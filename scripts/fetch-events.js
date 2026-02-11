@@ -426,14 +426,15 @@ function buildFullHTML(eventsJSON, updatedAt) {
   // Read the template HTML
   let html = fs.readFileSync(TEMPLATE_PATH, "utf8");
 
-  // Replace the placeholder data
-  const dataTag = `const EVENTS_DATA = [];`;
-  const replacement = `const EVENTS_DATA = ${eventsJSON};`;
-  html = html.replace(dataTag, replacement);
-
-  // Replace the updated timestamp
+  // Replace the event data (handles both empty placeholder and previously-embedded data)
   html = html.replace(
-    `const LAST_UPDATED = "";`,
+    /const EVENTS_DATA = \[.*?\];/s,
+    `const EVENTS_DATA = ${eventsJSON};`
+  );
+
+  // Replace the updated timestamp (handles both empty and previously-set values)
+  html = html.replace(
+    /const LAST_UPDATED = ".*?";/,
     `const LAST_UPDATED = "${updatedAt}";`
   );
 
