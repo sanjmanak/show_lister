@@ -6,13 +6,13 @@ Automated event aggregator that pulls comedy shows from Ticketmaster and Eventbr
 
 ## Data Sources
 
-- **Ticketmaster Discovery API** — Houston DMA comedy events (Houston Improv, Punch Line, arena shows, etc.)
-- **Eventbrite API** — The Riot Comedy Club, The Secret Group, and other Houston comedy organizers
+- **Ticketmaster Discovery API** — comedy events filtered to the Houston area (within ~100 miles)
+- **Eventbrite API** — events from known Houston organizers, also filtered to Houston-area venues
 
 ## How It Works
 
 1. A GitHub Action runs at **8 AM and 6 PM Central** (and can be triggered manually)
-2. `scripts/fetch-events.js` calls both APIs, normalizes events into a common schema, and deduplicates
+2. `scripts/fetch-events.js` calls both APIs, normalizes events into a common schema, filters to Houston-area shows in the next 90 days, and deduplicates
 3. The script writes `events.json` and injects data into `index.html`
 4. The Action commits and pushes — GitHub Pages rebuilds automatically
 
@@ -89,3 +89,4 @@ open index.html
 | Page shows 0 events | Check Action logs; one or both APIs may be down. Events load from embedded data or `events.json` |
 | Page not updating | Check that GitHub Pages is enabled and pointing to the right branch |
 | Events look stale | Trigger a manual workflow run from the Actions tab |
+| Seeing non-Houston events | Check that Ticketmaster/Eventbrite credentials are valid and rerun; script now filters by Houston radius + date window |

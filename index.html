@@ -620,6 +620,14 @@
       </select>
     </div>
 
+    <div class="select-wrapper">
+      <select id="sourceFilter">
+        <option value="all">All Sources</option>
+        <option value="ticketmaster">Ticketmaster Only</option>
+        <option value="eventbrite">Eventbrite Only</option>
+      </select>
+    </div>
+
     <div class="controls-spacer"></div>
 
     <span class="sort-label">Sort:</span>
@@ -8078,6 +8086,7 @@
     let allEvents = [];
     let currentTimeFilter = "all";
     let currentVenueFilter = "all";
+    let currentSourceFilter = "all";
     let currentSort = "date";
 
     // ================================================================
@@ -8151,6 +8160,12 @@
         currentSort = e.target.value;
         render();
       });
+
+      // Source filter
+      document.getElementById("sourceFilter").addEventListener("change", (e) => {
+        currentSourceFilter = e.target.value;
+        render();
+      });
     }
 
     // ================================================================
@@ -8187,11 +8202,14 @@
 
       const endOfWeek = toDateStr(addDays(now, 7 - dayOfWeek));
       const endOfMonth = toDateStr(new Date(now.getFullYear(), now.getMonth() + 1, 0));
+      const endOfNinetyDays = toDateStr(addDays(now, 90));
 
       let events = allEvents.filter(e => {
         if (!e.date) return false;
         // Don't show past events
         if (e.date < today) return false;
+        // Only show the next 90 days
+        if (e.date > endOfNinetyDays) return false;
         // Don't show cancelled
         if (e.status === "cancelled") return false;
 
@@ -8206,6 +8224,9 @@
 
         // Venue filter
         if (currentVenueFilter !== "all" && e.venue !== currentVenueFilter) return false;
+
+        // Source filter
+        if (currentSourceFilter !== "all" && e.source !== currentSourceFilter) return false;
 
         return true;
       });

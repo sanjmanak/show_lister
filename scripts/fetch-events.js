@@ -22,6 +22,10 @@ const EB_TOKEN = process.env.EVENTBRITE_TOKEN || "";
 const HOUSTON_DMA_ID = "324";
 const TM_BASE = "https://app.ticketmaster.com/discovery/v2/events.json";
 
+const HOUSTON_CENTER = { lat: 29.7604, lon: -95.3698 };
+const HOUSTON_RADIUS_MILES = 100;
+const EVENT_WINDOW_DAYS = 90;
+
 const EB_BASE = "https://www.eventbriteapi.com/v3";
 const EB_ORGANIZERS = [
   { id: "29979960920", name: "The Riot Comedy Club" },
@@ -148,10 +152,22 @@ async function fetchTicketmaster() {
 }
 
 function normalizeTM(ev) {
-  const venue =
+  const venueData =
     ev._embedded && ev._embedded.venues && ev._embedded.venues[0]
-      ? ev._embedded.venues[0].name
-      : "Unknown Venue";
+      ? ev._embedded.venues[0]
+      : {};
+
+  const venue = venueData.name || "Unknown Venue";
+  const city = venueData.city && venueData.city.name ? venueData.city.name : null;
+  const state = venueData.state && (venueData.state.stateCode || venueData.state.name)
+    ? (venueData.state.stateCode || venueData.state.name)
+    : null;
+  const latitude = venueData.location && venueData.location.latitude
+    ? parseFloat(venueData.location.latitude)
+    : null;
+  const longitude = venueData.location && venueData.location.longitude
+    ? parseFloat(venueData.location.longitude)
+    : null;
 
   const dateStr =
     ev.dates && ev.dates.start ? ev.dates.start.localDate : null;
@@ -174,6 +190,10 @@ function normalizeTM(ev) {
     id: makeId(ev.name, dateStr, venue),
     name: ev.name || "Untitled Event",
     venue,
+    city,
+    state,
+    latitude,
+    longitude,
     date: dateStr,
     time: formatTime(timeStr),
     day_of_week: dateStr ? getDayOfWeek(dateStr) : null,
@@ -270,6 +290,12 @@ async function fetchEventbrite() {
 function normalizeEB(ev, orgFallbackName) {
   const venueName =
     ev.venue && ev.venue.name ? ev.venue.name : orgFallbackName;
+  const address = ev.venue && ev.venue.address ? ev.venue.address : {};
+
+  const city = address.city || null;
+  const state = address.region || null;
+  const latitude = ev.venue && ev.venue.latitude ? parseFloat(ev.venue.latitude) : null;
+  const longitude = ev.venue && ev.venue.longitude ? parseFloat(ev.venue.longitude) : null;
 
   const startLocal = ev.start ? ev.start.local : null; // "2026-02-15T19:30:00"
   const dateStr = startLocal ? startLocal.slice(0, 10) : null;
@@ -293,6 +319,10 @@ function normalizeEB(ev, orgFallbackName) {
     id: makeId(ev.name ? ev.name.text : "Untitled", dateStr, venueName),
     name: ev.name ? ev.name.text : "Untitled Event",
     venue: venueName,
+    city,
+    state,
+    latitude,
+    longitude,
     date: dateStr,
     time: formatTime(timeRaw),
     day_of_week: dateStr ? getDayOfWeek(dateStr) : null,
@@ -357,6 +387,48 @@ function deduplicateEvents(events) {
   return Array.from(seen.values());
 }
 
+function haversineMiles(lat1, lon1, lat2, lon2) {
+  const toRad = (d) => (d * Math.PI) / 180;
+  const R = 3958.8;
+  const dLat = toRad(lat2 - lat1);
+  const dLon = toRad(lon2 - lon1);
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
+
+function isHoustonAreaEvent(ev) {
+  const hasCoords = Number.isFinite(ev.latitude) && Number.isFinite(ev.longitude);
+
+  if (hasCoords) {
+    const distance = haversineMiles(
+      HOUSTON_CENTER.lat,
+      HOUSTON_CENTER.lon,
+      ev.latitude,
+      ev.longitude
+    );
+    return distance <= HOUSTON_RADIUS_MILES;
+  }
+
+  const city = (ev.city || "").toLowerCase();
+  const state = (ev.state || "").toLowerCase();
+  return city.includes("houston") && (state === "tx" || state.includes("texas"));
+}
+
+function filterEventWindow(events, days) {
+  const today = new Date();
+  const start = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  const end = new Date(start);
+  end.setDate(end.getDate() + days);
+
+  const startStr = start.toISOString().slice(0, 10);
+  const endStr = end.toISOString().slice(0, 10);
+
+  return events.filter((ev) => ev.date && ev.date >= startStr && ev.date <= endStr);
+}
+
 function scoreCompleteness(ev) {
   let s = 0;
   if (ev.image_url) s++;
@@ -381,15 +453,11 @@ function buildFullHTML(eventsJSON, updatedAt) {
   let html = fs.readFileSync(TEMPLATE_PATH, "utf8");
 
   // Replace the placeholder data
-  const dataTag = `const EVENTS_DATA = [];`;
   const replacement = `const EVENTS_DATA = ${eventsJSON};`;
-  html = html.replace(dataTag, replacement);
+  html = html.replace(/const EVENTS_DATA = \[[\s\S]*?\];/, replacement);
 
   // Replace the updated timestamp
-  html = html.replace(
-    `const LAST_UPDATED = "";`,
-    `const LAST_UPDATED = "${updatedAt}";`
-  );
+  html = html.replace(/const LAST_UPDATED = "[^"]*";/, `const LAST_UPDATED = "${updatedAt}";`);
 
   return html;
 }
@@ -413,7 +481,9 @@ async function main() {
   console.log(`Eventbrite:   ${ebEvents.length} events`);
 
   const allEvents = [...tmEvents, ...ebEvents];
-  const deduped = deduplicateEvents(allEvents);
+  const houstonOnly = allEvents.filter(isHoustonAreaEvent);
+  const withinWindow = filterEventWindow(houstonOnly, EVENT_WINDOW_DAYS);
+  const deduped = deduplicateEvents(withinWindow);
 
   // Sort by date, then time
   deduped.sort((a, b) => {
@@ -421,6 +491,8 @@ async function main() {
     return (a.time || "").localeCompare(b.time || "");
   });
 
+  console.log(`Houston +/- ${HOUSTON_RADIUS_MILES}mi: ${houstonOnly.length} events`);
+  console.log(`Next ${EVENT_WINDOW_DAYS} days: ${withinWindow.length} events`);
   console.log(`After dedup:  ${deduped.length} events`);
   console.log("");
 
