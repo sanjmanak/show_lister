@@ -1,6 +1,6 @@
 # Event Scraper
 
-**Every comedy show in Houston. One place.**
+**Every event in a city. One place.**
 
 Automated event aggregator that pulls comedy shows from Ticketmaster and Eventbrite, deduplicates them, and publishes a static site to GitHub Pages — updated twice daily.
 
