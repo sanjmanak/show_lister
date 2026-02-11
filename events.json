@@ -1,97 +1,7 @@
 {
-  "last_updated": "2026-02-11T06:19:18.548Z",
-  "total_events": 412,
+  "last_updated": "2026-02-11T14:49:25.061Z",
+  "total_events": 409,
   "events": [
-    {
-      "id": "e8a0a60f92ff6cd6",
-      "name": "C U Next Tuesday: Weekly Comedy hosted by Corlis DeLauren and Tess Vergult",
-      "venue": "The Secret Group",
-      "date": "2026-02-10",
-      "time": "10:00 PM",
-      "day_of_week": "Tuesday",
-      "price_min": 0,
-      "price_max": 0,
-      "currency": "USD",
-      "ticket_url": "https://www.eventbrite.com/e/c-u-next-tuesday-weekly-comedy-hosted-by-corlis-delauren-and-tess-vergult-tickets-1980906875790",
-      "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1175277800%2F68532713233%2F1%2Foriginal.20240802-211725?auto=format%2Ccompress&q=75&sharp=10&s=ba397994fdb17c793402bc18790ed8de",
-      "source": "eventbrite",
-      "age_restriction": null,
-      "status": "started",
-      "description": "Discover C U Next Tuesday: a weekly comedy show hosted by Corlis DeLauren and Tess Vergult at The Secret Group!",
-      "last_updated": "2026-02-11T06:19:17.110Z"
-    },
-    {
-      "id": "f36fe4afbda63c74",
-      "name": "PASS THE MIC: Comedy Open Mic",
-      "venue": "The Secret Group",
-      "date": "2026-02-10",
-      "time": "11:30 PM",
-      "day_of_week": "Tuesday",
-      "price_min": 0,
-      "price_max": 0,
-      "currency": "USD",
-      "ticket_url": "https://www.eventbrite.com/e/pass-the-mic-comedy-open-mic-tickets-1980906885820",
-      "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1175277830%2F68532713233%2F1%2Foriginal.20240806-170802?auto=format%2Ccompress&q=75&sharp=10&s=bfeeb4c2ab0736301befd13bf7840073",
-      "source": "eventbrite",
-      "age_restriction": null,
-      "status": "on_sale",
-      "description": "Get ready to grab the mic and make 'em laugh at our Comedy Open Mic night every Tuesday night!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
-    },
-    {
-      "id": "3a7bfcb37649950d",
-      "name": "Palm Springs Speaks Presents: Cheech Marin",
-      "venue": "Plaza Theatre",
-      "date": "2026-02-10",
-      "time": "7:30 PM",
-      "day_of_week": "Tuesday",
-      "price_min": null,
-      "price_max": null,
-      "currency": "USD",
-      "ticket_url": "https://www.ticketmaster.com/palm-springs-speaks-presents-cheech-marin-palm-springs-california-02-10-2026/event/0A006370CA456F2C",
-      "image_url": "https://s1.ticketm.net/dam/a/897/71b3a8be-f08d-4d4e-ac39-3b0432e19897_SOURCE",
-      "source": "ticketmaster",
-      "age_restriction": null,
-      "status": "off_sale",
-      "description": null,
-      "last_updated": "2026-02-11T06:19:09.786Z"
-    },
-    {
-      "id": "5ea3de36692572f7",
-      "name": "James Acaster",
-      "venue": "Orpheum Theatre",
-      "date": "2026-02-10",
-      "time": "8:00 PM",
-      "day_of_week": "Tuesday",
-      "price_min": null,
-      "price_max": null,
-      "currency": "USD",
-      "ticket_url": "https://www.ticketmaster.com/james-acaster-los-angeles-california-02-10-2026/event/09006356498A8D99",
-      "image_url": "https://s1.ticketm.net/dam/a/d13/c81e50ee-ab25-4824-9d36-8e84d01aad13_SOURCE",
-      "source": "ticketmaster",
-      "age_restriction": null,
-      "status": "off_sale",
-      "description": "Event Age Restriction: 14+",
-      "last_updated": "2026-02-11T06:19:09.786Z"
-    },
-    {
-      "id": "8c773f8e0b389eb7",
-      "name": "FOR THE CULTURE: A Tuesday Comedy Show for The Culture",
-      "venue": "The Secret Group",
-      "date": "2026-02-10",
-      "time": "8:00 PM",
-      "day_of_week": "Tuesday",
-      "price_min": 0,
-      "price_max": 0,
-      "currency": "USD",
-      "ticket_url": "https://www.eventbrite.com/e/for-the-culture-a-tuesday-comedy-show-for-the-culture-tickets-1980906872781",
-      "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1171686511%2F3558237521%2F1%2Foriginal.20251124-232548?auto=format%2Ccompress&q=75&sharp=10&s=f229ff3250f6ec814bce4550095dd7d0",
-      "source": "eventbrite",
-      "age_restriction": null,
-      "status": "started",
-      "description": "A stand-up comedy show that celebrates the vibrant humor and unique perspectives of a diverse lineup of comics!",
-      "last_updated": "2026-02-11T06:19:17.110Z"
-    },
     {
       "id": "29493b83f1051e25",
       "name": "Witchy Wednesdays Open Mic",
@@ -108,7 +18,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us at The Secret Group for a night of laughs with longer sets from comedy pros and quick 5-minute sets from up-and-coming amateurs!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "59e63b019538af4b",
@@ -126,7 +36,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A comedy showcase that gets you through the week! With local favorites, great food, and full bar on a Wednesday night.",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "d5ec53b00b16cc00",
@@ -144,7 +54,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "This event is ages 14+",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "52abc93d0d0dc950",
@@ -162,7 +72,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of nonstop laughter with a stacked, can?t-miss comedy lineup. Hosted by Tony Rock, this live show brings together a powerhouse mix of TV favorites, viral standouts, and comedy club legends all on one stage for an unforgettable night out.Featuring headliners Tommy Davidson (In Living Color) and Finesse Mitchell (SNL), plus performances from London Brown, Ron G, John Grimes, and Carmen Barton. One night. One room. Paff Soul Comedy - Laugh till it hurts!",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "51c4a0e01adf6704",
@@ -180,7 +90,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Sex Mex with Zegovia and Loose Helmet at The Secret Group Wednesday, February 11th!",
-      "last_updated": "2026-02-11T06:19:17.110Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "40c6043f6d27bfde",
@@ -198,7 +108,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "15 comedians each perform one minute and you decide which comedians advance on to win this weeks - One Minute Comedy Showdown with Jeff Joe!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "97ee72891a44fd4a",
@@ -216,7 +126,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A Dark Burlesque Experience & Content Creator Mixer",
-      "last_updated": "2026-02-11T06:19:17.110Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "040eb37fda0fdbf2",
@@ -234,7 +144,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Hilarious Duo Zahid Dewji & Andrew Youngblood return for one night to host one of the funniest comedy shows in Houston!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "5793331bd6fcf685",
@@ -252,7 +162,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A comedy open mic featuring some of Houston's best comedians!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "886e21675ebdb19e",
@@ -270,7 +180,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Jaron Myers  at The Riot Comedy Club",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "a50420bcdee89cdd",
@@ -288,7 +198,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "Trenton Davis ten thousand hours of Standup comedy is beginning to pay dividends Trenton was the San Francisco International Comedy Competition runner up for 2016. He was runner up in the prestigious NBC Standup for Diversity program and won 2015 Sacramento Comedy Festival. Trenton was born in Greensboro, NC and began his comedy journey in Chicago, IL. His unique experiences have shaped his views and created one of the best new comedic writers and performers of our generation. Trenton currently resides in Los Angeles and Atlanta, GA. TV Credits The Real Laughs on Fox Bar Rescue",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "bf60ad660a3c728e",
@@ -306,7 +216,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come catch some of the nation's best up-and-coming comics stretch their legs and perfect their craft every Thursday!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "472aaff974057070",
@@ -324,7 +234,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "TDE Presents: Top Notch Comedy Show kicks off NBA All-Star Weekend with a high-energy night of stand-up featuring Nate Jackson, René Vaca, Ryan Davis, James Davis, Tacarra Williams, and Donnell Rawlings, hosted by Sir Lance Woods. The night is capped with a surprise TDE artist performance, launching a culture-forward experience where comedy and music collide.",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "07201377637b35f2",
@@ -342,7 +252,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to laugh your socks off at The Riot Comedy Club - it's gonna be a riot! 6-8 Comedians from Houston and around the country.",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "12194e1b0a63f17b",
@@ -360,7 +270,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "An evening of Karaoke and cheap drinks!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "149076289c3e04f0",
@@ -378,7 +288,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "a721f79408215071",
@@ -396,7 +306,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share drinks and laughs on a Friday night at The Riot featuring The You Look Like Roast Contest with meanest and funniest comedians",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "0a2d25938ed27d70",
@@ -414,7 +324,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of raunchy jokes and adult humor at The Late Night Dirty Show: X Rated Comedy LIVE at The Secret Group!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "5830461e1b6dac71",
@@ -432,7 +342,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "16+ Suggested",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "5d28d2d29a12be1f",
@@ -450,7 +360,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "Trenton Davis ten thousand hours of Standup comedy is beginning to pay dividends Trenton was the San Francisco International Comedy Competition runner up for 2016. He was runner up in the prestigious NBC Standup for Diversity program and won 2015 Sacramento Comedy Festival. Trenton was born in Greensboro, NC and began his comedy journey in Chicago, IL. His unique experiences have shaped his views and created one of the best new comedic writers and performers of our generation. Trenton currently resides in Los Angeles and Atlanta, GA. TV Credits The Real Laughs on Fox Bar Rescue",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "9edde22dbc55a8b8",
@@ -468,7 +378,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A fun evening of standup comedy at The Riot with tasty food, full bar, and comedy from visiting/returning-hometown headliner Zahid Dewji!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.861Z"
     },
     {
       "id": "3d5be4873f664a58",
@@ -486,7 +396,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "3df0c40e3020366b",
@@ -504,7 +414,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "ffcd55333be5b3d0",
@@ -522,7 +432,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Eric Schwartz -  Live at the Secret Group Friday February 13th",
-      "last_updated": "2026-02-11T06:19:18.441Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "2b71fb1354041c1f",
@@ -540,7 +450,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share drinks and laughs on a Friday night at The Riot featuring both local and headlining comedians for a show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "e8f15e7f956cd9da",
@@ -558,7 +468,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "YOUR FAVORITE EMO INDIE AND PUNK JAMZ ALL NIGHT LONG, COME PARTY! CHEAP DRINKS !",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "63fb54e4be2b8f9f",
@@ -576,7 +486,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "6117d5206778b5fa",
@@ -594,7 +504,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share some Love and laughs on valentine's day with funny comedians & hosts of the hit dating show \"Swipe Right\" Jeff Joe & Lotto Marie",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "c85c21d5dda1061b",
@@ -612,7 +522,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Speedball open mic is back, Saturdays at 11:59 for some quick, raw, and unfiltered comedy!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "c4335113916ac449",
@@ -630,7 +540,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "18+ Welcome with Valid ID. Every person must have a ticket to attend the event, regardless of age. Doors: 6:00 p.m. Show: 7:00 p.m. *All times and supporting acts are subject to change The following bag policy is in place: Bags up to 12\" x 6\" x 12\" are allowed in the venue. All bags will be searched prior to entry. Bags that are not clear will be subject to additional search.",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "48edcecdd60cf228",
@@ -648,7 +558,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "Trenton Davis ten thousand hours of Standup comedy is beginning to pay dividends Trenton was the San Francisco International Comedy Competition runner up for 2016. He was runner up in the prestigious NBC Standup for Diversity program and won 2015 Sacramento Comedy Festival. Trenton was born in Greensboro, NC and began his comedy journey in Chicago, IL. His unique experiences have shaped his views and created one of the best new comedic writers and performers of our generation. Trenton currently resides in Los Angeles and Atlanta, GA. TV Credits The Real Laughs on Fox Bar Rescue",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "8a470cbc98912f30",
@@ -666,7 +576,7 @@
       "age_restriction": null,
       "status": "cancelled",
       "description": "Due to scheduling conflicts, the concert at the Alex Theatre with Vicki Lawrence scheduled for February 14 has been cancelled. The box office will issue refunds automatically, you don't need to take any further action. Thanks for being a patron of the Alex and we will see you at a future show.",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "6436a35928627a57",
@@ -684,7 +594,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share some Love and laughs on valentine's day with funny comedians & hosts of the hit dating show \"Swipe Right\" Jeff Joe & Lotto Marie",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "fdc18e998a90a770",
@@ -702,7 +612,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for “The Battle of The Sexes”, the only Houston's PREMIER Valentine’s Day event.",
-      "last_updated": "2026-02-11T06:19:17.110Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "a2b7626e7847f1f3",
@@ -720,7 +630,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "5e4020cc9693c4a8",
@@ -738,7 +648,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Kam Franklin & Friends -  A Valentine's Day Evening Celebration for Everybody Saturday, Feb. 14th at The Secret Group",
-      "last_updated": "2026-02-11T06:19:18.441Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "046a7c96b70297ac",
@@ -756,7 +666,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "Join us for the NBC All-Star weekend and Valentine's Day for a very special Comedy Block Party!! The Elliott Brothers and Chris Spencer are home and bringing Comedy Block Party to Downtown Inglewood at the legendary The Miracle Theater! Join host CHRIS SPENCER and his ALL-STAR lineup of friends for coolest Block Party in town!",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "e975fcd8b3dea86d",
@@ -774,7 +684,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share some Love and laughs on valentine's day with funny comedians & hosts of the hit dating show \"Swipe Right\" Jeff Joe & Lotto Marie",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "0d1597cb692fe3c9",
@@ -792,7 +702,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A dance party set to the hits of the 90's and Early 2000's!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "38b9b6132a180e94",
@@ -810,7 +720,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for “The Battle of The Sexes”, the only Houston's PREMIER Valentine’s Day event.",
-      "last_updated": "2026-02-11T06:19:17.110Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "33560e0a1ac4f42b",
@@ -828,7 +738,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Laughs are earned, not given.",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "6a2bd71c94781f9c",
@@ -846,7 +756,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Classic Cinema, curated by DJ Rosegawd in Los Angeles, is a cinematic and musical journey celebrating classic Black movies and the soundtracks that brought them to life. This series honors a time when music played a key role in creating the vibe and world of each film. After watching the movie of the month, guests can dive into the soundtrack experience and mingle with fellow movie and music lovers for a night of culture and nostalgia.",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "a02ba1c3ddece68c",
@@ -864,7 +774,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features some of the best comedians in Houston headlining!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "f8c58c9578e84892",
@@ -882,7 +792,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A Sunday Comedy showcase hosted by: Shane Tucker and Trip Truman Sponsored by 8th Wonder Brewery",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "e12e6e1ef0cc69b2",
@@ -900,7 +810,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Adam Mamawala at The Riot Comedy Club!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "696f0c00b31c8325",
@@ -918,7 +828,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of surprises and mystery lineup of comedians at The (secret) Secret Show LIVE at The Secret Group!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "b00bb5ed15b86718",
@@ -936,7 +846,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get your hump day kicks on Route 66...er Polk Street rather, with Houston's favorite comedic troupe every Monday night at 10.",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "fa80b78a25e92a99",
@@ -954,7 +864,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A weekly comedy open mic every Monday at The Secret Group!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "4748ed934bb151fd",
@@ -972,7 +882,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "MONDAY NIGHT COMEDY! With Mason James, Matt BC & Dylan Kendrick . Every Monday night at 8PM!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "a1b1efc9452d26d5",
@@ -990,7 +900,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Discover C U Next Tuesday: a weekly comedy show hosted by Corlis DeLauren and Tess Vergult at The Secret Group!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "dd8ad0aa93656492",
@@ -1008,7 +918,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to grab the mic and make 'em laugh at our Comedy Open Mic night every Tuesday night!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "3df98fade76f0cdd",
@@ -1026,7 +936,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A stand-up comedy show that celebrates the vibrant humor and unique perspectives of a diverse lineup of comics!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "3d3de0dcf5ec3f29",
@@ -1044,7 +954,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us at The Secret Group for a night of laughs with longer sets from comedy pros and quick 5-minute sets from up-and-coming amateurs!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "84a929dd6b079b98",
@@ -1062,7 +972,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A comedy showcase that gets you through the week! With local favorites, great food, and full bar on a Wednesday night.",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "3b7534fc739c0cc5",
@@ -1080,7 +990,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "An evening of comedy, beer and tequila featuring some of Houston's best comedians!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "2971ba0f73b3e11d",
@@ -1098,7 +1008,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "15 comedians each perform one minute and you decide which comedians advance on to win this weeks - One Minute Comedy Showdown with Jeff Joe!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "4ef0457b0240f686",
@@ -1116,7 +1026,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to laugh your socks off at The Riot Comedy Club - it's gonna be a riot! 6-8 Comedians from Houston and around the country.",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "35af52fcaa16a081",
@@ -1134,7 +1044,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "e923eb358557a980",
@@ -1152,7 +1062,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Visit thebellwetherla.com for everything you need to know before the show. Upgraded access to the Looking Glass Lounge is now available at check out: * Access to preferred, stage-adjacent, standing room viewing section on the balcony level in the Main Room * Access to the exclusive Looking Glass Lounge 30 minutes before and throughout the show * Looking Glass Lounge upgrades include a separate premier entrance to The Bellwether, private bar serving exclusive beers, liquors, specialty drinks and complimentary hors doeuvres, and private bathrooms The Bellwether is a cashless venue. Please plan accordingly. There is a delivery delay in place on this event lifting 24 hours prior to show time",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "407d353306b8f0cb",
@@ -1170,7 +1080,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "Patrick DeGuire started performing stand up after losing a significant amount of vision. He discovered laughter to be therapeutic. He won the Improv Harrah?s National Comedy Club Talent Search. This led to appearances on Comedy Central and Comics Unleashed. He has also been heard on The Bob and Tom Show and NPR. Patrick has toured with Tom Segura and Theo Von and Gabriel Iglesias. He has performed for U.S. troops in numerous countries including Iraq and Japan and South Korea. His material explores the advantages and disadvantages of living with limited vision. He discusses the challenges of relationships and being a father to eight children. Patrick headlines top comedy clubs throughout the United States. His perspective on life is both insightful and hilarious. He addresses an assortment of topics that resonate with diverse audiences. Patrick continues to be a favorite in the national comedy scene.",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "d409b6320bac88e8",
@@ -1188,7 +1098,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come catch some of the nation's best up-and-coming comics stretch their legs and perfect their craft every Thursday!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "056b9c60a1f89b24",
@@ -1206,7 +1116,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to laugh your socks off at The Riot Comedy Club - it's gonna be a riot! 6-8 Comedians from Houston and around the country.",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.861Z"
     },
     {
       "id": "c0dde3a7927db92f",
@@ -1224,7 +1134,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "An evening of Karaoke and cheap drinks!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "392934ca840505be",
@@ -1242,7 +1152,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A comedy open mic featuring some of Houston's best comedians!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "1c5b35cdad6afc9e",
@@ -1260,7 +1170,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "f95cd9a28bc24e86",
@@ -1278,7 +1188,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch the wild-card showcase this Friday at The Riot featuring both local and headlining comedians for a late show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "a0bfa3799c5624da",
@@ -1296,7 +1206,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of raunchy jokes and adult humor at The Late Night Dirty Show: X Rated Comedy LIVE at The Secret Group!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "7d0524a77b1f3b26",
@@ -1314,7 +1224,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "Patrick DeGuire started performing stand up after losing a significant amount of vision. He discovered laughter to be therapeutic. He won the Improv Harrah?s National Comedy Club Talent Search. This led to appearances on Comedy Central and Comics Unleashed. He has also been heard on The Bob and Tom Show and NPR. Patrick has toured with Tom Segura and Theo Von and Gabriel Iglesias. He has performed for U.S. troops in numerous countries including Iraq and Japan and South Korea. His material explores the advantages and disadvantages of living with limited vision. He discusses the challenges of relationships and being a father to eight children. Patrick headlines top comedy clubs throughout the United States. His perspective on life is both insightful and hilarious. He addresses an assortment of topics that resonate with diverse audiences. Patrick continues to be a favorite in the national comedy scene.",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "131ebf99011cd625",
@@ -1332,7 +1242,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A fun evening of standup comedy at The Riot with tasty food, full bar, and comedy from visiting headliner Brendan Sagalow!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.861Z"
     },
     {
       "id": "f0b7d05124ac43a6",
@@ -1350,7 +1260,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "c0d3d5d1c0b674ca",
@@ -1368,7 +1278,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "76d57f68b787f2d0",
@@ -1386,7 +1296,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "DOORS: 7PM SHOW: 8PM LINE UP: ERIC OCHOA JAY VALENTINO G MONEY NO REFUNDS OR EXCHANGES",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "b83214d5f99b1e9d",
@@ -1404,7 +1314,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Everyone entering the theatre must have a paid ticket regardless of age or seating requirements. All sales are final. There are no refunds or exchanges.",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.006Z"
     },
     {
       "id": "90397044b4deaff5",
@@ -1422,7 +1332,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "90a380ad09ffda31",
@@ -1440,7 +1350,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Orchid Mantis Live at The Secret Group Friday Feb 20th",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "ccf8ebf1ba39c0d7",
@@ -1458,7 +1368,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share drinks and laughs on a Friday night at The Riot featuring both local and headlining comedians for a show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "1015f3e605be443e",
@@ -1476,7 +1386,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "YOUR FAVORITE EMO INDIE AND PUNK JAMZ ALL NIGHT LONG, COME PARTY! CHEAP DRINKS !",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "206dd7b54ec59234",
@@ -1494,7 +1404,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch the wild-card showcase this Saturday at The Riot featuring both local and headlining comedians for a late show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "85cc20842fca3ddd",
@@ -1512,7 +1422,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
-      "last_updated": "2026-02-11T06:19:18.441Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "24e137d7f93a27a1",
@@ -1530,7 +1440,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Speedball open mic is back, Saturdays at 11:59 for some quick, raw, and unfiltered comedy!",
-      "last_updated": "2026-02-11T06:19:18.441Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "a1f4dca09165dfe0",
@@ -1548,7 +1458,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "All Ages Welcome. Every person must have a ticket to attend the event, regardless of age. Doors: 4:00 p.m. Show: 5:00 p.m. *All times and supporting acts are subject to change The following bag policy is in place: Bags up to 12\" x 6\" x 12\" are allowed in the venue. All bags will be searched prior to entry. Bags that are not clear will be subject to additional search.",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "39c21d7507b1340a",
@@ -1566,7 +1476,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "VENUE: Pechanga SummitVENUE DOORS OPEN AT 6:30 PMBy purchasing tickets and entering Pechanga Resort Casino, each ticket holder is agreeing to the Terms and Conditions, Release, Wavier, Indemnification, and Covenant Not to Sue set forth at https://www.pechanga.com/box-officeAge Restriction",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "1351575b7d15216d",
@@ -1584,7 +1494,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "Patrick DeGuire started performing stand up after losing a significant amount of vision. He discovered laughter to be therapeutic. He won the Improv Harrah?s National Comedy Club Talent Search. This led to appearances on Comedy Central and Comics Unleashed. He has also been heard on The Bob and Tom Show and NPR. Patrick has toured with Tom Segura and Theo Von and Gabriel Iglesias. He has performed for U.S. troops in numerous countries including Iraq and Japan and South Korea. His material explores the advantages and disadvantages of living with limited vision. He discusses the challenges of relationships and being a father to eight children. Patrick headlines top comedy clubs throughout the United States. His perspective on life is both insightful and hilarious. He addresses an assortment of topics that resonate with diverse audiences. Patrick continues to be a favorite in the national comedy scene.",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "ded0488611a06396",
@@ -1602,7 +1512,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Everyone entering the theatre must have a paid ticket regardless of age or seating requirements. All sales are final. There are no refunds or exchanges.",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "b488b0fdec2c662e",
@@ -1620,7 +1530,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A fun evening of standup comedy at The Riot with tasty food, full bar, and comedy from visiting headliner Brendan Sagalow!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.861Z"
     },
     {
       "id": "5ca58b052fd76152",
@@ -1638,7 +1548,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Left to Suffer: Eternal Suffering Tour with Larcenia Roe &  Fr3ak \nSaturday, Feb 21, 2026 at The Secret Group",
-      "last_updated": "2026-02-11T06:19:17.110Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "4b330d8ea21b0f02",
@@ -1656,7 +1566,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "88eff37711534344",
@@ -1674,7 +1584,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "2797a837f92ceb99",
@@ -1692,7 +1602,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "ALL SALES FINALNO REFUNDS/EXCHANGES",
-      "last_updated": "2026-02-11T06:19:09.970Z"
+      "last_updated": "2026-02-11T14:49:19.152Z"
     },
     {
       "id": "51c99f270aabeb67",
@@ -1710,7 +1620,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share drinks and laughs on a Saturday night at The Riot featuring local and nationally touring comedians for a show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "baaf91eabf677d8c",
@@ -1728,7 +1638,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A dance party set to the hits of the 90's and Early 2000's!",
-      "last_updated": "2026-02-11T06:19:17.111Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "27965f226d75f59f",
@@ -1746,7 +1656,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
-      "last_updated": "2026-02-11T06:19:18.441Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "b792a379951f24cc",
@@ -1764,7 +1674,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Laughs are earned, not given.",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "f243ad8004118ee2",
@@ -1782,7 +1692,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features some of the best comedians in Houston headlining!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "ee6b7c45c8e43958",
@@ -1800,7 +1710,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A Sunday Comedy showcase hosted by: Shane Tucker and Trip Truman Sponsored by 8th Wonder Brewery",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "78f7b5dcb5072643",
@@ -1818,7 +1728,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features local favorite comedians with cold drinks, tasty food, and a chill vibe",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "1aa52cd3b01e8fee",
@@ -1836,7 +1746,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "60cf57751d646154",
@@ -1854,7 +1764,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of surprises and mystery lineup of comedians at The (secret) Secret Show LIVE at The Secret Group!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "92d638dfac3a69f4",
@@ -1872,7 +1782,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get your hump day kicks on Route 66...er Polk Street rather, with Houston's favorite comedic troupe every Monday night at 10.",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "f06c05502fe8662e",
@@ -1890,7 +1800,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A weekly comedy open mic every Monday at The Secret Group!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "afefc5a3754655aa",
@@ -1908,7 +1818,7 @@
       "age_restriction": null,
       "status": "rescheduled",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "402ac80203615e1b",
@@ -1926,7 +1836,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "MONDAY NIGHT COMEDY! With Mason James, Matt BC & Dylan Kendrick . Every Monday night at 8PM!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "7d81c8bf956f2722",
@@ -1944,7 +1854,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Discover C U Next Tuesday: a weekly comedy show hosted by Corlis DeLauren and Tess Vergult at The Secret Group!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "3723ddb2ff4847a5",
@@ -1962,7 +1872,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to grab the mic and make 'em laugh at our Comedy Open Mic night every Tuesday night!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "6c827eafaafd330e",
@@ -1980,7 +1890,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A stand-up comedy show that celebrates the vibrant humor and unique perspectives of a diverse lineup of comics!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "2f029a933987ce7e",
@@ -1998,7 +1908,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us at The Secret Group for a night of laughs with longer sets from comedy pros and quick 5-minute sets from up-and-coming amateurs!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "d6cb23d2f27ac1a5",
@@ -2016,7 +1926,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A comedy showcase that gets you through the week! With local favorites, great food, and full bar on a Wednesday night.",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "e0e2b551ccdd8e4f",
@@ -2034,7 +1944,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "An evening of comedy, beer and tequila featuring some of Houston's best comedians!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "b66e414c55aba760",
@@ -2052,7 +1962,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "15 comedians each perform one minute and you decide which comedians advance on to win this weeks - One Minute Comedy Showdown with Jeff Joe!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "b29c9df04298630e",
@@ -2070,7 +1980,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to laugh your socks off at The Riot Comedy Club - it's gonna be a riot! 6-8 Comedians from Houston and around the country.",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "8b31701a733c294f",
@@ -2088,7 +1998,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "Ahmed Ahmed is an Egyptian American actor and comedian. He is also a producer and director. He is known as a multi faceted talent in the industry. Ahmed co founded the Axis of Evil Comedy Tour. This tour aired on Comedy Central and traveled across the Middle East. He has filmed two comedy specials for Showtime. He starred in the series Sullivan and Son on TBS. His acting credits include Iron Man, Weeds, Swingers and You Don?t Mess with the Zohan. Ahmed directed the award winning documentary Just Like Us. This film premiered at the Tribeca Film Festival. It won many awards for best director and best documentary. Ahmed even dined with President Obama at the White House because of his work. He can be seen in the documentary Too Soon on Vice TV. He is currently developing new television shows and films. Ahmed believes that laughter heals. He thinks comedy bridges the gap between communities worldwide.",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "88fb1f18e3ed9148",
@@ -2106,7 +2016,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come catch some of the nation's best up-and-coming comics stretch their legs and perfect their craft every Thursday!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "6d737e3b7003e92e",
@@ -2124,7 +2034,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "The Dating app game is a such a gamble, let’s take it back to the old school… Live dating games. Come as a contestant or come to just watch.",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "66a2c551f8c76bd4",
@@ -2142,7 +2052,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "An evening of Karaoke and cheap drinks!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "53cd4be50920594e",
@@ -2160,7 +2070,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A comedy open mic featuring some of Houston's best comedians!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "c41225b99f8499f0",
@@ -2178,7 +2088,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "25577d58ee696ea7",
@@ -2196,7 +2106,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch the wild-card showcase this Friday at The Riot featuring both local and headlining comedians for a late show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "f3f5947d99b71b1c",
@@ -2214,7 +2124,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of raunchy jokes and adult humor at The Late Night Dirty Show: X Rated Comedy LIVE at The Secret Group!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "e55686a2ad06521a",
@@ -2232,7 +2142,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "Ahmed Ahmed is an Egyptian American actor and comedian. He is also a producer and director. He is known as a multi faceted talent in the industry. Ahmed co founded the Axis of Evil Comedy Tour. This tour aired on Comedy Central and traveled across the Middle East. He has filmed two comedy specials for Showtime. He starred in the series Sullivan and Son on TBS. His acting credits include Iron Man, Weeds, Swingers and You Don?t Mess with the Zohan. Ahmed directed the award winning documentary Just Like Us. This film premiered at the Tribeca Film Festival. It won many awards for best director and best documentary. Ahmed even dined with President Obama at the White House because of his work. He can be seen in the documentary Too Soon on Vice TV. He is currently developing new television shows and films. Ahmed believes that laughter heals. He thinks comedy bridges the gap between communities worldwide.",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "374acd848095810a",
@@ -2250,7 +2160,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to laugh till your sides hurt as Sugar Sammy takes the stage at The Riot Comedy Club for a night of hilarious stand-up comedy!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "8344691fbb38c3f6",
@@ -2268,7 +2178,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "6ca2178d963a9073",
@@ -2286,7 +2196,7 @@
       "age_restriction": null,
       "status": "rescheduled",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "a2430a053e92402c",
@@ -2304,7 +2214,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "388730ab4d1cb6c3",
@@ -2322,7 +2232,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to laugh till your sides hurt as Sugar Sammy takes the stage at The Riot Comedy Club for a night of hilarious stand-up comedy!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "de3e18df12d9ce43",
@@ -2340,7 +2250,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "YOUR FAVORITE EMO INDIE AND PUNK JAMZ ALL NIGHT LONG, COME PARTY! CHEAP DRINKS !",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "a0ee20b8a47686a0",
@@ -2358,7 +2268,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch the wild-card showcase this Saturday at The Riot featuring both local and headlining comedians for a late show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "a8ca24d156d2e8ac",
@@ -2376,7 +2286,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "2bbff8e952563314",
@@ -2394,7 +2304,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Speedball open mic is back, Saturdays at 11:59 for some quick, raw, and unfiltered comedy!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "656d8047060655d9",
@@ -2412,7 +2322,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "fa850aa8d0f4f40a",
@@ -2430,7 +2340,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "Ahmed Ahmed is an Egyptian American actor and comedian. He is also a producer and director. He is known as a multi faceted talent in the industry. Ahmed co founded the Axis of Evil Comedy Tour. This tour aired on Comedy Central and traveled across the Middle East. He has filmed two comedy specials for Showtime. He starred in the series Sullivan and Son on TBS. His acting credits include Iron Man, Weeds, Swingers and You Don?t Mess with the Zohan. Ahmed directed the award winning documentary Just Like Us. This film premiered at the Tribeca Film Festival. It won many awards for best director and best documentary. Ahmed even dined with President Obama at the White House because of his work. He can be seen in the documentary Too Soon on Vice TV. He is currently developing new television shows and films. Ahmed believes that laughter heals. He thinks comedy bridges the gap between communities worldwide.",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "c3ed37dab77c128b",
@@ -2448,7 +2358,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "e3210d1a12ae58bb",
@@ -2466,7 +2376,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Click here to see the stage from your seat!For venue information, click here.",
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "354c5b1171a50680",
@@ -2484,7 +2394,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.786Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "9b9da7cb7c4c5683",
@@ -2502,7 +2412,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "af16fda14c3a0f63",
@@ -2520,7 +2430,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Original 80s music and videos throughout the night!",
-      "last_updated": "2026-02-11T06:19:17.110Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "eef2638172f6f36b",
@@ -2538,7 +2448,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to laugh till your sides hurt as Sugar Sammy takes the stage at The Riot Comedy Club for a night of hilarious stand-up comedy!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "0b68e58d045d1603",
@@ -2556,7 +2466,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A dance party set to the hits of the 90's and Early 2000's!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "8fb32248ed236b61",
@@ -2574,7 +2484,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "a118defc5afde4ce",
@@ -2592,7 +2502,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features some of the best comedians in Houston headlining!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "e410b877d2b7f430",
@@ -2610,7 +2520,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features local favorite comedians with cold drinks, tasty food, and a chill vibe",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "3b29a4ec84ea9615",
@@ -2628,7 +2538,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Paris Sashay at The Riot Comedy Club!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "e60159ef5b93a13d",
@@ -2646,7 +2556,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "SIAMESE - HTX with Mirrorcell & Cabal Monday, Mar 02",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "1534ceae8ec7fd6a",
@@ -2664,7 +2574,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A comedy showcase that gets you through the week! With local favorites, great food, and full bar on a Wednesday night.",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.861Z"
     },
     {
       "id": "69d46934afd3564d",
@@ -2682,7 +2592,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "76fb72920c3813cb",
@@ -2700,7 +2610,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "15 comedians each perform one minute and you decide which comedians advance on to win this weeks - One Minute Comedy Showdown with Jeff Joe!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "7cdefa51091d62bf",
@@ -2718,7 +2628,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to laugh your socks off at The Riot Comedy Club - it's gonna be a riot! 6-8 Comedians from Houston and around the country.",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "2d6ec4c1656f1c55",
@@ -2736,7 +2646,7 @@
       "age_restriction": "18+",
       "status": "off_sale",
       "description": "Darren Carter is an American stand up comedian and actor known as The Party Starter. He was born in Fresno and has entertained audiences for over twenty years. His unique style blends observational humor with physical comedy. Carter began his career in the nineties at open mic nights in Los Angeles. He gained recognition for his energetic stage presence. This led to appearances on The Tonight Show with Jay Leno and Comedy Central Presents. He has released comedy albums titled Shady Side and That Gingers Crazy. Carter performs at major venues like The Comedy Store and The Laugh Factory. His film Born Again and his Dry Bar Comedy Special are recent highlights. He has acted in films such as Be Cool and Love Chronicles. Carter also hosts the Pocket Party podcast. He is famous for his infectious laughter and high energy performances. He connects with audiences of all ages and backgrounds. He continues to tour regularly and brings joy to fans across the country.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "2478d7aa6d721cc9",
@@ -2754,7 +2664,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "The Laugh Block features the best visiting talent in the city, hosted by the hilarious JCann! Full food, drinks, and good vibes all night!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "d06254c1cdb636b1",
@@ -2772,7 +2682,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch the wild-card showcase this Friday at The Riot featuring both local and headlining comedians for a late show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "7429df4d79075e53",
@@ -2790,7 +2700,7 @@
       "age_restriction": "18+",
       "status": "off_sale",
       "description": "Darren Carter is an American stand up comedian and actor known as The Party Starter. He was born in Fresno and has entertained audiences for over twenty years. His unique style blends observational humor with physical comedy. Carter began his career in the nineties at open mic nights in Los Angeles. He gained recognition for his energetic stage presence. This led to appearances on The Tonight Show with Jay Leno and Comedy Central Presents. He has released comedy albums titled Shady Side and That Gingers Crazy. Carter performs at major venues like The Comedy Store and The Laugh Factory. His film Born Again and his Dry Bar Comedy Special are recent highlights. He has acted in films such as Be Cool and Love Chronicles. Carter also hosts the Pocket Party podcast. He is famous for his infectious laughter and high energy performances. He connects with audiences of all ages and backgrounds. He continues to tour regularly and brings joy to fans across the country.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "34433396766b95cd",
@@ -2808,7 +2718,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Nick Murphy at The Riot Comedy Club!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "e3b33bf1bd8325c6",
@@ -2826,7 +2736,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "987225c2081afa67",
@@ -2844,7 +2754,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "6ebedb086039e879",
@@ -2862,7 +2772,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "3f8601742eef00b5",
@@ -2880,7 +2790,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Everyone entering the theatre must have a paid ticket regardless of age or seating requirements. All sales are final. No refunds or exchanges.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "7eb0200c8859aadc",
@@ -2898,7 +2808,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Alex Cureau - The Complete Unknown Tour Live at the Secret Group Friday March 6th",
-      "last_updated": "2026-02-11T06:19:17.110Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "e39a96e69df3cf28",
@@ -2916,7 +2826,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share drinks and laughs on a Friday night at The Riot featuring both local and headlining comedians for a show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "aa960fc59760dfd1",
@@ -2934,7 +2844,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch the wild-card showcase this Saturday at The Riot featuring both local and headlining comedians for a late show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "712ae6286733f72c",
@@ -2952,7 +2862,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "8fc6da86bd053fa4",
@@ -2970,7 +2880,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "This is a fully reserved, seated show. Please be mindful in selecting your seats, as they will be your seats on the night of the performance. Please contact us at THEBELASCO@LIVENATION.COM or (213) 531-0580 for questions regarding accessibility at the venue and to request accommodation. DOORS: 6PM SHOW: 7PM",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "a10fb9a1c77da298",
@@ -2988,7 +2898,7 @@
       "age_restriction": "18+",
       "status": "off_sale",
       "description": "Darren Carter is an American stand up comedian and actor known as The Party Starter. He was born in Fresno and has entertained audiences for over twenty years. His unique style blends observational humor with physical comedy. Carter began his career in the nineties at open mic nights in Los Angeles. He gained recognition for his energetic stage presence. This led to appearances on The Tonight Show with Jay Leno and Comedy Central Presents. He has released comedy albums titled Shady Side and That Gingers Crazy. Carter performs at major venues like The Comedy Store and The Laugh Factory. His film Born Again and his Dry Bar Comedy Special are recent highlights. He has acted in films such as Be Cool and Love Chronicles. Carter also hosts the Pocket Party podcast. He is famous for his infectious laughter and high energy performances. He connects with audiences of all ages and backgrounds. He continues to tour regularly and brings joy to fans across the country.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "277f9f908d89743c",
@@ -3006,7 +2916,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Erik Rivera at The Riot Comedy Club!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "5c3a86521aa61c51",
@@ -3024,7 +2934,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "ed10ba36228c3d6e",
@@ -3042,7 +2952,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "VIP Booths with bottle service available. Must be 18+, or 16+ must be accompanied by 21+",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "80dbd35f788f64dc",
@@ -3060,7 +2970,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "9640a3c0c9c2e48b",
@@ -3078,7 +2988,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share drinks and laughs on a Saturday night at The Riot featuring local and nationally touring comedians for a show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "15c74182cdc04114",
@@ -3096,7 +3006,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "02e286dc17068b61",
@@ -3114,7 +3024,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features some of the best comedians in Houston headlining!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "46d4db81ab8c3319",
@@ -3132,7 +3042,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Grove of Anaheim is a Cashless and Smoke Free venue.Visit the Grove of Anaheim FAQ page for bag policy, accessible accommodation requests, and more.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "57f916f98c928d74",
@@ -3150,7 +3060,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "0c2a93248407792b",
@@ -3168,7 +3078,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features local favorite comedians with cold drinks, tasty food, and a chill vibe",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "9f62158a2923cae9",
@@ -3186,7 +3096,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Mo Amer LIVE at The Secret Group!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "f612ecfa7af01bd5",
@@ -3204,7 +3114,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A comedy showcase that gets you through the week! With local favorites, great food, and full bar on a Wednesday night.",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "77fdd9dcb6886d13",
@@ -3222,7 +3132,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Mystery and blackmail are on the menu when six guests gather at Boddy Manor for a night they?ll never forget! Was it Mrs. Peacock in the study with the knife? Or Colonel Mustard in the library with the wrench? Based on the 1985 Paramount Pictures movie and classic Hasbro board game, Clue is a hilarious whodunit that will keep you guessing until the final twist.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "7be91743044d0ce2",
@@ -3240,7 +3150,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Mo Amer LIVE at The Secret Group!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "3b57a9b7c7e98bfd",
@@ -3258,7 +3168,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "15 comedians each perform one minute and you decide which comedians advance on to win this weeks - One Minute Comedy Showdown with Jeff Joe!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "bf38df8798797184",
@@ -3276,7 +3186,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to laugh your socks off at The Riot Comedy Club - it's gonna be a riot! 6-8 Comedians from Houston and around the country.",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "1ca998a66b0b0b1c",
@@ -3294,7 +3204,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Mystery and blackmail are on the menu when six guests gather at Boddy Manor for a night they?ll never forget! Was it Mrs. Peacock in the study with the knife? Or Colonel Mustard in the library with the wrench? Based on the 1985 Paramount Pictures movie and classic Hasbro board game, Clue is a hilarious whodunit that will keep you guessing until the final twist.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "6378617f3e794d31",
@@ -3312,7 +3222,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "8fa396dfbeea4f24",
@@ -3330,7 +3240,7 @@
       "age_restriction": "18+",
       "status": "off_sale",
       "description": "Claude Stuart is a veteran comedian who performs at venues across the globe. He has appeared on The Tonight Show and Last Comic Standing. His stage style is explosive and rapid fire. Critics compare his physical comedy to Steve Martin and Robin Williams. He is known as a physical insult comedian and a comedy triple threat. Claude has starred in commercials for Jeep and Heineken. His television credits include That 70s Show and Scrubs and Will and Grace. He has appeared in films like Starship Troopers and Man On The Moon. Claude created and hosted Game Set and Laugh for The Tennis Channel. He stars in the sketch series High Land Parking on Amazon Prime. His comedy specials have earned him over two hundred seventy thousand followers. He recently recorded a new album for SiriusXM. Claude is a partner in a production company filming a movie with John Cleese. He has written for NBC and the show Funny You Should Ask. He has more jokes on the air than anyone in the history of that program",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "db435989606b2e06",
@@ -3348,7 +3258,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Skaiwater Live at the Secret Group - Thursday March 12th at 8PM!",
-      "last_updated": "2026-02-11T06:19:17.110Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "576675411e40a432",
@@ -3366,7 +3276,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share drinks and laughs on a Friday night at The Riot featuring The You Look Like Roast Contest with meanest and funniest comedians",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "2be04151c62487ac",
@@ -3384,7 +3294,7 @@
       "age_restriction": "18+",
       "status": "off_sale",
       "description": "Claude Stuart is a veteran comedian who performs at venues across the globe. He has appeared on The Tonight Show and Last Comic Standing. His stage style is explosive and rapid fire. Critics compare his physical comedy to Steve Martin and Robin Williams. He is known as a physical insult comedian and a comedy triple threat. Claude has starred in commercials for Jeep and Heineken. His television credits include That 70s Show and Scrubs and Will and Grace. He has appeared in films like Starship Troopers and Man On The Moon. Claude created and hosted Game Set and Laugh for The Tennis Channel. He stars in the sketch series High Land Parking on Amazon Prime. His comedy specials have earned him over two hundred seventy thousand followers. He recently recorded a new album for SiriusXM. Claude is a partner in a production company filming a movie with John Cleese. He has written for NBC and the show Funny You Should Ask. He has more jokes on the air than anyone in the history of that program",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "13b9652645e9ebc5",
@@ -3402,7 +3312,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Stand up comedian Milan Patel (Netflix Introducing 2025) headlines The Secret Group and he's bringing on some of his favorite local comics.",
-      "last_updated": "2026-02-11T06:19:17.110Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "280767f7cc241f6c",
@@ -3420,7 +3330,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Everyone entering the theatre, regardless of age or seating requirements must have a paid ticket. All sales are final. There are no refunds or exchanges.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "716295844a6c82a8",
@@ -3438,7 +3348,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "730fc6b3e1fe6a2c",
@@ -3456,7 +3366,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Mystery and blackmail are on the menu when six guests gather at Boddy Manor for a night they?ll never forget! Was it Mrs. Peacock in the study with the knife? Or Colonel Mustard in the library with the wrench? Based on the 1985 Paramount Pictures movie and classic Hasbro board game, Clue is a hilarious whodunit that will keep you guessing until the final twist.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "2b11c690469219c7",
@@ -3474,7 +3384,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share drinks and laughs on a Friday night at The Riot featuring both local and headlining comedians for a show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "9e028d42603eb144",
@@ -3492,7 +3402,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share drinks and laughs on a Saturday night at The Riot featuring local and nationally touring comedians for a show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "bc6325453f134ced",
@@ -3510,7 +3420,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Everyone entering the theatre, regardless of age or seating requirements must have a paid ticket. All sales are final. There are no refunds or exchanges.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "5f2e7c35e89356b4",
@@ -3528,7 +3438,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch the wild-card showcase this Saturday at The Riot featuring both local and headlining comedians for a late show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "e0c671c2745d8f51",
@@ -3546,7 +3456,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Classic Cinema, curated by DJ Rosegawd in Los Angeles, is a cinematic and musical journey celebrating classic Black movies and the soundtracks that brought them to life. This series honors a time when music played a key role in creating the vibe and world of each film. After watching the movie of the month, guests can dive into the soundtrack experience and mingle with fellow movie and music lovers for a night of culture and nostalgia.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "a9ba22a4151ff8a4",
@@ -3564,7 +3474,7 @@
       "age_restriction": "18+",
       "status": "off_sale",
       "description": "Claude Stuart is a veteran comedian who performs at venues across the globe. He has appeared on The Tonight Show and Last Comic Standing. His stage style is explosive and rapid fire. Critics compare his physical comedy to Steve Martin and Robin Williams. He is known as a physical insult comedian and a comedy triple threat. Claude has starred in commercials for Jeep and Heineken. His television credits include That 70s Show and Scrubs and Will and Grace. He has appeared in films like Starship Troopers and Man On The Moon. Claude created and hosted Game Set and Laugh for The Tennis Channel. He stars in the sketch series High Land Parking on Amazon Prime. His comedy specials have earned him over two hundred seventy thousand followers. He recently recorded a new album for SiriusXM. Claude is a partner in a production company filming a movie with John Cleese. He has written for NBC and the show Funny You Should Ask. He has more jokes on the air than anyone in the history of that program",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "afda18483bdcb87b",
@@ -3582,7 +3492,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "2cf6e841ba09f78e",
@@ -3600,7 +3510,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "1ee5f5e00097e3b3",
@@ -3618,7 +3528,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Super Carlin Brothers - Through the Griffin Tour LIVE at The Secret Group! Saturday, March 14th 2026",
-      "last_updated": "2026-02-11T06:19:17.110Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "eb3166641bc4d012",
@@ -3636,7 +3546,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Everyone entering the theatre, regardless of age or seating requirements must have a paid ticket. All sales are final. There are no refunds or exchanges.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "8aee3ac57b551f7c",
@@ -3654,7 +3564,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Doors: 6PM Show: 7PM *All times are subject to change Ages 18+ w/valid ID. Every person requires a ticket to enter, regardless of age.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "0538008104fc19c6",
@@ -3672,7 +3582,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features some of the best comedians in Houston headlining!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "d8c6335c4af6776d",
@@ -3690,7 +3600,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features local favorite comedians with cold drinks, tasty food, and a chill vibe",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "1d9a1cd6d755eb05",
@@ -3708,7 +3618,7 @@
       "age_restriction": "18+",
       "status": "off_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "38f765c8e53a1389",
@@ -3726,7 +3636,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A comedy showcase that gets you through the week! With local favorites, great food, and full bar on a Wednesday night.",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "e7e254b90492d2c2",
@@ -3744,7 +3654,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Volumes: The Mirror Touch Tour with Notions, Catsclaw, War Within Dreams, Apex Fallen & Lights - Wednesday, Mar 18, 2026",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "5f8727511d8d8789",
@@ -3762,7 +3672,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "15 comedians each perform one minute and you decide which comedians advance on to win this weeks - One Minute Comedy Showdown with Jeff Joe!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "9afdbdf94ef7c850",
@@ -3780,7 +3690,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to laugh your socks off at The Riot Comedy Club - it's gonna be a riot! 6-8 Comedians from Houston and around the country.",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "b9fe463f792ab08b",
@@ -3798,7 +3708,7 @@
       "age_restriction": "18+",
       "status": "off_sale",
       "description": "Join us for a high- energy night of stand up comedy as we bring back the classic comedy contest format. There will be numerous comedians competing head-to-head. Each performer will bring their best material to impress both a panel of judges and YOU, the audience. Whether your there to vote, laugh or discover the next standout comedian, this is a night you wont want to miss.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "36414bcbc3a673e2",
@@ -3816,7 +3726,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to laugh your socks off at The Riot Comedy Club - it's gonna be a riot! 6-8 Comedians from Houston and around the country.",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "7caf8659df3d5fbc",
@@ -3834,7 +3744,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch the wild-card showcase this Friday at The Riot featuring both local and headlining comedians for a late show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "fbadca08f5e20c8f",
@@ -3852,7 +3762,7 @@
       "age_restriction": "18+",
       "status": "off_sale",
       "description": "James Walker is a famous American actor and comedian. He was born in 1947 and raised in the Bronx. He began his career performing stand up comedy with groups like the Black Panthers. He eventually toured with music legends like Stevie Wonder and Diana Ross. Producer Norman Lear discovered him and cast him in the hit show Good Times. He played the character J J Evans from 1974 to 1979. He became famous for the catchphrase Dy no mite. Walker earned two Golden Globe nominations for this role. Time Magazine named him the comedian of the decade for the 1970s. He helped launch the careers of Jay Leno and David Letterman by hiring them as writers. He has appeared in films like Airplane and Let is Do It Again. He continues to perform stand up around the world today. He has written a best selling book and recorded two Grammy nominated albums. He remains a beloved figure in television history.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "e724d631e00d3448",
@@ -3870,7 +3780,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "344d0122182e9956",
@@ -3888,7 +3798,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come party this weekend at The Riot with tasty food, full bar, free parking, great vibes and comedy from visiting headliner Bryan Callen!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.861Z"
     },
     {
       "id": "d43753706e73489d",
@@ -3906,7 +3816,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Everyone entering the theatre, regardless of age or seating requirements must have a paid ticket. All sales are final. There are no refunds or exchanges.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "e67dfb665e69eccb",
@@ -3924,7 +3834,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "67f36f4e30d85c11",
@@ -3942,7 +3852,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Lineup:",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "48f41b6292372d72",
@@ -3960,7 +3870,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Everyone entering the theatre, regardless of age or seating requirements must have a paid ticket. All sales are final. There are no refunds or exchanges.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "cdd928c379a20e35",
@@ -3978,7 +3888,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch the wild-card showcase this Saturday at The Riot featuring both local and headlining comedians for a late show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "cfc2835f08607448",
@@ -3996,7 +3906,7 @@
       "age_restriction": "18+",
       "status": "off_sale",
       "description": "James Walker is a famous American actor and comedian. He was born in 1947 and raised in the Bronx. He began his career performing stand up comedy with groups like the Black Panthers. He eventually toured with music legends like Stevie Wonder and Diana Ross. Producer Norman Lear discovered him and cast him in the hit show Good Times. He played the character J J Evans from 1974 to 1979. He became famous for the catchphrase Dy no mite. Walker earned two Golden Globe nominations for this role. Time Magazine named him the comedian of the decade for the 1970s. He helped launch the careers of Jay Leno and David Letterman by hiring them as writers. He has appeared in films like Airplane and Let is Do It Again. He continues to perform stand up around the world today. He has written a best selling book and recorded two Grammy nominated albums. He remains a beloved figure in television history.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "bb81a4f9ecaf1287",
@@ -4014,7 +3924,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "0ddac0762930c408",
@@ -4032,7 +3942,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "This event has a suggested age limit of 12 years and older.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "548bb35b102442bc",
@@ -4050,7 +3960,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come party this weekend at The Riot with tasty food, full bar, free parking, great vibes and comedy from visiting headliner Bryan Callen!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.861Z"
     },
     {
       "id": "453c850367e3d392",
@@ -4068,7 +3978,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "0f9a86fb04588196",
@@ -4086,7 +3996,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "b2a02db81ba50626",
@@ -4104,7 +4014,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Everyone entering the theatre, regardless of age or seating requirements must have a paid ticket. All sales are final. There are no refunds or exchanges.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "9a270dfe2c6fe64e",
@@ -4122,7 +4032,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features some of the best comedians in Houston headlining!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "c70ff37cabce8fb3",
@@ -4140,7 +4050,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features local favorite comedians with cold drinks, tasty food, and a chill vibe",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "db54c56c13be824d",
@@ -4158,7 +4068,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Stephen Lynch LIVE at Bad Astronaut , Sunday March 22nd!",
-      "last_updated": "2026-02-11T06:19:18.441Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "162118afdc5d99a5",
@@ -4176,7 +4086,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A comedy showcase that gets you through the week! With local favorites, great food, and full bar on a Wednesday night.",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "16a69b156a8d460a",
@@ -4194,7 +4104,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Dark Divine: The Shallow Graves Tour with Not Enough Space, Save Us, Set for Tomorrow - Wednesday, Mar 25, 2026",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "d8214b4db3530141",
@@ -4212,7 +4122,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "c8b5a201cca1d1c3",
@@ -4230,7 +4140,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "15 comedians each perform one minute and you decide which comedians advance on to win this weeks - One Minute Comedy Showdown with Jeff Joe!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "66ec49116b9a07b4",
@@ -4248,7 +4158,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to laugh your socks off at The Riot Comedy Club - it's gonna be a riot! 6-8 Comedians from Houston and around the country.",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "c9a45ef5a808d92b",
@@ -4266,7 +4176,7 @@
       "age_restriction": "18+",
       "status": "off_sale",
       "description": "Jackie Flynn is a prominent actor and comedian from Boston. He has performed at major venues like the Comedy Store and the Laugh Factory. He won the San Francisco Comedy Competition and appeared at the Montreal Just For Laughs Festival. The Farrelly brothers discovered him early in his career. This led to roles in movies such as King Pin and There is Something About Mary. He also appeared in Shallow Hal and The Three Stooges. On television he has been seen in The King of Queens and Veep. He currently plays Tony in the series Loudermilk. Many recognize him from the Miller Lite Man Law commercials. He is a favorite for corporate events and golf tournaments due to his background in the sport. Companies like IBM and Intel have hired him for entertainment. Jackie is known for a unique brand of sarcastic observational humor. His rapid fire delivery makes him a favorite for audiences of all ages. He remains a highly respected figure in the world of standup comedy.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "dd8e12442be097a9",
@@ -4284,7 +4194,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "The Dating app game is a such a gamble, let’s take it back to the old school… Live dating games. Come as a contestant or come to just watch.",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "5c40df74edcc3247",
@@ -4302,7 +4212,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch the wild-card showcase this Friday at The Riot featuring both local and headlining comedians for a late show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "d1ad1e7679db6cf8",
@@ -4320,7 +4230,7 @@
       "age_restriction": "18+",
       "status": "off_sale",
       "description": "Jackie Flynn is a prominent actor and comedian from Boston. He has performed at major venues like the Comedy Store and the Laugh Factory. He won the San Francisco Comedy Competition and appeared at the Montreal Just For Laughs Festival. The Farrelly brothers discovered him early in his career. This led to roles in movies such as King Pin and There is Something About Mary. He also appeared in Shallow Hal and The Three Stooges. On television he has been seen in The King of Queens and Veep. He currently plays Tony in the series Loudermilk. Many recognize him from the Miller Lite Man Law commercials. He is a favorite for corporate events and golf tournaments due to his background in the sport. Companies like IBM and Intel have hired him for entertainment. Jackie is known for a unique brand of sarcastic observational humor. His rapid fire delivery makes him a favorite for audiences of all ages. He remains a highly respected figure in the world of standup comedy.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "f4b0fe7224d55947",
@@ -4338,7 +4248,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Matt Ross at The Riot Comedy Club!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "7367fa8c5922890a",
@@ -4356,7 +4266,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Everyone entering the theatre, regardless of age or seating requirements must have a paid ticket. All sales are final. There are no refunds or exchanges.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "222dc2a727efda47",
@@ -4374,7 +4284,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "a1eddcb765fce2b3",
@@ -4392,7 +4302,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Everyone entering the theater must have a ticket regardless of age or seating requirements. All sales are final, no refunds or exchanges.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "41b03fe474424a79",
@@ -4410,7 +4320,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Everyone entering the theatre, regardless of age or seating requirements must have a paid ticket. All sales are final. There are no refunds or exchanges.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "3be9787fc6050f8b",
@@ -4428,7 +4338,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch the wild-card showcase this Saturday at The Riot featuring both local and headlining comedians for a late show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "659d45bbabac7a00",
@@ -4446,7 +4356,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Grove of Anaheim is a Cashless and Smoke Free venue.Visit the Grove of Anaheim FAQ page for bag policy, accessible accommodation requests, and more.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "f82c04dbb8e02383",
@@ -4464,7 +4374,7 @@
       "age_restriction": null,
       "status": "rescheduled",
       "description": "DOORS: 6PM SHOW: 7PM ALL AGES",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "b6a1e9b141e57298",
@@ -4482,7 +4392,7 @@
       "age_restriction": "18+",
       "status": "off_sale",
       "description": "Jackie Flynn is a prominent actor and comedian from Boston. He has performed at major venues like the Comedy Store and the Laugh Factory. He won the San Francisco Comedy Competition and appeared at the Montreal Just For Laughs Festival. The Farrelly brothers discovered him early in his career. This led to roles in movies such as King Pin and There is Something About Mary. He also appeared in Shallow Hal and The Three Stooges. On television he has been seen in The King of Queens and Veep. He currently plays Tony in the series Loudermilk. Many recognize him from the Miller Lite Man Law commercials. He is a favorite for corporate events and golf tournaments due to his background in the sport. Companies like IBM and Intel have hired him for entertainment. Jackie is known for a unique brand of sarcastic observational humor. His rapid fire delivery makes him a favorite for audiences of all ages. He remains a highly respected figure in the world of standup comedy.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "9c407172f6216a16",
@@ -4500,7 +4410,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Matt O'Brien at The Riot Comedy Club!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "2090e53378a4ebeb",
@@ -4518,7 +4428,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "3be135697defe24b",
@@ -4536,7 +4446,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share drinks and laughs on a Saturday night at The Riot featuring local and nationally touring comedians for a show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "da8185b6bf38b6bc",
@@ -4554,7 +4464,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share drinks and laughs on a Friday night at The Riot featuring both local and headlining comedians for a show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "011cf3d19afe1dad",
@@ -4572,7 +4482,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Everyone entering the theatre, regardless of age or seating requirements must have a paid ticket. All sales are final. There are no refunds or exchanges.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "c8ab561ccdb97aa0",
@@ -4590,7 +4500,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features some of the best comedians in Houston headlining!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "788ec7903d52e25a",
@@ -4608,7 +4518,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features local favorite comedians with cold drinks, tasty food, and a chill vibe",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "a11d5570fb14d914",
@@ -4626,7 +4536,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A FOUR DAY OUT-OF-THIS-WORLD CELEBRATION OF COMEDY!!!  Famous Headliners, 30+ events, BBQ Cookoff, Cold Drinks, Tasty Food, and more!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "69cc312fb30a4090",
@@ -4644,7 +4554,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "400 People competed, these are your final 25 contestants. Help Decide who wins the 2026 Riot National Comedy Contest winner",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "ef28d31a30a2c853",
@@ -4662,7 +4572,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "400 People competed, these are your final 25 contestants. Help Decide who wins the 2026 Riot National Comedy Contest winner",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "61cdae41bdbfe86c",
@@ -4680,7 +4590,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come see Kill Tony star Timmy No Brakes headlines the Riot Comedy Festival in Houston!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "36460c0ac6d2a0ff",
@@ -4698,7 +4608,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Lemaire Lee at The Riot Comedy Club for The Riot Comedy Festival",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "ad122ab17806b80a",
@@ -4716,7 +4626,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come see Andy Huggins, seen on Don't Tell Comedy & America's Got Talent, headline the Riot Comedy Festival in Houston!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "ba62f360c8dcf14f",
@@ -4734,7 +4644,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "2784fa8253cd69cc",
@@ -4752,7 +4662,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come see Matthew Broussard, seen on Don't Tell Comedy & The Tonight Show, headline the Riot Comedy Festival in Houston!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "f24292e2dfc8217f",
@@ -4770,7 +4680,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "saturdays at your place with Retirement Party, Kerosene Heights - Friday, Apr 03, 2026",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "e0cd758224f8f8df",
@@ -4788,7 +4698,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Shawn Gardini at The Riot Comedy Club!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "7eff4f22a2743a7b",
@@ -4806,7 +4716,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "All-You-Can-Eat BBQ Cook-off featuring six of Houston's Best BBQ Cookers at The Gordy in Montrose.",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "adcbcc00099e9c85",
@@ -4824,7 +4734,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come see Isabel Hagen, seen on The Tonight Show, headline the Riot Comedy Festival in Houston!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "0ac2d3d6a1888caa",
@@ -4842,7 +4752,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come see live improv from the best improv troupes in Houston perform at The Riot Comedy Festival at The Gordy!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "35e6bfea6eeb35c9",
@@ -4860,7 +4770,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "e65d91ca1820b970",
@@ -4878,7 +4788,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come see Nate Marshall  live at the Riot Comedy Festival at The Riot Comedy Club! Cold Drinks, Tasty Food & Funny Comedy.",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "b0c9af236b499934",
@@ -4896,7 +4806,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come see Tommy Pope, seen on The Stuff Island Podcast, Comedy Central & Gilly and Keeves, headline the Riot Comedy Festival in Houston!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "c8b02dadf2535802",
@@ -4914,7 +4824,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features some of the best comedians in Houston headlining!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "181b5e67fc8aaedf",
@@ -4932,7 +4842,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Zachary Ross with Offended by Everything - Sunday, Apr 05, 2026",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "7e5446f8a73ca7e8",
@@ -4950,7 +4860,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features local favorite comedians with cold drinks, tasty food, and a chill vibe",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "0ecbaf7ef7502f61",
@@ -4968,7 +4878,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A comedy showcase that gets you through the week! With local favorites, great food, and full bar on a Wednesday night.",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "34361f587bb47514",
@@ -4986,7 +4896,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Ben Quad / WISHER Album Release Tour with Riley!, Aren't We Amphibians, Footballhead Wednesday April 08, 2026",
-      "last_updated": "2026-02-11T06:19:17.110Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "570f99eceeff04c8",
@@ -5004,7 +4914,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "15 comedians each perform one minute and you decide which comedians advance on to win this weeks - One Minute Comedy Showdown with Jeff Joe!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "2781e95c610f8acf",
@@ -5022,7 +4932,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Grove of Anaheim is a Cashless and Smoke Free venue.Visit the Grove of Anaheim FAQ page for bag policy, accessible accommodation requests, and more.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "ae70f14d109063dd",
@@ -5040,7 +4950,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to laugh your socks off at The Riot Comedy Club - it's gonna be a riot! 6-8 Comedians from Houston and around the country.",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "9c979018737ba47d",
@@ -5058,7 +4968,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "8e4f31bbf90e59e3",
@@ -5076,7 +4986,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "The Dating app game is a such a gamble, let’s take it back to the old school… Live dating games. Come as a contestant or come to just watch.",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "1aeca683c07a4498",
@@ -5094,7 +5004,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "All Ages Welcome. Every person must have a ticket to attend the event, regardless of age. Doors: 6:00 p.m. Show: 7:00 p.m. *All times and supporting acts are subject to change The following bag policy is in place: Bags up to 12\" x 6\" x 12\" are allowed in the venue. All bags will be searched prior to entry. Bags that are not clear will be subject to additional search.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "46773dae95511f54",
@@ -5112,7 +5022,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A fun evening of standup comedy at The Riot with tasty food, full bar, and comedy from visiting headliner Peter Revello!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.861Z"
     },
     {
       "id": "411773fae351303c",
@@ -5130,7 +5040,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "36f3d8674f662892",
@@ -5148,7 +5058,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Melrose Avenue with  Autumn Kings & Stray View Friday, Apr 10, 2026 at The Secret Group!",
-      "last_updated": "2026-02-11T06:19:17.110Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "b94827a31c18cdd6",
@@ -5166,7 +5076,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share drinks and laughs on a Friday night at The Riot featuring both local and headlining comedians for a show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "c05170d598a2333f",
@@ -5184,7 +5094,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch the wild-card showcase this Saturday at The Riot featuring both local and headlining comedians for a late show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "3167cdbf5343da8e",
@@ -5202,7 +5112,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Grove of Anaheim is a Cashless and Smoke Free venue.Visit the Grove of Anaheim FAQ page for bag policy, accessible accommodation requests, and more.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "58ecad2283a99624",
@@ -5220,7 +5130,7 @@
       "age_restriction": null,
       "status": "cancelled",
       "description": "Unfortunately, the Event Organizer has had to cancel your event. You don't need to do a thing. We'll issue a refund to the original method of payment used at time of purchase, as soon as funds are received from the Event Organizer. It should appear on your account within 14-21 days. Please Note: If the tickets were transferred to you, the refund will go to the fan who originally purchased the tickets from Ticketmaster. Please see our Purchase Policy for more information.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "05348678dacdfa1c",
@@ -5238,7 +5148,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A fun evening of standup comedy at The Riot with tasty food, full bar, and comedy from visiting headliner Peter Revello!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.861Z"
     },
     {
       "id": "c789c241fb035668",
@@ -5256,7 +5166,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "59b778be9878513f",
@@ -5274,7 +5184,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "We running it back!! We Them Ones Comedy Tour, Back Outside and this time, we turning it ALL THE WAY UP!! Artist scheduled to appear are subject to change. No refunds. No Exchanges. No Exceptions.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "e8c9e476b08be18d",
@@ -5292,7 +5202,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "trauma ray + Glixen Live at The Secret Group Saturday April 11th!",
-      "last_updated": "2026-02-11T06:19:17.110Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "4d2cf30afbf80114",
@@ -5310,7 +5220,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share drinks and laughs on a Saturday night at The Riot featuring local and nationally touring comedians for a show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "20dc477553458ab2",
@@ -5328,7 +5238,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features some of the best comedians in Houston headlining!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "b5cf4be80d819a50",
@@ -5346,7 +5256,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Everyone entering the theatre must have a paid ticket regardless of age or seating requirements. All sales are final. No refunds or exchanges.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.007Z"
     },
     {
       "id": "f7d548e9466f0cbd",
@@ -5364,7 +5274,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features local favorite comedians with cold drinks, tasty food, and a chill vibe",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "3d52d16206367918",
@@ -5382,7 +5292,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A comedy showcase that gets you through the week! With local favorites, great food, and full bar on a Wednesday night.",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "cb4e06ba2cd0c32e",
@@ -5400,7 +5310,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Gridiron Live at The Secret Group Wednesday, April 15th!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "f7b58806ef3054bb",
@@ -5418,7 +5328,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "15 comedians each perform one minute and you decide which comedians advance on to win this weeks - One Minute Comedy Showdown with Jeff Joe!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "ed82079c0b22fb46",
@@ -5436,7 +5346,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to laugh your socks off at The Riot Comedy Club - it's gonna be a riot! 6-8 Comedians from Houston and around the country.",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "c2ee2ec67efe9128",
@@ -5454,7 +5364,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Chamber",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "7317c9659340cf50",
@@ -5472,7 +5382,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to laugh your socks off at The Riot Comedy Club - it's gonna be a riot! 6-8 Comedians from Houston and around the country.",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "3e5cb249ff51e65b",
@@ -5490,7 +5400,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch the wild-card showcase this Friday at The Riot featuring both local and headlining comedians for a late show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "c55ab7b0d0a3bc61",
@@ -5508,7 +5418,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "All Ages Welcome. Every person must have a ticket to attend the event, regardless of age. Doors: 6:00 p.m. Show: 7:00 p.m. *All times and supporting acts are subject to change The following bag policy is in place: Bags up to 12\" x 6\" x 12\" are allowed in the venue. All bags will be searched prior to entry. Bags that are not clear will be subject to additional search.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "ad1bc57d8958179d",
@@ -5526,7 +5436,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "e9544183886fff8b",
@@ -5544,7 +5454,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "5c95f616ce28dbc5",
@@ -5562,7 +5472,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "abf5c859dc20a00c",
@@ -5580,7 +5490,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Eddie Griffin American actor, comedian, producer, writer, and director He's known for his roles as Tiberius Jefferson \"T.J.\" Hicks in the Deuce Bigalow films, The Meteor Man, Double Take, and Norbit NO PICTURES OR RECORDING WILL BE ALLOWED DURING THE SHOW. This event is all ages minors to be accompanied by an adult. Everyone including children must have a ticket. No Outside Food or Drinks Allowed into Venue. Some Seats in Sections A & D have obstructed views. If handicap accessible seating is required, please purchase Section A or D Row 1 and/ or any aisle seats. No refunds will be given for any tickets purchased from a third party site or verified resale tickets off of Ticketmaster. No Backpacks or oversized purses. Management Reserves All Rights. For more information please contact Morongo Entertainment at (951) 849-3080 Ext 27002 - Reward Card Members receive a discount when purchasing tickets over the phone through the Morongo Box Office.",
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "2a20507d4b7b5e3b",
@@ -5598,7 +5508,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share drinks and laughs on a Friday night at The Riot featuring both local and headlining comedians for a show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "f9d4545bc1baa31a",
@@ -5616,7 +5526,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch the wild-card showcase this Saturday at The Riot featuring both local and headlining comedians for a late show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "e994b99ef7b5b9d1",
@@ -5634,7 +5544,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Henry Sir at The Riot Comedy Club!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.861Z"
     },
     {
       "id": "bd0f2fb95649f7db",
@@ -5652,7 +5562,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "99b2394719b8f8e2",
@@ -5670,7 +5580,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share drinks and laughs on a Saturday night at The Riot featuring local and nationally touring comedians for a show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "2c42a58e6d527edc",
@@ -5688,7 +5598,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features some of the best comedians in Houston headlining!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "ea20163e8daeb3b9",
@@ -5706,7 +5616,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features local favorite comedians with cold drinks, tasty food, and a chill vibe",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "7299d25af89134b6",
@@ -5724,7 +5634,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A comedy showcase that gets you through the week! With local favorites, great food, and full bar on a Wednesday night.",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "4f70fe37ea331b8d",
@@ -5742,7 +5652,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "15 comedians each perform one minute and you decide which comedians advance on to win this weeks - One Minute Comedy Showdown with Jeff Joe!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "0787bd702ee65045",
@@ -5760,7 +5670,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to laugh your socks off at The Riot Comedy Club - it's gonna be a riot! 6-8 Comedians from Houston and around the country.",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "7b33d40e222d8548",
@@ -5778,7 +5688,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "The Dating app game is a such a gamble, let’s take it back to the old school… Live dating games. Come as a contestant or come to just watch.",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "4b694ffc475c2a17",
@@ -5796,7 +5706,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch the wild-card showcase this Friday at The Riot featuring both local and headlining comedians for a late show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "b7d8a255d124fd4f",
@@ -5814,7 +5724,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.787Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "fb8c24b44adcfd55",
@@ -5832,7 +5742,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Lineup:",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "b41612f40acd03fa",
@@ -5850,7 +5760,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Share drinks and laughs on a Friday night at The Riot featuring both local and headlining comedians for a show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "62551aec4f54ac3e",
@@ -5868,7 +5778,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Catch the wild-card showcase this Saturday at The Riot featuring both local and headlining comedians for a late show you won't want to miss!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "b41dff1e3c9d32d9",
@@ -5886,7 +5796,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "41030df57a02a815",
@@ -5904,7 +5814,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Gareth Reynolds at The Riot Comedy Club!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "5108fbea6a55cd54",
@@ -5922,7 +5832,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Joe DeRosa has made a name for himself in comedy and entertainment with six top-ten\ncharting stand-up albums and a multitude of performances",
-      "last_updated": "2026-02-11T06:19:17.110Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "1d28b197ecde99f4",
@@ -5940,7 +5850,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "3a597ec62f9a4a21",
@@ -5958,7 +5868,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Gareth Reynolds at The Riot Comedy Club!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.860Z"
     },
     {
       "id": "adcc533abc12bbc2",
@@ -5976,7 +5886,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features some of the best comedians in Houston headlining!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "3f4eee7319791b29",
@@ -5994,7 +5904,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come join The Riot for this Sunday lineup that features local favorite comedians with cold drinks, tasty food, and a chill vibe",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "3bf95dbcc3195c2b",
@@ -6012,7 +5922,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "A comedy showcase that gets you through the week! With local favorites, great food, and full bar on a Wednesday night.",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "88d2aa8e170cddb4",
@@ -6030,7 +5940,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "15 comedians each perform one minute and you decide which comedians advance on to win this weeks - One Minute Comedy Showdown with Jeff Joe!",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "c7d4e6c878868814",
@@ -6048,7 +5958,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to laugh your socks off at The Riot Comedy Club - it's gonna be a riot! 6-8 Comedians from Houston and around the country.",
-      "last_updated": "2026-02-11T06:19:13.641Z"
+      "last_updated": "2026-02-11T14:49:20.608Z"
     },
     {
       "id": "5452c96862830e27",
@@ -6066,7 +5976,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "The Laugh Block features the best visiting talent in the city, hosted by the hilarious JCann! Full food, drinks, and good vibes all night!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "17e378546ad8421e",
@@ -6084,7 +5994,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Coma Cinema with Trace Mountains and Skirts Live at The Secret Group Friday May 1st",
-      "last_updated": "2026-02-11T06:19:17.110Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "48ea6f4979535373",
@@ -6102,7 +6012,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Downside Podcast LIVE at Bad Astronaut Friday May 1st!",
-      "last_updated": "2026-02-11T06:19:17.110Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "15b5478312e9918d",
@@ -6120,7 +6030,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "b0b5c0758a18de68",
@@ -6138,7 +6048,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "71f3bd3fa6087b30",
@@ -6156,7 +6066,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "290eee9ada2a01a8",
@@ -6174,7 +6084,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Ages 13+ Welcome. Every person must have a ticket to attend the event, regardless of age. Doors: 6:00 p.m. Show: 7:00 p.m. *All times and supporting acts are subject to change The following bag policy is in place: Bags up to 12\" x 6\" x 12\" are allowed in the venue. All bags will be searched prior to entry. Bags that are not clear will be subject to additional search.",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "d5f07feae1b06236",
@@ -6192,7 +6102,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "This event is a screening followed by a Q+A",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "88d3d89f1954ffb8",
@@ -6210,7 +6120,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "18+",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "fe14f580a9225e46",
@@ -6228,7 +6138,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Doors: 6pm Show: 7pm All Ages Netflix Is A Joke Presents: Grace Helbig: Let Me Get This Off My Chest",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "a3cc5ecb119ffa65",
@@ -6246,7 +6156,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "THIS IS AN 16+ EVENT This is a fully reserved, seated show. Please be mindful in selecting your seats, as they will be your seats on the night of the performance. Please contact us at THEBELASCO@LIVENATION.COM or (213) 531-0580 for questions regarding accessibility at the venue and to request accommodation. DOORS: 6PM SHOW: 7PM",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "b30f37ca0700688c",
@@ -6264,7 +6174,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "Age limit: 18+",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "00a9837994cd7298",
@@ -6282,7 +6192,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "18+",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "db711c14e6ef4a60",
@@ -6300,7 +6210,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "7ea79830d6301bae",
@@ -6318,7 +6228,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "4084bb238f35daad",
@@ -6336,7 +6246,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "9f036826ce32f14a",
@@ -6354,7 +6264,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "fcd685c869527e54",
@@ -6372,7 +6282,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "cae7b82e8415263d",
@@ -6390,7 +6300,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Featuring various special guests: Patton Oswalt Cheri Oteri Sheng Wang Michael Carbonaro Bob The Drag Queen Danny Elfman Diane Yang Natasha Lyonne Shaun Weiss David Arquette The B-52s Mark Mothersbaugh Gerard Casale Fred Armisen Puddles Pity Party Julio Torres Patti Harrison *LINEUP SUBJECT TO CHANGE* For parking & shuttle information: http://www.lagreektheatre.com",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "b71ad2eae23daebc",
@@ -6408,7 +6318,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Ages 21+ Welcome w/ Valid ID Doors: 7PM *All times are subject to change",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "024783dc25a994ed",
@@ -6426,7 +6336,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "9adf0b58ddee747d",
@@ -6444,7 +6354,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "NO REFUNDS, EXCHANGES OR CANCELATIONS.A portion of each ticket will support the LA County Parks Foundation in restoring damage to parks from the recent Los Angeles wildfires. Click here for Park and Ride or Shuttle tickets.",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "ca6819880fd8a957",
@@ -6462,7 +6372,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "8a47503bf24dd3db",
@@ -6480,7 +6390,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "This is a fully reserved, seated show. Please be mindful in selecting your seats, as they will be your seats on the night of the performance. Please contact us at THEBELASCO@LIVENATION.COM or (213) 531-0580 for questions regarding accessibility at the venue and to request accommodation. DOORS: 9PM SHOW: 9:45PM",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "985985d467c3f528",
@@ -6498,7 +6408,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "18+ with Valid ID Welcome. Every person must have a ticket to attend the event, regardless of age. Doors: 9:00 p.m. Show: 9:45 p.m. *All times and supporting acts are subject to change The following bag policy is in place: Bags up to 12\" x 6\" x 12\" are allowed in the venue. All bags will be searched prior to entry. Bags that are not clear will be subject to additional search.",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "29a278d4b1f155e0",
@@ -6516,7 +6426,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "51b6b7e6f709938e",
@@ -6534,7 +6444,25 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
+    },
+    {
+      "id": "b76596e8c6172160",
+      "name": "Netflix Is A Joke Presents: Jim Jeffries",
+      "venue": "The Comedy Store",
+      "date": "2026-05-05",
+      "time": "10:00 PM",
+      "day_of_week": "Tuesday",
+      "price_min": null,
+      "price_max": null,
+      "currency": "USD",
+      "ticket_url": "https://www.showclix.com/event/jim-jefferies-2026-netflix",
+      "image_url": "https://s1.ticketm.net/dam/a/2fc/1ea04932-4cde-4ce7-be38-df74c21cf2fc_SOURCE",
+      "source": "ticketmaster",
+      "age_restriction": null,
+      "status": "on_sale",
+      "description": null,
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "e1a77d4001edffbb",
@@ -6552,7 +6480,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "4f5acb589e5f0350",
@@ -6570,7 +6498,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "651684359835dc19",
@@ -6588,7 +6516,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "97c283b840774797",
@@ -6606,7 +6534,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "b5f722d2cce779b1",
@@ -6624,7 +6552,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "7ab2a479c046dc70",
@@ -6642,7 +6570,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "7b1ccdcfbac65f04",
@@ -6660,7 +6588,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "4f82078f5515bac0",
@@ -6678,7 +6606,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "996ed02333df98c7",
@@ -6696,7 +6624,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "All ages.",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "096720b12e9ae6a9",
@@ -6714,7 +6642,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "DISCLOSURE: This event will be a phone-free experience. Use of cellphones, smart watches, smart accessories, cameras, or recording devices will not be permitted in the performance space. Upon arrival at the venue, all phones, smart watches, and accessories will be secured in YONDR pouches that will be opened at the end of the event. Guests maintain possession of their phones at all times, and can access their phones throughout the event at designated Phone Use Areas in the venue. All phones will be re-secured in YONDR pouches before returning to the event space. Anyone seen using a phone during the performance will be escorted out of the venue. Guests are encouraged to bring a credit card for purchases inside the venue. We appreciate your cooperation in creating a phone-free viewing experience.",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "746b34ff5b56c562",
@@ -6732,7 +6660,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "9a05a9cd85275d86",
@@ -6750,7 +6678,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "This is a General Admission SEATED show. All seats are filled on a first come first served basis. Ages 21+ Welcome w/ Valid ID Doors: 6PM *All times are subject to change",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "32881a58f58e330c",
@@ -6768,7 +6696,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "57fa07e81bda64ac",
@@ -6786,7 +6714,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "This is a fully reserved, seated show. Please be mindful in selecting your seats, as they will be your seats on the night of the performance. Please contact us at THEBELASCO@LIVENATION.COM or (213) 531-0580 for questions regarding accessibility at the venue and to request accommodation. DOORS: 6PM SHOW: 7PM",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "31d76ce20b3a1d5b",
@@ -6804,7 +6732,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "4be0565876709797",
@@ -6822,7 +6750,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "0d9eea598c763655",
@@ -6840,7 +6768,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "002d1be299b9bfa7",
@@ -6858,7 +6786,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "Age limit: 18+",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "cf96e68e8ca9a9b5",
@@ -6876,7 +6804,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Doors: 6pm Show: 7pm All Ages Netflix is a Joke Presents: JR De Guzman at the Regent",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "a7639a34539f2d87",
@@ -6894,7 +6822,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "73380f608635a80e",
@@ -6912,7 +6840,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "cd6c357acd583314",
@@ -6930,7 +6858,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Featuring special guest John Mulaney (5/05) *LINEUP SUBJECT TO CHANGE*",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "5d45a2d78e86a889",
@@ -6948,7 +6876,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Ages 16+ Welcome Doors: 6:30PM Show: 7:30PM *All times and supporting acts are subject to change without notice. Premier Parking vouchers are valid starting two (2) hours prior to doors opening for the event. Earlier on-site parking access is not guaranteed. Vinyl Room Doors open 90 minutes prior to doors opening to the music hall.",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "9b3085d2470d1c31",
@@ -6966,7 +6894,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "b1fbb0a197b8ce37",
@@ -6984,7 +6912,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "9bbfd6216a93aa9c",
@@ -7002,7 +6930,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "For parking & shuttle information: http://www.lagreektheatre.com",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "17ddf99899788ecd",
@@ -7020,7 +6948,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "9e38ed0acaeff3ae",
@@ -7038,7 +6966,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "93a8400908a40705",
@@ -7056,7 +6984,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "7505dfa8b192c190",
@@ -7074,7 +7002,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "bb95c7475e2e0364",
@@ -7092,7 +7020,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "a5be615646cef748",
@@ -7110,7 +7038,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "4bda39e90650dcb5",
@@ -7128,7 +7056,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "All Ages Welcome. Every person must have a ticket to attend the event, regardless of age. Doors: 9:00 p.m. Show: 9:45 p.m. *All times and supporting acts are subject to change The following bag policy is in place: Bags up to 12\" x 6\" x 12\" are allowed in the venue. All bags will be searched prior to entry. Bags that are not clear will be subject to additional search.",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "30c08ad592159e6b",
@@ -7146,7 +7074,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "Age limit: 18+",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "313ff9af80f3b47d",
@@ -7164,7 +7092,7 @@
       "age_restriction": "18+",
       "status": "on_sale",
       "description": "Doors: 9pm Show: 9:45pm 18+ Only Netflix Is A Joke Presents: Almost Friday TV LIVE",
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "828b3c351c15e15c",
@@ -7182,7 +7110,25 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-02-11T06:19:09.788Z"
+      "last_updated": "2026-02-11T14:49:19.008Z"
+    },
+    {
+      "id": "9a9d0fa1e02ced87",
+      "name": "Netflix Is A Joke Presents: Fly On The Wall",
+      "venue": "Orpheum Theatre",
+      "date": "2026-05-06",
+      "time": "6:00 PM",
+      "day_of_week": "Wednesday",
+      "price_min": null,
+      "price_max": null,
+      "currency": "USD",
+      "ticket_url": "https://www.ticketmaster.com/netflix-is-a-joke-presents-fly-los-angeles-california-05-06-2026/event/09006431B0AEB67C",
+      "image_url": "https://s1.ticketm.net/dam/a/8fa/fb1ced55-9743-4558-b189-fbc5176928fa_SOURCE",
+      "source": "ticketmaster",
+      "age_restriction": null,
+      "status": "on_sale",
+      "description": null,
+      "last_updated": "2026-02-11T14:49:19.008Z"
     },
     {
       "id": "cb8f822e56f2cf3f",
@@ -7200,7 +7146,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Call Me Karizma with Jady Live at The Secret Group Thursday, May 7th!",
-      "last_updated": "2026-02-11T06:19:17.110Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "17672084fdba34fd",
@@ -7218,7 +7164,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Steven Rogers at The Riot Comedy Club!",
-      "last_updated": "2026-02-11T06:19:11.848Z"
+      "last_updated": "2026-02-11T14:49:18.861Z"
     },
     {
       "id": "5ee123d8aa55c102",
@@ -7236,7 +7182,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Javi Bailon at The Riot Comedy Club!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "15d90add341f127e",
@@ -7254,7 +7200,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Caitlin Peluffo at The Riot Comedy Club!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "703a09af84f9eeb9",
@@ -7272,7 +7218,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Caitlin Peluffo at The Riot Comedy Club!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "294decb1b3e97706",
@@ -7290,7 +7236,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Pushing 30 by Abby Govindan",
-      "last_updated": "2026-02-11T06:19:17.110Z"
+      "last_updated": "2026-02-11T14:49:23.754Z"
     },
     {
       "id": "1f156195e5dfbea8",
@@ -7308,7 +7254,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Cam Bertrand at The Riot Comedy Club!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "8f267907c543b7e9",
@@ -7326,7 +7272,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Michael Lenoci at The Riot Comedy Club!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "f6fead942da0927e",
@@ -7344,7 +7290,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Kelsy Karter & The Heroines: The Pleasure Tour - Sunday, Jun 07, 2026",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     },
     {
       "id": "f342d796d242a815",
@@ -7362,7 +7308,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Join us for a hilarious evening of laughter with Graham Kay at The Riot Comedy Club!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "b8298538a5e34671",
@@ -7380,7 +7326,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come party this weekend at The Riot with tasty food, full bar, free parking, great vibes and comedy from visiting headliner Bo Johnson!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "9a7c902a7f3b0fd4",
@@ -7398,7 +7344,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come party this weekend at The Riot with tasty food, full bar, free parking, great vibes and comedy from visiting headliner Bo Johnson!",
-      "last_updated": "2026-02-11T06:19:15.516Z"
+      "last_updated": "2026-02-11T14:49:22.276Z"
     },
     {
       "id": "7d87a32756ea8e44",
@@ -7416,7 +7362,7 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come see Steve Hofstetter live in person at The Secret Group on December 31, 2026!",
-      "last_updated": "2026-02-11T06:19:18.442Z"
+      "last_updated": "2026-02-11T14:49:25.045Z"
     }
   ]
 }
