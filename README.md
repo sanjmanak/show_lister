@@ -1,4 +1,4 @@
-# Comedy Houston
+# Event Scraper
 
 **Every comedy show in Houston. One place.**
 
