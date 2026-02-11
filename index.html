@@ -620,6 +620,14 @@
       </select>
     </div>
 
+    <div class="select-wrapper">
+      <select id="sourceFilter">
+        <option value="all">All Sources</option>
+        <option value="ticketmaster">Ticketmaster</option>
+        <option value="eventbrite">Eventbrite</option>
+      </select>
+    </div>
+
     <div class="controls-spacer"></div>
 
     <span class="sort-label">Sort:</span>
@@ -8078,6 +8086,7 @@
     let allEvents = [];
     let currentTimeFilter = "all";
     let currentVenueFilter = "all";
+    let currentSourceFilter = "all";
     let currentSort = "date";
 
     // ================================================================
@@ -8146,6 +8155,12 @@
         render();
       });
 
+      // Source filter
+      document.getElementById("sourceFilter").addEventListener("change", (e) => {
+        currentSourceFilter = e.target.value;
+        render();
+      });
+
       // Sort
       document.getElementById("sortSelect").addEventListener("change", (e) => {
         currentSort = e.target.value;
@@ -8206,6 +8221,13 @@
 
         // Venue filter
         if (currentVenueFilter !== "all" && e.venue !== currentVenueFilter) return false;
+
+        // Source filter
+        if (currentSourceFilter !== "all" && e.source !== currentSourceFilter) return false;
+
+        // 90-day cap
+        const maxDate = toDateStr(addDays(new Date(), 90));
+        if (e.date > maxDate) return false;
 
         return true;
       });
