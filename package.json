@@ -1,0 +1,9 @@
+{
+  "name": "houston-comedy-shows",
+  "version": "1.0.0",
+  "description": "Automated comedy event aggregator for Houston — pulls from Ticketmaster and Eventbrite",
+  "private": true,
+  "scripts": {
+    "fetch": "node scripts/fetch-events.js"
+  }
+}

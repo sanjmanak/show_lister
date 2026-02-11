@@ -1,0 +1,52 @@
+name: Update Comedy Events
+
+on:
+  # Run twice daily at 8am and 6pm Central Time
+  # Central Time is UTC-6 (CST) or UTC-5 (CDT)
+  # 8am CT = 14:00 UTC (CST) / 13:00 UTC (CDT)
+  # 6pm CT = 00:00 UTC next day (CST) / 23:00 UTC (CDT)
+  # Using CDT (March-November) times — GitHub will run at these UTC times year-round
+  schedule:
+    - cron: '0 14 * * *'   # ~8am CT
+    - cron: '0 0 * * *'    # ~6pm CT
+
+  # Manual trigger from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  TZ: America/Chicago
+
+jobs:
+  fetch-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch events from APIs
+        env:
+          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
+          EVENTBRITE_TOKEN: ${{ secrets.EVENTBRITE_TOKEN }}
+        run: node scripts/fetch-events.js
+
+      - name: Commit and push updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add events.json index.html
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update events data — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
+            git push
+          fi
