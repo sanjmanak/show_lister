@@ -19,7 +19,11 @@ const crypto = require("crypto");
 const TM_API_KEY = process.env.TICKETMASTER_API_KEY || "";
 const EB_TOKEN = process.env.EVENTBRITE_TOKEN || "";
 
-const HOUSTON_DMA_ID = "324";
+const HOUSTON_LAT = "29.7604";
+const HOUSTON_LON = "-95.3698";
+const SEARCH_RADIUS = "100";
+const SEARCH_UNIT = "miles";
+const MAX_DAYS_AHEAD = 90;
 const TM_BASE = "https://app.ticketmaster.com/discovery/v2/events.json";
 
 const EB_BASE = "https://www.eventbriteapi.com/v3";
@@ -90,14 +94,27 @@ async function fetchTicketmaster() {
     return [];
   }
 
-  console.log("[Ticketmaster] Fetching comedy events in Houston DMA...");
+  console.log("[Ticketmaster] Fetching comedy events near Houston, TX...");
   const events = [];
 
-  // Broad comedy search in Houston DMA
+  const now = new Date();
+  const endDate = new Date(now);
+  endDate.setDate(endDate.getDate() + MAX_DAYS_AHEAD);
+
+  // Format as "yyyy-MM-ddTHH:mm:ssZ"
+  const startDateTime = now.toISOString().replace(/\.\d{3}Z$/, "Z");
+  const endDateTime = endDate.toISOString().replace(/\.\d{3}Z$/, "Z");
+
+  // Broad comedy search near Houston using lat/long + radius
   const params = new URLSearchParams({
     apikey: TM_API_KEY,
     classificationName: "comedy",
-    dmaId: HOUSTON_DMA_ID,
+    latlong: `${HOUSTON_LAT},${HOUSTON_LON}`,
+    radius: SEARCH_RADIUS,
+    unit: SEARCH_UNIT,
+    stateCode: "TX",
+    startDateTime,
+    endDateTime,
     size: "200",
     sort: "date,asc",
   });
@@ -109,9 +126,9 @@ async function fetchTicketmaster() {
         events.push(normalizeTM(ev));
       }
     }
-    console.log(`[Ticketmaster] Found ${events.length} events from DMA search.`);
+    console.log(`[Ticketmaster] Found ${events.length} events from geo search.`);
   } catch (err) {
-    console.error(`[Ticketmaster] DMA search failed: ${err.message}`);
+    console.error(`[Ticketmaster] Geo search failed: ${err.message}`);
   }
 
   // Venue-specific searches for Houston Improv
@@ -124,6 +141,8 @@ async function fetchTicketmaster() {
       const vp = new URLSearchParams({
         apikey: TM_API_KEY,
         venueId: venue.id,
+        startDateTime,
+        endDateTime,
         size: "200",
         sort: "date,asc",
       });
@@ -144,14 +163,29 @@ async function fetchTicketmaster() {
     }
   }
 
-  return events;
+  // Post-fetch safety filter: only keep events in Texas
+  const txEvents = events.filter((e) => {
+    if (!e.venue_state) return true; // keep if state unknown
+    return e.venue_state === "TX";
+  });
+  const removed = events.length - txEvents.length;
+  if (removed > 0) {
+    console.log(`[Ticketmaster] Filtered out ${removed} non-TX events.`);
+  }
+
+  return txEvents;
 }
 
 function normalizeTM(ev) {
-  const venue =
+  const venueObj =
     ev._embedded && ev._embedded.venues && ev._embedded.venues[0]
-      ? ev._embedded.venues[0].name
-      : "Unknown Venue";
+      ? ev._embedded.venues[0]
+      : null;
+  const venue = venueObj ? venueObj.name : "Unknown Venue";
+  const venueState =
+    venueObj && venueObj.state ? venueObj.state.stateCode : null;
+  const venueCity =
+    venueObj && venueObj.city ? venueObj.city.name : null;
 
   const dateStr =
     ev.dates && ev.dates.start ? ev.dates.start.localDate : null;
@@ -174,6 +208,8 @@ function normalizeTM(ev) {
     id: makeId(ev.name, dateStr, venue),
     name: ev.name || "Untitled Event",
     venue,
+    venue_state: venueState,
+    venue_city: venueCity,
     date: dateStr,
     time: formatTime(timeStr),
     day_of_week: dateStr ? getDayOfWeek(dateStr) : null,
@@ -224,6 +260,14 @@ async function fetchEventbrite() {
   const events = [];
   const headers = { Authorization: `Bearer ${EB_TOKEN}` };
 
+  const now = new Date();
+  const endDate = new Date(now);
+  endDate.setDate(endDate.getDate() + MAX_DAYS_AHEAD);
+
+  // Eventbrite date format: "yyyy-MM-ddTHH:mm:ss"
+  const rangeStart = now.toISOString().replace(/\.\d{3}Z$/, "");
+  const rangeEnd = endDate.toISOString().replace(/\.\d{3}Z$/, "");
+
   for (const org of EB_ORGANIZERS) {
     try {
       let page = 1;
@@ -234,6 +278,8 @@ async function fetchEventbrite() {
           status: "live",
           order_by: "start_asc",
           "expand": "venue,ticket_availability",
+          "start_date.range_start": rangeStart,
+          "start_date.range_end": rangeEnd,
           page: String(page),
         });
         const url = `${EB_BASE}/organizers/${org.id}/events/?${params}`;
