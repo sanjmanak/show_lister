@@ -3,20 +3,29 @@
  * Comedy Houston — HTML template rendered by the [comedy_houston] shortcode.
  * This file is included by comedy-houston.php inside the #ch-app wrapper div.
  * Do not load directly.
+ *
+ * Available variables (set by render_shortcode before include):
+ *   $ch_show_hero     — bool — whether to render the hero banner
+ *   $ch_show_controls — bool — whether to render the filter toolbar
+ *   $ch_show_footer   — bool — whether to render the data sources footer
+ *   $ch_hero_title    — string — custom hero title (empty = default)
  */
 if (!defined('ABSPATH')) exit;
 ?>
 
+  <?php if ($ch_show_hero): ?>
   <!-- HERO -->
   <div class="ch-hero">
-    <h1 class="ch-hero-title">Every Comedy Show in Houston</h1>
+    <h1 class="ch-hero-title"><?php echo esc_html($ch_hero_title ?: 'Every Comedy Show in Houston'); ?></h1>
     <p class="ch-hero-subtitle">Houston Improv, The Riot, Secret Group, Punch Line &amp; more — updated daily</p>
     <div class="ch-hero-meta">
       <span class="event-count" id="chEventCount">0 shows</span>
       <span id="chUpdatedAt"></span>
     </div>
   </div>
+  <?php endif; ?>
 
+  <?php if ($ch_show_controls): ?>
   <!-- FILTER CONTROLS -->
   <div class="controls" id="chControls">
     <div class="filter-group" id="chTimeFilters">
@@ -54,6 +63,7 @@ if (!defined('ABSPATH')) exit;
       </select>
     </div>
   </div>
+  <?php endif; ?>
 
   <!-- MAIN EVENT LISTINGS -->
   <main class="ch-main" id="chMain">
@@ -63,9 +73,11 @@ if (!defined('ABSPATH')) exit;
     </div>
   </main>
 
+  <?php if ($ch_show_footer): ?>
   <!-- FOOTER -->
   <div class="ch-footer">
     Updated automatically twice daily &middot; Data from
     <a href="https://www.ticketmaster.com" target="_blank" rel="noopener">Ticketmaster</a> &amp;
     <a href="https://www.eventbrite.com" target="_blank" rel="noopener">Eventbrite</a>
   </div>
+  <?php endif; ?>
