@@ -37,21 +37,13 @@ if (!defined('ABSPATH')) exit;
       <button class="filter-btn" data-filter="month">This Month</button>
     </div>
 
+    <div class="controls-spacer"></div>
+
     <div class="select-wrapper">
       <select id="chVenueFilter">
         <option value="all">All Venues</option>
       </select>
     </div>
-
-    <div class="select-wrapper">
-      <select id="chSourceFilter">
-        <option value="all">All Sources</option>
-        <option value="ticketmaster">Ticketmaster</option>
-        <option value="eventbrite">Eventbrite</option>
-      </select>
-    </div>
-
-    <div class="controls-spacer"></div>
 
     <span class="sort-label">Sort:</span>
     <div class="select-wrapper">
