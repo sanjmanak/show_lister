@@ -25,12 +25,13 @@ class Comedy_Houston_Plugin {
     const CLICKS_TABLE = 'ch_clicks';
 
     private $defaults = [
-        'github_user'    => 'sanjmanak',
-        'repo'           => 'show_lister',
-        'color_scheme'   => 'dark',
-        'tm_affiliate'   => '',
-        'eb_affiliate'   => '',
-        'track_clicks'   => '1',
+        'github_user'         => 'sanjmanak',
+        'repo'                => 'show_lister',
+        'color_scheme'        => 'dark',
+        'show_source_badges'  => '1',
+        'tm_affiliate'        => '',
+        'eb_affiliate'        => '',
+        'track_clicks'        => '1',
     ];
 
     public function __construct() {
@@ -122,9 +123,10 @@ class Comedy_Houston_Plugin {
                 sanitize_text_field($opts['repo'])
             ),
             'colorScheme'     => sanitize_text_field($scheme),
-            'trackClicks'     => (bool) $opts['track_clicks'],
-            'redirectBase'    => esc_url($redirect_base),
-            'shortcodeParams' => $shortcode_params,
+            'trackClicks'      => (bool) $opts['track_clicks'],
+            'showSourceBadges' => (bool) $opts['show_source_badges'],
+            'redirectBase'     => esc_url($redirect_base),
+            'shortcodeParams'  => $shortcode_params,
         ];
 
         wp_add_inline_script(
@@ -273,6 +275,7 @@ class Comedy_Houston_Plugin {
         );
 
         add_settings_field('color_scheme', 'Color Scheme', [$this, 'field_color_scheme'], 'comedy-houston', 'ch_appearance');
+        add_settings_field('show_source_badges', 'Source Badges', [$this, 'field_show_source_badges'], 'comedy-houston', 'ch_appearance');
 
         // --- Data Source section ---
         add_settings_section(
@@ -304,6 +307,7 @@ class Comedy_Houston_Plugin {
         $clean['repo']         = sanitize_text_field($input['repo'] ?? '');
         $clean['color_scheme'] = in_array($input['color_scheme'] ?? '', ['dark', 'light', 'auto'], true)
             ? $input['color_scheme'] : 'dark';
+        $clean['show_source_badges'] = !empty($input['show_source_badges']) ? '1' : '0';
         $clean['tm_affiliate'] = sanitize_text_field($input['tm_affiliate'] ?? '');
         $clean['eb_affiliate'] = sanitize_text_field($input['eb_affiliate'] ?? '');
         $clean['track_clicks'] = !empty($input['track_clicks']) ? '1' : '0';
@@ -323,6 +327,15 @@ class Comedy_Houston_Plugin {
         </select>
         <p class="description">Choose the palette for the event listings. "Auto" uses the visitor's OS dark/light mode setting.</p>
         <?php
+    }
+
+    public function field_show_source_badges() {
+        $opts = $this->get_options();
+        printf(
+            '<label><input type="checkbox" name="%s[show_source_badges]" value="1" %s> Show "ticketmaster" / "eventbrite" badge on event cards</label>',
+            self::OPTION_KEY, checked($opts['show_source_badges'], '1', false)
+        );
+        echo '<p class="description">Displays a small source label in the top-right corner of each card image.</p>';
     }
 
     public function field_github_user() {

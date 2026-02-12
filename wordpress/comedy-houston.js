@@ -28,6 +28,7 @@
   var JSON_URL = config.jsonUrl ||
     "https://raw.githubusercontent.com/sanjmanak/show_lister/main/events.json";
   var TRACK_CLICKS = config.trackClicks !== false;
+  var SHOW_SOURCE_BADGES = config.showSourceBadges !== false;
   var REDIRECT_BASE = config.redirectBase || "";
 
   // Shortcode params (locked filters from PHP shortcode attributes)
@@ -331,7 +332,7 @@
 
     return '<article class="event-card">' +
       '<div class="card-image">' + imageHTML +
-      '<span class="card-source-badge ' + escapeAttr(ev.source) + '">' + escapeHTML(ev.source) + '</span>' +
+      (SHOW_SOURCE_BADGES ? '<span class="card-source-badge ' + escapeAttr(ev.source) + '">' + escapeHTML(ev.source) + '</span>' : '') +
       '<span class="card-status-badge ' + escapeAttr(statusClass) + '">' + escapeHTML(statusLabel) + '</span>' +
       '</div>' +
       '<div class="card-body">' +
