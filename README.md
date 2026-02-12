@@ -2,7 +2,7 @@
 
 **Every event in a city. One place.**
 
-Automated event aggregator that pulls comedy shows from Ticketmaster and Eventbrite, deduplicates them, and publishes a static site to GitHub Pages — updated twice daily.
+This is an automated event aggregator that pulls comedy shows from Ticketmaster and Eventbrite, deduplicates them, and publishes a static site to GitHub Pages — updated twice daily.
 
 ## Data Sources
 
