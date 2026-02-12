@@ -44,6 +44,7 @@
   var currentSort = "date";
   var lockedMaxPrice = (scParams.maxPrice !== null && scParams.maxPrice !== undefined)
     ? scParams.maxPrice : null;
+  var showOpenMic = scParams.showOpenMic !== false;
 
   // ================================================================
   // INIT — wait for DOM to be ready
@@ -233,6 +234,7 @@
 
       if (currentVenueFilter !== "all" && ev.venue !== currentVenueFilter) continue;
       if (currentSourceFilter !== "all" && ev.source !== currentSourceFilter) continue;
+      if (!showOpenMic && ev.name && ev.name.toLowerCase().indexOf("open mic") !== -1) continue;
 
       // Max price filter: include free shows (price_min === 0 or null) and shows
       // with price_min <= maxPrice

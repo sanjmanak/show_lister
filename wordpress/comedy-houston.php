@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.1.0
+ * Version: 2.2.0
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -68,14 +68,14 @@ class Comedy_Houston_Plugin {
             'comedy-houston-style',
             plugin_dir_url(__FILE__) . 'comedy-houston.css',
             [],
-            '2.1.0'
+            '2.2.0'
         );
 
         wp_register_script(
             'comedy-houston-app',
             plugin_dir_url(__FILE__) . 'comedy-houston.js',
             [],
-            '2.1.0',
+            '2.2.0',
             true
         );
     }
@@ -99,6 +99,7 @@ class Comedy_Houston_Plugin {
             'show_footer'       => 'true',
             'show_venue_filter' => 'true',
             'show_sort'         => 'true',
+            'show_open_mic'     => 'true',
         ], $atts, self::SHORTCODE);
 
         $scheme = !empty($atts['theme']) ? $atts['theme'] : $opts['color_scheme'];
@@ -115,6 +116,7 @@ class Comedy_Houston_Plugin {
             'maxPrice' => $atts['max_price'] !== '' ? floatval($atts['max_price']) : null,
             'venue'    => sanitize_text_field($atts['venue']),
             'source'   => sanitize_text_field($atts['source']),
+            'showOpenMic' => strtolower($atts['show_open_mic']) !== 'false',
         ];
 
         // Use wp_add_inline_script for proper type handling (null, bool, numbers)
@@ -439,6 +441,7 @@ class Comedy_Houston_Plugin {
                     <tr><td><code>show_controls</code></td><td>true, false</td><td>true</td></tr>
                     <tr><td><code>show_venue_filter</code></td><td>true, false — show/hide the venue dropdown</td><td>true</td></tr>
                     <tr><td><code>show_sort</code></td><td>true, false — show/hide the sort dropdown</td><td>true</td></tr>
+                    <tr><td><code>show_open_mic</code></td><td>true, false — include/exclude events with &ldquo;open mic&rdquo; in the name</td><td>true</td></tr>
                     <tr><td><code>show_footer</code></td><td>true, false</td><td>true</td></tr>
                 </tbody>
             </table>
