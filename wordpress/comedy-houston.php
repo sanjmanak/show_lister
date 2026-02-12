@@ -100,6 +100,7 @@ class Comedy_Houston_Plugin {
             'show_venue_filter' => 'true',
             'show_sort'         => 'true',
             'show_open_mic'     => 'true',
+            'type'              => '',
         ], $atts, self::SHORTCODE);
 
         $scheme = !empty($atts['theme']) ? $atts['theme'] : $opts['color_scheme'];
@@ -117,6 +118,7 @@ class Comedy_Houston_Plugin {
             'venue'    => sanitize_text_field($atts['venue']),
             'source'   => sanitize_text_field($atts['source']),
             'showOpenMic' => strtolower($atts['show_open_mic']) !== 'false',
+            'type' => sanitize_text_field($atts['type']),
         ];
 
         // Use wp_add_inline_script for proper type handling (null, bool, numbers)
@@ -442,6 +444,7 @@ class Comedy_Houston_Plugin {
                     <tr><td><code>show_venue_filter</code></td><td>true, false — show/hide the venue dropdown</td><td>true</td></tr>
                     <tr><td><code>show_sort</code></td><td>true, false — show/hide the sort dropdown</td><td>true</td></tr>
                     <tr><td><code>show_open_mic</code></td><td>true, false — include/exclude events with &ldquo;open mic&rdquo; in the name</td><td>true</td></tr>
+                    <tr><td><code>type</code></td><td>open_mic — show only events matching this type (filters by name keyword)</td><td><em>all types</em></td></tr>
                     <tr><td><code>show_footer</code></td><td>true, false</td><td>true</td></tr>
                 </tbody>
             </table>
@@ -453,6 +456,8 @@ class Comedy_Houston_Plugin {
             <code>[comedy_houston max_price="10" show_hero="false" show_controls="false" show_footer="false"]</code>
             <p style="margin-top: 8px;"><strong>Specific venue:</strong></p>
             <code>[comedy_houston venue="Houston Improv" show_controls="false"]</code>
+            <p style="margin-top: 8px;"><strong>Open mics only (for blog posts):</strong></p>
+            <code>[comedy_houston type="open_mic" show_hero="false" show_controls="false" show_footer="false"]</code>
         </div>
         <?php
     }
