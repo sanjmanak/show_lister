@@ -1,0 +1,624 @@
+/* ================================================================
+   Comedy Houston — WordPress Plugin Styles
+   Supports three color schemes: dark, light, auto (system preference)
+   All styles scoped under #ch-app to avoid WordPress theme conflicts
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ================================================================
+   DARK THEME (default)
+   ================================================================ */
+#ch-app.ch-theme-dark {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-card: #1a1a26;
+  --bg-card-hover: #22222f;
+  --bg-input: #16161f;
+  --border: #2a2a3a;
+  --border-hover: #3a3a4f;
+  --text-primary: #f0f0f5;
+  --text-secondary: #9999aa;
+  --text-muted: #666677;
+  --accent: #ff4d6a;
+  --accent-hover: #ff6b83;
+  --accent-glow: rgba(255, 77, 106, 0.15);
+  --accent-secondary: #7c5cff;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.4);
+  --placeholder-bg: linear-gradient(135deg, #1a1a2e, #16213e);
+  --source-badge-bg: rgba(0, 0, 0, 0.7);
+}
+
+/* ================================================================
+   LIGHT THEME
+   ================================================================ */
+#ch-app.ch-theme-light {
+  --bg-primary: #f8f8fa;
+  --bg-secondary: #eeeef2;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f5f5f8;
+  --bg-input: #f0f0f4;
+  --border: #dddde4;
+  --border-hover: #c0c0cc;
+  --text-primary: #1a1a2e;
+  --text-secondary: #555566;
+  --text-muted: #888899;
+  --accent: #e0365a;
+  --accent-hover: #c52e4f;
+  --accent-glow: rgba(224, 54, 90, 0.1);
+  --accent-secondary: #6344e0;
+  --success: #16a34a;
+  --warning: #d97706;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 4px 24px rgba(0, 0, 0, 0.12);
+  --placeholder-bg: linear-gradient(135deg, #e8e8f0, #dddde8);
+  --source-badge-bg: rgba(255, 255, 255, 0.85);
+}
+
+/* ================================================================
+   AUTO THEME — follows OS preference
+   ================================================================ */
+#ch-app.ch-theme-auto {
+  --bg-primary: #f8f8fa;
+  --bg-secondary: #eeeef2;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f5f5f8;
+  --bg-input: #f0f0f4;
+  --border: #dddde4;
+  --border-hover: #c0c0cc;
+  --text-primary: #1a1a2e;
+  --text-secondary: #555566;
+  --text-muted: #888899;
+  --accent: #e0365a;
+  --accent-hover: #c52e4f;
+  --accent-glow: rgba(224, 54, 90, 0.1);
+  --accent-secondary: #6344e0;
+  --success: #16a34a;
+  --warning: #d97706;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 4px 24px rgba(0, 0, 0, 0.12);
+  --placeholder-bg: linear-gradient(135deg, #e8e8f0, #dddde8);
+  --source-badge-bg: rgba(255, 255, 255, 0.85);
+}
+
+@media (prefers-color-scheme: dark) {
+  #ch-app.ch-theme-auto {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #1a1a26;
+    --bg-card-hover: #22222f;
+    --bg-input: #16161f;
+    --border: #2a2a3a;
+    --border-hover: #3a3a4f;
+    --text-primary: #f0f0f5;
+    --text-secondary: #9999aa;
+    --text-muted: #666677;
+    --accent: #ff4d6a;
+    --accent-hover: #ff6b83;
+    --accent-glow: rgba(255, 77, 106, 0.15);
+    --accent-secondary: #7c5cff;
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.4);
+    --placeholder-bg: linear-gradient(135deg, #1a1a2e, #16213e);
+    --source-badge-bg: rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* ================================================================
+   BASE LAYOUT
+   ================================================================ */
+#ch-app {
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  --transition: 0.2s ease;
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 40px;
+}
+
+#ch-app *, #ch-app *::before, #ch-app *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#ch-app a { color: inherit; text-decoration: none; }
+#ch-app img { display: block; max-width: 100%; }
+
+/* HERO BANNER */
+#ch-app .ch-hero {
+  text-align: center;
+  padding: 40px 24px 20px;
+}
+
+#ch-app .ch-hero-title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+#ch-app .ch-hero-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+#ch-app .ch-hero-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+#ch-app .event-count {
+  background: var(--accent-glow);
+  color: var(--accent);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+/* CONTROLS BAR */
+#ch-app .controls {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#ch-app .filter-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+#ch-app .filter-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+#ch-app .filter-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+
+#ch-app .filter-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+#ch-app .select-wrapper {
+  position: relative;
+}
+
+#ch-app .select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 8px 36px 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+#ch-app .select-wrapper select:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+#ch-app .select-wrapper::after {
+  content: '';
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--text-muted);
+  pointer-events: none;
+}
+
+#ch-app .controls-spacer {
+  flex: 1;
+}
+
+#ch-app .sort-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* MAIN CONTENT */
+#ch-app .ch-main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+}
+
+/* Date group headers */
+#ch-app .date-group {
+  margin-top: 32px;
+}
+
+#ch-app .date-group:first-child {
+  margin-top: 8px;
+}
+
+#ch-app .date-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+}
+
+#ch-app .date-header-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+#ch-app .date-header-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+#ch-app .date-header-count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Event grid */
+#ch-app .events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* EVENT CARD */
+#ch-app .event-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: chCardFadeIn 0.4s ease forwards;
+}
+
+#ch-app .event-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  background: var(--bg-card-hover);
+}
+
+@keyframes chCardFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#ch-app .card-image {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+#ch-app .card-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+#ch-app .event-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+#ch-app .card-image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--placeholder-bg);
+}
+
+#ch-app .card-image-placeholder .venue-icon {
+  font-size: 2rem;
+  opacity: 0.3;
+}
+
+#ch-app .card-image-placeholder .venue-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+#ch-app .card-source-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--source-badge-bg);
+  color: var(--text-primary);
+  backdrop-filter: blur(4px);
+}
+
+#ch-app .card-source-badge.ticketmaster { color: #0093d0; }
+#ch-app .card-source-badge.eventbrite { color: #f05537; }
+
+#ch-app .card-status-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(4px);
+}
+
+#ch-app .card-status-badge.on_sale {
+  display: none;
+}
+
+#ch-app .card-status-badge.cancelled {
+  background: rgba(239, 68, 68, 0.9);
+  color: #fff;
+}
+
+#ch-app .card-status-badge.postponed,
+#ch-app .card-status-badge.rescheduled {
+  background: rgba(245, 158, 11, 0.9);
+  color: #000;
+}
+
+#ch-app .card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#ch-app .card-date-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+#ch-app .card-date-time .separator {
+  width: 3px;
+  height: 3px;
+  background: var(--text-muted);
+  border-radius: 50%;
+}
+
+#ch-app .card-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#ch-app .card-venue {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+#ch-app .card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+#ch-app .card-price {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+#ch-app .card-price .from {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+#ch-app .card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+#ch-app .card-cta:hover {
+  background: var(--accent-hover);
+  transform: scale(1.04);
+}
+
+#ch-app .card-cta .arrow {
+  transition: transform var(--transition);
+}
+
+#ch-app .card-cta:hover .arrow {
+  transform: translateX(2px);
+}
+
+/* EMPTY STATE */
+#ch-app .empty-state {
+  text-align: center;
+  padding: 80px 24px;
+  color: var(--text-muted);
+}
+
+#ch-app .empty-state h2 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+}
+
+#ch-app .empty-state p {
+  font-size: 0.95rem;
+}
+
+/* LOADING STATE */
+#ch-app .loading {
+  text-align: center;
+  padding: 80px 24px;
+}
+
+#ch-app .spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: chSpin 0.8s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes chSpin {
+  to { transform: rotate(360deg); }
+}
+
+#ch-app .loading-text {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* FOOTER */
+#ch-app .ch-footer {
+  border-top: 1px solid var(--border);
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+#ch-app .ch-footer a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  #ch-app .controls {
+    padding: 12px 16px;
+  }
+
+  #ch-app .ch-main {
+    padding: 0 16px 40px;
+  }
+
+  #ch-app .events-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  #ch-app .filter-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  #ch-app .ch-hero-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #ch-app .card-body {
+    padding: 12px;
+  }
+}
+
+/* Animation delays for staggered card entry */
+#ch-app .event-card:nth-child(1)  { animation-delay: 0.02s; }
+#ch-app .event-card:nth-child(2)  { animation-delay: 0.04s; }
+#ch-app .event-card:nth-child(3)  { animation-delay: 0.06s; }
+#ch-app .event-card:nth-child(4)  { animation-delay: 0.08s; }
+#ch-app .event-card:nth-child(5)  { animation-delay: 0.10s; }
+#ch-app .event-card:nth-child(6)  { animation-delay: 0.12s; }
+#ch-app .event-card:nth-child(7)  { animation-delay: 0.14s; }
+#ch-app .event-card:nth-child(8)  { animation-delay: 0.16s; }
+#ch-app .event-card:nth-child(9)  { animation-delay: 0.18s; }
+#ch-app .event-card:nth-child(10) { animation-delay: 0.20s; }
+#ch-app .event-card:nth-child(11) { animation-delay: 0.22s; }
+#ch-app .event-card:nth-child(12) { animation-delay: 0.24s; }
