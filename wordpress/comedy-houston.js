@@ -4,12 +4,18 @@
  * Fetches events.json from the GitHub repo and renders event cards
  * with filtering, sorting, and affiliate click tracking.
  *
- * Config is injected by the PHP plugin via wp_localize_script:
+ * Config is injected by the PHP plugin via wp_add_inline_script:
  *   window.ComedyHoustonConfig = {
  *     jsonUrl:      "https://raw.githubusercontent.com/.../events.json",
  *     colorScheme:  "dark" | "light" | "auto",
  *     trackClicks:  true | false,
- *     redirectBase: "https://yoursite.com/?ch_go="
+ *     redirectBase: "https://yoursite.com/?ch_go=",
+ *     shortcodeParams: {
+ *       filter:   "all"|"today"|"tomorrow"|"weekend"|"week"|"month",
+ *       maxPrice: number|null,
+ *       venue:    ""|"Venue Name",
+ *       source:   ""|"ticketmaster"|"eventbrite"
+ *     }
  *   }
  */
 (function () {
@@ -22,16 +28,23 @@
   var JSON_URL = config.jsonUrl ||
     "https://raw.githubusercontent.com/sanjmanak/show_lister/main/events.json";
   var TRACK_CLICKS = config.trackClicks !== false;
+  var SHOW_SOURCE_BADGES = config.showSourceBadges !== false;
   var REDIRECT_BASE = config.redirectBase || "";
+
+  // Shortcode params (locked filters from PHP shortcode attributes)
+  var scParams = config.shortcodeParams || {};
 
   // ================================================================
   // APP STATE
   // ================================================================
   var allEvents = [];
-  var currentTimeFilter = "all";
-  var currentVenueFilter = "all";
-  var currentSourceFilter = "all";
+  var currentTimeFilter = scParams.filter || "all";
+  var currentVenueFilter = scParams.venue || "all";
+  var currentSourceFilter = scParams.source || "all";
   var currentSort = "date";
+  var lockedMaxPrice = (scParams.maxPrice !== null && scParams.maxPrice !== undefined)
+    ? scParams.maxPrice : null;
+  var showOpenMic = scParams.showOpenMic !== false;
 
   // ================================================================
   // INIT — wait for DOM to be ready
@@ -64,6 +77,7 @@
     }
 
     populateVenueFilter();
+    applyShortcodeDefaults();
     bindEvents();
     render();
   }
@@ -108,6 +122,31 @@
       opt.value = venues[j];
       opt.textContent = venues[j];
       sel.appendChild(opt);
+    }
+  }
+
+  function applyShortcodeDefaults() {
+    // Set the active time filter button to match shortcode param
+    if (currentTimeFilter !== "all") {
+      var timeButtons = document.querySelectorAll("#chTimeFilters .filter-btn");
+      for (var i = 0; i < timeButtons.length; i++) {
+        timeButtons[i].classList.remove("active");
+        if (timeButtons[i].getAttribute("data-filter") === currentTimeFilter) {
+          timeButtons[i].classList.add("active");
+        }
+      }
+    }
+
+    // Pre-select venue dropdown if shortcode specifies one
+    if (currentVenueFilter !== "all") {
+      var venueEl = document.getElementById("chVenueFilter");
+      if (venueEl) venueEl.value = currentVenueFilter;
+    }
+
+    // Pre-select source dropdown if shortcode specifies one
+    if (currentSourceFilter !== "all") {
+      var sourceEl = document.getElementById("chSourceFilter");
+      if (sourceEl) sourceEl.value = currentSourceFilter;
     }
   }
 
@@ -195,6 +234,15 @@
 
       if (currentVenueFilter !== "all" && ev.venue !== currentVenueFilter) continue;
       if (currentSourceFilter !== "all" && ev.source !== currentSourceFilter) continue;
+      if (!showOpenMic && ev.name && ev.name.toLowerCase().indexOf("open mic") !== -1) continue;
+
+      // Max price filter: include free shows (price_min === 0 or null) and shows
+      // with price_min <= maxPrice
+      if (lockedMaxPrice !== null) {
+        var evPrice = ev.price_min;
+        // Include free shows (null/0 price_min)
+        if (evPrice !== null && evPrice !== 0 && evPrice > lockedMaxPrice) continue;
+      }
 
       var maxDate = toDateStr(addDays(new Date(), 90));
       if (ev.date > maxDate) continue;
@@ -286,7 +334,7 @@
 
     return '<article class="event-card">' +
       '<div class="card-image">' + imageHTML +
-      '<span class="card-source-badge ' + escapeAttr(ev.source) + '">' + escapeHTML(ev.source) + '</span>' +
+      (SHOW_SOURCE_BADGES ? '<span class="card-source-badge ' + escapeAttr(ev.source) + '">' + escapeHTML(ev.source) + '</span>' : '') +
       '<span class="card-status-badge ' + escapeAttr(statusClass) + '">' + escapeHTML(statusLabel) + '</span>' +
       '</div>' +
       '<div class="card-body">' +

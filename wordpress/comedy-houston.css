@@ -182,7 +182,13 @@
 #ch-app .controls {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 20px 24px;
+  padding: 20px 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#ch-app .controls-row {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
@@ -258,6 +264,14 @@
 
 #ch-app .controls-spacer {
   flex: 1;
+}
+
+#ch-app .select-wrapper-venue select {
+  font-size: 0.6rem;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 #ch-app .sort-label {

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.0.0
+ * Version: 2.2.0
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -25,12 +25,13 @@ class Comedy_Houston_Plugin {
     const CLICKS_TABLE = 'ch_clicks';
 
     private $defaults = [
-        'github_user'    => 'sanjmanak',
-        'repo'           => 'show_lister',
-        'color_scheme'   => 'dark',
-        'tm_affiliate'   => '',
-        'eb_affiliate'   => '',
-        'track_clicks'   => '1',
+        'github_user'         => 'sanjmanak',
+        'repo'                => 'show_lister',
+        'color_scheme'        => 'dark',
+        'show_source_badges'  => '1',
+        'tm_affiliate'        => '',
+        'eb_affiliate'        => '',
+        'track_clicks'        => '1',
     ];
 
     public function __construct() {
@@ -67,14 +68,14 @@ class Comedy_Houston_Plugin {
             'comedy-houston-style',
             plugin_dir_url(__FILE__) . 'comedy-houston.css',
             [],
-            '2.0.0'
+            '2.2.0'
         );
 
         wp_register_script(
             'comedy-houston-app',
             plugin_dir_url(__FILE__) . 'comedy-houston.js',
             [],
-            '2.0.0',
+            '2.2.0',
             true
         );
     }
@@ -87,7 +88,18 @@ class Comedy_Houston_Plugin {
         $opts = $this->get_options();
 
         $atts = shortcode_atts([
-            'theme' => '', // override from shortcode if desired
+            'theme'         => '',
+            'filter'        => 'all',
+            'max_price'     => '',
+            'venue'         => '',
+            'source'        => '',
+            'title'         => '',
+            'show_hero'         => 'true',
+            'show_controls'     => 'true',
+            'show_footer'       => 'true',
+            'show_venue_filter' => 'true',
+            'show_sort'         => 'true',
+            'show_open_mic'     => 'true',
         ], $atts, self::SHORTCODE);
 
         $scheme = !empty($atts['theme']) ? $atts['theme'] : $opts['color_scheme'];
@@ -98,16 +110,42 @@ class Comedy_Houston_Plugin {
         // Build redirect base URL for affiliate click tracking
         $redirect_base = home_url('/') . '?' . self::REDIRECT_VAR . '=';
 
-        wp_localize_script('comedy-houston-app', 'ComedyHoustonConfig', [
-            'jsonUrl'      => sprintf(
+        // Shortcode filter params passed to JS
+        $shortcode_params = [
+            'filter'   => sanitize_text_field($atts['filter']),
+            'maxPrice' => $atts['max_price'] !== '' ? floatval($atts['max_price']) : null,
+            'venue'    => sanitize_text_field($atts['venue']),
+            'source'   => sanitize_text_field($atts['source']),
+            'showOpenMic' => strtolower($atts['show_open_mic']) !== 'false',
+        ];
+
+        // Use wp_add_inline_script for proper type handling (null, bool, numbers)
+        $js_config = [
+            'jsonUrl'         => sprintf(
                 'https://raw.githubusercontent.com/%s/%s/main/events.json',
                 sanitize_text_field($opts['github_user']),
                 sanitize_text_field($opts['repo'])
             ),
-            'colorScheme'  => sanitize_text_field($scheme),
-            'trackClicks'  => (bool) $opts['track_clicks'],
-            'redirectBase' => esc_url($redirect_base),
-        ]);
+            'colorScheme'     => sanitize_text_field($scheme),
+            'trackClicks'      => (bool) $opts['track_clicks'],
+            'showSourceBadges' => (bool) $opts['show_source_badges'],
+            'redirectBase'     => esc_url($redirect_base),
+            'shortcodeParams'  => $shortcode_params,
+        ];
+
+        wp_add_inline_script(
+            'comedy-houston-app',
+            'window.ComedyHoustonConfig = ' . wp_json_encode($js_config) . ';',
+            'before'
+        );
+
+        // Template visibility flags (available in the included template file)
+        $ch_show_hero         = strtolower($atts['show_hero']) !== 'false';
+        $ch_show_controls     = strtolower($atts['show_controls']) !== 'false';
+        $ch_show_footer       = strtolower($atts['show_footer']) !== 'false';
+        $ch_show_venue_filter = strtolower($atts['show_venue_filter']) !== 'false';
+        $ch_show_sort         = strtolower($atts['show_sort']) !== 'false';
+        $ch_hero_title        = sanitize_text_field($atts['title']);
 
         ob_start();
         // Output the theme class on the wrapper so CSS can switch palettes
@@ -243,6 +281,7 @@ class Comedy_Houston_Plugin {
         );
 
         add_settings_field('color_scheme', 'Color Scheme', [$this, 'field_color_scheme'], 'comedy-houston', 'ch_appearance');
+        add_settings_field('show_source_badges', 'Source Badges', [$this, 'field_show_source_badges'], 'comedy-houston', 'ch_appearance');
 
         // --- Data Source section ---
         add_settings_section(
@@ -274,6 +313,7 @@ class Comedy_Houston_Plugin {
         $clean['repo']         = sanitize_text_field($input['repo'] ?? '');
         $clean['color_scheme'] = in_array($input['color_scheme'] ?? '', ['dark', 'light', 'auto'], true)
             ? $input['color_scheme'] : 'dark';
+        $clean['show_source_badges'] = !empty($input['show_source_badges']) ? '1' : '0';
         $clean['tm_affiliate'] = sanitize_text_field($input['tm_affiliate'] ?? '');
         $clean['eb_affiliate'] = sanitize_text_field($input['eb_affiliate'] ?? '');
         $clean['track_clicks'] = !empty($input['track_clicks']) ? '1' : '0';
@@ -293,6 +333,15 @@ class Comedy_Houston_Plugin {
         </select>
         <p class="description">Choose the palette for the event listings. "Auto" uses the visitor's OS dark/light mode setting.</p>
         <?php
+    }
+
+    public function field_show_source_badges() {
+        $opts = $this->get_options();
+        printf(
+            '<label><input type="checkbox" name="%s[show_source_badges]" value="1" %s> Show "ticketmaster" / "eventbrite" badge on event cards</label>',
+            self::OPTION_KEY, checked($opts['show_source_badges'], '1', false)
+        );
+        echo '<p class="description">Displays a small source label in the top-right corner of each card image.</p>';
     }
 
     public function field_github_user() {
@@ -377,8 +426,33 @@ class Comedy_Houston_Plugin {
             <h2>Usage</h2>
             <p>Add this shortcode to any page or post:</p>
             <code>[comedy_houston]</code>
-            <p style="margin-top: 8px;">Override the theme per-page if needed:</p>
-            <code>[comedy_houston theme="light"]</code>
+
+            <h3 style="margin-top: 16px;">Shortcode Parameters</h3>
+            <table class="widefat" style="max-width: 800px; margin-top: 8px;">
+                <thead><tr><th>Parameter</th><th>Values</th><th>Default</th></tr></thead>
+                <tbody>
+                    <tr><td><code>filter</code></td><td>all, today, tomorrow, weekend, week, month</td><td>all</td></tr>
+                    <tr><td><code>max_price</code></td><td>number — only shows with price_min &le; this value (free shows included)</td><td><em>none</em></td></tr>
+                    <tr><td><code>venue</code></td><td>venue name string</td><td><em>all venues</em></td></tr>
+                    <tr><td><code>source</code></td><td>ticketmaster, eventbrite</td><td><em>all sources</em></td></tr>
+                    <tr><td><code>title</code></td><td>custom hero title text</td><td>Every Comedy Show in Houston</td></tr>
+                    <tr><td><code>theme</code></td><td>dark, light, auto</td><td><em>global setting</em></td></tr>
+                    <tr><td><code>show_hero</code></td><td>true, false</td><td>true</td></tr>
+                    <tr><td><code>show_controls</code></td><td>true, false</td><td>true</td></tr>
+                    <tr><td><code>show_venue_filter</code></td><td>true, false — show/hide the venue dropdown</td><td>true</td></tr>
+                    <tr><td><code>show_sort</code></td><td>true, false — show/hide the sort dropdown</td><td>true</td></tr>
+                    <tr><td><code>show_open_mic</code></td><td>true, false — include/exclude events with &ldquo;open mic&rdquo; in the name</td><td>true</td></tr>
+                    <tr><td><code>show_footer</code></td><td>true, false</td><td>true</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 16px;">Examples</h3>
+            <p><strong>Weekend shows (for blog posts):</strong></p>
+            <code>[comedy_houston filter="weekend" show_hero="false" show_controls="false" show_footer="false"]</code>
+            <p style="margin-top: 8px;"><strong>Free &amp; cheap shows:</strong></p>
+            <code>[comedy_houston max_price="10" show_hero="false" show_controls="false" show_footer="false"]</code>
+            <p style="margin-top: 8px;"><strong>Specific venue:</strong></p>
+            <code>[comedy_houston venue="Houston Improv" show_controls="false"]</code>
         </div>
         <?php
     }
