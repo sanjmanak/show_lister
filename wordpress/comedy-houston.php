@@ -94,9 +94,11 @@ class Comedy_Houston_Plugin {
             'venue'         => '',
             'source'        => '',
             'title'         => '',
-            'show_hero'     => 'true',
-            'show_controls' => 'true',
-            'show_footer'   => 'true',
+            'show_hero'         => 'true',
+            'show_controls'     => 'true',
+            'show_footer'       => 'true',
+            'show_venue_filter' => 'true',
+            'show_sort'         => 'true',
         ], $atts, self::SHORTCODE);
 
         $scheme = !empty($atts['theme']) ? $atts['theme'] : $opts['color_scheme'];
@@ -136,10 +138,12 @@ class Comedy_Houston_Plugin {
         );
 
         // Template visibility flags (available in the included template file)
-        $ch_show_hero     = strtolower($atts['show_hero']) !== 'false';
-        $ch_show_controls = strtolower($atts['show_controls']) !== 'false';
-        $ch_show_footer   = strtolower($atts['show_footer']) !== 'false';
-        $ch_hero_title    = sanitize_text_field($atts['title']);
+        $ch_show_hero         = strtolower($atts['show_hero']) !== 'false';
+        $ch_show_controls     = strtolower($atts['show_controls']) !== 'false';
+        $ch_show_footer       = strtolower($atts['show_footer']) !== 'false';
+        $ch_show_venue_filter = strtolower($atts['show_venue_filter']) !== 'false';
+        $ch_show_sort         = strtolower($atts['show_sort']) !== 'false';
+        $ch_hero_title        = sanitize_text_field($atts['title']);
 
         ob_start();
         // Output the theme class on the wrapper so CSS can switch palettes
@@ -433,6 +437,8 @@ class Comedy_Houston_Plugin {
                     <tr><td><code>theme</code></td><td>dark, light, auto</td><td><em>global setting</em></td></tr>
                     <tr><td><code>show_hero</code></td><td>true, false</td><td>true</td></tr>
                     <tr><td><code>show_controls</code></td><td>true, false</td><td>true</td></tr>
+                    <tr><td><code>show_venue_filter</code></td><td>true, false — show/hide the venue dropdown</td><td>true</td></tr>
+                    <tr><td><code>show_sort</code></td><td>true, false — show/hide the sort dropdown</td><td>true</td></tr>
                     <tr><td><code>show_footer</code></td><td>true, false</td><td>true</td></tr>
                 </tbody>
             </table>

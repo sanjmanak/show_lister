@@ -5,9 +5,11 @@
  * Do not load directly.
  *
  * Available variables (set by render_shortcode before include):
- *   $ch_show_hero     — bool — whether to render the hero banner
- *   $ch_show_controls — bool — whether to render the filter toolbar
- *   $ch_show_footer   — bool — whether to render the data sources footer
+ *   $ch_show_hero         — bool — whether to render the hero banner
+ *   $ch_show_controls     — bool — whether to render the filter toolbar
+ *   $ch_show_footer       — bool — whether to render the data sources footer
+ *   $ch_show_venue_filter — bool — whether to render the venue dropdown
+ *   $ch_show_sort         — bool — whether to render the sort dropdown
  *   $ch_hero_title    — string — custom hero title (empty = default)
  */
 if (!defined('ABSPATH')) exit;
@@ -28,32 +30,39 @@ if (!defined('ABSPATH')) exit;
   <?php if ($ch_show_controls): ?>
   <!-- FILTER CONTROLS -->
   <div class="controls" id="chControls">
-    <div class="filter-group" id="chTimeFilters">
-      <button class="filter-btn active" data-filter="all">All Shows</button>
-      <button class="filter-btn" data-filter="today">Today</button>
-      <button class="filter-btn" data-filter="tomorrow">Tomorrow</button>
-      <button class="filter-btn" data-filter="weekend">This Weekend</button>
-      <button class="filter-btn" data-filter="week">This Week</button>
-      <button class="filter-btn" data-filter="month">This Month</button>
+    <div class="controls-row">
+      <div class="filter-group" id="chTimeFilters">
+        <button class="filter-btn active" data-filter="all">All Shows</button>
+        <button class="filter-btn" data-filter="today">Today</button>
+        <button class="filter-btn" data-filter="tomorrow">Tomorrow</button>
+        <button class="filter-btn" data-filter="weekend">This Weekend</button>
+        <button class="filter-btn" data-filter="week">This Week</button>
+        <button class="filter-btn" data-filter="month">This Month</button>
+      </div>
+
+      <?php if ($ch_show_sort): ?>
+      <div class="controls-spacer"></div>
+      <span class="sort-label">Sort:</span>
+      <div class="select-wrapper">
+        <select id="chSortSelect">
+          <option value="date">Date</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="name">Name A-Z</option>
+        </select>
+      </div>
+      <?php endif; ?>
     </div>
 
-    <div class="controls-spacer"></div>
-
-    <div class="select-wrapper">
-      <select id="chVenueFilter">
-        <option value="all">All Venues</option>
-      </select>
+    <?php if ($ch_show_venue_filter): ?>
+    <div class="controls-row">
+      <div class="select-wrapper select-wrapper-venue">
+        <select id="chVenueFilter">
+          <option value="all">All Venues</option>
+        </select>
+      </div>
     </div>
-
-    <span class="sort-label">Sort:</span>
-    <div class="select-wrapper">
-      <select id="chSortSelect">
-        <option value="date">Date</option>
-        <option value="price-low">Price: Low to High</option>
-        <option value="price-high">Price: High to Low</option>
-        <option value="name">Name A-Z</option>
-      </select>
-    </div>
+    <?php endif; ?>
   </div>
   <?php endif; ?>
 
