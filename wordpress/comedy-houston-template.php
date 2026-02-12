@@ -1,12 +1,11 @@
 <?php
 /**
  * Comedy Houston — HTML template rendered by the [comedy_houston] shortcode.
- * This file is included by comedy-houston.php and should not be loaded directly.
+ * This file is included by comedy-houston.php inside the #ch-app wrapper div.
+ * Do not load directly.
  */
 if (!defined('ABSPATH')) exit;
 ?>
-
-<div id="ch-app">
 
   <!-- HERO -->
   <div class="ch-hero">
@@ -70,5 +69,3 @@ if (!defined('ABSPATH')) exit;
     <a href="https://www.ticketmaster.com" target="_blank" rel="noopener">Ticketmaster</a> &amp;
     <a href="https://www.eventbrite.com" target="_blank" rel="noopener">Eventbrite</a>
   </div>
-
-</div>

@@ -1,9 +1,16 @@
 /**
- * Comedy Houston — WordPress Plugin JavaScript
+ * Comedy Houston — WordPress Plugin JavaScript (v2)
  *
  * Fetches events.json from the GitHub repo and renders event cards
- * with filtering and sorting. Config is injected by the PHP plugin
- * via wp_localize_script as window.ComedyHoustonConfig.
+ * with filtering, sorting, and affiliate click tracking.
+ *
+ * Config is injected by the PHP plugin via wp_localize_script:
+ *   window.ComedyHoustonConfig = {
+ *     jsonUrl:      "https://raw.githubusercontent.com/.../events.json",
+ *     colorScheme:  "dark" | "light" | "auto",
+ *     trackClicks:  true | false,
+ *     redirectBase: "https://yoursite.com/?ch_go="
+ *   }
  */
 (function () {
   "use strict";
@@ -14,6 +21,8 @@
   var config = window.ComedyHoustonConfig || {};
   var JSON_URL = config.jsonUrl ||
     "https://raw.githubusercontent.com/sanjmanak/show_lister/main/events.json";
+  var TRACK_CLICKS = config.trackClicks !== false;
+  var REDIRECT_BASE = config.redirectBase || "";
 
   // ================================================================
   // APP STATE
@@ -36,7 +45,6 @@
   }
 
   onReady(function () {
-    // Only run if the app container exists on this page
     if (!document.getElementById("ch-app")) return;
     init();
   });
@@ -58,6 +66,19 @@
     populateVenueFilter();
     bindEvents();
     render();
+  }
+
+  // ================================================================
+  // TICKET URL BUILDER — routes through redirect for tracking
+  // ================================================================
+  function buildTicketUrl(originalUrl) {
+    if (!originalUrl) return "";
+    // If tracking is enabled and we have a redirect base, route through it
+    if (TRACK_CLICKS && REDIRECT_BASE) {
+      return REDIRECT_BASE + btoa(originalUrl);
+    }
+    // Otherwise link directly
+    return originalUrl;
   }
 
   // ================================================================
@@ -91,27 +112,23 @@
   }
 
   function bindEvents() {
-    // Time filters
     var timeButtons = document.querySelectorAll("#chTimeFilters .filter-btn");
     for (var i = 0; i < timeButtons.length; i++) {
       timeButtons[i].addEventListener("click", handleTimeFilter);
     }
 
-    // Venue filter
     var venueEl = document.getElementById("chVenueFilter");
     if (venueEl) venueEl.addEventListener("change", function (e) {
       currentVenueFilter = e.target.value;
       render();
     });
 
-    // Source filter
     var sourceEl = document.getElementById("chSourceFilter");
     if (sourceEl) sourceEl.addEventListener("change", function (e) {
       currentSourceFilter = e.target.value;
       render();
     });
 
-    // Sort
     var sortEl = document.getElementById("chSortSelect");
     if (sortEl) sortEl.addEventListener("change", function (e) {
       currentSort = e.target.value;
@@ -163,26 +180,26 @@
 
     var events = [];
     for (var i = 0; i < allEvents.length; i++) {
-      var e = allEvents[i];
-      if (!e.date) continue;
-      if (e.date < today) continue;
-      if (e.status === "cancelled") continue;
+      var ev = allEvents[i];
+      if (!ev.date) continue;
+      if (ev.date < today) continue;
+      if (ev.status === "cancelled") continue;
 
-      if (currentTimeFilter === "today" && e.date !== today) continue;
-      if (currentTimeFilter === "tomorrow" && e.date !== tomorrow) continue;
+      if (currentTimeFilter === "today" && ev.date !== today) continue;
+      if (currentTimeFilter === "tomorrow" && ev.date !== tomorrow) continue;
       if (currentTimeFilter === "weekend") {
-        if (e.date !== friDate && e.date !== satDate && e.date !== sunDate) continue;
+        if (ev.date !== friDate && ev.date !== satDate && ev.date !== sunDate) continue;
       }
-      if (currentTimeFilter === "week" && e.date > endOfWeek) continue;
-      if (currentTimeFilter === "month" && e.date > endOfMonth) continue;
+      if (currentTimeFilter === "week" && ev.date > endOfWeek) continue;
+      if (currentTimeFilter === "month" && ev.date > endOfMonth) continue;
 
-      if (currentVenueFilter !== "all" && e.venue !== currentVenueFilter) continue;
-      if (currentSourceFilter !== "all" && e.source !== currentSourceFilter) continue;
+      if (currentVenueFilter !== "all" && ev.venue !== currentVenueFilter) continue;
+      if (currentSourceFilter !== "all" && ev.source !== currentSourceFilter) continue;
 
       var maxDate = toDateStr(addDays(new Date(), 90));
-      if (e.date > maxDate) continue;
+      if (ev.date > maxDate) continue;
 
-      events.push(e);
+      events.push(ev);
     }
 
     if (currentSort === "date") {
@@ -217,7 +234,6 @@
       return;
     }
 
-    // Group by date
     var groupKeys = [];
     var groups = {};
     for (var i = 0; i < events.length; i++) {
@@ -262,8 +278,9 @@
     var statusClass = ev.status || "unknown";
     var statusLabel = (ev.status || "").replace(/_/g, " ");
 
+    var ticketUrl = buildTicketUrl(ev.ticket_url);
     var ticketHTML = ev.ticket_url
-      ? '<a class="card-cta" href="' + escapeAttr(ev.ticket_url) + '" target="_blank" rel="noopener">' +
+      ? '<a class="card-cta" href="' + escapeAttr(ticketUrl) + '" target="_blank" rel="noopener">' +
         'Get Tickets <span class="arrow">&rarr;</span></a>'
       : '<span class="card-cta" style="opacity:0.5;cursor:default;">Coming Soon</span>';
 
