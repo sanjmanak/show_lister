@@ -76,6 +76,11 @@ open index.html
 ├── scripts/fetch-events.js               # API fetcher & normalizer
 ├── events.json                           # Generated event data
 ├── index.html                            # Static site (dark theme, responsive)
+├── wordpress/
+│   ├── comedy-houston.php                # WordPress plugin (v2.3.0)
+│   ├── comedy-houston-template.php       # Plugin HTML template
+│   ├── comedy-houston.js                 # Client-side filtering & sorting
+│   └── comedy-houston.css                # Plugin styles (dark/light/auto)
 ├── package.json                          # Project metadata
 └── README.md
 ```
