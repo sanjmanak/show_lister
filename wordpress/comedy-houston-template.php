@@ -10,7 +10,11 @@
  *   $ch_show_footer       — bool — whether to render the data sources footer
  *   $ch_show_venue_filter — bool — whether to render the venue dropdown
  *   $ch_show_sort         — bool — whether to render the sort dropdown
- *   $ch_hero_title    — string — custom hero title (empty = default)
+ *   $ch_hero_title        — string — custom hero title (empty = default)
+ *   $ch_ssr_html          — string — server-rendered event cards HTML (SEO)
+ *   $ch_ssr_jsonld        — string — JSON-LD structured data for events
+ *   $ch_ssr_count         — int    — number of server-rendered events
+ *   $ch_ssr_updated_at    — string — formatted last-updated timestamp
  */
 if (!defined('ABSPATH')) exit;
 ?>
@@ -21,8 +25,8 @@ if (!defined('ABSPATH')) exit;
     <h1 class="ch-hero-title"><?php echo esc_html($ch_hero_title ?: 'Every Comedy Show in Houston'); ?></h1>
     <p class="ch-hero-subtitle">Houston Improv, The Riot, Secret Group, Punch Line &amp; more — updated daily</p>
     <div class="ch-hero-meta">
-      <span class="event-count" id="chEventCount">0 shows</span>
-      <span id="chUpdatedAt"></span>
+      <span class="event-count" id="chEventCount"><?php echo (int) $ch_ssr_count; ?> show<?php echo $ch_ssr_count !== 1 ? 's' : ''; ?></span>
+      <span id="chUpdatedAt"><?php if (!empty($ch_ssr_updated_at)) echo 'Updated ' . esc_html($ch_ssr_updated_at); ?></span>
     </div>
   </div>
   <?php endif; ?>
@@ -66,12 +70,24 @@ if (!defined('ABSPATH')) exit;
   </div>
   <?php endif; ?>
 
+  <?php
+  // JSON-LD structured data for Google rich results (Event schema)
+  if (!empty($ch_ssr_jsonld)) {
+      echo $ch_ssr_jsonld;
+  }
+  ?>
+
   <!-- MAIN EVENT LISTINGS -->
   <main class="ch-main" id="chMain">
-    <div class="loading" id="chLoadingState">
-      <div class="spinner"></div>
-      <div class="loading-text">Loading shows...</div>
-    </div>
+    <?php if (!empty($ch_ssr_html)): ?>
+      <?php // Server-rendered events — visible to Googlebot and users before JS loads ?>
+      <?php echo $ch_ssr_html; ?>
+    <?php else: ?>
+      <div class="loading" id="chLoadingState">
+        <div class="spinner"></div>
+        <div class="loading-text">Loading shows...</div>
+      </div>
+    <?php endif; ?>
   </main>
 
   <?php if ($ch_show_footer): ?>

@@ -64,6 +64,10 @@
   });
 
   async function init() {
+    // Check if server-rendered (SSR) content is already in the DOM
+    var main = document.getElementById("chMain");
+    var hasSSR = main && !main.querySelector("#chLoadingState");
+
     try {
       var resp = await fetch(JSON_URL);
       if (resp.ok) {
@@ -80,7 +84,11 @@
     populateVenueFilter();
     applyShortcodeDefaults();
     bindEvents();
-    render();
+
+    // Only re-render if we have fresh data, or if there's no SSR content to preserve
+    if (allEvents.length > 0 || !hasSSR) {
+      render();
+    }
   }
 
   // ================================================================
