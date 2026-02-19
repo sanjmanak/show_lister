@@ -110,6 +110,88 @@
 
     article li { margin-bottom: 8px; }
 
+    .show-card {
+      display: flex;
+      gap: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: border-color var(--transition);
+    }
+
+    .show-card:hover {
+      border-color: #3a3a4f;
+    }
+
+    .show-img {
+      width: 180px;
+      min-width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .show-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .show-info p {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .show-info strong {
+      font-size: 1.1rem;
+    }
+
+    .show-info .blurb {
+      font-style: italic;
+      color: var(--text-secondary);
+      margin-top: 4px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .show-info .details {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .ticket-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 6px 16px;
+      background: var(--accent);
+      color: #fff !important;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background var(--transition);
+    }
+
+    .ticket-link:hover {
+      background: var(--accent-hover);
+      text-decoration: none !important;
+    }
+
+    @media (max-width: 640px) {
+      .show-card {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .show-img {
+        width: 100%;
+        min-width: unset;
+        height: 200px;
+      }
+    }
+
     .footer {
       margin-top: 60px;
       padding-top: 24px;
@@ -136,238 +218,336 @@
 
     <article>
 <h2>Houston Comedy Roundup: February 16 – February 22, 2026</h2>
-
-<p>Houston, get ready for a week packed with laughter! From local legends to nationally touring headliners, there’s something for every comedy fan. Whether you're in the mood for a raunchy late-night show or a cozy Sunday showcase, the Houston comedy scene has you covered. Check out the lineup for the week ahead!</p>
+<p>This week in Houston's comedy scene is packed with laughter and exciting shows! Get ready to catch some well-known names like Aries Spears and Brendan Sagalow, along with emerging talents showcasing their skills. Whether you're in the mood for raunchy laughs or heartwarming stories, there's something for everyone!</p>
 
 <h3>Thursday, February 19, 2026</h3>
-<ul>
-    <li><strong>The Riot Presents Thursday Night Standup Comedy Showcase!</strong> <br>
-        Venue: Rudyard's <br>
-        Time: 7:00 PM <br>
-        Price: $15.89 – $101.97 <br>
-        <a href="https://www.eventbrite.com/e/the-riot-presents-thursday-night-standup-comedy-showcase-tickets-1978451116548">Tickets</a>
-    </li>
-    <li><strong>Dale Jones</strong> <br>
-        Venue: Punch Line Houston <br>
-        Time: 7:30 PM <br>
-        Price: Check link for details <br>
-        <a href="https://www.ticketmaster.com/dale-jones-houston-texas-02-19-2026/event/3A0063720DD5DEF7">Tickets</a>
-    </li>
-    <li><strong>Aries Spears</strong> <br>
-        Venue: Houston Improv <br>
-        Time: 7:30 PM <br>
-        <a href="https://www.ticketweb.com/event/aries-spears-houston-improv-tickets/14716343?REFERRAL_ID=tmfeed">Tickets</a>
-    </li>
-    <li><strong>The Best of TSG Headliner Series - Chad Alexander</strong> <br>
-        Venue: The Secret Group <br>
-        Time: 8:00 PM <br>
-        Price: $18.06 – $21.51 <br>
-        <a href="https://www.eventbrite.com/e/the-best-of-tsg-headliner-series-chad-alexander-tickets-1982630343729">Tickets</a>
-    </li>
-    <li><strong>The Riot Presents Thursday Night Standup Comedy Showcase [Late Show]!</strong> <br>
-        Venue: Rudyard's <br>
-        Time: 9:00 PM <br>
-        Price: $15.89 – $101.97 <br>
-        <a href="https://www.eventbrite.com/e/the-riot-presents-thursday-night-standup-comedy-showcase-late-show-tickets-1980773907077">Tickets</a>
-    </li>
-    <li><strong>Karaoke every THURSDAY!</strong> <br>
-        Venue: The Secret Group <br>
-        Time: 9:00 PM <br>
-        Price: $0 <br>
-        <a href="https://www.eventbrite.com/e/karaoke-every-thursday-tickets-1980909034246">Tickets</a>
-    </li>
-    <li><strong>Back of the Bus Comedy Open Mic</strong> <br>
-        Venue: The Secret Group <br>
-        Time: 9:30 PM <br>
-        Price: $0 <br>
-        <a href="https://www.eventbrite.com/e/back-of-the-bus-comedy-open-mic-tickets-1980909024216">Tickets</a>
-    </li>
-</ul>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F921744943%2F428099579998%2F1%2Foriginal.20241222-184551?auto=format%2Ccompress&q=75&sharp=10&s=652bbd368bcddbe710d9adae8aa12cc1" alt="The Riot Presents Thursday Night Standup Comedy Showcase!" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>The Riot Presents Thursday Night Standup Comedy Showcase!</strong><br>
+        Rudyard's, 7:00 PM<br>
+        Price: $15.89 – $101.97<br>
+        Get ready to laugh your socks off at The Riot Comedy Club - it's gonna be a riot! 6-8 Comedians from Houston and around the country.<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/the-riot-presents-thursday-night-standup-comedy-showcase-tickets-1978451116548">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://s1.ticketm.net/dam/a/86b/cd4bcf11-b18c-4b3d-8ed2-991a6d5fb86b_SOURCE" alt="Dale Jones" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>Dale Jones</strong><br>
+        Punch Line Houston, 7:30 PM<br>
+        This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted.<br>
+        <a class="ticket-link" href="https://www.ticketmaster.com/dale-jones-houston-texas-02-19-2026/event/3A0063720DD5DEF7">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://s1.ticketm.net/dam/a/fe8/f5d847b2-3439-4e8f-8b98-efc6f1cb9fe8_SOURCE" alt="Aries Spears" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>Aries Spears</strong><br>
+        Houston Improv, 7:30 PM<br>
+        You might know Aries Spears from his time on "Mad TV" and his stand-up special "Aries Spears: Hollywood, Look I’m Smiling".<br>
+        <a class="ticket-link" href="https://www.ticketweb.com/event/aries-spears-houston-improv-tickets/14716343?REFERRAL_ID=tmfeed">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176743871%2F3558237521%2F1%2Foriginal.20260205-024409?auto=format%2Ccompress&q=75&sharp=10&s=70e5049026424875ceb7fb9cbafc7ae9" alt="The Best of TSG Headliner Series - Chad Alexander" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>The Best of TSG Headliner Series - Chad Alexander</strong><br>
+        The Secret Group, 8:00 PM<br>
+        Price: $18.06 – $21.51<br>
+        Come catch some of the nation's best up-and-coming comics stretch their legs and perfect their craft every Thursday!<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/the-best-of-tsg-headliner-series-chad-alexander-tickets-1982630343729">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F921744943%2F428099579998%2F1%2Foriginal.20241222-184551?auto=format%2Ccompress&q=75&sharp=10&s=652bbd368bcddbe710d9adae8aa12cc1" alt="The Riot Presents Thursday Night Standup Comedy Showcase [Late Show]!" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>The Riot Presents Thursday Night Standup Comedy Showcase [Late Show]!</strong><br>
+        Rudyard's, 9:00 PM<br>
+        Price: $15.89 – $101.97<br>
+        Get ready to laugh your socks off with another lineup of 6-8 comedians from Houston and beyond!<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/the-riot-presents-thursday-night-standup-comedy-showcase-late-show-tickets-1980773907077">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F668595149%2F284483032458%2F1%2Foriginal.20240105-215425?auto=format%2Ccompress&q=75&sharp=10&s=1046f247676ad74b3dbf29842c73a6f3" alt="Karaoke every THURSDAY!" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>Karaoke every THURSDAY!</strong><br>
+        The Secret Group, 9:00 PM<br>
+        Price: $0<br>
+        An evening of karaoke and cheap drinks!<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/karaoke-every-thursday-tickets-1980909034246">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1175279813%2F65406453537%2F1%2Foriginal.20210519-142609?auto=format%2Ccompress&q=75&sharp=10&s=f37f4e48c17e1d6d758ea59722f16df5" alt="Back of the Bus Comedy Open Mic" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>Back of the Bus Comedy Open Mic</strong><br>
+        The Secret Group, 9:30 PM<br>
+        Price: $0<br>
+        A comedy open mic featuring some of Houston's best comedians!<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/back-of-the-bus-comedy-open-mic-tickets-1980909024216">Get Tickets</a>
+    </div>
+</div>
 
 <h3>Friday, February 20, 2026</h3>
-<ul>
-    <li><strong>The Best of the Secret Group Comedy Showcase 10pm</strong> <br>
-        Venue: The Secret Group <br>
-        Time: 10:00 PM <br>
-        Price: $18.06 – $21.51 <br>
-        <a href="https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-10pm-tickets-1980909058318">Tickets</a>
-    </li>
-    <li><strong>The Riot Comedy Club Presents Friday Night Standup Comedy Late Showcase!</strong> <br>
-        Venue: Rudyard's <br>
-        Time: 11:00 PM <br>
-        Price: $22.13 – $140.65 <br>
-        <a href="https://www.eventbrite.com/e/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-tickets-1978465798462">Tickets</a>
-    </li>
-    <li><strong>The Late Night Dirty Show: X Rated Comedy</strong> <br>
-        Venue: The Secret Group <br>
-        Time: 11:59 PM <br>
-        Price: $8.82 <br>
-        <a href="https://www.eventbrite.com/e/the-late-night-dirty-show-x-rated-comedy-tickets-1980909062330">Tickets</a>
-    </li>
-    <li><strong>David Nihill: Taking Tangents Tour</strong> <br>
-        Venue: Punch Line Houston <br>
-        Time: 7:00 PM <br>
-        <a href="https://www.ticketmaster.com/david-nihill-taking-tangents-tour-houston-texas-02-20-2026/event/3A00632AE0B54A76">Tickets</a>
-    </li>
-    <li><strong>Brendan Sagalow (Don't Tell, Comedy Cellar) Headlines The Riot Comedy Club</strong> <br>
-        Venue: The Riot Comedy Club upstairs at Rudyard's <br>
-        Time: 7:00 PM <br>
-        Price: $28.36 – $190.55 <br>
-        <a href="https://www.eventbrite.com/e/brendan-sagalow-dont-tell-comedy-cellar-headlines-the-riot-comedy-club-tickets-1980492188449">Tickets</a>
-    </li>
-    <li><strong>Aries Spears</strong> <br>
-        Venue: Houston Improv <br>
-        Time: 7:30 PM <br>
-        <a href="https://www.ticketweb.com/event/aries-spears-houston-improv-tickets/14716363?REFERRAL_ID=tmfeed">Tickets</a>
-    </li>
-    <li><strong>All About Comedy Fest: Rickey Smiley & DeRay Davis</strong> <br>
-        Venue: Arena Theatre <br>
-        Time: 8:00 PM <br>
-        <a href="https://www.ticketmaster.com/all-about-comedy-fest-rickey-smiley-houston-texas-02-20-2026/event/3A006366D1C7BE04">Tickets</a>
-    </li>
-    <li><strong>The Best of the Secret Group Comedy Showcase 8pm</strong> <br>
-        Venue: The Secret Group <br>
-        Time: 8:00 PM <br>
-        Price: $18.06 – $21.51 <br>
-        <a href="https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-8pm-tickets-1980909053303">Tickets</a>
-    </li>
-    <li><strong>Orchid Mantis</strong> <br>
-        Venue: The Secret Group <br>
-        Time: 8:00 PM <br>
-        Price: $16.24 – $20.36 <br>
-        <a href="https://www.eventbrite.com/e/orchid-mantis-tickets-1982063260568">Tickets</a>
-    </li>
-    <li><strong>The Riot Presents Friday Night Standup Comedy Showcase</strong> <br>
-        Venue: Rudyard's <br>
-        Time: 9:00 PM <br>
-        Price: $27.12 – $176.83 <br>
-        <a href="https://www.eventbrite.com/e/the-riot-presents-friday-night-standup-comedy-showcase-tickets-1978464486538">Tickets</a>
-    </li>
-    <li><strong>NOTHING MATTERS Emo | Indie | Punk Dance Party</strong> <br>
-        Venue: The Secret Group <br>
-        Time: 9:00 PM <br>
-        Price: $0 <br>
-        <a href="https://www.eventbrite.com/e/nothing-matters-emo-indie-punk-dance-party-tickets-1980909038258">Tickets</a>
-    </li>
-</ul>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1175279903%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=0844307746961868caeb1258ecdd3da7" alt="The Best of the Secret Group Comedy Showcase 10pm" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>The Best of the Secret Group Comedy Showcase 10pm</strong><br>
+        The Secret Group, 10:00 PM<br>
+        Price: $18.06 – $21.51<br>
+        Catch some great local comics in the newly renovated back room of TSG "The Box"!<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-10pm-tickets-1980909058318">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F921815173%2F428099579998%2F1%2Foriginal.20241222-205850?auto=format%2Ccompress&q=75&sharp=10&s=9010f4e0b7824cc18a8e7a787c6354a1" alt="The Riot Comedy Club Presents Friday Night Standup Comedy Late Showcase!" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>The Riot Comedy Club Presents Friday Night Standup Comedy Late Showcase!</strong><br>
+        Rudyard's, 11:00 PM<br>
+        Price: $22.13 – $140.65<br>
+        Catch the wild-card showcase this Friday at The Riot featuring both local and headlining comedians for a late show you won't want to miss!<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-tickets-1978465798462">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F923781843%2F2186820483043%2F1%2Foriginal.20241227-161803?auto=format%2Ccompress&q=75&sharp=10&s=680f9342c7cee46a79ee13f5f9896ffe" alt="The Late Night Dirty Show: X Rated Comedy" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>The Late Night Dirty Show: X Rated Comedy</strong><br>
+        The Secret Group, 11:59 PM<br>
+        Price: $8.82<br>
+        Get ready for a night of raunchy jokes and adult humor at The Late Night Dirty Show: X Rated Comedy LIVE!<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/the-late-night-dirty-show-x-rated-comedy-tickets-1980909062330">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://s1.ticketm.net/dam/a/12a/c806a736-e022-4160-b213-c84e9b28e12a_SOURCE" alt="David Nihill: Taking Tangents Tour" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>David Nihill: Taking Tangents Tour</strong><br>
+        Punch Line Houston, 7:00 PM<br>
+        This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted.<br>
+        <a class="ticket-link" href="https://www.ticketmaster.com/david-nihill-taking-tangents-tour-houston-texas-02-20-2026/event/3A00632AE0B54A76">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1174769018%2F428099579998%2F1%2Foriginal.20260113-195000?auto=format%2Ccompress&q=75&sharp=10&s=07d49c6adfb6e47af800490928dba5c9" alt="Brendan Sagalow (Don't Tell, Comedy Cellar) Headlines The Riot Comedy Club" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>Brendan Sagalow (Don't Tell, Comedy Cellar) Headlines The Riot Comedy Club</strong><br>
+        The Riot Comedy Club upstairs at Rudyard's, 7:00 PM<br>
+        Price: $28.36 – $190.55<br>
+        A fun evening of standup comedy at The Riot with delicious food, a full bar, and comedy from visiting headliner Brendan Sagalow, known for his appearances on "Don't Tell Comedy" and "Comedy Cellar".<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/brendan-sagalow-dont-tell-comedy-cellar-headlines-the-riot-comedy-club-tickets-1980492188449">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://s1.ticketm.net/dam/a/fe8/f5d847b2-3439-4e8f-8b98-efc6f1cb9fe8_SOURCE" alt="Aries Spears" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>Aries Spears</strong><br>
+        Houston Improv, 7:30 PM<br>
+        You might know Aries Spears from his time on "Mad TV" and his stand-up special "Aries Spears: Hollywood, Look I’m Smiling".<br>
+        <a class="ticket-link" href="https://www.ticketweb.com/event/aries-spears-houston-improv-tickets/14716363?REFERRAL_ID=tmfeed">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://s1.ticketm.net/dam/e/e74/8d838467-c674-41ac-9541-98c12feede74_SOURCE" alt="All About Comedy Fest: Rickey Smiley & DeRay Davis" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>All About Comedy Fest: Rickey Smiley & DeRay Davis</strong><br>
+        Arena Theatre, 8:00 PM<br>
+        This event features two heavyweights in comedy, Rickey Smiley and DeRay Davis, who have made a name for themselves in stand-up and television. Don't miss this chance to see them live!<br>
+        <a class="ticket-link" href="https://www.ticketmaster.com/all-about-comedy-fest-rickey-smiley-houston-texas-02-20-2026/event/3A006366D1C7BE04">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1175279883%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=6b0e10da1dc89200d460ef6ca3a4a703" alt="The Best of the Secret Group Comedy Showcase 8pm" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>The Best of the Secret Group Comedy Showcase 8pm</strong><br>
+        The Secret Group, 8:00 PM<br>
+        Price: $18.06 – $21.51<br>
+        Catch some great local comics in the newly renovated back room of TSG "The Box"!<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-8pm-tickets-1980909053303">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176318812%2F3558237521%2F1%2Foriginal.20260131-072322?auto=format%2Ccompress&q=75&sharp=10&s=ce5dd2a2dd9da128d71afe568630e6cf" alt="Orchid Mantis" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>Orchid Mantis</strong><br>
+        The Secret Group, 8:00 PM<br>
+        Price: $16.24 – $20.36<br>
+        Orchid Mantis Live at The Secret Group this Friday night!<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/orchid-mantis-tickets-1982063260568">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F921749563%2F428099579998%2F1%2Foriginal.20241222-185815?auto=format%2Ccompress&q=75&sharp=10&s=e1f9d300df09ea89dbf1204885285c1" alt="The Riot Presents Friday Night Standup Comedy Showcase" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>The Riot Presents Friday Night Standup Comedy Showcase</strong><br>
+        Rudyard's, 9:00 PM<br>
+        Price: $27.12 – $176.83<br>
+        Share drinks and laughs on a Friday night at The Riot featuring both local and headlining comedians for a show you won't want to miss!<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/the-riot-presents-friday-night-standup-comedy-showcase-tickets-1978464486538">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F929405653%2F2186820483043%2F1%2Foriginal.20250107-103040?auto=format%2Ccompress&q=75&sharp=10&s=1d21125375d641476e8f6e5df01af7dc" alt="NOTHING MATTERS Emo | Indie | Punk Dance Party" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>NOTHING MATTERS Emo | Indie | Punk Dance Party</strong><br>
+        The Secret Group, 9:00 PM<br>
+        Price: $0<br>
+        YOUR FAVORITE EMO INDIE AND PUNK JAMZ ALL NIGHT LONG, COME PARTY! CHEAP DRINKS!<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/nothing-matters-emo-indie-punk-dance-party-tickets-1980909038258">Get Tickets</a>
+    </div>
+</div>
 
 <h3>Saturday, February 21, 2026</h3>
-<ul>
-    <li><strong>The Riot Comedy Club Presents Saturday Night Standup Comedy Late Show!</strong> <br>
-        Venue: Rudyard's <br>
-        Time: 11:00 PM <br>
-        Price: $22.13 – $140.65 <br>
-        <a href="https://www.eventbrite.com/e/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-tickets-1978469092314">Tickets</a>
-    </li>
-    <li><strong>The Best of the Secret Group RATED R Comedy Showcase 11pm</strong> <br>
-        Venue: The Secret Group <br>
-        Time: 11:00 PM <br>
-        Price: $11.13 – $14.59 <br>
-        <a href="https://www.eventbrite.com/e/the-best-of-the-secret-group-rated-r-comedy-showcase-11pm-tickets-1980909083393">Tickets</a>
-    </li>
-    <li><strong>SPEEDBALL: Comedy Open Mic</strong> <br>
-        Venue: The Secret Group <br>
-        Time: 11:59 PM <br>
-        Price: $0 <br>
-        <a href="https://www.eventbrite.com/e/speedball-comedy-open-mic-tickets-1980909091417">Tickets</a>
-    </li>
-    <li><strong>Aries Spears</strong> <br>
-        Venue: Houston Improv <br>
-        Time: 4:30 PM <br>
-        <a href="https://www.ticketweb.com/event/aries-spears-houston-improv-tickets/14176464?REFERRAL_ID=tmfeed">Tickets</a>
-    </li>
-    <li><strong>David Nihill: Taking Tangents Tour</strong> <br>
-        Venue: Punch Line Houston <br>
-        Time: 7:00 PM <br>
-        <a href="https://www.ticketmaster.com/david-nihill-taking-tangents-tour-houston-texas-02-21-2026/event/3A00632AE0BA4A84">Tickets</a>
-    </li>
-    <li><strong>The Riot Comedy Club Presents Brendan Sagalow (Don't Tell, Comedy Cellar)</strong> <br>
-        Venue: The Riot Comedy Club upstairs at Rudyard's <br>
-        Time: 7:00 PM <br>
-        Price: $28.36 – $190.55 <br>
-        <a href="https://www.eventbrite.com/e/the-riot-comedy-club-presents-brendan-sagalow-dont-tell-comedy-cellar-tickets-1980492511415">Tickets</a>
-    </li>
-    <li><strong>Left to Suffer: Eternal Suffering Tour</strong> <br>
-        Venue: The Secret Group <br>
-        Time: 7:00 PM <br>
-        <a href="https://www.eventbrite.com/e/left-to-suffer-eternal-suffering-tour-tickets-1789888447529">Tickets</a>
-    </li>
-    <li><strong>The Best of the Secret Group Comedy Showcase 7pm</strong> <br>
-        Venue: The Secret Group <br>
-        Time: 7:00 PM <br>
-        Price: $18.06 – $21.51 <br>
-        <a href="https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-7pm-tickets-1980909074366">Tickets</a>
-    </li>
-    <li><strong>Gary Owen</strong> <br>
-        Venue: Smart Financial Centre at Sugar Land <br>
-        Time: 8:00 PM <br>
-        <a href="https://www.ticketmaster.com/event/Z7r9jZ1A7r9f4">Tickets</a>
-    </li>
-    <li><strong>The Riot Presents Saturday Night Standup Comedy Showcase</strong> <br>
-        Venue: Rudyard's <br>
-        Time: 9:00 PM <br>
-        Price: $27.12 – $164.36 <br>
-        <a href="https://www.eventbrite.com/e/the-riot-presents-saturday-night-standup-comedy-showcase-tickets-1978468379181">Tickets</a>
-    </li>
-    <li><strong>DIAL UP: 90s & Y2K Dance Party!</strong> <br>
-        Venue: The Secret Group <br>
-        Time: 9:00 PM <br>
-        Price: $0 <br>
-        <a href="https://www.eventbrite.com/e/dial-up-90s-y2k-dance-party-tickets-1980909070354">Tickets</a>
-    </li>
-    <li><strong>The Best of the Secret Group Comedy Showcase 9pm</strong> <br>
-        Venue: The Secret Group <br>
-        Time: 9:00 PM <br>
-        Price: $18.06 – $21.51 <br>
-        <a href="https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-9pm-tickets-1980909080384">Tickets</a>
-    </li>
-</ul>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F889261973%2F428099579998%2F1%2Foriginal.20241031-215306?auto=format%2Ccompress&q=75&sharp=10&s=077a0da259a2aa60945937bbb8445ef4" alt="The Riot Comedy Club Presents Saturday Night Standup Comedy Late Show!" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>The Riot Comedy Club Presents Saturday Night Standup Comedy Late Show!</strong><br>
+        Rudyard's, 11:00 PM<br>
+        Price: $22.13 – $140.65<br>
+        Catch the wild-card showcase this Saturday at The Riot featuring both local and headlining comedians for a late show you won't want to miss!<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-tickets-1978469092314">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1175280019%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=7f97d9aa3f960a370d0e95e19cb080da" alt="The Best of the Secret Group RATED R Comedy Showcase 11pm" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>The Best of the Secret Group RATED R Comedy Showcase 11pm</strong><br>
+        The Secret Group, 11:00 PM<br>
+        Price: $11.13 – $14.59<br>
+        Catch some great local comics in the newly renovated back room of TSG "The Box"!<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/the-best-of-the-secret-group-rated-r-comedy-showcase-11pm-tickets-1980909083393">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1065628803%2F3558237521%2F1%2Foriginal.20250703-001512?auto=format%2Ccompress&q=75&sharp=10&s=61b8871824c7fc4b25eb3b46b0c8c63e" alt="SPEEDBALL: Comedy Open Mic" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>SPEEDBALL: Comedy Open Mic</strong><br>
+        The Secret Group, 11:59 PM<br>
+        Price: $0<br>
+        Speedball open mic is back, Saturdays at 11:59 for some quick, raw, and unfiltered comedy!<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/speedball-comedy-open-mic-tickets-1980909091417">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://s1.ticketm.net/dam/a/fe8/f5d847b2-3439-4e8f-8b98-efc6f1cb9fe8_SOURCE" alt="Aries Spears" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>Aries Spears</strong><br>
+        Houston Improv, 4:30 PM<br>
+        You might know Aries Spears from his time on "Mad TV" and his stand-up special "Aries Spears: Hollywood, Look I’m Smiling".<br>
+        <a class="ticket-link" href="https://www.ticketweb.com/event/aries-spears-houston-improv-tickets/14176464?REFERRAL_ID=tmfeed">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://s1.ticketm.net/dam/a/12a/c806a736-e022-4160-b213-c84e9b28e12a_SOURCE" alt="David Nihill: Taking Tangents Tour" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>David Nihill: Taking Tangents Tour</strong><br>
+        Punch Line Houston, 7:00 PM<br>
+        This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted.<br>
+        <a class="ticket-link" href="https://www.ticketmaster.com/david-nihill-taking-tangents-tour-houston-texas-02-21-2026/event/3A00632AE0BA4A84">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1174769018%2F428099579998%2F1%2Foriginal.20260113-195000?auto=format%2Ccompress&q=75&sharp=10&s=07d49c6adfb6e47af800490928dba5c9" alt="The Riot Comedy Club Presents Brendan Sagalow (Don't Tell, Comedy Cellar)" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>The Riot Comedy Club Presents Brendan Sagalow (Don't Tell, Comedy Cellar)</strong><br>
+        The Riot Comedy Club upstairs at Rudyard's, 7:00 PM<br>
+        Price: $28.36 – $190.55<br>
+        A fun evening of standup comedy at The Riot with tasty food, full bar, and comedy from visiting headliner Brendan Sagalow!<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/the-riot-comedy-club-presents-brendan-sagalow-dont-tell-comedy-cellar-tickets-1980492511415">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1148420683%2F3558237521%2F1%2Foriginal.20251008-220321?auto=format%2Ccompress&q=75&sharp=10&s=063bab734146ad89e9ab0a28014b56f4" alt="Left to Suffer: Eternal Suffering Tour" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>Left to Suffer: Eternal Suffering Tour</strong><br>
+        The Secret Group, 7:00 PM<br>
+        Join Left to Suffer for their Eternal Suffering Tour with Larcenia Roe &  Fr3ak.<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/left-to-suffer-eternal-suffering-tour-tickets-1789888447529">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1175279973%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=839ce2d857a9459e97eec7311ebf5df7" alt="The Best of the Secret Group Comedy Showcase 7pm" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>The Best of the Secret Group Comedy Showcase 7pm</strong><br>
+        The Secret Group, 7:00 PM<br>
+        Price: $18.06 – $21.51<br>
+        Catch some great local comics in the newly renovated back room of TSG "The Box"!<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-7pm-tickets-1980909074366">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://s1.ticketm.net/dam/a/abf/6eb4a789-e1f0-4d3c-aa1e-fca35eff7abf_SOURCE" alt="Gary Owen" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>Gary Owen</strong><br>
+        Smart Financial Centre at Sugar Land, 8:00 PM<br>
+        Gary Owen is a hilarious comedian and actor known for his roles in "Think Like a Man" and "Ride Along," and his stand-up specials.<br>
+        <a class="ticket-link" href="https://www.ticketmaster.com/event/Z7r9jZ1A7r9f4">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F889003873%2F428099579998%2F1%2Foriginal.20241031-163451?auto=format%2Ccompress&q=75&sharp=10&s=649f6c6c01da33aff4a43b1fa3102060" alt="The Riot Presents Saturday Night Standup Comedy Showcase" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>The Riot Presents Saturday Night Standup Comedy Showcase</strong><br>
+        Rudyard's, 9:00 PM<br>
+        Price: $27.12 – $164.36<br>
+        Share drinks and laughs on a Saturday night at The Riot featuring local and nationally touring comedians for a show you won't want to miss!<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/the-riot-presents-saturday-night-standup-comedy-showcase-tickets-1978468379181">Get Tickets</a>
+    </div>
+</div>
 
 <h3>Sunday, February 22, 2026</h3>
-<ul>
-    <li><strong>COMEDY DOJO: Sunday Open Mic Comedy</strong> <br>
-        Venue: The Secret Group <br>
-        Time: 11:00 PM <br>
-        Price: $0 <br>
-        <a href="https://www.eventbrite.com/e/comedy-dojo-sunday-open-mic-comedy-tickets-1982630166198">Tickets</a>
-    </li>
-    <li><strong>The Riot Presents "Houston's Funniest" Comedy Showcase</strong> <br>
-        Venue: Rudyard's <br>
-        Time: 6:00 PM <br>
-        Price: $15.89 – $101.97 <br>
-        <a href="https://www.eventbrite.com/e/the-riot-presents-houstons-funniest-comedy-showcase-tickets-1978471199617">Tickets</a>
-    </li>
-    <li><strong>Matt Kirshen</strong> <br>
-        Venue: Punch Line Houston <br>
-        Time: 7:00 PM <br>
-        <a href="https://www.ticketmaster.com/matt-kirshen-houston-texas-02-22-2026/event/3A00636B3870B6BE">Tickets</a>
-    </li>
-    <li><strong>The Last Laugh with Shane Tucker & Trip Truman</strong> <br>
-        Venue: The Secret Group <br>
-        Time: 7:00 PM <br>
-        Price: $8.82 <br>
-        <a href="https://www.eventbrite.com/e/the-last-laugh-with-shane-tucker-trip-truman-tickets-1982630160180">Tickets</a>
-    </li>
-    <li><strong>Aries Spears</strong> <br>
-        Venue: Houston Improv <br>
-        Time: 7:30 PM <br>
-        <a href="https://www.ticketweb.com/event/aries-spears-houston-improv-tickets/14716383?REFERRAL_ID=tmfeed">Tickets</a>
-    </li>
-    <li><strong>The Riot Comedy Club Presents Sunday Night Standup Comedy Showcase</strong> <br>
-        Venue: Rudyard's <br>
-        Time: 8:00 PM <br>
-        Price: $15.89 – $96.98 <br>
-        <a href="https://www.eventbrite.com/e/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-tickets-1978472000011">Tickets</a>
-    </li>
-    <li><strong>The (secret) Secret Show</strong> <br>
-        Venue: The Secret Group <br>
-        Time: 9:00 PM <br>
-        Price: $14.59 <br>
-        <a href="https://www.eventbrite.com/e/the-secret-secret-show-tickets-1982630163189">Tickets</a>
-    </li>
-</ul>
-
-<p>This week promises an exciting array of comedy shows in Houston! Be sure to grab your tickets early to secure your spot, as many of these shows will sell out fast. Get ready to laugh your heart out!</p>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1076822873%2F428099579998%2F1%2Foriginal.20250719-012422?auto=format%2Ccompress&q=75&sharp=10&s=bfbde5693f20c2ed6b0f605eafbbbf5d" alt="The Riot Comedy Club Presents Sunday Night Standup Comedy Showcase" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>The Riot Comedy Club Presents Sunday Night Standup Comedy Showcase</strong><br>
+        Rudyard's, 8:00 PM<br>
+        Price: $15.89 – $96.98<br>
+        Come join The Riot for this Sunday lineup that features local favorite comedians with cold drinks, tasty food, and a chill vibe.<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-tickets-1978472000011">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://s1.ticketm.net/dam/a/6d7/cf34110d-4f5f-4c8a-99f1-72724b6496d7_SOURCE" alt="Matt Kirshen" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>Matt Kirshen</strong><br>
+        Punch Line Houston, 7:00 PM<br>
+        This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted.<br>
+        <a class="ticket-link" href="https://www.ticketmaster.com/matt-kirshen-houston-texas-02-22-2026/event/3A00636B3870B6BE">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1100995563%2F3558237521%2F1%2Foriginal.20250820-192844?auto=format%2Ccompress&q=75&sharp=10&s=3c339be9ad6e32174392d290eea45139" alt="The Last Laugh with Shane Tucker & Trip Truman" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>The Last Laugh with Shane Tucker & Trip Truman</strong><br>
+        The Secret Group, 7:00 PM<br>
+        Price: $8.82<br>
+        A Sunday Comedy showcase hosted by Shane Tucker and Trip Truman Sponsored by 8th Wonder Brewery.<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/the-last-laugh-with-shane-tucker-trip-truman-tickets-1982630160180">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://s1.ticketm.net/dam/a/fe8/f5d847b2-3439-4e8f-8b98-efc6f1cb9fe8_SOURCE" alt="Aries Spears" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>Aries Spears</strong><br>
+        Houston Improv, 7:30 PM<br>
+        You might know Aries Spears from his time on "Mad TV" and his stand-up special "Aries Spears: Hollywood, Look I’m Smiling".<br>
+        <a class="ticket-link" href="https://www.ticketweb.com/event/aries-spears-houston-improv-tickets/14716383?REFERRAL_ID=tmfeed">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F924695553%2F428099579998%2F1%2Foriginal.20241230-012109?auto=format%2Ccompress&q=75&sharp=10&s=eb1d7dc1df4a82a06dd93deea39ba2c1" alt="The Riot Presents 'Houston's Funniest' Comedy Showcase" class="show-img" loading="lazy">
+    <div class="show-info">
+        <strong>The Riot Presents "Houston's Funniest" Comedy Showcase</strong><br>
+        Rudyard's, 6:00 PM<br>
+        Price: $15.89 – $101.97<br>
+        Come join The Riot for this Sunday lineup that features some of the best comedians in Houston headlining!<br>
+        <a class="ticket-link" href="https://www.eventbrite.com/e/the-riot-presents-houstons-funniest-comedy-showcase-tickets-1978471199617">Get Tickets</a>
+    </div>
+</div>
+<div class="show-card">
+    <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F929419643%2F2186820483043%2
     </article>
 
     <div class="meta" style="margin-top: 24px;">
