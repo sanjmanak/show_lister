@@ -108,7 +108,7 @@ function callOpenAI(prompt, systemPrompt) {
         { role: "user", content: prompt },
       ],
       temperature: 0.7,
-      max_tokens: 4000,
+      max_tokens: 8000,
     });
 
     const options = {
@@ -157,10 +157,11 @@ function callOpenAI(prompt, systemPrompt) {
 
 function buildPrompt(events, weekRange) {
   const eventList = events
-    .map((ev) => {
-      const parts = [`- **${ev.name}**`];
+    .map((ev, idx) => {
+      const parts = [`- **${ev.name}** [EVENT_ID: ${idx}]`];
       parts.push(`  Venue: ${ev.venue}`);
       parts.push(`  Date: ${formatDateForDisplay(ev.date)}`);
+      if (ev.day_of_week) parts.push(`  Day: ${ev.day_of_week}`);
       if (ev.time) parts.push(`  Time: ${ev.time}`);
       if (ev.price_min !== null) {
         const price =
@@ -171,12 +172,13 @@ function buildPrompt(events, weekRange) {
       }
       if (ev.description) {
         const desc =
-          ev.description.length > 200
-            ? ev.description.slice(0, 200) + "..."
+          ev.description.length > 300
+            ? ev.description.slice(0, 300) + "..."
             : ev.description;
         parts.push(`  Description: ${desc}`);
       }
       if (ev.ticket_url) parts.push(`  Tickets: ${ev.ticket_url}`);
+      if (ev.image_url) parts.push(`  Image: ${ev.image_url}`);
       return parts.join("\n");
     })
     .join("\n\n");
@@ -188,19 +190,45 @@ Here are the ${events.length} events happening this week:
 ${eventList}
 
 Requirements:
-- Write in a fun, engaging, conversational tone that makes people excited to go out and laugh
-- Group events by day of the week (Monday, Tuesday, etc.)
-- For each event, mention the show name, venue, time, and price if available
-- Include ticket links as hyperlinks where available
-- If there are notable headliners or special events, highlight them
-- Start with a brief intro paragraph about the Houston comedy scene this week
-- End with a short outro encouraging people to get tickets early
+
+COMEDIAN RECOGNITION (this is the most important part):
+- For each event, look at the comedian/show name and use your knowledge to figure out who the most well-known comedians are
+- For well-known comedians, write a personal 1-2 sentence blurb: mention what they're known for — TV shows they've been on, Netflix specials, podcast appearances, viral moments, comedy albums, etc. For example: "You might know Ari Shaffir from his Netflix series 'This Is Not Happening' or his podcast 'Skeptic Tank'" or "DeRay Davis has been everywhere — 'Wild 'N Out', 'Empire', and multiple Comedy Central specials"
+- If you genuinely don't recognize a comedian or can't confidently say what they're known for, that's totally fine — just present the show details without a personal blurb. Don't make things up
+- For open mic nights, showcases, or multi-act shows (not headliner-driven), just describe the vibe of the event instead
+
+IMAGES:
+- For EVERY event that has an Image URL listed above, you MUST embed it using this exact HTML structure:
+  <div class="show-card">
+    <img src="THE_IMAGE_URL" alt="EVENT NAME" class="show-img" loading="lazy">
+    <div class="show-info">
+      ...show details here...
+    </div>
+  </div>
+- For events without an image, use the same structure but skip the <img> tag
+- The image and show info should appear side-by-side (the CSS handles this)
+
+STRUCTURE:
+- Group events by day of the week (Monday, Tuesday, etc.) — only include days that have events
+- Use <h2> for the blog post title
+- Use <h3> for each day heading (e.g., "Thursday" or "Friday Night")
+- Within each day, use a <div class="show-card"> for each event
+- For each event include: show name (bold), venue, time, price, the personal blurb if applicable, and a "Get Tickets" link
+- Start with a brief intro paragraph highlighting the biggest names or can't-miss shows of the week
+- End with a short outro encouraging people to grab tickets
+
+FORMAT:
 - Output ONLY the blog post content in HTML (just the article body — no <html>, <head>, or <body> tags)
-- Use semantic HTML: <h2> for the title, <h3> for day headings, <p> for paragraphs, <a> for links
-- Keep it concise but informative — aim for a 2-3 minute read`;
+- Use semantic HTML: <h2>, <h3>, <p>, <a>, <strong>
+- Wrap ticket links in <a class="ticket-link" href="URL">Get Tickets</a>
+- Keep it conversational, fun, and informative — like a friend who knows the comedy scene texting you recommendations`;
 }
 
-const SYSTEM_PROMPT = `You are a Houston comedy scene blogger. You write weekly roundup posts for ComedyHouston.com that help locals find the best comedy shows each week. Your tone is enthusiastic but not over-the-top, knowledgeable about the Houston comedy scene and its venues (Houston Improv, The Riot, The Secret Group, etc.), and practical — you always include dates, times, prices, and ticket links so readers can take action. You write in clean, semantic HTML.`;
+const SYSTEM_PROMPT = `You are a Houston comedy scene blogger and comedy nerd. You write weekly roundup posts for ComedyHouston.com. You have deep knowledge of the comedy world — you know which comedians have been on TV shows, who has Netflix specials, who's been on Joe Rogan or Kill Tony, who came up through Last Comic Standing, etc.
+
+Your job is to look at each comedian's name and use your genuine knowledge to write a personal, knowledgeable blurb. If you recognize the comedian, mention specific credits (TV shows, specials, podcasts, movies). If you don't recognize them, just describe the event without fabricating credits.
+
+Your tone is enthusiastic but authentic — like a friend who actually follows comedy telling you what's happening this week. You always include practical details (day, time, venue, price, ticket links) and embed the event images when provided. You write in clean, semantic HTML using the CSS classes specified in the prompt.`;
 
 // ---------------------------------------------------------------------------
 // HTML template
@@ -318,6 +346,88 @@ function wrapInHTML(blogContent, weekRange, generatedAt) {
     }
 
     article li { margin-bottom: 8px; }
+
+    .show-card {
+      display: flex;
+      gap: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: border-color var(--transition);
+    }
+
+    .show-card:hover {
+      border-color: #3a3a4f;
+    }
+
+    .show-img {
+      width: 180px;
+      min-width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .show-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .show-info p {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .show-info strong {
+      font-size: 1.1rem;
+    }
+
+    .show-info .blurb {
+      font-style: italic;
+      color: var(--text-secondary);
+      margin-top: 4px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .show-info .details {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .ticket-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 6px 16px;
+      background: var(--accent);
+      color: #fff !important;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background var(--transition);
+    }
+
+    .ticket-link:hover {
+      background: var(--accent-hover);
+      text-decoration: none !important;
+    }
+
+    @media (max-width: 640px) {
+      .show-card {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .show-img {
+        width: 100%;
+        min-width: unset;
+        height: 200px;
+      }
+    }
 
     .footer {
       margin-top: 60px;
