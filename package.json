@@ -4,6 +4,7 @@
   "description": "Automated comedy event aggregator for Houston — pulls from Ticketmaster and Eventbrite",
   "private": true,
   "scripts": {
-    "fetch": "node scripts/fetch-events.js"
+    "fetch": "node scripts/fetch-events.js",
+    "blog": "node scripts/generate-blog-post.js"
   }
 }
