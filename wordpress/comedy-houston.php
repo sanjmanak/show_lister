@@ -349,13 +349,20 @@ class Comedy_Houston_Plugin {
         $filtered = [];
         foreach ($events as $ev) {
             $date = $ev['date'] ?? '';
-            if (empty($date) || $date < $today) continue;
+            if (empty($date)) continue;
             if (($ev['status'] ?? '') === 'cancelled') continue;
             if ($date > $max_date) continue;
 
+            // For weekend filter, allow past dates within the weekend window (Fri/Sat/Sun)
+            // so a Sunday visitor still sees Friday & Saturday shows in "this weekend"
+            if ($filter === 'weekend') {
+                if ($date !== $fri_date && $date !== $sat_date && $date !== $sun_date) continue;
+            } else {
+                if ($date < $today) continue;
+            }
+
             if ($filter === 'today' && $date !== $today) continue;
             if ($filter === 'tomorrow' && $date !== $tomorrow) continue;
-            if ($filter === 'weekend' && $date !== $fri_date && $date !== $sat_date && $date !== $sun_date) continue;
             if ($filter === 'week' && $date > $end_of_week) continue;
             if ($filter === 'month' && $date > $end_of_month) continue;
 
