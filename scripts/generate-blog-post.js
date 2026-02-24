@@ -16,11 +16,13 @@ const path = require("path");
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || "";
 const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-4o-mini";
+const IMAGE_MODEL = process.env.OPENAI_IMAGE_MODEL || "dall-e-3";
 
 const OUTPUT_DIR = path.resolve(__dirname, "..");
 const EVENTS_JSON_PATH = path.join(OUTPUT_DIR, "events.json");
 const BLOG_DIR = path.join(OUTPUT_DIR, "blog");
 const BLOG_HTML_PATH = path.join(BLOG_DIR, "index.html");
+const BLOG_IMAGE_PATH = path.join(BLOG_DIR, "weekly-hero.png");
 
 // ---------------------------------------------------------------------------
 // Date helpers
@@ -152,6 +154,108 @@ function callOpenAI(prompt, systemPrompt) {
 }
 
 // ---------------------------------------------------------------------------
+// Identify top comedians via OpenAI
+// ---------------------------------------------------------------------------
+
+function identifyTopComedians(events) {
+  const eventNames = events
+    .filter((ev) => {
+      const name = ev.name.toLowerCase();
+      // Skip open mics, showcases, karaoke, and generic recurring events
+      return (
+        !name.includes("open mic") &&
+        !name.includes("showcase") &&
+        !name.includes("karaoke") &&
+        !name.includes("showdown") &&
+        !name.includes("dating")
+      );
+    })
+    .map((ev) => ev.name);
+
+  // Deduplicate names (same comedian may have multiple dates)
+  const unique = [...new Set(eventNames)];
+
+  const prompt = `Here is a list of comedy show names happening in Houston this week. Pick the top 5 that feature the most well-known, nationally recognized comedians. Only pick comedians you genuinely know are famous (Netflix specials, TV appearances, major podcasts, sold-out tours, etc.). If there are fewer than 5 recognizable names, only return however many you're confident about (minimum 0).
+
+Shows:
+${unique.map((n) => `- ${n}`).join("\n")}
+
+Return ONLY a JSON array of objects with "name" (the comedian's name, not the event title) and "show" (the event title exactly as listed). Example:
+[{"name": "Ali Siddiq", "show": "Ali Siddiq"}, {"name": "Greg Fitzsimmons", "show": "Greg Fitzsimmons"}]
+
+Return ONLY the JSON array, no other text.`;
+
+  return callOpenAI(prompt, "You are a comedy expert. Return only valid JSON.");
+}
+
+// ---------------------------------------------------------------------------
+// DALL-E image generation
+// ---------------------------------------------------------------------------
+
+function generateHeroImage(comedianNames, weekRange) {
+  return new Promise((resolve, reject) => {
+    // Build a clean text list for the image
+    const nameList = comedianNames.slice(0, 5);
+
+    const imagePrompt = `Create a clean, modern promotional graphic for a weekly comedy roundup. The image should be a square (1024x1024) with a blue and white color palette.
+
+Design requirements:
+- Background: Deep navy blue (#1a3a5c) with subtle gradient or geometric pattern
+- Text color: White and light blue
+- At the top: "THIS WEEK IN HOUSTON COMEDY" in bold white text
+- In the center, list these comedian/show names, each on its own line in large, clear white text:
+${nameList.map((n, i) => `  ${i + 1}. ${n}`).join("\n")}
+- At the bottom: "${weekRange}" in smaller light blue text
+- Style: Clean typography-focused design, no photographs, no clip art, no cartoon faces
+- The text should be clearly legible and well-spaced
+- Feel free to add subtle decorative elements like thin lines, a microphone icon, or stars in the blue/white palette`;
+
+    const body = JSON.stringify({
+      model: IMAGE_MODEL,
+      prompt: imagePrompt,
+      n: 1,
+      size: "1024x1024",
+      response_format: "b64_json",
+    });
+
+    const options = {
+      hostname: "api.openai.com",
+      path: "/v1/images/generations",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${OPENAI_API_KEY}`,
+        "Content-Length": Buffer.byteLength(body),
+      },
+    };
+
+    const req = https.request(options, (res) => {
+      let data = "";
+      res.on("data", (chunk) => (data += chunk));
+      res.on("end", () => {
+        if (res.statusCode >= 400) {
+          return reject(
+            new Error(`DALL-E API error ${res.statusCode}: ${data.slice(0, 500)}`)
+          );
+        }
+        try {
+          const parsed = JSON.parse(data);
+          const b64 = parsed.data[0].b64_json;
+          const buffer = Buffer.from(b64, "base64");
+          resolve(buffer);
+        } catch (e) {
+          reject(new Error(`Failed to parse DALL-E response: ${e.message}`));
+        }
+      });
+    });
+
+    req.on("error", (err) => reject(err));
+    req.write(body);
+    req.end();
+  });
+}
+
+// ---------------------------------------------------------------------------
 // Build the prompt
 // ---------------------------------------------------------------------------
 
@@ -191,11 +295,28 @@ ${eventList}
 
 Requirements:
 
-COMEDIAN RECOGNITION (this is the most important part):
-- For each event, look at the comedian/show name and use your knowledge to figure out who the most well-known comedians are
-- For well-known comedians, write a personal 1-2 sentence blurb: mention what they're known for — TV shows they've been on, Netflix specials, podcast appearances, viral moments, comedy albums, etc. For example: "You might know Ari Shaffir from his Netflix series 'This Is Not Happening' or his podcast 'Skeptic Tank'" or "DeRay Davis has been everywhere — 'Wild 'N Out', 'Empire', and multiple Comedy Central specials"
-- If you genuinely don't recognize a comedian or can't confidently say what they're known for, that's totally fine — just present the show details without a personal blurb. Don't make things up
-- For open mic nights, showcases, or multi-act shows (not headliner-driven), just describe the vibe of the event instead
+COMEDIAN DEEP DIVES (this is the MOST IMPORTANT part — this is what makes this blog post worth reading):
+
+You MUST identify the most well-known, nationally recognized comedians performing this week and write a DETAILED two-sentence blurb for each one. These blurbs are the heart of the blog post.
+
+Rules for the blurbs:
+- Pick between 2 and 4 comedians you GENUINELY RECOGNIZE as having a notable presence (Netflix specials, HBO specials, Comedy Central specials, late night TV appearances, major podcasts like Joe Rogan / Kill Tony / Tigerbelly, viral clips, sitcom roles, movies, comedy albums, tours, etc.)
+- For EACH one, write EXACTLY two sentences that are specific and personal:
+  - Sentence 1: What they're specifically known for — name the ACTUAL special titles, show names, podcast names, movie titles, etc. Be concrete. Not "known for his relatable humor" but "broke out with his Netflix hour 'The Domino Effect' and his legendary storytelling segments on 'This Is Not Happening'"
+  - Sentence 2: What the audience can expect at the live show — their style, energy, what makes their live performance different or special. For example: "His live sets are marathon storytelling sessions that feel like sitting around a campfire with the funniest person you've ever met — raw, unpredictable, and impossible to look away from."
+- Write these blurbs using a <p class="blurb"> tag inside the show-info div
+- If a comedian appears multiple times in the week (e.g., Thursday + Friday + Saturday), write the full blurb ONLY on their first appearance. For subsequent dates, write one sentence like "Another chance to catch [Name] — see Thursday's listing for why you don't want to miss this."
+- If you DON'T genuinely recognize a comedian, DO NOT write a blurb. Do NOT fabricate credits. Just present the event details. Silence is better than filler.
+- For open mic nights, showcases, karaoke, or multi-act variety shows — write one sentence about the vibe/format of the event instead of comedian blurbs.
+
+MINIMUM OUTPUT: At least 2 comedians with 2-sentence blurbs (4 sentences total across the post).
+MAXIMUM OUTPUT: No more than 4 comedians with 2-sentence blurbs (8 sentences total).
+If there genuinely are fewer than 2 recognizable names this week, that's OK — just say so in the intro.
+
+INTRO PARAGRAPH:
+- Open with an engaging 2-3 sentence intro that specifically names the biggest acts of the week and why they're a big deal
+- Don't be generic ("Houston is bursting with laughs!"). Instead: "Ali Siddiq brings his raw prison-to-stage storytelling to the Improv this week, and if you haven't seen Greg Fitzsimmons' razor-sharp crowd work, Friday at Punch Line is your shot."
+- Set the tone like you're texting a friend who asked "what's good in comedy this week?"
 
 IMAGES:
 - For EVERY event that has an Image URL listed above, you MUST embed it using this exact HTML structure:
@@ -213,28 +334,43 @@ STRUCTURE:
 - Use <h2> for the blog post title
 - Use <h3> for each day heading (e.g., "Thursday" or "Friday Night")
 - Within each day, use a <div class="show-card"> for each event
-- For each event include: show name (bold), venue, time, price, the personal blurb if applicable, and a "Get Tickets" link
-- Start with a brief intro paragraph highlighting the biggest names or can't-miss shows of the week
-- End with a short outro encouraging people to grab tickets
+- For each event's show-info div, include: show name in <strong>, venue, time, price (each on a line with <br>), the <p class="blurb"> if applicable, and a "Get Tickets" link
+- End with a short 1-2 sentence outro encouraging people to grab tickets early, mentioning which shows are most likely to sell out
 
 FORMAT:
 - Output ONLY the blog post content in HTML (just the article body — no <html>, <head>, or <body> tags)
 - Use semantic HTML: <h2>, <h3>, <p>, <a>, <strong>
 - Wrap ticket links in <a class="ticket-link" href="URL">Get Tickets</a>
-- Keep it conversational, fun, and informative — like a friend who knows the comedy scene texting you recommendations`;
+- Comedian blurbs go in <p class="blurb"> tags
+- Keep it conversational and knowledgeable — you're a comedy nerd who actually follows these comedians, not a marketing intern generating copy`;
 }
 
-const SYSTEM_PROMPT = `You are a Houston comedy scene blogger and comedy nerd. You write weekly roundup posts for ComedyHouston.com. You have deep knowledge of the comedy world — you know which comedians have been on TV shows, who has Netflix specials, who's been on Joe Rogan or Kill Tony, who came up through Last Comic Standing, etc.
+const SYSTEM_PROMPT = `You are a Houston comedy scene blogger who ACTUALLY follows stand-up comedy closely. You write the weekly roundup for ComedyHouston.com. You have deep, specific knowledge of the comedy world:
 
-Your job is to look at each comedian's name and use your genuine knowledge to write a personal, knowledgeable blurb. If you recognize the comedian, mention specific credits (TV shows, specials, podcasts, movies). If you don't recognize them, just describe the event without fabricating credits.
+- You know specific Netflix/HBO/Comedy Central special TITLES (not just "they have a special")
+- You know which podcasts comedians host or have appeared on (Joe Rogan, Kill Tony, Tigerbelly, Your Mom's House, WTF with Marc Maron, etc.)
+- You know breakout moments: Last Comic Standing seasons, Comedy Central roasts, viral clips, late night sets
+- You know comedians' STYLES: storytelling vs. one-liners vs. crowd work vs. observational vs. dark humor
 
-Your tone is enthusiastic but authentic — like a friend who actually follows comedy telling you what's happening this week. You always include practical details (day, time, venue, price, ticket links) and embed the event images when provided. You write in clean, semantic HTML using the CSS classes specified in the prompt.`;
+CRITICAL RULES:
+1. When you write a blurb about a comedian, you MUST include at least one SPECIFIC, VERIFIABLE credit (a named special, a named show, a named podcast). "Known for his hilarious style" is BANNED. "Known for his Netflix hour 'The Domino Effect'" is correct.
+2. If you cannot name a specific credit for a comedian, DO NOT write a blurb. Just list the event details.
+3. Never describe a comedian as "a rising star" or "up-and-coming" or "known for relatable humor" — these are empty filler phrases. Either you know specific things about them or you stay silent.
+4. Write like you're texting a friend, not writing marketing copy. No exclamation points in every sentence. Be genuine.
+
+You write in clean, semantic HTML using the CSS classes specified in the prompt. You always include practical details (day, time, venue, price, ticket links) and embed event images when provided.`;
 
 // ---------------------------------------------------------------------------
 // HTML template
 // ---------------------------------------------------------------------------
 
-function wrapInHTML(blogContent, weekRange, generatedAt) {
+function wrapInHTML(blogContent, weekRange, generatedAt, hasHeroImage) {
+  const heroImageHTML = hasHeroImage
+    ? `\n    <div class="hero-image">
+      <img src="weekly-hero.png" alt="This Week in Houston Comedy — ${weekRange}" loading="eager">
+    </div>\n`
+    : "";
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -307,6 +443,19 @@ function wrapInHTML(blogContent, weekRange, generatedAt) {
     }
 
     .header-nav .sep { color: var(--text-muted); }
+
+    .hero-image {
+      margin-bottom: 32px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
     article h2 {
       font-size: 2rem;
@@ -452,7 +601,7 @@ function wrapInHTML(blogContent, weekRange, generatedAt) {
       <span class="sep">/</span>
       <a href="/blog/">Weekly Blog</a>
     </nav>
-
+${heroImageHTML}
     <article>
 ${blogContent}
     </article>
@@ -499,18 +648,53 @@ async function main() {
   console.log(`Week range: ${weekRange}`);
   console.log("");
 
-  // Build prompt and call OpenAI
+  // Ensure blog directory exists
+  if (!fs.existsSync(BLOG_DIR)) {
+    fs.mkdirSync(BLOG_DIR, { recursive: true });
+  }
+
+  // Step 1: Identify top comedians for the hero image
+  console.log("Identifying top comedians for hero image...");
+  let topComedianNames = [];
+  let hasHeroImage = false;
+
+  try {
+    const topComediansRaw = await identifyTopComedians(events);
+    // Parse JSON from the response (handle potential markdown wrapping)
+    const jsonStr = topComediansRaw.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
+    const topComedians = JSON.parse(jsonStr);
+    topComedianNames = topComedians.map((c) => c.name).slice(0, 5);
+    console.log(`Top comedians identified: ${topComedianNames.join(", ")}`);
+    console.log("");
+  } catch (err) {
+    console.warn(`Warning: Could not identify top comedians: ${err.message}`);
+    console.warn("Skipping hero image generation.");
+    console.log("");
+  }
+
+  // Step 2: Generate hero image via DALL-E (if we have comedian names)
+  if (topComedianNames.length > 0) {
+    console.log(`Generating hero image with DALL-E (${IMAGE_MODEL})...`);
+    try {
+      const imageBuffer = await generateHeroImage(topComedianNames, weekRange);
+      fs.writeFileSync(BLOG_IMAGE_PATH, imageBuffer);
+      hasHeroImage = true;
+      console.log(`Wrote hero image: ${BLOG_IMAGE_PATH} (${(imageBuffer.length / 1024).toFixed(0)} KB)`);
+      console.log("");
+    } catch (err) {
+      console.warn(`Warning: Could not generate hero image: ${err.message}`);
+      console.warn("Continuing without hero image.");
+      console.log("");
+    }
+  }
+
+  // Step 3: Generate the blog post
   const prompt = buildPrompt(events, weekRange);
   console.log(`Sending ${events.length} events to OpenAI (${OPENAI_MODEL})...`);
 
   const blogContent = await callOpenAI(prompt, SYSTEM_PROMPT);
   console.log("Blog post generated successfully.");
   console.log("");
-
-  // Ensure blog directory exists
-  if (!fs.existsSync(BLOG_DIR)) {
-    fs.mkdirSync(BLOG_DIR, { recursive: true });
-  }
 
   // Write the HTML file
   const generatedAt = new Date().toLocaleDateString("en-US", {
@@ -519,7 +703,7 @@ async function main() {
     day: "numeric",
     year: "numeric",
   });
-  const html = wrapInHTML(blogContent, weekRange, generatedAt);
+  const html = wrapInHTML(blogContent, weekRange, generatedAt, hasHeroImage);
   fs.writeFileSync(BLOG_HTML_PATH, html);
   console.log(`Wrote ${BLOG_HTML_PATH}`);
   console.log("");
