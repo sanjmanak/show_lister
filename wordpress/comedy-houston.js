@@ -204,23 +204,28 @@
     var tomorrow = toDateStr(addDays(now, 1));
 
     var dayOfWeek = now.getDay();
-    var satDate, sunDate;
+    var friDate, satDate, sunDate;
     if (dayOfWeek === 0) {
+      // Sunday: weekend = last Fri, last Sat, today
+      friDate = toDateStr(addDays(now, -2));
       satDate = toDateStr(addDays(now, -1));
       sunDate = today;
     } else if (dayOfWeek === 6) {
+      // Saturday: weekend = yesterday (Fri), today, tomorrow (Sun)
+      friDate = toDateStr(addDays(now, -1));
       satDate = today;
       sunDate = tomorrow;
+    } else if (dayOfWeek === 5) {
+      // Friday: weekend = today, tomorrow (Sat), day after (Sun)
+      friDate = today;
+      satDate = tomorrow;
+      sunDate = toDateStr(addDays(now, 2));
     } else {
-      var daysToSat = 6 - dayOfWeek;
-      satDate = toDateStr(addDays(now, daysToSat));
-      sunDate = toDateStr(addDays(now, daysToSat + 1));
-    }
-    var friDate;
-    if (dayOfWeek <= 5) {
-      friDate = toDateStr(addDays(now, 5 - dayOfWeek));
-    } else {
-      friDate = toDateStr(addDays(now, -1));
+      // Mon-Thu: weekend = upcoming Fri, Sat, Sun
+      var daysToFri = 5 - dayOfWeek;
+      friDate = toDateStr(addDays(now, daysToFri));
+      satDate = toDateStr(addDays(now, daysToFri + 1));
+      sunDate = toDateStr(addDays(now, daysToFri + 2));
     }
 
     var endOfWeek = toDateStr(addDays(now, 7 - dayOfWeek));
@@ -230,14 +235,18 @@
     for (var i = 0; i < allEvents.length; i++) {
       var ev = allEvents[i];
       if (!ev.date) continue;
-      if (ev.date < today) continue;
       if (ev.status === "cancelled") continue;
+
+      // For weekend filter, allow past dates within the weekend window (Fri/Sat/Sun)
+      // so a Sunday visitor still sees Friday & Saturday shows in "this weekend"
+      if (currentTimeFilter === "weekend") {
+        if (ev.date !== friDate && ev.date !== satDate && ev.date !== sunDate) continue;
+      } else {
+        if (ev.date < today) continue;
+      }
 
       if (currentTimeFilter === "today" && ev.date !== today) continue;
       if (currentTimeFilter === "tomorrow" && ev.date !== tomorrow) continue;
-      if (currentTimeFilter === "weekend") {
-        if (ev.date !== friDate && ev.date !== satDate && ev.date !== sunDate) continue;
-      }
       if (currentTimeFilter === "week" && ev.date > endOfWeek) continue;
       if (currentTimeFilter === "month" && ev.date > endOfMonth) continue;
 
@@ -367,7 +376,10 @@
   // HELPERS
   // ================================================================
   function toDateStr(d) {
-    return d.toISOString().slice(0, 10);
+    var y = d.getFullYear();
+    var m = ('0' + (d.getMonth() + 1)).slice(-2);
+    var day = ('0' + d.getDate()).slice(-2);
+    return y + '-' + m + '-' + day;
   }
 
   function addDays(d, n) {

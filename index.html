@@ -7128,28 +7128,30 @@
       const today = toDateStr(now);
       const tomorrow = toDateStr(addDays(now, 1));
 
-      // Weekend: upcoming Saturday & Sunday
+      // Weekend: Fri-Sat-Sun
       const dayOfWeek = now.getDay(); // 0=Sun ... 6=Sat
-      let satDate, sunDate;
+      let friDate, satDate, sunDate;
       if (dayOfWeek === 0) {
-        // Sunday — "this weekend" means today
+        // Sunday: weekend = last Fri, last Sat, today
+        friDate = toDateStr(addDays(now, -2));
         satDate = toDateStr(addDays(now, -1));
         sunDate = today;
       } else if (dayOfWeek === 6) {
-        // Saturday
+        // Saturday: weekend = yesterday (Fri), today, tomorrow (Sun)
+        friDate = toDateStr(addDays(now, -1));
         satDate = today;
         sunDate = tomorrow;
+      } else if (dayOfWeek === 5) {
+        // Friday: weekend = today, tomorrow (Sat), day after (Sun)
+        friDate = today;
+        satDate = tomorrow;
+        sunDate = toDateStr(addDays(now, 2));
       } else {
-        const daysToSat = 6 - dayOfWeek;
-        satDate = toDateStr(addDays(now, daysToSat));
-        sunDate = toDateStr(addDays(now, daysToSat + 1));
-      }
-      // Also include Friday evening as "weekend"
-      let friDate;
-      if (dayOfWeek <= 5) {
-        friDate = toDateStr(addDays(now, 5 - dayOfWeek));
-      } else {
-        friDate = toDateStr(addDays(now, -1)); // Saturday — Friday was yesterday
+        // Mon-Thu: weekend = upcoming Fri, Sat, Sun
+        const daysToFri = 5 - dayOfWeek;
+        friDate = toDateStr(addDays(now, daysToFri));
+        satDate = toDateStr(addDays(now, daysToFri + 1));
+        sunDate = toDateStr(addDays(now, daysToFri + 2));
       }
 
       const endOfWeek = toDateStr(addDays(now, 7 - dayOfWeek));
@@ -7157,17 +7159,20 @@
 
       let events = allEvents.filter(e => {
         if (!e.date) return false;
-        // Don't show past events
-        if (e.date < today) return false;
         // Don't show cancelled
         if (e.status === "cancelled") return false;
+
+        // For weekend filter, allow past dates within the weekend window (Fri/Sat/Sun)
+        // so a Sunday visitor still sees Friday & Saturday shows in "this weekend"
+        if (currentTimeFilter === "weekend") {
+          if (e.date !== friDate && e.date !== satDate && e.date !== sunDate) return false;
+        } else {
+          if (e.date < today) return false;
+        }
 
         // Time filter
         if (currentTimeFilter === "today" && e.date !== today) return false;
         if (currentTimeFilter === "tomorrow" && e.date !== tomorrow) return false;
-        if (currentTimeFilter === "weekend") {
-          if (e.date !== friDate && e.date !== satDate && e.date !== sunDate) return false;
-        }
         if (currentTimeFilter === "week" && e.date > endOfWeek) return false;
         if (currentTimeFilter === "month" && e.date > endOfMonth) return false;
 
@@ -7298,7 +7303,10 @@
     // HELPERS
     // ================================================================
     function toDateStr(d) {
-      return d.toISOString().slice(0, 10);
+      const y = d.getFullYear();
+      const m = ('0' + (d.getMonth() + 1)).slice(-2);
+      const day = ('0' + d.getDate()).slice(-2);
+      return y + '-' + m + '-' + day;
     }
 
     function addDays(d, n) {
