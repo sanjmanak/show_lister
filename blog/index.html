@@ -127,12 +127,16 @@
     }
 
     .hero-grid {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px 24px;
+      justify-items: center;
       margin-bottom: 20px;
       position: relative;
       z-index: 1;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero-grid-item {
@@ -143,17 +147,18 @@
     }
 
     .hero-grid-item img {
-      width: 120px;
-      height: 120px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid rgba(255, 77, 106, 0.4);
     }
 
     .hero-grid-name {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       font-weight: 700;
       text-align: center;
+      max-width: 120px;
     }
 
     .hero-extra-lineup {
@@ -345,44 +350,53 @@
           <img src="https://s1.ticketm.net/dam/a/597/a6675b28-8ab7-4b56-956e-e83dbfd4c597_SOURCE" alt="Jason Cheny">
           <div class="hero-grid-name">Jason Cheny</div>
         </div>
+        <div class="hero-grid-item">
+          <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1122396523%2F428099579998%2F1%2Foriginal.20250912-160510?auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;s=d5efbe308ccf45c42263e7d5edbbd463" alt="Sugar Sammy">
+          <div class="hero-grid-name">Sugar Sammy</div>
+        </div>
+        <div class="hero-grid-item">
+          <img src="https://s1.ticketm.net/dam/a/82d/1da73de0-27a6-41ff-87c8-57979eacf82d_TABLET_LANDSCAPE_LARGE_16_9.jpg" alt="Mae Martin">
+          <div class="hero-grid-name">Mae Martin</div>
+        </div>
+        <div class="hero-grid-item">
+          <img src="https://s1.ticketm.net/dam/a/ec6/afc9d927-edfa-499d-9bf2-02257f9b4ec6_SOURCE" alt="Amir K">
+          <div class="hero-grid-name">Amir K</div>
+        </div>
       </div>
       <div class="hero-extra-lineup">
-        <span class="hero-extra-name">Sugar Sammy</span>
-        <span class="hero-extra-name">Sugar Sammy</span>
-        <span class="hero-extra-name">Mae Martin</span>
-        <span class="hero-extra-name">Amir K</span>
-        <span class="hero-extra-name">Henry Cho</span>
         <span class="hero-extra-name">Paris Sashay</span>
+        <span class="hero-extra-name">Henry Cho</span>
       </div>
       <div class="hero-dates">February 23 – March 1, 2026</div>
     </div>
 
     <article>
-<h2>This Week in Houston Comedy: February 23 – March 1, 2026</h2>
+<h2>Houston Comedy Shows: February 23 – March 1, 2026</h2>
 
-<p>Ali Siddiq brings his raw prison-to-stage storytelling to the Improv this week, and if you haven't seen Greg Fitzsimmons' razor-sharp crowd work, Friday at Punch Line is your shot. Also, don't miss Mae Martin at Cullen Performance Hall, known for their heartfelt takes on identity and relationships. We've got a stacked week ahead, so let's dive into what's happening in the Houston comedy scene!</p>
+<p>Ali Siddiq brings his raw prison-to-stage storytelling to the Improv this week, and if you haven't seen Greg Fitzsimmons' razor-sharp crowd work, Friday at Punch Line is your shot. These are just a couple of the big acts hitting Houston stages, alongside other comedy heavyweights and local showcases. Grab your tickets and get ready for a week full of laughs!</p>
 
 <h3>Wednesday</h3>
-
-<div class="show-card">
-  <img src="https://s1.ticketm.net/dam/a/8b9/0a83a81b-0da6-4434-9b7d-4e59027c58b9_SOURCE" alt="Ali Siddiq" class="show-img" loading="lazy">
-  <div class="show-info">
-    <strong>Ali Siddiq</strong><br>
-    Venue: Houston Improv<br>
-    Time: 7:30 PM<br>
-    <a class="ticket-link" href="https://www.ticketweb.com/event/ali-siddiq-houston-improv-tickets/14066084?REFERRAL_ID=tmfeed">Get Tickets</a>
-    <p class="blurb">Ali Siddiq is renowned for his storytelling style, drawing from personal experiences, including his time incarcerated. His live sets are marathon storytelling sessions that feel like sitting around a campfire with the funniest person you've ever met — raw, unpredictable, and impossible to look away from.</p>
-  </div>
-</div>
 
 <div class="show-card">
   <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177348468%2F3558237521%2F1%2Foriginal.20260212-040426?auto=format%2Ccompress&q=75&sharp=10&s=57e2d1d20dec72672b2cb90151fc5d34" alt="Devil's Advocate Comedy" class="show-img" loading="lazy">
   <div class="show-info">
     <strong>Devil's Advocate Comedy</strong><br>
-    Venue: The Secret Group<br>
-    Time: 10:00 PM<br>
-    Price: $8.82<br>
+    The Secret Group<br>
+    10:00 PM<br>
+    $8.82<br>
+    <p class="blurb">Hosted by Blythe Payne & Quinn Doran, this mid-week comedy event promises a mix of witty banter and sharp punchlines.</p>
     <a class="ticket-link" href="https://www.eventbrite.com/e/devils-advocate-comedy-tickets-1983206644460">Get Tickets</a>
+  </div>
+</div>
+
+<div class="show-card">
+  <img src="https://s1.ticketm.net/dam/a/8b9/0a83a81b-0da6-4434-9b7d-4e59027c58b9_SOURCE" alt="Ali Siddiq" class="show-img" loading="lazy">
+  <div class="show-info">
+    <strong>Ali Siddiq</strong><br>
+    Houston Improv<br>
+    7:30 PM<br>
+    <p class="blurb">Ali Siddiq is a Houston-born comedian renowned for his masterful storytelling, with specials like "It's Bigger Than These Bars" and the viral "Mexicans Got on Boots" segment. His live sets are marathon storytelling sessions that feel like sitting around a campfire with the funniest person you've ever met — raw, unpredictable, and impossible to look away from.</p>
+    <a class="ticket-link" href="https://www.ticketweb.com/event/ali-siddiq-houston-improv-tickets/14066084?REFERRAL_ID=tmfeed">Get Tickets</a>
   </div>
 </div>
 
@@ -392,10 +406,10 @@
   <img src="https://s1.ticketm.net/dam/a/c3f/720f5f8a-a718-4c06-8cb5-f22765fcbc3f_56721_TABLET_LANDSCAPE_LARGE_16_9.jpg" alt="Greg Fitzsimmons" class="show-img" loading="lazy">
   <div class="show-info">
     <strong>Greg Fitzsimmons</strong><br>
-    Venue: Punch Line Houston<br>
-    Time: 7:30 PM<br>
+    Punch Line Houston<br>
+    7:30 PM<br>
+    <p class="blurb">Greg Fitzsimmons, known for his sharp wit and appearances on "Late Night with Conan O'Brien," delivers a potent mix of stand-up and crowd work. His shows are a masterclass in observational humor, leaving audiences both laughing and thinking.</p>
     <a class="ticket-link" href="https://www.ticketmaster.com/greg-fitzsimmons-houston-texas-02-26-2026/event/3A0063821D26D289">Get Tickets</a>
-    <p class="blurb">Greg Fitzsimmons is a stand-up comedian and writer known for his appearances on "The Tonight Show with Jay Leno" and "Late Night with Conan O'Brien." He brings sharp wit and insightful observations to the stage, making his live shows both thought-provoking and entertaining.</p>
   </div>
 </div>
 
@@ -405,52 +419,50 @@
   <img src="https://s1.ticketm.net/dam/a/82d/1da73de0-27a6-41ff-87c8-57979eacf82d_TABLET_LANDSCAPE_LARGE_16_9.jpg" alt="Mae Martin" class="show-img" loading="lazy">
   <div class="show-info">
     <strong>Mae Martin</strong><br>
-    Venue: Cullen Performance Hall<br>
-    Time: 7:30 PM<br>
+    Cullen Performance Hall<br>
+    7:30 PM<br>
+    <p class="blurb">Mae Martin, star of the Netflix series "Feel Good," brings their unique blend of personal storytelling and quirky humor to the stage. Expect a show that's both deeply personal and universally relatable, delivered with charm and wit.</p>
     <a class="ticket-link" href="https://www.ticketmaster.com/event/Z7r9jZ1A7q3Gy">Get Tickets</a>
-    <p class="blurb">Mae Martin is best known for creating and starring in the Netflix series "Feel Good" and their stand-up special "Sap." Their live performances are a candid exploration of identity and relationships, delivered with humor and heart.</p>
   </div>
 </div>
 
 <div class="show-card">
-  <img src="https://s1.ticketm.net/dam/a/ec6/afc9d927-edfa-499d-9bf2-02257f9b4ec6_SOURCE" alt="Amir K" class="show-img" loading="lazy">
+  <img src="https://s1.ticketm.net/dam/a/597/a6675b28-8ab7-4b56-956e-e83dbfd4c597_SOURCE" alt="Jason Cheny" class="show-img" loading="lazy">
   <div class="show-info">
-    <strong>Amir K</strong><br>
-    Venue: Houston Improv<br>
-    Time: 7:30 PM<br>
-    <a class="ticket-link" href="https://www.ticketweb.com/event/amir-k-houston-improv-tickets/14140334?REFERRAL_ID=tmfeed">Get Tickets</a>
-    <p class="blurb">Amir K is known for his role on "Mad TV" and being a finalist on "Last Comic Standing" in 2015. His performances are high-energy and improvisational, often involving audience interaction that keeps the show lively and unpredictable.</p>
+    <strong>Jason Cheny</strong><br>
+    Houston Improv<br>
+    7:30 PM<br>
+    <a class="ticket-link" href="https://www.ticketweb.com/event/jason-cheny-houston-improv-tickets/14638763?REFERRAL_ID=tmfeed">Get Tickets</a>
   </div>
 </div>
 
 <h3>Saturday</h3>
 
 <div class="show-card">
-  <img src="https://s1.ticketm.net/dam/a/7f4/fc65c911-56ce-4498-ab30-ec37acea87f4_354241_TABLET_LANDSCAPE_LARGE_16_9.jpg" alt="Henry Cho" class="show-img" loading="lazy">
+  <img src="https://s1.ticketm.net/dam/a/bb5/c7d68f46-2707-4c16-8b12-b561ea43ebb5_TABLET_LANDSCAPE_LARGE_16_9.jpg" alt="Kill Tony Presents Kill Texas" class="show-img" loading="lazy">
   <div class="show-info">
-    <strong>Henry Cho: The Empty Nest Tour</strong><br>
-    Venue: Jefferson Theatre<br>
-    Time: 8:00 PM<br>
-    <a class="ticket-link" href="https://www.ticketmaster.com/henry-cho-the-empty-nest-tour-beaumont-texas-02-28-2026/event/3A00632BD367389F">Get Tickets</a>
-    <p class="blurb">Henry Cho is celebrated for his clean humor and appearances on "The Tonight Show." Expect a night of family-friendly comedy with a Southern twist, focusing on cultural experiences and everyday life.</p>
+    <strong>Kill Tony Presents Kill Texas</strong><br>
+    Smart Financial Centre at Sugar Land<br>
+    7:00 PM<br>
+    <p class="blurb">Kill Tony, the popular podcast known for its rapid-fire comedy and surprise guests, brings its unique format to Texas. Expect a night of unpredictable comedy with both seasoned comics and newcomers taking the stage.</p>
+    <a class="ticket-link" href="https://www.ticketmaster.com/event/Z7r9jZ1A7OZ4N">Get Tickets</a>
   </div>
 </div>
 
 <h3>Sunday</h3>
 
 <div class="show-card">
-  <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1175154315%2F428099579998%2F1%2Foriginal.20260118-012153?auto=format%2Ccompress&q=75&sharp=10&s=268eb5d6eb1cfb63ab1932962753524d" alt="Paris Sashay" class="show-img" loading="lazy">
+  <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1175154315%2F428099579998%2F1%2Foriginal.20260118-012153?auto=format%2Ccompress&q=75&sharp=10&s=268eb5d6eb1cfb63ab1932962753524d" alt="Paris Sashay Headlines The Riot Comedy Club" class="show-img" loading="lazy">
   <div class="show-info">
     <strong>Paris Sashay Headlines The Riot Comedy Club</strong><br>
-    Venue: The Riot Comedy Club upstairs at Rudyard's<br>
-    Time: 8:00 PM<br>
-    Price: $28.36 – $190.55<br>
+    The Riot Comedy Club upstairs at Rudyard's<br>
+    8:00 PM<br>
+    <p class="blurb">Paris Sashay, known for her appearances on Comedy Central and "The Tonight Show," brings her bold and unapologetic humor to Houston. Her performances are a mix of sharp social commentary and personal anecdotes that leave audiences both entertained and enlightened.</p>
     <a class="ticket-link" href="https://www.eventbrite.com/e/paris-sashay-headlines-the-riot-comedy-club-tickets-1980792626066">Get Tickets</a>
-    <p class="blurb">Paris Sashay has made waves with appearances on "Unprotected Sets" and "2 Dope Queens." Her bold and unapologetic comedy tackles social issues with sharp humor and personal anecdotes.</p>
   </div>
 </div>
 
-<p>With such a stellar lineup, be sure to grab your tickets early. Ali Siddiq and Greg Fitzsimmons are likely to sell out, so don't wait too long to secure your spot!</p>
+<p>These are just a few highlights of the comedy scene in Houston this week. Be sure to grab your tickets early, especially for the big names like Ali Siddiq and Greg Fitzsimmons, as they are sure to sell out quickly!</p>
     </article>
 
     <div class="meta" style="margin-top: 24px;">

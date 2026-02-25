@@ -6,8 +6,8 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      width: 1200px;
-      height: 630px;
+      width: 1080px;
+      height: 1080px;
       font-family: 'Inter', sans-serif;
       background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
       color: #f0f0f5;
@@ -20,36 +20,38 @@
     }
     .bg-accent {
       position: absolute;
-      width: 400px;
-      height: 400px;
+      width: 500px;
+      height: 500px;
       border-radius: 50%;
-      filter: blur(120px);
+      filter: blur(140px);
       opacity: 0.15;
     }
-    .bg-accent-1 { background: #ff4d6a; top: -100px; right: -50px; }
-    .bg-accent-2 { background: #7c5cff; bottom: -100px; left: -50px; }
+    .bg-accent-1 { background: #ff4d6a; top: -150px; right: -100px; }
+    .bg-accent-2 { background: #7c5cff; bottom: -150px; left: -100px; }
     .header-label {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 600;
-      letter-spacing: 4px;
+      letter-spacing: 5px;
       text-transform: uppercase;
       color: #ff4d6a;
       margin-bottom: 8px;
       z-index: 1;
     }
     .title {
-      font-size: 38px;
+      font-size: 48px;
       font-weight: 900;
       letter-spacing: -1px;
-      margin-bottom: 24px;
+      margin-bottom: 36px;
       z-index: 1;
       text-align: center;
     }
     .headshot-grid {
-      display: flex;
-      gap: 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px 40px;
       z-index: 1;
-      margin-bottom: 20px;
+      margin-bottom: 28px;
+      max-width: 720px;
     }
     .grid-item {
       display: flex;
@@ -58,25 +60,27 @@
       gap: 10px;
     }
     .grid-item img {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid rgba(255, 77, 106, 0.5);
     }
     .grid-name {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
       color: #ffffff;
       text-align: center;
+      max-width: 180px;
     }
     .extra-lineup {
       display: flex;
       gap: 16px;
       z-index: 1;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       flex-wrap: wrap;
       justify-content: center;
+      max-width: 800px;
     }
     .extra-name {
       font-size: 16px;
@@ -86,15 +90,15 @@
       border-left: 2px solid #ff4d6a;
     }
     .week-range {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 500;
       color: #9999aa;
       z-index: 1;
     }
     .brand {
       position: absolute;
-      bottom: 20px;
-      font-size: 13px;
+      bottom: 28px;
+      font-size: 14px;
       font-weight: 600;
       letter-spacing: 2px;
       color: #666677;
@@ -120,14 +124,22 @@
         <img src="https://s1.ticketm.net/dam/a/597/a6675b28-8ab7-4b56-956e-e83dbfd4c597_SOURCE" alt="Jason Cheny">
         <div class="grid-name">Jason Cheny</div>
       </div>
+      <div class="grid-item">
+        <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1122396523%2F428099579998%2F1%2Foriginal.20250912-160510?auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;s=d5efbe308ccf45c42263e7d5edbbd463" alt="Sugar Sammy">
+        <div class="grid-name">Sugar Sammy</div>
+      </div>
+      <div class="grid-item">
+        <img src="https://s1.ticketm.net/dam/a/82d/1da73de0-27a6-41ff-87c8-57979eacf82d_TABLET_LANDSCAPE_LARGE_16_9.jpg" alt="Mae Martin">
+        <div class="grid-name">Mae Martin</div>
+      </div>
+      <div class="grid-item">
+        <img src="https://s1.ticketm.net/dam/a/ec6/afc9d927-edfa-499d-9bf2-02257f9b4ec6_SOURCE" alt="Amir K">
+        <div class="grid-name">Amir K</div>
+      </div>
   </div>
   <div class="extra-lineup">
-      <span class="extra-name">Sugar Sammy</span>
-      <span class="extra-name">Sugar Sammy</span>
-      <span class="extra-name">Mae Martin</span>
-      <span class="extra-name">Amir K</span>
-      <span class="extra-name">Henry Cho</span>
       <span class="extra-name">Paris Sashay</span>
+      <span class="extra-name">Henry Cho</span>
   </div>
   <div class="week-range">February 23 – March 1, 2026</div>
   <div class="brand">COMEDYHOUSTON.COM</div>
