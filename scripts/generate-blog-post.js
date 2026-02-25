@@ -256,7 +256,7 @@ function identifyTopComedians(events) {
   // Deduplicate names (same comedian may have multiple dates)
   const unique = [...new Set(eventNames)];
 
-  const prompt = `Here is a list of comedy show names happening in Houston this week. Pick the top 5 that feature the most well-known, nationally recognized comedians. Only pick comedians you genuinely know are famous (Netflix specials, TV appearances, major podcasts, sold-out tours, etc.). If there are fewer than 5 recognizable names, only return however many you're confident about (minimum 0).
+  const prompt = `Here is a list of comedy show names happening in Houston this week. Identify ALL that feature recognizable comedians — anyone with Netflix/HBO/Comedy Central specials, TV appearances, major podcast appearances, sold-out tours, large social media followings (100k+), etc. Don't limit yourself to a fixed number. If there are no recognizable names, return an empty array.
 
 Shows:
 ${unique.map((n) => `- ${n}`).join("\n")}
@@ -281,10 +281,28 @@ function escapeHTML(str) {
     .replace(/"/g, "&quot;");
 }
 
-function generateHeroCreativeHTML(comedianNames, weekRange) {
-  const nameItems = comedianNames
-    .map((name) => `      <div class="lineup-name">${escapeHTML(name)}</div>`)
+function generateHeroCreativeHTML(comedians, weekRange) {
+  // Pick up to 3 comedians with images for the headshot grid
+  const withImages = comedians.filter((c) => c.imageUrl).slice(0, 3);
+  const gridItems = withImages
+    .map(
+      (c) => `      <div class="grid-item">
+        <img src="${escapeHTML(c.imageUrl)}" alt="${escapeHTML(c.name)}">
+        <div class="grid-name">${escapeHTML(c.name)}</div>
+      </div>`
+    )
     .join("\n");
+
+  // List any remaining comedian names that didn't make the image grid
+  const gridNames = new Set(withImages.map((c) => c.name));
+  const extraNames = comedians.filter((c) => !gridNames.has(c.name));
+  const extraItems = extraNames
+    .map((c) => `      <span class="extra-name">${escapeHTML(c.name)}</span>`)
+    .join("\n");
+  const extraSection =
+    extraNames.length > 0
+      ? `  <div class="extra-lineup">\n${extraItems}\n  </div>`
+      : "";
 
   return `<!DOCTYPE html>
 <html>
@@ -322,31 +340,56 @@ function generateHeroCreativeHTML(comedianNames, weekRange) {
       letter-spacing: 4px;
       text-transform: uppercase;
       color: #ff4d6a;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       z-index: 1;
     }
     .title {
-      font-size: 42px;
+      font-size: 38px;
       font-weight: 900;
       letter-spacing: -1px;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
       z-index: 1;
       text-align: center;
     }
-    .lineup {
+    .headshot-grid {
+      display: flex;
+      gap: 32px;
+      z-index: 1;
+      margin-bottom: 20px;
+    }
+    .grid-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
-      z-index: 1;
-      margin-bottom: 32px;
+      gap: 10px;
     }
-    .lineup-name {
-      font-size: 28px;
+    .grid-item img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255, 77, 106, 0.5);
+    }
+    .grid-name {
+      font-size: 18px;
       font-weight: 700;
       color: #ffffff;
-      padding: 4px 20px;
-      border-left: 3px solid #ff4d6a;
+      text-align: center;
+    }
+    .extra-lineup {
+      display: flex;
+      gap: 16px;
+      z-index: 1;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .extra-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #9999aa;
+      padding: 2px 12px;
+      border-left: 2px solid #ff4d6a;
     }
     .week-range {
       font-size: 18px;
@@ -356,7 +399,7 @@ function generateHeroCreativeHTML(comedianNames, weekRange) {
     }
     .brand {
       position: absolute;
-      bottom: 24px;
+      bottom: 20px;
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 2px;
@@ -370,26 +413,46 @@ function generateHeroCreativeHTML(comedianNames, weekRange) {
   <div class="bg-accent bg-accent-2"></div>
   <div class="header-label">This Week In</div>
   <div class="title">Houston Comedy</div>
-  <div class="lineup">
-${nameItems}
+  <div class="headshot-grid">
+${gridItems}
   </div>
+${extraSection}
   <div class="week-range">${escapeHTML(weekRange)}</div>
   <div class="brand">COMEDYHOUSTON.COM</div>
 </body>
 </html>`;
 }
 
-function generateInlineHeroHTML(comedianNames, weekRange) {
-  const nameItems = comedianNames
-    .map((name) => `        <div class="hero-name">${escapeHTML(name)}</div>`)
+function generateInlineHeroHTML(comedians, weekRange) {
+  // Pick up to 3 comedians with images for the headshot grid
+  const withImages = comedians.filter((c) => c.imageUrl).slice(0, 3);
+  const gridItems = withImages
+    .map(
+      (c) => `        <div class="hero-grid-item">
+          <img src="${escapeHTML(c.imageUrl)}" alt="${escapeHTML(c.name)}">
+          <div class="hero-grid-name">${escapeHTML(c.name)}</div>
+        </div>`
+    )
     .join("\n");
+
+  // List remaining names
+  const gridNames = new Set(withImages.map((c) => c.name));
+  const extraNames = comedians.filter((c) => !gridNames.has(c.name));
+  const extraItems = extraNames
+    .map((c) => `        <span class="hero-extra-name">${escapeHTML(c.name)}</span>`)
+    .join("\n");
+  const extraSection =
+    extraNames.length > 0
+      ? `      <div class="hero-extra-lineup">\n${extraItems}\n      </div>`
+      : "";
 
   return `    <div class="hero-creative">
       <div class="hero-label">This Week In</div>
       <div class="hero-title">Houston Comedy</div>
-      <div class="hero-lineup">
-${nameItems}
+      <div class="hero-grid">
+${gridItems}
       </div>
+${extraSection}
       <div class="hero-dates">${escapeHTML(weekRange)}</div>
     </div>`;
 }
@@ -443,7 +506,7 @@ COMEDIAN DEEP DIVES (this is the MOST IMPORTANT part — this is what makes this
 You MUST identify the most well-known, nationally recognized comedians performing this week and write a DETAILED two-sentence blurb for each one. These blurbs are the heart of the blog post.
 
 Rules for the blurbs:
-- Pick between 2 and 4 comedians you GENUINELY RECOGNIZE as having a notable presence (Netflix specials, HBO specials, Comedy Central specials, late night TV appearances, major podcasts like Joe Rogan / Kill Tony / Tigerbelly, viral clips, sitcom roles, movies, comedy albums, tours, etc.)
+- Write a blurb for EVERY comedian you genuinely recognize as having a notable presence — Netflix specials, HBO specials, Comedy Central specials, late night TV appearances, major podcasts like Joe Rogan / Kill Tony / Tigerbelly, viral clips, sitcom roles, movies, comedy albums, tours, large social media followings (100k+), etc. Don't skip someone just because you already wrote about others.
 - For EACH one, write EXACTLY two sentences that are specific and personal:
   - Sentence 1: What they're specifically known for — name the ACTUAL special titles, show names, podcast names, movie titles, etc. Be concrete. Not "known for his relatable humor" but "broke out with his Netflix hour 'The Domino Effect' and his legendary storytelling segments on 'This Is Not Happening'"
   - Sentence 2: What the audience can expect at the live show — their style, energy, what makes their live performance different or special. For example: "His live sets are marathon storytelling sessions that feel like sitting around a campfire with the funniest person you've ever met — raw, unpredictable, and impossible to look away from."
@@ -452,9 +515,8 @@ Rules for the blurbs:
 - If you DON'T genuinely recognize a comedian, DO NOT write a blurb. Do NOT fabricate credits. Just present the event details. Silence is better than filler.
 - For open mic nights, showcases, karaoke, or multi-act variety shows — write one sentence about the vibe/format of the event instead of comedian blurbs.
 
-MINIMUM OUTPUT: At least 2 comedians with 2-sentence blurbs (4 sentences total across the post).
-MAXIMUM OUTPUT: No more than 4 comedians with 2-sentence blurbs (8 sentences total).
-If there genuinely are fewer than 2 recognizable names this week, that's OK — just say so in the intro.
+MINIMUM OUTPUT: At least 2 comedians with 2-sentence blurbs.
+There is NO maximum — if 6 comedians are recognizable, write blurbs for all 6. Every comedian with verifiable credits deserves a blurb. If there genuinely are fewer than 2 recognizable names this week, that's OK — just say so in the intro.
 
 INTRO PARAGRAPH:
 - Open with an engaging 2-3 sentence intro that specifically names the biggest acts of the week and why they're a big deal
@@ -637,21 +699,52 @@ function wrapInHTML(blogContent, weekRange, generatedAt, inlineHeroHTML) {
       z-index: 1;
     }
 
-    .hero-lineup {
+    .hero-grid {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 24px;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 20px;
       position: relative;
       z-index: 1;
     }
 
-    .hero-name {
-      font-size: 1.2rem;
+    .hero-grid-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-grid-item img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255, 77, 106, 0.4);
+    }
+
+    .hero-grid-name {
+      font-size: 0.95rem;
       font-weight: 700;
-      padding: 2px 16px;
-      border-left: 3px solid var(--accent);
+      text-align: center;
+    }
+
+    .hero-extra-lineup {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-extra-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      padding: 2px 10px;
+      border-left: 2px solid var(--accent);
     }
 
     .hero-dates {
@@ -796,6 +889,9 @@ function wrapInHTML(blogContent, weekRange, generatedAt, inlineHeroHTML) {
       article h2 { font-size: 1.5rem; }
       article h3 { font-size: 1.15rem; }
       .container { padding: 24px 16px 60px; }
+      .hero-creative { padding: 32px 20px; }
+      .hero-grid-item img { width: 80px; height: 80px; }
+      .hero-grid-name { font-size: 0.8rem; }
     }
   </style>
 </head>
@@ -861,20 +957,32 @@ async function main() {
 
   // Step 1: Identify top comedians
   console.log("Identifying top comedians...");
-  let topComedianNames = [];
+  let topComedians = []; // [{name, show, imageUrl}]
 
   try {
     const topComediansRaw = await identifyTopComedians(events);
     // Parse JSON from the response (handle potential markdown wrapping)
     const jsonStr = topComediansRaw.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
-    const topComedians = JSON.parse(jsonStr);
-    topComedianNames = topComedians.map((c) => c.name).slice(0, 5);
-    console.log(`Top comedians identified: ${topComedianNames.join(", ")}`);
+    const parsed = JSON.parse(jsonStr);
+    // Match each comedian back to their event to grab the image URL
+    topComedians = parsed.map((c) => {
+      const matchedEvent = events.find(
+        (ev) => ev.name === c.show || ev.name.toLowerCase().includes(c.name.toLowerCase())
+      );
+      return {
+        name: c.name,
+        show: c.show,
+        imageUrl: matchedEvent?.image_url || null,
+      };
+    });
+    console.log(`Top comedians identified: ${topComedians.map((c) => c.name).join(", ")}`);
     console.log("");
   } catch (err) {
     console.warn(`Warning: Could not identify top comedians: ${err.message}`);
     console.log("");
   }
+
+  const topComedianNames = topComedians.map((c) => c.name);
 
   // Step 2: Research comedians via web search
   let comedianResearch = "";
@@ -893,11 +1001,11 @@ async function main() {
 
   // Step 3: Generate hero creative HTML (replaces DALL-E)
   let inlineHeroHTML = "";
-  if (topComedianNames.length > 0) {
-    const heroHTML = generateHeroCreativeHTML(topComedianNames, weekRange);
+  if (topComedians.length > 0) {
+    const heroHTML = generateHeroCreativeHTML(topComedians, weekRange);
     fs.writeFileSync(BLOG_HERO_HTML_PATH, heroHTML);
     console.log(`Wrote hero creative HTML: ${BLOG_HERO_HTML_PATH}`);
-    inlineHeroHTML = generateInlineHeroHTML(topComedianNames, weekRange);
+    inlineHeroHTML = generateInlineHeroHTML(topComedians, weekRange);
     console.log("");
   }
 
@@ -905,7 +1013,9 @@ async function main() {
   const prompt = buildPrompt(events, weekRange, comedianResearch);
   console.log(`Sending ${events.length} events to OpenAI (${OPENAI_MODEL})...`);
 
-  const blogContent = await callOpenAI(prompt, SYSTEM_PROMPT);
+  let blogContent = await callOpenAI(prompt, SYSTEM_PROMPT);
+  // Strip markdown code fences that OpenAI sometimes wraps around HTML output
+  blogContent = blogContent.replace(/^```html\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
   console.log("Blog post generated successfully.");
   console.log("");
 
