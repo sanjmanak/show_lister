@@ -282,8 +282,8 @@ function escapeHTML(str) {
 }
 
 function generateHeroCreativeHTML(comedians, weekRange) {
-  // Pick up to 3 comedians with images for the headshot grid
-  const withImages = comedians.filter((c) => c.imageUrl).slice(0, 3);
+  // Pick up to 6 comedians with images for a 3x2 grid
+  const withImages = comedians.filter((c) => c.imageUrl).slice(0, 6);
   const gridItems = withImages
     .map(
       (c) => `      <div class="grid-item">
@@ -312,8 +312,8 @@ function generateHeroCreativeHTML(comedians, weekRange) {
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      width: 1200px;
-      height: 630px;
+      width: 1080px;
+      height: 1080px;
       font-family: 'Inter', sans-serif;
       background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
       color: #f0f0f5;
@@ -326,36 +326,38 @@ function generateHeroCreativeHTML(comedians, weekRange) {
     }
     .bg-accent {
       position: absolute;
-      width: 400px;
-      height: 400px;
+      width: 500px;
+      height: 500px;
       border-radius: 50%;
-      filter: blur(120px);
+      filter: blur(140px);
       opacity: 0.15;
     }
-    .bg-accent-1 { background: #ff4d6a; top: -100px; right: -50px; }
-    .bg-accent-2 { background: #7c5cff; bottom: -100px; left: -50px; }
+    .bg-accent-1 { background: #ff4d6a; top: -150px; right: -100px; }
+    .bg-accent-2 { background: #7c5cff; bottom: -150px; left: -100px; }
     .header-label {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 600;
-      letter-spacing: 4px;
+      letter-spacing: 5px;
       text-transform: uppercase;
       color: #ff4d6a;
       margin-bottom: 8px;
       z-index: 1;
     }
     .title {
-      font-size: 38px;
+      font-size: 48px;
       font-weight: 900;
       letter-spacing: -1px;
-      margin-bottom: 24px;
+      margin-bottom: 36px;
       z-index: 1;
       text-align: center;
     }
     .headshot-grid {
-      display: flex;
-      gap: 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px 40px;
       z-index: 1;
-      margin-bottom: 20px;
+      margin-bottom: 28px;
+      max-width: 720px;
     }
     .grid-item {
       display: flex;
@@ -364,25 +366,27 @@ function generateHeroCreativeHTML(comedians, weekRange) {
       gap: 10px;
     }
     .grid-item img {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid rgba(255, 77, 106, 0.5);
     }
     .grid-name {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
       color: #ffffff;
       text-align: center;
+      max-width: 180px;
     }
     .extra-lineup {
       display: flex;
       gap: 16px;
       z-index: 1;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       flex-wrap: wrap;
       justify-content: center;
+      max-width: 800px;
     }
     .extra-name {
       font-size: 16px;
@@ -392,15 +396,15 @@ function generateHeroCreativeHTML(comedians, weekRange) {
       border-left: 2px solid #ff4d6a;
     }
     .week-range {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 500;
       color: #9999aa;
       z-index: 1;
     }
     .brand {
       position: absolute;
-      bottom: 20px;
-      font-size: 13px;
+      bottom: 28px;
+      font-size: 14px;
       font-weight: 600;
       letter-spacing: 2px;
       color: #666677;
@@ -424,8 +428,8 @@ ${extraSection}
 }
 
 function generateInlineHeroHTML(comedians, weekRange) {
-  // Pick up to 3 comedians with images for the headshot grid
-  const withImages = comedians.filter((c) => c.imageUrl).slice(0, 3);
+  // Pick up to 6 comedians with images for a 3x2 grid
+  const withImages = comedians.filter((c) => c.imageUrl).slice(0, 6);
   const gridItems = withImages
     .map(
       (c) => `        <div class="hero-grid-item">
@@ -700,12 +704,16 @@ function wrapInHTML(blogContent, weekRange, generatedAt, inlineHeroHTML) {
     }
 
     .hero-grid {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px 24px;
+      justify-items: center;
       margin-bottom: 20px;
       position: relative;
       z-index: 1;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero-grid-item {
@@ -716,17 +724,18 @@ function wrapInHTML(blogContent, weekRange, generatedAt, inlineHeroHTML) {
     }
 
     .hero-grid-item img {
-      width: 120px;
-      height: 120px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid rgba(255, 77, 106, 0.4);
     }
 
     .hero-grid-name {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       font-weight: 700;
       text-align: center;
+      max-width: 120px;
     }
 
     .hero-extra-lineup {
@@ -974,6 +983,14 @@ async function main() {
         show: c.show,
         imageUrl: matchedEvent?.image_url || null,
       };
+    });
+    // Deduplicate by comedian name (OpenAI sometimes returns the same person twice)
+    const seen = new Set();
+    topComedians = topComedians.filter((c) => {
+      const key = c.name.toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
     });
     console.log(`Top comedians identified: ${topComedians.map((c) => c.name).join(", ")}`);
     console.log("");

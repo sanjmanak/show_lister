@@ -25,7 +25,7 @@ async function main() {
   });
 
   const page = await browser.newPage();
-  await page.setViewport({ width: 1200, height: 630 });
+  await page.setViewport({ width: 1080, height: 1080 });
   await page.goto(`file://${HERO_HTML}`, { waitUntil: "networkidle0" });
   await page.screenshot({ path: HERO_IMAGE, type: "png" });
 
