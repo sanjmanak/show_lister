@@ -53,3 +53,46 @@ jobs:
             git commit -m "Weekly blog post — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
             git push
           fi
+
+      - name: Load caption for email
+        id: caption
+        run: |
+          if [ -f blog/instagram-caption.txt ]; then
+            echo "CAPTION<<CAPTION_EOF" >> $GITHUB_ENV
+            cat blog/instagram-caption.txt >> $GITHUB_ENV
+            echo "" >> $GITHUB_ENV
+            echo "CAPTION_EOF" >> $GITHUB_ENV
+            echo "has_caption=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_caption=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Email weekly creative + caption
+        if: >
+          hashFiles('blog/weekly-hero.png') != '' &&
+          steps.caption.outputs.has_caption == 'true' &&
+          secrets.SMTP_SERVER != ''
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "Comedy Houston — This Week's Creative & Caption"
+          to: ${{ secrets.NOTIFY_EMAIL }}
+          from: ${{ secrets.SMTP_FROM }}
+          body: |
+            Here's your weekly Comedy Houston creative and Instagram caption.
+
+            -----------------------------------------------
+            INSTAGRAM CAPTION (copy & paste)
+            -----------------------------------------------
+
+            ${{ env.CAPTION }}
+
+            -----------------------------------------------
+
+            The hero image is attached — ready to post.
+
+            Blog post: https://sanjmanak.github.io/show_lister/blog/
+          attachments: blog/weekly-hero.png
