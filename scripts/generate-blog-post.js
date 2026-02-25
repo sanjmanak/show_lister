@@ -474,20 +474,27 @@ function generateInstagramCaption(comedianNames, weekRange) {
 Week: ${weekRange}
 Featured comedians: ${namesList}
 
-Requirements:
-- Open with a hook that grabs attention. Channel the energy of marketers like Gary Vee, Seth Godin, and Roy H. Williams (Wizard of Ads) — make people FEEL something, create urgency, paint a picture.
-- Mention the week range naturally (e.g., "Houston, ${weekRange}")
-- Name-drop 2-4 of the biggest comedians performing
-- Keep it under 150 words — punchy, not a wall of text
-- End with a call to action (link in bio, grab tickets, tag a friend who needs a laugh)
-- Add 3-5 relevant hashtags at the end (#HoustonComedy #StandUp #LiveComedy etc.)
-- NO emojis in every sentence — use them sparingly (max 3-4 total)
-- Write like a cool local publication that actually knows comedy, not a corporate brand
-- The tone should make someone stop scrolling and think "I need to go to this"`;
+STRUCTURE (follow this exact format):
+
+1. HOOK (1 sentence): A simple, direct opener addressed to Houston. Example tone: "Houston — looking for great comedy this week?" Keep it warm, not dramatic. No metaphors about laughter being "felt in your bones." Just talk to people like a friend.
+
+2. THE PITCH (2-3 sentences): These comedians are handpicked by us. Frame it as a recommendation — great for date night, a night out with friends, coworkers, or just because you need a laugh. Name-drop 2-3 of the biggest names naturally, don't hype them with adjectives like "legendary" or "incredible." Just state who they are. Trust the names to do the work.
+
+3. CTA (1 sentence): Simple and direct. Link in bio. Grab tickets. Tag someone you'd bring.
+
+4. HASHTAGS (on a new line): #HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston
+
+RULES:
+- Total length: 60-80 words MAX (before hashtags). Shorter is better.
+- NO emojis except 🎤 once (optional). Zero is also fine.
+- NO hyperbole. No "masterclass in the human condition." No "redefine what you thought was funny." No "hotter than a Texas summer." Just be straightforward.
+- NO AI filler phrases: "But wait, there's more," "This isn't just X, it's Y," "Don't just hear about it — be about it." These are banned.
+- Write at a 6th grade reading level. Short sentences. Plain words.
+- The voice is a friend who knows comedy telling you what's good this week — not a copywriter trying to go viral.`;
 
   return callOpenAI(
     prompt,
-    "You are the social media voice of Comedy Houston, a publication that specializes in promoting all things comedy in Houston, Texas, and the South. You write captions that are sharp, authentic, and create genuine excitement — not generic hype. Think Gary Vee's urgency, Seth Godin's insight, and Wizard of Ads' storytelling. Keep it real."
+    "You are writing an Instagram caption for a local comedy publication. Your influences are Seth Godin (be minimal, say less, mean more) and Roy H. Williams aka the Wizard of Ads (speak to one person, be honest, earn trust). You write clean, modern copy that converts because it's genuine — not because it's loud. No AI voice. No marketing fluff. Just a clear, warm recommendation."
   );
 }
 
