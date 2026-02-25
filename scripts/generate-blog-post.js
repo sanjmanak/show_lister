@@ -15,14 +15,13 @@ const path = require("path");
 // ---------------------------------------------------------------------------
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || "";
-const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-4o-mini";
-const IMAGE_MODEL = process.env.OPENAI_IMAGE_MODEL || "dall-e-3";
+const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-4o";
 
 const OUTPUT_DIR = path.resolve(__dirname, "..");
 const EVENTS_JSON_PATH = path.join(OUTPUT_DIR, "events.json");
 const BLOG_DIR = path.join(OUTPUT_DIR, "blog");
 const BLOG_HTML_PATH = path.join(BLOG_DIR, "index.html");
-const BLOG_IMAGE_PATH = path.join(BLOG_DIR, "weekly-hero.png");
+const BLOG_HERO_HTML_PATH = path.join(BLOG_DIR, "weekly-hero.html");
 
 // ---------------------------------------------------------------------------
 // Date helpers
@@ -154,6 +153,88 @@ function callOpenAI(prompt, systemPrompt) {
 }
 
 // ---------------------------------------------------------------------------
+// OpenAI Responses API (with web search)
+// ---------------------------------------------------------------------------
+
+function callOpenAIResponses(input, instructions) {
+  return new Promise((resolve, reject) => {
+    const body = JSON.stringify({
+      model: OPENAI_MODEL,
+      instructions: instructions,
+      input: input,
+      tools: [{ type: "web_search_preview" }],
+    });
+
+    const options = {
+      hostname: "api.openai.com",
+      path: "/v1/responses",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${OPENAI_API_KEY}`,
+        "Content-Length": Buffer.byteLength(body),
+      },
+    };
+
+    const req = https.request(options, (res) => {
+      let data = "";
+      res.on("data", (chunk) => (data += chunk));
+      res.on("end", () => {
+        if (res.statusCode >= 400) {
+          return reject(
+            new Error(`OpenAI Responses API error ${res.statusCode}: ${data.slice(0, 500)}`)
+          );
+        }
+        try {
+          const parsed = JSON.parse(data);
+          const textOutput = parsed.output
+            .filter((item) => item.type === "message")
+            .flatMap((item) => item.content)
+            .filter((c) => c.type === "output_text")
+            .map((c) => c.text)
+            .join("\n");
+
+          if (parsed.usage) {
+            console.log(
+              `OpenAI Responses usage — input: ${parsed.usage.input_tokens}, output: ${parsed.usage.output_tokens}, total: ${parsed.usage.total_tokens}`
+            );
+          }
+          resolve(textOutput);
+        } catch (e) {
+          reject(new Error(`Failed to parse Responses API response: ${e.message}`));
+        }
+      });
+    });
+
+    req.on("error", (err) => reject(err));
+    req.write(body);
+    req.end();
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Research comedians via web search
+// ---------------------------------------------------------------------------
+
+function researchComedians(comedianNames) {
+  const input = `Search the web for current information about these comedians who are performing in Houston this week:
+
+${comedianNames.map((name) => `- ${name}`).join("\n")}
+
+For EACH comedian, find:
+1. Their most notable credits — specific Netflix/HBO/Comedy Central special TITLES, TV show names, podcast names, movie titles
+2. Any recent activity (2025–2026): new specials, tour announcements, recent podcast appearances, viral moments
+3. Their comedy style and what makes their live show special
+
+Return a 3-4 sentence research summary for each comedian. Use SPECIFIC NAMES AND TITLES, not generic descriptions. If you can't find reliable info about someone, say so.`;
+
+  const instructions =
+    "You are a comedy research assistant. Search the web to find accurate, current information about each comedian. Cite specific show titles, special names, and verifiable facts. If you cannot find information about a comedian, say so rather than guessing.";
+
+  return callOpenAIResponses(input, instructions);
+}
+
+// ---------------------------------------------------------------------------
 // Identify top comedians via OpenAI
 // ---------------------------------------------------------------------------
 
@@ -189,77 +270,135 @@ Return ONLY the JSON array, no other text.`;
 }
 
 // ---------------------------------------------------------------------------
-// DALL-E image generation
+// HTML hero creative (replaces DALL-E)
 // ---------------------------------------------------------------------------
 
-function generateHeroImage(comedianNames, weekRange) {
-  return new Promise((resolve, reject) => {
-    // Build a clean text list for the image
-    const nameList = comedianNames.slice(0, 5);
+function escapeHTML(str) {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
 
-    const imagePrompt = `Create a clean, modern promotional graphic for a weekly comedy roundup. The image should be a square (1024x1024) with a blue and white color palette.
+function generateHeroCreativeHTML(comedianNames, weekRange) {
+  const nameItems = comedianNames
+    .map((name) => `      <div class="lineup-name">${escapeHTML(name)}</div>`)
+    .join("\n");
 
-Design requirements:
-- Background: Deep navy blue (#1a3a5c) with subtle gradient or geometric pattern
-- Text color: White and light blue
-- At the top: "THIS WEEK IN HOUSTON COMEDY" in bold white text
-- In the center, list these comedian/show names, each on its own line in large, clear white text:
-${nameList.map((n, i) => `  ${i + 1}. ${n}`).join("\n")}
-- At the bottom: "${weekRange}" in smaller light blue text
-- Style: Clean typography-focused design, no photographs, no clip art, no cartoon faces
-- The text should be clearly legible and well-spaced
-- Feel free to add subtle decorative elements like thin lines, a microphone icon, or stars in the blue/white palette`;
+  return `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1200px;
+      height: 630px;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+      color: #f0f0f5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .bg-accent {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+    }
+    .bg-accent-1 { background: #ff4d6a; top: -100px; right: -50px; }
+    .bg-accent-2 { background: #7c5cff; bottom: -100px; left: -50px; }
+    .header-label {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #ff4d6a;
+      margin-bottom: 12px;
+      z-index: 1;
+    }
+    .title {
+      font-size: 42px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 32px;
+      z-index: 1;
+      text-align: center;
+    }
+    .lineup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 1;
+      margin-bottom: 32px;
+    }
+    .lineup-name {
+      font-size: 28px;
+      font-weight: 700;
+      color: #ffffff;
+      padding: 4px 20px;
+      border-left: 3px solid #ff4d6a;
+    }
+    .week-range {
+      font-size: 18px;
+      font-weight: 500;
+      color: #9999aa;
+      z-index: 1;
+    }
+    .brand {
+      position: absolute;
+      bottom: 24px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #666677;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-accent bg-accent-1"></div>
+  <div class="bg-accent bg-accent-2"></div>
+  <div class="header-label">This Week In</div>
+  <div class="title">Houston Comedy</div>
+  <div class="lineup">
+${nameItems}
+  </div>
+  <div class="week-range">${escapeHTML(weekRange)}</div>
+  <div class="brand">COMEDYHOUSTON.COM</div>
+</body>
+</html>`;
+}
 
-    const body = JSON.stringify({
-      model: IMAGE_MODEL,
-      prompt: imagePrompt,
-      n: 1,
-      size: "1024x1024",
-      response_format: "b64_json",
-    });
+function generateInlineHeroHTML(comedianNames, weekRange) {
+  const nameItems = comedianNames
+    .map((name) => `        <div class="hero-name">${escapeHTML(name)}</div>`)
+    .join("\n");
 
-    const options = {
-      hostname: "api.openai.com",
-      path: "/v1/images/generations",
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${OPENAI_API_KEY}`,
-        "Content-Length": Buffer.byteLength(body),
-      },
-    };
-
-    const req = https.request(options, (res) => {
-      let data = "";
-      res.on("data", (chunk) => (data += chunk));
-      res.on("end", () => {
-        if (res.statusCode >= 400) {
-          return reject(
-            new Error(`DALL-E API error ${res.statusCode}: ${data.slice(0, 500)}`)
-          );
-        }
-        try {
-          const parsed = JSON.parse(data);
-          const b64 = parsed.data[0].b64_json;
-          const buffer = Buffer.from(b64, "base64");
-          resolve(buffer);
-        } catch (e) {
-          reject(new Error(`Failed to parse DALL-E response: ${e.message}`));
-        }
-      });
-    });
-
-    req.on("error", (err) => reject(err));
-    req.write(body);
-    req.end();
-  });
+  return `    <div class="hero-creative">
+      <div class="hero-label">This Week In</div>
+      <div class="hero-title">Houston Comedy</div>
+      <div class="hero-lineup">
+${nameItems}
+      </div>
+      <div class="hero-dates">${escapeHTML(weekRange)}</div>
+    </div>`;
 }
 
 // ---------------------------------------------------------------------------
 // Build the prompt
 // ---------------------------------------------------------------------------
 
-function buildPrompt(events, weekRange) {
+function buildPrompt(events, weekRange, comedianResearch) {
   const eventList = events
     .map((ev, idx) => {
       const parts = [`- **${ev.name}** [EVENT_ID: ${idx}]`];
@@ -287,12 +426,16 @@ function buildPrompt(events, weekRange) {
     })
     .join("\n\n");
 
+  const researchSection = comedianResearch
+    ? `\n\nCOMEDIAN RESEARCH (from web search — use this for accurate, current blurbs):\n\n${comedianResearch}\n`
+    : "";
+
   return `Write a blog post about Houston comedy shows for the week of ${weekRange}.
 
 Here are the ${events.length} events happening this week:
 
 ${eventList}
-
+${researchSection}
 Requirements:
 
 COMEDIAN DEEP DIVES (this is the MOST IMPORTANT part — this is what makes this blog post worth reading):
@@ -364,12 +507,7 @@ You write in clean, semantic HTML using the CSS classes specified in the prompt.
 // HTML template
 // ---------------------------------------------------------------------------
 
-function wrapInHTML(blogContent, weekRange, generatedAt, hasHeroImage) {
-  const heroImageHTML = hasHeroImage
-    ? `\n    <div class="hero-image">
-      <img src="weekly-hero.png" alt="This Week in Houston Comedy — ${weekRange}" loading="eager">
-    </div>\n`
-    : "";
+function wrapInHTML(blogContent, weekRange, generatedAt, inlineHeroHTML) {
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -378,6 +516,7 @@ function wrapInHTML(blogContent, weekRange, generatedAt, hasHeroImage) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>This Week in Houston Comedy — ${weekRange}</title>
   <meta name="description" content="Your weekly roundup of every comedy show in Houston for ${weekRange}. Find shows at Houston Improv, The Riot, The Secret Group, and more.">
+  <meta property="og:image" content="weekly-hero.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -444,17 +583,83 @@ function wrapInHTML(blogContent, weekRange, generatedAt, hasHeroImage) {
 
     .header-nav .sep { color: var(--text-muted); }
 
-    .hero-image {
-      margin-bottom: 32px;
-      border-radius: var(--radius);
-      overflow: hidden;
+    .hero-creative {
+      background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
       border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 48px 32px;
+      margin-bottom: 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero-image img {
-      width: 100%;
-      height: auto;
-      display: block;
+    .hero-creative::before,
+    .hero-creative::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.15;
+    }
+
+    .hero-creative::before {
+      background: var(--accent);
+      top: -100px;
+      right: -50px;
+    }
+
+    .hero-creative::after {
+      background: var(--accent-secondary);
+      bottom: -100px;
+      left: -50px;
+    }
+
+    .hero-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-lineup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 2px 16px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .hero-dates {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      position: relative;
+      z-index: 1;
     }
 
     article h2 {
@@ -601,7 +806,8 @@ function wrapInHTML(blogContent, weekRange, generatedAt, hasHeroImage) {
       <span class="sep">/</span>
       <a href="/blog/">Weekly Blog</a>
     </nav>
-${heroImageHTML}
+${inlineHeroHTML}
+
     <article>
 ${blogContent}
     </article>
@@ -653,10 +859,9 @@ async function main() {
     fs.mkdirSync(BLOG_DIR, { recursive: true });
   }
 
-  // Step 1: Identify top comedians for the hero image
-  console.log("Identifying top comedians for hero image...");
+  // Step 1: Identify top comedians
+  console.log("Identifying top comedians...");
   let topComedianNames = [];
-  let hasHeroImage = false;
 
   try {
     const topComediansRaw = await identifyTopComedians(events);
@@ -668,28 +873,36 @@ async function main() {
     console.log("");
   } catch (err) {
     console.warn(`Warning: Could not identify top comedians: ${err.message}`);
-    console.warn("Skipping hero image generation.");
     console.log("");
   }
 
-  // Step 2: Generate hero image via DALL-E (if we have comedian names)
+  // Step 2: Research comedians via web search
+  let comedianResearch = "";
   if (topComedianNames.length > 0) {
-    console.log(`Generating hero image with DALL-E (${IMAGE_MODEL})...`);
+    console.log("Researching comedians via web search...");
     try {
-      const imageBuffer = await generateHeroImage(topComedianNames, weekRange);
-      fs.writeFileSync(BLOG_IMAGE_PATH, imageBuffer);
-      hasHeroImage = true;
-      console.log(`Wrote hero image: ${BLOG_IMAGE_PATH} (${(imageBuffer.length / 1024).toFixed(0)} KB)`);
+      comedianResearch = await researchComedians(topComedianNames);
+      console.log("Comedian research completed.");
       console.log("");
     } catch (err) {
-      console.warn(`Warning: Could not generate hero image: ${err.message}`);
-      console.warn("Continuing without hero image.");
+      console.warn(`Warning: Comedian research failed: ${err.message}`);
+      console.warn("Continuing without web research.");
       console.log("");
     }
   }
 
-  // Step 3: Generate the blog post
-  const prompt = buildPrompt(events, weekRange);
+  // Step 3: Generate hero creative HTML (replaces DALL-E)
+  let inlineHeroHTML = "";
+  if (topComedianNames.length > 0) {
+    const heroHTML = generateHeroCreativeHTML(topComedianNames, weekRange);
+    fs.writeFileSync(BLOG_HERO_HTML_PATH, heroHTML);
+    console.log(`Wrote hero creative HTML: ${BLOG_HERO_HTML_PATH}`);
+    inlineHeroHTML = generateInlineHeroHTML(topComedianNames, weekRange);
+    console.log("");
+  }
+
+  // Step 4: Generate the blog post (with research context)
+  const prompt = buildPrompt(events, weekRange, comedianResearch);
   console.log(`Sending ${events.length} events to OpenAI (${OPENAI_MODEL})...`);
 
   const blogContent = await callOpenAI(prompt, SYSTEM_PROMPT);
@@ -703,7 +916,7 @@ async function main() {
     day: "numeric",
     year: "numeric",
   });
-  const html = wrapInHTML(blogContent, weekRange, generatedAt, hasHeroImage);
+  const html = wrapInHTML(blogContent, weekRange, generatedAt, inlineHeroHTML);
   fs.writeFileSync(BLOG_HTML_PATH, html);
   console.log(`Wrote ${BLOG_HTML_PATH}`);
   console.log("");
