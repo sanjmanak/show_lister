@@ -22,6 +22,7 @@ const EVENTS_JSON_PATH = path.join(OUTPUT_DIR, "events.json");
 const BLOG_DIR = path.join(OUTPUT_DIR, "blog");
 const BLOG_HTML_PATH = path.join(BLOG_DIR, "index.html");
 const BLOG_HERO_HTML_PATH = path.join(BLOG_DIR, "weekly-hero.html");
+const BLOG_CAPTION_PATH = path.join(BLOG_DIR, "instagram-caption.txt");
 
 // ---------------------------------------------------------------------------
 // Date helpers
@@ -459,6 +460,35 @@ ${gridItems}
 ${extraSection}
       <div class="hero-dates">${escapeHTML(weekRange)}</div>
     </div>`;
+}
+
+// ---------------------------------------------------------------------------
+// Instagram caption generation
+// ---------------------------------------------------------------------------
+
+function generateInstagramCaption(comedianNames, weekRange) {
+  const namesList = comedianNames.slice(0, 6).join(", ");
+
+  const prompt = `Write an Instagram caption for Comedy Houston's weekly post.
+
+Week: ${weekRange}
+Featured comedians: ${namesList}
+
+Requirements:
+- Open with a hook that grabs attention. Channel the energy of marketers like Gary Vee, Seth Godin, and Roy H. Williams (Wizard of Ads) — make people FEEL something, create urgency, paint a picture.
+- Mention the week range naturally (e.g., "Houston, ${weekRange}")
+- Name-drop 2-4 of the biggest comedians performing
+- Keep it under 150 words — punchy, not a wall of text
+- End with a call to action (link in bio, grab tickets, tag a friend who needs a laugh)
+- Add 3-5 relevant hashtags at the end (#HoustonComedy #StandUp #LiveComedy etc.)
+- NO emojis in every sentence — use them sparingly (max 3-4 total)
+- Write like a cool local publication that actually knows comedy, not a corporate brand
+- The tone should make someone stop scrolling and think "I need to go to this"`;
+
+  return callOpenAI(
+    prompt,
+    "You are the social media voice of Comedy Houston, a publication that specializes in promoting all things comedy in Houston, Texas, and the South. You write captions that are sharp, authentic, and create genuine excitement — not generic hype. Think Gary Vee's urgency, Seth Godin's insight, and Wizard of Ads' storytelling. Keep it real."
+  );
 }
 
 // ---------------------------------------------------------------------------
@@ -1047,6 +1077,22 @@ async function main() {
   fs.writeFileSync(BLOG_HTML_PATH, html);
   console.log(`Wrote ${BLOG_HTML_PATH}`);
   console.log("");
+
+  // Step 5: Generate Instagram caption
+  if (topComedianNames.length > 0) {
+    console.log("Generating Instagram caption...");
+    try {
+      let caption = await generateInstagramCaption(topComedianNames, weekRange);
+      caption = caption.replace(/^```\w*\s*\n?/g, "").replace(/\n?```\s*$/g, "").trim();
+      fs.writeFileSync(BLOG_CAPTION_PATH, caption);
+      console.log(`Wrote Instagram caption: ${BLOG_CAPTION_PATH}`);
+      console.log("");
+    } catch (err) {
+      console.warn(`Warning: Caption generation failed: ${err.message}`);
+      console.log("");
+    }
+  }
+
   console.log("Done!");
 }
 
