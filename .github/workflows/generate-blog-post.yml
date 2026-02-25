@@ -54,24 +54,28 @@ jobs:
             git push
           fi
 
-      - name: Load caption for email
-        id: caption
+      - name: Check if email is configured
+        id: email-check
+        env:
+          HAS_SMTP: ${{ secrets.SMTP_SERVER }}
         run: |
-          if [ -f blog/instagram-caption.txt ]; then
-            echo "CAPTION<<CAPTION_EOF" >> $GITHUB_ENV
-            cat blog/instagram-caption.txt >> $GITHUB_ENV
-            echo "" >> $GITHUB_ENV
-            echo "CAPTION_EOF" >> $GITHUB_ENV
-            echo "has_caption=true" >> $GITHUB_OUTPUT
+          if [ -n "$HAS_SMTP" ] && [ -f blog/instagram-caption.txt ] && [ -f blog/weekly-hero.png ]; then
+            echo "send_email=true" >> $GITHUB_OUTPUT
           else
-            echo "has_caption=false" >> $GITHUB_OUTPUT
+            echo "send_email=false" >> $GITHUB_OUTPUT
+            echo "Skipping email — SMTP not configured or files missing."
           fi
 
+      - name: Load caption for email
+        if: steps.email-check.outputs.send_email == 'true'
+        run: |
+          echo "CAPTION<<CAPTION_EOF" >> $GITHUB_ENV
+          cat blog/instagram-caption.txt >> $GITHUB_ENV
+          echo "" >> $GITHUB_ENV
+          echo "CAPTION_EOF" >> $GITHUB_ENV
+
       - name: Email weekly creative + caption
-        if: >
-          hashFiles('blog/weekly-hero.png') != '' &&
-          steps.caption.outputs.has_caption == 'true' &&
-          secrets.SMTP_SERVER != ''
+        if: steps.email-check.outputs.send_email == 'true'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: ${{ secrets.SMTP_SERVER }}
