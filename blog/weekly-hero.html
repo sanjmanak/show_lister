@@ -34,31 +34,56 @@
       letter-spacing: 4px;
       text-transform: uppercase;
       color: #ff4d6a;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       z-index: 1;
     }
     .title {
-      font-size: 42px;
+      font-size: 38px;
       font-weight: 900;
       letter-spacing: -1px;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
       z-index: 1;
       text-align: center;
     }
-    .lineup {
+    .headshot-grid {
+      display: flex;
+      gap: 32px;
+      z-index: 1;
+      margin-bottom: 20px;
+    }
+    .grid-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
-      z-index: 1;
-      margin-bottom: 32px;
+      gap: 10px;
     }
-    .lineup-name {
-      font-size: 28px;
+    .grid-item img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255, 77, 106, 0.5);
+    }
+    .grid-name {
+      font-size: 18px;
       font-weight: 700;
       color: #ffffff;
-      padding: 4px 20px;
-      border-left: 3px solid #ff4d6a;
+      text-align: center;
+    }
+    .extra-lineup {
+      display: flex;
+      gap: 16px;
+      z-index: 1;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .extra-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #9999aa;
+      padding: 2px 12px;
+      border-left: 2px solid #ff4d6a;
     }
     .week-range {
       font-size: 18px;
@@ -68,7 +93,7 @@
     }
     .brand {
       position: absolute;
-      bottom: 24px;
+      bottom: 20px;
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 2px;
@@ -82,12 +107,27 @@
   <div class="bg-accent bg-accent-2"></div>
   <div class="header-label">This Week In</div>
   <div class="title">Houston Comedy</div>
-  <div class="lineup">
-      <div class="lineup-name">Ali Siddiq</div>
-      <div class="lineup-name">Greg Fitzsimmons</div>
-      <div class="lineup-name">Sugar Sammy</div>
-      <div class="lineup-name">Mae Martin</div>
-      <div class="lineup-name">Henry Cho</div>
+  <div class="headshot-grid">
+      <div class="grid-item">
+        <img src="https://s1.ticketm.net/dam/a/8b9/0a83a81b-0da6-4434-9b7d-4e59027c58b9_SOURCE" alt="Ali Siddiq">
+        <div class="grid-name">Ali Siddiq</div>
+      </div>
+      <div class="grid-item">
+        <img src="https://s1.ticketm.net/dam/a/c3f/720f5f8a-a718-4c06-8cb5-f22765fcbc3f_56721_TABLET_LANDSCAPE_LARGE_16_9.jpg" alt="Greg Fitzsimmons">
+        <div class="grid-name">Greg Fitzsimmons</div>
+      </div>
+      <div class="grid-item">
+        <img src="https://s1.ticketm.net/dam/a/597/a6675b28-8ab7-4b56-956e-e83dbfd4c597_SOURCE" alt="Jason Cheny">
+        <div class="grid-name">Jason Cheny</div>
+      </div>
+  </div>
+  <div class="extra-lineup">
+      <span class="extra-name">Sugar Sammy</span>
+      <span class="extra-name">Sugar Sammy</span>
+      <span class="extra-name">Mae Martin</span>
+      <span class="extra-name">Amir K</span>
+      <span class="extra-name">Henry Cho</span>
+      <span class="extra-name">Paris Sashay</span>
   </div>
   <div class="week-range">February 23 – March 1, 2026</div>
   <div class="brand">COMEDYHOUSTON.COM</div>
