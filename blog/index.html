@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>This Week in Houston Comedy — February 23 – March 1, 2026</title>
   <meta name="description" content="Your weekly roundup of every comedy show in Houston for February 23 – March 1, 2026. Find shows at Houston Improv, The Riot, The Secret Group, and more.">
+  <meta property="og:image" content="weekly-hero.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -71,17 +72,83 @@
 
     .header-nav .sep { color: var(--text-muted); }
 
-    .hero-image {
-      margin-bottom: 32px;
-      border-radius: var(--radius);
-      overflow: hidden;
+    .hero-creative {
+      background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
       border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 48px 32px;
+      margin-bottom: 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero-image img {
-      width: 100%;
-      height: auto;
-      display: block;
+    .hero-creative::before,
+    .hero-creative::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.15;
+    }
+
+    .hero-creative::before {
+      background: var(--accent);
+      top: -100px;
+      right: -50px;
+    }
+
+    .hero-creative::after {
+      background: var(--accent-secondary);
+      bottom: -100px;
+      left: -50px;
+    }
+
+    .hero-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-lineup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 2px 16px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .hero-dates {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      position: relative;
+      z-index: 1;
     }
 
     article h2 {
@@ -228,75 +295,34 @@
       <span class="sep">/</span>
       <a href="/blog/">Weekly Blog</a>
     </nav>
-
-    <div class="hero-image">
-      <img src="weekly-hero.png" alt="This Week in Houston Comedy — February 23 – March 1, 2026" loading="eager">
+    <div class="hero-creative">
+      <div class="hero-label">This Week In</div>
+      <div class="hero-title">Houston Comedy</div>
+      <div class="hero-lineup">
+        <div class="hero-name">Ali Siddiq</div>
+        <div class="hero-name">Greg Fitzsimmons</div>
+        <div class="hero-name">Sugar Sammy</div>
+        <div class="hero-name">Mae Martin</div>
+        <div class="hero-name">Henry Cho</div>
+      </div>
+      <div class="hero-dates">February 23 – March 1, 2026</div>
     </div>
 
     <article>
-<h2>Comedy Roundup: February 23 – March 1, 2026</h2>
+```html
+<h2>This Week in Houston Comedy: February 23 – March 1, 2026</h2>
 
-<p>This week in Houston, you can catch the incredible Ali Siddiq at the Improv, bringing his raw prison-to-stage storytelling style that’s become a standout in the comedy scene. Plus, Greg Fitzsimmons, known for his razor-sharp crowd work and appearances on shows like "The Joe Rogan Experience," will be making waves at Punch Line on Friday and Saturday.</p>
+<p>Ali Siddiq brings his raw prison-to-stage storytelling to the Improv this week, and if you haven't seen Greg Fitzsimmons' razor-sharp crowd work, Friday at Punch Line is your shot. With big names and local showcases happening every night, Houston's comedy scene is buzzing. Check out the highlights below and snag your tickets early for the best seats in the house.</p>
 
-<h3>Tuesday, February 24</h3>
-
-<div class="show-card">
-  <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177009348%2F68532713233%2F1%2Foriginal.20240802-211725?auto=format%2Ccompress&q=75&sharp=10&s=7a3118b349dc522175478a647cc08b50" alt="C U Next Tuesday: Weekly Comedy" class="show-img" loading="lazy">
-  <div class="show-info">
-    <strong>C U Next Tuesday: Weekly Comedy hosted by Corlis DeLauren and Tess Vergult</strong><br>
-    The Secret Group<br>
-    10:00 PM<br>
-    Price: $0<br>
-    <p class="blurb">A fun weekly showcase where local comics hit the stage, bringing a mix of styles and perspectives to the mic.</p>
-    <a class="ticket-link" href="https://www.eventbrite.com/e/c-u-next-tuesday-weekly-comedy-hosted-by-corlis-delauren-and-tess-vergult-tickets-1982630296588">Get Tickets</a>
-  </div>
-</div>
-
-<div class="show-card">
-  <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177009364%2F68532713233%2F1%2Foriginal.20240806-170802?auto=format%2Ccompress&q=75&sharp=10&s=5091c1e6f4b3d6deb751df585f0ab37e" alt="PASS THE MIC: Tuesday Open Mic Comedy" class="show-img" loading="lazy">
-  <div class="show-info">
-    <strong>PASS THE MIC: Tuesday Open Mic Comedy</strong><br>
-    The Secret Group<br>
-    11:30 PM<br>
-    Price: $0<br>
-    <p class="blurb">Grab the mic yourself or enjoy a night filled with fresh talent as local comedians showcase their best material.</p>
-    <a class="ticket-link" href="https://www.eventbrite.com/e/pass-the-mic-tuesday-open-mic-comedy-tickets-1982630301603">Get Tickets</a>
-  </div>
-</div>
+<h3>Wednesday Night</h3>
 
 <div class="show-card">
   <img src="https://s1.ticketm.net/dam/a/8b9/0a83a81b-0da6-4434-9b7d-4e59027c58b9_SOURCE" alt="Ali Siddiq" class="show-img" loading="lazy">
   <div class="show-info">
     <strong>Ali Siddiq</strong><br>
-    Houston Improv<br>
-    7:30 PM<br>
-    <a class="ticket-link" href="https://www.ticketweb.com/event/ali-siddiq-houston-improv-tickets/14066094?REFERRAL_ID=tmfeed">Get Tickets</a>
-    <p class="blurb">Ali broke out with his Netflix hour 'It’s Bigger Than These Bars' and his storytelling segments on 'This Is Not Happening.' Expect powerful, relatable anecdotes delivered in his unique, engaging style that captivates from the first punchline.</p>
-  </div>
-</div>
-
-<h3>Wednesday, February 25</h3>
-
-<div class="show-card">
-  <img src="https://s1.ticketm.net/dam/a/204/1cf0a6ef-fc13-449d-a78a-210f4ddbd204_SOURCE" alt="Comedy Allstars" class="show-img" loading="lazy">
-  <div class="show-info">
-    <strong>Comedy Allstars</strong><br>
-    Punch Line Houston<br>
-    7:00 PM<br>
-    <p class="blurb">Catch a variety of local comedians showcasing their best material, creating an electric atmosphere perfect for a night of laughs.</p>
-    <a class="ticket-link" href="https://www.ticketmaster.com/comedy-allstars-houston-texas-02-25-2026/event/3A0063921DFBD6F3">Get Tickets</a>
-  </div>
-</div>
-
-<div class="show-card">
-  <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177009380%2F284483032458%2F1%2Foriginal.20210608-153141?auto=format%2Ccompress&q=75&sharp=10&s=966fc7cac68b24e2b83bf95fcd0a0660" alt="$2 BILL Two Dollar Comedy Show" class="show-img" loading="lazy">
-  <div class="show-info">
-    <strong>$2 BILL Two Dollar Comedy Show every Wednesday!</strong><br>
-    The Secret Group<br>
-    8:00 PM<br>
-    Price: $5.36<br>
-    <p class="blurb">An affordable evening of laughs featuring some of Houston's best comedians, all while enjoying drinks at great prices.</p>
-    <a class="ticket-link" href="https://www.eventbrite.com/e/2-bill-two-dollar-comedy-show-every-wednesday-tickets-1982630305615">Get Tickets</a>
+    Houston Improv, 7:30 PM<br>
+    <p class="blurb">Ali Siddiq broke out with his Netflix hour "The Domino Effect" and his legendary storytelling segments on "This Is Not Happening." His live sets are marathon storytelling sessions that feel like sitting around a campfire with the funniest person you've ever met — raw, unpredictable, and impossible to look away from.</p>
+    <a class="ticket-link" href="https://www.ticketweb.com/event/ali-siddiq-houston-improv-tickets/14066084?REFERRAL_ID=tmfeed">Get Tickets</a>
   </div>
 </div>
 
@@ -304,101 +330,58 @@
   <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177348468%2F3558237521%2F1%2Foriginal.20260212-040426?auto=format%2Ccompress&q=75&sharp=10&s=57e2d1d20dec72672b2cb90151fc5d34" alt="Devil's Advocate Comedy" class="show-img" loading="lazy">
   <div class="show-info">
     <strong>Devil's Advocate Comedy</strong><br>
-    The Secret Group<br>
-    10:00 PM<br>
+    The Secret Group, 10:00 PM<br>
     Price: $8.82<br>
-    <p class="blurb">Join hosts Blythe Payne & Quinn Doran for a night of edgy comedy that pushes boundaries while delivering unique perspectives.</p>
     <a class="ticket-link" href="https://www.eventbrite.com/e/devils-advocate-comedy-tickets-1983206644460">Get Tickets</a>
   </div>
 </div>
 
-<h3>Thursday, February 26</h3>
+<h3>Thursday Night</h3>
 
 <div class="show-card">
   <img src="https://s1.ticketm.net/dam/a/c3f/720f5f8a-a718-4c06-8cb5-f22765fcbc3f_56721_TABLET_LANDSCAPE_LARGE_16_9.jpg" alt="Greg Fitzsimmons" class="show-img" loading="lazy">
   <div class="show-info">
     <strong>Greg Fitzsimmons</strong><br>
-    Punch Line Houston<br>
-    7:30 PM<br>
-    <p class="blurb">Greg is a regular on 'The Joe Rogan Experience' and has his own specials like 'Life on Stage' that showcase his witty observations. Expect a fast-paced show filled with sharp crowd work and hilarious anecdotes from his years in the business.</p>
+    Punch Line Houston, 7:30 PM<br>
+    <p class="blurb">Greg Fitzsimmons is well-known for his appearances on "The Joe Rogan Experience" and his numerous stand-up specials, including "Life on Stage." His crowd work is razor-sharp, making his live performances an engaging and spontaneous experience.</p>
     <a class="ticket-link" href="https://www.ticketmaster.com/greg-fitzsimmons-houston-texas-02-26-2026/event/3A0063821D26D289">Get Tickets</a>
   </div>
 </div>
 
-<h3>Friday, February 27</h3>
+<div class="show-card">
+  <img src="https://s1.ticketm.net/dam/a/597/a6675b28-8ab7-4b56-956e-e83dbfd4c597_SOURCE" alt="Jason Cheny" class="show-img" loading="lazy">
+  <div class="show-info">
+    <strong>Jason Cheny</strong><br>
+    Houston Improv, 7:30 PM<br>
+    <a class="ticket-link" href="https://www.ticketweb.com/event/jason-cheny-houston-improv-tickets/14638763?REFERRAL_ID=tmfeed">Get Tickets</a>
+  </div>
+</div>
+
+<h3>Friday Night</h3>
 
 <div class="show-card">
   <img src="https://s1.ticketm.net/dam/a/c3f/720f5f8a-a718-4c06-8cb5-f22765fcbc3f_56721_TABLET_LANDSCAPE_LARGE_16_9.jpg" alt="Greg Fitzsimmons" class="show-img" loading="lazy">
   <div class="show-info">
     <strong>Greg Fitzsimmons</strong><br>
-    Punch Line Houston<br>
-    7:00 PM<br>
-    <p class="blurb">Catch Greg for another night of laughs — see Thursday's listing for why you don’t want to miss this.</p>
+    Punch Line Houston, 7:00 PM<br>
+    <p class="blurb">Another chance to catch Greg Fitzsimmons — see Thursday's listing for why you don't want to miss this.</p>
     <a class="ticket-link" href="https://www.ticketmaster.com/greg-fitzsimmons-houston-texas-02-27-2026/event/3A0063821D29D28F">Get Tickets</a>
   </div>
 </div>
 
+<h3>Saturday Night</h3>
+
 <div class="show-card">
-  <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F923781843%2F2186820483043%2F1%2Foriginal.20241227-161803?auto=format%2Ccompress&q=75&sharp=10&s=680f9342c7cee46a79ee13f5f9896ffe" alt="The Late Night Dirty Show: X Rated Comedy" class="show-img" loading="lazy">
+  <img src="https://s1.ticketm.net/dam/a/ec6/afc9d927-edfa-499d-9bf2-02257f9b4ec6_SOURCE" alt="Amir K" class="show-img" loading="lazy">
   <div class="show-info">
-    <strong>The Late Night Dirty Show: X Rated Comedy</strong><br>
-    The Secret Group<br>
-    11:59 PM<br>
-    Price: $8.82<br>
-    <p class="blurb">A night full of raunchy jokes and adult humor that’s not for the faint of heart — get ready for some unfiltered laughs!</p>
-    <a class="ticket-link" href="https://www.eventbrite.com/e/the-late-night-dirty-show-x-rated-comedy-tickets-1982630372816">Get Tickets</a>
+    <strong>Amir K</strong><br>
+    Houston Improv, 7:00 PM<br>
+    <a class="ticket-link" href="https://www.ticketweb.com/event/amir-k-houston-improv-tickets/14140364?REFERRAL_ID=tmfeed">Get Tickets</a>
   </div>
 </div>
 
-<h3>Saturday, February 28</h3>
-
-<div class="show-card">
-  <img src="https://s1.ticketm.net/dam/a/c3f/720f5f8a-a718-4c06-8cb5-f22765fcbc3f_56721_TABLET_LANDSCAPE_LARGE_16_9.jpg" alt="Greg Fitzsimmons" class="show-img" loading="lazy">
-  <div class="show-info">
-    <strong>Greg Fitzsimmons</strong><br>
-    Punch Line Houston<br>
-    7:00 PM<br>
-    <p class="blurb">Last chance to see Greg this week — check Thursday’s listing for his signature style that keeps audiences engaged and laughing.</p>
-    <a class="ticket-link" href="https://www.ticketmaster.com/greg-fitzsimmons-houston-texas-02-28-2026/event/3A0063821D2CD292">Get Tickets</a>
-  </div>
-</div>
-
-<div class="show-card">
-  <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177009674%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=c659c697040f8c367cf98537ce321752" alt="The Best of the Secret Group Comedy Showcase 11pm" class="show-img" loading="lazy">
-  <div class="show-info">
-    <strong>The Best of the Secret Group Comedy Showcase 11pm</strong><br>
-    The Secret Group<br>
-    11:00 PM<br>
-    Price: $11.13 – $14.59<br>
-    <p class="blurb">Experience a lineup of local comics in an intimate setting, perfect for discovering new voices in comedy.</p>
-    <a class="ticket-link" href="https://www.eventbrite.com/e/the-best-of-the-secret-group-rated-r-comedy-showcase-11pm-tickets-1982630393879">Get Tickets</a>
-  </div>
-</div>
-
-<h3>Sunday, March 1</h3>
-
-<div class="show-card">
-  <img src="https://s1.ticketm.net/dam/a/204/1cf0a6ef-fc13-449d-a78a-210f4ddbd204_SOURCE" alt="Comedy Allstars" class="show-img" loading="lazy">
-  <div class="show-info">
-    <strong>Comedy Allstars</strong><br>
-    Punch Line Houston<br>
-    7:00 PM<br>
-    <p class="blurb">Catch a variety of local comedians showcasing their best material, creating an electric atmosphere perfect for a night of laughs.</p>
-    <a class="ticket-link" href="https://www.ticketmaster.com/comedy-allstars-houston-texas-03-01-2026/event/3A0063921E01D6F9">Get Tickets</a>
-  </div>
-</div>
-
-<div class="show-card">
-  <img src="https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg" alt="Chingona Comedy: Loteria Edition" class="show-img" loading="lazy">
-  <div class="show-info">
-    <strong>Chingona Comedy: Loteria Edition</strong><br>
-    Houston Improv<br>
-    7:00 PM<br>
-    <a class="ticket-link" href="https://www.ticketweb.com/event/chingona-comedy-loteria-edition-houston-improv-tickets/14167034?REFERRAL_ID=tmfeed">Get Tickets</a>
-  </div>
-</div>
-
-<p>If you're looking to catch some laughs, don't wait too long to grab your tickets — shows with Ali Siddiq and Greg Fitzsimmons are likely to sell out quickly. Check out these events for a week filled with fantastic comedy!</p>
+<p>With so many great shows this week, make sure to grab your tickets early. Ali Siddiq and Greg Fitzsimmons are sure to be crowd favorites, so don't wait until the last minute!</p>
+```
     </article>
 
     <div class="meta" style="margin-top: 24px;">
