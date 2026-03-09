@@ -492,28 +492,29 @@ ${extraSection}
 // Instagram caption generation
 // ---------------------------------------------------------------------------
 
-function generateInstagramCaption(comedianNames, weekRange, instagramHandles) {
+function generateInstagramCaption(comedianNames, weekRange, instagramHandles, comedianResearch) {
   const namesList = comedianNames.slice(0, 6).join(", ");
 
   // Build the handles section for the prompt
   const handlesFound = instagramHandles || {};
   const handleEntries = Object.entries(handlesFound).filter(([, handle]) => handle);
-  const handlesNote = handleEntries.length > 0
-    ? `\nKnown Instagram handles: ${handleEntries.map(([name, handle]) => `${name} = ${handle}`).join(", ")}`
-    : "";
-
   const handlesList = handleEntries.map(([, handle]) => handle).join(" ");
+
+  // Build research context so the caption can reference real credits
+  const researchSection = comedianResearch
+    ? `\nBACKGROUND ON THESE COMEDIANS (use this to write specific, informed copy — do NOT dump all of it into the caption, just pick 1-2 details that make the best hook):\n\n${comedianResearch}\n`
+    : "";
 
   const prompt = `Write an Instagram caption for Comedy Houston's weekly post.
 
 Week: ${weekRange}
-Featured comedians: ${namesList}${handlesNote}
-
+Featured comedians: ${namesList}
+${researchSection}
 STRUCTURE (follow this exact format):
 
-1. HOOK (1 sentence): A simple, direct opener addressed to Houston. Example tone: "Houston — looking for great comedy this week?" Keep it warm, not dramatic. No metaphors about laughter being "felt in your bones." Just talk to people like a friend.
+1. HOOK (1 sentence): Address Houston directly. Use a SPECIFIC detail from the research to make it interesting — a comedian's real special title, a real credit, something concrete. Not "great comedy this week" but something like "The guy behind Netflix's 'The Domino Effect' is in Houston this Thursday." Make it feel like insider knowledge, not an ad.
 
-2. THE PITCH (2-3 sentences): These comedians are handpicked by us. Frame it as a recommendation — great for date night, a night out with friends, coworkers, or just because you need a laugh. Name-drop 2-3 of the biggest names naturally, don't hype them with adjectives like "legendary" or "incredible." Just state who they are. Trust the names to do the work.
+2. THE PITCH (2-3 sentences): Recommend 2-3 of the biggest names with ONE specific, real detail each — a special title, a podcast they host, a show they were on. Don't stack adjectives. Just state the fact and let it speak. Frame it as a personal recommendation for a night out.
 
 3. CTA (1 sentence): Simple and direct. Link in bio. Grab tickets. Tag someone you'd bring.
 
@@ -522,17 +523,18 @@ STRUCTURE (follow this exact format):
 5. COMEDIAN TAGS (on a new line after hashtags): List ALL of the following Instagram handles on their own line, separated by spaces. Do NOT skip any. Do NOT invent handles. ONLY use the exact handles provided here:${handlesList ? `\n${handlesList}` : "\n(No handles available — skip this section entirely)"}
 
 RULES:
-- Total length: 60-80 words MAX (before hashtags and handles). Shorter is better.
+- Caption body (sections 1-3): 80-120 words. Enough room to be specific, not enough to ramble.
 - NO emojis except 🎤 once (optional). Zero is also fine.
-- NO hyperbole. No "masterclass in the human condition." No "redefine what you thought was funny." No "hotter than a Texas summer." Just be straightforward.
+- Every comedian you mention MUST have a real, verifiable credit attached. No "known for his hilarious style." Either name the special/show/podcast or don't mention them.
+- NO hyperbole. No "masterclass." No "redefine comedy." No "hotter than a Texas summer." Just be real.
 - NO AI filler phrases: "But wait, there's more," "This isn't just X, it's Y," "Don't just hear about it — be about it." These are banned.
 - Write at a 6th grade reading level. Short sentences. Plain words.
-- The voice is a friend who knows comedy telling you what's good this week — not a copywriter trying to go viral.
-- The comedian Instagram handles section MUST use ONLY the exact handles listed above. Never make up a handle.`;
+- The voice is a friend who actually follows comedy telling you what's good this week — not a copywriter.
+- The comedian handles section MUST use ONLY the exact handles listed above. Never make up a handle.`;
 
   return callOpenAI(
     prompt,
-    "You are writing an Instagram caption for a local comedy publication. Your influences are Seth Godin (be minimal, say less, mean more) and Roy H. Williams aka the Wizard of Ads (speak to one person, be honest, earn trust). You write clean, modern copy that converts because it's genuine — not because it's loud. No AI voice. No marketing fluff. Just a clear, warm recommendation."
+    "You are writing an Instagram caption for a local comedy publication. Your influences are Seth Godin (be minimal, say less, mean more) and Roy H. Williams aka the Wizard of Ads (speak to one person, be honest, earn trust). You write clean, modern copy that converts because it's genuine — not because it's loud. No AI voice. No marketing fluff. Just a clear, warm, specific recommendation backed by real facts."
   );
 }
 
@@ -1157,7 +1159,7 @@ async function main() {
   if (topComedianNames.length > 0) {
     console.log("Generating Instagram caption...");
     try {
-      let caption = await generateInstagramCaption(topComedianNames, weekRange, instagramHandles);
+      let caption = await generateInstagramCaption(topComedianNames, weekRange, instagramHandles, comedianResearch);
       caption = caption.replace(/^```\w*\s*\n?/g, "").replace(/\n?```\s*$/g, "").trim();
       fs.writeFileSync(BLOG_CAPTION_PATH, caption);
       console.log(`Wrote Instagram caption: ${BLOG_CAPTION_PATH}`);
