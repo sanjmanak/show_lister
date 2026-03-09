@@ -240,23 +240,30 @@ Return a 3-4 sentence research summary for each comedian. Use SPECIFIC NAMES AND
 // ---------------------------------------------------------------------------
 
 function lookupInstagramHandles(comedianNames) {
-  const input = `Find the official Instagram handles for these comedians:
+  const input = `Find the official Instagram handles for EACH of these comedians. You MUST search for EVERY single person on this list individually — do not skip anyone:
 
 ${comedianNames.map((name) => `- ${name}`).join("\n")}
 
-For EACH comedian, search for their Instagram handle. Check their official websites, Linktree pages, social media profiles, and verified Instagram accounts. The handle should start with @.
+SEARCH STRATEGY — for EACH comedian, try ALL of these approaches:
+1. Search "[comedian name] instagram" directly
+2. Search "[comedian name] comedian social media"
+3. Search "[comedian name] official website" — their site often links to their Instagram
+4. Search "[comedian name] linktree" — Linktree pages list all social handles
+5. Check if their Instagram handle is simply their name with no spaces (very common for comedians — e.g., Bill Burr = @wilfredburr, Katt Williams = @kattwilliams, Michelle Buteau = @michellebuteau)
 
-Return ONLY a JSON array of objects with "name" (comedian name) and "instagram" (their handle including the @ symbol, or null if not found). Example:
-[{"name": "Ali Siddiq", "instagram": "@alisiddiq"}, {"name": "Unknown Comic", "instagram": null}]
+Most working comedians — especially anyone with Netflix specials, HBO specials, or national tours — WILL have an Instagram account. If someone is famous enough to headline a comedy club, they almost certainly have an Instagram. Try harder before returning null.
+
+Return ONLY a JSON array of objects with "name" (comedian name) and "instagram" (their handle including the @ symbol, or null if truly not found). Example:
+[{"name": "Ali Siddiq", "instagram": "@alisiddiq"}, {"name": "Unknown Local Comic", "instagram": null}]
 
 IMPORTANT:
-- Only return handles you are confident are correct and belong to the actual comedian.
-- If you cannot confidently find a comedian's Instagram, set instagram to null.
-- Do NOT guess or fabricate handles.
+- Search for EVERY comedian on the list. Do not stop after finding 2-3.
+- Most of these people WILL have Instagram accounts. null should be rare, not the default.
+- Do NOT guess or fabricate handles — but DO search thoroughly before giving up.
 - Return ONLY the JSON array, no other text.`;
 
   const instructions =
-    "You are a social media research assistant. Search the web to find verified Instagram handles for each comedian. Only return handles you are confident are correct. If unsure, return null for that comedian.";
+    "You are a social media research assistant. Your job is to search the web and find the Instagram handle for EVERY comedian on the list. Search thoroughly for each person — try multiple search queries per comedian. These are professional comedians; most of them have Instagram accounts. Only return null if you genuinely cannot find their handle after searching.";
 
   return callOpenAIResponses(input, instructions);
 }
@@ -523,7 +530,7 @@ STRUCTURE (follow this exact format):
 5. COMEDIAN TAGS (on a new line after hashtags): List ALL of the following Instagram handles on their own line, separated by spaces. Do NOT skip any. Do NOT invent handles. ONLY use the exact handles provided here:${handlesList ? `\n${handlesList}` : "\n(No handles available — skip this section entirely)"}
 
 RULES:
-- Caption body (sections 1-3): 80-120 words. Enough room to be specific, not enough to ramble.
+- Caption body (sections 1-3): 110-150 words. Enough room to mention 3-4 comedians with real credits, not enough to ramble.
 - NO emojis except 🎤 once (optional). Zero is also fine.
 - Every comedian you mention MUST have a real, verifiable credit attached. No "known for his hilarious style." Either name the special/show/podcast or don't mention them.
 - NO hyperbole. No "masterclass." No "redefine comedy." No "hotter than a Texas summer." Just be real.
