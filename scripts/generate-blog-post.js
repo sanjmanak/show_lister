@@ -236,6 +236,32 @@ Return a 3-4 sentence research summary for each comedian. Use SPECIFIC NAMES AND
 }
 
 // ---------------------------------------------------------------------------
+// Look up Instagram handles via web search
+// ---------------------------------------------------------------------------
+
+function lookupInstagramHandles(comedianNames) {
+  const input = `Find the official Instagram handles for these comedians:
+
+${comedianNames.map((name) => `- ${name}`).join("\n")}
+
+For EACH comedian, search for their Instagram handle. Check their official websites, Linktree pages, social media profiles, and verified Instagram accounts. The handle should start with @.
+
+Return ONLY a JSON array of objects with "name" (comedian name) and "instagram" (their handle including the @ symbol, or null if not found). Example:
+[{"name": "Ali Siddiq", "instagram": "@alisiddiq"}, {"name": "Unknown Comic", "instagram": null}]
+
+IMPORTANT:
+- Only return handles you are confident are correct and belong to the actual comedian.
+- If you cannot confidently find a comedian's Instagram, set instagram to null.
+- Do NOT guess or fabricate handles.
+- Return ONLY the JSON array, no other text.`;
+
+  const instructions =
+    "You are a social media research assistant. Search the web to find verified Instagram handles for each comedian. Only return handles you are confident are correct. If unsure, return null for that comedian.";
+
+  return callOpenAIResponses(input, instructions);
+}
+
+// ---------------------------------------------------------------------------
 // Identify top comedians via OpenAI
 // ---------------------------------------------------------------------------
 
@@ -466,13 +492,22 @@ ${extraSection}
 // Instagram caption generation
 // ---------------------------------------------------------------------------
 
-function generateInstagramCaption(comedianNames, weekRange) {
+function generateInstagramCaption(comedianNames, weekRange, instagramHandles) {
   const namesList = comedianNames.slice(0, 6).join(", ");
+
+  // Build the handles section for the prompt
+  const handlesFound = instagramHandles || {};
+  const handleEntries = Object.entries(handlesFound).filter(([, handle]) => handle);
+  const handlesNote = handleEntries.length > 0
+    ? `\nKnown Instagram handles: ${handleEntries.map(([name, handle]) => `${name} = ${handle}`).join(", ")}`
+    : "";
+
+  const handlesList = handleEntries.map(([, handle]) => handle).join(" ");
 
   const prompt = `Write an Instagram caption for Comedy Houston's weekly post.
 
 Week: ${weekRange}
-Featured comedians: ${namesList}
+Featured comedians: ${namesList}${handlesNote}
 
 STRUCTURE (follow this exact format):
 
@@ -484,13 +519,16 @@ STRUCTURE (follow this exact format):
 
 4. HASHTAGS (on a new line): #HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston
 
+5. COMEDIAN TAGS (on a new line after hashtags): List ALL of the following Instagram handles on their own line, separated by spaces. Do NOT skip any. Do NOT invent handles. ONLY use the exact handles provided here:${handlesList ? `\n${handlesList}` : "\n(No handles available — skip this section entirely)"}
+
 RULES:
-- Total length: 60-80 words MAX (before hashtags). Shorter is better.
+- Total length: 60-80 words MAX (before hashtags and handles). Shorter is better.
 - NO emojis except 🎤 once (optional). Zero is also fine.
 - NO hyperbole. No "masterclass in the human condition." No "redefine what you thought was funny." No "hotter than a Texas summer." Just be straightforward.
 - NO AI filler phrases: "But wait, there's more," "This isn't just X, it's Y," "Don't just hear about it — be about it." These are banned.
 - Write at a 6th grade reading level. Short sentences. Plain words.
-- The voice is a friend who knows comedy telling you what's good this week — not a copywriter trying to go viral.`;
+- The voice is a friend who knows comedy telling you what's good this week — not a copywriter trying to go viral.
+- The comedian Instagram handles section MUST use ONLY the exact handles listed above. Never make up a handle.`;
 
   return callOpenAI(
     prompt,
@@ -1085,11 +1123,41 @@ async function main() {
   console.log(`Wrote ${BLOG_HTML_PATH}`);
   console.log("");
 
-  // Step 5: Generate Instagram caption
+  // Step 5: Look up Instagram handles via web search
+  let instagramHandles = {}; // { "Comedian Name": "@handle" or null }
+  if (topComedianNames.length > 0) {
+    console.log("Looking up Instagram handles...");
+    try {
+      const handlesRaw = await lookupInstagramHandles(topComedianNames);
+      const handlesJson = handlesRaw.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
+      const handlesParsed = JSON.parse(handlesJson);
+      for (const entry of handlesParsed) {
+        if (entry.name && entry.instagram) {
+          instagramHandles[entry.name] = entry.instagram;
+        }
+      }
+      const found = Object.entries(instagramHandles);
+      if (found.length > 0) {
+        console.log(`Found ${found.length} Instagram handle(s):`);
+        for (const [name, handle] of found) {
+          console.log(`  ${name} → ${handle}`);
+        }
+      } else {
+        console.log("No Instagram handles found.");
+      }
+      console.log("");
+    } catch (err) {
+      console.warn(`Warning: Instagram handle lookup failed: ${err.message}`);
+      console.warn("Continuing without handles.");
+      console.log("");
+    }
+  }
+
+  // Step 6: Generate Instagram caption (with handles)
   if (topComedianNames.length > 0) {
     console.log("Generating Instagram caption...");
     try {
-      let caption = await generateInstagramCaption(topComedianNames, weekRange);
+      let caption = await generateInstagramCaption(topComedianNames, weekRange, instagramHandles);
       caption = caption.replace(/^```\w*\s*\n?/g, "").replace(/\n?```\s*$/g, "").trim();
       fs.writeFileSync(BLOG_CAPTION_PATH, caption);
       console.log(`Wrote Instagram caption: ${BLOG_CAPTION_PATH}`);
