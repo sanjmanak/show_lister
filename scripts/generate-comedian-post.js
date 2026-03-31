@@ -280,8 +280,16 @@ Return a JSON object with these fields (leave null/empty if you cannot verify):
   "recent_activity_2025_2026": "",
   "instagram_handle": "",
   "notable_bits_or_quotes": [],
-  "background_story": ""
+  "background_story": "",
+  "source_urls": [
+    {"label": "Wikipedia", "url": ""},
+    {"label": "Netflix special page or IMDB", "url": ""},
+    {"label": "Notable interview or article", "url": ""},
+    {"label": "Podcast episode or appearance", "url": ""}
+  ]
 }
+
+For source_urls: include 3-6 real, working URLs you found during research. These should be the actual pages you pulled facts from — Wikipedia, IMDB, Netflix, YouTube specials, podcast episodes, magazine interviews, etc. Only include URLs you actually visited and verified. Leave the array empty if you cannot find reliable sources.
 
 CRITICAL: Only include facts you can verify via web search. If you cannot find a special title, do not invent one. If you cannot find podcast appearances, leave the array empty. Accuracy over completeness.
 
@@ -332,6 +340,20 @@ STRUCTURE:
 6. EVENT DETAILS — Weave in date, venue, time, price naturally. Not a hard break from the narrative.
 
 7. CTA — One short closing sentence pointing to tickets. No hype.
+
+8. SIGN-OFF — End the post with this exact HTML (do not modify):
+<div class="post-footer">
+  <p>For more Houston comedy shows, visit <a href="https://comedyhouston.com">ComedyHouston.com</a> — updated twice daily with every show in the city.</p>
+  <p>Have a question or want to list your show? <a href="https://comedyhouston.com/contact/">Contact us</a>.</p>
+</div>
+
+SOURCE LINKS (IMPORTANT):
+The research data includes a "source_urls" array with verified URLs. You MUST weave 3-4 of these as natural hyperlinks into the article body. For example:
+- When mentioning a Netflix special, link the special title to its IMDB/Netflix page
+- When mentioning their background, link to their Wikipedia page
+- When mentioning a podcast appearance, link to the episode
+- When mentioning an interview or article, link to it
+Use natural anchor text — link the relevant phrase, not "click here." If fewer than 3 source URLs are available, use what you have. Do NOT invent URLs.
 
 BANNED PHRASES (remove if they appear):
 - "Don't miss"
@@ -384,7 +406,11 @@ Also remove:
 - Any fabricated quotes or bit descriptions not in the research
 - Any of these banned phrases: "don't miss," "must-see," "side-splitting," "comedic genius," "hilarity ensues," "get ready," "a night of laughs"
 
-IMPORTANT: Do not add new content. Only subtract or lightly rephrase for flow after removing sentences. Keep the HTML structure intact. Return the cleaned HTML.`;
+IMPORTANT:
+- Do not add new content. Only subtract or lightly rephrase for flow after removing sentences.
+- Keep the HTML structure intact. Return the cleaned HTML.
+- PRESERVE all hyperlinks (<a href="...">) that link to real source URLs (Wikipedia, IMDB, Netflix, YouTube, etc.). These are sourced references and should NOT be removed.
+- PRESERVE the <div class="post-footer"> section at the end exactly as-is. Do not modify or remove it.`;
 
   return callOpenAI(prompt, systemPrompt, 0.2);
 }
@@ -546,6 +572,22 @@ ${imageUrl ? `  <meta property="og:image" content="${escapeHTML(imageUrl)}">` : 
     }
 
     .event-details strong { color: var(--text-primary); }
+
+    .post-footer {
+      margin-top: 40px;
+      padding: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .post-footer p {
+      margin-bottom: 8px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .post-footer p:last-child { margin-bottom: 0; }
 
     .footer {
       margin-top: 60px;
@@ -817,6 +859,9 @@ async function main() {
       venue: venue,
       date: date,
       filename: filename,
+      imageUrl: imageUrl,
+      ticketUrl: ticketUrl,
+      slug: `${nameSlug}-${venueSlug}-${dateSlug}`,
     });
   }
 
@@ -825,6 +870,18 @@ async function main() {
     const indexHTML = generateComediansIndex(generatedPosts);
     fs.writeFileSync(path.join(COMEDIANS_DIR, "index.html"), indexHTML);
     console.log(`Wrote: blog/comedians/index.html`);
+
+    // Write manifest JSON (used by Phase 2 WordPress publishing)
+    const manifest = {
+      generated_at: new Date().toISOString(),
+      week_range: weekRange,
+      posts: generatedPosts,
+    };
+    fs.writeFileSync(
+      path.join(COMEDIANS_DIR, "manifest.json"),
+      JSON.stringify(manifest, null, 2)
+    );
+    console.log(`Wrote: blog/comedians/manifest.json`);
   }
 
   console.log("");
