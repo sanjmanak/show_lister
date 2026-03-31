@@ -849,6 +849,19 @@ function wpUploadImage(imageBuffer, contentType, filename) {
  * Publish a blog post to WordPress.
  * Returns the post URL on success.
  */
+/** Look up a WordPress category ID by slug. Returns the ID or 0. */
+async function wpGetCategoryBySlug(slug) {
+  try {
+    const categories = await wpRequest("GET", `/wp-json/wp/v2/categories?slug=${encodeURIComponent(slug)}`, null);
+    if (Array.isArray(categories) && categories.length > 0) {
+      return categories[0].id;
+    }
+  } catch (err) {
+    console.warn(`    Could not look up category "${slug}": ${err.message}`);
+  }
+  return 0;
+}
+
 async function publishToWordPress(comedianName, venue, date, slug, htmlContent, imageUrl) {
   console.log("  Step 4: Publishing to WordPress...");
 
@@ -865,6 +878,7 @@ async function publishToWordPress(comedianName, venue, date, slug, htmlContent, 
 
   // Upload featured image if available
   let featuredMediaId = 0;
+  let wpImageUrl = "";
   if (imageUrl) {
     try {
       console.log("    Downloading featured image...");
@@ -874,10 +888,27 @@ async function publishToWordPress(comedianName, venue, date, slug, htmlContent, 
       console.log("    Uploading to WordPress media library...");
       featuredMediaId = await wpUploadImage(buffer, contentType, imgFilename);
       console.log(`    Featured image uploaded (media ID: ${featuredMediaId})`);
+
+      // Get the uploaded image URL from WP for embedding in content
+      try {
+        const media = await wpRequest("GET", `/wp-json/wp/v2/media/${featuredMediaId}`, null);
+        wpImageUrl = media.source_url || "";
+      } catch (_) {
+        wpImageUrl = imageUrl; // fallback to original URL
+      }
     } catch (err) {
       console.warn(`    Featured image upload failed: ${err.message}. Publishing without image.`);
     }
   }
+
+  // Inject the image at the top of the post content
+  if (wpImageUrl) {
+    const imgTag = `<figure class="wp-block-image size-large"><img src="${wpImageUrl}" alt="${comedianName.replace(/"/g, '&quot;')}" class="wp-image-${featuredMediaId}"/></figure>\n\n`;
+    wpContent = imgTag + wpContent;
+  }
+
+  // Look up the "Shows" category (slug: comedy-shows)
+  const categoryId = await wpGetCategoryBySlug("comedy-shows");
 
   // Create the post
   const postData = {
@@ -890,6 +921,13 @@ async function publishToWordPress(comedianName, venue, date, slug, htmlContent, 
 
   if (featuredMediaId) {
     postData.featured_media = featuredMediaId;
+  }
+
+  if (categoryId) {
+    postData.categories = [categoryId];
+    console.log(`    Category: Shows (ID: ${categoryId})`);
+  } else {
+    console.warn("    Warning: 'comedy-shows' category not found — posting as Uncategorized.");
   }
 
   const post = await wpRequest("POST", "/wp-json/wp/v2/posts", postData);
@@ -943,7 +981,12 @@ async function main() {
       seen.add(key);
       return true;
     });
-    console.log(`Found ${headliners.length} headliner(s): ${headliners.map((c) => c.name).join(", ")}`);
+    // Hard cap: max 5 comedian posts per week
+    if (headliners.length > 5) {
+      console.log(`Found ${headliners.length} headliners — capping at 5.`);
+      headliners = headliners.slice(0, 5);
+    }
+    console.log(`Processing ${headliners.length} headliner(s): ${headliners.map((c) => c.name).join(", ")}`);
   } catch (err) {
     console.error(`Failed to identify headliners: ${err.message}`);
     process.exit(1);
