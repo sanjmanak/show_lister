@@ -32,6 +32,9 @@ jobs:
       - name: Generate per-comedian blog posts
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          WP_SITE_URL: ${{ secrets.WP_SITE_URL }}
+          WP_APP_USER: ${{ secrets.WP_APP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
         run: node scripts/generate-comedian-post.js
 
       - name: Commit and push comedian posts

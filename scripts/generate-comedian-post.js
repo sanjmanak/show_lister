@@ -22,8 +22,16 @@ const path = require("path");
 // Config
 // ---------------------------------------------------------------------------
 
+const http = require("http");
+
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || "";
 const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-4o";
+
+// WordPress publishing config (optional — skipped if not set)
+const WP_SITE_URL = process.env.WP_SITE_URL || "";          // e.g. https://www.comedyhouston.com
+const WP_APP_USER = process.env.WP_APP_USER || "";           // e.g. Comedy Houston Field Team
+const WP_APP_PASSWORD = process.env.WP_APP_PASSWORD || "";   // Application Password from WP
+const WP_ENABLED = !!(WP_SITE_URL && WP_APP_USER && WP_APP_PASSWORD);
 
 const OUTPUT_DIR = path.resolve(__dirname, "..");
 const EVENTS_JSON_PATH = path.join(OUTPUT_DIR, "events.json");
@@ -707,12 +715,196 @@ ${postLinks}
 }
 
 // ---------------------------------------------------------------------------
+// WordPress REST API helpers
+// ---------------------------------------------------------------------------
+
+/** Make an HTTP/HTTPS request and return the parsed JSON response. */
+function wpRequest(method, urlPath, body) {
+  return new Promise((resolve, reject) => {
+    const fullUrl = WP_SITE_URL.replace(/\/$/, "") + urlPath;
+    const parsed = new URL(fullUrl);
+    const isHttps = parsed.protocol === "https:";
+    const lib = isHttps ? https : http;
+
+    const auth = Buffer.from(`${WP_APP_USER}:${WP_APP_PASSWORD}`).toString("base64");
+
+    const bodyStr = body ? JSON.stringify(body) : null;
+
+    const options = {
+      hostname: parsed.hostname,
+      port: parsed.port || (isHttps ? 443 : 80),
+      path: parsed.pathname + parsed.search,
+      method: method,
+      headers: {
+        Authorization: `Basic ${auth}`,
+        "Content-Type": "application/json",
+        "User-Agent": "ComedyHouston-BlogBot/1.0",
+      },
+    };
+
+    if (bodyStr) {
+      options.headers["Content-Length"] = Buffer.byteLength(bodyStr);
+    }
+
+    const req = lib.request(options, (res) => {
+      let data = "";
+      res.on("data", (chunk) => (data += chunk));
+      res.on("end", () => {
+        if (res.statusCode >= 400) {
+          return reject(
+            new Error(`WordPress API ${res.statusCode}: ${data.slice(0, 500)}`)
+          );
+        }
+        try {
+          resolve(JSON.parse(data));
+        } catch (e) {
+          reject(new Error(`Failed to parse WP response: ${e.message}`));
+        }
+      });
+    });
+
+    req.on("error", (err) => reject(err));
+    if (bodyStr) req.write(bodyStr);
+    req.end();
+  });
+}
+
+/** Download an image from a URL and return the raw Buffer + content type. */
+function downloadImage(imageUrl) {
+  return new Promise((resolve, reject) => {
+    const parsed = new URL(imageUrl);
+    const lib = parsed.protocol === "https:" ? https : http;
+
+    lib.get(imageUrl, { headers: { "User-Agent": "ComedyHouston-BlogBot/1.0" } }, (res) => {
+      // Follow redirects (up to 3)
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        return downloadImage(res.headers.location).then(resolve).catch(reject);
+      }
+      if (res.statusCode >= 400) {
+        return reject(new Error(`Image download failed: HTTP ${res.statusCode}`));
+      }
+
+      const chunks = [];
+      res.on("data", (chunk) => chunks.push(chunk));
+      res.on("end", () => {
+        resolve({
+          buffer: Buffer.concat(chunks),
+          contentType: res.headers["content-type"] || "image/jpeg",
+        });
+      });
+      res.on("error", reject);
+    }).on("error", reject);
+  });
+}
+
+/** Upload an image to WordPress media library, return the media ID. */
+function wpUploadImage(imageBuffer, contentType, filename) {
+  return new Promise((resolve, reject) => {
+    const fullUrl = WP_SITE_URL.replace(/\/$/, "") + "/wp-json/wp/v2/media";
+    const parsed = new URL(fullUrl);
+    const isHttps = parsed.protocol === "https:";
+    const lib = isHttps ? https : http;
+
+    const auth = Buffer.from(`${WP_APP_USER}:${WP_APP_PASSWORD}`).toString("base64");
+
+    const options = {
+      hostname: parsed.hostname,
+      port: parsed.port || (isHttps ? 443 : 80),
+      path: parsed.pathname,
+      method: "POST",
+      headers: {
+        Authorization: `Basic ${auth}`,
+        "Content-Type": contentType,
+        "Content-Disposition": `attachment; filename="${filename}"`,
+        "Content-Length": imageBuffer.length,
+        "User-Agent": "ComedyHouston-BlogBot/1.0",
+      },
+    };
+
+    const req = lib.request(options, (res) => {
+      let data = "";
+      res.on("data", (chunk) => (data += chunk));
+      res.on("end", () => {
+        if (res.statusCode >= 400) {
+          return reject(
+            new Error(`WP media upload ${res.statusCode}: ${data.slice(0, 500)}`)
+          );
+        }
+        try {
+          const parsed = JSON.parse(data);
+          resolve(parsed.id);
+        } catch (e) {
+          reject(new Error(`Failed to parse WP media response: ${e.message}`));
+        }
+      });
+    });
+
+    req.on("error", (err) => reject(err));
+    req.write(imageBuffer);
+    req.end();
+  });
+}
+
+/**
+ * Publish a blog post to WordPress.
+ * Returns the post URL on success.
+ */
+async function publishToWordPress(comedianName, venue, date, slug, htmlContent, imageUrl) {
+  console.log("  Step 4: Publishing to WordPress...");
+
+  // Extract just the article body (strip the <h1> — WordPress uses the title field)
+  let wpContent = htmlContent;
+  let wpTitle = `${comedianName} at ${venue} — ${formatDateForDisplay(date)}`;
+
+  // Try to extract <h1> from content to use as WP title
+  const h1Match = wpContent.match(/<h1[^>]*>(.*?)<\/h1>/i);
+  if (h1Match) {
+    wpTitle = h1Match[1].replace(/<[^>]+>/g, ""); // strip any inner HTML tags
+    wpContent = wpContent.replace(/<h1[^>]*>.*?<\/h1>/i, "").trim();
+  }
+
+  // Upload featured image if available
+  let featuredMediaId = 0;
+  if (imageUrl) {
+    try {
+      console.log("    Downloading featured image...");
+      const { buffer, contentType } = await downloadImage(imageUrl);
+      const ext = contentType.includes("png") ? "png" : "jpg";
+      const imgFilename = `${slug}.${ext}`;
+      console.log("    Uploading to WordPress media library...");
+      featuredMediaId = await wpUploadImage(buffer, contentType, imgFilename);
+      console.log(`    Featured image uploaded (media ID: ${featuredMediaId})`);
+    } catch (err) {
+      console.warn(`    Featured image upload failed: ${err.message}. Publishing without image.`);
+    }
+  }
+
+  // Create the post
+  const postData = {
+    title: wpTitle,
+    content: wpContent,
+    status: "publish",
+    slug: slug,
+    comment_status: "closed",
+  };
+
+  if (featuredMediaId) {
+    postData.featured_media = featuredMediaId;
+  }
+
+  const post = await wpRequest("POST", "/wp-json/wp/v2/posts", postData);
+  console.log(`    Published: ${post.link}`);
+  return post.link;
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
 async function main() {
   console.log("=== Comedy Houston — Per-Comedian Blog Post Generator ===");
   console.log(`Time: ${new Date().toISOString()}`);
+  console.log(`WordPress publishing: ${WP_ENABLED ? "ENABLED (" + WP_SITE_URL + ")" : "DISABLED (no WP credentials set)"}`);
   console.log("");
 
   if (!OPENAI_API_KEY) {
@@ -848,10 +1040,25 @@ async function main() {
     });
     const html = wrapInHTML(finalContent, headliner.name, venue, date, generatedAt, imageUrl);
 
-    // Write file
+    // Write file to GitHub Pages
     const filePath = path.join(COMEDIANS_DIR, filename);
     fs.writeFileSync(filePath, html);
     console.log(`  Wrote: blog/comedians/${filename}`);
+
+    const postSlug = `${nameSlug}-${venueSlug}-${dateSlug}`;
+    let wpLink = "";
+
+    // Publish to WordPress if configured
+    if (WP_ENABLED) {
+      try {
+        wpLink = await publishToWordPress(
+          headliner.name, venue, date, postSlug, finalContent, imageUrl
+        );
+      } catch (err) {
+        console.error(`  WordPress publish failed: ${err.message}`);
+        console.log("  Post saved to GitHub Pages only.");
+      }
+    }
     console.log("");
 
     generatedPosts.push({
@@ -861,7 +1068,8 @@ async function main() {
       filename: filename,
       imageUrl: imageUrl,
       ticketUrl: ticketUrl,
-      slug: `${nameSlug}-${venueSlug}-${dateSlug}`,
+      slug: postSlug,
+      wpLink: wpLink,
     });
   }
 
