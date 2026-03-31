@@ -22,8 +22,16 @@ const path = require("path");
 // Config
 // ---------------------------------------------------------------------------
 
+const http = require("http");
+
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || "";
 const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-4o";
+
+// WordPress publishing config (optional — skipped if not set)
+const WP_SITE_URL = process.env.WP_SITE_URL || "";          // e.g. https://www.comedyhouston.com
+const WP_APP_USER = process.env.WP_APP_USER || "";           // e.g. Comedy Houston Field Team
+const WP_APP_PASSWORD = process.env.WP_APP_PASSWORD || "";   // Application Password from WP
+const WP_ENABLED = !!(WP_SITE_URL && WP_APP_USER && WP_APP_PASSWORD);
 
 const OUTPUT_DIR = path.resolve(__dirname, "..");
 const EVENTS_JSON_PATH = path.join(OUTPUT_DIR, "events.json");
@@ -280,8 +288,16 @@ Return a JSON object with these fields (leave null/empty if you cannot verify):
   "recent_activity_2025_2026": "",
   "instagram_handle": "",
   "notable_bits_or_quotes": [],
-  "background_story": ""
+  "background_story": "",
+  "source_urls": [
+    {"label": "Wikipedia", "url": ""},
+    {"label": "Netflix special page or IMDB", "url": ""},
+    {"label": "Notable interview or article", "url": ""},
+    {"label": "Podcast episode or appearance", "url": ""}
+  ]
 }
+
+For source_urls: include 3-6 real, working URLs you found during research. These should be the actual pages you pulled facts from — Wikipedia, IMDB, Netflix, YouTube specials, podcast episodes, magazine interviews, etc. Only include URLs you actually visited and verified. Leave the array empty if you cannot find reliable sources.
 
 CRITICAL: Only include facts you can verify via web search. If you cannot find a special title, do not invent one. If you cannot find podcast appearances, leave the array empty. Accuracy over completeness.
 
@@ -332,6 +348,20 @@ STRUCTURE:
 6. EVENT DETAILS — Weave in date, venue, time, price naturally. Not a hard break from the narrative.
 
 7. CTA — One short closing sentence pointing to tickets. No hype.
+
+8. SIGN-OFF — End the post with this exact HTML (do not modify):
+<div class="post-footer">
+  <p>For more Houston comedy shows, visit <a href="https://comedyhouston.com">ComedyHouston.com</a> — updated twice daily with every show in the city.</p>
+  <p>Have a question or want to list your show? <a href="https://comedyhouston.com/contact/">Contact us</a>.</p>
+</div>
+
+SOURCE LINKS (IMPORTANT):
+The research data includes a "source_urls" array with verified URLs. You MUST weave 3-4 of these as natural hyperlinks into the article body. For example:
+- When mentioning a Netflix special, link the special title to its IMDB/Netflix page
+- When mentioning their background, link to their Wikipedia page
+- When mentioning a podcast appearance, link to the episode
+- When mentioning an interview or article, link to it
+Use natural anchor text — link the relevant phrase, not "click here." If fewer than 3 source URLs are available, use what you have. Do NOT invent URLs.
 
 BANNED PHRASES (remove if they appear):
 - "Don't miss"
@@ -384,7 +414,11 @@ Also remove:
 - Any fabricated quotes or bit descriptions not in the research
 - Any of these banned phrases: "don't miss," "must-see," "side-splitting," "comedic genius," "hilarity ensues," "get ready," "a night of laughs"
 
-IMPORTANT: Do not add new content. Only subtract or lightly rephrase for flow after removing sentences. Keep the HTML structure intact. Return the cleaned HTML.`;
+IMPORTANT:
+- Do not add new content. Only subtract or lightly rephrase for flow after removing sentences.
+- Keep the HTML structure intact. Return the cleaned HTML.
+- PRESERVE all hyperlinks (<a href="...">) that link to real source URLs (Wikipedia, IMDB, Netflix, YouTube, etc.). These are sourced references and should NOT be removed.
+- PRESERVE the <div class="post-footer"> section at the end exactly as-is. Do not modify or remove it.`;
 
   return callOpenAI(prompt, systemPrompt, 0.2);
 }
@@ -547,6 +581,22 @@ ${imageUrl ? `  <meta property="og:image" content="${escapeHTML(imageUrl)}">` : 
 
     .event-details strong { color: var(--text-primary); }
 
+    .post-footer {
+      margin-top: 40px;
+      padding: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .post-footer p {
+      margin-bottom: 8px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .post-footer p:last-child { margin-bottom: 0; }
+
     .footer {
       margin-top: 60px;
       padding-top: 24px;
@@ -665,12 +715,196 @@ ${postLinks}
 }
 
 // ---------------------------------------------------------------------------
+// WordPress REST API helpers
+// ---------------------------------------------------------------------------
+
+/** Make an HTTP/HTTPS request and return the parsed JSON response. */
+function wpRequest(method, urlPath, body) {
+  return new Promise((resolve, reject) => {
+    const fullUrl = WP_SITE_URL.replace(/\/$/, "") + urlPath;
+    const parsed = new URL(fullUrl);
+    const isHttps = parsed.protocol === "https:";
+    const lib = isHttps ? https : http;
+
+    const auth = Buffer.from(`${WP_APP_USER}:${WP_APP_PASSWORD}`).toString("base64");
+
+    const bodyStr = body ? JSON.stringify(body) : null;
+
+    const options = {
+      hostname: parsed.hostname,
+      port: parsed.port || (isHttps ? 443 : 80),
+      path: parsed.pathname + parsed.search,
+      method: method,
+      headers: {
+        Authorization: `Basic ${auth}`,
+        "Content-Type": "application/json",
+        "User-Agent": "ComedyHouston-BlogBot/1.0",
+      },
+    };
+
+    if (bodyStr) {
+      options.headers["Content-Length"] = Buffer.byteLength(bodyStr);
+    }
+
+    const req = lib.request(options, (res) => {
+      let data = "";
+      res.on("data", (chunk) => (data += chunk));
+      res.on("end", () => {
+        if (res.statusCode >= 400) {
+          return reject(
+            new Error(`WordPress API ${res.statusCode}: ${data.slice(0, 500)}`)
+          );
+        }
+        try {
+          resolve(JSON.parse(data));
+        } catch (e) {
+          reject(new Error(`Failed to parse WP response: ${e.message}`));
+        }
+      });
+    });
+
+    req.on("error", (err) => reject(err));
+    if (bodyStr) req.write(bodyStr);
+    req.end();
+  });
+}
+
+/** Download an image from a URL and return the raw Buffer + content type. */
+function downloadImage(imageUrl) {
+  return new Promise((resolve, reject) => {
+    const parsed = new URL(imageUrl);
+    const lib = parsed.protocol === "https:" ? https : http;
+
+    lib.get(imageUrl, { headers: { "User-Agent": "ComedyHouston-BlogBot/1.0" } }, (res) => {
+      // Follow redirects (up to 3)
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        return downloadImage(res.headers.location).then(resolve).catch(reject);
+      }
+      if (res.statusCode >= 400) {
+        return reject(new Error(`Image download failed: HTTP ${res.statusCode}`));
+      }
+
+      const chunks = [];
+      res.on("data", (chunk) => chunks.push(chunk));
+      res.on("end", () => {
+        resolve({
+          buffer: Buffer.concat(chunks),
+          contentType: res.headers["content-type"] || "image/jpeg",
+        });
+      });
+      res.on("error", reject);
+    }).on("error", reject);
+  });
+}
+
+/** Upload an image to WordPress media library, return the media ID. */
+function wpUploadImage(imageBuffer, contentType, filename) {
+  return new Promise((resolve, reject) => {
+    const fullUrl = WP_SITE_URL.replace(/\/$/, "") + "/wp-json/wp/v2/media";
+    const parsed = new URL(fullUrl);
+    const isHttps = parsed.protocol === "https:";
+    const lib = isHttps ? https : http;
+
+    const auth = Buffer.from(`${WP_APP_USER}:${WP_APP_PASSWORD}`).toString("base64");
+
+    const options = {
+      hostname: parsed.hostname,
+      port: parsed.port || (isHttps ? 443 : 80),
+      path: parsed.pathname,
+      method: "POST",
+      headers: {
+        Authorization: `Basic ${auth}`,
+        "Content-Type": contentType,
+        "Content-Disposition": `attachment; filename="${filename}"`,
+        "Content-Length": imageBuffer.length,
+        "User-Agent": "ComedyHouston-BlogBot/1.0",
+      },
+    };
+
+    const req = lib.request(options, (res) => {
+      let data = "";
+      res.on("data", (chunk) => (data += chunk));
+      res.on("end", () => {
+        if (res.statusCode >= 400) {
+          return reject(
+            new Error(`WP media upload ${res.statusCode}: ${data.slice(0, 500)}`)
+          );
+        }
+        try {
+          const parsed = JSON.parse(data);
+          resolve(parsed.id);
+        } catch (e) {
+          reject(new Error(`Failed to parse WP media response: ${e.message}`));
+        }
+      });
+    });
+
+    req.on("error", (err) => reject(err));
+    req.write(imageBuffer);
+    req.end();
+  });
+}
+
+/**
+ * Publish a blog post to WordPress.
+ * Returns the post URL on success.
+ */
+async function publishToWordPress(comedianName, venue, date, slug, htmlContent, imageUrl) {
+  console.log("  Step 4: Publishing to WordPress...");
+
+  // Extract just the article body (strip the <h1> — WordPress uses the title field)
+  let wpContent = htmlContent;
+  let wpTitle = `${comedianName} at ${venue} — ${formatDateForDisplay(date)}`;
+
+  // Try to extract <h1> from content to use as WP title
+  const h1Match = wpContent.match(/<h1[^>]*>(.*?)<\/h1>/i);
+  if (h1Match) {
+    wpTitle = h1Match[1].replace(/<[^>]+>/g, ""); // strip any inner HTML tags
+    wpContent = wpContent.replace(/<h1[^>]*>.*?<\/h1>/i, "").trim();
+  }
+
+  // Upload featured image if available
+  let featuredMediaId = 0;
+  if (imageUrl) {
+    try {
+      console.log("    Downloading featured image...");
+      const { buffer, contentType } = await downloadImage(imageUrl);
+      const ext = contentType.includes("png") ? "png" : "jpg";
+      const imgFilename = `${slug}.${ext}`;
+      console.log("    Uploading to WordPress media library...");
+      featuredMediaId = await wpUploadImage(buffer, contentType, imgFilename);
+      console.log(`    Featured image uploaded (media ID: ${featuredMediaId})`);
+    } catch (err) {
+      console.warn(`    Featured image upload failed: ${err.message}. Publishing without image.`);
+    }
+  }
+
+  // Create the post
+  const postData = {
+    title: wpTitle,
+    content: wpContent,
+    status: "publish",
+    slug: slug,
+    comment_status: "closed",
+  };
+
+  if (featuredMediaId) {
+    postData.featured_media = featuredMediaId;
+  }
+
+  const post = await wpRequest("POST", "/wp-json/wp/v2/posts", postData);
+  console.log(`    Published: ${post.link}`);
+  return post.link;
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
 async function main() {
   console.log("=== Comedy Houston — Per-Comedian Blog Post Generator ===");
   console.log(`Time: ${new Date().toISOString()}`);
+  console.log(`WordPress publishing: ${WP_ENABLED ? "ENABLED (" + WP_SITE_URL + ")" : "DISABLED (no WP credentials set)"}`);
   console.log("");
 
   if (!OPENAI_API_KEY) {
@@ -806,10 +1040,25 @@ async function main() {
     });
     const html = wrapInHTML(finalContent, headliner.name, venue, date, generatedAt, imageUrl);
 
-    // Write file
+    // Write file to GitHub Pages
     const filePath = path.join(COMEDIANS_DIR, filename);
     fs.writeFileSync(filePath, html);
     console.log(`  Wrote: blog/comedians/${filename}`);
+
+    const postSlug = `${nameSlug}-${venueSlug}-${dateSlug}`;
+    let wpLink = "";
+
+    // Publish to WordPress if configured
+    if (WP_ENABLED) {
+      try {
+        wpLink = await publishToWordPress(
+          headliner.name, venue, date, postSlug, finalContent, imageUrl
+        );
+      } catch (err) {
+        console.error(`  WordPress publish failed: ${err.message}`);
+        console.log("  Post saved to GitHub Pages only.");
+      }
+    }
     console.log("");
 
     generatedPosts.push({
@@ -817,6 +1066,10 @@ async function main() {
       venue: venue,
       date: date,
       filename: filename,
+      imageUrl: imageUrl,
+      ticketUrl: ticketUrl,
+      slug: postSlug,
+      wpLink: wpLink,
     });
   }
 
@@ -825,6 +1078,18 @@ async function main() {
     const indexHTML = generateComediansIndex(generatedPosts);
     fs.writeFileSync(path.join(COMEDIANS_DIR, "index.html"), indexHTML);
     console.log(`Wrote: blog/comedians/index.html`);
+
+    // Write manifest JSON (used by Phase 2 WordPress publishing)
+    const manifest = {
+      generated_at: new Date().toISOString(),
+      week_range: weekRange,
+      posts: generatedPosts,
+    };
+    fs.writeFileSync(
+      path.join(COMEDIANS_DIR, "manifest.json"),
+      JSON.stringify(manifest, null, 2)
+    );
+    console.log(`Wrote: blog/comedians/manifest.json`);
   }
 
   console.log("");

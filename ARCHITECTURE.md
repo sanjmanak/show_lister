@@ -1,6 +1,6 @@
 # Show Lister — Complete Architecture Guide
 
-> **Version:** 2.3.0 | **Last updated:** March 2026 | **Owner:** sanjmanak
+> **Version:** 2.4.0 | **Last updated:** March 2026 | **Owner:** sanjmanak
 
 ---
 
@@ -62,16 +62,17 @@ The whole thing runs for free on GitHub (hosting, automation, scheduling) with t
 
 ## System Overview
 
-There are **six major components** that work together:
+There are **seven major components** that work together:
 
 | # | Component | What It Does | Tech |
 |---|-----------|-------------|------|
 | 1 | **Event Fetcher** | Pulls shows from Ticketmaster + Eventbrite, deduplicates, writes JSON + HTML | Node.js script |
 | 2 | **Static Website** | The public-facing show listing page (dark theme, filters, search) | Plain HTML/CSS/JS |
 | 3 | **Blog Generator** | Weekly AI-written blog post + Instagram caption + hero image | Node.js + OpenAI API |
-| 4 | **WordPress Plugin** | Embeds show listings on any WordPress site with filtering, themes, affiliate tracking | PHP + JS + CSS |
-| 5 | **GitHub Actions** | Two automated workflows: twice-daily fetch + weekly blog generation | YAML workflow files |
-| 6 | **GitHub Pages** | Free static hosting — serves the website, JSON data, and blog posts | GitHub infrastructure |
+| 4 | **Comedian Post Generator** | Per-comedian 600-word SEO blog posts with source links and fact-checking | Node.js + OpenAI API |
+| 5 | **WordPress Plugin** | Embeds show listings on any WordPress site with filtering, themes, affiliate tracking, GA4 event tracking | PHP + JS + CSS |
+| 6 | **GitHub Actions** | Three automated workflows: twice-daily fetch + weekly blog + weekly comedian posts | YAML workflow files |
+| 7 | **GitHub Pages** | Free static hosting — serves the website, JSON data, and blog posts | GitHub infrastructure |
 
 ---
 
@@ -175,9 +176,61 @@ const LAST_UPDATED = "";       // → replaced with ISO timestamp
 
 ---
 
+### 3b. Per-Comedian SEO Blog Post Generator (`scripts/generate-comedian-post.js`)
+
+**~500 lines of Node.js. Zero npm dependencies.** Runs once a week (Monday mornings, 1 hour after the weekly blog post).
+
+#### What it does, step by step:
+
+1. **Reads `events.json`** and filters to this week's events (Monday–Sunday)
+
+2. **Identifies headliners** — sends event list to OpenAI to pick out nationally recognized comedians (same logic as the weekly blog generator)
+
+3. **For each headliner, runs a 3-call pipeline:**
+
+   **Call 1 — Deep Research** (OpenAI Responses API with web search):
+   - Full bio, hometown, career arc
+   - Specific specials (title, platform, year)
+   - Podcast appearances, TV spots, viral moments
+   - Comedy style description
+   - Instagram handle
+   - **Source URLs** (Wikipedia, IMDB, Netflix, YouTube, interviews) — 3-6 verified URLs per comedian
+
+   **Call 2 — Write the Blog Post** (OpenAI Chat Completions):
+   - 600-word publication-quality article with strict editorial guidelines
+   - SEO title with comedian name + city + venue
+   - Sections: hook, credentials, comedy style, live experience, event details, CTA
+   - **3-4 source hyperlinks** woven naturally into the text (linking to Wikipedia, specials, interviews)
+   - Banned phrase list prevents AI slop ("don't miss," "side-splitting," etc.)
+   - Comedy Houston footer with links to homepage and contact page
+
+   **Call 3 — Fact-Check Pass** (OpenAI Chat Completions):
+   - Compares draft against research data
+   - Removes any claim not supported by the research
+   - Strips generic sentences, unverified adjectives, fabricated quotes
+   - Preserves source hyperlinks and footer
+
+4. **Writes individual HTML files** to `blog/comedians/` — one per comedian
+
+5. **Generates an index page** listing all comedian posts for the week
+
+6. **Writes a manifest.json** with post metadata (comedian name, venue, date, image URL, slug) — used by Phase 2 WordPress auto-publishing
+
+#### Files generated:
+| File | Purpose |
+|------|---------|
+| `blog/comedians/{slug}.html` | Individual comedian blog post |
+| `blog/comedians/index.html` | Index page listing all comedian posts |
+| `blog/comedians/manifest.json` | Post metadata for WordPress publishing |
+
+#### Cost per run:
+~$0.15–0.30 per comedian (3 API calls). Typical weekly run with 3–5 comedians: **$0.50–1.50**.
+
+---
+
 ### 4. WordPress Plugin (`wordpress/`)
 
-**Version 2.3.0. ~830 lines of PHP + 443 lines of JS + 639 lines of CSS.**
+**Version 2.4.0. ~900 lines of PHP + 460 lines of JS + 639 lines of CSS.**
 
 A full-featured WordPress plugin that embeds show listings on any WordPress site.
 
@@ -196,6 +249,7 @@ A full-featured WordPress plugin that embeds show listings on any WordPress site
 | **Filtering** | Time period, venue, source, max price, open mic toggle |
 | **Sorting** | Date, price, name |
 | **Affiliate tracking** | Redirects ticket links through the WordPress site, appending Ticketmaster/Eventbrite affiliate IDs. Logs clicks to a database table with hashed IPs |
+| **GA4 event tracking** | Fires `gtag('event', 'ticket_click')` with comedian name, venue, price, and outbound URL on every "Get Tickets" click. Works with Google Site Kit's existing gtag injection. |
 | **SEO** | Server-side rendering for Googlebot, JSON-LD structured data, Open Graph meta tags |
 | **Shortcode params** | `filter`, `max_price`, `venue`, `source`, `theme`, `title`, `show_hero`, `show_controls`, `show_footer`, `show_venue_filter`, `show_sort`, `show_open_mic`, `type` |
 
@@ -205,6 +259,13 @@ A full-featured WordPress plugin that embeds show listings on any WordPress site
 - Ticketmaster/Eventbrite affiliate IDs
 - Click tracking on/off
 - Shows click stats in admin panel
+
+#### Admin click analytics dashboard:
+The Settings → Comedy Houston page displays:
+- **Clicks today** and **total clicks** summary banner
+- **Top 10 clicked links today** — table with readable show names extracted from URLs, click counts
+- **Top 10 clicked links last 30 days** — same format, wider window
+- Show names are extracted from Ticketmaster/Eventbrite URL slugs for human-readable display
 
 #### Database table (`wp_ch_clicks`):
 Logs every ticket click with: timestamp, original URL, final URL (with affiliate params), hashed IP, user agent, referer.
@@ -235,6 +296,17 @@ Logs every ticket click with: timestamp, original URL, final URL (with affiliate
 | **Commits** | `blog/index.html`, `blog/weekly-hero.html`, `blog/weekly-hero.png`, `blog/instagram-caption.txt` |
 | **Email** | Only sends if `SMTP_SERVER` secret exists and blog files were generated |
 
+#### Workflow 3: Generate Comedian Posts (`.github/workflows/generate-comedian-posts.yml`)
+
+| Field | Value |
+|-------|-------|
+| **Schedule** | Weekly: `0 16 * * 1` UTC (Monday ~10–11 AM Central, 1 hour after blog post) |
+| **Manual trigger** | Yes (`workflow_dispatch`) |
+| **What it runs** | `generate-comedian-post.js` |
+| **Secrets used** | `OPENAI_API_KEY` |
+| **Commits** | `blog/comedians/*.html`, `blog/comedians/manifest.json` |
+| **Cost** | ~$0.50–1.50 per run (3 API calls per comedian, typically 3–5 comedians) |
+
 ---
 
 ### 6. GitHub Pages Hosting
@@ -246,6 +318,8 @@ Logs every ticket click with: timestamp, original URL, final URL (with affiliate
   - `/events.json` → raw event data (consumed by WordPress plugin)
   - `/blog/` → `blog/index.html` (weekly blog post)
   - `/blog/weekly-hero.png` → hero image
+  - `/blog/comedians/` → individual comedian spotlight posts
+  - `/blog/comedians/manifest.json` → post metadata for WordPress publishing
 
 GitHub Pages rebuilds automatically whenever the Actions workflow pushes a commit.
 
@@ -415,24 +489,30 @@ show_lister/
 ├── .github/
 │   └── workflows/
 │       ├── update-events.yml            # Cron: fetch events 2x daily
-│       └── generate-blog-post.yml       # Cron: weekly blog + email
+│       ├── generate-blog-post.yml       # Cron: weekly blog + email
+│       └── generate-comedian-posts.yml  # Cron: weekly per-comedian SEO posts
 │
 ├── scripts/
 │   ├── fetch-events.js                  # Core fetcher (~500 lines)
 │   ├── generate-blog-post.js            # AI blog generator (~1,600 lines)
+│   ├── generate-comedian-post.js        # Per-comedian SEO post generator (~500 lines)
 │   └── screenshot-hero.js               # Puppeteer PNG screenshotter (~40 lines)
 │
 ├── wordpress/
-│   ├── comedy-houston.php               # Main plugin file (~830 lines)
+│   ├── comedy-houston.php               # Main plugin file (~900 lines) — includes click analytics dashboard
 │   ├── comedy-houston-template.php      # Plugin HTML template
-│   ├── comedy-houston.js                # Client-side filtering (~443 lines)
+│   ├── comedy-houston.js                # Client-side filtering + GA4 tracking (~460 lines)
 │   └── comedy-houston.css               # Plugin styles, 3 themes (~639 lines)
 │
 ├── blog/
 │   ├── index.html                       # Generated weekly blog post
 │   ├── weekly-hero.html                 # Hero creative (HTML source)
 │   ├── weekly-hero.png                  # Hero creative (1080×1080 PNG)
-│   └── instagram-caption.txt            # Generated Instagram caption
+│   ├── instagram-caption.txt            # Generated Instagram caption
+│   └── comedians/                       # Per-comedian spotlight posts
+│       ├── index.html                   # Index listing all comedian posts
+│       ├── manifest.json                # Post metadata (for WordPress publishing)
+│       └── {comedian-slug}.html         # Individual comedian blog posts
 │
 ├── index.html                           # Main static website (~8,285 lines)
 ├── events.json                          # Generated event data
@@ -585,8 +665,8 @@ Here's what each API costs and how someone could theoretically abuse it:
 |-----|------|-----------|----------------|------------|
 | **Ticketmaster** | Free (5,000 calls/day limit) | ~4 calls/day | Can't run up a bill — it's free. Worst case: rate limited. | $0 |
 | **Eventbrite** | Free (1,000 calls/hour limit) | ~4 calls/day | Can't run up a bill — it's free. Worst case: rate limited. | $0 |
-| **OpenAI** | Pay-per-use (~$0.01–0.03/1K tokens + web search) | ~$2–10/week (one blog run) | If `workflow_dispatch` triggered repeatedly: ~$10/run × N runs | **Potentially significant** — set a spend cap |
-| **GitHub Actions** | Free (2,000 min/month for free tier) | ~5 min/day (fetch) + ~10 min/week (blog) | If workflows triggered excessively, you'd hit the free tier limit and they'd just stop. | $0 (just stops running) |
+| **OpenAI** | Pay-per-use (~$0.01–0.03/1K tokens + web search) | ~$3–12/week (blog + comedian posts) | If `workflow_dispatch` triggered repeatedly: ~$10/run × N runs | **Potentially significant** — set a spend cap |
+| **GitHub Actions** | Free (2,000 min/month for free tier) | ~5 min/day (fetch) + ~15 min/week (blog + comedian posts) | If workflows triggered excessively, you'd hit the free tier limit and they'd just stop. | $0 (just stops running) |
 | **GitHub Pages** | Free | Continuous | No billing risk. If traffic spikes, GitHub may throttle (soft limit ~100GB/month bandwidth). | $0 |
 | **SMTP (email)** | Depends on provider | ~4 emails/month | If blog workflow triggered repeatedly, more emails sent. Most providers have daily limits. | Minimal |
 
@@ -604,8 +684,11 @@ If you're an AI agent working on this codebase, here's what you need to know:
 
 - **To update the event fetching logic:** Edit `scripts/fetch-events.js`. Test locally with `TICKETMASTER_API_KEY` and `EVENTBRITE_TOKEN` env vars set.
 - **To change the website appearance:** Edit `index.html` — all CSS and JS is inline. The `EVENTS_DATA` variable at the top gets replaced at build time, so don't move it.
-- **To modify the blog generation:** Edit `scripts/generate-blog-post.js`. The OpenAI prompts are in functions like `buildPrompt()`, `generateInstagramCaption()`, `identifyTopComedians()`.
-- **To change the WordPress plugin:** Edit files in `wordpress/`. The PHP file handles server-side logic; the JS file handles client-side filtering; the CSS file has three theme variants.
-- **To change the automation schedule:** Edit the `cron` lines in `.github/workflows/*.yml`. Times are in UTC.
+- **To modify the weekly blog generation:** Edit `scripts/generate-blog-post.js`. The OpenAI prompts are in functions like `buildPrompt()`, `generateInstagramCaption()`, `identifyTopComedians()`.
+- **To modify per-comedian blog posts:** Edit `scripts/generate-comedian-post.js`. Key functions: `researchComedian()` (research prompt), `writeBlogPost()` (writing prompt with source links), `factCheckPost()` (editorial pass). The writing prompt includes banned phrase lists, source URL requirements, and the Comedy Houston footer.
+- **To change the WordPress plugin:** Edit files in `wordpress/`. The PHP file handles server-side logic + admin click analytics dashboard; the JS file handles client-side filtering + GA4 event tracking; the CSS file has three theme variants.
+- **To change the automation schedule:** Edit the `cron` lines in `.github/workflows/*.yml`. Times are in UTC. The comedian post workflow runs 1 hour after the weekly blog post.
+- **GA4 tracking:** The JS fires `gtag('event', 'ticket_click', {...})` on every "Get Tickets" click. Requires Google Site Kit (or any gtag injection) on the WordPress site. Events appear in GA4 → Reports → Engagement → Events.
+- **Click analytics dashboard:** The PHP admin page queries `wp_ch_clicks` for top 10 links clicked today and last 30 days. URL slugs are parsed into readable show names via `extract_link_label()`.
 - **There are no tests.** This is a personal project. Changes are validated by running locally and checking the output.
 - **There are no npm dependencies.** Don't add any unless absolutely necessary — the zero-dependency approach is intentional.
