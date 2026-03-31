@@ -332,6 +332,37 @@
     }
 
     main.innerHTML = html;
+
+    // Bind GA4 event tracking on "Get Tickets" links
+    var ctaLinks = main.querySelectorAll("a.card-cta");
+    for (var c = 0; c < ctaLinks.length; c++) {
+      ctaLinks[c].addEventListener("click", handleTicketClick);
+    }
+  }
+
+  // ================================================================
+  // GA4 EVENT TRACKING — fires when visitor clicks "Get Tickets"
+  // ================================================================
+  function handleTicketClick(e) {
+    var link = e.currentTarget;
+    var card = link.closest(".event-card");
+    if (!card) return;
+
+    var eventName = (card.querySelector(".card-name") || {}).textContent || "Unknown";
+    var venueName = (card.querySelector(".card-venue") || {}).textContent || "Unknown";
+    var priceText = (card.querySelector(".card-price") || {}).textContent || "";
+
+    // Fire GA4 event if gtag is available (injected by Site Kit)
+    if (typeof gtag === "function") {
+      gtag("event", "ticket_click", {
+        event_category: "engagement",
+        event_label: eventName,
+        comedian_name: eventName,
+        venue_name: venueName,
+        price_info: priceText.trim(),
+        outbound_url: link.href
+      });
+    }
   }
 
   function renderCard(ev) {

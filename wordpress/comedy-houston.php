@@ -618,6 +618,49 @@ class Comedy_Houston_Plugin {
     }
 
     // =========================================================================
+    // CLICK ANALYTICS HELPERS
+    // =========================================================================
+
+    /**
+     * Extract a human-readable label from a ticket URL.
+     * Turns "https://www.ticketmaster.com/ali-siddiq-domino-effect-tour/event/123"
+     * into "Ali Siddiq Domino Effect Tour".
+     */
+    private function extract_link_label($url) {
+        $parsed = wp_parse_url($url);
+        $path = $parsed['path'] ?? '';
+
+        // Ticketmaster: /event-name-slug/event/ID or /event-name-slug/event/ID
+        if (strpos($url, 'ticketmaster.com') !== false) {
+            // Remove leading slash and trailing segments like /event/ID
+            $path = trim($path, '/');
+            $parts = explode('/', $path);
+            // First segment is usually the slug
+            $slug = $parts[0] ?? '';
+            if ($slug && $slug !== 'event') {
+                return ucwords(str_replace('-', ' ', $slug));
+            }
+        }
+
+        // Eventbrite: /e/event-name-slug-DIGITS
+        if (strpos($url, 'eventbrite.com') !== false) {
+            $path = trim($path, '/');
+            // Remove leading "e/" prefix
+            if (strpos($path, 'e/') === 0) {
+                $path = substr($path, 2);
+            }
+            // Remove trailing ticket ID digits
+            $slug = preg_replace('/-\d+$/', '', $path);
+            if ($slug) {
+                return ucwords(str_replace('-', ' ', $slug));
+            }
+        }
+
+        // Fallback: use the hostname
+        return $parsed['host'] ?? $url;
+    }
+
+    // =========================================================================
     // ADMIN SETTINGS PAGE
     // =========================================================================
 
@@ -776,6 +819,86 @@ class Comedy_Houston_Plugin {
                 <?php echo esc_html($clicks_today); ?> clicks today &middot;
                 <?php echo esc_html($total_clicks); ?> total clicks recorded
             </div>
+
+            <?php
+            // --- Top 10 Clicked Links: Today ---
+            $top_today = $wpdb->get_results($wpdb->prepare(
+                "SELECT original_url, COUNT(*) AS click_count
+                 FROM $table
+                 WHERE clicked_at >= %s
+                 GROUP BY original_url
+                 ORDER BY click_count DESC
+                 LIMIT 10",
+                current_time('Y-m-d') . ' 00:00:00'
+            ));
+
+            // --- Top 10 Clicked Links: Last 30 Days ---
+            $top_30d = $wpdb->get_results($wpdb->prepare(
+                "SELECT original_url, COUNT(*) AS click_count
+                 FROM $table
+                 WHERE clicked_at >= %s
+                 GROUP BY original_url
+                 ORDER BY click_count DESC
+                 LIMIT 10",
+                wp_date('Y-m-d', strtotime('-30 days')) . ' 00:00:00'
+            ));
+            ?>
+
+            <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-top: 12px;">
+                <!-- Today's Top Clicks -->
+                <div style="flex: 1; min-width: 350px;">
+                    <h3 style="margin-top: 0;">Top Clicked Today</h3>
+                    <?php if (!empty($top_today)): ?>
+                    <table class="widefat striped" style="max-width: 100%;">
+                        <thead><tr><th>#</th><th>Show / Link</th><th style="text-align:right;">Clicks</th></tr></thead>
+                        <tbody>
+                        <?php foreach ($top_today as $i => $row):
+                            // Extract a readable label from the URL
+                            $label = $this->extract_link_label($row->original_url);
+                        ?>
+                            <tr>
+                                <td><?php echo (int)$i + 1; ?></td>
+                                <td>
+                                    <strong><?php echo esc_html($label); ?></strong><br>
+                                    <a href="<?php echo esc_url($row->original_url); ?>" target="_blank" rel="noopener" style="font-size: 11px; color: #888; word-break: break-all;"><?php echo esc_html($row->original_url); ?></a>
+                                </td>
+                                <td style="text-align:right; font-weight: 600; font-size: 16px;"><?php echo (int)$row->click_count; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                    <?php else: ?>
+                    <p style="color: #888;">No clicks recorded today yet.</p>
+                    <?php endif; ?>
+                </div>
+
+                <!-- Last 30 Days Top Clicks -->
+                <div style="flex: 1; min-width: 350px;">
+                    <h3 style="margin-top: 0;">Top Clicked — Last 30 Days</h3>
+                    <?php if (!empty($top_30d)): ?>
+                    <table class="widefat striped" style="max-width: 100%;">
+                        <thead><tr><th>#</th><th>Show / Link</th><th style="text-align:right;">Clicks</th></tr></thead>
+                        <tbody>
+                        <?php foreach ($top_30d as $i => $row):
+                            $label = $this->extract_link_label($row->original_url);
+                        ?>
+                            <tr>
+                                <td><?php echo (int)$i + 1; ?></td>
+                                <td>
+                                    <strong><?php echo esc_html($label); ?></strong><br>
+                                    <a href="<?php echo esc_url($row->original_url); ?>" target="_blank" rel="noopener" style="font-size: 11px; color: #888; word-break: break-all;"><?php echo esc_html($row->original_url); ?></a>
+                                </td>
+                                <td style="text-align:right; font-weight: 600; font-size: 16px;"><?php echo (int)$row->click_count; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                    <?php else: ?>
+                    <p style="color: #888;">No clicks in the last 30 days.</p>
+                    <?php endif; ?>
+                </div>
+            </div>
+
             <?php endif; ?>
 
             <form method="post" action="options.php">
