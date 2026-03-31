@@ -1,0 +1,48 @@
+name: Generate Comedian Blog Posts
+
+on:
+  # Run weekly — Monday at 10am Central (1 hour after the weekly blog post)
+  # 10am CDT = 15:00 UTC, 10am CST = 16:00 UTC
+  # Using 16:00 UTC to cover both
+  schedule:
+    - cron: '0 16 * * 1'   # Every Monday ~10am CT
+
+  # Manual trigger from the Actions tab (use this for testing!)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  TZ: America/Chicago
+
+jobs:
+  generate-comedian-posts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate per-comedian blog posts
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node scripts/generate-comedian-post.js
+
+      - name: Commit and push comedian posts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add blog/comedians/
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No new comedian posts to commit."
+          else
+            git commit -m "Comedian spotlights — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
+            git push
+          fi
