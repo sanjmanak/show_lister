@@ -309,12 +309,43 @@ function validateImageUrl(url) {
   });
 }
 
-/** Extract candidate image URLs from an HTML page string. */
-function extractImageCandidates(html, baseUrl) {
+/** Extract candidate image URLs from an HTML page string, prioritizing images matching the comedian's name. */
+function extractImageCandidates(html, baseUrl, comedianName) {
   const candidates = [];
   const seen = new Set();
 
-  function addCandidate(raw, priority) {
+  // Build name fragments for matching (e.g. "Nate Marshall" → ["nate", "marshall", "natemarshall"])
+  const nameFragments = [];
+  if (comedianName) {
+    const parts = comedianName.toLowerCase().replace(/[^a-z\s]/g, "").split(/\s+/).filter(Boolean);
+    nameFragments.push(...parts);
+    if (parts.length > 1) nameFragments.push(parts.join("")); // "natemarshall"
+    // Also add hyphenated and underscored: "nate-marshall", "nate_marshall"
+    if (parts.length > 1) {
+      nameFragments.push(parts.join("-"));
+      nameFragments.push(parts.join("_"));
+    }
+  }
+
+  function nameMatchScore(url, altText) {
+    const check = (url + " " + (altText || "")).toLowerCase();
+    let score = 0;
+    for (const frag of nameFragments) {
+      if (frag.length >= 3 && check.includes(frag)) score++;
+    }
+    return score;
+  }
+
+  // Reject URLs that look like site chrome, not comedian photos
+  const rejectPatterns = [
+    "favicon", "logo", "icon", "1x1", "pixel", "tracking", "badge",
+    "button", "banner", "sprite", "data:image", "avatar", "widget",
+    "footer", "header", "nav-", "menu", "social", "share", "arrow",
+    "close", "search", "cart", "checkout", "payment", "ad-", "ads/",
+    "analytics", "placeholder", ".svg", ".gif"
+  ];
+
+  function addCandidate(raw, basePriority, altText) {
     if (!raw || typeof raw !== "string") return;
     let url = raw.trim();
     // Resolve relative URLs
@@ -323,26 +354,27 @@ function extractImageCandidates(html, baseUrl) {
       try { url = new URL(url, baseUrl).href; } catch (_) { return; }
     }
     if (!url.startsWith("http")) return;
-    // Skip tiny images, icons, tracking pixels, logos
     const lower = url.toLowerCase();
-    if (lower.includes("favicon") || lower.includes("logo") || lower.includes("icon")
-        || lower.includes("1x1") || lower.includes("pixel") || lower.includes("tracking")
-        || lower.includes("badge") || lower.includes("button") || lower.includes("banner")
-        || lower.includes("sprite") || lower.includes("data:image")) return;
+    if (rejectPatterns.some((p) => lower.includes(p))) return;
     if (seen.has(url)) return;
     seen.add(url);
-    candidates.push({ url, priority });
+
+    // Boost priority if the URL or alt text contains the comedian's name
+    const nameBonus = nameMatchScore(url, altText);
+    // Lower priority number = better; name match gives a big boost
+    const priority = nameBonus > 0 ? Math.max(0, basePriority - nameBonus * 3) : basePriority;
+    candidates.push({ url, priority, nameBonus });
   }
 
   // Priority 1: og:image (most reliable for headshots)
   const ogMatch = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i)
     || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
-  if (ogMatch) addCandidate(ogMatch[1], 1);
+  if (ogMatch) addCandidate(ogMatch[1], 2);
 
   // Priority 2: twitter:image
   const twMatch = html.match(/<meta[^>]+(?:name|property)=["']twitter:image["'][^>]+content=["']([^"']+)["']/i)
     || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+(?:name|property)=["']twitter:image["']/i);
-  if (twMatch) addCandidate(twMatch[1], 2);
+  if (twMatch) addCandidate(twMatch[1], 3);
 
   // Priority 3: JSON-LD image
   const jsonLdMatch = html.match(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi);
@@ -352,24 +384,25 @@ function extractImageCandidates(html, baseUrl) {
       try {
         const ld = JSON.parse(inner);
         const img = ld.image || (ld["@graph"] && ld["@graph"].find(n => n.image));
-        if (typeof img === "string") addCandidate(img, 3);
-        else if (img && typeof img.url === "string") addCandidate(img.url, 3);
+        if (typeof img === "string") addCandidate(img, 4);
+        else if (img && typeof img.url === "string") addCandidate(img.url, 4);
       } catch (_) {}
     }
   }
 
-  // Priority 4: Large <img> tags (likely hero/profile images)
+  // Priority 4-6: <img> tags — extract src and alt text
   const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi;
   let imgMatch;
   while ((imgMatch = imgRegex.exec(html)) !== null) {
     const src = imgMatch[1];
-    // Check if the img tag has large dimensions suggesting a real photo
     const tag = imgMatch[0];
+    // Extract alt text for name matching
+    const altMatch = tag.match(/alt=["']([^"']*?)["']/i);
+    const altText = altMatch ? altMatch[1] : "";
     const widthMatch = tag.match(/width=["']?(\d+)/i);
     const width = widthMatch ? parseInt(widthMatch[1]) : 0;
-    // Prioritize larger images
     if (width >= 300 || !widthMatch) {
-      addCandidate(src, width >= 300 ? 4 : 6);
+      addCandidate(src, width >= 300 ? 5 : 7, altText);
     }
   }
 
@@ -380,12 +413,17 @@ function extractImageCandidates(html, baseUrl) {
     const parts = srcsetMatch[1].split(",");
     for (const part of parts) {
       const src = part.trim().split(/\s+/)[0];
-      addCandidate(src, 5);
+      addCandidate(src, 6);
     }
   }
 
-  // Sort by priority (lower = better)
-  candidates.sort((a, b) => a.priority - b.priority);
+  // Sort: name-matched images first, then by priority
+  candidates.sort((a, b) => {
+    // Images with name match always win
+    if (a.nameBonus > 0 && b.nameBonus === 0) return -1;
+    if (b.nameBonus > 0 && a.nameBonus === 0) return 1;
+    return a.priority - b.priority;
+  });
   return candidates.map((c) => c.url);
 }
 
@@ -393,7 +431,7 @@ function extractImageCandidates(html, baseUrl) {
  * Given candidate page URLs from research, fetch each page, extract images,
  * validate them, and return the first working image URL (or null).
  */
-async function findBestHeadshot(pageUrls) {
+async function findBestHeadshot(pageUrls, comedianName) {
   for (const pageUrl of pageUrls) {
     try {
       console.log(`    Fetching page: ${pageUrl}`);
@@ -403,7 +441,7 @@ async function findBestHeadshot(pageUrls) {
         continue;
       }
 
-      const candidates = extractImageCandidates(html, pageUrl);
+      const candidates = extractImageCandidates(html, pageUrl, comedianName);
       console.log(`      Found ${candidates.length} image candidate(s).`);
 
       // Try top 5 candidates
@@ -666,14 +704,52 @@ function generateComedianGraphicHTML(name, venue, dateStr, imageUrl, size) {
   };
   const { w, h } = dims[size];
 
-  // Adjust layout per size
-  const photoHeight = size === "story" ? "60%" : size === "portrait" ? "65%" : "70%";
-  const gradientStart = size === "story" ? "55%" : size === "portrait" ? "58%" : "60%";
-  const nameFontSize = size === "story" ? "56px" : "48px";
-  const detailFontSize = size === "story" ? "24px" : "20px";
-  const brandFontSize = "13px";
-  const bottomPadding = size === "story" ? "60px" : "40px";
-  const objectPosition = size === "square" ? "center 20%" : "center 15%";
+  // --- Size-specific layout tuning ---
+  // Square: tight crop, text fills bottom third
+  // Portrait: more breathing room, slight pullback
+  // Story: full vertical, photo top 55%, details fill bottom
+  const config = {
+    square: {
+      photoHeight: "68%",
+      gradientHeight: "55%",
+      objectPosition: "center 20%",
+      nameFontSize: "72px",
+      dateFontSize: "32px",
+      venueFontSize: "26px",
+      brandFontSize: "18px",
+      bottomPadding: "48px",
+      sidePadding: "56px",
+      accentWidth: "52px",
+      accentHeight: "4px",
+    },
+    portrait: {
+      photoHeight: "62%",
+      gradientHeight: "52%",
+      objectPosition: "center 15%",
+      nameFontSize: "76px",
+      dateFontSize: "34px",
+      venueFontSize: "28px",
+      brandFontSize: "18px",
+      bottomPadding: "56px",
+      sidePadding: "56px",
+      accentWidth: "52px",
+      accentHeight: "4px",
+    },
+    story: {
+      photoHeight: "55%",
+      gradientHeight: "55%",
+      objectPosition: "center 15%",
+      nameFontSize: "80px",
+      dateFontSize: "36px",
+      venueFontSize: "30px",
+      brandFontSize: "20px",
+      bottomPadding: "64px",
+      sidePadding: "60px",
+      accentWidth: "56px",
+      accentHeight: "5px",
+    },
+  };
+  const c = config[size];
 
   return `<!DOCTYPE html>
 <html>
@@ -695,22 +771,22 @@ function generateComedianGraphicHTML(name, venue, dateStr, imageUrl, size) {
       top: 0;
       left: 0;
       width: 100%;
-      height: ${photoHeight};
+      height: ${c.photoHeight};
       object-fit: cover;
-      object-position: ${objectPosition};
+      object-position: ${c.objectPosition};
     }
     .gradient {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
-      height: ${100 - parseInt(gradientStart)}%;
+      height: ${c.gradientHeight};
       background: linear-gradient(
         to bottom,
         rgba(10, 10, 15, 0) 0%,
-        rgba(10, 10, 15, 0.6) 25%,
-        rgba(10, 10, 15, 0.92) 60%,
-        rgba(10, 10, 15, 1) 100%
+        rgba(10, 10, 15, 0.55) 30%,
+        rgba(10, 10, 15, 0.88) 55%,
+        rgba(10, 10, 15, 1) 75%
       );
     }
     .content {
@@ -718,38 +794,43 @@ function generateComedianGraphicHTML(name, venue, dateStr, imageUrl, size) {
       bottom: 0;
       left: 0;
       width: 100%;
-      padding: 0 48px ${bottomPadding};
+      padding: 0 ${c.sidePadding} ${c.bottomPadding};
       z-index: 2;
     }
     .accent-line {
-      width: 40px;
-      height: 3px;
+      width: ${c.accentWidth};
+      height: ${c.accentHeight};
       background: #ff4d6a;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
     .name {
-      font-size: ${nameFontSize};
-      font-weight: 800;
+      font-size: ${c.nameFontSize};
+      font-weight: 900;
       color: #ffffff;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
     }
-    .details {
-      font-size: ${detailFontSize};
+    .date {
+      font-size: ${c.dateFontSize};
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.95);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .venue {
+      font-size: ${c.venueFontSize};
       font-weight: 500;
-      color: rgba(255, 255, 255, 0.75);
-      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.3;
+      margin-bottom: 24px;
     }
     .brand {
-      position: absolute;
-      bottom: ${size === "story" ? "24px" : "16px"};
-      left: 48px;
-      font-size: ${brandFontSize};
-      font-weight: 600;
-      letter-spacing: 2px;
+      font-size: ${c.brandFontSize};
+      font-weight: 700;
+      letter-spacing: 3px;
       color: #ff4d6a;
-      opacity: 0.7;
       z-index: 2;
     }
   </style>
@@ -760,9 +841,10 @@ function generateComedianGraphicHTML(name, venue, dateStr, imageUrl, size) {
   <div class="content">
     <div class="accent-line"></div>
     <div class="name">${safeName}</div>
-    <div class="details">${safeVenue}<br>${safeDate}</div>
+    <div class="date">${safeDate}</div>
+    <div class="venue">${safeVenue}</div>
+    <div class="brand">COMEDYHOUSTON.COM</div>
   </div>
-  <div class="brand">COMEDYHOUSTON.COM</div>
 </body>
 </html>`;
 }
@@ -1472,7 +1554,7 @@ async function main() {
       const pageUrls = researchObj.headshot_page_urls || [];
       if (pageUrls.length > 0) {
         console.log(`  Found ${pageUrls.length} candidate page(s) for headshot extraction...`);
-        const headshot = await findBestHeadshot(pageUrls);
+        const headshot = await findBestHeadshot(pageUrls, headliner.name);
         if (headshot) {
           console.log(`  Using extracted headshot: ${headshot}`);
           imageUrl = headshot;
