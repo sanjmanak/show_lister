@@ -29,13 +29,19 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Generate per-comedian blog posts
+      - name: Generate per-comedian blog posts + graphics + captions
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           WP_SITE_URL: ${{ secrets.WP_SITE_URL }}
           WP_APP_USER: ${{ secrets.WP_APP_USER }}
           WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
         run: node scripts/generate-comedian-post.js
+
+      - name: Install Puppeteer
+        run: npm install puppeteer
+
+      - name: Screenshot comedian Instagram graphics
+        run: node scripts/screenshot-comedian-graphics.js
 
       - name: Commit and push comedian posts
         run: |
@@ -49,3 +55,49 @@ jobs:
             git commit -m "Comedian spotlights — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
             git push
           fi
+
+      - name: Check if email is configured
+        id: email-check
+        env:
+          HAS_SMTP: ${{ secrets.SMTP_SERVER }}
+        run: |
+          if [ -n "$HAS_SMTP" ] && [ -f blog/comedians/email-subject.txt ] && [ -f blog/comedians/email-body.txt ]; then
+            echo "send_email=true" >> $GITHUB_OUTPUT
+          else
+            echo "send_email=false" >> $GITHUB_OUTPUT
+            echo "Skipping email — SMTP not configured or email files missing."
+          fi
+
+      - name: Load email content
+        if: steps.email-check.outputs.send_email == 'true'
+        run: |
+          echo "EMAIL_SUBJECT=$(cat blog/comedians/email-subject.txt)" >> $GITHUB_ENV
+          echo "EMAIL_BODY<<EMAIL_BODY_EOF" >> $GITHUB_ENV
+          cat blog/comedians/email-body.txt >> $GITHUB_ENV
+          echo "" >> $GITHUB_ENV
+          echo "EMAIL_BODY_EOF" >> $GITHUB_ENV
+
+      - name: Collect PNG attachments list
+        if: steps.email-check.outputs.send_email == 'true'
+        id: attachments
+        run: |
+          # Build comma-separated list of all PNG files in images dir
+          PNGS=$(find blog/comedians/images -name '*.png' 2>/dev/null | sort | tr '\n' ',')
+          # Remove trailing comma
+          PNGS="${PNGS%,}"
+          echo "files=${PNGS}" >> $GITHUB_OUTPUT
+          echo "Found attachments: ${PNGS}"
+
+      - name: Email comedian spotlight assets
+        if: steps.email-check.outputs.send_email == 'true' && steps.attachments.outputs.files != ''
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: ${{ env.EMAIL_SUBJECT }}
+          to: ${{ secrets.NOTIFY_EMAIL }}
+          from: ${{ secrets.SMTP_FROM }}
+          body: ${{ env.EMAIL_BODY }}
+          attachments: ${{ steps.attachments.outputs.files }}
