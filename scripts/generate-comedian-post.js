@@ -1273,7 +1273,8 @@ async function main() {
     // Pick the best image: prefer clean headshot from research, fall back to event image
     let imageUrl = eventImageUrl;
     try {
-      const researchObj = JSON.parse(research);
+      const cleanResearch = research.replace(/^```json\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
+      const researchObj = JSON.parse(cleanResearch);
       if (researchObj.headshot_url) {
         console.log(`  Found clean headshot: ${researchObj.headshot_url}`);
         imageUrl = researchObj.headshot_url;
@@ -1349,7 +1350,8 @@ async function main() {
     let instagramHandle = "";
     // Try to extract Instagram handle from research
     try {
-      const researchObj = JSON.parse(research);
+      const cleanRes = research.replace(/^```json\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
+      const researchObj = JSON.parse(cleanRes);
       instagramHandle = researchObj.instagram_handle || "";
     } catch (_) {
       // Research wasn't valid JSON or didn't have handle — that's fine
