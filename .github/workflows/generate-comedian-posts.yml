@@ -53,6 +53,7 @@ jobs:
             echo "No new comedian posts to commit."
           else
             git commit -m "Comedian spotlights — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
+            git pull --rebase origin main
             git push
           fi
 
