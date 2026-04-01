@@ -713,10 +713,10 @@ function generateComedianGraphicHTML(name, venue, dateStr, imageUrl, size) {
       photoHeight: "68%",
       gradientHeight: "55%",
       objectPosition: "center 20%",
-      nameFontSize: "72px",
-      dateFontSize: "32px",
-      venueFontSize: "26px",
-      brandFontSize: "18px",
+      nameFontSize: "80px",
+      dateFontSize: "36px",
+      venueFontSize: "29px",
+      brandFontSize: "20px",
       bottomPadding: "48px",
       sidePadding: "56px",
       accentWidth: "52px",
@@ -726,10 +726,10 @@ function generateComedianGraphicHTML(name, venue, dateStr, imageUrl, size) {
       photoHeight: "62%",
       gradientHeight: "52%",
       objectPosition: "center 15%",
-      nameFontSize: "76px",
-      dateFontSize: "34px",
-      venueFontSize: "28px",
-      brandFontSize: "18px",
+      nameFontSize: "84px",
+      dateFontSize: "38px",
+      venueFontSize: "31px",
+      brandFontSize: "20px",
       bottomPadding: "56px",
       sidePadding: "56px",
       accentWidth: "52px",
@@ -739,10 +739,10 @@ function generateComedianGraphicHTML(name, venue, dateStr, imageUrl, size) {
       photoHeight: "55%",
       gradientHeight: "55%",
       objectPosition: "center 15%",
-      nameFontSize: "80px",
-      dateFontSize: "36px",
-      venueFontSize: "30px",
-      brandFontSize: "20px",
+      nameFontSize: "88px",
+      dateFontSize: "40px",
+      venueFontSize: "33px",
+      brandFontSize: "22px",
       bottomPadding: "64px",
       sidePadding: "60px",
       accentWidth: "56px",
@@ -1467,6 +1467,30 @@ async function main() {
   if (!fs.existsSync(COMEDIANS_DIR)) {
     fs.mkdirSync(COMEDIANS_DIR, { recursive: true });
   }
+
+  // Clean up previous run's generated files (images, captions, email files)
+  // This prevents stale content from being emailed or committed
+  console.log("Cleaning up previous run's files...");
+  const imagesDir = path.join(COMEDIANS_DIR, "images");
+  if (fs.existsSync(imagesDir)) {
+    const oldFiles = fs.readdirSync(imagesDir);
+    for (const f of oldFiles) {
+      fs.unlinkSync(path.join(imagesDir, f));
+    }
+    console.log(`  Removed ${oldFiles.length} old file(s) from blog/comedians/images/`);
+  }
+  // Remove old caption files
+  const oldCaptions = fs.readdirSync(COMEDIANS_DIR).filter((f) => f.endsWith("-caption.txt"));
+  for (const f of oldCaptions) {
+    fs.unlinkSync(path.join(COMEDIANS_DIR, f));
+  }
+  if (oldCaptions.length > 0) console.log(`  Removed ${oldCaptions.length} old caption file(s)`);
+  // Remove old email files
+  for (const f of ["email-subject.txt", "email-body.txt"]) {
+    const p = path.join(COMEDIANS_DIR, f);
+    if (fs.existsSync(p)) fs.unlinkSync(p);
+  }
+  console.log("");
 
   // Step 0: Identify headliners
   console.log("Step 0: Identifying headliners...");
