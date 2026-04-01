@@ -289,6 +289,7 @@ Return a JSON object with these fields (leave null/empty if you cannot verify):
   "instagram_handle": "",
   "notable_bits_or_quotes": [],
   "background_story": "",
+  "headshot_url": "",
   "source_urls": [
     {"label": "Wikipedia", "url": ""},
     {"label": "Netflix special page or IMDB", "url": ""},
@@ -296,6 +297,18 @@ Return a JSON object with these fields (leave null/empty if you cannot verify):
     {"label": "Podcast episode or appearance", "url": ""}
   ]
 }
+
+For headshot_url: Search for a clean, high-quality photo of this comedian. Prefer images from:
+  - The comedian's official website or social media profiles
+  - Verified comedy club, festival, or promoter pages (e.g. Improv, major showcases)
+  - Press kits, interviews, or profile pages
+  - Images with minimal or no text overlays
+REJECT images that:
+  - Contain watermarks or heavy text/logo overlays (e.g. event posters with venue branding, dates, "LIVE IN HOUSTON" text)
+  - Come from stock photo marketplaces (Shutterstock, Getty, Adobe Stock)
+  - State "all rights reserved," "editorial use only," or similar restrictions
+  - Are low resolution (under 400px wide)
+The ideal image is a clean headshot or upper-body photo of the comedian — just the person, no promotional text. Return the direct image URL (ending in .jpg, .png, .webp, etc.) if possible. If no suitable clean image is found, leave this field as an empty string "".
 
 For source_urls: include 3-6 real, working URLs you found during research. These should be the actual pages you pulled facts from — Wikipedia, IMDB, Netflix, YouTube specials, podcast episodes, magazine interviews, etc. Only include URLs you actually visited and verified. Leave the array empty if you cannot find reliable sources.
 
@@ -1234,7 +1247,7 @@ async function main() {
     const date = matchedEvent.date;
     const time = matchedEvent.time;
     const ticketUrl = matchedEvent.ticket_url || "";
-    const imageUrl = matchedEvent.image_url || "";
+    const eventImageUrl = matchedEvent.image_url || "";
     const priceMin = matchedEvent.price_min;
     const priceMax = matchedEvent.price_max;
     let price = "";
@@ -1255,6 +1268,20 @@ async function main() {
     } catch (err) {
       console.warn(`  Research failed: ${err.message}. Writing with limited data.`);
       research = JSON.stringify({ full_name: headliner.name, note: "Research unavailable" });
+    }
+
+    // Pick the best image: prefer clean headshot from research, fall back to event image
+    let imageUrl = eventImageUrl;
+    try {
+      const researchObj = JSON.parse(research);
+      if (researchObj.headshot_url) {
+        console.log(`  Found clean headshot: ${researchObj.headshot_url}`);
+        imageUrl = researchObj.headshot_url;
+      } else {
+        console.log("  No clean headshot found — using event image.");
+      }
+    } catch (_) {
+      console.log("  Could not parse research for headshot — using event image.");
     }
 
     // Step 2: Write the blog post
