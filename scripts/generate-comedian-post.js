@@ -238,31 +238,49 @@ function callOpenAIResponses(input, instructions) {
 /** Fetch a URL and return the response body as a string. Follows up to 3 redirects. */
 function fetchPage(url, redirectsLeft) {
   if (redirectsLeft === undefined) redirectsLeft = 3;
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     if (!url || redirectsLeft < 0) return resolve("");
-    const lib = url.startsWith("https") ? https : http;
-    const req = lib.get(url, { timeout: 8000, headers: { "User-Agent": "ComedyHouston-BlogBot/1.0" } }, (res) => {
-      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        let next = res.headers.location;
-        if (next.startsWith("/")) {
-          const parsed = new URL(url);
-          next = parsed.origin + next;
+    let resolved = false;
+    function done(val) { if (!resolved) { resolved = true; resolve(val); } }
+
+    try {
+      const lib = url.startsWith("https") ? https : http;
+      const req = lib.get(url, { timeout: 8000, headers: { "User-Agent": "ComedyHouston-BlogBot/1.0" } }, (res) => {
+        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+          let next = res.headers.location;
+          if (next.startsWith("/")) {
+            try { next = new URL(next, url).href; } catch (_) { return done(""); }
+          }
+          res.resume();
+          return fetchPage(next, redirectsLeft - 1).then(done).catch(() => done(""));
         }
-        res.resume();
-        return fetchPage(next, redirectsLeft - 1).then(resolve).catch(reject);
-      }
-      if (res.statusCode !== 200) {
-        res.resume();
-        return resolve("");
-      }
-      let data = "";
-      res.setEncoding("utf8");
-      res.on("data", (chunk) => { data += chunk; if (data.length > 200000) res.destroy(); });
-      res.on("end", () => resolve(data));
-      res.on("error", () => resolve(""));
-    });
-    req.on("error", () => resolve(""));
-    req.on("timeout", () => { req.destroy(); resolve(""); });
+        if (res.statusCode !== 200) {
+          res.resume();
+          return done("");
+        }
+        // Only accept text/html responses
+        const ct = (res.headers["content-type"] || "").toLowerCase();
+        if (!ct.includes("text/html") && !ct.includes("text/plain") && !ct.includes("application/xhtml")) {
+          res.resume();
+          return done("");
+        }
+        let data = "";
+        res.setEncoding("utf8");
+        res.on("data", (chunk) => {
+          data += chunk;
+          if (data.length > 200000) {
+            res.destroy();
+            done(data);
+          }
+        });
+        res.on("end", () => done(data));
+        res.on("error", () => done(data || ""));
+      });
+      req.on("error", () => done(""));
+      req.on("timeout", () => { req.destroy(); done(""); });
+    } catch (_) {
+      done("");
+    }
   });
 }
 
@@ -377,25 +395,33 @@ function extractImageCandidates(html, baseUrl) {
  */
 async function findBestHeadshot(pageUrls) {
   for (const pageUrl of pageUrls) {
-    console.log(`    Fetching page: ${pageUrl}`);
-    const html = await fetchPage(pageUrl);
-    if (!html) {
-      console.log("      Page fetch failed, skipping.");
-      continue;
-    }
-
-    const candidates = extractImageCandidates(html, pageUrl);
-    console.log(`      Found ${candidates.length} image candidate(s).`);
-
-    // Try top 5 candidates
-    for (const imgUrl of candidates.slice(0, 5)) {
-      const valid = await validateImageUrl(imgUrl);
-      if (valid) {
-        console.log(`      Validated: ${imgUrl}`);
-        return imgUrl;
+    try {
+      console.log(`    Fetching page: ${pageUrl}`);
+      const html = await fetchPage(pageUrl);
+      if (!html) {
+        console.log("      Page fetch failed, skipping.");
+        continue;
       }
+
+      const candidates = extractImageCandidates(html, pageUrl);
+      console.log(`      Found ${candidates.length} image candidate(s).`);
+
+      // Try top 5 candidates
+      for (const imgUrl of candidates.slice(0, 5)) {
+        try {
+          const valid = await validateImageUrl(imgUrl);
+          if (valid) {
+            console.log(`      Validated: ${imgUrl}`);
+            return imgUrl;
+          }
+        } catch (valErr) {
+          console.log(`      Validation error for ${imgUrl}: ${valErr.message}`);
+        }
+      }
+      console.log("      No valid images from this page.");
+    } catch (err) {
+      console.log(`      Error processing ${pageUrl}: ${err.message}`);
     }
-    console.log("      No valid images from this page.");
   }
   return null;
 }
