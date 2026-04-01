@@ -230,50 +230,174 @@ function callOpenAIResponses(input, instructions) {
 }
 
 // ---------------------------------------------------------------------------
-// Validate a headshot URL (HEAD request — checks it's a real, loadable image)
+// Two-stage headshot finder:
+//   Stage A: OpenAI finds candidate pages (official site, bio, press)
+//   Stage B: Our code fetches pages, extracts image URLs, validates them
 // ---------------------------------------------------------------------------
 
+/** Fetch a URL and return the response body as a string. Follows up to 3 redirects. */
+function fetchPage(url, redirectsLeft) {
+  if (redirectsLeft === undefined) redirectsLeft = 3;
+  return new Promise((resolve, reject) => {
+    if (!url || redirectsLeft < 0) return resolve("");
+    const lib = url.startsWith("https") ? https : http;
+    const req = lib.get(url, { timeout: 8000, headers: { "User-Agent": "ComedyHouston-BlogBot/1.0" } }, (res) => {
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        let next = res.headers.location;
+        if (next.startsWith("/")) {
+          const parsed = new URL(url);
+          next = parsed.origin + next;
+        }
+        res.resume();
+        return fetchPage(next, redirectsLeft - 1).then(resolve).catch(reject);
+      }
+      if (res.statusCode !== 200) {
+        res.resume();
+        return resolve("");
+      }
+      let data = "";
+      res.setEncoding("utf8");
+      res.on("data", (chunk) => { data += chunk; if (data.length > 200000) res.destroy(); });
+      res.on("end", () => resolve(data));
+      res.on("error", () => resolve(""));
+    });
+    req.on("error", () => resolve(""));
+    req.on("timeout", () => { req.destroy(); resolve(""); });
+  });
+}
+
+/** Validate an image URL with a HEAD request. Returns true if 200 + image/* content-type. */
 function validateImageUrl(url) {
   return new Promise((resolve) => {
     if (!url || typeof url !== "string") return resolve(false);
-
-    // Reject non-http URLs and obvious page URLs
     try {
       const parsed = new URL(url);
       if (!parsed.protocol.startsWith("http")) return resolve(false);
-
-      // Reject URLs that are clearly web pages, not images
-      const pathname = parsed.pathname.toLowerCase();
-      const pageExtensions = [".html", ".htm", ".php", ".asp", ".aspx"];
-      if (pageExtensions.some((ext) => pathname.endsWith(ext))) {
-        return resolve(false);
-      }
-      // Reject bare paths like /bio, /about, /press (no file extension = probably a page)
-      const lastSegment = pathname.split("/").pop();
-      if (lastSegment && !lastSegment.includes(".")) {
-        return resolve(false);
-      }
     } catch (_) {
       return resolve(false);
     }
-
-    // HEAD request to verify it returns image content type and 200
     const lib = url.startsWith("https") ? https : http;
     const req = lib.request(url, { method: "HEAD", timeout: 5000, headers: { "User-Agent": "ComedyHouston-BlogBot/1.0" } }, (res) => {
-      // Follow one redirect
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
         return validateImageUrl(res.headers.location).then(resolve);
       }
       if (res.statusCode !== 200) return resolve(false);
-
       const contentType = (res.headers["content-type"] || "").toLowerCase();
       resolve(contentType.startsWith("image/"));
     });
-
     req.on("error", () => resolve(false));
     req.on("timeout", () => { req.destroy(); resolve(false); });
     req.end();
   });
+}
+
+/** Extract candidate image URLs from an HTML page string. */
+function extractImageCandidates(html, baseUrl) {
+  const candidates = [];
+  const seen = new Set();
+
+  function addCandidate(raw, priority) {
+    if (!raw || typeof raw !== "string") return;
+    let url = raw.trim();
+    // Resolve relative URLs
+    if (url.startsWith("//")) url = "https:" + url;
+    else if (url.startsWith("/")) {
+      try { url = new URL(url, baseUrl).href; } catch (_) { return; }
+    }
+    if (!url.startsWith("http")) return;
+    // Skip tiny images, icons, tracking pixels, logos
+    const lower = url.toLowerCase();
+    if (lower.includes("favicon") || lower.includes("logo") || lower.includes("icon")
+        || lower.includes("1x1") || lower.includes("pixel") || lower.includes("tracking")
+        || lower.includes("badge") || lower.includes("button") || lower.includes("banner")
+        || lower.includes("sprite") || lower.includes("data:image")) return;
+    if (seen.has(url)) return;
+    seen.add(url);
+    candidates.push({ url, priority });
+  }
+
+  // Priority 1: og:image (most reliable for headshots)
+  const ogMatch = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i)
+    || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
+  if (ogMatch) addCandidate(ogMatch[1], 1);
+
+  // Priority 2: twitter:image
+  const twMatch = html.match(/<meta[^>]+(?:name|property)=["']twitter:image["'][^>]+content=["']([^"']+)["']/i)
+    || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+(?:name|property)=["']twitter:image["']/i);
+  if (twMatch) addCandidate(twMatch[1], 2);
+
+  // Priority 3: JSON-LD image
+  const jsonLdMatch = html.match(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi);
+  if (jsonLdMatch) {
+    for (const block of jsonLdMatch) {
+      const inner = block.replace(/<script[^>]*>/i, "").replace(/<\/script>/i, "");
+      try {
+        const ld = JSON.parse(inner);
+        const img = ld.image || (ld["@graph"] && ld["@graph"].find(n => n.image));
+        if (typeof img === "string") addCandidate(img, 3);
+        else if (img && typeof img.url === "string") addCandidate(img.url, 3);
+      } catch (_) {}
+    }
+  }
+
+  // Priority 4: Large <img> tags (likely hero/profile images)
+  const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi;
+  let imgMatch;
+  while ((imgMatch = imgRegex.exec(html)) !== null) {
+    const src = imgMatch[1];
+    // Check if the img tag has large dimensions suggesting a real photo
+    const tag = imgMatch[0];
+    const widthMatch = tag.match(/width=["']?(\d+)/i);
+    const width = widthMatch ? parseInt(widthMatch[1]) : 0;
+    // Prioritize larger images
+    if (width >= 300 || !widthMatch) {
+      addCandidate(src, width >= 300 ? 4 : 6);
+    }
+  }
+
+  // Priority 5: srcset images
+  const srcsetRegex = /srcset=["']([^"']+)["']/gi;
+  let srcsetMatch;
+  while ((srcsetMatch = srcsetRegex.exec(html)) !== null) {
+    const parts = srcsetMatch[1].split(",");
+    for (const part of parts) {
+      const src = part.trim().split(/\s+/)[0];
+      addCandidate(src, 5);
+    }
+  }
+
+  // Sort by priority (lower = better)
+  candidates.sort((a, b) => a.priority - b.priority);
+  return candidates.map((c) => c.url);
+}
+
+/**
+ * Given candidate page URLs from research, fetch each page, extract images,
+ * validate them, and return the first working image URL (or null).
+ */
+async function findBestHeadshot(pageUrls) {
+  for (const pageUrl of pageUrls) {
+    console.log(`    Fetching page: ${pageUrl}`);
+    const html = await fetchPage(pageUrl);
+    if (!html) {
+      console.log("      Page fetch failed, skipping.");
+      continue;
+    }
+
+    const candidates = extractImageCandidates(html, pageUrl);
+    console.log(`      Found ${candidates.length} image candidate(s).`);
+
+    // Try top 5 candidates
+    for (const imgUrl of candidates.slice(0, 5)) {
+      const valid = await validateImageUrl(imgUrl);
+      if (valid) {
+        console.log(`      Validated: ${imgUrl}`);
+        return imgUrl;
+      }
+    }
+    console.log("      No valid images from this page.");
+  }
+  return null;
 }
 
 // ---------------------------------------------------------------------------
@@ -336,7 +460,7 @@ Return a JSON object with these fields (leave null/empty if you cannot verify):
   "instagram_handle": "",
   "notable_bits_or_quotes": [],
   "background_story": "",
-  "headshot_url": "",
+  "headshot_page_urls": [],
   "source_urls": [
     {"label": "Wikipedia", "url": ""},
     {"label": "Netflix special page or IMDB", "url": ""},
@@ -345,17 +469,12 @@ Return a JSON object with these fields (leave null/empty if you cannot verify):
   ]
 }
 
-For headshot_url: Search for a clean, high-quality photo of this comedian. Prefer images from:
-  - The comedian's official website or social media profiles
-  - Verified comedy club, festival, or promoter pages (e.g. Improv, major showcases)
-  - Press kits, interviews, or profile pages
-  - Images with minimal or no text overlays
-REJECT images that:
-  - Contain watermarks or heavy text/logo overlays (e.g. event posters with venue branding, dates, "LIVE IN HOUSTON" text)
-  - Come from stock photo marketplaces (Shutterstock, Getty, Adobe Stock)
-  - State "all rights reserved," "editorial use only," or similar restrictions
-  - Are low resolution (under 400px wide)
-The ideal image is a clean headshot or upper-body photo of the comedian — just the person, no promotional text. Return the direct image URL (ending in .jpg, .png, .webp, etc.) if possible. If no suitable clean image is found, leave this field as an empty string "".
+For headshot_page_urls: Find 2-4 web pages that are likely to contain a clean, professional headshot or portrait photo of this comedian. Our code will fetch these pages and extract the actual image. Prioritize in this order:
+  1. The comedian's official website (especially /bio, /about, /press, or homepage)
+  2. Their Wikipedia page (if they have one)
+  3. A press/media/EPK page
+  4. A profile page on a major platform (IMDB, comedy club bio page)
+Return the full page URLs as an array of strings. Do NOT try to return direct image file URLs — just the pages where a photo is likely to exist. If no relevant pages are found, leave as an empty array [].
 
 For source_urls: include 3-6 real, working URLs you found during research. These should be the actual pages you pulled facts from — Wikipedia, IMDB, Netflix, YouTube specials, podcast episodes, magazine interviews, etc. Only include URLs you actually visited and verified. Leave the array empty if you cannot find reliable sources.
 
@@ -1317,25 +1436,28 @@ async function main() {
       research = JSON.stringify({ full_name: headliner.name, note: "Research unavailable" });
     }
 
-    // Pick the best image: prefer clean headshot from research, fall back to event image
+    // Two-stage headshot finder:
+    //   Stage A: Extract candidate page URLs from research (OpenAI found these)
+    //   Stage B: Fetch pages, extract og:image / <img> tags, validate
     let imageUrl = eventImageUrl;
     try {
       const cleanResearch = research.replace(/^```json\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
       const researchObj = JSON.parse(cleanResearch);
-      if (researchObj.headshot_url) {
-        console.log(`  Found headshot candidate: ${researchObj.headshot_url}`);
-        const isValid = await validateImageUrl(researchObj.headshot_url);
-        if (isValid) {
-          console.log("  Headshot validated — using it.");
-          imageUrl = researchObj.headshot_url;
+      const pageUrls = researchObj.headshot_page_urls || [];
+      if (pageUrls.length > 0) {
+        console.log(`  Found ${pageUrls.length} candidate page(s) for headshot extraction...`);
+        const headshot = await findBestHeadshot(pageUrls);
+        if (headshot) {
+          console.log(`  Using extracted headshot: ${headshot}`);
+          imageUrl = headshot;
         } else {
-          console.log("  Headshot failed validation (404, not an image, or page URL) — using event image.");
+          console.log("  No valid headshot extracted from candidate pages — using event image.");
         }
       } else {
-        console.log("  No clean headshot found — using event image.");
+        console.log("  No headshot candidate pages in research — using event image.");
       }
     } catch (_) {
-      console.log("  Could not parse research for headshot — using event image.");
+      console.log("  Could not parse research for headshot pages — using event image.");
     }
 
     // Step 2: Write the blog post
