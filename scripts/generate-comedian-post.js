@@ -342,7 +342,14 @@ function extractImageCandidates(html, baseUrl, comedianName) {
     "button", "banner", "sprite", "data:image", "avatar", "widget",
     "footer", "header", "nav-", "menu", "social", "share", "arrow",
     "close", "search", "cart", "checkout", "payment", "ad-", "ads/",
-    "analytics", "placeholder", ".svg", ".gif"
+    "analytics", "placeholder", ".svg", ".gif",
+    // Reject event/venue generic images
+    "open-mic", "openmic", "open_mic", "openmicnight",
+    "flyer", "poster", "event-", "events/", "venue",
+    "microphone", "neon", "stage-", "crowd", "audience",
+    "background", "bg-", "bg_", "hero-bg", "pattern",
+    "default", "no-image", "noimage", "coming-soon",
+    "ticket", "buy-ticket", "calendar"
   ];
 
   function addCandidate(raw, basePriority, altText) {
@@ -356,6 +363,9 @@ function extractImageCandidates(html, baseUrl, comedianName) {
     if (!url.startsWith("http")) return;
     const lower = url.toLowerCase();
     if (rejectPatterns.some((p) => lower.includes(p))) return;
+    // Also reject based on alt text content
+    const altLower = (altText || "").toLowerCase();
+    if (altLower && ["open mic", "logo", "venue", "banner", "ticket", "calendar", "event"].some((p) => altLower.includes(p))) return;
     if (seen.has(url)) return;
     seen.add(url);
 
@@ -1364,7 +1374,67 @@ async function wpGetCategoryBySlug(slug) {
   return 0;
 }
 
-async function publishToWordPress(comedianName, venue, date, slug, htmlContent, imageUrl) {
+/** Get or create a WordPress tag by name. Returns the tag ID. */
+async function wpGetOrCreateTag(tagName) {
+  const slug = tagName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  try {
+    const existing = await wpRequest("GET", `/wp-json/wp/v2/tags?slug=${encodeURIComponent(slug)}`, null);
+    if (Array.isArray(existing) && existing.length > 0) return existing[0].id;
+  } catch (_) {}
+  try {
+    const created = await wpRequest("POST", "/wp-json/wp/v2/tags", { name: tagName, slug: slug });
+    return created.id;
+  } catch (err) {
+    console.warn(`    Could not create tag "${tagName}": ${err.message}`);
+    return 0;
+  }
+}
+
+/** Generate relevant SEO tags for a comedian post. */
+function generatePostTags(comedianName, venue, research) {
+  const tags = [];
+  // Always include the comedian's name and venue
+  tags.push(comedianName);
+  if (venue) tags.push(venue);
+  tags.push("Houston Comedy");
+  tags.push("Live Comedy");
+  tags.push("Stand-Up Comedy");
+
+  // Extract additional tags from research
+  try {
+    const cleanRes = research.replace(/^```json\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
+    const obj = JSON.parse(cleanRes);
+    // Add special titles as tags
+    if (obj.specials && Array.isArray(obj.specials)) {
+      for (const s of obj.specials.slice(0, 3)) {
+        if (s.platform) tags.push(s.platform); // Netflix, HBO, etc.
+      }
+    }
+    // Add TV show names
+    if (obj.tv_appearances && Array.isArray(obj.tv_appearances)) {
+      for (const t of obj.tv_appearances.slice(0, 2)) {
+        if (t.show) tags.push(t.show);
+      }
+    }
+    // Add comedy style themes
+    if (obj.comedy_style && obj.comedy_style.recurring_themes) {
+      for (const theme of obj.comedy_style.recurring_themes.slice(0, 2)) {
+        tags.push(theme);
+      }
+    }
+  } catch (_) {}
+
+  // Deduplicate
+  const seen = new Set();
+  return tags.filter((t) => {
+    const key = t.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  }).slice(0, 10); // Cap at 10 tags
+}
+
+async function publishToWordPress(comedianName, venue, date, slug, htmlContent, imageUrl, research) {
   console.log("  Step 4: Publishing to WordPress...");
 
   // Extract just the article body (strip the <h1> — WordPress uses the title field)
@@ -1412,6 +1482,17 @@ async function publishToWordPress(comedianName, venue, date, slug, htmlContent, 
   // Look up the "Shows" category (slug: comedy-shows)
   const categoryId = await wpGetCategoryBySlug("comedy-shows");
 
+  // Generate and resolve tags
+  const tagNames = generatePostTags(comedianName, venue, research || "");
+  const tagIds = [];
+  if (tagNames.length > 0) {
+    console.log(`    Tags: ${tagNames.join(", ")}`);
+    for (const name of tagNames) {
+      const id = await wpGetOrCreateTag(name);
+      if (id) tagIds.push(id);
+    }
+  }
+
   // Create the post
   const postData = {
     title: wpTitle,
@@ -1423,6 +1504,10 @@ async function publishToWordPress(comedianName, venue, date, slug, htmlContent, 
 
   if (featuredMediaId) {
     postData.featured_media = featuredMediaId;
+  }
+
+  if (tagIds.length > 0) {
+    postData.tags = tagIds;
   }
 
   if (categoryId) {
@@ -1678,7 +1763,7 @@ async function main() {
     if (WP_ENABLED) {
       try {
         wpLink = await publishToWordPress(
-          headliner.name, venue, date, postSlug, finalContent, imageUrl
+          headliner.name, venue, date, postSlug, finalContent, imageUrl, research
         );
       } catch (err) {
         console.error(`  WordPress publish failed: ${err.message}`);
