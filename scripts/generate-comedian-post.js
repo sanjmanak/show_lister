@@ -424,6 +424,221 @@ IMPORTANT:
 }
 
 // ---------------------------------------------------------------------------
+// Instagram graphic HTML templates (3 sizes per comedian)
+// ---------------------------------------------------------------------------
+
+const IMAGES_DIR = path.join(COMEDIANS_DIR, "images");
+
+/**
+ * Generate an Instagram graphic HTML template for a comedian.
+ * Sizes: square (1080×1080), portrait (1080×1350), story (1080×1920)
+ */
+function generateComedianGraphicHTML(name, venue, dateStr, imageUrl, size) {
+  const displayDate = formatDateForDisplay(dateStr);
+  const safeName = name
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+  const safeVenue = (venue || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+  const safeDate = displayDate
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+  const safeImage = (imageUrl || "")
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;");
+
+  const dims = {
+    square:   { w: 1080, h: 1080 },
+    portrait: { w: 1080, h: 1350 },
+    story:    { w: 1080, h: 1920 },
+  };
+  const { w, h } = dims[size];
+
+  // Adjust layout per size
+  const photoHeight = size === "story" ? "60%" : size === "portrait" ? "65%" : "70%";
+  const gradientStart = size === "story" ? "55%" : size === "portrait" ? "58%" : "60%";
+  const nameFontSize = size === "story" ? "56px" : "48px";
+  const detailFontSize = size === "story" ? "24px" : "20px";
+  const brandFontSize = "13px";
+  const bottomPadding = size === "story" ? "60px" : "40px";
+  const objectPosition = size === "square" ? "center 20%" : "center 15%";
+
+  return `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: ${w}px;
+      height: ${h}px;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+      position: relative;
+      background: #0a0a0f;
+    }
+    .photo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: ${photoHeight};
+      object-fit: cover;
+      object-position: ${objectPosition};
+    }
+    .gradient {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: ${100 - parseInt(gradientStart)}%;
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 15, 0) 0%,
+        rgba(10, 10, 15, 0.6) 25%,
+        rgba(10, 10, 15, 0.92) 60%,
+        rgba(10, 10, 15, 1) 100%
+      );
+    }
+    .content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 0 48px ${bottomPadding};
+      z-index: 2;
+    }
+    .accent-line {
+      width: 40px;
+      height: 3px;
+      background: #ff4d6a;
+      margin-bottom: 16px;
+    }
+    .name {
+      font-size: ${nameFontSize};
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .details {
+      font-size: ${detailFontSize};
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.5;
+    }
+    .brand {
+      position: absolute;
+      bottom: ${size === "story" ? "24px" : "16px"};
+      left: 48px;
+      font-size: ${brandFontSize};
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #ff4d6a;
+      opacity: 0.7;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  ${imageUrl ? `<img class="photo" src="${safeImage}" alt="${safeName}">` : ""}
+  <div class="gradient"></div>
+  <div class="content">
+    <div class="accent-line"></div>
+    <div class="name">${safeName}</div>
+    <div class="details">${safeVenue}<br>${safeDate}</div>
+  </div>
+  <div class="brand">COMEDYHOUSTON.COM</div>
+</body>
+</html>`;
+}
+
+/**
+ * Write all 3 Instagram graphic HTML files for a comedian.
+ * Returns array of { htmlPath, pngPath, size, slug } objects.
+ */
+function writeComedianGraphics(name, venue, date, imageUrl, slug) {
+  if (!fs.existsSync(IMAGES_DIR)) {
+    fs.mkdirSync(IMAGES_DIR, { recursive: true });
+  }
+
+  const sizes = ["square", "portrait", "story"];
+  const results = [];
+
+  for (const size of sizes) {
+    const html = generateComedianGraphicHTML(name, venue, date, imageUrl, size);
+    const htmlFile = `${slug}-${size}.html`;
+    const pngFile = `${slug}-${size}.png`;
+    const htmlPath = path.join(IMAGES_DIR, htmlFile);
+    fs.writeFileSync(htmlPath, html);
+    results.push({
+      htmlPath,
+      pngPath: path.join(IMAGES_DIR, pngFile),
+      pngFile,
+      size,
+      slug,
+    });
+  }
+
+  return results;
+}
+
+// ---------------------------------------------------------------------------
+// Per-comedian Instagram caption
+// ---------------------------------------------------------------------------
+
+function generateComedianCaption(comedianName, venue, dateStr, instagramHandle, research) {
+  const displayDate = formatDateForDisplay(dateStr);
+
+  const prompt = `Write an Instagram caption promoting a single comedian's upcoming show.
+
+COMEDIAN: ${comedianName}
+VENUE: ${venue}
+DATE: ${displayDate}
+INSTAGRAM: ${instagramHandle || "(not found)"}
+
+RESEARCH (use ONLY verified details from this):
+${research}
+
+STRUCTURE:
+1. HOOK (1 sentence): Lead with one specific, real credit — a special title, a show they were on, a podcast they host. Make it feel like insider knowledge. Address Houston directly.
+
+2. THE PITCH (2-3 sentences): Why this comedian is worth seeing live. Use 1-2 concrete details from the research. Describe their style or energy in plain language. Frame it as a personal recommendation.
+
+3. SHOW DETAILS (1 line): ${venue} · ${displayDate}
+
+4. CTA (1 sentence): Link in bio for tickets. Tag someone you'd bring.
+
+5. HASHTAGS (new line): #HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #${comedianName.replace(/[^a-zA-Z0-9]/g, "")}
+
+6. TAGS (new line): ${instagramHandle ? instagramHandle : "(skip — no handle available)"}
+
+RULES:
+- Total caption body (sections 1-4): 80-120 words
+- NO emojis except 🎤 once (optional). Zero is also fine.
+- Every claim must come from the research. No invented credits.
+- NO hyperbole. No "masterclass." No "redefine comedy."
+- NO AI filler: "But wait," "This isn't just X," "Don't just hear about it"
+- Write at a 6th grade reading level. Short sentences. Plain words.
+- The voice is a friend who follows comedy recommending a show.
+- If an Instagram handle is provided, include it EXACTLY as given. Never invent handles.`;
+
+  return callOpenAI(
+    prompt,
+    "You are writing an Instagram caption for a local comedy publication. Your influences are Seth Godin (minimal, say less, mean more) and Roy H. Williams aka the Wizard of Ads (speak to one person, be honest, earn trust). Clean, modern copy that converts because it's genuine — not because it's loud. No AI voice. No marketing fluff."
+  );
+}
+
+// ---------------------------------------------------------------------------
 // HTML template
 // ---------------------------------------------------------------------------
 
@@ -1073,6 +1288,7 @@ async function main() {
     const nameSlug = slugify(headliner.name);
     const venueSlug = slugify(venue);
     const filename = `${nameSlug}-${venueSlug}-${dateSlug}.html`;
+    const postSlug = `${nameSlug}-${venueSlug}-${dateSlug}`;
 
     // Wrap in HTML template
     const generatedAt = new Date().toLocaleDateString("en-US", {
@@ -1088,7 +1304,38 @@ async function main() {
     fs.writeFileSync(filePath, html);
     console.log(`  Wrote: blog/comedians/${filename}`);
 
-    const postSlug = `${nameSlug}-${venueSlug}-${dateSlug}`;
+    // Step 4: Generate Instagram graphics (3 sizes)
+    console.log("  Step 4: Generating Instagram graphic templates...");
+    let graphicFiles = [];
+    try {
+      graphicFiles = writeComedianGraphics(headliner.name, venue, date, imageUrl, postSlug);
+      for (const gf of graphicFiles) {
+        console.log(`    Wrote: blog/comedians/images/${path.basename(gf.htmlPath)}`);
+      }
+    } catch (err) {
+      console.warn(`  Instagram graphics failed: ${err.message}`);
+    }
+
+    // Step 5: Generate Instagram caption
+    console.log("  Step 5: Generating Instagram caption...");
+    let caption = "";
+    let instagramHandle = "";
+    // Try to extract Instagram handle from research
+    try {
+      const researchObj = JSON.parse(research);
+      instagramHandle = researchObj.instagram_handle || "";
+    } catch (_) {
+      // Research wasn't valid JSON or didn't have handle — that's fine
+    }
+    try {
+      caption = await generateComedianCaption(headliner.name, venue, date, instagramHandle, research);
+      const captionPath = path.join(COMEDIANS_DIR, `${postSlug}-caption.txt`);
+      fs.writeFileSync(captionPath, caption);
+      console.log(`  Wrote: blog/comedians/${postSlug}-caption.txt`);
+    } catch (err) {
+      console.warn(`  Caption generation failed: ${err.message}`);
+    }
+
     let wpLink = "";
 
     // Publish to WordPress if configured
@@ -1113,6 +1360,8 @@ async function main() {
       ticketUrl: ticketUrl,
       slug: postSlug,
       wpLink: wpLink,
+      caption: caption,
+      graphicFiles: graphicFiles.map((gf) => gf.pngFile),
     });
   }
 
@@ -1133,6 +1382,37 @@ async function main() {
       JSON.stringify(manifest, null, 2)
     );
     console.log(`Wrote: blog/comedians/manifest.json`);
+
+    // Write email summary for the workflow email step
+    const names = generatedPosts.map((p) => p.comedianName);
+    const totalImages = generatedPosts.reduce((n, p) => n + (p.graphicFiles || []).length, 0);
+    const subject = `Comedy Houston — Comedian Spotlights: ${names.join(", ")} (${totalImages} posts)`;
+
+    let emailBody = `Here are this week's comedian spotlight assets — ready to post on Instagram.\n\n`;
+
+    for (const post of generatedPosts) {
+      emailBody += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+      emailBody += `${post.comedianName} — ${post.venue}, ${formatDateForDisplay(post.date)}\n`;
+      if (post.wpLink) {
+        emailBody += `Blog post: ${post.wpLink}\n`;
+      } else {
+        emailBody += `Blog post: https://sanjmanak.github.io/show_lister/blog/comedians/${post.filename}\n`;
+      }
+      emailBody += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+      if (post.caption) {
+        emailBody += `INSTAGRAM CAPTION (copy & paste):\n\n${post.caption}\n\n`;
+      }
+      emailBody += `Images attached: ${(post.graphicFiles || []).join(", ") || "none"}\n\n`;
+    }
+
+    emailBody += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+    emailBody += `All ${totalImages} images are attached — 3 sizes per comedian (square, portrait, story).\n`;
+    emailBody += `Browse all shows: https://comedyhouston.com\n`;
+
+    fs.writeFileSync(path.join(COMEDIANS_DIR, "email-subject.txt"), subject);
+    fs.writeFileSync(path.join(COMEDIANS_DIR, "email-body.txt"), emailBody);
+    console.log(`Wrote: blog/comedians/email-subject.txt`);
+    console.log(`Wrote: blog/comedians/email-body.txt`);
   }
 
   console.log("");
