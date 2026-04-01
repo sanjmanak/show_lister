@@ -230,6 +230,53 @@ function callOpenAIResponses(input, instructions) {
 }
 
 // ---------------------------------------------------------------------------
+// Validate a headshot URL (HEAD request — checks it's a real, loadable image)
+// ---------------------------------------------------------------------------
+
+function validateImageUrl(url) {
+  return new Promise((resolve) => {
+    if (!url || typeof url !== "string") return resolve(false);
+
+    // Reject non-http URLs and obvious page URLs
+    try {
+      const parsed = new URL(url);
+      if (!parsed.protocol.startsWith("http")) return resolve(false);
+
+      // Reject URLs that are clearly web pages, not images
+      const pathname = parsed.pathname.toLowerCase();
+      const pageExtensions = [".html", ".htm", ".php", ".asp", ".aspx"];
+      if (pageExtensions.some((ext) => pathname.endsWith(ext))) {
+        return resolve(false);
+      }
+      // Reject bare paths like /bio, /about, /press (no file extension = probably a page)
+      const lastSegment = pathname.split("/").pop();
+      if (lastSegment && !lastSegment.includes(".")) {
+        return resolve(false);
+      }
+    } catch (_) {
+      return resolve(false);
+    }
+
+    // HEAD request to verify it returns image content type and 200
+    const lib = url.startsWith("https") ? https : http;
+    const req = lib.request(url, { method: "HEAD", timeout: 5000, headers: { "User-Agent": "ComedyHouston-BlogBot/1.0" } }, (res) => {
+      // Follow one redirect
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        return validateImageUrl(res.headers.location).then(resolve);
+      }
+      if (res.statusCode !== 200) return resolve(false);
+
+      const contentType = (res.headers["content-type"] || "").toLowerCase();
+      resolve(contentType.startsWith("image/"));
+    });
+
+    req.on("error", () => resolve(false));
+    req.on("timeout", () => { req.destroy(); resolve(false); });
+    req.end();
+  });
+}
+
+// ---------------------------------------------------------------------------
 // Step 0: Identify headliners (reuses existing pattern)
 // ---------------------------------------------------------------------------
 
@@ -1276,8 +1323,14 @@ async function main() {
       const cleanResearch = research.replace(/^```json\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
       const researchObj = JSON.parse(cleanResearch);
       if (researchObj.headshot_url) {
-        console.log(`  Found clean headshot: ${researchObj.headshot_url}`);
-        imageUrl = researchObj.headshot_url;
+        console.log(`  Found headshot candidate: ${researchObj.headshot_url}`);
+        const isValid = await validateImageUrl(researchObj.headshot_url);
+        if (isValid) {
+          console.log("  Headshot validated — using it.");
+          imageUrl = researchObj.headshot_url;
+        } else {
+          console.log("  Headshot failed validation (404, not an image, or page URL) — using event image.");
+        }
       } else {
         console.log("  No clean headshot found — using event image.");
       }
