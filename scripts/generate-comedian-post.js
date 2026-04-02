@@ -570,9 +570,9 @@ function writeBlogPost(comedianName, venue, city, date, time, price, ticketUrl, 
   const priceStr = price || "See venue for pricing";
   const timeStr = time || "See venue for time";
 
-  const systemPrompt = `You are a professional entertainment journalist and comedy critic. Your writing appears in major city publications and national culture outlets. You write with authority, specificity, and rhythm. You avoid generic phrasing, filler, and clichés. Every sentence must feel intentional and human. You never invent facts. You only use verified details provided in the input.`;
+  const systemPrompt = `You are a senior arts & culture writer whose byline has appeared in Variety, The Hollywood Reporter, Vulture, and the New York Times Arts section. You write about comedy the way a wine critic writes about wine — with deep knowledge, precise language, and genuine enthusiasm that never crosses into hype. Your prose has rhythm. You trust the reader's intelligence. You never tell them something is funny; you describe the mechanics of why it works and let them feel it.`;
 
-  const prompt = `Write a 600-word blog post promoting a live comedy show.
+  const prompt = `Write a 600-word blog post about a comedian's upcoming live show.
 
 INPUT DATA:
 Comedian: ${comedianName}
@@ -587,56 +587,50 @@ ${imageUrl ? `Image URL: ${imageUrl}` : ""}
 VERIFIED RESEARCH (DO NOT EXCEED OR INVENT):
 ${research}
 
-STRUCTURE:
-1. SEO TITLE — Include comedian name + city + venue. Publication headline tone, not marketing copy. Return it as an <h1> tag.
+TITLE (critical — this is what makes people click):
+Write an <h1> tag with a headline that a Variety or Vulture editor would approve. The headline must:
+- Be specific to THIS comedian — it should not work for any other performer
+- Reference something concrete: a special title, a signature bit, a career moment, a quote, a cultural reference
+- NEVER use the pattern "[Name] Brings [X] to [City/Venue]" — this is the #1 banned title format
+- NEVER use "Brings," "Takes the Stage," "Comes to," "Heads to," "Hits," or "Lands at"
+- Instead, try structures like:
+  • A declarative statement about the comedian's art: "The Quiet Precision of Sam Tallent, Live at Punch Line"
+  • A reference to their material: "After 'Running the Light,' Sam Tallent Isn't Slowing Down"
+  • A cultural observation: "Why Matthew Broussard's Math-Joke Comedy Shouldn't Work — But Does"
+  • An evocative description: "Isabel Hagen's Viola and Punchlines Make an Unlikely Pair"
+  • A direct, magazine-style hook: "Shawn Gardini: Philadelphia's Best-Kept Comedy Secret, One Night in Houston"
 
-2. OPENING — Sharp, specific hook anchored to something real: a bit, a perspective, recent momentum, or reputation. No "get ready," "don't miss," or "comedy fans will love."
+OPENING (first paragraph):
+Do NOT start with the comedian's name. Start with a scene, a detail, a quote from their material, a cultural observation, or a specific moment from their career. Pull the reader into the world of this comedian before naming them. Think of how a New Yorker profile opens — obliquely, with texture, then sharpens into focus.
 
-3. WHO THEY ARE — Weave credentials into narrative. Mention specific specials with year and platform. Give context for why those credits matter. No bullet-style listing.
+BODY:
+- Weave credentials (specials, TV, podcasts) into narrative, not a resume list
+- Describe their comedy style using specific, sensory language. Not "sharp wit" but how the wit actually manifests — the timing, the structure, the targets, the surprises
+- If the research mentions specific bits, quotes, or material — use them. A real detail from a set is worth ten adjectives.
+- Include what the live show offers that a special doesn't — intimacy, improvisation, the unpredictable moments
+- Weave in date, venue, time, price naturally — embedded in the narrative, not a separate info block
 
-4. COMEDY STYLE — Describe how they actually perform: timing, tone, structure, persona. Use concrete language. Reference themes from known material if available. Never use "hilarious," "unique," or "relatable" without backing it up.
+CTA: One short closing sentence. No hype. Point to tickets.
 
-5. WHAT TO EXPECT LIVE — Describe the live experience: crowd work, pacing, energy, room feel. Make it feel observed, not guessed.
-
-6. EVENT DETAILS — Weave in date, venue, time, price naturally. Not a hard break from the narrative.
-
-7. CTA — One short closing sentence pointing to tickets. No hype.
-
-8. SIGN-OFF — End the post with this exact HTML (do not modify):
+SIGN-OFF — End the post with this exact HTML (do not modify):
 <div class="post-footer">
   <p>For more Houston comedy shows, visit <a href="https://comedyhouston.com">ComedyHouston.com</a> — updated twice daily with every show in the city.</p>
   <p>Have a question or want to list your show? <a href="https://comedyhouston.com/contact/">Contact us</a>.</p>
 </div>
 
-SOURCE LINKS (IMPORTANT):
-The research data includes a "source_urls" array with verified URLs. You MUST weave 3-4 of these as natural hyperlinks into the article body. For example:
-- When mentioning a Netflix special, link the special title to its IMDB/Netflix page
-- When mentioning their background, link to their Wikipedia page
-- When mentioning a podcast appearance, link to the episode
-- When mentioning an interview or article, link to it
-Use natural anchor text — link the relevant phrase, not "click here." If fewer than 3 source URLs are available, use what you have. Do NOT invent URLs.
+SOURCE LINKS:
+The research includes "source_urls" with verified URLs. Weave 3-4 as natural hyperlinks — link special titles to IMDB/Netflix, background to Wikipedia, interviews to their source. Natural anchor text, never "click here." Do NOT invent URLs.
 
-BANNED PHRASES (remove if they appear):
-- "Don't miss"
-- "Known for his/her unique style"
-- "A night of laughs"
-- "Comedy fans will enjoy/love"
-- "Get ready"
-- "Side-splitting"
-- "Rib-tickling"
-- "Comedic genius"
-- "Laugh-out-loud"
-- "Must-see"
-- "Hilarity ensues"
-- Any sentence that could apply to any comedian without changes
+BANNED PHRASES:
+"Don't miss" / "Must-see" / "Get ready" / "Side-splitting" / "Rib-tickling" / "Comedic genius" / "Laugh-out-loud" / "Hilarity ensues" / "A night of laughs" / "Known for his/her unique style" / "Comedy fans will love" / "Brings his/her [X] to [Y]" / "Takes the stage" / "Sharp wit" / "Razor-sharp" / "Boundary-pushing" / "Unapologetic" / "Unfiltered" / "Raw and honest" / "In a world where..." / Any sentence that could apply to any comedian without changes
 
 STYLE:
-- No exclamation points
-- No emojis
-- Vary sentence length for rhythm
-- Maximum 3 uses of the comedian's full name; use pronouns or last name after that
+- No exclamation points, no emojis
+- Vary sentence length dramatically — a three-word sentence after a long one creates rhythm
+- Maximum 2 uses of the comedian's full name; use last name or pronouns after
 - At least 3 concrete, verifiable details from the research
-- Write like a human critic, not a marketer
+- Write like you've actually seen this comedian perform, even if you haven't
+- The reader should learn something about comedy itself, not just this event
 
 OUTPUT: Return ONLY the HTML blog post content. Use semantic HTML: <h1> for the SEO title, <p> for paragraphs. No <html>/<head>/<body> wrapper. Include a single <a class="ticket-link" href="${ticketUrl}">Get Tickets</a> link in the CTA paragraph.`;
 
@@ -1374,67 +1368,7 @@ async function wpGetCategoryBySlug(slug) {
   return 0;
 }
 
-/** Get or create a WordPress tag by name. Returns the tag ID. */
-async function wpGetOrCreateTag(tagName) {
-  const slug = tagName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-  try {
-    const existing = await wpRequest("GET", `/wp-json/wp/v2/tags?slug=${encodeURIComponent(slug)}`, null);
-    if (Array.isArray(existing) && existing.length > 0) return existing[0].id;
-  } catch (_) {}
-  try {
-    const created = await wpRequest("POST", "/wp-json/wp/v2/tags", { name: tagName, slug: slug });
-    return created.id;
-  } catch (err) {
-    console.warn(`    Could not create tag "${tagName}": ${err.message}`);
-    return 0;
-  }
-}
-
-/** Generate relevant SEO tags for a comedian post. */
-function generatePostTags(comedianName, venue, research) {
-  const tags = [];
-  // Always include the comedian's name and venue
-  tags.push(comedianName);
-  if (venue) tags.push(venue);
-  tags.push("Houston Comedy");
-  tags.push("Live Comedy");
-  tags.push("Stand-Up Comedy");
-
-  // Extract additional tags from research
-  try {
-    const cleanRes = research.replace(/^```json\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
-    const obj = JSON.parse(cleanRes);
-    // Add special titles as tags
-    if (obj.specials && Array.isArray(obj.specials)) {
-      for (const s of obj.specials.slice(0, 3)) {
-        if (s.platform) tags.push(s.platform); // Netflix, HBO, etc.
-      }
-    }
-    // Add TV show names
-    if (obj.tv_appearances && Array.isArray(obj.tv_appearances)) {
-      for (const t of obj.tv_appearances.slice(0, 2)) {
-        if (t.show) tags.push(t.show);
-      }
-    }
-    // Add comedy style themes
-    if (obj.comedy_style && obj.comedy_style.recurring_themes) {
-      for (const theme of obj.comedy_style.recurring_themes.slice(0, 2)) {
-        tags.push(theme);
-      }
-    }
-  } catch (_) {}
-
-  // Deduplicate
-  const seen = new Set();
-  return tags.filter((t) => {
-    const key = t.toLowerCase();
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  }).slice(0, 10); // Cap at 10 tags
-}
-
-async function publishToWordPress(comedianName, venue, date, slug, htmlContent, imageUrl, research) {
+async function publishToWordPress(comedianName, venue, date, slug, htmlContent, imageUrl) {
   console.log("  Step 4: Publishing to WordPress...");
 
   // Extract just the article body (strip the <h1> — WordPress uses the title field)
@@ -1482,17 +1416,6 @@ async function publishToWordPress(comedianName, venue, date, slug, htmlContent, 
   // Look up the "Shows" category (slug: comedy-shows)
   const categoryId = await wpGetCategoryBySlug("comedy-shows");
 
-  // Generate and resolve tags
-  const tagNames = generatePostTags(comedianName, venue, research || "");
-  const tagIds = [];
-  if (tagNames.length > 0) {
-    console.log(`    Tags: ${tagNames.join(", ")}`);
-    for (const name of tagNames) {
-      const id = await wpGetOrCreateTag(name);
-      if (id) tagIds.push(id);
-    }
-  }
-
   // Create the post
   const postData = {
     title: wpTitle,
@@ -1504,10 +1427,6 @@ async function publishToWordPress(comedianName, venue, date, slug, htmlContent, 
 
   if (featuredMediaId) {
     postData.featured_media = featuredMediaId;
-  }
-
-  if (tagIds.length > 0) {
-    postData.tags = tagIds;
   }
 
   if (categoryId) {
@@ -1656,7 +1575,9 @@ async function main() {
     // Two-stage headshot finder:
     //   Stage A: Extract candidate page URLs from research (OpenAI found these)
     //   Stage B: Fetch pages, extract og:image / <img> tags, validate
-    let imageUrl = eventImageUrl;
+    // graphicImageUrl = best image for Instagram graphics (prefer clean headshot)
+    // eventImageUrl = original Ticketmaster/Eventbrite image (used for WordPress/blog — consistent aspect ratio)
+    let graphicImageUrl = eventImageUrl;
     try {
       const cleanResearch = research.replace(/^```json\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
       const researchObj = JSON.parse(cleanResearch);
@@ -1665,16 +1586,16 @@ async function main() {
         console.log(`  Found ${pageUrls.length} candidate page(s) for headshot extraction...`);
         const headshot = await findBestHeadshot(pageUrls, headliner.name);
         if (headshot) {
-          console.log(`  Using extracted headshot: ${headshot}`);
-          imageUrl = headshot;
+          console.log(`  Using extracted headshot for graphics: ${headshot}`);
+          graphicImageUrl = headshot;
         } else {
-          console.log("  No valid headshot extracted from candidate pages — using event image.");
+          console.log("  No valid headshot extracted — using event image for graphics.");
         }
       } else {
-        console.log("  No headshot candidate pages in research — using event image.");
+        console.log("  No headshot candidate pages in research — using event image for graphics.");
       }
     } catch (_) {
-      console.log("  Could not parse research for headshot pages — using event image.");
+      console.log("  Could not parse research for headshot pages — using event image for graphics.");
     }
 
     // Step 2: Write the blog post
@@ -1682,7 +1603,7 @@ async function main() {
     let draft = "";
     try {
       draft = await writeBlogPost(
-        headliner.name, venue, "Houston, TX", date, time, price, ticketUrl, imageUrl, research
+        headliner.name, venue, "Houston, TX", date, time, price, ticketUrl, eventImageUrl, research
       );
       draft = draft.replace(/^```html\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
       console.log("  Draft complete.");
@@ -1717,7 +1638,7 @@ async function main() {
       day: "numeric",
       year: "numeric",
     });
-    const html = wrapInHTML(finalContent, headliner.name, venue, date, generatedAt, imageUrl);
+    const html = wrapInHTML(finalContent, headliner.name, venue, date, generatedAt, eventImageUrl);
 
     // Write file to GitHub Pages
     const filePath = path.join(COMEDIANS_DIR, filename);
@@ -1728,7 +1649,7 @@ async function main() {
     console.log("  Step 4: Generating Instagram graphic templates...");
     let graphicFiles = [];
     try {
-      graphicFiles = writeComedianGraphics(headliner.name, venue, date, imageUrl, postSlug);
+      graphicFiles = writeComedianGraphics(headliner.name, venue, date, graphicImageUrl, postSlug);
       for (const gf of graphicFiles) {
         console.log(`    Wrote: blog/comedians/images/${path.basename(gf.htmlPath)}`);
       }
@@ -1763,7 +1684,7 @@ async function main() {
     if (WP_ENABLED) {
       try {
         wpLink = await publishToWordPress(
-          headliner.name, venue, date, postSlug, finalContent, imageUrl, research
+          headliner.name, venue, date, postSlug, finalContent, eventImageUrl
         );
       } catch (err) {
         console.error(`  WordPress publish failed: ${err.message}`);
@@ -1777,7 +1698,8 @@ async function main() {
       venue: venue,
       date: date,
       filename: filename,
-      imageUrl: imageUrl,
+      imageUrl: eventImageUrl,
+      graphicImageUrl: graphicImageUrl,
       ticketUrl: ticketUrl,
       slug: postSlug,
       wpLink: wpLink,
