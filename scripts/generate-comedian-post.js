@@ -587,18 +587,25 @@ ${imageUrl ? `Image URL: ${imageUrl}` : ""}
 VERIFIED RESEARCH (DO NOT EXCEED OR INVENT):
 ${research}
 
-TITLE (critical — this is what makes people click):
-Write an <h1> tag with a headline that a Variety or Vulture editor would approve. The headline must:
+TITLE (critical — this drives both clicks AND search rankings):
+Write an <h1> tag with a headline that a Variety or Vulture editor would approve.
+SEO REQUIREMENTS — the title MUST contain ALL THREE of these:
+  1. The comedian's full name (exactly as provided)
+  2. The venue name
+  3. The word "Houston"
+These are non-negotiable for long-tail search. Someone will Google "${comedianName} Houston" or "${comedianName} ${venue}" and this title must match.
+
+CREATIVE REQUIREMENTS — the title must also:
 - Be specific to THIS comedian — it should not work for any other performer
-- Reference something concrete: a special title, a signature bit, a career moment, a quote, a cultural reference
+- Reference something concrete: a special title, a signature bit, a career moment, a cultural reference
 - NEVER use the pattern "[Name] Brings [X] to [City/Venue]" — this is the #1 banned title format
 - NEVER use "Brings," "Takes the Stage," "Comes to," "Heads to," "Hits," or "Lands at"
 - Instead, try structures like:
-  • A declarative statement about the comedian's art: "The Quiet Precision of Sam Tallent, Live at Punch Line"
-  • A reference to their material: "After 'Running the Light,' Sam Tallent Isn't Slowing Down"
-  • A cultural observation: "Why Matthew Broussard's Math-Joke Comedy Shouldn't Work — But Does"
-  • An evocative description: "Isabel Hagen's Viola and Punchlines Make an Unlikely Pair"
-  • A direct, magazine-style hook: "Shawn Gardini: Philadelphia's Best-Kept Comedy Secret, One Night in Houston"
+  • "The Quiet Precision of Sam Tallent, Live at Punch Line Houston"
+  • "After 'Running the Light,' Sam Tallent Returns to Punch Line Houston"
+  • "Why Matthew Broussard's Math-Comedy Works — See for Yourself at The Gordy in Houston"
+  • "Isabel Hagen's Viola and Punchlines: A Night at The Riot Houston"
+  • "Shawn Gardini: Philadelphia's Best-Kept Comedy Secret at The Gordy Houston"
 
 OPENING (first paragraph):
 Do NOT start with the comedian's name. Start with a scene, a detail, a quote from their material, a cultural observation, or a specific moment from their career. Pull the reader into the world of this comedian before naming them. Think of how a New Yorker profile opens — obliquely, with texture, then sharpens into focus.
@@ -941,9 +948,26 @@ function escapeHTML(str) {
     .replace(/"/g, "&quot;");
 }
 
-function wrapInHTML(blogContent, comedianName, venue, date, generatedAt, imageUrl) {
-  const title = `${comedianName} at ${venue} — ${formatDateForDisplay(date)}`;
-  const description = `${comedianName} performs live at ${venue} in Houston, TX on ${formatDateForDisplay(date)}. Get show details, comedian background, and ticket info.`;
+function wrapInHTML(blogContent, comedianName, venue, date, generatedAt, imageUrl, ticketUrl) {
+  const title = `${comedianName} at ${venue} — ${formatDateForDisplay(date)} | Houston Comedy`;
+  const description = `${comedianName} performs live at ${venue} in Houston, TX on ${formatDateForDisplay(date)}. Get show details, comedian background, and ticket info at ComedyHouston.com.`;
+
+  // JSON-LD structured data for search engine rich snippets
+  const jsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ComedyEvent",
+    "name": `${comedianName} Live at ${venue}`,
+    "description": description,
+    "startDate": date,
+    "location": {
+      "@type": "Place",
+      "name": venue,
+      "address": { "@type": "PostalAddress", "addressLocality": "Houston", "addressRegion": "TX" }
+    },
+    "performer": { "@type": "Person", "name": comedianName },
+    ...(imageUrl ? { "image": imageUrl } : {}),
+    ...(ticketUrl ? { "offers": { "@type": "Offer", "url": ticketUrl } } : {}),
+  });
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -956,6 +980,10 @@ function wrapInHTML(blogContent, comedianName, venue, date, generatedAt, imageUr
   <meta property="og:description" content="${escapeHTML(description)}">
   <meta property="og:type" content="article">
 ${imageUrl ? `  <meta property="og:image" content="${escapeHTML(imageUrl)}">` : ""}
+  <meta property="og:site_name" content="Comedy Houston">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://comedyhouston.com/${escapeHTML(comedianName.toLowerCase().replace(/[^a-z0-9]+/g, '-'))}">
+  <script type="application/ld+json">${jsonLd}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -1638,7 +1666,7 @@ async function main() {
       day: "numeric",
       year: "numeric",
     });
-    const html = wrapInHTML(finalContent, headliner.name, venue, date, generatedAt, eventImageUrl);
+    const html = wrapInHTML(finalContent, headliner.name, venue, date, generatedAt, eventImageUrl, ticketUrl);
 
     // Write file to GitHub Pages
     const filePath = path.join(COMEDIANS_DIR, filename);
