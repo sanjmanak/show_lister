@@ -1,0 +1,64 @@
+name: Post to Instagram
+
+on:
+  # Staggered schedule: every 6 hours starting Monday 4pm CT (22:00 UTC)
+  # Mon 4pm CT, Mon 10pm CT, Tue 4am CT, Tue 10am CT, Tue 4pm CT, ...
+  # 4pm CDT = 21:00 UTC, 4pm CST = 22:00 UTC — using 22:00 to cover both
+  schedule:
+    - cron: '0 4,10,16,22 * * *'  # Every 6 hours, daily
+
+  # Manual trigger for testing
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  TZ: America/Chicago
+
+jobs:
+  post-to-instagram:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check if manifest exists
+        id: check
+        run: |
+          if [ ! -f blog/comedians/manifest.json ]; then
+            echo "skip=true" >> $GITHUB_OUTPUT
+            echo "No manifest.json found — skipping."
+          else
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Set up Node.js
+        if: steps.check.outputs.skip != 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Post next comedian to Instagram
+        if: steps.check.outputs.skip != 'true'
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+        run: node scripts/post-to-instagram.js
+
+      - name: Commit updated state file
+        if: steps.check.outputs.skip != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add blog/comedians/ig-post-state.json
+          if git diff --staged --quiet; then
+            echo "No state changes to commit."
+          else
+            git commit -m "Instagram post — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
+            git stash --include-untracked
+            git pull --rebase origin main
+            git stash pop || true
+            git push
+          fi
