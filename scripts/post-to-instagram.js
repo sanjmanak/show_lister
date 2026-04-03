@@ -24,7 +24,7 @@ const path = require("path");
 
 const IG_ACCESS_TOKEN = process.env.INSTAGRAM_ACCESS_TOKEN || "";
 const IG_USER_ID = process.env.INSTAGRAM_USER_ID || "";
-const GRAPH_API_VERSION = "v21.0";
+const GRAPH_API_VERSION = "v25.0";
 
 const OUTPUT_DIR = path.resolve(__dirname, "..");
 const COMEDIANS_DIR = path.join(OUTPUT_DIR, "blog", "comedians");
