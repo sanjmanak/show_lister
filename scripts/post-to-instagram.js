@@ -292,47 +292,128 @@ async function waitForContainer(containerId) {
 }
 
 // ---------------------------------------------------------------------------
-// Channel 1: Instagram Feed (square image + caption + comedian tag)
+// Channel 1: Instagram Feed — carousel (if teasers exist) or single image
 // ---------------------------------------------------------------------------
 
-async function postInstagramFeed(post, caption, handle) {
-  const imageUrl = `${IMAGES_BASE_URL}/${post.slug}-square.png`;
-
-  console.log(`\n  IG FEED — ${post.comedianName}`);
-  await verifyImageUrl(imageUrl);
-
-  // Build the media container params
-  const mediaParams = {
-    image_url: imageUrl,
-    caption,
-    access_token: IG_ACCESS_TOKEN,
-  };
-
-  // Add comedian tag if we have a handle
-  if (handle) {
-    // user_tags: tag the comedian at center of image
-    mediaParams.user_tags = JSON.stringify([
-      { username: handle, x: 0.5, y: 0.5 },
-    ]);
-    console.log(`   Tagging: @${handle}`);
+/**
+ * Check if blog teaser images exist for this comedian on GitHub Pages.
+ * Returns array of teaser URLs that are accessible, or empty array.
+ */
+async function findTeaserImages(slug) {
+  const teasers = [];
+  for (let i = 1; i <= 2; i++) {
+    const url = `${IMAGES_BASE_URL}/${slug}-teaser-${i}.png`;
+    try {
+      await verifyImageUrl(url);
+      teasers.push(url);
+    } catch {
+      // Teaser doesn't exist — that's fine
+    }
   }
+  return teasers;
+}
 
-  // Step 1 — Create container
-  console.log("   Creating media container…");
-  const container = await graphRequest("POST", `/${IG_USER_ID}/media`, mediaParams);
-  console.log(`   Container: ${container.id}`);
-
-  await waitForContainer(container.id);
-
-  // Step 2 — Publish
-  console.log("   Publishing…");
-  const result = await graphRequest("POST", `/${IG_USER_ID}/media_publish`, {
-    creation_id: container.id,
+/**
+ * Create a single carousel child container (no caption, no tags).
+ */
+async function createCarouselChild(imageUrl) {
+  const child = await graphRequest("POST", `/${IG_USER_ID}/media`, {
+    image_url: imageUrl,
+    is_carousel_item: true,
     access_token: IG_ACCESS_TOKEN,
   });
+  await waitForContainer(child.id);
+  return child.id;
+}
 
-  console.log(`   IG Feed posted! Media ID: ${result.id}`);
-  return result.id;
+async function postInstagramFeed(post, caption, handle) {
+  const squareUrl = `${IMAGES_BASE_URL}/${post.slug}-square.png`;
+
+  console.log(`\n  IG FEED — ${post.comedianName}`);
+  await verifyImageUrl(squareUrl);
+
+  // Check for teaser images (for carousel)
+  console.log("   Checking for blog teaser images…");
+  const teaserUrls = await findTeaserImages(post.slug);
+
+  if (teaserUrls.length > 0) {
+    // ---- CAROUSEL MODE ----
+    console.log(`   Found ${teaserUrls.length} teaser(s) — building carousel.`);
+    const allImages = [squareUrl, ...teaserUrls];
+
+    // Step 1 — Create child containers for each image
+    const childIds = [];
+    for (let i = 0; i < allImages.length; i++) {
+      console.log(`   Creating carousel child ${i + 1}/${allImages.length}…`);
+      const childId = await createCarouselChild(allImages[i]);
+      childIds.push(childId);
+      console.log(`   Child ${i + 1}: ${childId}`);
+    }
+
+    // Step 2 — Create the carousel container
+    console.log("   Creating carousel container…");
+    const carouselParams = {
+      media_type: "CAROUSEL",
+      caption,
+      children: childIds.join(","),
+      access_token: IG_ACCESS_TOKEN,
+    };
+
+    // user_tags only supported on the first image in carousels
+    if (handle) {
+      carouselParams.user_tags = JSON.stringify([
+        { username: handle, x: 0.5, y: 0.5 },
+      ]);
+      console.log(`   Tagging: @${handle} (on slide 1)`);
+    }
+
+    const carousel = await graphRequest("POST", `/${IG_USER_ID}/media`, carouselParams);
+    console.log(`   Carousel container: ${carousel.id}`);
+
+    await waitForContainer(carousel.id);
+
+    // Step 3 — Publish
+    console.log("   Publishing carousel…");
+    const result = await graphRequest("POST", `/${IG_USER_ID}/media_publish`, {
+      creation_id: carousel.id,
+      access_token: IG_ACCESS_TOKEN,
+    });
+
+    console.log(`   IG Feed posted as CAROUSEL (${allImages.length} slides)! Media ID: ${result.id}`);
+    return result.id;
+
+  } else {
+    // ---- SINGLE IMAGE MODE (fallback) ----
+    console.log("   No teasers found — posting single image.");
+
+    const mediaParams = {
+      image_url: squareUrl,
+      caption,
+      access_token: IG_ACCESS_TOKEN,
+    };
+
+    if (handle) {
+      mediaParams.user_tags = JSON.stringify([
+        { username: handle, x: 0.5, y: 0.5 },
+      ]);
+      console.log(`   Tagging: @${handle}`);
+    }
+
+    console.log("   Creating media container…");
+    const container = await graphRequest("POST", `/${IG_USER_ID}/media`, mediaParams);
+    console.log(`   Container: ${container.id}`);
+
+    await waitForContainer(container.id);
+
+    console.log("   Publishing…");
+    const result = await graphRequest("POST", `/${IG_USER_ID}/media_publish`, {
+      creation_id: container.id,
+      access_token: IG_ACCESS_TOKEN,
+    });
+
+    console.log(`   IG Feed posted! Media ID: ${result.id}`);
+    return result.id;
+  }
 }
 
 // ---------------------------------------------------------------------------
