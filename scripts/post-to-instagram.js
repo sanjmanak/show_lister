@@ -1,15 +1,19 @@
 #!/usr/bin/env node
 
 /**
- * Comedy Houston — Instagram Auto-Poster
+ * Comedy Houston — Social Media Auto-Poster
  *
  * Reads blog/comedians/manifest.json, determines the next comedian to post
- * (via ig-post-state.json), and publishes one carousel-free image post to
- * Instagram using the Meta Graph API (Content Publishing API).
+ * (via ig-post-state.json), and publishes across four channels:
  *
- * Two-step publish flow:
- *   1. POST /{ig-user-id}/media  → create media container (image_url + caption)
- *   2. POST /{ig-user-id}/media_publish → publish the container
+ *   1. Instagram Feed  — square image + caption + comedian tag
+ *   2. Instagram Story — story-sized image (no caption — API limitation)
+ *   3. Facebook Page   — square image + caption
+ *   4. Facebook Story  — story-sized image
+ *
+ * Uses the Meta Graph API (Content Publishing API). The same Page Access
+ * Token works for both Instagram and Facebook since the IG Business account
+ * is linked to the Facebook Page.
  *
  * Zero npm dependencies — uses only built-in Node modules.
  */
@@ -32,6 +36,9 @@ const MANIFEST_PATH = path.join(COMEDIANS_DIR, "manifest.json");
 const STATE_PATH = path.join(COMEDIANS_DIR, "ig-post-state.json");
 const IMAGES_BASE_URL =
   "https://sanjmanak.github.io/show_lister/blog/comedians/images";
+
+// Facebook Page ID is resolved at runtime from the Page Access Token
+let FB_PAGE_ID = "";
 
 // ---------------------------------------------------------------------------
 // HTTP helpers (vanilla Node.js — matches existing repo patterns)
@@ -169,11 +176,10 @@ function saveState(state) {
 }
 
 // ---------------------------------------------------------------------------
-// Core: determine next post & publish
+// Helpers
 // ---------------------------------------------------------------------------
 
 function getNextToPost(manifest, state) {
-  // If the week changed, reset state
   if (state.week_range !== manifest.week_range) {
     console.log(
       `New week detected ("${manifest.week_range}" vs "${state.week_range}") — resetting state.`
@@ -185,16 +191,11 @@ function getNextToPost(manifest, state) {
   const postedSlugs = new Set(state.posted.map((p) => p.slug));
   const remaining = manifest.posts.filter((p) => !postedSlugs.has(p.slug));
 
-  if (remaining.length === 0) {
-    return null;
-  }
-
-  return remaining[0];
+  return remaining.length === 0 ? null : remaining[0];
 }
 
 /**
- * Read the caption from the dedicated caption file, falling back to the
- * manifest's inline caption field.
+ * Read caption from dedicated file, falling back to manifest inline caption.
  */
 function loadCaption(post) {
   const captionFile = path.join(COMEDIANS_DIR, `${post.slug}-caption.txt`);
@@ -206,55 +207,20 @@ function loadCaption(post) {
 }
 
 /**
- * Step 1: Create a media container
- * Step 2: Publish the container
+ * Extract the comedian's Instagram handle from the caption.
+ * Captions end with @handle — we grab the last @mention.
  */
-async function publishToInstagram(post) {
-  const imageUrl = `${IMAGES_BASE_URL}/${post.slug}-square.png`;
-  const caption = loadCaption(post);
-
-  console.log(`\n📸 Publishing: ${post.comedianName}`);
-  console.log(`   Slug: ${post.slug}`);
-  console.log(`   Image URL: ${imageUrl}`);
-  console.log(`   Caption length: ${caption.length} chars`);
-  console.log(`   Caption preview: ${caption.slice(0, 120)}…`);
-  console.log(`   IG User ID: ${IG_USER_ID}`);
-  console.log(`   Token prefix: ${IG_ACCESS_TOKEN.slice(0, 10)}…`);
-
-  // Verify the image is accessible before calling the API
-  console.log("\n   Pre-check: Verifying image URL is accessible…");
-  await verifyImageUrl(imageUrl);
-
-  // Step 1 — Create media container
-  console.log("\n   Step 1/2: Creating media container…");
-  const container = await graphRequest("POST", `/${IG_USER_ID}/media`, {
-    image_url: imageUrl,
-    caption,
-    access_token: IG_ACCESS_TOKEN,
-  });
-
-  const creationId = container.id;
-  console.log(`   Container created: ${creationId}`);
-
-  // The container may need a few seconds to process the image.
-  // Poll the status before publishing (max 30s).
-  await waitForContainer(creationId);
-
-  // Step 2 — Publish
-  console.log("   Step 2/2: Publishing container…");
-  const result = await graphRequest("POST", `/${IG_USER_ID}/media_publish`, {
-    creation_id: creationId,
-    access_token: IG_ACCESS_TOKEN,
-  });
-
-  console.log(`\n   Published! Media ID: ${result.id}`);
-  return result.id;
+function extractHandle(caption) {
+  const matches = caption.match(/@([a-zA-Z0-9_.]+)/g);
+  if (!matches || matches.length === 0) return null;
+  // The last @mention in the caption is typically the comedian's handle
+  // (earlier ones are hashtag-like or other accounts)
+  const handle = matches[matches.length - 1].replace("@", "");
+  return handle;
 }
 
 /**
- * HEAD-request the image URL to make sure it's publicly accessible.
- * If the image 404s, the Graph API will give a cryptic error — better to
- * catch it early with a clear message.
+ * HEAD-request an image URL to verify it's publicly accessible.
  */
 function verifyImageUrl(imageUrl) {
   return new Promise((resolve, reject) => {
@@ -262,18 +228,16 @@ function verifyImageUrl(imageUrl) {
     const req = https.request(
       { hostname: url.hostname, path: url.pathname, method: "HEAD" },
       (res) => {
-        console.log(`   Image check: HTTP ${res.statusCode}`);
+        console.log(`   Image check: HTTP ${res.statusCode} — ${imageUrl.split("/").pop()}`);
         if (res.statusCode === 200) {
           resolve();
         } else if (res.statusCode === 301 || res.statusCode === 302) {
           console.log(`   Image redirects to: ${res.headers.location}`);
-          resolve(); // GitHub Pages may redirect, still OK
+          resolve();
         } else {
           reject(
             new Error(
-              `Image not accessible (HTTP ${res.statusCode}). ` +
-              `The image must be committed to main and deployed via GitHub Pages.\n` +
-              `   Expected URL: ${imageUrl}\n` +
+              `Image not accessible (HTTP ${res.statusCode}): ${imageUrl}\n` +
               `   FIX: Make sure the branch is merged to main and GitHub Pages has deployed.`
             )
           );
@@ -288,14 +252,13 @@ function verifyImageUrl(imageUrl) {
 }
 
 /**
- * Poll container status until it's FINISHED (or timeout after ~30 seconds).
- * Meta sometimes needs a few seconds to download and process the image.
+ * Poll container status until FINISHED (max ~30 seconds).
  */
 async function waitForContainer(containerId) {
   const maxAttempts = 10;
   const delayMs = 3000;
 
-  console.log(`\n   Waiting for container ${containerId} to finish processing…`);
+  console.log(`   Waiting for container ${containerId} to finish processing…`);
 
   for (let i = 0; i < maxAttempts; i++) {
     const status = await graphRequest("GET", `/${containerId}`, {
@@ -313,24 +276,230 @@ async function waitForContainer(containerId) {
 
     if (code === "ERROR") {
       const detail = status.status || "no detail provided";
-      console.error(`   Container processing FAILED.`);
-      console.error(`   Status detail: ${detail}`);
-      console.error(`   Full response: ${JSON.stringify(status)}`);
+      console.error(`   Container processing FAILED: ${detail}`);
       throw new Error(
-        `Container processing failed (status: ${detail}). This usually means the image URL ` +
-        `is not accessible or is in an unsupported format. Ensure the PNG is committed to main ` +
-        `and deployed via GitHub Pages.`
+        `Container processing failed (status: ${detail}). Ensure the PNG is committed ` +
+        `to main and deployed via GitHub Pages.`
       );
     }
 
     if (i < maxAttempts - 1) {
-      console.log(`   Waiting ${delayMs / 1000}s before next poll…`);
       await new Promise((r) => setTimeout(r, delayMs));
     }
   }
 
-  // Proceed anyway — often works even if status hasn't flipped yet
   console.log("   WARNING: Container poll timed out after 30s — attempting publish anyway.");
+}
+
+// ---------------------------------------------------------------------------
+// Channel 1: Instagram Feed (square image + caption + comedian tag)
+// ---------------------------------------------------------------------------
+
+async function postInstagramFeed(post, caption, handle) {
+  const imageUrl = `${IMAGES_BASE_URL}/${post.slug}-square.png`;
+
+  console.log(`\n  IG FEED — ${post.comedianName}`);
+  await verifyImageUrl(imageUrl);
+
+  // Build the media container params
+  const mediaParams = {
+    image_url: imageUrl,
+    caption,
+    access_token: IG_ACCESS_TOKEN,
+  };
+
+  // Add comedian tag if we have a handle
+  if (handle) {
+    // user_tags: tag the comedian at center of image
+    mediaParams.user_tags = JSON.stringify([
+      { username: handle, x: 0.5, y: 0.5 },
+    ]);
+    console.log(`   Tagging: @${handle}`);
+  }
+
+  // Step 1 — Create container
+  console.log("   Creating media container…");
+  const container = await graphRequest("POST", `/${IG_USER_ID}/media`, mediaParams);
+  console.log(`   Container: ${container.id}`);
+
+  await waitForContainer(container.id);
+
+  // Step 2 — Publish
+  console.log("   Publishing…");
+  const result = await graphRequest("POST", `/${IG_USER_ID}/media_publish`, {
+    creation_id: container.id,
+    access_token: IG_ACCESS_TOKEN,
+  });
+
+  console.log(`   IG Feed posted! Media ID: ${result.id}`);
+  return result.id;
+}
+
+// ---------------------------------------------------------------------------
+// Channel 2: Instagram Story (story-sized image, no caption)
+// ---------------------------------------------------------------------------
+
+async function postInstagramStory(post) {
+  const imageUrl = `${IMAGES_BASE_URL}/${post.slug}-story.png`;
+
+  console.log(`\n  IG STORY — ${post.comedianName}`);
+  await verifyImageUrl(imageUrl);
+
+  // Step 1 — Create story container
+  console.log("   Creating story container…");
+  const container = await graphRequest("POST", `/${IG_USER_ID}/media`, {
+    image_url: imageUrl,
+    media_type: "STORIES",
+    access_token: IG_ACCESS_TOKEN,
+  });
+  console.log(`   Container: ${container.id}`);
+
+  await waitForContainer(container.id);
+
+  // Step 2 — Publish
+  console.log("   Publishing story…");
+  const result = await graphRequest("POST", `/${IG_USER_ID}/media_publish`, {
+    creation_id: container.id,
+    access_token: IG_ACCESS_TOKEN,
+  });
+
+  console.log(`   IG Story posted! Media ID: ${result.id}`);
+  return result.id;
+}
+
+// ---------------------------------------------------------------------------
+// Channel 3: Facebook Page Feed (square image + caption)
+// ---------------------------------------------------------------------------
+
+async function postFacebookFeed(post, caption) {
+  if (!FB_PAGE_ID) {
+    console.log("\n  FB FEED — Skipped (no Facebook Page ID resolved)");
+    return null;
+  }
+
+  const imageUrl = `${IMAGES_BASE_URL}/${post.slug}-square.png`;
+
+  console.log(`\n  FB FEED — ${post.comedianName}`);
+
+  // Facebook Pages API: POST /{page-id}/photos
+  console.log("   Posting photo to Facebook Page…");
+  const result = await graphRequest("POST", `/${FB_PAGE_ID}/photos`, {
+    url: imageUrl,
+    message: caption,
+    published: true,
+    access_token: IG_ACCESS_TOKEN,
+  });
+
+  console.log(`   FB Feed posted! Post ID: ${result.id || result.post_id}`);
+  return result.id || result.post_id;
+}
+
+// ---------------------------------------------------------------------------
+// Channel 4: Facebook Page Story (story-sized image)
+// ---------------------------------------------------------------------------
+
+async function postFacebookStory(post) {
+  if (!FB_PAGE_ID) {
+    console.log("\n  FB STORY — Skipped (no Facebook Page ID resolved)");
+    return null;
+  }
+
+  const imageUrl = `${IMAGES_BASE_URL}/${post.slug}-story.png`;
+
+  console.log(`\n  FB STORY — ${post.comedianName}`);
+
+  // Step 1 — Upload photo as unpublished
+  console.log("   Uploading unpublished photo…");
+  const photo = await graphRequest("POST", `/${FB_PAGE_ID}/photos`, {
+    url: imageUrl,
+    published: false,
+    access_token: IG_ACCESS_TOKEN,
+  });
+  console.log(`   Photo ID: ${photo.id}`);
+
+  // Step 2 — Create story from the photo
+  console.log("   Creating Facebook story…");
+  const story = await graphRequest("POST", `/${FB_PAGE_ID}/photo_stories`, {
+    photo_id: photo.id,
+    access_token: IG_ACCESS_TOKEN,
+  });
+
+  console.log(`   FB Story posted! Story ID: ${story.id || story.post_id}`);
+  return story.id || story.post_id;
+}
+
+// ---------------------------------------------------------------------------
+// Orchestrator: post to all channels, tolerating individual failures
+// ---------------------------------------------------------------------------
+
+async function publishEverywhere(post) {
+  const caption = loadCaption(post);
+  const handle = extractHandle(caption);
+
+  console.log(`\n📸 Publishing: ${post.comedianName}`);
+  console.log(`   Caption length: ${caption.length} chars`);
+  console.log(`   Caption preview: ${caption.slice(0, 120)}…`);
+  console.log(`   Comedian handle: ${handle ? "@" + handle : "(not found)"}`);
+
+  const results = {
+    igFeed: null,
+    igStory: null,
+    fbFeed: null,
+    fbStory: null,
+    errors: [],
+  };
+
+  // --- Instagram Feed (primary — must succeed) ---
+  results.igFeed = await postInstagramFeed(post, caption, handle);
+
+  // --- Instagram Story (best-effort) ---
+  try {
+    results.igStory = await postInstagramStory(post);
+  } catch (err) {
+    console.error(`\n  WARNING: IG Story failed — ${err.message}`);
+    results.errors.push(`IG Story: ${err.message}`);
+  }
+
+  // --- Facebook Page Feed (best-effort) ---
+  try {
+    results.fbFeed = await postFacebookFeed(post, caption);
+  } catch (err) {
+    console.error(`\n  WARNING: FB Feed failed — ${err.message}`);
+    results.errors.push(`FB Feed: ${err.message}`);
+  }
+
+  // --- Facebook Page Story (best-effort) ---
+  try {
+    results.fbStory = await postFacebookStory(post);
+  } catch (err) {
+    console.error(`\n  WARNING: FB Story failed — ${err.message}`);
+    results.errors.push(`FB Story: ${err.message}`);
+  }
+
+  return results;
+}
+
+// ---------------------------------------------------------------------------
+// Resolve Facebook Page ID from the Page Access Token
+// ---------------------------------------------------------------------------
+
+async function resolveFacebookPageId() {
+  try {
+    console.log("\nResolving Facebook Page ID from token…");
+    const me = await graphRequest("GET", "/me", {
+      fields: "id,name",
+      access_token: IG_ACCESS_TOKEN,
+    });
+    // A Page Access Token returns the Page when you call /me
+    // A User Access Token returns the user — check which one we got
+    if (me.name && me.id) {
+      FB_PAGE_ID = me.id;
+      console.log(`  Facebook Page: "${me.name}" (ID: ${FB_PAGE_ID})`);
+    }
+  } catch (err) {
+    console.log(`  Could not resolve Facebook Page ID — ${err.message}`);
+    console.log(`  Facebook posting will be skipped.`);
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -339,10 +508,11 @@ async function waitForContainer(containerId) {
 
 async function main() {
   const startTime = Date.now();
-  console.log("=== Comedy Houston — Instagram Auto-Poster ===");
+  console.log("=== Comedy Houston — Social Media Auto-Poster ===");
   console.log(`    Time: ${new Date().toISOString()}`);
   console.log(`    Graph API: ${GRAPH_API_VERSION}`);
-  console.log(`    Node: ${process.version}\n`);
+  console.log(`    Node: ${process.version}`);
+  console.log(`    Channels: IG Feed + IG Story + FB Feed + FB Story\n`);
 
   // Validate secrets
   if (!IG_ACCESS_TOKEN) {
@@ -380,6 +550,9 @@ async function main() {
     console.error("     Generate a new one via Graph API Explorer and update the GitHub secret.");
     process.exit(1);
   }
+
+  // Resolve Facebook Page ID (for FB feed + FB stories)
+  await resolveFacebookPageId();
 
   // Load manifest
   if (!fs.existsSync(MANIFEST_PATH)) {
@@ -419,22 +592,32 @@ async function main() {
   console.log(`  Progress: ${state.posted.length + 1}/${manifest.posts.length}`);
   console.log(`${"=".repeat(60)}`);
 
-  // Publish
-  const mediaId = await publishToInstagram(nextPost);
+  // Publish across all channels
+  const results = await publishEverywhere(nextPost);
 
   // Update state
   state.posted.push({
     slug: nextPost.slug,
     comedianName: nextPost.comedianName,
-    mediaId,
+    igFeedMediaId: results.igFeed,
+    igStoryMediaId: results.igStory,
+    fbFeedPostId: results.fbFeed,
+    fbStoryPostId: results.fbStory,
     postedAt: new Date().toISOString(),
   });
   saveState(state);
 
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
   console.log(`\n${"=".repeat(60)}`);
-  console.log(`SUCCESS — ${nextPost.comedianName} posted to Instagram`);
-  console.log(`  Media ID: ${mediaId}`);
+  console.log(`RESULTS — ${nextPost.comedianName}`);
+  console.log(`  IG Feed:  ${results.igFeed ? "POSTED (ID: " + results.igFeed + ")" : "FAILED"}`);
+  console.log(`  IG Story: ${results.igStory ? "POSTED (ID: " + results.igStory + ")" : "SKIPPED/FAILED"}`);
+  console.log(`  FB Feed:  ${results.fbFeed ? "POSTED (ID: " + results.fbFeed + ")" : "SKIPPED/FAILED"}`);
+  console.log(`  FB Story: ${results.fbStory ? "POSTED (ID: " + results.fbStory + ")" : "SKIPPED/FAILED"}`);
+  if (results.errors.length > 0) {
+    console.log(`  Warnings: ${results.errors.length}`);
+    results.errors.forEach((e) => console.log(`    - ${e}`));
+  }
   console.log(`  Progress: ${state.posted.length}/${manifest.posts.length} published this week`);
   console.log(`  Remaining: ${manifest.posts.length - state.posted.length}`);
   console.log(`  Elapsed: ${elapsed}s`);

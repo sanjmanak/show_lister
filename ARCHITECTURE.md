@@ -70,7 +70,7 @@ There are **eight major components** that work together:
 | 2 | **Static Website** | The public-facing show listing page (dark theme, filters, search) | Plain HTML/CSS/JS |
 | 3 | **Blog Generator** | Weekly AI-written blog post + Instagram caption + hero image | Node.js + OpenAI API |
 | 4 | **Comedian Post Generator** | Per-comedian 600-word SEO blog posts with source links and fact-checking | Node.js + OpenAI API |
-| 5 | **Instagram Auto-Poster** | Publishes comedian spotlight graphics to Instagram via Meta Graph API on a staggered schedule | Node.js + Meta Graph API |
+| 5 | **Social Media Auto-Poster** | Publishes comedian spotlights to Instagram feed + stories, Facebook Page feed + stories, with comedian tagging | Node.js + Meta Graph API |
 | 6 | **WordPress Plugin** | Embeds show listings on any WordPress site with filtering, themes, affiliate tracking, GA4 event tracking | PHP + JS + CSS |
 | 7 | **GitHub Actions** | Four automated workflows: twice-daily fetch + weekly blog + weekly comedian posts + staggered IG posting | YAML workflow files |
 | 8 | **GitHub Pages** | Free static hosting — serves the website, JSON data, and blog posts | GitHub infrastructure |
@@ -308,16 +308,27 @@ Logs every ticket click with: timestamp, original URL, final URL (with affiliate
 | **Commits** | `blog/comedians/*.html`, `blog/comedians/manifest.json` |
 | **Cost** | ~$0.50–1.50 per run (3 API calls per comedian, typically 3–5 comedians) |
 
-#### Workflow 4: Post to Instagram (`.github/workflows/post-to-instagram.yml`)
+#### Workflow 4: Social Media Auto-Poster (`.github/workflows/post-to-instagram.yml`)
 
 | Field | Value |
 |-------|-------|
 | **Schedule** | Every 6 hours: `0 4,10,16,22 * * *` UTC (covers Mon 4pm CT onward) |
 | **Manual trigger** | Yes (`workflow_dispatch`) |
-| **What it runs** | `post-to-instagram.js` — posts the next unposted comedian to Instagram |
+| **What it runs** | `post-to-instagram.js` — posts the next comedian across 4 channels |
 | **Secrets used** | `INSTAGRAM_ACCESS_TOKEN`, `INSTAGRAM_USER_ID` |
 | **Commits** | `blog/comedians/ig-post-state.json` |
 | **Cost** | Free (Meta Graph API has no per-call cost) |
+
+**Per comedian, 4 posts go out:**
+
+| Channel | Image | Caption | Comedian Tag |
+|---------|-------|---------|-------------|
+| Instagram Feed | Square (1080×1080) | Full caption + hashtags | Tagged in photo via `user_tags` |
+| Instagram Story | Story (1080×1920) | None (API limitation) | Not supported in Stories API |
+| Facebook Page Feed | Square (1080×1080) | Full caption + hashtags | N/A |
+| Facebook Page Story | Story (1080×1920) | None | N/A |
+
+The Instagram Feed post is the primary channel — if it fails, the run fails. The other 3 channels are **best-effort**: if any fail, the error is logged but the run still succeeds and state is saved. The Facebook Page ID is resolved automatically at runtime from the Page Access Token (no extra secret needed).
 
 ---
 
@@ -577,7 +588,7 @@ show_lister/
 │   ├── fetch-events.js                  # Core fetcher (~500 lines)
 │   ├── generate-blog-post.js            # AI blog generator (~1,600 lines)
 │   ├── generate-comedian-post.js        # Per-comedian SEO post generator (~500 lines)
-│   ├── post-to-instagram.js             # Instagram auto-poster via Meta Graph API (~250 lines)
+│   ├── post-to-instagram.js             # Multi-channel social poster: IG feed/story + FB feed/story (~450 lines)
 │   └── screenshot-hero.js               # Puppeteer PNG screenshotter (~40 lines)
 │
 ├── wordpress/
