@@ -523,6 +523,13 @@ The Instagram auto-poster uses Meta's **Content Publishing API** via a Facebook 
    - `business_management` ← **critical** — without this, `me/accounts` returns empty on newer API versions
 3. Also add the **"Manage Pages"** use case and ensure `pages_show_list` and `pages_read_engagement` are active there too
 
+#### Step 2b: Add Instagram Tester Role
+1. In your app, go to **App Roles** → **Roles** (in the left sidebar or settings gear)
+2. Find the **"Instagram Testers"** section and click **Add Instagram Testers**
+3. Enter the Instagram username you want to post to (e.g., `comedyhoustontx`)
+4. On your phone/browser, log into that Instagram account → Settings → Apps and Websites → **Tester Invitations** → **Accept** the invite
+5. You do **NOT** need to generate a token from the "API setup with Instagram login" use case page — skip that entirely
+
 #### Step 3: Generate Access Token
 1. Go to [Graph API Explorer](https://developers.facebook.com/tools/explorer/)
 2. Set the domain dropdown to **`graph.facebook.com`** (not `graph.instagram.com`)
