@@ -62,7 +62,7 @@ The whole thing runs for free on GitHub (hosting, automation, scheduling) with t
 
 ## System Overview
 
-There are **seven major components** that work together:
+There are **eight major components** that work together:
 
 | # | Component | What It Does | Tech |
 |---|-----------|-------------|------|
@@ -70,9 +70,10 @@ There are **seven major components** that work together:
 | 2 | **Static Website** | The public-facing show listing page (dark theme, filters, search) | Plain HTML/CSS/JS |
 | 3 | **Blog Generator** | Weekly AI-written blog post + Instagram caption + hero image | Node.js + OpenAI API |
 | 4 | **Comedian Post Generator** | Per-comedian 600-word SEO blog posts with source links and fact-checking | Node.js + OpenAI API |
-| 5 | **WordPress Plugin** | Embeds show listings on any WordPress site with filtering, themes, affiliate tracking, GA4 event tracking | PHP + JS + CSS |
-| 6 | **GitHub Actions** | Three automated workflows: twice-daily fetch + weekly blog + weekly comedian posts | YAML workflow files |
-| 7 | **GitHub Pages** | Free static hosting — serves the website, JSON data, and blog posts | GitHub infrastructure |
+| 5 | **Instagram Auto-Poster** | Publishes comedian spotlight graphics to Instagram via Meta Graph API on a staggered schedule | Node.js + Meta Graph API |
+| 6 | **WordPress Plugin** | Embeds show listings on any WordPress site with filtering, themes, affiliate tracking, GA4 event tracking | PHP + JS + CSS |
+| 7 | **GitHub Actions** | Four automated workflows: twice-daily fetch + weekly blog + weekly comedian posts + staggered IG posting | YAML workflow files |
+| 8 | **GitHub Pages** | Free static hosting — serves the website, JSON data, and blog posts | GitHub infrastructure |
 
 ---
 
@@ -307,6 +308,17 @@ Logs every ticket click with: timestamp, original URL, final URL (with affiliate
 | **Commits** | `blog/comedians/*.html`, `blog/comedians/manifest.json` |
 | **Cost** | ~$0.50–1.50 per run (3 API calls per comedian, typically 3–5 comedians) |
 
+#### Workflow 4: Post to Instagram (`.github/workflows/post-to-instagram.yml`)
+
+| Field | Value |
+|-------|-------|
+| **Schedule** | Every 6 hours: `0 4,10,16,22 * * *` UTC (covers Mon 4pm CT onward) |
+| **Manual trigger** | Yes (`workflow_dispatch`) |
+| **What it runs** | `post-to-instagram.js` — posts the next unposted comedian to Instagram |
+| **Secrets used** | `INSTAGRAM_ACCESS_TOKEN`, `INSTAGRAM_USER_ID` |
+| **Commits** | `blog/comedians/ig-post-state.json` |
+| **Cost** | Free (Meta Graph API has no per-call cost) |
+
 ---
 
 ### 6. GitHub Pages Hosting
@@ -477,7 +489,68 @@ Every event from both APIs is normalized to this structure:
 | `SMTP_FROM` | Sender email address |
 | `NOTIFY_EMAIL` | Recipient email address |
 
+### Optional (for Instagram auto-posting):
+
+| Secret | Purpose | Where to get it |
+|--------|---------|-----------------|
+| `INSTAGRAM_ACCESS_TOKEN` | Long-lived Page Access Token (~60 day expiry) | See Meta setup guide below |
+| `INSTAGRAM_USER_ID` | Instagram Business account numeric ID | See Meta setup guide below |
+
 All secrets are stored in **GitHub Repository Secrets** (Settings → Secrets and variables → Actions). They are never committed to the repo.
+
+### Meta Developer Portal Setup (Instagram Auto-Posting)
+
+The Instagram auto-poster uses Meta's **Content Publishing API** via a Facebook Page linked to an Instagram Business account. Here's the full setup:
+
+#### Prerequisites
+- An **Instagram Business** or **Creator** account (not Personal)
+- A **Facebook Page** linked to that Instagram account
+- Your personal Facebook account must be an **admin** of that Page
+
+#### Step 1: Create a Meta App
+1. Go to [developers.facebook.com](https://developers.facebook.com) → My Apps → Create App
+2. Select **"Business"** as the app type
+3. Name it (e.g., "Comedy Houston Poster")
+4. Leave it in **Development mode** (no App Review needed for your own account)
+
+#### Step 2: Add Use Cases & Permissions
+1. Go to your app → **Use cases** → add the **"Instagram API"** use case
+2. Under Use cases → Customize → **Permissions and features**, add these (click `+ Add` on each):
+   - `instagram_business_basic`
+   - `instagram_business_content_publish`
+   - `pages_show_list`
+   - `pages_read_engagement`
+   - `business_management` ← **critical** — without this, `me/accounts` returns empty on newer API versions
+3. Also add the **"Manage Pages"** use case and ensure `pages_show_list` and `pages_read_engagement` are active there too
+
+#### Step 3: Generate Access Token
+1. Go to [Graph API Explorer](https://developers.facebook.com/tools/explorer/)
+2. Set the domain dropdown to **`graph.facebook.com`** (not `graph.instagram.com`)
+3. Select your app in the "Meta App" dropdown
+4. Set "User or Page" to **"User Token"**
+5. Under Permissions, add: `business_management`, `instagram_basic`, `instagram_content_publish`, `instagram_manage_comments`, `pages_read_engagement`, `pages_show_list`
+6. Click **"Generate Access Token"** — in the authorization popup, **make sure you select your Facebook Page** on the Page selection screen
+
+#### Step 4: Get Your Instagram User ID
+Run this in Graph API Explorer:
+```
+me/accounts?fields=id,name,access_token,instagram_business_account&limit=50
+```
+Find your Page in the results. The `instagram_business_account.id` is your `INSTAGRAM_USER_ID`.
+
+#### Step 5: Exchange for Long-Lived Token
+Copy the **Page Access Token** (the `access_token` inside the `data` array, NOT the one in the top-right panel) and run in your terminal:
+```bash
+curl -s "https://graph.facebook.com/v25.0/oauth/access_token?grant_type=fb_exchange_token&client_id=YOUR_APP_ID&client_secret=YOUR_APP_SECRET&fb_exchange_token=PAGE_TOKEN" | jq .
+```
+The returned `access_token` is valid for ~60 days.
+
+#### Step 6: Save to GitHub Secrets
+- `INSTAGRAM_ACCESS_TOKEN` → the long-lived token from Step 5
+- `INSTAGRAM_USER_ID` → the numeric ID from Step 4
+
+#### Token Refresh
+Long-lived tokens expire in ~60 days. Set a calendar reminder to regenerate before expiry. The script validates the token on every run and will log a clear error message if it's expired.
 
 ---
 
@@ -490,12 +563,14 @@ show_lister/
 │   └── workflows/
 │       ├── update-events.yml            # Cron: fetch events 2x daily
 │       ├── generate-blog-post.yml       # Cron: weekly blog + email
-│       └── generate-comedian-posts.yml  # Cron: weekly per-comedian SEO posts
+│       ├── generate-comedian-posts.yml  # Cron: weekly per-comedian SEO posts
+│       └── post-to-instagram.yml       # Cron: staggered IG posting (every 6h)
 │
 ├── scripts/
 │   ├── fetch-events.js                  # Core fetcher (~500 lines)
 │   ├── generate-blog-post.js            # AI blog generator (~1,600 lines)
 │   ├── generate-comedian-post.js        # Per-comedian SEO post generator (~500 lines)
+│   ├── post-to-instagram.js             # Instagram auto-poster via Meta Graph API (~250 lines)
 │   └── screenshot-hero.js               # Puppeteer PNG screenshotter (~40 lines)
 │
 ├── wordpress/
@@ -512,6 +587,7 @@ show_lister/
 │   └── comedians/                       # Per-comedian spotlight posts
 │       ├── index.html                   # Index listing all comedian posts
 │       ├── manifest.json                # Post metadata (for WordPress publishing)
+│       ├── ig-post-state.json           # Tracks which comedians have been posted to IG
 │       └── {comedian-slug}.html         # Individual comedian blog posts
 │
 ├── index.html                           # Main static website (~8,285 lines)
