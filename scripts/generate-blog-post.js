@@ -1796,15 +1796,21 @@ RULES:
     editorialContent = `<p>Here are all the comedy shows happening in Houston this weekend (${weekendRangeStr}). Grab your tickets before they sell out.</p>`;
   }
 
-  // Build the full post content: editorial + shortcode
+  // Build the full post content: dynamic editorial + static SEO copy + shortcode
   const updatedDate = new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
   const postContent = `${editorialContent}
+
+<p>Houston is one of the best cities in the country for live comedy, with shows happening every night of the week at venues like the <strong>Houston Improv</strong>, <strong>The Secret Group</strong>, <strong>The Riot</strong>, <strong>Joke Joint Comedy Showcase</strong>, and more. It can be hard to keep track of every comedy show happening across the city — and to tell the difference between open mics and proper headliner shows you'd want to take a date or a group of friends to.</p>
+
+<p>The list below is updated every week and includes all <strong>comedy shows in Houston this weekend</strong>, <strong>excluding open mic comedy</strong>, so you only see featured shows and touring headliners. Whether you're looking for stand-up comedy, improv, or a late-night variety show, this is the most complete weekend comedy calendar for Houston.</p>
+
+<p>If you have any suggestions on shows we didn't list here, please use our <a href="https://www.comedyhouston.com/contact">contact page to message us</a>.</p>
 
 <p><em>Last updated: ${updatedDate}</em></p>
 
 [comedy_houston filter="weekend"]
 
-<p>Looking for shows beyond the weekend? Check out our <a href="https://www.comedyhouston.com">full Houston comedy calendar</a> for every show this month.</p>`;
+<p>Looking for shows beyond the weekend? Check out our <a href="https://www.comedyhouston.com">full Houston comedy calendar</a> for every show this month, or read our <a href="https://www.comedyhouston.com/blog/">weekly comedy roundup</a> for in-depth previews of the biggest acts coming to town.</p>`;
 
   const postTitle = `Houston Comedy Shows This Weekend — ${weekendRangeStr}`;
 
