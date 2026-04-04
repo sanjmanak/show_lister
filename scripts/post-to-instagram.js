@@ -356,12 +356,32 @@ async function postInstagramStory(post) {
 
   await waitForContainer(container.id);
 
-  // Step 2 — Publish
+  // Stories need extra buffer time after FINISHED — Meta's backend sometimes
+  // reports FINISHED before the media is actually ready to publish (code 9007).
+  console.log("   Waiting 5s for Stories backend to fully process…");
+  await new Promise((r) => setTimeout(r, 5000));
+
+  // Step 2 — Publish (with retry for the 9007 "not ready" race condition)
   console.log("   Publishing story…");
-  const result = await graphRequest("POST", `/${IG_USER_ID}/media_publish`, {
-    creation_id: container.id,
-    access_token: IG_ACCESS_TOKEN,
-  });
+  let result;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      result = await graphRequest("POST", `/${IG_USER_ID}/media_publish`, {
+        creation_id: container.id,
+        access_token: IG_ACCESS_TOKEN,
+      });
+      break; // success
+    } catch (err) {
+      const isNotReady = err.message.includes("9007") || err.message.includes("not ready");
+      if (isNotReady && attempt < 2) {
+        const waitSec = (attempt + 1) * 5;
+        console.log(`   Story not ready yet — waiting ${waitSec}s before retry ${attempt + 2}/3…`);
+        await new Promise((r) => setTimeout(r, waitSec * 1000));
+      } else {
+        throw err;
+      }
+    }
+  }
 
   console.log(`   IG Story posted! Media ID: ${result.id}`);
   return result.id;
