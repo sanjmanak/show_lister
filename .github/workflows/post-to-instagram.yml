@@ -57,8 +57,24 @@ jobs:
             echo "No state changes to commit."
           else
             git commit -m "Instagram post — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
-            git stash --include-untracked
-            git pull --rebase origin main
-            git stash pop || true
-            git push
+            # Retry push up to 4 times (handles concurrent workflow runs)
+            for i in 1 2 3 4; do
+              echo "Push attempt $i…"
+              git pull --rebase origin main --no-edit 2>/dev/null || {
+                echo "Rebase conflict — resetting and re-applying."
+                git rebase --abort 2>/dev/null || true
+                git reset --soft HEAD~1
+                git stash
+                git pull origin main
+                git stash pop
+                git add blog/comedians/ig-post-state.json
+                git commit -m "Instagram post — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
+              }
+              if git push origin main; then
+                echo "Push succeeded on attempt $i."
+                break
+              fi
+              echo "Push failed, retrying in ${i}s…"
+              sleep $i
+            done
           fi
