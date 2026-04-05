@@ -7,6 +7,7 @@
  */
 
 const https = require("https");
+const http = require("http");
 const fs = require("fs");
 const path = require("path");
 
@@ -16,6 +17,12 @@ const path = require("path");
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || "";
 const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-4o";
+
+// WordPress publishing config (optional — skipped if not set)
+const WP_SITE_URL = process.env.WP_SITE_URL || "";
+const WP_APP_USER = process.env.WP_APP_USER || "";
+const WP_APP_PASSWORD = process.env.WP_APP_PASSWORD || "";
+const WP_ENABLED = !!(WP_SITE_URL && WP_APP_USER && WP_APP_PASSWORD);
 
 const OUTPUT_DIR = path.resolve(__dirname, "..");
 const EVENTS_JSON_PATH = path.join(OUTPUT_DIR, "events.json");
@@ -214,6 +221,288 @@ function callOpenAIResponses(input, instructions) {
 }
 
 // ---------------------------------------------------------------------------
+// Headshot extraction (ported from generate-comedian-post.js)
+// ---------------------------------------------------------------------------
+
+/** Fetch a URL and return the response body as a string. Follows up to 3 redirects. */
+function fetchPage(url, redirectsLeft) {
+  if (redirectsLeft === undefined) redirectsLeft = 3;
+  return new Promise((resolve) => {
+    if (!url || redirectsLeft < 0) return resolve("");
+    let resolved = false;
+    function done(val) { if (!resolved) { resolved = true; resolve(val); } }
+
+    try {
+      const lib = url.startsWith("https") ? https : http;
+      const req = lib.get(url, { timeout: 8000, headers: { "User-Agent": "ComedyHouston-BlogBot/1.0" } }, (res) => {
+        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+          let next = res.headers.location;
+          if (next.startsWith("/")) {
+            try { next = new URL(next, url).href; } catch (_) { return done(""); }
+          }
+          res.resume();
+          return fetchPage(next, redirectsLeft - 1).then(done).catch(() => done(""));
+        }
+        if (res.statusCode !== 200) { res.resume(); return done(""); }
+        const ct = (res.headers["content-type"] || "").toLowerCase();
+        if (!ct.includes("text/html") && !ct.includes("text/plain") && !ct.includes("application/xhtml")) {
+          res.resume();
+          return done("");
+        }
+        let data = "";
+        res.setEncoding("utf8");
+        res.on("data", (chunk) => { data += chunk; if (data.length > 200000) { res.destroy(); done(data); } });
+        res.on("end", () => done(data));
+        res.on("error", () => done(data || ""));
+      });
+      req.on("error", () => done(""));
+      req.on("timeout", () => { req.destroy(); done(""); });
+    } catch (_) { done(""); }
+  });
+}
+
+/** Validate an image URL with a HEAD request. Returns true if 200 + image/* content-type. */
+function validateImageUrl(url) {
+  return new Promise((resolve) => {
+    if (!url || typeof url !== "string") return resolve(false);
+    try { const p = new URL(url); if (!p.protocol.startsWith("http")) return resolve(false); } catch (_) { return resolve(false); }
+    const lib = url.startsWith("https") ? https : http;
+    const req = lib.request(url, { method: "HEAD", timeout: 5000, headers: { "User-Agent": "ComedyHouston-BlogBot/1.0" } }, (res) => {
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        return validateImageUrl(res.headers.location).then(resolve);
+      }
+      if (res.statusCode !== 200) return resolve(false);
+      const contentType = (res.headers["content-type"] || "").toLowerCase();
+      resolve(contentType.startsWith("image/"));
+    });
+    req.on("error", () => resolve(false));
+    req.on("timeout", () => { req.destroy(); resolve(false); });
+    req.end();
+  });
+}
+
+/** Extract candidate image URLs from an HTML page, prioritizing comedian name matches. */
+function extractImageCandidates(html, baseUrl, comedianName) {
+  const candidates = [];
+  const seen = new Set();
+
+  const nameFragments = [];
+  if (comedianName) {
+    const parts = comedianName.toLowerCase().replace(/[^a-z\s]/g, "").split(/\s+/).filter(Boolean);
+    nameFragments.push(...parts);
+    if (parts.length > 1) { nameFragments.push(parts.join("")); nameFragments.push(parts.join("-")); nameFragments.push(parts.join("_")); }
+  }
+
+  function nameMatchScore(url, altText) {
+    const check = (url + " " + (altText || "")).toLowerCase();
+    let score = 0;
+    for (const frag of nameFragments) { if (frag.length >= 3 && check.includes(frag)) score++; }
+    return score;
+  }
+
+  const rejectPatterns = [
+    "favicon", "logo", "icon", "1x1", "pixel", "tracking", "badge", "button", "banner",
+    "sprite", "data:image", "avatar", "widget", "footer", "header", "nav-", "menu",
+    "social", "share", "arrow", "close", "search", "cart", "checkout", "payment",
+    "ad-", "ads/", "analytics", "placeholder", ".svg", ".gif",
+    "open-mic", "openmic", "open_mic", "flyer", "poster", "event-", "events/", "venue",
+    "microphone", "neon", "stage-", "crowd", "audience", "background", "bg-", "bg_",
+    "hero-bg", "pattern", "default", "no-image", "noimage", "coming-soon", "ticket",
+    "buy-ticket", "calendar"
+  ];
+
+  function addCandidate(raw, basePriority, altText) {
+    if (!raw || typeof raw !== "string") return;
+    let url = raw.trim();
+    if (url.startsWith("//")) url = "https:" + url;
+    else if (url.startsWith("/")) { try { url = new URL(url, baseUrl).href; } catch (_) { return; } }
+    if (!url.startsWith("http")) return;
+    const lower = url.toLowerCase();
+    if (rejectPatterns.some((p) => lower.includes(p))) return;
+    const altLower = (altText || "").toLowerCase();
+    if (altLower && ["open mic", "logo", "venue", "banner", "ticket", "calendar", "event"].some((p) => altLower.includes(p))) return;
+    if (seen.has(url)) return;
+    seen.add(url);
+    const nameBonus = nameMatchScore(url, altText);
+    const priority = nameBonus > 0 ? Math.max(0, basePriority - nameBonus * 3) : basePriority;
+    candidates.push({ url, priority, nameBonus });
+  }
+
+  // og:image
+  const ogMatch = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i)
+    || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
+  if (ogMatch) addCandidate(ogMatch[1], 2);
+
+  // twitter:image
+  const twMatch = html.match(/<meta[^>]+(?:name|property)=["']twitter:image["'][^>]+content=["']([^"']+)["']/i)
+    || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+(?:name|property)=["']twitter:image["']/i);
+  if (twMatch) addCandidate(twMatch[1], 3);
+
+  // JSON-LD
+  const jsonLdMatch = html.match(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi);
+  if (jsonLdMatch) {
+    for (const block of jsonLdMatch) {
+      const inner = block.replace(/<script[^>]*>/i, "").replace(/<\/script>/i, "");
+      try {
+        const ld = JSON.parse(inner);
+        const img = ld.image || (ld["@graph"] && ld["@graph"].find(n => n.image));
+        if (typeof img === "string") addCandidate(img, 4);
+        else if (img && typeof img.url === "string") addCandidate(img.url, 4);
+      } catch (_) {}
+    }
+  }
+
+  // <img> tags
+  const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi;
+  let imgMatch;
+  while ((imgMatch = imgRegex.exec(html)) !== null) {
+    const src = imgMatch[1];
+    const tag = imgMatch[0];
+    const altMatch = tag.match(/alt=["']([^"']*?)["']/i);
+    const altText = altMatch ? altMatch[1] : "";
+    const widthMatch = tag.match(/width=["']?(\d+)/i);
+    const width = widthMatch ? parseInt(widthMatch[1]) : 0;
+    if (width >= 300 || !widthMatch) addCandidate(src, width >= 300 ? 5 : 7, altText);
+  }
+
+  // srcset
+  const srcsetRegex = /srcset=["']([^"']+)["']/gi;
+  let srcsetMatch;
+  while ((srcsetMatch = srcsetRegex.exec(html)) !== null) {
+    const parts = srcsetMatch[1].split(",");
+    for (const part of parts) { const src = part.trim().split(/\s+/)[0]; addCandidate(src, 6); }
+  }
+
+  candidates.sort((a, b) => {
+    if (a.nameBonus > 0 && b.nameBonus === 0) return -1;
+    if (b.nameBonus > 0 && a.nameBonus === 0) return 1;
+    return a.priority - b.priority;
+  });
+  return candidates.map((c) => c.url);
+}
+
+/** Fetch pages, extract images, validate — return first working image URL or null. */
+async function findBestHeadshot(pageUrls, comedianName) {
+  for (const pageUrl of pageUrls) {
+    try {
+      console.log(`    Fetching page: ${pageUrl}`);
+      const html = await fetchPage(pageUrl);
+      if (!html) { console.log("      Page fetch failed, skipping."); continue; }
+      const candidates = extractImageCandidates(html, pageUrl, comedianName);
+      console.log(`      Found ${candidates.length} image candidate(s).`);
+      for (const imgUrl of candidates.slice(0, 5)) {
+        try {
+          const valid = await validateImageUrl(imgUrl);
+          if (valid) { console.log(`      Validated: ${imgUrl}`); return imgUrl; }
+        } catch (_) {}
+      }
+    } catch (err) { console.log(`      Error: ${err.message}`); }
+  }
+  return null;
+}
+
+// ---------------------------------------------------------------------------
+// WordPress REST API helpers
+// ---------------------------------------------------------------------------
+
+function wpRequest(method, urlPath, body) {
+  return new Promise((resolve, reject) => {
+    const fullUrl = WP_SITE_URL.replace(/\/$/, "") + urlPath;
+    const parsed = new URL(fullUrl);
+    const isHttps = parsed.protocol === "https:";
+    const lib = isHttps ? https : http;
+    const auth = Buffer.from(`${WP_APP_USER}:${WP_APP_PASSWORD}`).toString("base64");
+    const bodyStr = body ? JSON.stringify(body) : null;
+
+    const options = {
+      hostname: parsed.hostname,
+      port: parsed.port || (isHttps ? 443 : 80),
+      path: parsed.pathname + parsed.search,
+      method: method,
+      headers: {
+        Authorization: `Basic ${auth}`,
+        "Content-Type": "application/json",
+        "User-Agent": "ComedyHouston-BlogBot/1.0",
+      },
+    };
+    if (bodyStr) options.headers["Content-Length"] = Buffer.byteLength(bodyStr);
+
+    const req = lib.request(options, (res) => {
+      let data = "";
+      res.on("data", (chunk) => (data += chunk));
+      res.on("end", () => {
+        if (res.statusCode >= 400) return reject(new Error(`WordPress API ${res.statusCode}: ${data.slice(0, 500)}`));
+        try { resolve(JSON.parse(data)); } catch (e) { reject(new Error(`Failed to parse WP response: ${e.message}`)); }
+      });
+    });
+    req.on("error", (err) => reject(err));
+    if (bodyStr) req.write(bodyStr);
+    req.end();
+  });
+}
+
+function downloadImage(imageUrl) {
+  return new Promise((resolve, reject) => {
+    const parsed = new URL(imageUrl);
+    const lib = parsed.protocol === "https:" ? https : http;
+    lib.get(imageUrl, { headers: { "User-Agent": "ComedyHouston-BlogBot/1.0" } }, (res) => {
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        return downloadImage(res.headers.location).then(resolve).catch(reject);
+      }
+      if (res.statusCode >= 400) return reject(new Error(`Image download failed: HTTP ${res.statusCode}`));
+      const chunks = [];
+      res.on("data", (chunk) => chunks.push(chunk));
+      res.on("end", () => resolve({ buffer: Buffer.concat(chunks), contentType: res.headers["content-type"] || "image/jpeg" }));
+      res.on("error", reject);
+    }).on("error", reject);
+  });
+}
+
+function wpUploadImage(imageBuffer, contentType, filename) {
+  return new Promise((resolve, reject) => {
+    const fullUrl = WP_SITE_URL.replace(/\/$/, "") + "/wp-json/wp/v2/media";
+    const parsed = new URL(fullUrl);
+    const isHttps = parsed.protocol === "https:";
+    const lib = isHttps ? https : http;
+    const auth = Buffer.from(`${WP_APP_USER}:${WP_APP_PASSWORD}`).toString("base64");
+
+    const options = {
+      hostname: parsed.hostname,
+      port: parsed.port || (isHttps ? 443 : 80),
+      path: parsed.pathname,
+      method: "POST",
+      headers: {
+        Authorization: `Basic ${auth}`,
+        "Content-Type": contentType,
+        "Content-Disposition": `attachment; filename="${filename}"`,
+        "Content-Length": imageBuffer.length,
+        "User-Agent": "ComedyHouston-BlogBot/1.0",
+      },
+    };
+
+    const req = lib.request(options, (res) => {
+      let data = "";
+      res.on("data", (chunk) => (data += chunk));
+      res.on("end", () => {
+        if (res.statusCode >= 400) return reject(new Error(`WP media upload ${res.statusCode}: ${data.slice(0, 500)}`));
+        try { resolve(JSON.parse(data).id); } catch (e) { reject(new Error(`Failed to parse WP media response: ${e.message}`)); }
+      });
+    });
+    req.on("error", (err) => reject(err));
+    req.write(imageBuffer);
+    req.end();
+  });
+}
+
+async function wpGetCategoryBySlug(slug) {
+  try {
+    const categories = await wpRequest("GET", `/wp-json/wp/v2/categories?slug=${encodeURIComponent(slug)}`, null);
+    if (Array.isArray(categories) && categories.length > 0) return categories[0].id;
+  } catch (err) { console.warn(`  Could not look up category "${slug}": ${err.message}`); }
+  return 0;
+}
+
+// ---------------------------------------------------------------------------
 // Research comedians via web search
 // ---------------------------------------------------------------------------
 
@@ -222,15 +511,23 @@ function researchComedians(comedianNames) {
 
 ${comedianNames.map((name) => `- ${name}`).join("\n")}
 
-For EACH comedian, find:
-1. Their most notable credits — specific Netflix/HBO/Comedy Central special TITLES, TV show names, podcast names, movie titles
-2. Any recent activity (2025–2026): new specials, tour announcements, recent podcast appearances, viral moments
-3. Their comedy style and what makes their live show special
+For EACH comedian, return a JSON object with these fields:
+{
+  "name": "Comedian Name",
+  "summary": "3-4 sentence research summary with SPECIFIC special titles, show names, podcast names. No generic praise.",
+  "sourceUrls": ["https://en.wikipedia.org/wiki/...", "https://www.netflix.com/title/...", "https://www.youtube.com/..."],
+  "headshotPageUrls": ["https://en.wikipedia.org/wiki/Comedian_Name", "https://www.imdb.com/name/...", "https://comedianname.com"]
+}
 
-Return a 3-4 sentence research summary for each comedian. Use SPECIFIC NAMES AND TITLES, not generic descriptions. If you can't find reliable info about someone, say so.`;
+IMPORTANT:
+- "sourceUrls": 2-3 real, verifiable URLs where readers can learn more (Wikipedia, IMDB, Netflix page, YouTube special, interview). These will be hyperlinked in the blog post.
+- "headshotPageUrls": 2-4 pages likely to have a good headshot photo (Wikipedia, IMDB, official site, press page). These are for image extraction, NOT displayed to users.
+- "summary": Use SPECIFIC NAMES AND TITLES, not generic descriptions. If you can't find reliable info, say so.
+
+Return ONLY a JSON array of these objects, no other text.`;
 
   const instructions =
-    "You are a comedy research assistant. Search the web to find accurate, current information about each comedian. Cite specific show titles, special names, and verifiable facts. If you cannot find information about a comedian, say so rather than guessing.";
+    "You are a comedy research assistant. Search the web to find accurate, current information about each comedian. Cite specific show titles, special names, and verifiable facts. Return structured JSON with source URLs and headshot page URLs. If you cannot find information about a comedian, say so rather than guessing.";
 
   return callOpenAIResponses(input, instructions);
 }
@@ -316,12 +613,12 @@ function escapeHTML(str) {
 }
 
 function generateHeroCreativeHTML(comedians, weekRange) {
-  // Pick up to 6 comedians with images for a 3x2 grid
-  const withImages = comedians.filter((c) => c.imageUrl).slice(0, 6);
+  // Pick up to 6 comedians with images for a 3x2 grid — prefer headshots over ticket images
+  const withImages = comedians.filter((c) => c.headshotUrl || c.imageUrl).slice(0, 6).map((c) => ({ ...c, displayImage: c.headshotUrl || c.imageUrl }));
   const gridItems = withImages
     .map(
       (c) => `      <div class="grid-item">
-        <img src="${escapeHTML(c.imageUrl)}" alt="${escapeHTML(c.name)}">
+        <img src="${escapeHTML(c.displayImage)}" alt="${escapeHTML(c.name)}">
         <div class="grid-name">${escapeHTML(c.name)}</div>
       </div>`
     )
@@ -462,12 +759,12 @@ ${extraSection}
 }
 
 function generateInlineHeroHTML(comedians, weekRange) {
-  // Pick up to 6 comedians with images for a 3x2 grid
-  const withImages = comedians.filter((c) => c.imageUrl).slice(0, 6);
+  // Pick up to 6 comedians with images for a 3x2 grid — prefer headshots
+  const withImages = comedians.filter((c) => c.headshotUrl || c.imageUrl).slice(0, 6);
   const gridItems = withImages
     .map(
       (c) => `        <div class="hero-grid-item">
-          <img src="${escapeHTML(c.imageUrl)}" alt="${escapeHTML(c.name)}">
+          <img src="${escapeHTML(c.headshotUrl || c.imageUrl)}" alt="${escapeHTML(c.name)}">
           <div class="hero-grid-name">${escapeHTML(c.name)}</div>
         </div>`
     )
@@ -549,7 +846,7 @@ RULES:
 // Build the prompt
 // ---------------------------------------------------------------------------
 
-function buildPrompt(events, weekRange, comedianResearch) {
+function buildPrompt(events, weekRange, comedianResearch, comedianSourceLinks) {
   const eventList = events
     .map((ev, idx) => {
       const parts = [`- **${ev.name}** [EVENT_ID: ${idx}]`];
@@ -581,13 +878,24 @@ function buildPrompt(events, weekRange, comedianResearch) {
     ? `\n\nCOMEDIAN RESEARCH (from web search — use this for accurate, current blurbs):\n\n${comedianResearch}\n`
     : "";
 
+  // Build source links context for the prompt
+  let sourceLinksSection = "";
+  if (comedianSourceLinks && Object.keys(comedianSourceLinks).length > 0) {
+    sourceLinksSection = "\n\nSOURCE LINKS PER COMEDIAN (use 1-2 of these as hyperlinks in each comedian's blurb):\n";
+    for (const [name, urls] of Object.entries(comedianSourceLinks)) {
+      sourceLinksSection += `- ${name}: ${urls.join(", ")}\n`;
+    }
+  }
+
   return `Write a blog post about Houston comedy shows for the week of ${weekRange}.
 
 Here are the ${events.length} events happening this week:
 
 ${eventList}
-${researchSection}
+${researchSection}${sourceLinksSection}
 Requirements:
+
+WORD COUNT: Aim for ~600 words of article body text (not counting HTML tags). This is a tight, punchy roundup — every sentence earns its place.
 
 COMEDIAN DEEP DIVES (this is the MOST IMPORTANT part — this is what makes this blog post worth reading):
 
@@ -598,6 +906,7 @@ Rules for the blurbs:
 - For EACH one, write EXACTLY two sentences that are specific and personal:
   - Sentence 1: What they're specifically known for — name the ACTUAL special titles, show names, podcast names, movie titles, etc. Be concrete. Not "known for his relatable humor" but "broke out with his Netflix hour 'The Domino Effect' and his legendary storytelling segments on 'This Is Not Happening'"
   - Sentence 2: What the audience can expect at the live show — their style, energy, what makes their live performance different or special. For example: "His live sets are marathon storytelling sessions that feel like sitting around a campfire with the funniest person you've ever met — raw, unpredictable, and impossible to look away from."
+- For EACH comedian blurb, include 1-2 hyperlinks to credible sources (Wikipedia page, Netflix special page, YouTube clip, IMDB page, etc.). Use the SOURCE LINKS provided above if available. Wrap them naturally: e.g., "broke out with his Netflix hour <a href="URL">The Domino Effect</a>". Do NOT dump bare URLs — weave them into the text.
 - Write these blurbs using a <p class="blurb"> tag inside the show-info div
 - If a comedian appears multiple times in the week (e.g., Thursday + Friday + Saturday), write the full blurb ONLY on their first appearance. For subsequent dates, write one sentence like "Another chance to catch [Name] — see Thursday's listing for why you don't want to miss this."
 - If you DON'T genuinely recognize a comedian, DO NOT write a blurb. Do NOT fabricate credits. Just present the event details. Silence is better than filler.
@@ -650,6 +959,8 @@ CRITICAL RULES:
 2. If you cannot name a specific credit for a comedian, DO NOT write a blurb. Just list the event details.
 3. Never describe a comedian as "a rising star" or "up-and-coming" or "known for relatable humor" — these are empty filler phrases. Either you know specific things about them or you stay silent.
 4. Write like you're texting a friend, not writing marketing copy. No exclamation points in every sentence. Be genuine.
+5. BANNED PHRASES: "don't miss", "side-splitting", "laugh-out-loud", "gut-busting", "rib-tickling", "a night to remember", "Houston's comedy scene", "Whether you're a fan of", "Something for everyone", "masterclass", "comedic genius", "redefine comedy", "hotter than a Texas summer", "buckle up", "prepare to". These are generic filler — replace with specific facts.
+6. Each comedian blurb MUST include 1-2 hyperlinks to real sources (Wikipedia, Netflix, YouTube, IMDB). Weave them into the text naturally.
 
 You write in clean, semantic HTML using the CSS classes specified in the prompt. You always include practical details (day, time, venue, price, ticket links) and embed event images when provided.`;
 
@@ -1031,6 +1342,14 @@ async function main() {
     process.exit(1);
   }
 
+  // Detect if this is a Thursday "weekend-only" refresh
+  const dayOfWeek = new Date().getDay(); // 0=Sun, 4=Thu
+  const isThursdayRefresh = dayOfWeek === 4;
+  if (isThursdayRefresh) {
+    console.log("Thursday detected — running weekend post refresh only.");
+    console.log("");
+  }
+
   // Load and filter events
   const { events, monday, sunday } = loadThisWeeksEvents();
 
@@ -1042,6 +1361,67 @@ async function main() {
   const weekRange = formatWeekRange(monday, sunday);
   console.log(`Week range: ${weekRange}`);
   console.log("");
+
+  // Thursday: only update the weekend post, then exit
+  if (isThursdayRefresh) {
+    if (WP_ENABLED) {
+      console.log("Updating 'This Weekend' evergreen post on WordPress...");
+      // Quick comedian identification for the weekend post
+      let quickComedians = [];
+      let quickResearch = "";
+      let quickSourceLinks = {};
+      try {
+        const topComediansRaw = await identifyTopComedians(events);
+        const jsonStr = topComediansRaw.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
+        const parsed = JSON.parse(jsonStr);
+        quickComedians = parsed.map((c) => {
+          const matchedEvent = events.find(
+            (ev) => ev.name === c.show || ev.name.toLowerCase().includes(c.name.toLowerCase())
+          );
+          return { name: c.name, show: c.show, imageUrl: matchedEvent?.image_url || null };
+        });
+        // Deduplicate
+        const seen = new Set();
+        quickComedians = quickComedians.filter((c) => {
+          const key = c.name.toLowerCase();
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        });
+        console.log(`Comedians identified: ${quickComedians.map((c) => c.name).join(", ")}`);
+
+        // Quick research for weekend post copy
+        if (quickComedians.length > 0) {
+          const researchRaw = await researchComedians(quickComedians.map((c) => c.name));
+          const researchJson = researchRaw.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
+          try {
+            const researchParsed = JSON.parse(researchJson);
+            const summaries = [];
+            for (const entry of researchParsed) {
+              if (entry.name && entry.summary) summaries.push(`**${entry.name}**: ${entry.summary}`);
+              if (entry.name && entry.sourceUrls) quickSourceLinks[entry.name] = entry.sourceUrls;
+            }
+            quickResearch = summaries.join("\n\n");
+          } catch (_) {
+            quickResearch = researchRaw;
+          }
+        }
+      } catch (err) {
+        console.warn(`Comedian identification failed: ${err.message}`);
+      }
+
+      try {
+        await updateWeekendPost(events, weekRange, quickComedians, quickResearch, quickSourceLinks);
+      } catch (err) {
+        console.warn(`Weekend post update failed: ${err.message}`);
+      }
+    } else {
+      console.log("WordPress not configured — nothing to do on Thursday.");
+    }
+    console.log("");
+    console.log("Done! (Thursday refresh)");
+    return;
+  }
 
   // Ensure blog directory exists
   if (!fs.existsSync(BLOG_DIR)) {
@@ -1085,19 +1465,66 @@ async function main() {
 
   const topComedianNames = topComedians.map((c) => c.name);
 
-  // Step 2: Research comedians via web search
+  // Step 2: Research comedians via web search (returns structured JSON now)
   let comedianResearch = "";
+  let comedianSourceLinks = {}; // { "Name": ["url1", "url2"] }
+  let comedianHeadshotPages = {}; // { "Name": ["page1", "page2"] }
   if (topComedianNames.length > 0) {
     console.log("Researching comedians via web search...");
     try {
-      comedianResearch = await researchComedians(topComedianNames);
-      console.log("Comedian research completed.");
+      const researchRaw = await researchComedians(topComedianNames);
+      const researchJson = researchRaw.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
+      try {
+        const researchParsed = JSON.parse(researchJson);
+        // Build the text summary for the blog prompt
+        const summaries = [];
+        for (const entry of researchParsed) {
+          if (entry.name && entry.summary) summaries.push(`**${entry.name}**: ${entry.summary}`);
+          if (entry.name && entry.sourceUrls && entry.sourceUrls.length > 0) {
+            comedianSourceLinks[entry.name] = entry.sourceUrls;
+          }
+          if (entry.name && entry.headshotPageUrls && entry.headshotPageUrls.length > 0) {
+            comedianHeadshotPages[entry.name] = entry.headshotPageUrls;
+          }
+        }
+        comedianResearch = summaries.join("\n\n");
+        console.log(`Research completed for ${researchParsed.length} comedian(s).`);
+        console.log(`Source links found for: ${Object.keys(comedianSourceLinks).join(", ") || "none"}`);
+        console.log(`Headshot pages found for: ${Object.keys(comedianHeadshotPages).join(", ") || "none"}`);
+      } catch (parseErr) {
+        // Fallback: treat as plain text if JSON parsing fails
+        console.warn(`Warning: Research JSON parse failed, using as plain text: ${parseErr.message}`);
+        comedianResearch = researchRaw;
+      }
       console.log("");
     } catch (err) {
       console.warn(`Warning: Comedian research failed: ${err.message}`);
       console.warn("Continuing without web research.");
       console.log("");
     }
+  }
+
+  // Step 2b: Find headshot images for top comedians (prefer independent sources over ticket images)
+  if (topComedians.length > 0) {
+    console.log("Finding headshot images for comedians...");
+    for (const comedian of topComedians) {
+      const pageUrls = comedianHeadshotPages[comedian.name] || [];
+      if (pageUrls.length > 0) {
+        try {
+          console.log(`  ${comedian.name}: searching ${pageUrls.length} page(s)...`);
+          const headshot = await findBestHeadshot(pageUrls, comedian.name);
+          if (headshot) {
+            console.log(`  ${comedian.name}: found independent headshot`);
+            comedian.headshotUrl = headshot;
+          } else {
+            console.log(`  ${comedian.name}: no headshot found, will use ticket image`);
+          }
+        } catch (err) {
+          console.log(`  ${comedian.name}: headshot search failed: ${err.message}`);
+        }
+      }
+    }
+    console.log("");
   }
 
   // Step 3: Generate hero creative HTML (replaces DALL-E)
@@ -1110,8 +1537,8 @@ async function main() {
     console.log("");
   }
 
-  // Step 4: Generate the blog post (with research context)
-  const prompt = buildPrompt(events, weekRange, comedianResearch);
+  // Step 4: Generate the blog post (with research context + source links)
+  const prompt = buildPrompt(events, weekRange, comedianResearch, comedianSourceLinks);
   console.log(`Sending ${events.length} events to OpenAI (${OPENAI_MODEL})...`);
 
   let blogContent = await callOpenAI(prompt, SYSTEM_PROMPT);
@@ -1177,7 +1604,238 @@ async function main() {
     }
   }
 
+  // Step 7: Publish weekly roundup to WordPress
+  if (WP_ENABLED) {
+    console.log("Publishing weekly roundup to WordPress...");
+    try {
+      const wpTitle = `Houston Comedy Shows This Week — ${weekRange}`;
+      const wpSlug = `houston-comedy-shows-this-week-${monday.toISOString().slice(0, 10)}`;
+
+      // Build WordPress post content from the blog HTML (just the article body)
+      let wpContent = blogContent;
+
+      // Upload hero image as featured image
+      let featuredMediaId = 0;
+      const heroPngPath = path.join(BLOG_DIR, "weekly-hero.png");
+      if (fs.existsSync(heroPngPath)) {
+        try {
+          console.log("  Uploading hero image to WordPress...");
+          const heroBuffer = fs.readFileSync(heroPngPath);
+          featuredMediaId = await wpUploadImage(heroBuffer, "image/png", `weekly-hero-${monday.toISOString().slice(0, 10)}.png`);
+          console.log(`  Hero image uploaded (media ID: ${featuredMediaId})`);
+
+          // Get the WP URL for the uploaded image
+          try {
+            const media = await wpRequest("GET", `/wp-json/wp/v2/media/${featuredMediaId}`, null);
+            const wpHeroUrl = media.source_url || "";
+            if (wpHeroUrl) {
+              const heroFigure = `<figure class="wp-block-image size-large"><img src="${wpHeroUrl}" alt="Houston Comedy Shows This Week" class="wp-image-${featuredMediaId}"/></figure>\n\n`;
+              wpContent = heroFigure + wpContent;
+            }
+          } catch (_) {}
+        } catch (err) {
+          console.warn(`  Hero image upload failed: ${err.message}`);
+        }
+      }
+
+      // Upload 1-2 comedian headshots inline
+      const comediansWithHeadshots = topComedians.filter((c) => c.headshotUrl).slice(0, 2);
+      for (const comedian of comediansWithHeadshots) {
+        try {
+          console.log(`  Uploading headshot for ${comedian.name}...`);
+          const { buffer, contentType } = await downloadImage(comedian.headshotUrl);
+          const ext = contentType.includes("png") ? "png" : "jpg";
+          const imgFilename = `${comedian.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-headshot.${ext}`;
+          const mediaId = await wpUploadImage(buffer, contentType, imgFilename);
+          const media = await wpRequest("GET", `/wp-json/wp/v2/media/${mediaId}`, null);
+          const imgUrl = media.source_url || comedian.headshotUrl;
+          // Inject comedian headshot after the first mention of their name in the content
+          const nameEscaped = comedian.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+          const nameRegex = new RegExp(`(</p>)`, "i");
+          const imgTag = `\n<figure class="wp-block-image size-medium"><img src="${imgUrl}" alt="${comedian.name.replace(/"/g, '&quot;')}" class="wp-image-${mediaId}"/><figcaption>${comedian.name}</figcaption></figure>\n`;
+          // Insert after the first paragraph that mentions the comedian
+          const mentionRegex = new RegExp(`(${nameEscaped}[^<]*</p>)`, "i");
+          if (mentionRegex.test(wpContent)) {
+            wpContent = wpContent.replace(mentionRegex, `$1${imgTag}`);
+            console.log(`  Headshot for ${comedian.name} injected into post.`);
+          }
+        } catch (err) {
+          console.warn(`  Headshot upload for ${comedian.name} failed: ${err.message}`);
+        }
+      }
+
+      // Look up category
+      const categoryId = await wpGetCategoryBySlug("comedy-shows");
+
+      const postData = {
+        title: wpTitle,
+        content: wpContent,
+        status: "publish",
+        slug: wpSlug,
+        comment_status: "closed",
+      };
+      if (featuredMediaId) postData.featured_media = featuredMediaId;
+      if (categoryId) postData.categories = [categoryId];
+
+      const post = await wpRequest("POST", "/wp-json/wp/v2/posts", postData);
+      console.log(`  Weekly roundup published: ${post.link}`);
+      console.log("");
+    } catch (err) {
+      console.warn(`Warning: WordPress weekly roundup publish failed: ${err.message}`);
+      console.warn("Blog post is still live on GitHub Pages.");
+      console.log("");
+    }
+  } else {
+    console.log("WordPress publishing disabled (no WP credentials set).");
+    console.log("");
+  }
+
+  // Step 8: Update the "This Weekend" evergreen WordPress post
+  if (WP_ENABLED) {
+    console.log("Updating 'This Weekend' evergreen post on WordPress...");
+    try {
+      await updateWeekendPost(events, weekRange, topComedians, comedianResearch, comedianSourceLinks);
+    } catch (err) {
+      console.warn(`Warning: Weekend post update failed: ${err.message}`);
+    }
+    console.log("");
+  }
+
   console.log("Done!");
+}
+
+// ---------------------------------------------------------------------------
+// "This Weekend" evergreen post updater
+// ---------------------------------------------------------------------------
+
+async function updateWeekendPost(allEvents, weekRange, topComedians, comedianResearch, comedianSourceLinks) {
+  // Filter to Friday–Sunday events
+  const weekendEvents = allEvents.filter((ev) => {
+    const dow = (ev.day_of_week || "").toLowerCase();
+    return dow === "friday" || dow === "saturday" || dow === "sunday";
+  });
+
+  if (weekendEvents.length === 0) {
+    console.log("  No weekend events found — skipping update.");
+    return;
+  }
+
+  // Find the existing post by slug
+  const slug = "houston-comedy-shows-this-weekend";
+  let existingPost = null;
+  try {
+    const posts = await wpRequest("GET", `/wp-json/wp/v2/posts?slug=${slug}&status=publish`, null);
+    if (Array.isArray(posts) && posts.length > 0) {
+      existingPost = posts[0];
+      console.log(`  Found existing post (ID: ${existingPost.id}): ${existingPost.link}`);
+    }
+  } catch (err) {
+    console.warn(`  Could not find existing weekend post: ${err.message}`);
+  }
+
+  if (!existingPost) {
+    console.log("  No existing 'this weekend' post found — creating new one.");
+  }
+
+  // Build the weekend date range string
+  const fridayEvents = weekendEvents.filter((ev) => (ev.day_of_week || "").toLowerCase() === "friday");
+  const sundayEvents = weekendEvents.filter((ev) => (ev.day_of_week || "").toLowerCase() === "sunday");
+  const firstDate = weekendEvents[0]?.date || "";
+  const lastDate = weekendEvents[weekendEvents.length - 1]?.date || firstDate;
+  const weekendRangeStr = firstDate === lastDate
+    ? formatDateForDisplay(firstDate)
+    : `${formatDateForDisplay(firstDate).replace(/,\s*\d{4}$/, "")} – ${formatDateForDisplay(lastDate)}`;
+
+  // Identify which top comedians are performing this weekend
+  const weekendComedianNames = [];
+  for (const comedian of topComedians) {
+    const hasWeekendShow = weekendEvents.some((ev) =>
+      ev.name.toLowerCase().includes(comedian.name.toLowerCase())
+    );
+    if (hasWeekendShow) weekendComedianNames.push(comedian.name);
+  }
+
+  // Generate editorial copy via OpenAI
+  const weekendResearch = comedianResearch || "";
+  let sourceLinksHint = "";
+  if (comedianSourceLinks && weekendComedianNames.length > 0) {
+    sourceLinksHint = "\n\nSOURCE LINKS (use 1-2 as hyperlinks per comedian you mention):\n";
+    for (const name of weekendComedianNames) {
+      if (comedianSourceLinks[name]) sourceLinksHint += `- ${name}: ${comedianSourceLinks[name].join(", ")}\n`;
+    }
+  }
+
+  const weekendPrompt = `Write a short, punchy editorial intro for the "Houston Comedy Shows This Weekend" page on ComedyHouston.com.
+
+Weekend: ${weekendRangeStr}
+Total shows: ${weekendEvents.length}
+${weekendComedianNames.length > 0 ? `Notable comedians this weekend: ${weekendComedianNames.join(", ")}` : "No major national headliners this weekend — it's a great time to discover local talent."}
+
+${weekendResearch ? `COMEDIAN RESEARCH:\n${weekendResearch}\n` : ""}${sourceLinksHint}
+
+RULES:
+- 150-200 words MAX. This text sits ABOVE a live event widget, so keep it tight.
+- Open with a hook that names the biggest act or most interesting show this weekend.
+- Mention 2-3 specific shows with real details (venue, time, what makes them worth attending).
+- If you mention a comedian, include 1 hyperlink to a credible source (Wikipedia, Netflix, YouTube).
+- End with a single sentence nudge: "Scroll down for the full lineup and ticket links."
+- NO generic filler. NO "Houston's comedy scene is thriving." NO "Whether you're looking for..."
+- BANNED PHRASES: "don't miss", "side-splitting", "a night to remember", "something for everyone", "buckle up", "prepare to"
+- Write like a friend recommending weekend plans, not a press release.
+- Output ONLY the HTML paragraphs (2-3 <p> tags). No headings, no wrapper tags.`;
+
+  let editorialContent = "";
+  try {
+    editorialContent = await callOpenAI(weekendPrompt,
+      "You write short, specific recommendations for a Houston comedy event page. Your voice is warm, knowing, and concise — like a friend who actually goes to shows. You never use filler or hype. Every sentence has a specific fact or recommendation."
+    );
+    editorialContent = editorialContent.replace(/^```html\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
+    console.log("  Weekend editorial copy generated.");
+  } catch (err) {
+    console.warn(`  Weekend editorial generation failed: ${err.message}`);
+    editorialContent = `<p>Here are all the comedy shows happening in Houston this weekend (${weekendRangeStr}). Grab your tickets before they sell out.</p>`;
+  }
+
+  // Build the full post content: dynamic editorial + static SEO copy + shortcode
+  const updatedDate = new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+  const postContent = `${editorialContent}
+
+<p>Houston is one of the best cities in the country for live comedy, with shows happening every night of the week at venues like the <strong>Houston Improv</strong>, <strong>The Secret Group</strong>, <strong>The Riot</strong>, <strong>Joke Joint Comedy Showcase</strong>, and more. It can be hard to keep track of every comedy show happening across the city — and to tell the difference between open mics and proper headliner shows you'd want to take a date or a group of friends to.</p>
+
+<p>The list below is updated every week and includes all <strong>comedy shows in Houston this weekend</strong>, <strong>excluding open mic comedy</strong>, so you only see featured shows and touring headliners. Whether you're looking for stand-up comedy, improv, or a late-night variety show, this is the most complete weekend comedy calendar for Houston.</p>
+
+<p>If you have any suggestions on shows we didn't list here, please use our <a href="https://www.comedyhouston.com/contact">contact page to message us</a>.</p>
+
+<p><em>Last updated: ${updatedDate}</em></p>
+
+[comedy_houston filter="weekend"]
+
+<p>Looking for shows beyond the weekend? Check out our <a href="https://www.comedyhouston.com">full Houston comedy calendar</a> for every show this month, or read our <a href="https://www.comedyhouston.com/blog/">weekly comedy roundup</a> for in-depth previews of the biggest acts coming to town.</p>`;
+
+  const postTitle = `Houston Comedy Shows This Weekend — ${weekendRangeStr}`;
+
+  if (existingPost) {
+    // Update the existing post
+    const updateData = {
+      content: postContent,
+      title: postTitle,
+    };
+    const updated = await wpRequest("POST", `/wp-json/wp/v2/posts/${existingPost.id}`, updateData);
+    console.log(`  Weekend post updated: ${updated.link}`);
+  } else {
+    // Create a new post
+    const categoryId = await wpGetCategoryBySlug("comedy-shows");
+    const newPostData = {
+      title: postTitle,
+      content: postContent,
+      status: "publish",
+      slug: slug,
+      comment_status: "closed",
+    };
+    if (categoryId) newPostData.categories = [categoryId];
+    const created = await wpRequest("POST", "/wp-json/wp/v2/posts", newPostData);
+    console.log(`  Weekend post created: ${created.link}`);
+  }
 }
 
 main().catch((err) => {
