@@ -19,6 +19,10 @@ env:
 jobs:
   post-to-instagram:
     runs-on: ubuntu-latest
+    # Hard cap so a hung node process can never burn >15 min of CI time
+    # and — more importantly — can never block the Commit state step from
+    # running on the next scheduled run.
+    timeout-minutes: 15
 
     steps:
       - name: Checkout repository
@@ -42,13 +46,19 @@ jobs:
 
       - name: Post next comedian to Instagram
         if: steps.check.outputs.skip != 'true'
+        # Step-level cap: if the node process ever fails to exit cleanly,
+        # kill it after 10 min so the Commit state step still runs.
+        timeout-minutes: 10
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
         run: node scripts/post-to-instagram.js
 
       - name: Commit updated state file
-        if: steps.check.outputs.skip != 'true'
+        # always() so that even if the post step times out or errors after
+        # saveState() has already written ig-post-state.json, we still
+        # commit/push the advancement and avoid reposting the same comedian.
+        if: always() && steps.check.outputs.skip != 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

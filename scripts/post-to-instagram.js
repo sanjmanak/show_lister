@@ -769,17 +769,30 @@ async function main() {
   console.log(`${"=".repeat(60)}`);
 }
 
-main().catch((err) => {
-  console.error(`\n${"!".repeat(60)}`);
-  console.error(`FATAL ERROR: ${err.message}`);
-  console.error(`${"!".repeat(60)}`);
-  if (err.stack) {
-    console.error(`\nStack trace:\n${err.stack}`);
-  }
-  console.error(`\nCommon fixes:`);
-  console.error(`  1. Expired token → regenerate in Graph API Explorer, update GitHub secret`);
-  console.error(`  2. Image not found → ensure branch is merged to main and GitHub Pages deployed`);
-  console.error(`  3. Permission error → check instagram_content_publish is granted to the app`);
-  console.error(`  4. Rate limit → wait and retry (max ~25 posts per 24 hours)`);
-  process.exit(1);
-});
+main()
+  .then(() => {
+    // Force-exit on success. Without this the process has been observed to
+    // hang for over an hour after main() completes — lingering HTTP/1.1
+    // keep-alive sockets to graph.facebook.com (and/or any other unref'd
+    // handle) keep the event loop alive, GitHub Actions eventually cancels
+    // the step, the state-commit step never runs, and the next scheduled
+    // run reposts the same comedian to all four channels. See PR that
+    // introduced this fix for run logs.
+    try { https.globalAgent.destroy(); } catch {}
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.error(`\n${"!".repeat(60)}`);
+    console.error(`FATAL ERROR: ${err.message}`);
+    console.error(`${"!".repeat(60)}`);
+    if (err.stack) {
+      console.error(`\nStack trace:\n${err.stack}`);
+    }
+    console.error(`\nCommon fixes:`);
+    console.error(`  1. Expired token → regenerate in Graph API Explorer, update GitHub secret`);
+    console.error(`  2. Image not found → ensure branch is merged to main and GitHub Pages deployed`);
+    console.error(`  3. Permission error → check instagram_content_publish is granted to the app`);
+    console.error(`  4. Rate limit → wait and retry (max ~25 posts per 24 hours)`);
+    try { https.globalAgent.destroy(); } catch {}
+    process.exit(1);
+  });
