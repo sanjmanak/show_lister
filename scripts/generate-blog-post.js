@@ -10,6 +10,7 @@ const https = require("https");
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const { spawnSync } = require("child_process");
 
 // ---------------------------------------------------------------------------
 // Config
@@ -612,10 +613,55 @@ function escapeHTML(str) {
     .replace(/"/g, "&quot;");
 }
 
+function isUsableImageUrl(url) {
+  if (!url || typeof url !== "string") return false;
+  const lower = url.toLowerCase();
+  // Generic avatar / placeholder URLs we never want to display in the hero.
+  const badPatterns = [
+    "placeholder",
+    "default-avatar",
+    "default_avatar",
+    "no-image",
+    "noimage",
+    "silhouette",
+    "mystery-person",
+    "gravatar.com/avatar/0",
+    "/avatar-default",
+    "blank-profile",
+  ];
+  return !badPatterns.some((p) => lower.includes(p));
+}
+
+function buildInitialsPlaceholder(name) {
+  const initials = (name || "?")
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0].toUpperCase())
+    .join("");
+  // Brand-tinted circular SVG with the comedian's initials. Returned as a
+  // data URI so it works inside the headless screenshot with no network
+  // dependency and no broken-image icons.
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c5cff"/><stop offset="1" stop-color="#ff4d6a"/></linearGradient></defs><rect width="200" height="200" fill="url(#g)"/><text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" font-family="Inter,Arial,sans-serif" font-size="80" font-weight="800" fill="#ffffff">${initials}</text></svg>`;
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+}
+
 function generateHeroCreativeHTML(comedians, weekRange) {
-  // Pick up to 6 comedians with images for a 3x2 grid — prefer headshots over ticket images
-  const withImages = comedians.filter((c) => c.headshotUrl || c.imageUrl).slice(0, 6).map((c) => ({ ...c, displayImage: c.headshotUrl || c.imageUrl }));
-  const gridItems = withImages
+  // Take up to 6 comedians (with or without a usable image — missing images
+  // get a branded initials placeholder so the grid is never sparse).
+  const featured = comedians.slice(0, 6).map((c) => {
+    const raw = c.headshotUrl || c.imageUrl || "";
+    const usable = isUsableImageUrl(raw) ? raw : buildInitialsPlaceholder(c.name);
+    return { ...c, displayImage: usable };
+  });
+
+  // Adaptive grid: 2x2 for 4 comedians, 3-col for 5–6, single row for 1–3.
+  const count = featured.length;
+  let gridClass = "cols-3";
+  if (count === 4) gridClass = "cols-2";
+  else if (count <= 3) gridClass = `cols-${Math.max(count, 1)}`;
+
+  const gridItems = featured
     .map(
       (c) => `      <div class="grid-item">
         <img src="${escapeHTML(c.displayImage)}" alt="${escapeHTML(c.name)}">
@@ -623,6 +669,8 @@ function generateHeroCreativeHTML(comedians, weekRange) {
       </div>`
     )
     .join("\n");
+  // Keep `withImages` name available below for the "extra lineup" diff.
+  const withImages = featured;
 
   // List any remaining comedian names that didn't make the image grid
   const gridNames = new Set(withImages.map((c) => c.name));
@@ -684,17 +732,19 @@ function generateHeroCreativeHTML(comedians, weekRange) {
     }
     .headshot-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px 40px;
+      gap: 32px 48px;
       z-index: 1;
       margin-bottom: 28px;
-      max-width: 720px;
+      justify-items: center;
     }
+    .headshot-grid.cols-1 { grid-template-columns: 1fr; max-width: 360px; }
+    .headshot-grid.cols-2 { grid-template-columns: repeat(2, 1fr); max-width: 640px; }
+    .headshot-grid.cols-3 { grid-template-columns: repeat(3, 1fr); max-width: 720px; gap: 24px 40px; }
     .grid-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
     .grid-item img {
       width: 180px;
@@ -702,6 +752,18 @@ function generateHeroCreativeHTML(comedians, weekRange) {
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid rgba(255, 77, 106, 0.5);
+    }
+    /* When fewer comedians are featured, give each one more visual weight. */
+    .headshot-grid.cols-2 .grid-item img,
+    .headshot-grid.cols-1 .grid-item img {
+      width: 260px;
+      height: 260px;
+      border-width: 4px;
+    }
+    .headshot-grid.cols-2 .grid-name,
+    .headshot-grid.cols-1 .grid-name {
+      font-size: 22px;
+      max-width: 260px;
     }
     .grid-name {
       font-size: 17px;
@@ -748,7 +810,7 @@ function generateHeroCreativeHTML(comedians, weekRange) {
   <div class="bg-accent bg-accent-2"></div>
   <div class="header-label">This Week In</div>
   <div class="title">Houston Comedy</div>
-  <div class="headshot-grid">
+  <div class="headshot-grid ${gridClass}">
 ${gridItems}
   </div>
 ${extraSection}
@@ -1534,6 +1596,24 @@ async function main() {
     fs.writeFileSync(BLOG_HERO_HTML_PATH, heroHTML);
     console.log(`Wrote hero creative HTML: ${BLOG_HERO_HTML_PATH}`);
     inlineHeroHTML = generateInlineHeroHTML(topComedians, weekRange);
+
+    // Render the hero HTML to PNG immediately so any downstream consumer
+    // (especially the WordPress weekly-roundup publish below) uses *this*
+    // week's image. Previously the workflow rendered the screenshot AFTER
+    // generate-blog-post.js finished, which meant WP got last week's PNG
+    // that was still committed in the repo.
+    try {
+      const screenshotScript = path.join(__dirname, "screenshot-hero.js");
+      console.log("Rendering hero PNG via screenshot-hero.js...");
+      const result = spawnSync(process.execPath, [screenshotScript], {
+        stdio: "inherit",
+      });
+      if (result.status !== 0) {
+        console.warn(`Warning: screenshot-hero.js exited with status ${result.status}. WP publish may use a stale image.`);
+      }
+    } catch (err) {
+      console.warn(`Warning: could not render hero PNG inline: ${err.message}`);
+    }
     console.log("");
   }
 

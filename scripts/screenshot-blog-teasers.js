@@ -85,10 +85,33 @@ async function main() {
       // Wait a moment for any lazy-loaded images/fonts
       await new Promise((r) => setTimeout(r, 2000));
 
+      // Measure full document height so we can pick a meaningful "scrolled
+      // down" capture point. Puppeteer's `clip` is document-relative, so
+      // simply calling window.scrollTo() does NOT change what gets captured —
+      // we have to set the clip's y coordinate ourselves.
+      const docHeight = await page.evaluate(() =>
+        Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight,
+          document.body.offsetHeight,
+          document.documentElement.offsetHeight
+        )
+      );
+
+      // Force any lazy-loaded images further down the page to load by
+      // scrolling through the document once before capturing.
+      await page.evaluate(async (h) => {
+        const step = 600;
+        for (let y = 0; y < h; y += step) {
+          window.scrollTo(0, y);
+          await new Promise((r) => setTimeout(r, 80));
+        }
+        window.scrollTo(0, 0);
+      }, docHeight);
+      await new Promise((r) => setTimeout(r, 800));
+
       // Teaser 1: Top of the page (hero area + intro)
       const teaser1Path = path.join(IMAGES_DIR, `${post.slug}-teaser-1.png`);
-      await page.evaluate(() => window.scrollTo(0, 0));
-      await new Promise((r) => setTimeout(r, 500));
       await page.screenshot({
         path: teaser1Path,
         type: "png",
@@ -97,14 +120,19 @@ async function main() {
       console.log(`    → ${post.slug}-teaser-1.png (top of page)`);
       totalScreenshots++;
 
-      // Teaser 2: Scrolled down to show body content
+      // Teaser 2: Capture the *middle* of the article body. Puppeteer's
+      // `clip` y is measured from the top of the document, so we pick a
+      // y-offset that lands roughly halfway down the article (clamped so
+      // we never run past the bottom).
       const teaser2Path = path.join(IMAGES_DIR, `${post.slug}-teaser-2.png`);
-      await page.evaluate(() => window.scrollTo(0, 800));
-      await new Promise((r) => setTimeout(r, 500));
+      const clipY = Math.max(
+        0,
+        Math.min(Math.floor(docHeight / 2) - 200, docHeight - 1080)
+      );
       await page.screenshot({
         path: teaser2Path,
         type: "png",
-        clip: { x: 0, y: 0, width: 1080, height: 1080 },
+        clip: { x: 0, y: clipY, width: 1080, height: 1080 },
       });
       console.log(`    → ${post.slug}-teaser-2.png (scrolled content)`);
       totalScreenshots++;
