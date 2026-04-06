@@ -32,14 +32,6 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Generate blog post from events
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          WP_SITE_URL: ${{ secrets.WP_SITE_URL }}
-          WP_APP_USER: ${{ secrets.WP_APP_USER }}
-          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
-        run: node scripts/generate-blog-post.js
-
       - name: Check if today is Thursday (weekend-only refresh)
         id: day-check
         run: |
@@ -50,13 +42,20 @@ jobs:
             echo "is_thursday=false" >> $GITHUB_OUTPUT
           fi
 
+      # Puppeteer must be installed BEFORE generate-blog-post.js runs because
+      # that script now renders the weekly hero PNG inline (so the WordPress
+      # weekly-roundup publish gets *this* week's image, not last week's).
       - name: Install Puppeteer
         if: steps.day-check.outputs.is_thursday != 'true'
         run: npm install puppeteer
 
-      - name: Screenshot hero creative
-        if: steps.day-check.outputs.is_thursday != 'true'
-        run: node scripts/screenshot-hero.js
+      - name: Generate blog post from events
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          WP_SITE_URL: ${{ secrets.WP_SITE_URL }}
+          WP_APP_USER: ${{ secrets.WP_APP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+        run: node scripts/generate-blog-post.js
 
       - name: Commit and push blog post
         run: |

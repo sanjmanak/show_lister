@@ -533,6 +533,21 @@ async function postFacebookStory(post) {
 // Orchestrator: post to all channels, tolerating individual failures
 // ---------------------------------------------------------------------------
 
+// Hard timeout (ms) for any single channel publish. If Meta's container
+// poll loop or any other step hangs, we abort that channel and continue
+// to the next one rather than letting the whole job stall for hours.
+const CHANNEL_TIMEOUT_MS = parseInt(process.env.IG_CHANNEL_TIMEOUT_MS || "300000", 10); // 5 min default
+
+function withTimeout(promise, label, ms) {
+  let timer;
+  const timeout = new Promise((_, reject) => {
+    timer = setTimeout(() => {
+      reject(new Error(`${label} timed out after ${Math.round(ms / 1000)}s`));
+    }, ms);
+  });
+  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
+}
+
 async function publishEverywhere(post) {
   const caption = loadCaption(post);
   const handle = extractHandle(caption);
@@ -541,6 +556,7 @@ async function publishEverywhere(post) {
   console.log(`   Caption length: ${caption.length} chars`);
   console.log(`   Caption preview: ${caption.slice(0, 120)}…`);
   console.log(`   Comedian handle: ${handle ? "@" + handle : "(not found)"}`);
+  console.log(`   Per-channel timeout: ${Math.round(CHANNEL_TIMEOUT_MS / 1000)}s`);
 
   const results = {
     igFeed: null,
@@ -551,11 +567,31 @@ async function publishEverywhere(post) {
   };
 
   // --- Instagram Feed (primary — must succeed) ---
-  results.igFeed = await postInstagramFeed(post, caption, handle);
+  // Even the primary channel gets a timeout so a stuck container poll
+  // can't hang the workflow indefinitely.
+  try {
+    results.igFeed = await withTimeout(
+      postInstagramFeed(post, caption, handle),
+      "IG Feed",
+      CHANNEL_TIMEOUT_MS
+    );
+  } catch (err) {
+    console.error(`\n  ERROR: IG Feed failed — ${err.message}`);
+    results.errors.push(`IG Feed: ${err.message}`);
+    // IG Feed is the anchor post — if it failed, don't waste API quota on
+    // the other channels for this comedian; bail out and let the next
+    // scheduled run retry the same comedian (state is only updated on
+    // successful IG Feed below).
+    throw err;
+  }
 
   // --- Instagram Story (best-effort) ---
   try {
-    results.igStory = await postInstagramStory(post);
+    results.igStory = await withTimeout(
+      postInstagramStory(post),
+      "IG Story",
+      CHANNEL_TIMEOUT_MS
+    );
   } catch (err) {
     console.error(`\n  WARNING: IG Story failed — ${err.message}`);
     results.errors.push(`IG Story: ${err.message}`);
@@ -563,7 +599,11 @@ async function publishEverywhere(post) {
 
   // --- Facebook Page Feed (best-effort) ---
   try {
-    results.fbFeed = await postFacebookFeed(post, caption);
+    results.fbFeed = await withTimeout(
+      postFacebookFeed(post, caption),
+      "FB Feed",
+      CHANNEL_TIMEOUT_MS
+    );
   } catch (err) {
     console.error(`\n  WARNING: FB Feed failed — ${err.message}`);
     results.errors.push(`FB Feed: ${err.message}`);
@@ -571,7 +611,11 @@ async function publishEverywhere(post) {
 
   // --- Facebook Page Story (best-effort) ---
   try {
-    results.fbStory = await postFacebookStory(post);
+    results.fbStory = await withTimeout(
+      postFacebookStory(post),
+      "FB Story",
+      CHANNEL_TIMEOUT_MS
+    );
   } catch (err) {
     console.error(`\n  WARNING: FB Story failed — ${err.message}`);
     results.errors.push(`FB Story: ${err.message}`);
