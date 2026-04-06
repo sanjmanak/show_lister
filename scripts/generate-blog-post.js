@@ -1757,8 +1757,34 @@ async function main() {
       if (featuredMediaId) postData.featured_media = featuredMediaId;
       if (categoryId) postData.categories = [categoryId];
 
-      const post = await wpRequest("POST", "/wp-json/wp/v2/posts", postData);
-      console.log(`  Weekly roundup published: ${post.link}`);
+      // If a roundup with this slug already exists (e.g. the workflow is
+      // being re-run on the same Monday), update it in place instead of
+      // creating a duplicate post. WordPress's REST API does NOT dedupe by
+      // slug — it would auto-suffix the new slug to "...-2" and leave the
+      // old (often broken) post live.
+      let existingRoundup = null;
+      try {
+        const found = await wpRequest(
+          "GET",
+          `/wp-json/wp/v2/posts?slug=${encodeURIComponent(wpSlug)}&status=publish,draft,future,private`,
+          null
+        );
+        if (Array.isArray(found) && found.length > 0) {
+          existingRoundup = found[0];
+        }
+      } catch (err) {
+        console.warn(`  Slug lookup failed (will create new post): ${err.message}`);
+      }
+
+      let post;
+      if (existingRoundup) {
+        console.log(`  Existing roundup found (ID ${existingRoundup.id}) — updating in place.`);
+        post = await wpRequest("POST", `/wp-json/wp/v2/posts/${existingRoundup.id}`, postData);
+        console.log(`  Weekly roundup updated: ${post.link}`);
+      } else {
+        post = await wpRequest("POST", "/wp-json/wp/v2/posts", postData);
+        console.log(`  Weekly roundup published: ${post.link}`);
+      }
       console.log("");
     } catch (err) {
       console.warn(`Warning: WordPress weekly roundup publish failed: ${err.message}`);
