@@ -60,7 +60,9 @@ jobs:
           fi
 
       - name: Notify on failure
-        if: failure() && secrets.SMTP_SERVER != ''
+        if: failure() && env.HAS_SMTP == 'true'
+        env:
+          HAS_SMTP: ${{ secrets.SMTP_SERVER != '' }}
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: ${{ secrets.SMTP_SERVER }}
