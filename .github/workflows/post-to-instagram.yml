@@ -13,16 +13,24 @@ on:
 permissions:
   contents: write
 
+# Critical: the 6-hour cron + manual_dispatch could otherwise double-fire and
+# both runs would mutate ig-post-state.json + race to push main. Serialize.
+concurrency:
+  group: post-to-instagram
+  cancel-in-progress: false
+
 env:
   TZ: America/Chicago
 
 jobs:
   post-to-instagram:
     runs-on: ubuntu-latest
-    # Hard cap so a hung node process can never burn >15 min of CI time
-    # and — more importantly — can never block the Commit state step from
-    # running on the next scheduled run.
-    timeout-minutes: 15
+    # Hard cap so a hung node process can never burn unbounded CI time and —
+    # more importantly — can never block the Commit state step from running
+    # on the next scheduled run. Budget breakdown:
+    #   4 channels × 3 min per-channel timeout (IG_CHANNEL_TIMEOUT_MS=180000)
+    #   = 12 min worst case + setup/commit overhead → 25 min job cap.
+    timeout-minutes: 25
 
     steps:
       - name: Checkout repository
@@ -47,11 +55,15 @@ jobs:
       - name: Post next comedian to Instagram
         if: steps.check.outputs.skip != 'true'
         # Step-level cap: if the node process ever fails to exit cleanly,
-        # kill it after 10 min so the Commit state step still runs.
-        timeout-minutes: 10
+        # kill it so the Commit state step still runs. Must be > sum of
+        # per-channel timeouts (4 × 3 min = 12 min) plus headroom.
+        timeout-minutes: 18
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          # Tighten per-channel timeout from default 5 min → 3 min so that
+          # all four channels can finish within the step timeout above.
+          IG_CHANNEL_TIMEOUT_MS: '180000'
         run: node scripts/post-to-instagram.js
 
       - name: Commit updated state file
@@ -88,3 +100,23 @@ jobs:
               sleep $i
             done
           fi
+
+      - name: Notify on failure
+        if: failure() && env.HAS_SMTP == 'true'
+        env:
+          HAS_SMTP: ${{ secrets.SMTP_SERVER != '' }}
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "[Comedy Houston] post-to-instagram FAILED"
+          to: ${{ secrets.NOTIFY_EMAIL }}
+          from: ${{ secrets.SMTP_FROM }}
+          body: |
+            The post-to-instagram workflow failed. The state file may or may
+            not have advanced — check the run logs to see whether the next
+            scheduled run will retry the same comedian or move on.
+
+            Run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
