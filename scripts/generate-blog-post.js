@@ -1838,7 +1838,138 @@ async function main() {
     console.log("");
   }
 
+  // Step 9: Update the /this-week/ landing page on WordPress.
+  // This is the page your Instagram bio link points at — it never changes URL,
+  // but the contents are refreshed every Monday so every IG impression lands
+  // on this week's headliners + ticket links + email capture.
+  if (WP_ENABLED && topComedians.length > 0) {
+    console.log("Updating '/this-week/' landing page on WordPress...");
+    try {
+      await updateThisWeekLandingPage(topComedians, weekRange, monday, sunday);
+    } catch (err) {
+      console.warn(`Warning: This-week landing page update failed: ${err.message}`);
+    }
+    console.log("");
+  }
+
   console.log("Done!");
+}
+
+/**
+ * Build + publish the "/this-week/" WordPress page — the permanent IG-bio
+ * destination. Same slug every week, contents refreshed.
+ *
+ * Why a Page (not a Post): pages don't show up in the blog archive / RSS,
+ * they have stable canonical URLs, and they're meant for evergreen
+ * always-current content. Exactly what an IG bio link needs.
+ */
+async function updateThisWeekLandingPage(topComedians, weekRange, monday, sunday) {
+  const slug = "this-week";
+  const title = `Houston Comedy This Week — ${weekRange}`;
+
+  // Build the comedian card grid. Each card links to the per-comedian post
+  // (which itself has the internal-link footer back to the rest of the week).
+  const cardsHtml = topComedians
+    .map((c) => {
+      const comedianSlug = c.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+      // Per-comedian posts use {nameSlug}-{venueSlug}-{date} format. We don't
+      // know the exact slug from this script — link to the search page as a
+      // fallback. The roundup post itself is the primary CTA.
+      const img = c.headshotUrl || "";
+      const imgHtml = img
+        ? `<img src="${escapeHTML(img)}" alt="${escapeHTML(c.name)}" loading="lazy" />`
+        : `<div class="placeholder">${escapeHTML(c.name.split(" ").map((w) => w[0]).join("").slice(0, 2))}</div>`;
+      const showLine = c.show ? `<p class="show">${escapeHTML(c.show)}</p>` : "";
+      return `
+  <div class="comedian-card">
+    ${imgHtml}
+    <h3>${escapeHTML(c.name)}</h3>
+    ${showLine}
+  </div>`;
+    })
+    .join("\n");
+
+  const dateRangeLabel = `${monday.toLocaleDateString("en-US", { month: "long", day: "numeric" })} – ${sunday.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}`;
+
+  // Page content. Inline styles because we can't rely on the WP theme
+  // having matching CSS classes — pages on different themes break otherwise.
+  const pageContent = `
+<style>
+.this-week-landing { max-width: 900px; margin: 0 auto; }
+.this-week-landing .lede { font-size: 1.25rem; line-height: 1.6; color: #444; margin: 1.5rem 0 2rem; }
+.this-week-landing .comedian-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; margin: 2rem 0; }
+.this-week-landing .comedian-card { background: #f8f8fb; border-radius: 12px; padding: 16px; text-align: center; }
+.this-week-landing .comedian-card img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; margin-bottom: 12px; }
+.this-week-landing .comedian-card .placeholder { width: 100%; aspect-ratio: 1; border-radius: 8px; background: linear-gradient(135deg, #ff4d6a, #7c5cff); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 800; margin-bottom: 12px; }
+.this-week-landing .comedian-card h3 { margin: 0 0 4px; font-size: 1.05rem; }
+.this-week-landing .comedian-card .show { font-size: 0.85rem; color: #777; margin: 0; }
+.this-week-landing .cta-block { background: #0a0a0f; color: #fff; padding: 32px; border-radius: 16px; text-align: center; margin: 2.5rem 0; }
+.this-week-landing .cta-block h2 { margin-top: 0; color: #fff; }
+.this-week-landing .cta-block .btn { display: inline-block; background: #ff4d6a; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 12px; }
+.this-week-landing .secondary-cta { background: #fff8e7; border: 1px solid #f0d99a; padding: 20px; border-radius: 12px; margin: 1.5rem 0; }
+</style>
+
+<div class="this-week-landing">
+
+  <p class="lede">Every comedian playing Houston this week, in one place. Updated every Monday morning — bookmark this page or follow <a href="https://instagram.com/comedyhoustontx">@comedyhoustontx</a> on Instagram.</p>
+
+  <p style="color: #888; font-size: 0.95rem; margin-top: -1rem;"><strong>Week of ${escapeHTML(dateRangeLabel)}</strong></p>
+
+  <h2>This week's headliners</h2>
+  <div class="comedian-grid">
+    ${cardsHtml}
+  </div>
+
+  <div class="cta-block">
+    <h2>Get the full weekly roundup</h2>
+    <p>Day-by-day breakdown, ticket links, and the inside take on every show.</p>
+    <a class="btn" href="https://comedyhouston.com/category/comedy-shows/">Read the full weekly roundup →</a>
+  </div>
+
+  <div class="secondary-cta">
+    <h3 style="margin-top: 0;">🎟️ Want discount tickets?</h3>
+    <p>Join the Comedy Houston mailing list and we'll send you ticket discounts and the best shows each week. <a href="https://comedyhouston.com/#email">Sign up free →</a></p>
+  </div>
+
+  <h2>Browse every show in Houston</h2>
+  <p>Looking for something specific? Our live event tracker pulls comedy shows from every venue in Houston — Improv, Riot, Secret Group, and more — twice a day.</p>
+  <p><a href="https://comedyhouston.com/all-shows/"><strong>See every Houston comedy show →</strong></a></p>
+
+  <p style="margin-top: 3rem; color: #888; font-size: 0.85rem; text-align: center;">Last updated: ${escapeHTML(new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" }))}</p>
+
+</div>
+`;
+
+  // Look up existing /this-week/ page by slug — update in place if it exists.
+  let existingPage = null;
+  try {
+    const found = await wpRequest(
+      "GET",
+      `/wp-json/wp/v2/pages?slug=${encodeURIComponent(slug)}&status=publish,draft,future,private`,
+      null
+    );
+    if (Array.isArray(found) && found.length > 0) existingPage = found[0];
+  } catch (err) {
+    console.warn(`  Slug lookup failed (will create new page): ${err.message}`);
+  }
+
+  const pageData = {
+    title: title,
+    content: pageContent,
+    status: "publish",
+    slug: slug,
+    comment_status: "closed",
+  };
+
+  let page;
+  if (existingPage) {
+    console.log(`  Existing /this-week/ page found (ID ${existingPage.id}) — updating in place.`);
+    page = await wpRequest("POST", `/wp-json/wp/v2/pages/${existingPage.id}`, pageData);
+  } else {
+    console.log("  Creating new /this-week/ page.");
+    page = await wpRequest("POST", "/wp-json/wp/v2/pages", pageData);
+  }
+  console.log(`  Landing page live: ${page.link}`);
 }
 
 // ---------------------------------------------------------------------------

@@ -1031,25 +1031,71 @@ function escapeHTML(str) {
     .replace(/"/g, "&quot;");
 }
 
+/**
+ * Build the "Also performing in Houston this week" internal-linking section.
+ * Pure templating off the manifest — no LLM call. Run as a second pass after
+ * all comedian posts are generated so each post can link to the others.
+ *
+ * SEO purpose: every per-comedian page becomes part of a topical cluster
+ * instead of an island. Google uses internal links as the #1 signal for
+ * crawl priority and topical authority on a young site.
+ */
+function buildAlsoThisWeekSection(currentSlug, allPosts) {
+  const others = allPosts.filter((p) => p.slug !== currentSlug);
+  if (others.length === 0) return "";
+
+  const items = others
+    .map((p) => {
+      const url = p.wpLink || `https://comedyhouston.com/${p.slug}/`;
+      const dateLabel = formatDateForDisplay(p.date);
+      return `    <li><a href="${escapeHTML(url)}"><strong>${escapeHTML(p.comedianName)}</strong></a> — ${escapeHTML(p.venue)}, ${escapeHTML(dateLabel)}</li>`;
+    })
+    .join("\n");
+
+  return `
+<hr />
+<h3>Also performing in Houston this week</h3>
+<p>If you're already booking your weekend, here's the rest of this week's headliners:</p>
+<ul>
+${items}
+</ul>
+<p><a href="https://comedyhouston.com/this-week/"><strong>See the full weekly roundup →</strong></a></p>
+`;
+}
+
 function wrapInHTML(blogContent, comedianName, venue, date, generatedAt, imageUrl, ticketUrl) {
   const title = `${comedianName} at ${venue} — ${formatDateForDisplay(date)} | Houston Comedy`;
   const description = `${comedianName} performs live at ${venue} in Houston, TX on ${formatDateForDisplay(date)}. Get show details, comedian background, and ticket info at ComedyHouston.com.`;
 
-  // JSON-LD structured data for search engine rich snippets
-  const jsonLd = JSON.stringify({
-    "@context": "https://schema.org",
+  // JSON-LD structured data for search engine rich snippets.
+  // @graph with both Person and ComedyEvent so Google can build a knowledge
+  // panel for the comedian AND show the event in event-rich-result carousels
+  // for local intent queries like "comedy houston this weekend".
+  const personNode = {
+    "@type": "Person",
+    "name": comedianName,
+    "jobTitle": "Comedian",
+    ...(imageUrl ? { "image": imageUrl } : {}),
+  };
+  const eventNode = {
     "@type": "ComedyEvent",
     "name": `${comedianName} Live at ${venue}`,
     "description": description,
     "startDate": date,
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "location": {
       "@type": "Place",
       "name": venue,
-      "address": { "@type": "PostalAddress", "addressLocality": "Houston", "addressRegion": "TX" }
+      "address": { "@type": "PostalAddress", "addressLocality": "Houston", "addressRegion": "TX", "addressCountry": "US" }
     },
     "performer": { "@type": "Person", "name": comedianName },
     ...(imageUrl ? { "image": imageUrl } : {}),
-    ...(ticketUrl ? { "offers": { "@type": "Offer", "url": ticketUrl } } : {}),
+    ...(ticketUrl ? { "offers": { "@type": "Offer", "url": ticketUrl, "availability": "https://schema.org/InStock", "priceCurrency": "USD" } } : {}),
+  };
+  const jsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [personNode, eventNode],
   });
 
   return `<!DOCTYPE html>
@@ -1964,7 +2010,62 @@ async function main() {
       caption: caption,
       instagramHandle: instagramHandle, // "@name" or "" — poster uses this to tag the comedian in the IG photo
       graphicFiles: graphicFiles.map((gf) => gf.pngFile),
+      // Stash the post body and metadata so the second pass below can append
+      // the internal-linking section and re-publish without re-running the
+      // 4-call OpenAI pipeline.
+      _finalContent: finalContent,
+      _generatedAt: generatedAt,
     });
+  }
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // Second pass: internal linking ("Also performing this week" footer block)
+  // ─────────────────────────────────────────────────────────────────────────
+  // Now that every comedian post has been written and (optionally) published,
+  // we know all the slugs and WP URLs. Walk the manifest a second time and
+  // append a cross-link section to each post pointing at the OTHER comedians
+  // this week. Re-write the GitHub Pages HTML and re-publish to WordPress
+  // (slug-dedupe handles the in-place update).
+  if (generatedPosts.length > 1) {
+    console.log("");
+    console.log("━━━ Second pass: adding internal links between comedian posts ━━━");
+    for (const post of generatedPosts) {
+      try {
+        const linkSection = buildAlsoThisWeekSection(post.slug, generatedPosts);
+        const linkedContent = post._finalContent + linkSection;
+
+        // Rewrite GitHub Pages HTML
+        const linkedHtml = wrapInHTML(
+          linkedContent,
+          post.comedianName,
+          post.venue,
+          post.date,
+          post._generatedAt,
+          post.imageUrl,
+          post.ticketUrl
+        );
+        fs.writeFileSync(path.join(COMEDIANS_DIR, post.filename), linkedHtml);
+
+        // Re-publish to WordPress (slug-dedupe will UPDATE the existing post
+        // in place — no -2 suffixed duplicate). Skip if WP isn't ready or
+        // the first publish never created a post.
+        if (wpReady && post.wpLink) {
+          await publishToWordPress(
+            post.comedianName, post.venue, post.date, post.slug, linkedContent, post.imageUrl
+          );
+        }
+        console.log(`  Linked: ${post.comedianName}`);
+      } catch (err) {
+        console.warn(`  Internal link pass failed for ${post.comedianName}: ${err.message}`);
+      }
+    }
+    console.log("");
+  }
+
+  // Strip the internal-only fields before they hit manifest.json
+  for (const post of generatedPosts) {
+    delete post._finalContent;
+    delete post._generatedAt;
   }
 
   // Generate index page
@@ -2019,6 +2120,45 @@ async function main() {
     fs.writeFileSync(path.join(COMEDIANS_DIR, "email-body.txt"), emailBody);
     console.log(`Wrote: blog/comedians/email-subject.txt`);
     console.log(`Wrote: blog/comedians/email-body.txt`);
+  }
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // Sitemap generation — write sitemap.xml at repo root.
+  // Submitting this to Google Search Console once means new comedian posts
+  // get crawled within days instead of weeks. The sitemap is regenerated on
+  // every comedian-posts run so it always reflects the current week.
+  // ─────────────────────────────────────────────────────────────────────────
+  if (generatedPosts.length > 0) {
+    try {
+      const today = new Date().toISOString().slice(0, 10);
+      const baseUrl = "https://comedyhouston.com";
+      const urls = [
+        { loc: `${baseUrl}/`, priority: "1.0", changefreq: "daily" },
+        { loc: `${baseUrl}/this-week/`, priority: "0.9", changefreq: "weekly" },
+      ];
+      for (const post of generatedPosts) {
+        const url = post.wpLink || `${baseUrl}/${post.slug}/`;
+        urls.push({ loc: url, priority: "0.8", changefreq: "weekly" });
+      }
+      const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls
+  .map(
+    (u) => `  <url>
+    <loc>${u.loc}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${u.changefreq}</changefreq>
+    <priority>${u.priority}</priority>
+  </url>`
+  )
+  .join("\n")}
+</urlset>
+`;
+      fs.writeFileSync(path.join(OUTPUT_DIR, "sitemap.xml"), xml);
+      console.log(`Wrote: sitemap.xml (${urls.length} URLs)`);
+    } catch (err) {
+      console.warn(`Sitemap generation failed: ${err.message}`);
+    }
   }
 
   console.log("");
