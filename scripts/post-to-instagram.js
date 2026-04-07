@@ -207,16 +207,48 @@ function loadCaption(post) {
 }
 
 /**
- * Extract the comedian's Instagram handle from the caption.
- * Captions end with @handle — we grab the last @mention.
+ * Resolve the comedian's Instagram handle for user_tags on the IG photo.
+ *
+ * Priority:
+ *   1. post.instagramHandle from manifest.json (authoritative — set by
+ *      the generator from OpenAI research, always "@name" format).
+ *   2. Last @mention in the caption body.
+ *   3. Bare-handle fallback: the generator template puts the handle on
+ *      its own trailing line, so if the last non-empty line looks like a
+ *      single handle token (no spaces, handle-legal chars), use it.
+ *      This recovers captions that were generated before the normalizer
+ *      fix landed and emitted the handle without an "@" prefix.
+ *
+ * Returns the handle WITHOUT the leading "@", or null if none found.
  */
-function extractHandle(caption) {
-  const matches = caption.match(/@([a-zA-Z0-9_.]+)/g);
-  if (!matches || matches.length === 0) return null;
-  // The last @mention in the caption is typically the comedian's handle
-  // (earlier ones are hashtag-like or other accounts)
-  const handle = matches[matches.length - 1].replace("@", "");
-  return handle;
+function resolveHandle(post, caption) {
+  // 1. Manifest field (authoritative)
+  if (post.instagramHandle) {
+    return post.instagramHandle.replace(/^@+/, "").trim() || null;
+  }
+
+  // 2. Last @mention in caption
+  const mentions = caption.match(/@([a-zA-Z0-9_.]+)/g);
+  if (mentions && mentions.length > 0) {
+    return mentions[mentions.length - 1].replace("@", "");
+  }
+
+  // 3. Bare handle on the last non-empty line (legacy fallback)
+  const lines = caption.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+  for (let i = lines.length - 1; i >= 0; i--) {
+    const line = lines[i];
+    // Skip hashtag-only lines
+    if (line.startsWith("#")) continue;
+    // Single token, handle-legal chars, reasonable length, not a sentence
+    if (/^[a-zA-Z0-9_.]{3,30}$/.test(line) && !/\s/.test(line)) {
+      return line;
+    }
+    // Stop at the first non-matching non-hashtag line — the handle is
+    // only valid if it's at the very end, not buried mid-caption.
+    break;
+  }
+
+  return null;
 }
 
 /**
@@ -550,7 +582,7 @@ function withTimeout(promise, label, ms) {
 
 async function publishEverywhere(post) {
   const caption = loadCaption(post);
-  const handle = extractHandle(caption);
+  const handle = resolveHandle(post, caption);
 
   console.log(`\n📸 Publishing: ${post.comedianName}`);
   console.log(`   Caption length: ${caption.length} chars`);
