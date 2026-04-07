@@ -531,8 +531,16 @@ Return a JSON object with these fields (leave null/empty if you cannot verify):
   },
   "live_reputation": "",
   "recent_activity_2025_2026": "",
+  "recent_hook": {
+    "summary": "",
+    "quote": "",
+    "source_publication": "",
+    "source_url": "",
+    "date": ""
+  },
   "instagram_handle": "",
   "notable_bits_or_quotes": [],
+  "unverifiable_claims_to_avoid": [],
   "background_story": "",
   "headshot_page_urls": [],
   "source_urls": [
@@ -542,6 +550,10 @@ Return a JSON object with these fields (leave null/empty if you cannot verify):
     {"label": "Podcast episode or appearance", "url": ""}
   ]
 }
+
+For recent_hook: This is the SINGLE MOST IMPORTANT field. Find the freshest piece of news about this comedian — ideally from the last 90 days, no older than 12 months. A new tour announcement, a recent podcast/interview, an album, a Netflix release, a public comment, a project in development. Include a real verbatim quote if you can find one, with the publication name, URL, and date. If you cannot find anything from the last 12 months, leave it null — do NOT pad with old material. The blog post will be built around this hook, so it must be specific and recent.
+
+For unverifiable_claims_to_avoid: List any "facts" you encountered during research that appeared in low-quality sources, fan wikis, or AI-generated summaries that you could NOT independently verify (e.g. "supposedly appeared in X show"). The writer will be told to never use these.
 
 For headshot_page_urls: Find 2-4 web pages that are likely to contain a clean, professional headshot or portrait photo of this comedian. Our code will fetch these pages and extract the actual image. Prioritize in this order:
   1. The comedian's official website (especially /bio, /about, /press, or homepage)
@@ -570,9 +582,14 @@ function writeBlogPost(comedianName, venue, city, date, time, price, ticketUrl, 
   const priceStr = price || "See venue for pricing";
   const timeStr = time || "See venue for time";
 
-  const systemPrompt = `You are a senior arts & culture writer whose byline has appeared in Variety, The Hollywood Reporter, Vulture, and the New York Times Arts section. You write about comedy the way a wine critic writes about wine — with deep knowledge, precise language, and genuine enthusiasm that never crosses into hype. Your prose has rhythm. You trust the reader's intelligence. You never tell them something is funny; you describe the mechanics of why it works and let them feel it.`;
+  const systemPrompt = `You are a working comedy writer whose byline appears in Vulture, The New Yorker's Talk of the Town, and the LA Times Calendar section. You write about comedians the way a fellow obsessive does — with specific references, dry confidence, and zero hype. You trust the reader. You never explain that something is funny; you describe what the comic actually does and let it land.
 
-  const prompt = `Write a 600-word blog post about a comedian's upcoming live show.
+VOICE ANCHOR — match this register:
+"Russell Brand is one of those comedians who, despite selling out theaters all over the world and starring in several films throughout the past decade, I have simply not paid much attention to. Brand often seemed to me too smug, self-referential, and, quite frankly, stupid to ever give him the benefit of the doubt. However, in the last few months, I've slowly come around to him. In April, Brand appeared on Norm MacDonald's video podcast Norm Macdonald Live, and I found that his lascivious, free-love persona contrasted well against MacDonald's particular brand of sexual repression. Like a kind of glammed up Trojan horse, he sneaks past our defenses and enlightens and entertains while pontificating on the news of the day."
+
+Notice what that paragraph does: a real opinion, a specific recent appearance with a real co-host, an unexpected adjective ("lascivious"), one good metaphor (not three), and zero throat-clearing. That is the bar.`;
+
+  const prompt = `Write a 400-word blog post about a comedian's upcoming live show. 400 words is a HARD CEILING. Tighter is fine. Padding is not.
 
 INPUT DATA:
 Comedian: ${comedianName}
@@ -584,8 +601,16 @@ Price: ${priceStr}
 Ticket URL: ${ticketUrl}
 ${imageUrl ? `Image URL: ${imageUrl}` : ""}
 
-VERIFIED RESEARCH (DO NOT EXCEED OR INVENT):
+VERIFIED RESEARCH (THIS IS YOUR ONLY SOURCE OF FACTS — anything not here is forbidden):
 ${research}
+
+ABSOLUTE FACT RULES:
+- You may ONLY state facts that appear explicitly in the research above. Not "reasonable inferences." Not "well-known background." Only what is in the JSON.
+- If the research has a "recent_hook" with content, the post MUST be built around it. Lead with the hook. It is the reason this specific show in ${formatDateForDisplay(date)} matters.
+- If a credit, special, TV show, or quote is not in the research, it does not exist. Do not mention it.
+- Anything in "unverifiable_claims_to_avoid" is poison. Never reference it.
+- NEVER output the literal token "[VERIFY]" or any bracketed editor's note. The published post must read as final. If you are not sure about something, just leave it out. Silence is better than a flag.
+- NEVER paraphrase or reconstruct quotes. A quote may only appear if it is verbatim from "notable_bits_or_quotes" or "recent_hook.quote".
 
 TITLE (critical — this drives both clicks AND search rankings):
 Write an <h1> tag with a headline that a Variety or Vulture editor would approve.
@@ -631,13 +656,25 @@ The research includes "source_urls" with verified URLs. Weave 3-4 as natural hyp
 BANNED PHRASES:
 "Don't miss" / "Must-see" / "Get ready" / "Side-splitting" / "Rib-tickling" / "Comedic genius" / "Laugh-out-loud" / "Hilarity ensues" / "A night of laughs" / "Known for his/her unique style" / "Comedy fans will love" / "Brings his/her [X] to [Y]" / "Takes the stage" / "Sharp wit" / "Razor-sharp" / "Boundary-pushing" / "Unapologetic" / "Unfiltered" / "Raw and honest" / "In a world where..." / Any sentence that could apply to any comedian without changes
 
+BANNED STRUCTURES (these are LLM tells — instant rejection):
+- "X isn't just Y, it's Z" (and any "not just/but also" variant)
+- Opening with weather, atmosphere, "the air crackles," "in the dim glow," "under the lights," or any scene-setting that doesn't reference THIS comedian
+- Closing with "boundaries blur," "shared experience," "the magic of live comedy," or any abstract reassurance
+- Rhetorical questions ("How does he do it?")
+- Metaphor stacking — pick ONE metaphor for the whole post or none. No "scalpel + canvas + mirror."
+- Tricolons (three-item lists like "sharp, smart, and surprising")
+- The word "scalpel." Ever. It is the LLM's favorite comedy implement and a giveaway.
+- Any sentence whose structure is "abstract claim, abstract elaboration, abstract reassurance"
+- A standalone CTA paragraph at the end ("Don't miss your chance...")
+
 STYLE:
 - No exclamation points, no emojis
-- Vary sentence length dramatically — a three-word sentence after a long one creates rhythm
+- Vary sentence length dramatically — a three-word sentence after a long one creates rhythm. Read it back in your head.
 - Maximum 2 uses of the comedian's full name; use last name or pronouns after
-- At least 3 concrete, verifiable details from the research
-- Write like you've actually seen this comedian perform, even if you haven't
-- The reader should learn something about comedy itself, not just this event
+- At least 3 concrete, verifiable details from the research, ideally one per paragraph
+- Every paragraph must contain at least one specific noun (a real credit, a venue detail, a year, a publication name, a tour name) — no all-abstract paragraphs
+- Confident omission: if you don't have enough material for 400 words, write 320. Do not stretch.
+- The reader should feel the writer has an actual opinion, not a press release
 
 OUTPUT: Return ONLY the HTML blog post content. Use semantic HTML: <h1> for the SEO title, <p> for paragraphs. No <html>/<head>/<body> wrapper. Include a single <a class="ticket-link" href="${ticketUrl}">Get Tickets</a> link in the CTA paragraph.`;
 
@@ -649,7 +686,7 @@ OUTPUT: Return ONLY the HTML blog post content. Use semantic HTML: <h1> for the 
 // ---------------------------------------------------------------------------
 
 function factCheckPost(research, draft) {
-  const systemPrompt = `You are a senior editorial fact-checker at a major publication. Your job is to compare a draft article against verified source research and remove anything that is not supported. You are ruthless about accuracy. You never add content, only subtract.`;
+  const systemPrompt = `You are a senior editorial fact-checker at a major publication. Your job is to compare a draft article against verified source research and silently remove anything that is not supported. You are ruthless about accuracy. The output you produce is FINAL and will be published as-is to WordPress with no human review. You never add content, only subtract or lightly rephrase for flow.`;
 
   const prompt = `RESEARCH DATA:
 ${research}
@@ -657,24 +694,70 @@ ${research}
 DRAFT ARTICLE:
 ${draft}
 
-Review this article against the research data. For each claim in the article:
+Review this article against the research data. For each claim:
 1. If it appears in the research data → keep it
-2. If it's a reasonable inference from the research → keep it
-3. If it's NOT in the research and cannot be verified → REMOVE the entire sentence
+2. If it is NOT in the research and cannot be verified → REMOVE the entire sentence and lightly stitch the surrounding sentences for flow
 
 Also remove:
 - Any generic sentence that could describe any comedian (e.g., "audiences are in for a treat")
 - Any adjective not backed by a specific reference
 - Any fabricated quotes or bit descriptions not in the research
 - Any of these banned phrases: "don't miss," "must-see," "side-splitting," "comedic genius," "hilarity ensues," "get ready," "a night of laughs"
+- Any rhetorical question, any "isn't just X, it's Y" construction, any closing CTA paragraph
+
+CRITICAL — THIS IS THE FINAL VERSION:
+- The output goes straight to WordPress. There is NO human review.
+- NEVER emit "[VERIFY]", "[CHECK]", "[CITATION NEEDED]", "[TODO]", or any bracketed editor's note. If something is shaky, just delete it. Silence > flag.
+- Do not leave editor's comments, parenthetical asides to the writer, or self-references.
+- The post should read as a finished, confident piece by a working journalist.
 
 IMPORTANT:
 - Do not add new content. Only subtract or lightly rephrase for flow after removing sentences.
 - Keep the HTML structure intact. Return the cleaned HTML.
-- PRESERVE all hyperlinks (<a href="...">) that link to real source URLs (Wikipedia, IMDB, Netflix, YouTube, etc.). These are sourced references and should NOT be removed.
-- PRESERVE the <div class="post-footer"> section at the end exactly as-is. Do not modify or remove it.`;
+- PRESERVE all hyperlinks (<a href="...">) that link to real source URLs.
+- PRESERVE the <div class="post-footer"> section at the end exactly as-is.`;
 
   return callOpenAI(prompt, systemPrompt, 0.2);
+}
+
+// ---------------------------------------------------------------------------
+// Step 4: Polish pass — voice & rhythm critique, no new facts
+// ---------------------------------------------------------------------------
+
+function polishPost(draft) {
+  const systemPrompt = `You are a copy chief at a respected magazine. You take a fact-checked draft and tighten it for voice, rhythm, and specificity. You never add facts. You aggressively cut LLM-tells. The version you return is the version that publishes — no flags, no notes.`;
+
+  const prompt = `Here is a fact-checked draft. Score it silently against this rubric, then return ONLY the rewritten HTML:
+
+RUBRIC (do not output, just apply):
+- Specificity: every paragraph has at least one concrete noun
+- Rhythm: short sentences mixed with long
+- Voice: confident, dry, opinionated, not press-release
+- No LLM tells: no "isn't just X it's Y," no rhetorical questions, no metaphor stacking, no scalpel/canvas/mirror, no "in a world where," no closing reassurance
+- Length: 400 words MAX in the body. Cut the weakest paragraph entirely if over.
+
+REWRITE RULES:
+- Do NOT add any new facts, names, credits, quotes, or claims. You can only cut and rearrange existing content.
+- Keep the <h1> title.
+- Keep all <a href="..."> hyperlinks pointing to real sources.
+- Keep the <div class="post-footer"> at the end exactly as-is.
+- NEVER emit "[VERIFY]" or any bracketed editor's note. This is the final version.
+- Return ONLY the HTML. No preamble, no explanation, no scoring.
+
+DRAFT:
+${draft}`;
+
+  return callOpenAI(prompt, systemPrompt, 0.5);
+}
+
+// Final safety net: strip any [VERIFY]-style editor markers that slipped through
+function stripEditorMarkers(html) {
+  if (!html) return html;
+  // Remove tokens like [VERIFY], [VERIFY date], [CHECK], [CITATION NEEDED], [TODO ...]
+  let cleaned = html.replace(/\s*\[(?:VERIFY|CHECK|CITATION NEEDED|TODO|CONFIRM|FACT[- ]?CHECK)[^\]]*\]/gi, "");
+  // Collapse any double spaces created by the removal
+  cleaned = cleaned.replace(/[ \t]{2,}/g, " ");
+  return cleaned;
 }
 
 // ---------------------------------------------------------------------------
@@ -1717,6 +1800,25 @@ async function main() {
     } catch (err) {
       console.warn(`  Fact-check failed: ${err.message}. Using unedited draft.`);
     }
+
+    // Step 4: Polish pass — voice, rhythm, length (no new facts)
+    console.log("  Step 4: Polish pass...");
+    try {
+      const polished = await polishPost(finalContent);
+      const cleanedPolish = polished.replace(/^```html\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
+      if (cleanedPolish && cleanedPolish.length > 200) {
+        finalContent = cleanedPolish;
+        console.log("  Polish complete.");
+      } else {
+        console.warn("  Polish output too short — keeping fact-checked draft.");
+      }
+    } catch (err) {
+      console.warn(`  Polish failed: ${err.message}. Using fact-checked draft.`);
+    }
+
+    // Final safety net: strip any [VERIFY]/editor markers that slipped through.
+    // The published post must have NO bracketed editor flags.
+    finalContent = stripEditorMarkers(finalContent);
 
     // Generate filename
     const dateSlug = date; // YYYY-MM-DD
