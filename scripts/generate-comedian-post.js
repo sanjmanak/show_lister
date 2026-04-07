@@ -1697,6 +1697,13 @@ async function main() {
     } catch (_) {
       // Research wasn't valid JSON or didn't have handle — that's fine
     }
+    // Normalize handle to always be "@name" so the LLM can't emit it bare
+    // (bare handles break the poster's user_tags extraction, so the
+    // comedian never gets tagged in the IG photo).
+    if (instagramHandle) {
+      instagramHandle = "@" + instagramHandle.replace(/^@+/, "").trim();
+      if (instagramHandle === "@") instagramHandle = "";
+    }
     try {
       caption = await generateComedianCaption(headliner.name, venue, date, instagramHandle, research);
       const captionPath = path.join(COMEDIANS_DIR, `${postSlug}-caption.txt`);
@@ -1732,6 +1739,7 @@ async function main() {
       slug: postSlug,
       wpLink: wpLink,
       caption: caption,
+      instagramHandle: instagramHandle, // "@name" or "" — poster uses this to tag the comedian in the IG photo
       graphicFiles: graphicFiles.map((gf) => gf.pngFile),
     });
   }
