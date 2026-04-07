@@ -110,7 +110,9 @@ async function main() {
       }, docHeight);
       await new Promise((r) => setTimeout(r, 800));
 
-      // Teaser 1: Top of the page (hero area + intro)
+      // Teaser 1: Top of the page (hero area + intro).
+      // We intentionally only capture ONE teaser — sharing a second screenshot
+      // of the article body would give away too much of the post on Instagram.
       const teaser1Path = path.join(IMAGES_DIR, `${post.slug}-teaser-1.png`);
       await page.screenshot({
         path: teaser1Path,
@@ -118,23 +120,6 @@ async function main() {
         clip: { x: 0, y: 0, width: 1080, height: 1080 },
       });
       console.log(`    → ${post.slug}-teaser-1.png (top of page)`);
-      totalScreenshots++;
-
-      // Teaser 2: Capture the *middle* of the article body. Puppeteer's
-      // `clip` y is measured from the top of the document, so we pick a
-      // y-offset that lands roughly halfway down the article (clamped so
-      // we never run past the bottom).
-      const teaser2Path = path.join(IMAGES_DIR, `${post.slug}-teaser-2.png`);
-      const clipY = Math.max(
-        0,
-        Math.min(Math.floor(docHeight / 2) - 200, docHeight - 1080)
-      );
-      await page.screenshot({
-        path: teaser2Path,
-        type: "png",
-        clip: { x: 0, y: clipY, width: 1080, height: 1080 },
-      });
-      console.log(`    → ${post.slug}-teaser-2.png (scrolled content)`);
       totalScreenshots++;
 
     } catch (err) {
