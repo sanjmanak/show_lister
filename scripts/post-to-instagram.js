@@ -79,22 +79,47 @@ function graphRequest(method, urlPath, params) {
       },
     };
 
-    const attempt = (retries) => {
+    const attempt = (retries, backoffMs) => {
       const req = https.request(options, (res) => {
         let data = "";
         res.on("data", (chunk) => (data += chunk));
         res.on("end", () => {
           console.log(`  [API] Response status: ${res.statusCode}`);
 
+          // Honor Retry-After header if present (seconds or HTTP date).
+          const retryAfterHeader = res.headers && res.headers["retry-after"];
+          let retryAfterMs = 0;
+          if (retryAfterHeader) {
+            const n = Number(retryAfterHeader);
+            if (!Number.isNaN(n)) {
+              retryAfterMs = n * 1000;
+            } else {
+              const t = Date.parse(retryAfterHeader);
+              if (!Number.isNaN(t)) retryAfterMs = Math.max(0, t - Date.now());
+            }
+          }
+
           try {
             const parsed = JSON.parse(data);
 
+            // 429 Too Many Requests — respect Retry-After, then bail out of
+            // this run entirely (exit 0) so state is NOT advanced and the
+            // next scheduled cron picks up cleanly. We don't loop locally —
+            // Meta's IG publish quota is ~25/day and retrying in-process just
+            // burns job minutes.
+            if (res.statusCode === 429) {
+              const waitSec = retryAfterMs ? Math.round(retryAfterMs / 1000) : "unknown";
+              console.error(`  [API] 429 Rate limited. Retry-After: ${waitSec}s`);
+              return reject(new Error(`RATE_LIMITED:${waitSec}`));
+            }
+
             if (res.statusCode >= 500 && retries > 0) {
+              const delay = retryAfterMs || backoffMs;
               console.log(
-                `  [API] Server error ${res.statusCode} — retrying (${retries} left)…`
+                `  [API] Server error ${res.statusCode} — retrying in ${delay}ms (${retries} left)…`
               );
               console.log(`  [API] Response body: ${data.slice(0, 500)}`);
-              return setTimeout(() => attempt(retries - 1), 3000);
+              return setTimeout(() => attempt(retries - 1, Math.min(backoffMs * 2, 30000)), delay);
             }
 
             if (res.statusCode >= 400) {
@@ -121,9 +146,10 @@ function graphRequest(method, urlPath, params) {
                 console.error(`  FIX: Ensure the image is committed to main and accessible via GitHub Pages.`);
               } else if (errCode === 9007) {
                 console.error(`\n  DIAGNOSIS: Duplicate post — this image/caption may have already been published.`);
-              } else if (errCode === 4) {
-                console.error(`\n  DIAGNOSIS: Rate limit hit.`);
-                console.error(`  FIX: Wait before retrying. Instagram allows ~25 posts per 24 hours.`);
+              } else if (errCode === 4 || errCode === 17 || errCode === 32 || errCode === 613) {
+                console.error(`\n  DIAGNOSIS: Rate limit hit (code ${errCode}).`);
+                console.error(`  FIX: Skipping this run; state will NOT advance. Next cron will retry.`);
+                return reject(new Error(`RATE_LIMITED:code_${errCode}`));
               }
 
               return reject(
@@ -145,8 +171,8 @@ function graphRequest(method, urlPath, params) {
       req.on("error", (err) => {
         console.error(`  [API] Network error: ${err.message}`);
         if (retries > 0) {
-          console.log(`  [API] Retrying (${retries} left)…`);
-          return setTimeout(() => attempt(retries - 1), 3000);
+          console.log(`  [API] Retrying in ${backoffMs}ms (${retries} left)…`);
+          return setTimeout(() => attempt(retries - 1, Math.min(backoffMs * 2, 30000)), backoffMs);
         }
         reject(err);
       });
@@ -155,7 +181,7 @@ function graphRequest(method, urlPath, params) {
       req.end();
     };
 
-    attempt(2);
+    attempt(2, 3000);
   });
 }
 
@@ -167,7 +193,7 @@ function loadState() {
   if (fs.existsSync(STATE_PATH)) {
     return JSON.parse(fs.readFileSync(STATE_PATH, "utf8"));
   }
-  return { posted: [], week_range: null };
+  return { posted: [], week_range: null, manifest_version: null };
 }
 
 function saveState(state) {
@@ -186,6 +212,27 @@ function getNextToPost(manifest, state) {
     );
     state.posted = [];
     state.week_range = manifest.week_range;
+    state.manifest_version = manifest.manifest_version || null;
+  } else if (
+    manifest.manifest_version &&
+    state.manifest_version &&
+    state.manifest_version !== manifest.manifest_version
+  ) {
+    // Same week but manifest was regenerated mid-week. Drop any state
+    // entries whose slugs no longer appear in the manifest — they refer to
+    // comedians we no longer intend to post. Keep entries that still match
+    // so we don't re-post anyone who already went out.
+    const manifestSlugs = new Set(manifest.posts.map((p) => p.slug));
+    const before = state.posted.length;
+    state.posted = state.posted.filter((p) => manifestSlugs.has(p.slug));
+    const dropped = before - state.posted.length;
+    console.log(
+      `Manifest regenerated mid-week (v${state.manifest_version} → v${manifest.manifest_version}). ` +
+        `Pruned ${dropped} stale state entr${dropped === 1 ? "y" : "ies"}.`
+    );
+    state.manifest_version = manifest.manifest_version;
+  } else if (manifest.manifest_version && !state.manifest_version) {
+    state.manifest_version = manifest.manifest_version;
   }
 
   const postedSlugs = new Set(state.posted.map((p) => p.slug));
@@ -669,13 +716,18 @@ async function resolveFacebookPageId() {
     });
     // A Page Access Token returns the Page when you call /me
     // A User Access Token returns the user — check which one we got
-    if (me.name && me.id) {
+    if (me && me.id) {
       FB_PAGE_ID = me.id;
-      console.log(`  Facebook Page: "${me.name}" (ID: ${FB_PAGE_ID})`);
+      console.log(`  Facebook Page: "${me.name || "(unnamed)"}" (ID: ${FB_PAGE_ID})`);
+      return;
     }
+    console.error("  ERROR: /me returned no id — token does not resolve to a Facebook Page.");
+    console.error("  ACTION: Ensure INSTAGRAM_ACCESS_TOKEN is a Page Access Token (not a User token).");
+    console.error("  Facebook posting will be UNAVAILABLE this run; IG posting will continue.");
   } catch (err) {
-    console.log(`  Could not resolve Facebook Page ID — ${err.message}`);
-    console.log(`  Facebook posting will be skipped.`);
+    console.error(`  ERROR: Could not resolve Facebook Page ID — ${err.message}`);
+    console.error("  ACTION: Regenerate a long-lived Page Access Token and update INSTAGRAM_ACCESS_TOKEN.");
+    console.error("  Facebook posting will be UNAVAILABLE this run; IG posting will continue.");
   }
 }
 
@@ -801,19 +853,29 @@ async function main() {
   console.log(`${"=".repeat(60)}`);
 }
 
+// Shared exit path. Without this the process has been observed to hang for
+// over an hour after main() completes — lingering HTTP/1.1 keep-alive sockets
+// to graph.facebook.com (and/or any other unref'd handle) keep the event loop
+// alive, GitHub Actions eventually cancels the step, the state-commit step
+// never runs, and the next scheduled run reposts the same comedian to all
+// four channels. Destroy the agent, give Node a tick to tear down sockets,
+// then exit. Used by BOTH success and error paths so state is never left
+// uncommitted because of a keep-alive leak on the error branch.
+function exit(code) {
+  try { https.globalAgent.destroy(); } catch {}
+  // Unref any remaining handles and give destroy() a beat to complete.
+  setTimeout(() => process.exit(code), 150).unref();
+}
+
 main()
-  .then(() => {
-    // Force-exit on success. Without this the process has been observed to
-    // hang for over an hour after main() completes — lingering HTTP/1.1
-    // keep-alive sockets to graph.facebook.com (and/or any other unref'd
-    // handle) keep the event loop alive, GitHub Actions eventually cancels
-    // the step, the state-commit step never runs, and the next scheduled
-    // run reposts the same comedian to all four channels. See PR that
-    // introduced this fix for run logs.
-    try { https.globalAgent.destroy(); } catch {}
-    process.exit(0);
-  })
+  .then(() => exit(0))
   .catch((err) => {
+    // Rate-limit: exit 0 so the workflow doesn't flag red; state was NOT
+    // advanced, so the next cron will retry the same comedian cleanly.
+    if (err && typeof err.message === "string" && err.message.startsWith("RATE_LIMITED")) {
+      console.error(`\nRATE LIMITED — ${err.message}. Exiting 0; state not advanced.`);
+      return exit(0);
+    }
     console.error(`\n${"!".repeat(60)}`);
     console.error(`FATAL ERROR: ${err.message}`);
     console.error(`${"!".repeat(60)}`);
@@ -825,6 +887,5 @@ main()
     console.error(`  2. Image not found → ensure branch is merged to main and GitHub Pages deployed`);
     console.error(`  3. Permission error → check instagram_content_publish is granted to the app`);
     console.error(`  4. Rate limit → wait and retry (max ~25 posts per 24 hours)`);
-    try { https.globalAgent.destroy(); } catch {}
-    process.exit(1);
+    exit(1);
   });
