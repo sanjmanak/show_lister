@@ -13,12 +13,23 @@ on:
 permissions:
   contents: write
 
+# Prevent manual reruns from racing the Mon cron — both publish to WordPress
+# and both commit to blog/comedians/. Slug-dedup keeps WP safe; this keeps git
+# clean.
+concurrency:
+  group: generate-comedian-posts
+  cancel-in-progress: false
+
 env:
   TZ: America/Chicago
 
 jobs:
   generate-comedian-posts:
     runs-on: ubuntu-latest
+    # Typical run is 3–8 min; cap at 45 to allow for ~6 comedians × 3 OpenAI
+    # calls + Puppeteer screenshots without leaving a hung process running for
+    # hours.
+    timeout-minutes: 45
 
     steps:
       - name: Checkout repository
@@ -108,3 +119,21 @@ jobs:
           from: ${{ secrets.SMTP_FROM }}
           body: ${{ env.EMAIL_BODY }}
           attachments: ${{ steps.attachments.outputs.files }}
+
+      - name: Notify on failure
+        if: failure() && secrets.SMTP_SERVER != ''
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "[Comedy Houston] generate-comedian-posts FAILED"
+          to: ${{ secrets.NOTIFY_EMAIL }}
+          from: ${{ secrets.SMTP_FROM }}
+          body: |
+            The generate-comedian-posts workflow failed.
+            Per-comedian posts may be missing for this week — the IG poster
+            will have nothing new to publish until this is fixed.
+
+            Run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}

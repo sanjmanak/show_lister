@@ -16,12 +16,21 @@ on:
 permissions:
   contents: write
 
+# Prevent a manual run from racing the Mon/Thu cron — both call WordPress and
+# both push to main. f6dabb1's slug-dedup keeps WP safe; this keeps git safe.
+concurrency:
+  group: generate-blog-post
+  cancel-in-progress: false
+
 env:
   TZ: America/Chicago
 
 jobs:
   generate-blog:
     runs-on: ubuntu-latest
+    # Cap so a hung OpenAI Responses (web search) call or hung Puppeteer
+    # render can't burn the default 6h timeout.
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repository
@@ -124,3 +133,19 @@ jobs:
 
             Blog post: https://sanjmanak.github.io/show_lister/blog/
           attachments: blog/weekly-hero.png
+
+      - name: Notify on failure
+        if: failure() && secrets.SMTP_SERVER != ''
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "[Comedy Houston] generate-blog-post FAILED"
+          to: ${{ secrets.NOTIFY_EMAIL }}
+          from: ${{ secrets.SMTP_FROM }}
+          body: |
+            The generate-blog-post workflow failed.
+
+            Run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}

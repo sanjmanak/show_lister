@@ -16,12 +16,20 @@ on:
 permissions:
   contents: write
 
+# Prevent two scheduled/manual runs from racing on events.json + index.html.
+concurrency:
+  group: update-events
+  cancel-in-progress: false
+
 env:
   TZ: America/Chicago
 
 jobs:
   fetch-and-deploy:
     runs-on: ubuntu-latest
+    # Fetch normally takes <30s; cap at 15 min so a hung HTTPS socket can never
+    # burn the default 6h job timeout.
+    timeout-minutes: 15
 
     steps:
       - name: Checkout repository
@@ -50,3 +58,19 @@ jobs:
             git commit -m "Update events data — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
             git push
           fi
+
+      - name: Notify on failure
+        if: failure() && secrets.SMTP_SERVER != ''
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "[Comedy Houston] update-events FAILED"
+          to: ${{ secrets.NOTIFY_EMAIL }}
+          from: ${{ secrets.SMTP_FROM }}
+          body: |
+            The update-events workflow failed.
+
+            Run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
