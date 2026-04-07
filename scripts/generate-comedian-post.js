@@ -1368,8 +1368,25 @@ function wpRequest(method, urlPath, body) {
       res.on("data", (chunk) => (data += chunk));
       res.on("end", () => {
         if (res.statusCode >= 400) {
+          // Surface as much detail as possible — status, a relevant subset of
+          // headers, and the first 1500 chars of the body. This makes it
+          // possible to tell apart "WP rejected the credentials" (401 with a
+          // rest_not_logged_in code) from "Hostinger/LiteSpeed blocked us"
+          // (401/403 with HTML body, no JSON code) from "WP rejected the
+          // payload" (400 with rest_invalid_param) from rate-limiting (429).
+          const relevantHeaders = {
+            "content-type": res.headers["content-type"],
+            "www-authenticate": res.headers["www-authenticate"],
+            "x-litespeed-cache": res.headers["x-litespeed-cache"],
+            "cf-ray": res.headers["cf-ray"],
+            server: res.headers["server"],
+          };
           return reject(
-            new Error(`WordPress API ${res.statusCode}: ${data.slice(0, 500)}`)
+            new Error(
+              `WordPress API ${res.statusCode} ${method} ${urlPath} | ` +
+              `headers=${JSON.stringify(relevantHeaders)} | ` +
+              `body=${data.slice(0, 1500)}`
+            )
           );
         }
         try {
@@ -1384,6 +1401,33 @@ function wpRequest(method, urlPath, body) {
     if (bodyStr) req.write(bodyStr);
     req.end();
   });
+}
+
+/**
+ * Preflight WordPress auth check. Calls /wp-json/wp/v2/users/me once before
+ * we start publishing posts. If the credentials, IP, or host firewall are
+ * broken, we want to find out *now* with a loud, specific error — not after
+ * silently writing 25 posts to GitHub Pages only.
+ *
+ * Returns true on success, false on failure (caller decides whether to
+ * proceed). On failure, the underlying detailed error is logged.
+ */
+async function wpPreflight() {
+  console.log("Preflight: checking WordPress auth via /wp-json/wp/v2/users/me ...");
+  try {
+    const me = await wpRequest("GET", "/wp-json/wp/v2/users/me?context=edit", null);
+    console.log(`  WP auth OK — authenticated as "${me.name}" (id=${me.id}, slug=${me.slug})`);
+    return true;
+  } catch (err) {
+    console.error("  WP PREFLIGHT FAILED — publishing will be skipped this run.");
+    console.error(`  ${err.message}`);
+    console.error("  Common causes:");
+    console.error("    • WP_APP_PASSWORD secret in GitHub is stale (regenerate in WP → Users → Application Passwords)");
+    console.error("    • WP_APP_USER does not match the user the password belongs to");
+    console.error("    • Hostinger / LiteSpeed / security plugin is blocking the GitHub Actions runner IP (check hPanel security logs)");
+    console.error("    • LiteSpeed Cache is stripping the Authorization header (exclude /wp-json/ from cache)");
+    return false;
+  }
 }
 
 /** Download an image from a URL and return the raw Buffer + content type. */
@@ -1604,6 +1648,17 @@ async function main() {
   const weekRange = formatWeekRange(monday, sunday);
   console.log(`Week range: ${weekRange}`);
   console.log("");
+
+  // Preflight WordPress auth once, up front. If it fails, we still generate
+  // posts to GitHub Pages but we skip publishing — and the failure reason is
+  // logged loudly so it's the first thing visible in the workflow log.
+  let wpReady = WP_ENABLED;
+  if (WP_ENABLED) {
+    wpReady = await wpPreflight();
+    if (!wpReady) {
+      console.warn("WordPress publishing DISABLED for this run due to preflight failure.\n");
+    }
+  }
 
   // Ensure output directory exists
   if (!fs.existsSync(COMEDIANS_DIR)) {
@@ -1883,8 +1938,8 @@ async function main() {
 
     let wpLink = "";
 
-    // Publish to WordPress if configured
-    if (WP_ENABLED) {
+    // Publish to WordPress if configured AND preflight passed
+    if (wpReady) {
       try {
         wpLink = await publishToWordPress(
           headliner.name, venue, date, postSlug, finalContent, eventImageUrl

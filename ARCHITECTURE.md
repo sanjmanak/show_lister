@@ -192,7 +192,7 @@ const LAST_UPDATED = "";       // → replaced with ISO timestamp
 
 2. **Identifies headliners** — prefers `blog/top-comedians.json`, a handoff file written by `generate-blog-post.js` earlier on Monday. This guarantees the weekly roundup and the per-comedian posts cover the exact same comedians and saves one OpenAI call. Falls back to its own OpenAI call (with JSON-array extraction as a second-chance parser) only if the handoff file is missing or stale (different `week_range`).
 
-3. **For each headliner, runs a 3-call pipeline:**
+3. **For each headliner, runs a 4-call pipeline:**
 
    **Call 1 — Deep Research** (OpenAI Responses API with web search):
    - Full bio, hometown, career arc
@@ -200,21 +200,31 @@ const LAST_UPDATED = "";       // → replaced with ISO timestamp
    - Podcast appearances, TV spots, viral moments
    - Comedy style description
    - Instagram handle
+   - **`recent_hook`** — the freshest piece of news about this comedian (last 90 days ideally), with verbatim quote, publication, URL, and date. The blog post is built around this hook so the lede is fresh, not the same Daily-Show / Netflix-special default that every other write-up uses.
+   - **`unverifiable_claims_to_avoid`** — explicit do-not-use list of "facts" surfaced in low-quality sources. The writer is told these are forbidden, which structurally blocks credit hallucinations.
    - **Source URLs** (Wikipedia, IMDB, Netflix, YouTube, interviews) — 3-6 verified URLs per comedian
 
    **Call 2 — Write the Blog Post** (OpenAI Chat Completions):
-   - 600-word publication-quality article with strict editorial guidelines
+   - **400-word hard ceiling** (down from 600 — shorter forces the model to cut padding, which is where most AI-voice lives)
+   - System prompt includes a **voice anchor**: a real human-written paragraph in the target register, with annotation explaining what it does. Models imitate provided samples far better than they follow style descriptions.
+   - **Absolute fact rules**: the writer can ONLY state facts present in the research JSON. No "reasonable inferences," no paraphrased quotes, no credits not in the verified list.
    - SEO title with comedian name + city + venue
-   - Sections: hook, credentials, comedy style, live experience, event details, CTA
-   - **3-4 source hyperlinks** woven naturally into the text (linking to Wikipedia, specials, interviews)
-   - Banned phrase list prevents AI slop ("don't miss," "side-splitting," etc.)
+   - **Banned structures** (separate from banned phrases): no "X isn't just Y, it's Z," no rhetorical questions, no atmospheric openings ("in the dim glow of"), no closing reassurance ("boundaries blur"), no metaphor stacking, no tricolons, the literal word "scalpel" forbidden.
+   - **3-4 source hyperlinks** woven naturally into the text
    - Comedy Houston footer with links to homepage and contact page
 
    **Call 3 — Fact-Check Pass** (OpenAI Chat Completions):
-   - Compares draft against research data
-   - Removes any claim not supported by the research
-   - Strips generic sentences, unverified adjectives, fabricated quotes
+   - Compares draft against research data and **silently removes** any claim not supported by the research (no `[VERIFY]` markers — the post must read as final)
+   - Strips generic sentences, unverified adjectives, fabricated quotes, rhetorical questions, "isn't just" constructions, CTA paragraphs
    - Preserves source hyperlinks and footer
+
+   **Call 4 — Polish Pass** (OpenAI Chat Completions):
+   - Copy-chief style + rhythm tightening on the fact-checked draft
+   - Cannot add new facts — only cuts and rearranges
+   - Enforces 400-word ceiling by cutting the weakest paragraph entirely if over
+   - Same "no editor flags" rule as fact-check
+
+   **Final safety net — `stripEditorMarkers()`**: a regex pass that removes any `[VERIFY]`, `[CHECK]`, `[CITATION NEEDED]`, `[TODO]`, `[CONFIRM]`, `[FACT-CHECK]` tokens that slipped past both LLM passes. The published post is guaranteed to have no bracketed editor notes.
 
 4. **Writes individual HTML files** to `blog/comedians/` — one per comedian
 
@@ -231,7 +241,13 @@ const LAST_UPDATED = "";       // → replaced with ISO timestamp
 | `blog/top-comedians.json` | Headliner handoff written by the weekly blog generator and consumed by this script so both workflows agree on the comedian list |
 
 #### Cost per run:
-~$0.15–0.30 per comedian (3 API calls). Typical weekly run with 3–5 comedians: **$0.50–1.50**.
+~$0.16–0.32 per comedian (4 API calls — research, write, fact-check, polish). Typical weekly run with 3–5 comedians: **$0.55–1.60**.
+
+#### WordPress publishing — preflight & error logging
+
+Before any per-comedian publish runs, `wpPreflight()` calls `GET /wp-json/wp/v2/users/me?context=edit` once. If it fails, WordPress publishing is disabled for the rest of the run and the failure reason is logged loudly at the top of the workflow output (with hints: stale app password, username mismatch, Hostinger/LiteSpeed blocking the runner IP, LiteSpeed stripping the Authorization header). Posts still get written to GitHub Pages so nothing is lost. This replaces the old behavior where a 401 from the first category lookup would silently bail out per-comedian and the only sign of trouble was 25 "Post saved to GitHub Pages only" lines deep in the log.
+
+`wpRequest()` errors now include the HTTP method, path, a relevant subset of response headers (`content-type`, `www-authenticate`, `x-litespeed-cache`, `cf-ray`, `server`), and the first 1500 chars of the response body — enough to distinguish credential failures (`rest_not_logged_in` JSON) from host firewall blocks (HTML body, no JSON code) from payload validation errors (`rest_invalid_param`) from rate-limiting (429).
 
 ---
 
@@ -329,7 +345,7 @@ Logs every ticket click with: timestamp, original URL, final URL (with affiliate
 
 | Channel | Image | Caption | Comedian Tag |
 |---------|-------|---------|-------------|
-| Instagram Feed | **Carousel**: slide 1 = square graphic, slides 2–3 = blog post teaser cards (falls back to single image if no teasers exist) | Full caption + hashtags | Tagged in photo via `user_tags` |
+| Instagram Feed | **Carousel**: slide 1 = square graphic, slide 2 = single blog post teaser (top of post; falls back to a single image if the teaser doesn't exist) | Full caption + hashtags | Tagged in photo via `user_tags` |
 | Instagram Story | Story (1080×1920) | None (API limitation) | Not supported in Stories API |
 | Facebook Page Feed | Square (1080×1080) | Full caption + hashtags | N/A |
 | Facebook Page Story | Story (1080×1920) | None | N/A |
@@ -342,7 +358,7 @@ The Instagram Feed post is the primary channel — if it fails, the run fails an
 
 **Manifest / state reconciliation.** The manifest written by `generate-comedian-post.js` includes a `manifest_version` timestamp. The IG poster compares it against `state.manifest_version`: if the week matches but the version changed (mid-week manifest regeneration), it prunes state entries whose slugs no longer appear in the new manifest so orphaned comedians can't resurface.
 
-**Carousel teasers** are generated by `screenshot-blog-teasers.js` during the Monday comedian post generation workflow. Each comedian gets 2 branded 1080×1080 cards showing excerpts from their blog post. If teaser images don't exist (e.g., older posts), the feed post falls back to a single square image automatically.
+**Carousel teasers** are generated by `screenshot-blog-teasers.js` during the Monday comedian post generation workflow. Each comedian gets **one** 1080×1080 screenshot of the top of their blog post (hero + intro). Sharing a second mid-article shot was giving away too much of the post, so it was removed. If the teaser image doesn't exist (e.g., older posts), the feed post falls back to a single square image automatically.
 
 ---
 
