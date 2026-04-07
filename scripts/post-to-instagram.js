@@ -393,14 +393,25 @@ async function findTeaserImages(slug) {
 }
 
 /**
- * Create a single carousel child container (no caption, no tags).
+ * Create a single carousel child container.
+ *
+ * Meta's Graph API does NOT accept `user_tags` on the carousel parent
+ * (returns 400 / OAuthException 100 / subcode 2207065). Tags must be
+ * attached to the child container at creation time. We tag only slide 1
+ * (the comedian's main image).
  */
-async function createCarouselChild(imageUrl) {
-  const child = await graphRequest("POST", `/${IG_USER_ID}/media`, {
+async function createCarouselChild(imageUrl, handle = null) {
+  const params = {
     image_url: imageUrl,
     is_carousel_item: true,
     access_token: IG_ACCESS_TOKEN,
-  });
+  };
+  if (handle) {
+    params.user_tags = JSON.stringify([
+      { username: handle, x: 0.5, y: 0.5 },
+    ]);
+  }
+  const child = await graphRequest("POST", `/${IG_USER_ID}/media`, params);
   await waitForContainer(child.id);
   return child.id;
 }
@@ -420,16 +431,19 @@ async function postInstagramFeed(post, caption, handle) {
     console.log(`   Found ${teaserUrls.length} teaser(s) — building carousel.`);
     const allImages = [squareUrl, ...teaserUrls];
 
-    // Step 1 — Create child containers for each image
+    // Step 1 — Create child containers for each image. Tag the comedian
+    // on slide 1 only; Meta rejects user_tags on the carousel parent.
     const childIds = [];
     for (let i = 0; i < allImages.length; i++) {
       console.log(`   Creating carousel child ${i + 1}/${allImages.length}…`);
-      const childId = await createCarouselChild(allImages[i]);
+      const childHandle = i === 0 ? handle : null;
+      const childId = await createCarouselChild(allImages[i], childHandle);
       childIds.push(childId);
-      console.log(`   Child ${i + 1}: ${childId}`);
+      console.log(`   Child ${i + 1}: ${childId}${childHandle ? ` (tagged @${childHandle})` : ""}`);
     }
 
-    // Step 2 — Create the carousel container
+    // Step 2 — Create the carousel container (no user_tags here — Meta
+    // rejects them on CAROUSEL_V2 parents).
     console.log("   Creating carousel container…");
     const carouselParams = {
       media_type: "CAROUSEL",
@@ -437,14 +451,6 @@ async function postInstagramFeed(post, caption, handle) {
       children: childIds.join(","),
       access_token: IG_ACCESS_TOKEN,
     };
-
-    // user_tags only supported on the first image in carousels
-    if (handle) {
-      carouselParams.user_tags = JSON.stringify([
-        { username: handle, x: 0.5, y: 0.5 },
-      ]);
-      console.log(`   Tagging: @${handle} (on slide 1)`);
-    }
 
     const carousel = await graphRequest("POST", `/${IG_USER_ID}/media`, carouselParams);
     console.log(`   Carousel container: ${carousel.id}`);
