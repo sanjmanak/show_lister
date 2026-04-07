@@ -1464,8 +1464,35 @@ async function publishToWordPress(comedianName, venue, date, slug, htmlContent, 
     console.warn("    Warning: 'comedy-shows' category not found — posting as Uncategorized.");
   }
 
-  const post = await wpRequest("POST", "/wp-json/wp/v2/posts", postData);
-  console.log(`    Published: ${post.link}`);
+  // If a per-comedian post with this slug already exists (e.g. the workflow
+  // is being re-run on the same Monday), update it in place instead of
+  // creating a duplicate. WordPress's REST API does NOT dedupe by slug — it
+  // would auto-suffix the new slug to "...-2" and leave the old post live,
+  // breaking SEO and any social links that already point at the original.
+  // (Mirrors the fix applied to the weekly roundup in f6dabb1.)
+  let existingPost = null;
+  try {
+    const found = await wpRequest(
+      "GET",
+      `/wp-json/wp/v2/posts?slug=${encodeURIComponent(slug)}&status=publish,draft,future,private`,
+      null
+    );
+    if (Array.isArray(found) && found.length > 0) {
+      existingPost = found[0];
+    }
+  } catch (err) {
+    console.warn(`    Slug lookup failed (will create new post): ${err.message}`);
+  }
+
+  let post;
+  if (existingPost) {
+    console.log(`    Existing post found (ID ${existingPost.id}) — updating in place.`);
+    post = await wpRequest("POST", `/wp-json/wp/v2/posts/${existingPost.id}`, postData);
+    console.log(`    Updated: ${post.link}`);
+  } else {
+    post = await wpRequest("POST", "/wp-json/wp/v2/posts", postData);
+    console.log(`    Published: ${post.link}`);
+  }
   return post.link;
 }
 
@@ -1527,10 +1554,49 @@ async function main() {
   // Step 0: Identify headliners
   console.log("Step 0: Identifying headliners...");
   let headliners = [];
+
+  // Prefer the handoff file written by generate-blog-post.js earlier on
+  // Monday — this guarantees the weekly roundup and the per-comedian posts
+  // cover the exact same comedians (and saves one OpenAI call).
+  const handoffPath = path.join(__dirname, "..", "blog", "top-comedians.json");
+  if (fs.existsSync(handoffPath)) {
+    try {
+      const handoff = JSON.parse(fs.readFileSync(handoffPath, "utf8"));
+      if (
+        handoff &&
+        handoff.week_range === weekRange &&
+        Array.isArray(handoff.comedians) &&
+        handoff.comedians.length > 0
+      ) {
+        headliners = handoff.comedians.slice(0, 5);
+        console.log(
+          `Using ${headliners.length} headliner(s) from blog handoff: ${headliners.map((c) => c.name).join(", ")}`
+        );
+        console.log("");
+      } else {
+        console.log("Handoff file exists but week_range doesn't match — falling back to OpenAI.");
+      }
+    } catch (e) {
+      console.warn(`Could not read handoff file: ${e.message}`);
+    }
+  }
+
+  if (headliners.length > 0) {
+    // Skip the OpenAI call entirely; headliners came from the handoff.
+  } else
   try {
     const raw = await identifyTopComedians(events);
     const jsonStr = raw.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
-    headliners = JSON.parse(jsonStr);
+    try {
+      headliners = JSON.parse(jsonStr);
+    } catch (parseErr) {
+      // OpenAI sometimes wraps or prefixes the JSON with prose. Fall back to
+      // extracting the first top-level JSON array before giving up.
+      console.warn(`  JSON parse failed: ${parseErr.message}. Attempting array extraction…`);
+      const match = jsonStr.match(/\[[\s\S]*\]/);
+      if (!match) throw parseErr;
+      headliners = JSON.parse(match[0]);
+    }
     // Deduplicate by name
     const seen = new Set();
     headliners = headliners.filter((c) => {
@@ -1751,8 +1817,12 @@ async function main() {
     console.log(`Wrote: blog/comedians/index.html`);
 
     // Write manifest JSON (used by Phase 2 WordPress publishing)
+    // `manifest_version` is a monotonic stamp that changes every time this
+    // script runs — the IG poster uses it to detect mid-week manifest
+    // regeneration and prune state entries whose slugs no longer exist.
     const manifest = {
       generated_at: new Date().toISOString(),
+      manifest_version: Date.now(),
       week_range: weekRange,
       posts: generatedPosts,
     };

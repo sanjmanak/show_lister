@@ -1520,6 +1520,29 @@ async function main() {
     });
     console.log(`Top comedians identified: ${topComedians.map((c) => c.name).join(", ")}`);
     console.log("");
+
+    // Persist the selection so generate-comedian-post.js can consume it and
+    // guarantee both workflows write about the same headliners (instead of
+    // each making an independent OpenAI call and disagreeing).
+    try {
+      const handoffPath = path.join(BLOG_DIR, "top-comedians.json");
+      fs.writeFileSync(
+        handoffPath,
+        JSON.stringify(
+          {
+            generated_at: new Date().toISOString(),
+            week_range: weekRange,
+            comedians: topComedians.map((c) => ({ name: c.name, show: c.show })),
+          },
+          null,
+          2
+        )
+      );
+      console.log(`Wrote headliner handoff → ${handoffPath}`);
+      console.log("");
+    } catch (e) {
+      console.warn(`Could not write top-comedians.json handoff: ${e.message}`);
+    }
   } catch (err) {
     console.warn(`Warning: Could not identify top comedians: ${err.message}`);
     console.log("");
@@ -1714,8 +1737,16 @@ async function main() {
             }
           } catch (_) {}
         } catch (err) {
-          console.warn(`  Hero image upload failed: ${err.message}`);
+          // The hero image is the anchor visual for the weekly roundup — if
+          // it fails to upload, abort the WP publish rather than silently
+          // publishing an image-less post. The next scheduled run (or manual
+          // re-trigger) will retry cleanly thanks to the slug-dedupe fix.
+          console.error(`  ERROR: Hero image upload failed: ${err.message}`);
+          throw new Error(`Weekly roundup aborted: hero image upload failed (${err.message})`);
         }
+      } else {
+        console.error(`  ERROR: weekly-hero.png not found at ${heroPngPath}`);
+        throw new Error("Weekly roundup aborted: weekly-hero.png missing");
       }
 
       // Upload 1-2 comedian headshots inline
