@@ -267,6 +267,11 @@ function validateImageUrl(url) {
   return new Promise((resolve) => {
     if (!url || typeof url !== "string") return resolve(false);
     try { const p = new URL(url); if (!p.protocol.startsWith("http")) return resolve(false); } catch (_) { return resolve(false); }
+    // Known placeholder/avatar paths that pass content-type checks but render
+    // as generic gray silhouettes (e.g. allevents.in's upload-temp directory
+    // serves a default profile.png when the user never uploaded a real photo).
+    const lower = url.toLowerCase();
+    if (lower.includes("allevents.in/transup")) return resolve(false);
     const lib = url.startsWith("https") ? https : http;
     const req = lib.request(url, { method: "HEAD", timeout: 5000, headers: { "User-Agent": "ComedyHouston-BlogBot/1.0" } }, (res) => {
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
@@ -274,7 +279,15 @@ function validateImageUrl(url) {
       }
       if (res.statusCode !== 200) return resolve(false);
       const contentType = (res.headers["content-type"] || "").toLowerCase();
-      resolve(contentType.startsWith("image/"));
+      if (!contentType.startsWith("image/")) return resolve(false);
+      // Byte-size floor: real headshots are 20–200KB. Generic avatar
+      // placeholders are typically <5KB. Reject anything ≤8KB so we fall
+      // back to the ticket image instead of rendering a gray silhouette.
+      // If the server doesn't return Content-Length, accept (preserves
+      // current behavior for sources that omit the header).
+      const len = parseInt(res.headers["content-length"] || "0", 10);
+      if (len > 0 && len < 8000) return resolve(false);
+      resolve(true);
     });
     req.on("error", () => resolve(false));
     req.on("timeout", () => { req.destroy(); resolve(false); });
@@ -1871,13 +1884,15 @@ async function updateThisWeekLandingPage(topComedians, weekRange, monday, sunday
   // (which itself has the internal-link footer back to the rest of the week).
   const cardsHtml = topComedians
     .map((c) => {
-      const comedianSlug = c.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-      // Per-comedian posts use {nameSlug}-{venueSlug}-{date} format. We don't
-      // know the exact slug from this script — link to the search page as a
-      // fallback. The roundup post itself is the primary CTA.
-      const img = c.headshotUrl || "";
-      const imgHtml = img
-        ? `<img src="${escapeHTML(img)}" alt="${escapeHTML(c.name)}" loading="lazy" />`
+      // Same fallback chain the weekly hero uses (line 653):
+      //   prefer independent headshot → fall back to event ticket image →
+      //   final fallback to gradient initials placeholder.
+      // Without the c.imageUrl middle step, comedians whose headshot search
+      // failed (most of them, most weeks) all rendered as ugly initials.
+      const raw = c.headshotUrl || c.imageUrl || "";
+      const usable = isUsableImageUrl(raw) ? raw : "";
+      const imgHtml = usable
+        ? `<img src="${escapeHTML(usable)}" alt="${escapeHTML(c.name)}" loading="lazy" />`
         : `<div class="placeholder">${escapeHTML(c.name.split(" ").map((w) => w[0]).join("").slice(0, 2))}</div>`;
       const showLine = c.show ? `<p class="show">${escapeHTML(c.show)}</p>` : "";
       return `

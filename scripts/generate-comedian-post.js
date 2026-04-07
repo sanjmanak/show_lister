@@ -294,6 +294,11 @@ function validateImageUrl(url) {
     } catch (_) {
       return resolve(false);
     }
+    // Reject known placeholder/avatar paths that pass content-type checks
+    // but render as generic gray silhouettes (e.g. allevents.in's upload-temp
+    // dir serves a default profile.png when no real photo was uploaded).
+    const lower = url.toLowerCase();
+    if (lower.includes("allevents.in/transup")) return resolve(false);
     const lib = url.startsWith("https") ? https : http;
     const req = lib.request(url, { method: "HEAD", timeout: 5000, headers: { "User-Agent": "ComedyHouston-BlogBot/1.0" } }, (res) => {
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
@@ -301,7 +306,13 @@ function validateImageUrl(url) {
       }
       if (res.statusCode !== 200) return resolve(false);
       const contentType = (res.headers["content-type"] || "").toLowerCase();
-      resolve(contentType.startsWith("image/"));
+      if (!contentType.startsWith("image/")) return resolve(false);
+      // Real headshots are 20–200KB; placeholder avatars are typically <5KB.
+      // Reject ≤8KB so we fall back to the ticket image instead of rendering
+      // a gray silhouette. Accept if Content-Length is missing.
+      const len = parseInt(res.headers["content-length"] || "0", 10);
+      if (len > 0 && len < 8000) return resolve(false);
+      resolve(true);
     });
     req.on("error", () => resolve(false));
     req.on("timeout", () => { req.destroy(); resolve(false); });
