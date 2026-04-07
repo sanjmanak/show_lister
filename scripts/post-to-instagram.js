@@ -380,7 +380,9 @@ async function waitForContainer(containerId) {
  */
 async function findTeaserImages(slug) {
   const teasers = [];
-  for (let i = 1; i <= 2; i++) {
+  // Only one teaser is generated now (the top-of-page shot). Sharing a
+  // second screenshot of the article body gives away too much of the post.
+  for (let i = 1; i <= 1; i++) {
     const url = `${IMAGES_BASE_URL}/${slug}-teaser-${i}.png`;
     try {
       await verifyImageUrl(url);
