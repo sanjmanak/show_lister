@@ -788,6 +788,47 @@ async function main() {
     process.exit(1);
   }
 
+  // Token expiry early-warning. Long-lived Page Access Tokens last ~60 days
+  // and silently stop working when they expire — that's the most common
+  // "why is nothing posting?" outage. Use debug_token to read the actual
+  // expiry timestamp; warn at <14 days, FAIL the workflow at <7 days so the
+  // notify-on-failure email step fires and alerts a human in time to refresh.
+  try {
+    const debug = await graphRequest("GET", "/debug_token", {
+      input_token: IG_ACCESS_TOKEN,
+      access_token: IG_ACCESS_TOKEN,
+    });
+    const data = debug && debug.data;
+    const expiresAt = data && data.expires_at; // unix seconds; 0 = never expires
+    if (expiresAt && expiresAt > 0) {
+      const daysLeft = Math.floor((expiresAt * 1000 - Date.now()) / 86400000);
+      const expiryDate = new Date(expiresAt * 1000).toISOString().slice(0, 10);
+      console.log(`  Token expires: ${expiryDate} (${daysLeft} days remaining)`);
+      if (daysLeft < 7) {
+        console.error(`\n╔════════════════════════════════════════════════════════════╗`);
+        console.error(`║  TOKEN EXPIRES IN ${daysLeft} DAYS — REFRESH IMMEDIATELY        `);
+        console.error(`╠════════════════════════════════════════════════════════════╣`);
+        console.error(`║  1. Open https://developers.facebook.com/tools/explorer    ║`);
+        console.error(`║  2. Select your app, generate a long-lived Page token      ║`);
+        console.error(`║  3. Update the INSTAGRAM_ACCESS_TOKEN GitHub secret        ║`);
+        console.error(`║  4. Re-run this workflow                                   ║`);
+        console.error(`╚════════════════════════════════════════════════════════════╝`);
+        // Failing here triggers the workflow's notify-on-failure email step
+        // BEFORE the token actually expires. The IG post for this run is
+        // sacrificed in exchange for not silently breaking for the next week.
+        process.exit(1);
+      } else if (daysLeft < 14) {
+        console.warn(`  ⚠ WARNING: Token expires in ${daysLeft} days — refresh soon to avoid outage.`);
+      }
+    } else {
+      console.log("  Token has no expiry (or never-expires user token).");
+    }
+  } catch (err) {
+    // Don't fail the run on debug_token errors — the validation call above
+    // already proved the token works for the actual API surface we use.
+    console.warn(`  Could not check token expiry (non-fatal): ${err.message}`);
+  }
+
   // Resolve Facebook Page ID (for FB feed + FB stories)
   await resolveFacebookPageId();
 
