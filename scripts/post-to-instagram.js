@@ -300,7 +300,13 @@ function resolveHandle(post, caption) {
 
 /**
  * HEAD-request an image URL to verify it's publicly accessible.
+ *
+ * 15s cap — GitHub Pages CDN normally answers HEAD in <1s. Anything longer
+ * is a stalled socket; without this, a hung CDN would burn the 5-minute
+ * per-channel timeout and block the whole IG run.
  */
+const VERIFY_IMAGE_TIMEOUT_MS = 15_000;
+
 function verifyImageUrl(imageUrl) {
   return new Promise((resolve, reject) => {
     const url = new URL(imageUrl);
@@ -323,6 +329,11 @@ function verifyImageUrl(imageUrl) {
         }
       }
     );
+    req.setTimeout(VERIFY_IMAGE_TIMEOUT_MS, () => {
+      req.destroy(
+        new Error(`verifyImageUrl timed out after ${VERIFY_IMAGE_TIMEOUT_MS}ms: ${imageUrl}`)
+      );
+    });
     req.on("error", (err) => {
       reject(new Error(`Cannot reach image URL: ${err.message}`));
     });

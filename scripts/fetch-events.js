@@ -41,6 +41,12 @@ const TEMPLATE_PATH = path.join(OUTPUT_DIR, "index.html");
 // HTTP helper with retries
 // ---------------------------------------------------------------------------
 
+// 30s per-call cap. Ticketmaster / Eventbrite normally respond in <2s; anything
+// past 30s is a stalled socket and will burn the 15-min job timeout if we let
+// it. Applied via req.setTimeout() so it fires even after the connection has
+// been established (socket read stalls, not just connect stalls).
+const FETCH_TIMEOUT_MS = 30_000;
+
 function fetchJSON(url, headers = {}, retries = 3) {
   return new Promise((resolve, reject) => {
     const mod = url.startsWith("https") ? https : http;
@@ -67,6 +73,9 @@ function fetchJSON(url, headers = {}, retries = 3) {
           reject(new Error(`JSON parse error for ${url}: ${e.message}`));
         }
       });
+    });
+    req.setTimeout(FETCH_TIMEOUT_MS, () => {
+      req.destroy(new Error(`Request timed out after ${FETCH_TIMEOUT_MS}ms: ${url}`));
     });
     req.on("error", (err) => {
       if (retries > 0) {
