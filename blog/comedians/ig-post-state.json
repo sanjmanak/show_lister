@@ -35,8 +35,17 @@
       "fbFeedPostId": "1272420024982740",
       "fbStoryPostId": "1625098028613500",
       "postedAt": "2026-04-07T11:07:30.412Z"
+    },
+    {
+      "slug": "andy-huggins-punch-line-houston-2026-04-08",
+      "comedianName": "Andy Huggins",
+      "igFeedMediaId": "17874054327455305",
+      "igStoryMediaId": "18074425964204999",
+      "fbFeedPostId": "1273371481554261",
+      "fbStoryPostId": "968900745826174",
+      "postedAt": "2026-04-08T17:16:11.148Z"
     }
   ],
   "week_range": "April 6 – April 12, 2026",
-  "manifest_version": null
+  "manifest_version": 1775663688888
 }
