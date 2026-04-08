@@ -5,9 +5,25 @@
  * Used in CI after generate-blog-post.js creates the hero creative HTML.
  */
 
-const puppeteer = require("puppeteer");
 const path = require("path");
 const fs = require("fs");
+
+// Puppeteer is a heavy dependency and isn't always installed on a fresh
+// checkout. Give the user a clear, actionable error instead of Node's
+// default "Cannot find module 'puppeteer'" stack trace.
+let puppeteer;
+try {
+  puppeteer = require("puppeteer");
+} catch (err) {
+  console.error(
+    "screenshot-hero.js: puppeteer is not installed.\n" +
+      "  Install it with `npm install puppeteer` (or `npm ci` if the\n" +
+      "  project lockfile already has it pinned). On CI, the workflow\n" +
+      "  step that builds the weekly hero PNG must run `npm install`\n" +
+      "  before invoking this script."
+  );
+  process.exit(1);
+}
 
 const HERO_HTML = path.resolve(__dirname, "../blog/weekly-hero.html");
 const HERO_IMAGE = path.resolve(__dirname, "../blog/weekly-hero.png");
