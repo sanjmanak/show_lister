@@ -128,6 +128,14 @@ function loadThisWeeksEvents() {
 // OpenAI Chat Completions API
 // ---------------------------------------------------------------------------
 
+// Per-request timeouts on OpenAI sockets. Without these a stalled socket
+// hangs forever and burns the 45-minute job timeout, which cancels the
+// commit/email steps downstream. Chat completion typically returns in
+// <30s; web-search Responses calls get a larger budget since the tool
+// latency tail is longer.
+const OPENAI_CHAT_TIMEOUT_MS = 90_000;
+const OPENAI_RESPONSES_TIMEOUT_MS = 120_000;
+
 function callOpenAI(prompt, systemPrompt, temperature) {
   return new Promise((resolve, reject) => {
     const body = JSON.stringify({
@@ -174,6 +182,9 @@ function callOpenAI(prompt, systemPrompt, temperature) {
       });
     });
 
+    req.setTimeout(OPENAI_CHAT_TIMEOUT_MS, () => {
+      req.destroy(new Error(`OpenAI chat request timed out after ${OPENAI_CHAT_TIMEOUT_MS}ms`));
+    });
     req.on("error", (err) => reject(err));
     req.write(body);
     req.end();
@@ -234,6 +245,9 @@ function callOpenAIResponses(input, instructions) {
       });
     });
 
+    req.setTimeout(OPENAI_RESPONSES_TIMEOUT_MS, () => {
+      req.destroy(new Error(`OpenAI Responses request timed out after ${OPENAI_RESPONSES_TIMEOUT_MS}ms`));
+    });
     req.on("error", (err) => reject(err));
     req.write(body);
     req.end();
@@ -1251,31 +1265,49 @@ async function wpPreflight() {
   }
 }
 
-/** Download an image from a URL and return the raw Buffer + content type. */
-function downloadImage(imageUrl) {
+/**
+ * Download an image from a URL and return the raw Buffer + content type.
+ * Follows up to 3 redirects; a misconfigured CDN that loops
+ * 301→301→301 used to recurse indefinitely here because the "up to 3"
+ * comment was never enforced in code. Also attaches a 30s per-request
+ * timeout so a stalled CDN can't burn the job timeout.
+ */
+function downloadImage(imageUrl, redirectsLeft) {
+  if (redirectsLeft === undefined) redirectsLeft = 3;
   return new Promise((resolve, reject) => {
+    if (redirectsLeft < 0) {
+      return reject(new Error("Image download failed: too many redirects"));
+    }
     const parsed = new URL(imageUrl);
     const lib = parsed.protocol === "https:" ? https : http;
 
-    lib.get(imageUrl, { headers: { "User-Agent": "ComedyHouston-BlogBot/1.0" } }, (res) => {
-      // Follow redirects (up to 3)
-      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        return downloadImage(res.headers.location).then(resolve).catch(reject);
-      }
-      if (res.statusCode >= 400) {
-        return reject(new Error(`Image download failed: HTTP ${res.statusCode}`));
-      }
+    const req = lib.get(
+      imageUrl,
+      { headers: { "User-Agent": "ComedyHouston-BlogBot/1.0" } },
+      (res) => {
+        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+          res.resume();
+          return downloadImage(res.headers.location, redirectsLeft - 1).then(resolve).catch(reject);
+        }
+        if (res.statusCode >= 400) {
+          return reject(new Error(`Image download failed: HTTP ${res.statusCode}`));
+        }
 
-      const chunks = [];
-      res.on("data", (chunk) => chunks.push(chunk));
-      res.on("end", () => {
-        resolve({
-          buffer: Buffer.concat(chunks),
-          contentType: res.headers["content-type"] || "image/jpeg",
+        const chunks = [];
+        res.on("data", (chunk) => chunks.push(chunk));
+        res.on("end", () => {
+          resolve({
+            buffer: Buffer.concat(chunks),
+            contentType: res.headers["content-type"] || "image/jpeg",
+          });
         });
-      });
-      res.on("error", reject);
-    }).on("error", reject);
+        res.on("error", reject);
+      }
+    );
+    req.setTimeout(30_000, () => {
+      req.destroy(new Error(`downloadImage timed out after 30000ms: ${imageUrl.slice(0, 80)}`));
+    });
+    req.on("error", reject);
   });
 }
 
