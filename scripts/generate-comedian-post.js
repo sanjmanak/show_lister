@@ -17,12 +17,23 @@
 const https = require("https");
 const fs = require("fs");
 const path = require("path");
+const http = require("http");
+
+// Shared image pipeline — single source of truth for URL blocklists,
+// HEAD validation, real-dimension parsing, and the inverted preference
+// rule that keeps the event image as the floor. See
+// scripts/lib/image-utils.js for the full rationale.
+const imageUtils = require("./lib/image-utils");
+const {
+  findBestHeadshot,
+  evaluateHeadshotCandidate,
+  pickDisplayImage,
+  isUsableImageUrl,
+} = imageUtils;
 
 // ---------------------------------------------------------------------------
 // Config
 // ---------------------------------------------------------------------------
-
-const http = require("http");
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || "";
 const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-4o";
@@ -230,260 +241,13 @@ function callOpenAIResponses(input, instructions) {
 }
 
 // ---------------------------------------------------------------------------
-// Two-stage headshot finder:
+// Two-stage headshot finder — now lives in scripts/lib/image-utils.js
 //   Stage A: OpenAI finds candidate pages (official site, bio, press)
-//   Stage B: Our code fetches pages, extracts image URLs, validates them
+//   Stage B: Shared lib fetches pages, extracts image URLs, runs the
+//            strict-gate pipeline (URL blocklist + HEAD + real-dimensions
+//            + aspect ratio) and returns only candidates that beat the
+//            event image as a quality floor.
 // ---------------------------------------------------------------------------
-
-/** Fetch a URL and return the response body as a string. Follows up to 3 redirects. */
-function fetchPage(url, redirectsLeft) {
-  if (redirectsLeft === undefined) redirectsLeft = 3;
-  return new Promise((resolve) => {
-    if (!url || redirectsLeft < 0) return resolve("");
-    let resolved = false;
-    function done(val) { if (!resolved) { resolved = true; resolve(val); } }
-
-    try {
-      const lib = url.startsWith("https") ? https : http;
-      const req = lib.get(url, { timeout: 8000, headers: { "User-Agent": "ComedyHouston-BlogBot/1.0" } }, (res) => {
-        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-          let next = res.headers.location;
-          if (next.startsWith("/")) {
-            try { next = new URL(next, url).href; } catch (_) { return done(""); }
-          }
-          res.resume();
-          return fetchPage(next, redirectsLeft - 1).then(done).catch(() => done(""));
-        }
-        if (res.statusCode !== 200) {
-          res.resume();
-          return done("");
-        }
-        // Only accept text/html responses
-        const ct = (res.headers["content-type"] || "").toLowerCase();
-        if (!ct.includes("text/html") && !ct.includes("text/plain") && !ct.includes("application/xhtml")) {
-          res.resume();
-          return done("");
-        }
-        let data = "";
-        res.setEncoding("utf8");
-        res.on("data", (chunk) => {
-          data += chunk;
-          if (data.length > 200000) {
-            res.destroy();
-            done(data);
-          }
-        });
-        res.on("end", () => done(data));
-        res.on("error", () => done(data || ""));
-      });
-      req.on("error", () => done(""));
-      req.on("timeout", () => { req.destroy(); done(""); });
-    } catch (_) {
-      done("");
-    }
-  });
-}
-
-/** Validate an image URL with a HEAD request. Returns true if 200 + image/* content-type. */
-function validateImageUrl(url) {
-  return new Promise((resolve) => {
-    if (!url || typeof url !== "string") return resolve(false);
-    try {
-      const parsed = new URL(url);
-      if (!parsed.protocol.startsWith("http")) return resolve(false);
-    } catch (_) {
-      return resolve(false);
-    }
-    // Reject known placeholder/avatar paths that pass content-type checks
-    // but render as generic gray silhouettes (e.g. allevents.in's upload-temp
-    // dir serves a default profile.png when no real photo was uploaded).
-    const lower = url.toLowerCase();
-    if (lower.includes("allevents.in/transup")) return resolve(false);
-    const lib = url.startsWith("https") ? https : http;
-    const req = lib.request(url, { method: "HEAD", timeout: 5000, headers: { "User-Agent": "ComedyHouston-BlogBot/1.0" } }, (res) => {
-      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        return validateImageUrl(res.headers.location).then(resolve);
-      }
-      if (res.statusCode !== 200) return resolve(false);
-      const contentType = (res.headers["content-type"] || "").toLowerCase();
-      if (!contentType.startsWith("image/")) return resolve(false);
-      // Real headshots are 20–200KB; placeholder avatars are typically <5KB.
-      // Reject ≤8KB so we fall back to the ticket image instead of rendering
-      // a gray silhouette. Accept if Content-Length is missing.
-      const len = parseInt(res.headers["content-length"] || "0", 10);
-      if (len > 0 && len < 8000) return resolve(false);
-      resolve(true);
-    });
-    req.on("error", () => resolve(false));
-    req.on("timeout", () => { req.destroy(); resolve(false); });
-    req.end();
-  });
-}
-
-/** Extract candidate image URLs from an HTML page string, prioritizing images matching the comedian's name. */
-function extractImageCandidates(html, baseUrl, comedianName) {
-  const candidates = [];
-  const seen = new Set();
-
-  // Build name fragments for matching (e.g. "Nate Marshall" → ["nate", "marshall", "natemarshall"])
-  const nameFragments = [];
-  if (comedianName) {
-    const parts = comedianName.toLowerCase().replace(/[^a-z\s]/g, "").split(/\s+/).filter(Boolean);
-    nameFragments.push(...parts);
-    if (parts.length > 1) nameFragments.push(parts.join("")); // "natemarshall"
-    // Also add hyphenated and underscored: "nate-marshall", "nate_marshall"
-    if (parts.length > 1) {
-      nameFragments.push(parts.join("-"));
-      nameFragments.push(parts.join("_"));
-    }
-  }
-
-  function nameMatchScore(url, altText) {
-    const check = (url + " " + (altText || "")).toLowerCase();
-    let score = 0;
-    for (const frag of nameFragments) {
-      if (frag.length >= 3 && check.includes(frag)) score++;
-    }
-    return score;
-  }
-
-  // Reject URLs that look like site chrome, not comedian photos
-  const rejectPatterns = [
-    "favicon", "logo", "icon", "1x1", "pixel", "tracking", "badge",
-    "button", "banner", "sprite", "data:image", "avatar", "widget",
-    "footer", "header", "nav-", "menu", "social", "share", "arrow",
-    "close", "search", "cart", "checkout", "payment", "ad-", "ads/",
-    "analytics", "placeholder", ".svg", ".gif",
-    // Reject event/venue generic images
-    "open-mic", "openmic", "open_mic", "openmicnight",
-    "flyer", "poster", "event-", "events/", "venue",
-    "microphone", "neon", "stage-", "crowd", "audience",
-    "background", "bg-", "bg_", "hero-bg", "pattern",
-    "default", "no-image", "noimage", "coming-soon",
-    "ticket", "buy-ticket", "calendar"
-  ];
-
-  function addCandidate(raw, basePriority, altText) {
-    if (!raw || typeof raw !== "string") return;
-    let url = raw.trim();
-    // Resolve relative URLs
-    if (url.startsWith("//")) url = "https:" + url;
-    else if (url.startsWith("/")) {
-      try { url = new URL(url, baseUrl).href; } catch (_) { return; }
-    }
-    if (!url.startsWith("http")) return;
-    const lower = url.toLowerCase();
-    if (rejectPatterns.some((p) => lower.includes(p))) return;
-    // Also reject based on alt text content
-    const altLower = (altText || "").toLowerCase();
-    if (altLower && ["open mic", "logo", "venue", "banner", "ticket", "calendar", "event"].some((p) => altLower.includes(p))) return;
-    if (seen.has(url)) return;
-    seen.add(url);
-
-    // Boost priority if the URL or alt text contains the comedian's name
-    const nameBonus = nameMatchScore(url, altText);
-    // Lower priority number = better; name match gives a big boost
-    const priority = nameBonus > 0 ? Math.max(0, basePriority - nameBonus * 3) : basePriority;
-    candidates.push({ url, priority, nameBonus });
-  }
-
-  // Priority 1: og:image (most reliable for headshots)
-  const ogMatch = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i)
-    || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
-  if (ogMatch) addCandidate(ogMatch[1], 2);
-
-  // Priority 2: twitter:image
-  const twMatch = html.match(/<meta[^>]+(?:name|property)=["']twitter:image["'][^>]+content=["']([^"']+)["']/i)
-    || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+(?:name|property)=["']twitter:image["']/i);
-  if (twMatch) addCandidate(twMatch[1], 3);
-
-  // Priority 3: JSON-LD image
-  const jsonLdMatch = html.match(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi);
-  if (jsonLdMatch) {
-    for (const block of jsonLdMatch) {
-      const inner = block.replace(/<script[^>]*>/i, "").replace(/<\/script>/i, "");
-      try {
-        const ld = JSON.parse(inner);
-        const img = ld.image || (ld["@graph"] && ld["@graph"].find(n => n.image));
-        if (typeof img === "string") addCandidate(img, 4);
-        else if (img && typeof img.url === "string") addCandidate(img.url, 4);
-      } catch (_) {}
-    }
-  }
-
-  // Priority 4-6: <img> tags — extract src and alt text
-  const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi;
-  let imgMatch;
-  while ((imgMatch = imgRegex.exec(html)) !== null) {
-    const src = imgMatch[1];
-    const tag = imgMatch[0];
-    // Extract alt text for name matching
-    const altMatch = tag.match(/alt=["']([^"']*?)["']/i);
-    const altText = altMatch ? altMatch[1] : "";
-    const widthMatch = tag.match(/width=["']?(\d+)/i);
-    const width = widthMatch ? parseInt(widthMatch[1]) : 0;
-    if (width >= 300 || !widthMatch) {
-      addCandidate(src, width >= 300 ? 5 : 7, altText);
-    }
-  }
-
-  // Priority 5: srcset images
-  const srcsetRegex = /srcset=["']([^"']+)["']/gi;
-  let srcsetMatch;
-  while ((srcsetMatch = srcsetRegex.exec(html)) !== null) {
-    const parts = srcsetMatch[1].split(",");
-    for (const part of parts) {
-      const src = part.trim().split(/\s+/)[0];
-      addCandidate(src, 6);
-    }
-  }
-
-  // Sort: name-matched images first, then by priority
-  candidates.sort((a, b) => {
-    // Images with name match always win
-    if (a.nameBonus > 0 && b.nameBonus === 0) return -1;
-    if (b.nameBonus > 0 && a.nameBonus === 0) return 1;
-    return a.priority - b.priority;
-  });
-  return candidates.map((c) => c.url);
-}
-
-/**
- * Given candidate page URLs from research, fetch each page, extract images,
- * validate them, and return the first working image URL (or null).
- */
-async function findBestHeadshot(pageUrls, comedianName) {
-  for (const pageUrl of pageUrls) {
-    try {
-      console.log(`    Fetching page: ${pageUrl}`);
-      const html = await fetchPage(pageUrl);
-      if (!html) {
-        console.log("      Page fetch failed, skipping.");
-        continue;
-      }
-
-      const candidates = extractImageCandidates(html, pageUrl, comedianName);
-      console.log(`      Found ${candidates.length} image candidate(s).`);
-
-      // Try top 5 candidates
-      for (const imgUrl of candidates.slice(0, 5)) {
-        try {
-          const valid = await validateImageUrl(imgUrl);
-          if (valid) {
-            console.log(`      Validated: ${imgUrl}`);
-            return imgUrl;
-          }
-        } catch (valErr) {
-          console.log(`      Validation error for ${imgUrl}: ${valErr.message}`);
-        }
-      }
-      console.log("      No valid images from this page.");
-    } catch (err) {
-      console.log(`      Error processing ${pageUrl}: ${err.message}`);
-    }
-  }
-  return null;
-}
 
 // ---------------------------------------------------------------------------
 // Step 0: Identify headliners (reuses existing pattern)
@@ -1861,30 +1625,57 @@ async function main() {
       research = JSON.stringify({ full_name: headliner.name, note: "Research unavailable" });
     }
 
-    // Two-stage headshot finder:
-    //   Stage A: Extract candidate page URLs from research (OpenAI found these)
-    //   Stage B: Fetch pages, extract og:image / <img> tags, validate
-    // graphicImageUrl = best image for Instagram graphics (prefer clean headshot)
-    // eventImageUrl = original Ticketmaster/Eventbrite image (used for WordPress/blog — consistent aspect ratio)
+    // Image selection (inverted preference):
+    //
+    //   1. Event image (Ticketmaster/Eventbrite) is the FLOOR.
+    //   2. If the blog-post handoff already picked a displayImage for this
+    //      comedian via the strict gate, reuse it — no re-scrape, guaranteed
+    //      visual consistency with the weekly hero.
+    //   3. Otherwise try to upgrade via headshot scrape + strict gate.
+    //
+    // graphicImageUrl = what we render into the Instagram graphics (square,
+    // portrait, story). It MUST be an http URL, not a data URI, because the
+    // headless screenshot reads it over HTTP.
     let graphicImageUrl = eventImageUrl;
-    try {
-      const cleanResearch = research.replace(/^```json\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
-      const researchObj = JSON.parse(cleanResearch);
-      const pageUrls = researchObj.headshot_page_urls || [];
-      if (pageUrls.length > 0) {
-        console.log(`  Found ${pageUrls.length} candidate page(s) for headshot extraction...`);
-        const headshot = await findBestHeadshot(pageUrls, headliner.name);
-        if (headshot) {
-          console.log(`  Using extracted headshot for graphics: ${headshot}`);
-          graphicImageUrl = headshot;
+
+    // Look up the pre-validated handoff pick (if any) for this headliner.
+    const handoffPick = (headliner.displayImage && !headliner.displayImage.startsWith("data:"))
+      ? headliner.displayImage
+      : null;
+    if (handoffPick) {
+      console.log(`  Handoff: using pre-validated displayImage (source=${headliner.imageSource || "unknown"}).`);
+      graphicImageUrl = handoffPick;
+    } else {
+      // Fall back to scraping. This path runs when the comedian was
+      // identified by generate-comedian-post.js's own OpenAI call (no
+      // handoff file, or a week_range mismatch). Reuse the shared
+      // strict-gate pipeline — same quality bar as the weekly hero.
+      try {
+        const cleanResearch = research.replace(/^```json\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
+        const researchObj = JSON.parse(cleanResearch);
+        const pageUrls = researchObj.headshot_page_urls || [];
+        if (pageUrls.length > 0) {
+          console.log(`  Found ${pageUrls.length} candidate page(s) — running strict-gate headshot scrape...`);
+          const headshot = await findBestHeadshot(pageUrls, headliner.name);
+          if (headshot) {
+            console.log(`  Strict-gate accepted scraped headshot: ${headshot}`);
+            graphicImageUrl = headshot;
+          } else {
+            console.log("  No scraped candidate beat the strict gate — keeping event image.");
+          }
         } else {
-          console.log("  No valid headshot extracted — using event image for graphics.");
+          console.log("  No headshot candidate pages in research — keeping event image.");
         }
-      } else {
-        console.log("  No headshot candidate pages in research — using event image for graphics.");
+      } catch (_) {
+        console.log("  Could not parse research for headshot pages — keeping event image.");
       }
-    } catch (_) {
-      console.log("  Could not parse research for headshot pages — using event image for graphics.");
+    }
+
+    // Final safety: if whatever we ended up with is an obvious placeholder
+    // URL or fails the URL-shape check, drop back to the event image. This
+    // mirrors the hero policy: event image is the floor, never falls below.
+    if (!graphicImageUrl || !isUsableImageUrl(graphicImageUrl)) {
+      graphicImageUrl = eventImageUrl;
     }
 
     // Step 2: Write the blog post
