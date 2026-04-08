@@ -82,7 +82,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           # Stage all blog files that exist (Thursday won't generate hero/caption)
-          for f in blog/index.html blog/weekly-hero.html blog/weekly-hero.png blog/instagram-caption.txt; do
+          # top-comedians.json is the handoff file consumed by generate-comedian-post.js;
+          # if it's not committed, the comedian workflow can't reuse the strict-gated
+          # displayImage and re-runs identifyTopComedians() unnecessarily.
+          for f in blog/index.html blog/weekly-hero.html blog/weekly-hero.png blog/instagram-caption.txt blog/top-comedians.json; do
             [ -f "$f" ] && git add "$f"
           done
           # Only commit if there are changes

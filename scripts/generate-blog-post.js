@@ -122,6 +122,15 @@ function loadThisWeeksEvents() {
 // OpenAI API call
 // ---------------------------------------------------------------------------
 
+// Per-request timeouts on the OpenAI sockets. Same class of bug as the
+// Hostinger mid-upload hang that killed run #26: a stalled OpenAI socket
+// would wait forever and burn the full job timeout, cancelling the
+// commit/email steps that depend on `if: !cancelled()`. Chat completions
+// usually return in <30s; web-search Responses calls can run longer and
+// get their own larger budget.
+const OPENAI_CHAT_TIMEOUT_MS = 90_000;
+const OPENAI_RESPONSES_TIMEOUT_MS = 120_000;
+
 function callOpenAI(prompt, systemPrompt) {
   return new Promise((resolve, reject) => {
     const body = JSON.stringify({
@@ -168,6 +177,9 @@ function callOpenAI(prompt, systemPrompt) {
       });
     });
 
+    req.setTimeout(OPENAI_CHAT_TIMEOUT_MS, () => {
+      req.destroy(new Error(`OpenAI chat request timed out after ${OPENAI_CHAT_TIMEOUT_MS}ms`));
+    });
     req.on("error", (err) => reject(err));
     req.write(body);
     req.end();
@@ -228,6 +240,9 @@ function callOpenAIResponses(input, instructions) {
       });
     });
 
+    req.setTimeout(OPENAI_RESPONSES_TIMEOUT_MS, () => {
+      req.destroy(new Error(`OpenAI Responses request timed out after ${OPENAI_RESPONSES_TIMEOUT_MS}ms`));
+    });
     req.on("error", (err) => reject(err));
     req.write(body);
     req.end();
@@ -1276,6 +1291,15 @@ async function main() {
     process.exit(1);
   }
 
+  // Collect WordPress publish failures across all WP-touching steps so we
+  // can fail the job at the end. Without this, the workflow turns green
+  // even when the roundup / weekend post / this-week page didn't actually
+  // publish — which means the public WP surface can go stale for a week
+  // before anyone notices. The commit + email steps downstream run under
+  // `if: !cancelled()`, so a throw here still ships the caption to the
+  // operator AND triggers the failure notifier.
+  const wpFailures = [];
+
   // Detect if this is a Thursday "weekend-only" refresh
   const dayOfWeek = new Date().getDay(); // 0=Sun, 4=Thu
   const isThursdayRefresh = dayOfWeek === 4;
@@ -1347,12 +1371,18 @@ async function main() {
       try {
         await updateWeekendPost(events, weekRange, quickComedians, quickResearch, quickSourceLinks);
       } catch (err) {
-        console.warn(`Weekend post update failed: ${err.message}`);
+        console.error(`ERROR: Weekend post update failed: ${err.message}`);
+        wpFailures.push(`weekend post (Thursday): ${err.message}`);
       }
     } else {
       console.log("WordPress not configured — nothing to do on Thursday.");
     }
     console.log("");
+    if (wpFailures.length > 0) {
+      throw new Error(
+        `WordPress Thursday refresh had ${wpFailures.length} failure(s): ${wpFailures.join("; ")}`
+      );
+    }
     console.log("Done! (Thursday refresh)");
     return;
   }
@@ -1390,6 +1420,20 @@ async function main() {
       seen.add(key);
       return true;
     });
+    // Hard cap: the identifyTopComedians() prompt explicitly says "Don't
+    // limit yourself to a fixed number" so a chatty run can return 20+
+    // names. Everything downstream (headshot scrape loop, research call,
+    // Instagram handle lookup, handoff file) would then do ~20× the work,
+    // blow past the 20-minute job budget, and balloon the OpenAI bill.
+    // The hero only renders 6 and the per-comedian script caps at 5, so
+    // 8 is a safe ceiling that leaves a little margin for dedupe/miss.
+    const MAX_TOP_COMEDIANS = 8;
+    if (topComedians.length > MAX_TOP_COMEDIANS) {
+      console.log(
+        `Capping ${topComedians.length} → ${MAX_TOP_COMEDIANS} comedians (first-come wins).`
+      );
+      topComedians = topComedians.slice(0, MAX_TOP_COMEDIANS);
+    }
     console.log(`Top comedians identified: ${topComedians.map((c) => c.name).join(", ")}`);
     console.log("");
     // Handoff JSON is written below after Step 2b, once displayImage has
@@ -1737,8 +1781,9 @@ async function main() {
       }
       console.log("");
     } catch (err) {
-      console.warn(`Warning: WordPress weekly roundup publish failed: ${err.message}`);
-      console.warn("Blog post is still live on GitHub Pages.");
+      console.error(`ERROR: WordPress weekly roundup publish failed: ${err.message}`);
+      console.error("Blog post is still live on GitHub Pages, but WordPress is stale.");
+      wpFailures.push(`weekly roundup: ${err.message}`);
       console.log("");
     }
   } else {
@@ -1752,7 +1797,8 @@ async function main() {
     try {
       await updateWeekendPost(events, weekRange, topComedians, comedianResearch, comedianSourceLinks);
     } catch (err) {
-      console.warn(`Warning: Weekend post update failed: ${err.message}`);
+      console.error(`ERROR: Weekend post update failed: ${err.message}`);
+      wpFailures.push(`weekend post: ${err.message}`);
     }
     console.log("");
   }
@@ -1766,9 +1812,20 @@ async function main() {
     try {
       await updateThisWeekLandingPage(topComedians, weekRange, monday, sunday);
     } catch (err) {
-      console.warn(`Warning: This-week landing page update failed: ${err.message}`);
+      console.error(`ERROR: This-week landing page update failed: ${err.message}`);
+      wpFailures.push(`this-week landing page: ${err.message}`);
     }
     console.log("");
+  }
+
+  // If any WordPress step failed, throw so the workflow goes red and the
+  // failure notifier fires. The `if: !cancelled()` guards on the
+  // commit/email steps mean the operator still gets the caption + hero
+  // PNG in their inbox; they just also get an alert that WP is stale.
+  if (wpFailures.length > 0) {
+    throw new Error(
+      `WordPress publish had ${wpFailures.length} failure(s): ${wpFailures.join("; ")}`
+    );
   }
 
   console.log("Done!");

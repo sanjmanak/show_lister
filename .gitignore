@@ -1,0 +1,33 @@
+# Secrets / local config — never commit
+.env
+.env.*
+*.env
+secrets.json
+credentials.json
+*.pem
+*.key
+
+# Node / Puppeteer
+node_modules/
+package-lock.json
+npm-debug.log*
+.npm/
+
+# Local scratch + OS cruft
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+*~
+
+# Editor / IDE
+.vscode/
+.idea/
+*.iml
+
+# Claude Code / agent state
+.claude/
+
+# Local test artifacts (generated images, logs, puppeteer caches)
+*.log
+blog/comedians/images/*.local.png

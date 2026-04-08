@@ -198,6 +198,43 @@ class Comedy_Houston_Plugin {
             exit;
         }
 
+        // Scheme allowlist: only http/https. FILTER_VALIDATE_URL alone accepts
+        // javascript:, data:, file:, etc. — any of which would turn this
+        // endpoint into an open redirect / XSS vector.
+        if (!preg_match('~^https?://~i', $decoded)) {
+            wp_safe_redirect(home_url('/'));
+            exit;
+        }
+
+        // Host allowlist: only redirect to known ticket vendors. Anything
+        // else could be abused to launder phishing links through our
+        // domain's reputation. Subdomain-safe match (ends-with check after
+        // a literal dot so "notticketmaster.com" does not pass).
+        $host = strtolower((string) parse_url($decoded, PHP_URL_HOST));
+        $allowed_hosts = [
+            'ticketmaster.com',
+            'ticketmaster.ca',
+            'livenation.com',
+            'eventbrite.com',
+            'eventbrite.ca',
+        ];
+        $host_ok = false;
+        foreach ($allowed_hosts as $allowed) {
+            if ($host === $allowed) {
+                $host_ok = true;
+                break;
+            }
+            $suffix = '.' . $allowed;
+            if (strlen($host) > strlen($suffix) && substr($host, -strlen($suffix)) === $suffix) {
+                $host_ok = true;
+                break;
+            }
+        }
+        if (!$host_ok) {
+            wp_safe_redirect(home_url('/'));
+            exit;
+        }
+
         $target_url = $decoded;
         $opts = $this->get_options();
 
