@@ -245,8 +245,50 @@ function callOpenAIResponses(input, instructions) {
 // WordPress REST API helpers
 // ---------------------------------------------------------------------------
 
+// Single-request timeout for every WordPress / image-download HTTP call.
+// Without this, a silent TCP hang on Hostinger's load balancer (or any
+// upstream proxy) leaves the Node socket waiting indefinitely — which
+// burned a 30-minute job timeout in run #26 and lost the Instagram
+// caption email along with it. With the timeout in place, the request
+// throws a clear error after WP_REQUEST_TIMEOUT_MS, the existing
+// try/catch around the WP publish swallows it, and the script
+// continues to the email step.
+const WP_REQUEST_TIMEOUT_MS = 30_000;
+// Hero PNG upload is the biggest payload (~200KB) and the slowest call —
+// give it a bit more headroom than a JSON POST.
+const WP_UPLOAD_TIMEOUT_MS = 60_000;
+// Hard ceiling so a misbehaving server can't burn the whole job. After
+// this many ms across ALL WP operations in main(), we abort WP publish
+// and let the email step take over.
+const WP_TOTAL_BUDGET_MS = 8 * 60 * 1000; // 8 minutes
+let wpDeadline = 0; // set in main() right before the WP publish step
+
+/**
+ * Reject a pending WP request if we've blown the cumulative budget. Cheap
+ * and best-effort: each individual request still has its own timeout, but
+ * this catches pathological "lots of slow-but-not-quite-timing-out" cases.
+ */
+function checkWpDeadline(label) {
+  if (wpDeadline > 0 && Date.now() > wpDeadline) {
+    throw new Error(`${label} skipped: cumulative WP budget of ${WP_TOTAL_BUDGET_MS}ms exceeded`);
+  }
+}
+
+/**
+ * Attach a hard timeout to an http(s) ClientRequest. If the response
+ * doesn't arrive within `ms` (or the body stalls mid-stream), destroy
+ * the socket so the consumer's `error` handler fires with a real
+ * Error instead of hanging forever — Node's default behavior.
+ */
+function attachRequestTimeout(req, ms, label) {
+  req.setTimeout(ms, () => {
+    req.destroy(new Error(`${label} timed out after ${ms}ms`));
+  });
+}
+
 function wpRequest(method, urlPath, body) {
   return new Promise((resolve, reject) => {
+    try { checkWpDeadline(`WP ${method} ${urlPath}`); } catch (e) { return reject(e); }
     const fullUrl = WP_SITE_URL.replace(/\/$/, "") + urlPath;
     const parsed = new URL(fullUrl);
     const isHttps = parsed.protocol === "https:";
@@ -275,31 +317,38 @@ function wpRequest(method, urlPath, body) {
         try { resolve(JSON.parse(data)); } catch (e) { reject(new Error(`Failed to parse WP response: ${e.message}`)); }
       });
     });
+    attachRequestTimeout(req, WP_REQUEST_TIMEOUT_MS, `WP ${method} ${urlPath}`);
     req.on("error", (err) => reject(err));
     if (bodyStr) req.write(bodyStr);
     req.end();
   });
 }
 
-function downloadImage(imageUrl) {
+function downloadImage(imageUrl, redirectsLeft) {
+  if (redirectsLeft === undefined) redirectsLeft = 3;
   return new Promise((resolve, reject) => {
+    if (redirectsLeft < 0) return reject(new Error("Image download failed: too many redirects"));
     const parsed = new URL(imageUrl);
     const lib = parsed.protocol === "https:" ? https : http;
-    lib.get(imageUrl, { headers: { "User-Agent": "ComedyHouston-BlogBot/1.0" } }, (res) => {
+    const req = lib.get(imageUrl, { headers: { "User-Agent": "ComedyHouston-BlogBot/1.0" } }, (res) => {
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        return downloadImage(res.headers.location).then(resolve).catch(reject);
+        res.resume();
+        return downloadImage(res.headers.location, redirectsLeft - 1).then(resolve).catch(reject);
       }
       if (res.statusCode >= 400) return reject(new Error(`Image download failed: HTTP ${res.statusCode}`));
       const chunks = [];
       res.on("data", (chunk) => chunks.push(chunk));
       res.on("end", () => resolve({ buffer: Buffer.concat(chunks), contentType: res.headers["content-type"] || "image/jpeg" }));
       res.on("error", reject);
-    }).on("error", reject);
+    });
+    attachRequestTimeout(req, WP_REQUEST_TIMEOUT_MS, `downloadImage ${imageUrl.slice(0, 60)}`);
+    req.on("error", reject);
   });
 }
 
 function wpUploadImage(imageBuffer, contentType, filename) {
   return new Promise((resolve, reject) => {
+    try { checkWpDeadline(`WP media upload ${filename}`); } catch (e) { return reject(e); }
     const fullUrl = WP_SITE_URL.replace(/\/$/, "") + "/wp-json/wp/v2/media";
     const parsed = new URL(fullUrl);
     const isHttps = parsed.protocol === "https:";
@@ -328,6 +377,7 @@ function wpUploadImage(imageBuffer, contentType, filename) {
         try { resolve(JSON.parse(data).id); } catch (e) { reject(new Error(`Failed to parse WP media response: ${e.message}`)); }
       });
     });
+    attachRequestTimeout(req, WP_UPLOAD_TIMEOUT_MS, `WP media upload ${filename}`);
     req.on("error", (err) => reject(err));
     req.write(imageBuffer);
     req.end();
@@ -1572,7 +1622,13 @@ async function main() {
 
   // Step 7: Publish weekly roundup to WordPress
   if (WP_ENABLED) {
-    console.log("Publishing weekly roundup to WordPress...");
+    // Arm the cumulative WP budget. After this many ms across ALL WP
+    // calls in the script, every subsequent call short-circuits with a
+    // budget-exceeded error so the email step at the end of the workflow
+    // still gets a chance to run. Each individual call also has its own
+    // per-request timeout (WP_REQUEST_TIMEOUT_MS / WP_UPLOAD_TIMEOUT_MS).
+    wpDeadline = Date.now() + WP_TOTAL_BUDGET_MS;
+    console.log(`Publishing weekly roundup to WordPress... (cumulative budget: ${Math.round(WP_TOTAL_BUDGET_MS / 1000)}s)`);
     try {
       const wpTitle = `Houston Comedy Shows This Week — ${weekRange}`;
       const wpSlug = `houston-comedy-shows-this-week-${monday.toISOString().slice(0, 10)}`;

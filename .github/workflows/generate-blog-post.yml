@@ -28,9 +28,12 @@ env:
 jobs:
   generate-blog:
     runs-on: ubuntu-latest
-    # Cap so a hung OpenAI Responses (web search) call or hung Puppeteer
-    # render can't burn the default 6h timeout.
-    timeout-minutes: 30
+    # Hard ceiling for the whole job. The script itself enforces tighter
+    # per-call timeouts (WP_REQUEST_TIMEOUT_MS / WP_UPLOAD_TIMEOUT_MS /
+    # WP_TOTAL_BUDGET_MS) so any individual hang aborts cleanly and the
+    # email step still runs. This 20-minute cap is the absolute fail-safe
+    # for runaway OpenAI / Puppeteer calls.
+    timeout-minutes: 20
 
     steps:
       - name: Checkout repository
@@ -66,7 +69,15 @@ jobs:
           WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
         run: node scripts/generate-blog-post.js
 
+      # `if: !cancelled()` on the next four steps means: even if the
+      # generate step exited non-zero (e.g. WordPress publishing blew up),
+      # we still commit the partial output, send the Instagram email, and
+      # run the failure notifier. The script's WP timeouts mean a hang
+      # becomes a thrown error rather than a job-killing 30-minute wait,
+      # so by the time we get here we usually still have a hero PNG and a
+      # caption on disk that the operator can post manually.
       - name: Commit and push blog post
+        if: ${{ !cancelled() }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -87,7 +98,7 @@ jobs:
           fi
 
       - name: Check if email is configured
-        if: steps.day-check.outputs.is_thursday != 'true'
+        if: ${{ !cancelled() && steps.day-check.outputs.is_thursday != 'true' }}
         id: email-check
         env:
           HAS_SMTP: ${{ secrets.SMTP_SERVER }}
@@ -100,7 +111,7 @@ jobs:
           fi
 
       - name: Load caption for email
-        if: steps.email-check.outputs.send_email == 'true'
+        if: ${{ !cancelled() && steps.email-check.outputs.send_email == 'true' }}
         run: |
           echo "CAPTION<<CAPTION_EOF" >> $GITHUB_ENV
           cat blog/instagram-caption.txt >> $GITHUB_ENV
@@ -108,7 +119,7 @@ jobs:
           echo "CAPTION_EOF" >> $GITHUB_ENV
 
       - name: Email weekly creative + caption
-        if: steps.email-check.outputs.send_email == 'true'
+        if: ${{ !cancelled() && steps.email-check.outputs.send_email == 'true' }}
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: ${{ secrets.SMTP_SERVER }}
