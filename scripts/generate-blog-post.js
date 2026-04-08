@@ -25,6 +25,11 @@ const {
   pickDisplayImage,
 } = imageUtils;
 
+// Regex-based scrub for the LLM's blog HTML — strips <script>, on*= handlers,
+// javascript:/data: URLs, and a handful of other injection shapes. Zero npm
+// deps by design. See scripts/lib/sanitize-html.js for the full rationale.
+const { sanitizeAiHtml } = require("./lib/sanitize-html");
+
 // ---------------------------------------------------------------------------
 // Config
 // ---------------------------------------------------------------------------
@@ -440,6 +445,58 @@ Return ONLY a JSON array of these objects, no other text.`;
 // ---------------------------------------------------------------------------
 // Look up Instagram handles via web search
 // ---------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------
+// Instagram handle validation
+// ---------------------------------------------------------------------------
+//
+// The LLM tells us "don't fabricate handles" but it absolutely does. Before a
+// hallucinated @handle reaches the public caption, HEAD instagram.com/{handle}/
+// and drop anything that doesn't 200. A logged-out IG profile still returns
+// 200 for valid usernames and 404 for invalid ones — no auth needed.
+//
+// 10s cap so a single slow check can't stall the run, single attempt so we
+// don't retry-spam Instagram. Conservative: if the request errors out (SSL,
+// DNS, timeout), we KEEP the handle rather than stripping it, because an IG
+// infra hiccup shouldn't silently delete real @-mentions from the caption.
+
+const IG_HANDLE_CHECK_TIMEOUT_MS = 10_000;
+
+function validateInstagramHandle(handle) {
+  return new Promise((resolve) => {
+    if (!handle || typeof handle !== "string") return resolve(false);
+    const clean = handle.trim().replace(/^@/, "");
+    // IG usernames: letters, digits, period, underscore; 1–30 chars.
+    if (!/^[A-Za-z0-9._]{1,30}$/.test(clean)) return resolve(false);
+
+    const req = https.request(
+      {
+        hostname: "www.instagram.com",
+        path: `/${clean}/`,
+        method: "HEAD",
+        headers: {
+          "User-Agent": "Mozilla/5.0 (compatible; ComedyHoustonBot/1.0)",
+        },
+      },
+      (res) => {
+        // IG returns 200 for real usernames (even logged out), 404 for bogus.
+        // 301/302 is a redirect to the login wall for a username they don't
+        // want to expose publicly — treat as valid to avoid false negatives.
+        if (res.statusCode === 200 || res.statusCode === 301 || res.statusCode === 302) {
+          resolve(true);
+        } else {
+          resolve(false);
+        }
+        res.resume();
+      }
+    );
+    req.setTimeout(IG_HANDLE_CHECK_TIMEOUT_MS, () => {
+      req.destroy(new Error("ig handle check timeout"));
+    });
+    req.on("error", () => resolve(true)); // conservative: keep on error
+    req.end();
+  });
+}
 
 function lookupInstagramHandles(comedianNames) {
   const input = `Find the official Instagram handles for EACH of these comedians. You MUST search for EVERY single person on this list individually — do not skip anyone:
@@ -1604,6 +1661,25 @@ async function main() {
   let blogContent = await callOpenAI(prompt, SYSTEM_PROMPT);
   // Strip markdown code fences that OpenAI sometimes wraps around HTML output
   blogContent = blogContent.replace(/^```html\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
+
+  // Minimum-length sanity check. If the model returned an empty string, a
+  // safety refusal, or a single-sentence "I can't help with that" we do NOT
+  // want that landing in production. Fail loudly so the notify-on-failure
+  // step fires and the operator investigates.
+  if (blogContent.length < 400) {
+    throw new Error(
+      `Blog content too short (${blogContent.length} chars) — treating as a model refusal or empty response. First 200 chars: ${blogContent.slice(0, 200)}`
+    );
+  }
+
+  // Sanitize AI output — strip any <script>/<iframe>/on*=/javascript: that
+  // slipped through. We do NOT trust the LLM with raw HTML, ever.
+  const sanitized = sanitizeAiHtml(blogContent);
+  if (sanitized.removed.length > 0) {
+    console.warn(`  sanitizeAiHtml removed: ${sanitized.removed.join(", ")}`);
+  }
+  blogContent = sanitized.html;
+
   console.log("Blog post generated successfully.");
   console.log("");
 
@@ -1632,12 +1708,29 @@ async function main() {
           instagramHandles[entry.name] = entry.instagram;
         }
       }
+
+      // Validate each handle with a single HEAD to instagram.com/{handle}/.
+      // Drops hallucinated usernames before they land in the public caption.
+      // See validateInstagramHandle() for the "conservative on error" rule.
+      const entries = Object.entries(instagramHandles);
+      if (entries.length > 0) {
+        console.log(`Validating ${entries.length} handle(s) against instagram.com...`);
+        const validated = {};
+        for (const [name, handle] of entries) {
+          const ok = await validateInstagramHandle(handle);
+          if (ok) {
+            validated[name] = handle;
+            console.log(`  ✓ ${name} → ${handle}`);
+          } else {
+            console.warn(`  ✗ ${name} → ${handle} (not reachable — dropped)`);
+          }
+        }
+        instagramHandles = validated;
+      }
+
       const found = Object.entries(instagramHandles);
       if (found.length > 0) {
-        console.log(`Found ${found.length} Instagram handle(s):`);
-        for (const [name, handle] of found) {
-          console.log(`  ${name} → ${handle}`);
-        }
+        console.log(`Found ${found.length} validated Instagram handle(s).`);
       } else {
         console.log("No Instagram handles found.");
       }

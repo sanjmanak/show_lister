@@ -31,6 +31,11 @@ const {
   isUsableImageUrl,
 } = imageUtils;
 
+// Regex-based scrub for LLM-produced HTML. Runs after the fact-check and
+// polish passes, right before we wrap the body in the final template.
+// See scripts/lib/sanitize-html.js.
+const { sanitizeAiHtml } = require("./lib/sanitize-html");
+
 // ---------------------------------------------------------------------------
 // Config
 // ---------------------------------------------------------------------------
@@ -1754,6 +1759,27 @@ async function main() {
     // Final safety net: strip any [VERIFY]/editor markers that slipped through.
     // The published post must have NO bracketed editor flags.
     finalContent = stripEditorMarkers(finalContent);
+
+    // Refusal / empty-output check. If three LLM passes produced fewer than
+    // 300 chars, something is wrong (safety refusal, truncation, API error).
+    // Skip this comedian rather than publishing a broken stub.
+    if (!finalContent || finalContent.length < 300) {
+      console.warn(
+        `  Final content too short for ${headliner.name} (${finalContent.length} chars) — skipping.`
+      );
+      continue;
+    }
+
+    // Sanitize the AI output. Strip <script>/<iframe>/on*=/javascript: URLs
+    // that the LLM might have produced (via prompt injection from a hostile
+    // event description, or via the model just… doing the wrong thing).
+    const sanitized = sanitizeAiHtml(finalContent);
+    if (sanitized.removed.length > 0) {
+      console.warn(
+        `  sanitizeAiHtml removed for ${headliner.name}: ${sanitized.removed.join(", ")}`
+      );
+    }
+    finalContent = sanitized.html;
 
     // Generate filename
     const dateSlug = date; // YYYY-MM-DD

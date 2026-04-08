@@ -28,6 +28,12 @@ try {
 const HERO_HTML = path.resolve(__dirname, "../blog/weekly-hero.html");
 const HERO_IMAGE = path.resolve(__dirname, "../blog/weekly-hero.png");
 
+// Local file:// render should be <1s. Cap explicitly at 20s so we never
+// silently inherit Puppeteer's default 30s, and always close the browser
+// in a finally block so a crashed Chrome can't leak a zombie process into
+// the next step of the workflow.
+const NAV_TIMEOUT_MS = 20_000;
+
 async function main() {
   if (!fs.existsSync(HERO_HTML)) {
     console.log("No hero HTML found, skipping screenshot.");
@@ -40,13 +46,18 @@ async function main() {
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
 
-  const page = await browser.newPage();
-  await page.setViewport({ width: 1080, height: 1080 });
-  await page.goto(`file://${HERO_HTML}`, { waitUntil: "networkidle0" });
-  await page.screenshot({ path: HERO_IMAGE, type: "png" });
-
-  await browser.close();
-  console.log(`Screenshot saved: ${HERO_IMAGE}`);
+  try {
+    const page = await browser.newPage();
+    await page.setViewport({ width: 1080, height: 1080 });
+    await page.goto(`file://${HERO_HTML}`, {
+      waitUntil: "networkidle0",
+      timeout: NAV_TIMEOUT_MS,
+    });
+    await page.screenshot({ path: HERO_IMAGE, type: "png" });
+    console.log(`Screenshot saved: ${HERO_IMAGE}`);
+  } finally {
+    await browser.close();
+  }
 }
 
 main().catch((err) => {
