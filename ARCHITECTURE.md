@@ -134,7 +134,7 @@ const LAST_UPDATED = "";       // → replaced with ISO timestamp
 
 ### 3. Weekly Blog Post Generator (`scripts/generate-blog-post.js`)
 
-**~1,600 lines. The AI-powered content pipeline.** Runs once a week (Monday mornings).
+**~1,950 lines. The AI-powered content pipeline.** Runs once a week (Monday mornings). Image-pipeline helpers (URL blocklists, HEAD validation, real-dimension parser, strict-gate headshot finder, inverted display-image policy) live in `scripts/lib/image-utils.js` and are shared with `generate-comedian-post.js`.
 
 #### What it does, step by step:
 
@@ -176,6 +176,36 @@ const LAST_UPDATED = "";       // → replaced with ISO timestamp
 
 **Slug dedupe on WordPress publish.** Before creating a roundup post, the script looks up any existing post with the same slug and `POST /wp-json/wp/v2/posts/{id}` to update in place. Prevents "-2" suffixed duplicates when the workflow is re-run on the same Monday. The per-comedian publisher uses the same pattern.
 
+#### Image pipeline — inverted preference + strict gate (`scripts/lib/image-utils.js`)
+
+The hero used to render Instagram glyphs and silhouette PNGs because the headshot validator was HEAD-only (status + content-type + ≥8KB bytes). Social-CDN profile icons and default-avatar PNGs sailed through that gate, and `findBestHeadshot()` returned the first match — so the Eventbrite/Ticketmaster event image was never reached via the `c.headshotUrl || c.imageUrl` short-circuit.
+
+The new policy treats the **event image as the floor**, not a fallback:
+
+1. **`scripts/lib/image-utils.js`** is the single source of truth for the URL blocklists, HEAD validation, candidate extraction, and the strict gate. Strict gate = URL not in expanded social-CDN blocklist (`pbs.twimg.com`, `cdninstagram`, `lookaside.fb`, `profile_image`, `/400x400/`, etc.) → HEAD `200` + `image/*` + `Content-Length ≥ 20_000` → real pixel dimensions parsed from the first 32KB via a ranged GET (JPEG SOFn / PNG IHDR / WebP VP8/VP8L/VP8X / GIF) → width & height ≥ 300 → aspect ratio in `[0.65, 1.55]`. A scraped headshot only replaces the event image if it beats the entire bar.
+
+2. **`pickDisplayImage(eventImageUrl, validatedHeadshotUrl, comedianName)`** applies the inverted rule once. Both the weekly hero, the inline hero on `blog/index.html`, the `/this-week/` landing page card grid, and the per-comedian Instagram graphics consume the same decision so they always render the same image for the same comedian.
+
+3. **`blog/top-comedians.json` handoff** is now written *after* the strict-gate step and includes `imageUrl`, `headshotUrl`, `displayImage`, and `imageSource` (`"event" | "headshot" | "initials"`) for each comedian. `generate-comedian-post.js` reuses the pre-validated `displayImage` directly and skips re-scraping — one round of network work, not two, and guaranteed visual consistency between weekly hero and per-comedian spotlights.
+
+4. The same library is `require()`d by both blog scripts, deleting ~340 lines of drifted duplicate code (the comedian script's old copy carried `openmicnight` in its blocklist while the blog script's didn't, etc.).
+
+#### WordPress publish reliability — per-request timeouts + cumulative budget
+
+WordPress / Hostinger occasionally drop a TCP connection silently mid-upload. The script's `wpRequest`, `wpUploadImage`, and `downloadImage` helpers used to set no client-side timeout, so a hang would wait forever and burn the entire job-level `timeout-minutes` — losing the Instagram caption email along with it. Run #26 was killed exactly that way.
+
+Three layers of defense are now in place:
+
+| Layer | Value | Behavior |
+|-------|-------|----------|
+| Per-call timeout (JSON) | `WP_REQUEST_TIMEOUT_MS = 30_000` | `req.setTimeout()` destroys the socket and rejects with a clear `... timed out after 30000ms` error |
+| Per-call timeout (media upload) | `WP_UPLOAD_TIMEOUT_MS = 60_000` | Larger budget for the hero PNG payload |
+| Cumulative budget | `WP_TOTAL_BUDGET_MS = 8 * 60 * 1000` | `wpDeadline` is armed at the start of Step 7; every subsequent WP call short-circuits with a `budget-exceeded` error once the wall-clock blows past it |
+
+Every `wpRequest` / `wpUploadImage` / `downloadImage` failure is already swallowed by the existing try/catch around Step 7 ("Publishing weekly roundup to WordPress…"), which `console.warn`s and continues. So the script always exits cleanly within ~10 minutes worst-case, the workflow's `Commit and push blog post` step still runs, and the email step still ships the hero PNG + Instagram caption to the operator's inbox even if the WordPress publish failed.
+
+The workflow YAML reinforces the same idea: every step from `Commit and push blog post` onward runs under `if: ${{ !cancelled() }}`, so a non-zero exit from `node scripts/generate-blog-post.js` no longer skips the email. Job-level `timeout-minutes` is now `20` (down from 30), and the script's per-call + cumulative timeouts mean it should never come close to that ceiling.
+
 #### OpenAI models used:
 - **Chat Completions API** (`/v1/chat/completions`) — for blog writing, comedian identification, caption generation
 - **Responses API** (`/v1/responses`) — for web search (comedian research, Instagram handle lookup)
@@ -184,7 +214,7 @@ const LAST_UPDATED = "";       // → replaced with ISO timestamp
 
 ### 3b. Per-Comedian SEO Blog Post Generator (`scripts/generate-comedian-post.js`)
 
-**~500 lines of Node.js. Zero npm dependencies.** Runs once a week (Monday mornings, 1 hour after the weekly blog post).
+**~1,940 lines of Node.js. Zero npm dependencies.** Runs once a week (Monday mornings, 1 hour after the weekly blog post). Shares all image-pipeline code with `generate-blog-post.js` via `scripts/lib/image-utils.js` (see §3 above) — no more drifted duplicate copies.
 
 #### What it does, step by step:
 
@@ -226,11 +256,13 @@ const LAST_UPDATED = "";       // → replaced with ISO timestamp
 
    **Final safety net — `stripEditorMarkers()`**: a regex pass that removes any `[VERIFY]`, `[CHECK]`, `[CITATION NEEDED]`, `[TODO]`, `[CONFIRM]`, `[FACT-CHECK]` tokens that slipped past both LLM passes. The published post is guaranteed to have no bracketed editor notes.
 
-4. **Writes individual HTML files** to `blog/comedians/` — one per comedian
+4. **Picks the display image without re-scraping.** For each headliner, the script first looks at the pre-validated `displayImage` written by `generate-blog-post.js` into `blog/top-comedians.json`. That image already cleared the strict gate (URL blocklist + HEAD ≥ 20KB + real-dimension check + aspect ratio in [0.65, 1.55]) so it's reused as-is for the Instagram square / portrait / story graphics — no second round of network work, and the per-comedian spotlight visually matches the weekly hero. Only when the handoff is missing or stale (different `week_range`) does the script fall back to the same shared `findBestHeadshot()` from `scripts/lib/image-utils.js` and run the strict gate fresh.
 
-5. **Generates an index page** listing all comedian posts for the week
+5. **Writes individual HTML files** to `blog/comedians/` — one per comedian
 
-6. **Writes a manifest.json** with post metadata (comedian name, venue, date, image URL, slug) — used by Phase 2 WordPress auto-publishing
+6. **Generates an index page** listing all comedian posts for the week
+
+7. **Writes a manifest.json** with post metadata (comedian name, venue, date, image URL, slug) — used by Phase 2 WordPress auto-publishing
 
 #### Files generated:
 | File | Purpose |
@@ -312,12 +344,13 @@ Logs every ticket click with: timestamp, original URL, final URL (with affiliate
 
 | Field | Value |
 |-------|-------|
-| **Schedule** | Weekly: `0 15 * * 1` UTC (Monday ~9–10 AM Central) |
+| **Schedule** | Weekly: `0 15 * * 1` UTC (Monday ~9–10 AM Central) and `0 15 * * 4` UTC (Thursday weekend-post refresh) |
 | **Manual trigger** | Yes (`workflow_dispatch`) |
-| **What it runs** | `generate-blog-post.js` → `screenshot-hero.js` → email (conditional) |
+| **What it runs** | `generate-blog-post.js` (which calls `screenshot-hero.js` inline) → `git commit/push` → email (conditional) |
 | **Secrets used** | `OPENAI_API_KEY` + optionally all SMTP secrets |
-| **Commits** | `blog/index.html`, `blog/weekly-hero.html`, `blog/weekly-hero.png`, `blog/instagram-caption.txt` |
-| **Email** | Only sends if `SMTP_SERVER` secret exists and blog files were generated |
+| **Commits** | `blog/index.html`, `blog/weekly-hero.html`, `blog/weekly-hero.png`, `blog/instagram-caption.txt`, `blog/top-comedians.json` |
+| **Job timeout** | `timeout-minutes: 20` (down from 30 — script-side per-call WP timeouts make this a fail-safe, not the primary kill switch) |
+| **Email** | Sends whenever `SMTP_SERVER` is set AND the caption + hero files exist on disk. Crucially, the `Commit and push`, `Check if email is configured`, `Load caption for email`, and `Email weekly creative + caption` steps all run under `if: ${{ !cancelled() }}` — so if `node scripts/generate-blog-post.js` exits non-zero (e.g. WordPress publish failure), the operator still gets the Instagram caption + hero PNG by email and can post manually. |
 
 #### Workflow 3: Generate Comedian Posts (`.github/workflows/generate-comedian-posts.yml`)
 
