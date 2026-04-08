@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-04-08T19:16:11.632Z",
+  "week_range": "April 6 – April 12, 2026",
+  "comedians": [
+    {
+      "name": "Andy Huggins",
+      "show": "Andy Huggins & Friends",
+      "imageUrl": "https://s1.ticketm.net/dam/a/584/a473ec18-fdb7-41e2-8f5c-137684fa3584_SOURCE",
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/a/584/a473ec18-fdb7-41e2-8f5c-137684fa3584_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "Mark Viera",
+      "show": "Mark Viera",
+      "imageUrl": "https://s1.ticketm.net/dam/a/67a/50dee159-f1be-4b11-b55f-448aac07b67a_SOURCE",
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/a/67a/50dee159-f1be-4b11-b55f-448aac07b67a_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "Jaboukie Young-White",
+      "show": "Jaboukie Young-White",
+      "imageUrl": "https://s1.ticketm.net/dam/a/a08/aa7490b8-54c6-4635-bebc-247682771a08_SOURCE",
+      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/2024-03-08_SXSW-2024_Variety-comedy-awards_05196_%28cropped%29.jpg/960px-2024-03-08_SXSW-2024_Variety-comedy-awards_05196_%28cropped%29.jpg",
+      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/2024-03-08_SXSW-2024_Variety-comedy-awards_05196_%28cropped%29.jpg/960px-2024-03-08_SXSW-2024_Variety-comedy-awards_05196_%28cropped%29.jpg",
+      "imageSource": "headshot"
+    },
+    {
+      "name": "Peter Revello",
+      "show": "Peter Revello (Tonight Show, LMAOF) Headlines The Riot Comedy Club",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1174957379%2F428099579998%2F1%2Foriginal.20260115-151854?auto=format%2Ccompress&q=75&sharp=10&s=a2ddd515f3b661002b18cfe7d74105a1",
+      "headshotUrl": "https://images.squarespace-cdn.com/content/v1/5a4e9fddbe42d6b9d0ff44cf/1536162255482-WYMQNK9BIQGZ0XC2566N/39145607_1701639576624711_383654421935947776_o.jpg?format=500w",
+      "displayImage": "https://images.squarespace-cdn.com/content/v1/5a4e9fddbe42d6b9d0ff44cf/1536162255482-WYMQNK9BIQGZ0XC2566N/39145607_1701639576624711_383654421935947776_o.jpg?format=500w",
+      "imageSource": "headshot"
+    },
+    {
+      "name": "Mo Amer",
+      "show": "Mo Amer",
+      "imageUrl": "https://s1.ticketm.net/dam/a/407/e2afafee-20b2-4067-b289-cb171ea40407_SOURCE",
+      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Mo_Amer.jpg",
+      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Mo_Amer.jpg",
+      "imageSource": "headshot"
+    }
+  ]
+}
