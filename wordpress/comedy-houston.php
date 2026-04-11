@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.3.0
+ * Version: 2.4.0
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,6 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
+    const VERSION      = '2.4.0';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -68,14 +69,14 @@ class Comedy_Houston_Plugin {
             'comedy-houston-style',
             plugin_dir_url(__FILE__) . 'comedy-houston.css',
             [],
-            '2.3.0'
+            self::VERSION
         );
 
         wp_register_script(
             'comedy-houston-app',
             plugin_dir_url(__FILE__) . 'comedy-houston.js',
             [],
-            '2.3.0',
+            self::VERSION,
             true
         );
     }
@@ -121,6 +122,25 @@ class Comedy_Houston_Plugin {
             'type' => sanitize_text_field($atts['type']),
         ];
 
+        // Fetch the manifest once so we can (a) pass a slug-lookup map into
+        // the JS config for client-side rendering, and (b) pass the raw posts
+        // array into the SSR renderer for Googlebot. Missing/404 manifest is
+        // fine — both render paths fall back to the old "Get Tickets only" UI.
+        $manifest_posts = $this->fetch_manifest_data();
+
+        // Build a compact lookup structure for JS: array of { date, comedian,
+        // wpLink } tuples. Keeping it small so the inline script stays under
+        // a few KB even with ~20 posts on disk.
+        $js_comedian_posts = [];
+        foreach ($manifest_posts as $p) {
+            if (empty($p['date']) || empty($p['comedianName']) || empty($p['wpLink'])) continue;
+            $js_comedian_posts[] = [
+                'date' => $p['date'],
+                'comedian' => $p['comedianName'],
+                'wpLink' => $p['wpLink'],
+            ];
+        }
+
         // Use wp_add_inline_script for proper type handling (null, bool, numbers)
         $js_config = [
             'jsonUrl'         => sprintf(
@@ -133,6 +153,7 @@ class Comedy_Houston_Plugin {
             'showSourceBadges' => (bool) $opts['show_source_badges'],
             'redirectBase'     => esc_url($redirect_base),
             'shortcodeParams'  => $shortcode_params,
+            'comedianPosts'    => $js_comedian_posts,
         ];
 
         wp_add_inline_script(
@@ -151,7 +172,7 @@ class Comedy_Houston_Plugin {
         if ($events_data && !empty($events_data['events'])) {
             $filtered = $this->filter_events($events_data['events'], $atts);
             $ch_ssr_count = count($filtered);
-            $ch_ssr_html = $this->render_ssr_html($filtered, $opts, $redirect_base);
+            $ch_ssr_html = $this->render_ssr_html($filtered, $opts, $redirect_base, $manifest_posts);
             $ch_ssr_jsonld = $this->render_jsonld($filtered);
             if (!empty($events_data['last_updated'])) {
                 $ts = strtotime($events_data['last_updated']);
@@ -350,6 +371,71 @@ class Comedy_Houston_Plugin {
     }
 
     /**
+     * Fetch blog/comedians/manifest.json from GitHub with transient caching.
+     * Returns the manifest array or [] on failure (callers treat missing as
+     * "no comedian posts available" — they still render cards, just without
+     * the "More info" internal link).
+     */
+    public function fetch_manifest_data() {
+        $opts = $this->get_options();
+        $cache_key = 'ch_manifest_' . md5($opts['github_user'] . '_' . $opts['repo']);
+
+        $cached = get_transient($cache_key);
+        if ($cached !== false) {
+            return $cached;
+        }
+
+        $url = sprintf(
+            'https://raw.githubusercontent.com/%s/%s/main/blog/comedians/manifest.json',
+            sanitize_text_field($opts['github_user']),
+            sanitize_text_field($opts['repo'])
+        );
+
+        $response = wp_remote_get($url, ['timeout' => 10]);
+        if (is_wp_error($response) || wp_remote_retrieve_response_code($response) !== 200) {
+            // Cache the empty result briefly so a 404 doesn't hammer GitHub on
+            // every page load. 5 minutes is short enough that a freshly
+            // generated manifest still shows up quickly.
+            set_transient($cache_key, [], 5 * MINUTE_IN_SECONDS);
+            return [];
+        }
+
+        $data = json_decode(wp_remote_retrieve_body($response), true);
+        if (!$data || empty($data['posts']) || !is_array($data['posts'])) {
+            set_transient($cache_key, [], 5 * MINUTE_IN_SECONDS);
+            return [];
+        }
+
+        set_transient($cache_key, $data['posts'], HOUR_IN_SECONDS);
+        return $data['posts'];
+    }
+
+    /**
+     * Find the comedian post matching an event, if one exists. Used by both
+     * the SSR card renderer and passed into JS for client-side render. Match
+     * criteria: exact date + fuzzy "comedian name appears in event title".
+     *
+     * Returns the matching manifest post (assoc array) or null.
+     */
+    public function find_comedian_post_for_event($ev, $manifest_posts) {
+        if (empty($manifest_posts) || empty($ev['date']) || empty($ev['name'])) {
+            return null;
+        }
+        $ev_date = $ev['date'];
+        $ev_name_lower = strtolower($ev['name']);
+
+        foreach ($manifest_posts as $post) {
+            if (($post['date'] ?? '') !== $ev_date) continue;
+            $comedian_lower = strtolower($post['comedianName'] ?? '');
+            if (!$comedian_lower) continue;
+            if (strpos($ev_name_lower, $comedian_lower) !== false) {
+                return $post;
+            }
+        }
+        return null;
+    }
+
+    /**
      * Filter events server-side (mirrors JS getFiltered() logic).
      */
     private function filter_events($events, $atts) {
@@ -430,7 +516,7 @@ class Comedy_Houston_Plugin {
     /**
      * Render server-side HTML for event cards (mirrors JS render/renderCard).
      */
-    private function render_ssr_html($events, $opts, $redirect_base) {
+    private function render_ssr_html($events, $opts, $redirect_base, $manifest_posts = []) {
         if (empty($events)) return '';
 
         $show_badges = (bool) $opts['show_source_badges'];
@@ -454,7 +540,7 @@ class Comedy_Houston_Plugin {
             $html .= '</div><div class="events-grid">';
 
             foreach ($evts as $ev) {
-                $html .= $this->render_card_html($ev, $show_badges, $track, $redirect_base);
+                $html .= $this->render_card_html($ev, $show_badges, $track, $redirect_base, $manifest_posts);
             }
 
             $html .= '</div></section>';
@@ -463,7 +549,7 @@ class Comedy_Houston_Plugin {
         return $html;
     }
 
-    private function render_card_html($ev, $show_badges, $track, $redirect_base) {
+    private function render_card_html($ev, $show_badges, $track, $redirect_base, $manifest_posts = []) {
         $name = esc_html($ev['name'] ?? 'Untitled Event');
         $venue = esc_html($ev['venue'] ?? 'Unknown Venue');
         $image = $ev['image_url'] ?? '';
@@ -493,6 +579,17 @@ class Comedy_Houston_Plugin {
             ? '<a class="card-cta" href="' . $ticket_link . '" target="_blank" rel="noopener">Get Tickets <span class="arrow">&rarr;</span></a>'
             : '<span class="card-cta" style="opacity:0.5;cursor:default;">Coming Soon</span>';
 
+        // Internal link: if this event matches a published comedian post,
+        // render a secondary "More info" link so visitors can read our
+        // content instead of bouncing straight to the ticket vendor. This
+        // closes the SEO → audience loop that was previously broken.
+        $more_info_html = '';
+        $matched_post = $this->find_comedian_post_for_event($ev, $manifest_posts);
+        if ($matched_post && !empty($matched_post['wpLink'])) {
+            $more_info_html = '<a class="card-cta card-cta-secondary" href="'
+                . esc_attr($matched_post['wpLink']) . '">More info</a>';
+        }
+
         $card = '<article class="event-card">';
         $card .= '<div class="card-image">' . $image_html;
         if ($show_badges) {
@@ -508,7 +605,8 @@ class Comedy_Houston_Plugin {
         $card .= '</div>';
         $card .= '<h3 class="card-name">' . $name . '</h3>';
         $card .= '<div class="card-venue">' . $venue . '</div>';
-        $card .= '<div class="card-footer"><div class="card-price">' . $price_html . '</div>' . $ticket_html . '</div>';
+        $card .= '<div class="card-footer"><div class="card-price">' . $price_html . '</div>'
+            . $more_info_html . $ticket_html . '</div>';
         $card .= '</div></article>';
 
         return $card;
@@ -562,6 +660,12 @@ class Comedy_Houston_Plugin {
 
     /**
      * Generate JSON-LD structured data for events (Google rich results).
+     *
+     * Emits an ItemList of Event items with the full set of Google-recommended
+     * fields: TZ-aware startDate/endDate, performer, organizer, location with
+     * streetAddress, offers.validFrom, image, description. Google uses these
+     * to surface events in the "events near you" carousel and in per-comedian
+     * knowledge panels.
      */
     private function render_jsonld($events) {
         if (empty($events)) return '';
@@ -571,37 +675,54 @@ class Comedy_Houston_Plugin {
         $items = [];
         $pos = 1;
         foreach ($schema_events as $ev) {
-            $time_24h = $this->time_to_24h($ev['time'] ?? '');
-            $start_date = ($ev['date'] ?? '') . 'T' . ($time_24h ?: '00:00') . ':00';
+            $venue_name = $ev['venue'] ?? 'Houston Venue';
 
-            $item = [
-                '@type' => 'ListItem',
-                'position' => $pos,
-                'item' => [
-                    '@type' => 'Event',
-                    'name' => $ev['name'] ?? 'Comedy Show',
-                    'startDate' => $start_date,
-                    'eventAttendanceMode' => 'https://schema.org/OfflineEventAttendanceMode',
-                    'eventStatus' => $this->map_status_schema($ev['status'] ?? 'on_sale'),
-                    'location' => [
-                        '@type' => 'Place',
-                        'name' => $ev['venue'] ?? 'Houston Venue',
-                        'address' => [
-                            '@type' => 'PostalAddress',
-                            'addressLocality' => 'Houston',
-                            'addressRegion' => 'TX',
-                            'addressCountry' => 'US',
-                        ],
-                    ],
+            // Start/end dates with proper America/Chicago offset (DST-aware).
+            // PHP's DateTime handles DST transitions automatically when you
+            // construct with a DateTimeZone, so the offset flips between -06:00
+            // (CST) and -05:00 (CDT) based on the event's actual date.
+            $start_date = $this->build_iso_datetime($ev['date'] ?? '', $ev['time'] ?? '', '19:00');
+            $end_date   = $this->build_iso_datetime($ev['date'] ?? '', $ev['time'] ?? '', '19:00', 120);
+
+            // Location with street address from the venue map (falls back to
+            // Houston/TX when the venue isn't in the map).
+            $address = $this->venue_address($venue_name);
+
+            $event_item = [
+                '@type' => 'Event',
+                'name' => $ev['name'] ?? 'Comedy Show',
+                'startDate' => $start_date,
+                'endDate' => $end_date,
+                'eventAttendanceMode' => 'https://schema.org/OfflineEventAttendanceMode',
+                'eventStatus' => $this->map_status_schema($ev['status'] ?? 'on_sale'),
+                'location' => [
+                    '@type' => 'Place',
+                    'name' => $venue_name,
+                    'address' => $address,
+                ],
+                'organizer' => [
+                    '@type' => 'Organization',
+                    'name' => $venue_name,
                 ],
             ];
 
+            // Performer: a Person node keyed off the headliner extracted from
+            // the event title. Lets Google connect the event to each comedian's
+            // knowledge graph entity ("Mo Amer upcoming tour dates").
+            $performer_name = $this->extract_performer_name($ev['name'] ?? '');
+            if ($performer_name) {
+                $event_item['performer'] = [
+                    '@type' => 'Person',
+                    'name' => $performer_name,
+                ];
+            }
+
             if (!empty($ev['image_url'])) {
-                $item['item']['image'] = $ev['image_url'];
+                $event_item['image'] = $ev['image_url'];
             }
 
             if (!empty($ev['description'])) {
-                $item['item']['description'] = mb_substr($ev['description'], 0, 300);
+                $event_item['description'] = mb_substr($ev['description'], 0, 300);
             }
 
             if (!empty($ev['ticket_url'])) {
@@ -610,17 +731,29 @@ class Comedy_Houston_Plugin {
                     'url' => $ev['ticket_url'],
                     'priceCurrency' => $ev['currency'] ?? 'USD',
                     'availability' => 'https://schema.org/InStock',
+                    // validFrom = when tickets went on sale. We don't track the
+                    // real on-sale date, so use last_updated as a floor.
+                    'validFrom' => !empty($ev['last_updated'])
+                        ? $ev['last_updated']
+                        : gmdate('Y-m-d\TH:i:s\Z'),
                 ];
                 if (isset($ev['price_min']) && $ev['price_min'] !== null) {
                     $offer['lowPrice'] = $ev['price_min'];
+                    // Google's Event guidelines want a `price` field too when
+                    // only a min is known — use lowPrice as the canonical price.
+                    $offer['price'] = $ev['price_min'];
                 }
                 if (isset($ev['price_max']) && $ev['price_max'] !== null) {
                     $offer['highPrice'] = $ev['price_max'];
                 }
-                $item['item']['offers'] = $offer;
+                $event_item['offers'] = $offer;
             }
 
-            $items[] = $item;
+            $items[] = [
+                '@type' => 'ListItem',
+                'position' => $pos,
+                'item' => $event_item,
+            ];
             $pos++;
         }
 
@@ -634,6 +767,33 @@ class Comedy_Houston_Plugin {
         ];
 
         return '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
+    }
+
+    /**
+     * Build an ISO-8601 datetime string in America/Chicago (DST-aware).
+     * $date       = "YYYY-MM-DD"
+     * $time       = "7:30 PM" or "19:30" or "" (if empty, $default_time_24h is used)
+     * $default    = "19:00" fallback when no time is known
+     * $offset_min = add N minutes (used for endDate = start + 120)
+     *
+     * Returns e.g. "2026-04-10T19:30:00-05:00" or "" if the date is invalid.
+     */
+    private function build_iso_datetime($date, $time, $default_time_24h = '19:00', $offset_min = 0) {
+        if (empty($date)) return '';
+        $time_24h = $this->time_to_24h($time);
+        if (!$time_24h) $time_24h = $default_time_24h;
+
+        try {
+            $tz = new DateTimeZone('America/Chicago');
+            $dt = DateTime::createFromFormat('Y-m-d H:i', $date . ' ' . $time_24h, $tz);
+            if (!$dt) return '';
+            if ($offset_min !== 0) {
+                $dt->modify(sprintf('%+d minutes', $offset_min));
+            }
+            return $dt->format('c'); // ISO 8601 with offset, e.g. 2026-04-10T19:30:00-05:00
+        } catch (Exception $e) {
+            return '';
+        }
     }
 
     private function time_to_24h($time_str) {
@@ -652,6 +812,157 @@ class Comedy_Houston_Plugin {
             'rescheduled' => 'https://schema.org/EventRescheduled',
         ];
         return $map[$status] ?? 'https://schema.org/EventScheduled';
+    }
+
+    /**
+     * Venue → PostalAddress lookup.
+     *
+     * ⚠️ Addresses below are hand-verified against Google Maps. If you add a
+     * new venue, look it up first and add it here — Google's event validator
+     * will warn about missing streetAddress, which hurts the "events near you"
+     * carousel eligibility.
+     *
+     * Match is case-insensitive, leading/trailing whitespace stripped,
+     * punctuation normalized. Unknown venues fall back to city/state only.
+     */
+    private function venue_address($venue_name) {
+        $key = $this->normalize_venue_key($venue_name);
+
+        $map = [
+            'punch line houston' => [
+                'street' => '2930 Sage Rd',
+                'locality' => 'Houston',
+                'region' => 'TX',
+                'postal' => '77056',
+            ],
+            'houston improv' => [
+                'street' => '7620 Katy Fwy #431',
+                'locality' => 'Houston',
+                'region' => 'TX',
+                'postal' => '77024',
+            ],
+            'the secret group' => [
+                'street' => '2101 Polk St',
+                'locality' => 'Houston',
+                'region' => 'TX',
+                'postal' => '77003',
+            ],
+            'rudyards' => [
+                'street' => '2010 Waugh Dr',
+                'locality' => 'Houston',
+                'region' => 'TX',
+                'postal' => '77006',
+            ],
+            'the riot comedy club upstairs at rudyards' => [
+                'street' => '2010 Waugh Dr',
+                'locality' => 'Houston',
+                'region' => 'TX',
+                'postal' => '77006',
+            ],
+            'the riot comedy club' => [
+                'street' => '2010 Waugh Dr',
+                'locality' => 'Houston',
+                'region' => 'TX',
+                'postal' => '77006',
+            ],
+            // TODO: Verify and add The Gordy's street address, plus any other
+            // venues that start appearing in events.json. Unknown venues still
+            // get a valid (city-only) PostalAddress via the fallback below.
+        ];
+
+        $address = [
+            '@type' => 'PostalAddress',
+            'addressLocality' => 'Houston',
+            'addressRegion' => 'TX',
+            'addressCountry' => 'US',
+        ];
+
+        if (isset($map[$key])) {
+            $m = $map[$key];
+            $address['streetAddress'] = $m['street'];
+            $address['addressLocality'] = $m['locality'];
+            $address['addressRegion'] = $m['region'];
+            if (!empty($m['postal'])) {
+                $address['postalCode'] = $m['postal'];
+            }
+        }
+
+        return $address;
+    }
+
+    private function normalize_venue_key($venue_name) {
+        $key = strtolower(trim((string) $venue_name));
+        // Drop punctuation and collapse whitespace so "Rudyard's" matches "Rudyards".
+        $key = preg_replace('/[^a-z0-9\s]/', '', $key);
+        $key = preg_replace('/\s+/', ' ', $key);
+        return trim($key);
+    }
+
+    /**
+     * Pull the headliner name out of an event title for schema.org performer.
+     *
+     * Handles:
+     *   "Mo Amer"                          → "Mo Amer"
+     *   "Jaboukie Young-White"             → "Jaboukie Young-White"
+     *   "Ali Siddiq: The Domino Effect"    → "Ali Siddiq"
+     *   "Andy Huggins & Friends"           → "Andy Huggins"
+     *   "Mark Viera Live at Punch Line"    → "Mark Viera"
+     *   "Peter Revello Headlines The Riot" → "Peter Revello"
+     *   "Open Mic Night"                   → "" (rejected — generic)
+     *
+     * If the result looks like a generic event name (open mic, showcase,
+     * roast battle, etc.) we return "" and the caller skips performer.
+     */
+    private function extract_performer_name($event_name) {
+        if (empty($event_name)) return '';
+
+        $name = trim($event_name);
+
+        // Cut at common separators that introduce tour/show subtitles.
+        foreach ([':', ' - ', ' — ', ' – ', ' (', ' feat', ' ft'] as $sep) {
+            $pos = stripos($name, $sep);
+            if ($pos !== false) {
+                $name = trim(substr($name, 0, $pos));
+            }
+        }
+
+        // Drop everything from "& Friends", "with", "Live at", "Headlines", etc.
+        $stop_patterns = [
+            '/\s+&\s+Friends\b.*$/i',
+            '/\s+\bwith\b.*$/i',
+            '/\s+\bLive at\b.*$/i',
+            '/\s+\bat the\b.*$/i',
+            '/\s+\bat\b\s+[A-Z].*$/',
+            '/\s+\bHeadlines\b.*$/i',
+            '/\s+\bHeadlining\b.*$/i',
+            '/\s+\bPresents\b.*$/i',
+            '/\s+\bComedy Tour\b.*$/i',
+            '/\s+\bTour\b.*$/i',
+        ];
+        foreach ($stop_patterns as $pattern) {
+            $name = preg_replace($pattern, '', $name);
+        }
+
+        $name = trim($name);
+
+        // Reject generic / non-person event names so we don't pollute the
+        // performer slot with "Open Mic Night" or "Comedy Showcase".
+        $generic = [
+            'open mic', 'showcase', 'roast battle', 'comedy night',
+            'stand up', 'stand-up', 'karaoke', 'improv jam', 'new talent',
+            'comedy show', 'comedy jam',
+        ];
+        $lower = strtolower($name);
+        foreach ($generic as $g) {
+            if (strpos($lower, $g) !== false) return '';
+        }
+
+        // Require at least two words (a first + last name) and a reasonable
+        // length so we don't accept 1-word artist aliases or 200-char blurbs.
+        $word_count = str_word_count($name);
+        if ($word_count < 2 || strlen($name) > 60) return '';
+
+        return $name;
     }
 
     // =========================================================================
