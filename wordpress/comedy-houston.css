@@ -492,8 +492,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 8px;
   margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+/* Secondary "More info" CTA — same pill shape as Get Tickets but ghost
+   variant so the primary ticket button still dominates visually. */
+#ch-app .card-cta-secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 7px 14px;
+}
+
+#ch-app .card-cta-secondary:hover {
+  background: var(--accent);
+  color: #fff;
 }
 
 #ch-app .card-price {

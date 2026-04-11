@@ -31,6 +31,12 @@
   var SHOW_SOURCE_BADGES = config.showSourceBadges !== false;
   var REDIRECT_BASE = config.redirectBase || "";
 
+  // Published comedian posts, injected by the PHP plugin. Each entry is
+  // { date: "YYYY-MM-DD", comedian: "Mo Amer", wpLink: "https://..." }.
+  // findComedianPostForEvent() below uses this to add a "More info" link
+  // next to "Get Tickets" when an event matches a published post.
+  var COMEDIAN_POSTS = Array.isArray(config.comedianPosts) ? config.comedianPosts : [];
+
   // Shortcode params (locked filters from PHP shortcode attributes)
   var scParams = config.shortcodeParams || {};
 
@@ -365,6 +371,23 @@
     }
   }
 
+  // Fuzzy-match an event to a published comedian post. Exact date + the
+  // comedian's name appearing as a substring of the event title. Kept in
+  // sync with find_comedian_post_for_event() in comedy-houston.php.
+  function findComedianPostForEvent(ev) {
+    if (!ev || !ev.date || !ev.name || COMEDIAN_POSTS.length === 0) return null;
+    var evDate = ev.date;
+    var evNameLower = ev.name.toLowerCase();
+    for (var i = 0; i < COMEDIAN_POSTS.length; i++) {
+      var p = COMEDIAN_POSTS[i];
+      if (p.date !== evDate) continue;
+      var c = (p.comedian || "").toLowerCase();
+      if (!c) continue;
+      if (evNameLower.indexOf(c) !== -1) return p;
+    }
+    return null;
+  }
+
   function renderCard(ev) {
     var imageHTML = ev.image_url
       ? '<img src="' + escapeAttr(ev.image_url) + '" alt="' + escapeAttr(ev.name) + '" loading="lazy">'
@@ -383,6 +406,16 @@
         'Get Tickets <span class="arrow">&rarr;</span></a>'
       : '<span class="card-cta" style="opacity:0.5;cursor:default;">Coming Soon</span>';
 
+    // If we have an internal comedian post for this event, show a secondary
+    // "More info" link. Keeps visitors on our site for the research content
+    // before they click out to the ticket vendor.
+    var matchedPost = findComedianPostForEvent(ev);
+    var moreInfoHTML = "";
+    if (matchedPost && matchedPost.wpLink) {
+      moreInfoHTML = '<a class="card-cta card-cta-secondary" href="' +
+        escapeAttr(matchedPost.wpLink) + '">More info</a>';
+    }
+
     return '<article class="event-card">' +
       '<div class="card-image">' + imageHTML +
       (SHOW_SOURCE_BADGES ? '<span class="card-source-badge ' + escapeAttr(ev.source) + '">' + escapeHTML(ev.source) + '</span>' : '') +
@@ -399,6 +432,7 @@
       '<div class="card-venue">' + escapeHTML(ev.venue) + '</div>' +
       '<div class="card-footer">' +
       '<div class="card-price">' + priceHTML + '</div>' +
+      moreInfoHTML +
       ticketHTML +
       '</div></div></article>';
   }

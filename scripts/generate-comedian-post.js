@@ -857,40 +857,283 @@ ${items}
 `;
 }
 
-function wrapInHTML(blogContent, comedianName, venue, date, generatedAt, imageUrl, ticketUrl) {
+// ---------------------------------------------------------------------------
+// Schema.org helpers (shared by wrapInHTML head injection AND the WordPress
+// post body injection). Single source of truth so the GitHub Pages HTML and
+// the WordPress post carry identical structured data.
+// ---------------------------------------------------------------------------
+
+/**
+ * Venue → PostalAddress lookup. Kept in sync with wordpress/comedy-houston.php
+ * venue_address(). Add new venues in BOTH places.
+ *
+ * ⚠️ Addresses hand-verified against Google Maps. Unknown venues fall back to
+ * Houston/TX only so the schema is still valid.
+ */
+function venueAddress(venueName) {
+  const key = (venueName || "")
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s]/g, "")
+    .replace(/\s+/g, " ");
+
+  const map = {
+    "punch line houston": { street: "2930 Sage Rd", locality: "Houston", region: "TX", postal: "77056" },
+    "houston improv":     { street: "7620 Katy Fwy #431", locality: "Houston", region: "TX", postal: "77024" },
+    "the secret group":   { street: "2101 Polk St", locality: "Houston", region: "TX", postal: "77003" },
+    "rudyards":           { street: "2010 Waugh Dr", locality: "Houston", region: "TX", postal: "77006" },
+    "the riot comedy club upstairs at rudyards": { street: "2010 Waugh Dr", locality: "Houston", region: "TX", postal: "77006" },
+    "the riot comedy club":                       { street: "2010 Waugh Dr", locality: "Houston", region: "TX", postal: "77006" },
+    // TODO: The Gordy and any new venue added to events.json.
+  };
+
+  const out = {
+    "@type": "PostalAddress",
+    addressLocality: "Houston",
+    addressRegion: "TX",
+    addressCountry: "US",
+  };
+  if (map[key]) {
+    const m = map[key];
+    out.streetAddress = m.street;
+    out.addressLocality = m.locality;
+    out.addressRegion = m.region;
+    if (m.postal) out.postalCode = m.postal;
+  }
+  return out;
+}
+
+/**
+ * US DST rules: 2nd Sunday of March through 1st Sunday of November.
+ * Used to pick the correct America/Chicago UTC offset (-05:00 CDT vs -06:00 CST)
+ * without pulling in a tz library.
+ */
+function isChicagoDst(year, month, day) {
+  if (month < 3 || month > 11) return false;
+  if (month > 3 && month < 11) return true;
+  if (month === 3) {
+    // DST starts on the 2nd Sunday of March.
+    let sundays = 0;
+    for (let i = 1; i <= 31; i++) {
+      const d = new Date(year, 2, i);
+      if (d.getDay() === 0) {
+        sundays++;
+        if (sundays === 2) return day >= i;
+      }
+    }
+    return false;
+  }
+  // November: DST ends on the 1st Sunday.
+  for (let i = 1; i <= 7; i++) {
+    const d = new Date(year, 10, i);
+    if (d.getDay() === 0) return day < i;
+  }
+  return false;
+}
+
+/**
+ * Build an ISO-8601 datetime string in America/Chicago with proper offset.
+ *   buildChicagoIso("2026-04-10", "7:30 PM")          → "2026-04-10T19:30:00-05:00"
+ *   buildChicagoIso("2026-04-10", "7:30 PM", 120)     → "2026-04-10T21:30:00-05:00"  (endDate = +2h)
+ *   buildChicagoIso("2026-04-10", null)               → "2026-04-10T19:00:00-05:00"  (default 7 PM)
+ */
+function buildChicagoIso(dateStr, timeStr, addMinutes = 0) {
+  if (!dateStr) return "";
+  const dateMatch = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!dateMatch) return "";
+  let year = parseInt(dateMatch[1], 10);
+  let month = parseInt(dateMatch[2], 10);
+  let day = parseInt(dateMatch[3], 10);
+
+  let hour = 19;
+  let minute = 0;
+  if (timeStr) {
+    const m = String(timeStr).match(/(\d{1,2}):?(\d{0,2})\s*(AM|PM)?/i);
+    if (m) {
+      hour = parseInt(m[1], 10);
+      minute = m[2] ? parseInt(m[2], 10) : 0;
+      const ampm = (m[3] || "").toUpperCase();
+      if (ampm === "PM" && hour < 12) hour += 12;
+      if (ampm === "AM" && hour === 12) hour = 0;
+    }
+  }
+
+  if (addMinutes) {
+    // Walk the clock forward by addMinutes. Use Date arithmetic so midnight
+    // wraparound is correct; then read the components back out.
+    const asUtc = new Date(Date.UTC(year, month - 1, day, hour, minute));
+    asUtc.setUTCMinutes(asUtc.getUTCMinutes() + addMinutes);
+    year = asUtc.getUTCFullYear();
+    month = asUtc.getUTCMonth() + 1;
+    day = asUtc.getUTCDate();
+    hour = asUtc.getUTCHours();
+    minute = asUtc.getUTCMinutes();
+  }
+
+  const offset = isChicagoDst(year, month, day) ? "-05:00" : "-06:00";
+  const pad = (n) => String(n).padStart(2, "0");
+  return `${year}-${pad(month)}-${pad(day)}T${pad(hour)}:${pad(minute)}:00${offset}`;
+}
+
+/**
+ * Pull sameAs URLs (Wikipedia, IMDB, Netflix, Rotten Tomatoes, official site,
+ * Instagram) out of the research JSON so Google can link the Person node to
+ * the comedian's real knowledge graph entity. Returns a deduped URL array.
+ */
+function extractPerformerSameAs(research) {
+  const urls = new Set();
+  if (!research) return [];
+
+  let text = research;
+  if (typeof research === "object") {
+    try { text = JSON.stringify(research); } catch (_) { text = ""; }
+  }
+
+  // Whitelist of identity-establishing domains. Ordered by authority so that
+  // if we ever want to cap the array, we keep the most useful first.
+  const hostRegex = /\bhttps?:\/\/(?:[\w-]+\.)*(?:en\.wikipedia\.org|wikipedia\.org|imdb\.com|netflix\.com|rottentomatoes\.com|instagram\.com|twitter\.com|x\.com|youtube\.com)[^\s"')<>]+/gi;
+  const matches = String(text).match(hostRegex) || [];
+  for (const url of matches) {
+    // Strip trailing punctuation that commonly comes from sentence boundaries.
+    const cleaned = url.replace(/[.,);:\]]+$/, "");
+    urls.add(cleaned);
+  }
+
+  // If the research JSON has an instagram_handle but no instagram URL made it
+  // into the matches above, synthesize the URL from the handle.
+  if (typeof research === "string") {
+    try {
+      const obj = JSON.parse(String(research).replace(/^```json\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim());
+      if (obj && obj.instagram_handle) {
+        const handle = String(obj.instagram_handle).replace(/^@+/, "").trim();
+        if (handle) urls.add(`https://www.instagram.com/${handle}/`);
+      }
+    } catch (_) { /* research wasn't JSON — ignore */ }
+  }
+
+  return Array.from(urls).slice(0, 8);
+}
+
+/**
+ * Build the full schema.org @graph for a comedian post. Returns a JS object
+ * ready to pass to JSON.stringify — the SAME graph is injected into the
+ * GitHub Pages HTML <head> (via wrapInHTML) AND into the WordPress post body
+ * (via the main loop), so search engines see identical data on both.
+ */
+function buildComedianSchemaGraph({
+  comedianName,
+  venue,
+  date,
+  time,
+  imageUrl,
+  ticketUrl,
+  priceMin,
+  priceMax,
+  currency,
+  description,
+  research,
+  lastUpdated,
+}) {
+  const sameAs = extractPerformerSameAs(research);
+  const performer = {
+    "@type": "Person",
+    name: comedianName,
+    jobTitle: "Comedian",
+    ...(imageUrl ? { image: imageUrl } : {}),
+    ...(sameAs.length > 0 ? { sameAs } : {}),
+  };
+
+  const startDate = buildChicagoIso(date, time, 0);
+  const endDate = buildChicagoIso(date, time, 120);
+
+  const event = {
+    "@type": "ComedyEvent",
+    name: `${comedianName} Live at ${venue}`,
+    description:
+      description ||
+      `${comedianName} performs live at ${venue} in Houston, TX on ${formatDateForDisplay(date)}.`,
+    ...(startDate ? { startDate } : {}),
+    ...(endDate ? { endDate } : {}),
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    location: {
+      "@type": "Place",
+      name: venue,
+      address: venueAddress(venue),
+    },
+    organizer: {
+      "@type": "Organization",
+      name: venue,
+    },
+    performer: {
+      "@type": "Person",
+      name: comedianName,
+      ...(sameAs.length > 0 ? { sameAs } : {}),
+    },
+    ...(imageUrl ? { image: imageUrl } : {}),
+  };
+
+  if (ticketUrl) {
+    const offer = {
+      "@type": "Offer",
+      url: ticketUrl,
+      priceCurrency: currency || "USD",
+      availability: "https://schema.org/InStock",
+      validFrom: lastUpdated || new Date().toISOString(),
+    };
+    if (priceMin !== null && priceMin !== undefined) {
+      offer.lowPrice = priceMin;
+      offer.price = priceMin;
+    }
+    if (priceMax !== null && priceMax !== undefined) {
+      offer.highPrice = priceMax;
+    }
+    event.offers = offer;
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [performer, event],
+  };
+}
+
+/**
+ * Serialize a schema graph as a `<script type="application/ld+json">` block
+ * ready to prepend to post body HTML.
+ */
+function renderSchemaScriptTag(graph) {
+  return `<script type="application/ld+json">${JSON.stringify(graph)}</script>`;
+}
+
+function wrapInHTML(blogContent, comedianName, venue, date, generatedAt, imageUrl, ticketUrl, schemaGraph) {
   const title = `${comedianName} at ${venue} — ${formatDateForDisplay(date)} | Houston Comedy`;
   const description = `${comedianName} performs live at ${venue} in Houston, TX on ${formatDateForDisplay(date)}. Get show details, comedian background, and ticket info at ComedyHouston.com.`;
 
-  // JSON-LD structured data for search engine rich snippets.
-  // @graph with both Person and ComedyEvent so Google can build a knowledge
-  // panel for the comedian AND show the event in event-rich-result carousels
-  // for local intent queries like "comedy houston this weekend".
-  const personNode = {
-    "@type": "Person",
-    "name": comedianName,
-    "jobTitle": "Comedian",
-    ...(imageUrl ? { "image": imageUrl } : {}),
-  };
-  const eventNode = {
-    "@type": "ComedyEvent",
-    "name": `${comedianName} Live at ${venue}`,
-    "description": description,
-    "startDate": date,
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "location": {
-      "@type": "Place",
-      "name": venue,
-      "address": { "@type": "PostalAddress", "addressLocality": "Houston", "addressRegion": "TX", "addressCountry": "US" }
-    },
-    "performer": { "@type": "Person", "name": comedianName },
-    ...(imageUrl ? { "image": imageUrl } : {}),
-    ...(ticketUrl ? { "offers": { "@type": "Offer", "url": ticketUrl, "availability": "https://schema.org/InStock", "priceCurrency": "USD" } } : {}),
-  };
-  const jsonLd = JSON.stringify({
-    "@context": "https://schema.org",
-    "@graph": [personNode, eventNode],
-  });
+  // JSON-LD structured data. If the caller passed a pre-built graph (from
+  // buildComedianSchemaGraph), use it — that guarantees the GitHub Pages HTML
+  // and the WordPress post body carry identical structured data. Otherwise
+  // fall back to a minimal Person + ComedyEvent graph so older callsites still
+  // emit something valid.
+  let jsonLd;
+  if (schemaGraph) {
+    jsonLd = JSON.stringify(schemaGraph);
+  } else {
+    const fallbackGraph = buildComedianSchemaGraph({
+      comedianName,
+      venue,
+      date,
+      time: null,
+      imageUrl,
+      ticketUrl,
+      priceMin: null,
+      priceMax: null,
+      currency: "USD",
+      description,
+      research: "",
+      lastUpdated: null,
+    });
+    jsonLd = JSON.stringify(fallbackGraph);
+  }
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -1781,6 +2024,33 @@ async function main() {
     }
     finalContent = sanitized.html;
 
+    // Build the schema.org @graph ONCE and inject it into finalContent.
+    // Must run AFTER sanitizeAiHtml (which would otherwise strip our script
+    // tag) and BEFORE wrapInHTML / publishToWordPress so the same graph ends
+    // up in both the GitHub Pages <head> AND the WordPress post body. This
+    // is the fix for the audit gap: comedian posts on comedyhouston.com had
+    // no Event schema, so Google couldn't surface them in the event carousel
+    // or tie them to the comedian's knowledge panel.
+    const schemaGraph = buildComedianSchemaGraph({
+      comedianName: headliner.name,
+      venue: venue,
+      date: date,
+      time: time,
+      imageUrl: eventImageUrl,
+      ticketUrl: ticketUrl,
+      priceMin: priceMin,
+      priceMax: priceMax,
+      currency: matchedEvent.currency || "USD",
+      description: matchedEvent.description || "",
+      research: research,
+      lastUpdated: matchedEvent.last_updated || null,
+    });
+    const schemaScript = renderSchemaScriptTag(schemaGraph);
+    // Prepend so the script tag sits at the top of the WP post body. Google
+    // reads JSON-LD anywhere on the page, but keeping it first makes it
+    // trivial to spot in "View Source" during debugging.
+    finalContent = schemaScript + "\n\n" + finalContent;
+
     // Generate filename
     const dateSlug = date; // YYYY-MM-DD
     const nameSlug = slugify(headliner.name);
@@ -1795,7 +2065,7 @@ async function main() {
       day: "numeric",
       year: "numeric",
     });
-    const html = wrapInHTML(finalContent, headliner.name, venue, date, generatedAt, eventImageUrl, ticketUrl);
+    const html = wrapInHTML(finalContent, headliner.name, venue, date, generatedAt, eventImageUrl, ticketUrl, schemaGraph);
 
     // Write file to GitHub Pages
     const filePath = path.join(COMEDIANS_DIR, filename);
@@ -1870,11 +2140,14 @@ async function main() {
       caption: caption,
       instagramHandle: instagramHandle, // "@name" or "" — poster uses this to tag the comedian in the IG photo
       graphicFiles: graphicFiles.map((gf) => gf.pngFile),
-      // Stash the post body and metadata so the second pass below can append
-      // the internal-linking section and re-publish without re-running the
-      // 4-call OpenAI pipeline.
+      // Stash the post body, metadata, and the pre-built schema graph so the
+      // second pass below can append the internal-linking section, re-wrap
+      // the HTML, and re-publish without re-running the 4-call OpenAI
+      // pipeline. The schema graph is reused verbatim — same structured data
+      // in round 1 and round 2.
       _finalContent: finalContent,
       _generatedAt: generatedAt,
+      _schemaGraph: schemaGraph,
     });
   }
 
@@ -1894,7 +2167,11 @@ async function main() {
         const linkSection = buildAlsoThisWeekSection(post.slug, generatedPosts);
         const linkedContent = post._finalContent + linkSection;
 
-        // Rewrite GitHub Pages HTML
+        // Rewrite GitHub Pages HTML. Pass the pre-built schema graph so the
+        // <head> JSON-LD matches what's already embedded at the top of the
+        // post body (the script block was prepended to _finalContent in the
+        // first pass, and buildAlsoThisWeekSection only appends — never
+        // touches the head of the body content).
         const linkedHtml = wrapInHTML(
           linkedContent,
           post.comedianName,
@@ -1902,7 +2179,8 @@ async function main() {
           post.date,
           post._generatedAt,
           post.imageUrl,
-          post.ticketUrl
+          post.ticketUrl,
+          post._schemaGraph
         );
         fs.writeFileSync(path.join(COMEDIANS_DIR, post.filename), linkedHtml);
 
@@ -1926,6 +2204,7 @@ async function main() {
   for (const post of generatedPosts) {
     delete post._finalContent;
     delete post._generatedAt;
+    delete post._schemaGraph;
   }
 
   // Generate index page
