@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.4.0
+ * Version: 2.4.1
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.4.0';
+    const VERSION      = '2.4.1';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -412,8 +412,18 @@ class Comedy_Houston_Plugin {
 
     /**
      * Find the comedian post matching an event, if one exists. Used by both
-     * the SSR card renderer and passed into JS for client-side render. Match
-     * criteria: exact date + fuzzy "comedian name appears in event title".
+     * the SSR card renderer and passed into JS for client-side render.
+     *
+     * Two-pass match so multi-night residencies (Mo Amer runs Fri/Sat/Sun at
+     * Houston Improv but the post is tagged to one night) still get the
+     * "More info" link on every night:
+     *
+     *   1. Exact-date + comedian-name substring (most accurate for one-off shows)
+     *   2. Any-date-within-manifest-week + comedian-name substring (catches
+     *      the other nights of the same residency)
+     *
+     * Events outside the manifest's week range never match — prevents a
+     * future Mo Amer show from accidentally linking to this week's post.
      *
      * Returns the matching manifest post (assoc array) or null.
      */
@@ -424,8 +434,34 @@ class Comedy_Houston_Plugin {
         $ev_date = $ev['date'];
         $ev_name_lower = strtolower($ev['name']);
 
+        // Gate: the event must fall inside the manifest week. Manifest is
+        // rewritten every Monday, so min/max across posts = the current week.
+        $min_date = null;
+        $max_date = null;
+        foreach ($manifest_posts as $post) {
+            $d = $post['date'] ?? '';
+            if (!$d) continue;
+            if ($min_date === null || $d < $min_date) $min_date = $d;
+            if ($max_date === null || $d > $max_date) $max_date = $d;
+        }
+        if ($min_date === null) return null;
+        if ($ev_date < $min_date || $ev_date > $max_date) return null;
+
+        // Pass 1: exact date match (preferred — resolves cleanly for one-off shows).
         foreach ($manifest_posts as $post) {
             if (($post['date'] ?? '') !== $ev_date) continue;
+            $comedian_lower = strtolower($post['comedianName'] ?? '');
+            if (!$comedian_lower) continue;
+            if (strpos($ev_name_lower, $comedian_lower) !== false) {
+                return $post;
+            }
+        }
+
+        // Pass 2: any date within manifest week, name-only match.
+        // Fixes the multi-night residency case: Mo Amer's Friday post is
+        // the canonical write-up; his Saturday and Sunday show cards link
+        // to the same post so every appearance routes to our content.
+        foreach ($manifest_posts as $post) {
             $comedian_lower = strtolower($post['comedianName'] ?? '');
             if (!$comedian_lower) continue;
             if (strpos($ev_name_lower, $comedian_lower) !== false) {

@@ -371,19 +371,48 @@
     }
   }
 
-  // Fuzzy-match an event to a published comedian post. Exact date + the
-  // comedian's name appearing as a substring of the event title. Kept in
-  // sync with find_comedian_post_for_event() in comedy-houston.php.
+  // Fuzzy-match an event to a published comedian post.
+  //
+  // Two-pass match so multi-night residencies still link every appearance:
+  //   1. Exact-date + comedian-name substring (preferred, most accurate)
+  //   2. Any-date-within-manifest-week + name substring (catches Mo Amer's
+  //      Sat/Sun shows when the post is dated to Friday)
+  //
+  // Events outside the manifest week never match. Kept in sync with
+  // find_comedian_post_for_event() in comedy-houston.php.
   function findComedianPostForEvent(ev) {
     if (!ev || !ev.date || !ev.name || COMEDIAN_POSTS.length === 0) return null;
     var evDate = ev.date;
     var evNameLower = ev.name.toLowerCase();
+
+    // Week gate: compute manifest week bounds once and reject out-of-range
+    // events so next week's shows don't accidentally inherit this week's link.
+    var minDate = null;
+    var maxDate = null;
+    for (var j = 0; j < COMEDIAN_POSTS.length; j++) {
+      var d = COMEDIAN_POSTS[j].date;
+      if (!d) continue;
+      if (minDate === null || d < minDate) minDate = d;
+      if (maxDate === null || d > maxDate) maxDate = d;
+    }
+    if (minDate === null) return null;
+    if (evDate < minDate || evDate > maxDate) return null;
+
+    // Pass 1: exact date match.
     for (var i = 0; i < COMEDIAN_POSTS.length; i++) {
       var p = COMEDIAN_POSTS[i];
       if (p.date !== evDate) continue;
       var c = (p.comedian || "").toLowerCase();
       if (!c) continue;
       if (evNameLower.indexOf(c) !== -1) return p;
+    }
+
+    // Pass 2: any-date, name-only match within the manifest week.
+    for (var k = 0; k < COMEDIAN_POSTS.length; k++) {
+      var p2 = COMEDIAN_POSTS[k];
+      var c2 = (p2.comedian || "").toLowerCase();
+      if (!c2) continue;
+      if (evNameLower.indexOf(c2) !== -1) return p2;
     }
     return null;
   }
