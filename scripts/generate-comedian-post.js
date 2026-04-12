@@ -1624,7 +1624,7 @@ async function wpGetCategoryBySlug(slug) {
   return 0;
 }
 
-async function publishToWordPress(comedianName, venue, date, slug, htmlContent, imageUrl) {
+async function publishToWordPress(comedianName, venue, date, slug, htmlContent, imageUrl, schemaGraph) {
   console.log("  Step 4: Publishing to WordPress...");
 
   // Extract just the article body (strip the <h1> — WordPress uses the title field)
@@ -1690,6 +1690,18 @@ async function publishToWordPress(comedianName, venue, date, slug, htmlContent, 
     console.log(`    Category: Shows (ID: ${categoryId})`);
   } else {
     console.warn("    Warning: 'comedy-shows' category not found — posting as Uncategorized.");
+  }
+
+  // Schema graph goes on a custom REST field registered by the Comedy Houston
+  // plugin (v2.4.2+). The plugin stores it in post_meta and emits
+  // <script type="application/ld+json"> from wp_head on the front-end. This
+  // keeps the script tag out of post_content entirely, so wp_kses_post can't
+  // strip it on publish (no unfiltered_html capability required) and later
+  // Gutenberg edits can't corrupt the JSON. If the plugin isn't deployed yet,
+  // WordPress silently ignores unknown REST fields — the in-body prepend
+  // still carries the schema as a fallback until the plugin is live.
+  if (schemaGraph) {
+    postData.ch_schema_graph = JSON.stringify(schemaGraph);
   }
 
   // If a per-comedian post with this slug already exists (e.g. the workflow
@@ -2118,7 +2130,7 @@ async function main() {
     if (wpReady) {
       try {
         wpLink = await publishToWordPress(
-          headliner.name, venue, date, postSlug, finalContent, eventImageUrl
+          headliner.name, venue, date, postSlug, finalContent, eventImageUrl, schemaGraph
         );
       } catch (err) {
         console.error(`  WordPress publish failed: ${err.message}`);
@@ -2189,7 +2201,7 @@ async function main() {
         // the first publish never created a post.
         if (wpReady && post.wpLink) {
           await publishToWordPress(
-            post.comedianName, post.venue, post.date, post.slug, linkedContent, post.imageUrl
+            post.comedianName, post.venue, post.date, post.slug, linkedContent, post.imageUrl, post._schemaGraph
           );
         }
         console.log(`  Linked: ${post.comedianName}`);
