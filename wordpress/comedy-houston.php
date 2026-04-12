@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.4.0
+ * Version: 2.4.2
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.4.0';
+    const VERSION      = '2.4.2';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -47,6 +47,13 @@ class Comedy_Houston_Plugin {
         // Click redirect endpoint
         add_action('init', [$this, 'register_redirect_endpoint']);
         add_action('template_redirect', [$this, 'handle_redirect']);
+
+        // Comedian-post schema: receive via REST custom field, emit from wp_head.
+        // Keeps the <script type="application/ld+json"> tag out of post_content
+        // entirely so wp_kses_post can't strip it on publish and so content
+        // edits in Gutenberg can't corrupt the JSON graph.
+        add_action('rest_api_init', [$this, 'register_comedian_schema_field']);
+        add_action('wp_head', [$this, 'emit_comedian_schema_head'], 20);
 
         // Create clicks table on activation
         register_activation_hook(__FILE__, [$this, 'create_clicks_table']);
@@ -306,6 +313,118 @@ class Comedy_Houston_Plugin {
         }
         // Hash the IP for privacy
         return wp_hash(trim($ip));
+    }
+
+    // =========================================================================
+    // COMEDIAN POST SCHEMA (REST field + wp_head emitter)
+    // =========================================================================
+
+    /**
+     * Register a writable REST field `ch_schema_graph` on posts. The per-comedian
+     * blog generator POSTs the schema.org @graph as a JSON-encoded string on
+     * this field when it creates/updates a comedy-shows post; we store it in
+     * post meta and emit it from wp_head on the front-end.
+     *
+     * Why this exists: the prior architecture prepended a <script type="application/ld+json">
+     * tag to post_content. That tag was silently stripped by wp_kses_post() on
+     * the WordPress REST write path unless the API user held the unfiltered_html
+     * capability (Administrator on single-site WP). Routing schema through
+     * post meta removes the capability dependency entirely — any role that
+     * can create/edit the post can set the field, and the raw <script> tag
+     * never touches post_content so it can't be stripped or corrupted by
+     * later Gutenberg saves.
+     *
+     * WP core already enforces edit_post at the post level for REST writes,
+     * so we don't need a separate permission_callback here — if the caller
+     * can PATCH/POST the post, they can set this field.
+     */
+    public function register_comedian_schema_field() {
+        register_rest_field('post', 'ch_schema_graph', [
+            'schema' => [
+                'description' => 'Schema.org @graph JSON for this comedian post (JSON-encoded string).',
+                'type'        => 'string',
+                'context'     => ['view', 'edit'],
+            ],
+            'get_callback' => function ($post_arr) {
+                $val = get_post_meta($post_arr['id'], '_ch_schema_graph', true);
+                return is_string($val) ? $val : '';
+            },
+            'update_callback' => function ($value, $post) {
+                if (!is_string($value)) {
+                    return new WP_Error(
+                        'ch_schema_invalid_type',
+                        'ch_schema_graph must be a JSON-encoded string.',
+                        ['status' => 400]
+                    );
+                }
+                // Hard cap at 64KB. A realistic ComedyEvent @graph is ~2KB;
+                // 64KB is ~30× headroom and prevents a runaway writer from
+                // ballooning post_meta.
+                if (strlen($value) > 65536) {
+                    return new WP_Error(
+                        'ch_schema_too_large',
+                        'ch_schema_graph exceeds the 64KB limit.',
+                        ['status' => 400]
+                    );
+                }
+                // Validate it actually parses as JSON — refuse to save
+                // garbage that would produce broken JSON-LD in <head>.
+                $decoded = json_decode($value, true);
+                if ($decoded === null && json_last_error() !== JSON_ERROR_NONE) {
+                    return new WP_Error(
+                        'ch_schema_invalid_json',
+                        'ch_schema_graph is not valid JSON: ' . json_last_error_msg(),
+                        ['status' => 400]
+                    );
+                }
+                update_post_meta($post->ID, '_ch_schema_graph', $value);
+                return true;
+            },
+        ]);
+    }
+
+    /**
+     * Emit the stored schema.org @graph for comedian posts on the front-end.
+     * Fires on wp_head for singular `post` views in the comedy-shows category
+     * and echoes a <script type="application/ld+json"> block using the JSON
+     * stashed in post meta by the REST update_callback above.
+     *
+     * Posts without the meta set (legacy posts predating this refactor, or
+     * non-comedy-shows posts that happen to be in the loop) produce zero
+     * output — the emitter stays silent rather than emitting an empty tag.
+     * During the belt-and-suspenders transition, those legacy posts still
+     * carry schema via the in-body prepend from the generator, so coverage
+     * never drops below the current baseline.
+     */
+    public function emit_comedian_schema_head() {
+        if (!is_singular('post')) {
+            return;
+        }
+        $post = get_queried_object();
+        if (!$post || empty($post->ID)) {
+            return;
+        }
+        // Scope to the comedy-shows category so we don't pollute the schema
+        // graph of unrelated posts that might end up with this meta set.
+        if (!has_category('comedy-shows', $post)) {
+            return;
+        }
+        $json = get_post_meta($post->ID, '_ch_schema_graph', true);
+        if (!is_string($json) || $json === '') {
+            return;
+        }
+        // Re-decode / re-encode to guarantee well-formed JSON and strip any
+        // stray whitespace or BOM. If decode fails (should be impossible — we
+        // validated on write — but defense in depth) stay silent.
+        $decoded = json_decode($json, true);
+        if ($decoded === null && json_last_error() !== JSON_ERROR_NONE) {
+            return;
+        }
+        $clean = wp_json_encode($decoded, JSON_UNESCAPED_SLASHES);
+        if (!is_string($clean) || $clean === '') {
+            return;
+        }
+        echo "\n<script type=\"application/ld+json\">" . $clean . "</script>\n";
     }
 
     // =========================================================================
