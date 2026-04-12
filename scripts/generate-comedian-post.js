@@ -1073,18 +1073,23 @@ function buildComedianSchemaGraph({
     ...(imageUrl ? { image: imageUrl } : {}),
   };
 
-  if (ticketUrl) {
+  // Offers. Google's Event Rich Results requires `offers.price` or
+  // `offers.priceSpecification` when offers is present — an Offer without
+  // a price is an ERROR (not a warning) and drops the event from carousel
+  // eligibility. So we emit offers ONLY when we know the price (priceMin
+  // is set, including 0 for free events). If we have a ticket URL but no
+  // price data, we omit offers entirely rather than shipping a partial
+  // Offer that would break schema validation for the whole Event.
+  if (ticketUrl && priceMin !== null && priceMin !== undefined) {
     const offer = {
       "@type": "Offer",
       url: ticketUrl,
       priceCurrency: currency || "USD",
       availability: "https://schema.org/InStock",
       validFrom: lastUpdated || new Date().toISOString(),
+      price: priceMin,
+      lowPrice: priceMin,
     };
-    if (priceMin !== null && priceMin !== undefined) {
-      offer.lowPrice = priceMin;
-      offer.price = priceMin;
-    }
     if (priceMax !== null && priceMax !== undefined) {
       offer.highPrice = priceMax;
     }

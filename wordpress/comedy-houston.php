@@ -844,7 +844,15 @@ class Comedy_Houston_Plugin {
                 $event_item['description'] = mb_substr($ev['description'], 0, 300);
             }
 
-            if (!empty($ev['ticket_url'])) {
+            // Offers. Google's Event Rich Results requires `offers.price` or
+            // `offers.priceSpecification` when offers is present — an Offer
+            // without a price is an ERROR (not a warning) and drops the event
+            // from carousel eligibility. So we emit offers ONLY when we know
+            // the price (price_min is set, including 0 for free events). If
+            // we have a ticket URL but no price data, we omit offers entirely
+            // rather than shipping a partial Offer that would break schema
+            // validation for the whole Event.
+            if (!empty($ev['ticket_url']) && isset($ev['price_min']) && $ev['price_min'] !== null) {
                 $offer = [
                     '@type' => 'Offer',
                     'url' => $ev['ticket_url'],
@@ -855,13 +863,12 @@ class Comedy_Houston_Plugin {
                     'validFrom' => !empty($ev['last_updated'])
                         ? $ev['last_updated']
                         : gmdate('Y-m-d\TH:i:s\Z'),
+                    // Google's Event guidelines want a `price` field — use
+                    // price_min as the canonical price and also mirror it to
+                    // lowPrice for range-offer consumers.
+                    'price' => $ev['price_min'],
+                    'lowPrice' => $ev['price_min'],
                 ];
-                if (isset($ev['price_min']) && $ev['price_min'] !== null) {
-                    $offer['lowPrice'] = $ev['price_min'];
-                    // Google's Event guidelines want a `price` field too when
-                    // only a min is known — use lowPrice as the canonical price.
-                    $offer['price'] = $ev['price_min'];
-                }
                 if (isset($ev['price_max']) && $ev['price_max'] !== null) {
                     $offer['highPrice'] = $ev['price_max'];
                 }
