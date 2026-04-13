@@ -1,51 +1,15 @@
 {
   "posted": [
     {
-      "slug": "mark-viera-punch-line-houston-2026-04-09",
-      "comedianName": "Mark Viera",
-      "igFeedMediaId": "17888482977465650",
-      "igStoryMediaId": "18086510663613166",
-      "fbFeedPostId": "1272244228333653",
-      "fbStoryPostId": "717263648080551",
-      "postedAt": "2026-04-07T05:24:12.806Z"
-    },
-    {
-      "slug": "jaboukie-young-white-punch-line-houston-2026-04-10",
-      "comedianName": "Jaboukie Young-White",
-      "igFeedMediaId": "17964227616058847",
-      "igStoryMediaId": "18111932005755725",
-      "fbFeedPostId": "1272245625000180",
-      "fbStoryPostId": "2846603899022705",
-      "postedAt": "2026-04-07T05:26:54.547Z"
-    },
-    {
-      "slug": "peter-revello-the-riot-comedy-club-upstairs-at-rudyards-2026-04-10",
-      "comedianName": "Peter Revello",
-      "igFeedMediaId": "18367252471161034",
-      "igStoryMediaId": "18169904956408555",
-      "fbFeedPostId": "1272257801665629",
-      "fbStoryPostId": "1622297338992152",
-      "postedAt": "2026-04-07T05:51:43.169Z"
-    },
-    {
-      "slug": "mo-amer-houston-improv-2026-04-10",
-      "comedianName": "Mo Amer",
-      "igFeedMediaId": "18106979494697744",
-      "igStoryMediaId": "18112205575766665",
-      "fbFeedPostId": "1272420024982740",
-      "fbStoryPostId": "1625098028613500",
-      "postedAt": "2026-04-07T11:07:30.412Z"
-    },
-    {
-      "slug": "andy-huggins-punch-line-houston-2026-04-08",
-      "comedianName": "Andy Huggins",
-      "igFeedMediaId": "17874054327455305",
-      "igStoryMediaId": "18074425964204999",
-      "fbFeedPostId": "1273371481554261",
-      "fbStoryPostId": "968900745826174",
-      "postedAt": "2026-04-08T17:16:11.148Z"
+      "slug": "dj-demers-the-secret-group-2026-04-15",
+      "comedianName": "DJ Demers",
+      "igFeedMediaId": "18054408335710282",
+      "igStoryMediaId": "18039868127785927",
+      "fbFeedPostId": "1277055637852512",
+      "fbStoryPostId": "1325495556113053",
+      "postedAt": "2026-04-13T17:15:21.429Z"
     }
   ],
-  "week_range": "April 6 – April 12, 2026",
-  "manifest_version": 1775663688888
+  "week_range": "April 13 – April 19, 2026",
+  "manifest_version": 1776100100440
 }
