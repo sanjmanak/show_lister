@@ -1,46 +1,70 @@
 {
-  "generated_at": "2026-04-08T19:16:11.632Z",
-  "week_range": "April 6 – April 12, 2026",
+  "generated_at": "2026-04-13T16:06:32.645Z",
+  "week_range": "April 13 – April 19, 2026",
   "comedians": [
     {
-      "name": "Andy Huggins",
-      "show": "Andy Huggins & Friends",
-      "imageUrl": "https://s1.ticketm.net/dam/a/584/a473ec18-fdb7-41e2-8f5c-137684fa3584_SOURCE",
+      "name": "DJ Demers",
+      "show": "DJ Demers",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1180724360%2F3558237521%2F1%2Foriginal.20260326-032617?auto=format%2Ccompress&q=75&sharp=10&s=476f7b4191ed6605a7a6dc20a8ebbe54",
+      "headshotUrl": "https://images.squarespace-cdn.com/content/v1/54fa08e2e4b04dc2c5e011a9/1628728282291-2T5OB8B3P055J5OELGAF/DJ+Demers+headshot+smallest.jpg",
+      "displayImage": "https://images.squarespace-cdn.com/content/v1/54fa08e2e4b04dc2c5e011a9/1628728282291-2T5OB8B3P055J5OELGAF/DJ+Demers+headshot+smallest.jpg",
+      "imageSource": "headshot"
+    },
+    {
+      "name": "Francis Ellis",
+      "show": "Francis Ellis",
+      "imageUrl": "https://s1.ticketm.net/dam/a/00a/9bc54acf-d39f-4641-b15b-f7d85b6fe00a_SOURCE",
       "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/584/a473ec18-fdb7-41e2-8f5c-137684fa3584_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/00a/9bc54acf-d39f-4641-b15b-f7d85b6fe00a_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Mark Viera",
-      "show": "Mark Viera",
-      "imageUrl": "https://s1.ticketm.net/dam/a/67a/50dee159-f1be-4b11-b55f-448aac07b67a_SOURCE",
+      "name": "Trey Kennedy",
+      "show": "TREY KENNEDY - THE RELATABLE TOUR",
+      "imageUrl": "https://s1.ticketm.net/dam/a/949/5cde611c-539d-443f-b0c7-bc13bcb06949_SOURCE",
       "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/67a/50dee159-f1be-4b11-b55f-448aac07b67a_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/949/5cde611c-539d-443f-b0c7-bc13bcb06949_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Jaboukie Young-White",
-      "show": "Jaboukie Young-White",
-      "imageUrl": "https://s1.ticketm.net/dam/a/a08/aa7490b8-54c6-4635-bebc-247682771a08_SOURCE",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/2024-03-08_SXSW-2024_Variety-comedy-awards_05196_%28cropped%29.jpg/960px-2024-03-08_SXSW-2024_Variety-comedy-awards_05196_%28cropped%29.jpg",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/2024-03-08_SXSW-2024_Variety-comedy-awards_05196_%28cropped%29.jpg/960px-2024-03-08_SXSW-2024_Variety-comedy-awards_05196_%28cropped%29.jpg",
+      "name": "Dave Attell",
+      "show": "Dave Attell",
+      "imageUrl": "https://s1.ticketm.net/dam/a/437/8aa1d8dd-f64c-42f3-aef1-0c05c60f7437_SOURCE",
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/a/437/8aa1d8dd-f64c-42f3-aef1-0c05c60f7437_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "John Crist",
+      "show": "John Crist",
+      "imageUrl": "https://s1.ticketm.net/dam/a/544/33c53e82-16ab-4677-8ab9-d88c8529a544_SOURCE",
+      "headshotUrl": "https://images.squarespace-cdn.com/content/v1/6903dde3b277a554a3099fce/8497a055-8291-4028-829f-f5f3c6a04bf7/net-positive-with-john-crist-podcast.png",
+      "displayImage": "https://images.squarespace-cdn.com/content/v1/6903dde3b277a554a3099fce/8497a055-8291-4028-829f-f5f3c6a04bf7/net-positive-with-john-crist-podcast.png",
       "imageSource": "headshot"
     },
     {
-      "name": "Peter Revello",
-      "show": "Peter Revello (Tonight Show, LMAOF) Headlines The Riot Comedy Club",
-      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1174957379%2F428099579998%2F1%2Foriginal.20260115-151854?auto=format%2Ccompress&q=75&sharp=10&s=a2ddd515f3b661002b18cfe7d74105a1",
-      "headshotUrl": "https://images.squarespace-cdn.com/content/v1/5a4e9fddbe42d6b9d0ff44cf/1536162255482-WYMQNK9BIQGZ0XC2566N/39145607_1701639576624711_383654421935947776_o.jpg?format=500w",
-      "displayImage": "https://images.squarespace-cdn.com/content/v1/5a4e9fddbe42d6b9d0ff44cf/1536162255482-WYMQNK9BIQGZ0XC2566N/39145607_1701639576624711_383654421935947776_o.jpg?format=500w",
-      "imageSource": "headshot"
+      "name": "Pedro Gonzalez",
+      "show": "Pedro Gonzalez",
+      "imageUrl": "https://s1.ticketm.net/dam/a/c58/6d9532a3-bc6c-44d8-a617-a2f35614cc58_SOURCE",
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/a/c58/6d9532a3-bc6c-44d8-a617-a2f35614cc58_SOURCE",
+      "imageSource": "event"
     },
     {
-      "name": "Mo Amer",
-      "show": "Mo Amer",
-      "imageUrl": "https://s1.ticketm.net/dam/a/407/e2afafee-20b2-4067-b289-cb171ea40407_SOURCE",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Mo_Amer.jpg",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Mo_Amer.jpg",
-      "imageSource": "headshot"
+      "name": "Tom Rhodes",
+      "show": "Tom Rhodes",
+      "imageUrl": "https://s1.ticketm.net/dam/a/3f8/1f09d220-4d46-4385-94f4-cc745dde73f8_SOURCE",
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/a/3f8/1f09d220-4d46-4385-94f4-cc745dde73f8_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "Zakir Khan",
+      "show": "Papa Yaar by Zakir Khan",
+      "imageUrl": "https://s1.ticketm.net/dam/a/32c/472984fc-c14d-46a4-928c-17dc7d1a132c_SOURCE",
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/a/32c/472984fc-c14d-46a4-928c-17dc7d1a132c_SOURCE",
+      "imageSource": "event"
     }
   ]
 }
