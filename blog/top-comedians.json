@@ -1,22 +1,14 @@
 {
-  "generated_at": "2026-04-14T02:14:15.445Z",
+  "generated_at": "2026-04-14T02:17:56.331Z",
   "week_range": "April 13 – April 19, 2026",
   "comedians": [
     {
       "name": "Zakir Khan",
       "show": "Papa Yaar by Zakir Khan",
       "imageUrl": "https://s1.ticketm.net/dam/a/32c/472984fc-c14d-46a4-928c-17dc7d1a132c_SOURCE",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Zakir_khan_2.jpg/1280px-Zakir_khan_2.jpg",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Zakir_khan_2.jpg/1280px-Zakir_khan_2.jpg",
-      "imageSource": "headshot"
-    },
-    {
-      "name": "John Crist",
-      "show": "John Crist",
-      "imageUrl": "https://s1.ticketm.net/dam/a/544/33c53e82-16ab-4677-8ab9-d88c8529a544_SOURCE",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/John_B_Crist%2C_2017_%2837001175170%29_cropped.jpg/960px-John_B_Crist%2C_2017_%2837001175170%29_cropped.jpg",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/John_B_Crist%2C_2017_%2837001175170%29_cropped.jpg/960px-John_B_Crist%2C_2017_%2837001175170%29_cropped.jpg",
-      "imageSource": "headshot"
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/a/32c/472984fc-c14d-46a4-928c-17dc7d1a132c_SOURCE",
+      "imageSource": "event"
     },
     {
       "name": "Trey Kennedy",
@@ -27,12 +19,20 @@
       "imageSource": "event"
     },
     {
+      "name": "John Crist",
+      "show": "John Crist",
+      "imageUrl": "https://s1.ticketm.net/dam/a/544/33c53e82-16ab-4677-8ab9-d88c8529a544_SOURCE",
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/a/544/33c53e82-16ab-4677-8ab9-d88c8529a544_SOURCE",
+      "imageSource": "event"
+    },
+    {
       "name": "Dave Attell",
       "show": "Dave Attell",
       "imageUrl": "https://s1.ticketm.net/dam/a/437/8aa1d8dd-f64c-42f3-aef1-0c05c60f7437_SOURCE",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Dave_Attell_2009.jpg/500px-Dave_Attell_2009.jpg",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Dave_Attell_2009.jpg/500px-Dave_Attell_2009.jpg",
-      "imageSource": "headshot"
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/a/437/8aa1d8dd-f64c-42f3-aef1-0c05c60f7437_SOURCE",
+      "imageSource": "event"
     },
     {
       "name": "Francis Ellis",
@@ -40,6 +40,14 @@
       "imageUrl": "https://s1.ticketm.net/dam/a/00a/9bc54acf-d39f-4641-b15b-f7d85b6fe00a_SOURCE",
       "headshotUrl": null,
       "displayImage": "https://s1.ticketm.net/dam/a/00a/9bc54acf-d39f-4641-b15b-f7d85b6fe00a_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "Tom Rhodes",
+      "show": "Tom Rhodes",
+      "imageUrl": "https://s1.ticketm.net/dam/a/3f8/1f09d220-4d46-4385-94f4-cc745dde73f8_SOURCE",
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/a/3f8/1f09d220-4d46-4385-94f4-cc745dde73f8_SOURCE",
       "imageSource": "event"
     }
   ]
