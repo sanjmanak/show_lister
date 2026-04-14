@@ -532,34 +532,45 @@ IMPORTANT:
 // ---------------------------------------------------------------------------
 
 function identifyTopComedians(events) {
-  const eventNames = events
-    .filter((ev) => {
-      const name = ev.name.toLowerCase();
-      // Skip open mics, showcases, karaoke, and generic recurring events
-      return (
-        !name.includes("open mic") &&
-        !name.includes("showcase") &&
-        !name.includes("karaoke") &&
-        !name.includes("showdown") &&
-        !name.includes("dating")
-      );
-    })
-    .map((ev) => ev.name);
+  const filtered = events.filter((ev) => {
+    const name = ev.name.toLowerCase();
+    // Skip open mics, showcases, karaoke, and generic recurring events
+    return (
+      !name.includes("open mic") &&
+      !name.includes("showcase") &&
+      !name.includes("karaoke") &&
+      !name.includes("showdown") &&
+      !name.includes("dating")
+    );
+  });
 
-  // Deduplicate names (same comedian may have multiple dates)
-  const unique = [...new Set(eventNames)];
+  // Build show entries with venue info so OpenAI can factor in venue size
+  const showEntries = filtered.map((ev) => {
+    const venue = ev.venue ? ` (at ${ev.venue})` : "";
+    return `${ev.name}${venue}`;
+  });
 
-  const prompt = `Here is a list of comedy show names happening in Houston this week. Identify ALL that feature recognizable comedians — anyone with Netflix/HBO/Comedy Central specials, TV appearances, major podcast appearances, sold-out tours, large social media followings (100k+), etc. Don't limit yourself to a fixed number. If there are no recognizable names, return an empty array.
+  // Deduplicate (same comedian may have multiple dates)
+  const unique = [...new Set(showEntries)];
+
+  const prompt = `Here is a list of comedy show names happening in Houston this week, with their venues. Identify ALL that feature recognizable comedians — anyone with Netflix/HBO/Comedy Central specials, TV appearances, major podcast appearances, sold-out tours, large social media followings (100k+), etc. Don't limit yourself to a fixed number. If there are no recognizable names, return an empty array.
+
+IMPORTANT: Return the results RANKED by drawing power / overall fame, biggest names first. Consider:
+- Social media following (millions of followers > hundreds of thousands)
+- Venue size (arenas/stadiums like NRG Arena > large theaters like Bayou Music Center > mid-size clubs like Houston Improv > small clubs like The Secret Group)
+- Mainstream recognition (Netflix specials, late-night TV, major tours)
+- International fame
+The comedian playing the biggest venue with the largest following should be #1, not the one whose show happens earliest in the week.
 
 Shows:
 ${unique.map((n) => `- ${n}`).join("\n")}
 
-Return ONLY a JSON array of objects with "name" (the comedian's name, not the event title) and "show" (the event title exactly as listed). Example:
+Return ONLY a JSON array of objects with "name" (the comedian's name, not the event title) and "show" (the event title exactly as listed, WITHOUT the venue in parentheses). Example:
 [{"name": "Ali Siddiq", "show": "Ali Siddiq"}, {"name": "Greg Fitzsimmons", "show": "Greg Fitzsimmons"}]
 
 Return ONLY the JSON array, no other text.`;
 
-  return callOpenAI(prompt, "You are a comedy expert. Return only valid JSON.");
+  return callOpenAI(prompt, "You are a comedy expert with deep knowledge of comedian popularity, social media followings, and venue sizes. Return only valid JSON.");
 }
 
 // ---------------------------------------------------------------------------
@@ -1484,10 +1495,12 @@ async function main() {
     // blow past the 20-minute job budget, and balloon the OpenAI bill.
     // The hero only renders 6 and the per-comedian script caps at 5, so
     // 8 is a safe ceiling that leaves a little margin for dedupe/miss.
+    // NOTE: The list is now ranked by drawing power (biggest names first)
+    // so the top 8 are the most prominent acts of the week.
     const MAX_TOP_COMEDIANS = 8;
     if (topComedians.length > MAX_TOP_COMEDIANS) {
       console.log(
-        `Capping ${topComedians.length} → ${MAX_TOP_COMEDIANS} comedians (first-come wins).`
+        `Capping ${topComedians.length} → ${MAX_TOP_COMEDIANS} comedians (ranked by prominence).`
       );
       topComedians = topComedians.slice(0, MAX_TOP_COMEDIANS);
     }
