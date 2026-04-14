@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "slug": "dj-demers-the-secret-group-2026-04-15",
-      "comedianName": "DJ Demers",
-      "igFeedMediaId": "18054408335710282",
-      "igStoryMediaId": "18039868127785927",
-      "fbFeedPostId": "1277055637852512",
-      "fbStoryPostId": "1325495556113053",
-      "postedAt": "2026-04-13T17:15:21.429Z"
-    },
-    {
       "slug": "francis-ellis-punch-line-houston-2026-04-16",
       "comedianName": "Francis Ellis",
       "igFeedMediaId": "18454037947111030",
@@ -17,8 +8,17 @@
       "fbFeedPostId": "1277215134503229",
       "fbStoryPostId": "942934525172858",
       "postedAt": "2026-04-13T22:54:11.332Z"
+    },
+    {
+      "slug": "zakir-khan-nrg-arena-2026-04-19",
+      "comedianName": "Zakir Khan",
+      "igFeedMediaId": "18053045504501840",
+      "igStoryMediaId": "17893555443443215",
+      "fbFeedPostId": "1277406841150725",
+      "fbStoryPostId": "2038867417047194",
+      "postedAt": "2026-04-14T06:06:23.879Z"
     }
   ],
   "week_range": "April 13 – April 19, 2026",
-  "manifest_version": 1776100100440
+  "manifest_version": 1776133611458
 }
