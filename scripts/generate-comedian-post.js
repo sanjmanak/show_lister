@@ -991,11 +991,27 @@ function extractPerformerSameAs(research) {
 
   // Whitelist of identity-establishing domains. Ordered by authority so that
   // if we ever want to cap the array, we keep the most useful first.
-  const hostRegex = /\bhttps?:\/\/(?:[\w-]+\.)*(?:en\.wikipedia\.org|wikipedia\.org|imdb\.com|netflix\.com|rottentomatoes\.com|instagram\.com|twitter\.com|x\.com|youtube\.com)[^\s"')<>]+/gi;
+  // Note: `)` is deliberately NOT excluded from the URL character class —
+  // Wikipedia disambiguation URLs legitimately end with `)`, e.g.
+  // `https://en.wikipedia.org/wiki/Zakir_Khan_(comedian)`. We handle
+  // sentence-boundary closing parens in the cleanup step below.
+  const hostRegex = /\bhttps?:\/\/(?:[\w-]+\.)*(?:en\.wikipedia\.org|wikipedia\.org|imdb\.com|netflix\.com|rottentomatoes\.com|instagram\.com|twitter\.com|x\.com|youtube\.com)[^\s"'<>]+/gi;
   const matches = String(text).match(hostRegex) || [];
   for (const url of matches) {
     // Strip trailing punctuation that commonly comes from sentence boundaries.
-    const cleaned = url.replace(/[.,);:\]]+$/, "");
+    // For `)`: only strip when unbalanced (more closing than opening parens
+    // in the URL) so "Zakir_Khan_(comedian)" is preserved but "(visit X)"
+    // correctly drops the trailing ')'.
+    let cleaned = url.replace(/[.,;:\]]+$/, "");
+    while (cleaned.endsWith(")")) {
+      const opens = (cleaned.match(/\(/g) || []).length;
+      const closes = (cleaned.match(/\)/g) || []).length;
+      if (closes > opens) {
+        cleaned = cleaned.slice(0, -1);
+      } else {
+        break;
+      }
+    }
     urls.add(cleaned);
   }
 
@@ -2041,13 +2057,19 @@ async function main() {
     }
     finalContent = sanitized.html;
 
-    // Build the schema.org @graph ONCE and inject it into finalContent.
-    // Must run AFTER sanitizeAiHtml (which would otherwise strip our script
-    // tag) and BEFORE wrapInHTML / publishToWordPress so the same graph ends
-    // up in both the GitHub Pages <head> AND the WordPress post body. This
-    // is the fix for the audit gap: comedian posts on comedyhouston.com had
-    // no Event schema, so Google couldn't surface them in the event carousel
-    // or tie them to the comedian's knowledge panel.
+    // Build the schema.org @graph ONCE. It flows to two emitters:
+    //   1. The static GitHub Pages HTML, via wrapInHTML — injected into
+    //      <head> further below.
+    //   2. The WordPress post, via the `ch_schema_graph` REST field in
+    //      publishToWordPress — the Comedy Houston plugin (v2.4.2+) stores
+    //      it in post meta and emits it from wp_head on singular views.
+    // The schema is NOT prepended to finalContent. An earlier version did
+    // that as a belt-and-suspenders during the plugin refactor transition;
+    // it has been removed now that the plugin path is verified live. Keeping
+    // the <script> tag in post_content caused Rank Math to serialize the
+    // JSON as the post's auto-generated meta description (and og/twitter
+    // descriptions, and BlogPosting.description), poisoning social previews
+    // and SERP snippets across every comedian post.
     const schemaGraph = buildComedianSchemaGraph({
       comedianName: headliner.name,
       venue: venue,
@@ -2062,11 +2084,6 @@ async function main() {
       research: research,
       lastUpdated: matchedEvent.last_updated || null,
     });
-    const schemaScript = renderSchemaScriptTag(schemaGraph);
-    // Prepend so the script tag sits at the top of the WP post body. Google
-    // reads JSON-LD anywhere on the page, but keeping it first makes it
-    // trivial to spot in "View Source" during debugging.
-    finalContent = schemaScript + "\n\n" + finalContent;
 
     // Generate filename
     const dateSlug = date; // YYYY-MM-DD
