@@ -1,54 +1,70 @@
 {
-  "generated_at": "2026-04-14T02:17:56.331Z",
-  "week_range": "April 13 – April 19, 2026",
+  "generated_at": "2026-04-20T16:01:48.393Z",
+  "week_range": "April 20 – April 26, 2026",
   "comedians": [
     {
-      "name": "Zakir Khan",
-      "show": "Papa Yaar by Zakir Khan",
-      "imageUrl": "https://s1.ticketm.net/dam/a/32c/472984fc-c14d-46a4-928c-17dc7d1a132c_SOURCE",
+      "name": "Phil Rosenthal",
+      "show": "An Evening With Phil Rosenthal Of \"Somebody Feed Phil\"",
+      "imageUrl": "https://s1.ticketm.net/dam/a/995/c029f992-03e3-4e3d-9379-3d28ce998995_SOURCE",
+      "headshotUrl": "https://images.squarespace-cdn.com/content/v1/5f7e3a324c57ab07ef1ec055/1756504914165-G9N9IMB3POTM4HRNZDGI/39_Phil_Rosenthal_Conoboy_Chicago.jpeg",
+      "displayImage": "https://images.squarespace-cdn.com/content/v1/5f7e3a324c57ab07ef1ec055/1756504914165-G9N9IMB3POTM4HRNZDGI/39_Phil_Rosenthal_Conoboy_Chicago.jpeg",
+      "imageSource": "headshot"
+    },
+    {
+      "name": "Mo Gilligan",
+      "show": "Mo Gilligan - The Mo You Know",
+      "imageUrl": "https://s1.ticketm.net/dam/a/570/8bb30424-966d-4c2e-9ab8-4c7d0f8b1570_SOURCE",
       "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/32c/472984fc-c14d-46a4-928c-17dc7d1a132c_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/570/8bb30424-966d-4c2e-9ab8-4c7d0f8b1570_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Trey Kennedy",
-      "show": "TREY KENNEDY - THE RELATABLE TOUR",
-      "imageUrl": "https://s1.ticketm.net/dam/a/949/5cde611c-539d-443f-b0c7-bc13bcb06949_SOURCE",
+      "name": "Nimesh Patel",
+      "show": "Nimesh Patel: With All Due Disrespect Tour",
+      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/949/5cde611c-539d-443f-b0c7-bc13bcb06949_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "imageSource": "event"
     },
     {
-      "name": "John Crist",
-      "show": "John Crist",
-      "imageUrl": "https://s1.ticketm.net/dam/a/544/33c53e82-16ab-4677-8ab9-d88c8529a544_SOURCE",
+      "name": "Kyle Kinane",
+      "show": "Kyle Kinane",
+      "imageUrl": "https://s1.ticketm.net/dam/a/6a5/d593c066-08f6-46c7-a5d6-25fa5dccc6a5_SOURCE",
+      "headshotUrl": "https://assets.cdn.filesafe.space/QcukbhGsMLsBsqMKqtY0/media/69112385d4d779e099803b1f.png",
+      "displayImage": "https://assets.cdn.filesafe.space/QcukbhGsMLsBsqMKqtY0/media/69112385d4d779e099803b1f.png",
+      "imageSource": "headshot"
+    },
+    {
+      "name": "Emo Philips",
+      "show": "Emo Philips",
+      "imageUrl": "https://s1.ticketm.net/dam/a/d32/6a68bcf2-b4ba-40f5-bc4b-468b02144d32_SOURCE",
+      "headshotUrl": "https://img-archive.nyc3.digitaloceanspaces.com/emophilips/images/dr-katz-1.jpg",
+      "displayImage": "https://img-archive.nyc3.digitaloceanspaces.com/emophilips/images/dr-katz-1.jpg",
+      "imageSource": "headshot"
+    },
+    {
+      "name": "Joe DeRosa",
+      "show": "Joe DeRosa",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1164139513%2F3558237521%2F1%2Foriginal.20251028-054323?auto=format%2Ccompress&q=75&sharp=10&s=0bf4abc988e855271aa774c5abc6eeff",
       "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/544/33c53e82-16ab-4677-8ab9-d88c8529a544_SOURCE",
+      "displayImage": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1164139513%2F3558237521%2F1%2Foriginal.20251028-054323?auto=format%2Ccompress&q=75&sharp=10&s=0bf4abc988e855271aa774c5abc6eeff",
       "imageSource": "event"
     },
     {
-      "name": "Dave Attell",
-      "show": "Dave Attell",
-      "imageUrl": "https://s1.ticketm.net/dam/a/437/8aa1d8dd-f64c-42f3-aef1-0c05c60f7437_SOURCE",
+      "name": "Gareth Reynolds",
+      "show": "Gareth Reynolds Headlines The Riot Comedy Club",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1173064477%2F428099579998%2F1%2Foriginal.20251216-160138?auto=format%2Ccompress&q=75&sharp=10&s=cefe7f17f9c48af9eee21791e1ab61b1",
       "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/437/8aa1d8dd-f64c-42f3-aef1-0c05c60f7437_SOURCE",
+      "displayImage": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1173064477%2F428099579998%2F1%2Foriginal.20251216-160138?auto=format%2Ccompress&q=75&sharp=10&s=cefe7f17f9c48af9eee21791e1ab61b1",
       "imageSource": "event"
     },
     {
-      "name": "Francis Ellis",
-      "show": "Francis Ellis",
-      "imageUrl": "https://s1.ticketm.net/dam/a/00a/9bc54acf-d39f-4641-b15b-f7d85b6fe00a_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/00a/9bc54acf-d39f-4641-b15b-f7d85b6fe00a_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Tom Rhodes",
-      "show": "Tom Rhodes",
-      "imageUrl": "https://s1.ticketm.net/dam/a/3f8/1f09d220-4d46-4385-94f4-cc745dde73f8_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/3f8/1f09d220-4d46-4385-94f4-cc745dde73f8_SOURCE",
-      "imageSource": "event"
+      "name": "Kellen Erskine",
+      "show": "Kellen Erskine Headlines The Riot Comedy Club",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177397226%2F428099579998%2F1%2Foriginal.20260212-180343?auto=format%2Ccompress&q=75&sharp=10&s=7d5b7037d69a563c8503394604a99ceb",
+      "headshotUrl": "https://images.squarespace-cdn.com/content/v1/68d4871c856daf492ecc7533/97ed531c-4cbd-4d92-acd0-45126997c196/kellen+mural.jpg",
+      "displayImage": "https://images.squarespace-cdn.com/content/v1/68d4871c856daf492ecc7533/97ed531c-4cbd-4d92-acd0-45126997c196/kellen+mural.jpg",
+      "imageSource": "headshot"
     }
   ]
 }
