@@ -1,51 +1,15 @@
 {
   "posted": [
     {
-      "slug": "francis-ellis-punch-line-houston-2026-04-16",
-      "comedianName": "Francis Ellis",
-      "igFeedMediaId": "18454037947111030",
-      "igStoryMediaId": "17875057077569958",
-      "fbFeedPostId": "1277215134503229",
-      "fbStoryPostId": "942934525172858",
-      "postedAt": "2026-04-13T22:54:11.332Z"
-    },
-    {
-      "slug": "zakir-khan-nrg-arena-2026-04-19",
-      "comedianName": "Zakir Khan",
-      "igFeedMediaId": "18053045504501840",
-      "igStoryMediaId": "17893555443443215",
-      "fbFeedPostId": "1277406841150725",
-      "fbStoryPostId": "2038867417047194",
-      "postedAt": "2026-04-14T06:06:23.879Z"
-    },
-    {
-      "slug": "trey-kennedy-bayou-music-center-2026-04-17",
-      "comedianName": "Trey Kennedy",
-      "igFeedMediaId": "18094921046158650",
-      "igStoryMediaId": "17948570480983715",
-      "fbFeedPostId": "1277565931134816",
-      "fbStoryPostId": "1615963782966946",
-      "postedAt": "2026-04-14T11:12:14.606Z"
-    },
-    {
-      "slug": "john-crist-cullen-performance-hall-2026-04-18",
-      "comedianName": "John Crist",
-      "igFeedMediaId": "18086352650018299",
-      "igStoryMediaId": "17859945405683122",
-      "fbFeedPostId": "1277785884446154",
-      "fbStoryPostId": "937195385860603",
-      "postedAt": "2026-04-14T17:19:31.026Z"
-    },
-    {
-      "slug": "dave-attell-houston-improv-2026-04-17",
-      "comedianName": "Dave Attell",
-      "igFeedMediaId": "18080490497381882",
-      "igStoryMediaId": "17933785038057906",
-      "fbFeedPostId": "1277946104430132",
-      "fbStoryPostId": "789799727251079",
-      "postedAt": "2026-04-14T22:54:08.986Z"
+      "slug": "phil-rosenthal-713-music-hall-2026-04-26",
+      "comedianName": "Phil Rosenthal",
+      "igFeedMediaId": "18117570895679541",
+      "igStoryMediaId": "18063558308694306",
+      "fbFeedPostId": "1282363677321708",
+      "fbStoryPostId": "1388389449977398",
+      "postedAt": "2026-04-20T17:15:32.851Z"
     }
   ],
-  "week_range": "April 13 – April 19, 2026",
-  "manifest_version": 1776133611458
+  "week_range": "April 20 – April 26, 2026",
+  "manifest_version": 1776704989853
 }
