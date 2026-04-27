@@ -1,51 +1,15 @@
 {
   "posted": [
     {
-      "slug": "phil-rosenthal-713-music-hall-2026-04-26",
-      "comedianName": "Phil Rosenthal",
-      "igFeedMediaId": "18117570895679541",
-      "igStoryMediaId": "18063558308694306",
-      "fbFeedPostId": "1282363677321708",
-      "fbStoryPostId": "1388389449977398",
-      "postedAt": "2026-04-20T17:15:32.851Z"
-    },
-    {
-      "slug": "mo-gilligan-punch-line-houston-2026-04-26",
-      "comedianName": "Mo Gilligan",
-      "igFeedMediaId": "18173604871362629",
-      "igStoryMediaId": "17880037818557418",
-      "fbFeedPostId": "1282528743971868",
-      "fbStoryPostId": "1356022819918818",
-      "postedAt": "2026-04-20T22:55:08.623Z"
-    },
-    {
-      "slug": "nimesh-patel-houston-improv-2026-04-21",
-      "comedianName": "Nimesh Patel",
-      "igFeedMediaId": "18089853974248635",
-      "igStoryMediaId": "18150990655467305",
-      "fbFeedPostId": "1282742077283868",
-      "fbStoryPostId": "1521760979374342",
-      "postedAt": "2026-04-21T06:09:35.172Z"
-    },
-    {
-      "slug": "kyle-kinane-punch-line-houston-2026-04-23",
-      "comedianName": "Kyle Kinane",
-      "igFeedMediaId": "18127575463583548",
-      "igStoryMediaId": "18126015715607443",
-      "fbFeedPostId": "1282902190601190",
-      "fbStoryPostId": "2143443523173832",
-      "postedAt": "2026-04-21T11:17:40.957Z"
-    },
-    {
-      "slug": "emo-philips-punch-line-houston-2026-04-22",
-      "comedianName": "Emo Philips",
-      "igFeedMediaId": "18084876272613180",
-      "igStoryMediaId": "17909276937382153",
-      "fbFeedPostId": "1283122773912465",
-      "fbStoryPostId": "1490144012642885",
-      "postedAt": "2026-04-21T17:13:08.114Z"
+      "slug": "jim-gaffigan-the-cynthia-woods-mitchell-pavilion-sponsored-by-huntsman-2026-05-02",
+      "comedianName": "Jim Gaffigan",
+      "igFeedMediaId": "18073054016664770",
+      "igStoryMediaId": "18002680967860624",
+      "fbFeedPostId": "1288009653423777",
+      "fbStoryPostId": "952736014315680",
+      "postedAt": "2026-04-27T17:38:27.125Z"
     }
   ],
-  "week_range": "April 20 – April 26, 2026",
-  "manifest_version": 1776704989853
+  "week_range": "April 27 – May 3, 2026",
+  "manifest_version": 1777310701687
 }
