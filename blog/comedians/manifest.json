@@ -1,96 +1,60 @@
 {
-  "generated_at": "2026-04-20T17:09:49.853Z",
-  "manifest_version": 1776704989853,
-  "week_range": "April 20 – April 26, 2026",
+  "generated_at": "2026-04-27T17:25:01.687Z",
+  "manifest_version": 1777310701687,
+  "week_range": "April 27 – May 3, 2026",
   "posts": [
     {
-      "comedianName": "Phil Rosenthal",
-      "venue": "713 Music Hall",
-      "date": "2026-04-26",
-      "filename": "phil-rosenthal-713-music-hall-2026-04-26.html",
-      "imageUrl": "https://s1.ticketm.net/dam/a/995/c029f992-03e3-4e3d-9379-3d28ce998995_SOURCE",
-      "graphicImageUrl": "https://images.squarespace-cdn.com/content/v1/5f7e3a324c57ab07ef1ec055/1756504914165-G9N9IMB3POTM4HRNZDGI/39_Phil_Rosenthal_Conoboy_Chicago.jpeg",
-      "ticketUrl": "https://www.ticketmaster.com/an-evening-with-phil-rosenthal-of-houston-texas-04-26-2026/event/3A00636F2291AA22",
-      "slug": "phil-rosenthal-713-music-hall-2026-04-26",
-      "wpLink": "https://comedyhouston.com/phil-rosenthal-713-music-hall-2026-04-26/",
-      "caption": "'Somebody Feed Phil' is moving to YouTube, but first, Houston gets Phil Rosenthal live. 🎤 Known for 'Everybody Loves Raymond,' Phil's humor is warm, relatable, and full of heart. His stories blend family, food, and everyday life into moments that make you laugh and think. Catch his engaging storytelling up close. \n\n713 Music Hall · Sunday, April 26, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #PhilRosenthal",
+      "comedianName": "Jim Gaffigan",
+      "venue": "The Cynthia Woods Mitchell Pavilion sponsored by Huntsman",
+      "date": "2026-05-02",
+      "filename": "jim-gaffigan-the-cynthia-woods-mitchell-pavilion-sponsored-by-huntsman-2026-05-02.html",
+      "imageUrl": "https://s1.ticketm.net/dam/a/838/aabe1f75-fe3d-4040-b17b-7f53ded6d838_SOURCE",
+      "graphicImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Jim_Gaffigan_June_2023_%28cropped%29.jpg/500px-Jim_Gaffigan_June_2023_%28cropped%29.jpg",
+      "ticketUrl": "https://www.ticketmaster.com/jim-gaffigan-everything-is-wonderful-the-woodlands-texas-05-02-2026/event/3A00635DEFB4A562",
+      "slug": "jim-gaffigan-the-cynthia-woods-mitchell-pavilion-sponsored-by-huntsman-2026-05-02",
+      "wpLink": "https://comedyhouston.com/jim-gaffigan-the-cynthia-woods-mitchell-pavilion-sponsored-by-huntsman-2026-05-02/",
+      "caption": "\"Dark Pale\" on Amazon Prime is a must-watch, Houston. But seeing Jim Gaffigan live? That's a whole new level. Known for his clean, deadpan style, Jim's humor hits home with stories of fatherhood, food, and everyday life. It's like having a hilarious chat with a friend who sees the funny in everything. \n\nThe Cynthia Woods Mitchell Pavilion sponsored by Huntsman · Saturday, May 2, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #JimGaffigan",
       "instagramHandle": "",
       "graphicFiles": [
-        "phil-rosenthal-713-music-hall-2026-04-26-square.png",
-        "phil-rosenthal-713-music-hall-2026-04-26-portrait.png",
-        "phil-rosenthal-713-music-hall-2026-04-26-story.png"
+        "jim-gaffigan-the-cynthia-woods-mitchell-pavilion-sponsored-by-huntsman-2026-05-02-square.png",
+        "jim-gaffigan-the-cynthia-woods-mitchell-pavilion-sponsored-by-huntsman-2026-05-02-portrait.png",
+        "jim-gaffigan-the-cynthia-woods-mitchell-pavilion-sponsored-by-huntsman-2026-05-02-story.png"
       ]
     },
     {
-      "comedianName": "Mo Gilligan",
-      "venue": "Punch Line Houston",
-      "date": "2026-04-26",
-      "filename": "mo-gilligan-punch-line-houston-2026-04-26.html",
-      "imageUrl": "https://s1.ticketm.net/dam/a/570/8bb30424-966d-4c2e-9ab8-4c7d0f8b1570_SOURCE",
-      "graphicImageUrl": "https://s1.ticketm.net/dam/a/570/8bb30424-966d-4c2e-9ab8-4c7d0f8b1570_SOURCE",
-      "ticketUrl": "https://www.ticketmaster.com/mo-gilligan-the-mo-you-know-houston-texas-04-26-2026/event/3A0063322C4882B7",
-      "slug": "mo-gilligan-punch-line-houston-2026-04-26",
-      "wpLink": "https://comedyhouston.com/mo-gilligan-punch-line-houston-2026-04-26/",
-      "caption": "Heard of Mo Gilligan? He's the guy who made waves in the UK with his infectious humor and sharp observations. Hey Houston, this is your chance to see him live.\n\nMo's comedy is all about real life, with a twist. He brings a fresh, high-energy style that you won't want to miss. Think laughs, stories, and a night out you’ll talk about for weeks.\n\nPunch Line Houston · Sunday, April 26, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #MoGilligan",
-      "instagramHandle": "",
-      "graphicFiles": [
-        "mo-gilligan-punch-line-houston-2026-04-26-square.png",
-        "mo-gilligan-punch-line-houston-2026-04-26-portrait.png",
-        "mo-gilligan-punch-line-houston-2026-04-26-story.png"
-      ]
-    },
-    {
-      "comedianName": "Nimesh Patel",
+      "comedianName": "Michael Colyar",
       "venue": "Houston Improv",
-      "date": "2026-04-21",
-      "filename": "nimesh-patel-houston-improv-2026-04-21.html",
-      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "graphicImageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "ticketUrl": "https://www.ticketweb.com/event/nimesh-patel-with-all-due-houston-improv-tickets/14643583?REFERRAL_ID=tmfeed",
-      "slug": "nimesh-patel-houston-improv-2026-04-21",
-      "wpLink": "https://comedyhouston.com/nimesh-patel-houston-improv-2026-04-21/",
-      "caption": "Nimesh Patel’s latest Netflix special, “Instant Karma,” has everyone talking. Houston, catch the man behind the incisive jokes and sharp wit that took him from open mics to writing for Chris Rock. His comedy is full of observational humor that hits close to home. Don’t miss his engaging and clever performance. \n\nHouston Improv · Tuesday, April 21, 2026\n\nLink in bio for tickets. Tag someone you'd bring. \n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #NimeshPatel\n\n@findingnimesh",
-      "instagramHandle": "@findingnimesh",
-      "graphicFiles": [
-        "nimesh-patel-houston-improv-2026-04-21-square.png",
-        "nimesh-patel-houston-improv-2026-04-21-portrait.png",
-        "nimesh-patel-houston-improv-2026-04-21-story.png"
-      ]
-    },
-    {
-      "comedianName": "Kyle Kinane",
-      "venue": "Punch Line Houston",
-      "date": "2026-04-23",
-      "filename": "kyle-kinane-punch-line-houston-2026-04-23.html",
-      "imageUrl": "https://s1.ticketm.net/dam/a/6a5/d593c066-08f6-46c7-a5d6-25fa5dccc6a5_SOURCE",
-      "graphicImageUrl": "https://assets.cdn.filesafe.space/QcukbhGsMLsBsqMKqtY0/media/69112385d4d779e099803b1f.png",
-      "ticketUrl": "https://www.ticketmaster.com/kyle-kinane-houston-texas-04-23-2026/event/3A0063821D54D2B5",
-      "slug": "kyle-kinane-punch-line-houston-2026-04-23",
-      "wpLink": "https://comedyhouston.com/kyle-kinane-punch-line-houston-2026-04-23/",
-      "caption": "Kyle Kinane's back with his podcast, \"The Boogie Monster,\" and he's bringing his stories to Houston. Known for his self-deprecating humor and tales of personal misadventures, Kyle's shows are a mix of laughs and genuine moments. His style is easy-going, like catching up with a friend who happens to be really funny. Fans of Louis C.K. and Patton Oswalt will feel right at home. Don’t miss out on a night of relatable humor and engaging storytelling.\n\nPunch Line Houston · Thursday, April 23, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #KyleKinane\n\n@kylekinane",
-      "instagramHandle": "@kylekinane",
-      "graphicFiles": [
-        "kyle-kinane-punch-line-houston-2026-04-23-square.png",
-        "kyle-kinane-punch-line-houston-2026-04-23-portrait.png",
-        "kyle-kinane-punch-line-houston-2026-04-23-story.png"
-      ]
-    },
-    {
-      "comedianName": "Emo Philips",
-      "venue": "Punch Line Houston",
-      "date": "2026-04-22",
-      "filename": "emo-philips-punch-line-houston-2026-04-22.html",
-      "imageUrl": "https://s1.ticketm.net/dam/a/d32/6a68bcf2-b4ba-40f5-bc4b-468b02144d32_SOURCE",
-      "graphicImageUrl": "https://img-archive.nyc3.digitaloceanspaces.com/emophilips/images/dr-katz-1.jpg",
-      "ticketUrl": "https://www.ticketmaster.com/emo-philips-houston-texas-04-22-2026/event/3A006434BC54D3F0",
-      "slug": "emo-philips-punch-line-houston-2026-04-22",
-      "wpLink": "https://comedyhouston.com/emo-philips-punch-line-houston-2026-04-22/",
-      "caption": "Remember when Emo Philips played a hacker on *Miami Vice*? Houston, here's your chance to see that surreal humor live. Emo Philips brings his eccentric stage presence to Punch Line Houston. Expect clever wordplay and a unique delivery that keeps audiences on their toes. If you love absurdity and self-deprecation, this is your night.\n\nPunch Line Houston · Wednesday, April 22, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #EmoPhilips",
+      "date": "2026-05-01",
+      "filename": "michael-colyar-houston-improv-2026-05-01.html",
+      "imageUrl": "https://s1.ticketm.net/dam/a/2a1/a00c30ca-41bd-4404-96af-7f54f3c5c2a1_SOURCE",
+      "graphicImageUrl": "https://s1.ticketm.net/dam/a/2a1/a00c30ca-41bd-4404-96af-7f54f3c5c2a1_SOURCE",
+      "ticketUrl": "https://www.ticketweb.com/event/michael-colyar-houston-improv-tickets/14823733?REFERRAL_ID=tmfeed",
+      "slug": "michael-colyar-houston-improv-2026-05-01",
+      "wpLink": "https://comedyhouston.com/michael-colyar-houston-improv-2026-05-01/",
+      "caption": "Seen him on \"Def Comedy Jam\"? Now catch Michael K. Colyar live in Houston.\n\nColyar's high-energy, thought-provoking style is a must-see. Known as the \"King of Venice Beach,\" he's captivated audiences for decades. With sharp wit and a unique take on everyday life, his humor hits home. It's more than laughs—it's an experience.\n\nHouston Improv · Friday, May 1, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #MichaelColyar",
       "instagramHandle": "",
       "graphicFiles": [
-        "emo-philips-punch-line-houston-2026-04-22-square.png",
-        "emo-philips-punch-line-houston-2026-04-22-portrait.png",
-        "emo-philips-punch-line-houston-2026-04-22-story.png"
+        "michael-colyar-houston-improv-2026-05-01-square.png",
+        "michael-colyar-houston-improv-2026-05-01-portrait.png",
+        "michael-colyar-houston-improv-2026-05-01-story.png"
+      ]
+    },
+    {
+      "comedianName": "Jesus Trejo",
+      "venue": "Punch Line Houston",
+      "date": "2026-04-30",
+      "filename": "jesus-trejo-punch-line-houston-2026-04-30.html",
+      "imageUrl": "https://s1.ticketm.net/dam/a/2fd/438295bb-fc0b-4f17-8e56-00c83eee72fd_SOURCE",
+      "graphicImageUrl": "https://s1.ticketm.net/dam/a/2fd/438295bb-fc0b-4f17-8e56-00c83eee72fd_SOURCE",
+      "ticketUrl": "https://www.ticketmaster.com/jesus-trejo-houston-texas-04-30-2026/event/3A00648DDA15CCD5",
+      "slug": "jesus-trejo-punch-line-houston-2026-04-30",
+      "wpLink": "https://comedyhouston.com/jesus-trejo-punch-line-houston-2026-04-30/",
+      "caption": "Ever seen \"Mr. Iglesias\"? Jesús Trejo played the unforgettable Mr. Trujillo. Houston, you're in for a treat. Trejo's comedy blends heart and hilarity, diving deep into family tales and immigrant experiences with warmth and wit. His stories feel personal, yet universal, making each show a unique experience. \n\nPunch Line Houston · Thursday, April 30, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #JesusTrejo\n\n@jesustrejo1",
+      "instagramHandle": "@jesustrejo1",
+      "graphicFiles": [
+        "jesus-trejo-punch-line-houston-2026-04-30-square.png",
+        "jesus-trejo-punch-line-houston-2026-04-30-portrait.png",
+        "jesus-trejo-punch-line-houston-2026-04-30-story.png"
       ]
     }
   ]
