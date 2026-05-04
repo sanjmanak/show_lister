@@ -1,30 +1,54 @@
 {
-  "generated_at": "2026-04-27T16:19:11.243Z",
-  "week_range": "April 27 – May 3, 2026",
+  "generated_at": "2026-05-04T16:25:37.399Z",
+  "week_range": "May 4 – May 10, 2026",
   "comedians": [
     {
-      "name": "Jim Gaffigan",
-      "show": "Jim Gaffigan: Everything is Wonderful!",
-      "imageUrl": "https://s1.ticketm.net/dam/a/838/aabe1f75-fe3d-4040-b17b-7f53ded6d838_SOURCE",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Jim_Gaffigan_June_2023_%28cropped%29.jpg/500px-Jim_Gaffigan_June_2023_%28cropped%29.jpg",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Jim_Gaffigan_June_2023_%28cropped%29.jpg/500px-Jim_Gaffigan_June_2023_%28cropped%29.jpg",
+      "name": "We Them Ones",
+      "show": "We Them Ones Comedy Tour",
+      "imageUrl": "https://s1.ticketm.net/dam/a/05b/e9588798-f82a-4795-8aa6-123fa6c9305b_SOURCE",
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/a/05b/e9588798-f82a-4795-8aa6-123fa6c9305b_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "Chelcie Lynn",
+      "show": "Chelcie Lynn: Trailer Trash Tammy The Loose Lips Tour",
+      "imageUrl": "https://s1.ticketm.net/dam/a/ccc/3ec56389-0983-4b6c-87d1-987442fb2ccc_SOURCE",
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/a/ccc/3ec56389-0983-4b6c-87d1-987442fb2ccc_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "Ali Siddiq",
+      "show": "Ali Siddiq: The Custom Fit Tour",
+      "imageUrl": "https://s1.ticketm.net/dam/a/8b9/0a83a81b-0da6-4434-9b7d-4e59027c58b9_SOURCE",
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/a/8b9/0a83a81b-0da6-4434-9b7d-4e59027c58b9_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "Gabriel Iglesias",
+      "show": "Gabriel Iglesias",
+      "imageUrl": "https://s1.ticketm.net/dam/a/f02/33a32096-d2fb-45cf-9d95-b71260f94f02_SOURCE",
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/a/f02/33a32096-d2fb-45cf-9d95-b71260f94f02_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "Joe Dombrowski",
+      "show": "Joe Dombrowski",
+      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "headshotUrl": "https://assets.cdn.filesafe.space/eomO7PCI0dDIKw9zt9jn/media/df7f25d6-d63c-4e3b-9c74-4c4d3d941dd0.webp",
+      "displayImage": "https://assets.cdn.filesafe.space/eomO7PCI0dDIKw9zt9jn/media/df7f25d6-d63c-4e3b-9c74-4c4d3d941dd0.webp",
       "imageSource": "headshot"
     },
     {
-      "name": "Michael Colyar",
-      "show": "Michael Colyar",
-      "imageUrl": "https://s1.ticketm.net/dam/a/2a1/a00c30ca-41bd-4404-96af-7f54f3c5c2a1_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/2a1/a00c30ca-41bd-4404-96af-7f54f3c5c2a1_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Jesus Trejo",
-      "show": "Jesus Trejo",
-      "imageUrl": "https://s1.ticketm.net/dam/a/2fd/438295bb-fc0b-4f17-8e56-00c83eee72fd_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/2fd/438295bb-fc0b-4f17-8e56-00c83eee72fd_SOURCE",
-      "imageSource": "event"
+      "name": "Rafael Portugal",
+      "show": "Rafael Portugal (Em Portuguãªs)",
+      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "headshotUrl": "https://rafaelportugal.com.br/wp-content/themes/rafael-portugal-eu-comigo-mesmo/assets/images/rafael-modal.jpg",
+      "displayImage": "https://rafaelportugal.com.br/wp-content/themes/rafael-portugal-eu-comigo-mesmo/assets/images/rafael-modal.jpg",
+      "imageSource": "headshot"
     }
   ]
 }
