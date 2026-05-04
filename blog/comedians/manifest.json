@@ -1,60 +1,96 @@
 {
-  "generated_at": "2026-04-27T17:25:01.687Z",
-  "manifest_version": 1777310701687,
-  "week_range": "April 27 – May 3, 2026",
+  "generated_at": "2026-05-04T17:45:00.193Z",
+  "manifest_version": 1777916700193,
+  "week_range": "May 4 – May 10, 2026",
   "posts": [
     {
-      "comedianName": "Jim Gaffigan",
-      "venue": "The Cynthia Woods Mitchell Pavilion sponsored by Huntsman",
-      "date": "2026-05-02",
-      "filename": "jim-gaffigan-the-cynthia-woods-mitchell-pavilion-sponsored-by-huntsman-2026-05-02.html",
-      "imageUrl": "https://s1.ticketm.net/dam/a/838/aabe1f75-fe3d-4040-b17b-7f53ded6d838_SOURCE",
-      "graphicImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Jim_Gaffigan_June_2023_%28cropped%29.jpg/500px-Jim_Gaffigan_June_2023_%28cropped%29.jpg",
-      "ticketUrl": "https://www.ticketmaster.com/jim-gaffigan-everything-is-wonderful-the-woodlands-texas-05-02-2026/event/3A00635DEFB4A562",
-      "slug": "jim-gaffigan-the-cynthia-woods-mitchell-pavilion-sponsored-by-huntsman-2026-05-02",
-      "wpLink": "https://comedyhouston.com/jim-gaffigan-the-cynthia-woods-mitchell-pavilion-sponsored-by-huntsman-2026-05-02/",
-      "caption": "\"Dark Pale\" on Amazon Prime is a must-watch, Houston. But seeing Jim Gaffigan live? That's a whole new level. Known for his clean, deadpan style, Jim's humor hits home with stories of fatherhood, food, and everyday life. It's like having a hilarious chat with a friend who sees the funny in everything. \n\nThe Cynthia Woods Mitchell Pavilion sponsored by Huntsman · Saturday, May 2, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #JimGaffigan",
+      "comedianName": "We Them Ones",
+      "venue": "Toyota Center - TX",
+      "date": "2026-05-09",
+      "filename": "we-them-ones-toyota-center-tx-2026-05-09.html",
+      "imageUrl": "https://s1.ticketm.net/dam/a/05b/e9588798-f82a-4795-8aa6-123fa6c9305b_SOURCE",
+      "graphicImageUrl": "https://s1.ticketm.net/dam/a/05b/e9588798-f82a-4795-8aa6-123fa6c9305b_SOURCE",
+      "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7rkko",
+      "slug": "we-them-ones-toyota-center-tx-2026-05-09",
+      "wpLink": "https://comedyhouston.com/we-them-ones-toyota-center-tx-2026-05-09/",
+      "caption": "Houston, ready for a laugh with the best in the biz? Mike Epps is bringing the \"We Them Ones Comedy Tour\" to town. Expect a night of pure comedy gold with Tony T. Roberts hosting and a killer lineup including Chico Bean, DC Young Fly, and Karlous Miller. These comedians blend social media humor with classic stand-up and improv, promising a night full of surprises and belly laughs. Don't miss out. Toyota Center - TX · Saturday, May 9, 2026. Link in bio for tickets. Tag someone you'd bring. \n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #WeThemOnes",
       "instagramHandle": "",
       "graphicFiles": [
-        "jim-gaffigan-the-cynthia-woods-mitchell-pavilion-sponsored-by-huntsman-2026-05-02-square.png",
-        "jim-gaffigan-the-cynthia-woods-mitchell-pavilion-sponsored-by-huntsman-2026-05-02-portrait.png",
-        "jim-gaffigan-the-cynthia-woods-mitchell-pavilion-sponsored-by-huntsman-2026-05-02-story.png"
+        "we-them-ones-toyota-center-tx-2026-05-09-square.png",
+        "we-them-ones-toyota-center-tx-2026-05-09-portrait.png",
+        "we-them-ones-toyota-center-tx-2026-05-09-story.png"
       ]
     },
     {
-      "comedianName": "Michael Colyar",
+      "comedianName": "Chelcie Lynn",
+      "venue": "713 Music Hall",
+      "date": "2026-05-08",
+      "filename": "chelcie-lynn-713-music-hall-2026-05-08.html",
+      "imageUrl": "https://s1.ticketm.net/dam/a/ccc/3ec56389-0983-4b6c-87d1-987442fb2ccc_SOURCE",
+      "graphicImageUrl": "https://s1.ticketm.net/dam/a/ccc/3ec56389-0983-4b6c-87d1-987442fb2ccc_SOURCE",
+      "ticketUrl": "https://www.ticketmaster.com/chelcie-lynn-trailer-trash-tammy-the-houston-texas-05-08-2026/event/3A006445BA66E63C",
+      "slug": "chelcie-lynn-713-music-hall-2026-05-08",
+      "wpLink": "https://comedyhouston.com/chelcie-lynn-713-music-hall-2026-05-08/",
+      "caption": "\"Tammy’s Pontoon Party\" isn't just a YouTube hit—it's a glimpse into the world of Chelcie Lynn. Hey, Houston, if you like your humor bold and unfiltered, you won't want to miss her live. Known for sold-out shows and her unapologetically authentic style, Chelcie brings Trailer Trash Tammy to life with every joke. It's the kind of night that reminds you why live comedy is worth it. \n\n713 Music Hall · Friday, May 8, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #ChelcieLynn\n\n@chelcielynnn",
+      "instagramHandle": "@chelcielynnn",
+      "graphicFiles": [
+        "chelcie-lynn-713-music-hall-2026-05-08-square.png",
+        "chelcie-lynn-713-music-hall-2026-05-08-portrait.png",
+        "chelcie-lynn-713-music-hall-2026-05-08-story.png"
+      ]
+    },
+    {
+      "comedianName": "Ali Siddiq",
+      "venue": "Jefferson Theatre",
+      "date": "2026-05-09",
+      "filename": "ali-siddiq-jefferson-theatre-2026-05-09.html",
+      "imageUrl": "https://s1.ticketm.net/dam/a/8b9/0a83a81b-0da6-4434-9b7d-4e59027c58b9_SOURCE",
+      "graphicImageUrl": "https://s1.ticketm.net/dam/a/8b9/0a83a81b-0da6-4434-9b7d-4e59027c58b9_SOURCE",
+      "ticketUrl": "https://www.ticketmaster.com/ali-siddiq-the-custom-fit-tour-beaumont-texas-05-09-2026/event/3A0064898B636B6C",
+      "slug": "ali-siddiq-jefferson-theatre-2026-05-09",
+      "wpLink": "https://comedyhouston.com/ali-siddiq-jefferson-theatre-2026-05-09/",
+      "caption": "Houston, remember Ali Siddiq's \"Domino Effect 2: Loss\"? This hometown storyteller just won the 2026 NAACP Image Award for \"My Two Sons.\" Ali's shows are like catching up with an old friend—funny, real, and full of heart. His stories are about life and the world around us, and they hit home. Don't miss him live. \n\nJefferson Theatre · Saturday, May 9, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #AliSiddiq\n\n@alisiddiq",
+      "instagramHandle": "@alisiddiq",
+      "graphicFiles": [
+        "ali-siddiq-jefferson-theatre-2026-05-09-square.png",
+        "ali-siddiq-jefferson-theatre-2026-05-09-portrait.png",
+        "ali-siddiq-jefferson-theatre-2026-05-09-story.png"
+      ]
+    },
+    {
+      "comedianName": "Gabriel Iglesias",
       "venue": "Houston Improv",
-      "date": "2026-05-01",
-      "filename": "michael-colyar-houston-improv-2026-05-01.html",
-      "imageUrl": "https://s1.ticketm.net/dam/a/2a1/a00c30ca-41bd-4404-96af-7f54f3c5c2a1_SOURCE",
-      "graphicImageUrl": "https://s1.ticketm.net/dam/a/2a1/a00c30ca-41bd-4404-96af-7f54f3c5c2a1_SOURCE",
-      "ticketUrl": "https://www.ticketweb.com/event/michael-colyar-houston-improv-tickets/14823733?REFERRAL_ID=tmfeed",
-      "slug": "michael-colyar-houston-improv-2026-05-01",
-      "wpLink": "https://comedyhouston.com/michael-colyar-houston-improv-2026-05-01/",
-      "caption": "Seen him on \"Def Comedy Jam\"? Now catch Michael K. Colyar live in Houston.\n\nColyar's high-energy, thought-provoking style is a must-see. Known as the \"King of Venice Beach,\" he's captivated audiences for decades. With sharp wit and a unique take on everyday life, his humor hits home. It's more than laughs—it's an experience.\n\nHouston Improv · Friday, May 1, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #MichaelColyar",
-      "instagramHandle": "",
+      "date": "2026-05-06",
+      "filename": "gabriel-iglesias-houston-improv-2026-05-06.html",
+      "imageUrl": "https://s1.ticketm.net/dam/a/f02/33a32096-d2fb-45cf-9d95-b71260f94f02_SOURCE",
+      "graphicImageUrl": "https://s1.ticketm.net/dam/a/f02/33a32096-d2fb-45cf-9d95-b71260f94f02_SOURCE",
+      "ticketUrl": "https://www.ticketweb.com/event/gabriel-iglesias-houston-improv-tickets/14889803?REFERRAL_ID=tmfeed",
+      "slug": "gabriel-iglesias-houston-improv-2026-05-06",
+      "wpLink": "https://comedyhouston.com/gabriel-iglesias-houston-improv-2026-05-06/",
+      "caption": "\"Stadium Fluffy\" hit Netflix in 2022. Now, Houston, get ready for Gabriel Iglesias live. Known for turning personal stories into laughter, Gabriel mixes sound effects and voices like no other. His take on Latin culture and life's fluffy moments will leave you laughing and nodding along. Don't miss this chance to see his energetic storytelling up close.\n\nHouston Improv · Wednesday, May 6, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #GabrielIglesias\n\n@fluffyguy",
+      "instagramHandle": "@fluffyguy",
       "graphicFiles": [
-        "michael-colyar-houston-improv-2026-05-01-square.png",
-        "michael-colyar-houston-improv-2026-05-01-portrait.png",
-        "michael-colyar-houston-improv-2026-05-01-story.png"
+        "gabriel-iglesias-houston-improv-2026-05-06-square.png",
+        "gabriel-iglesias-houston-improv-2026-05-06-portrait.png",
+        "gabriel-iglesias-houston-improv-2026-05-06-story.png"
       ]
     },
     {
-      "comedianName": "Jesus Trejo",
-      "venue": "Punch Line Houston",
-      "date": "2026-04-30",
-      "filename": "jesus-trejo-punch-line-houston-2026-04-30.html",
-      "imageUrl": "https://s1.ticketm.net/dam/a/2fd/438295bb-fc0b-4f17-8e56-00c83eee72fd_SOURCE",
-      "graphicImageUrl": "https://s1.ticketm.net/dam/a/2fd/438295bb-fc0b-4f17-8e56-00c83eee72fd_SOURCE",
-      "ticketUrl": "https://www.ticketmaster.com/jesus-trejo-houston-texas-04-30-2026/event/3A00648DDA15CCD5",
-      "slug": "jesus-trejo-punch-line-houston-2026-04-30",
-      "wpLink": "https://comedyhouston.com/jesus-trejo-punch-line-houston-2026-04-30/",
-      "caption": "Ever seen \"Mr. Iglesias\"? Jesús Trejo played the unforgettable Mr. Trujillo. Houston, you're in for a treat. Trejo's comedy blends heart and hilarity, diving deep into family tales and immigrant experiences with warmth and wit. His stories feel personal, yet universal, making each show a unique experience. \n\nPunch Line Houston · Thursday, April 30, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #JesusTrejo\n\n@jesustrejo1",
-      "instagramHandle": "@jesustrejo1",
+      "comedianName": "Joe Dombrowski",
+      "venue": "Houston Improv",
+      "date": "2026-05-08",
+      "filename": "joe-dombrowski-houston-improv-2026-05-08.html",
+      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "graphicImageUrl": "https://assets.cdn.filesafe.space/eomO7PCI0dDIKw9zt9jn/media/df7f25d6-d63c-4e3b-9c74-4c4d3d941dd0.webp",
+      "ticketUrl": "https://www.ticketweb.com/event/joe-dombrowski-houston-improv-tickets/14519853?REFERRAL_ID=tmfeed",
+      "slug": "joe-dombrowski-houston-improv-2026-05-08",
+      "wpLink": "https://comedyhouston.com/joe-dombrowski-houston-improv-2026-05-08/",
+      "caption": "📺 Houston, catch Joe Dombrowski from \"Dad on Arrival,\" his latest YouTube special, live and in person. If you love stories that blend teaching and comedy, Joe’s your guy. His tales of parenting and school days are as real as they are funny. Think Jim Gaffigan, but with a chalkboard.\n\n🎤 Houston Improv · Friday, May 8, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #JoeDombrowski\n\n@mrdtimes3",
+      "instagramHandle": "@mrdtimes3",
       "graphicFiles": [
-        "jesus-trejo-punch-line-houston-2026-04-30-square.png",
-        "jesus-trejo-punch-line-houston-2026-04-30-portrait.png",
-        "jesus-trejo-punch-line-houston-2026-04-30-story.png"
+        "joe-dombrowski-houston-improv-2026-05-08-square.png",
+        "joe-dombrowski-houston-improv-2026-05-08-portrait.png",
+        "joe-dombrowski-houston-improv-2026-05-08-story.png"
       ]
     }
   ]
