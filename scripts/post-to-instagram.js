@@ -386,6 +386,47 @@ async function waitForContainer(containerId) {
 // ---------------------------------------------------------------------------
 
 /**
+ * Publish a finished container with retry on 9007 / "not ready".
+ *
+ * Meta's container poll occasionally reports FINISHED before the publish
+ * endpoint has caught up, especially for carousels and stories. The IG
+ * publish call then returns code 9007 / subcode 2207027 / "The media is
+ * not ready for publishing, please wait for a moment". This is transient
+ * even though Meta annotates it `is_transient: false`.
+ *
+ * Run #143 hit this on the carousel publish — the user_tag-fix made it
+ * past container creation, then died at this step because there was no
+ * retry. The IG Story path already had this pattern; this hoists it so
+ * carousel + single-image use the same logic.
+ */
+async function publishWithRetry(creationId, label) {
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      return await graphRequest("POST", `/${IG_USER_ID}/media_publish`, {
+        creation_id: creationId,
+        access_token: IG_ACCESS_TOKEN,
+      });
+    } catch (err) {
+      const m = err.message || "";
+      const isNotReady =
+        /code 9007\b/.test(m) ||
+        /2207027/.test(m) ||
+        /not ready/i.test(m) ||
+        /Media ID is not available/i.test(m);
+      if (isNotReady && attempt < 2) {
+        const waitSec = (attempt + 1) * 5;
+        console.log(
+          `   ${label} not ready yet — waiting ${waitSec}s before retry ${attempt + 2}/3…`
+        );
+        await new Promise((r) => setTimeout(r, waitSec * 1000));
+        continue;
+      }
+      throw err;
+    }
+  }
+}
+
+/**
  * Check if blog teaser images exist for this comedian on GitHub Pages.
  * Returns array of teaser URLs that are accessible, or empty array.
  */
@@ -526,12 +567,9 @@ async function postInstagramFeed(post, caption, handle) {
 
     await waitForContainer(carousel.id);
 
-    // Step 3 — Publish
+    // Step 3 — Publish (with 9007 "not ready" retry — see publishWithRetry)
     console.log("   Publishing carousel…");
-    const result = await graphRequest("POST", `/${IG_USER_ID}/media_publish`, {
-      creation_id: carousel.id,
-      access_token: IG_ACCESS_TOKEN,
-    });
+    const result = await publishWithRetry(carousel.id, "Carousel");
 
     console.log(`   IG Feed posted as CAROUSEL (${allImages.length} slides)! Media ID: ${result.id}`);
     return result.id;
@@ -574,10 +612,7 @@ async function postInstagramFeed(post, caption, handle) {
     await waitForContainer(container.id);
 
     console.log("   Publishing…");
-    const result = await graphRequest("POST", `/${IG_USER_ID}/media_publish`, {
-      creation_id: container.id,
-      access_token: IG_ACCESS_TOKEN,
-    });
+    const result = await publishWithRetry(container.id, "IG Feed");
 
     console.log(`   IG Feed posted! Media ID: ${result.id}`);
     return result.id;
@@ -610,27 +645,9 @@ async function postInstagramStory(post) {
   console.log("   Waiting 5s for Stories backend to fully process…");
   await new Promise((r) => setTimeout(r, 5000));
 
-  // Step 2 — Publish (with retry for the 9007 "not ready" race condition)
+  // Step 2 — Publish (publishWithRetry handles 9007 "not ready" race)
   console.log("   Publishing story…");
-  let result;
-  for (let attempt = 0; attempt < 3; attempt++) {
-    try {
-      result = await graphRequest("POST", `/${IG_USER_ID}/media_publish`, {
-        creation_id: container.id,
-        access_token: IG_ACCESS_TOKEN,
-      });
-      break; // success
-    } catch (err) {
-      const isNotReady = err.message.includes("9007") || err.message.includes("not ready");
-      if (isNotReady && attempt < 2) {
-        const waitSec = (attempt + 1) * 5;
-        console.log(`   Story not ready yet — waiting ${waitSec}s before retry ${attempt + 2}/3…`);
-        await new Promise((r) => setTimeout(r, waitSec * 1000));
-      } else {
-        throw err;
-      }
-    }
-  }
+  const result = await publishWithRetry(container.id, "Story");
 
   console.log(`   IG Story posted! Media ID: ${result.id}`);
   return result.id;
