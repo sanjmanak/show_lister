@@ -1,54 +1,54 @@
 {
-  "generated_at": "2026-05-04T16:25:37.399Z",
-  "week_range": "May 4 – May 10, 2026",
+  "generated_at": "2026-05-11T17:18:47.190Z",
+  "week_range": "May 11 – May 17, 2026",
   "comedians": [
     {
-      "name": "We Them Ones",
-      "show": "We Them Ones Comedy Tour",
-      "imageUrl": "https://s1.ticketm.net/dam/a/05b/e9588798-f82a-4795-8aa6-123fa6c9305b_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/05b/e9588798-f82a-4795-8aa6-123fa6c9305b_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Chelcie Lynn",
-      "show": "Chelcie Lynn: Trailer Trash Tammy The Loose Lips Tour",
-      "imageUrl": "https://s1.ticketm.net/dam/a/ccc/3ec56389-0983-4b6c-87d1-987442fb2ccc_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/ccc/3ec56389-0983-4b6c-87d1-987442fb2ccc_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Ali Siddiq",
-      "show": "Ali Siddiq: The Custom Fit Tour",
-      "imageUrl": "https://s1.ticketm.net/dam/a/8b9/0a83a81b-0da6-4434-9b7d-4e59027c58b9_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/8b9/0a83a81b-0da6-4434-9b7d-4e59027c58b9_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Gabriel Iglesias",
-      "show": "Gabriel Iglesias",
-      "imageUrl": "https://s1.ticketm.net/dam/a/f02/33a32096-d2fb-45cf-9d95-b71260f94f02_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/f02/33a32096-d2fb-45cf-9d95-b71260f94f02_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Joe Dombrowski",
-      "show": "Joe Dombrowski",
-      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "headshotUrl": "https://assets.cdn.filesafe.space/eomO7PCI0dDIKw9zt9jn/media/df7f25d6-d63c-4e3b-9c74-4c4d3d941dd0.webp",
-      "displayImage": "https://assets.cdn.filesafe.space/eomO7PCI0dDIKw9zt9jn/media/df7f25d6-d63c-4e3b-9c74-4c4d3d941dd0.webp",
+      "name": "Jeff Foxworthy",
+      "show": "Jeff Foxworthy",
+      "imageUrl": "https://s1.ticketm.net/dam/a/a4f/b3a7846d-291a-43b8-8e02-f426a4e11a4f_SOURCE",
+      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Jeff_Foxworthy.jpg",
+      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Jeff_Foxworthy.jpg",
       "imageSource": "headshot"
     },
     {
-      "name": "Rafael Portugal",
-      "show": "Rafael Portugal (Em Portuguãªs)",
-      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "headshotUrl": "https://rafaelportugal.com.br/wp-content/themes/rafael-portugal-eu-comigo-mesmo/assets/images/rafael-modal.jpg",
-      "displayImage": "https://rafaelportugal.com.br/wp-content/themes/rafael-portugal-eu-comigo-mesmo/assets/images/rafael-modal.jpg",
+      "name": "Bobby Lee",
+      "show": "Bobby Lee: The Finally Tour 2026",
+      "imageUrl": "https://s1.ticketm.net/dam/a/9a4/3273c2f1-bd2e-4ed7-9208-0b3b66e319a4_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/Bobby_Lee_Edited_James_Tamim.jpeg",
+      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/7/72/Bobby_Lee_Edited_James_Tamim.jpeg",
       "imageSource": "headshot"
+    },
+    {
+      "name": "Ahmed Al Basheer",
+      "show": "Ahmed Al Basheer: Hallucinations",
+      "imageUrl": "https://s1.ticketm.net/dam/e/1f1/6ee56a0c-73e4-4c0c-9f3b-2908b7be01f1_SOURCE",
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/e/1f1/6ee56a0c-73e4-4c0c-9f3b-2908b7be01f1_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "Gary Gulman",
+      "show": "Gary Gulman: All New Live",
+      "imageUrl": "https://s1.ticketm.net/dam/a/99f/d7f5da23-46f2-48dd-a99f-e105f1cf199f_SOURCE",
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/a/99f/d7f5da23-46f2-48dd-a99f-e105f1cf199f_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "Naomi Watanabe",
+      "show": "Naomi Watanabe: From Tokyo",
+      "imageUrl": "https://s1.ticketm.net/dam/a/79e/33783030-df68-4080-ae9b-3c2bb486079e_SOURCE",
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/a/79e/33783030-df68-4080-ae9b-3c2bb486079e_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "Shuler King",
+      "show": "Shuler King",
+      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "imageSource": "event"
     }
   ]
 }
