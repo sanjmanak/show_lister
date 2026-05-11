@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px;
+      height: 1080px;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+      position: relative;
+      background: #0a0a0f;
+    }
+    .photo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 68%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+    .gradient {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 55%;
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 15, 0) 0%,
+        rgba(10, 10, 15, 0.55) 30%,
+        rgba(10, 10, 15, 0.88) 55%,
+        rgba(10, 10, 15, 1) 75%
+      );
+    }
+    .content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 0 56px 48px;
+      z-index: 2;
+    }
+    .accent-line {
+      width: 52px;
+      height: 4px;
+      background: #ff4d6a;
+      margin-bottom: 20px;
+    }
+    .name {
+      font-size: 80px;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .date {
+      font-size: 36px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.95);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .venue {
+      font-size: 29px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+    .brand {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #ff4d6a;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <img class="photo" src="https://s1.ticketm.net/dam/a/99f/d7f5da23-46f2-48dd-a99f-e105f1cf199f_SOURCE" alt="Gary Gulman">
+  <div class="gradient"></div>
+  <div class="content">
+    <div class="accent-line"></div>
+    <div class="name">Gary Gulman</div>
+    <div class="date">Wednesday, May 13, 2026</div>
+    <div class="venue">House of Blues Houston</div>
+    <div class="brand">COMEDYHOUSTON.COM</div>
+  </div>
+</body>
+</html>
