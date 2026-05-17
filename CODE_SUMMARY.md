@@ -33,7 +33,7 @@ Show Lister (`houston-comedy-shows`) is an automated event aggregator for Housto
 Two API sources are queried in parallel (`Promise.all`):
 
 - **Ticketmaster Discovery API v2** — Searches for comedy events within 100 miles of Houston (lat/lon: 29.7604, -95.3698), plus venue-specific queries (Houston Improv). Results are post-filtered to Texas only.
-- **Eventbrite API v3** — Fetches events from two hardcoded organizers: The Riot Comedy Club and The Secret Group. Supports pagination (up to 10 pages per organizer).
+- **Eventbrite API v3** — Fetches events from hardcoded organizers: The Riot Comedy Club, The Secret Group, and Social Comedy Night. Supports pagination (up to 10 pages per organizer).
 
 Both use a shared `fetchJSON()` helper with automatic retry on HTTP 429 (rate limit) and network errors, using exponential backoff (2s, 4s, 6s).
 

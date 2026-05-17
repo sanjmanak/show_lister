@@ -30,6 +30,7 @@ const EB_BASE = "https://www.eventbriteapi.com/v3";
 const EB_ORGANIZERS = [
   { id: "29979960920", name: "The Riot Comedy Club" },
   { id: "20138725138", name: "The Secret Group" },
+  { id: "120744254440", name: "Social Comedy Night" },
 ];
 
 const OUTPUT_DIR = path.resolve(__dirname, "..");
