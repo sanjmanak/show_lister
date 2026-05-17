@@ -93,9 +93,10 @@ There are **eight major components** that work together:
    - Handles HTTP 429 rate limits with automatic retry (exponential backoff: 2s, 4s, 6s)
 
 2. **Fetches from Eventbrite API v3**
-   - Pulls from two hardcoded comedy organizers:
+   - Pulls from hardcoded comedy organizers:
      - The Riot Comedy Club (organizer ID: `29979960920`)
      - The Secret Group (organizer ID: `20138725138`)
+     - Social Comedy Night (organizer ID: `120744254440`)
    - Supports pagination (up to 10 pages per organizer)
    - Filters to live events within 90 days
 
