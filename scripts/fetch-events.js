@@ -31,6 +31,7 @@ const EB_ORGANIZERS = [
   { id: "29979960920", name: "The Riot Comedy Club" },
   { id: "20138725138", name: "The Secret Group" },
   { id: "120744254440", name: "Social Comedy Night" },
+  { id: "120997218882", name: "The Den Comedy Club" },
 ];
 
 const OUTPUT_DIR = path.resolve(__dirname, "..");
