@@ -97,6 +97,7 @@ There are **eight major components** that work together:
      - The Riot Comedy Club (organizer ID: `29979960920`)
      - The Secret Group (organizer ID: `20138725138`)
      - Social Comedy Night (organizer ID: `120744254440`)
+     - The Den Comedy Club (organizer ID: `120997218882`)
    - Supports pagination (up to 10 pages per organizer)
    - Filters to live events within 90 days
 
