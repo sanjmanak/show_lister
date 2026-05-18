@@ -1,51 +1,15 @@
 {
   "posted": [
     {
-      "slug": "jeff-foxworthy-the-grand-1894-opera-house-tx-2026-05-16",
-      "comedianName": "Jeff Foxworthy",
-      "igFeedMediaId": "17905683729420353",
-      "igStoryMediaId": "18044191706785178",
-      "fbFeedPostId": "1299291752295567",
-      "fbStoryPostId": "2445982289250552",
-      "postedAt": "2026-05-11T23:03:19.227Z"
-    },
-    {
-      "slug": "bobby-lee-713-music-hall-2026-05-16",
-      "comedianName": "Bobby Lee",
-      "igFeedMediaId": "18161963356441468",
-      "igStoryMediaId": "18129224197596424",
-      "fbFeedPostId": "1299520668939342",
-      "fbStoryPostId": "1005047178848939",
-      "postedAt": "2026-05-12T06:43:25.382Z"
-    },
-    {
-      "slug": "ahmed-al-basheer-bayou-music-center-2026-05-17",
-      "comedianName": "Ahmed Al Basheer",
-      "igFeedMediaId": "18582801289058094",
-      "igStoryMediaId": "18109844479807712",
-      "fbFeedPostId": "1299700575588018",
-      "fbStoryPostId": "955180304025500",
-      "postedAt": "2026-05-12T12:03:18.086Z"
-    },
-    {
-      "slug": "gary-gulman-house-of-blues-houston-2026-05-13",
-      "comedianName": "Gary Gulman",
-      "igFeedMediaId": "17976189782865756",
-      "igStoryMediaId": "18077506889200984",
-      "fbFeedPostId": "1299931548898254",
-      "fbStoryPostId": "2166983054154482",
-      "postedAt": "2026-05-12T18:08:16.608Z"
-    },
-    {
-      "slug": "naomi-watanabe-house-of-blues-houston-2026-05-16",
-      "comedianName": "Naomi Watanabe",
-      "igFeedMediaId": "18075971504216770",
-      "igStoryMediaId": "18447594262117326",
-      "fbFeedPostId": "1300081965549879",
-      "fbStoryPostId": "1516618513505335",
-      "postedAt": "2026-05-12T23:09:50.629Z"
+      "slug": "kevin-nealon-houston-improv-2026-05-22",
+      "comedianName": "Kevin Nealon",
+      "igFeedMediaId": "18138487822535250",
+      "igStoryMediaId": "18104055301778092",
+      "fbFeedPostId": "1304803648411044",
+      "fbStoryPostId": "27096552993368124",
+      "postedAt": "2026-05-18T18:06:44.789Z"
     }
   ],
-  "week_range": "May 11 – May 17, 2026",
-  "manifest_version": 1778522297709
+  "week_range": "May 18 – May 24, 2026",
+  "manifest_version": 1779127298152
 }
