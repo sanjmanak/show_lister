@@ -1,54 +1,14 @@
 {
-  "generated_at": "2026-05-11T17:18:47.190Z",
-  "week_range": "May 11 – May 17, 2026",
+  "generated_at": "2026-05-18T17:24:42.912Z",
+  "week_range": "May 18 – May 24, 2026",
   "comedians": [
     {
-      "name": "Jeff Foxworthy",
-      "show": "Jeff Foxworthy",
-      "imageUrl": "https://s1.ticketm.net/dam/a/a4f/b3a7846d-291a-43b8-8e02-f426a4e11a4f_SOURCE",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Jeff_Foxworthy.jpg",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Jeff_Foxworthy.jpg",
+      "name": "Kevin Nealon",
+      "show": "Kevin Nealon",
+      "imageUrl": "https://s1.ticketm.net/dam/a/7b3/c51ac6c7-c9ac-4bbb-bbb1-a0c9e19c57b3_SOURCE",
+      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Kevinnealon.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail_unscaled",
+      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Kevinnealon.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail_unscaled",
       "imageSource": "headshot"
-    },
-    {
-      "name": "Bobby Lee",
-      "show": "Bobby Lee: The Finally Tour 2026",
-      "imageUrl": "https://s1.ticketm.net/dam/a/9a4/3273c2f1-bd2e-4ed7-9208-0b3b66e319a4_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/Bobby_Lee_Edited_James_Tamim.jpeg",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/7/72/Bobby_Lee_Edited_James_Tamim.jpeg",
-      "imageSource": "headshot"
-    },
-    {
-      "name": "Ahmed Al Basheer",
-      "show": "Ahmed Al Basheer: Hallucinations",
-      "imageUrl": "https://s1.ticketm.net/dam/e/1f1/6ee56a0c-73e4-4c0c-9f3b-2908b7be01f1_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/e/1f1/6ee56a0c-73e4-4c0c-9f3b-2908b7be01f1_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Gary Gulman",
-      "show": "Gary Gulman: All New Live",
-      "imageUrl": "https://s1.ticketm.net/dam/a/99f/d7f5da23-46f2-48dd-a99f-e105f1cf199f_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/99f/d7f5da23-46f2-48dd-a99f-e105f1cf199f_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Naomi Watanabe",
-      "show": "Naomi Watanabe: From Tokyo",
-      "imageUrl": "https://s1.ticketm.net/dam/a/79e/33783030-df68-4080-ae9b-3c2bb486079e_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/79e/33783030-df68-4080-ae9b-3c2bb486079e_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Shuler King",
-      "show": "Shuler King",
-      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "imageSource": "event"
     }
   ]
 }
