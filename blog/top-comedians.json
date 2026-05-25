@@ -1,13 +1,21 @@
 {
-  "generated_at": "2026-05-18T17:24:42.912Z",
-  "week_range": "May 18 – May 24, 2026",
+  "generated_at": "2026-05-25T16:58:01.805Z",
+  "week_range": "May 25 – May 31, 2026",
   "comedians": [
     {
-      "name": "Kevin Nealon",
-      "show": "Kevin Nealon",
-      "imageUrl": "https://s1.ticketm.net/dam/a/7b3/c51ac6c7-c9ac-4bbb-bbb1-a0c9e19c57b3_SOURCE",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Kevinnealon.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail_unscaled",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Kevinnealon.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail_unscaled",
+      "name": "Martin Lawrence",
+      "show": "Martin Lawrence",
+      "imageUrl": "https://s1.ticketm.net/dam/a/22b/972f6e8a-044e-4a97-b94f-5c29835e622b_SOURCE",
+      "headshotUrl": null,
+      "displayImage": "https://s1.ticketm.net/dam/a/22b/972f6e8a-044e-4a97-b94f-5c29835e622b_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "Tim Meadows",
+      "show": "Tim Meadows",
+      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Tim_Meadows_by_Gage_Skidmore.jpg/960px-Tim_Meadows_by_Gage_Skidmore.jpg",
+      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Tim_Meadows_by_Gage_Skidmore.jpg/960px-Tim_Meadows_by_Gage_Skidmore.jpg",
       "imageSource": "headshot"
     }
   ]
