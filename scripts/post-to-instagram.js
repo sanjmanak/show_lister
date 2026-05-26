@@ -547,7 +547,13 @@ async function createCarouselChild(imageUrl, handle = null) {
       throw err;
     }
   }
-  await waitForContainer(child.id);
+  // Do NOT poll a carousel *child* item container's status. Unlike single-image
+  // and parent carousel containers, the Graph API rejects a status GET on a
+  // child item with GraphMethodException code 100 / subcode 33 ("Authorization
+  // Error") even though the create call returned 200 — observed persistently
+  // (every poll, not a transient race) in production. Child readiness is
+  // reflected by the PARENT carousel container's status, which IS pollable and
+  // which we wait on before publishing. So just return the child ID.
   return { id: child.id, tagDropped };
 }
 
