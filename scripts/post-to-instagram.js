@@ -342,13 +342,18 @@ function verifyImageUrl(imageUrl) {
 }
 
 /**
- * A freshly-created container ID is returned by the create call before Meta's
- * read path can serve it. A status GET in that window fails with
- * GraphMethodException code 100 — which Meta labels "Authorization Error" or
- * "does not exist", misleadingly, since the ID is valid and becomes readable a
- * few seconds later. This was the carousel-child failure in run #221: the
- * create returned 200 + an ID, the immediate status poll got 400/code 100, and
- * the run died. Treat this signature as transient and keep polling.
+ * Detect Meta rejecting a container-status GET with GraphMethodException
+ * code 100 / subcode 33 ("Authorization Error" / "does not exist" / "cannot be
+ * loaded" / "Unsupported get request").
+ *
+ * IMPORTANT: this is NOT a transient read-after-write race (an earlier theory).
+ * Between 2026-05-18 and 2026-05-26 Meta changed behavior so that
+ * `GET /{ig-container-id}` — for BOTH single-image, carousel child, AND carousel
+ * parent containers — returns this error on every attempt, even though the
+ * create call returned 200 and the token can still read the IG account, the
+ * Page, and debug_token. Container status reads are simply unavailable right
+ * now. We can't poll for FINISHED, so we fall through to publish and let
+ * publishWithRetry() absorb any "media not ready" (9007) along the way.
  */
 function isContainerNotReadable(err) {
   if (!err || typeof err.message !== "string") return false;
@@ -360,27 +365,47 @@ function isContainerNotReadable(err) {
 }
 
 /**
- * Poll container status until FINISHED (max ~30 seconds).
+ * Poll container status until FINISHED (max ~30 seconds). If Meta refuses to
+ * serve container status (code 100/33 — see isContainerNotReadable), stop
+ * polling after a few attempts, wait a fixed buffer, and return so the caller
+ * can publish anyway (publishWithRetry handles "media not ready").
  */
 async function waitForContainer(containerId) {
   const maxAttempts = 10;
   const delayMs = 3000;
+  const maxNotReadable = 3;
+  const fallthroughBufferMs = 12000;
+  let notReadableCount = 0;
 
   console.log(`   Waiting for container ${containerId} to finish processing…`);
 
   for (let i = 0; i < maxAttempts; i++) {
     let status;
     try {
+      // Query only status_code — the `status` detail field is dropped in case
+      // Meta is rejecting the read because of that field specifically.
       status = await graphRequest("GET", `/${containerId}`, {
-        fields: "status_code,status",
+        fields: "status_code",
         access_token: IG_ACCESS_TOKEN,
       });
     } catch (err) {
-      // Read-after-write race — the ID isn't queryable yet. Retry rather than
-      // treating it as a fatal auth error.
-      if (isContainerNotReadable(err) && i < maxAttempts - 1) {
+      if (isContainerNotReadable(err)) {
+        notReadableCount++;
+        if (notReadableCount >= maxNotReadable) {
+          console.log(
+            `   Container status reads are being rejected by Meta (code 100/33) ` +
+            `after ${notReadableCount} attempts — the status endpoint is ` +
+            `unavailable for this container. Skipping the poll and proceeding ` +
+            `to publish; the publish step retries on "media not ready".`
+          );
+          console.log(
+            `   Waiting ${fallthroughBufferMs / 1000}s for processing before publish…`
+          );
+          await new Promise((r) => setTimeout(r, fallthroughBufferMs));
+          return;
+        }
         console.log(
-          `   Poll ${i + 1}/${maxAttempts}: container not readable yet ` +
+          `   Poll ${i + 1}/${maxAttempts}: status not readable ` +
           `(${err.message.split("\n")[0]}) — retrying in ${delayMs}ms…`
         );
         await new Promise((r) => setTimeout(r, delayMs));
@@ -398,10 +423,9 @@ async function waitForContainer(containerId) {
     }
 
     if (code === "ERROR") {
-      const detail = status.status || "no detail provided";
-      console.error(`   Container processing FAILED: ${detail}`);
+      console.error(`   Container processing FAILED (status_code=ERROR).`);
       throw new Error(
-        `Container processing failed (status: ${detail}). Ensure the PNG is committed ` +
+        `Container processing failed (status_code: ERROR). Ensure the PNG is committed ` +
         `to main and deployed via GitHub Pages.`
       );
     }
