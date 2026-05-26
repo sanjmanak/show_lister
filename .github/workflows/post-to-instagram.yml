@@ -101,8 +101,19 @@ jobs:
             done
           fi
 
+  # Failure notification lives in its OWN job. GitHub downloads every action a
+  # job references during "Set up job" — BEFORE any step runs — so a third-party
+  # action that fails to download (e.g. a moved/unservable tag) aborts the whole
+  # job at setup, even when it's only meant to run on failure. Keeping the email
+  # action out of the posting job guarantees a broken notifier can never block
+  # posting. This job only spins up when post-to-instagram fails.
+  notify-failure:
+    needs: post-to-instagram
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
       - name: Notify on failure
-        if: failure() && env.HAS_SMTP == 'true'
+        if: env.HAS_SMTP == 'true'
         env:
           HAS_SMTP: ${{ secrets.SMTP_SERVER != '' }}
         uses: dawidd6/action-send-mail@v3
