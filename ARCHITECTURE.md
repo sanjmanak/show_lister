@@ -569,7 +569,7 @@ Every event from both APIs is normalized to this structure:
 
 | Secret | Purpose | Where to get it |
 |--------|---------|-----------------|
-| `INSTAGRAM_ACCESS_TOKEN` | Long-lived Page Access Token (~60 day expiry) | See Meta setup guide below |
+| `INSTAGRAM_ACCESS_TOKEN` | **Non-expiring** Page Access Token (see "Access token model" below — NOT a 60-day user token) | See Meta setup guide below |
 | `INSTAGRAM_USER_ID` | Instagram Business account numeric ID | See Meta setup guide below |
 
 All secrets are stored in **GitHub Repository Secrets** (Settings → Secrets and variables → Actions). They are never committed to the repo.
@@ -621,19 +621,77 @@ me/accounts?fields=id,name,access_token,instagram_business_account&limit=50
 ```
 Find your Page in the results. The `instagram_business_account.id` is your `INSTAGRAM_USER_ID`.
 
-#### Step 5: Exchange for Long-Lived Token
-Copy the **Page Access Token** (the `access_token` inside the `data` array, NOT the one in the top-right panel) and run in your terminal:
+#### Step 5: Exchange for a NON-EXPIRING Page Token
+The token you store must be a **Page** token that descends from a **long-lived User** token — that specific combination never expires. Two hops:
+
+1. Exchange the short-lived **User** token (from Step 3) for a long-lived User token (~60 days):
+   ```bash
+   curl -s "https://graph.facebook.com/v25.0/oauth/access_token?grant_type=fb_exchange_token&client_id=YOUR_APP_ID&client_secret=YOUR_APP_SECRET&fb_exchange_token=SHORT_LIVED_USER_TOKEN" | jq .
+   ```
+2. Call `me/accounts` **with that long-lived User token** and copy the Page's `access_token`:
+   ```bash
+   curl -s "https://graph.facebook.com/v25.0/me/accounts?fields=name,access_token,instagram_business_account&access_token=LONG_LIVED_USER_TOKEN" | jq .
+   ```
+   Because it descends from a long-lived User token, this **Page token has no expiry.**
+
+Verify before saving — this is the check that proves you did it right:
 ```bash
-curl -s "https://graph.facebook.com/v25.0/oauth/access_token?grant_type=fb_exchange_token&client_id=YOUR_APP_ID&client_secret=YOUR_APP_SECRET&fb_exchange_token=PAGE_TOKEN" | jq .
+curl -s "https://graph.facebook.com/v25.0/debug_token?input_token=PAGE_TOKEN&access_token=PAGE_TOKEN" | jq .data
 ```
-The returned `access_token` is valid for ~60 days.
+You want `"type": "PAGE"` and **`"expires_at": 0`** (0 = never). Also note `data_access_expires_at` — see below.
 
 #### Step 6: Save to GitHub Secrets
-- `INSTAGRAM_ACCESS_TOKEN` → the long-lived token from Step 5
-- `INSTAGRAM_USER_ID` → the numeric ID from Step 4
+- `INSTAGRAM_ACCESS_TOKEN` → the **Page** token from Step 5 (`type: PAGE`, `expires_at: 0`)
+- `INSTAGRAM_USER_ID` → the numeric `instagram_business_account.id` from Step 4
 
-#### Token Refresh
-Long-lived tokens expire in ~60 days. Set a calendar reminder to regenerate before expiry. The script validates the token on every run and will log a clear error message if it's expired.
+#### Access token model — the nuance (don't relearn this the hard way)
+This is the single thing that has wasted the most time on this project, so it's spelled out explicitly:
+
+- **Long-lived USER token → expires in ~60 days.** The classic trap. If one of these ever lands in `INSTAGRAM_ACCESS_TOKEN`, posting silently dies ~60 days later with a `code 190`. The "60 vs 180 days" confusion: it's **60**, and only for *user* tokens. 180 is not a real Meta number; the other real number is **90** (below).
+- **PAGE token derived from a long-lived USER token → `expires_at: 0` (never expires).** This is what we store. The script logs "Token has no expiry" when it sees this. Confirm with `debug_token`: `type: PAGE`, `expires_at: 0`.
+- **`data_access_expires_at` (~90 days) is a SEPARATE clock.** Even a non-expiring token carries a 90-day "data access" window (Meta's data-use / inactivity policy). When it lapses, data-touching calls can begin failing even though `expires_at` is still `0`. Practical cadence: **re-run Step 5 roughly every ~90 days**, OR take the app through **App Review → Advanced Access / Live mode** to remove the window entirely (the permanent fix). Either way this is far better than the 60-day user-token treadmill.
+- **The Meta app is intentionally in Development mode.** This is fine for posting to your own linked account and is **not** a cause of posting failures — posting (create + `media_publish`) works in Dev mode; verified in production. Dev mode mainly matters for the 90-day data-access window above.
+
+Health check any time (needs only the token itself): run the `debug_token` call and expect `is_valid: true`, `type: PAGE`, `expires_at: 0`; read `data_access_expires_at` as your next refresh deadline.
+
+---
+
+## Posting reliability — known Meta quirks & a debugging runbook
+
+`scripts/post-to-instagram.js` has accreted defenses against real, observed Meta behaviors. **Read this before "fixing" the poster** so you don't re-diagnose from scratch (we burned several cycles relearning the items below).
+
+### Incident: container status reads break (May 2026)
+Between **2026-05-18 and 2026-05-26**, `GET /{ig-container-id}?fields=status_code` started returning `GraphMethodException code 100 / subcode 33 ("Authorization Error")` on **every** call — for single-image, carousel child, *and* carousel parent containers. Everything else kept working with the same token: token validation, `debug_token`, `GET /me`, **creating** containers (`POST /media`), and **publishing** (`POST /media_publish`). The container *status* endpoint was the only broken piece.
+
+What it was NOT (each ruled out the hard way):
+- Not the token, permissions, image, or Dev mode — create + publish succeed with the same token.
+- Not a transient read-after-write race (an early wrong guess) — it failed **10/10**, persistently, on every poll.
+- Not carousel-child-specific (a second wrong guess) — the parent container's status read failed identically.
+
+**Fix in code:** `waitForContainer()` stops polling after a few `100/33` rejections, waits a fixed buffer (~12s), and proceeds to publish. `publishWithRetry()` absorbs any `9007` "media not ready". It also queries only `status_code` (the `status` detail field was dropped in case that field was the trigger). **If Meta restores the status endpoint, the normal `status_code === "FINISHED"` path resumes automatically — no code change needed.** Verified working: all four channels (IG Feed, IG Story, FB Feed, FB Story) posted with this workaround.
+
+> Future audit hook: re-test `GET /{container-id}?fields=status_code`. If it works again, the workaround simply stops mattering (the poll path is still there). If you want to optimize, you could shorten the fallthrough by skipping the poll entirely while the quirk persists.
+
+### Other defenses already in the script (don't remove without cause)
+- `user_tags` are rejected on the carousel **parent** (`subcode 2207065`) — tags are attached to child containers only, and only to slide 1.
+- A bad/private/invalid comedian handle makes Meta reject the tagged create — the code retries the create **without** the tag so the post still goes out (the caption still @-mentions them).
+- `media_publish` can return `9007` "media not ready" right after a container reports ready — `publishWithRetry()` retries with backoff.
+- IG Stories get an extra buffer before publishing.
+- IG Feed is the **anchor**: if it fails the run aborts and state is NOT advanced, so the next cron retries the same comedian. The other three channels are best-effort.
+
+### Failure-notification architecture (why it's a separate job)
+GitHub Actions downloads **every** action a job references during "Set up job", *before any step runs*. So a third-party action whose tag can't be downloaded aborts the **whole job at setup** — even a notify-on-failure step meant to run only on failure. This actually happened: a `dawidd6/action-send-mail@v3` tag became un-downloadable and killed posting for ~a week in 4-second job failures (which looked like a posting bug but wasn't). Mitigations now in place:
+- The failure notifier lives in its **own** `notify-failure` job, so it can never gate posting.
+- It sends email via **curl's built-in SMTP** (preinstalled on the runner) instead of a third-party action — nothing to download, nothing a moved upstream tag can break.
+- General rule: keep fragile third-party actions **out** of the critical posting job; pin any action you do use to a full commit SHA.
+
+### Runbook — if posting stops
+1. **Actions → Post to Instagram → latest run.** Note which step/line failed and the error `code`.
+2. **Job dies in seconds at "Set up job"** → an action failed to download. Check `uses:` refs (first-party `actions/*` are usually fine).
+3. **`code 190`** at token validation → token expired/invalid → regenerate the non-expiring Page token (Step 5), update `INSTAGRAM_ACCESS_TOKEN`. (Rare now that the token is non-expiring — if you see it, someone likely stored a *user* token by mistake.)
+4. **`code 100 / subcode 33` on `GET /{container-id}`** → the May-2026 status-read quirk; already tolerated, posting should still succeed. If the same code appears on **`media_publish`** instead, that's new — investigate app/account state (and Meta platform status).
+5. **`code 36003`** → image not reachable → ensure images are on `main` and GitHub Pages has deployed.
+6. **`code 4 / 17 / 32 / 613` or HTTP `429`** → rate limit (~25 IG publishes/day) → the run exits without advancing state; the next cron retries cleanly.
 
 ---
 
