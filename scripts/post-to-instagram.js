@@ -984,6 +984,39 @@ async function main() {
     } else {
       console.log("  Token has no expiry (or never-expires user token).");
     }
+
+    // Second clock: the data-access window. A non-expiring PAGE token
+    // (expires_at: 0) still carries a ~90-day `data_access_expires_at` (Meta's
+    // data-use / inactivity policy — see ARCHITECTURE.md "Access token model").
+    // When it lapses, data-touching calls start failing even though expires_at
+    // is still 0 — the one silent outage this token model is otherwise immune
+    // to, and nothing else watches the date. Mirror the expiry alerting: warn
+    // at <14 days, FAIL at <7 so the notify-on-failure email fires in time to
+    // re-derive the Page token before posting silently breaks.
+    const dataAccessAt = data && data.data_access_expires_at; // unix seconds; 0 = no window
+    if (dataAccessAt && dataAccessAt > 0) {
+      const daysLeft = Math.floor((dataAccessAt * 1000 - Date.now()) / 86400000);
+      const windowEnd = new Date(dataAccessAt * 1000).toISOString().slice(0, 10);
+      console.log(`  Data-access window ends: ${windowEnd} (${daysLeft} days remaining)`);
+      if (daysLeft < 7) {
+        console.error(`\n╔════════════════════════════════════════════════════════════╗`);
+        console.error(`║  DATA-ACCESS WINDOW ENDS IN ${daysLeft} DAYS — REFRESH TOKEN     `);
+        console.error(`╠════════════════════════════════════════════════════════════╣`);
+        console.error(`║  The token never "expires" (expires_at: 0) but its 90-day  ║`);
+        console.error(`║  data-access window is closing. When it lapses, posting    ║`);
+        console.error(`║  silently fails. Re-derive the Page token:                 ║`);
+        console.error(`║  1. Graph Explorer → long-lived USER token                 ║`);
+        console.error(`║  2. GET /me/accounts with it → copy the PAGE access_token  ║`);
+        console.error(`║  3. Update the INSTAGRAM_ACCESS_TOKEN GitHub secret        ║`);
+        console.error(`║  4. Re-run this workflow                                   ║`);
+        console.error(`╚════════════════════════════════════════════════════════════╝`);
+        // Same trade as the expiry check: sacrifice this run's post to fire the
+        // failure email while there's still time to refresh.
+        process.exit(1);
+      } else if (daysLeft < 14) {
+        console.warn(`  ⚠ WARNING: Data-access window ends in ${daysLeft} days — re-derive the Page token soon.`);
+      }
+    }
   } catch (err) {
     // Don't fail the run on debug_token errors — the validation call above
     // already proved the token works for the actual API surface we use.
