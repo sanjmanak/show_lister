@@ -112,22 +112,47 @@ jobs:
     if: failure()
     runs-on: ubuntu-latest
     steps:
-      - name: Notify on failure
+      # Send the alert via curl's built-in SMTP support rather than a
+      # third-party action. curl ships on every ubuntu-latest runner, so there
+      # is no action archive to download and nothing that a moved/unservable
+      # upstream tag can break — the exact failure mode that took posting down.
+      - name: Notify on failure (SMTP via curl)
         if: env.HAS_SMTP == 'true'
         env:
           HAS_SMTP: ${{ secrets.SMTP_SERVER != '' }}
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: ${{ secrets.SMTP_SERVER }}
-          server_port: ${{ secrets.SMTP_PORT }}
-          username: ${{ secrets.SMTP_USERNAME }}
-          password: ${{ secrets.SMTP_PASSWORD }}
-          subject: "[Comedy Houston] post-to-instagram FAILED"
-          to: ${{ secrets.NOTIFY_EMAIL }}
-          from: ${{ secrets.SMTP_FROM }}
-          body: |
-            The post-to-instagram workflow failed. The state file may or may
-            not have advanced — check the run logs to see whether the next
-            scheduled run will retry the same comedian or move on.
+          SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          {
+            echo "From: ${SMTP_FROM}"
+            echo "To: ${NOTIFY_EMAIL}"
+            echo "Subject: [Comedy Houston] post-to-instagram FAILED"
+            echo "Content-Type: text/plain; charset=UTF-8"
+            echo
+            echo "The post-to-instagram workflow failed. The state file may or may"
+            echo "not have advanced — check the run logs to see whether the next"
+            echo "scheduled run will retry the same comedian or move on."
+            echo
+            echo "Run: ${RUN_URL}"
+          } > "${RUNNER_TEMP}/ig-failure-email.txt"
 
-            Run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          # Port 465 = implicit TLS (smtps://); 587/25 = STARTTLS (smtp:// + --ssl-reqd).
+          if [ "${SMTP_PORT}" = "465" ]; then
+            URL="smtps://${SMTP_SERVER}:${SMTP_PORT}"
+          else
+            URL="smtp://${SMTP_SERVER}:${SMTP_PORT}"
+          fi
+
+          curl --silent --show-error --fail --ssl-reqd \
+            --url "${URL}" \
+            --user "${SMTP_USERNAME}:${SMTP_PASSWORD}" \
+            --mail-from "${SMTP_FROM}" \
+            --mail-rcpt "${NOTIFY_EMAIL}" \
+            --upload-file "${RUNNER_TEMP}/ig-failure-email.txt"
+          echo "Failure notification email sent."
