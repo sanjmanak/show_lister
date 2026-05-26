@@ -342,6 +342,24 @@ function verifyImageUrl(imageUrl) {
 }
 
 /**
+ * A freshly-created container ID is returned by the create call before Meta's
+ * read path can serve it. A status GET in that window fails with
+ * GraphMethodException code 100 — which Meta labels "Authorization Error" or
+ * "does not exist", misleadingly, since the ID is valid and becomes readable a
+ * few seconds later. This was the carousel-child failure in run #221: the
+ * create returned 200 + an ID, the immediate status poll got 400/code 100, and
+ * the run died. Treat this signature as transient and keep polling.
+ */
+function isContainerNotReadable(err) {
+  if (!err || typeof err.message !== "string") return false;
+  const m = err.message;
+  return (
+    /code 100\b/.test(m) &&
+    /Authorization Error|does not exist|cannot be loaded|Unsupported get request/i.test(m)
+  );
+}
+
+/**
  * Poll container status until FINISHED (max ~30 seconds).
  */
 async function waitForContainer(containerId) {
@@ -351,10 +369,25 @@ async function waitForContainer(containerId) {
   console.log(`   Waiting for container ${containerId} to finish processing…`);
 
   for (let i = 0; i < maxAttempts; i++) {
-    const status = await graphRequest("GET", `/${containerId}`, {
-      fields: "status_code,status",
-      access_token: IG_ACCESS_TOKEN,
-    });
+    let status;
+    try {
+      status = await graphRequest("GET", `/${containerId}`, {
+        fields: "status_code,status",
+        access_token: IG_ACCESS_TOKEN,
+      });
+    } catch (err) {
+      // Read-after-write race — the ID isn't queryable yet. Retry rather than
+      // treating it as a fatal auth error.
+      if (isContainerNotReadable(err) && i < maxAttempts - 1) {
+        console.log(
+          `   Poll ${i + 1}/${maxAttempts}: container not readable yet ` +
+          `(${err.message.split("\n")[0]}) — retrying in ${delayMs}ms…`
+        );
+        await new Promise((r) => setTimeout(r, delayMs));
+        continue;
+      }
+      throw err;
+    }
 
     const code = status.status_code || "UNKNOWN";
     console.log(`   Poll ${i + 1}/${maxAttempts}: status=${code}`);
