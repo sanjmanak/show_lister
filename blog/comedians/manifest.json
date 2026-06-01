@@ -1,42 +1,96 @@
 {
-  "generated_at": "2026-05-25T17:44:58.088Z",
-  "manifest_version": 1779731098088,
-  "week_range": "May 25 – May 31, 2026",
+  "generated_at": "2026-06-01T20:20:13.154Z",
+  "manifest_version": 1780345213154,
+  "week_range": "June 1 – June 7, 2026",
   "posts": [
     {
       "comedianName": "Martin Lawrence",
       "venue": "Smart Financial Centre at Sugar Land",
-      "date": "2026-05-29",
-      "filename": "martin-lawrence-smart-financial-centre-at-sugar-land-2026-05-29.html",
+      "date": "2026-06-05",
+      "filename": "martin-lawrence-smart-financial-centre-at-sugar-land-2026-06-05.html",
       "imageUrl": "https://s1.ticketm.net/dam/a/22b/972f6e8a-044e-4a97-b94f-5c29835e622b_SOURCE",
-      "graphicImageUrl": "https://s1.ticketm.net/dam/a/22b/972f6e8a-044e-4a97-b94f-5c29835e622b_SOURCE",
-      "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7-41_",
-      "slug": "martin-lawrence-smart-financial-centre-at-sugar-land-2026-05-29",
-      "wpLink": "https://comedyhouston.com/martin-lawrence-smart-financial-centre-at-sugar-land-2026-05-29/",
-      "caption": "Houston, remember Martin Payne from the show \"Martin\"? He's back, live, and better than ever. Martin Lawrence is bringing his signature energy and sharp observations to the stage. Known for his physical comedy and engaging stories, he's a must-see. Lawrence has recently gone viral for his impressive transformation, showing up healthier and ready to entertain.  \n\nSmart Financial Centre at Sugar Land · Friday, May 29, 2026\n\nLink in bio for tickets. Tag a friend you'd take.  \n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #MartinLawrence",
-      "instagramHandle": "",
+      "graphicImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0b/MartinLawrenceHWOFJune2013.jpg",
+      "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7-94V",
+      "slug": "martin-lawrence-smart-financial-centre-at-sugar-land-2026-06-05",
+      "wpLink": "https://comedyhouston.com/martin-lawrence-smart-financial-centre-at-sugar-land-2026-06-05/",
+      "caption": "Houston, remember \"Martin Lawrence Live: Runteldat\"? The energy of that special is coming to town! Martin Lawrence brings his high-energy and engaging storytelling to the stage. Known for animated, observational humor, he dives into themes of culture and self-deprecation. Imagine Eddie Murphy’s style with a bit more physical comedy. \n\nSmart Financial Centre at Sugar Land · Friday, June 5, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #MartinLawrence\n\n@martinlawrence",
+      "instagramHandle": "@martinlawrence",
       "graphicFiles": [
-        "martin-lawrence-smart-financial-centre-at-sugar-land-2026-05-29-square.png",
-        "martin-lawrence-smart-financial-centre-at-sugar-land-2026-05-29-portrait.png",
-        "martin-lawrence-smart-financial-centre-at-sugar-land-2026-05-29-story.png"
+        "martin-lawrence-smart-financial-centre-at-sugar-land-2026-06-05-square.png",
+        "martin-lawrence-smart-financial-centre-at-sugar-land-2026-06-05-portrait.png",
+        "martin-lawrence-smart-financial-centre-at-sugar-land-2026-06-05-story.png"
       ]
     },
     {
-      "comedianName": "Tim Meadows",
+      "comedianName": "Jeff Dunham",
+      "venue": "Hobby Center",
+      "date": "2026-06-05",
+      "filename": "jeff-dunham-hobby-center-2026-06-05.html",
+      "imageUrl": "https://s1.ticketm.net/dam/a/676/f9528726-9c07-4c43-b46e-f0b25ebcc676_SOURCE",
+      "graphicImageUrl": "https://s1.ticketm.net/dam/a/676/f9528726-9c07-4c43-b46e-f0b25ebcc676_SOURCE",
+      "ticketUrl": "https://www.ticketmaster.com/jeff-dunham-artificial-intelligence-houston-texas-06-05-2026/event/3A006458F0E17915",
+      "slug": "jeff-dunham-hobby-center-2026-06-05",
+      "wpLink": "https://comedyhouston.com/jeff-dunham-hobby-center-2026-06-05/",
+      "caption": "Jeff Dunham's \"Spark of Insanity\" had us all in stitches. Houston, get ready for that same magic live. Jeff brings his unique ventriloquism to life with characters that are both hilarious and thought-provoking. His shows are known for selling out, blending sharp social commentary with unforgettable puppet routines. Don't miss your chance to see him in action.\n\nHobby Center · Friday, June 5, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #JeffDunham\n\n@jeffdunham",
+      "instagramHandle": "@jeffdunham",
+      "graphicFiles": [
+        "jeff-dunham-hobby-center-2026-06-05-square.png",
+        "jeff-dunham-hobby-center-2026-06-05-portrait.png",
+        "jeff-dunham-hobby-center-2026-06-05-story.png"
+      ]
+    },
+    {
+      "comedianName": "Bassem Youssef",
       "venue": "Houston Improv",
-      "date": "2026-05-29",
-      "filename": "tim-meadows-houston-improv-2026-05-29.html",
-      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "graphicImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Tim_Meadows_by_Gage_Skidmore.jpg/960px-Tim_Meadows_by_Gage_Skidmore.jpg",
-      "ticketUrl": "https://www.ticketweb.com/event/tim-meadows-houston-improv-tickets/14635563?REFERRAL_ID=tmfeed",
-      "slug": "tim-meadows-houston-improv-2026-05-29",
-      "wpLink": "https://comedyhouston.com/tim-meadows-houston-improv-2026-05-29/",
-      "caption": "Remember Tim Meadows from *Saturday Night Live*? Houston, he's bringing his versatile and character-driven comedy to our stage. Known for his spot-on impersonations and sharp satire, Tim's live shows are a masterclass in improvisation. You might know him as Leon Phelps or Principal Ron Duvall, but wait until you see him live. His humor is as fresh as ever.\n\nHouston Improv · Friday, May 29, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #TimMeadows",
+      "date": "2026-06-04",
+      "filename": "bassem-youssef-houston-improv-2026-06-04.html",
+      "imageUrl": "https://s1.ticketm.net/dam/a/4e9/debacb0e-51b2-41c0-99c1-d54e44e2e4e9_SOURCE",
+      "graphicImageUrl": "https://s1.ticketm.net/dam/a/4e9/debacb0e-51b2-41c0-99c1-d54e44e2e4e9_SOURCE",
+      "ticketUrl": "https://www.ticketweb.com/event/bassem-youssef-the-belly-of-houston-improv-tickets/14635373?REFERRAL_ID=tmfeed",
+      "slug": "bassem-youssef-houston-improv-2026-06-04",
+      "wpLink": "https://comedyhouston.com/bassem-youssef-houston-improv-2026-06-04/",
+      "caption": "Catch Bassem Youssef, the voice behind 'El Bernameg,' as he takes the stage in Houston. Known as 'Egypt’s Jon Stewart,' his wit is sharp and his insights are bold. If you like your comedy with a side of truth, Bassem is your guy. Houston Improv · Thursday, June 4, 2026. Link in bio for tickets. Tag someone you'd bring. #HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #BassemYoussef @bassemyoussef",
+      "instagramHandle": "@bassemyoussef",
+      "graphicFiles": [
+        "bassem-youssef-houston-improv-2026-06-04-square.png",
+        "bassem-youssef-houston-improv-2026-06-04-portrait.png",
+        "bassem-youssef-houston-improv-2026-06-04-story.png"
+      ]
+    },
+    {
+      "comedianName": "Doug Stanhope",
+      "venue": "Houston Improv",
+      "date": "2026-06-08",
+      "filename": "doug-stanhope-houston-improv-2026-06-08.html",
+      "imageUrl": "https://s1.ticketm.net/dam/a/65e/687c4bd8-f1d1-4435-a25e-3545a3bc365e_SOURCE",
+      "graphicImageUrl": "https://images.squarespace-cdn.com/content/v1/546025fde4b08eea0acc1bc4/aef59286-32ba-45ed-9bba-4885f143306a/P1046026.03_04_26_22.Still010.jpg",
+      "ticketUrl": "https://www.ticketweb.com/event/doug-stanhope-houston-improv-tickets/14869683?REFERRAL_ID=tmfeed",
+      "slug": "doug-stanhope-houston-improv-2026-06-08",
+      "wpLink": "https://comedyhouston.com/doug-stanhope-houston-improv-2026-06-08/",
+      "caption": "Doug Stanhope co-hosted *The Man Show* with Joe Rogan. Houston, have you heard? This Monday, he's bringing his razor-sharp comedy to town. Known for his fearless dive into controversial topics, Doug delivers laughs with unfiltered social commentary. If you love comedy that cuts deep and makes you think, don't miss this. Houston Improv · Monday, June 8, 2026. Link in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #DougStanhope",
       "instagramHandle": "",
       "graphicFiles": [
-        "tim-meadows-houston-improv-2026-05-29-square.png",
-        "tim-meadows-houston-improv-2026-05-29-portrait.png",
-        "tim-meadows-houston-improv-2026-05-29-story.png"
+        "doug-stanhope-houston-improv-2026-06-08-square.png",
+        "doug-stanhope-houston-improv-2026-06-08-portrait.png",
+        "doug-stanhope-houston-improv-2026-06-08-story.png"
+      ]
+    },
+    {
+      "comedianName": "Nene Leakes",
+      "venue": "House of Blues Houston",
+      "date": "2026-06-05",
+      "filename": "nene-leakes-house-of-blues-houston-2026-06-05.html",
+      "imageUrl": "https://s1.ticketm.net/dam/a/296/5bc755dd-09eb-4357-9805-00b7ca63a296_SOURCE",
+      "graphicImageUrl": "https://s1.ticketm.net/dam/a/296/5bc755dd-09eb-4357-9805-00b7ca63a296_SOURCE",
+      "ticketUrl": "https://www.ticketmaster.com/queen-and-king-of-reality-show-houston-texas-06-05-2026/event/3A00648DC0EDA9DD",
+      "slug": "nene-leakes-house-of-blues-houston-2026-06-05",
+      "wpLink": "https://comedyhouston.com/nene-leakes-house-of-blues-houston-2026-06-05/",
+      "caption": "Ever seen NeNe Leakes on *The Real Housewives of Atlanta*? Now's your chance to catch her live, Houston. Her bold, candid style turns every story into a comedy event. Known for her energetic performances, NeNe blends personal anecdotes with reality TV insights. It's a night you won't forget.\n\nHouse of Blues Houston · Friday, June 5, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #NeneLeakes  \n@neneleakes",
+      "instagramHandle": "@neneleakes",
+      "graphicFiles": [
+        "nene-leakes-house-of-blues-houston-2026-06-05-square.png",
+        "nene-leakes-house-of-blues-houston-2026-06-05-portrait.png",
+        "nene-leakes-house-of-blues-houston-2026-06-05-story.png"
       ]
     }
   ]
