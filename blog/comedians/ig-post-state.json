@@ -1,51 +1,15 @@
 {
   "posted": [
     {
-      "slug": "martin-lawrence-smart-financial-centre-at-sugar-land-2026-06-05",
-      "comedianName": "Martin Lawrence",
-      "igFeedMediaId": "18218894965326252",
-      "igStoryMediaId": "18056132012556560",
-      "fbFeedPostId": "1316411367250272",
-      "fbStoryPostId": "1432515121964801",
-      "postedAt": "2026-06-01T23:40:39.446Z"
-    },
-    {
-      "slug": "jeff-dunham-hobby-center-2026-06-05",
-      "comedianName": "Jeff Dunham",
-      "igFeedMediaId": "18101681234037732",
-      "igStoryMediaId": "18441527296140763",
-      "fbFeedPostId": "1316721070552635",
-      "fbStoryPostId": "1315204803909620",
-      "postedAt": "2026-06-02T08:43:11.987Z"
-    },
-    {
-      "slug": "bassem-youssef-houston-improv-2026-06-04",
-      "comedianName": "Bassem Youssef",
-      "igFeedMediaId": "18113023774842528",
-      "igStoryMediaId": "17902988667431342",
-      "fbFeedPostId": "1316938603864215",
-      "fbStoryPostId": "2394078551082046",
-      "postedAt": "2026-06-02T14:15:31.749Z"
-    },
-    {
-      "slug": "doug-stanhope-houston-improv-2026-06-08",
-      "comedianName": "Doug Stanhope",
-      "igFeedMediaId": "18047801801547033",
-      "igStoryMediaId": "18197790037321536",
-      "fbFeedPostId": "1317174537173955",
-      "fbStoryPostId": "826172086970011",
-      "postedAt": "2026-06-02T19:50:07.732Z"
-    },
-    {
-      "slug": "nene-leakes-house-of-blues-houston-2026-06-05",
-      "comedianName": "Nene Leakes",
-      "igFeedMediaId": "18174025978412162",
-      "igStoryMediaId": "18159938146457159",
-      "fbFeedPostId": "1317303720494370",
-      "fbStoryPostId": "2141063989815676",
-      "postedAt": "2026-06-02T23:54:48.746Z"
+      "slug": "rob-schneider-houston-improv-2026-06-12",
+      "comedianName": "Rob Schneider",
+      "igFeedMediaId": "18090248729373014",
+      "igStoryMediaId": "17957732855963737",
+      "fbFeedPostId": "1322304503327625",
+      "fbStoryPostId": "1636101734859474",
+      "postedAt": "2026-06-08T18:31:06.008Z"
     }
   ],
-  "week_range": "June 1 – June 7, 2026",
-  "manifest_version": 1780345213154
+  "week_range": "June 8 – June 14, 2026",
+  "manifest_version": 1780943256538
 }
