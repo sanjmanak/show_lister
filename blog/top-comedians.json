@@ -1,30 +1,14 @@
 {
-  "generated_at": "2026-06-01T19:51:39.265Z",
-  "week_range": "June 1 – June 7, 2026",
+  "generated_at": "2026-06-08T17:42:48.343Z",
+  "week_range": "June 8 – June 14, 2026",
   "comedians": [
     {
-      "name": "Martin Lawrence",
-      "show": "Martin Lawrence",
-      "imageUrl": "https://s1.ticketm.net/dam/a/22b/972f6e8a-044e-4a97-b94f-5c29835e622b_SOURCE",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0b/MartinLawrenceHWOFJune2013.jpg",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/0/0b/MartinLawrenceHWOFJune2013.jpg",
+      "name": "Rob Schneider",
+      "show": "Rob Schneider",
+      "imageUrl": "https://s1.ticketm.net/dam/a/de0/4783d9ee-47f1-4f3c-b085-f0d707cc2de0_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Rob_Schneider_2025.jpg/1280px-Rob_Schneider_2025.jpg",
+      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Rob_Schneider_2025.jpg/1280px-Rob_Schneider_2025.jpg",
       "imageSource": "headshot"
-    },
-    {
-      "name": "Jeff Dunham",
-      "show": "Jeff Dunham Artificial Intelligence",
-      "imageUrl": "https://s1.ticketm.net/dam/a/676/f9528726-9c07-4c43-b46e-f0b25ebcc676_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/676/f9528726-9c07-4c43-b46e-f0b25ebcc676_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Bassem Youssef",
-      "show": "Bassem Youssef: The Belly of the Beast Tour",
-      "imageUrl": "https://s1.ticketm.net/dam/a/4e9/debacb0e-51b2-41c0-99c1-d54e44e2e4e9_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/4e9/debacb0e-51b2-41c0-99c1-d54e44e2e4e9_SOURCE",
-      "imageSource": "event"
     },
     {
       "name": "Doug Stanhope",
@@ -32,30 +16,6 @@
       "imageUrl": "https://s1.ticketm.net/dam/a/65e/687c4bd8-f1d1-4435-a25e-3545a3bc365e_SOURCE",
       "headshotUrl": "https://images.squarespace-cdn.com/content/v1/546025fde4b08eea0acc1bc4/aef59286-32ba-45ed-9bba-4885f143306a/P1046026.03_04_26_22.Still010.jpg",
       "displayImage": "https://images.squarespace-cdn.com/content/v1/546025fde4b08eea0acc1bc4/aef59286-32ba-45ed-9bba-4885f143306a/P1046026.03_04_26_22.Still010.jpg",
-      "imageSource": "headshot"
-    },
-    {
-      "name": "Nene Leakes",
-      "show": "Queen and King of Reality Show, Nene Leakes and Carlos King LIVE!  18+",
-      "imageUrl": "https://s1.ticketm.net/dam/a/296/5bc755dd-09eb-4357-9805-00b7ca63a296_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/296/5bc755dd-09eb-4357-9805-00b7ca63a296_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Carlos King",
-      "show": "Queen and King of Reality Show, Nene Leakes and Carlos King LIVE!  18+",
-      "imageUrl": "https://s1.ticketm.net/dam/a/296/5bc755dd-09eb-4357-9805-00b7ca63a296_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/296/5bc755dd-09eb-4357-9805-00b7ca63a296_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Caitlin Peluffo",
-      "show": "Caitlin Peluffo (The Tonight Show) Headlines The Riot Comedy Club",
-      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1179043218%2F428099579998%2F1%2Foriginal.20260304-195330?auto=format%2Ccompress&q=75&sharp=10&s=a6ea18d7c5e7bf6c9168217a83d1e0cf",
-      "headshotUrl": "https://images.squarespace-cdn.com/content/v1/52e6edbde4b0b5ecbffe139d/1714741703169-D0EM55RK3ZO43A0V0QUH/2024-04-16_CaitlinPeluffo_Final_3.jpg",
-      "displayImage": "https://images.squarespace-cdn.com/content/v1/52e6edbde4b0b5ecbffe139d/1714741703169-D0EM55RK3ZO43A0V0QUH/2024-04-16_CaitlinPeluffo_Final_3.jpg",
       "imageSource": "headshot"
     }
   ]
