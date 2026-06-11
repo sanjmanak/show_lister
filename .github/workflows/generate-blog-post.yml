@@ -85,7 +85,7 @@ jobs:
           # top-comedians.json is the handoff file consumed by generate-comedian-post.js;
           # if it's not committed, the comedian workflow can't reuse the strict-gated
           # displayImage and re-runs identifyTopComedians() unnecessarily.
-          for f in blog/index.html blog/weekly-hero.html blog/weekly-hero.png blog/instagram-caption.txt blog/top-comedians.json; do
+          for f in blog/index.html blog/weekly-hero.html blog/weekly-hero.png blog/instagram-caption.txt blog/top-comedians.json blog/weekly-meta.json; do
             [ -f "$f" ] && git add "$f"
           done
           # Only commit if there are changes
@@ -98,6 +98,42 @@ jobs:
               git commit -m "Weekly blog post — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
             fi
             git push
+          fi
+
+      # Auto-post the weekly roundup (hero + caption) to IG + FB. Runs AFTER
+      # the commit/push so the hero PNG is reachable on main. The script
+      # refuses stale creative (weekly-meta.json week check) and can't
+      # double-post (weekly-post-state.json), so `!cancelled()` is safe even
+      # when the generate step exited non-zero after writing the creative.
+      - name: Auto-post weekly roundup to Instagram + Facebook
+        if: ${{ !cancelled() && steps.day-check.outputs.is_thursday != 'true' }}
+        timeout-minutes: 12
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          IG_CHANNEL_TIMEOUT_MS: '180000'
+        run: node scripts/post-weekly-roundup.js
+
+      - name: Commit weekly posting state
+        if: ${{ !cancelled() && steps.day-check.outputs.is_thursday != 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add blog/weekly-post-state.json 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "No state changes to commit."
+          else
+            git commit -m "Weekly roundup posted — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
+            for i in 1 2 3 4; do
+              echo "Push attempt $i…"
+              git pull --rebase origin main --no-edit || true
+              if git push origin main; then
+                echo "Push succeeded on attempt $i."
+                break
+              fi
+              echo "Push failed, retrying in ${i}s…"
+              sleep $i
+            done
           fi
 
       - name: Check if email is configured
@@ -129,21 +165,22 @@ jobs:
           server_port: ${{ secrets.SMTP_PORT }}
           username: ${{ secrets.SMTP_USERNAME }}
           password: ${{ secrets.SMTP_PASSWORD }}
-          subject: "Comedy Houston — This Week's Creative & Caption"
+          subject: "Comedy Houston — Weekly Creative (auto-posted)"
           to: ${{ secrets.NOTIFY_EMAIL }}
           from: ${{ secrets.SMTP_FROM }}
           body: |
-            Here's your weekly Comedy Houston creative and Instagram caption.
+            This week's Comedy Houston creative. It was AUTO-POSTED to
+            Instagram + Facebook by the workflow — this email is your
+            receipt and backup. If the auto-post step failed (check the
+            workflow run), post it manually with the caption below.
 
             -----------------------------------------------
-            INSTAGRAM CAPTION (copy & paste)
+            INSTAGRAM CAPTION (copy & paste if needed)
             -----------------------------------------------
 
             ${{ env.CAPTION }}
 
             -----------------------------------------------
-
-            The hero image is attached — ready to post.
 
             Blog post: https://sanjmanak.github.io/show_lister/blog/
           attachments: blog/weekly-hero.png

@@ -1899,6 +1899,29 @@ async function main() {
       caption = caption.replace(/^```\w*\s*\n?/g, "").replace(/\n?```\s*$/g, "").trim();
       fs.writeFileSync(BLOG_CAPTION_PATH, caption);
       console.log(`Wrote Instagram caption: ${BLOG_CAPTION_PATH}`);
+
+      // Auto-post handoff: post-weekly-roundup.js (run by the workflow after
+      // commit/push lands the hero PNG on main) requires this meta to prove
+      // the caption + hero on disk belong to THIS week — not last week's
+      // files from the checkout after a partial generation failure.
+      const heroPngForMeta = path.join(BLOG_DIR, "weekly-hero.png");
+      if (fs.existsSync(heroPngForMeta)) {
+        fs.writeFileSync(
+          path.join(BLOG_DIR, "weekly-meta.json"),
+          JSON.stringify(
+            {
+              week_monday: monday.toISOString().slice(0, 10),
+              week_range: weekRange,
+              generated_at: new Date().toISOString(),
+              hero: "weekly-hero.png",
+              caption: "instagram-caption.txt",
+            },
+            null,
+            2
+          ) + "\n"
+        );
+        console.log("Wrote weekly-meta.json (auto-post handoff).");
+      }
       console.log("");
     } catch (err) {
       console.warn(`Warning: Caption generation failed: ${err.message}`);
