@@ -352,7 +352,8 @@ Logs every ticket click with: timestamp, original URL, final URL (with affiliate
 | **Secrets used** | `OPENAI_API_KEY` + optionally all SMTP secrets |
 | **Commits** | `blog/index.html`, `blog/weekly-hero.html`, `blog/weekly-hero.png`, `blog/instagram-caption.txt`, `blog/top-comedians.json` |
 | **Job timeout** | `timeout-minutes: 20` (down from 30 — script-side per-call WP timeouts make this a fail-safe, not the primary kill switch) |
-| **Email** | Sends whenever `SMTP_SERVER` is set AND the caption + hero files exist on disk. Crucially, the `Commit and push`, `Check if email is configured`, `Load caption for email`, and `Email weekly creative + caption` steps all run under `if: ${{ !cancelled() }}` — so if `node scripts/generate-blog-post.js` exits non-zero (e.g. WordPress publish failure), the operator still gets the Instagram caption + hero PNG by email and can post manually. |
+| **Auto-post** | After the commit/push, `post-weekly-roundup.js` posts the hero + caption to IG feed (anchor) + FB feed via `scripts/lib/meta-api.js`. Freshness is proven by `blog/weekly-meta.json` (written only when this week's caption + hero both exist); `blog/weekly-post-state.json` is week-keyed so Thursday runs and re-runs can't double-post; the hero URL carries a week-keyed cache-buster so the raw CDN can't serve last week's PNG. |
+| **Email** | Sends whenever `SMTP_SERVER` is set AND the caption + hero files exist on disk — now a receipt/backup for the auto-post rather than a to-do. Crucially, the `Commit and push`, auto-post, and email steps all run under `if: ${{ !cancelled() }}` — so if `node scripts/generate-blog-post.js` exits non-zero (e.g. WordPress publish failure), the operator still gets the Instagram caption + hero PNG by email and can post manually. |
 
 #### Workflow 3: Generate Comedian Posts (`.github/workflows/generate-comedian-posts.yml`)
 
