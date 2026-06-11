@@ -100,11 +100,33 @@
   // ================================================================
   // TICKET URL BUILDER — routes through redirect for tracking
   // ================================================================
+  // Keep in sync with is_allowed_ticket_url() in comedy-houston.php. The
+  // redirect endpoint only forwards to these vendors, so anything else must
+  // link directly — otherwise the click bounces back to the homepage.
+  var ALLOWED_TICKET_HOSTS = /(^|\.)(ticketmaster\.(com|ca)|livenation\.com|eventbrite\.(com|ca)|ticketweb\.com|universe\.com)$/i;
+
+  function isAllowedTicketUrl(url) {
+    try {
+      var a = document.createElement("a");
+      a.href = url;
+      return ALLOWED_TICKET_HOSTS.test(a.hostname);
+    } catch (_) {
+      return false;
+    }
+  }
+
   function buildTicketUrl(originalUrl) {
     if (!originalUrl) return "";
-    // If tracking is enabled and we have a redirect base, route through it
-    if (TRACK_CLICKS && REDIRECT_BASE) {
-      return REDIRECT_BASE + btoa(originalUrl);
+    // If tracking is enabled and we have a redirect base, route through it.
+    // URL-safe base64 (- and _ instead of + and /, no padding): a literal
+    // "+" in standard base64 becomes a space in the query string and the
+    // redirect handler's strict decode used to fail on it.
+    if (TRACK_CLICKS && REDIRECT_BASE && isAllowedTicketUrl(originalUrl)) {
+      try {
+        return REDIRECT_BASE + btoa(originalUrl).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+      } catch (_) {
+        return originalUrl;
+      }
     }
     // Otherwise link directly
     return originalUrl;

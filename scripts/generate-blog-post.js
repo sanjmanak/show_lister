@@ -531,18 +531,20 @@ IMPORTANT:
 // Identify top comedians via OpenAI
 // ---------------------------------------------------------------------------
 
-function identifyTopComedians(events) {
-  const filtered = events.filter((ev) => {
+// Open mics, showcases, karaoke, and generic recurring events — skipped when
+// identifying headliners and (unless nothing else exists) when backfilling
+// the hero grid.
+const GENERIC_EVENT_PATTERNS = ["open mic", "showcase", "karaoke", "showdown", "dating"];
+
+function filterSpotlightEvents(events) {
+  return events.filter((ev) => {
     const name = ev.name.toLowerCase();
-    // Skip open mics, showcases, karaoke, and generic recurring events
-    return (
-      !name.includes("open mic") &&
-      !name.includes("showcase") &&
-      !name.includes("karaoke") &&
-      !name.includes("showdown") &&
-      !name.includes("dating")
-    );
+    return !GENERIC_EVENT_PATTERNS.some((p) => name.includes(p));
   });
+}
+
+function identifyTopComedians(events) {
+  const filtered = filterSpotlightEvents(events);
 
   // Build show entries with venue info so OpenAI can factor in venue size
   const showEntries = filtered.map((ev) => {
@@ -571,6 +573,102 @@ Return ONLY a JSON array of objects with "name" (the comedian's name, not the ev
 Return ONLY the JSON array, no other text.`;
 
   return callOpenAI(prompt, "You are a comedy expert with deep knowledge of comedian popularity, social media followings, and venue sizes. Return only valid JSON.");
+}
+
+// ---------------------------------------------------------------------------
+// Hero backfill — notable events fill the grid when comedians run short
+// ---------------------------------------------------------------------------
+
+// Shorten an event title for a hero tile. "Ali Siddiq: The Domino Effect
+// Tour" → "Ali Siddiq"; generic titles pass through, long ones get clipped.
+function eventTileName(title) {
+  let name = String(title || "").trim();
+  // "Riot Comedy Club Presents \"The Show\"" → "The Show"
+  const presents = name.match(/\bpresents[:\s]+["“]?(.+?)["”]?$/i);
+  if (presents && presents[1].trim().length >= 4) name = presents[1].trim();
+  const first = name.split(/\s*[|–—]\s*|:\s/)[0].trim();
+  if (first.length >= 4) name = first;
+  if (name.length > 36) name = name.slice(0, 33).trimEnd() + "…";
+  return name;
+}
+
+// The weekly hero should ALWAYS render a full 6-tile grid so the calendar
+// looks active even on a slow week. When identifyTopComedians() only finds
+// 2-3 recognizable names, fill the remaining slots with notable events:
+// dedupe by title, skip shows already covered by a featured comedian, rank
+// by image availability + ticket price (a rough drawing-power proxy), and
+// spread across venues. Open mics / showcases are only used if there is
+// literally nothing else on the calendar.
+function buildHeroBackfillEntries(events, existingEntries, needed) {
+  if (needed <= 0) return [];
+
+  const covered = existingEntries.map((c) => ({
+    name: (c.name || "").toLowerCase(),
+    show: (c.show || "").toLowerCase(),
+  }));
+
+  const seenTitles = new Set();
+  const collect = (pool) => {
+    const out = [];
+    for (const ev of pool) {
+      const key = (ev.name || "").trim().toLowerCase();
+      if (!key || seenTitles.has(key)) continue;
+      const isCovered = covered.some(
+        (c) => (c.show && key === c.show) || (c.name && key.includes(c.name))
+      );
+      if (isCovered) continue;
+      seenTitles.add(key);
+      out.push(ev);
+    }
+    return out;
+  };
+
+  let candidates = collect(filterSpotlightEvents(events));
+  if (candidates.length < needed) {
+    candidates = candidates.concat(collect(events));
+  }
+
+  candidates.sort((a, b) => {
+    const imgDiff = (b.image_url ? 1 : 0) - (a.image_url ? 1 : 0);
+    if (imgDiff) return imgDiff;
+    const priceDiff =
+      (b.price_max || b.price_min || 0) - (a.price_max || a.price_min || 0);
+    if (priceDiff) return priceDiff;
+    return (a.date || "").localeCompare(b.date || "");
+  });
+
+  // First pass takes at most one event per venue so the grid shows the
+  // breadth of the week; second pass fills any remaining slots.
+  const picked = [];
+  const usedVenues = new Set();
+  for (const venueSpread of [true, false]) {
+    for (const ev of candidates) {
+      if (picked.length >= needed) break;
+      if (picked.includes(ev)) continue;
+      const venueKey = (ev.venue || "").toLowerCase();
+      if (venueSpread && usedVenues.has(venueKey)) continue;
+      usedVenues.add(venueKey);
+      picked.push(ev);
+    }
+    if (picked.length >= needed) break;
+  }
+
+  return picked.map((ev) => {
+    const pick = pickDisplayImage({
+      eventImageUrl: ev.image_url,
+      comedianName: ev.name,
+    });
+    return {
+      name: eventTileName(ev.name),
+      show: ev.name,
+      venue: ev.venue || null,
+      date: ev.date || null,
+      imageUrl: ev.image_url || null,
+      displayImage: pick.displayImage,
+      imageSource: pick.source,
+      isEventBackfill: true,
+    };
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -813,8 +911,20 @@ ${extraSection}
 // Instagram caption generation
 // ---------------------------------------------------------------------------
 
-function generateInstagramCaption(comedianNames, weekRange, instagramHandles, comedianResearch) {
-  const namesList = comedianNames.slice(0, 6).join(", ");
+function generateInstagramCaption(comedianNames, weekRange, instagramHandles, comedianResearch, extraShows = []) {
+  const namesList =
+    comedianNames.length > 0
+      ? comedianNames.slice(0, 6).join(", ")
+      : "(no big-name headliners identified this week — lead with the shows listed below)";
+
+  // Backfill events that fill out the hero grid on slow weeks. The caption
+  // should acknowledge them so the copy matches the 6-tile image.
+  const extraShowsSection =
+    extraShows.length > 0
+      ? `\nAlso on this week's calendar (these appear in the post image — work 1-2 of them into the pitch or a single "also happening" sentence, naming the venue):\n${extraShows
+          .map((s) => `- ${s.show}${s.venue ? ` at ${s.venue}` : ""}`)
+          .join("\n")}\n`
+      : "";
 
   // Build the handles section for the prompt
   const handlesFound = instagramHandles || {};
@@ -830,7 +940,7 @@ function generateInstagramCaption(comedianNames, weekRange, instagramHandles, co
 
 Week: ${weekRange}
 Featured comedians: ${namesList}
-${researchSection}
+${researchSection}${extraShowsSection}
 STRUCTURE (follow this exact format):
 
 1. HOOK (1 sentence): Address Houston directly. Use a SPECIFIC detail from the research to make it interesting — a comedian's real special title, a real credit, something concrete. Not "great comedy this week" but something like "The guy behind Netflix's 'The Domino Effect' is in Houston this Thursday." Make it feel like insider knowledge, not an ad.
@@ -1639,13 +1749,36 @@ async function main() {
     }
   }
 
+  // Step 2c: Build the hero lineup — comedians first, then notable-event
+  // backfill so the grid always shows HERO_TILE_COUNT tiles. Backfill
+  // entries are hero/caption-only: they are NOT written to the
+  // top-comedians.json handoff, so the per-comedian deep-research posts
+  // still only cover real headliners.
+  const HERO_TILE_COUNT = 6;
+  let heroEntries = [...topComedians];
+  if (heroEntries.length < HERO_TILE_COUNT) {
+    const backfill = buildHeroBackfillEntries(
+      events,
+      topComedians,
+      HERO_TILE_COUNT - heroEntries.length
+    );
+    if (backfill.length > 0) {
+      console.log(
+        `Hero backfill: only ${topComedians.length} comedian(s) found — adding ${backfill.length} notable event(s): ${backfill.map((e) => e.name).join(", ")}`
+      );
+      console.log("");
+    }
+    heroEntries = heroEntries.concat(backfill);
+  }
+  const backfillEntries = heroEntries.filter((e) => e.isEventBackfill);
+
   // Step 3: Generate hero creative HTML (replaces DALL-E)
   let inlineHeroHTML = "";
-  if (topComedians.length > 0) {
-    const heroHTML = generateHeroCreativeHTML(topComedians, weekRange);
+  if (heroEntries.length > 0) {
+    const heroHTML = generateHeroCreativeHTML(heroEntries, weekRange);
     fs.writeFileSync(BLOG_HERO_HTML_PATH, heroHTML);
     console.log(`Wrote hero creative HTML: ${BLOG_HERO_HTML_PATH}`);
-    inlineHeroHTML = generateInlineHeroHTML(topComedians, weekRange);
+    inlineHeroHTML = generateInlineHeroHTML(heroEntries, weekRange);
 
     // Render the hero HTML to PNG immediately so any downstream consumer
     // (especially the WordPress weekly-roundup publish below) uses *this*
@@ -1755,11 +1888,14 @@ async function main() {
     }
   }
 
-  // Step 6: Generate Instagram caption (with handles)
-  if (topComedianNames.length > 0) {
+  // Step 6: Generate Instagram caption (with handles). Runs whenever the
+  // hero has anything to show — on a slow week with zero recognized
+  // comedians the caption is built from the backfill events instead, so
+  // the weekly IG post still goes out.
+  if (heroEntries.length > 0) {
     console.log("Generating Instagram caption...");
     try {
-      let caption = await generateInstagramCaption(topComedianNames, weekRange, instagramHandles, comedianResearch);
+      let caption = await generateInstagramCaption(topComedianNames, weekRange, instagramHandles, comedianResearch, backfillEntries);
       caption = caption.replace(/^```\w*\s*\n?/g, "").replace(/\n?```\s*$/g, "").trim();
       fs.writeFileSync(BLOG_CAPTION_PATH, caption);
       console.log(`Wrote Instagram caption: ${BLOG_CAPTION_PATH}`);
