@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.4.2
+ * Version: 2.4.3
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.4.2';
+    const VERSION      = '2.4.3';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -219,6 +219,17 @@ class Comedy_Houston_Plugin {
         }
 
         $payload = sanitize_text_field(wp_unslash($_GET[self::REDIRECT_VAR]));
+        // Tolerant decode. Links are generated URL-safe (- and _ instead of
+        // + and /), but older cached pages still carry standard base64 where
+        // a literal "+" arrives here as a space after query-string parsing —
+        // that single character used to fail the strict decode and bounce
+        // the visitor back to the homepage instead of the ticket page.
+        $payload = str_replace(' ', '+', $payload);
+        $payload = strtr($payload, '-_', '+/');
+        $pad = strlen($payload) % 4;
+        if ($pad) {
+            $payload .= str_repeat('=', 4 - $pad);
+        }
         $decoded = base64_decode($payload, true);
 
         if ($decoded === false || !filter_var($decoded, FILTER_VALIDATE_URL)) {
@@ -236,29 +247,8 @@ class Comedy_Houston_Plugin {
 
         // Host allowlist: only redirect to known ticket vendors. Anything
         // else could be abused to launder phishing links through our
-        // domain's reputation. Subdomain-safe match (ends-with check after
-        // a literal dot so "notticketmaster.com" does not pass).
-        $host = strtolower((string) parse_url($decoded, PHP_URL_HOST));
-        $allowed_hosts = [
-            'ticketmaster.com',
-            'ticketmaster.ca',
-            'livenation.com',
-            'eventbrite.com',
-            'eventbrite.ca',
-        ];
-        $host_ok = false;
-        foreach ($allowed_hosts as $allowed) {
-            if ($host === $allowed) {
-                $host_ok = true;
-                break;
-            }
-            $suffix = '.' . $allowed;
-            if (strlen($host) > strlen($suffix) && substr($host, -strlen($suffix)) === $suffix) {
-                $host_ok = true;
-                break;
-            }
-        }
-        if (!$host_ok) {
+        // domain's reputation.
+        if (!$this->is_allowed_ticket_url($decoded)) {
             wp_safe_redirect(home_url('/'));
             exit;
         }
@@ -282,6 +272,40 @@ class Comedy_Houston_Plugin {
         // Redirect — use wp_redirect since it's an external URL
         wp_redirect(esc_url_raw($target_url), 302);
         exit;
+    }
+
+    /**
+     * Ticket vendors the ?ch_go= redirect will forward to. Subdomain-safe
+     * match (ends-with check after a literal dot so "notticketmaster.com"
+     * does not pass). Keep in sync with ALLOWED_TICKET_HOSTS in
+     * comedy-houston.js — any vendor missing from this list gets a direct
+     * link at render time instead of a tracked redirect, so clicks never
+     * dead-end on the homepage.
+     */
+    private function is_allowed_ticket_url($url) {
+        if (!preg_match('~^https?://~i', $url)) {
+            return false;
+        }
+        $host = strtolower((string) parse_url($url, PHP_URL_HOST));
+        $allowed_hosts = [
+            'ticketmaster.com',
+            'ticketmaster.ca',
+            'livenation.com',
+            'eventbrite.com',
+            'eventbrite.ca',
+            'ticketweb.com',
+            'universe.com',
+        ];
+        foreach ($allowed_hosts as $allowed) {
+            if ($host === $allowed) {
+                return true;
+            }
+            $suffix = '.' . $allowed;
+            if (strlen($host) > strlen($suffix) && substr($host, -strlen($suffix)) === $suffix) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private function log_click($original_url, $final_url) {
@@ -688,8 +712,11 @@ class Comedy_Houston_Plugin {
         $price_html = $this->format_price_html($ev['price_min'] ?? null, $ev['price_max'] ?? null, $ev['currency'] ?? 'USD');
 
         $ticket_url = $ev['ticket_url'] ?? '';
-        if ($ticket_url && $track && $redirect_base) {
-            $ticket_link = esc_attr($redirect_base . base64_encode($ticket_url));
+        if ($ticket_url && $track && $redirect_base && $this->is_allowed_ticket_url($ticket_url)) {
+            // URL-safe base64 (- and _ instead of + and /, no padding):
+            // standard base64 can contain "+", which query-string parsing
+            // turns into a space and breaks the redirect.
+            $ticket_link = esc_attr($redirect_base . rtrim(strtr(base64_encode($ticket_url), '+/', '-_'), '='));
         } else {
             $ticket_link = esc_attr($ticket_url);
         }

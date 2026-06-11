@@ -72,7 +72,7 @@ There are **eight major components** that work together:
 | 4 | **Comedian Post Generator** | Per-comedian 600-word SEO blog posts with source links and fact-checking | Node.js + OpenAI API |
 | 5 | **Social Media Auto-Poster** | Publishes comedian spotlights to Instagram feed + stories, Facebook Page feed + stories, with comedian tagging | Node.js + Meta Graph API |
 | 6 | **WordPress Plugin** | Embeds show listings on any WordPress site with filtering, themes, affiliate tracking, GA4 event tracking | PHP + JS + CSS |
-| 7 | **GitHub Actions** | Four automated workflows: twice-daily fetch + weekly blog + weekly comedian posts + staggered IG posting | YAML workflow files |
+| 7 | **GitHub Actions** | Five automated workflows: twice-daily fetch + weekly blog + weekly comedian posts + staggered IG posting + daily "Tonight in Houston" post | YAML workflow files |
 | 8 | **GitHub Pages** | Free static hosting — serves the website, JSON data, and blog posts | GitHub infrastructure |
 
 ---
@@ -375,6 +375,37 @@ Logs every ticket click with: timestamp, original URL, final URL (with affiliate
 | **Secrets used** | `INSTAGRAM_ACCESS_TOKEN`, `INSTAGRAM_USER_ID` |
 | **Commits** | `blog/comedians/ig-post-state.json` |
 | **Cost** | Free (Meta Graph API has no per-call cost) |
+
+#### Workflow 5: Tonight in Houston (`.github/workflows/post-tonight.yml`)
+
+| Field | Value |
+|-------|-------|
+| **Schedule** | Daily: `0 20 * * *` UTC (~3 PM CDT / 2 PM CST) |
+| **Manual trigger** | Yes (`workflow_dispatch`) |
+| **What it runs** | `generate-tonight-post.js` (graphic + caption) → commit/push → `post-tonight.js` (IG feed + IG story + FB feed + FB story) |
+| **Secrets used** | `INSTAGRAM_ACCESS_TOKEN`, `INSTAGRAM_USER_ID` |
+| **Commits** | `blog/tonight/tonight-{date}-*.png/.txt`, `tonight-meta.json`, `tonight-post-state.json` |
+| **Cost** | $0 — no OpenAI calls; the creative is a deterministic typographic lineup card |
+
+The daily post guarantees at least one Instagram post per day regardless of
+how many recognizable comedians the weekly pipeline found. Key design points:
+
+- **Row selection** prefers headliner-named shows ("Rob Schneider", "Tumua")
+  over generic showcases — show-name shape is the ranking signal, NOT ticket
+  price (Eventbrite `price_max` includes VIP tables; TM headliners are often
+  null) and NOT start time (which buries 7:30 headliners under 6 PM showcases).
+- **Non-comedy filtering**: name patterns (dance party, karaoke, …) plus the
+  `genre` field that `fetch-events.js` now stamps on Ticketmaster events
+  (filters out leaked touring musicals like Spamilton).
+- Images are served to Meta from **raw.githubusercontent.com** (no GitHub
+  Pages build to wait on) with date-stamped filenames (no CDN staleness).
+- `tonight-post-state.json` records the last posted date so re-runs can't
+  double-post. State only advances after the anchor channel (IG feed)
+  succeeds. Old artifacts are deleted daily so the repo doesn't grow.
+- Shares ALL Meta plumbing with the comedian poster via
+  `scripts/lib/meta-api.js` (graphRequest rate-limit handling, container
+  status workaround, 9007 publish retry, token expiry guards, socket-leak
+  shutdown). Fix bugs in the lib once, both posters get it.
 
 **Per comedian, 4 posts go out:**
 
@@ -705,15 +736,22 @@ show_lister/
 │       ├── update-events.yml            # Cron: fetch events 2x daily
 │       ├── generate-blog-post.yml       # Cron: weekly blog + email
 │       ├── generate-comedian-posts.yml  # Cron: weekly per-comedian SEO posts
-│       └── post-to-instagram.yml       # Cron: staggered IG posting (every 6h)
+│       ├── post-to-instagram.yml       # Cron: staggered IG posting (every 6h)
+│       └── post-tonight.yml            # Cron: daily "Tonight in Houston" post (3 PM CT)
 │
 ├── scripts/
-│   ├── fetch-events.js                  # Core fetcher (~500 lines)
-│   ├── generate-blog-post.js            # AI blog generator (~1,600 lines)
-│   ├── generate-comedian-post.js        # Per-comedian SEO post generator (~500 lines)
-│   ├── post-to-instagram.js             # Multi-channel social poster: IG carousel/story + FB feed/story (~550 lines)
-│   ├── screenshot-blog-teasers.js       # Puppeteer blog teaser cards for carousel slides (~200 lines)
-│   └── screenshot-hero.js               # Puppeteer PNG screenshotter (~40 lines)
+│   ├── lib/
+│   │   ├── image-utils.js               # Shared headshot strict-gate pipeline
+│   │   ├── meta-api.js                  # Shared Meta Graph API plumbing (both posters)
+│   │   └── sanitize-html.js             # AI-output HTML sanitizer
+│   ├── fetch-events.js                  # Core fetcher (~550 lines, venue normalization + genre)
+│   ├── generate-blog-post.js            # AI blog generator (~2,300 lines, 6-tile hero w/ event backfill)
+│   ├── generate-comedian-post.js        # Per-comedian SEO post generator
+│   ├── generate-tonight-post.js         # Daily lineup graphic + caption (no AI, ~$0)
+│   ├── post-to-instagram.js             # Weekly comedian poster: IG carousel/story + FB feed/story
+│   ├── post-tonight.js                  # Daily Tonight-in-Houston poster (4 channels)
+│   ├── screenshot-blog-teasers.js       # Puppeteer blog teaser cards for carousel slides
+│   └── screenshot-hero.js               # Puppeteer PNG screenshotter
 │
 ├── wordpress/
 │   ├── comedy-houston.php               # Main plugin file (~900 lines) — includes click analytics dashboard
