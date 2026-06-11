@@ -192,7 +192,7 @@ function normalizeTM(ev) {
     ev._embedded && ev._embedded.venues && ev._embedded.venues[0]
       ? ev._embedded.venues[0]
       : null;
-  const venue = venueObj ? venueObj.name : "Unknown Venue";
+  const venue = normalizeVenueName(venueObj ? venueObj.name : "Unknown Venue");
   const venueState =
     venueObj && venueObj.state ? venueObj.state.stateCode : null;
   const venueCity =
@@ -215,9 +215,18 @@ function normalizeTM(ev) {
   const status =
     ev.dates && ev.dates.status ? ev.dates.status.code : "unknown";
 
+  // Ticketmaster's "comedy" search leaks touring musicals and plays
+  // (Spamilton, Clue). Stamp the genre so downstream consumers (daily
+  // Tonight post, weekly hero backfill) can filter Theatre out.
+  const genre =
+    ev.classifications && ev.classifications[0] && ev.classifications[0].genre
+      ? ev.classifications[0].genre.name || null
+      : null;
+
   return {
     id: makeId(ev.name, dateStr, venue),
     name: ev.name || "Untitled Event",
+    genre,
     venue,
     venue_state: venueState,
     venue_city: venueCity,
@@ -325,8 +334,9 @@ async function fetchEventbrite() {
 }
 
 function normalizeEB(ev, orgFallbackName) {
-  const venueName =
-    ev.venue && ev.venue.name ? ev.venue.name : orgFallbackName;
+  const venueName = normalizeVenueName(
+    ev.venue && ev.venue.name ? ev.venue.name : orgFallbackName
+  );
 
   const startLocal = ev.start ? ev.start.local : null; // "2026-02-15T19:30:00"
   const dateStr = startLocal ? startLocal.slice(0, 10) : null;
@@ -369,6 +379,27 @@ function normalizeEB(ev, orgFallbackName) {
 // ---------------------------------------------------------------------------
 // Utilities
 // ---------------------------------------------------------------------------
+
+// The same physical venue arrives under different names per source —
+// Ticketmaster says "Houston Improv" while the club's ticketweb/Eventbrite
+// listings say "Improv Comedy Club- Houston". The venue is part of the
+// dedupe hash (makeId), so without normalization the same show appears
+// twice on the site and the venue filter splits into two entries.
+// Keys are lowercased with whitespace collapsed.
+const VENUE_ALIASES = {
+  "improv comedy club- houston": "Houston Improv",
+  "improv comedy club - houston": "Houston Improv",
+  "improv comedy club-houston": "Houston Improv",
+  "improv comedy club houston": "Houston Improv",
+  "houston improv comedy club": "Houston Improv",
+  "the houston improv": "Houston Improv",
+};
+
+function normalizeVenueName(name) {
+  if (!name) return name;
+  const key = name.toLowerCase().replace(/\s+/g, " ").trim();
+  return VENUE_ALIASES[key] || name;
+}
 
 function makeId(name, date, venue) {
   const raw = `${(name || "").toLowerCase().trim()}|${date || ""}|${(venue || "").toLowerCase().trim()}`;

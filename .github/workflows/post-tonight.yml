@@ -1,0 +1,161 @@
+name: Tonight in Houston
+
+on:
+  # Daily at 20:00 UTC = 3 PM CDT (2 PM CST in winter). Houston is on
+  # daylight time most of the comedy season; GitHub cron can't follow DST.
+  schedule:
+    - cron: '0 20 * * *'
+
+  # Manual trigger for testing
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Serialize with itself (cron + manual dispatch could double-fire and race
+# the state commit). The script's tonight-post-state.json date check is the
+# second line of defense against double-posting.
+concurrency:
+  group: post-tonight
+  cancel-in-progress: false
+
+env:
+  TZ: America/Chicago
+
+jobs:
+  post-tonight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Puppeteer
+        run: npm install puppeteer
+
+      - name: Generate tonight graphic + caption
+        run: node scripts/generate-tonight-post.js
+
+      - name: Check if there are shows tonight
+        id: check
+        run: |
+          COUNT=$(node -e "console.log(JSON.parse(require('fs').readFileSync('blog/tonight/tonight-meta.json','utf8')).count || 0)")
+          echo "count=$COUNT" >> $GITHUB_OUTPUT
+          if [ "$COUNT" = "0" ]; then
+            echo "No shows tonight — skipping post."
+          else
+            echo "$COUNT shows tonight."
+          fi
+
+      # The PNGs must be on main BEFORE posting — Meta fetches the image
+      # from raw.githubusercontent.com server-side.
+      - name: Commit and push tonight creative
+        if: steps.check.outputs.count != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add blog/tonight/
+          if git diff --staged --quiet; then
+            echo "No creative changes to commit."
+          else
+            git commit -m "Tonight in Houston creative — $(TZ=America/Chicago date +'%B %d, %Y')"
+            for i in 1 2 3 4; do
+              echo "Push attempt $i…"
+              git pull --rebase origin main --no-edit || true
+              if git push origin main; then
+                echo "Push succeeded on attempt $i."
+                break
+              fi
+              echo "Push failed, retrying in ${i}s…"
+              sleep $i
+            done
+          fi
+
+      - name: Post to Instagram + Facebook
+        if: steps.check.outputs.count != '0'
+        # Step-level cap > 4 channels × 3 min per-channel timeout + image
+        # propagation wait (~2 min worst case).
+        timeout-minutes: 18
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          IG_CHANNEL_TIMEOUT_MS: '180000'
+        run: node scripts/post-tonight.js
+
+      - name: Commit posting state
+        # always() so that if the post step errors after state was written
+        # (e.g. best-effort channel failure after the anchor succeeded), the
+        # advancement still lands and a re-run can't double-post.
+        if: always() && steps.check.outputs.count != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add blog/tonight/tonight-post-state.json
+          if git diff --staged --quiet; then
+            echo "No state changes to commit."
+          else
+            git commit -m "Tonight in Houston posted — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
+            for i in 1 2 3 4; do
+              echo "Push attempt $i…"
+              git pull --rebase origin main --no-edit || true
+              if git push origin main; then
+                echo "Push succeeded on attempt $i."
+                break
+              fi
+              echo "Push failed, retrying in ${i}s…"
+              sleep $i
+            done
+          fi
+
+  # Failure notifier lives in its own job so a broken notifier can never
+  # block posting — see post-to-instagram.yml for the incident history.
+  notify-failure:
+    needs: post-tonight
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify on failure (SMTP via curl)
+        if: env.HAS_SMTP == 'true'
+        env:
+          HAS_SMTP: ${{ secrets.SMTP_SERVER != '' }}
+          SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          {
+            echo "From: ${SMTP_FROM}"
+            echo "To: ${NOTIFY_EMAIL}"
+            echo "Subject: [Comedy Houston] Tonight-in-Houston post FAILED"
+            echo "Content-Type: text/plain; charset=UTF-8"
+            echo
+            echo "The daily Tonight in Houston workflow failed. Tonight's post"
+            echo "did not go out. Re-run the workflow manually to retry, or"
+            echo "check the logs:"
+            echo
+            echo "Run: ${RUN_URL}"
+          } > "${RUNNER_TEMP}/tonight-failure-email.txt"
+
+          if [ "${SMTP_PORT}" = "465" ]; then
+            URL="smtps://${SMTP_SERVER}:${SMTP_PORT}"
+          else
+            URL="smtp://${SMTP_SERVER}:${SMTP_PORT}"
+          fi
+
+          curl --silent --show-error --fail --ssl-reqd \
+            --url "${URL}" \
+            --user "${SMTP_USERNAME}:${SMTP_PASSWORD}" \
+            --mail-from "${SMTP_FROM}" \
+            --mail-rcpt "${NOTIFY_EMAIL}" \
+            --upload-file "${RUNNER_TEMP}/tonight-failure-email.txt"
+          echo "Failure notification email sent."

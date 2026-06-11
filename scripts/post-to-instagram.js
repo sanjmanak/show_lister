@@ -18,17 +18,32 @@
  * Zero npm dependencies — uses only built-in Node modules.
  */
 
-const https = require("https");
 const fs = require("fs");
 const path = require("path");
+
+// Shared Meta Graph API plumbing (graphRequest retry/rate-limit handling,
+// container status workarounds, publish retries, token guards, shutdown).
+// Extracted to scripts/lib/meta-api.js so the daily "Tonight in Houston"
+// poster reuses the exact same battle-tested code. See ARCHITECTURE.md
+// "Posting reliability" before changing the lib.
+const {
+  IG_ACCESS_TOKEN,
+  IG_USER_ID,
+  GRAPH_API_VERSION,
+  graphRequest,
+  verifyImageUrl,
+  waitForContainer,
+  publishWithRetry,
+  isUserTagError,
+  withTimeout,
+  resolveFacebookPageId,
+  validateTokenAndGuards,
+  shutdown,
+} = require("./lib/meta-api");
 
 // ---------------------------------------------------------------------------
 // Config
 // ---------------------------------------------------------------------------
-
-const IG_ACCESS_TOKEN = process.env.INSTAGRAM_ACCESS_TOKEN || "";
-const IG_USER_ID = process.env.INSTAGRAM_USER_ID || "";
-const GRAPH_API_VERSION = "v25.0";
 
 const OUTPUT_DIR = path.resolve(__dirname, "..");
 const COMEDIANS_DIR = path.join(OUTPUT_DIR, "blog", "comedians");
@@ -39,151 +54,6 @@ const IMAGES_BASE_URL =
 
 // Facebook Page ID is resolved at runtime from the Page Access Token
 let FB_PAGE_ID = "";
-
-// ---------------------------------------------------------------------------
-// HTTP helpers (vanilla Node.js — matches existing repo patterns)
-// ---------------------------------------------------------------------------
-
-/**
- * Make an HTTPS request and return parsed JSON.
- * Retries up to 2 times on transient errors (5xx, network).
- * Logs full request/response details for debugging.
- */
-function graphRequest(method, urlPath, params) {
-  return new Promise((resolve, reject) => {
-    const url = new URL(`https://graph.facebook.com/${GRAPH_API_VERSION}${urlPath}`);
-
-    // Build safe params for logging (redact access_token)
-    const safeParams = params ? { ...params } : {};
-    if (safeParams.access_token) {
-      safeParams.access_token = safeParams.access_token.slice(0, 10) + "…REDACTED";
-    }
-
-    if (method === "GET" && params) {
-      Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, v));
-    }
-
-    const body = method === "POST" ? JSON.stringify(params) : null;
-
-    // Log the request (safe version)
-    console.log(`\n  [API] ${method} ${url.pathname}`);
-    console.log(`  [API] Params: ${JSON.stringify(safeParams)}`);
-
-    const options = {
-      hostname: url.hostname,
-      path: url.pathname + url.search,
-      method,
-      headers: {
-        "Content-Type": "application/json",
-        ...(body ? { "Content-Length": Buffer.byteLength(body) } : {}),
-      },
-    };
-
-    const attempt = (retries, backoffMs) => {
-      const req = https.request(options, (res) => {
-        let data = "";
-        res.on("data", (chunk) => (data += chunk));
-        res.on("end", () => {
-          console.log(`  [API] Response status: ${res.statusCode}`);
-
-          // Honor Retry-After header if present (seconds or HTTP date).
-          const retryAfterHeader = res.headers && res.headers["retry-after"];
-          let retryAfterMs = 0;
-          if (retryAfterHeader) {
-            const n = Number(retryAfterHeader);
-            if (!Number.isNaN(n)) {
-              retryAfterMs = n * 1000;
-            } else {
-              const t = Date.parse(retryAfterHeader);
-              if (!Number.isNaN(t)) retryAfterMs = Math.max(0, t - Date.now());
-            }
-          }
-
-          try {
-            const parsed = JSON.parse(data);
-
-            // 429 Too Many Requests — respect Retry-After, then bail out of
-            // this run entirely (exit 0) so state is NOT advanced and the
-            // next scheduled cron picks up cleanly. We don't loop locally —
-            // Meta's IG publish quota is ~25/day and retrying in-process just
-            // burns job minutes.
-            if (res.statusCode === 429) {
-              const waitSec = retryAfterMs ? Math.round(retryAfterMs / 1000) : "unknown";
-              console.error(`  [API] 429 Rate limited. Retry-After: ${waitSec}s`);
-              return reject(new Error(`RATE_LIMITED:${waitSec}`));
-            }
-
-            if (res.statusCode >= 500 && retries > 0) {
-              const delay = retryAfterMs || backoffMs;
-              console.log(
-                `  [API] Server error ${res.statusCode} — retrying in ${delay}ms (${retries} left)…`
-              );
-              console.log(`  [API] Response body: ${data.slice(0, 500)}`);
-              return setTimeout(() => attempt(retries - 1, Math.min(backoffMs * 2, 30000)), delay);
-            }
-
-            if (res.statusCode >= 400) {
-              const errCode = parsed.error?.code || "unknown";
-              const errSubcode = parsed.error?.error_subcode || "none";
-              const errType = parsed.error?.type || "unknown";
-              const errMsg = parsed.error?.message || data.slice(0, 500);
-
-              console.error(`  [API] ERROR ${res.statusCode}:`);
-              console.error(`  [API]   Type: ${errType}`);
-              console.error(`  [API]   Code: ${errCode}, Subcode: ${errSubcode}`);
-              console.error(`  [API]   Message: ${errMsg}`);
-              console.error(`  [API]   Full response: ${data.slice(0, 1000)}`);
-
-              // Common error diagnosis
-              if (errCode === 190) {
-                console.error(`\n  DIAGNOSIS: Access token is expired or invalid.`);
-                console.error(`  FIX: Generate a new long-lived token and update the INSTAGRAM_ACCESS_TOKEN GitHub secret.`);
-              } else if (errCode === 10 || errSubcode === 2207050) {
-                console.error(`\n  DIAGNOSIS: App does not have permission to publish.`);
-                console.error(`  FIX: Ensure instagram_content_publish permission is granted and the app has access to the Page.`);
-              } else if (errCode === 36003) {
-                console.error(`\n  DIAGNOSIS: Image URL is not publicly accessible.`);
-                console.error(`  FIX: Ensure the image is committed to main and accessible via GitHub Pages.`);
-              } else if (errCode === 9007) {
-                console.error(`\n  DIAGNOSIS: Duplicate post — this image/caption may have already been published.`);
-              } else if (errCode === 4 || errCode === 17 || errCode === 32 || errCode === 613) {
-                console.error(`\n  DIAGNOSIS: Rate limit hit (code ${errCode}).`);
-                console.error(`  FIX: Skipping this run; state will NOT advance. Next cron will retry.`);
-                return reject(new Error(`RATE_LIMITED:code_${errCode}`));
-              }
-
-              return reject(
-                new Error(
-                  `Graph API error ${res.statusCode} (code ${errCode}): ${errMsg}`
-                )
-              );
-            }
-
-            console.log(`  [API] Success: ${JSON.stringify(parsed).slice(0, 200)}`);
-            resolve(parsed);
-          } catch (e) {
-            console.error(`  [API] Failed to parse response: ${data.slice(0, 500)}`);
-            reject(new Error(`Failed to parse Graph API response: ${e.message}`));
-          }
-        });
-      });
-
-      req.on("error", (err) => {
-        console.error(`  [API] Network error: ${err.message}`);
-        if (retries > 0) {
-          console.log(`  [API] Retrying in ${backoffMs}ms (${retries} left)…`);
-          return setTimeout(() => attempt(retries - 1, Math.min(backoffMs * 2, 30000)), backoffMs);
-        }
-        reject(err);
-      });
-
-      if (body) req.write(body);
-      req.end();
-    };
-
-    attempt(2, 3000);
-  });
-}
 
 // ---------------------------------------------------------------------------
 // State management
@@ -298,190 +168,14 @@ function resolveHandle(post, caption) {
   return null;
 }
 
-/**
- * HEAD-request an image URL to verify it's publicly accessible.
- *
- * 15s cap — GitHub Pages CDN normally answers HEAD in <1s. Anything longer
- * is a stalled socket; without this, a hung CDN would burn the 5-minute
- * per-channel timeout and block the whole IG run.
- */
-const VERIFY_IMAGE_TIMEOUT_MS = 15_000;
-
-function verifyImageUrl(imageUrl) {
-  return new Promise((resolve, reject) => {
-    const url = new URL(imageUrl);
-    const req = https.request(
-      { hostname: url.hostname, path: url.pathname, method: "HEAD" },
-      (res) => {
-        console.log(`   Image check: HTTP ${res.statusCode} — ${imageUrl.split("/").pop()}`);
-        if (res.statusCode === 200) {
-          resolve();
-        } else if (res.statusCode === 301 || res.statusCode === 302) {
-          console.log(`   Image redirects to: ${res.headers.location}`);
-          resolve();
-        } else {
-          reject(
-            new Error(
-              `Image not accessible (HTTP ${res.statusCode}): ${imageUrl}\n` +
-              `   FIX: Make sure the branch is merged to main and GitHub Pages has deployed.`
-            )
-          );
-        }
-      }
-    );
-    req.setTimeout(VERIFY_IMAGE_TIMEOUT_MS, () => {
-      req.destroy(
-        new Error(`verifyImageUrl timed out after ${VERIFY_IMAGE_TIMEOUT_MS}ms: ${imageUrl}`)
-      );
-    });
-    req.on("error", (err) => {
-      reject(new Error(`Cannot reach image URL: ${err.message}`));
-    });
-    req.end();
-  });
-}
-
-/**
- * Detect Meta rejecting a container-status GET with GraphMethodException
- * code 100 / subcode 33 ("Authorization Error" / "does not exist" / "cannot be
- * loaded" / "Unsupported get request").
- *
- * IMPORTANT: this is NOT a transient read-after-write race (an earlier theory).
- * Between 2026-05-18 and 2026-05-26 Meta changed behavior so that
- * `GET /{ig-container-id}` — for BOTH single-image, carousel child, AND carousel
- * parent containers — returns this error on every attempt, even though the
- * create call returned 200 and the token can still read the IG account, the
- * Page, and debug_token. Container status reads are simply unavailable right
- * now. We can't poll for FINISHED, so we fall through to publish and let
- * publishWithRetry() absorb any "media not ready" (9007) along the way.
- */
-function isContainerNotReadable(err) {
-  if (!err || typeof err.message !== "string") return false;
-  const m = err.message;
-  return (
-    /code 100\b/.test(m) &&
-    /Authorization Error|does not exist|cannot be loaded|Unsupported get request/i.test(m)
-  );
-}
-
-/**
- * Poll container status until FINISHED (max ~30 seconds). If Meta refuses to
- * serve container status (code 100/33 — see isContainerNotReadable), stop
- * polling after a few attempts, wait a fixed buffer, and return so the caller
- * can publish anyway (publishWithRetry handles "media not ready").
- */
-async function waitForContainer(containerId) {
-  const maxAttempts = 10;
-  const delayMs = 3000;
-  const maxNotReadable = 3;
-  const fallthroughBufferMs = 12000;
-  let notReadableCount = 0;
-
-  console.log(`   Waiting for container ${containerId} to finish processing…`);
-
-  for (let i = 0; i < maxAttempts; i++) {
-    let status;
-    try {
-      // Query only status_code — the `status` detail field is dropped in case
-      // Meta is rejecting the read because of that field specifically.
-      status = await graphRequest("GET", `/${containerId}`, {
-        fields: "status_code",
-        access_token: IG_ACCESS_TOKEN,
-      });
-    } catch (err) {
-      if (isContainerNotReadable(err)) {
-        notReadableCount++;
-        if (notReadableCount >= maxNotReadable) {
-          console.log(
-            `   Container status reads are being rejected by Meta (code 100/33) ` +
-            `after ${notReadableCount} attempts — the status endpoint is ` +
-            `unavailable for this container. Skipping the poll and proceeding ` +
-            `to publish; the publish step retries on "media not ready".`
-          );
-          console.log(
-            `   Waiting ${fallthroughBufferMs / 1000}s for processing before publish…`
-          );
-          await new Promise((r) => setTimeout(r, fallthroughBufferMs));
-          return;
-        }
-        console.log(
-          `   Poll ${i + 1}/${maxAttempts}: status not readable ` +
-          `(${err.message.split("\n")[0]}) — retrying in ${delayMs}ms…`
-        );
-        await new Promise((r) => setTimeout(r, delayMs));
-        continue;
-      }
-      throw err;
-    }
-
-    const code = status.status_code || "UNKNOWN";
-    console.log(`   Poll ${i + 1}/${maxAttempts}: status=${code}`);
-
-    if (code === "FINISHED") {
-      console.log("   Container ready for publishing.");
-      return;
-    }
-
-    if (code === "ERROR") {
-      console.error(`   Container processing FAILED (status_code=ERROR).`);
-      throw new Error(
-        `Container processing failed (status_code: ERROR). Ensure the PNG is committed ` +
-        `to main and deployed via GitHub Pages.`
-      );
-    }
-
-    if (i < maxAttempts - 1) {
-      await new Promise((r) => setTimeout(r, delayMs));
-    }
-  }
-
-  console.log("   WARNING: Container poll timed out after 30s — attempting publish anyway.");
-}
+// verifyImageUrl, waitForContainer, publishWithRetry, isUserTagError come
+// from scripts/lib/meta-api.js — including the May-2026 container-status
+// workaround and the 9007 "media not ready" retry. See the lib for the
+// full incident history.
 
 // ---------------------------------------------------------------------------
 // Channel 1: Instagram Feed — carousel (if teasers exist) or single image
 // ---------------------------------------------------------------------------
-
-/**
- * Publish a finished container with retry on 9007 / "not ready".
- *
- * Meta's container poll occasionally reports FINISHED before the publish
- * endpoint has caught up, especially for carousels and stories. The IG
- * publish call then returns code 9007 / subcode 2207027 / "The media is
- * not ready for publishing, please wait for a moment". This is transient
- * even though Meta annotates it `is_transient: false`.
- *
- * Run #143 hit this on the carousel publish — the user_tag-fix made it
- * past container creation, then died at this step because there was no
- * retry. The IG Story path already had this pattern; this hoists it so
- * carousel + single-image use the same logic.
- */
-async function publishWithRetry(creationId, label) {
-  for (let attempt = 0; attempt < 3; attempt++) {
-    try {
-      return await graphRequest("POST", `/${IG_USER_ID}/media_publish`, {
-        creation_id: creationId,
-        access_token: IG_ACCESS_TOKEN,
-      });
-    } catch (err) {
-      const m = err.message || "";
-      const isNotReady =
-        /code 9007\b/.test(m) ||
-        /2207027/.test(m) ||
-        /not ready/i.test(m) ||
-        /Media ID is not available/i.test(m);
-      if (isNotReady && attempt < 2) {
-        const waitSec = (attempt + 1) * 5;
-        console.log(
-          `   ${label} not ready yet — waiting ${waitSec}s before retry ${attempt + 2}/3…`
-        );
-        await new Promise((r) => setTimeout(r, waitSec * 1000));
-        continue;
-      }
-      throw err;
-    }
-  }
-}
 
 /**
  * Check if blog teaser images exist for this comedian on GitHub Pages.
@@ -501,32 +195,6 @@ async function findTeaserImages(slug) {
     }
   }
   return teasers;
-}
-
-/**
- * Detect Meta Graph API errors caused by an unusable user_tag handle —
- * private account, invalid username, deleted user, ineligible-for-tagging.
- *
- * Observed signatures from real failures:
- *   code 110 / subcode 2207018 / "Invalid user id" /
- *     "Cannot load user with a private account or invalid username"
- *   code 100 / subcode 2207039 / "user is not allowed to be tagged"
- *   code 100 / "user_tags" malformed
- *
- * The handle is generated by OpenAI web research (generate-comedian-post.js)
- * and never validated against IG's directory, so it can be wrong. When it
- * is, we want to publish the post WITHOUT the tag rather than stall the
- * whole queue waiting for a human to fix the manifest.
- */
-function isUserTagError(err) {
-  if (!err || typeof err.message !== "string") return false;
-  const m = err.message;
-  if (/code 110\b/.test(m) && /Invalid user id/i.test(m)) return true;
-  if (/2207018|2207039|2207065/.test(m)) return true;
-  if (/Cannot load user/i.test(m)) return true;
-  if (/user is not allowed to be tagged/i.test(m)) return true;
-  if (/user_tags?\b/i.test(m) && /code (100|110)\b/.test(m)) return true;
-  return false;
 }
 
 /**
@@ -786,16 +454,6 @@ async function postFacebookStory(post) {
 // to the next one rather than letting the whole job stall for hours.
 const CHANNEL_TIMEOUT_MS = parseInt(process.env.IG_CHANNEL_TIMEOUT_MS || "300000", 10); // 5 min default
 
-function withTimeout(promise, label, ms) {
-  let timer;
-  const timeout = new Promise((_, reject) => {
-    timer = setTimeout(() => {
-      reject(new Error(`${label} timed out after ${Math.round(ms / 1000)}s`));
-    }, ms);
-  });
-  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
-}
-
 async function publishEverywhere(post) {
   const caption = loadCaption(post);
   const handle = resolveHandle(post, caption);
@@ -873,34 +531,6 @@ async function publishEverywhere(post) {
 }
 
 // ---------------------------------------------------------------------------
-// Resolve Facebook Page ID from the Page Access Token
-// ---------------------------------------------------------------------------
-
-async function resolveFacebookPageId() {
-  try {
-    console.log("\nResolving Facebook Page ID from token…");
-    const me = await graphRequest("GET", "/me", {
-      fields: "id,name",
-      access_token: IG_ACCESS_TOKEN,
-    });
-    // A Page Access Token returns the Page when you call /me
-    // A User Access Token returns the user — check which one we got
-    if (me && me.id) {
-      FB_PAGE_ID = me.id;
-      console.log(`  Facebook Page: "${me.name || "(unnamed)"}" (ID: ${FB_PAGE_ID})`);
-      return;
-    }
-    console.error("  ERROR: /me returned no id — token does not resolve to a Facebook Page.");
-    console.error("  ACTION: Ensure INSTAGRAM_ACCESS_TOKEN is a Page Access Token (not a User token).");
-    console.error("  Facebook posting will be UNAVAILABLE this run; IG posting will continue.");
-  } catch (err) {
-    console.error(`  ERROR: Could not resolve Facebook Page ID — ${err.message}`);
-    console.error("  ACTION: Regenerate a long-lived Page Access Token and update INSTAGRAM_ACCESS_TOKEN.");
-    console.error("  Facebook posting will be UNAVAILABLE this run; IG posting will continue.");
-  }
-}
-
-// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
@@ -912,119 +542,20 @@ async function main() {
   console.log(`    Node: ${process.version}`);
   console.log(`    Channels: IG Feed + IG Story + FB Feed + FB Story\n`);
 
-  // Validate secrets
-  if (!IG_ACCESS_TOKEN) {
-    console.error("ERROR: INSTAGRAM_ACCESS_TOKEN secret is not set.");
-    console.error("FIX: Add it in GitHub repo → Settings → Secrets → Actions.");
-    console.error("     See ARCHITECTURE.md for setup instructions.");
-    process.exit(1);
-  }
-  if (!IG_USER_ID) {
-    console.error("ERROR: INSTAGRAM_USER_ID secret is not set.");
-    console.error("FIX: Add it in GitHub repo → Settings → Secrets → Actions.");
-    console.error("     Run this in Graph API Explorer to find it:");
-    console.error("     GET /{page-id}?fields=instagram_business_account");
-    process.exit(1);
-  }
-
   console.log(`Config:`);
-  console.log(`  IG User ID: ${IG_USER_ID}`);
+  console.log(`  IG User ID: ${IG_USER_ID || "(not set)"}`);
   console.log(`  Token: ${IG_ACCESS_TOKEN.slice(0, 10)}…(${IG_ACCESS_TOKEN.length} chars)`);
   console.log(`  Manifest: ${MANIFEST_PATH}`);
   console.log(`  State: ${STATE_PATH}`);
   console.log(`  Images base URL: ${IMAGES_BASE_URL}`);
 
-  // Validate token with a lightweight API call
-  console.log("\nValidating access token…");
-  try {
-    const tokenCheck = await graphRequest("GET", `/${IG_USER_ID}`, {
-      fields: "id,username",
-      access_token: IG_ACCESS_TOKEN,
-    });
-    console.log(`  Token valid! IG account: @${tokenCheck.username || tokenCheck.id}`);
-  } catch (err) {
-    console.error(`\nERROR: Token validation failed — ${err.message}`);
-    console.error("FIX: Your access token may be expired (they last ~60 days).");
-    console.error("     Generate a new one via Graph API Explorer and update the GitHub secret.");
-    process.exit(1);
-  }
-
-  // Token expiry early-warning. Long-lived Page Access Tokens last ~60 days
-  // and silently stop working when they expire — that's the most common
-  // "why is nothing posting?" outage. Use debug_token to read the actual
-  // expiry timestamp; warn at <14 days, FAIL the workflow at <7 days so the
-  // notify-on-failure email step fires and alerts a human in time to refresh.
-  try {
-    const debug = await graphRequest("GET", "/debug_token", {
-      input_token: IG_ACCESS_TOKEN,
-      access_token: IG_ACCESS_TOKEN,
-    });
-    const data = debug && debug.data;
-    const expiresAt = data && data.expires_at; // unix seconds; 0 = never expires
-    if (expiresAt && expiresAt > 0) {
-      const daysLeft = Math.floor((expiresAt * 1000 - Date.now()) / 86400000);
-      const expiryDate = new Date(expiresAt * 1000).toISOString().slice(0, 10);
-      console.log(`  Token expires: ${expiryDate} (${daysLeft} days remaining)`);
-      if (daysLeft < 7) {
-        console.error(`\n╔════════════════════════════════════════════════════════════╗`);
-        console.error(`║  TOKEN EXPIRES IN ${daysLeft} DAYS — REFRESH IMMEDIATELY        `);
-        console.error(`╠════════════════════════════════════════════════════════════╣`);
-        console.error(`║  1. Open https://developers.facebook.com/tools/explorer    ║`);
-        console.error(`║  2. Select your app, generate a long-lived Page token      ║`);
-        console.error(`║  3. Update the INSTAGRAM_ACCESS_TOKEN GitHub secret        ║`);
-        console.error(`║  4. Re-run this workflow                                   ║`);
-        console.error(`╚════════════════════════════════════════════════════════════╝`);
-        // Failing here triggers the workflow's notify-on-failure email step
-        // BEFORE the token actually expires. The IG post for this run is
-        // sacrificed in exchange for not silently breaking for the next week.
-        process.exit(1);
-      } else if (daysLeft < 14) {
-        console.warn(`  ⚠ WARNING: Token expires in ${daysLeft} days — refresh soon to avoid outage.`);
-      }
-    } else {
-      console.log("  Token has no expiry (or never-expires user token).");
-    }
-
-    // Second clock: the data-access window. A non-expiring PAGE token
-    // (expires_at: 0) still carries a ~90-day `data_access_expires_at` (Meta's
-    // data-use / inactivity policy — see ARCHITECTURE.md "Access token model").
-    // When it lapses, data-touching calls start failing even though expires_at
-    // is still 0 — the one silent outage this token model is otherwise immune
-    // to, and nothing else watches the date. Mirror the expiry alerting: warn
-    // at <14 days, FAIL at <7 so the notify-on-failure email fires in time to
-    // re-derive the Page token before posting silently breaks.
-    const dataAccessAt = data && data.data_access_expires_at; // unix seconds; 0 = no window
-    if (dataAccessAt && dataAccessAt > 0) {
-      const daysLeft = Math.floor((dataAccessAt * 1000 - Date.now()) / 86400000);
-      const windowEnd = new Date(dataAccessAt * 1000).toISOString().slice(0, 10);
-      console.log(`  Data-access window ends: ${windowEnd} (${daysLeft} days remaining)`);
-      if (daysLeft < 7) {
-        console.error(`\n╔════════════════════════════════════════════════════════════╗`);
-        console.error(`║  DATA-ACCESS WINDOW ENDS IN ${daysLeft} DAYS — REFRESH TOKEN     `);
-        console.error(`╠════════════════════════════════════════════════════════════╣`);
-        console.error(`║  The token never "expires" (expires_at: 0) but its 90-day  ║`);
-        console.error(`║  data-access window is closing. When it lapses, posting    ║`);
-        console.error(`║  silently fails. Re-derive the Page token:                 ║`);
-        console.error(`║  1. Graph Explorer → long-lived USER token                 ║`);
-        console.error(`║  2. GET /me/accounts with it → copy the PAGE access_token  ║`);
-        console.error(`║  3. Update the INSTAGRAM_ACCESS_TOKEN GitHub secret        ║`);
-        console.error(`║  4. Re-run this workflow                                   ║`);
-        console.error(`╚════════════════════════════════════════════════════════════╝`);
-        // Same trade as the expiry check: sacrifice this run's post to fire the
-        // failure email while there's still time to refresh.
-        process.exit(1);
-      } else if (daysLeft < 14) {
-        console.warn(`  ⚠ WARNING: Data-access window ends in ${daysLeft} days — re-derive the Page token soon.`);
-      }
-    }
-  } catch (err) {
-    // Don't fail the run on debug_token errors — the validation call above
-    // already proved the token works for the actual API surface we use.
-    console.warn(`  Could not check token expiry (non-fatal): ${err.message}`);
-  }
+  // Secrets check, token validation, and the two expiry early-warning
+  // clocks (token expiry + 90-day data-access window). Exits loudly on
+  // hard failures so the notify-on-failure email fires — see the lib.
+  await validateTokenAndGuards();
 
   // Resolve Facebook Page ID (for FB feed + FB stories)
-  await resolveFacebookPageId();
+  FB_PAGE_ID = await resolveFacebookPageId();
 
   // Load manifest
   if (!fs.existsSync(MANIFEST_PATH)) {
@@ -1096,28 +627,18 @@ async function main() {
   console.log(`${"=".repeat(60)}`);
 }
 
-// Shared exit path. Without this the process has been observed to hang for
-// over an hour after main() completes — lingering HTTP/1.1 keep-alive sockets
-// to graph.facebook.com (and/or any other unref'd handle) keep the event loop
-// alive, GitHub Actions eventually cancels the step, the state-commit step
-// never runs, and the next scheduled run reposts the same comedian to all
-// four channels. Destroy the agent, give Node a tick to tear down sockets,
-// then exit. Used by BOTH success and error paths so state is never left
-// uncommitted because of a keep-alive leak on the error branch.
-function exit(code) {
-  try { https.globalAgent.destroy(); } catch {}
-  // Unref any remaining handles and give destroy() a beat to complete.
-  setTimeout(() => process.exit(code), 150).unref();
-}
-
+// Shared exit path (scripts/lib/meta-api.js shutdown()): destroys keep-alive
+// sockets so the process actually exits — a leak here used to cancel the
+// state-commit step and cause duplicate comedian posts. Used by BOTH success
+// and error paths.
 main()
-  .then(() => exit(0))
+  .then(() => shutdown(0))
   .catch((err) => {
     // Rate-limit: exit 0 so the workflow doesn't flag red; state was NOT
     // advanced, so the next cron will retry the same comedian cleanly.
     if (err && typeof err.message === "string" && err.message.startsWith("RATE_LIMITED")) {
       console.error(`\nRATE LIMITED — ${err.message}. Exiting 0; state not advanced.`);
-      return exit(0);
+      return shutdown(0);
     }
     console.error(`\n${"!".repeat(60)}`);
     console.error(`FATAL ERROR: ${err.message}`);
@@ -1130,5 +651,5 @@ main()
     console.error(`  2. Image not found → ensure branch is merged to main and GitHub Pages deployed`);
     console.error(`  3. Permission error → check instagram_content_publish is granted to the app`);
     console.error(`  4. Rate limit → wait and retry (max ~25 posts per 24 hours)`);
-    exit(1);
+    shutdown(1);
   });
