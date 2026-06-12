@@ -49,10 +49,20 @@ const TEMPLATE_PATH = path.join(OUTPUT_DIR, "index.html");
 // been established (socket read stalls, not just connect stalls).
 const FETCH_TIMEOUT_MS = 30_000;
 
+// Default headers on every API request. Node's https module sends NO
+// User-Agent by default, and Eventbrite's CloudFront WAF started blocking
+// UA-less requests with a 403 "Request blocked" HTML page (first observed
+// 2026-06-11 — every organizer call failed and events.json silently went
+// Ticketmaster-only). An identifying UA is also just good API citizenship.
+const DEFAULT_HEADERS = {
+  "User-Agent": "ComedyHouston-EventBot/1.0 (+https://comedyhouston.com)",
+  "Accept": "application/json",
+};
+
 function fetchJSON(url, headers = {}, retries = 3) {
   return new Promise((resolve, reject) => {
     const mod = url.startsWith("https") ? https : http;
-    const req = mod.get(url, { headers }, (res) => {
+    const req = mod.get(url, { headers: { ...DEFAULT_HEADERS, ...headers } }, (res) => {
       let body = "";
       res.on("data", (chunk) => (body += chunk));
       res.on("end", () => {
@@ -500,6 +510,40 @@ async function main() {
   console.log("");
   console.log(`Ticketmaster: ${tmEvents.length} events`);
   console.log(`Eventbrite:   ${ebEvents.length} events`);
+
+  // Source-collapse guard. On 2026-06-11 Eventbrite's WAF started 403-ing
+  // every API call; the fetcher logged the errors, got 0 events, and
+  // silently published a Ticketmaster-only file — the site lost half its
+  // listings (The Riot, Secret Group, Den, …) with no alert. If a source
+  // that contributed events to the last good events.json suddenly returns
+  // zero, fail the run instead: the commit step never runs, the last good
+  // data stays live (stale > gutted), and the notify-on-failure email fires.
+  if (fs.existsSync(EVENTS_JSON_PATH)) {
+    try {
+      const prev = JSON.parse(fs.readFileSync(EVENTS_JSON_PATH, "utf8"));
+      const prevEvents = prev.events || [];
+      const checks = [
+        ["eventbrite", ebEvents.length],
+        ["ticketmaster", tmEvents.length],
+      ];
+      for (const [source, count] of checks) {
+        const prevCount = prevEvents.filter((e) => e.source === source).length;
+        if (prevCount > 0 && count === 0) {
+          throw new Error(
+            `${source} returned 0 events but the previous events.json had ${prevCount}. ` +
+              `Refusing to publish a gutted file — keeping last good data. ` +
+              `Check the fetch errors above (API outage, WAF block, expired token?).`
+          );
+        }
+      }
+    } catch (err) {
+      if (err instanceof SyntaxError) {
+        console.warn("Could not parse previous events.json — skipping source-collapse guard.");
+      } else {
+        throw err;
+      }
+    }
+  }
 
   const allEvents = [...tmEvents, ...ebEvents];
   const deduped = deduplicateEvents(allEvents);
