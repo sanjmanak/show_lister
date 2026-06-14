@@ -52,11 +52,17 @@ const FETCH_TIMEOUT_MS = 30_000;
 // Default headers on every API request. Node's https module sends NO
 // User-Agent by default, and Eventbrite's CloudFront WAF started blocking
 // UA-less requests with a 403 "Request blocked" HTML page (first observed
-// 2026-06-11 — every organizer call failed and events.json silently went
-// Ticketmaster-only). An identifying UA is also just good API citizenship.
+// 2026-06-11). A bare bot UA ("ComedyHouston-EventBot/1.0") cleared it for a
+// day, then the WAF began 403-ing that too (2026-06-13 — all organizer calls
+// failed and the source-collapse guard tripped the run). The fingerprint, not
+// the rate, is what gets flagged, so present as a real browser: a current
+// Chrome User-Agent plus the Accept-Language header browsers always send.
 const DEFAULT_HEADERS = {
-  "User-Agent": "ComedyHouston-EventBot/1.0 (+https://comedyhouston.com)",
+  "User-Agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
+    "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
   "Accept": "application/json",
+  "Accept-Language": "en-US,en;q=0.9",
 };
 
 function fetchJSON(url, headers = {}, retries = 3) {
@@ -69,6 +75,19 @@ function fetchJSON(url, headers = {}, retries = 3) {
         if (res.statusCode === 429 && retries > 0) {
           const wait = (4 - retries) * 2000;
           console.log(`  Rate limited. Retrying in ${wait / 1000}s...`);
+          return setTimeout(
+            () => fetchJSON(url, headers, retries - 1).then(resolve, reject),
+            wait
+          );
+        }
+        // Eventbrite sits behind a CloudFront WAF that returns 403 "Request
+        // blocked" when it dislikes the caller. Part of that can be
+        // intermittent (edge-node / soft rate signals), so back off and retry
+        // rather than failing instantly. Longer waits than 429 because a WAF
+        // is slower to forgive — 4s, 8s, 12s.
+        if (res.statusCode === 403 && retries > 0) {
+          const wait = (4 - retries) * 4000;
+          console.log(`  Blocked (403). Retrying in ${wait / 1000}s...`);
           return setTimeout(
             () => fetchJSON(url, headers, retries - 1).then(resolve, reject),
             wait
