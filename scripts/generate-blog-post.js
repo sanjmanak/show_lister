@@ -870,63 +870,66 @@ function generateHeroCreativeHTML(comedians, weekRange) {
     .bg-accent-1 { background: #ff4d6a; top: -150px; right: -100px; }
     .bg-accent-2 { background: #7c5cff; bottom: -150px; left: -100px; }
     .header-label {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 600;
-      letter-spacing: 5px;
+      letter-spacing: 6px;
       text-transform: uppercase;
       color: #ff4d6a;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       z-index: 1;
     }
     .title {
-      font-size: 48px;
+      font-size: 62px;
       font-weight: 900;
       letter-spacing: -1px;
-      margin-bottom: 36px;
+      margin-bottom: 46px;
       z-index: 1;
       text-align: center;
     }
+    /* The headshots are the content — size them up so they fill the 1080×1080
+       frame instead of floating in dead space (matches the "pinch to zoom"
+       crop an operator would otherwise do by hand before posting). */
     .headshot-grid {
       display: grid;
-      gap: 32px 48px;
+      gap: 34px 54px;
       z-index: 1;
-      margin-bottom: 28px;
+      margin-bottom: 38px;
       justify-items: center;
     }
-    .headshot-grid.cols-1 { grid-template-columns: 1fr; max-width: 360px; }
-    .headshot-grid.cols-2 { grid-template-columns: repeat(2, 1fr); max-width: 640px; }
-    .headshot-grid.cols-3 { grid-template-columns: repeat(3, 1fr); max-width: 720px; gap: 24px 40px; }
+    .headshot-grid.cols-1 { grid-template-columns: 1fr; max-width: 420px; }
+    .headshot-grid.cols-2 { grid-template-columns: repeat(2, 1fr); max-width: 720px; }
+    .headshot-grid.cols-3 { grid-template-columns: repeat(3, 1fr); max-width: 920px; gap: 34px 54px; }
     .grid-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
     .grid-item img {
-      width: 180px;
-      height: 180px;
+      width: 270px;
+      height: 270px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid rgba(255, 77, 106, 0.5);
+      border: 4px solid rgba(255, 77, 106, 0.5);
     }
-    /* When fewer comedians are featured, give each one more visual weight. */
+    /* When fewer comedians are featured, give each one even more visual weight. */
     .headshot-grid.cols-2 .grid-item img,
     .headshot-grid.cols-1 .grid-item img {
-      width: 260px;
-      height: 260px;
-      border-width: 4px;
+      width: 330px;
+      height: 330px;
+      border-width: 5px;
     }
     .headshot-grid.cols-2 .grid-name,
     .headshot-grid.cols-1 .grid-name {
-      font-size: 22px;
-      max-width: 260px;
+      font-size: 26px;
+      max-width: 330px;
     }
     .grid-name {
-      font-size: 17px;
+      font-size: 21px;
       font-weight: 700;
       color: #ffffff;
       text-align: center;
-      max-width: 180px;
+      max-width: 270px;
     }
     .extra-lineup {
       display: flex;
@@ -945,15 +948,15 @@ function generateHeroCreativeHTML(comedians, weekRange) {
       border-left: 2px solid #ff4d6a;
     }
     .week-range {
-      font-size: 20px;
+      font-size: 25px;
       font-weight: 500;
       color: #9999aa;
       z-index: 1;
     }
     .brand {
       position: absolute;
-      bottom: 28px;
-      font-size: 14px;
+      bottom: 34px;
+      font-size: 16px;
       font-weight: 600;
       letter-spacing: 2px;
       color: #666677;
@@ -2455,7 +2458,18 @@ RULES:
   }
 }
 
-main().catch((err) => {
-  console.error("Fatal error:", err);
-  process.exit(1);
-});
+// Only run the full generator when invoked directly (`node generate-blog-post.js`).
+// Exporting the pure builders lets tests/previews render the hero creative
+// without kicking off OpenAI calls, WordPress publishing, or Puppeteer.
+if (require.main === module) {
+  main().catch((err) => {
+    console.error("Fatal error:", err);
+    process.exit(1);
+  });
+}
+
+module.exports = {
+  generateHeroCreativeHTML,
+  generateInlineHeroHTML,
+  escapeHTML,
+};
