@@ -283,6 +283,21 @@ const WP_UPLOAD_TIMEOUT_MS = 60_000;
 const WP_TOTAL_BUDGET_MS = 8 * 60 * 1000; // 8 minutes
 let wpDeadline = 0; // set in main() right before the WP publish step
 
+// Transient-failure retry for WordPress network calls. Run #51 died on a
+// single intermittent 403 (HTML body, not a JSON API error) from the host's
+// WAF sitting in front of /wp-json — runs #47–#50 published fine, so it was a
+// blip, not a config break. Before this, there was ZERO retry: one bad
+// response aborted the whole WP publish. Now each WP call retries transient
+// failures (403 WAF blocks, 408/429, 5xx, socket timeouts / resets) with
+// exponential backoff, capped so it can't blow the cumulative WP budget.
+const WP_MAX_ATTEMPTS = parseInt(process.env.WP_MAX_ATTEMPTS || "4", 10);
+const WP_RETRY_BASE_MS = parseInt(process.env.WP_RETRY_BASE_MS || "2000", 10);
+
+// Marker file the workflow checks after posting: if present, WordPress
+// publishing failed but Instagram/Facebook still went out, so the run stays
+// green and a dedicated "WordPress failed" alert email fires instead.
+const WP_STATUS_PATH = path.join(BLOG_DIR, "wp-publish-status.json");
+
 /**
  * Reject a pending WP request if we've blown the cumulative budget. Cheap
  * and best-effort: each individual request still has its own timeout, but
@@ -291,6 +306,81 @@ let wpDeadline = 0; // set in main() right before the WP publish step
 function checkWpDeadline(label) {
   if (wpDeadline > 0 && Date.now() > wpDeadline) {
     throw new Error(`${label} skipped: cumulative WP budget of ${WP_TOTAL_BUDGET_MS}ms exceeded`);
+  }
+}
+
+/**
+ * Decide whether a failed WP call is worth retrying. Retry the transient
+ * stuff — WAF 403s, 408/429, 5xx, and network-level errors (timeouts, resets,
+ * DNS) that carry no statusCode. Do NOT retry hard failures: 401 (bad app
+ * password), 400 (malformed request), 404 (missing) — those won't fix
+ * themselves, and the cumulative-budget "skipped" error must not loop either.
+ */
+function isRetryableWpError(err) {
+  const code = err && err.statusCode;
+  if (code === 403 || code === 408 || code === 429) return true;
+  if (typeof code === "number" && code >= 500 && code <= 599) return true;
+  if (!code) {
+    const m = (err && err.message) || "";
+    if (/cumulative WP budget/i.test(m)) return false; // budget exhausted — stop
+    if (/timed out|ECONNRESET|ETIMEDOUT|EAI_AGAIN|ENOTFOUND|ECONNREFUSED|EPIPE|socket hang up|network/i.test(m)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * Run a WP network operation with exponential backoff on transient errors.
+ * Stops early if the cumulative WP budget is blown so retries can't eat the
+ * whole job. Non-transient errors throw immediately (no point retrying a bad
+ * password). Each individual attempt still has its own per-request timeout.
+ */
+async function withWpRetry(label, fn) {
+  let lastErr;
+  for (let attempt = 1; attempt <= WP_MAX_ATTEMPTS; attempt++) {
+    try {
+      return await fn();
+    } catch (err) {
+      lastErr = err;
+      if (attempt >= WP_MAX_ATTEMPTS || !isRetryableWpError(err)) throw err;
+      if (wpDeadline > 0 && Date.now() > wpDeadline) {
+        console.warn(`  ${label}: WP budget exhausted — not retrying.`);
+        throw err;
+      }
+      const delay = WP_RETRY_BASE_MS * Math.pow(2, attempt - 1); // 2s, 4s, 8s…
+      const firstLine = String(err.message || err).split("\n")[0].slice(0, 140);
+      console.warn(
+        `  ${label} failed (${firstLine}) — retry ${attempt}/${WP_MAX_ATTEMPTS - 1} in ${Math.round(delay / 1000)}s…`
+      );
+      await new Promise((r) => setTimeout(r, delay));
+    }
+  }
+  throw lastErr;
+}
+
+/**
+ * Record WordPress publish failures without failing the run. Instagram/
+ * Facebook posting is the deliverable and runs as a separate workflow step, so
+ * a WP-only failure shouldn't paint the whole automation red (that's what made
+ * run #51 look like the IG post hadn't happened when it actually had). Drop a
+ * marker file the workflow turns into a dedicated alert email; the run stays
+ * green and the next scheduled run retries WordPress cleanly (slug-dedupe makes
+ * re-publishing safe).
+ */
+function reportWpFailures(wpFailures, context) {
+  if (!wpFailures || wpFailures.length === 0) return;
+  console.error(`\n⚠ WordPress publish had ${wpFailures.length} failure(s) — Instagram/Facebook are NOT affected:`);
+  wpFailures.forEach((f) => console.error(`   - ${f}`));
+  console.error("Run stays GREEN (social post is the deliverable); a WordPress-failure alert email will be sent.");
+  try {
+    if (!fs.existsSync(BLOG_DIR)) fs.mkdirSync(BLOG_DIR, { recursive: true });
+    fs.writeFileSync(
+      WP_STATUS_PATH,
+      JSON.stringify({ context, failedAt: new Date().toISOString(), failures: wpFailures }, null, 2) + "\n"
+    );
+  } catch (e) {
+    console.error(`   (could not write ${WP_STATUS_PATH}: ${e.message})`);
   }
 }
 
@@ -307,6 +397,10 @@ function attachRequestTimeout(req, ms, label) {
 }
 
 function wpRequest(method, urlPath, body) {
+  return withWpRetry(`WP ${method} ${urlPath}`, () => wpRequestOnce(method, urlPath, body));
+}
+
+function wpRequestOnce(method, urlPath, body) {
   return new Promise((resolve, reject) => {
     try { checkWpDeadline(`WP ${method} ${urlPath}`); } catch (e) { return reject(e); }
     const fullUrl = WP_SITE_URL.replace(/\/$/, "") + urlPath;
@@ -333,7 +427,11 @@ function wpRequest(method, urlPath, body) {
       let data = "";
       res.on("data", (chunk) => (data += chunk));
       res.on("end", () => {
-        if (res.statusCode >= 400) return reject(new Error(`WordPress API ${res.statusCode}: ${data.slice(0, 500)}`));
+        if (res.statusCode >= 400) {
+          const e = new Error(`WordPress API ${res.statusCode}: ${data.slice(0, 500)}`);
+          e.statusCode = res.statusCode;
+          return reject(e);
+        }
         try { resolve(JSON.parse(data)); } catch (e) { reject(new Error(`Failed to parse WP response: ${e.message}`)); }
       });
     });
@@ -367,6 +465,10 @@ function downloadImage(imageUrl, redirectsLeft) {
 }
 
 function wpUploadImage(imageBuffer, contentType, filename) {
+  return withWpRetry(`WP media upload ${filename}`, () => wpUploadImageOnce(imageBuffer, contentType, filename));
+}
+
+function wpUploadImageOnce(imageBuffer, contentType, filename) {
   return new Promise((resolve, reject) => {
     try { checkWpDeadline(`WP media upload ${filename}`); } catch (e) { return reject(e); }
     const fullUrl = WP_SITE_URL.replace(/\/$/, "") + "/wp-json/wp/v2/media";
@@ -393,7 +495,11 @@ function wpUploadImage(imageBuffer, contentType, filename) {
       let data = "";
       res.on("data", (chunk) => (data += chunk));
       res.on("end", () => {
-        if (res.statusCode >= 400) return reject(new Error(`WP media upload ${res.statusCode}: ${data.slice(0, 500)}`));
+        if (res.statusCode >= 400) {
+          const e = new Error(`WP media upload ${res.statusCode}: ${data.slice(0, 500)}`);
+          e.statusCode = res.statusCode;
+          return reject(e);
+        }
         try { resolve(JSON.parse(data).id); } catch (e) { reject(new Error(`Failed to parse WP media response: ${e.message}`)); }
       });
     });
@@ -764,63 +870,66 @@ function generateHeroCreativeHTML(comedians, weekRange) {
     .bg-accent-1 { background: #ff4d6a; top: -150px; right: -100px; }
     .bg-accent-2 { background: #7c5cff; bottom: -150px; left: -100px; }
     .header-label {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 600;
-      letter-spacing: 5px;
+      letter-spacing: 6px;
       text-transform: uppercase;
       color: #ff4d6a;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       z-index: 1;
     }
     .title {
-      font-size: 48px;
+      font-size: 62px;
       font-weight: 900;
       letter-spacing: -1px;
-      margin-bottom: 36px;
+      margin-bottom: 46px;
       z-index: 1;
       text-align: center;
     }
+    /* The headshots are the content — size them up so they fill the 1080×1080
+       frame instead of floating in dead space (matches the "pinch to zoom"
+       crop an operator would otherwise do by hand before posting). */
     .headshot-grid {
       display: grid;
-      gap: 32px 48px;
+      gap: 34px 54px;
       z-index: 1;
-      margin-bottom: 28px;
+      margin-bottom: 38px;
       justify-items: center;
     }
-    .headshot-grid.cols-1 { grid-template-columns: 1fr; max-width: 360px; }
-    .headshot-grid.cols-2 { grid-template-columns: repeat(2, 1fr); max-width: 640px; }
-    .headshot-grid.cols-3 { grid-template-columns: repeat(3, 1fr); max-width: 720px; gap: 24px 40px; }
+    .headshot-grid.cols-1 { grid-template-columns: 1fr; max-width: 420px; }
+    .headshot-grid.cols-2 { grid-template-columns: repeat(2, 1fr); max-width: 720px; }
+    .headshot-grid.cols-3 { grid-template-columns: repeat(3, 1fr); max-width: 920px; gap: 34px 54px; }
     .grid-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
     .grid-item img {
-      width: 180px;
-      height: 180px;
+      width: 270px;
+      height: 270px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid rgba(255, 77, 106, 0.5);
+      border: 4px solid rgba(255, 77, 106, 0.5);
     }
-    /* When fewer comedians are featured, give each one more visual weight. */
+    /* When fewer comedians are featured, give each one even more visual weight. */
     .headshot-grid.cols-2 .grid-item img,
     .headshot-grid.cols-1 .grid-item img {
-      width: 260px;
-      height: 260px;
-      border-width: 4px;
+      width: 330px;
+      height: 330px;
+      border-width: 5px;
     }
     .headshot-grid.cols-2 .grid-name,
     .headshot-grid.cols-1 .grid-name {
-      font-size: 22px;
-      max-width: 260px;
+      font-size: 26px;
+      max-width: 330px;
     }
     .grid-name {
-      font-size: 17px;
+      font-size: 21px;
       font-weight: 700;
       color: #ffffff;
       text-align: center;
-      max-width: 180px;
+      max-width: 270px;
     }
     .extra-lineup {
       display: flex;
@@ -839,15 +948,15 @@ function generateHeroCreativeHTML(comedians, weekRange) {
       border-left: 2px solid #ff4d6a;
     }
     .week-range {
-      font-size: 20px;
+      font-size: 25px;
       font-weight: 500;
       color: #9999aa;
       z-index: 1;
     }
     .brand {
       position: absolute;
-      bottom: 28px;
-      font-size: 14px;
+      bottom: 34px;
+      font-size: 16px;
       font-weight: 600;
       letter-spacing: 2px;
       color: #666677;
@@ -1469,14 +1578,16 @@ async function main() {
     process.exit(1);
   }
 
-  // Collect WordPress publish failures across all WP-touching steps so we
-  // can fail the job at the end. Without this, the workflow turns green
-  // even when the roundup / weekend post / this-week page didn't actually
-  // publish — which means the public WP surface can go stale for a week
-  // before anyone notices. The commit + email steps downstream run under
-  // `if: !cancelled()`, so a throw here still ships the caption to the
-  // operator AND triggers the failure notifier.
+  // Collect WordPress publish failures across all WP-touching steps. At the
+  // end they're written to a marker file (reportWpFailures) that the workflow
+  // turns into a dedicated alert email — WordPress is best-effort and no longer
+  // fails the run, since the Instagram/Facebook post is the real deliverable
+  // and posts from its own workflow step regardless of WP's outcome.
   const wpFailures = [];
+
+  // Clear any stale marker so a previous run's WP failure can't trigger a
+  // false alert. (Fresh checkouts won't have it, but local re-runs might.)
+  try { if (fs.existsSync(WP_STATUS_PATH)) fs.unlinkSync(WP_STATUS_PATH); } catch (_) {}
 
   // Detect if this is a Thursday "weekend-only" refresh
   const dayOfWeek = new Date().getDay(); // 0=Sun, 4=Thu
@@ -1556,11 +1667,7 @@ async function main() {
       console.log("WordPress not configured — nothing to do on Thursday.");
     }
     console.log("");
-    if (wpFailures.length > 0) {
-      throw new Error(
-        `WordPress Thursday refresh had ${wpFailures.length} failure(s): ${wpFailures.join("; ")}`
-      );
-    }
+    reportWpFailures(wpFailures, "thursday-refresh");
     console.log("Done! (Thursday refresh)");
     return;
   }
@@ -2083,15 +2190,12 @@ async function main() {
     console.log("");
   }
 
-  // If any WordPress step failed, throw so the workflow goes red and the
-  // failure notifier fires. The `if: !cancelled()` guards on the
-  // commit/email steps mean the operator still gets the caption + hero
-  // PNG in their inbox; they just also get an alert that WP is stale.
-  if (wpFailures.length > 0) {
-    throw new Error(
-      `WordPress publish had ${wpFailures.length} failure(s): ${wpFailures.join("; ")}`
-    );
-  }
+  // WordPress publishing is best-effort: the Instagram/Facebook auto-post is
+  // the deliverable and runs as its own workflow step, so a WP-only failure no
+  // longer fails the run. We record the failures to a marker file; the workflow
+  // turns that into a dedicated "WordPress failed" alert email and the run
+  // stays green. The next scheduled run retries WP cleanly (slug-dedupe).
+  reportWpFailures(wpFailures, "monday-full");
 
   console.log("Done!");
 }
@@ -2354,7 +2458,18 @@ RULES:
   }
 }
 
-main().catch((err) => {
-  console.error("Fatal error:", err);
-  process.exit(1);
-});
+// Only run the full generator when invoked directly (`node generate-blog-post.js`).
+// Exporting the pure builders lets tests/previews render the hero creative
+// without kicking off OpenAI calls, WordPress publishing, or Puppeteer.
+if (require.main === module) {
+  main().catch((err) => {
+    console.error("Fatal error:", err);
+    process.exit(1);
+  });
+}
+
+module.exports = {
+  generateHeroCreativeHTML,
+  generateInlineHeroHTML,
+  escapeHTML,
+};
