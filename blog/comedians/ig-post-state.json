@@ -1,24 +1,15 @@
 {
   "posted": [
     {
-      "slug": "rob-schneider-houston-improv-2026-06-12",
-      "comedianName": "Rob Schneider",
-      "igFeedMediaId": "18090248729373014",
-      "igStoryMediaId": "17957732855963737",
-      "fbFeedPostId": "1322304503327625",
-      "fbStoryPostId": "1636101734859474",
-      "postedAt": "2026-06-08T18:31:06.008Z"
-    },
-    {
-      "slug": "doug-stanhope-houston-improv-2026-06-08",
-      "comedianName": "Doug Stanhope",
-      "igFeedMediaId": "17884936806420798",
-      "igStoryMediaId": "17915538528400414",
-      "fbFeedPostId": "1322452363312839",
-      "fbStoryPostId": "980960231601531",
-      "postedAt": "2026-06-08T23:17:55.185Z"
+      "slug": "nate-bargatze-toyota-center-tx-2026-06-18",
+      "comedianName": "Nate Bargatze",
+      "igFeedMediaId": "18326747071257383",
+      "igStoryMediaId": "18601179532035201",
+      "fbFeedPostId": "1328250089399733",
+      "fbStoryPostId": "1392680969414399",
+      "postedAt": "2026-06-15T23:53:27.342Z"
     }
   ],
-  "week_range": "June 8 – June 14, 2026",
-  "manifest_version": 1780943256538
+  "week_range": "June 15 – June 21, 2026",
+  "manifest_version": 1781553052403
 }
