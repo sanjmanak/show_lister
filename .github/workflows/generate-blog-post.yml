@@ -185,6 +185,68 @@ jobs:
             Blog post: https://sanjmanak.github.io/show_lister/blog/
           attachments: blog/weekly-hero.png
 
+      # WordPress publishing is best-effort. When it fails but Instagram/
+      # Facebook posted fine, the script writes blog/wp-publish-status.json and
+      # exits 0 — the run stays GREEN. We surface the WP failure with its own
+      # alert email so the WordPress site doesn't silently go stale, without the
+      # whole automation looking broken (which is what made run #51 look like
+      # the IG post hadn't happened when it actually had).
+      - name: Check if WordPress publish failed
+        if: ${{ !cancelled() }}
+        id: wp-check
+        env:
+          HAS_SMTP: ${{ secrets.SMTP_SERVER }}
+        run: |
+          if [ -f blog/wp-publish-status.json ]; then
+            echo "WordPress publish failures detected:"
+            cat blog/wp-publish-status.json
+            if [ -n "$HAS_SMTP" ]; then
+              echo "wp_failed=true" >> $GITHUB_OUTPUT
+              {
+                echo "WP_FAILURES<<WP_EOF"
+                cat blog/wp-publish-status.json
+                echo ""
+                echo "WP_EOF"
+              } >> $GITHUB_ENV
+            else
+              echo "wp_failed=false" >> $GITHUB_OUTPUT
+              echo "SMTP not configured — skipping WP alert email."
+            fi
+          else
+            echo "wp_failed=false" >> $GITHUB_OUTPUT
+            echo "WordPress published cleanly (no marker file)."
+          fi
+
+      - name: Alert on WordPress publish failure
+        if: ${{ !cancelled() && steps.wp-check.outputs.wp_failed == 'true' }}
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "[Comedy Houston] WordPress publish failed — Instagram/Facebook are fine"
+          to: ${{ secrets.NOTIFY_EMAIL }}
+          from: ${{ secrets.SMTP_FROM }}
+          body: |
+            Heads up: this week's automation ran and your Instagram + Facebook
+            post WENT OUT FINE. WordPress publishing is the only thing that
+            failed, so the blog site may be showing last week's content.
+
+            This run is still marked GREEN on purpose — the social post is the
+            deliverable and it succeeded. This email exists only so the
+            WordPress side doesn't quietly go stale.
+
+            The script already retried automatically with backoff, and the next
+            scheduled run will retry again. If you keep getting this email, the
+            host (Hostinger) is likely blocking the WordPress REST API — check
+            the site's WAF / security plugin and allowlist /wp-json/.
+
+            What failed:
+            ${{ env.WP_FAILURES }}
+
+            Run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
       - name: Notify on failure
         if: failure() && env.HAS_SMTP == 'true'
         env:

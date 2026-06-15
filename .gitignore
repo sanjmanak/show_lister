@@ -31,3 +31,7 @@ Thumbs.db
 # Local test artifacts (generated images, logs, puppeteer caches)
 *.log
 blog/comedians/images/*.local.png
+
+# Ephemeral WordPress-failure marker (workflow reads it for the alert email;
+# never meant to be committed)
+blog/wp-publish-status.json
