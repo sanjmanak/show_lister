@@ -1,54 +1,54 @@
 {
-  "generated_at": "2026-06-15T18:59:41.592Z",
-  "week_range": "June 15 – June 21, 2026",
+  "generated_at": "2026-06-22T18:39:33.019Z",
+  "week_range": "June 22 – June 28, 2026",
   "comedians": [
     {
-      "name": "Nate Bargatze",
-      "show": "Nate Bargatze",
-      "imageUrl": "https://s1.ticketm.net/dam/a/3af/969958b2-3e23-41ae-a1e8-8be73f5463af_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Nate_Bargatze.jpg/1280px-Nate_Bargatze.jpg",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Nate_Bargatze.jpg/1280px-Nate_Bargatze.jpg",
+      "name": "Ilana Glazer",
+      "show": "Ilana Glazer Live!",
+      "imageUrl": "https://s1.ticketm.net/dam/a/f77/86ff3f6c-5a81-4c89-a149-0da887652f77_SOURCE",
+      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/IlanaGlazer-byPhilipRomano.jpg/960px-IlanaGlazer-byPhilipRomano.jpg",
+      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/IlanaGlazer-byPhilipRomano.jpg/960px-IlanaGlazer-byPhilipRomano.jpg",
       "imageSource": "headshot"
     },
     {
-      "name": "Tommy Davidson",
-      "show": "Tommy Davidson",
-      "imageUrl": "https://s1.ticketm.net/dam/a/d9e/9a8f8cfa-57c0-4e0c-91f4-d151d795fd9e_SOURCE",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/CUN2008_Oscar_party_MosDef.jpg",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/d/d7/CUN2008_Oscar_party_MosDef.jpg",
+      "name": "Craig Robinson",
+      "show": "Craig Robinson",
+      "imageUrl": "https://s1.ticketm.net/dam/a/e8a/eff47471-b583-4f2e-95a5-c047530bee8a_SOURCE",
+      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Craig_Robinson_by_Gage_Skidmore.jpg/1280px-Craig_Robinson_by_Gage_Skidmore.jpg",
+      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Craig_Robinson_by_Gage_Skidmore.jpg/1280px-Craig_Robinson_by_Gage_Skidmore.jpg",
       "imageSource": "headshot"
     },
     {
-      "name": "Daphnique Springs",
-      "show": "Daphnique Springs",
+      "name": "Mojo Brookzz",
+      "show": "Mojo Brookzz",
       "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "headshotUrl": null,
       "displayImage": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "imageSource": "event"
     },
     {
-      "name": "Sean Patton",
-      "show": "Sean Patton ( Late Night Show ) Headlines The Riot Comedy Club",
-      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1180333426%2F2094665311053%2F1%2Foriginal.20260320-174348?auto=format%2Ccompress&q=75&sharp=10&s=0f0dc3682c97ea5a7d72b36227dc8eb9",
+      "name": "DoKnow",
+      "show": "DoKnow",
+      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "headshotUrl": null,
-      "displayImage": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1180333426%2F2094665311053%2F1%2Foriginal.20260320-174348?auto=format%2Ccompress&q=75&sharp=10&s=0f0dc3682c97ea5a7d72b36227dc8eb9",
+      "displayImage": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "imageSource": "event"
     },
     {
-      "name": "Concrete",
-      "show": "That's Not Me Comedy Tour With Concrete & Jerry Garcia",
-      "imageUrl": "https://s1.ticketm.net/dam/a/f91/2f6ac2cb-18b8-48ec-8250-0e37221f5f91_SOURCE",
+      "name": "Liza Treyger",
+      "show": "Liza Treyger",
+      "imageUrl": "https://s1.ticketm.net/dam/a/210/c73c44ac-f5e7-45c4-ba00-3e1e733d8210_SOURCE",
       "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/f91/2f6ac2cb-18b8-48ec-8250-0e37221f5f91_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/210/c73c44ac-f5e7-45c4-ba00-3e1e733d8210_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Jerry Garcia",
-      "show": "That's Not Me Comedy Tour With Concrete & Jerry Garcia",
-      "imageUrl": "https://s1.ticketm.net/dam/a/f91/2f6ac2cb-18b8-48ec-8250-0e37221f5f91_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/f91/2f6ac2cb-18b8-48ec-8250-0e37221f5f91_SOURCE",
-      "imageSource": "event"
+      "name": "ALOK",
+      "show": "ALOK: Eat Pray Leave Tour",
+      "imageUrl": "https://s1.ticketm.net/dam/a/365/2ed4d0bf-fbd5-4429-a335-75e84f5d7365_SOURCE",
+      "headshotUrl": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://assets.cdn.filesafe.space/m5XqddngDaLVwJuxJdTp/media/68eb24c6254b4b99d507bcbf.png",
+      "displayImage": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://assets.cdn.filesafe.space/m5XqddngDaLVwJuxJdTp/media/68eb24c6254b4b99d507bcbf.png",
+      "imageSource": "headshot"
     }
   ]
 }
