@@ -1,51 +1,15 @@
 {
   "posted": [
     {
-      "slug": "ilana-glazer-713-music-hall-2026-06-23",
-      "comedianName": "Ilana Glazer",
-      "igFeedMediaId": "18025757570835166",
-      "igStoryMediaId": "18008552111919921",
-      "fbFeedPostId": "1333835318841210",
-      "fbStoryPostId": "1681778096369705",
-      "postedAt": "2026-06-22T19:37:02.631Z"
-    },
-    {
-      "slug": "craig-robinson-houston-improv-2026-06-25",
-      "comedianName": "Craig Robinson",
-      "igFeedMediaId": "18112942315898762",
-      "igStoryMediaId": "18109359731476514",
-      "fbFeedPostId": "1333949732163102",
-      "fbStoryPostId": "2073596753238361",
-      "postedAt": "2026-06-22T23:26:35.423Z"
-    },
-    {
-      "slug": "mojo-brookzz-houston-improv-2026-06-22",
-      "comedianName": "Mojo Brookzz",
-      "igFeedMediaId": "18160901884456529",
-      "igStoryMediaId": "17944551312210323",
-      "fbFeedPostId": "1334247882133287",
-      "fbStoryPostId": "965998169594064",
-      "postedAt": "2026-06-23T07:55:08.048Z"
-    },
-    {
-      "slug": "doknow-houston-improv-2026-06-24",
-      "comedianName": "DoKnow",
-      "igFeedMediaId": "18082224644542507",
-      "igStoryMediaId": "18104931437106271",
-      "fbFeedPostId": "1334413322116743",
-      "fbStoryPostId": "2459399201149373",
-      "postedAt": "2026-06-23T12:41:04.736Z"
-    },
-    {
-      "slug": "liza-treyger-punch-line-houston-2026-06-25",
-      "comedianName": "Liza Treyger",
-      "igFeedMediaId": "18098427641235477",
-      "igStoryMediaId": "18398124868086487",
-      "fbFeedPostId": "1334626145428794",
-      "fbStoryPostId": "1309150124710288",
-      "postedAt": "2026-06-23T18:07:03.891Z"
+      "slug": "gary-owen-houston-improv-2026-07-07",
+      "comedianName": "Gary Owen",
+      "igFeedMediaId": "17966902721937967",
+      "igStoryMediaId": "18084259673181493",
+      "fbFeedPostId": "1345704174320991",
+      "fbStoryPostId": "1588106822885367",
+      "postedAt": "2026-07-06T23:15:09.720Z"
     }
   ],
-  "week_range": "June 22 – June 28, 2026",
-  "manifest_version": 1782156734898
+  "week_range": "July 6 – July 12, 2026",
+  "manifest_version": 1783364873798
 }
