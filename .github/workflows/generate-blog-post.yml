@@ -97,7 +97,25 @@ jobs:
             else
               git commit -m "Weekly blog post — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
             fi
-            git push
+            # Integrate any commits that landed on main since this job's
+            # checkout BEFORE pushing. Two ways this bites otherwise:
+            #   1. Live race — another workflow (update-events, post-to-
+            #      instagram, …) pushes during the ~1.5min generate window.
+            #   2. Re-runs — GitHub replays the run against its ORIGINAL commit
+            #      SHA, so a re-run's checkout is behind today's main and a bare
+            #      push is rejected "fetch first" every time, deterministically.
+            # A bare `git push` handled neither; rebase-then-retry (the same
+            # pattern the other push steps/workflows use) handles both.
+            for i in 1 2 3 4; do
+              echo "Push attempt $i…"
+              git pull --rebase origin main --no-edit || true
+              if git push origin main; then
+                echo "Push succeeded on attempt $i."
+                break
+              fi
+              echo "Push failed, retrying in ${i}s…"
+              sleep $i
+            done
           fi
 
       # Auto-post the weekly roundup (hero + caption) to IG + FB. Runs AFTER
