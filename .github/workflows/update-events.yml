@@ -56,7 +56,21 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "Update events data — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
-            git push
+            # Integrate remote changes before pushing. A bare `git push` here
+            # loses the race whenever another workflow (or a re-run replaying an
+            # older commit SHA) leaves main ahead of this job's checkout, which
+            # is exactly how this workflow's own push beat the blog run and got
+            # it rejected. Rebase-then-retry matches the other push steps.
+            for i in 1 2 3 4; do
+              echo "Push attempt $i…"
+              git pull --rebase origin main --no-edit || true
+              if git push origin main; then
+                echo "Push succeeded on attempt $i."
+                break
+              fi
+              echo "Push failed, retrying in ${i}s…"
+              sleep $i
+            done
           fi
 
       - name: Notify on failure
