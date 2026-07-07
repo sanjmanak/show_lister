@@ -412,7 +412,16 @@ function normalizeVenueName(name) {
 }
 
 function makeId(name, date, venue) {
-  const raw = `${(name || "").toLowerCase().trim()}|${date || ""}|${(venue || "").toLowerCase().trim()}`;
+  // Strip punctuation/whitespace from the name before hashing so the same show
+  // from two sources doesn't survive as two events. Ticketmaster and Eventbrite
+  // spell headliners differently ("DL Hughley" vs "D. L. Hughley"), and without
+  // this the dedupe hash differs and the same show is listed twice — on the
+  // site and in the weekly hero. This mirrors what VENUE_ALIASES already does
+  // for the venue half of the key. Only collapses punctuation/spacing/case;
+  // genuinely different names still differ in letters, so distinct shows at the
+  // same venue+date are never merged.
+  const nameKey = (name || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  const raw = `${nameKey}|${date || ""}|${(venue || "").toLowerCase().trim()}`;
   return crypto.createHash("sha256").update(raw).digest("hex").slice(0, 16);
 }
 

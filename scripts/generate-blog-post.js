@@ -649,6 +649,16 @@ function filterSpotlightEvents(events) {
   });
 }
 
+// Normalize a comedian name into a dedupe key. A plain toLowerCase() is not
+// enough: the LLM returns the same person under different spellings/punctuation
+// ("D. L. Hughley" vs "DL Hughley", "Ali Siddiq" vs "ali  siddiq"), which then
+// slip past the dedupe and produce twin hero circles + double @-mentions in the
+// caption. Stripping everything but [a-z0-9] collapses those variants:
+//   "D. L. Hughley" -> "dlhughley"  ==  "DL Hughley" -> "dlhughley"
+function comedianDedupeKey(name) {
+  return (name || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
 function identifyTopComedians(events) {
   const filtered = filterSpotlightEvents(events);
 
@@ -1038,7 +1048,19 @@ function generateInstagramCaption(comedianNames, weekRange, instagramHandles, co
   // Build the handles section for the prompt
   const handlesFound = instagramHandles || {};
   const handleEntries = Object.entries(handlesFound).filter(([, handle]) => handle);
-  const handlesList = handleEntries.map(([, handle]) => handle).join(" ");
+  // Dedupe the handles themselves: even after name-level dedupe, two distinct
+  // names could resolve to the same account (e.g. a variant that slipped
+  // through), which would otherwise print "@realdlhughley @realdlhughley".
+  const seenHandles = new Set();
+  const handlesList = handleEntries
+    .map(([, handle]) => handle)
+    .filter((handle) => {
+      const key = handle.trim().toLowerCase().replace(/^@/, "");
+      if (!key || seenHandles.has(key)) return false;
+      seenHandles.add(key);
+      return true;
+    })
+    .join(" ");
 
   // Build research context so the caption can reference real credits
   const researchSection = comedianResearch
@@ -1627,10 +1649,10 @@ async function main() {
           );
           return { name: c.name, show: c.show, imageUrl: matchedEvent?.image_url || null };
         });
-        // Deduplicate
+        // Deduplicate (punctuation-insensitive: "D. L. Hughley" == "DL Hughley")
         const seen = new Set();
         quickComedians = quickComedians.filter((c) => {
-          const key = c.name.toLowerCase();
+          const key = comedianDedupeKey(c.name);
           if (seen.has(key)) return false;
           seen.add(key);
           return true;
@@ -1697,10 +1719,11 @@ async function main() {
         imageUrl: matchedEvent?.image_url || null,
       };
     });
-    // Deduplicate by comedian name (OpenAI sometimes returns the same person twice)
+    // Deduplicate by comedian name (OpenAI sometimes returns the same person
+    // twice, often under different spellings — "D. L. Hughley" vs "DL Hughley")
     const seen = new Set();
     topComedians = topComedians.filter((c) => {
-      const key = c.name.toLowerCase();
+      const key = comedianDedupeKey(c.name);
       if (seen.has(key)) return false;
       seen.add(key);
       return true;
