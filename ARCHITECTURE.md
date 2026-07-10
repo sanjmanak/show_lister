@@ -98,6 +98,7 @@ There are **eight major components** that work together:
      - The Secret Group (organizer ID: `20138725138`)
      - Social Comedy Night (organizer ID: `120744254440`)
      - The Den Comedy Club (organizer ID: `120997218882`)
+     - Cat Dad Comedy (organizer ID: `120461230041`)
    - Supports pagination (up to 10 pages per organizer)
    - Filters to live events within 90 days
 
