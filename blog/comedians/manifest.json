@@ -1,96 +1,60 @@
 {
-  "generated_at": "2026-07-06T19:07:53.798Z",
-  "manifest_version": 1783364873798,
-  "week_range": "July 6 – July 12, 2026",
+  "generated_at": "2026-07-13T17:56:28.808Z",
+  "manifest_version": 1783965388808,
+  "week_range": "July 13 – July 19, 2026",
   "posts": [
     {
-      "comedianName": "Gary Owen",
+      "comedianName": "Duncan Trussell",
       "venue": "Houston Improv",
-      "date": "2026-07-07",
-      "filename": "gary-owen-houston-improv-2026-07-07.html",
-      "imageUrl": "https://s1.ticketm.net/dam/a/abf/6eb4a789-e1f0-4d3c-aa1e-fca35eff7abf_SOURCE",
-      "graphicImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Gary_Owen_image_for_Wikipedia.jpg",
-      "ticketUrl": "https://www.ticketweb.com/event/gary-owen-houston-improv-tickets/14226684?REFERRAL_ID=tmfeed",
-      "slug": "gary-owen-houston-improv-2026-07-07",
-      "wpLink": "https://comedyhouston.com/gary-owen-houston-improv-2026-07-07/",
-      "caption": "Houston, remember Gary Owen from BET's \"Comic View\"? 🎤 He's back and bringing his \"No Hard Feelings Tour\" to our city. Known for his unapologetic humor and high-energy shows, Gary tells stories that make us laugh about life and its absurdities. His style is fearless, and his performances draw in fans from all walks of life. Don't miss this chance to see him live.\n\nHouston Improv · Tuesday, July 7, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #GaryOwen",
+      "date": "2026-07-16",
+      "filename": "duncan-trussell-houston-improv-2026-07-16.html",
+      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "graphicImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/47/Duncan_Trussell_on_VICELAND%27S_Party_Legends.png",
+      "ticketUrl": "https://www.ticketweb.com/event/duncan-trussell-houston-improv-tickets/14893843?REFERRAL_ID=tmfeed",
+      "slug": "duncan-trussell-houston-improv-2026-07-16",
+      "wpLink": "https://comedyhouston.com/duncan-trussell-houston-improv-2026-07-16/",
+      "caption": "Co-creator of Netflix's \"The Midnight Gospel,\" Duncan Trussell, is bringing his mind-bending comedy to Houston. Known for blending humor with deep thoughts on philosophy and spirituality, Duncan's shows are like a wild, funny conversation with an old friend. His narrative style invites you to think and laugh, sometimes at the same time. Don't miss this chance to see him live.\n\nHouston Improv · Thursday, July 16, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #DuncanTrussell",
       "instagramHandle": "",
       "graphicFiles": [
-        "gary-owen-houston-improv-2026-07-07-square.png",
-        "gary-owen-houston-improv-2026-07-07-portrait.png",
-        "gary-owen-houston-improv-2026-07-07-story.png"
+        "duncan-trussell-houston-improv-2026-07-16-square.png",
+        "duncan-trussell-houston-improv-2026-07-16-portrait.png",
+        "duncan-trussell-houston-improv-2026-07-16-story.png"
       ]
     },
     {
-      "comedianName": "Dave Smith",
-      "venue": "Punch Line Houston",
-      "date": "2026-07-09",
-      "filename": "dave-smith-punch-line-houston-2026-07-09.html",
-      "imageUrl": "https://s1.ticketm.net/dam/a/153/cd13ef52-6cbc-45ee-8c6d-4a5fc91f5153_SOURCE",
-      "graphicImageUrl": "https://files.seatengine.com/talent/headshots/photos/71901/full/data",
-      "ticketUrl": "https://www.ticketmaster.com/dave-smith-houston-texas-07-09-2026/event/3A006470B35CA142",
-      "slug": "dave-smith-punch-line-houston-2026-07-09",
-      "wpLink": "https://comedyhouston.com/dave-smith-punch-line-houston-2026-07-09/",
-      "caption": "You've heard him on \"The Joe Rogan Experience,\" Houston. Now see Dave Smith live. Known for his sharp political insight and biting humor, Dave blends libertarian politics with a critique of government and media. Recent shows in Pittsburgh had audiences in stitches. If you enjoy smart laughs, this is your night. \n\nPunch Line Houston · Thursday, July 9, 2026\n\nLink in bio for tickets. Tag someone you'd bring. \n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #DaveSmith",
-      "instagramHandle": "",
-      "graphicFiles": [
-        "dave-smith-punch-line-houston-2026-07-09-square.png",
-        "dave-smith-punch-line-houston-2026-07-09-portrait.png",
-        "dave-smith-punch-line-houston-2026-07-09-story.png"
-      ]
-    },
-    {
-      "comedianName": "DL Hughley",
+      "comedianName": "Luenell",
       "venue": "Houston Improv",
-      "date": "2026-07-10",
-      "filename": "dl-hughley-houston-improv-2026-07-10.html",
-      "imageUrl": "https://s1.ticketm.net/dam/a/4af/a7091ede-2fb7-4276-a6fc-5d1f208d74af_SOURCE",
-      "graphicImageUrl": "https://s1.ticketm.net/dam/a/4af/a7091ede-2fb7-4276-a6fc-5d1f208d74af_SOURCE",
-      "ticketUrl": "https://www.ticketweb.com/event/dl-hughley-houston-improv-tickets/14757383?REFERRAL_ID=tmfeed",
-      "slug": "dl-hughley-houston-improv-2026-07-10",
-      "wpLink": "https://comedyhouston.com/dl-hughley-houston-improv-2026-07-10/",
-      "caption": "🎤 Hey Houston, remember \"The Original Kings of Comedy\"? D.L. Hughley is bringing that legendary presence to town. Known for his sharp takes on politics and race, he delivers humor that's both thought-provoking and engaging. A night with Hughley is a night of laughter mixed with real talk. \n\nCatch him live at the Houston Improv · Friday, July 10, 2026. \n\nLink in bio for tickets. Tag someone you'd bring. \n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #DLHughley \n\n@realdlhughley",
-      "instagramHandle": "@realdlhughley",
+      "date": "2026-07-17",
+      "filename": "luenell-houston-improv-2026-07-17.html",
+      "imageUrl": "https://s1.ticketm.net/dam/a/daf/69fa9b15-055a-4910-b9f1-42dbe9eb2daf_SOURCE",
+      "graphicImageUrl": "https://s1.ticketm.net/dam/a/daf/69fa9b15-055a-4910-b9f1-42dbe9eb2daf_SOURCE",
+      "ticketUrl": "https://www.ticketweb.com/event/luenell-houston-improv-tickets/14949593?REFERRAL_ID=tmfeed",
+      "slug": "luenell-houston-improv-2026-07-17",
+      "wpLink": "https://comedyhouston.com/luenell-houston-improv-2026-07-17/",
+      "caption": "Houston, did you catch Luenell on \"Chappelle's Home Team - Luenell: Town Business\"? 🎤 Her bold, unapologetic humor has lit up stages for over 30 years. With high-energy storytelling and a knack for tackling social issues and personal experiences, Luenell brings every show to life. It's comedy that feels real and hits home. Don't miss her at the Houston Improv.  \n\nHouston Improv · Friday, July 17, 2026  \n\nLink in bio for tickets. Tag someone you'd bring.  \n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #Luenell  \n\n@luenell",
+      "instagramHandle": "@luenell",
       "graphicFiles": [
-        "dl-hughley-houston-improv-2026-07-10-square.png",
-        "dl-hughley-houston-improv-2026-07-10-portrait.png",
-        "dl-hughley-houston-improv-2026-07-10-story.png"
+        "luenell-houston-improv-2026-07-17-square.png",
+        "luenell-houston-improv-2026-07-17-portrait.png",
+        "luenell-houston-improv-2026-07-17-story.png"
       ]
     },
     {
-      "comedianName": "D. L. Hughley",
+      "comedianName": "Usama Siddiquee",
       "venue": "Houston Improv",
-      "date": "2026-07-10",
-      "filename": "d-l-hughley-houston-improv-2026-07-10.html",
-      "imageUrl": "https://s1.ticketm.net/dam/a/4af/a7091ede-2fb7-4276-a6fc-5d1f208d74af_SOURCE",
-      "graphicImageUrl": "https://images.fandango.com/cms/assets/fddb0ab0-1c9d-11f1-a2dc-ab6c01e84288--fan-merch-modalpopup-wbhorrorfrightclub-343x362-v6.jpg",
-      "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7-O19",
-      "slug": "d-l-hughley-houston-improv-2026-07-10",
-      "wpLink": "https://comedyhouston.com/d-l-hughley-houston-improv-2026-07-10/",
-      "caption": "D.L. Hughley, known for his sharp wit on \"The Hughleys,\" brings his astute humor to Houston. He's been making folks laugh since 1990, blending social commentary with smart observations. Expect a night of laughs that make you think, delivered by one of the best in the game. Catch him live and see why he's a must-see. \n\nHouston Improv · Friday, July 10, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #DLHughley\n\n@realdlhughley",
-      "instagramHandle": "@realdlhughley",
+      "date": "2026-07-15",
+      "filename": "usama-siddiquee-houston-improv-2026-07-15.html",
+      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "graphicImageUrl": "https://images.squarespace-cdn.com/content/557f10f0e4b069fd29c60d39/1434648772070-4K5ZBSO0D3XTL12ORRCH/usamacreek.jpg?content-type=image%2Fjpeg",
+      "ticketUrl": "https://www.ticketweb.com/event/usama-siddiquee-houston-improv-tickets/14913763?REFERRAL_ID=tmfeed",
+      "slug": "usama-siddiquee-houston-improv-2026-07-15",
+      "wpLink": "https://comedyhouston.com/usama-siddiquee-houston-improv-2026-07-15/",
+      "caption": "Usama Siddiquee, your favorite semifinalist from \"America's Got Talent,\" is bringing his high-energy comedy back home to Texas. His sharp take on growing up Muslim in Plano mixed with dating misadventures makes for a night of laughs you won't forget. Usama's rapid-fire delivery and personal stories keep you engaged and laughing. Don't miss his live set.\n\nHouston Improv · Wednesday, July 15, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #UsamaSiddiquee\n\n@usamastandsup",
+      "instagramHandle": "@usamastandsup",
       "graphicFiles": [
-        "d-l-hughley-houston-improv-2026-07-10-square.png",
-        "d-l-hughley-houston-improv-2026-07-10-portrait.png",
-        "d-l-hughley-houston-improv-2026-07-10-story.png"
-      ]
-    },
-    {
-      "comedianName": "Billy Wayne Davis",
-      "venue": "The Secret Group",
-      "date": "2026-07-13",
-      "filename": "billy-wayne-davis-the-secret-group-2026-07-13.html",
-      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1183858105%2F3558237521%2F1%2Foriginal.20260505-210132?auto=format%2Ccompress&q=75&sharp=10&s=7b32706fa2d0a277f34a26be64d0a045",
-      "graphicImageUrl": "https://comedyworks.com/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIwZmE0OWI0OC03YzVhLTQ0Y2MtOTRiNi0zNjQ5ZjQ2Mzg3OGUiLCJkaXNwb3NpdGlvbiI6ImlubGluZTsgZmlsZW5hbWU9XCJCaWxseV9XYXluZV9EYXZpc19DYXIuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnQmlsbHlfV2F5bmVfRGF2aXNfQ2FyLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI2LTA3LTA2VDE5OjEyOjExLjA5OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--4401dc3c76b9952ab08f66f8af3eafafbcaf988a/Billy_Wayne_Davis_Car.jpg",
-      "ticketUrl": "https://www.eventbrite.com/e/yall-asked-with-billy-wayne-davis-tickets-1988867122101",
-      "slug": "billy-wayne-davis-the-secret-group-2026-07-13",
-      "wpLink": "https://comedyhouston.com/billy-wayne-davis-the-secret-group-2026-07-13/",
-      "caption": "\"Testify\" on Hulu gave you a taste. Now, Houston, get the full experience. Billy Wayne Davis brings his Southern charm and sharp political wit to The Secret Group. Known for his unique voice and connection with audiences, he's not just telling jokes—he's sharing stories. Don't miss a chance to see him live. \n\nThe Secret Group · Monday, July 13, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #BillyWayneDavis",
-      "instagramHandle": "",
-      "graphicFiles": [
-        "billy-wayne-davis-the-secret-group-2026-07-13-square.png",
-        "billy-wayne-davis-the-secret-group-2026-07-13-portrait.png",
-        "billy-wayne-davis-the-secret-group-2026-07-13-story.png"
+        "usama-siddiquee-houston-improv-2026-07-15-square.png",
+        "usama-siddiquee-houston-improv-2026-07-15-portrait.png",
+        "usama-siddiquee-houston-improv-2026-07-15-story.png"
       ]
     }
   ]
