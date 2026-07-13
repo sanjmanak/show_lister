@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-07-07T19:07:29.416Z",
-  "week_range": "July 6 – July 12, 2026",
+  "generated_at": "2026-07-13T17:04:28.953Z",
+  "week_range": "July 13 – July 19, 2026",
   "comedians": [
     {
-      "name": "D. L. Hughley",
-      "show": "D. L. Hughley",
-      "imageUrl": "https://s1.ticketm.net/dam/a/4af/a7091ede-2fb7-4276-a6fc-5d1f208d74af_SOURCE",
+      "name": "Duncan Trussell",
+      "show": "Duncan Trussell",
+      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/4/47/Duncan_Trussell_on_VICELAND%27S_Party_Legends.png",
+      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/4/47/Duncan_Trussell_on_VICELAND%27S_Party_Legends.png",
+      "imageSource": "headshot"
+    },
+    {
+      "name": "Luenell",
+      "show": "Luenell",
+      "imageUrl": "https://s1.ticketm.net/dam/a/daf/69fa9b15-055a-4910-b9f1-42dbe9eb2daf_SOURCE",
       "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/4af/a7091ede-2fb7-4276-a6fc-5d1f208d74af_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/daf/69fa9b15-055a-4910-b9f1-42dbe9eb2daf_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "DL Hughley",
-      "show": "DL Hughley",
-      "imageUrl": "https://s1.ticketm.net/dam/a/4af/a7091ede-2fb7-4276-a6fc-5d1f208d74af_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/4af/a7091ede-2fb7-4276-a6fc-5d1f208d74af_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Gary Owen",
-      "show": "Gary Owen",
-      "imageUrl": "https://s1.ticketm.net/dam/a/abf/6eb4a789-e1f0-4d3c-aa1e-fca35eff7abf_SOURCE",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Gary_Owen_image_for_Wikipedia.jpg",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Gary_Owen_image_for_Wikipedia.jpg",
+      "name": "Usama Siddiquee",
+      "show": "Usama Siddiquee",
+      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "headshotUrl": "https://images.squarespace-cdn.com/content/557f10f0e4b069fd29c60d39/1434648772070-4K5ZBSO0D3XTL12ORRCH/usamacreek.jpg?content-type=image%2Fjpeg",
+      "displayImage": "https://images.squarespace-cdn.com/content/557f10f0e4b069fd29c60d39/1434648772070-4K5ZBSO0D3XTL12ORRCH/usamacreek.jpg?content-type=image%2Fjpeg",
       "imageSource": "headshot"
     }
   ]
