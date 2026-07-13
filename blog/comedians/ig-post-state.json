@@ -1,51 +1,15 @@
 {
   "posted": [
     {
-      "slug": "gary-owen-houston-improv-2026-07-07",
-      "comedianName": "Gary Owen",
-      "igFeedMediaId": "17966902721937967",
-      "igStoryMediaId": "18084259673181493",
-      "fbFeedPostId": "1345704174320991",
-      "fbStoryPostId": "1588106822885367",
-      "postedAt": "2026-07-06T23:15:09.720Z"
-    },
-    {
-      "slug": "dave-smith-punch-line-houston-2026-07-09",
-      "comedianName": "Dave Smith",
-      "igFeedMediaId": "18110774785932257",
-      "igStoryMediaId": "17884238892599450",
-      "fbFeedPostId": "1345990570959018",
-      "fbStoryPostId": "27374185802224339",
-      "postedAt": "2026-07-07T07:49:25.246Z"
-    },
-    {
-      "slug": "dl-hughley-houston-improv-2026-07-10",
-      "comedianName": "DL Hughley",
-      "igFeedMediaId": "18429065956123114",
-      "igStoryMediaId": "18045668408587435",
-      "fbFeedPostId": "1346172644274144",
-      "fbStoryPostId": "1690345678939832",
-      "postedAt": "2026-07-07T12:32:37.346Z"
-    },
-    {
-      "slug": "d-l-hughley-houston-improv-2026-07-10",
-      "comedianName": "D. L. Hughley",
-      "igFeedMediaId": "18140530099555533",
-      "igStoryMediaId": "18330986707283252",
-      "fbFeedPostId": "1346406250917450",
-      "fbStoryPostId": "1238859168302029",
-      "postedAt": "2026-07-07T18:07:42.827Z"
-    },
-    {
-      "slug": "billy-wayne-davis-the-secret-group-2026-07-13",
-      "comedianName": "Billy Wayne Davis",
-      "igFeedMediaId": "17872941438684645",
-      "igStoryMediaId": "18080542313297832",
-      "fbFeedPostId": "1346583077566434",
-      "fbStoryPostId": "1021629354030237",
-      "postedAt": "2026-07-07T23:08:45.054Z"
+      "slug": "duncan-trussell-houston-improv-2026-07-16",
+      "comedianName": "Duncan Trussell",
+      "igFeedMediaId": "17902430109303438",
+      "igStoryMediaId": "18016139993911633",
+      "fbFeedPostId": "1351087790449296",
+      "fbStoryPostId": "1119952847039746",
+      "postedAt": "2026-07-13T18:01:31.701Z"
     }
   ],
-  "week_range": "July 6 – July 12, 2026",
-  "manifest_version": 1783364873798
+  "week_range": "July 13 – July 19, 2026",
+  "manifest_version": 1783965388808
 }
