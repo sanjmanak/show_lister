@@ -77,6 +77,7 @@ jobs:
       # so by the time we get here we usually still have a hero PNG and a
       # caption on disk that the operator can post manually.
       - name: Commit and push blog post
+        id: commit-blog
         if: ${{ !cancelled() }}
         run: |
           git config user.name "github-actions[bot]"
@@ -106,16 +107,25 @@ jobs:
             #      push is rejected "fetch first" every time, deterministically.
             # A bare `git push` handled neither; rebase-then-retry (the same
             # pattern the other push steps/workflows use) handles both.
+            pushed=false
             for i in 1 2 3 4; do
               echo "Push attempt $i…"
-              git pull --rebase origin main --no-edit || true
+              # Abort a half-applied rebase so the next attempt starts clean.
+              git pull --rebase origin main --no-edit || { git rebase --abort 2>/dev/null || true; }
               if git push origin main; then
                 echo "Push succeeded on attempt $i."
+                pushed=true
                 break
               fi
               echo "Push failed, retrying in ${i}s…"
               sleep $i
             done
+            # Without this the loop falls through on total failure and the
+            # step exits 0 via the final `sleep` — a silently lost push.
+            if [ "$pushed" != "true" ]; then
+              echo "ERROR: git push failed after 4 attempts."
+              exit 1
+            fi
           fi
 
       # Auto-post the weekly roundup (hero + caption) to IG + FB. Runs AFTER
@@ -123,8 +133,11 @@ jobs:
       # refuses stale creative (weekly-meta.json week check) and can't
       # double-post (weekly-post-state.json), so `!cancelled()` is safe even
       # when the generate step exited non-zero after writing the creative.
+      # Gated on the commit step SUCCEEDING (not just !cancelled()) — if the
+      # push failed, main still serves LAST week's hero PNG and Meta would
+      # fetch and post it under this week's caption.
       - name: Auto-post weekly roundup to Instagram + Facebook
-        if: ${{ !cancelled() && steps.day-check.outputs.is_thursday != 'true' }}
+        if: ${{ !cancelled() && steps.commit-blog.outcome == 'success' && steps.day-check.outputs.is_thursday != 'true' }}
         timeout-minutes: 12
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
@@ -142,16 +155,25 @@ jobs:
             echo "No state changes to commit."
           else
             git commit -m "Weekly roundup posted — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
+            pushed=false
             for i in 1 2 3 4; do
               echo "Push attempt $i…"
-              git pull --rebase origin main --no-edit || true
+              # Abort a half-applied rebase so the next attempt starts clean.
+              git pull --rebase origin main --no-edit || { git rebase --abort 2>/dev/null || true; }
               if git push origin main; then
                 echo "Push succeeded on attempt $i."
+                pushed=true
                 break
               fi
               echo "Push failed, retrying in ${i}s…"
               sleep $i
             done
+            # Without this the loop falls through on total failure and the
+            # step exits 0 via the final `sleep` — a silently lost push.
+            if [ "$pushed" != "true" ]; then
+              echo "ERROR: git push failed after 4 attempts."
+              exit 1
+            fi
           fi
 
       - name: Check if email is configured
@@ -170,10 +192,13 @@ jobs:
       - name: Load caption for email
         if: ${{ !cancelled() && steps.email-check.outputs.send_email == 'true' }}
         run: |
-          echo "CAPTION<<CAPTION_EOF" >> $GITHUB_ENV
+          # Random delimiter so a caption line can never terminate the heredoc
+          # early and smuggle arbitrary env vars into later steps.
+          delim="CAPTION_EOF_${RANDOM}${RANDOM}"
+          echo "CAPTION<<${delim}" >> $GITHUB_ENV
           cat blog/instagram-caption.txt >> $GITHUB_ENV
           echo "" >> $GITHUB_ENV
-          echo "CAPTION_EOF" >> $GITHUB_ENV
+          echo "${delim}" >> $GITHUB_ENV
 
       - name: Email weekly creative + caption
         if: ${{ !cancelled() && steps.email-check.outputs.send_email == 'true' }}

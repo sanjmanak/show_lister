@@ -67,9 +67,11 @@ function fetchJSON(url, headers = {}, retries = 3) {
       let body = "";
       res.on("data", (chunk) => (body += chunk));
       res.on("end", () => {
-        if (res.statusCode === 429 && retries > 0) {
+        // Retry transient server errors too — a single TM/EB 502 used to kill
+        // that source's whole fetch for the run.
+        if ((res.statusCode === 429 || res.statusCode >= 500) && retries > 0) {
           const wait = (4 - retries) * 2000;
-          console.log(`  Rate limited. Retrying in ${wait / 1000}s...`);
+          console.log(`  HTTP ${res.statusCode}. Retrying in ${wait / 1000}s...`);
           return setTimeout(
             () => fetchJSON(url, headers, retries - 1).then(resolve, reject),
             wait
@@ -480,7 +482,9 @@ function scoreCompleteness(ev) {
 // ---------------------------------------------------------------------------
 
 function generateHTML(events, updatedAt) {
-  const eventsJSON = JSON.stringify(events, null, 2);
+  // Escape "<" so organizer-supplied text containing "</script>" can't break
+  // out of the inline <script> block ("<" is a valid JS string escape).
+  const eventsJSON = JSON.stringify(events, null, 2).replace(/</g, "\\u003c");
   return buildFullHTML(eventsJSON, updatedAt);
 }
 
@@ -488,16 +492,21 @@ function buildFullHTML(eventsJSON, updatedAt) {
   // Read the template HTML
   let html = fs.readFileSync(TEMPLATE_PATH, "utf8");
 
-  // Replace the event data (handles both empty placeholder and previously-embedded data)
+  // Replace the event data (handles both the empty placeholder and previously-
+  // embedded data). The pretty-printed JSON's only column-0 "]" is the final
+  // top-level close, so anchoring on "\n];" can't stop early at a "];" inside
+  // an event's text (JSON strings can't contain raw newlines). Replacer
+  // functions, not replacement strings: event text containing "$&"/"$'"
+  // would otherwise be expanded as replacement patterns.
   html = html.replace(
-    /const EVENTS_DATA = \[.*?\];/s,
-    `const EVENTS_DATA = ${eventsJSON};`
+    /const EVENTS_DATA = (?:\[\]|\[[\s\S]*?\n\]);/,
+    () => `const EVENTS_DATA = ${eventsJSON};`
   );
 
   // Replace the updated timestamp (handles both empty and previously-set values)
   html = html.replace(
     /const LAST_UPDATED = ".*?";/,
-    `const LAST_UPDATED = "${updatedAt}";`
+    () => `const LAST_UPDATED = "${updatedAt}";`
   );
 
   return html;
@@ -558,14 +567,39 @@ async function main() {
   const allEvents = [...tmEvents, ...ebEvents];
   const deduped = deduplicateEvents(allEvents);
 
-  // Sort by date, then time
+  // Sort by date, then time. Times are 12-hour strings ("8:00 PM"), so a
+  // string compare puts "10:00 PM" before "8:00 PM" — compare minutes instead.
   deduped.sort((a, b) => {
     if (a.date !== b.date) return (a.date || "").localeCompare(b.date || "");
-    return (a.time || "").localeCompare(b.time || "");
+    return timeToMinutes(a.time) - timeToMinutes(b.time);
   });
 
   console.log(`After dedup:  ${deduped.length} events`);
   console.log("");
+
+  // Preserve each event's last_updated stamp from the previous run when its
+  // content is otherwise identical. Re-stamping all ~280 events every run
+  // made every twice-daily commit a ~570 KB diff even when nothing changed —
+  // and made the field meaningless (it's meant to say when THIS event's data
+  // last changed; the WP plugin uses it for JSON-LD validFrom).
+  try {
+    if (fs.existsSync(EVENTS_JSON_PATH)) {
+      const prev = JSON.parse(fs.readFileSync(EVENTS_JSON_PATH, "utf8"));
+      const prevById = new Map((prev.events || []).map((e) => [e.id, e]));
+      const contentKey = ({ last_updated, ...rest }) => JSON.stringify(rest);
+      let preserved = 0;
+      for (const ev of deduped) {
+        const old = prevById.get(ev.id);
+        if (old && old.last_updated && contentKey(old) === contentKey(ev)) {
+          ev.last_updated = old.last_updated;
+          preserved++;
+        }
+      }
+      console.log(`Preserved last_updated on ${preserved}/${deduped.length} unchanged events`);
+    }
+  } catch (e) {
+    console.warn(`Could not diff against previous events.json: ${e.message}`);
+  }
 
   const updatedAt = new Date().toISOString();
 

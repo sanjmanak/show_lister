@@ -298,13 +298,28 @@
       events.push(ev);
     }
 
+    // Times are 12-hour strings ("8:00 PM") so a string compare puts
+    // "10:00 PM" before "8:00 PM" — compare minutes-since-midnight instead.
+    function timeToMinutes(t) {
+      if (!t) return 24 * 60 + 1;
+      var m = String(t).match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+      if (!m) return 24 * 60 + 1;
+      var h = parseInt(m[1], 10) % 12;
+      if (/pm/i.test(m[3])) h += 12;
+      return h * 60 + parseInt(m[2], 10);
+    }
     if (currentSort === "date") {
       events.sort(function (a, b) {
         var dc = (a.date || "").localeCompare(b.date || "");
-        return dc !== 0 ? dc : (a.time || "").localeCompare(b.time || "");
+        return dc !== 0 ? dc : timeToMinutes(a.time) - timeToMinutes(b.time);
       });
     } else if (currentSort === "price-low") {
-      events.sort(function (a, b) { return (a.price_min || 9999) - (b.price_min || 9999); });
+      // price_min === 0 is a real free show — `|| 9999` would sort it last.
+      events.sort(function (a, b) {
+        var ap = a.price_min == null ? 9999 : a.price_min;
+        var bp = b.price_min == null ? 9999 : b.price_min;
+        return ap - bp;
+      });
     } else if (currentSort === "price-high") {
       events.sort(function (a, b) { return (b.price_max || 0) - (a.price_max || 0); });
     } else if (currentSort === "name") {
