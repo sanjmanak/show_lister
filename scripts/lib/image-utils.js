@@ -470,7 +470,11 @@ async function evaluateHeadshotCandidate(url) {
   if (SOCIAL_CDN_BLOCKLIST.some((p) => lower.includes(p))) {
     return { ok: false, url, reason: "blocklist" };
   }
-  if (EXT_BLOCKLIST.some((ext) => lower.includes(ext))) {
+  // endsWith, not includes — a host like gifts.com or a query param containing
+  // ".gif" must not disqualify an otherwise valid JPEG (isUsableImageUrl
+  // already does it this way). Strip the query string before checking.
+  const pathOnly = lower.split(/[?#]/)[0];
+  if (EXT_BLOCKLIST.some((ext) => pathOnly.endsWith(ext))) {
     return { ok: false, url, reason: "ext" };
   }
 

@@ -69,6 +69,26 @@ function getCurrentWeekRange() {
   return { monday, sunday };
 }
 
+/** YYYY-MM-DD in process-local time. toISOString() would convert to UTC,
+ * which pushes Sunday 23:59 Central onto the following Monday. */
+function toLocalDateStr(d) {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${dd}`;
+}
+
+/** "8:00 PM" → minutes since midnight. String compares put "10:00 PM"
+ * before "8:00 PM"; missing/unparseable times sort last. */
+function timeToMinutes(t) {
+  if (!t) return 24 * 60 + 1;
+  const m = String(t).match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+  if (!m) return 24 * 60 + 1;
+  let h = parseInt(m[1], 10) % 12;
+  if (/pm/i.test(m[3])) h += 12;
+  return h * 60 + parseInt(m[2], 10);
+}
+
 function formatDateForDisplay(dateStr) {
   const d = new Date(dateStr + "T12:00:00");
   return d.toLocaleDateString("en-US", {
@@ -84,6 +104,14 @@ function formatWeekRange(monday, sunday) {
   const start = monday.toLocaleDateString("en-US", opts);
   const end = sunday.toLocaleDateString("en-US", { ...opts, year: "numeric" });
   return `${start} – ${end}`;
+}
+
+// Punctuation-insensitive identity key so "D. L. Hughley" == "DL Hughley".
+// Same helper as generate-blog-post.js — the 2026-07-06 run generated and
+// posted the same comedian twice because this script still deduped on the
+// raw lowercased name.
+function comedianDedupeKey(name) {
+  return (name || "").toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 
 /** Turn "Ali Siddiq: The Domino Effect Tour" into "ali-siddiq-domino-effect-tour" */
@@ -110,8 +138,8 @@ function loadThisWeeksEvents() {
   const events = raw.events || [];
 
   const { monday, sunday } = getCurrentWeekRange();
-  const mondayStr = monday.toISOString().slice(0, 10);
-  const sundayStr = sunday.toISOString().slice(0, 10);
+  const mondayStr = toLocalDateStr(monday);
+  const sundayStr = toLocalDateStr(sunday);
 
   const filtered = events.filter((ev) => {
     if (!ev.date) return false;
@@ -120,7 +148,7 @@ function loadThisWeeksEvents() {
 
   filtered.sort((a, b) => {
     if (a.date !== b.date) return a.date.localeCompare(b.date);
-    return (a.time || "").localeCompare(b.time || "");
+    return timeToMinutes(a.time) - timeToMinutes(b.time);
   });
 
   console.log(
@@ -1123,7 +1151,11 @@ function buildComedianSchemaGraph({
  * ready to prepend to post body HTML.
  */
 function renderSchemaScriptTag(graph) {
-  return `<script type="application/ld+json">${JSON.stringify(graph)}</script>`;
+  // JSON.stringify does not escape "<", so an event name containing
+  // "</script>" (third-party Ticketmaster/Eventbrite data) would break out
+  // of the JSON-LD block. < is valid JSON and parses identically.
+  const json = JSON.stringify(graph).replace(/</g, "\\u003c");
+  return `<script type="application/ld+json">${json}</script>`;
 }
 
 function wrapInHTML(blogContent, comedianName, venue, date, generatedAt, imageUrl, ticketUrl, schemaGraph) {
@@ -1135,9 +1167,11 @@ function wrapInHTML(blogContent, comedianName, venue, date, generatedAt, imageUr
   // and the WordPress post body carry identical structured data. Otherwise
   // fall back to a minimal Person + ComedyEvent graph so older callsites still
   // emit something valid.
+  // Escape "<" (see renderSchemaScriptTag) so third-party event text can't
+  // close the script block.
   let jsonLd;
   if (schemaGraph) {
-    jsonLd = JSON.stringify(schemaGraph);
+    jsonLd = JSON.stringify(schemaGraph).replace(/</g, "\\u003c");
   } else {
     const fallbackGraph = buildComedianSchemaGraph({
       comedianName,
@@ -1153,7 +1187,7 @@ function wrapInHTML(blogContent, comedianName, venue, date, generatedAt, imageUr
       research: "",
       lastUpdated: null,
     });
-    jsonLd = JSON.stringify(fallbackGraph);
+    jsonLd = JSON.stringify(fallbackGraph).replace(/</g, "\\u003c");
   }
 
   return `<!DOCTYPE html>
@@ -1869,10 +1903,10 @@ async function main() {
       if (!match) throw parseErr;
       headliners = JSON.parse(match[0]);
     }
-    // Deduplicate by name
+    // Deduplicate by name (punctuation-insensitive)
     const seen = new Set();
     headliners = headliners.filter((c) => {
-      const key = c.name.toLowerCase();
+      const key = comedianDedupeKey(c.name);
       if (seen.has(key)) return false;
       seen.add(key);
       return true;
@@ -1888,6 +1922,18 @@ async function main() {
     process.exit(1);
   }
   console.log("");
+
+  // Final dedupe regardless of which path produced the list — the handoff
+  // path previously had no dedupe at all.
+  {
+    const seenKeys = new Set();
+    headliners = headliners.filter((c) => {
+      const key = comedianDedupeKey(c && c.name);
+      if (!key || seenKeys.has(key)) return false;
+      seenKeys.add(key);
+      return true;
+    });
+  }
 
   if (headliners.length === 0) {
     console.log("No recognizable headliners this week. Skipping.");

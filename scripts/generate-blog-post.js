@@ -43,6 +43,10 @@ const WP_APP_USER = process.env.WP_APP_USER || "";
 const WP_APP_PASSWORD = process.env.WP_APP_PASSWORD || "";
 const WP_ENABLED = !!(WP_SITE_URL && WP_APP_USER && WP_APP_PASSWORD);
 
+// Process start time — used to prove the hero PNG was rendered by THIS run
+// (the checkout always contains last week's committed copy).
+const SCRIPT_START_MS = Date.now();
+
 const OUTPUT_DIR = path.resolve(__dirname, "..");
 const EVENTS_JSON_PATH = path.join(OUTPUT_DIR, "events.json");
 const BLOG_DIR = path.join(OUTPUT_DIR, "blog");
@@ -71,6 +75,26 @@ function getCurrentWeekRange() {
   sunday.setHours(23, 59, 59, 999);
 
   return { monday, sunday };
+}
+
+/** YYYY-MM-DD in process-local time. toISOString() would convert to UTC,
+ * which pushes Sunday 23:59 Central onto the following Monday. */
+function toLocalDateStr(d) {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${dd}`;
+}
+
+/** "8:00 PM" → minutes since midnight. String compares put "10:00 PM"
+ * before "8:00 PM"; missing/unparseable times sort last. */
+function timeToMinutes(t) {
+  if (!t) return 24 * 60 + 1;
+  const m = String(t).match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+  if (!m) return 24 * 60 + 1;
+  let h = parseInt(m[1], 10) % 12;
+  if (/pm/i.test(m[3])) h += 12;
+  return h * 60 + parseInt(m[2], 10);
 }
 
 function formatDateForDisplay(dateStr) {
@@ -103,18 +127,18 @@ function loadThisWeeksEvents() {
   const events = raw.events || [];
 
   const { monday, sunday } = getCurrentWeekRange();
-  const mondayStr = monday.toISOString().slice(0, 10);
-  const sundayStr = sunday.toISOString().slice(0, 10);
+  const mondayStr = toLocalDateStr(monday);
+  const sundayStr = toLocalDateStr(sunday);
 
   const filtered = events.filter((ev) => {
     if (!ev.date) return false;
     return ev.date >= mondayStr && ev.date <= sundayStr;
   });
 
-  // Sort by date then time
+  // Sort by date then time (numeric — see timeToMinutes)
   filtered.sort((a, b) => {
     if (a.date !== b.date) return a.date.localeCompare(b.date);
-    return (a.time || "").localeCompare(b.time || "");
+    return timeToMinutes(a.time) - timeToMinutes(b.time);
   });
 
   console.log(
@@ -2034,8 +2058,20 @@ async function main() {
       // commit/push lands the hero PNG on main) requires this meta to prove
       // the caption + hero on disk belong to THIS week — not last week's
       // files from the checkout after a partial generation failure.
+      // Existence alone doesn't prove freshness — LAST week's committed PNG
+      // is always present in the checkout. Require the file to have been
+      // (re)written during THIS process, else a failed screenshot-hero run
+      // would auto-post last week's image under this week's caption.
       const heroPngForMeta = path.join(BLOG_DIR, "weekly-hero.png");
-      if (fs.existsSync(heroPngForMeta)) {
+      const heroIsFresh =
+        fs.existsSync(heroPngForMeta) &&
+        fs.statSync(heroPngForMeta).mtimeMs >= SCRIPT_START_MS;
+      if (!heroIsFresh && fs.existsSync(heroPngForMeta)) {
+        console.warn(
+          "weekly-hero.png predates this run (screenshot-hero failed?) — NOT writing weekly-meta.json, auto-post will be skipped."
+        );
+      }
+      if (heroIsFresh) {
         fs.writeFileSync(
           path.join(BLOG_DIR, "weekly-meta.json"),
           JSON.stringify(

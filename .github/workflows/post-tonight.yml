@@ -65,16 +65,25 @@ jobs:
             echo "No creative changes to commit."
           else
             git commit -m "Tonight in Houston creative — $(TZ=America/Chicago date +'%B %d, %Y')"
+            pushed=false
             for i in 1 2 3 4; do
               echo "Push attempt $i…"
-              git pull --rebase origin main --no-edit || true
+              # Abort a half-applied rebase so the next attempt starts clean.
+              git pull --rebase origin main --no-edit || { git rebase --abort 2>/dev/null || true; }
               if git push origin main; then
                 echo "Push succeeded on attempt $i."
+                pushed=true
                 break
               fi
               echo "Push failed, retrying in ${i}s…"
               sleep $i
             done
+            # Without this the loop falls through on total failure and the
+            # step exits 0 via the final `sleep` — a silently lost push.
+            if [ "$pushed" != "true" ]; then
+              echo "ERROR: git push failed after 4 attempts."
+              exit 1
+            fi
           fi
 
       - name: Post to Instagram + Facebook
@@ -101,16 +110,25 @@ jobs:
             echo "No state changes to commit."
           else
             git commit -m "Tonight in Houston posted — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
+            pushed=false
             for i in 1 2 3 4; do
               echo "Push attempt $i…"
-              git pull --rebase origin main --no-edit || true
+              # Abort a half-applied rebase so the next attempt starts clean.
+              git pull --rebase origin main --no-edit || { git rebase --abort 2>/dev/null || true; }
               if git push origin main; then
                 echo "Push succeeded on attempt $i."
+                pushed=true
                 break
               fi
               echo "Push failed, retrying in ${i}s…"
               sleep $i
             done
+            # Without this the loop falls through on total failure and the
+            # step exits 0 via the final `sleep` — a silently lost push.
+            if [ "$pushed" != "true" ]; then
+              echo "ERROR: git push failed after 4 attempts."
+              exit 1
+            fi
           fi
 
   # Failure notifier lives in its own job so a broken notifier can never

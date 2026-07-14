@@ -62,16 +62,36 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add blog/comedians/
+          # The script writes sitemap.xml to the repo root; without staging it
+          # here it was generated every Monday and thrown away with the runner.
+          # (if-form, not `[ ] &&` — a missing file must not trip `bash -e`.)
+          if [ -f sitemap.xml ]; then git add sitemap.xml; fi
           # Only commit if there are changes
           if git diff --staged --quiet; then
             echo "No new comedian posts to commit."
           else
             git commit -m "Comedian spotlights — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
-            # Stash untracked files (node_modules etc.) so rebase can run
-            git stash --include-untracked
-            git pull --rebase origin main
-            git stash pop || true
-            git push
+            # Rebase-then-retry, same pattern as the other workflows. Stash any
+            # remaining TRACKED modifications so the rebase can run — but not
+            # --include-untracked, which pointlessly stashed node_modules.
+            git stash || true
+            pushed=false
+            for i in 1 2 3 4; do
+              echo "Push attempt $i…"
+              git pull --rebase origin main --no-edit || { git rebase --abort 2>/dev/null || true; }
+              if git push origin main; then
+                echo "Push succeeded on attempt $i."
+                pushed=true
+                break
+              fi
+              echo "Push failed, retrying in ${i}s…"
+              sleep $i
+            done
+            git stash pop 2>/dev/null || true
+            if [ "$pushed" != "true" ]; then
+              echo "ERROR: git push failed after 4 attempts — the IG poster will have nothing to post."
+              exit 1
+            fi
           fi
 
       - name: Check if email is configured
@@ -90,10 +110,13 @@ jobs:
         if: steps.email-check.outputs.send_email == 'true'
         run: |
           echo "EMAIL_SUBJECT=$(cat blog/comedians/email-subject.txt)" >> $GITHUB_ENV
-          echo "EMAIL_BODY<<EMAIL_BODY_EOF" >> $GITHUB_ENV
+          # Random delimiter so an LLM-written body line can never terminate
+          # the heredoc early and smuggle env vars into later steps.
+          delim="EMAIL_BODY_EOF_${RANDOM}${RANDOM}"
+          echo "EMAIL_BODY<<${delim}" >> $GITHUB_ENV
           cat blog/comedians/email-body.txt >> $GITHUB_ENV
           echo "" >> $GITHUB_ENV
-          echo "EMAIL_BODY_EOF" >> $GITHUB_ENV
+          echo "${delim}" >> $GITHUB_ENV
 
       - name: Collect PNG attachments list
         if: steps.email-check.outputs.send_email == 'true'
