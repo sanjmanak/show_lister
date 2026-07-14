@@ -449,6 +449,17 @@ function formatTime(timeStr) {
   return `${h}:${m} ${ampm}`;
 }
 
+/** "8:00 PM" → minutes since midnight. String compares put "10:00 PM"
+ * before "8:00 PM"; missing/unparseable times sort last. */
+function timeToMinutes(t) {
+  if (!t) return 24 * 60 + 1;
+  const m = String(t).match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+  if (!m) return 24 * 60 + 1;
+  let h = parseInt(m[1], 10) % 12;
+  if (/pm/i.test(m[3])) h += 12;
+  return h * 60 + parseInt(m[2], 10);
+}
+
 function deduplicateEvents(events) {
   const seen = new Map();
   for (const ev of events) {
