@@ -1,30 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-07-16T17:45:56.654Z",
-  "total_excluded": 33,
+  "last_updated": "2026-07-16T21:10:11.771Z",
+  "total_excluded": 31,
   "events": [
-    {
-      "name": "Hit the Lights",
-      "venue": "The Secret Group",
-      "venue_city": null,
-      "date": "2026-07-16",
-      "time": "7:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/hit-the-lights-tickets-1986665186051",
-      "reason": "music artist blocklisted: \"hit the lights\""
-    },
-    {
-      "name": "Karaoke every THURSDAY!",
-      "venue": "The Secret Group",
-      "venue_city": null,
-      "date": "2026-07-16",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/karaoke-every-thursday-tickets-1992533959711",
-      "reason": "title keyword blocklisted: \"karaoke\""
-    },
     {
       "name": "NOTHING MATTERS Emo | Indie | Punk Dance Party",
       "venue": "The Secret Group",
