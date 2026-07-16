@@ -52,7 +52,7 @@ function graphRequest(method, urlPath, params) {
       safeParams.access_token = safeParams.access_token.slice(0, 10) + "…REDACTED";
     }
 
-    if (method === "GET" && params) {
+    if ((method === "GET" || method === "DELETE") && params) {
       Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, v));
     }
 
@@ -632,6 +632,49 @@ async function postFbStoryPhoto(pageId, imageUrl) {
 }
 
 // ---------------------------------------------------------------------------
+// Object deletion (used by delete-tonight-posts.js)
+// ---------------------------------------------------------------------------
+
+/**
+ * Detect "the object is already gone" errors on a DELETE — the object was
+ * deleted manually, expired (stories), or never existed. Deliberately
+ * NARROWER than isContainerNotReadable: a bare "Authorization Error" on a
+ * delete is a REAL failure (token/permission problem), not already-gone,
+ * and must stay in state for retry.
+ */
+function isObjectGoneError(err) {
+  if (!err || typeof err.message !== "string") return false;
+  const m = err.message;
+  if (/Graph API error 404\b/.test(m)) return true;
+  return (
+    /code 100\b/.test(m) &&
+    /subcode 33\b|does not exist|cannot be loaded|Unsupported (get|delete) request|No node specified/i.test(m)
+  );
+}
+
+/**
+ * DELETE a Graph API object (IG media, FB post/photo) by ID.
+ * Returns "deleted" on success, "already_gone" if the object no longer
+ * exists. Rethrows everything else (including RATE_LIMITED sentinels).
+ * DELETE is idempotent, so graphRequest's 5xx retry loop is safe here.
+ */
+async function deleteGraphObject(objectId, label) {
+  try {
+    await graphRequest("DELETE", `/${objectId}`, {
+      access_token: IG_ACCESS_TOKEN,
+    });
+    console.log(`   ${label} deleted (ID: ${objectId})`);
+    return "deleted";
+  } catch (err) {
+    if (isObjectGoneError(err)) {
+      console.log(`   ${label} already gone (ID: ${objectId}) — treating as deleted.`);
+      return "already_gone";
+    }
+    throw err;
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Shared exit path
 // ---------------------------------------------------------------------------
 
@@ -646,6 +689,11 @@ async function postFbStoryPhoto(pageId, imageUrl) {
  * keep-alive leak on the error branch.
  */
 function shutdown(code) {
+  // The timer below is unref'd, so if the event loop drains before it fires
+  // (e.g. an error thrown before any socket was opened) Node exits naturally
+  // — exitCode makes sure that path still reports the right status instead
+  // of a silent 0.
+  process.exitCode = code;
   try { https.globalAgent.destroy(); } catch {}
   // Unref any remaining handles and give destroy() a beat to complete.
   setTimeout(() => process.exit(code), 150).unref();
@@ -669,5 +717,7 @@ module.exports = {
   postIgStoryImage,
   postFbFeedPhoto,
   postFbStoryPhoto,
+  isObjectGoneError,
+  deleteGraphObject,
   shutdown,
 };
