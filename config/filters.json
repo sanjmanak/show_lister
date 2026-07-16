@@ -1,0 +1,69 @@
+{
+  "_readme": [
+    "Relevance filters applied by scripts/fetch-events.js at ingest time.",
+    "Events matching any rule below are EXCLUDED from events.json and the site,",
+    "and logged to excluded-events.json (committed on every fetch) so you can",
+    "audit false positives. All matching is case-insensitive.",
+    "",
+    "  venue_blocklist  — exact venue names to always exclude (non-metro or non-comedy venues).",
+    "  city_blocklist   — venue_city values to always exclude (outside the Houston metro).",
+    "  title_blocklist  — keyword/phrase substrings that mark a non-comedy event",
+    "                     (karaoke nights, dance parties, movie screenings, ...).",
+    "  artist_blocklist — music acts that appear in comedy venues' Eventbrite feeds;",
+    "                     matched as a substring of the event title.",
+    "  genre_blocklist  — Ticketmaster genre names to exclude (catches touring",
+    "                     musicals/plays that leak into TM's comedy search).",
+    "  title_allowlist  — keyword/phrase substrings that PROTECT an event from",
+    "                     title_blocklist and genre_blocklist (NOT from venue/city/",
+    "                     artist blocks). Use this to keep comedy-adjacent events",
+    "                     like live podcasts that would otherwise be caught."
+  ],
+  "venue_blocklist": [
+    "Jefferson Theatre",
+    "Doggett Ford Park"
+  ],
+  "city_blocklist": [
+    "Beaumont",
+    "Port Arthur"
+  ],
+  "title_blocklist": [
+    "karaoke",
+    "dance party",
+    "movie night",
+    "film screening",
+    "movie screening",
+    "silent disco",
+    "emo night",
+    "vinyl night",
+    "listening party"
+  ],
+  "artist_blocklist": [
+    "Emarosa",
+    "The Word Alive",
+    "Slow Joy",
+    "Luh Tyler",
+    "Royale Lynn",
+    "Hit the Lights",
+    "Jay Worthy",
+    "King Khemoo",
+    "Nino Paid",
+    "Born Without Bones",
+    "Millionaire$"
+  ],
+  "genre_blocklist": [
+    "Theatre",
+    "Musical"
+  ],
+  "title_allowlist": [
+    "comedy",
+    "comedian",
+    "stand-up",
+    "stand up",
+    "standup",
+    "open mic",
+    "improv",
+    "roast",
+    "podcast",
+    "therapy gecko"
+  ]
+}

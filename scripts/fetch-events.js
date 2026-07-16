@@ -39,6 +39,8 @@ const OUTPUT_DIR = path.resolve(__dirname, "..");
 const EVENTS_JSON_PATH = path.join(OUTPUT_DIR, "events.json");
 const INDEX_HTML_PATH = path.join(OUTPUT_DIR, "index.html");
 const TEMPLATE_PATH = path.join(OUTPUT_DIR, "index.html");
+const FILTERS_JSON_PATH = path.join(OUTPUT_DIR, "config", "filters.json");
+const EXCLUDED_JSON_PATH = path.join(OUTPUT_DIR, "excluded-events.json");
 
 // ---------------------------------------------------------------------------
 // HTTP helper with retries
@@ -406,6 +408,13 @@ const VENUE_ALIASES = {
   "improv comedy club houston": "Houston Improv",
   "houston improv comedy club": "Houston Improv",
   "the houston improv": "Houston Improv",
+  // The Riot's Eventbrite listings carry the old "Upstairs at Rudyards"
+  // location string; both point at 2010 Waugh Dr. Without this alias the
+  // venue filter splits into two entries and dedupe misses collisions.
+  // NOTE: "Stages" is a genuinely different venue The Riot produces shows
+  // at — do NOT alias it here.
+  "the riot comedy club upstairs at rudyards": "The Riot Comedy Club",
+  "the riot comedy club upstairs at rudyard's": "The Riot Comedy Club",
 };
 
 function normalizeVenueName(name) {
@@ -486,6 +495,230 @@ function scoreCompleteness(ev) {
   if (ev.ticket_url) s++;
   if (ev.time) s++;
   return s;
+}
+
+// ---------------------------------------------------------------------------
+// Fuzzy deduplication (second pass)
+//
+// The exact-hash dedup above only merges events whose normalized
+// name|date|venue match exactly. The same show frequently arrives with
+// VARIANT TITLES — e.g. Ticketmaster's geo search returns "Alfred Robles"
+// (ticketmaster.com listing) while the Houston Improv venue query returns
+// "Alfred Robles: Vatos with Gatos Tour" (ticketweb.com listing), same
+// venue, same date, same start time. This pass buckets events by normalized
+// venue + date + start time and merges pairs whose titles are similar
+// (token-Jaccard ≥ 0.8) or where one title's tokens are a subset of the
+// other's (the tour-subtitle case above).
+// ---------------------------------------------------------------------------
+
+function titleTokens(name) {
+  return new Set(
+    String(name || "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean)
+  );
+}
+
+const TITLE_SIMILARITY_THRESHOLD = 0.8;
+
+function titlesLookLikeSameShow(nameA, nameB) {
+  const a = titleTokens(nameA);
+  const b = titleTokens(nameB);
+  if (a.size === 0 || b.size === 0) return false;
+  let inter = 0;
+  for (const t of a) if (b.has(t)) inter++;
+  const union = a.size + b.size - inter;
+  const jaccard = inter / union;
+  if (jaccard >= TITLE_SIMILARITY_THRESHOLD) return true;
+  // Containment: "alfred robles" ⊂ "alfred robles vatos with gatos tour".
+  // Require the contained title to have ≥2 tokens so a single generic word
+  // ("comedy") can't swallow an unrelated show in the same room.
+  const smaller = a.size <= b.size ? a : b;
+  if (smaller.size >= 2 && inter === smaller.size) return true;
+  return false;
+}
+
+// Vendors we can append affiliate params to (see the WP plugin) — a listing
+// on one of these hosts beats the same show's ticketweb/universe mirror.
+const PREFERRED_TICKET_HOSTS = /(^|\.)(ticketmaster\.com|eventbrite\.com|livenation\.com)$/i;
+
+function ticketHost(url) {
+  const m = String(url || "").match(/^https?:\/\/([^/?#]+)/i);
+  return m ? m[1].toLowerCase() : "";
+}
+
+function mergePreferenceScore(ev) {
+  let s = scoreCompleteness(ev);
+  // Real price data trumps "Price TBA" — weight it above everything else.
+  if (ev.price_min !== null && ev.price_min !== undefined) s += 10;
+  if (PREFERRED_TICKET_HOSTS.test(ticketHost(ev.ticket_url))) s += 5;
+  return s;
+}
+
+/** Copy any fields the winner is missing from the record being dropped. */
+function backfillEvent(winner, loser) {
+  if (winner.price_min === null || winner.price_min === undefined) {
+    winner.price_min = loser.price_min;
+    winner.price_max = loser.price_max;
+    winner.currency = loser.currency || winner.currency;
+  }
+  if (!winner.image_url) winner.image_url = loser.image_url;
+  if (!winner.description) winner.description = loser.description;
+  if (!winner.ticket_url) winner.ticket_url = loser.ticket_url;
+  if (!winner.time) winner.time = loser.time;
+  if (!winner.age_restriction) winner.age_restriction = loser.age_restriction;
+  if (!winner.genre) winner.genre = loser.genre;
+}
+
+function fuzzyDeduplicateEvents(events) {
+  const buckets = new Map();
+  for (const ev of events) {
+    const venueKey = String(ev.venue || "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim();
+    const key = `${venueKey}|${ev.date || ""}|${ev.time || ""}`;
+    if (!buckets.has(key)) buckets.set(key, []);
+    buckets.get(key).push(ev);
+  }
+
+  const dropped = new Set();
+  for (const group of buckets.values()) {
+    if (group.length < 2) continue;
+    for (let i = 0; i < group.length; i++) {
+      if (dropped.has(group[i].id)) continue;
+      for (let j = i + 1; j < group.length; j++) {
+        const a = group[i];
+        const b = group[j];
+        if (dropped.has(b.id)) continue;
+        if (!titlesLookLikeSameShow(a.name, b.name)) continue;
+        const winner = mergePreferenceScore(b) > mergePreferenceScore(a) ? b : a;
+        const loser = winner === a ? b : a;
+        backfillEvent(winner, loser);
+        dropped.add(loser.id);
+        console.log(
+          `  [fuzzy-dedupe] "${loser.name}" (${loser.source}) merged into ` +
+            `"${winner.name}" (${winner.source}) @ ${winner.venue} ${winner.date} ${winner.time || ""}`
+        );
+        // If the loser was slot i, the winner (slot j) keeps comparing.
+        if (loser === a) break;
+      }
+    }
+  }
+
+  if (dropped.size > 0) {
+    console.log(`Fuzzy dedup merged ${dropped.size} variant-title listing(s).`);
+  }
+  return events.filter((e) => !dropped.has(e.id));
+}
+
+// ---------------------------------------------------------------------------
+// Relevance filtering (config/filters.json)
+//
+// The site should list ONLY comedy events in the Houston metro. The
+// Ticketmaster comedy search reaches 100 miles (Beaumont) and the Eventbrite
+// organizer feeds include everything a venue publishes (karaoke, dance
+// parties, music tours). Rules live in config/filters.json so they're easy
+// to edit without touching code; every excluded event is logged to
+// excluded-events.json for false-positive auditing.
+// ---------------------------------------------------------------------------
+
+function loadRelevanceFilters() {
+  try {
+    const raw = JSON.parse(fs.readFileSync(FILTERS_JSON_PATH, "utf8"));
+    const lc = (arr) => (Array.isArray(arr) ? arr.map((s) => String(s).toLowerCase().trim()).filter(Boolean) : []);
+    return {
+      venueBlocklist: lc(raw.venue_blocklist),
+      cityBlocklist: lc(raw.city_blocklist),
+      titleBlocklist: lc(raw.title_blocklist),
+      artistBlocklist: lc(raw.artist_blocklist),
+      genreBlocklist: lc(raw.genre_blocklist),
+      titleAllowlist: lc(raw.title_allowlist),
+    };
+  } catch (err) {
+    console.warn(`Could not load ${FILTERS_JSON_PATH}: ${err.message} — relevance filtering skipped.`);
+    return null;
+  }
+}
+
+/**
+ * Returns a human-readable exclusion reason, or null if the event should be
+ * kept. The title allowlist protects against title/genre blocks only —
+ * venue, city, and music-artist blocks always win.
+ */
+function classifyExclusion(ev, filters) {
+  if (!filters) return null;
+  const name = String(ev.name || "").toLowerCase();
+  const venue = String(ev.venue || "").toLowerCase().trim();
+  const city = String(ev.venue_city || "").toLowerCase().trim();
+  const genre = String(ev.genre || "").toLowerCase().trim();
+
+  if (venue && filters.venueBlocklist.includes(venue)) {
+    return `venue blocklisted: ${ev.venue}`;
+  }
+  if (city && filters.cityBlocklist.includes(city)) {
+    return `city blocklisted: ${ev.venue_city}`;
+  }
+  for (const artist of filters.artistBlocklist) {
+    if (name.includes(artist)) {
+      return `music artist blocklisted: "${artist}"`;
+    }
+  }
+
+  const allowlisted = filters.titleAllowlist.some((kw) => name.includes(kw));
+  if (!allowlisted) {
+    for (const kw of filters.titleBlocklist) {
+      if (name.includes(kw)) {
+        return `title keyword blocklisted: "${kw}"`;
+      }
+    }
+    if (genre && filters.genreBlocklist.includes(genre)) {
+      return `genre blocklisted: ${ev.genre}`;
+    }
+  }
+  return null;
+}
+
+function applyRelevanceFilters(events, filters) {
+  const kept = [];
+  const excluded = [];
+  for (const ev of events) {
+    const reason = classifyExclusion(ev, filters);
+    if (reason) {
+      excluded.push({
+        name: ev.name,
+        venue: ev.venue,
+        venue_city: ev.venue_city || null,
+        date: ev.date,
+        time: ev.time,
+        source: ev.source,
+        genre: ev.genre || null,
+        ticket_url: ev.ticket_url,
+        reason,
+      });
+    } else {
+      kept.push(ev);
+    }
+  }
+  return { kept, excluded };
+}
+
+function writeExcludedLog(excluded, updatedAt) {
+  const sorted = excluded
+    .slice()
+    .sort((a, b) => (a.date || "").localeCompare(b.date || "") || (a.name || "").localeCompare(b.name || ""));
+  const payload = {
+    _readme:
+      "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
+    last_updated: updatedAt,
+    total_excluded: sorted.length,
+    events: sorted,
+  };
+  fs.writeFileSync(EXCLUDED_JSON_PATH, JSON.stringify(payload, null, 2));
+  console.log(`Wrote ${EXCLUDED_JSON_PATH} (${sorted.length} excluded)`);
 }
 
 // ---------------------------------------------------------------------------
@@ -575,8 +808,24 @@ async function main() {
     }
   }
 
-  const allEvents = [...tmEvents, ...ebEvents];
-  const deduped = deduplicateEvents(allEvents);
+  // Relevance filtering (comedy-only, Houston-metro-only) — see
+  // config/filters.json. Runs before dedup so junk can't win a merge.
+  const filters = loadRelevanceFilters();
+  const { kept: relevantEvents, excluded } = applyRelevanceFilters(
+    [...tmEvents, ...ebEvents],
+    filters
+  );
+  if (excluded.length > 0) {
+    console.log(`Relevance filter excluded ${excluded.length} events:`);
+    for (const ex of excluded.slice(0, 30)) {
+      console.log(`  [excluded] ${ex.date} | ${ex.venue} | ${ex.name} — ${ex.reason}`);
+    }
+    if (excluded.length > 30) console.log(`  ... and ${excluded.length - 30} more (see excluded-events.json)`);
+  }
+  writeExcludedLog(excluded, new Date().toISOString());
+
+  const allEvents = relevantEvents;
+  const deduped = fuzzyDeduplicateEvents(deduplicateEvents(allEvents));
 
   // Sort by date, then time. Times are 12-hour strings ("8:00 PM"), so a
   // string compare puts "10:00 PM" before "8:00 PM" — compare minutes instead.
@@ -637,7 +886,22 @@ async function main() {
   console.log("Done!");
 }
 
-main().catch((err) => {
-  console.error("Fatal error:", err);
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch((err) => {
+    console.error("Fatal error:", err);
+    process.exit(1);
+  });
+}
+
+// Exported for tests — running `node scripts/fetch-events.js` still executes
+// main() as before; require()-ing the module does not.
+module.exports = {
+  normalizeVenueName,
+  makeId,
+  deduplicateEvents,
+  fuzzyDeduplicateEvents,
+  titlesLookLikeSameShow,
+  loadRelevanceFilters,
+  classifyExclusion,
+  applyRelevanceFilters,
+};
