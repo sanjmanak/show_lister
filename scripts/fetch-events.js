@@ -364,9 +364,26 @@ async function fetchEventbrite() {
   const endDate = new Date(now);
   endDate.setDate(endDate.getDate() + MAX_DAYS_AHEAD);
 
-  // Eventbrite date format: "yyyy-MM-ddTHH:mm:ss"
-  const rangeStart = now.toISOString().replace(/\.\d{3}Z$/, "");
-  const rangeEnd = endDate.toISOString().replace(/\.\d{3}Z$/, "");
+  // Eventbrite reads a NAIVE `start_date.range_*` (no "Z"/offset) as the
+  // event's LOCAL time — Central for Houston — not UTC. Passing
+  // now.toISOString() (a UTC wall-clock like "21:10") therefore got read as
+  // 9:10pm Central, which silently dropped every show still to come earlier
+  // that evening: an afternoon run wiped out that night's whole lineup.
+  //
+  // Anchor the window to Central calendar days instead: from the start of
+  // today (Central) so today's full lineup is always retained regardless of
+  // run time, through end-of-day on the last day. The plugin filters display
+  // by date (not time), so including earlier-today shows is exactly what it
+  // expects, and past days are still trimmed from the payload.
+  const centralDay = (d) =>
+    new Intl.DateTimeFormat("en-CA", {
+      timeZone: "America/Chicago",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).format(d); // "YYYY-MM-DD"
+  const rangeStart = `${centralDay(now)}T00:00:00`;
+  const rangeEnd = `${centralDay(endDate)}T23:59:59`;
 
   for (const org of EB_ORGANIZERS) {
     try {
