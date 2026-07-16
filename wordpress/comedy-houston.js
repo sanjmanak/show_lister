@@ -438,8 +438,10 @@
     var statusLabel = (ev.status || "").replace(/_/g, " ");
 
     var ticketUrl = buildTicketUrl(ev.ticket_url);
+    // rel="sponsored nofollow" — monetized outbound links (kept in sync with
+    // the SSR renderer in comedy-houston.php).
     var ticketHTML = ev.ticket_url
-      ? '<a class="card-cta" href="' + escapeAttr(ticketUrl) + '" target="_blank" rel="noopener">' +
+      ? '<a class="card-cta" href="' + escapeAttr(ticketUrl) + '" target="_blank" rel="sponsored nofollow noopener">' +
         'Get Tickets <span class="arrow">&rarr;</span></a>'
       : '<span class="card-cta" style="opacity:0.5;cursor:default;">Coming Soon</span>';
 

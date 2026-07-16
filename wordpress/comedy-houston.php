@@ -52,6 +52,12 @@ class Comedy_Houston_Plugin {
         add_action('init', [$this, 'register_redirect_endpoint']);
         add_action('template_redirect', [$this, 'handle_redirect']);
 
+        // Keep crawlers away from ?ch_go= redirect URLs (crawl budget).
+        // Only affects WordPress's virtual robots.txt — if a physical
+        // robots.txt file exists on the server, this filter never runs and
+        // the disallow rules must be added to that file by hand.
+        add_filter('robots_txt', [$this, 'filter_robots_txt'], 10, 2);
+
         // Comedian-post schema: receive via REST custom field, emit from wp_head.
         // Keeps the <script type="application/ld+json"> tag out of post_content
         // entirely so wp_kses_post can't strip it on publish and so content
@@ -226,6 +232,13 @@ class Comedy_Houston_Plugin {
             return;
         }
 
+        // Every ?ch_go= URL is a tracking redirect — it must never be indexed
+        // (each base64 payload is a unique URL, so crawlers would otherwise
+        // burn crawl budget on thousands of duplicate redirect URLs).
+        if (!headers_sent()) {
+            header('X-Robots-Tag: noindex, nofollow', true);
+        }
+
         $payload = sanitize_text_field(wp_unslash($_GET[self::REDIRECT_VAR]));
         // Tolerant decode. Links are generated URL-safe (- and _ instead of
         // + and /), but older cached pages still carry standard base64 where
@@ -280,6 +293,23 @@ class Comedy_Houston_Plugin {
         // Redirect — use wp_redirect since it's an external URL
         wp_redirect(esc_url_raw($target_url), 302);
         exit;
+    }
+
+    /**
+     * Append ?ch_go= disallow rules to WordPress's virtual robots.txt.
+     * Every redirect payload is a unique URL; without this, crawlers spend
+     * their budget on thousands of 302s instead of real content pages.
+     */
+    public function filter_robots_txt($output, $public) {
+        if (!$public) {
+            return $output;
+        }
+        $rules = "\n# Comedy Houston: ticket-click redirect URLs (tracking 302s, not content)\n"
+            . "User-agent: *\n"
+            . "Disallow: /?ch_go=\n"
+            . "Disallow: /*?ch_go=\n"
+            . "Disallow: /*&ch_go=\n";
+        return $output . $rules;
     }
 
     /**
@@ -787,8 +817,11 @@ class Comedy_Houston_Plugin {
             $ticket_link = esc_attr($ticket_url);
         }
 
+        // rel="sponsored nofollow": these are monetized outbound ticket links
+        // (affiliate redirect) — Google requires sponsored/nofollow on paid
+        // links, and it stops PageRank leaking to the ticket vendors.
         $ticket_html = $ticket_url
-            ? '<a class="card-cta" href="' . $ticket_link . '" target="_blank" rel="noopener">Get Tickets <span class="arrow">&rarr;</span></a>'
+            ? '<a class="card-cta" href="' . $ticket_link . '" target="_blank" rel="sponsored nofollow noopener">Get Tickets <span class="arrow">&rarr;</span></a>'
             : '<span class="card-cta" style="opacity:0.5;cursor:default;">Coming Soon</span>';
 
         // Internal link: if this event matches a published comedian post,
