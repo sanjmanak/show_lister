@@ -298,6 +298,9 @@
       if (!showOpenMic && isOpenMic) continue;
       if (typeFilter === "open_mic" && !isOpenMic) continue;
 
+      // type="free": only confirmed $0 shows (null price is unknown, not free).
+      if (typeFilter === "free" && ev.price_min !== 0) continue;
+
       // Max price filter: include free shows (price_min === 0 or null) and shows
       // with price_min <= maxPrice
       if (lockedMaxPrice !== null) {

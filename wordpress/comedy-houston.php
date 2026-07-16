@@ -69,6 +69,12 @@ class Comedy_Houston_Plugin {
         // already emits Organization schema is active).
         add_action('wp_head', [$this, 'emit_organization_schema'], 5);
 
+        // Per-page SEO title/description (set via REST by the landing-page
+        // sync script; skipped when an SEO plugin is active).
+        add_action('rest_api_init', [$this, 'register_page_seo_fields']);
+        add_filter('pre_get_document_title', [$this, 'filter_document_title'], 20);
+        add_action('wp_head', [$this, 'emit_meta_description'], 1);
+
         // Create clicks table on activation
         register_activation_hook(__FILE__, [$this, 'create_clicks_table']);
     }
@@ -427,7 +433,9 @@ class Comedy_Houston_Plugin {
      * can PATCH/POST the post, they can set this field.
      */
     public function register_comedian_schema_field() {
-        register_rest_field('post', 'ch_schema_graph', [
+        // Registered for posts (comedian/roundup schema) AND pages (venue
+        // pages carry LocalBusiness schema through the same field).
+        register_rest_field(['post', 'page'], 'ch_schema_graph', [
             'schema' => [
                 'description' => 'Schema.org @graph JSON for this comedian post (JSON-encoded string).',
                 'type'        => 'string',
@@ -485,16 +493,18 @@ class Comedy_Houston_Plugin {
      * never drops below the current baseline.
      */
     public function emit_comedian_schema_head() {
-        if (!is_singular('post')) {
+        if (!is_singular(['post', 'page'])) {
             return;
         }
         $post = get_queried_object();
         if (!$post || empty($post->ID)) {
             return;
         }
-        // Scope to the comedy-shows category so we don't pollute the schema
-        // graph of unrelated posts that might end up with this meta set.
-        if (!has_category('comedy-shows', $post)) {
+        // Posts: scope to the comedy-shows category so we don't pollute the
+        // schema graph of unrelated posts that might end up with this meta
+        // set. Pages (venue pages) have no categories — the meta itself is
+        // the opt-in.
+        if ($post->post_type === 'post' && !has_category('comedy-shows', $post)) {
             return;
         }
         $json = get_post_meta($post->ID, '_ch_schema_graph', true);
@@ -513,6 +523,66 @@ class Comedy_Houston_Plugin {
             return;
         }
         echo "\n<script type=\"application/ld+json\">" . $clean . "</script>\n";
+    }
+
+    // =========================================================================
+    // PER-PAGE SEO TITLE / META DESCRIPTION
+    // =========================================================================
+
+    /**
+     * REST fields `ch_meta_title` and `ch_meta_description` on pages and
+     * posts. The landing-page sync script (scripts/manage-wp-pages.js) sets
+     * these when it creates /tonight/, /this-weekend/, /free/, /open-mics/
+     * and the venue pages. Stored in post meta; emitted below when no SEO
+     * plugin is active (an active SEO plugin owns titles/descriptions).
+     */
+    public function register_page_seo_fields() {
+        foreach (['ch_meta_title' => '_ch_meta_title', 'ch_meta_description' => '_ch_meta_description'] as $field => $meta_key) {
+            register_rest_field(['page', 'post'], $field, [
+                'schema' => [
+                    'description' => 'SEO ' . str_replace('ch_meta_', '', $field) . ' for this page.',
+                    'type'        => 'string',
+                    'context'     => ['view', 'edit'],
+                ],
+                'get_callback' => function ($post_arr) use ($meta_key) {
+                    $val = get_post_meta($post_arr['id'], $meta_key, true);
+                    return is_string($val) ? $val : '';
+                },
+                'update_callback' => function ($value, $post) use ($meta_key) {
+                    if (!is_string($value)) {
+                        return new WP_Error('ch_meta_invalid_type', 'Value must be a string.', ['status' => 400]);
+                    }
+                    update_post_meta($post->ID, $meta_key, sanitize_text_field($value));
+                    return true;
+                },
+            ]);
+        }
+    }
+
+    public function filter_document_title($title) {
+        if ($this->seo_plugin_handles_schema() || !is_singular(['page', 'post'])) {
+            return $title;
+        }
+        $post = get_queried_object();
+        if (!$post || empty($post->ID)) {
+            return $title;
+        }
+        $custom = get_post_meta($post->ID, '_ch_meta_title', true);
+        return (is_string($custom) && $custom !== '') ? $custom : $title;
+    }
+
+    public function emit_meta_description() {
+        if ($this->seo_plugin_handles_schema() || !is_singular(['page', 'post'])) {
+            return;
+        }
+        $post = get_queried_object();
+        if (!$post || empty($post->ID)) {
+            return;
+        }
+        $desc = get_post_meta($post->ID, '_ch_meta_description', true);
+        if (is_string($desc) && $desc !== '') {
+            echo '<meta name="description" content="' . esc_attr($desc) . '">' . "\n";
+        }
     }
 
     // =========================================================================
@@ -761,6 +831,13 @@ class Comedy_Houston_Plugin {
             $is_open_mic = strpos($name_lower, 'open mic') !== false;
             if (!$show_open_mic && $is_open_mic) continue;
             if ($type_filter === 'open_mic' && !$is_open_mic) continue;
+
+            // type="free": only events with a confirmed $0 price. Events with
+            // unknown pricing (null) are NOT assumed free.
+            if ($type_filter === 'free') {
+                $pm = $ev['price_min'] ?? null;
+                if ($pm === null || floatval($pm) != 0) continue;
+            }
 
             if ($max_price !== null) {
                 $ev_price = $ev['price_min'] ?? null;
@@ -1600,7 +1677,8 @@ class Comedy_Houston_Plugin {
                     <tr><td><code>show_venue_filter</code></td><td>true, false — show/hide the venue dropdown</td><td>true</td></tr>
                     <tr><td><code>show_sort</code></td><td>true, false — show/hide the sort dropdown</td><td>true</td></tr>
                     <tr><td><code>show_open_mic</code></td><td>true, false — include/exclude events with &ldquo;open mic&rdquo; in the name</td><td>true</td></tr>
-                    <tr><td><code>type</code></td><td>open_mic — show only events matching this type (filters by name keyword)</td><td><em>all types</em></td></tr>
+                    <tr><td><code>type</code></td><td>open_mic (name contains &ldquo;open mic&rdquo;), free (confirmed $0 shows only)</td><td><em>all types</em></td></tr>
+                    <tr><td><code>initial_days</code></td><td>number — initial render window in days for the &ldquo;all&rdquo; view (0 = no cap); a &ldquo;Show all&rdquo; button reveals the rest</td><td>14</td></tr>
                     <tr><td><code>show_footer</code></td><td>true, false</td><td>true</td></tr>
                 </tbody>
             </table>
