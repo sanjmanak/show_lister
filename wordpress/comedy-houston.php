@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.4.3
+ * Version: 2.5.0
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.4.3';
+    const VERSION      = '2.5.0';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -33,6 +33,10 @@ class Comedy_Houston_Plugin {
         'tm_affiliate'        => '',
         'eb_affiliate'        => '',
         'track_clicks'        => '1',
+        'org_name'            => 'Comedy Houston',
+        'org_logo'            => '',
+        // One URL per line — social profiles for Organization sameAs.
+        'org_sameas'          => "https://www.instagram.com/comedyhoustontx/",
     ];
 
     public function __construct() {
@@ -54,6 +58,10 @@ class Comedy_Houston_Plugin {
         // edits in Gutenberg can't corrupt the JSON graph.
         add_action('rest_api_init', [$this, 'register_comedian_schema_field']);
         add_action('wp_head', [$this, 'emit_comedian_schema_head'], 20);
+
+        // Site-wide Organization JSON-LD (skipped when an SEO plugin that
+        // already emits Organization schema is active).
+        add_action('wp_head', [$this, 'emit_organization_schema'], 5);
 
         // Create clicks table on activation
         register_activation_hook(__FILE__, [$this, 'create_clicks_table']);
@@ -449,6 +457,64 @@ class Comedy_Houston_Plugin {
             return;
         }
         echo "\n<script type=\"application/ld+json\">" . $clean . "</script>\n";
+    }
+
+    // =========================================================================
+    // ORGANIZATION SCHEMA (site-wide)
+    // =========================================================================
+
+    /**
+     * True when an active SEO plugin already emits Organization/BlogPosting
+     * schema — in that case we stay silent to avoid duplicate entities.
+     * (Google Site Kit is NOT in this list: it handles analytics/search
+     * console, not schema markup.)
+     */
+    private function seo_plugin_handles_schema() {
+        return defined('WPSEO_VERSION')      // Yoast SEO
+            || class_exists('RankMath')      // Rank Math
+            || defined('AIOSEO_VERSION')     // All in One SEO
+            || defined('SEOPRESS_VERSION');  // SEOPress
+    }
+
+    /**
+     * Emit Organization JSON-LD on every front-end page. Name, logo, and
+     * sameAs profiles are configurable at Settings → Comedy Houston, so the
+     * markup stays config-driven rather than hardcoded.
+     */
+    public function emit_organization_schema() {
+        if (is_admin() || $this->seo_plugin_handles_schema()) {
+            return;
+        }
+        $opts = $this->get_options();
+
+        $org = [
+            '@context' => 'https://schema.org',
+            '@type'    => 'Organization',
+            '@id'      => home_url('/') . '#organization',
+            'name'     => !empty($opts['org_name']) ? $opts['org_name'] : get_bloginfo('name'),
+            'url'      => home_url('/'),
+        ];
+
+        $logo = !empty($opts['org_logo']) ? $opts['org_logo'] : get_site_icon_url(512);
+        if (!empty($logo)) {
+            $org['logo'] = $logo;
+        }
+
+        // sameAs: one URL per line in settings; only http(s) URLs are kept.
+        $same_as = [];
+        foreach (preg_split('/\r\n|\r|\n/', (string) ($opts['org_sameas'] ?? '')) as $line) {
+            $line = trim($line);
+            if ($line !== '' && preg_match('~^https?://~i', $line)) {
+                $same_as[] = esc_url_raw($line);
+            }
+        }
+        if (!empty($same_as)) {
+            $org['sameAs'] = array_values($same_as);
+        }
+
+        echo "\n<script type=\"application/ld+json\">"
+            . wp_json_encode($org, JSON_UNESCAPED_SLASHES)
+            . "</script>\n";
     }
 
     // =========================================================================
@@ -1213,6 +1279,18 @@ class Comedy_Houston_Plugin {
         add_settings_field('tm_affiliate', 'Ticketmaster Affiliate ID', [$this, 'field_tm_affiliate'], 'comedy-houston', 'ch_affiliate');
         add_settings_field('eb_affiliate', 'Eventbrite Affiliate ID', [$this, 'field_eb_affiliate'], 'comedy-houston', 'ch_affiliate');
         add_settings_field('track_clicks', 'Log Clicks', [$this, 'field_track_clicks'], 'comedy-houston', 'ch_affiliate');
+
+        // --- SEO / Schema section ---
+        add_settings_section(
+            'ch_seo',
+            'SEO & Schema',
+            function () { echo '<p>Organization structured data emitted site-wide (skipped automatically if Yoast/Rank Math/AIOSEO/SEOPress is active).</p>'; },
+            'comedy-houston'
+        );
+
+        add_settings_field('org_name', 'Organization Name', [$this, 'field_org_name'], 'comedy-houston', 'ch_seo');
+        add_settings_field('org_logo', 'Organization Logo URL', [$this, 'field_org_logo'], 'comedy-houston', 'ch_seo');
+        add_settings_field('org_sameas', 'Social Profiles (sameAs)', [$this, 'field_org_sameas'], 'comedy-houston', 'ch_seo');
     }
 
     public function sanitize_settings($input) {
@@ -1225,6 +1303,9 @@ class Comedy_Houston_Plugin {
         $clean['tm_affiliate'] = sanitize_text_field($input['tm_affiliate'] ?? '');
         $clean['eb_affiliate'] = sanitize_text_field($input['eb_affiliate'] ?? '');
         $clean['track_clicks'] = !empty($input['track_clicks']) ? '1' : '0';
+        $clean['org_name']     = sanitize_text_field($input['org_name'] ?? '');
+        $clean['org_logo']     = esc_url_raw($input['org_logo'] ?? '');
+        $clean['org_sameas']   = sanitize_textarea_field($input['org_sameas'] ?? '');
         return $clean;
     }
 
@@ -1293,6 +1374,33 @@ class Comedy_Houston_Plugin {
             self::OPTION_KEY, checked($opts['track_clicks'], '1', false)
         );
         echo '<p class="description">Logs timestamp, hashed IP, and destination URL. Useful for analytics.</p>';
+    }
+
+    public function field_org_name() {
+        $opts = $this->get_options();
+        printf(
+            '<input type="text" name="%s[org_name]" value="%s" class="regular-text">',
+            self::OPTION_KEY, esc_attr($opts['org_name'])
+        );
+        echo '<p class="description">Used as the Organization <code>name</code> in JSON-LD. Defaults to the site title if empty.</p>';
+    }
+
+    public function field_org_logo() {
+        $opts = $this->get_options();
+        printf(
+            '<input type="url" name="%s[org_logo]" value="%s" class="regular-text" placeholder="https://comedyhouston.com/logo.png">',
+            self::OPTION_KEY, esc_attr($opts['org_logo'])
+        );
+        echo '<p class="description">Square logo, at least 112&times;112px. Falls back to the Site Icon if empty.</p>';
+    }
+
+    public function field_org_sameas() {
+        $opts = $this->get_options();
+        printf(
+            '<textarea name="%s[org_sameas]" rows="4" class="large-text code" placeholder="https://www.instagram.com/comedyhoustontx/">%s</textarea>',
+            self::OPTION_KEY, esc_textarea($opts['org_sameas'])
+        );
+        echo '<p class="description">One URL per line — Instagram, Facebook, X, YouTube, etc. Emitted as the Organization <code>sameAs</code> array.</p>';
     }
 
     public function render_settings_page() {
