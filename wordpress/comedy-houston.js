@@ -52,6 +52,10 @@
     ? scParams.maxPrice : null;
   var showOpenMic = scParams.showOpenMic !== false;
   var typeFilter = scParams.type || "";
+  // Initial render window (days) for the "all" view — the rest of the list
+  // is revealed by the "Show all" button. Mirrors initial_days in PHP.
+  var initialDays = typeof scParams.initialDays === "number" ? scParams.initialDays : 14;
+  var showAllRequested = false;
 
   // ================================================================
   // INIT — wait for DOM to be ready
@@ -210,6 +214,16 @@
       currentSort = e.target.value;
       render();
     });
+
+    // "Show all upcoming shows" — delegated so it works for both the
+    // server-rendered button and every JS re-render.
+    var main = document.getElementById("chMain");
+    if (main) main.addEventListener("click", function (e) {
+      var btn = e.target.closest ? e.target.closest(".ch-show-all-btn") : null;
+      if (!btn) return;
+      showAllRequested = true;
+      render();
+    });
   }
 
   function handleTimeFilter(e) {
@@ -336,9 +350,25 @@
     var main = document.getElementById("chMain");
     if (!main) return;
     var events = getFiltered();
+    var totalCount = events.length;
+
+    // Initial 14-day window on the "all" view: render the near-term events
+    // and a "Show all" button instead of hundreds of cards through +90 days.
+    var truncated = false;
+    if (currentTimeFilter === "all" && initialDays > 0 && !showAllRequested) {
+      var cutoff = toDateStr(addDays(new Date(), initialDays));
+      var windowed = [];
+      for (var w = 0; w < events.length; w++) {
+        if (!events[w].date || events[w].date <= cutoff) windowed.push(events[w]);
+      }
+      if (windowed.length > 0 && windowed.length < events.length) {
+        events = windowed;
+        truncated = true;
+      }
+    }
 
     var countEl = document.getElementById("chEventCount");
-    if (countEl) countEl.textContent = events.length + (events.length === 1 ? " show" : " shows");
+    if (countEl) countEl.textContent = totalCount + (totalCount === 1 ? " show" : " shows");
 
     if (events.length === 0) {
       main.innerHTML = '<div class="empty-state"><h2>No shows found</h2><p>Try changing your filters or check back later.</p></div>';
@@ -372,6 +402,11 @@
       }
 
       html += '</div></section>';
+    }
+
+    if (truncated) {
+      html += '<div class="ch-show-all-wrap"><button type="button" class="ch-show-all-btn">' +
+        'Show all ' + totalCount + ' upcoming shows</button></div>';
     }
 
     main.innerHTML = html;
@@ -427,7 +462,7 @@
 
   function renderCard(ev) {
     var imageHTML = ev.image_url
-      ? '<img src="' + escapeAttr(ev.image_url) + '" alt="' + escapeAttr(ev.name) + '" loading="lazy">'
+      ? '<img src="' + escapeAttr(ev.image_url) + '" alt="' + escapeAttr(ev.name) + '" loading="lazy" decoding="async" width="640" height="360">'
       : '<div class="card-image-placeholder">' +
         '<span class="venue-icon">&#127908;</span>' +
         '<span class="venue-label">' + escapeHTML(ev.venue) + '</span></div>';

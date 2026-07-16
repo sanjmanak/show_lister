@@ -123,6 +123,10 @@ class Comedy_Houston_Plugin {
             'show_sort'         => 'true',
             'show_open_mic'     => 'true',
             'type'              => '',
+            // Initial render window in days for the unfiltered ("all") view.
+            // The full list (hundreds of events through +90 days) is only
+            // rendered after the visitor clicks "Show all". 0 disables.
+            'initial_days'      => '14',
         ], $atts, self::SHORTCODE);
 
         $scheme = !empty($atts['theme']) ? $atts['theme'] : $opts['color_scheme'];
@@ -141,6 +145,7 @@ class Comedy_Houston_Plugin {
             'source'   => sanitize_text_field($atts['source']),
             'showOpenMic' => strtolower($atts['show_open_mic']) !== 'false',
             'type' => sanitize_text_field($atts['type']),
+            'initialDays' => max(0, intval($atts['initial_days'])),
         ];
 
         // Fetch the manifest once so we can (a) pass a slug-lookup map into
@@ -193,7 +198,28 @@ class Comedy_Houston_Plugin {
         if ($events_data && !empty($events_data['events'])) {
             $filtered = $this->filter_events($events_data['events'], $atts);
             $ch_ssr_count = count($filtered);
-            $ch_ssr_html = $this->render_ssr_html($filtered, $opts, $redirect_base, $manifest_posts);
+
+            // Cap the initial "all" render to the next N days; the tail is
+            // revealed by the "Show all" button (JS). JSON-LD below still
+            // covers the full filtered list so schema is not affected.
+            $initial_days = max(0, intval($atts['initial_days']));
+            $ssr_events = $filtered;
+            if ($initial_days > 0 && $atts['filter'] === 'all') {
+                $cutoff = wp_date('Y-m-d', strtotime('+' . $initial_days . ' days'));
+                $windowed = array_values(array_filter($filtered, function ($ev) use ($cutoff) {
+                    return ($ev['date'] ?? '') <= $cutoff;
+                }));
+                // Don't window down to an empty page (e.g. a quiet fortnight).
+                if (!empty($windowed) && count($windowed) < count($filtered)) {
+                    $ssr_events = $windowed;
+                }
+            }
+
+            $ch_ssr_html = $this->render_ssr_html($ssr_events, $opts, $redirect_base, $manifest_posts);
+            if (count($ssr_events) < $ch_ssr_count) {
+                $ch_ssr_html .= '<div class="ch-show-all-wrap"><button type="button" class="ch-show-all-btn">'
+                    . 'Show all ' . (int) $ch_ssr_count . ' upcoming shows</button></div>';
+            }
             $ch_ssr_jsonld = $this->render_jsonld($filtered);
             if (!empty($events_data['last_updated'])) {
                 $ts = strtotime($events_data['last_updated']);
@@ -800,7 +826,10 @@ class Comedy_Houston_Plugin {
         $age = $ev['age_restriction'] ?? null;
 
         if ($image) {
-            $image_html = '<img src="' . esc_attr($image) . '" alt="' . esc_attr($ev['name'] ?? '') . '" loading="lazy">';
+            // width/height are intrinsic-size hints (the CSS 16:9 box with
+            // object-fit:cover controls display size) — they let the browser
+            // reserve space before the image loads.
+            $image_html = '<img src="' . esc_attr($image) . '" alt="' . esc_attr($ev['name'] ?? '') . '" loading="lazy" decoding="async" width="640" height="360">';
         } else {
             $image_html = '<div class="card-image-placeholder"><span class="venue-icon">&#127908;</span><span class="venue-label">' . $venue . '</span></div>';
         }
