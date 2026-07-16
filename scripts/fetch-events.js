@@ -417,6 +417,23 @@ const VENUE_ALIASES = {
   "the riot comedy club upstairs at rudyard's": "The Riot Comedy Club",
 };
 
+// Merge venue aliases from config/venues.json — the single source of truth
+// for venue data (also consumed by the WP plugin and the page-sync script).
+// Non-fatal on failure; the hardcoded aliases above still apply.
+try {
+  const venuesConfig = JSON.parse(
+    fs.readFileSync(path.join(OUTPUT_DIR, "config", "venues.json"), "utf8")
+  );
+  for (const v of venuesConfig.venues || []) {
+    if (!v || !v.name) continue;
+    for (const alias of v.aliases || []) {
+      VENUE_ALIASES[String(alias).toLowerCase().replace(/\s+/g, " ").trim()] = v.name;
+    }
+  }
+} catch (err) {
+  console.warn(`Could not merge venue aliases from config/venues.json: ${err.message}`);
+}
+
 function normalizeVenueName(name) {
   if (!name) return name;
   const key = name.toLowerCase().replace(/\s+/g, " ").trim();

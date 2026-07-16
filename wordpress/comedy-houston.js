@@ -37,6 +37,10 @@
   // next to "Get Tickets" when an event matches a published post.
   var COMEDIAN_POSTS = Array.isArray(config.comedianPosts) ? config.comedianPosts : [];
 
+  // venue name → /venues/{slug}/ URL map (injected by PHP from
+  // config/venues.json). Venue names on cards link to their venue page.
+  var VENUE_PAGES = config.venuePages || {};
+
   // Shortcode params (locked filters from PHP shortcode attributes)
   var scParams = config.shortcodeParams || {};
 
@@ -506,7 +510,11 @@
       (ev.age_restriction ? '<span class="separator"></span><span>' + escapeHTML(ev.age_restriction) + '</span>' : '') +
       '</div>' +
       '<h3 class="card-name">' + escapeHTML(ev.name) + '</h3>' +
-      '<div class="card-venue">' + escapeHTML(ev.venue) + '</div>' +
+      '<div class="card-venue">' +
+      (VENUE_PAGES[ev.venue]
+        ? '<a href="' + escapeAttr(VENUE_PAGES[ev.venue]) + '">' + escapeHTML(ev.venue) + '</a>'
+        : escapeHTML(ev.venue)) +
+      '</div>' +
       '<div class="card-footer">' +
       '<div class="card-price">' + priceHTML + '</div>' +
       moreInfoHTML +

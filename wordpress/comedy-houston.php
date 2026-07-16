@@ -186,6 +186,7 @@ class Comedy_Houston_Plugin {
             'redirectBase'     => esc_url($redirect_base),
             'shortcodeParams'  => $shortcode_params,
             'comedianPosts'    => $js_comedian_posts,
+            'venuePages'       => $this->build_venue_pages_map(),
         ];
 
         wp_add_inline_script(
@@ -746,6 +747,95 @@ class Comedy_Houston_Plugin {
     }
 
     /**
+     * Fetch config/venues.json from GitHub with transient caching. The venue
+     * registry drives JSON-LD addresses and event-card venue links; failures
+     * return [] and everything falls back to the hardcoded address map.
+     */
+    public function fetch_venues_data() {
+        $opts = $this->get_options();
+        $cache_key = 'ch_venues_' . md5($opts['github_user'] . '_' . $opts['repo']);
+
+        $cached = get_transient($cache_key);
+        if ($cached !== false) {
+            return $cached;
+        }
+
+        $url = sprintf(
+            'https://raw.githubusercontent.com/%s/%s/main/config/venues.json',
+            sanitize_text_field($opts['github_user']),
+            sanitize_text_field($opts['repo'])
+        );
+
+        $response = wp_remote_get($url, ['timeout' => 10]);
+        if (is_wp_error($response) || wp_remote_retrieve_response_code($response) !== 200) {
+            set_transient($cache_key, [], 5 * MINUTE_IN_SECONDS);
+            return [];
+        }
+
+        $data = json_decode(wp_remote_retrieve_body($response), true);
+        if (!$data || empty($data['venues']) || !is_array($data['venues'])) {
+            set_transient($cache_key, [], 5 * MINUTE_IN_SECONDS);
+            return [];
+        }
+
+        set_transient($cache_key, $data['venues'], HOUR_IN_SECONDS);
+        return $data['venues'];
+    }
+
+    /**
+     * Look up a venue registry entry by (aliased) name. Returns the venue
+     * array from config/venues.json or null. Index is built once per request.
+     */
+    private function venue_registry_entry($venue_name) {
+        static $index = null;
+        if ($index === null) {
+            $index = [];
+            foreach ($this->fetch_venues_data() as $v) {
+                if (empty($v['name'])) continue;
+                $index[$this->normalize_venue_key($v['name'])] = $v;
+                foreach (($v['aliases'] ?? []) as $alias) {
+                    $index[$this->normalize_venue_key($alias)] = $v;
+                }
+            }
+        }
+        $key = $this->normalize_venue_key($venue_name);
+        return $index[$key] ?? null;
+    }
+
+    /**
+     * venue name (and each alias) → venue page URL map, passed to the JS
+     * renderer so client-side cards can link venue names too.
+     */
+    public function build_venue_pages_map() {
+        $map = [];
+        foreach ($this->fetch_venues_data() as $v) {
+            if (empty($v['name']) || empty($v['slug'])) continue;
+            if (isset($v['page']['enabled']) && !$v['page']['enabled']) continue;
+            $url = home_url('/venues/' . $v['slug'] . '/');
+            $map[$v['name']] = $url;
+            foreach (($v['aliases'] ?? []) as $alias) {
+                $map[$alias] = $url;
+            }
+        }
+        return $map;
+    }
+
+    /**
+     * URL of the venue's /venues/{slug}/ page, or '' when the venue has no
+     * (enabled) page in the registry.
+     */
+    public function venue_page_url($venue_name) {
+        $v = $this->venue_registry_entry($venue_name);
+        if (!$v || empty($v['slug'])) {
+            return '';
+        }
+        if (isset($v['page']['enabled']) && !$v['page']['enabled']) {
+            return '';
+        }
+        return home_url('/venues/' . $v['slug'] . '/');
+    }
+
+    /**
      * Find the comedian post matching an event, if one exists. Used by both
      * the SSR card renderer and passed into JS for client-side render. Match
      * criteria: exact date + fuzzy "comedian name appears in event title".
@@ -955,7 +1045,13 @@ class Comedy_Houston_Plugin {
         }
         $card .= '</div>';
         $card .= '<h3 class="card-name">' . $name . '</h3>';
-        $card .= '<div class="card-venue">' . $venue . '</div>';
+        // Venue name links to its /venues/{slug}/ page when one exists
+        // (internal links from every event card into the venue pages).
+        $venue_page = $this->venue_page_url($ev['venue'] ?? '');
+        $venue_html = $venue_page
+            ? '<a href="' . esc_attr($venue_page) . '">' . $venue . '</a>'
+            : $venue;
+        $card .= '<div class="card-venue">' . $venue_html . '</div>';
         $card .= '<div class="card-footer"><div class="card-price">' . $price_html . '</div>'
             . $more_info_html . $ticket_html . '</div>';
         $card .= '</div></article>';
@@ -1184,6 +1280,20 @@ class Comedy_Houston_Plugin {
      * punctuation normalized. Unknown venues fall back to city/state only.
      */
     private function venue_address($venue_name) {
+        // Registry (config/venues.json fetched from GitHub) wins when it has
+        // a street address; the hardcoded map below is the offline fallback.
+        $entry = $this->venue_registry_entry($venue_name);
+        if ($entry && !empty($entry['address']['street'])) {
+            $a = $entry['address'];
+            return [
+                '@type'           => 'PostalAddress',
+                'streetAddress'   => $a['street'],
+                'addressLocality' => !empty($a['locality']) ? $a['locality'] : 'Houston',
+                'addressRegion'   => !empty($a['region']) ? $a['region'] : 'TX',
+                'addressCountry'  => 'US',
+            ] + (!empty($a['postal']) ? ['postalCode' => $a['postal']] : []);
+        }
+
         $key = $this->normalize_venue_key($venue_name);
 
         $map = [
