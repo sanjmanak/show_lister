@@ -1325,22 +1325,27 @@ class Comedy_Houston_Plugin {
                 'postal' => '77006',
             ],
             // The Riot Comedy Club relocated from Upstairs at Rudyard's to
-            // 1925 Washington Ave. postal intentionally omitted — the zip is
-            // unverified (config/venues.json carries the same blank), so we
-            // ship a valid PostalAddress without a guessed postalCode. This
-            // fallback is only used if the config/venues.json registry fetch
-            // fails; the registry is the source of truth.
+            // 1925 Washington Ave (zip owner-verified). This fallback is only
+            // used if the config/venues.json registry fetch fails; the registry
+            // is the source of truth.
             'the riot comedy club upstairs at rudyards' => [
                 'street' => '1925 Washington Ave',
                 'locality' => 'Houston',
                 'region' => 'TX',
-                'postal' => '',
+                'postal' => '77007',
             ],
             'the riot comedy club' => [
                 'street' => '1925 Washington Ave',
                 'locality' => 'Houston',
                 'region' => 'TX',
-                'postal' => '',
+                'postal' => '77007',
+            ],
+            // The Riot's second location, at GuadalaHARRY's in Conroe.
+            'the riot comedy club conroe' => [
+                'street' => '219 Simonton St',
+                'locality' => 'Conroe',
+                'region' => 'TX',
+                'postal' => '77301',
             ],
             'the den comedy club' => [
                 'street' => '201 Woodard St',

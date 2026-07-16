@@ -33,6 +33,16 @@ const EB_ORGANIZERS = [
   { id: "120744254440", name: "Social Comedy Night" },
   { id: "120997218882", name: "The Den Comedy Club" },
   { id: "120461230041", name: "Cat Dad Comedy" },
+  // The Riot's second location, hosted at GuadalaHARRY's in Conroe. This
+  // organizer account only produces Conroe shows, and Eventbrite's raw venue
+  // string for them varies ("GuadalaHARRY's", etc.), so `forceVenue` pins
+  // every event to the canonical Conroe venue name rather than relying on the
+  // per-event venue string. Must match the venue `name` in config/venues.json.
+  {
+    id: "120648602531",
+    name: "The Riot Comedy Club — Conroe",
+    forceVenue: "The Riot Comedy Club — Conroe",
+  },
 ];
 
 const OUTPUT_DIR = path.resolve(__dirname, "..");
@@ -377,7 +387,7 @@ async function fetchEventbrite() {
 
         if (data.events && data.events.length > 0) {
           for (const ev of data.events) {
-            events.push(normalizeEB(ev, org.name));
+            events.push(normalizeEB(ev, org.name, org.forceVenue));
           }
         }
 
@@ -403,10 +413,15 @@ async function fetchEventbrite() {
   return events;
 }
 
-function normalizeEB(ev, orgFallbackName) {
-  const venueName = normalizeVenueName(
-    ev.venue && ev.venue.name ? ev.venue.name : orgFallbackName
-  );
+function normalizeEB(ev, orgFallbackName, forceVenue) {
+  // A location-specific organizer can pin its events to one canonical venue
+  // (forceVenue) so an inconsistent per-event venue string can't split it off
+  // into an unmatched venue. Otherwise fall back to the event's own venue name.
+  const venueName = forceVenue
+    ? forceVenue
+    : normalizeVenueName(
+        ev.venue && ev.venue.name ? ev.venue.name : orgFallbackName
+      );
 
   const startLocal = ev.start ? ev.start.local : null; // "2026-02-15T19:30:00"
   const dateStr = startLocal ? startLocal.slice(0, 10) : null;

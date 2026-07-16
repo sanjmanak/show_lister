@@ -77,11 +77,10 @@
         "The Riot Comedy Club Upstairs at Rudyards",
         "The Riot Comedy Club Upstairs at Rudyard's",
         "The Riot Comedy Club Washington Ave",
-        "The Riot Comedy Club Conroe",
         "The Riot"
       ],
-      "_address_note": "RELOCATED from Upstairs at Rudyard's (2010 Waugh Dr, 77006 — now stale). New main home: 1925 Washington Ave, Houston, TX. postal LEFT BLANK — zip UNVERIFIED (owner suggested ~77007, do not hardcode until confirmed). The Riot also runs a separate Conroe, TX location; if Conroe shows start listing under their own venue name, add a second venue entry with that address rather than folding it in here.",
-      "address": { "street": "1925 Washington Ave", "locality": "Houston", "region": "TX", "postal": "" },
+      "_address_note": "RELOCATED from Upstairs at Rudyard's (2010 Waugh Dr, 77006 — now stale) to its new main home at 1925 Washington Ave, Houston, TX 77007 (address + zip owner-verified). The Riot's separate Conroe, TX location (at GuadalaHARRY's) is its own venue entry below — do not fold it in here.",
+      "address": { "street": "1925 Washington Ave", "locality": "Houston", "region": "TX", "postal": "77007" },
       "phone": "",
       "website": "",
       "schema_type": "ComedyClub",
@@ -89,8 +88,32 @@
         "enabled": true,
         "title": "The Riot Comedy Club — Shows, Tickets & Info",
         "meta_title": "The Riot Comedy Club — Shows, Tickets & Info | Comedy Houston",
-        "meta_description": "Upcoming shows from The Riot Comedy Club — relocating to Washington Ave in Houston, plus a Conroe room — headliner showcases with prices and ticket links.",
-        "description_html": "<p>The Riot Comedy Club is relocating to a new home at 1925 Washington Ave in Houston, moving on from its long run in the upstairs room at Rudyard's in Montrose. The club also runs shows at a separate location in Conroe. Its bread and butter is tightly-booked weekend headliner showcases — touring comics with credits like Kill Tony, Don't Tell Comedy, and late-night TV, backed by strong Houston openers.</p>\n<p>Tickets are sold through Eventbrite and the shows are intimate by design, so popular weekends genuinely do sell out. The Riot also produces occasional shows at other Houston venues — those appear in our listings under the venue actually hosting them.</p>\n<p><!-- TODO(owner): CONFIRM the Washington Ave zip (config/venues.json address.postal is blank until verified) and the open date if the room is still fitting out. Also add a separate Conroe venue entry (address + zip) if Conroe shows list independently. Verify age policy, drink minimums, parking, official website URL. --></p>"
+        "meta_description": "Upcoming shows from The Riot Comedy Club — now at a new home on Washington Ave in Houston — weekend headliner showcases with prices and direct ticket links.",
+        "description_html": "<p>The Riot Comedy Club has relocated to a new home at 1925 Washington Ave in Houston, moving on from its long run in the upstairs room at Rudyard's in Montrose. (The Riot also runs a separate room in Conroe — see The Riot Comedy Club — Conroe.) Its bread and butter is tightly-booked weekend headliner showcases — touring comics with credits like Kill Tony, Don't Tell Comedy, and late-night TV, backed by strong Houston openers.</p>\n<p>Tickets are sold through Eventbrite and the shows are intimate by design, so popular weekends genuinely do sell out. The Riot also produces occasional shows at other Houston venues — those appear in our listings under the venue actually hosting them.</p>\n<p><!-- TODO(owner): confirm the Washington Ave open date if the room is still fitting out, and verify age policy, drink minimums, parking, and official website URL. --></p>"
+      }
+    },
+    {
+      "name": "The Riot Comedy Club — Conroe",
+      "slug": "the-riot-comedy-club-conroe",
+      "aliases": [
+        "The Riot Comedy Club Conroe",
+        "Riot Comedy Club at GuadalaHARRY's",
+        "The Riot Comedy Club at GuadalaHARRY's",
+        "GuadalaHARRY's",
+        "GuadalaHarry's",
+        "Guadalaharrys"
+      ],
+      "_venue_note": "The Riot Comedy Club's second location, hosted at GuadalaHARRY's in Conroe, TX. Fed by its own Eventbrite organizer (120648602531), which fetch-events.js pins to this venue via `forceVenue` regardless of the raw Eventbrite venue string. Address, zip, and phone owner-verified.",
+      "address": { "street": "219 Simonton St", "locality": "Conroe", "region": "TX", "postal": "77301" },
+      "phone": "(713) 264-8664",
+      "website": "",
+      "schema_type": "ComedyClub",
+      "page": {
+        "enabled": true,
+        "title": "The Riot Comedy Club (Conroe) — Shows, Tickets & Info",
+        "meta_title": "The Riot Comedy Club Conroe — Shows, Tickets & Info | Comedy Houston",
+        "meta_description": "Upcoming shows at The Riot Comedy Club's Conroe room inside GuadalaHARRY's — touring headliner stand-up north of Houston, with prices and direct ticket links.",
+        "description_html": "<p>The Riot Comedy Club's Conroe location runs inside GuadalaHARRY's at 219 Simonton St in Conroe, TX, bringing the club's headliner comedy north of Houston. Like the flagship room, it books tightly-curated weekend showcases of touring comics backed by strong Houston-area openers.</p>\n<p>Tickets are sold through Eventbrite, and the room doubles as a full-service Tex-Mex restaurant, so you can grab food and drinks with the show.</p>\n<p><!-- TODO(owner): verify and fill in — age policy, showtimes/room capacity, parking, and official website URL. --></p>"
       }
     },
     {
