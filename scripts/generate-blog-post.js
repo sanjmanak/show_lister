@@ -29,6 +29,7 @@ const {
 // javascript:/data: URLs, and a handful of other injection shapes. Zero npm
 // deps by design. See scripts/lib/sanitize-html.js for the full rationale.
 const { sanitizeAiHtml } = require("./lib/sanitize-html");
+const { addBlogPostingToGraph, wpGmtToIso } = require("./lib/schema-utils");
 
 // ---------------------------------------------------------------------------
 // Config
@@ -2113,6 +2114,7 @@ async function main() {
 
       // Upload hero image as featured image
       let featuredMediaId = 0;
+      let wpHeroImageUrl = "";
       const heroPngPath = path.join(BLOG_DIR, "weekly-hero.png");
       if (fs.existsSync(heroPngPath)) {
         try {
@@ -2125,6 +2127,7 @@ async function main() {
           try {
             const media = await wpRequest("GET", `/wp-json/wp/v2/media/${featuredMediaId}`, null);
             const wpHeroUrl = media.source_url || "";
+            wpHeroImageUrl = wpHeroUrl;
             if (wpHeroUrl) {
               const heroFigure = `<figure class="wp-block-image size-large"><img src="${wpHeroUrl}" alt="Houston Comedy Shows This Week" class="wp-image-${featuredMediaId}"/></figure>\n\n`;
               wpContent = heroFigure + wpContent;
@@ -2209,6 +2212,28 @@ async function main() {
       } else {
         post = await wpRequest("POST", "/wp-json/wp/v2/posts", postData);
         console.log(`  Weekly roundup published: ${post.link}`);
+      }
+
+      // Attach BlogPosting schema via the plugin's ch_schema_graph REST field
+      // (emitted from wp_head for comedy-shows posts). Done after the create
+      // call because mainEntityOfPage needs the real permalink. Best-effort.
+      if (post && post.link && post.id) {
+        try {
+          const roundupGraph = addBlogPostingToGraph(null, {
+            title: wpTitle,
+            url: post.link,
+            description: `Every comedy show in Houston this week (${weekRange}) — headliners, showcases, and open mics with times, prices, and ticket links.`,
+            imageUrl: wpHeroImageUrl || null,
+            datePublished: wpGmtToIso(post.date_gmt),
+            dateModified: wpGmtToIso(post.modified_gmt),
+          });
+          await wpRequest("POST", `/wp-json/wp/v2/posts/${post.id}`, {
+            ch_schema_graph: JSON.stringify(roundupGraph),
+          });
+          console.log("  BlogPosting schema attached.");
+        } catch (err) {
+          console.warn(`  BlogPosting schema update failed (non-fatal): ${err.message}`);
+        }
       }
       console.log("");
     } catch (err) {

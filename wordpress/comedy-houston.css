@@ -651,3 +651,44 @@
 #ch-app .event-card:nth-child(10) { animation-delay: 0.20s; }
 #ch-app .event-card:nth-child(11) { animation-delay: 0.22s; }
 #ch-app .event-card:nth-child(12) { animation-delay: 0.24s; }
+
+/* ============================================================
+   SHOW ALL BUTTON (initial 14-day render window)
+   ============================================================ */
+
+#ch-app .ch-show-all-wrap {
+  text-align: center;
+  margin: 28px 0 8px;
+}
+
+#ch-app .ch-show-all-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 12px 28px;
+  border-radius: 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+#ch-app .ch-show-all-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* Venue name links (to /venues/{slug}/ pages) */
+#ch-app .card-venue a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--border-hover);
+  transition: color var(--transition), border-color var(--transition);
+}
+
+#ch-app .card-venue a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}

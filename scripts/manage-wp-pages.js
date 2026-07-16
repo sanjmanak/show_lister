@@ -1,0 +1,301 @@
+#!/usr/bin/env node
+
+/**
+ * Comedy Houston — WordPress page sync
+ *
+ * Creates/updates the SEO landing pages (config/landing-pages.json) and the
+ * venue pages (config/venues.json, if present) on WordPress. Idempotent:
+ * pages are looked up by slug and updated in place, never duplicated.
+ *
+ * Runs from the "Manage WordPress Pages" workflow (workflow_dispatch) with:
+ *   WP_SITE_URL, WP_APP_USER, WP_APP_PASSWORD
+ *
+ * The page CONTENT is a short intro + the [comedy_houston] shortcode, so the
+ * event listings on these pages stay live via the plugin — the pages only
+ * need re-syncing when the copy in the config files changes.
+ */
+
+"use strict";
+
+const fs = require("fs");
+const path = require("path");
+const https = require("https");
+const http = require("http");
+
+const WP_SITE_URL = (process.env.WP_SITE_URL || "").replace(/\/+$/, "");
+const WP_APP_USER = process.env.WP_APP_USER || "";
+const WP_APP_PASSWORD = process.env.WP_APP_PASSWORD || "";
+
+const ROOT = path.resolve(__dirname, "..");
+const LANDING_CONFIG = path.join(ROOT, "config", "landing-pages.json");
+const VENUES_CONFIG = path.join(ROOT, "config", "venues.json");
+
+const REQUEST_TIMEOUT_MS = 30_000;
+
+function wpRequest(method, apiPath, body) {
+  return new Promise((resolve, reject) => {
+    const url = new URL(WP_SITE_URL + apiPath);
+    const mod = url.protocol === "http:" ? http : https;
+    const auth = Buffer.from(`${WP_APP_USER}:${WP_APP_PASSWORD}`).toString("base64");
+    const payload = body ? JSON.stringify(body) : null;
+
+    const req = mod.request(
+      url,
+      {
+        method,
+        headers: {
+          Authorization: `Basic ${auth}`,
+          "Content-Type": "application/json",
+          "User-Agent": "ComedyHouston-PageSync/1.0 (+https://comedyhouston.com)",
+          Accept: "application/json",
+          ...(payload ? { "Content-Length": Buffer.byteLength(payload) } : {}),
+        },
+      },
+      (res) => {
+        let data = "";
+        res.on("data", (c) => (data += c));
+        res.on("end", () => {
+          if (res.statusCode >= 200 && res.statusCode < 300) {
+            try {
+              resolve(JSON.parse(data));
+            } catch (e) {
+              reject(new Error(`WP ${method} ${apiPath}: JSON parse error: ${e.message}`));
+            }
+          } else {
+            reject(
+              new Error(
+                `WP ${method} ${apiPath} failed: HTTP ${res.statusCode}\n${data.slice(0, 1000)}`
+              )
+            );
+          }
+        });
+      }
+    );
+    req.setTimeout(REQUEST_TIMEOUT_MS, () => {
+      req.destroy(new Error(`WP ${method} ${apiPath} timed out after ${REQUEST_TIMEOUT_MS}ms`));
+    });
+    req.on("error", reject);
+    if (payload) req.write(payload);
+    req.end();
+  });
+}
+
+/**
+ * Preflight: authenticate and report what this application-password user is
+ * allowed to do. Aborts (throws) if the user cannot publish pages, since
+ * that's this script's whole job.
+ */
+async function preflight() {
+  console.log("Preflight: GET /wp-json/wp/v2/users/me?context=edit ...");
+  const me = await wpRequest("GET", "/wp-json/wp/v2/users/me?context=edit", null);
+  const caps = me.capabilities || {};
+  const interesting = ["publish_pages", "edit_pages", "publish_posts", "upload_files", "unfiltered_html", "manage_options"];
+  console.log(`  Authenticated as "${me.name}" (id=${me.id}, slug=${me.slug})`);
+  console.log(`  Roles: ${(me.roles || []).join(", ") || "(none reported)"}`);
+  console.log("  Capabilities of interest:");
+  for (const cap of interesting) {
+    console.log(`    ${cap}: ${caps[cap] ? "YES" : "no"}`);
+  }
+  if (!caps.publish_pages) {
+    throw new Error(
+      "This WP user lacks the publish_pages capability — cannot sync landing/venue pages. " +
+        "Grant the user an Editor/Administrator role, or fall back to posts."
+    );
+  }
+  return me;
+}
+
+async function findPageBySlug(slug) {
+  const found = await wpRequest(
+    "GET",
+    `/wp-json/wp/v2/pages?slug=${encodeURIComponent(slug)}&status=publish,draft,future,private`,
+    null
+  );
+  return Array.isArray(found) && found.length > 0 ? found[0] : null;
+}
+
+/**
+ * Create or update (by slug) a WordPress page.
+ * Returns the page object from the WP response.
+ */
+async function syncPage({ slug, title, content, parent = 0, metaTitle, metaDescription, schemaGraph }) {
+  const pageData = {
+    title,
+    content,
+    status: "publish",
+    slug,
+    comment_status: "closed",
+    parent,
+  };
+  if (metaTitle) pageData.ch_meta_title = metaTitle;
+  if (metaDescription) pageData.ch_meta_description = metaDescription;
+  if (schemaGraph) pageData.ch_schema_graph = JSON.stringify(schemaGraph);
+
+  const existing = await findPageBySlug(slug);
+  let page;
+  if (existing) {
+    page = await wpRequest("POST", `/wp-json/wp/v2/pages/${existing.id}`, pageData);
+    console.log(`  Updated  /${slug}/ (ID ${page.id}): ${page.link}`);
+  } else {
+    page = await wpRequest("POST", "/wp-json/wp/v2/pages", pageData);
+    console.log(`  Created  /${slug}/ (ID ${page.id}): ${page.link}`);
+  }
+  return page;
+}
+
+/** Cross-link block appended to each landing page (excluding itself). */
+function landingCrossLinks(pages, selfSlug) {
+  const links = pages
+    .filter((p) => p.slug !== selfSlug)
+    .map((p) => `<a href="/${p.slug}/">${escapeHTML(p.title)}</a>`)
+    .join(" &middot; ");
+  return `<p class="ch-landing-crosslinks"><em>More Houston comedy: ${links} &middot; <a href="/">Every upcoming show</a></em></p>`;
+}
+
+function escapeHTML(str) {
+  return String(str || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+async function syncLandingPages() {
+  if (!fs.existsSync(LANDING_CONFIG)) {
+    console.log("No config/landing-pages.json — skipping landing pages.");
+    return [];
+  }
+  const config = JSON.parse(fs.readFileSync(LANDING_CONFIG, "utf8"));
+  const pages = config.pages || [];
+  console.log(`\nSyncing ${pages.length} landing page(s)...`);
+
+  const results = [];
+  for (const p of pages) {
+    const content = `${p.intro_html}\n\n${p.shortcode}\n\n${landingCrossLinks(pages, p.slug)}`;
+    try {
+      const page = await syncPage({
+        slug: p.slug,
+        title: p.title,
+        content,
+        metaTitle: p.meta_title,
+        metaDescription: p.meta_description,
+      });
+      results.push({ slug: p.slug, link: page.link, ok: true });
+    } catch (err) {
+      console.error(`  ERROR syncing /${p.slug}/: ${err.message}`);
+      results.push({ slug: p.slug, ok: false, error: err.message });
+    }
+  }
+  return results;
+}
+
+/** Build LocalBusiness JSON-LD for a venue (used by venue pages). */
+function buildVenueSchema(venue) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": venue.schema_type || "ComedyClub",
+    name: venue.name,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: venue.address.street,
+      addressLocality: venue.address.locality || "Houston",
+      addressRegion: venue.address.region || "TX",
+      postalCode: venue.address.postal,
+      addressCountry: "US",
+    },
+  };
+  if (venue.website) schema.url = venue.website;
+  if (venue.phone) schema.telephone = venue.phone;
+  if (venue.same_as && venue.same_as.length > 0) schema.sameAs = venue.same_as;
+  return schema;
+}
+
+async function syncVenuePages() {
+  if (!fs.existsSync(VENUES_CONFIG)) {
+    console.log("No config/venues.json — skipping venue pages.");
+    return [];
+  }
+  const config = JSON.parse(fs.readFileSync(VENUES_CONFIG, "utf8"));
+  const venues = (config.venues || []).filter((v) => v.page && v.page.enabled !== false);
+  if (venues.length === 0) {
+    console.log("No venues with pages enabled — skipping venue pages.");
+    return [];
+  }
+
+  console.log(`\nSyncing venues parent page + ${venues.length} venue page(s)...`);
+
+  // Parent page /venues/ so children live at /venues/{slug}/.
+  const venueLinks = venues
+    .map((v) => `<li><a href="/venues/${v.slug}/">${escapeHTML(v.name)}</a></li>`)
+    .join("\n");
+  const parent = await syncPage({
+    slug: "venues",
+    title: "Houston Comedy Venues",
+    content:
+      `<p>Every comedy club and venue we track in Houston — showtimes, ticket links, and what to know before you go.</p>\n<ul>\n${venueLinks}\n</ul>`,
+    metaTitle: "Houston Comedy Clubs & Venues | Comedy Houston",
+    metaDescription:
+      "Guides to every comedy club in Houston — Houston Improv, Punch Line, The Secret Group, The Riot, The Den — with upcoming shows, tickets, and venue info.",
+  });
+
+  const results = [];
+  for (const v of venues) {
+    const p = v.page;
+    const shortcode = `[comedy_houston venue="${v.name}" show_hero="false" show_controls="false"]`;
+    const content = [
+      p.description_html,
+      `<h2>Upcoming shows at ${escapeHTML(v.name)}</h2>`,
+      shortcode,
+      `<p class="ch-landing-crosslinks"><em>More Houston comedy: <a href="/venues/">All venues</a> &middot; <a href="/tonight/">Tonight</a> &middot; <a href="/this-weekend/">This weekend</a> &middot; <a href="/">Every upcoming show</a></em></p>`,
+    ].join("\n\n");
+
+    try {
+      const page = await syncPage({
+        slug: v.slug,
+        title: p.title || `${v.name} — Shows, Tickets & Info`,
+        content,
+        parent: parent.id,
+        metaTitle: p.meta_title || `${v.name} — Shows, Tickets & Info | Comedy Houston`,
+        metaDescription: p.meta_description || "",
+        schemaGraph: v.address && v.address.street ? buildVenueSchema(v) : null,
+      });
+      results.push({ slug: `venues/${v.slug}`, link: page.link, ok: true });
+    } catch (err) {
+      console.error(`  ERROR syncing /venues/${v.slug}/: ${err.message}`);
+      results.push({ slug: `venues/${v.slug}`, ok: false, error: err.message });
+    }
+  }
+  return results;
+}
+
+async function main() {
+  console.log("=== Comedy Houston — WordPress Page Sync ===");
+  console.log(`Time: ${new Date().toISOString()}`);
+
+  if (!WP_SITE_URL || !WP_APP_USER || !WP_APP_PASSWORD) {
+    console.error("Missing WP_SITE_URL / WP_APP_USER / WP_APP_PASSWORD env vars.");
+    process.exit(1);
+  }
+
+  await preflight();
+
+  const landing = await syncLandingPages();
+  const venuesRes = await syncVenuePages();
+
+  const all = [...landing, ...venuesRes];
+  const failed = all.filter((r) => !r.ok);
+  console.log(`\nDone: ${all.length - failed.length}/${all.length} pages synced.`);
+  if (failed.length > 0) {
+    console.error(`Failed: ${failed.map((f) => f.slug).join(", ")}`);
+    process.exit(1);
+  }
+}
+
+if (require.main === module) {
+  main().catch((err) => {
+    console.error("Fatal error:", err.message);
+    process.exit(1);
+  });
+}
+
+module.exports = { buildVenueSchema, landingCrossLinks };

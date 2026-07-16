@@ -1,0 +1,40 @@
+name: Manage WordPress Pages
+
+# Syncs the SEO landing pages (config/landing-pages.json) and venue pages
+# (config/venues.json) to WordPress. Pages embed the [comedy_houston]
+# shortcode, so their event listings stay live without re-syncing — run this
+# only after editing the config copy (or to create the pages the first time).
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: manage-pages
+  cancel-in-progress: false
+
+env:
+  TZ: America/Chicago
+
+jobs:
+  sync-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Sync pages to WordPress
+        env:
+          WP_SITE_URL: ${{ secrets.WP_SITE_URL }}
+          WP_APP_USER: ${{ secrets.WP_APP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+        run: node scripts/manage-wp-pages.js

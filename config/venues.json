@@ -1,0 +1,104 @@
+{
+  "_readme": [
+    "Single source of truth for venue data. Consumed by:",
+    "  - scripts/fetch-events.js  — `aliases` are merged into venue-name normalization",
+    "  - scripts/manage-wp-pages.js — creates/updates /venues/{slug}/ pages (page.*)",
+    "  - wordpress/comedy-houston.php — fetches this file from GitHub raw for",
+    "    JSON-LD venue addresses and for linking event-card venue names to venue pages",
+    "",
+    "Addresses were hand-verified against the plugin's existing map. `website`",
+    "is left empty where unverified — fill it in and re-run the Manage",
+    "WordPress Pages workflow. LocalBusiness schema is only emitted for",
+    "venues with a street address, so TODO-address venues degrade gracefully.",
+    "Set page.enabled=false to stop syncing a venue's page (it is never",
+    "deleted automatically)."
+  ],
+  "venues": [
+    {
+      "name": "Houston Improv",
+      "slug": "houston-improv",
+      "aliases": [
+        "Improv Comedy Club- Houston",
+        "Improv Comedy Club - Houston",
+        "Improv Comedy Club-Houston",
+        "Improv Comedy Club Houston",
+        "Houston Improv Comedy Club",
+        "The Houston Improv"
+      ],
+      "address": { "street": "7620 Katy Fwy #431", "locality": "Houston", "region": "TX", "postal": "77024" },
+      "website": "",
+      "schema_type": "ComedyClub",
+      "page": {
+        "enabled": true,
+        "title": "Houston Improv — Shows, Tickets & Info",
+        "meta_title": "Houston Improv — Shows, Tickets & Info | Comedy Houston",
+        "meta_description": "Upcoming shows at the Houston Improv with prices and direct ticket links, updated twice daily — plus location and venue info for Houston's biggest comedy club.",
+        "description_html": "<p>The Houston Improv is the city's stop on the nationwide Improv comedy club circuit, located at 7620 Katy Fwy #431 in the Marq*E entertainment district on the Katy Freeway. It's the room where the biggest national touring headliners play when they come through Houston — the calendar below regularly features comics you know from Netflix specials, late-night TV, and the big podcasts, often for multi-night weekend runs with early and late shows.</p>\n<p>Tickets for most shows are sold through Ticketmaster and the club's box office, and headliner weekends sell out routinely — if a Friday or Saturday name show is on your list, book early rather than at the door.</p>\n<p><!-- TODO(owner): verify and fill in — food/drink minimum policy, age restrictions (18+?), parking specifics (Marq*E garage?), box office hours, official website URL --></p>"
+      }
+    },
+    {
+      "name": "Punch Line Houston",
+      "slug": "punch-line-houston",
+      "aliases": ["Punch Line Comedy Club Houston", "Punch Line Comedy Club - Houston", "The Punch Line Houston"],
+      "address": { "street": "2930 Sage Rd", "locality": "Houston", "region": "TX", "postal": "77056" },
+      "website": "",
+      "schema_type": "ComedyClub",
+      "page": {
+        "enabled": true,
+        "title": "Punch Line Houston — Shows, Tickets & Info",
+        "meta_title": "Punch Line Houston — Shows, Tickets & Info | Comedy Houston",
+        "meta_description": "Every upcoming show at Punch Line Comedy Club Houston — headliners, showtimes, prices, and direct ticket links, updated twice daily.",
+        "description_html": "<p>Punch Line Houston is a dedicated stand-up club at 2930 Sage Rd in the Galleria area, and one of the busiest rooms in the city — most weeks it runs shows Wednesday through Sunday, mixing national touring headliners with strong club regulars and Spanish-language shows (look for the \"en Español\" listings). It's the kind of room where you can catch a Daily Show correspondent on Friday and a rising club comic finding their hour on Sunday.</p>\n<p>Tickets are sold through Ticketmaster; weekend headliner shows frequently sell out, and seating is typically assigned at the door by arrival time.</p>\n<p><!-- TODO(owner): verify and fill in — drink/food minimum policy, age restriction, parking (Galleria-area garage/lot?), seating policy confirmation, official website URL --></p>"
+      }
+    },
+    {
+      "name": "The Secret Group",
+      "slug": "the-secret-group",
+      "aliases": ["Secret Group", "The Secret Group Houston"],
+      "address": { "street": "2101 Polk St", "locality": "Houston", "region": "TX", "postal": "77003" },
+      "website": "",
+      "schema_type": "ComedyClub",
+      "page": {
+        "enabled": true,
+        "title": "The Secret Group — Shows, Tickets & Info",
+        "meta_title": "The Secret Group — Shows, Tickets & Info | Comedy Houston",
+        "meta_description": "Upcoming comedy at The Secret Group in EaDo Houston — alternative touring comics, showcases, and open mics with prices and ticket links, updated twice daily.",
+        "description_html": "<p>The Secret Group is an independent comedy venue and bar at 2101 Polk St in EaDo (East Downtown), and the center of gravity for Houston's alternative comedy scene. Across its rooms you'll find touring alt-comedy and podcast acts, local showcases, themed shows, and some of the most consistent open mics in the city — there's comedy on the calendar most nights of the week.</p>\n<p>The venue also hosts non-comedy nights (music, karaoke, dance parties); we filter those out automatically, so the list below is only the comedy. Tickets for most shows are sold through Eventbrite, and plenty of the weekly programming is cheap or free.</p>\n<p><!-- TODO(owner): verify and fill in — age policy per room (21+ bar shows?), parking situation in EaDo, food options, official website URL --></p>"
+      }
+    },
+    {
+      "name": "The Riot Comedy Club",
+      "slug": "the-riot-comedy-club",
+      "aliases": [
+        "The Riot Comedy Club Upstairs at Rudyards",
+        "The Riot Comedy Club Upstairs at Rudyard's",
+        "The Riot"
+      ],
+      "address": { "street": "2010 Waugh Dr", "locality": "Houston", "region": "TX", "postal": "77006" },
+      "website": "",
+      "schema_type": "ComedyClub",
+      "page": {
+        "enabled": true,
+        "title": "The Riot Comedy Club — Shows, Tickets & Info",
+        "meta_title": "The Riot Comedy Club — Shows, Tickets & Info | Comedy Houston",
+        "meta_description": "Upcoming shows at The Riot Comedy Club in Montrose — weekend headliner showcases with touring comics, plus prices and ticket links, updated twice daily.",
+        "description_html": "<p>The Riot Comedy Club runs in the upstairs room at Rudyard's, the long-standing Montrose pub at 2010 Waugh Dr. Its bread and butter is tightly-booked weekend headliner showcases — touring comics with credits like Kill Tony, Don't Tell Comedy, and late-night TV, backed by strong Houston openers, in a low-ceiling room that comics love because the laughs have nowhere to go.</p>\n<p>Tickets are sold through Eventbrite and the shows are intimate by design, so popular weekends genuinely do sell out. The Riot also produces occasional shows at other Houston venues — those appear in our listings under the venue actually hosting them.</p>\n<p><!-- TODO(owner): verify and fill in — age policy (Rudyard's is a bar — 21+?), drink minimums, parking/street-parking notes in Montrose, official website URL --></p>"
+      }
+    },
+    {
+      "name": "The Den Comedy Club",
+      "slug": "the-den-comedy-club",
+      "aliases": ["The Den", "Den Comedy Club"],
+      "address": { "street": "", "locality": "Houston", "region": "TX", "postal": "" },
+      "website": "",
+      "schema_type": "ComedyClub",
+      "page": {
+        "enabled": true,
+        "title": "The Den Comedy Club — Shows, Tickets & Info",
+        "meta_title": "The Den Comedy Club — Shows, Tickets & Info | Comedy Houston",
+        "meta_description": "Upcoming shows at The Den Comedy Club in Houston — intimate speakeasy-style stand-up shows with prices and ticket links, updated twice daily.",
+        "description_html": "<p>The Den Comedy Club is a speakeasy-style stand-up room in Houston — a small, intimate space where the crowd is close enough that every show feels like a private set. The lineup leans on curated showcases of Houston's working comics with touring guests mixed in, and the smaller room means shows regularly sell out on word of mouth alone.</p>\n<p>Tickets are sold through Eventbrite; check the listings below for what's coming up.</p>\n<p><!-- TODO(owner): The Den's street address is not filled in yet (config/venues.json) — LocalBusiness schema is skipped until it is. Also verify: exact location/neighborhood, age policy, BYOB or bar service, parking, official website/Instagram --></p>"
+      }
+    }
+  ]
+}

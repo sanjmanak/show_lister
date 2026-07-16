@@ -1,0 +1,44 @@
+{
+  "_readme": [
+    "Landing pages synced to WordPress by scripts/manage-wp-pages.js",
+    "(run via the 'Manage WordPress Pages' workflow_dispatch action).",
+    "Each entry creates/updates a WP page by slug. intro_html is placed",
+    "above the [comedy_houston] shortcode. meta_title/meta_description are",
+    "stored in page meta and emitted by the Comedy Houston plugin when no",
+    "SEO plugin is active. Edit copy here, then re-run the workflow."
+  ],
+  "pages": [
+    {
+      "slug": "tonight",
+      "title": "Comedy Shows in Houston Tonight",
+      "meta_title": "Comedy Shows in Houston Tonight | Comedy Houston",
+      "meta_description": "Every stand-up comedy show in Houston tonight — headliners, showcases, and open mics across every club, with showtimes, prices, and direct ticket links. Updated twice daily.",
+      "intro_html": "<p>Looking for comedy shows in Houston tonight? This list covers every stand-up show happening across the city — touring headliners at the Improv and Punch Line, showcases at The Secret Group and The Riot, speakeasy shows at The Den, and the free open mics where Houston's next headliners are working out new material. We update this page twice a day with showtimes, prices, and direct ticket links, so what you see is what's actually still on sale. Most weeknight shows start between 7:30 and 8:00, and the late shows kick off after 10 if your night's just getting started.</p>",
+      "shortcode": "[comedy_houston filter=\"today\" show_hero=\"false\" show_controls=\"false\"]"
+    },
+    {
+      "slug": "this-weekend",
+      "title": "Comedy Shows in Houston This Weekend",
+      "meta_title": "Comedy Shows in Houston This Weekend | Comedy Houston",
+      "meta_description": "Every comedy show in Houston this weekend in one place — Friday, Saturday, and Sunday shows at every club, with prices, showtimes, and ticket links.",
+      "intro_html": "<p>Every comedy show happening in Houston this weekend, all in one place. Friday and Saturday nights are when the big touring names roll through the Improv and Punch Line, but the weekend runs deeper than that — late-night showcases, uncensored after-hours shows, Sunday night lineups, and free rooms that don't cost you anything but the drink in your hand. We pull listings from every club and independent room in the city and update twice daily, so you can compare showtimes and prices without opening six different websites. Planning a date night or a group outing? Grab tickets early — weekend headliner shows in Houston sell out more often than you'd think.</p>",
+      "shortcode": "[comedy_houston filter=\"weekend\" show_hero=\"false\" show_controls=\"false\"]"
+    },
+    {
+      "slug": "free",
+      "title": "Free Comedy Shows in Houston",
+      "meta_title": "Free Comedy Shows in Houston | Comedy Houston",
+      "meta_description": "Every free comedy show in Houston — weekly showcases, bar shows, and open mics that cost nothing to attend. Updated twice daily with times and locations.",
+      "intro_html": "<p>Houston has one of the best free comedy scenes in the country — you just have to know where to look. Every week there are free shows and open mics across the city: bar showcases where working comics sharpen their best material, and open mics where you might catch a future headliner's first great set. Free doesn't mean an afterthought, either; several of these rooms are run by the same comics and producers behind the ticketed shows downtown. This page tracks every free comedy show in Houston, updated twice daily. Most are 21+, most want you to buy a drink, and all of them want you in a seat laughing.</p>",
+      "shortcode": "[comedy_houston type=\"free\" show_hero=\"false\" show_controls=\"false\"]"
+    },
+    {
+      "slug": "open-mics",
+      "title": "Comedy Open Mics in Houston",
+      "meta_title": "Comedy Open Mics in Houston — Full Weekly List | Comedy Houston",
+      "meta_description": "The complete list of comedy open mics in Houston, updated twice daily — where to watch, where to perform, and when sign-up starts, every night of the week.",
+      "intro_html": "<p>This is the complete, current list of comedy open mics in Houston — whether you want to watch comedy in its rawest form or get on stage yourself. The city runs mics nearly every night of the week, from long-running rooms at The Secret Group to bar mics scattered across town, and each one has its own personality, sign-up rules, and crowd. If you're a new comic, open mics are where you start: show up early, get your name on the list, and keep your set tight. If you're an audience member, admission is free and the comedy is unpredictable in the best way. We update this list twice daily so you never trek across town to a mic that moved or died.</p>",
+      "shortcode": "[comedy_houston type=\"open_mic\" show_hero=\"false\" show_controls=\"false\"]"
+    }
+  ]
+}

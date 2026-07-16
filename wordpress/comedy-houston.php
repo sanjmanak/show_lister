@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.4.3
+ * Version: 2.5.0
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.4.3';
+    const VERSION      = '2.5.0';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -33,6 +33,10 @@ class Comedy_Houston_Plugin {
         'tm_affiliate'        => '',
         'eb_affiliate'        => '',
         'track_clicks'        => '1',
+        'org_name'            => 'Comedy Houston',
+        'org_logo'            => '',
+        // One URL per line — social profiles for Organization sameAs.
+        'org_sameas'          => "https://www.instagram.com/comedyhoustontx/",
     ];
 
     public function __construct() {
@@ -48,12 +52,28 @@ class Comedy_Houston_Plugin {
         add_action('init', [$this, 'register_redirect_endpoint']);
         add_action('template_redirect', [$this, 'handle_redirect']);
 
+        // Keep crawlers away from ?ch_go= redirect URLs (crawl budget).
+        // Only affects WordPress's virtual robots.txt — if a physical
+        // robots.txt file exists on the server, this filter never runs and
+        // the disallow rules must be added to that file by hand.
+        add_filter('robots_txt', [$this, 'filter_robots_txt'], 10, 2);
+
         // Comedian-post schema: receive via REST custom field, emit from wp_head.
         // Keeps the <script type="application/ld+json"> tag out of post_content
         // entirely so wp_kses_post can't strip it on publish and so content
         // edits in Gutenberg can't corrupt the JSON graph.
         add_action('rest_api_init', [$this, 'register_comedian_schema_field']);
         add_action('wp_head', [$this, 'emit_comedian_schema_head'], 20);
+
+        // Site-wide Organization JSON-LD (skipped when an SEO plugin that
+        // already emits Organization schema is active).
+        add_action('wp_head', [$this, 'emit_organization_schema'], 5);
+
+        // Per-page SEO title/description (set via REST by the landing-page
+        // sync script; skipped when an SEO plugin is active).
+        add_action('rest_api_init', [$this, 'register_page_seo_fields']);
+        add_filter('pre_get_document_title', [$this, 'filter_document_title'], 20);
+        add_action('wp_head', [$this, 'emit_meta_description'], 1);
 
         // Create clicks table on activation
         register_activation_hook(__FILE__, [$this, 'create_clicks_table']);
@@ -109,6 +129,10 @@ class Comedy_Houston_Plugin {
             'show_sort'         => 'true',
             'show_open_mic'     => 'true',
             'type'              => '',
+            // Initial render window in days for the unfiltered ("all") view.
+            // The full list (hundreds of events through +90 days) is only
+            // rendered after the visitor clicks "Show all". 0 disables.
+            'initial_days'      => '14',
         ], $atts, self::SHORTCODE);
 
         $scheme = !empty($atts['theme']) ? $atts['theme'] : $opts['color_scheme'];
@@ -127,6 +151,7 @@ class Comedy_Houston_Plugin {
             'source'   => sanitize_text_field($atts['source']),
             'showOpenMic' => strtolower($atts['show_open_mic']) !== 'false',
             'type' => sanitize_text_field($atts['type']),
+            'initialDays' => max(0, intval($atts['initial_days'])),
         ];
 
         // Fetch the manifest once so we can (a) pass a slug-lookup map into
@@ -161,6 +186,7 @@ class Comedy_Houston_Plugin {
             'redirectBase'     => esc_url($redirect_base),
             'shortcodeParams'  => $shortcode_params,
             'comedianPosts'    => $js_comedian_posts,
+            'venuePages'       => $this->build_venue_pages_map(),
         ];
 
         wp_add_inline_script(
@@ -179,7 +205,28 @@ class Comedy_Houston_Plugin {
         if ($events_data && !empty($events_data['events'])) {
             $filtered = $this->filter_events($events_data['events'], $atts);
             $ch_ssr_count = count($filtered);
-            $ch_ssr_html = $this->render_ssr_html($filtered, $opts, $redirect_base, $manifest_posts);
+
+            // Cap the initial "all" render to the next N days; the tail is
+            // revealed by the "Show all" button (JS). JSON-LD below still
+            // covers the full filtered list so schema is not affected.
+            $initial_days = max(0, intval($atts['initial_days']));
+            $ssr_events = $filtered;
+            if ($initial_days > 0 && $atts['filter'] === 'all') {
+                $cutoff = wp_date('Y-m-d', strtotime('+' . $initial_days . ' days'));
+                $windowed = array_values(array_filter($filtered, function ($ev) use ($cutoff) {
+                    return ($ev['date'] ?? '') <= $cutoff;
+                }));
+                // Don't window down to an empty page (e.g. a quiet fortnight).
+                if (!empty($windowed) && count($windowed) < count($filtered)) {
+                    $ssr_events = $windowed;
+                }
+            }
+
+            $ch_ssr_html = $this->render_ssr_html($ssr_events, $opts, $redirect_base, $manifest_posts);
+            if (count($ssr_events) < $ch_ssr_count) {
+                $ch_ssr_html .= '<div class="ch-show-all-wrap"><button type="button" class="ch-show-all-btn">'
+                    . 'Show all ' . (int) $ch_ssr_count . ' upcoming shows</button></div>';
+            }
             $ch_ssr_jsonld = $this->render_jsonld($filtered);
             if (!empty($events_data['last_updated'])) {
                 $ts = strtotime($events_data['last_updated']);
@@ -216,6 +263,13 @@ class Comedy_Houston_Plugin {
     public function handle_redirect() {
         if (empty($_GET[self::REDIRECT_VAR])) {
             return;
+        }
+
+        // Every ?ch_go= URL is a tracking redirect — it must never be indexed
+        // (each base64 payload is a unique URL, so crawlers would otherwise
+        // burn crawl budget on thousands of duplicate redirect URLs).
+        if (!headers_sent()) {
+            header('X-Robots-Tag: noindex, nofollow', true);
         }
 
         $payload = sanitize_text_field(wp_unslash($_GET[self::REDIRECT_VAR]));
@@ -272,6 +326,23 @@ class Comedy_Houston_Plugin {
         // Redirect — use wp_redirect since it's an external URL
         wp_redirect(esc_url_raw($target_url), 302);
         exit;
+    }
+
+    /**
+     * Append ?ch_go= disallow rules to WordPress's virtual robots.txt.
+     * Every redirect payload is a unique URL; without this, crawlers spend
+     * their budget on thousands of 302s instead of real content pages.
+     */
+    public function filter_robots_txt($output, $public) {
+        if (!$public) {
+            return $output;
+        }
+        $rules = "\n# Comedy Houston: ticket-click redirect URLs (tracking 302s, not content)\n"
+            . "User-agent: *\n"
+            . "Disallow: /?ch_go=\n"
+            . "Disallow: /*?ch_go=\n"
+            . "Disallow: /*&ch_go=\n";
+        return $output . $rules;
     }
 
     /**
@@ -363,7 +434,9 @@ class Comedy_Houston_Plugin {
      * can PATCH/POST the post, they can set this field.
      */
     public function register_comedian_schema_field() {
-        register_rest_field('post', 'ch_schema_graph', [
+        // Registered for posts (comedian/roundup schema) AND pages (venue
+        // pages carry LocalBusiness schema through the same field).
+        register_rest_field(['post', 'page'], 'ch_schema_graph', [
             'schema' => [
                 'description' => 'Schema.org @graph JSON for this comedian post (JSON-encoded string).',
                 'type'        => 'string',
@@ -421,16 +494,18 @@ class Comedy_Houston_Plugin {
      * never drops below the current baseline.
      */
     public function emit_comedian_schema_head() {
-        if (!is_singular('post')) {
+        if (!is_singular(['post', 'page'])) {
             return;
         }
         $post = get_queried_object();
         if (!$post || empty($post->ID)) {
             return;
         }
-        // Scope to the comedy-shows category so we don't pollute the schema
-        // graph of unrelated posts that might end up with this meta set.
-        if (!has_category('comedy-shows', $post)) {
+        // Posts: scope to the comedy-shows category so we don't pollute the
+        // schema graph of unrelated posts that might end up with this meta
+        // set. Pages (venue pages) have no categories — the meta itself is
+        // the opt-in.
+        if ($post->post_type === 'post' && !has_category('comedy-shows', $post)) {
             return;
         }
         $json = get_post_meta($post->ID, '_ch_schema_graph', true);
@@ -449,6 +524,124 @@ class Comedy_Houston_Plugin {
             return;
         }
         echo "\n<script type=\"application/ld+json\">" . $clean . "</script>\n";
+    }
+
+    // =========================================================================
+    // PER-PAGE SEO TITLE / META DESCRIPTION
+    // =========================================================================
+
+    /**
+     * REST fields `ch_meta_title` and `ch_meta_description` on pages and
+     * posts. The landing-page sync script (scripts/manage-wp-pages.js) sets
+     * these when it creates /tonight/, /this-weekend/, /free/, /open-mics/
+     * and the venue pages. Stored in post meta; emitted below when no SEO
+     * plugin is active (an active SEO plugin owns titles/descriptions).
+     */
+    public function register_page_seo_fields() {
+        foreach (['ch_meta_title' => '_ch_meta_title', 'ch_meta_description' => '_ch_meta_description'] as $field => $meta_key) {
+            register_rest_field(['page', 'post'], $field, [
+                'schema' => [
+                    'description' => 'SEO ' . str_replace('ch_meta_', '', $field) . ' for this page.',
+                    'type'        => 'string',
+                    'context'     => ['view', 'edit'],
+                ],
+                'get_callback' => function ($post_arr) use ($meta_key) {
+                    $val = get_post_meta($post_arr['id'], $meta_key, true);
+                    return is_string($val) ? $val : '';
+                },
+                'update_callback' => function ($value, $post) use ($meta_key) {
+                    if (!is_string($value)) {
+                        return new WP_Error('ch_meta_invalid_type', 'Value must be a string.', ['status' => 400]);
+                    }
+                    update_post_meta($post->ID, $meta_key, sanitize_text_field($value));
+                    return true;
+                },
+            ]);
+        }
+    }
+
+    public function filter_document_title($title) {
+        if ($this->seo_plugin_handles_schema() || !is_singular(['page', 'post'])) {
+            return $title;
+        }
+        $post = get_queried_object();
+        if (!$post || empty($post->ID)) {
+            return $title;
+        }
+        $custom = get_post_meta($post->ID, '_ch_meta_title', true);
+        return (is_string($custom) && $custom !== '') ? $custom : $title;
+    }
+
+    public function emit_meta_description() {
+        if ($this->seo_plugin_handles_schema() || !is_singular(['page', 'post'])) {
+            return;
+        }
+        $post = get_queried_object();
+        if (!$post || empty($post->ID)) {
+            return;
+        }
+        $desc = get_post_meta($post->ID, '_ch_meta_description', true);
+        if (is_string($desc) && $desc !== '') {
+            echo '<meta name="description" content="' . esc_attr($desc) . '">' . "\n";
+        }
+    }
+
+    // =========================================================================
+    // ORGANIZATION SCHEMA (site-wide)
+    // =========================================================================
+
+    /**
+     * True when an active SEO plugin already emits Organization/BlogPosting
+     * schema — in that case we stay silent to avoid duplicate entities.
+     * (Google Site Kit is NOT in this list: it handles analytics/search
+     * console, not schema markup.)
+     */
+    private function seo_plugin_handles_schema() {
+        return defined('WPSEO_VERSION')      // Yoast SEO
+            || class_exists('RankMath')      // Rank Math
+            || defined('AIOSEO_VERSION')     // All in One SEO
+            || defined('SEOPRESS_VERSION');  // SEOPress
+    }
+
+    /**
+     * Emit Organization JSON-LD on every front-end page. Name, logo, and
+     * sameAs profiles are configurable at Settings → Comedy Houston, so the
+     * markup stays config-driven rather than hardcoded.
+     */
+    public function emit_organization_schema() {
+        if (is_admin() || $this->seo_plugin_handles_schema()) {
+            return;
+        }
+        $opts = $this->get_options();
+
+        $org = [
+            '@context' => 'https://schema.org',
+            '@type'    => 'Organization',
+            '@id'      => home_url('/') . '#organization',
+            'name'     => !empty($opts['org_name']) ? $opts['org_name'] : get_bloginfo('name'),
+            'url'      => home_url('/'),
+        ];
+
+        $logo = !empty($opts['org_logo']) ? $opts['org_logo'] : get_site_icon_url(512);
+        if (!empty($logo)) {
+            $org['logo'] = $logo;
+        }
+
+        // sameAs: one URL per line in settings; only http(s) URLs are kept.
+        $same_as = [];
+        foreach (preg_split('/\r\n|\r|\n/', (string) ($opts['org_sameas'] ?? '')) as $line) {
+            $line = trim($line);
+            if ($line !== '' && preg_match('~^https?://~i', $line)) {
+                $same_as[] = esc_url_raw($line);
+            }
+        }
+        if (!empty($same_as)) {
+            $org['sameAs'] = array_values($same_as);
+        }
+
+        echo "\n<script type=\"application/ld+json\">"
+            . wp_json_encode($org, JSON_UNESCAPED_SLASHES)
+            . "</script>\n";
     }
 
     // =========================================================================
@@ -554,6 +747,95 @@ class Comedy_Houston_Plugin {
     }
 
     /**
+     * Fetch config/venues.json from GitHub with transient caching. The venue
+     * registry drives JSON-LD addresses and event-card venue links; failures
+     * return [] and everything falls back to the hardcoded address map.
+     */
+    public function fetch_venues_data() {
+        $opts = $this->get_options();
+        $cache_key = 'ch_venues_' . md5($opts['github_user'] . '_' . $opts['repo']);
+
+        $cached = get_transient($cache_key);
+        if ($cached !== false) {
+            return $cached;
+        }
+
+        $url = sprintf(
+            'https://raw.githubusercontent.com/%s/%s/main/config/venues.json',
+            sanitize_text_field($opts['github_user']),
+            sanitize_text_field($opts['repo'])
+        );
+
+        $response = wp_remote_get($url, ['timeout' => 10]);
+        if (is_wp_error($response) || wp_remote_retrieve_response_code($response) !== 200) {
+            set_transient($cache_key, [], 5 * MINUTE_IN_SECONDS);
+            return [];
+        }
+
+        $data = json_decode(wp_remote_retrieve_body($response), true);
+        if (!$data || empty($data['venues']) || !is_array($data['venues'])) {
+            set_transient($cache_key, [], 5 * MINUTE_IN_SECONDS);
+            return [];
+        }
+
+        set_transient($cache_key, $data['venues'], HOUR_IN_SECONDS);
+        return $data['venues'];
+    }
+
+    /**
+     * Look up a venue registry entry by (aliased) name. Returns the venue
+     * array from config/venues.json or null. Index is built once per request.
+     */
+    private function venue_registry_entry($venue_name) {
+        static $index = null;
+        if ($index === null) {
+            $index = [];
+            foreach ($this->fetch_venues_data() as $v) {
+                if (empty($v['name'])) continue;
+                $index[$this->normalize_venue_key($v['name'])] = $v;
+                foreach (($v['aliases'] ?? []) as $alias) {
+                    $index[$this->normalize_venue_key($alias)] = $v;
+                }
+            }
+        }
+        $key = $this->normalize_venue_key($venue_name);
+        return $index[$key] ?? null;
+    }
+
+    /**
+     * venue name (and each alias) → venue page URL map, passed to the JS
+     * renderer so client-side cards can link venue names too.
+     */
+    public function build_venue_pages_map() {
+        $map = [];
+        foreach ($this->fetch_venues_data() as $v) {
+            if (empty($v['name']) || empty($v['slug'])) continue;
+            if (isset($v['page']['enabled']) && !$v['page']['enabled']) continue;
+            $url = home_url('/venues/' . $v['slug'] . '/');
+            $map[$v['name']] = $url;
+            foreach (($v['aliases'] ?? []) as $alias) {
+                $map[$alias] = $url;
+            }
+        }
+        return $map;
+    }
+
+    /**
+     * URL of the venue's /venues/{slug}/ page, or '' when the venue has no
+     * (enabled) page in the registry.
+     */
+    public function venue_page_url($venue_name) {
+        $v = $this->venue_registry_entry($venue_name);
+        if (!$v || empty($v['slug'])) {
+            return '';
+        }
+        if (isset($v['page']['enabled']) && !$v['page']['enabled']) {
+            return '';
+        }
+        return home_url('/venues/' . $v['slug'] . '/');
+    }
+
+    /**
      * Find the comedian post matching an event, if one exists. Used by both
      * the SSR card renderer and passed into JS for client-side render. Match
      * criteria: exact date + fuzzy "comedian name appears in event title".
@@ -640,6 +922,13 @@ class Comedy_Houston_Plugin {
             if (!$show_open_mic && $is_open_mic) continue;
             if ($type_filter === 'open_mic' && !$is_open_mic) continue;
 
+            // type="free": only events with a confirmed $0 price. Events with
+            // unknown pricing (null) are NOT assumed free.
+            if ($type_filter === 'free') {
+                $pm = $ev['price_min'] ?? null;
+                if ($pm === null || floatval($pm) != 0) continue;
+            }
+
             if ($max_price !== null) {
                 $ev_price = $ev['price_min'] ?? null;
                 if ($ev_price !== null && $ev_price != 0 && $ev_price > $max_price) continue;
@@ -704,7 +993,10 @@ class Comedy_Houston_Plugin {
         $age = $ev['age_restriction'] ?? null;
 
         if ($image) {
-            $image_html = '<img src="' . esc_attr($image) . '" alt="' . esc_attr($ev['name'] ?? '') . '" loading="lazy">';
+            // width/height are intrinsic-size hints (the CSS 16:9 box with
+            // object-fit:cover controls display size) — they let the browser
+            // reserve space before the image loads.
+            $image_html = '<img src="' . esc_attr($image) . '" alt="' . esc_attr($ev['name'] ?? '') . '" loading="lazy" decoding="async" width="640" height="360">';
         } else {
             $image_html = '<div class="card-image-placeholder"><span class="venue-icon">&#127908;</span><span class="venue-label">' . $venue . '</span></div>';
         }
@@ -721,8 +1013,11 @@ class Comedy_Houston_Plugin {
             $ticket_link = esc_attr($ticket_url);
         }
 
+        // rel="sponsored nofollow": these are monetized outbound ticket links
+        // (affiliate redirect) — Google requires sponsored/nofollow on paid
+        // links, and it stops PageRank leaking to the ticket vendors.
         $ticket_html = $ticket_url
-            ? '<a class="card-cta" href="' . $ticket_link . '" target="_blank" rel="noopener">Get Tickets <span class="arrow">&rarr;</span></a>'
+            ? '<a class="card-cta" href="' . $ticket_link . '" target="_blank" rel="sponsored nofollow noopener">Get Tickets <span class="arrow">&rarr;</span></a>'
             : '<span class="card-cta" style="opacity:0.5;cursor:default;">Coming Soon</span>';
 
         // Internal link: if this event matches a published comedian post,
@@ -750,7 +1045,13 @@ class Comedy_Houston_Plugin {
         }
         $card .= '</div>';
         $card .= '<h3 class="card-name">' . $name . '</h3>';
-        $card .= '<div class="card-venue">' . $venue . '</div>';
+        // Venue name links to its /venues/{slug}/ page when one exists
+        // (internal links from every event card into the venue pages).
+        $venue_page = $this->venue_page_url($ev['venue'] ?? '');
+        $venue_html = $venue_page
+            ? '<a href="' . esc_attr($venue_page) . '">' . $venue . '</a>'
+            : $venue;
+        $card .= '<div class="card-venue">' . $venue_html . '</div>';
         $card .= '<div class="card-footer"><div class="card-price">' . $price_html . '</div>'
             . $more_info_html . $ticket_html . '</div>';
         $card .= '</div></article>';
@@ -979,6 +1280,20 @@ class Comedy_Houston_Plugin {
      * punctuation normalized. Unknown venues fall back to city/state only.
      */
     private function venue_address($venue_name) {
+        // Registry (config/venues.json fetched from GitHub) wins when it has
+        // a street address; the hardcoded map below is the offline fallback.
+        $entry = $this->venue_registry_entry($venue_name);
+        if ($entry && !empty($entry['address']['street'])) {
+            $a = $entry['address'];
+            return [
+                '@type'           => 'PostalAddress',
+                'streetAddress'   => $a['street'],
+                'addressLocality' => !empty($a['locality']) ? $a['locality'] : 'Houston',
+                'addressRegion'   => !empty($a['region']) ? $a['region'] : 'TX',
+                'addressCountry'  => 'US',
+            ] + (!empty($a['postal']) ? ['postalCode' => $a['postal']] : []);
+        }
+
         $key = $this->normalize_venue_key($venue_name);
 
         $map = [
@@ -1213,6 +1528,18 @@ class Comedy_Houston_Plugin {
         add_settings_field('tm_affiliate', 'Ticketmaster Affiliate ID', [$this, 'field_tm_affiliate'], 'comedy-houston', 'ch_affiliate');
         add_settings_field('eb_affiliate', 'Eventbrite Affiliate ID', [$this, 'field_eb_affiliate'], 'comedy-houston', 'ch_affiliate');
         add_settings_field('track_clicks', 'Log Clicks', [$this, 'field_track_clicks'], 'comedy-houston', 'ch_affiliate');
+
+        // --- SEO / Schema section ---
+        add_settings_section(
+            'ch_seo',
+            'SEO & Schema',
+            function () { echo '<p>Organization structured data emitted site-wide (skipped automatically if Yoast/Rank Math/AIOSEO/SEOPress is active).</p>'; },
+            'comedy-houston'
+        );
+
+        add_settings_field('org_name', 'Organization Name', [$this, 'field_org_name'], 'comedy-houston', 'ch_seo');
+        add_settings_field('org_logo', 'Organization Logo URL', [$this, 'field_org_logo'], 'comedy-houston', 'ch_seo');
+        add_settings_field('org_sameas', 'Social Profiles (sameAs)', [$this, 'field_org_sameas'], 'comedy-houston', 'ch_seo');
     }
 
     public function sanitize_settings($input) {
@@ -1225,6 +1552,9 @@ class Comedy_Houston_Plugin {
         $clean['tm_affiliate'] = sanitize_text_field($input['tm_affiliate'] ?? '');
         $clean['eb_affiliate'] = sanitize_text_field($input['eb_affiliate'] ?? '');
         $clean['track_clicks'] = !empty($input['track_clicks']) ? '1' : '0';
+        $clean['org_name']     = sanitize_text_field($input['org_name'] ?? '');
+        $clean['org_logo']     = esc_url_raw($input['org_logo'] ?? '');
+        $clean['org_sameas']   = sanitize_textarea_field($input['org_sameas'] ?? '');
         return $clean;
     }
 
@@ -1293,6 +1623,33 @@ class Comedy_Houston_Plugin {
             self::OPTION_KEY, checked($opts['track_clicks'], '1', false)
         );
         echo '<p class="description">Logs timestamp, hashed IP, and destination URL. Useful for analytics.</p>';
+    }
+
+    public function field_org_name() {
+        $opts = $this->get_options();
+        printf(
+            '<input type="text" name="%s[org_name]" value="%s" class="regular-text">',
+            self::OPTION_KEY, esc_attr($opts['org_name'])
+        );
+        echo '<p class="description">Used as the Organization <code>name</code> in JSON-LD. Defaults to the site title if empty.</p>';
+    }
+
+    public function field_org_logo() {
+        $opts = $this->get_options();
+        printf(
+            '<input type="url" name="%s[org_logo]" value="%s" class="regular-text" placeholder="https://comedyhouston.com/logo.png">',
+            self::OPTION_KEY, esc_attr($opts['org_logo'])
+        );
+        echo '<p class="description">Square logo, at least 112&times;112px. Falls back to the Site Icon if empty.</p>';
+    }
+
+    public function field_org_sameas() {
+        $opts = $this->get_options();
+        printf(
+            '<textarea name="%s[org_sameas]" rows="4" class="large-text code" placeholder="https://www.instagram.com/comedyhoustontx/">%s</textarea>',
+            self::OPTION_KEY, esc_textarea($opts['org_sameas'])
+        );
+        echo '<p class="description">One URL per line — Instagram, Facebook, X, YouTube, etc. Emitted as the Organization <code>sameAs</code> array.</p>';
     }
 
     public function render_settings_page() {
@@ -1430,7 +1787,8 @@ class Comedy_Houston_Plugin {
                     <tr><td><code>show_venue_filter</code></td><td>true, false — show/hide the venue dropdown</td><td>true</td></tr>
                     <tr><td><code>show_sort</code></td><td>true, false — show/hide the sort dropdown</td><td>true</td></tr>
                     <tr><td><code>show_open_mic</code></td><td>true, false — include/exclude events with &ldquo;open mic&rdquo; in the name</td><td>true</td></tr>
-                    <tr><td><code>type</code></td><td>open_mic — show only events matching this type (filters by name keyword)</td><td><em>all types</em></td></tr>
+                    <tr><td><code>type</code></td><td>open_mic (name contains &ldquo;open mic&rdquo;), free (confirmed $0 shows only)</td><td><em>all types</em></td></tr>
+                    <tr><td><code>initial_days</code></td><td>number — initial render window in days for the &ldquo;all&rdquo; view (0 = no cap); a &ldquo;Show all&rdquo; button reveals the rest</td><td>14</td></tr>
                     <tr><td><code>show_footer</code></td><td>true, false</td><td>true</td></tr>
                 </tbody>
             </table>

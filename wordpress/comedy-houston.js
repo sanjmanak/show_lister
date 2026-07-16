@@ -37,6 +37,10 @@
   // next to "Get Tickets" when an event matches a published post.
   var COMEDIAN_POSTS = Array.isArray(config.comedianPosts) ? config.comedianPosts : [];
 
+  // venue name → /venues/{slug}/ URL map (injected by PHP from
+  // config/venues.json). Venue names on cards link to their venue page.
+  var VENUE_PAGES = config.venuePages || {};
+
   // Shortcode params (locked filters from PHP shortcode attributes)
   var scParams = config.shortcodeParams || {};
 
@@ -52,6 +56,10 @@
     ? scParams.maxPrice : null;
   var showOpenMic = scParams.showOpenMic !== false;
   var typeFilter = scParams.type || "";
+  // Initial render window (days) for the "all" view — the rest of the list
+  // is revealed by the "Show all" button. Mirrors initial_days in PHP.
+  var initialDays = typeof scParams.initialDays === "number" ? scParams.initialDays : 14;
+  var showAllRequested = false;
 
   // ================================================================
   // INIT — wait for DOM to be ready
@@ -210,6 +218,16 @@
       currentSort = e.target.value;
       render();
     });
+
+    // "Show all upcoming shows" — delegated so it works for both the
+    // server-rendered button and every JS re-render.
+    var main = document.getElementById("chMain");
+    if (main) main.addEventListener("click", function (e) {
+      var btn = e.target.closest ? e.target.closest(".ch-show-all-btn") : null;
+      if (!btn) return;
+      showAllRequested = true;
+      render();
+    });
   }
 
   function handleTimeFilter(e) {
@@ -284,6 +302,9 @@
       if (!showOpenMic && isOpenMic) continue;
       if (typeFilter === "open_mic" && !isOpenMic) continue;
 
+      // type="free": only confirmed $0 shows (null price is unknown, not free).
+      if (typeFilter === "free" && ev.price_min !== 0) continue;
+
       // Max price filter: include free shows (price_min === 0 or null) and shows
       // with price_min <= maxPrice
       if (lockedMaxPrice !== null) {
@@ -336,9 +357,25 @@
     var main = document.getElementById("chMain");
     if (!main) return;
     var events = getFiltered();
+    var totalCount = events.length;
+
+    // Initial 14-day window on the "all" view: render the near-term events
+    // and a "Show all" button instead of hundreds of cards through +90 days.
+    var truncated = false;
+    if (currentTimeFilter === "all" && initialDays > 0 && !showAllRequested) {
+      var cutoff = toDateStr(addDays(new Date(), initialDays));
+      var windowed = [];
+      for (var w = 0; w < events.length; w++) {
+        if (!events[w].date || events[w].date <= cutoff) windowed.push(events[w]);
+      }
+      if (windowed.length > 0 && windowed.length < events.length) {
+        events = windowed;
+        truncated = true;
+      }
+    }
 
     var countEl = document.getElementById("chEventCount");
-    if (countEl) countEl.textContent = events.length + (events.length === 1 ? " show" : " shows");
+    if (countEl) countEl.textContent = totalCount + (totalCount === 1 ? " show" : " shows");
 
     if (events.length === 0) {
       main.innerHTML = '<div class="empty-state"><h2>No shows found</h2><p>Try changing your filters or check back later.</p></div>';
@@ -372,6 +409,11 @@
       }
 
       html += '</div></section>';
+    }
+
+    if (truncated) {
+      html += '<div class="ch-show-all-wrap"><button type="button" class="ch-show-all-btn">' +
+        'Show all ' + totalCount + ' upcoming shows</button></div>';
     }
 
     main.innerHTML = html;
@@ -427,7 +469,7 @@
 
   function renderCard(ev) {
     var imageHTML = ev.image_url
-      ? '<img src="' + escapeAttr(ev.image_url) + '" alt="' + escapeAttr(ev.name) + '" loading="lazy">'
+      ? '<img src="' + escapeAttr(ev.image_url) + '" alt="' + escapeAttr(ev.name) + '" loading="lazy" decoding="async" width="640" height="360">'
       : '<div class="card-image-placeholder">' +
         '<span class="venue-icon">&#127908;</span>' +
         '<span class="venue-label">' + escapeHTML(ev.venue) + '</span></div>';
@@ -438,8 +480,10 @@
     var statusLabel = (ev.status || "").replace(/_/g, " ");
 
     var ticketUrl = buildTicketUrl(ev.ticket_url);
+    // rel="sponsored nofollow" — monetized outbound links (kept in sync with
+    // the SSR renderer in comedy-houston.php).
     var ticketHTML = ev.ticket_url
-      ? '<a class="card-cta" href="' + escapeAttr(ticketUrl) + '" target="_blank" rel="noopener">' +
+      ? '<a class="card-cta" href="' + escapeAttr(ticketUrl) + '" target="_blank" rel="sponsored nofollow noopener">' +
         'Get Tickets <span class="arrow">&rarr;</span></a>'
       : '<span class="card-cta" style="opacity:0.5;cursor:default;">Coming Soon</span>';
 
@@ -466,7 +510,11 @@
       (ev.age_restriction ? '<span class="separator"></span><span>' + escapeHTML(ev.age_restriction) + '</span>' : '') +
       '</div>' +
       '<h3 class="card-name">' + escapeHTML(ev.name) + '</h3>' +
-      '<div class="card-venue">' + escapeHTML(ev.venue) + '</div>' +
+      '<div class="card-venue">' +
+      (VENUE_PAGES[ev.venue]
+        ? '<a href="' + escapeAttr(VENUE_PAGES[ev.venue]) + '">' + escapeHTML(ev.venue) + '</a>'
+        : escapeHTML(ev.venue)) +
+      '</div>' +
       '<div class="card-footer">' +
       '<div class="card-price">' + priceHTML + '</div>' +
       moreInfoHTML +

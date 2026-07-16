@@ -35,6 +35,7 @@ const {
 // polish passes, right before we wrap the body in the final template.
 // See scripts/lib/sanitize-html.js.
 const { sanitizeAiHtml } = require("./lib/sanitize-html");
+const { addBlogPostingToGraph, wpGmtToIso } = require("./lib/schema-utils");
 
 // ---------------------------------------------------------------------------
 // Config
@@ -1787,6 +1788,28 @@ async function publishToWordPress(comedianName, venue, date, slug, htmlContent, 
   } else {
     post = await wpRequest("POST", "/wp-json/wp/v2/posts", postData);
     console.log(`    Published: ${post.link}`);
+  }
+
+  // Now that the canonical post URL is known, extend the schema graph with a
+  // BlogPosting node (mainEntityOfPage needs the real permalink, which only
+  // exists after the create call). Best-effort: a failure here leaves the
+  // ComedyEvent/Person graph intact.
+  if (schemaGraph && post && post.link && post.id) {
+    try {
+      const fullGraph = addBlogPostingToGraph(schemaGraph, {
+        title: wpTitle,
+        url: post.link,
+        imageUrl: wpImageUrl || imageUrl || null,
+        datePublished: wpGmtToIso(post.date_gmt),
+        dateModified: wpGmtToIso(post.modified_gmt),
+      });
+      await wpRequest("POST", `/wp-json/wp/v2/posts/${post.id}`, {
+        ch_schema_graph: JSON.stringify(fullGraph),
+      });
+      console.log("    BlogPosting schema attached.");
+    } catch (err) {
+      console.warn(`    BlogPosting schema update failed (non-fatal): ${err.message}`);
+    }
   }
   return post.link;
 }
