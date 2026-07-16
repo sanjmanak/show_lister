@@ -1315,23 +1315,38 @@ class Comedy_Houston_Plugin {
                 'region' => 'TX',
                 'postal' => '77003',
             ],
+            // Rudyard's (the Montrose pub itself) is still at Waugh Dr. The
+            // Riot Comedy Club, which used to run upstairs here, has RELOCATED
+            // (see below) — keep this key pointed at the pub, not the club.
             'rudyards' => [
                 'street' => '2010 Waugh Dr',
                 'locality' => 'Houston',
                 'region' => 'TX',
                 'postal' => '77006',
             ],
+            // The Riot Comedy Club relocated from Upstairs at Rudyard's to
+            // 1925 Washington Ave. postal intentionally omitted — the zip is
+            // unverified (config/venues.json carries the same blank), so we
+            // ship a valid PostalAddress without a guessed postalCode. This
+            // fallback is only used if the config/venues.json registry fetch
+            // fails; the registry is the source of truth.
             'the riot comedy club upstairs at rudyards' => [
-                'street' => '2010 Waugh Dr',
+                'street' => '1925 Washington Ave',
                 'locality' => 'Houston',
                 'region' => 'TX',
-                'postal' => '77006',
+                'postal' => '',
             ],
             'the riot comedy club' => [
-                'street' => '2010 Waugh Dr',
+                'street' => '1925 Washington Ave',
                 'locality' => 'Houston',
                 'region' => 'TX',
-                'postal' => '77006',
+                'postal' => '',
+            ],
+            'the den comedy club' => [
+                'street' => '201 Woodard St',
+                'locality' => 'Houston',
+                'region' => 'TX',
+                'postal' => '77009',
             ],
             // TODO: Verify and add The Gordy's street address, plus any other
             // venues that start appearing in events.json. Unknown venues still

@@ -29,6 +29,7 @@ const WP_APP_PASSWORD = process.env.WP_APP_PASSWORD || "";
 const ROOT = path.resolve(__dirname, "..");
 const LANDING_CONFIG = path.join(ROOT, "config", "landing-pages.json");
 const VENUES_CONFIG = path.join(ROOT, "config", "venues.json");
+const EVENTS_JSON = path.join(ROOT, "events.json");
 
 const REQUEST_TIMEOUT_MS = 30_000;
 
@@ -189,23 +190,58 @@ async function syncLandingPages() {
   return results;
 }
 
+/**
+ * Derive a schema.org priceRange for a venue from its events, using each
+ * event's entry price (price_min). Returns e.g. "$19–$35", "Free", or null
+ * when no price data is available (Ticketmaster-sourced venues currently
+ * carry no priceRanges, so those correctly get no priceRange rather than a
+ * fabricated one). Because pages only re-sync on demand, this is a
+ * point-in-time snapshot — coarse whole-dollar bounds keep it stable across
+ * minor day-to-day fluctuations.
+ */
+function deriveVenuePriceRange(venue, events) {
+  if (!Array.isArray(events) || events.length === 0) return null;
+  const names = new Set(
+    [venue.name, ...(venue.aliases || [])].map((s) => String(s).toLowerCase().trim())
+  );
+  const mins = [];
+  for (const e of events) {
+    const v = String(e.venue || "").toLowerCase().trim();
+    if (!names.has(v)) continue;
+    if (typeof e.price_min === "number" && !Number.isNaN(e.price_min)) {
+      mins.push(e.price_min);
+    }
+  }
+  if (mins.length === 0) return null;
+  const positive = mins.filter((m) => m > 0);
+  if (positive.length === 0) return "Free";
+  const lo = Math.round(Math.min(...positive));
+  const hi = Math.round(Math.max(...mins));
+  return lo === hi ? `$${lo}` : `$${lo}–$${hi}`;
+}
+
 /** Build LocalBusiness JSON-LD for a venue (used by venue pages). */
-function buildVenueSchema(venue) {
+function buildVenueSchema(venue, priceRange) {
+  const address = {
+    "@type": "PostalAddress",
+    streetAddress: venue.address.street,
+    addressLocality: venue.address.locality || "Houston",
+    addressRegion: venue.address.region || "TX",
+    addressCountry: "US",
+  };
+  // Omit postalCode when unknown (e.g. an unverified zip) rather than
+  // emitting an empty string, which is not schema.org-valid.
+  if (venue.address.postal) address.postalCode = venue.address.postal;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": venue.schema_type || "ComedyClub",
     name: venue.name,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: venue.address.street,
-      addressLocality: venue.address.locality || "Houston",
-      addressRegion: venue.address.region || "TX",
-      postalCode: venue.address.postal,
-      addressCountry: "US",
-    },
+    address,
   };
-  if (venue.website) schema.url = venue.website;
   if (venue.phone) schema.telephone = venue.phone;
+  if (venue.website) schema.url = venue.website;
+  if (priceRange) schema.priceRange = priceRange;
   if (venue.same_as && venue.same_as.length > 0) schema.sameAs = venue.same_as;
   return schema;
 }
@@ -220,6 +256,18 @@ async function syncVenuePages() {
   if (venues.length === 0) {
     console.log("No venues with pages enabled — skipping venue pages.");
     return [];
+  }
+
+  // Load events (best-effort) so we can derive a priceRange per venue for the
+  // ComedyClub schema. Missing/invalid events.json just means no priceRange.
+  let events = [];
+  try {
+    if (fs.existsSync(EVENTS_JSON)) {
+      const raw = JSON.parse(fs.readFileSync(EVENTS_JSON, "utf8"));
+      events = Array.isArray(raw) ? raw : raw.events || [];
+    }
+  } catch (err) {
+    console.log(`  (events.json unreadable — venue priceRange skipped: ${err.message})`);
   }
 
   console.log(`\nSyncing venues parent page + ${venues.length} venue page(s)...`);
@@ -257,7 +305,9 @@ async function syncVenuePages() {
         parent: parent.id,
         metaTitle: p.meta_title || `${v.name} — Shows, Tickets & Info | Comedy Houston`,
         metaDescription: p.meta_description || "",
-        schemaGraph: v.address && v.address.street ? buildVenueSchema(v) : null,
+        schemaGraph: v.address && v.address.street
+          ? buildVenueSchema(v, deriveVenuePriceRange(v, events))
+          : null,
       });
       results.push({ slug: `venues/${v.slug}`, link: page.link, ok: true });
     } catch (err) {
@@ -298,4 +348,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { buildVenueSchema, landingCrossLinks };
+module.exports = { buildVenueSchema, deriveVenuePriceRange, landingCrossLinks };
