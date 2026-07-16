@@ -33,6 +33,16 @@ const EB_ORGANIZERS = [
   { id: "120744254440", name: "Social Comedy Night" },
   { id: "120997218882", name: "The Den Comedy Club" },
   { id: "120461230041", name: "Cat Dad Comedy" },
+  // The Riot's second location, hosted at GuadalaHARRY's in Conroe. This
+  // organizer account only produces Conroe shows, and Eventbrite's raw venue
+  // string for them varies ("GuadalaHARRY's", etc.), so `forceVenue` pins
+  // every event to the canonical Conroe venue name rather than relying on the
+  // per-event venue string. Must match the venue `name` in config/venues.json.
+  {
+    id: "120648602531",
+    name: "The Riot Comedy Club — Conroe",
+    forceVenue: "The Riot Comedy Club — Conroe",
+  },
 ];
 
 const OUTPUT_DIR = path.resolve(__dirname, "..");
@@ -199,6 +209,11 @@ async function fetchTicketmaster() {
     console.log(`[Ticketmaster] Filtered out ${removed} non-TX events.`);
   }
 
+  // Backfill prices the search endpoint dropped, then strip the internal
+  // TM id so it never reaches events.json.
+  await enrichTMPrices(txEvents);
+  for (const e of txEvents) delete e._tmId;
+
   return txEvents;
 }
 
@@ -240,6 +255,10 @@ function normalizeTM(ev) {
 
   return {
     id: makeId(ev.name, dateStr, venue),
+    // Raw Ticketmaster event id, used only to enrich missing prices via the
+    // detail endpoint (see enrichTMPrices). Stripped before events are
+    // returned, so it never lands in events.json.
+    _tmId: ev.id || null,
     name: ev.name || "Untitled Event",
     genre,
     venue,
@@ -259,6 +278,52 @@ function normalizeTM(ev) {
     description: ev.info || ev.pleaseNote || null,
     last_updated: new Date().toISOString(),
   };
+}
+
+/**
+ * Best-effort price backfill for Ticketmaster events.
+ *
+ * The Discovery *search* endpoint routinely returns comedy events with no
+ * `priceRanges` even when the single-event *detail* endpoint has them — the
+ * observed symptom is nearly every ticketmaster.com Punch Line listing coming
+ * back price-less, which renders as "Price TBA" with no JSON-LD Offer. For any
+ * event we still have no price for, we fetch its detail record and copy the
+ * real priceRanges across. We NEVER fabricate a price: events Ticketmaster
+ * genuinely has no price for (e.g. ticketweb-fulfilled shows) stay null and
+ * keep the "Price TBA" label. Failures are swallowed so a flaky detail call
+ * can't take down the run.
+ */
+async function enrichTMPrices(events) {
+  if (!TM_API_KEY) return;
+  const missing = events.filter(
+    (e) => e._tmId && (e.price_min === null || e.price_min === undefined)
+  );
+  if (missing.length === 0) return;
+
+  console.log(
+    `[Ticketmaster] Backfilling price for ${missing.length} event(s) via detail endpoint...`
+  );
+  let recovered = 0;
+  for (const e of missing) {
+    const url =
+      `https://app.ticketmaster.com/discovery/v2/events/` +
+      `${encodeURIComponent(e._tmId)}.json?apikey=${encodeURIComponent(TM_API_KEY)}`;
+    try {
+      const detail = await fetchJSON(url);
+      const pr = detail && Array.isArray(detail.priceRanges) ? detail.priceRanges : [];
+      if (pr.length > 0 && typeof pr[0].min === "number") {
+        e.price_min = pr[0].min;
+        e.price_max = typeof pr[0].max === "number" ? pr[0].max : pr[0].min;
+        if (pr[0].currency) e.currency = pr[0].currency;
+        recovered++;
+      }
+    } catch (err) {
+      console.log(`  [Ticketmaster] detail fetch failed for ${e._tmId}: ${err.message}`);
+    }
+  }
+  console.log(
+    `[Ticketmaster] Recovered price for ${recovered}/${missing.length} event(s).`
+  );
 }
 
 function mapTMStatus(code) {
@@ -322,7 +387,7 @@ async function fetchEventbrite() {
 
         if (data.events && data.events.length > 0) {
           for (const ev of data.events) {
-            events.push(normalizeEB(ev, org.name));
+            events.push(normalizeEB(ev, org.name, org.forceVenue));
           }
         }
 
@@ -348,10 +413,15 @@ async function fetchEventbrite() {
   return events;
 }
 
-function normalizeEB(ev, orgFallbackName) {
-  const venueName = normalizeVenueName(
-    ev.venue && ev.venue.name ? ev.venue.name : orgFallbackName
-  );
+function normalizeEB(ev, orgFallbackName, forceVenue) {
+  // A location-specific organizer can pin its events to one canonical venue
+  // (forceVenue) so an inconsistent per-event venue string can't split it off
+  // into an unmatched venue. Otherwise fall back to the event's own venue name.
+  const venueName = forceVenue
+    ? forceVenue
+    : normalizeVenueName(
+        ev.venue && ev.venue.name ? ev.venue.name : orgFallbackName
+      );
 
   const startLocal = ev.start ? ev.start.local : null; // "2026-02-15T19:30:00"
   const dateStr = startLocal ? startLocal.slice(0, 10) : null;

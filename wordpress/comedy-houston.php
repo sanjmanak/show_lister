@@ -1315,23 +1315,43 @@ class Comedy_Houston_Plugin {
                 'region' => 'TX',
                 'postal' => '77003',
             ],
+            // Rudyard's (the Montrose pub itself) is still at Waugh Dr. The
+            // Riot Comedy Club, which used to run upstairs here, has RELOCATED
+            // (see below) — keep this key pointed at the pub, not the club.
             'rudyards' => [
                 'street' => '2010 Waugh Dr',
                 'locality' => 'Houston',
                 'region' => 'TX',
                 'postal' => '77006',
             ],
+            // The Riot Comedy Club relocated from Upstairs at Rudyard's to
+            // 1925 Washington Ave (zip owner-verified). This fallback is only
+            // used if the config/venues.json registry fetch fails; the registry
+            // is the source of truth.
             'the riot comedy club upstairs at rudyards' => [
-                'street' => '2010 Waugh Dr',
+                'street' => '1925 Washington Ave',
                 'locality' => 'Houston',
                 'region' => 'TX',
-                'postal' => '77006',
+                'postal' => '77007',
             ],
             'the riot comedy club' => [
-                'street' => '2010 Waugh Dr',
+                'street' => '1925 Washington Ave',
                 'locality' => 'Houston',
                 'region' => 'TX',
-                'postal' => '77006',
+                'postal' => '77007',
+            ],
+            // The Riot's second location, at GuadalaHARRY's in Conroe.
+            'the riot comedy club conroe' => [
+                'street' => '219 Simonton St',
+                'locality' => 'Conroe',
+                'region' => 'TX',
+                'postal' => '77301',
+            ],
+            'the den comedy club' => [
+                'street' => '201 Woodard St',
+                'locality' => 'Houston',
+                'region' => 'TX',
+                'postal' => '77009',
             ],
             // TODO: Verify and add The Gordy's street address, plus any other
             // venues that start appearing in events.json. Unknown venues still
