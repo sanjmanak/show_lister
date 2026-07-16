@@ -1,10 +1,13 @@
 {
-  "last_posted_date": "2026-07-15",
-  "last_results": {
-    "igFeedMediaId": "18124937299661588",
-    "igStoryMediaId": "18369655960229887",
-    "fbFeedPostId": "1352773460280729",
-    "fbStoryPostId": "27399650156328132",
-    "postedAt": "2026-07-15T20:50:46.501Z"
-  }
+  "last_posted_date": "2026-07-16",
+  "posted": [
+    {
+      "date": "2026-07-16",
+      "igFeedMediaId": "18019615412887496",
+      "igStoryMediaId": "18157882069490620",
+      "fbFeedPostId": "1353579576866784",
+      "fbStoryPostId": "851932674460987",
+      "postedAt": "2026-07-16T20:46:32.265Z"
+    }
+  ]
 }
