@@ -21,6 +21,10 @@
  * workflow re-runs (manual dispatch, retry), the same night is never
  * posted twice. State only advances after the anchor channel succeeds —
  * same rule as post-to-instagram.js.
+ *
+ * Each night's post IDs are appended to the state's `posted` array so
+ * delete-tonight-posts.js can remove the posts once they age past the
+ * retention window (see lib/tonight-state.js for the shape).
  */
 
 const fs = require("fs");
@@ -37,11 +41,11 @@ const {
   postFbStoryPhoto,
   shutdown,
 } = require("./lib/meta-api");
+const { loadTonightState, saveTonightState } = require("./lib/tonight-state");
 
 const ROOT = path.resolve(__dirname, "..");
 const TONIGHT_DIR = path.join(ROOT, "blog", "tonight");
 const META_PATH = path.join(TONIGHT_DIR, "tonight-meta.json");
-const STATE_PATH = path.join(TONIGHT_DIR, "tonight-post-state.json");
 
 // raw.githubusercontent.com serves files straight from the branch — no
 // Pages deploy delay. Meta fetches images server-side, and raw URLs serve
@@ -82,9 +86,7 @@ async function main() {
     return;
   }
 
-  const state = fs.existsSync(STATE_PATH)
-    ? JSON.parse(fs.readFileSync(STATE_PATH, "utf8"))
-    : { last_posted_date: null };
+  const state = loadTonightState();
   if (state.last_posted_date === today) {
     console.log(`Already posted for ${today} — skipping (re-run protection).`);
     return;
@@ -171,15 +173,21 @@ async function main() {
 
   // --- Advance state (anchor succeeded) ---
   state.last_posted_date = today;
-  state.last_results = {
+  state.posted.push({
+    date: today,
     igFeedMediaId: results.igFeed,
     igStoryMediaId: results.igStory,
     fbFeedPostId: results.fbFeed,
     fbStoryPostId: results.fbStory,
     postedAt: new Date().toISOString(),
-  };
-  fs.writeFileSync(STATE_PATH, JSON.stringify(state, null, 2) + "\n");
-  console.log(`\nState saved → ${STATE_PATH}`);
+  });
+  // Safety cap — delete-tonight-posts.js owns the array's lifecycle, but if
+  // that workflow is ever disabled the state file must not grow forever.
+  if (state.posted.length > 60) {
+    state.posted = state.posted.slice(-60);
+  }
+  console.log("");
+  saveTonightState(state);
 
   console.log(`\n${"=".repeat(60)}`);
   console.log(`RESULTS — Tonight in Houston (${today})`);
