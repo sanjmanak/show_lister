@@ -123,8 +123,14 @@
     }
   }
 
+  // Only allow http(s) URLs into href/src attributes. Event data comes from
+  // external feeds — escapeAttr() alone doesn't stop javascript:/data: schemes.
+  function isSafeHttpUrl(url) {
+    return typeof url === "string" && /^https?:\/\//i.test(url.trim());
+  }
+
   function buildTicketUrl(originalUrl) {
-    if (!originalUrl) return "";
+    if (!originalUrl || !isSafeHttpUrl(originalUrl)) return "";
     // If tracking is enabled and we have a redirect base, route through it.
     // URL-safe base64 (- and _ instead of + and /, no padding): a literal
     // "+" in standard base64 becomes a space in the query string and the
@@ -468,7 +474,7 @@
   }
 
   function renderCard(ev) {
-    var imageHTML = ev.image_url
+    var imageHTML = ev.image_url && isSafeHttpUrl(ev.image_url)
       ? '<img src="' + escapeAttr(ev.image_url) + '" alt="' + escapeAttr(ev.name) + '" loading="lazy" decoding="async" width="640" height="360">'
       : '<div class="card-image-placeholder">' +
         '<span class="venue-icon">&#127908;</span>' +
@@ -482,7 +488,7 @@
     var ticketUrl = buildTicketUrl(ev.ticket_url);
     // rel="sponsored nofollow" — monetized outbound links (kept in sync with
     // the SSR renderer in comedy-houston.php).
-    var ticketHTML = ev.ticket_url
+    var ticketHTML = ticketUrl
       ? '<a class="card-cta" href="' + escapeAttr(ticketUrl) + '" target="_blank" rel="sponsored nofollow noopener">' +
         'Get Tickets <span class="arrow">&rarr;</span></a>'
       : '<span class="card-cta" style="opacity:0.5;cursor:default;">Coming Soon</span>';
@@ -492,7 +498,7 @@
     // before they click out to the ticket vendor.
     var matchedPost = findComedianPostForEvent(ev);
     var moreInfoHTML = "";
-    if (matchedPost && matchedPost.wpLink) {
+    if (matchedPost && matchedPost.wpLink && isSafeHttpUrl(matchedPost.wpLink)) {
       moreInfoHTML = '<a class="card-cta card-cta-secondary" href="' +
         escapeAttr(matchedPost.wpLink) + '">More info</a>';
     }

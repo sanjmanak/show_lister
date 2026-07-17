@@ -34,7 +34,7 @@ const {
 // Regex-based scrub for LLM-produced HTML. Runs after the fact-check and
 // polish passes, right before we wrap the body in the final template.
 // See scripts/lib/sanitize-html.js.
-const { sanitizeAiHtml } = require("./lib/sanitize-html");
+const { sanitizeAiHtml, addSponsoredRelToTicketLinks } = require("./lib/sanitize-html");
 const { addBlogPostingToGraph, wpGmtToIso } = require("./lib/schema-utils");
 
 // ---------------------------------------------------------------------------
@@ -1204,7 +1204,8 @@ function wrapInHTML(blogContent, comedianName, venue, date, generatedAt, imageUr
 ${imageUrl ? `  <meta property="og:image" content="${escapeHTML(imageUrl)}">` : ""}
   <meta property="og:site_name" content="Comedy Houston">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://comedyhouston.com/${escapeHTML(comedianName.toLowerCase().replace(/[^a-z0-9]+/g, '-'))}">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://comedyhouston.com/${escapeHTML(`${slugify(comedianName)}-${slugify(venue)}-${date}`)}/">
   <script type="application/ld+json">${jsonLd}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1419,6 +1420,7 @@ function generateComediansIndex(posts) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Houston Comedian Spotlights | Comedy Houston</title>
   <meta name="description" content="In-depth profiles of comedians performing live in Houston this week.">
+  <meta name="robots" content="noindex">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -2124,7 +2126,7 @@ async function main() {
         `  sanitizeAiHtml removed for ${headliner.name}: ${sanitized.removed.join(", ")}`
       );
     }
-    finalContent = sanitized.html;
+    finalContent = addSponsoredRelToTicketLinks(sanitized.html);
 
     // Build the schema.org @graph ONCE. It flows to two emitters:
     //   1. The static GitHub Pages HTML, via wrapInHTML — injected into

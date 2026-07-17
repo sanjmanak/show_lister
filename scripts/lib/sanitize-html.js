@@ -88,4 +88,29 @@ function sanitizeAiHtml(input) {
   return { html, removed };
 }
 
-module.exports = { sanitizeAiHtml };
+/**
+ * Stamp rel="sponsored nofollow noopener" + target="_blank" on monetized
+ * outbound ticket links in AI-generated post bodies. The LLM prompt asks for
+ * <a class="ticket-link"> but never reliably emits rel attributes, and Google
+ * requires sponsored/nofollow on paid affiliate links. Matches by class OR by
+ * known ticket-vendor host, and replaces any rel/target already present.
+ */
+const TICKET_HOST_RE = /(?:ticketmaster|livenation|eventbrite|ticketweb|axs|frontgatetickets)\./i;
+
+function addSponsoredRelToTicketLinks(html) {
+  if (typeof html !== "string" || html === "") return html;
+  return html.replace(/<a\b([^>]*)>/gi, (match, attrs) => {
+    const hrefMatch = attrs.match(/href\s*=\s*"([^"]*)"/i);
+    const isTicketLink =
+      /class\s*=\s*"[^"]*\bticket-link\b[^"]*"/i.test(attrs) ||
+      (hrefMatch && TICKET_HOST_RE.test(hrefMatch[1]));
+    if (!isTicketLink) return match;
+    const cleaned = attrs
+      .replace(/\s+rel\s*=\s*"[^"]*"/gi, "")
+      .replace(/\s+target\s*=\s*"[^"]*"/gi, "")
+      .replace(/\s+$/, "");
+    return `<a${cleaned} target="_blank" rel="sponsored nofollow noopener">`;
+  });
+}
+
+module.exports = { sanitizeAiHtml, addSponsoredRelToTicketLinks };

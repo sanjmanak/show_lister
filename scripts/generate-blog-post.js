@@ -28,7 +28,7 @@ const {
 // Regex-based scrub for the LLM's blog HTML — strips <script>, on*= handlers,
 // javascript:/data: URLs, and a handful of other injection shapes. Zero npm
 // deps by design. See scripts/lib/sanitize-html.js for the full rationale.
-const { sanitizeAiHtml } = require("./lib/sanitize-html");
+const { sanitizeAiHtml, addSponsoredRelToTicketLinks } = require("./lib/sanitize-html");
 const { addBlogPostingToGraph, wpGmtToIso } = require("./lib/schema-utils");
 
 // ---------------------------------------------------------------------------
@@ -1261,6 +1261,7 @@ function wrapInHTML(blogContent, weekRange, generatedAt, inlineHeroHTML) {
   <title>This Week in Houston Comedy — ${weekRange}</title>
   <meta name="description" content="Your weekly roundup of every comedy show in Houston for ${weekRange}. Find shows at Houston Improv, The Riot, The Secret Group, and more.">
   <meta property="og:image" content="weekly-hero.png">
+  <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -1979,7 +1980,7 @@ async function main() {
   if (sanitized.removed.length > 0) {
     console.warn(`  sanitizeAiHtml removed: ${sanitized.removed.join(", ")}`);
   }
-  blogContent = sanitized.html;
+  blogContent = addSponsoredRelToTicketLinks(sanitized.html);
 
   console.log("Blog post generated successfully.");
   console.log("");
