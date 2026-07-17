@@ -122,8 +122,12 @@ function slugify(str) {
     .replace(/[^a-z0-9\s-]/g, "")
     .replace(/\s+/g, "-")
     .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "")
-    .slice(0, 80);
+    .slice(0, 80)
+    // Strip edge hyphens AFTER the length cut: truncating at a word boundary
+    // re-introduces a trailing "-", WordPress silently normalizes it away on
+    // save, and the ?slug= idempotency lookup then misses the existing post
+    // and creates a "-2" duplicate on every rerun.
+    .replace(/^-|-$/g, "");
 }
 
 // ---------------------------------------------------------------------------
