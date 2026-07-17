@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.5.0
+ * Version: 2.5.1
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -519,7 +519,9 @@ class Comedy_Houston_Plugin {
         if ($decoded === null && json_last_error() !== JSON_ERROR_NONE) {
             return;
         }
-        $clean = wp_json_encode($decoded, JSON_UNESCAPED_SLASHES);
+        // JSON_HEX_TAG: encode < and > as </> so a "</script>" inside
+        // any string value can't terminate the script block (XSS breakout).
+        $clean = wp_json_encode($decoded, JSON_UNESCAPED_SLASHES | JSON_HEX_TAG);
         if (!is_string($clean) || $clean === '') {
             return;
         }
@@ -640,7 +642,7 @@ class Comedy_Houston_Plugin {
         }
 
         echo "\n<script type=\"application/ld+json\">"
-            . wp_json_encode($org, JSON_UNESCAPED_SLASHES)
+            . wp_json_encode($org, JSON_UNESCAPED_SLASHES | JSON_HEX_TAG)
             . "</script>\n";
     }
 
@@ -996,7 +998,7 @@ class Comedy_Houston_Plugin {
             // width/height are intrinsic-size hints (the CSS 16:9 box with
             // object-fit:cover controls display size) — they let the browser
             // reserve space before the image loads.
-            $image_html = '<img src="' . esc_attr($image) . '" alt="' . esc_attr($ev['name'] ?? '') . '" loading="lazy" decoding="async" width="640" height="360">';
+            $image_html = '<img src="' . esc_url($image) . '" alt="' . esc_attr($ev['name'] ?? '') . '" loading="lazy" decoding="async" width="640" height="360">';
         } else {
             $image_html = '<div class="card-image-placeholder"><span class="venue-icon">&#127908;</span><span class="venue-label">' . $venue . '</span></div>';
         }
@@ -1008,9 +1010,11 @@ class Comedy_Houston_Plugin {
             // URL-safe base64 (- and _ instead of + and /, no padding):
             // standard base64 can contain "+", which query-string parsing
             // turns into a space and breaks the redirect.
-            $ticket_link = esc_attr($redirect_base . rtrim(strtr(base64_encode($ticket_url), '+/', '-_'), '='));
+            $ticket_link = esc_url($redirect_base . rtrim(strtr(base64_encode($ticket_url), '+/', '-_'), '='));
         } else {
-            $ticket_link = esc_attr($ticket_url);
+            // esc_url (not esc_attr): strips javascript:/data: schemes from
+            // untrusted feed URLs, not just attribute-breaking characters.
+            $ticket_link = esc_url($ticket_url);
         }
 
         // rel="sponsored nofollow": these are monetized outbound ticket links
@@ -1028,7 +1032,7 @@ class Comedy_Houston_Plugin {
         $matched_post = $this->find_comedian_post_for_event($ev, $manifest_posts);
         if ($matched_post && !empty($matched_post['wpLink'])) {
             $more_info_html = '<a class="card-cta card-cta-secondary" href="'
-                . esc_attr($matched_post['wpLink']) . '">More info</a>';
+                . esc_url($matched_post['wpLink']) . '">More info</a>';
         }
 
         $card = '<article class="event-card">';
@@ -1049,7 +1053,7 @@ class Comedy_Houston_Plugin {
         // (internal links from every event card into the venue pages).
         $venue_page = $this->venue_page_url($ev['venue'] ?? '');
         $venue_html = $venue_page
-            ? '<a href="' . esc_attr($venue_page) . '">' . $venue . '</a>'
+            ? '<a href="' . esc_url($venue_page) . '">' . $venue . '</a>'
             : $venue;
         $card .= '<div class="card-venue">' . $venue_html . '</div>';
         $card .= '<div class="card-footer"><div class="card-price">' . $price_html . '</div>'
@@ -1220,7 +1224,9 @@ class Comedy_Houston_Plugin {
             'itemListElement' => $items,
         ];
 
-        return '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
+        // JSON_HEX_TAG guards against "</script>" breakout via untrusted event
+        // names/descriptions from the Ticketmaster/Eventbrite feeds.
+        return '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT | JSON_HEX_TAG) . '</script>';
     }
 
     /**
