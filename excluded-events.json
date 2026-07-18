@@ -1,6 +1,6 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-07-17T15:09:58.529Z",
+  "last_updated": "2026-07-18T02:26:07.553Z",
   "total_excluded": 35,
   "events": [
     {
@@ -13,17 +13,6 @@
       "genre": null,
       "ticket_url": "https://www.eventbrite.com/e/nothing-matters-emo-indie-punk-dance-party-tickets-1992533965729",
       "reason": "title keyword blocklisted: \"dance party\""
-    },
-    {
-      "name": "Slow Joy - I Love You So Much I Could Die Tour",
-      "venue": "The Secret Group",
-      "venue_city": null,
-      "date": "2026-07-17",
-      "time": "7:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/slow-joy-i-love-you-so-much-i-could-die-tour-tickets-1989628768205",
-      "reason": "music artist blocklisted: \"slow joy\""
     },
     {
       "name": "DIAL UP: 90s & Y2K Dance Party!",
@@ -266,6 +255,17 @@
       "genre": null,
       "ticket_url": "https://www.eventbrite.com/e/dial-up-90s-y2k-dance-party-tickets-1994281766448",
       "reason": "title keyword blocklisted: \"dance party\""
+    },
+    {
+      "name": "Slow Joy - I Love You So Much I Could Die Tour",
+      "venue": "The Secret Group",
+      "venue_city": null,
+      "date": "2026-08-15",
+      "time": "7:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/slow-joy-i-love-you-so-much-i-could-die-tour-tickets-1989628768205",
+      "reason": "music artist blocklisted: \"slow joy\""
     },
     {
       "name": "Classic Movie Night At The Jefferson Ferris Bueller's Day Off",
