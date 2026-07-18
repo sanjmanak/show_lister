@@ -6552,20 +6552,22 @@
     }
 
     function renderCard(ev) {
-      const imageHTML = ev.image_url
+      // Scheme guard: event data comes from external feeds — only ever emit
+      // http(s) URLs into src/href (blocks javascript:/data: injection).
+      const imageHTML = ev.image_url && isSafeHttpUrl(ev.image_url)
         ? `<img src="${escapeAttr(ev.image_url)}" alt="${escapeAttr(ev.name)}" loading="lazy">`
         : `<div class="card-image-placeholder">
              <span class="venue-icon">&#127908;</span>
              <span class="venue-label">${escapeHTML(ev.venue)}</span>
            </div>`;
 
-      const priceHTML = formatPrice(ev.price_min, ev.price_max, ev.currency);
+      const priceHTML = formatPrice(ev.price_min, ev.price_max, ev.currency, ev.price_source);
 
       const statusClass = ev.status || "unknown";
       const statusLabel = (ev.status || "").replace(/_/g, " ");
 
-      const ticketHTML = ev.ticket_url
-        ? `<a class="card-cta" href="${escapeAttr(ev.ticket_url)}" target="_blank" rel="noopener">
+      const ticketHTML = ev.ticket_url && isSafeHttpUrl(ev.ticket_url)
+        ? `<a class="card-cta" href="${escapeAttr(ev.ticket_url)}" target="_blank" rel="sponsored nofollow noopener">
              Get Tickets <span class="arrow">&rarr;</span>
            </a>`
         : `<span class="card-cta" style="opacity:0.5;cursor:default;">Coming Soon</span>`;
@@ -6634,7 +6636,7 @@
       return `${prefix}${days[d.getDay()]} &mdash; ${months[d.getMonth()]} ${d.getDate()}`;
     }
 
-    function formatPrice(min, max, currency) {
+    function formatPrice(min, max, currency, priceSource) {
       if (min === null && max === null) return '<span class="from">Price TBA</span>';
       if (min === 0 && (max === 0 || max === null)) return '<span style="color:var(--success);font-weight:600;">Free</span>';
 
@@ -6643,13 +6645,23 @@
         return v.toFixed(0) + " " + currency;
       };
 
+      // price_source "page" = scraped from the ticket page (includes fees).
+      const feesNote = priceSource === "page" ? ' <span class="from">incl. fees</span>' : '';
+
       if (min !== null && max !== null && min !== max) {
-        return `<span class="from">From</span> ${fmt(min)}&ndash;${fmt(max)}`;
+        return `<span class="from">From</span> ${fmt(min)}&ndash;${fmt(max)}${feesNote}`;
       }
       if (min !== null) {
-        return `<span class="from">From</span> ${fmt(min)}`;
+        return `<span class="from">From</span> ${fmt(min)}${feesNote}`;
       }
-      return `<span class="from">Up to</span> ${fmt(max)}`;
+      return `<span class="from">Up to</span> ${fmt(max)}${feesNote}`;
+    }
+
+    // Only http(s) URLs may reach src/href — feed data is external, and
+    // attribute-escaping alone doesn't block javascript:/data: schemes.
+    // Kept in sync with isSafeHttpUrl() in wordpress/comedy-houston.js.
+    function isSafeHttpUrl(url) {
+      return /^https?:\/\//i.test(String(url || "").trim());
     }
 
     function escapeHTML(str) {

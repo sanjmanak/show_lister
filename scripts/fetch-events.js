@@ -11,6 +11,7 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
+const zlib = require("zlib");
 
 // ---------------------------------------------------------------------------
 // Config
@@ -51,6 +52,16 @@ const INDEX_HTML_PATH = path.join(OUTPUT_DIR, "index.html");
 const TEMPLATE_PATH = path.join(OUTPUT_DIR, "index.html");
 const FILTERS_JSON_PATH = path.join(OUTPUT_DIR, "config", "filters.json");
 const EXCLUDED_JSON_PATH = path.join(OUTPUT_DIR, "excluded-events.json");
+const PRICE_CACHE_PATH = path.join(OUTPUT_DIR, "config", "price-cache.json");
+
+// Price-enrichment pacing. Ticketmaster's Discovery API allows 5 req/s, so
+// detail calls are spaced 250ms apart. Ticket-page fetches hit the vendors'
+// public web servers — space them out further and only ~111 pages max, 2x/day.
+const API_DETAIL_DELAY_MS = 250;
+const PAGE_FETCH_DELAY_MS = 350;
+// Re-verify page-scraped prices this often; between refreshes the cached
+// price is reused so resolved events cost zero fetches per run.
+const PRICE_CACHE_TTL_DAYS = 7;
 
 // ---------------------------------------------------------------------------
 // HTTP helper with retries
@@ -71,6 +82,8 @@ const DEFAULT_HEADERS = {
   "User-Agent": "ComedyHouston-EventBot/1.0 (+https://comedyhouston.com)",
   "Accept": "application/json",
 };
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function fetchJSON(url, headers = {}, retries = 3) {
   return new Promise((resolve, reject) => {
@@ -121,6 +134,374 @@ function fetchJSON(url, headers = {}, retries = 3) {
 }
 
 // ---------------------------------------------------------------------------
+// Ticket-page fetching (price fallback)
+//
+// The Discovery API has NO priceRanges for most Houston comedy events (the
+// 2026-07-17 run backfilled 0/200 via the detail endpoint with zero request
+// failures — the data simply isn't there, especially for TicketWeb-fulfilled
+// Houston Improv shows). The public event pages DO show prices, and both
+// ticketmaster.com and ticketweb.com embed schema.org Event JSON-LD with an
+// offers block carrying price/lowPrice/highPrice. So as a last resort we
+// fetch the event's own ticket page and read the price out of its JSON-LD.
+// NOTE: page prices include fees (the API's priceRanges are face value), so
+// these are stamped price_source:"page" and the UI labels them "incl. fees".
+// ---------------------------------------------------------------------------
+
+// A plain browser UA: ticket vendors serve the full page (JSON-LD included)
+// to browsers, while obvious bot UAs risk a WAF block page with no schema.
+const PAGE_HEADERS = {
+  "User-Agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+  "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+  "Accept-Language": "en-US,en;q=0.9",
+  "Accept-Encoding": "gzip, deflate, br",
+};
+
+/** Fetch an HTML page as text: follows redirects (TM URLs often 301 to the
+ * canonical slug), decompresses gzip/brotli, no retries — a per-event miss
+ * is tolerated by the caller and retried on the next scheduled run. */
+function fetchPage(url, redirectsLeft = 5) {
+  return new Promise((resolve, reject) => {
+    let parsed;
+    try {
+      parsed = new URL(url);
+    } catch (e) {
+      return reject(new Error(`Bad URL: ${url}`));
+    }
+    if (parsed.protocol !== "https:" && parsed.protocol !== "http:") {
+      return reject(new Error(`Unsupported protocol: ${url}`));
+    }
+    const mod = parsed.protocol === "https:" ? https : http;
+    const req = mod.get(url, { headers: PAGE_HEADERS }, (res) => {
+      if (
+        res.statusCode >= 300 &&
+        res.statusCode < 400 &&
+        res.headers.location &&
+        redirectsLeft > 0
+      ) {
+        res.resume();
+        const next = new URL(res.headers.location, url).toString();
+        return fetchPage(next, redirectsLeft - 1).then(resolve, reject);
+      }
+      if (res.statusCode >= 400) {
+        res.resume();
+        return reject(new Error(`HTTP ${res.statusCode} for ${url}`));
+      }
+      const chunks = [];
+      res.on("data", (c) => chunks.push(c));
+      res.on("end", () => {
+        let buf = Buffer.concat(chunks);
+        const enc = String(res.headers["content-encoding"] || "").toLowerCase();
+        try {
+          if (enc.includes("br")) buf = zlib.brotliDecompressSync(buf);
+          else if (enc.includes("gzip")) buf = zlib.gunzipSync(buf);
+          else if (enc.includes("deflate")) {
+            try {
+              buf = zlib.inflateSync(buf);
+            } catch (e) {
+              buf = zlib.inflateRawSync(buf);
+            }
+          }
+        } catch (e) {
+          return reject(new Error(`Decompress failed (${enc}): ${e.message}`));
+        }
+        resolve(buf.toString("utf8"));
+      });
+      res.on("error", reject);
+    });
+    req.setTimeout(FETCH_TIMEOUT_MS, () => {
+      req.destroy(new Error(`Request timed out after ${FETCH_TIMEOUT_MS}ms: ${url}`));
+    });
+    req.on("error", reject);
+  });
+}
+
+/** All parseable <script type="application/ld+json"> payloads in a page. */
+function extractJsonLdBlocks(html) {
+  const blocks = [];
+  const re =
+    /<script[^>]*type\s*=\s*["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
+  let m;
+  while ((m = re.exec(html)) !== null) {
+    const raw = m[1].trim();
+    if (!raw) continue;
+    try {
+      blocks.push(JSON.parse(raw));
+    } catch (e) {
+      // Malformed block — skip it, others may still parse.
+    }
+  }
+  return blocks;
+}
+
+/**
+ * Pull {min, max, currency} out of a ticket page's schema.org Event JSON-LD,
+ * or null when the page carries no usable price. Handles single Offer,
+ * Offer arrays, AggregateOffer (lowPrice/highPrice), priceSpecification,
+ * @graph nesting, and Event subtypes (ComedyEvent, TheaterEvent, ...).
+ *
+ * Guards: a page price of 0 is a placeholder (unavailable/TBA), NOT a free
+ * show — free shows come from the APIs, never from scraping. Prices are also
+ * sanity-bounded so a parse artifact can't publish a $0.50 or $50,000 ticket.
+ */
+function parseJsonLdPrices(html) {
+  const toNum = (v) => {
+    if (v === null || v === undefined || typeof v === "object") return null;
+    const n = parseFloat(String(v).replace(/[^0-9.]/g, ""));
+    return Number.isFinite(n) ? n : null;
+  };
+
+  const lows = [];
+  const highs = [];
+  let currency = null;
+
+  const visitOffer = (offer) => {
+    if (!offer || typeof offer !== "object") return;
+    if (Array.isArray(offer)) {
+      for (const o of offer) visitOffer(o);
+      return;
+    }
+    const spec =
+      offer.priceSpecification && typeof offer.priceSpecification === "object"
+        ? offer.priceSpecification
+        : null;
+    let low = toNum(offer.lowPrice);
+    if (low === null) low = toNum(offer.price);
+    if (low === null && spec) low = toNum(spec.minPrice) ?? toNum(spec.price);
+    let high = toNum(offer.highPrice);
+    if (high === null && spec) high = toNum(spec.maxPrice);
+    if (low !== null && low > 0 && low < 5000) {
+      lows.push(low);
+      if (high !== null && high >= low && high < 10000) highs.push(high);
+      if (!currency) {
+        currency = offer.priceCurrency || (spec ? spec.priceCurrency : null) || null;
+      }
+    } else if (high !== null && high > 0 && high < 10000) {
+      // Aggregate offer with only a highPrice — still worth the range top.
+      highs.push(high);
+    }
+  };
+
+  const visitNode = (node) => {
+    if (!node || typeof node !== "object") return;
+    if (Array.isArray(node)) {
+      for (const n of node) visitNode(n);
+      return;
+    }
+    const type = [].concat(node["@type"] || []).join(",");
+    if (/Event/i.test(type) && node.offers) visitOffer(node.offers);
+    if (node["@graph"]) visitNode(node["@graph"]);
+  };
+
+  for (const block of extractJsonLdBlocks(html)) visitNode(block);
+  if (lows.length === 0) return null;
+  const min = Math.min(...lows);
+  // Multiple tier Offers (GA $29, VIP $41.50) each carry a plain `price`;
+  // the top of the range is the highest of everything seen.
+  const top = Math.max(...lows.concat(highs));
+  return {
+    min,
+    max: top >= min ? top : min,
+    currency: currency || "USD",
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Price cache (config/price-cache.json)
+//
+// Page-scraped (and API-detail) prices are persisted across runs keyed by
+// event id, so an event resolved once isn't re-fetched twice a day for the
+// rest of its on-sale life. Entries refresh after PRICE_CACHE_TTL_DAYS and
+// are pruned when their event leaves the feed.
+// ---------------------------------------------------------------------------
+
+function loadPriceCache() {
+  try {
+    const raw = JSON.parse(fs.readFileSync(PRICE_CACHE_PATH, "utf8"));
+    return raw && typeof raw.entries === "object" && raw.entries !== null
+      ? raw.entries
+      : {};
+  } catch (e) {
+    return {};
+  }
+}
+
+function savePriceCache(entries) {
+  const payload = {
+    _readme:
+      "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
+    last_updated: new Date().toISOString(),
+    entries,
+  };
+  fs.writeFileSync(PRICE_CACHE_PATH, JSON.stringify(payload, null, 2));
+}
+
+function applyPrice(ev, min, max, currency, source) {
+  ev.price_min = min;
+  ev.price_max = max !== null && max !== undefined ? max : min;
+  if (currency) ev.currency = currency;
+  ev.price_source = source;
+}
+
+/**
+ * Best-effort price backfill, run AFTER relevance filtering + dedup so we
+ * never spend a request on an event that won't be published.
+ *
+ *   1. cache  — reuse prices resolved on previous runs (fresh within TTL)
+ *   2. api    — Ticketmaster detail endpoint (face value, throttled 250ms)
+ *   3. page   — the event's own ticket page's schema.org JSON-LD (includes
+ *               fees; throttled; works for TM, TicketWeb, Eventbrite, etc.)
+ *
+ * We NEVER fabricate a price. Every step logs per-event success/failure and
+ * a summary so the Action log shows exactly what was recovered from where.
+ */
+async function enrichPrices(events) {
+  const isMissing = (e) => e.price_min === null || e.price_min === undefined;
+  const cache = loadPriceCache();
+  const nowMs = Date.now();
+  const ttlMs = PRICE_CACHE_TTL_DAYS * 24 * 60 * 60 * 1000;
+
+  const missing = events.filter(isMissing);
+  const currentIds = new Set(events.map((e) => e.id));
+
+  let fromCache = 0;
+  let fromApi = 0;
+  let fromPage = 0;
+
+  if (missing.length > 0) {
+    console.log(`[prices] ${missing.length} event(s) missing a price.`);
+
+    // Pass 1: cache.
+    const uncached = [];
+    for (const e of missing) {
+      const c = cache[e.id];
+      const fresh =
+        c &&
+        typeof c.price_min === "number" &&
+        c.price_min > 0 &&
+        nowMs - (Date.parse(c.fetched_at) || 0) < ttlMs;
+      if (fresh) {
+        applyPrice(e, c.price_min, c.price_max, c.currency, c.source || "page");
+        fromCache++;
+      } else {
+        uncached.push(e);
+      }
+    }
+
+    // Pass 2: Ticketmaster detail endpoint.
+    const detailTargets = TM_API_KEY ? uncached.filter((e) => e._tmId) : [];
+    if (detailTargets.length > 0) {
+      console.log(
+        `[prices] Trying TM detail endpoint for ${detailTargets.length} event(s)...`
+      );
+    }
+    for (const e of detailTargets) {
+      await sleep(API_DETAIL_DELAY_MS);
+      const url =
+        `https://app.ticketmaster.com/discovery/v2/events/` +
+        `${encodeURIComponent(e._tmId)}.json?apikey=${encodeURIComponent(TM_API_KEY)}`;
+      try {
+        const detail = await fetchJSON(url);
+        const pr = detail && Array.isArray(detail.priceRanges) ? detail.priceRanges : [];
+        if (pr.length > 0 && typeof pr[0].min === "number" && pr[0].min > 0) {
+          applyPrice(
+            e,
+            pr[0].min,
+            typeof pr[0].max === "number" ? pr[0].max : pr[0].min,
+            pr[0].currency || null,
+            "api"
+          );
+          cache[e.id] = {
+            price_min: e.price_min,
+            price_max: e.price_max,
+            currency: e.currency,
+            source: "api",
+            url,
+            fetched_at: new Date().toISOString(),
+          };
+          fromApi++;
+          console.log(`  [prices] api hit: "${e.name}" ${e.date} → $${e.price_min}`);
+        } else {
+          console.log(`  [prices] api: no priceRanges for "${e.name}" (${e._tmId})`);
+        }
+      } catch (err) {
+        console.log(`  [prices] api detail FAILED for "${e.name}": ${err.message}`);
+      }
+    }
+
+    // Pass 3: the event's own ticket page.
+    const pageTargets = uncached.filter(
+      (e) => isMissing(e) && /^https?:\/\//i.test(String(e.ticket_url || ""))
+    );
+    if (pageTargets.length > 0) {
+      console.log(
+        `[prices] Trying ticket-page JSON-LD for ${pageTargets.length} event(s)...`
+      );
+    }
+    for (const e of pageTargets) {
+      await sleep(PAGE_FETCH_DELAY_MS);
+      const stale = cache[e.id];
+      try {
+        const html = await fetchPage(e.ticket_url);
+        const p = parseJsonLdPrices(html);
+        if (p) {
+          applyPrice(e, p.min, p.max, p.currency, "page");
+          cache[e.id] = {
+            price_min: p.min,
+            price_max: p.max,
+            currency: p.currency,
+            source: "page",
+            url: e.ticket_url,
+            fetched_at: new Date().toISOString(),
+          };
+          fromPage++;
+          console.log(
+            `  [prices] page hit: "${e.name}" ${e.date} → $${p.min}` +
+              (p.max !== p.min ? `–$${p.max}` : "") +
+              " (incl. fees)"
+          );
+        } else if (stale && typeof stale.price_min === "number" && stale.price_min > 0) {
+          // Page no longer carries a price (e.g. sold out) — a stale cached
+          // price beats regressing to "Price TBA".
+          applyPrice(e, stale.price_min, stale.price_max, stale.currency, stale.source || "page");
+          fromCache++;
+          console.log(`  [prices] page had no price for "${e.name}" — kept stale cache`);
+        } else {
+          console.log(`  [prices] page: no JSON-LD price on ${e.ticket_url}`);
+        }
+      } catch (err) {
+        if (stale && typeof stale.price_min === "number" && stale.price_min > 0) {
+          applyPrice(e, stale.price_min, stale.price_max, stale.currency, stale.source || "page");
+          fromCache++;
+          console.log(
+            `  [prices] page fetch FAILED for "${e.name}" (${err.message}) — kept stale cache`
+          );
+        } else {
+          console.log(`  [prices] page fetch FAILED for "${e.name}": ${err.message}`);
+        }
+      }
+    }
+  }
+
+  // Prune cache entries for events no longer in the feed, then persist.
+  for (const id of Object.keys(cache)) {
+    if (!currentIds.has(id)) delete cache[id];
+  }
+  try {
+    savePriceCache(cache);
+  } catch (err) {
+    console.warn(`[prices] Could not write ${PRICE_CACHE_PATH}: ${err.message}`);
+  }
+
+  const stillUnknown = events.filter(isMissing).length;
+  console.log(
+    `[prices] Summary: ${fromCache} from cache, ${fromApi} from API detail, ` +
+      `${fromPage} from ticket pages; ${stillUnknown} still unknown ` +
+      `(of ${missing.length} initially missing, ${events.length} total).`
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Ticketmaster
 // ---------------------------------------------------------------------------
 
@@ -137,8 +518,14 @@ async function fetchTicketmaster() {
   const endDate = new Date(now);
   endDate.setDate(endDate.getDate() + MAX_DAYS_AHEAD);
 
-  // Format as "yyyy-MM-ddTHH:mm:ssZ"
-  const startDateTime = now.toISOString().replace(/\.\d{3}Z$/, "Z");
+  // Format as "yyyy-MM-ddTHH:mm:ssZ". Anchored to the start of TODAY in
+  // America/Chicago, not the current UTC instant — the same fix the
+  // Eventbrite side got in 6d9dec7. Anchoring to now.toISOString() made an
+  // evening run (00:00 UTC = ~7pm CT) drop every Ticketmaster show earlier
+  // that same evening, so tonight's lineup vanished from the feed mid-day.
+  const startDateTime = centralStartOfDayUTC(now)
+    .toISOString()
+    .replace(/\.\d{3}Z$/, "Z");
   const endDateTime = endDate.toISOString().replace(/\.\d{3}Z$/, "Z");
 
   // Broad comedy search near Houston using lat/long + radius
@@ -209,11 +596,9 @@ async function fetchTicketmaster() {
     console.log(`[Ticketmaster] Filtered out ${removed} non-TX events.`);
   }
 
-  // Backfill prices the search endpoint dropped, then strip the internal
-  // TM id so it never reaches events.json.
-  await enrichTMPrices(txEvents);
-  for (const e of txEvents) delete e._tmId;
-
+  // Price enrichment happens in main() AFTER relevance filtering + dedup so
+  // no requests are spent on events that won't be published. _tmId rides
+  // along until then and is stripped before events.json is written.
   return txEvents;
 }
 
@@ -270,6 +655,10 @@ function normalizeTM(ev) {
     price_min: priceMin,
     price_max: priceMax,
     currency,
+    // Where the price came from: "api" = face value from the source API,
+    // "page" = scraped from the ticket page's JSON-LD (includes fees —
+    // the UI labels those "incl. fees"). Null when no price is known.
+    price_source: priceMin !== null ? "api" : null,
     ticket_url: ev.url || null,
     image_url: image,
     source: "ticketmaster",
@@ -278,52 +667,6 @@ function normalizeTM(ev) {
     description: ev.info || ev.pleaseNote || null,
     last_updated: new Date().toISOString(),
   };
-}
-
-/**
- * Best-effort price backfill for Ticketmaster events.
- *
- * The Discovery *search* endpoint routinely returns comedy events with no
- * `priceRanges` even when the single-event *detail* endpoint has them — the
- * observed symptom is nearly every ticketmaster.com Punch Line listing coming
- * back price-less, which renders as "Price TBA" with no JSON-LD Offer. For any
- * event we still have no price for, we fetch its detail record and copy the
- * real priceRanges across. We NEVER fabricate a price: events Ticketmaster
- * genuinely has no price for (e.g. ticketweb-fulfilled shows) stay null and
- * keep the "Price TBA" label. Failures are swallowed so a flaky detail call
- * can't take down the run.
- */
-async function enrichTMPrices(events) {
-  if (!TM_API_KEY) return;
-  const missing = events.filter(
-    (e) => e._tmId && (e.price_min === null || e.price_min === undefined)
-  );
-  if (missing.length === 0) return;
-
-  console.log(
-    `[Ticketmaster] Backfilling price for ${missing.length} event(s) via detail endpoint...`
-  );
-  let recovered = 0;
-  for (const e of missing) {
-    const url =
-      `https://app.ticketmaster.com/discovery/v2/events/` +
-      `${encodeURIComponent(e._tmId)}.json?apikey=${encodeURIComponent(TM_API_KEY)}`;
-    try {
-      const detail = await fetchJSON(url);
-      const pr = detail && Array.isArray(detail.priceRanges) ? detail.priceRanges : [];
-      if (pr.length > 0 && typeof pr[0].min === "number") {
-        e.price_min = pr[0].min;
-        e.price_max = typeof pr[0].max === "number" ? pr[0].max : pr[0].min;
-        if (pr[0].currency) e.currency = pr[0].currency;
-        recovered++;
-      }
-    } catch (err) {
-      console.log(`  [Ticketmaster] detail fetch failed for ${e._tmId}: ${err.message}`);
-    }
-  }
-  console.log(
-    `[Ticketmaster] Recovered price for ${recovered}/${missing.length} event(s).`
-  );
 }
 
 function mapTMStatus(code) {
@@ -375,15 +718,16 @@ async function fetchEventbrite() {
   // run time, through end-of-day on the last day. The plugin filters display
   // by date (not time), so including earlier-today shows is exactly what it
   // expects, and past days are still trimmed from the payload.
-  const centralDay = (d) =>
-    new Intl.DateTimeFormat("en-CA", {
-      timeZone: "America/Chicago",
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-    }).format(d); // "YYYY-MM-DD"
   const rangeStart = `${centralDay(now)}T00:00:00`;
   const rangeEnd = `${centralDay(endDate)}T23:59:59`;
+
+  // Per-organizer collapse guard: the whole-source guard in main() only
+  // trips when Eventbrite returns 0 events TOTAL. If 4 of 6 organizers fail
+  // (WAF block, auth change) but two still respond, a gutted feed would
+  // publish silently. Any organizer failing after fetchJSON's retries fails
+  // the run instead — last good events.json stays live and the failure
+  // email fires.
+  const failedOrgs = [];
 
   for (const org of EB_ORGANIZERS) {
     try {
@@ -423,7 +767,16 @@ async function fetchEventbrite() {
       console.error(
         `[Eventbrite] Failed for ${org.name}: ${err.message}`
       );
+      failedOrgs.push(org.name);
     }
+  }
+
+  if (failedOrgs.length > 0) {
+    throw new Error(
+      `[Eventbrite] ${failedOrgs.length}/${EB_ORGANIZERS.length} organizer ` +
+        `fetch(es) failed after retries: ${failedOrgs.join(", ")}. ` +
+        `Refusing to publish a partial Eventbrite feed — keeping last good data.`
+    );
   }
 
   console.log(`[Eventbrite] Total: ${events.length} events.`);
@@ -450,10 +803,12 @@ function normalizeEB(ev, orgFallbackName, forceVenue) {
 
   if (ev.ticket_availability && ev.ticket_availability.minimum_ticket_price) {
     priceMin = parseFloat(ev.ticket_availability.minimum_ticket_price.major_value);
+    if (Number.isNaN(priceMin)) priceMin = null;
     currency = ev.ticket_availability.minimum_ticket_price.currency || "USD";
   }
   if (ev.ticket_availability && ev.ticket_availability.maximum_ticket_price) {
     priceMax = parseFloat(ev.ticket_availability.maximum_ticket_price.major_value);
+    if (Number.isNaN(priceMax)) priceMax = null;
   }
 
   const image = ev.logo ? ev.logo.original ? ev.logo.original.url : ev.logo.url : null;
@@ -468,6 +823,7 @@ function normalizeEB(ev, orgFallbackName, forceVenue) {
     price_min: priceMin,
     price_max: priceMax,
     currency,
+    price_source: priceMin !== null ? "api" : null,
     ticket_url: ev.url || null,
     image_url: image,
     source: "eventbrite",
@@ -481,6 +837,38 @@ function normalizeEB(ev, orgFallbackName, forceVenue) {
 // ---------------------------------------------------------------------------
 // Utilities
 // ---------------------------------------------------------------------------
+
+/** Calendar day ("YYYY-MM-DD") of a Date in America/Chicago. */
+function centralDay(d) {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/Chicago",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(d);
+}
+
+/**
+ * The UTC instant of midnight (start of day) in America/Chicago for the
+ * Central calendar day containing `d`. Central is UTC-5 (CDT) or UTC-6
+ * (CST); try both candidate instants and keep the one that is actually
+ * 00:00 in Chicago — DST transitions happen at 2am, so Central midnight
+ * always exists and exactly one candidate matches.
+ */
+function centralStartOfDayUTC(d) {
+  const day = centralDay(d);
+  for (const offset of ["-05:00", "-06:00"]) {
+    const candidate = new Date(`${day}T00:00:00${offset}`);
+    const hour = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/Chicago",
+      hour: "2-digit",
+      hourCycle: "h23",
+    }).format(candidate);
+    if (centralDay(candidate) === day && hour === "00") return candidate;
+  }
+  // Unreachable, but never let a TZ-library surprise kill the fetch.
+  return new Date(`${day}T00:00:00-06:00`);
+}
 
 // The same physical venue arrives under different names per source —
 // Ticketmaster says "Houston Improv" while the club's ticketweb/Eventbrite
@@ -523,8 +911,11 @@ try {
 
 function normalizeVenueName(name) {
   if (!name) return name;
-  const key = name.toLowerCase().replace(/\s+/g, " ").trim();
-  return VENUE_ALIASES[key] || name;
+  // Collapse whitespace and trim the returned name too — Ticketmaster has
+  // shipped venues like "White Oak Music Hall - Upstairs " (trailing space),
+  // which otherwise survives into events.json and splits the venue filter.
+  const cleaned = String(name).replace(/\s+/g, " ").trim();
+  return VENUE_ALIASES[cleaned.toLowerCase()] || cleaned;
 }
 
 function makeId(name, date, venue) {
@@ -579,13 +970,15 @@ function deduplicateEvents(events) {
     if (!seen.has(ev.id)) {
       seen.set(ev.id, ev);
     } else {
-      // Prefer the one with more data (image, price, description)
+      // Keep the record with more/better data as the winner, then backfill
+      // any fields it's missing from the loser (same as the fuzzy pass) —
+      // previously the loser's fields were simply discarded, so a TM listing
+      // with a price could lose it to an EB duplicate with a better image.
       const existing = seen.get(ev.id);
-      const scoreA = scoreCompleteness(existing);
-      const scoreB = scoreCompleteness(ev);
-      if (scoreB > scoreA) {
-        seen.set(ev.id, ev);
-      }
+      const winner = mergePreferenceScore(ev) > mergePreferenceScore(existing) ? ev : existing;
+      const loser = winner === ev ? existing : ev;
+      backfillEvent(winner, loser);
+      seen.set(ev.id, winner);
     }
   }
   return Array.from(seen.values());
@@ -668,6 +1061,9 @@ function backfillEvent(winner, loser) {
     winner.price_min = loser.price_min;
     winner.price_max = loser.price_max;
     winner.currency = loser.currency || winner.currency;
+    if (loser.price_min !== null && loser.price_min !== undefined) {
+      winner.price_source = loser.price_source || "api";
+    }
   }
   if (!winner.image_url) winner.image_url = loser.image_url;
   if (!winner.description) winner.description = loser.description;
@@ -675,20 +1071,57 @@ function backfillEvent(winner, loser) {
   if (!winner.time) winner.time = loser.time;
   if (!winner.age_restriction) winner.age_restriction = loser.age_restriction;
   if (!winner.genre) winner.genre = loser.genre;
+  // Keep the TM id so the price-detail pass can still try the winner.
+  if (!winner._tmId && loser._tmId) winner._tmId = loser._tmId;
+}
+
+// Two listings of the same show can disagree on start time — TM lists the
+// showtime ("7:30 PM") while EB lists doors ("7:00 PM"). Treat times within
+// this window as the same slot; a typical early/late double-header is 2h+
+// apart so 60 minutes can't bridge two genuinely different shows.
+const FUZZY_TIME_WINDOW_MIN = 60;
+
+/** Times-of-day mentioned in a title (e.g. "5PM Show"), as minutes. */
+function titleTimeTokens(name) {
+  const tokens = new Set();
+  const re = /\b(\d{1,2})(?::(\d{2}))?\s*(a\.?m\.?|p\.?m\.?)\b/gi;
+  let m;
+  while ((m = re.exec(String(name || ""))) !== null) {
+    let h = parseInt(m[1], 10) % 12;
+    if (/^p/i.test(m[3])) h += 12;
+    tokens.add(h * 60 + (m[2] ? parseInt(m[2], 10) : 0));
+  }
+  return tokens;
+}
+
+/** True when both titles name times and they differ — "5PM Show" vs
+ * "7PM Show" is two separate shows even if the titles otherwise match. */
+function conflictingTitleTimes(nameA, nameB) {
+  const a = titleTimeTokens(nameA);
+  const b = titleTimeTokens(nameB);
+  if (a.size === 0 || b.size === 0) return false;
+  if (a.size !== b.size) return true;
+  for (const t of a) if (!b.has(t)) return true;
+  return false;
 }
 
 function fuzzyDeduplicateEvents(events) {
+  // Bucket by venue + date only. Bucketing on the exact time string meant a
+  // TM "7:30 PM" and EB "7:00 PM" (doors) listing of the same show were
+  // never even compared; the ±FUZZY_TIME_WINDOW_MIN check below replaces
+  // the exact-time equality.
   const buckets = new Map();
   for (const ev of events) {
     const venueKey = String(ev.venue || "")
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, " ")
       .trim();
-    const key = `${venueKey}|${ev.date || ""}|${ev.time || ""}`;
+    const key = `${venueKey}|${ev.date || ""}`;
     if (!buckets.has(key)) buckets.set(key, []);
     buckets.get(key).push(ev);
   }
 
+  const MISSING_TIME = 24 * 60 + 1; // timeToMinutes() sentinel
   const dropped = new Set();
   for (const group of buckets.values()) {
     if (group.length < 2) continue;
@@ -698,6 +1131,20 @@ function fuzzyDeduplicateEvents(events) {
         const a = group[i];
         const b = group[j];
         if (dropped.has(b.id)) continue;
+        // Same slot? Merge when both start times are known and within the
+        // window, or both are unknown. One-known/one-unknown stays split:
+        // on a two-show night we can't tell which show the timeless
+        // listing belongs to.
+        const ta = timeToMinutes(a.time);
+        const tb = timeToMinutes(b.time);
+        const bothKnown = ta !== MISSING_TIME && tb !== MISSING_TIME;
+        const bothUnknown = ta === MISSING_TIME && tb === MISSING_TIME;
+        if (!(bothUnknown || (bothKnown && Math.abs(ta - tb) <= FUZZY_TIME_WINDOW_MIN))) {
+          continue;
+        }
+        // "5PM Show" vs "7PM Show": explicit conflicting times in the
+        // titles mean two different shows in the same room.
+        if (conflictingTitleTimes(a.name, b.name)) continue;
         if (!titlesLookLikeSameShow(a.name, b.name)) continue;
         const winner = mergePreferenceScore(b) > mergePreferenceScore(a) ? b : a;
         const loser = winner === a ? b : a;
@@ -931,6 +1378,13 @@ async function main() {
   const allEvents = relevantEvents;
   const deduped = fuzzyDeduplicateEvents(deduplicateEvents(allEvents));
 
+  // Price backfill: cache → TM detail API → ticket-page JSON-LD. Runs after
+  // filtering + dedup so requests are only spent on events being published.
+  await enrichPrices(deduped);
+  // The raw Ticketmaster id was only needed for the detail-endpoint pass —
+  // strip it so it never reaches events.json.
+  for (const e of deduped) delete e._tmId;
+
   // Sort by date, then time. Times are 12-hour strings ("8:00 PM"), so a
   // string compare puts "10:00 PM" before "8:00 PM" — compare minutes instead.
   deduped.sort((a, b) => {
@@ -1005,7 +1459,14 @@ module.exports = {
   deduplicateEvents,
   fuzzyDeduplicateEvents,
   titlesLookLikeSameShow,
+  conflictingTitleTimes,
   loadRelevanceFilters,
   classifyExclusion,
   applyRelevanceFilters,
+  parseJsonLdPrices,
+  extractJsonLdBlocks,
+  enrichPrices,
+  fetchPage,
+  centralStartOfDayUTC,
+  timeToMinutes,
 };

@@ -195,7 +195,11 @@ function verifyImageUrl(imageUrl) {
   return new Promise((resolve, reject) => {
     const url = new URL(imageUrl);
     const req = https.request(
-      { hostname: url.hostname, path: url.pathname, method: "HEAD" },
+      // path must include the query string: the weekly-roundup hero appends
+      // ?v=<date> as a CDN cache-buster, and verifying only the bare path can
+      // hit a stale cached 200 while the ?v= variant Meta will actually fetch
+      // hasn't propagated yet.
+      { hostname: url.hostname, path: url.pathname + url.search, method: "HEAD" },
       (res) => {
         console.log(`   Image check: HTTP ${res.statusCode} — ${imageUrl.split("/").pop()}`);
         if (res.statusCode === 200) {

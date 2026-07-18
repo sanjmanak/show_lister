@@ -85,6 +85,28 @@ open index.html
 └── README.md
 ```
 
+## Prices
+
+Ticketmaster's Discovery API returns no `priceRanges` for most Houston comedy
+events (TicketWeb-fulfilled Houston Improv shows especially). The fetcher
+backfills prices in three steps: a cross-run cache (`config/price-cache.json`),
+the TM detail endpoint, and finally the event's own ticket page — parsing the
+schema.org JSON-LD that ticketmaster.com/ticketweb.com embed. Page-scraped
+prices **include fees**, so they carry `price_source: "page"` in `events.json`
+and render as "From $X incl. fees"; API prices carry `price_source: "api"`.
+Delete `config/price-cache.json` any time — it rebuilds over the next runs.
+
+## WordPress Page Caching (important)
+
+The `[comedy_houston]` listings are **date-dependent** — `/tonight/` and
+`/this-weekend/` (and the "Tonight"/"Tomorrow" headers everywhere) are computed
+server-side at render time. The plugin sends a `Cache-Control` header that
+expires cached copies at the next midnight America/Chicago, but full-page
+caches that ignore response headers (some host caches, WP cache plugins with
+fixed TTLs) **must exclude `/tonight/` and `/this-weekend/` from page caching**
+(or honor the header). Otherwise crawlers and visitors get yesterday's shows
+after midnight.
+
 ## Troubleshooting
 
 | Problem | Fix |

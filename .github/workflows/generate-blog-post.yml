@@ -202,7 +202,7 @@ jobs:
 
       - name: Email weekly creative + caption
         if: ${{ !cancelled() && steps.email-check.outputs.send_email == 'true' }}
-        uses: dawidd6/action-send-mail@v3
+        uses: dawidd6/action-send-mail@4226df7daafa6fc901a43789c49bf7ab309066e7 # v3 (SHA-pinned: action receives SMTP secrets)
         with:
           server_address: ${{ secrets.SMTP_SERVER }}
           server_port: ${{ secrets.SMTP_PORT }}
@@ -262,7 +262,7 @@ jobs:
 
       - name: Alert on WordPress publish failure
         if: ${{ !cancelled() && steps.wp-check.outputs.wp_failed == 'true' }}
-        uses: dawidd6/action-send-mail@v3
+        uses: dawidd6/action-send-mail@4226df7daafa6fc901a43789c49bf7ab309066e7 # v3 (SHA-pinned: action receives SMTP secrets)
         with:
           server_address: ${{ secrets.SMTP_SERVER }}
           server_port: ${{ secrets.SMTP_PORT }}
@@ -294,7 +294,7 @@ jobs:
         if: failure() && env.HAS_SMTP == 'true'
         env:
           HAS_SMTP: ${{ secrets.SMTP_SERVER != '' }}
-        uses: dawidd6/action-send-mail@v3
+        uses: dawidd6/action-send-mail@4226df7daafa6fc901a43789c49bf7ab309066e7 # v3 (SHA-pinned: action receives SMTP secrets)
         with:
           server_address: ${{ secrets.SMTP_SERVER }}
           server_port: ${{ secrets.SMTP_PORT }}

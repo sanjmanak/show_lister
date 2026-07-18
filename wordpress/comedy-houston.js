@@ -480,7 +480,7 @@
         '<span class="venue-icon">&#127908;</span>' +
         '<span class="venue-label">' + escapeHTML(ev.venue) + '</span></div>';
 
-    var priceHTML = formatPrice(ev.price_min, ev.price_max, ev.currency);
+    var priceHTML = formatPrice(ev.price_min, ev.price_max, ev.currency, ev.price_source);
 
     var statusClass = ev.status || "unknown";
     var statusLabel = (ev.status || "").replace(/_/g, " ");
@@ -568,7 +568,7 @@
     return prefix + days[d.getDay()] + " &mdash; " + months[d.getMonth()] + " " + d.getDate();
   }
 
-  function formatPrice(min, max, currency) {
+  function formatPrice(min, max, currency, priceSource) {
     if (min === null && max === null) return '<span class="from">Price TBA</span>';
     if (min === 0 && (max === 0 || max === null)) return '<span style="color:var(--success);font-weight:600;">Free</span>';
 
@@ -577,13 +577,18 @@
       return v.toFixed(0) + " " + currency;
     };
 
+    // price_source "page" = scraped from the ticket page, where the number
+    // includes fees (API prices are face value). Kept in sync with
+    // format_price_html() in comedy-houston.php.
+    var feesNote = priceSource === "page" ? ' <span class="from">incl. fees</span>' : '';
+
     if (min !== null && max !== null && min !== max) {
-      return '<span class="from">From</span> ' + fmt(min) + '&ndash;' + fmt(max);
+      return '<span class="from">From</span> ' + fmt(min) + '&ndash;' + fmt(max) + feesNote;
     }
     if (min !== null) {
-      return '<span class="from">From</span> ' + fmt(min);
+      return '<span class="from">From</span> ' + fmt(min) + feesNote;
     }
-    return '<span class="from">Up to</span> ' + fmt(max);
+    return '<span class="from">Up to</span> ' + fmt(max) + feesNote;
   }
 
   function escapeHTML(str) {

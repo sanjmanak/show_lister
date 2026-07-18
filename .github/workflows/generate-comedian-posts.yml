@@ -109,7 +109,11 @@ jobs:
       - name: Load email content
         if: steps.email-check.outputs.send_email == 'true'
         run: |
-          echo "EMAIL_SUBJECT=$(cat blog/comedians/email-subject.txt)" >> $GITHUB_ENV
+          # Collapse the subject to a single line before writing KEY=VALUE:
+          # the subject embeds feed-derived comedian names, and a smuggled
+          # newline would let a second KEY=VALUE line into $GITHUB_ENV (the
+          # same injection the heredoc below defends the body against).
+          echo "EMAIL_SUBJECT=$(tr -d '\r\n' < blog/comedians/email-subject.txt)" >> $GITHUB_ENV
           # Random delimiter so an LLM-written body line can never terminate
           # the heredoc early and smuggle env vars into later steps.
           delim="EMAIL_BODY_EOF_${RANDOM}${RANDOM}"
@@ -131,7 +135,7 @@ jobs:
 
       - name: Email comedian spotlight assets
         if: steps.email-check.outputs.send_email == 'true' && steps.attachments.outputs.files != ''
-        uses: dawidd6/action-send-mail@v3
+        uses: dawidd6/action-send-mail@4226df7daafa6fc901a43789c49bf7ab309066e7 # v3 (SHA-pinned: action receives SMTP secrets)
         with:
           server_address: ${{ secrets.SMTP_SERVER }}
           server_port: ${{ secrets.SMTP_PORT }}
@@ -147,7 +151,7 @@ jobs:
         if: failure() && env.HAS_SMTP == 'true'
         env:
           HAS_SMTP: ${{ secrets.SMTP_SERVER != '' }}
-        uses: dawidd6/action-send-mail@v3
+        uses: dawidd6/action-send-mail@4226df7daafa6fc901a43789c49bf7ab309066e7 # v3 (SHA-pinned: action receives SMTP secrets)
         with:
           server_address: ${{ secrets.SMTP_SERVER }}
           server_port: ${{ secrets.SMTP_PORT }}

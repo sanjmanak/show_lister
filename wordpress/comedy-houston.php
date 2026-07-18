@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.5.1
+ * Version: 2.6.0
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.5.0';
+    const VERSION      = '2.6.0';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -51,6 +51,14 @@ class Comedy_Houston_Plugin {
         // Click redirect endpoint
         add_action('init', [$this, 'register_redirect_endpoint']);
         add_action('template_redirect', [$this, 'handle_redirect']);
+
+        // Cache-Control for pages containing the shortcode: the listings are
+        // date-dependent ("Tonight"/"Tomorrow" labels, today/weekend filters
+        // computed server-side at render time), so any cached copy must
+        // expire at midnight America/Chicago or crawlers see yesterday's
+        // shows. Sent from template_redirect (before any output) rather than
+        // the shortcode, where headers may already be gone.
+        add_action('template_redirect', [$this, 'send_cache_headers'], 5);
 
         // Keep crawlers away from ?ch_go= redirect URLs (crawl budget).
         // Only affects WordPress's virtual robots.txt — if a physical
@@ -260,6 +268,32 @@ class Comedy_Houston_Plugin {
         // No rewrite rules needed — we use a query param ?ch_go=BASE64
     }
 
+    /**
+     * Cache-Control for event-listing pages, expiring at the next midnight
+     * in America/Chicago. Applies to any singular page/post whose content
+     * contains the [comedy_houston] shortcode. NOTE: host/plugin full-page
+     * caches that ignore Cache-Control must exclude /tonight/ and
+     * /this-weekend/ manually — see the README.
+     */
+    public function send_cache_headers() {
+        if (headers_sent() || is_admin() || !is_singular()) {
+            return;
+        }
+        $post = get_queried_object();
+        if (!$post || empty($post->post_content) || !has_shortcode($post->post_content, self::SHORTCODE)) {
+            return;
+        }
+        try {
+            $tz = new DateTimeZone('America/Chicago');
+            $now = new DateTime('now', $tz);
+            $midnight = new DateTime('tomorrow midnight', $tz);
+        } catch (Exception $e) {
+            return;
+        }
+        $max_age = max(60, $midnight->getTimestamp() - $now->getTimestamp());
+        header('Cache-Control: public, max-age=' . $max_age . ', s-maxage=' . $max_age);
+    }
+
     public function handle_redirect() {
         if (empty($_GET[self::REDIRECT_VAR])) {
             return;
@@ -318,8 +352,11 @@ class Comedy_Houston_Plugin {
             $target_url = add_query_arg('aff', $opts['eb_affiliate'], $target_url);
         }
 
-        // Log the click
-        if ($opts['track_clicks']) {
+        // Log the click. Rate-limited per client: this is an unauthenticated
+        // endpoint doing a DB INSERT per hit, so an abuser could flood the
+        // clicks table. Past the cap the redirect still works — we just stop
+        // recording.
+        if ($opts['track_clicks'] && !$this->click_rate_limited()) {
             $this->log_click($decoded, $target_url);
         }
 
@@ -376,6 +413,21 @@ class Comedy_Houston_Plugin {
                 return true;
             }
         }
+        return false;
+    }
+
+    /**
+     * True when this client (hashed IP) has already logged 30 clicks inside
+     * the current 60-second window. A real visitor clicks a handful of
+     * ticket links per session; 30/min is only reachable by a script.
+     */
+    private function click_rate_limited() {
+        $key = 'ch_clkrl_' . substr($this->get_hashed_ip(), 0, 24);
+        $count = (int) get_transient($key);
+        if ($count >= 30) {
+            return true;
+        }
+        set_transient($key, $count + 1, MINUTE_IN_SECONDS);
         return false;
     }
 
@@ -1003,7 +1055,12 @@ class Comedy_Houston_Plugin {
             $image_html = '<div class="card-image-placeholder"><span class="venue-icon">&#127908;</span><span class="venue-label">' . $venue . '</span></div>';
         }
 
-        $price_html = $this->format_price_html($ev['price_min'] ?? null, $ev['price_max'] ?? null, $ev['currency'] ?? 'USD');
+        $price_html = $this->format_price_html(
+            $ev['price_min'] ?? null,
+            $ev['price_max'] ?? null,
+            $ev['currency'] ?? 'USD',
+            $ev['price_source'] ?? ''
+        );
 
         $ticket_url = $ev['ticket_url'] ?? '';
         if ($ticket_url && $track && $redirect_base && $this->is_allowed_ticket_url($ticket_url)) {
@@ -1063,7 +1120,7 @@ class Comedy_Houston_Plugin {
         return $card;
     }
 
-    private function format_price_html($min, $max, $currency) {
+    private function format_price_html($min, $max, $currency, $price_source = '') {
         if ($min === null && $max === null) return '<span class="from">Price TBA</span>';
         if (($min === 0 || $min === 0.0) && ($max === 0 || $max === 0.0 || $max === null)) {
             return '<span style="color:var(--success);font-weight:600;">Free</span>';
@@ -1074,13 +1131,18 @@ class Comedy_Houston_Plugin {
             return number_format($v, 0) . ' ' . $currency;
         };
 
+        // price_source "page" = scraped from the ticket page, where the
+        // displayed number includes fees (unlike API face values). Label it
+        // honestly instead of pretending it's face value.
+        $fees_note = ($price_source === 'page') ? ' <span class="from">incl. fees</span>' : '';
+
         if ($min !== null && $max !== null && $min != $max) {
-            return '<span class="from">From</span> ' . $fmt($min) . '&ndash;' . $fmt($max);
+            return '<span class="from">From</span> ' . $fmt($min) . '&ndash;' . $fmt($max) . $fees_note;
         }
         if ($min !== null) {
-            return '<span class="from">From</span> ' . $fmt($min);
+            return '<span class="from">From</span> ' . $fmt($min) . $fees_note;
         }
-        return '<span class="from">Up to</span> ' . $fmt($max);
+        return '<span class="from">Up to</span> ' . $fmt($max) . $fees_note;
     }
 
     private function format_date_label($date_str) {
@@ -1176,33 +1238,34 @@ class Comedy_Houston_Plugin {
                 $event_item['description'] = mb_substr($ev['description'], 0, 300);
             }
 
-            // Offers. Google's Event Rich Results requires `offers.price` or
-            // `offers.priceSpecification` when offers is present — an Offer
-            // without a price is an ERROR (not a warning) and drops the event
-            // from carousel eligibility. So we emit offers ONLY when we know
-            // the price (price_min is set, including 0 for free events). If
-            // we have a ticket URL but no price data, we omit offers entirely
-            // rather than shipping a partial Offer that would break schema
-            // validation for the whole Event.
-            if (!empty($ev['ticket_url']) && isset($ev['price_min']) && $ev['price_min'] !== null) {
+            // Offers. schema.org's `price` is a RECOMMENDED field on Offer,
+            // not required — an Offer with just url + availability is valid
+            // and still gets the ticket URL into structured data (Google may
+            // flag the missing price as a warning, never an error). So: emit
+            // an Offer whenever there's a ticket URL, and add the price
+            // fields only when the price is actually known (including 0 for
+            // free shows). We never fabricate a price.
+            if (!empty($ev['ticket_url'])) {
                 $offer = [
                     '@type' => 'Offer',
                     'url' => $ev['ticket_url'],
-                    'priceCurrency' => $ev['currency'] ?? 'USD',
                     'availability' => 'https://schema.org/InStock',
                     // validFrom = when tickets went on sale. We don't track the
                     // real on-sale date, so use last_updated as a floor.
                     'validFrom' => !empty($ev['last_updated'])
                         ? $ev['last_updated']
                         : gmdate('Y-m-d\TH:i:s\Z'),
+                ];
+                if (isset($ev['price_min']) && $ev['price_min'] !== null) {
+                    $offer['priceCurrency'] = $ev['currency'] ?? 'USD';
                     // Google's Event guidelines want a `price` field — use
                     // price_min as the canonical price and also mirror it to
                     // lowPrice for range-offer consumers.
-                    'price' => $ev['price_min'],
-                    'lowPrice' => $ev['price_min'],
-                ];
-                if (isset($ev['price_max']) && $ev['price_max'] !== null) {
-                    $offer['highPrice'] = $ev['price_max'];
+                    $offer['price'] = $ev['price_min'];
+                    $offer['lowPrice'] = $ev['price_min'];
+                    if (isset($ev['price_max']) && $ev['price_max'] !== null) {
+                        $offer['highPrice'] = $ev['price_max'];
+                    }
                 }
                 $event_item['offers'] = $offer;
             }
