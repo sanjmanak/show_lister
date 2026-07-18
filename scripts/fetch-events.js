@@ -358,6 +358,7 @@ function applyPrice(ev, min, max, currency, source) {
 async function enrichPrices(events) {
   const isMissing = (e) => e.price_min === null || e.price_min === undefined;
   const cache = loadPriceCache();
+  const cacheSnapshot = JSON.stringify(cache);
   const nowMs = Date.now();
   const ttlMs = PRICE_CACHE_TTL_DAYS * 24 * 60 * 60 * 1000;
 
@@ -483,14 +484,19 @@ async function enrichPrices(events) {
     }
   }
 
-  // Prune cache entries for events no longer in the feed, then persist.
+  // Prune cache entries for events no longer in the feed, then persist —
+  // but only when the entries actually changed, so a run that recovers
+  // nothing doesn't dirty the file with a timestamp-only bump (which would
+  // make update-prices.sh publish an empty "price refresh" commit).
   for (const id of Object.keys(cache)) {
     if (!currentIds.has(id)) delete cache[id];
   }
-  try {
-    savePriceCache(cache);
-  } catch (err) {
-    console.warn(`[prices] Could not write ${PRICE_CACHE_PATH}: ${err.message}`);
+  if (JSON.stringify(cache) !== cacheSnapshot) {
+    try {
+      savePriceCache(cache);
+    } catch (err) {
+      console.warn(`[prices] Could not write ${PRICE_CACHE_PATH}: ${err.message}`);
+    }
   }
 
   const stillUnknown = events.filter(isMissing).length;
@@ -1444,8 +1450,76 @@ async function main() {
   console.log("Done!");
 }
 
+/**
+ * `--prices-only`: refresh prices on the ALREADY-PUBLISHED events.json without
+ * touching the event list itself. No API keys needed — the TM detail pass is
+ * skipped automatically (events.json carries no _tmId), so this is purely
+ * cache + ticket-page scraping.
+ *
+ * This mode exists because Ticketmaster/TicketWeb block page fetches from
+ * GitHub Actions' datacenter IPs (HTTP 403/530) but serve them fine to
+ * residential IPs. Run it from a home machine (see update-prices.sh) and the
+ * recovered prices land in config/price-cache.json, which the scheduled
+ * Action then reuses on every run — including as a stale fallback after the
+ * TTL, so prices survive until the event leaves the feed.
+ */
+async function pricesOnlyMain() {
+  console.log("=== Comedy Houston — Price Refresh (prices-only mode) ===");
+  console.log(`Time: ${new Date().toISOString()}`);
+  console.log("");
+
+  if (!fs.existsSync(EVENTS_JSON_PATH)) {
+    throw new Error(
+      `${EVENTS_JSON_PATH} not found — run a full fetch first (npm run fetch).`
+    );
+  }
+  const prev = JSON.parse(fs.readFileSync(EVENTS_JSON_PATH, "utf8"));
+  const events = prev.events || [];
+  if (events.length === 0) {
+    throw new Error("events.json has no events — refusing to run prices-only.");
+  }
+
+  const priceKey = (e) =>
+    JSON.stringify([e.price_min, e.price_max, e.currency, e.price_source]);
+  const before = new Map(events.map((e) => [e.id, priceKey(e)]));
+
+  await enrichPrices(events);
+
+  const changed = events.filter((e) => before.get(e.id) !== priceKey(e));
+  if (changed.length === 0) {
+    console.log("No price changes — events.json and index.html left untouched.");
+    return;
+  }
+
+  // Only re-stamp events whose price actually changed, mirroring the full
+  // run's diff-aware last_updated handling (the WP plugin reads this field).
+  const updatedAt = new Date().toISOString();
+  for (const e of changed) e.last_updated = updatedAt;
+
+  const output = {
+    last_updated: updatedAt,
+    total_events: events.length,
+    events,
+  };
+  fs.writeFileSync(EVENTS_JSON_PATH, JSON.stringify(output, null, 2));
+  console.log(`Wrote ${EVENTS_JSON_PATH} (${changed.length} event(s) re-priced)`);
+
+  try {
+    const html = generateHTML(events, updatedAt);
+    fs.writeFileSync(INDEX_HTML_PATH, html);
+    console.log(`Wrote ${INDEX_HTML_PATH}`);
+  } catch (err) {
+    console.error(`HTML generation failed: ${err.message}`);
+    console.log("index.html will use events.json at runtime via fetch().");
+  }
+
+  console.log("");
+  console.log("Done!");
+}
+
 if (require.main === module) {
-  main().catch((err) => {
+  const entry = process.argv.includes("--prices-only") ? pricesOnlyMain : main;
+  entry().catch((err) => {
     console.error("Fatal error:", err);
     process.exit(1);
   });
@@ -1466,6 +1540,7 @@ module.exports = {
   parseJsonLdPrices,
   extractJsonLdBlocks,
   enrichPrices,
+  pricesOnlyMain,
   fetchPage,
   centralStartOfDayUTC,
   timeToMinutes,

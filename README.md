@@ -96,6 +96,34 @@ prices **include fees**, so they carry `price_source: "page"` in `events.json`
 and render as "From $X incl. fees"; API prices carry `price_source: "api"`.
 Delete `config/price-cache.json` any time — it rebuilds over the next runs.
 
+### Local price refresh (required for page-scraped prices)
+
+Ticketmaster and TicketWeb **block page fetches from GitHub Actions'
+datacenter IPs** (HTTP 403 from ticketmaster.com, HTTP 530 from
+ticketweb.com), so the scheduled workflow's page-scrape step never succeeds
+on its own — from GitHub, every Ticketmaster/Improv show stays "Price TBA".
+The same fetches work fine from a residential connection, so prices are
+refreshed by a short local run:
+
+```bash
+./update-prices.sh        # or: npm run prices:publish
+```
+
+One command does everything: pulls the latest `events.json`, scrapes the
+missing prices from each event's ticket page (no API keys needed — the
+`--prices-only` mode never calls the TM/EB APIs), and commits + pushes
+`events.json`, `index.html`, and `config/price-cache.json` back to `main`.
+On a Mac, double-clicking `update-prices.command` in Finder does the same.
+To refresh prices without publishing, run `npm run prices` and inspect the
+diff yourself.
+
+Once a week is enough: the scheduled Action reuses the pushed cache on every
+run (and keeps stale entries as a fallback after the 7-day TTL, so prices
+degrade gracefully rather than reverting to TBA). The
+`price-reminder.yml` workflow checks coverage every Monday and emails a
+reminder (via the same SMTP secrets as the failure alerts) only when a local
+run is actually due.
+
 ## WordPress Page Caching (important)
 
 The `[comedy_houston]` listings are **date-dependent** — `/tonight/` and

@@ -5,6 +5,8 @@
   "private": true,
   "scripts": {
     "fetch": "node scripts/fetch-events.js",
+    "prices": "node scripts/fetch-events.js --prices-only",
+    "prices:publish": "bash update-prices.sh",
     "blog": "node scripts/generate-blog-post.js"
   }
 }
