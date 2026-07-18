@@ -1,0 +1,5 @@
+{
+  "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
+  "last_updated": "2026-07-18T14:48:12.651Z",
+  "entries": {}
+}
