@@ -1,0 +1,103 @@
+name: Weekly Price Refresh Reminder
+
+# Ticketmaster/TicketWeb block price scraping from GitHub's datacenter IPs
+# (403/530), so prices can only be recovered by running update-prices.sh from
+# a home connection. This workflow checks every Monday whether that local run
+# is due — many events missing prices, or the price cache going stale — and
+# emails a reminder with the exact command to run. It sends nothing when
+# coverage is healthy.
+
+on:
+  schedule:
+    # GitHub cron is UTC: 14:00 = 8am CST / 9am CDT, Mondays.
+    - cron: '0 14 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-and-remind:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check price coverage and cache freshness
+        id: check
+        run: |
+          node -e "
+            const fs = require('fs');
+            const d = JSON.parse(fs.readFileSync('events.json', 'utf8'));
+            const total = d.events.length;
+            const missing = d.events.filter(e => e.price_min == null).length;
+
+            let entries = {};
+            try {
+              const c = JSON.parse(fs.readFileSync('config/price-cache.json', 'utf8'));
+              if (c && typeof c.entries === 'object' && c.entries) entries = c.entries;
+            } catch (e) {}
+            const ages = Object.values(entries)
+              .map(e => Date.parse(e.fetched_at))
+              .filter(Number.isFinite);
+            const newestMs = ages.length ? Math.max(...ages) : 0;
+            const cacheAgeDays = newestMs
+              ? Math.floor((Date.now() - newestMs) / 86400000)
+              : null;
+            const cacheDesc = cacheAgeDays === null
+              ? 'empty (never refreshed)'
+              : cacheAgeDays + ' day(s) old';
+
+            // Remind when lots of events show 'Price TBA', or when the cache
+            // is empty / about to cross the 7-day re-verify TTL.
+            const needs = missing >= 15 || cacheAgeDays === null || cacheAgeDays >= 6;
+
+            console.log('Events missing a price: ' + missing + ' of ' + total);
+            console.log('Price cache: ' + cacheDesc);
+            console.log('Reminder needed: ' + needs);
+
+            fs.appendFileSync(process.env.GITHUB_OUTPUT,
+              'needs=' + needs + '\n' +
+              'missing=' + missing + '\n' +
+              'total=' + total + '\n' +
+              'cache_desc=' + cacheDesc + '\n');
+          "
+
+      - name: Send reminder email
+        if: steps.check.outputs.needs == 'true' && env.HAS_SMTP == 'true'
+        env:
+          HAS_SMTP: ${{ secrets.SMTP_SERVER != '' }}
+        # Pinned to the v3 commit SHA: this action receives the SMTP
+        # credentials, and a mutable tag could be repointed at malicious code.
+        uses: dawidd6/action-send-mail@4226df7daafa6fc901a43789c49bf7ab309066e7 # v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "[Comedy Houston] Weekly price refresh — run update-prices.sh"
+          to: ${{ secrets.NOTIFY_EMAIL }}
+          from: ${{ secrets.SMTP_FROM }}
+          body: |
+            Ticket prices on the site are due for a local refresh.
+
+            Right now: ${{ steps.check.outputs.missing }} of ${{ steps.check.outputs.total }} events are showing "Price TBA".
+            Price cache: ${{ steps.check.outputs.cache_desc }}.
+
+            From your machine (one command — it pulls, scrapes, and publishes):
+
+                cd path/to/show_lister
+                ./update-prices.sh
+
+            On a Mac you can also just double-click update-prices.command in the
+            repo folder.
+
+            Why you and not the server: Ticketmaster and TicketWeb block price
+            lookups from GitHub's datacenter IPs, but they answer normally from
+            a home connection. Your run fills config/price-cache.json, and the
+            twice-daily automatic update then reuses those prices on its own
+            until roughly next week.
+
+            Coverage check: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
