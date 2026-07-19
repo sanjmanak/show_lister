@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-19T00:21:45.368Z",
-  "total_events": 290,
+  "last_updated": "2026-07-19T02:39:54.374Z",
+  "total_events": 291,
   "events": [
     {
       "id": "f6d76891b6ec2414",
@@ -20,14 +20,14 @@
       "image_url": "https://s1.ticketm.net/dam/a/f35/a0d328a8-70ee-420b-9617-d788c7291f35_SOURCE",
       "source": "ticketmaster",
       "age_restriction": null,
-      "status": "on_sale",
+      "status": "off_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
-      "last_updated": "2026-07-18T14:46:30.984Z"
+      "last_updated": "2026-07-19T02:38:24.489Z"
     },
     {
       "id": "dab46973f74df8ce",
       "name": "Luenell",
-      "genre": "Other",
+      "genre": "Comedy",
       "venue": "Houston Improv",
       "venue_state": "TX",
       "venue_city": "Houston",
@@ -38,13 +38,13 @@
       "price_max": null,
       "currency": "USD",
       "price_source": null,
-      "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A70UFN",
+      "ticket_url": "https://www.ticketweb.com/event/luenell-houston-improv-tickets/14949623?REFERRAL_ID=tmfeed",
       "image_url": "https://s1.ticketm.net/dam/a/daf/69fa9b15-055a-4910-b9f1-42dbe9eb2daf_SOURCE",
       "source": "ticketmaster",
       "age_restriction": null,
-      "status": "on_sale",
+      "status": "off_sale",
       "description": null,
-      "last_updated": "2026-07-18T14:46:30.984Z"
+      "last_updated": "2026-07-19T02:38:24.489Z"
     },
     {
       "id": "9670cee5cbfb510b",
@@ -5812,6 +5812,28 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-19T00:21:45.368Z"
+    },
+    {
+      "id": "4b18c5aada75e68b",
+      "name": "Jeffrey Keller",
+      "genre": "Comedy",
+      "venue": "Punch Line Houston",
+      "venue_state": "TX",
+      "venue_city": "Houston",
+      "date": "2026-10-10",
+      "time": "7:00 PM",
+      "day_of_week": "Saturday",
+      "price_min": null,
+      "price_max": null,
+      "currency": "USD",
+      "price_source": null,
+      "ticket_url": "https://www.ticketmaster.com/jeffrey-keller-houston-texas-10-10-2026/event/3A006470B885AAB1",
+      "image_url": "https://s1.ticketm.net/dam/a/f83/afd2e0f3-6485-4b66-bb63-f524e8dfdf83_SOURCE",
+      "source": "ticketmaster",
+      "age_restriction": null,
+      "status": "on_sale",
+      "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
+      "last_updated": "2026-07-19T02:38:24.492Z"
     },
     {
       "id": "001eb003fb72a7e1",
