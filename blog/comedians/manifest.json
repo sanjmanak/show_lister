@@ -1,60 +1,78 @@
 {
-  "generated_at": "2026-07-13T17:56:28.808Z",
-  "manifest_version": 1783965388808,
-  "week_range": "July 13 – July 19, 2026",
+  "generated_at": "2026-07-20T18:05:24.661Z",
+  "manifest_version": 1784570724661,
+  "week_range": "July 20 – July 26, 2026",
   "posts": [
     {
-      "comedianName": "Duncan Trussell",
+      "comedianName": "Frankie Quinones",
       "venue": "Houston Improv",
-      "date": "2026-07-16",
-      "filename": "duncan-trussell-houston-improv-2026-07-16.html",
-      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "graphicImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/47/Duncan_Trussell_on_VICELAND%27S_Party_Legends.png",
-      "ticketUrl": "https://www.ticketweb.com/event/duncan-trussell-houston-improv-tickets/14893843?REFERRAL_ID=tmfeed",
-      "slug": "duncan-trussell-houston-improv-2026-07-16",
-      "wpLink": "https://comedyhouston.com/duncan-trussell-houston-improv-2026-07-16/",
-      "caption": "Co-creator of Netflix's \"The Midnight Gospel,\" Duncan Trussell, is bringing his mind-bending comedy to Houston. Known for blending humor with deep thoughts on philosophy and spirituality, Duncan's shows are like a wild, funny conversation with an old friend. His narrative style invites you to think and laugh, sometimes at the same time. Don't miss this chance to see him live.\n\nHouston Improv · Thursday, July 16, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #DuncanTrussell",
+      "date": "2026-07-23",
+      "filename": "frankie-quinones-houston-improv-2026-07-23.html",
+      "imageUrl": "https://s1.ticketm.net/dam/a/5c6/6dd00db3-3bc5-4951-8615-c71573c515c6_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "graphicImageUrl": "https://s1.ticketm.net/dam/a/5c6/6dd00db3-3bc5-4951-8615-c71573c515c6_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A704fF",
+      "slug": "frankie-quinones-houston-improv-2026-07-23",
+      "wpLink": "https://comedyhouston.com/frankie-quinones-houston-improv-2026-07-23/",
+      "caption": "Houston, catch Frankie Quiñones, the star of Hulu's \"This Fool\" and the voice behind Maria Teresa on \"Victor and Valentino.\" He's bringing his high-energy, character-driven comedy to your city. Known for his seamless character transitions and hilarious takes on Chicano culture and family dynamics, Frankie’s live shows are a must-see. Don’t miss the chance to witness his electric one-man variety show in person.\n\nHouston Improv · Thursday, July 23, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #FrankieQuinones\n\n@frankiequinones",
+      "instagramHandle": "@frankiequinones",
+      "graphicFiles": [
+        "frankie-quinones-houston-improv-2026-07-23-square.png",
+        "frankie-quinones-houston-improv-2026-07-23-portrait.png",
+        "frankie-quinones-houston-improv-2026-07-23-story.png"
+      ]
+    },
+    {
+      "comedianName": "Dulcé Sloan",
+      "venue": "Punch Line Houston",
+      "date": "2026-07-23",
+      "filename": "dulc-sloan-punch-line-houston-2026-07-23.html",
+      "imageUrl": "https://s1.ticketm.net/dam/a/c99/def9c37a-77e3-4bd1-9da5-369f62e62c99_SOURCE",
+      "graphicImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Dulc%C3%A9_Sloan_2019.jpg/1280px-Dulc%C3%A9_Sloan_2019.jpg",
+      "ticketUrl": "https://www.ticketmaster.com/dulce-sloan-houston-texas-07-23-2026/event/3A00647E99127A7C",
+      "slug": "dulc-sloan-punch-line-houston-2026-07-23",
+      "wpLink": "https://comedyhouston.com/dulc-sloan-punch-line-houston-2026-07-23/",
+      "caption": "Seen her on \"The Daily Show with Trevor Noah\"? Now see Dulcé Sloan live in Houston. Her comedy mixes personal stories with sharp social commentary. It's honest, insightful, and incredibly funny. If you love a good laugh with a side of truth, don't miss this. Grab a friend and enjoy an engaging night out.\n\nPunch Line Houston · Thursday, July 23, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #DulcSloan\n\n@dulcesloan",
+      "instagramHandle": "@dulcesloan",
+      "graphicFiles": [
+        "dulc-sloan-punch-line-houston-2026-07-23-square.png",
+        "dulc-sloan-punch-line-houston-2026-07-23-portrait.png",
+        "dulc-sloan-punch-line-houston-2026-07-23-story.png"
+      ]
+    },
+    {
+      "comedianName": "Katherine Blanford",
+      "venue": "The Riot Comedy Club",
+      "date": "2026-07-24",
+      "filename": "katherine-blanford-the-riot-comedy-club-2026-07-24.html",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1180762819%2F2094665311053%2F1%2Foriginal.20260326-155136?auto=format%2Ccompress&q=75&sharp=10&s=434c6e85f70e3d3aadd424cbe07a7db0",
+      "graphicImageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1180762819%2F2094665311053%2F1%2Foriginal.20260326-155136?auto=format%2Ccompress&q=75&sharp=10&s=434c6e85f70e3d3aadd424cbe07a7db0",
+      "ticketUrl": "https://www.eventbrite.com/e/katherine-blanford-headlines-the-riot-comedy-club-tickets-1986005180958",
+      "slug": "katherine-blanford-the-riot-comedy-club-2026-07-24",
+      "wpLink": "https://comedyhouston.com/katherine-blanford-the-riot-comedy-club-2026-07-24/",
+      "caption": "Seen on \"The Tonight Show Starring Jimmy Fallon,\" Katherine Blanford brings her Southern charm and high-energy storytelling to Houston. Known as the 'human Golden Retriever' of comedy, Katherine’s tales of family secrets and awkward teen years will keep you laughing. Don’t miss her warm and relatable humor live.\n\nThe Riot Comedy Club · Friday, July 24, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #KatherineBlanford",
       "instagramHandle": "",
       "graphicFiles": [
-        "duncan-trussell-houston-improv-2026-07-16-square.png",
-        "duncan-trussell-houston-improv-2026-07-16-portrait.png",
-        "duncan-trussell-houston-improv-2026-07-16-story.png"
+        "katherine-blanford-the-riot-comedy-club-2026-07-24-square.png",
+        "katherine-blanford-the-riot-comedy-club-2026-07-24-portrait.png",
+        "katherine-blanford-the-riot-comedy-club-2026-07-24-story.png"
       ]
     },
     {
-      "comedianName": "Luenell",
-      "venue": "Houston Improv",
-      "date": "2026-07-17",
-      "filename": "luenell-houston-improv-2026-07-17.html",
-      "imageUrl": "https://s1.ticketm.net/dam/a/daf/69fa9b15-055a-4910-b9f1-42dbe9eb2daf_SOURCE",
-      "graphicImageUrl": "https://s1.ticketm.net/dam/a/daf/69fa9b15-055a-4910-b9f1-42dbe9eb2daf_SOURCE",
-      "ticketUrl": "https://www.ticketweb.com/event/luenell-houston-improv-tickets/14949593?REFERRAL_ID=tmfeed",
-      "slug": "luenell-houston-improv-2026-07-17",
-      "wpLink": "https://comedyhouston.com/luenell-houston-improv-2026-07-17/",
-      "caption": "Houston, did you catch Luenell on \"Chappelle's Home Team - Luenell: Town Business\"? 🎤 Her bold, unapologetic humor has lit up stages for over 30 years. With high-energy storytelling and a knack for tackling social issues and personal experiences, Luenell brings every show to life. It's comedy that feels real and hits home. Don't miss her at the Houston Improv.  \n\nHouston Improv · Friday, July 17, 2026  \n\nLink in bio for tickets. Tag someone you'd bring.  \n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #Luenell  \n\n@luenell",
-      "instagramHandle": "@luenell",
+      "comedianName": "Adam Hunter",
+      "venue": "The Riot Comedy Club — Conroe",
+      "date": "2026-07-24",
+      "filename": "adam-hunter-the-riot-comedy-club-conroe-2026-07-24.html",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177389670%2F428099579998%2F1%2Foriginal.20260212-165124?auto=format%2Ccompress&q=75&sharp=10&s=5f14668d437bfde33f21f77ee1e85ebc",
+      "graphicImageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177389670%2F428099579998%2F1%2Foriginal.20260212-165124?auto=format%2Ccompress&q=75&sharp=10&s=5f14668d437bfde33f21f77ee1e85ebc",
+      "ticketUrl": "https://www.eventbrite.com/e/comedian-adam-hunter-gutfeld-live-in-conroe-tickets-1982976860169",
+      "slug": "adam-hunter-the-riot-comedy-club-conroe-2026-07-24",
+      "wpLink": "https://comedyhouston.com/adam-hunter-the-riot-comedy-club-conroe-2026-07-24/",
+      "caption": "Adam Hunter's comedy special \"Throwing Punches\" is a knockout on UFC Fight Pass. 🎤\n\nHouston, don't miss your chance to see Adam live. Known for his high-energy sets and rapid-fire delivery, he brings nonstop laughs with more jokes per minute than most. Whether he's riffing on marriage or pop culture, Adam's crowd work is lightning-fast and engaging.\n\nThe Riot Comedy Club — Conroe · Friday, July 24, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #AdamHunter",
+      "instagramHandle": "",
       "graphicFiles": [
-        "luenell-houston-improv-2026-07-17-square.png",
-        "luenell-houston-improv-2026-07-17-portrait.png",
-        "luenell-houston-improv-2026-07-17-story.png"
-      ]
-    },
-    {
-      "comedianName": "Usama Siddiquee",
-      "venue": "Houston Improv",
-      "date": "2026-07-15",
-      "filename": "usama-siddiquee-houston-improv-2026-07-15.html",
-      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "graphicImageUrl": "https://images.squarespace-cdn.com/content/557f10f0e4b069fd29c60d39/1434648772070-4K5ZBSO0D3XTL12ORRCH/usamacreek.jpg?content-type=image%2Fjpeg",
-      "ticketUrl": "https://www.ticketweb.com/event/usama-siddiquee-houston-improv-tickets/14913763?REFERRAL_ID=tmfeed",
-      "slug": "usama-siddiquee-houston-improv-2026-07-15",
-      "wpLink": "https://comedyhouston.com/usama-siddiquee-houston-improv-2026-07-15/",
-      "caption": "Usama Siddiquee, your favorite semifinalist from \"America's Got Talent,\" is bringing his high-energy comedy back home to Texas. His sharp take on growing up Muslim in Plano mixed with dating misadventures makes for a night of laughs you won't forget. Usama's rapid-fire delivery and personal stories keep you engaged and laughing. Don't miss his live set.\n\nHouston Improv · Wednesday, July 15, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #UsamaSiddiquee\n\n@usamastandsup",
-      "instagramHandle": "@usamastandsup",
-      "graphicFiles": [
-        "usama-siddiquee-houston-improv-2026-07-15-square.png",
-        "usama-siddiquee-houston-improv-2026-07-15-portrait.png",
-        "usama-siddiquee-houston-improv-2026-07-15-story.png"
+        "adam-hunter-the-riot-comedy-club-conroe-2026-07-24-square.png",
+        "adam-hunter-the-riot-comedy-club-conroe-2026-07-24-portrait.png",
+        "adam-hunter-the-riot-comedy-club-conroe-2026-07-24-story.png"
       ]
     }
   ]
