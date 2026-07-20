@@ -1,15 +1,7 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-07-19T00:21:45.367Z",
+  "last_updated": "2026-07-20T15:48:06.745Z",
   "entries": {
-    "ee158aaf7daaa13b": {
-      "price_min": 12.86,
-      "price_max": 12.86,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/houston-af-houston-improv-tickets/14240224?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-07-19T00:20:40.276Z"
-    },
     "24ccdea1fbf3dc98": {
       "price_min": 12.86,
       "price_max": 12.86,

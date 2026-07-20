@@ -1,19 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-07-20T02:52:40.732Z",
-  "total_excluded": 33,
+  "last_updated": "2026-07-20T15:46:37.238Z",
+  "total_excluded": 32,
   "events": [
-    {
-      "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
-      "venue": "The Secret Group",
-      "venue_city": null,
-      "date": "2026-07-19",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/our-mic-is-your-mic-emo-karaoke-tickets-1993031154835",
-      "reason": "title keyword blocklisted: \"karaoke\""
-    },
     {
       "name": "Karaoke every THURSDAY!",
       "venue": "The Secret Group",
