@@ -1,30 +1,38 @@
 {
-  "generated_at": "2026-07-13T17:04:28.953Z",
-  "week_range": "July 13 – July 19, 2026",
+  "generated_at": "2026-07-20T16:19:13.716Z",
+  "week_range": "July 20 – July 26, 2026",
   "comedians": [
     {
-      "name": "Duncan Trussell",
-      "show": "Duncan Trussell",
-      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/4/47/Duncan_Trussell_on_VICELAND%27S_Party_Legends.png",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/4/47/Duncan_Trussell_on_VICELAND%27S_Party_Legends.png",
-      "imageSource": "headshot"
-    },
-    {
-      "name": "Luenell",
-      "show": "Luenell",
-      "imageUrl": "https://s1.ticketm.net/dam/a/daf/69fa9b15-055a-4910-b9f1-42dbe9eb2daf_SOURCE",
+      "name": "Frankie Quinones",
+      "show": "Frankie Quinones",
+      "imageUrl": "https://s1.ticketm.net/dam/a/5c6/6dd00db3-3bc5-4951-8615-c71573c515c6_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/daf/69fa9b15-055a-4910-b9f1-42dbe9eb2daf_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/5c6/6dd00db3-3bc5-4951-8615-c71573c515c6_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "imageSource": "event"
     },
     {
-      "name": "Usama Siddiquee",
-      "show": "Usama Siddiquee",
-      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "headshotUrl": "https://images.squarespace-cdn.com/content/557f10f0e4b069fd29c60d39/1434648772070-4K5ZBSO0D3XTL12ORRCH/usamacreek.jpg?content-type=image%2Fjpeg",
-      "displayImage": "https://images.squarespace-cdn.com/content/557f10f0e4b069fd29c60d39/1434648772070-4K5ZBSO0D3XTL12ORRCH/usamacreek.jpg?content-type=image%2Fjpeg",
+      "name": "Dulcé Sloan",
+      "show": "Dulcé Sloan",
+      "imageUrl": "https://s1.ticketm.net/dam/a/c99/def9c37a-77e3-4bd1-9da5-369f62e62c99_SOURCE",
+      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Dulc%C3%A9_Sloan_2019.jpg/1280px-Dulc%C3%A9_Sloan_2019.jpg",
+      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Dulc%C3%A9_Sloan_2019.jpg/1280px-Dulc%C3%A9_Sloan_2019.jpg",
       "imageSource": "headshot"
+    },
+    {
+      "name": "Katherine Blanford",
+      "show": "Katherine Blanford Headlines The Riot Comedy Club",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1180762819%2F2094665311053%2F1%2Foriginal.20260326-155136?auto=format%2Ccompress&q=75&sharp=10&s=434c6e85f70e3d3aadd424cbe07a7db0",
+      "headshotUrl": null,
+      "displayImage": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1180762819%2F2094665311053%2F1%2Foriginal.20260326-155136?auto=format%2Ccompress&q=75&sharp=10&s=434c6e85f70e3d3aadd424cbe07a7db0",
+      "imageSource": "event"
+    },
+    {
+      "name": "Adam Hunter",
+      "show": "Comedian Adam Hunter (Gutfeld!) Live in Conroe",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177389670%2F428099579998%2F1%2Foriginal.20260212-165124?auto=format%2Ccompress&q=75&sharp=10&s=5f14668d437bfde33f21f77ee1e85ebc",
+      "headshotUrl": null,
+      "displayImage": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177389670%2F428099579998%2F1%2Foriginal.20260212-165124?auto=format%2Ccompress&q=75&sharp=10&s=5f14668d437bfde33f21f77ee1e85ebc",
+      "imageSource": "event"
     }
   ]
 }
