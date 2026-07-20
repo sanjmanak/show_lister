@@ -1,33 +1,15 @@
 {
   "posted": [
     {
-      "slug": "duncan-trussell-houston-improv-2026-07-16",
-      "comedianName": "Duncan Trussell",
-      "igFeedMediaId": "17902430109303438",
-      "igStoryMediaId": "18016139993911633",
-      "fbFeedPostId": "1351087790449296",
-      "fbStoryPostId": "1119952847039746",
-      "postedAt": "2026-07-13T18:01:31.701Z"
-    },
-    {
-      "slug": "luenell-houston-improv-2026-07-17",
-      "comedianName": "Luenell",
-      "igFeedMediaId": "18082313732286558",
-      "igStoryMediaId": "18011545214736224",
-      "fbFeedPostId": "1351234337101308",
-      "fbStoryPostId": "1669161124364375",
-      "postedAt": "2026-07-13T23:02:47.553Z"
-    },
-    {
-      "slug": "usama-siddiquee-houston-improv-2026-07-15",
-      "comedianName": "Usama Siddiquee",
-      "igFeedMediaId": "18157904584490041",
-      "igStoryMediaId": "17970195981120562",
-      "fbFeedPostId": "1351445597080182",
-      "fbStoryPostId": "1765050431578771",
-      "postedAt": "2026-07-14T06:19:13.486Z"
+      "slug": "frankie-quinones-houston-improv-2026-07-23",
+      "comedianName": "Frankie Quinones",
+      "igFeedMediaId": "18115532146718749",
+      "igStoryMediaId": "18200701201369553",
+      "fbFeedPostId": "1356567263234682",
+      "fbStoryPostId": "2098096990776688",
+      "postedAt": "2026-07-20T18:11:44.337Z"
     }
   ],
-  "week_range": "July 13 – July 19, 2026",
-  "manifest_version": 1783965388808
+  "week_range": "July 20 – July 26, 2026",
+  "manifest_version": 1784570724661
 }
