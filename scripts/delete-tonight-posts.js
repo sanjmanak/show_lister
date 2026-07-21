@@ -14,7 +14,12 @@
  * the array existed are never touched (user decision; see ARCHITECTURE.md).
  *
  * Per-channel rules:
- *   - IG/FB feed posts: DELETE /{id}; a real failure keeps the ID in state
+ *   - IG feed posts: Meta refuses to delete IG media for this app —
+ *     DELETE /{ig-media-id} returns (#10) even with every grantable scope
+ *     (verified 2026-07-21; see isPermissionError in meta-api.js). A (#10)
+ *     on an IG feed delete is pruned with a loud warning (manual takedown
+ *     if wanted); any OTHER IG feed error keeps the ID for retry + exit 1.
+ *   - FB feed posts: DELETE /{id}; a real failure keeps the ID in state
  *     so tomorrow's run retries, and exits 1 (fires the notify email).
  *   - IG/FB stories: auto-expire after 24h, so any delete error past the
  *     retention window is pruned with a warning, never a failure.
@@ -34,6 +39,7 @@ const {
   withTimeout,
   resolveFacebookPageId,
   deleteGraphObject,
+  isPermissionError,
   shutdown,
 } = require("./lib/meta-api");
 const { loadTonightState, saveTonightState } = require("./lib/tonight-state");
@@ -105,7 +111,7 @@ async function main() {
   }
 
   const failures = [];
-  const counts = { deleted: 0, alreadyGone: 0, prunedStories: 0, wouldDelete: 0 };
+  const counts = { deleted: 0, alreadyGone: 0, prunedStories: 0, igUndeletable: 0, wouldDelete: 0 };
   let rateLimited = false;
 
   for (const entry of eligible) {
@@ -156,6 +162,15 @@ async function main() {
           console.warn(`  ${label}: delete error (${err.message.split("\n")[0]}) — pruning; story already expired.`);
           entry[field] = null;
           counts.prunedStories++;
+        } else if (field === "igFeedMediaId" && isPermissionError(err)) {
+          // Meta won't delete IG media for this app no matter the scopes —
+          // retrying is pointless and keeping the workflow red helps no one.
+          console.warn(
+            `  ${label}: (#10) — Meta refuses IG media deletes for this app. ` +
+            `Pruning; remove manually on instagram.com if wanted (ID: ${id}).`
+          );
+          entry[field] = null;
+          counts.igUndeletable++;
         } else {
           console.error(`  ${label}: FAILED — ${err.message.split("\n")[0]}`);
           failures.push(`${entry.date} ${label} (${id}): ${err.message.split("\n")[0]}`);
@@ -190,6 +205,9 @@ async function main() {
     console.log(`  Deleted:        ${counts.deleted}`);
     console.log(`  Already gone:   ${counts.alreadyGone}`);
     console.log(`  Stories pruned: ${counts.prunedStories}`);
+    if (counts.igUndeletable > 0) {
+      console.log(`  IG undeletable: ${counts.igUndeletable}  (Meta forbids IG media deletes — remove manually if wanted)`);
+    }
     console.log(`  Failed:         ${failures.length}`);
     failures.forEach((f) => console.log(`    - ${f}`));
     if (rateLimited) console.log(`  Rate limited — remaining entries retry tomorrow.`);

@@ -456,6 +456,16 @@ after 3 days. Design points:
   (`isObjectGoneError` in `meta-api.js` — deliberately narrower than
   `isContainerNotReadable`, since an Authorization Error on a delete is a
   real token problem that must retry).
+- **IG feed media cannot actually be deleted by this app.** `DELETE
+  /{ig-media-id}` returns OAuthException `(#10) Insufficient permissions`
+  even on a fresh token carrying every grantable scope (verified
+  2026-07-21 in Graph API Explorer — there is NO delete-specific
+  permission to add, so don't burn time hunting for one; the likely
+  unlock, if any, is App Review / Advanced Access). The script detects
+  this (`isPermissionError` in `meta-api.js`), prunes the IG feed ID with
+  a warning, and moves on — old IG "Tonight" posts stay up unless removed
+  manually in the app. FB deletes DO work (`pages_manage_posts`) and
+  still alert on real failures.
 - A failed feed delete keeps its ID in state (tomorrow retries) and exits 1
   to fire the SMTP notifier; entries stuck > 14 days are dropped loudly so
   the workflow can't stay red forever. State is written BEFORE the exit
@@ -680,7 +690,7 @@ The Instagram auto-poster uses Meta's **Content Publishing API** via a Facebook 
 2. Set the domain dropdown to **`graph.facebook.com`** (not `graph.instagram.com`)
 3. Select your app in the "Meta App" dropdown
 4. Set "User or Page" to **"User Token"**
-5. Under Permissions, add: `business_management`, `instagram_basic`, `instagram_content_publish`, `instagram_manage_comments`, `pages_read_engagement`, `pages_show_list`
+5. Under Permissions, add: `business_management`, `instagram_basic`, `instagram_content_publish`, `instagram_manage_comments`, `pages_manage_posts`, `pages_read_engagement`, `pages_show_list` (`pages_manage_posts` is what lets the cleanup workflow delete FB page posts; there is no delete-specific scope — see Workflow 6 notes)
 6. Click **"Generate Access Token"** — in the authorization popup, **make sure you select your Facebook Page** on the Page selection screen
 
 #### Step 4: Get Your Instagram User ID
