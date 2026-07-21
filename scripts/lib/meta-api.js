@@ -132,8 +132,14 @@ function graphRequest(method, urlPath, params) {
                 console.error(`\n  DIAGNOSIS: Access token is expired or invalid.`);
                 console.error(`  FIX: Generate a new long-lived token and update the INSTAGRAM_ACCESS_TOKEN GitHub secret.`);
               } else if (errCode === 10 || errSubcode === 2207050) {
-                console.error(`\n  DIAGNOSIS: App does not have permission to publish.`);
-                console.error(`  FIX: Ensure instagram_content_publish permission is granted and the app has access to the Page.`);
+                if (method === "DELETE") {
+                  console.error(`\n  DIAGNOSIS: App is not allowed to delete this object.`);
+                  console.error(`  NOTE: For IG media this is expected — Meta returns (#10) on DELETE /{ig-media-id}`);
+                  console.error(`  even with every grantable scope (verified 2026-07-21). No permission fixes it.`);
+                } else {
+                  console.error(`\n  DIAGNOSIS: App does not have permission to publish.`);
+                  console.error(`  FIX: Ensure instagram_content_publish permission is granted and the app has access to the Page.`);
+                }
               } else if (errCode === 36003) {
                 console.error(`\n  DIAGNOSIS: Image URL is not publicly accessible.`);
                 console.error(`  FIX: Ensure the image is committed to main and accessible via GitHub Pages.`);
@@ -657,6 +663,19 @@ function isObjectGoneError(err) {
 }
 
 /**
+ * Detect Meta's OAuthException code 10 — "(#10) Insufficient permissions".
+ * On DELETE /{ig-media-id} this fires even when the token carries every
+ * grantable scope (verified 2026-07-21 in Graph API Explorer with a fresh
+ * full-permission user token AND the stored Page token): this app cannot
+ * delete IG media via the API, period. There is no delete-specific
+ * permission to request — delete-tonight-posts.js prunes these instead
+ * of retrying forever.
+ */
+function isPermissionError(err) {
+  return !!err && typeof err.message === "string" && /\(code 10\):/.test(err.message);
+}
+
+/**
  * DELETE a Graph API object (IG media, FB post/photo) by ID.
  * Returns "deleted" on success, "already_gone" if the object no longer
  * exists. Rethrows everything else (including RATE_LIMITED sentinels).
@@ -722,6 +741,7 @@ module.exports = {
   postFbFeedPhoto,
   postFbStoryPhoto,
   isObjectGoneError,
+  isPermissionError,
   deleteGraphObject,
   shutdown,
 };
