@@ -1,6 +1,6 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-07-21T15:39:29.287Z",
+  "last_updated": "2026-07-22T02:34:35.450Z",
   "total_excluded": 32,
   "events": [
     {
@@ -227,7 +227,7 @@
       "name": "Slow Joy - I Love You So Much I Could Die Tour",
       "venue": "The Secret Group",
       "venue_city": null,
-      "date": "2026-08-15",
+      "date": "2026-08-16",
       "time": "7:00 PM",
       "source": "eventbrite",
       "genre": null,
