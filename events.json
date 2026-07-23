@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-22T15:29:52.720Z",
-  "total_events": 276,
+  "last_updated": "2026-07-23T02:41:38.484Z",
+  "total_events": 277,
   "events": [
     {
       "id": "0003bb006bbb8da7",
@@ -20,9 +20,9 @@
       "image_url": "https://s1.ticketm.net/dam/a/868/850da570-206a-4586-88db-b96a58eaa868_SOURCE",
       "source": "ticketmaster",
       "age_restriction": null,
-      "status": "on_sale",
+      "status": "off_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
-      "last_updated": "2026-07-18T14:46:30.984Z"
+      "last_updated": "2026-07-23T02:40:02.011Z"
     },
     {
       "id": "b374030713fa4694",
@@ -3950,8 +3950,8 @@
       "last_updated": "2026-07-18T14:46:39.915Z"
     },
     {
-      "id": "79cd46189a162587",
-      "name": "Sejoe",
+      "id": "c1d8d0cd2a0cfa3c",
+      "name": "Sejoe (an Kreyòl)",
       "genre": "Comedy",
       "venue": "Punch Line Houston",
       "venue_state": "TX",
@@ -3963,13 +3963,13 @@
       "price_max": null,
       "currency": "USD",
       "price_source": null,
-      "ticket_url": "https://www.ticketmaster.com/sejoe-houston-texas-09-06-2026/event/3A0064A91B6F880F",
+      "ticket_url": "https://www.ticketmaster.com/sejoe-an-kreyol-houston-texas-09-06-2026/event/3A0064A91B6F880F",
       "image_url": "https://s1.ticketm.net/dam/a/7da/dcd2cc03-7a95-4967-8113-b4a616c827da_SOURCE",
       "source": "ticketmaster",
       "age_restriction": null,
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
-      "last_updated": "2026-07-18T14:46:30.986Z"
+      "last_updated": "2026-07-23T02:40:02.014Z"
     },
     {
       "id": "1a12fe702ed7998f",
@@ -4388,28 +4388,6 @@
       "last_updated": "2026-07-18T14:46:37.029Z"
     },
     {
-      "id": "ff503b4572c9c196",
-      "name": "Ruby Setnik",
-      "genre": "Comedy",
-      "venue": "Punch Line Houston",
-      "venue_state": "TX",
-      "venue_city": "Houston",
-      "date": "2026-09-18",
-      "time": "7:00 PM",
-      "day_of_week": "Friday",
-      "price_min": null,
-      "price_max": null,
-      "currency": "USD",
-      "price_source": null,
-      "ticket_url": "https://www.ticketmaster.com/ruby-setnik-houston-texas-09-18-2026/event/3A0064EDF272D4EE",
-      "image_url": "https://s1.ticketm.net/dam/a/d38/9bde9e19-f58a-4fd1-9521-002e7fee4d38_SOURCE",
-      "source": "ticketmaster",
-      "age_restriction": null,
-      "status": "on_sale",
-      "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
-      "last_updated": "2026-07-18T14:46:30.986Z"
-    },
-    {
       "id": "9940ea95b61d35f7",
       "name": "Bo Johnson (Don't Tell Comedy) Headlines The Riot Comedy Club",
       "venue": "The Riot Comedy Club",
@@ -4506,28 +4484,6 @@
       "status": "on_sale",
       "description": "Catch Aaron Weber live at The Riot Comedy Club upstairs at GuadalaHARRY's in downtown Conroe with tasty food, cold drinks, fun vibes.",
       "last_updated": "2026-07-18T14:46:39.915Z"
-    },
-    {
-      "id": "6ac3c9e0a6e4ec31",
-      "name": "Ruby Setnik",
-      "genre": "Comedy",
-      "venue": "Punch Line Houston",
-      "venue_state": "TX",
-      "venue_city": "Houston",
-      "date": "2026-09-19",
-      "time": "7:00 PM",
-      "day_of_week": "Saturday",
-      "price_min": null,
-      "price_max": null,
-      "currency": "USD",
-      "price_source": null,
-      "ticket_url": "https://www.ticketmaster.com/ruby-setnik-houston-texas-09-19-2026/event/3A0064EDF27AD4FD",
-      "image_url": "https://s1.ticketm.net/dam/a/d38/9bde9e19-f58a-4fd1-9521-002e7fee4d38_SOURCE",
-      "source": "ticketmaster",
-      "age_restriction": null,
-      "status": "on_sale",
-      "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
-      "last_updated": "2026-07-18T14:46:30.986Z"
     },
     {
       "id": "811b8c07515961c3",
@@ -5551,6 +5507,50 @@
       "last_updated": "2026-07-18T14:46:37.029Z"
     },
     {
+      "id": "d257018e0a83872b",
+      "name": "Funjelah Live Podcast Taping w/ Anjelah Johnson-Reyes & Special Guest",
+      "genre": "Theatre",
+      "venue": "Punch Line Houston",
+      "venue_state": "TX",
+      "venue_city": "Houston",
+      "date": "2026-10-15",
+      "time": "7:00 PM",
+      "day_of_week": "Thursday",
+      "price_min": null,
+      "price_max": null,
+      "currency": "USD",
+      "price_source": null,
+      "ticket_url": "https://www.ticketmaster.com/funjelah-live-podcast-taping-w-anjelah-houston-texas-10-15-2026/event/3A0064EABBAFB15B",
+      "image_url": "https://s1.ticketm.net/dam/a/754/9026b1db-62a7-45e4-8fbc-b4d7b85ee754_SOURCE",
+      "source": "ticketmaster",
+      "age_restriction": null,
+      "status": "on_sale",
+      "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
+      "last_updated": "2026-07-23T02:40:02.014Z"
+    },
+    {
+      "id": "16813c804528bc42",
+      "name": "Ivã¡N Fematt ÂLa Moleâ (En Espaã±Ol)",
+      "genre": "Comedy",
+      "venue": "Houston Improv",
+      "venue_state": "TX",
+      "venue_city": "Houston",
+      "date": "2026-10-15",
+      "time": "7:30 PM",
+      "day_of_week": "Thursday",
+      "price_min": null,
+      "price_max": null,
+      "currency": "USD",
+      "price_source": null,
+      "ticket_url": "https://www.ticketweb.com/event/ivn-fematt-la-mole-en-houston-improv-tickets/14891023?REFERRAL_ID=tmfeed",
+      "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "source": "ticketmaster",
+      "age_restriction": null,
+      "status": "on_sale",
+      "description": null,
+      "last_updated": "2026-07-23T02:40:02.015Z"
+    },
+    {
       "id": "d2edd9fe06746e57",
       "name": "Social Comedy Nite",
       "venue": "Social Beer Garden HTX",
@@ -5568,6 +5568,28 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-18T14:46:37.029Z"
+    },
+    {
+      "id": "a1a62c4d95a12667",
+      "name": "Janeane Garofalo",
+      "genre": "Comedy",
+      "venue": "Punch Line Houston",
+      "venue_state": "TX",
+      "venue_city": "Houston",
+      "date": "2026-10-16",
+      "time": "7:00 PM",
+      "day_of_week": "Friday",
+      "price_min": null,
+      "price_max": null,
+      "currency": "USD",
+      "price_source": null,
+      "ticket_url": "https://www.ticketmaster.com/janeane-garofalo-houston-texas-10-16-2026/event/3A0064D4250CD7C9",
+      "image_url": "https://s1.ticketm.net/dam/a/788/2d7a4e0b-fad8-484e-a401-179db63b0788_SOURCE",
+      "source": "ticketmaster",
+      "age_restriction": null,
+      "status": "on_sale",
+      "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
+      "last_updated": "2026-07-23T02:40:02.015Z"
     },
     {
       "id": "101c28031c9ba0af",
