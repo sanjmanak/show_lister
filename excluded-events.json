@@ -1,30 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-07-24T02:36:16.163Z",
-  "total_excluded": 32,
+  "last_updated": "2026-07-24T15:21:48.496Z",
+  "total_excluded": 30,
   "events": [
-    {
-      "name": "Karaoke every THURSDAY!",
-      "venue": "The Secret Group",
-      "venue_city": null,
-      "date": "2026-07-23",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/karaoke-every-thursday-tickets-1993031254132",
-      "reason": "title keyword blocklisted: \"karaoke\""
-    },
-    {
-      "name": "The Word Alive - The Deceiver & Dark Matter Anniversary Tour",
-      "venue": "The Secret Group",
-      "venue_city": null,
-      "date": "2026-07-23",
-      "time": "6:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/the-word-alive-the-deceiver-dark-matter-anniversary-tour-tickets-1988025191865",
-      "reason": "music artist blocklisted: \"the word alive\""
-    },
     {
       "name": "NOTHING MATTERS Emo | Indie | Punk Dance Party",
       "venue": "The Secret Group",
