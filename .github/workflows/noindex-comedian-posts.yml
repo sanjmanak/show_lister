@@ -1,0 +1,42 @@
+name: Noindex Comedian Posts (backfill)
+
+# Manual, one-time-ish maintenance: flags the existing per-comedian preview
+# posts with ch_noindex so the Comedy Houston plugin (v2.8.0+) emits a robots
+# noindex meta on them. New posts are flagged at publish time by
+# generate-comedian-post.js. Run with apply=false first and read the log.
+#
+# REQUIRES plugin v2.8.0+ to be active on the site — the ch_noindex REST
+# field doesn't exist before that and the writes would be silently dropped.
+
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "Actually write the flags (false = dry run, prints what it would flag)"
+        type: boolean
+        default: false
+
+jobs:
+  noindex:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Flag posts
+        env:
+          WP_SITE_URL: ${{ secrets.WP_SITE_URL }}
+          WP_APP_USER: ${{ secrets.WP_APP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+        run: |
+          if [ "${{ inputs.apply }}" = "true" ]; then
+            node scripts/noindex-comedian-posts.js --apply
+          else
+            node scripts/noindex-comedian-posts.js
+          fi

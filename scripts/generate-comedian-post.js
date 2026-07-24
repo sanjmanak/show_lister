@@ -1741,6 +1741,14 @@ async function publishToWordPress(comedianName, venue, date, slug, htmlContent, 
     status: "publish",
     slug: slug,
     comment_status: "closed",
+    // Per-comedian preview posts are noindexed by default (plugin v2.8.0
+    // emits the robots meta): they exist for Instagram creative and the
+    // event cards' "More info" internal links, but ~90 near-template posts
+    // indexed on a low-traffic domain were a sitewide quality drag. To keep
+    // a specific post indexable (it earns real GSC clicks), add a
+    // ch_allow_index=1 custom field in WP admin — it overrides this flag,
+    // so re-publishes can't flip it back.
+    ch_noindex: 1,
   };
 
   if (featuredMediaId) {
