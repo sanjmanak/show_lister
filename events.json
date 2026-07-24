@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-23T15:52:52.189Z",
+  "last_updated": "2026-07-24T02:37:38.008Z",
   "total_events": 273,
   "events": [
     {
@@ -20,14 +20,14 @@
       "image_url": "https://s1.ticketm.net/dam/a/c99/def9c37a-77e3-4bd1-9da5-369f62e62c99_SOURCE",
       "source": "ticketmaster",
       "age_restriction": null,
-      "status": "on_sale",
+      "status": "off_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
-      "last_updated": "2026-07-18T14:46:30.985Z"
+      "last_updated": "2026-07-24T02:36:08.024Z"
     },
     {
       "id": "df135a9ec88488fe",
       "name": "Frankie Quinones",
-      "genre": "Miscellaneous",
+      "genre": "Comedy",
       "venue": "Houston Improv",
       "venue_state": "TX",
       "venue_city": "Houston",
@@ -38,13 +38,13 @@
       "price_max": null,
       "currency": "USD",
       "price_source": null,
-      "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A704fF",
+      "ticket_url": "https://www.ticketweb.com/event/frankie-quiones-houston-improv-tickets/14910423?REFERRAL_ID=tmfeed",
       "image_url": "https://s1.ticketm.net/dam/a/5c6/6dd00db3-3bc5-4951-8615-c71573c515c6_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "source": "ticketmaster",
       "age_restriction": null,
-      "status": "on_sale",
+      "status": "off_sale",
       "description": null,
-      "last_updated": "2026-07-18T14:46:30.985Z"
+      "last_updated": "2026-07-24T02:36:08.024Z"
     },
     {
       "id": "f3baf30ed467f7f7",
@@ -3001,8 +3001,8 @@
       "last_updated": "2026-07-18T14:46:30.986Z"
     },
     {
-      "id": "c0e623bc8484328f",
-      "name": "Mario Salazar",
+      "id": "65d3246fc25a5b35",
+      "name": "Mario 'superstar' Salazar",
       "genre": "Comedy",
       "venue": "Houston Improv",
       "venue_state": "TX",
@@ -3010,17 +3010,17 @@
       "date": "2026-08-20",
       "time": "7:30 PM",
       "day_of_week": "Thursday",
-      "price_min": 25.22,
-      "price_max": 25.22,
+      "price_min": null,
+      "price_max": null,
       "currency": "USD",
-      "price_source": "page",
-      "ticket_url": "https://www.ticketweb.com/event/mario-salazar-houston-improv-tickets/14253054?REFERRAL_ID=tmfeed",
+      "price_source": null,
+      "ticket_url": "https://www.ticketweb.com/event/mario-superstar-salazar-houston-improv-tickets/14253054?REFERRAL_ID=tmfeed",
       "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "source": "ticketmaster",
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-07-19T00:21:45.368Z"
+      "last_updated": "2026-07-24T02:36:08.025Z"
     },
     {
       "id": "6fe3f62cc1c22514",
@@ -4140,12 +4140,12 @@
       "currency": "USD",
       "price_source": null,
       "ticket_url": "https://www.ticketmaster.com/abelardo-en-espanol-houston-texas-09-13-2026/event/3A0064F5CF58E8B5",
-      "image_url": "https://s1.ticketm.net/dam/a/5ba/743601a1-acbc-449b-8c97-2e829bd225ba_SOURCE",
+      "image_url": "https://s1.ticketm.net/dam/a/cb5/ba77f407-900a-4f10-bc9d-d088b2e07cb5_SOURCE",
       "source": "ticketmaster",
       "age_restriction": null,
       "status": "off_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
-      "last_updated": "2026-07-22T15:28:15.541Z"
+      "last_updated": "2026-07-24T02:36:08.026Z"
     },
     {
       "id": "fad593f8556c7597",
@@ -5507,13 +5507,13 @@
       "price_max": null,
       "currency": "USD",
       "price_source": null,
-      "ticket_url": "https://www.ticketweb.com/event/marlon-wayans-houston-improv-tickets/14949913?REFERRAL_ID=tmfeed",
+      "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A70Uay",
       "image_url": "https://s1.ticketm.net/dam/a/649/fc0c18a2-de9c-4378-9212-c7fa46e7e649_SOURCE",
       "source": "ticketmaster",
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-07-23T15:51:16.813Z"
+      "last_updated": "2026-07-24T02:36:08.026Z"
     },
     {
       "id": "101c28031c9ba0af",
