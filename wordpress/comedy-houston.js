@@ -304,7 +304,11 @@
 
       if (currentVenueFilter !== "all" && ev.venue !== currentVenueFilter) continue;
       if (currentSourceFilter !== "all" && ev.source !== currentSourceFilter) continue;
-      var isOpenMic = ev.name && ev.name.toLowerCase().replace(/-/g, " ").indexOf("open mic") !== -1;
+      // Explicit ingest-time flag (see config/open-mics.json); title match
+      // is only a fallback for pre-flag events.json payloads.
+      var isOpenMic = (typeof ev.is_open_mic === "boolean")
+        ? ev.is_open_mic
+        : !!(ev.name && ev.name.toLowerCase().replace(/-/g, " ").indexOf("open mic") !== -1);
       if (!showOpenMic && isOpenMic) continue;
       if (typeFilter === "open_mic" && !isOpenMic) continue;
 
@@ -488,10 +492,14 @@
     var ticketUrl = buildTicketUrl(ev.ticket_url);
     // rel="sponsored nofollow" — monetized outbound links (kept in sync with
     // the SSR renderer in comedy-houston.php).
+    // Confirmed-free shows with no ticket link (curated open mics) are
+    // walk-up events — "Coming Soon" would wrongly imply tickets are pending.
     var ticketHTML = ticketUrl
       ? '<a class="card-cta" href="' + escapeAttr(ticketUrl) + '" target="_blank" rel="sponsored nofollow noopener">' +
         'Get Tickets <span class="arrow">&rarr;</span></a>'
-      : '<span class="card-cta" style="opacity:0.5;cursor:default;">Coming Soon</span>';
+      : (ev.price_min === 0
+        ? '<span class="card-cta" style="opacity:0.7;cursor:default;">Free &mdash; just show up</span>'
+        : '<span class="card-cta" style="opacity:0.5;cursor:default;">Coming Soon</span>');
 
     // If we have an internal comedian post for this event, show a secondary
     // "More info" link. Keeps visitors on our site for the research content
@@ -505,7 +513,7 @@
 
     return '<article class="event-card">' +
       '<div class="card-image">' + imageHTML +
-      (SHOW_SOURCE_BADGES ? '<span class="card-source-badge ' + escapeAttr(ev.source) + '">' + escapeHTML(ev.source) + '</span>' : '') +
+      (SHOW_SOURCE_BADGES ? '<span class="card-source-badge ' + escapeAttr(ev.source) + '">' + escapeHTML(ev.source === "manual" ? "curated" : ev.source) + '</span>' : '') +
       '<span class="card-status-badge ' + escapeAttr(statusClass) + '">' + escapeHTML(statusLabel) + '</span>' +
       '</div>' +
       '<div class="card-body">' +

@@ -52,6 +52,7 @@ const INDEX_HTML_PATH = path.join(OUTPUT_DIR, "index.html");
 const TEMPLATE_PATH = path.join(OUTPUT_DIR, "index.html");
 const FILTERS_JSON_PATH = path.join(OUTPUT_DIR, "config", "filters.json");
 const EXCLUDED_JSON_PATH = path.join(OUTPUT_DIR, "excluded-events.json");
+const OPEN_MICS_JSON_PATH = path.join(OUTPUT_DIR, "config", "open-mics.json");
 const PRICE_CACHE_PATH = path.join(OUTPUT_DIR, "config", "price-cache.json");
 
 // Price-enrichment pacing. Ticketmaster's Discovery API allows 5 req/s, so
@@ -1239,6 +1240,112 @@ function classifyExclusion(ev, filters) {
   return null;
 }
 
+// ---------------------------------------------------------------------------
+// Open-mic classification (config/open-mics.json)
+//
+// The WordPress plugin's /open-mics/ page used to detect mics by the literal
+// title substring "open mic" — which only The Secret Group's series names
+// contain, so the "complete list" rendered exactly one venue. Classification
+// now happens here at ingest: every event gets an explicit `is_open_mic`
+// boolean (title match OR series allowlist), and recurring bar mics with no
+// Eventbrite/Ticketmaster presence can be hand-curated in `manual_mics` and
+// expanded into weekly occurrences.
+// ---------------------------------------------------------------------------
+
+function loadOpenMicConfig() {
+  try {
+    const raw = JSON.parse(fs.readFileSync(OPEN_MICS_JSON_PATH, "utf8"));
+    return {
+      seriesAllowlist: (Array.isArray(raw.series_allowlist) ? raw.series_allowlist : [])
+        .filter((r) => r && r.enabled !== false)
+        .map((r) => ({
+          titleMatch: String(r.title_match || "").toLowerCase().trim(),
+          venueMatch: String(r.venue_match || "").toLowerCase().trim(),
+        }))
+        .filter((r) => r.titleMatch),
+      manualMics: (Array.isArray(raw.manual_mics) ? raw.manual_mics : [])
+        .filter((m) => m && m.enabled !== false && m.name && m.venue && m.day_of_week),
+    };
+  } catch (err) {
+    console.warn(`Could not load ${OPEN_MICS_JSON_PATH}: ${err.message} — title-only open-mic matching.`);
+    return { seriesAllowlist: [], manualMics: [] };
+  }
+}
+
+function isOpenMicEvent(ev, openMicConfig) {
+  // Legacy rule: "open mic" in the title (hyphens normalized, as the WP
+  // plugin and front-end JS always did).
+  const name = String(ev.name || "").toLowerCase().replace(/-/g, " ");
+  if (name.includes("open mic")) return true;
+
+  const venue = String(ev.venue || "").toLowerCase();
+  return openMicConfig.seriesAllowlist.some(
+    (r) => name.includes(r.titleMatch) && (!r.venueMatch || venue.includes(r.venueMatch))
+  );
+}
+
+/**
+ * Expand `manual_mics` entries into dated occurrences over the next
+ * `windowDays` Central-time calendar days. An occurrence is dropped when the
+ * API feed already carries an open-mic event at the same venue on the same
+ * date (e.g. the mic later gains an Eventbrite listing) so a show is never
+ * listed twice.
+ */
+function expandManualMics(openMicConfig, existingEvents, windowDays = 90) {
+  if (openMicConfig.manualMics.length === 0) return [];
+
+  const existingMicKeys = new Set(
+    existingEvents
+      .filter((e) => e.is_open_mic)
+      .map((e) => `${String(e.venue || "").toLowerCase().trim()}|${e.date}`)
+  );
+
+  // Today's date in Central time, independent of the process TZ.
+  const todayStr = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/Chicago",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+
+  const nowIso = new Date().toISOString();
+  const out = [];
+  for (const mic of openMicConfig.manualMics) {
+    const venue = normalizeVenueName(mic.venue);
+    for (let offset = 0; offset < windowDays; offset++) {
+      const d = new Date(todayStr + "T12:00:00Z");
+      d.setUTCDate(d.getUTCDate() + offset);
+      const dateStr = d.toISOString().slice(0, 10);
+      if (getDayOfWeek(dateStr) !== mic.day_of_week) continue;
+      if (existingMicKeys.has(`${venue.toLowerCase().trim()}|${dateStr}`)) continue;
+      out.push({
+        id: makeId(mic.name, dateStr, venue),
+        name: mic.name,
+        genre: "Comedy",
+        venue,
+        venue_state: "TX",
+        venue_city: mic.venue_city || "Houston",
+        date: dateStr,
+        time: mic.time || null,
+        day_of_week: mic.day_of_week,
+        price_min: 0,
+        price_max: 0,
+        currency: "USD",
+        price_source: "manual",
+        ticket_url: mic.info_url || null,
+        image_url: mic.image_url || null,
+        source: "manual",
+        age_restriction: mic.age_restriction || null,
+        status: "on_sale",
+        description: mic.description || null,
+        is_open_mic: true,
+        last_updated: nowIso,
+      });
+    }
+  }
+  return out;
+}
+
 function applyRelevanceFilters(events, filters) {
   const kept = [];
   const excluded = [];
@@ -1391,6 +1498,22 @@ async function main() {
   // strip it so it never reaches events.json.
   for (const e of deduped) delete e._tmId;
 
+  // Open-mic classification + hand-curated recurring mics — see
+  // config/open-mics.json. The explicit is_open_mic flag is what the WP
+  // plugin and front-end JS filter on (with a title-match fallback for any
+  // events.json written before this field existed).
+  const openMicConfig = loadOpenMicConfig();
+  for (const ev of deduped) {
+    ev.is_open_mic = isOpenMicEvent(ev, openMicConfig);
+  }
+  const manualMics = expandManualMics(openMicConfig, deduped);
+  if (manualMics.length > 0) {
+    deduped.push(...manualMics);
+    console.log(`Open mics: ${deduped.filter((e) => e.is_open_mic).length} total (${manualMics.length} from manual_mics)`);
+  } else {
+    console.log(`Open mics: ${deduped.filter((e) => e.is_open_mic).length} flagged`);
+  }
+
   // Sort by date, then time. Times are 12-hour strings ("8:00 PM"), so a
   // string compare puts "10:00 PM" before "8:00 PM" — compare minutes instead.
   deduped.sort((a, b) => {
@@ -1537,6 +1660,9 @@ module.exports = {
   loadRelevanceFilters,
   classifyExclusion,
   applyRelevanceFilters,
+  loadOpenMicConfig,
+  isOpenMicEvent,
+  expandManualMics,
   parseJsonLdPrices,
   extractJsonLdBlocks,
   enrichPrices,

@@ -419,6 +419,7 @@
 
 #ch-app .card-source-badge.ticketmaster { color: #0093d0; }
 #ch-app .card-source-badge.eventbrite { color: #f05537; }
+#ch-app .card-source-badge.manual { color: #7bd88f; }
 
 #ch-app .card-status-badge {
   position: absolute;
