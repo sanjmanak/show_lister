@@ -637,8 +637,9 @@ class Comedy_Houston_Plugin {
     /**
      * REST fields `ch_meta_title` and `ch_meta_description` on pages and
      * posts. The landing-page sync script (scripts/manage-wp-pages.js) sets
-     * these when it creates /tonight/, /this-weekend/, /free/, /open-mics/
-     * and the venue pages. Stored in post meta; emitted below when no SEO
+     * these when it creates /tonight/, /this-weekend/, /free/,
+     * /open-mic-comedy-houston/ and the venue pages. Stored in post meta;
+     * emitted below when no SEO
      * plugin is active (an active SEO plugin owns titles/descriptions).
      */
     public function register_page_seo_fields() {
