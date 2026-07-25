@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.6.0
+ * Version: 2.8.0
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.6.0';
+    const VERSION      = '2.8.0';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -59,6 +59,47 @@ class Comedy_Houston_Plugin {
         // shows. Sent from template_redirect (before any output) rather than
         // the shortcode, where headers may already be gone.
         add_action('template_redirect', [$this, 'send_cache_headers'], 5);
+
+        // 301 the retired dated weekly roundups (/houston-comedy-shows-this-
+        // week-YYYY-MM-DD/) to the evergreen /this-week/ page. The generator
+        // no longer publishes dated posts; this consolidates the ~20 existing
+        // ones' signals onto the page that stays. Runs before send_cache_headers
+        // so the redirect wins even while the old posts still exist in WP.
+        add_action('template_redirect', [$this, 'redirect_dated_weekly_posts'], 4);
+
+        // Cache invalidation. Cache-Control alone can't fix a full-page cache
+        // (LiteSpeed) that serves HTML without ever running PHP — the twice-
+        // daily data import was updating events.json while cached listing
+        // pages kept rendering days-old shows under "Tonight". Two paths:
+        //   1. REST POST /wp-json/comedy-houston/v1/refresh — fired by the
+        //      update-events GitHub Action right after it pushes new data
+        //      (authenticated with the same application password the other
+        //      publishing scripts use). Refetches events.json and purges.
+        //   2. Hourly WP-cron fallback — refetches, compares a content hash,
+        //      and purges only when the data actually changed (covers the
+        //      case where the webhook isn't configured or fails).
+        add_action('rest_api_init', [$this, 'register_refresh_route']);
+        add_action('init', [$this, 'maybe_schedule_refresh_cron']);
+        add_action('comedy_houston_refresh_events', [$this, 'cron_refresh_events']);
+        register_deactivation_hook(__FILE__, [$this, 'clear_refresh_cron']);
+
+        // Corporate booking inquiry form ([comedy_houston_inquiry]) — an
+        // actual fillable form for the clean-comedy page, replacing the
+        // mailto: dead-end. Submissions are validated (token + honeypot +
+        // per-IP rate limit) and emailed to the inquiry address; the client
+        // fires a GA4 `corporate_inquiry` event on success.
+        add_shortcode('comedy_houston_inquiry', [$this, 'render_inquiry_form']);
+        add_action('rest_api_init', [$this, 'register_inquiry_routes']);
+
+        // Per-post noindex. The comedian-post generator marks its posts
+        // ch_noindex; ~90 near-template preview posts were a sitewide
+        // quality drag (all impressions, zero clicks). Posts stay live for
+        // Instagram and the event cards' "More info" links — they just stop
+        // being indexable. Add a ch_allow_index custom field (value 1) in WP
+        // admin to re-index a post that earns real clicks; it wins over
+        // ch_noindex so the generator can't flip it back.
+        add_action('rest_api_init', [$this, 'register_noindex_fields']);
+        add_action('wp_head', [$this, 'emit_noindex_meta'], 0);
 
         // Keep crawlers away from ?ch_go= redirect URLs (crawl budget).
         // Only affects WordPress's virtual robots.txt — if a physical
@@ -290,8 +331,35 @@ class Comedy_Houston_Plugin {
         } catch (Exception $e) {
             return;
         }
+        // Expire at the next Central midnight (the "Tonight"/"Tomorrow"
+        // labels roll over then), capped at 6 hours as a staleness safety
+        // net: the data import lands twice daily, so even if the purge
+        // webhook and cron both fail, no cache may outlive the next import
+        // by more than a few hours.
         $max_age = max(60, $midnight->getTimestamp() - $now->getTimestamp());
+        $max_age = min($max_age, 6 * HOUR_IN_SECONDS);
         header('Cache-Control: public, max-age=' . $max_age . ', s-maxage=' . $max_age);
+    }
+
+    /**
+     * 301 the retired dated weekly roundup posts to the evergreen
+     * /this-week/ page. The weekly generator no longer creates dated posts
+     * (each one duplicated /this-week/ for its seven days of relevance, then
+     * became permanent thin-content cannibalizing the evergreen URL); this
+     * consolidates the existing archive's signals without touching WP admin.
+     * The old posts can be deleted at leisure — the redirect fires before
+     * WordPress resolves the request either way.
+     */
+    public function redirect_dated_weekly_posts() {
+        if (is_admin() || empty($_SERVER['REQUEST_URI'])) {
+            return;
+        }
+        $path = wp_parse_url(wp_unslash($_SERVER['REQUEST_URI']), PHP_URL_PATH);
+        if (!$path || !preg_match('#^/houston-comedy-shows-this-week-\d{4}-\d{2}-\d{2}/?$#', $path)) {
+            return;
+        }
+        wp_safe_redirect(home_url('/this-week/'), 301);
+        exit;
     }
 
     public function handle_redirect() {
@@ -587,8 +655,9 @@ class Comedy_Houston_Plugin {
     /**
      * REST fields `ch_meta_title` and `ch_meta_description` on pages and
      * posts. The landing-page sync script (scripts/manage-wp-pages.js) sets
-     * these when it creates /tonight/, /this-weekend/, /free/, /open-mics/
-     * and the venue pages. Stored in post meta; emitted below when no SEO
+     * these when it creates /tonight/, /this-weekend/, /free/,
+     * /open-mic-comedy-houston/ and the venue pages. Stored in post meta;
+     * emitted below when no SEO
      * plugin is active (an active SEO plugin owns titles/descriptions).
      */
     public function register_page_seo_fields() {
@@ -732,18 +801,46 @@ class Comedy_Houston_Plugin {
      * Returns the decoded JSON array or null on failure.
      */
     public function fetch_events_data() {
-        $opts = $this->get_options();
-        $cache_key = 'ch_events_' . md5($opts['github_user'] . '_' . $opts['repo']);
+        $cache_key = $this->events_transient_key();
 
         $cached = get_transient($cache_key);
         if ($cached !== false) {
             return $cached;
         }
 
+        $fetched = $this->fetch_events_from_github();
+        if (!$fetched) {
+            return null;
+        }
+
+        // NOTE: this passive path deliberately does NOT update the
+        // ch_events_hash option — only refresh_events_and_purge() may mark a
+        // payload as "seen", otherwise an uncached page render could swallow
+        // a data change and the cron fallback would never purge the pages
+        // LiteSpeed rendered from the older payload.
+        set_transient($cache_key, $fetched['data'], HOUR_IN_SECONDS);
+        return $fetched['data'];
+    }
+
+    private function events_transient_key() {
+        $opts = $this->get_options();
+        return 'ch_events_' . md5($opts['github_user'] . '_' . $opts['repo']);
+    }
+
+    /**
+     * Fetch events.json from GitHub raw, bypassing the transient. $ref may be
+     * a branch or a commit SHA — the update-events workflow passes the SHA it
+     * just pushed, because raw.githubusercontent.com caches branch URLs for
+     * ~5 minutes while commit-SHA URLs are immutable and always fresh.
+     * Returns ['data' => array, 'hash' => md5-of-body] or null.
+     */
+    private function fetch_events_from_github($ref = 'main') {
+        $opts = $this->get_options();
         $url = sprintf(
-            'https://raw.githubusercontent.com/%s/%s/main/events.json',
+            'https://raw.githubusercontent.com/%s/%s/%s/events.json',
             sanitize_text_field($opts['github_user']),
-            sanitize_text_field($opts['repo'])
+            sanitize_text_field($opts['repo']),
+            rawurlencode($ref)
         );
 
         $response = wp_remote_get($url, ['timeout' => 10]);
@@ -751,13 +848,415 @@ class Comedy_Houston_Plugin {
             return null;
         }
 
-        $data = json_decode(wp_remote_retrieve_body($response), true);
+        $body = wp_remote_retrieve_body($response);
+        $data = json_decode($body, true);
         if (!$data || empty($data['events'])) {
             return null;
         }
 
-        set_transient($cache_key, $data, HOUR_IN_SECONDS);
-        return $data;
+        return ['data' => $data, 'hash' => md5($body)];
+    }
+
+    // =========================================================================
+    // CACHE INVALIDATION (LiteSpeed purge on data change)
+    // =========================================================================
+
+    /**
+     * POST /wp-json/comedy-houston/v1/refresh — called by the update-events
+     * GitHub Action after it pushes fresh events.json. Authenticated via
+     * application password (same WP_APP_USER/WP_APP_PASSWORD the publishing
+     * scripts already use). Optional body param `sha` pins the fetch to the
+     * just-pushed commit so the raw CDN's ~5-minute branch cache can't serve
+     * the previous payload back to us.
+     */
+    public function register_refresh_route() {
+        register_rest_route('comedy-houston/v1', '/refresh', [
+            'methods'  => 'POST',
+            'callback' => [$this, 'handle_refresh_request'],
+            'permission_callback' => function () {
+                return current_user_can('edit_posts');
+            },
+        ]);
+    }
+
+    public function handle_refresh_request($request) {
+        $sha = sanitize_text_field((string) $request->get_param('sha'));
+        if ($sha !== '' && !preg_match('/^[0-9a-f]{7,40}$/i', $sha)) {
+            return new WP_Error('ch_bad_sha', 'sha must be a hex commit id.', ['status' => 400]);
+        }
+        // Explicit webhook call = a data push just happened; always purge.
+        $result = $this->refresh_events_and_purge($sha !== '' ? $sha : null, true);
+        if (!$result['refreshed']) {
+            return new WP_Error('ch_fetch_failed', 'Could not fetch events.json from GitHub.', ['status' => 502]);
+        }
+        return rest_ensure_response($result);
+    }
+
+    /**
+     * Hourly WP-cron fallback: refetch, and purge only when the payload hash
+     * actually changed. Covers the twice-daily import when the REST webhook
+     * isn't configured (or its call failed) — without this, LiteSpeed keeps
+     * serving pages rendered from days-old data because a fully cached page
+     * never runs PHP, so the transient alone can never fix staleness.
+     */
+    public function maybe_schedule_refresh_cron() {
+        if (!wp_next_scheduled('comedy_houston_refresh_events')) {
+            wp_schedule_event(time() + HOUR_IN_SECONDS, 'hourly', 'comedy_houston_refresh_events');
+        }
+    }
+
+    public function clear_refresh_cron() {
+        wp_clear_scheduled_hook('comedy_houston_refresh_events');
+    }
+
+    public function cron_refresh_events() {
+        $this->refresh_events_and_purge(null, false);
+    }
+
+    /**
+     * Refetch events.json (optionally at a specific commit), refresh the
+     * transient, and purge the LiteSpeed page cache for every listing page
+     * when the data changed ($force purges unconditionally).
+     */
+    public function refresh_events_and_purge($sha = null, $force = false) {
+        $fetched = $this->fetch_events_from_github($sha !== null ? $sha : 'main');
+        if (!$fetched) {
+            return ['refreshed' => false, 'changed' => false, 'purged' => 0];
+        }
+
+        $changed = get_option('ch_events_hash') !== $fetched['hash'];
+        set_transient($this->events_transient_key(), $fetched['data'], HOUR_IN_SECONDS);
+        update_option('ch_events_hash', $fetched['hash'], false);
+
+        $purged = [];
+        if ($changed || $force) {
+            $purged = $this->purge_listing_cache();
+        }
+        return [
+            'refreshed' => true,
+            'changed'   => $changed,
+            'purged'    => count($purged),
+            'urls'      => $purged,
+        ];
+    }
+
+    /**
+     * Purge the page cache for the homepage and every published page/post
+     * containing the [comedy_houston] shortcode — /tonight/, /this-weekend/,
+     * /free/, the open-mics page, /this-week/, and all venue pages, whatever
+     * their current slugs. The litespeed_* actions are no-ops when LiteSpeed
+     * Cache isn't active, so this is safe on any host.
+     */
+    private function purge_listing_cache() {
+        global $wpdb;
+        $like = '%' . $wpdb->esc_like('[' . self::SHORTCODE) . '%';
+        $ids = $wpdb->get_col($wpdb->prepare(
+            "SELECT ID FROM {$wpdb->posts}
+             WHERE post_status = 'publish'
+               AND post_type IN ('page', 'post')
+               AND post_content LIKE %s",
+            $like
+        ));
+
+        $urls = [home_url('/')];
+        foreach ($ids as $id) {
+            $permalink = get_permalink((int) $id);
+            if ($permalink) {
+                $urls[] = $permalink;
+            }
+            do_action('litespeed_purge_post', (int) $id);
+        }
+        $urls = array_values(array_unique($urls));
+        foreach ($urls as $url) {
+            do_action('litespeed_purge_url', $url);
+        }
+        return $urls;
+    }
+
+    // =========================================================================
+    // CORPORATE BOOKING INQUIRY FORM
+    // =========================================================================
+
+    private function inquiry_email() {
+        return apply_filters('comedy_houston_inquiry_email', 'creative@comedyhouston.com');
+    }
+
+    /**
+     * Spam defense, no third-party service:
+     *   1. Token — the form fetches an HMAC-signed timestamp from REST at
+     *      page view (works on LiteSpeed-cached pages, where a rendered
+     *      nonce could be days old and long expired). Submissions must
+     *      arrive 8 seconds to 6 hours after the token was minted: bots
+     *      that POST the endpoint directly have no token, and bots that
+     *      auto-fill instantly fail the 8-second floor.
+     *   2. Honeypot — a visually hidden "website" field; any value rejects.
+     *   3. Rate limit — max 5 submissions per IP per hour via transient.
+     */
+    private function mint_inquiry_token() {
+        $ts = time();
+        return $ts . '.' . hash_hmac('sha256', 'ch-inquiry|' . $ts, wp_salt('nonce'));
+    }
+
+    private function verify_inquiry_token($token) {
+        if (!is_string($token) || !preg_match('/^(\d{10,12})\.([0-9a-f]{64})$/', $token, $m)) {
+            return false;
+        }
+        $ts = (int) $m[1];
+        if (!hash_equals(hash_hmac('sha256', 'ch-inquiry|' . $ts, wp_salt('nonce')), $m[2])) {
+            return false;
+        }
+        $age = time() - $ts;
+        return $age >= 8 && $age <= 6 * HOUR_IN_SECONDS;
+    }
+
+    public function register_inquiry_routes() {
+        register_rest_route('comedy-houston/v1', '/inquiry-token', [
+            'methods'  => 'GET',
+            'callback' => function () {
+                return rest_ensure_response(['token' => $this->mint_inquiry_token()]);
+            },
+            'permission_callback' => '__return_true',
+        ]);
+        register_rest_route('comedy-houston/v1', '/inquiry', [
+            'methods'  => 'POST',
+            'callback' => [$this, 'handle_inquiry_submission'],
+            'permission_callback' => '__return_true',
+        ]);
+    }
+
+    public function handle_inquiry_submission($request) {
+        // Honeypot: silently accept so bots don't learn they were caught.
+        if (trim((string) $request->get_param('website')) !== '') {
+            return rest_ensure_response(['ok' => true]);
+        }
+
+        if (!$this->verify_inquiry_token($request->get_param('ch_token'))) {
+            return new WP_Error('ch_inquiry_token', 'Session expired — please reload the page and try again.', ['status' => 403]);
+        }
+
+        $ip = isset($_SERVER['REMOTE_ADDR']) ? sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'])) : '';
+        $rate_key = 'ch_inq_' . md5($ip);
+        $count = (int) get_transient($rate_key);
+        if ($count >= 5) {
+            return new WP_Error('ch_inquiry_rate', 'Too many submissions — please try again later or email us directly.', ['status' => 429]);
+        }
+        set_transient($rate_key, $count + 1, HOUR_IN_SECONDS);
+
+        $field = function ($key, $max) use ($request) {
+            return mb_substr(sanitize_text_field((string) $request->get_param($key)), 0, $max);
+        };
+        $name       = $field('name', 100);
+        $email      = sanitize_email((string) $request->get_param('email'));
+        $org        = $field('organization', 150);
+        $event_date = $field('event_date', 20);
+        $event_type = $field('event_type', 60);
+        $audience   = $field('audience_size', 40);
+        $location   = $field('location', 200);
+        $budget     = $field('budget', 40);
+        $content    = $field('content_level', 60);
+        $notes      = mb_substr(sanitize_textarea_field((string) $request->get_param('notes')), 0, 4000);
+
+        if ($name === '' || !is_email($email) || $event_type === '' || $event_date === '') {
+            return new WP_Error('ch_inquiry_fields', 'Please fill in your name, email, event date, and event type.', ['status' => 400]);
+        }
+
+        $lines = [
+            'New corporate/clean comedy inquiry from comedyhouston.com',
+            '',
+            'Name:          ' . $name,
+            'Email:         ' . $email,
+            'Organization:  ' . ($org !== '' ? $org : '—'),
+            '',
+            'Event date:    ' . $event_date,
+            'Event type:    ' . $event_type,
+            'Audience size: ' . ($audience !== '' ? $audience : '—'),
+            'Location:      ' . ($location !== '' ? $location : '—'),
+            'Budget range:  ' . ($budget !== '' ? $budget : '—'),
+            'Content level: ' . ($content !== '' ? $content : '—'),
+            '',
+            'Notes:',
+            $notes !== '' ? $notes : '—',
+        ];
+        $subject = sprintf('Corporate comedy inquiry — %s, %s', $event_type, $event_date);
+        $headers = ['Reply-To: ' . $name . ' <' . $email . '>'];
+
+        if (!wp_mail($this->inquiry_email(), $subject, implode("\n", $lines), $headers)) {
+            return new WP_Error('ch_inquiry_mail', 'Could not send right now — please email ' . $this->inquiry_email() . ' directly.', ['status' => 500]);
+        }
+        return rest_ensure_response(['ok' => true]);
+    }
+
+    /**
+     * [comedy_houston_inquiry] — self-contained form (scoped styles + inline
+     * JS, no dependency on the listing app assets) sized to sit inside the
+     * clean-comedy page's ticket panel, but presentable anywhere. Shortcodes
+     * inside Custom HTML blocks are expanded by the_content, so it can be
+     * pasted straight into the hand-built page.
+     */
+    public function render_inquiry_form() {
+        $endpoint  = esc_url(rest_url('comedy-houston/v1/inquiry'));
+        $token_url = esc_url(rest_url('comedy-houston/v1/inquiry-token'));
+        $mailto    = esc_attr($this->inquiry_email());
+
+        ob_start();
+        ?>
+<div class="ch-inquiry" id="ch-inquiry">
+<style>
+.ch-inquiry{font-size:15px;text-align:left}
+.ch-inquiry .ch-iq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ch-inquiry label{display:block;font-weight:700;font-size:13px;margin-bottom:5px}
+.ch-inquiry input,.ch-inquiry select,.ch-inquiry textarea{width:100%;padding:11px 12px;border:1px solid #c9bfae;border-radius:3px;background:#fff;color:#171310;font:inherit}
+.ch-inquiry input:focus,.ch-inquiry select:focus,.ch-inquiry textarea:focus{outline:2px solid #f2a33c;outline-offset:1px}
+.ch-inquiry .ch-iq-full{grid-column:1/-1}
+.ch-inquiry .ch-iq-hp{position:absolute !important;left:-9999px !important;height:1px;width:1px;overflow:hidden}
+.ch-inquiry .ch-iq-submit{display:inline-block;border:0;cursor:pointer;background:#e6483d;color:#fff;font-weight:700;font-size:16px;padding:15px 27px;border-radius:3px}
+.ch-inquiry .ch-iq-submit:hover{background:#f05a4f}
+.ch-inquiry .ch-iq-submit[disabled]{opacity:.6;cursor:wait}
+.ch-inquiry .ch-iq-msg{margin:12px 0 0;font-weight:600;display:none}
+.ch-inquiry .ch-iq-msg.err{color:#b3261e;display:block}
+.ch-inquiry .ch-iq-msg.ok{color:#2e7d32;display:block}
+.ch-inquiry .ch-iq-alt{margin-top:12px;font-size:13.5px;color:#8a7c68}
+.ch-inquiry .ch-iq-alt a{color:inherit}
+@media(max-width:680px){.ch-inquiry .ch-iq-grid{grid-template-columns:1fr}}
+</style>
+<form class="ch-iq-form" method="post" action="<?php echo $endpoint; ?>" novalidate>
+  <div class="ch-iq-grid">
+    <div><label for="ch-iq-name">Your name *</label><input id="ch-iq-name" name="name" type="text" required autocomplete="name"></div>
+    <div><label for="ch-iq-email">Email *</label><input id="ch-iq-email" name="email" type="email" required autocomplete="email"></div>
+    <div><label for="ch-iq-org">Organization</label><input id="ch-iq-org" name="organization" type="text" autocomplete="organization"></div>
+    <div><label for="ch-iq-date">Event date *</label><input id="ch-iq-date" name="event_date" type="date" required></div>
+    <div><label for="ch-iq-type">Event type *</label>
+      <select id="ch-iq-type" name="event_type" required>
+        <option value="">Select…</option>
+        <option>Corporate event / conference</option>
+        <option>Association or awards dinner</option>
+        <option>Church, school, or nonprofit</option>
+        <option>Holiday party</option>
+        <option>Private celebration</option>
+        <option>Other</option>
+      </select></div>
+    <div><label for="ch-iq-size">Audience size</label>
+      <select id="ch-iq-size" name="audience_size">
+        <option value="">Select…</option>
+        <option>Under 50</option><option>50–150</option><option>150–500</option><option>500+</option>
+      </select></div>
+    <div><label for="ch-iq-loc">Location</label><input id="ch-iq-loc" name="location" type="text" placeholder="Venue or area, e.g. Galleria"></div>
+    <div><label for="ch-iq-budget">Budget range</label>
+      <select id="ch-iq-budget" name="budget">
+        <option value="">Select…</option>
+        <option>Under $1,000</option><option>$1,000–$2,500</option><option>$2,500–$5,000</option><option>$5,000+</option><option>Not sure yet</option>
+      </select></div>
+    <div><label for="ch-iq-content">Content level</label>
+      <select id="ch-iq-content" name="content_level">
+        <option value="">Select…</option>
+        <option>Workplace-safe</option><option>Family-friendly</option><option>Church-appropriate</option><option>No profanity</option><option>Let&rsquo;s discuss</option>
+      </select></div>
+    <div class="ch-iq-full"><label for="ch-iq-notes">Anything else</label><textarea id="ch-iq-notes" name="notes" rows="4" placeholder="Set length, A/V, customization, timing — whatever helps us match the room."></textarea></div>
+    <div class="ch-iq-hp" aria-hidden="true"><label for="ch-iq-web">Website</label><input id="ch-iq-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+  </div>
+  <input type="hidden" name="ch_token" value="">
+  <p style="margin-top:18px"><button type="submit" class="ch-iq-submit">Request comedian recommendations</button></p>
+  <p class="ch-iq-msg" role="status" aria-live="polite"></p>
+  <p class="ch-iq-alt">Prefer email? <a href="mailto:<?php echo $mailto; ?>?subject=Clean%20comedian%20for%20Houston%20event">Send the details to <?php echo esc_html($this->inquiry_email()); ?></a>. A complete inquiry does not obligate you to book.</p>
+</form>
+<script>
+(function(){
+  var root = document.currentScript.closest('.ch-inquiry');
+  var form = root.querySelector('.ch-iq-form');
+  var msg = root.querySelector('.ch-iq-msg');
+  var tokenField = form.querySelector('input[name=ch_token]');
+  // Token minted at page VIEW time (not render time — this page is served
+  // from a full-page cache), giving the anti-bot 8s-minimum age a real
+  // "time on page" to measure.
+  fetch(<?php echo wp_json_encode($token_url); ?>).then(function(r){return r.json();}).then(function(d){
+    if (d && d.token) tokenField.value = d.token;
+  }).catch(function(){});
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    msg.className = 'ch-iq-msg';
+    var btn = form.querySelector('.ch-iq-submit');
+    var data = {};
+    new FormData(form).forEach(function(v, k){ data[k] = v; });
+    if (!data.name || !data.email || !data.event_date || !data.event_type) {
+      msg.className = 'ch-iq-msg err';
+      msg.textContent = 'Please fill in your name, email, event date, and event type.';
+      return;
+    }
+    btn.disabled = true;
+    fetch(<?php echo wp_json_encode($endpoint); ?>, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    }).then(function(r){ return r.json().then(function(j){ return {ok: r.ok, body: j}; }); })
+    .then(function(res){
+      if (res.ok) {
+        if (typeof gtag === 'function') { gtag('event', 'corporate_inquiry'); }
+        form.innerHTML = '<p class="ch-iq-msg ok" style="display:block;font-size:17px">Got it — thanks. We\'ll reply from <?php echo esc_js($this->inquiry_email()); ?> with comedian recommendations, usually within one business day.</p>';
+      } else {
+        btn.disabled = false;
+        msg.className = 'ch-iq-msg err';
+        msg.textContent = (res.body && res.body.message) ? res.body.message : 'Something went wrong — please email us directly.';
+      }
+    }).catch(function(){
+      btn.disabled = false;
+      msg.className = 'ch-iq-msg err';
+      msg.textContent = 'Network error — please try again or email us directly.';
+    });
+  });
+})();
+</script>
+</div>
+        <?php
+        return ob_get_clean();
+    }
+
+    // =========================================================================
+    // PER-POST NOINDEX
+    // =========================================================================
+
+    public function register_noindex_fields() {
+        foreach (['ch_noindex' => '_ch_noindex', 'ch_allow_index' => '_ch_allow_index'] as $field => $meta_key) {
+            register_rest_field('post', $field, [
+                'schema' => [
+                    'description' => $field === 'ch_noindex'
+                        ? 'Emit a robots noindex meta tag on this post.'
+                        : 'Override: keep this post indexable even when ch_noindex is set.',
+                    'type'        => 'boolean',
+                    'context'     => ['view', 'edit'],
+                ],
+                'get_callback' => function ($post_arr) use ($meta_key) {
+                    return (bool) get_post_meta($post_arr['id'], $meta_key, true);
+                },
+                'update_callback' => function ($value, $post) use ($meta_key) {
+                    if ($value) {
+                        update_post_meta($post->ID, $meta_key, '1');
+                    } else {
+                        delete_post_meta($post->ID, $meta_key);
+                    }
+                    return true;
+                },
+            ]);
+        }
+    }
+
+    /**
+     * Robots noindex for flagged posts. Emitted unconditionally (even with
+     * an SEO plugin active): when multiple robots meta tags are present,
+     * Google honors the most restrictive directive, so this safely wins
+     * over Rank Math's default index. "follow" is kept so internal links on
+     * the posts keep passing signals to venue/landing pages.
+     */
+    public function emit_noindex_meta() {
+        if (!is_singular('post')) {
+            return;
+        }
+        $id = get_queried_object_id();
+        if (!$id) {
+            return;
+        }
+        if (get_post_meta($id, '_ch_noindex', true) && !get_post_meta($id, '_ch_allow_index', true)) {
+            echo '<meta name="robots" content="noindex, follow" />' . "\n";
+        }
     }
 
     /**
@@ -971,8 +1470,15 @@ class Comedy_Houston_Plugin {
             if (!empty($venue_filter) && $venue_filter !== 'all' && ($ev['venue'] ?? '') !== $venue_filter) continue;
             if (!empty($source_filter) && $source_filter !== 'all' && ($ev['source'] ?? '') !== $source_filter) continue;
 
+            // Prefer the explicit is_open_mic flag set at ingest by
+            // scripts/fetch-events.js (title match + series allowlist +
+            // curated mics — see config/open-mics.json). Title matching is
+            // only a fallback for events.json files written before the flag
+            // existed; on its own it made /open-mics/ a one-venue page.
             $name_lower = strtolower(str_replace('-', ' ', $ev['name'] ?? ''));
-            $is_open_mic = strpos($name_lower, 'open mic') !== false;
+            $is_open_mic = array_key_exists('is_open_mic', $ev)
+                ? !empty($ev['is_open_mic'])
+                : strpos($name_lower, 'open mic') !== false;
             if (!$show_open_mic && $is_open_mic) continue;
             if ($type_filter === 'open_mic' && !$is_open_mic) continue;
 
@@ -1077,9 +1583,15 @@ class Comedy_Houston_Plugin {
         // rel="sponsored nofollow": these are monetized outbound ticket links
         // (affiliate redirect) — Google requires sponsored/nofollow on paid
         // links, and it stops PageRank leaking to the ticket vendors.
+        // Confirmed-free shows with no ticket link (curated open mics) are
+        // walk-up events — "Coming Soon" would wrongly imply tickets are
+        // pending.
+        $is_free_walkup = !$ticket_url && isset($ev['price_min']) && $ev['price_min'] === 0;
         $ticket_html = $ticket_url
             ? '<a class="card-cta" href="' . $ticket_link . '" target="_blank" rel="sponsored nofollow noopener">Get Tickets <span class="arrow">&rarr;</span></a>'
-            : '<span class="card-cta" style="opacity:0.5;cursor:default;">Coming Soon</span>';
+            : ($is_free_walkup
+                ? '<span class="card-cta" style="opacity:0.7;cursor:default;">Free &mdash; just show up</span>'
+                : '<span class="card-cta" style="opacity:0.5;cursor:default;">Coming Soon</span>');
 
         // Internal link: if this event matches a published comedian post,
         // render a secondary "More info" link so visitors can read our
@@ -1095,7 +1607,10 @@ class Comedy_Houston_Plugin {
         $card = '<article class="event-card">';
         $card .= '<div class="card-image">' . $image_html;
         if ($show_badges) {
-            $card .= '<span class="card-source-badge ' . $source . '">' . esc_html($ev['source'] ?? '') . '</span>';
+            // "manual" is the internal source id for hand-curated mics — the
+            // visitor-facing badge reads "curated".
+            $source_label = ($ev['source'] ?? '') === 'manual' ? 'curated' : ($ev['source'] ?? '');
+            $card .= '<span class="card-source-badge ' . $source . '">' . esc_html($source_label) . '</span>';
         }
         $card .= '<span class="card-status-badge ' . esc_attr($status) . '">' . $status_label . '</span>';
         $card .= '</div>';
@@ -1875,8 +2390,8 @@ class Comedy_Houston_Plugin {
                     <tr><td><code>show_controls</code></td><td>true, false</td><td>true</td></tr>
                     <tr><td><code>show_venue_filter</code></td><td>true, false — show/hide the venue dropdown</td><td>true</td></tr>
                     <tr><td><code>show_sort</code></td><td>true, false — show/hide the sort dropdown</td><td>true</td></tr>
-                    <tr><td><code>show_open_mic</code></td><td>true, false — include/exclude events with &ldquo;open mic&rdquo; in the name</td><td>true</td></tr>
-                    <tr><td><code>type</code></td><td>open_mic (name contains &ldquo;open mic&rdquo;), free (confirmed $0 shows only)</td><td><em>all types</em></td></tr>
+                    <tr><td><code>show_open_mic</code></td><td>true, false — include/exclude open-mic events (flagged at ingest via config/open-mics.json)</td><td>true</td></tr>
+                    <tr><td><code>type</code></td><td>open_mic (events flagged is_open_mic), free (confirmed $0 shows only)</td><td><em>all types</em></td></tr>
                     <tr><td><code>initial_days</code></td><td>number — initial render window in days for the &ldquo;all&rdquo; view (0 = no cap); a &ldquo;Show all&rdquo; button reveals the rest</td><td>14</td></tr>
                     <tr><td><code>show_footer</code></td><td>true, false</td><td>true</td></tr>
                 </tbody>

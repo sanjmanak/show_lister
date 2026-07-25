@@ -2097,152 +2097,24 @@ async function main() {
     }
   }
 
-  // Step 7: Publish weekly roundup to WordPress
+  // Step 7 (RETIRED): the dated weekly roundup post
+  // (/houston-comedy-shows-this-week-YYYY-MM-DD/) is no longer published.
+  // Each dated post duplicated the evergreen /this-week/ page for its seven
+  // days of relevance, then lived on as permanent thin content cannibalizing
+  // the URL that actually ranks — ~20 near-identical archives competing for
+  // "houston comedy shows this week". The WordPress plugin (v2.7.0) now 301s
+  // the existing dated URLs to /this-week/, which Step 9 below refreshes in
+  // place every Monday. The hero PNG + caption still ship to Instagram via
+  // post-weekly-roundup.js, and blog/index.html still gets the full article.
   if (WP_ENABLED) {
-    // Arm the cumulative WP budget. After this many ms across ALL WP
-    // calls in the script, every subsequent call short-circuits with a
+    // Arm the cumulative WP budget for Steps 8-9. After this many ms across
+    // ALL WP calls in the script, every subsequent call short-circuits with a
     // budget-exceeded error so the email step at the end of the workflow
     // still gets a chance to run. Each individual call also has its own
     // per-request timeout (WP_REQUEST_TIMEOUT_MS / WP_UPLOAD_TIMEOUT_MS).
     wpDeadline = Date.now() + WP_TOTAL_BUDGET_MS;
-    console.log(`Publishing weekly roundup to WordPress... (cumulative budget: ${Math.round(WP_TOTAL_BUDGET_MS / 1000)}s)`);
-    try {
-      const wpTitle = `Houston Comedy Shows This Week — ${weekRange}`;
-      const wpSlug = `houston-comedy-shows-this-week-${monday.toISOString().slice(0, 10)}`;
-
-      // Build WordPress post content from the blog HTML (just the article body)
-      let wpContent = blogContent;
-
-      // Upload hero image as featured image
-      let featuredMediaId = 0;
-      let wpHeroImageUrl = "";
-      const heroPngPath = path.join(BLOG_DIR, "weekly-hero.png");
-      if (fs.existsSync(heroPngPath)) {
-        try {
-          console.log("  Uploading hero image to WordPress...");
-          const heroBuffer = fs.readFileSync(heroPngPath);
-          featuredMediaId = await wpUploadImage(heroBuffer, "image/png", `weekly-hero-${monday.toISOString().slice(0, 10)}.png`);
-          console.log(`  Hero image uploaded (media ID: ${featuredMediaId})`);
-
-          // Get the WP URL for the uploaded image
-          try {
-            const media = await wpRequest("GET", `/wp-json/wp/v2/media/${featuredMediaId}`, null);
-            const wpHeroUrl = media.source_url || "";
-            wpHeroImageUrl = wpHeroUrl;
-            if (wpHeroUrl) {
-              const heroFigure = `<figure class="wp-block-image size-large"><img src="${wpHeroUrl}" alt="Houston Comedy Shows This Week" class="wp-image-${featuredMediaId}"/></figure>\n\n`;
-              wpContent = heroFigure + wpContent;
-            }
-          } catch (_) {}
-        } catch (err) {
-          // The hero image is the anchor visual for the weekly roundup — if
-          // it fails to upload, abort the WP publish rather than silently
-          // publishing an image-less post. The next scheduled run (or manual
-          // re-trigger) will retry cleanly thanks to the slug-dedupe fix.
-          console.error(`  ERROR: Hero image upload failed: ${err.message}`);
-          throw new Error(`Weekly roundup aborted: hero image upload failed (${err.message})`);
-        }
-      } else {
-        console.error(`  ERROR: weekly-hero.png not found at ${heroPngPath}`);
-        throw new Error("Weekly roundup aborted: weekly-hero.png missing");
-      }
-
-      // Upload 1-2 comedian headshots inline
-      const comediansWithHeadshots = topComedians.filter((c) => c.headshotUrl).slice(0, 2);
-      for (const comedian of comediansWithHeadshots) {
-        try {
-          console.log(`  Uploading headshot for ${comedian.name}...`);
-          const { buffer, contentType } = await downloadImage(comedian.headshotUrl);
-          const ext = contentType.includes("png") ? "png" : "jpg";
-          const imgFilename = `${comedian.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-headshot.${ext}`;
-          const mediaId = await wpUploadImage(buffer, contentType, imgFilename);
-          const media = await wpRequest("GET", `/wp-json/wp/v2/media/${mediaId}`, null);
-          const imgUrl = media.source_url || comedian.headshotUrl;
-          // Inject comedian headshot after the first mention of their name in the content
-          const nameEscaped = comedian.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-          const nameRegex = new RegExp(`(</p>)`, "i");
-          const imgTag = `\n<figure class="wp-block-image size-medium"><img src="${imgUrl}" alt="${comedian.name.replace(/"/g, '&quot;')}" class="wp-image-${mediaId}"/><figcaption>${comedian.name}</figcaption></figure>\n`;
-          // Insert after the first paragraph that mentions the comedian
-          const mentionRegex = new RegExp(`(${nameEscaped}[^<]*</p>)`, "i");
-          if (mentionRegex.test(wpContent)) {
-            wpContent = wpContent.replace(mentionRegex, `$1${imgTag}`);
-            console.log(`  Headshot for ${comedian.name} injected into post.`);
-          }
-        } catch (err) {
-          console.warn(`  Headshot upload for ${comedian.name} failed: ${err.message}`);
-        }
-      }
-
-      // Look up category
-      const categoryId = await wpGetCategoryBySlug("comedy-shows");
-
-      const postData = {
-        title: wpTitle,
-        content: wpContent,
-        status: "publish",
-        slug: wpSlug,
-        comment_status: "closed",
-      };
-      if (featuredMediaId) postData.featured_media = featuredMediaId;
-      if (categoryId) postData.categories = [categoryId];
-
-      // If a roundup with this slug already exists (e.g. the workflow is
-      // being re-run on the same Monday), update it in place instead of
-      // creating a duplicate post. WordPress's REST API does NOT dedupe by
-      // slug — it would auto-suffix the new slug to "...-2" and leave the
-      // old (often broken) post live.
-      let existingRoundup = null;
-      try {
-        const found = await wpRequest(
-          "GET",
-          `/wp-json/wp/v2/posts?slug=${encodeURIComponent(wpSlug)}&status=publish,draft,future,private`,
-          null
-        );
-        if (Array.isArray(found) && found.length > 0) {
-          existingRoundup = found[0];
-        }
-      } catch (err) {
-        console.warn(`  Slug lookup failed (will create new post): ${err.message}`);
-      }
-
-      let post;
-      if (existingRoundup) {
-        console.log(`  Existing roundup found (ID ${existingRoundup.id}) — updating in place.`);
-        post = await wpRequest("POST", `/wp-json/wp/v2/posts/${existingRoundup.id}`, postData);
-        console.log(`  Weekly roundup updated: ${post.link}`);
-      } else {
-        post = await wpRequest("POST", "/wp-json/wp/v2/posts", postData);
-        console.log(`  Weekly roundup published: ${post.link}`);
-      }
-
-      // Attach BlogPosting schema via the plugin's ch_schema_graph REST field
-      // (emitted from wp_head for comedy-shows posts). Done after the create
-      // call because mainEntityOfPage needs the real permalink. Best-effort.
-      if (post && post.link && post.id) {
-        try {
-          const roundupGraph = addBlogPostingToGraph(null, {
-            title: wpTitle,
-            url: post.link,
-            description: `Every comedy show in Houston this week (${weekRange}) — headliners, showcases, and open mics with times, prices, and ticket links.`,
-            imageUrl: wpHeroImageUrl || null,
-            datePublished: wpGmtToIso(post.date_gmt),
-            dateModified: wpGmtToIso(post.modified_gmt),
-          });
-          await wpRequest("POST", `/wp-json/wp/v2/posts/${post.id}`, {
-            ch_schema_graph: JSON.stringify(roundupGraph),
-          });
-          console.log("  BlogPosting schema attached.");
-        } catch (err) {
-          console.warn(`  BlogPosting schema update failed (non-fatal): ${err.message}`);
-        }
-      }
-      console.log("");
-    } catch (err) {
-      console.error(`ERROR: WordPress weekly roundup publish failed: ${err.message}`);
-      console.error("Blog post is still live on GitHub Pages, but WordPress is stale.");
-      wpFailures.push(`weekly roundup: ${err.message}`);
-      console.log("");
-    }
+    console.log(`WordPress updates (cumulative budget: ${Math.round(WP_TOTAL_BUDGET_MS / 1000)}s) — dated weekly post retired, updating evergreen pages only.`);
+    console.log("");
   } else {
     console.log("WordPress publishing disabled (no WP credentials set).");
     console.log("");

@@ -61,6 +61,7 @@ jobs:
       # makes a workflow_dispatch on a feature branch a safe dry run: it
       # fetches and prints the summary but never pushes.
       - name: Commit and push updated data
+        id: push-data
         if: github.ref == 'refs/heads/main'
         run: |
           git config user.name "github-actions[bot]"
@@ -95,6 +96,38 @@ jobs:
               echo "ERROR: git push failed after 4 attempts."
               exit 1
             fi
+            echo "did_push=true" >> "$GITHUB_OUTPUT"
+            echo "pushed_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Tell WordPress the data changed so it purges the LiteSpeed page cache
+      # for the homepage and every listing page. Without this, fully cached
+      # pages never run PHP, the plugin's events transient never refreshes,
+      # and the homepage keeps advertising Monday's shows as "Tonight" for
+      # days (the plugin also runs an hourly hash-check cron as a fallback,
+      # so a failure here degrades to ≤1h extra staleness, not brokenness).
+      # The pushed commit SHA is passed so the plugin fetches the immutable
+      # raw URL — the branch URL is CDN-cached for ~5 minutes and could hand
+      # back the previous payload. Best-effort: a purge failure should not
+      # fail the data run.
+      - name: Purge WordPress listing cache
+        if: steps.push-data.outputs.did_push == 'true' && env.HAS_WP == 'true'
+        env:
+          HAS_WP: ${{ secrets.WP_SITE_URL != '' }}
+          WP_SITE_URL: ${{ secrets.WP_SITE_URL }}
+          WP_APP_USER: ${{ secrets.WP_APP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+        run: |
+          SHA="${{ steps.push-data.outputs.pushed_sha }}"
+          if curl -sS --fail-with-body --max-time 30 -X POST \
+               -u "$WP_APP_USER:$WP_APP_PASSWORD" \
+               -H 'Content-Type: application/json' \
+               -d "{\"sha\":\"$SHA\"}" \
+               "${WP_SITE_URL%/}/wp-json/comedy-houston/v1/refresh"; then
+            echo ""
+            echo "Cache purge OK."
+          else
+            echo "::warning::WordPress cache purge failed — hourly cron fallback will purge within the hour."
           fi
 
       - name: Notify on failure
