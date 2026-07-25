@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.8.0
+ * Version: 2.8.1
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.8.0';
+    const VERSION      = '2.8.1';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -261,7 +261,7 @@ class Comedy_Houston_Plugin {
             $initial_days = max(0, intval($atts['initial_days']));
             $ssr_events = $filtered;
             if ($initial_days > 0 && $atts['filter'] === 'all') {
-                $cutoff = wp_date('Y-m-d', strtotime('+' . $initial_days . ' days'));
+                $cutoff = $this->houston_date('Y-m-d', '+' . $initial_days . ' days');
                 $windowed = array_values(array_filter($filtered, function ($ev) use ($cutoff) {
                     return ($ev['date'] ?? '') <= $cutoff;
                 }));
@@ -280,7 +280,7 @@ class Comedy_Houston_Plugin {
             if (!empty($events_data['last_updated'])) {
                 $ts = strtotime($events_data['last_updated']);
                 if ($ts) {
-                    $ch_ssr_updated_at = wp_date('M j, g:i A', $ts);
+                    $ch_ssr_updated_at = $this->houston_date_from_ts('M j, g:i A', $ts);
                 }
             }
         }
@@ -355,11 +355,30 @@ class Comedy_Houston_Plugin {
             return;
         }
         $path = wp_parse_url(wp_unslash($_SERVER['REQUEST_URI']), PHP_URL_PATH);
-        if (!$path || !preg_match('#^/houston-comedy-shows-this-week-\d{4}-\d{2}-\d{2}/?$#', $path)) {
+        if (!$path) {
             return;
         }
-        wp_safe_redirect(home_url('/this-week/'), 301);
-        exit;
+
+        if (preg_match('#^/houston-comedy-shows-this-week-\d{4}-\d{2}-\d{2}/?$#', $path)) {
+            wp_safe_redirect(home_url('/this-week/'), 301);
+            exit;
+        }
+
+        // Legacy open-mic URLs → the canonical /open-mic-comedy-houston/
+        // page. Three open-mic URLs were briefly live simultaneously (the
+        // original /open-mics/ landing page, the old blog post, and the new
+        // canonical page), splitting internal links and rankings three ways.
+        // The redirect wins even while the old page/post still exist in WP —
+        // they can be trashed at leisure.
+        $legacy = [
+            '/open-mics'                   => '/open-mic-comedy-houston/',
+            '/every-open-mic-night-houston' => '/open-mic-comedy-houston/',
+        ];
+        $trimmed = rtrim($path, '/');
+        if (isset($legacy[$trimmed])) {
+            wp_safe_redirect(home_url($legacy[$trimmed]), 301);
+            exit;
+        }
     }
 
     public function handle_redirect() {
@@ -1414,38 +1433,61 @@ class Comedy_Houston_Plugin {
     }
 
     /**
+     * "Now" in Houston, formatted. Every date comparison in this plugin
+     * (Tonight/Tomorrow labels, today/weekend/week/month filters, render
+     * windows) MUST use these instead of wp_date()/date(): wp_date() follows
+     * the WP admin timezone setting, and if that setting is UTC (the WP
+     * default) "today" rolls over at 7pm Houston time — so from 7pm onward
+     * every listing page labels tomorrow's shows "Tonight". These are Houston
+     * events; the market timezone is a constant, not a setting.
+     */
+    private function houston_date($format, $modifier = null) {
+        $d = new DateTime('now', new DateTimeZone('America/Chicago'));
+        if ($modifier !== null) {
+            $d->modify($modifier);
+        }
+        return $d->format($format);
+    }
+
+    private function houston_date_from_ts($format, $ts) {
+        $d = new DateTime('@' . $ts);
+        $d->setTimezone(new DateTimeZone('America/Chicago'));
+        return $d->format($format);
+    }
+
+    /**
      * Filter events server-side (mirrors JS getFiltered() logic).
      */
     private function filter_events($events, $atts) {
-        $today = wp_date('Y-m-d');
-        $tomorrow = wp_date('Y-m-d', strtotime('+1 day'));
+        $today = $this->houston_date('Y-m-d');
+        $tomorrow = $this->houston_date('Y-m-d', '+1 day');
         $filter = $atts['filter'];
         $venue_filter = $atts['venue'];
         $source_filter = $atts['source'];
         $max_price = $atts['max_price'] !== '' ? floatval($atts['max_price']) : null;
         $show_open_mic = strtolower($atts['show_open_mic']) !== 'false';
         $type_filter = $atts['type'];
-        $max_date = wp_date('Y-m-d', strtotime('+90 days'));
+        $max_date = $this->houston_date('Y-m-d', '+90 days');
 
         // Weekend: Fri-Sat-Sun (mirrors JS logic)
-        $dow = (int) wp_date('w');
+        $dow = (int) $this->houston_date('w');
         if ($dow === 0) {
-            $fri_date = wp_date('Y-m-d', strtotime('-2 days'));
-            $sat_date = wp_date('Y-m-d', strtotime('-1 day'));
+            $fri_date = $this->houston_date('Y-m-d', '-2 days');
+            $sat_date = $this->houston_date('Y-m-d', '-1 day');
             $sun_date = $today;
         } elseif ($dow === 6) {
-            $fri_date = wp_date('Y-m-d', strtotime('-1 day'));
+            $fri_date = $this->houston_date('Y-m-d', '-1 day');
             $sat_date = $today;
             $sun_date = $tomorrow;
         } else {
             $days_to_fri = 5 - $dow;
-            $fri_date = wp_date('Y-m-d', strtotime("+{$days_to_fri} days"));
-            $sat_date = wp_date('Y-m-d', strtotime('+' . ($days_to_fri + 1) . ' days'));
-            $sun_date = wp_date('Y-m-d', strtotime('+' . ($days_to_fri + 2) . ' days'));
+            $fri_date = $this->houston_date('Y-m-d', "+{$days_to_fri} days");
+            $sat_date = $this->houston_date('Y-m-d', '+' . ($days_to_fri + 1) . ' days');
+            $sun_date = $this->houston_date('Y-m-d', '+' . ($days_to_fri + 2) . ' days');
         }
 
-        $end_of_week = wp_date('Y-m-d', strtotime('+' . (7 - $dow) . ' days'));
-        $end_of_month = wp_date('Y-m-t');
+        $end_of_week = $this->houston_date('Y-m-d', '+' . (7 - $dow) . ' days');
+        $end_of_month = $this->houston_date('Y-m-t');
 
         $filtered = [];
         foreach ($events as $ev) {
@@ -1661,8 +1703,8 @@ class Comedy_Houston_Plugin {
     }
 
     private function format_date_label($date_str) {
-        $today = wp_date('Y-m-d');
-        $tomorrow = wp_date('Y-m-d', strtotime('+1 day'));
+        $today = $this->houston_date('Y-m-d');
+        $tomorrow = $this->houston_date('Y-m-d', '+1 day');
 
         if ($date_str === $today) return 'Tonight';
         if ($date_str === $tomorrow) return 'Tomorrow';
