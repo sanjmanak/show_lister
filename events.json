@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-25T14:59:23.609Z",
-  "total_events": 524,
+  "last_updated": "2026-07-26T02:44:27.630Z",
+  "total_events": 525,
   "events": [
     {
       "id": "ee0cc848223aa76f",
@@ -20,15 +20,15 @@
       "image_url": "https://s1.ticketm.net/dam/a/c99/def9c37a-77e3-4bd1-9da5-369f62e62c99_SOURCE",
       "source": "ticketmaster",
       "age_restriction": null,
-      "status": "on_sale",
+      "status": "off_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
-      "last_updated": "2026-07-25T00:50:13.081Z",
+      "last_updated": "2026-07-26T02:42:34.448Z",
       "is_open_mic": false
     },
     {
       "id": "9c3e2d4d4ca727f3",
       "name": "Frankie Quinones",
-      "genre": "Miscellaneous",
+      "genre": "Comedy",
       "venue": "Houston Improv",
       "venue_state": "TX",
       "venue_city": "Houston",
@@ -39,13 +39,13 @@
       "price_max": null,
       "currency": "USD",
       "price_source": null,
-      "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A704f6",
+      "ticket_url": "https://www.ticketweb.com/event/frankie-quiones-houston-improv-tickets/14910433?REFERRAL_ID=tmfeed",
       "image_url": "https://s1.ticketm.net/dam/a/5c6/6dd00db3-3bc5-4951-8615-c71573c515c6_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "source": "ticketmaster",
       "age_restriction": null,
-      "status": "on_sale",
+      "status": "off_sale",
       "description": null,
-      "last_updated": "2026-07-25T00:50:13.081Z",
+      "last_updated": "2026-07-26T02:42:34.448Z",
       "is_open_mic": false
     },
     {
@@ -83,9 +83,9 @@
       "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177389657%2F428099579998%2F1%2Foriginal.20260212-165117?auto=format%2Ccompress&q=75&sharp=10&s=a85bdbc18540571475bd606567a5ea4c",
       "source": "eventbrite",
       "age_restriction": null,
-      "status": "on_sale",
+      "status": "started",
       "description": "Catch Adam Hunter live at The Riot Comedy Club upstairs at GuadalaHARRY's in downtown Conroe with tasty food, cold drinks, fun vibes.",
-      "last_updated": "2026-07-25T00:50:20.730Z",
+      "last_updated": "2026-07-26T02:42:41.383Z",
       "is_open_mic": false
     },
     {
@@ -2566,6 +2566,26 @@
       "status": "on_sale",
       "description": "Get ready for a night of raunchy jokes and adult humor at The Late Night Dirty Show: X Rated Comedy LIVE at The Secret Group!",
       "last_updated": "2026-07-25T00:50:15.986Z",
+      "is_open_mic": false
+    },
+    {
+      "id": "cf6b2fdf922430b4",
+      "name": "Adrian Alvarez live at the Den Comedy Club",
+      "venue": "The Den Comedy Club",
+      "date": "2026-08-08",
+      "time": "6:00 PM",
+      "day_of_week": "Saturday",
+      "price_min": 30.87,
+      "price_max": 244.57,
+      "currency": "USD",
+      "price_source": "api",
+      "ticket_url": "https://www.eventbrite.com/e/adrian-alvarez-live-at-the-den-comedy-club-tickets-1995208266635",
+      "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1189617230%2F2991795842957%2F1%2Foriginal.20260725-200858?auto=format%2Ccompress&q=75&sharp=10&s=ff544891dbfb1baeaa7ec639e44c5287",
+      "source": "eventbrite",
+      "age_restriction": null,
+      "status": "on_sale",
+      "description": "Get ready to laugh! Adrian Alvarez (aka Skits and Giggles) brings his viral Tío Papi family chaos & relatable humor live!",
+      "last_updated": "2026-07-26T02:42:39.675Z",
       "is_open_mic": false
     },
     {
