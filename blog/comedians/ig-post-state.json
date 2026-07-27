@@ -1,42 +1,15 @@
 {
   "posted": [
     {
-      "slug": "frankie-quinones-houston-improv-2026-07-23",
-      "comedianName": "Frankie Quinones",
-      "igFeedMediaId": "18115532146718749",
-      "igStoryMediaId": "18200701201369553",
-      "fbFeedPostId": "1356567263234682",
-      "fbStoryPostId": "2098096990776688",
-      "postedAt": "2026-07-20T18:11:44.337Z"
-    },
-    {
-      "slug": "dulc-sloan-punch-line-houston-2026-07-23",
-      "comedianName": "Dulcé Sloan",
-      "igFeedMediaId": "18014102417877479",
-      "igStoryMediaId": "18092407040572230",
-      "fbFeedPostId": "1356710309887044",
-      "fbStoryPostId": "1014410298061673",
-      "postedAt": "2026-07-20T23:06:55.130Z"
-    },
-    {
-      "slug": "katherine-blanford-the-riot-comedy-club-2026-07-24",
-      "comedianName": "Katherine Blanford",
-      "igFeedMediaId": "18081159347276987",
-      "igStoryMediaId": "18014643749865589",
-      "fbFeedPostId": "1356936236531118",
-      "fbStoryPostId": "2083875122193941",
-      "postedAt": "2026-07-21T06:36:17.436Z"
-    },
-    {
-      "slug": "adam-hunter-the-riot-comedy-club-conroe-2026-07-24",
-      "comedianName": "Adam Hunter",
-      "igFeedMediaId": "18116902495934290",
-      "igStoryMediaId": "18126875308656303",
-      "fbFeedPostId": "1357112179846857",
-      "fbStoryPostId": "1317249943500066",
-      "postedAt": "2026-07-21T11:52:37.280Z"
+      "slug": "donnell-rawlings-houston-improv-2026-07-31",
+      "comedianName": "Donnell Rawlings",
+      "igFeedMediaId": "18127244869731533",
+      "igStoryMediaId": "18110071118099776",
+      "fbFeedPostId": "1362079572683451",
+      "fbStoryPostId": "1563091338821235",
+      "postedAt": "2026-07-27T17:49:15.312Z"
     }
   ],
-  "week_range": "July 20 – July 26, 2026",
-  "manifest_version": 1784570724661
+  "week_range": "July 27 – August 2, 2026",
+  "manifest_version": 1785174248434
 }
