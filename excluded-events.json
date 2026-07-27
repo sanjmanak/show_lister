@@ -1,30 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-07-27T02:51:06.465Z",
-  "total_excluded": 28,
+  "last_updated": "2026-07-27T16:12:40.074Z",
+  "total_excluded": 26,
   "events": [
-    {
-      "name": "JAY WORTHY",
-      "venue": "The Secret Group",
-      "venue_city": null,
-      "date": "2026-07-26",
-      "time": "7:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/jay-worthy-tickets-1993043820719",
-      "reason": "music artist blocklisted: \"jay worthy\""
-    },
-    {
-      "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
-      "venue": "The Secret Group",
-      "venue_city": null,
-      "date": "2026-07-26",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/our-mic-is-your-mic-emo-karaoke-tickets-1993428544438",
-      "reason": "title keyword blocklisted: \"karaoke\""
-    },
     {
       "name": "Karaoke every THURSDAY!",
       "venue": "The Secret Group",
