@@ -1,37 +1,21 @@
 {
-  "generated_at": "2026-07-20T16:19:13.716Z",
-  "week_range": "July 20 – July 26, 2026",
+  "generated_at": "2026-07-27T16:52:05.974Z",
+  "week_range": "July 27 – August 2, 2026",
   "comedians": [
     {
-      "name": "Frankie Quinones",
-      "show": "Frankie Quinones",
-      "imageUrl": "https://s1.ticketm.net/dam/a/5c6/6dd00db3-3bc5-4951-8615-c71573c515c6_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/5c6/6dd00db3-3bc5-4951-8615-c71573c515c6_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "imageSource": "event"
-    },
-    {
-      "name": "Dulcé Sloan",
-      "show": "Dulcé Sloan",
-      "imageUrl": "https://s1.ticketm.net/dam/a/c99/def9c37a-77e3-4bd1-9da5-369f62e62c99_SOURCE",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Dulc%C3%A9_Sloan_2019.jpg/1280px-Dulc%C3%A9_Sloan_2019.jpg",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Dulc%C3%A9_Sloan_2019.jpg/1280px-Dulc%C3%A9_Sloan_2019.jpg",
+      "name": "Donnell Rawlings",
+      "show": "Donnell Rawlings",
+      "imageUrl": "https://s1.ticketm.net/dam/a/730/9618c87e-c032-4331-9f09-53464b3a0730_SOURCE",
+      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Donnell_Rawlings_stands_in_front_of_a_C-17_Globemaster_III_%2832666816002%29_%28cropped%29.jpg",
+      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Donnell_Rawlings_stands_in_front_of_a_C-17_Globemaster_III_%2832666816002%29_%28cropped%29.jpg",
       "imageSource": "headshot"
     },
     {
-      "name": "Katherine Blanford",
-      "show": "Katherine Blanford Headlines The Riot Comedy Club",
-      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1180762819%2F2094665311053%2F1%2Foriginal.20260326-155136?auto=format%2Ccompress&q=75&sharp=10&s=434c6e85f70e3d3aadd424cbe07a7db0",
+      "name": "Rogelio Ramos",
+      "show": "Rogelio Ramos (En Espanol)",
+      "imageUrl": "https://s1.ticketm.net/dam/a/96b/3ad9b8a0-47e1-45ef-b8f4-4a77adc8696b_SOURCE",
       "headshotUrl": null,
-      "displayImage": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1180762819%2F2094665311053%2F1%2Foriginal.20260326-155136?auto=format%2Ccompress&q=75&sharp=10&s=434c6e85f70e3d3aadd424cbe07a7db0",
-      "imageSource": "event"
-    },
-    {
-      "name": "Adam Hunter",
-      "show": "Comedian Adam Hunter (Gutfeld!) Live in Conroe",
-      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177389670%2F428099579998%2F1%2Foriginal.20260212-165124?auto=format%2Ccompress&q=75&sharp=10&s=5f14668d437bfde33f21f77ee1e85ebc",
-      "headshotUrl": null,
-      "displayImage": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177389670%2F428099579998%2F1%2Foriginal.20260212-165124?auto=format%2Ccompress&q=75&sharp=10&s=5f14668d437bfde33f21f77ee1e85ebc",
+      "displayImage": "https://s1.ticketm.net/dam/a/96b/3ad9b8a0-47e1-45ef-b8f4-4a77adc8696b_SOURCE",
       "imageSource": "event"
     }
   ]
