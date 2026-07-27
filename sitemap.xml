@@ -2,37 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://comedyhouston.com/</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://comedyhouston.com/this-week/</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://comedyhouston.com/frankie-quinones-houston-improv-2026-07-23/</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://comedyhouston.com/donnell-rawlings-houston-improv-2026-07-31/</loc>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://comedyhouston.com/dulc-sloan-punch-line-houston-2026-07-23/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://comedyhouston.com/katherine-blanford-the-riot-comedy-club-2026-07-24/</loc>
-    <lastmod>2026-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://comedyhouston.com/adam-hunter-the-riot-comedy-club-conroe-2026-07-24/</loc>
-    <lastmod>2026-07-20</lastmod>
+    <loc>https://comedyhouston.com/rogelio-ramos-houston-improv-2026-07-30/</loc>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
