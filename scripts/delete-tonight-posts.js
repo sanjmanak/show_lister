@@ -14,11 +14,14 @@
  * the array existed are never touched (user decision; see ARCHITECTURE.md).
  *
  * Per-channel rules:
- *   - IG feed posts: Meta refuses to delete IG media for this app —
- *     DELETE /{ig-media-id} returns (#10) even with every grantable scope
- *     (verified 2026-07-21; see isPermissionError in meta-api.js). A (#10)
- *     on an IG feed delete is pruned with a loud warning (manual takedown
- *     if wanted); any OTHER IG feed error keeps the ID for retry + exit 1.
+ *   - IG feed posts: DELETE /{ig-media-id} — supported by Meta since
+ *     Dec 2025, gated behind the instagram_manage_contents scope. A (#10)
+ *     permission error is therefore scope-dependent: if the token LACKS
+ *     instagram_manage_contents the ID is kept for retry and the run exits
+ *     1 (the notify email says how to fix the token); if the scope IS
+ *     present and Meta still refuses, the ID is pruned with a loud warning
+ *     (manual takedown if wanted) so the workflow can't stay red forever.
+ *     Any OTHER IG feed error keeps the ID for retry + exit 1.
  *   - FB feed posts: DELETE /{id}; a real failure keeps the ID in state
  *     so tomorrow's run retries, and exits 1 (fires the notify email).
  *   - IG/FB stories: auto-expire after 24h, so any delete error past the
@@ -40,6 +43,7 @@ const {
   resolveFacebookPageId,
   deleteGraphObject,
   isPermissionError,
+  tokenHasManageContents,
   shutdown,
 } = require("./lib/meta-api");
 const { loadTonightState, saveTonightState } = require("./lib/tonight-state");
@@ -98,6 +102,21 @@ async function main() {
   console.log(`  Token valid! IG account: @${tokenCheck.username || tokenCheck.id}`);
 
   const fbPageId = await resolveFacebookPageId();
+
+  // IG media deletes need instagram_manage_contents (Dec 2025 addition).
+  // null = debug_token unreadable; treated as "unknown" → (#10)s keep the
+  // ID for retry rather than pruning, so nothing is dropped on a fluke.
+  console.log("\nChecking token for instagram_manage_contents…");
+  const hasManageContents = await tokenHasManageContents();
+  if (hasManageContents === true) {
+    console.log("  Scope present — IG media deletes should be permitted.");
+  } else if (hasManageContents === false) {
+    console.warn(
+      "  ⚠ Token LACKS instagram_manage_contents — IG feed deletes will fail (#10).\n" +
+      "    FIX: Graph API Explorer → grant instagram_manage_contents → generate a\n" +
+      "    long-lived Page token → update the INSTAGRAM_ACCESS_TOKEN GitHub secret."
+    );
+  }
 
   const state = loadTonightState();
   const cutoff = Date.now() - RETENTION_DAYS * 86400000;
@@ -163,14 +182,23 @@ async function main() {
           entry[field] = null;
           counts.prunedStories++;
         } else if (field === "igFeedMediaId" && isPermissionError(err)) {
-          // Meta won't delete IG media for this app no matter the scopes —
-          // retrying is pointless and keeping the workflow red helps no one.
-          console.warn(
-            `  ${label}: (#10) — Meta refuses IG media deletes for this app. ` +
-            `Pruning; remove manually on instagram.com if wanted (ID: ${id}).`
-          );
-          entry[field] = null;
-          counts.igUndeletable++;
+          if (hasManageContents === true) {
+            // Scope is granted and Meta still refuses — retrying is
+            // pointless and keeping the workflow red helps no one.
+            console.warn(
+              `  ${label}: (#10) despite instagram_manage_contents being granted. ` +
+              `Pruning; remove manually on instagram.com if wanted (ID: ${id}).`
+            );
+            entry[field] = null;
+            counts.igUndeletable++;
+          } else {
+            // Missing (or unknown) scope — this is fixable by regenerating
+            // the token, so keep the ID and alert via the failure email.
+            failures.push(
+              `${entry.date} ${label} (${id}): (#10) — token lacks instagram_manage_contents; ` +
+              `regenerate the Page token with that scope and update INSTAGRAM_ACCESS_TOKEN`
+            );
+          }
         } else {
           console.error(`  ${label}: FAILED — ${err.message.split("\n")[0]}`);
           failures.push(`${entry.date} ${label} (${id}): ${err.message.split("\n")[0]}`);
@@ -206,7 +234,7 @@ async function main() {
     console.log(`  Already gone:   ${counts.alreadyGone}`);
     console.log(`  Stories pruned: ${counts.prunedStories}`);
     if (counts.igUndeletable > 0) {
-      console.log(`  IG undeletable: ${counts.igUndeletable}  (Meta forbids IG media deletes — remove manually if wanted)`);
+      console.log(`  IG undeletable: ${counts.igUndeletable}  (Meta refused despite instagram_manage_contents — remove manually if wanted)`);
     }
     console.log(`  Failed:         ${failures.length}`);
     failures.forEach((f) => console.log(`    - ${f}`));

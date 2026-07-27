@@ -133,9 +133,12 @@ function graphRequest(method, urlPath, params) {
                 console.error(`  FIX: Generate a new long-lived token and update the INSTAGRAM_ACCESS_TOKEN GitHub secret.`);
               } else if (errCode === 10 || errSubcode === 2207050) {
                 if (method === "DELETE") {
-                  console.error(`\n  DIAGNOSIS: App is not allowed to delete this object.`);
-                  console.error(`  NOTE: For IG media this is expected — Meta returns (#10) on DELETE /{ig-media-id}`);
-                  console.error(`  even with every grantable scope (verified 2026-07-21). No permission fixes it.`);
+                  console.error(`\n  DIAGNOSIS: Token lacks permission to delete this object.`);
+                  console.error(`  For IG media, deletion requires the instagram_manage_contents scope`);
+                  console.error(`  (added to the Graph API Dec 2025 — tokens issued before then, or without`);
+                  console.error(`  that scope granted, get this (#10)).`);
+                  console.error(`  FIX: Regenerate the Page token with instagram_manage_contents granted`);
+                  console.error(`  and update the INSTAGRAM_ACCESS_TOKEN GitHub secret.`);
                 } else {
                   console.error(`\n  DIAGNOSIS: App does not have permission to publish.`);
                   console.error(`  FIX: Ensure instagram_content_publish permission is granted and the app has access to the Page.`);
@@ -664,15 +667,44 @@ function isObjectGoneError(err) {
 
 /**
  * Detect Meta's OAuthException code 10 — "(#10) Insufficient permissions".
- * On DELETE /{ig-media-id} this fires even when the token carries every
- * grantable scope (verified 2026-07-21 in Graph API Explorer with a fresh
- * full-permission user token AND the stored Page token): this app cannot
- * delete IG media via the API, period. There is no delete-specific
- * permission to request — delete-tonight-posts.js prunes these instead
- * of retrying forever.
+ * On DELETE /{ig-media-id} the usual cause is a token missing the
+ * instagram_manage_contents scope: Meta added IG media deletion to the API
+ * in Dec 2025 behind that permission, so tokens issued before then (or
+ * generated without the scope) get (#10) on every media delete. The earlier
+ * "no permission fixes it" conclusion (verified 2026-07-21) predates the
+ * scope being grantable for this app. delete-tonight-posts.js uses
+ * tokenHasManageContents() to decide whether a (#10) is fixable (missing
+ * scope → keep for retry + alert) or genuinely refused (scope present →
+ * prune rather than stay red forever).
  */
 function isPermissionError(err) {
   return !!err && typeof err.message === "string" && /\(code 10\):/.test(err.message);
+}
+
+/**
+ * Whether the stored token carries the instagram_manage_contents scope
+ * (required for DELETE /{ig-media-id} since Dec 2025). Checks both the flat
+ * `scopes` list and `granular_scopes` — page-token debug output has been
+ * observed using either. Returns true/false, or null when debug_token
+ * itself fails (callers should treat null as "unknown", not "missing").
+ */
+async function tokenHasManageContents() {
+  try {
+    const debug = await graphRequest("GET", "/debug_token", {
+      input_token: IG_ACCESS_TOKEN,
+      access_token: IG_ACCESS_TOKEN,
+    });
+    const data = (debug && debug.data) || {};
+    const flat = Array.isArray(data.scopes) ? data.scopes : [];
+    const granular = Array.isArray(data.granular_scopes)
+      ? data.granular_scopes.map((s) => s && s.scope).filter(Boolean)
+      : [];
+    return flat.includes("instagram_manage_contents") ||
+      granular.includes("instagram_manage_contents");
+  } catch (err) {
+    console.warn(`  Could not read token scopes (non-fatal): ${err.message.split("\n")[0]}`);
+    return null;
+  }
 }
 
 /**
@@ -742,6 +774,7 @@ module.exports = {
   postFbStoryPhoto,
   isObjectGoneError,
   isPermissionError,
+  tokenHasManageContents,
   deleteGraphObject,
   shutdown,
 };
