@@ -699,7 +699,7 @@ The Instagram auto-poster uses Meta's **Content Publishing API** via a Facebook 
 2. Set the domain dropdown to **`graph.facebook.com`** (not `graph.instagram.com`)
 3. Select your app in the "Meta App" dropdown
 4. Set "User or Page" to **"User Token"**
-5. Under Permissions, add: `business_management`, `instagram_basic`, `instagram_content_publish`, `instagram_manage_comments`, `pages_manage_posts`, `pages_read_engagement`, `pages_show_list` (`pages_manage_posts` is what lets the cleanup workflow delete FB page posts; there is no delete-specific scope — see Workflow 6 notes)
+5. Under Permissions, add: `business_management`, `instagram_basic`, `instagram_content_publish`, `instagram_manage_comments`, `instagram_manage_contents`, `pages_manage_posts`, `pages_read_engagement`, `pages_show_list` (`pages_manage_posts` lets the cleanup workflow delete FB page posts; `instagram_manage_contents` lets it delete IG media — see Workflow 6 notes)
 6. Click **"Generate Access Token"** — in the authorization popup, **make sure you select your Facebook Page** on the Page selection screen
 
 #### Step 4: Get Your Instagram User ID
