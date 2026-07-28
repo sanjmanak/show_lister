@@ -456,16 +456,25 @@ after 3 days. Design points:
   (`isObjectGoneError` in `meta-api.js` — deliberately narrower than
   `isContainerNotReadable`, since an Authorization Error on a delete is a
   real token problem that must retry).
-- **IG feed media cannot actually be deleted by this app.** `DELETE
-  /{ig-media-id}` returns OAuthException `(#10) Insufficient permissions`
-  even on a fresh token carrying every grantable scope (verified
-  2026-07-21 in Graph API Explorer — there is NO delete-specific
-  permission to add, so don't burn time hunting for one; the likely
-  unlock, if any, is App Review / Advanced Access). The script detects
-  this (`isPermissionError` in `meta-api.js`), prunes the IG feed ID with
-  a warning, and moves on — old IG "Tonight" posts stay up unless removed
-  manually in the app. FB deletes DO work (`pages_manage_posts`) and
-  still alert on real failures.
+- **IG feed media deletes need the `instagram_manage_contents` scope.**
+  Meta added IG media deletion to the Graph API in Dec 2025, gated behind
+  that permission (Instagram-API-with-Facebook-Login apps only, which is
+  what this app is). A token without the scope gets OAuthException `(#10)
+  Insufficient permissions` on every `DELETE /{ig-media-id}` — that was
+  the state of things through at least 2026-07-27, because the stored
+  Page token predates the scope. (An earlier note here claimed no
+  permission unlocks IG deletes, verified 2026-07-21; that verification
+  predated the scope being visible/grantable for this app and is
+  superseded.) The script now checks the token's scopes at startup
+  (`tokenHasManageContents` in `meta-api.js`): a `(#10)` with the scope
+  MISSING keeps the ID in state and exits 1 so the notify email says
+  exactly how to fix the token; a `(#10)` with the scope PRESENT means
+  Meta genuinely refuses, so the ID is pruned with a warning (manual
+  takedown if wanted) rather than keeping the workflow red forever. FB
+  deletes work (`pages_manage_posts`) and still alert on real failures.
+  **To enable IG deletes:** Graph API Explorer → select the app → add
+  `instagram_manage_contents` to the granted permissions → generate a
+  long-lived Page token → update the `INSTAGRAM_ACCESS_TOKEN` secret.
 - A failed feed delete keeps its ID in state (tomorrow retries) and exits 1
   to fire the SMTP notifier; entries stuck > 14 days are dropped loudly so
   the workflow can't stay red forever. State is written BEFORE the exit
@@ -690,7 +699,7 @@ The Instagram auto-poster uses Meta's **Content Publishing API** via a Facebook 
 2. Set the domain dropdown to **`graph.facebook.com`** (not `graph.instagram.com`)
 3. Select your app in the "Meta App" dropdown
 4. Set "User or Page" to **"User Token"**
-5. Under Permissions, add: `business_management`, `instagram_basic`, `instagram_content_publish`, `instagram_manage_comments`, `pages_manage_posts`, `pages_read_engagement`, `pages_show_list` (`pages_manage_posts` is what lets the cleanup workflow delete FB page posts; there is no delete-specific scope — see Workflow 6 notes)
+5. Under Permissions, add: `business_management`, `instagram_basic`, `instagram_content_publish`, `instagram_manage_comments`, `instagram_manage_contents`, `pages_manage_posts`, `pages_read_engagement`, `pages_show_list` (`pages_manage_posts` lets the cleanup workflow delete FB page posts; `instagram_manage_contents` lets it delete IG media — see Workflow 6 notes)
 6. Click **"Generate Access Token"** — in the authorization popup, **make sure you select your Facebook Page** on the Page selection screen
 
 #### Step 4: Get Your Instagram User ID
