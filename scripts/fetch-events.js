@@ -34,6 +34,7 @@ const EB_ORGANIZERS = [
   { id: "120744254440", name: "Social Comedy Night" },
   { id: "120997218882", name: "The Den Comedy Club" },
   { id: "120461230041", name: "Cat Dad Comedy" },
+  { id: "51211366653", name: "Comedy Houston" },
   // The Riot's second location, hosted at GuadalaHARRY's in Conroe. This
   // organizer account only produces Conroe shows, and Eventbrite's raw venue
   // string for them varies ("GuadalaHARRY's", etc.), so `forceVenue` pins
@@ -1247,9 +1248,8 @@ function classifyExclusion(ev, filters) {
 // title substring "open mic" — which only The Secret Group's series names
 // contain, so the "complete list" rendered exactly one venue. Classification
 // now happens here at ingest: every event gets an explicit `is_open_mic`
-// boolean (title match OR series allowlist), and recurring bar mics with no
-// Eventbrite/Ticketmaster presence can be hand-curated in `manual_mics` and
-// expanded into weekly occurrences.
+// boolean (title match OR series allowlist). The file's `manual_mics` list
+// (bar mics with no API feed) is reference data only — it is not read here.
 // ---------------------------------------------------------------------------
 
 function loadOpenMicConfig() {
@@ -1263,12 +1263,10 @@ function loadOpenMicConfig() {
           venueMatch: String(r.venue_match || "").toLowerCase().trim(),
         }))
         .filter((r) => r.titleMatch),
-      manualMics: (Array.isArray(raw.manual_mics) ? raw.manual_mics : [])
-        .filter((m) => m && m.enabled !== false && m.name && m.venue && m.day_of_week),
     };
   } catch (err) {
     console.warn(`Could not load ${OPEN_MICS_JSON_PATH}: ${err.message} — title-only open-mic matching.`);
-    return { seriesAllowlist: [], manualMics: [] };
+    return { seriesAllowlist: [] };
   }
 }
 
@@ -1282,68 +1280,6 @@ function isOpenMicEvent(ev, openMicConfig) {
   return openMicConfig.seriesAllowlist.some(
     (r) => name.includes(r.titleMatch) && (!r.venueMatch || venue.includes(r.venueMatch))
   );
-}
-
-/**
- * Expand `manual_mics` entries into dated occurrences over the next
- * `windowDays` Central-time calendar days. An occurrence is dropped when the
- * API feed already carries an open-mic event at the same venue on the same
- * date (e.g. the mic later gains an Eventbrite listing) so a show is never
- * listed twice.
- */
-function expandManualMics(openMicConfig, existingEvents, windowDays = 90) {
-  if (openMicConfig.manualMics.length === 0) return [];
-
-  const existingMicKeys = new Set(
-    existingEvents
-      .filter((e) => e.is_open_mic)
-      .map((e) => `${String(e.venue || "").toLowerCase().trim()}|${e.date}`)
-  );
-
-  // Today's date in Central time, independent of the process TZ.
-  const todayStr = new Intl.DateTimeFormat("en-CA", {
-    timeZone: "America/Chicago",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).format(new Date());
-
-  const nowIso = new Date().toISOString();
-  const out = [];
-  for (const mic of openMicConfig.manualMics) {
-    const venue = normalizeVenueName(mic.venue);
-    for (let offset = 0; offset < windowDays; offset++) {
-      const d = new Date(todayStr + "T12:00:00Z");
-      d.setUTCDate(d.getUTCDate() + offset);
-      const dateStr = d.toISOString().slice(0, 10);
-      if (getDayOfWeek(dateStr) !== mic.day_of_week) continue;
-      if (existingMicKeys.has(`${venue.toLowerCase().trim()}|${dateStr}`)) continue;
-      out.push({
-        id: makeId(mic.name, dateStr, venue),
-        name: mic.name,
-        genre: "Comedy",
-        venue,
-        venue_state: "TX",
-        venue_city: mic.venue_city || "Houston",
-        date: dateStr,
-        time: mic.time || null,
-        day_of_week: mic.day_of_week,
-        price_min: 0,
-        price_max: 0,
-        currency: "USD",
-        price_source: "manual",
-        ticket_url: mic.info_url || null,
-        image_url: mic.image_url || null,
-        source: "manual",
-        age_restriction: mic.age_restriction || null,
-        status: "on_sale",
-        description: mic.description || null,
-        is_open_mic: true,
-        last_updated: nowIso,
-      });
-    }
-  }
-  return out;
 }
 
 function applyRelevanceFilters(events, filters) {
@@ -1498,21 +1434,18 @@ async function main() {
   // strip it so it never reaches events.json.
   for (const e of deduped) delete e._tmId;
 
-  // Open-mic classification + hand-curated recurring mics — see
-  // config/open-mics.json. The explicit is_open_mic flag is what the WP
-  // plugin and front-end JS filter on (with a title-match fallback for any
-  // events.json written before this field existed).
+  // Open-mic classification — see config/open-mics.json. The explicit
+  // is_open_mic flag is what the WP plugin and front-end JS filter on (with
+  // a title-match fallback for any events.json written before this field
+  // existed). Only API-sourced events are flagged; the hand-curated bar mics
+  // in that file's `manual_mics` are reference data and are NOT expanded
+  // into events.json (owner call, 2026-07-31 — the dateless placeholder
+  // cards cluttered the home page).
   const openMicConfig = loadOpenMicConfig();
   for (const ev of deduped) {
     ev.is_open_mic = isOpenMicEvent(ev, openMicConfig);
   }
-  const manualMics = expandManualMics(openMicConfig, deduped);
-  if (manualMics.length > 0) {
-    deduped.push(...manualMics);
-    console.log(`Open mics: ${deduped.filter((e) => e.is_open_mic).length} total (${manualMics.length} from manual_mics)`);
-  } else {
-    console.log(`Open mics: ${deduped.filter((e) => e.is_open_mic).length} flagged`);
-  }
+  console.log(`Open mics: ${deduped.filter((e) => e.is_open_mic).length} flagged`);
 
   // Sort by date, then time. Times are 12-hour strings ("8:00 PM"), so a
   // string compare puts "10:00 PM" before "8:00 PM" — compare minutes instead.
@@ -1662,7 +1595,6 @@ module.exports = {
   applyRelevanceFilters,
   loadOpenMicConfig,
   isOpenMicEvent,
-  expandManualMics,
   parseJsonLdPrices,
   extractJsonLdBlocks,
   enrichPrices,
