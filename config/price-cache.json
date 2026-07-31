@@ -1,15 +1,7 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-07-30T15:49:41.652Z",
+  "last_updated": "2026-07-31T16:00:29.649Z",
   "entries": {
-    "e749158deb290cb5": {
-      "price_min": 62.3,
-      "price_max": 62.3,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/rogelio-ramos-en-espaol-houston-improv-tickets/14909253?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-07-19T00:20:48.290Z"
-    },
     "9394ee9e9b731bfb": {
       "price_min": 31.4,
       "price_max": 31.4,
