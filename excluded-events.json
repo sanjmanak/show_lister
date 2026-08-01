@@ -1,30 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-08-01T02:42:53.380Z",
-  "total_excluded": 25,
+  "last_updated": "2026-08-01T14:55:34.347Z",
+  "total_excluded": 23,
   "events": [
-    {
-      "name": "Classic Moive Night At The Jefferson The Sandlot",
-      "venue": "Jefferson Theatre",
-      "venue_city": "Beaumont",
-      "date": "2026-07-31",
-      "time": "7:00 PM",
-      "source": "ticketmaster",
-      "genre": "Comedy",
-      "ticket_url": "https://www.ticketmaster.com/classic-moive-night-at-the-jefferson-beaumont-texas-07-31-2026/event/3A006499D20D2A00",
-      "reason": "venue blocklisted: Jefferson Theatre"
-    },
-    {
-      "name": "NOTHING MATTERS Emo | Indie | Punk Dance Party",
-      "venue": "The Secret Group",
-      "venue_city": null,
-      "date": "2026-07-31",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/nothing-matters-emo-indie-punk-dance-party-tickets-1993428716954",
-      "reason": "title keyword blocklisted: \"dance party\""
-    },
     {
       "name": "DIAL UP: 90s & Y2K Dance Party!",
       "venue": "The Secret Group",
