@@ -1,22 +1,30 @@
 {
-  "generated_at": "2026-07-27T16:52:05.974Z",
-  "week_range": "July 27 – August 2, 2026",
+  "generated_at": "2026-08-03T17:03:21.372Z",
+  "week_range": "August 3 – August 9, 2026",
   "comedians": [
     {
-      "name": "Donnell Rawlings",
-      "show": "Donnell Rawlings",
-      "imageUrl": "https://s1.ticketm.net/dam/a/730/9618c87e-c032-4331-9f09-53464b3a0730_SOURCE",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Donnell_Rawlings_stands_in_front_of_a_C-17_Globemaster_III_%2832666816002%29_%28cropped%29.jpg",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Donnell_Rawlings_stands_in_front_of_a_C-17_Globemaster_III_%2832666816002%29_%28cropped%29.jpg",
+      "name": "Affion Crockett",
+      "show": "Affion Crockett",
+      "imageUrl": "https://s1.ticketm.net/dam/a/996/9387f28e-f924-478e-acb0-c82e51c61996_SOURCE",
+      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/AffionCrockett1_%28cropped%29.jpg/960px-AffionCrockett1_%28cropped%29.jpg",
+      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/AffionCrockett1_%28cropped%29.jpg/960px-AffionCrockett1_%28cropped%29.jpg",
       "imageSource": "headshot"
     },
     {
-      "name": "Rogelio Ramos",
-      "show": "Rogelio Ramos (En Espanol)",
-      "imageUrl": "https://s1.ticketm.net/dam/a/96b/3ad9b8a0-47e1-45ef-b8f4-4a77adc8696b_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/96b/3ad9b8a0-47e1-45ef-b8f4-4a77adc8696b_SOURCE",
-      "imageSource": "event"
+      "name": "Ron Funches",
+      "show": "Ron Funches",
+      "imageUrl": "https://s1.ticketm.net/dam/a/ca0/1f5b6d32-ff79-4568-be1b-08ae5b1e4ca0_SOURCE",
+      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/4/40/Ron_Funches_SXSW_2015.jpg",
+      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/4/40/Ron_Funches_SXSW_2015.jpg",
+      "imageSource": "headshot"
+    },
+    {
+      "name": "Tom Shillue",
+      "show": "Comedian Tom Shillue (Gutfeld!, The Tonight Show) Live in Conroe",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176821301%2F428099579998%2F1%2Foriginal.20260205-211729?auto=format%2Ccompress&q=75&sharp=10&s=1b5a27798566a11721b19bfcc9902d20",
+      "headshotUrl": "https://cdn.prod.website-files.com/6940f208cb91aa0c946611df/6944dff02595f2b24df63297_Tom-Shillue-Official-Site.png",
+      "displayImage": "https://cdn.prod.website-files.com/6940f208cb91aa0c946611df/6944dff02595f2b24df63297_Tom-Shillue-Official-Site.png",
+      "imageSource": "headshot"
     }
   ]
 }
