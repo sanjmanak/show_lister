@@ -1,24 +1,15 @@
 {
   "posted": [
     {
-      "slug": "donnell-rawlings-houston-improv-2026-07-31",
-      "comedianName": "Donnell Rawlings",
-      "igFeedMediaId": "18127244869731533",
-      "igStoryMediaId": "18110071118099776",
-      "fbFeedPostId": "1362079572683451",
-      "fbStoryPostId": "1563091338821235",
-      "postedAt": "2026-07-27T17:49:15.312Z"
-    },
-    {
-      "slug": "rogelio-ramos-houston-improv-2026-07-30",
-      "comedianName": "Rogelio Ramos",
-      "igFeedMediaId": "17876412810684615",
-      "igStoryMediaId": "17999500043987738",
-      "fbFeedPostId": "1362245786000163",
-      "fbStoryPostId": "1034890465950995",
-      "postedAt": "2026-07-27T23:12:49.250Z"
+      "slug": "affion-crockett-houston-improv-2026-08-06",
+      "comedianName": "Affion Crockett",
+      "igFeedMediaId": "18175405516422692",
+      "igStoryMediaId": "17907698694460068",
+      "fbFeedPostId": "1368018298756245",
+      "fbStoryPostId": "1406167188041094",
+      "postedAt": "2026-08-03T17:58:45.189Z"
     }
   ],
-  "week_range": "July 27 – August 2, 2026",
-  "manifest_version": 1785174248434
+  "week_range": "August 3 – August 9, 2026",
+  "manifest_version": 1785779541256
 }
