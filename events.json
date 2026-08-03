@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-08-02T14:59:28.610Z",
-  "total_events": 243,
+  "last_updated": "2026-08-03T02:45:05.597Z",
+  "total_events": 244,
   "events": [
     {
       "id": "3e307ba23853520c",
@@ -20,9 +20,9 @@
       "image_url": "https://s1.ticketm.net/dam/a/204/1cf0a6ef-fc13-449d-a78a-210f4ddbd204_SOURCE",
       "source": "ticketmaster",
       "age_restriction": null,
-      "status": "on_sale",
+      "status": "off_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
-      "last_updated": "2026-07-25T00:50:13.081Z",
+      "last_updated": "2026-08-03T02:43:10.110Z",
       "is_open_mic": false
     },
     {
@@ -48,7 +48,7 @@
     {
       "id": "1665b8ed03680084",
       "name": "Donnell Rawlings",
-      "genre": "Miscellaneous",
+      "genre": "Comedy",
       "venue": "Houston Improv",
       "venue_state": "TX",
       "venue_city": "Houston",
@@ -59,13 +59,13 @@
       "price_max": null,
       "currency": "USD",
       "price_source": null,
-      "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A70K7e",
+      "ticket_url": "https://www.ticketweb.com/event/donnell-rawlings-houston-improv-tickets/14904293?REFERRAL_ID=tmfeed",
       "image_url": "https://s1.ticketm.net/dam/a/730/9618c87e-c032-4331-9f09-53464b3a0730_SOURCE",
       "source": "ticketmaster",
       "age_restriction": null,
-      "status": "on_sale",
+      "status": "off_sale",
       "description": null,
-      "last_updated": "2026-07-25T00:50:13.081Z",
+      "last_updated": "2026-08-03T02:43:10.110Z",
       "is_open_mic": false
     },
     {
@@ -5206,6 +5206,29 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-08-02T14:57:37.800Z",
+      "is_open_mic": false
+    },
+    {
+      "id": "cf7ca0036e49bcf0",
+      "name": "D'Lai",
+      "genre": "Comedy",
+      "venue": "Punch Line Houston",
+      "venue_state": "TX",
+      "venue_city": "Houston",
+      "date": "2026-10-29",
+      "time": "7:30 PM",
+      "day_of_week": "Thursday",
+      "price_min": null,
+      "price_max": null,
+      "currency": "USD",
+      "price_source": null,
+      "ticket_url": "https://www.ticketmaster.com/dlai-houston-texas-10-29-2026/event/3A0064BF2304F60A",
+      "image_url": "https://s1.ticketm.net/dam/a/592/75683124-585d-42f6-bd4b-01a389372592_SOURCE",
+      "source": "ticketmaster",
+      "age_restriction": null,
+      "status": "on_sale",
+      "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
+      "last_updated": "2026-08-03T02:43:10.113Z",
       "is_open_mic": false
     },
     {
