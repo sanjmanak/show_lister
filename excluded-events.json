@@ -1,7 +1,7 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-08-04T02:27:12.858Z",
-  "total_excluded": 21,
+  "last_updated": "2026-08-04T16:08:46.903Z",
+  "total_excluded": 25,
   "events": [
     {
       "name": "Karaoke every THURSDAY!",
@@ -103,6 +103,17 @@
       "reason": "title keyword blocklisted: \"dance party\""
     },
     {
+      "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
+      "venue": "The Secret Group",
+      "venue_city": null,
+      "date": "2026-08-16",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/our-mic-is-your-mic-emo-karaoke-tickets-1996542232563",
+      "reason": "title keyword blocklisted: \"karaoke\""
+    },
+    {
       "name": "Slow Joy - I Love You So Much I Could Die Tour",
       "venue": "The Secret Group",
       "venue_city": null,
@@ -114,6 +125,17 @@
       "reason": "music artist blocklisted: \"slow joy\""
     },
     {
+      "name": "Karaoke every THURSDAY!",
+      "venue": "The Secret Group",
+      "venue_city": null,
+      "date": "2026-08-20",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/karaoke-every-thursday-tickets-1996543354920",
+      "reason": "title keyword blocklisted: \"karaoke\""
+    },
+    {
       "name": "Classic Movie Night At The Jefferson Ferris Bueller's Day Off",
       "venue": "Jefferson Theatre",
       "venue_city": "Beaumont",
@@ -123,6 +145,28 @@
       "genre": "Comedy",
       "ticket_url": "https://www.ticketmaster.com/classic-movie-night-at-the-jefferson-beaumont-texas-08-21-2026/event/3A0064EAFAA315DC",
       "reason": "venue blocklisted: Jefferson Theatre"
+    },
+    {
+      "name": "NOTHING MATTERS Emo | Indie | Punk Dance Party",
+      "venue": "The Secret Group",
+      "venue_city": null,
+      "date": "2026-08-21",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/nothing-matters-emo-indie-punk-dance-party-tickets-1996543364950",
+      "reason": "title keyword blocklisted: \"dance party\""
+    },
+    {
+      "name": "DIAL UP: 90s & Y2K Dance Party!",
+      "venue": "The Secret Group",
+      "venue_city": null,
+      "date": "2026-08-22",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/dial-up-90s-y2k-dance-party-tickets-1996543374980",
+      "reason": "title keyword blocklisted: \"dance party\""
     },
     {
       "name": "Emarosa presents: High Horse Heaven Tour",
