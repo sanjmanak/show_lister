@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-08-03T16:20:26.242Z",
-  "total_events": 241,
+  "last_updated": "2026-08-04T02:29:23.684Z",
+  "total_events": 243,
   "events": [
     {
       "id": "ac85c83df54fc4c6",
@@ -561,23 +561,23 @@
       "is_open_mic": false
     },
     {
-      "id": "cf6b2fdf922430b4",
-      "name": "Adrian Alvarez live at the Den Comedy Club",
+      "id": "77071f7d4bcddb43",
+      "name": "Adrian Alvarez live at the den comedy club - Saturday",
       "venue": "The Den Comedy Club",
       "date": "2026-08-08",
       "time": "6:00 PM",
       "day_of_week": "Saturday",
       "price_min": 30.87,
-      "price_max": 244.57,
+      "price_max": 204.14,
       "currency": "USD",
       "price_source": "api",
-      "ticket_url": "https://www.eventbrite.com/e/adrian-alvarez-live-at-the-den-comedy-club-tickets-1995208266635",
+      "ticket_url": "https://www.eventbrite.com/e/adrian-alvarez-live-at-the-den-comedy-club-saturday-tickets-1995208266635",
       "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1189617230%2F2991795842957%2F1%2Foriginal.20260725-200858?auto=format%2Ccompress&q=75&sharp=10&s=ff544891dbfb1baeaa7ec639e44c5287",
       "source": "eventbrite",
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready to laugh! Adrian Alvarez (aka Skits and Giggles) brings his viral Tío Papi family chaos & relatable humor live!",
-      "last_updated": "2026-07-26T02:42:39.675Z",
+      "last_updated": "2026-08-04T02:27:10.703Z",
       "is_open_mic": false
     },
     {
@@ -790,6 +790,26 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.081Z",
+      "is_open_mic": false
+    },
+    {
+      "id": "c73a812515693dea",
+      "name": "Adrian Alvarez live at the den comedy club - Sunday",
+      "venue": "The Den Comedy Club",
+      "date": "2026-08-09",
+      "time": "6:00 PM",
+      "day_of_week": "Sunday",
+      "price_min": 30.87,
+      "price_max": 204.14,
+      "currency": "USD",
+      "price_source": "api",
+      "ticket_url": "https://www.eventbrite.com/e/adrian-alvarez-live-at-the-den-comedy-club-sunday-tickets-1996491226001",
+      "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1189617230%2F2991795842957%2F1%2Foriginal.20260725-200858?auto=format%2Ccompress&q=75&sharp=10&s=ff544891dbfb1baeaa7ec639e44c5287",
+      "source": "eventbrite",
+      "age_restriction": null,
+      "status": "on_sale",
+      "description": "Get ready to laugh! Adrian Alvarez (aka Skits and Giggles) brings his viral Tío Papi family chaos & relatable humor live!",
+      "last_updated": "2026-08-04T02:27:10.703Z",
       "is_open_mic": false
     },
     {
@@ -1251,6 +1271,26 @@
       "is_open_mic": false
     },
     {
+      "id": "43fbf144590de957",
+      "name": "The Best of TSG Headliner Series - Ruben Medina",
+      "venue": "The Secret Group",
+      "date": "2026-08-13",
+      "time": "8:00 PM",
+      "day_of_week": "Thursday",
+      "price_min": 14.59,
+      "price_max": 16.9,
+      "currency": "USD",
+      "price_source": "api",
+      "ticket_url": "https://www.eventbrite.com/e/the-best-of-tsg-headliner-series-ruben-medina-tickets-1996532417205",
+      "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176743871%2F3558237521%2F1%2Foriginal.20260205-024409?auto=format%2Ccompress&q=75&sharp=10&s=70e5049026424875ceb7fb9cbafc7ae9",
+      "source": "eventbrite",
+      "age_restriction": null,
+      "status": "on_sale",
+      "description": "Come catch some of the nation's best up-and-coming comics stretch their legs and perfect their craft every Thursday!",
+      "last_updated": "2026-08-04T02:27:08.510Z",
+      "is_open_mic": false
+    },
+    {
       "id": "e66ba6ad8ee291c2",
       "name": "Social Comedy Nite",
       "venue": "Social Beer Garden HTX",
@@ -1518,8 +1558,8 @@
       "source": "eventbrite",
       "age_restriction": null,
       "status": "on_sale",
-      "description": "Join us for an evening with Jed Harrelson on August 15, 2026!",
-      "last_updated": "2026-07-25T00:50:14.792Z",
+      "description": "Join us for an evening with Jed Harrelson with guest Carson Lewis on August 15, 2026!",
+      "last_updated": "2026-08-04T02:27:07.756Z",
       "is_open_mic": false
     },
     {
