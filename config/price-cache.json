@@ -1,15 +1,7 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-07-31T16:00:29.649Z",
+  "last_updated": "2026-08-07T05:59:14.536Z",
   "entries": {
-    "9394ee9e9b731bfb": {
-      "price_min": 31.4,
-      "price_max": 31.4,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/affion-crockett-houston-improv-tickets/14949663?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-07-19T00:20:53.744Z"
-    },
     "eecc125f84893cbf": {
       "price_min": 31.4,
       "price_max": 31.4,

@@ -1,19 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-08-07T02:36:49.762Z",
-  "total_excluded": 25,
+  "last_updated": "2026-08-07T05:57:32.320Z",
+  "total_excluded": 24,
   "events": [
-    {
-      "name": "Karaoke every THURSDAY!",
-      "venue": "The Secret Group",
-      "venue_city": null,
-      "date": "2026-08-06",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/karaoke-every-thursday-tickets-1993983527407",
-      "reason": "title keyword blocklisted: \"karaoke\""
-    },
     {
       "name": "Classic Movie Night At The Jefferson The Parent Trap",
       "venue": "Jefferson Theatre",
