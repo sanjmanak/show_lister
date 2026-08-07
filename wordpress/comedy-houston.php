@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.8.1
+ * Version: 2.9.0
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.8.1';
+    const VERSION      = '2.9.0';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -236,6 +236,9 @@ class Comedy_Houston_Plugin {
             'shortcodeParams'  => $shortcode_params,
             'comedianPosts'    => $js_comedian_posts,
             'venuePages'       => $this->build_venue_pages_map(),
+            // Performer-booking MVP endpoints (PERFORMER_REQUESTS.md).
+            'performerEndpoint' => esc_url_raw(rest_url('comedy-houston/v1/performer-interest')),
+            'performerTokenUrl' => esc_url_raw(rest_url('comedy-houston/v1/performer-token')),
         ];
 
         wp_add_inline_script(
@@ -1011,17 +1014,17 @@ class Comedy_Houston_Plugin {
      *   2. Honeypot — a visually hidden "website" field; any value rejects.
      *   3. Rate limit — max 5 submissions per IP per hour via transient.
      */
-    private function mint_inquiry_token() {
+    private function mint_inquiry_token($context = 'ch-inquiry') {
         $ts = time();
-        return $ts . '.' . hash_hmac('sha256', 'ch-inquiry|' . $ts, wp_salt('nonce'));
+        return $ts . '.' . hash_hmac('sha256', $context . '|' . $ts, wp_salt('nonce'));
     }
 
-    private function verify_inquiry_token($token) {
+    private function verify_inquiry_token($token, $context = 'ch-inquiry') {
         if (!is_string($token) || !preg_match('/^(\d{10,12})\.([0-9a-f]{64})$/', $token, $m)) {
             return false;
         }
         $ts = (int) $m[1];
-        if (!hash_equals(hash_hmac('sha256', 'ch-inquiry|' . $ts, wp_salt('nonce')), $m[2])) {
+        if (!hash_equals(hash_hmac('sha256', $context . '|' . $ts, wp_salt('nonce')), $m[2])) {
             return false;
         }
         $age = time() - $ts;
@@ -1039,6 +1042,21 @@ class Comedy_Houston_Plugin {
         register_rest_route('comedy-houston/v1', '/inquiry', [
             'methods'  => 'POST',
             'callback' => [$this, 'handle_inquiry_submission'],
+            'permission_callback' => '__return_true',
+        ]);
+        // Performer-booking MVP (see PERFORMER_REQUESTS.md in the repo).
+        // Same anti-spam design as the corporate inquiry form, separate
+        // token context + rate-limit bucket.
+        register_rest_route('comedy-houston/v1', '/performer-token', [
+            'methods'  => 'GET',
+            'callback' => function () {
+                return rest_ensure_response(['token' => $this->mint_inquiry_token('ch-performer')]);
+            },
+            'permission_callback' => '__return_true',
+        ]);
+        register_rest_route('comedy-houston/v1', '/performer-interest', [
+            'methods'  => 'POST',
+            'callback' => [$this, 'handle_performer_submission'],
             'permission_callback' => '__return_true',
         ]);
     }
@@ -1101,6 +1119,102 @@ class Comedy_Houston_Plugin {
 
         if (!wp_mail($this->inquiry_email(), $subject, implode("\n", $lines), $headers)) {
             return new WP_Error('ch_inquiry_mail', 'Could not send right now — please email ' . $this->inquiry_email() . ' directly.', ['status' => 500]);
+        }
+        return rest_ensure_response(['ok' => true]);
+    }
+
+    // =========================================================================
+    // PERFORMER-BOOKING MVP — "Interested in performing?" submissions
+    //
+    // Demand-validation experiment (PERFORMER_REQUESTS.md): comedians browsing
+    // eligible shows (events.json `performer_requests: true`, controlled by
+    // config/performer-requests.json) can raise their hand for a specific
+    // show. Submissions are emailed to the admin for manual concierge
+    // matching — no accounts, no producer dashboard, no storage beyond email.
+    // =========================================================================
+
+    private function performer_email() {
+        return apply_filters('comedy_houston_performer_email', $this->inquiry_email());
+    }
+
+    public function handle_performer_submission($request) {
+        // Honeypot: silently accept so bots don't learn they were caught.
+        if (trim((string) $request->get_param('website')) !== '') {
+            return rest_ensure_response(['ok' => true]);
+        }
+
+        if (!$this->verify_inquiry_token($request->get_param('ch_token'), 'ch-performer')) {
+            return new WP_Error('ch_perf_token', 'Session expired — please reload the page and try again.', ['status' => 403]);
+        }
+
+        $ip = isset($_SERVER['REMOTE_ADDR']) ? sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'])) : '';
+        $rate_key = 'ch_perf_' . md5($ip);
+        $count = (int) get_transient($rate_key);
+        if ($count >= 5) {
+            return new WP_Error('ch_perf_rate', 'Too many submissions — please try again later.', ['status' => 429]);
+        }
+        set_transient($rate_key, $count + 1, HOUR_IN_SECONDS);
+
+        $field = function ($key, $max) use ($request) {
+            return mb_substr(sanitize_text_field((string) $request->get_param($key)), 0, $max);
+        };
+
+        // Performer fields — only what the MVP needs.
+        $instagram  = ltrim($field('instagram', 60), '@');
+        $set_length = $field('set_length', 10);
+        $clip_url   = esc_url_raw((string) $request->get_param('clip_url'), ['http', 'https']);
+        $note       = mb_substr(sanitize_textarea_field((string) $request->get_param('note')), 0, 2000);
+
+        if ($instagram === '' || !preg_match('/^[A-Za-z0-9._]{1,30}$/', $instagram)) {
+            return new WP_Error('ch_perf_fields', 'Please enter your Instagram handle (letters, numbers, dots, underscores).', ['status' => 400]);
+        }
+        if (!in_array($set_length, ['5', '10', '15', '20+'], true)) {
+            return new WP_Error('ch_perf_fields', 'Please pick a set length.', ['status' => 400]);
+        }
+
+        // Event metadata — captured silently by the client from the card's
+        // event object. Advisory (a spoofed value only mis-labels the email),
+        // but it's what makes the submission actionable: it ties the raised
+        // hand to one specific show.
+        $event_id     = $field('event_id', 32);
+        $event_name   = $field('event_name', 200);
+        $venue        = $field('venue', 120);
+        $event_date   = $field('event_date', 20);
+        $event_time   = $field('event_time', 20);
+        $event_source = $field('event_source', 20);
+        $is_open_mic  = $request->get_param('is_open_mic') ? 'yes' : 'no';
+
+        $lines = [
+            'New performer-interest submission from comedyhouston.com',
+            '',
+            '— Show —',
+            'Event:      ' . ($event_name !== '' ? $event_name : '—'),
+            'Venue:      ' . ($venue !== '' ? $venue : '—'),
+            'Date/time:  ' . trim($event_date . ' ' . $event_time),
+            'Event ID:   ' . ($event_id !== '' ? $event_id : '—'),
+            'Source:     ' . ($event_source !== '' ? $event_source : '—'),
+            'Open mic:   ' . $is_open_mic,
+            '',
+            '— Performer —',
+            'Instagram:  @' . $instagram . '  (https://www.instagram.com/' . rawurlencode($instagram) . '/)',
+            'Set length: ' . $set_length . ' minutes',
+            'Clip:       ' . ($clip_url !== '' ? $clip_url : '—'),
+            '',
+            'Note:',
+            $note !== '' ? $note : '—',
+            '',
+            'Next step (manual concierge): vet the clip/IG, then intro them to',
+            'the show\'s producer. See PERFORMER_REQUESTS.md in the repo.',
+        ];
+        $subject = sprintf(
+            'Performer interest — %s @ %s, %s',
+            $event_name !== '' ? $event_name : 'unknown show',
+            $venue !== '' ? $venue : 'unknown venue',
+            $event_date !== '' ? $event_date : 'unknown date'
+        );
+
+        if (!wp_mail($this->performer_email(), $subject, implode("\n", $lines))) {
+            return new WP_Error('ch_perf_mail', 'Could not send right now — please try again in a minute.', ['status' => 500]);
         }
         return rest_ensure_response(['ok' => true]);
     }
@@ -1672,6 +1786,24 @@ class Comedy_Houston_Plugin {
         $card .= '<div class="card-venue">' . $venue_html . '</div>';
         $card .= '<div class="card-footer"><div class="card-price">' . $price_html . '</div>'
             . $more_info_html . $ticket_html . '</div>';
+
+        // Performer-booking MVP: secondary text-link CTA under the ticket
+        // row, only on events flagged eligible at ingest (performer_requests
+        // — see config/performer-requests.json). Deliberately quieter than
+        // "Get Tickets". Kept in sync with renderCard() in comedy-houston.js;
+        // the click handler + modal live there (delegated, so SSR markup
+        // works too).
+        if (!empty($ev['performer_requests'])) {
+            $card .= '<div class="card-perform-row"><button type="button" class="card-perform-link"'
+                . ' data-event-id="' . esc_attr($ev['id'] ?? '') . '"'
+                . ' data-event-name="' . esc_attr($ev['name'] ?? '') . '"'
+                . ' data-venue="' . esc_attr($ev['venue'] ?? '') . '"'
+                . ' data-event-date="' . esc_attr($ev['date'] ?? '') . '"'
+                . ' data-event-time="' . esc_attr($ev['time'] ?? '') . '"'
+                . ' data-event-source="' . esc_attr($ev['source'] ?? '') . '"'
+                . ' data-open-mic="' . (!empty($ev['is_open_mic']) ? '1' : '') . '"'
+                . '>&#127908; Interested in performing?</button></div>';
+        }
         $card .= '</div></article>';
 
         return $card;

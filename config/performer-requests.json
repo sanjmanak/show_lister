@@ -1,0 +1,74 @@
+{
+  "_readme": [
+    "Performer-booking MVP eligibility, applied by scripts/fetch-events.js at",
+    "ingest. Every event in events.json gets an explicit `performer_requests`",
+    "boolean (default FALSE). Events flagged true show a secondary",
+    "'🎤 Interested in performing?' CTA on their card in the WordPress plugin,",
+    "which opens a short interest form emailed to the admin. See",
+    "PERFORMER_REQUESTS.md at the repo root for the full experiment doc.",
+    "",
+    "An event is flagged performer_requests=true when `enabled` is true AND",
+    "ANY of these hold:",
+    "  1. `include_open_mics` is true and the event has is_open_mic=true",
+    "     (classification from config/open-mics.json).",
+    "  2. It matches an enabled entry in `series_allowlist`: title_match is a",
+    "     case-insensitive substring of the event title (hyphens normalized to",
+    "     spaces), and venue_match (if present) a case-insensitive substring",
+    "     of the venue name.",
+    "",
+    "To turn the whole experiment off: set `enabled` to false (takes effect",
+    "on the next fetch run, ~twice daily, or run scripts/fetch-events.js).",
+    "To turn one show/series on or off: add/edit its series_allowlist entry",
+    "and set `enabled` on that entry.",
+    "",
+    "Keep the cohort to local multi-comic lineups: open mics, recurring",
+    "showcases, independent productions. Never flag nationally touring",
+    "headliner shows (single named headliner at a major club) — a booking",
+    "request there is noise for everyone.",
+    "",
+    "Deliberately a boolean for the MVP, not a status enum. If the experiment",
+    "graduates, migrate to performer_request_status:",
+    "disabled | testing | producer_unverified | producer_verified |",
+    "producer_accepting — the ingest stamping point in fetch-events.js is the",
+    "single place to change."
+  ],
+  "enabled": true,
+  "include_open_mics": true,
+  "series_allowlist": [
+    {
+      "title_match": "Social Comedy Nite",
+      "enabled": true,
+      "note": "Free booked bar showcases at Notsuoh, Social Beer Garden HTX, and Big Ben Tavern (~29 upcoming instances). Owner-confirmed booked shows (2026-07-24) — exactly the concierge target. No venue_match on purpose: all three rooms."
+    },
+    {
+      "title_match": "East End Comedy Showcase",
+      "venue_match": "Wonky Power",
+      "enabled": true,
+      "note": "Weekly independent Thursday showcase, Eventbrite-listed, local production."
+    },
+    {
+      "title_match": "Best of the Secret Group",
+      "venue_match": "Secret Group",
+      "enabled": true,
+      "note": "'Best of Houston'-style multi-comic showcase, several time slots per weekend (7/8/9/10pm + Rated R 11pm). Covers 'The Best of the Secret Group Comedy Showcase' and 'RATED R' variants; deliberately does NOT match 'Best of TSG Headliner Series - <name>' (single named headliner)."
+    },
+    {
+      "title_match": "Monday Night Comedy",
+      "venue_match": "Secret Group",
+      "enabled": true,
+      "note": "Weekly local multi-comic showcase."
+    },
+    {
+      "title_match": "$2 Bill",
+      "venue_match": "Secret Group",
+      "enabled": true,
+      "note": "'$2 BILL Two Dollar Comedy Show every Wednesday!' — weekly local showcase."
+    },
+    {
+      "title_match": "Comedy & Drinks in a Speakeasy",
+      "venue_match": "Den Comedy Club",
+      "enabled": true,
+      "note": "The Den's rotating multi-comic club showcase, multiple nights per week. The Den is an existing Eventbrite feed partner."
+    }
+  ]
+}

@@ -54,6 +54,7 @@ const TEMPLATE_PATH = path.join(OUTPUT_DIR, "index.html");
 const FILTERS_JSON_PATH = path.join(OUTPUT_DIR, "config", "filters.json");
 const EXCLUDED_JSON_PATH = path.join(OUTPUT_DIR, "excluded-events.json");
 const OPEN_MICS_JSON_PATH = path.join(OUTPUT_DIR, "config", "open-mics.json");
+const PERFORMER_REQUESTS_JSON_PATH = path.join(OUTPUT_DIR, "config", "performer-requests.json");
 const PRICE_CACHE_PATH = path.join(OUTPUT_DIR, "config", "price-cache.json");
 
 // Price-enrichment pacing. Ticketmaster's Discovery API allows 5 req/s, so
@@ -1282,6 +1283,47 @@ function isOpenMicEvent(ev, openMicConfig) {
   );
 }
 
+// ---------------------------------------------------------------------------
+// Performer-booking MVP eligibility (config/performer-requests.json)
+//
+// Stamps an explicit `performer_requests` boolean on every event (default
+// false). The WordPress plugin renders the "🎤 Interested in performing?"
+// CTA only on flagged events. Eligibility is a manual allowlist — open mics
+// (via is_open_mic, when include_open_mics) plus recurring local showcase
+// series — NOT a classifier. See PERFORMER_REQUESTS.md for the experiment.
+// ---------------------------------------------------------------------------
+
+function loadPerformerRequestsConfig() {
+  try {
+    const raw = JSON.parse(fs.readFileSync(PERFORMER_REQUESTS_JSON_PATH, "utf8"));
+    return {
+      enabled: raw.enabled === true,
+      includeOpenMics: raw.include_open_mics === true,
+      seriesAllowlist: (Array.isArray(raw.series_allowlist) ? raw.series_allowlist : [])
+        .filter((r) => r && r.enabled !== false)
+        .map((r) => ({
+          titleMatch: String(r.title_match || "").toLowerCase().trim(),
+          venueMatch: String(r.venue_match || "").toLowerCase().trim(),
+        }))
+        .filter((r) => r.titleMatch),
+    };
+  } catch (err) {
+    console.warn(`Could not load ${PERFORMER_REQUESTS_JSON_PATH}: ${err.message} — performer_requests defaults to false.`);
+    return { enabled: false, includeOpenMics: false, seriesAllowlist: [] };
+  }
+}
+
+function isPerformerRequestEvent(ev, cfg) {
+  if (!cfg.enabled) return false;
+  if (cfg.includeOpenMics && ev.is_open_mic === true) return true;
+
+  const name = String(ev.name || "").toLowerCase().replace(/-/g, " ");
+  const venue = String(ev.venue || "").toLowerCase();
+  return cfg.seriesAllowlist.some(
+    (r) => name.includes(r.titleMatch) && (!r.venueMatch || venue.includes(r.venueMatch))
+  );
+}
+
 function applyRelevanceFilters(events, filters) {
   const kept = [];
   const excluded = [];
@@ -1446,6 +1488,17 @@ async function main() {
     ev.is_open_mic = isOpenMicEvent(ev, openMicConfig);
   }
   console.log(`Open mics: ${deduped.filter((e) => e.is_open_mic).length} flagged`);
+
+  // Performer-booking MVP eligibility — see config/performer-requests.json
+  // and PERFORMER_REQUESTS.md. Every event gets an explicit boolean (default
+  // false); flagged events show the "Interested in performing?" CTA in the
+  // WordPress plugin. Must run AFTER is_open_mic stamping above because the
+  // config can include open mics wholesale.
+  const performerConfig = loadPerformerRequestsConfig();
+  for (const ev of deduped) {
+    ev.performer_requests = isPerformerRequestEvent(ev, performerConfig);
+  }
+  console.log(`Performer requests: ${deduped.filter((e) => e.performer_requests).length} flagged`);
 
   // Sort by date, then time. Times are 12-hour strings ("8:00 PM"), so a
   // string compare puts "10:00 PM" before "8:00 PM" — compare minutes instead.

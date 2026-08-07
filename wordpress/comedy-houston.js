@@ -41,6 +41,12 @@
   // config/venues.json). Venue names on cards link to their venue page.
   var VENUE_PAGES = config.venuePages || {};
 
+  // Performer-booking MVP (PERFORMER_REQUESTS.md): REST endpoints injected
+  // by PHP. When absent (e.g. an old cached inline config), the CTA still
+  // renders but the modal shows a graceful error on submit.
+  var PERFORMER_ENDPOINT = config.performerEndpoint || "";
+  var PERFORMER_TOKEN_URL = config.performerTokenUrl || "";
+
   // Shortcode params (locked filters from PHP shortcode attributes)
   var scParams = config.shortcodeParams || {};
 
@@ -102,6 +108,10 @@
     // Only re-render if we have fresh data, or if there's no SSR content to preserve
     if (allEvents.length > 0 || !hasSSR) {
       render();
+    } else {
+      // SSR content kept as-is (fetch failed) — still count eligible views
+      // and pre-mint the anti-bot token off the server-rendered CTAs.
+      firePerformerViewTracking();
     }
   }
 
@@ -233,6 +243,22 @@
       if (!btn) return;
       showAllRequested = true;
       render();
+    });
+
+    // "Interested in performing?" — delegated for the same reason (SSR
+    // markup + every JS re-render share one listener).
+    if (main) main.addEventListener("click", function (e) {
+      var btn = e.target.closest ? e.target.closest(".card-perform-link") : null;
+      if (!btn) return;
+      openPerformerModal({
+        event_id: btn.getAttribute("data-event-id") || "",
+        event_name: btn.getAttribute("data-event-name") || "",
+        venue: btn.getAttribute("data-venue") || "",
+        event_date: btn.getAttribute("data-event-date") || "",
+        event_time: btn.getAttribute("data-event-time") || "",
+        event_source: btn.getAttribute("data-event-source") || "",
+        is_open_mic: btn.getAttribute("data-open-mic") === "1"
+      });
     });
   }
 
@@ -433,6 +459,8 @@
     for (var c = 0; c < ctaLinks.length; c++) {
       ctaLinks[c].addEventListener("click", handleTicketClick);
     }
+
+    firePerformerViewTracking();
   }
 
   // ================================================================
@@ -460,6 +488,232 @@
     }
   }
 
+  // ================================================================
+  // PERFORMER-BOOKING MVP — "Interested in performing?" flow
+  //
+  // Demand-validation experiment (PERFORMER_REQUESTS.md): a comedian
+  // browsing an eligible show can raise their hand for that specific
+  // show. Bottom sheet on mobile / centered modal on desktop, four
+  // fields, no account. Submission POSTs to the plugin's REST endpoint
+  // (token + honeypot + rate limit) which emails the admin.
+  //
+  // GA4 funnel: eligible_show_viewed → performer_interest_clicked →
+  // performer_interest_submitted.
+  // ================================================================
+  var performerTokenPromise = null;
+  var performerViewedFired = false;
+  var performerModal = null;
+  var performerMeta = null;
+
+  // Anti-bot token (8s-minimum age, like the corporate inquiry form).
+  // Minted as soon as eligible cards are on the page so the clock runs
+  // while the visitor browses, not while they type.
+  function getPerformerToken() {
+    if (!performerTokenPromise && PERFORMER_TOKEN_URL) {
+      performerTokenPromise = fetch(PERFORMER_TOKEN_URL)
+        .then(function (r) { return r.json(); })
+        .then(function (d) { return (d && d.token) || ""; })
+        .catch(function () { performerTokenPromise = null; return ""; });
+    }
+    return performerTokenPromise || Promise.resolve("");
+  }
+
+  function firePerformerViewTracking() {
+    if (performerViewedFired) return;
+    var links = document.querySelectorAll("#ch-app .card-perform-link");
+    if (!links.length) return;
+    performerViewedFired = true;
+    getPerformerToken();
+    if (typeof gtag === "function") {
+      var ids = [];
+      for (var i = 0; i < links.length && i < 20; i++) {
+        ids.push(links[i].getAttribute("data-event-id") || "?");
+      }
+      gtag("event", "eligible_show_viewed", {
+        event_category: "performer_mvp",
+        eligible_count: links.length,
+        event_ids: ids.join(",")
+      });
+    }
+  }
+
+  function performerGtag(name) {
+    if (typeof gtag !== "function" || !performerMeta) return;
+    gtag("event", name, {
+      event_category: "performer_mvp",
+      event_label: performerMeta.event_name,
+      event_id: performerMeta.event_id,
+      venue_name: performerMeta.venue,
+      event_date: performerMeta.event_date
+    });
+  }
+
+  function buildPerformerModal() {
+    var root = document.getElementById("ch-app") || document.body;
+    var overlay = document.createElement("div");
+    overlay.className = "ch-perf-overlay";
+    overlay.innerHTML =
+      '<div class="ch-perf-sheet" role="dialog" aria-modal="true" aria-labelledby="chPerfTitle">' +
+      '<button type="button" class="ch-perf-close" aria-label="Close">&times;</button>' +
+      '<h3 id="chPerfTitle">Interested in this show?</h3>' +
+      '<p class="ch-perf-show"></p>' +
+      '<p class="ch-perf-copy">ComedyHouston is testing a better way for local comedians and ' +
+      'show producers to connect. Tell us you&rsquo;re interested in performing and ' +
+      'we&rsquo;ll try to connect you with the right person.</p>' +
+      '<form class="ch-perf-form" novalidate>' +
+      '<label for="chPerfIg">Instagram handle *</label>' +
+      '<div class="ch-perf-ig"><span>@</span>' +
+      '<input id="chPerfIg" name="instagram" type="text" required maxlength="30" ' +
+      'placeholder="yourhandle" autocomplete="username" autocapitalize="none" spellcheck="false"></div>' +
+      '<label for="chPerfLen">Set length *</label>' +
+      '<select id="chPerfLen" name="set_length" required>' +
+      '<option value="">Select&hellip;</option>' +
+      '<option value="5">5 minutes</option>' +
+      '<option value="10">10 minutes</option>' +
+      '<option value="15">15 minutes</option>' +
+      '<option value="20+">20+ minutes</option>' +
+      '</select>' +
+      '<label for="chPerfClip">Clip URL <span class="ch-perf-opt">(optional)</span></label>' +
+      '<input id="chPerfClip" name="clip_url" type="url" maxlength="300" placeholder="https://… (YouTube, Instagram, Drive)">' +
+      '<label for="chPerfNote">Short note <span class="ch-perf-opt">(optional)</span></label>' +
+      '<textarea id="chPerfNote" name="note" rows="3" maxlength="2000" ' +
+      'placeholder="Anything the producer should know — experience, style, availability."></textarea>' +
+      '<div class="ch-perf-hp" aria-hidden="true"><label for="chPerfWeb">Website</label>' +
+      '<input id="chPerfWeb" name="website" type="text" tabindex="-1" autocomplete="off"></div>' +
+      '<p class="ch-perf-msg" role="status" aria-live="polite"></p>' +
+      '<button type="submit" class="ch-perf-submit">&#127908; I&rsquo;m interested</button>' +
+      '</form></div>';
+    root.appendChild(overlay);
+
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) closePerformerModal();
+    });
+    overlay.querySelector(".ch-perf-close").addEventListener("click", closePerformerModal);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && overlay.classList.contains("open")) closePerformerModal();
+    });
+    overlay.querySelector(".ch-perf-form").addEventListener("submit", submitPerformerInterest);
+    return overlay;
+  }
+
+  function openPerformerModal(meta) {
+    performerMeta = meta;
+    if (!performerModal) performerModal = buildPerformerModal();
+    getPerformerToken();
+
+    var showLine = meta.event_name +
+      (meta.venue ? " — " + meta.venue : "") +
+      (meta.event_date ? ", " + meta.event_date : "") +
+      (meta.event_time ? " · " + meta.event_time : "");
+    performerModal.querySelector(".ch-perf-show").textContent = showLine;
+
+    // Reset any previous state (form may have been replaced by the
+    // thank-you message on a prior submission).
+    var sheet = performerModal.querySelector(".ch-perf-sheet");
+    var thanks = sheet.querySelector(".ch-perf-thanks");
+    var form = sheet.querySelector(".ch-perf-form");
+    if (thanks) thanks.remove();
+    if (form) {
+      form.style.display = "";
+      var msg = form.querySelector(".ch-perf-msg");
+      msg.className = "ch-perf-msg";
+      msg.textContent = "";
+      form.querySelector(".ch-perf-submit").disabled = false;
+    }
+
+    performerModal.classList.add("open");
+    document.body.classList.add("ch-perf-lock");
+    var ig = performerModal.querySelector("#chPerfIg");
+    if (ig && window.matchMedia && !window.matchMedia("(max-width: 640px)").matches) {
+      ig.focus();
+    }
+    performerGtag("performer_interest_clicked");
+  }
+
+  function closePerformerModal() {
+    if (!performerModal) return;
+    performerModal.classList.remove("open");
+    document.body.classList.remove("ch-perf-lock");
+  }
+
+  function submitPerformerInterest(e) {
+    e.preventDefault();
+    var form = e.currentTarget;
+    var msg = form.querySelector(".ch-perf-msg");
+    var btn = form.querySelector(".ch-perf-submit");
+    msg.className = "ch-perf-msg";
+    msg.textContent = "";
+
+    var handle = (form.querySelector("#chPerfIg").value || "").trim().replace(/^@/, "");
+    var setLen = form.querySelector("#chPerfLen").value;
+    if (!/^[A-Za-z0-9._]{1,30}$/.test(handle)) {
+      msg.className = "ch-perf-msg err";
+      msg.textContent = "Please enter your Instagram handle (letters, numbers, dots, underscores).";
+      return;
+    }
+    if (!setLen) {
+      msg.className = "ch-perf-msg err";
+      msg.textContent = "Please pick a set length.";
+      return;
+    }
+    if (!PERFORMER_ENDPOINT) {
+      msg.className = "ch-perf-msg err";
+      msg.textContent = "Submissions aren’t available right now — please try again later.";
+      return;
+    }
+
+    btn.disabled = true;
+    getPerformerToken().then(function (token) {
+      var payload = {
+        ch_token: token,
+        website: form.querySelector("#chPerfWeb").value,
+        instagram: handle,
+        set_length: setLen,
+        clip_url: (form.querySelector("#chPerfClip").value || "").trim(),
+        note: (form.querySelector("#chPerfNote").value || "").trim(),
+        // Event metadata captured silently from the card's event object —
+        // this is what ties the raised hand to one specific show.
+        event_id: performerMeta.event_id,
+        event_name: performerMeta.event_name,
+        venue: performerMeta.venue,
+        event_date: performerMeta.event_date,
+        event_time: performerMeta.event_time,
+        event_source: performerMeta.event_source,
+        is_open_mic: performerMeta.is_open_mic
+      };
+      return fetch(PERFORMER_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+    }).then(function (r) {
+      return r.json().then(function (j) { return { ok: r.ok, body: j }; });
+    }).then(function (res) {
+      if (res.ok) {
+        performerGtag("performer_interest_submitted");
+        form.style.display = "none";
+        var thanks = document.createElement("p");
+        thanks.className = "ch-perf-thanks";
+        thanks.innerHTML = "Got it — you’re on the list for this show. " +
+          "If it’s a fit, we’ll reach out on Instagram to connect you " +
+          "with the person who books it.";
+        form.parentNode.appendChild(thanks);
+      } else {
+        btn.disabled = false;
+        // A 403 usually means the anti-bot token expired — clear the cache
+        // so the next attempt mints a fresh one.
+        performerTokenPromise = null;
+        msg.className = "ch-perf-msg err";
+        msg.textContent = (res.body && res.body.message) ? res.body.message : "Something went wrong — please try again.";
+      }
+    }).catch(function () {
+      btn.disabled = false;
+      performerTokenPromise = null;
+      msg.className = "ch-perf-msg err";
+      msg.textContent = "Network error — please try again.";
+    });
+  }
+
   // Fuzzy-match an event to a published comedian post. Exact date + the
   // comedian's name appearing as a substring of the event title. Kept in
   // sync with find_comedian_post_for_event() in comedy-houston.php.
@@ -478,6 +732,7 @@
   }
 
   function renderCard(ev) {
+    var performHTML = renderPerformLink(ev);
     var imageHTML = ev.image_url && isSafeHttpUrl(ev.image_url)
       ? '<img src="' + escapeAttr(ev.image_url) + '" alt="' + escapeAttr(ev.name) + '" loading="lazy" decoding="async" width="640" height="360">'
       : '<div class="card-image-placeholder">' +
@@ -533,7 +788,26 @@
       '<div class="card-price">' + priceHTML + '</div>' +
       moreInfoHTML +
       ticketHTML +
-      '</div></div></article>';
+      '</div>' +
+      performHTML +
+      '</div></article>';
+  }
+
+  // Performer-booking MVP: secondary text-link CTA under the ticket row,
+  // only on events flagged eligible at ingest (performer_requests — see
+  // config/performer-requests.json). Kept in sync with render_card_html()
+  // in comedy-houston.php.
+  function renderPerformLink(ev) {
+    if (ev.performer_requests !== true) return "";
+    return '<div class="card-perform-row"><button type="button" class="card-perform-link"' +
+      ' data-event-id="' + escapeAttr(ev.id || "") + '"' +
+      ' data-event-name="' + escapeAttr(ev.name || "") + '"' +
+      ' data-venue="' + escapeAttr(ev.venue || "") + '"' +
+      ' data-event-date="' + escapeAttr(ev.date || "") + '"' +
+      ' data-event-time="' + escapeAttr(ev.time || "") + '"' +
+      ' data-event-source="' + escapeAttr(ev.source || "") + '"' +
+      ' data-open-mic="' + (ev.is_open_mic === true ? "1" : "") + '"' +
+      '>&#127908; Interested in performing?</button></div>';
   }
 
   // ================================================================
