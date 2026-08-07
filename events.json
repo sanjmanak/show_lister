@@ -20,7 +20,8 @@
       "status": "on_sale",
       "description": "Catch the funniest laughs live at East End Comedy Showcase, happening at Wonky Power! Don't miss out!",
       "last_updated": "2026-07-30T15:48:00.585Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "6e8f75149502de06",
@@ -43,7 +44,8 @@
       "status": "cancelled",
       "description": "Unfortunately, the Event Organizer has had to cancel your event. You don't need to do a thing. We'll issue a refund to the [original method of payment](https://help.ticketmaster.com/hc/en-us/articles/9614074869009) used at time of purchase, as soon as funds are received from the Event Organizer. It should appear on your account within 14-21 days. Please Note: If the tickets were transferred to you, the refund will go to the fan who originally purchased the tickets from Ticketmaster. Please see our [Purchase Policy](https://help.ticketmaster.com/hc/en-us/articles/10465798887953-Purchase-Policy) for more information.",
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "75abb1d2513f9655",
@@ -66,7 +68,8 @@
       "status": "off_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-08-07T02:36:41.815Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "9394ee9e9b731bfb",
@@ -89,7 +92,8 @@
       "status": "off_sale",
       "description": null,
       "last_updated": "2026-08-07T02:36:41.815Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "e4df394bb127258e",
@@ -109,7 +113,8 @@
       "status": "on_sale",
       "description": "Kick back and laugh out loud with some of the funniest folks in Houston at this Thursday night comedy show in our speakeasy lounge.",
       "last_updated": "2026-08-06T02:29:22.245Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "d8f3fb89f5c8f029",
@@ -129,7 +134,8 @@
       "status": "on_sale",
       "description": "Come catch some of the nation's best up-and-coming comics stretch their legs and perfect their craft every Thursday!",
       "last_updated": "2026-07-25T00:50:14.792Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "cfb494d218811e85",
@@ -149,7 +155,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "ea44a6f0108a509c",
@@ -169,7 +176,8 @@
       "status": "on_sale",
       "description": "A comedy open mic featuring some of Houston's best comedians!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": true
+      "is_open_mic": true,
+      "performer_requests": true
     },
     {
       "id": "72f7285ae1c0d7d8",
@@ -192,7 +200,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "11ffe443f4f679d6",
@@ -212,7 +221,8 @@
       "status": "on_sale",
       "description": "Catch Tom Shillue live at The Riot Comedy Club upstairs at GuadalaHARRY's in downtown Conroe with tasty food, cold drinks, fun vibes.",
       "last_updated": "2026-07-25T00:50:20.730Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "eecc125f84893cbf",
@@ -235,7 +245,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "23de837b52b6e7f6",
@@ -255,7 +266,8 @@
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "3b1869539c488628",
@@ -275,7 +287,8 @@
       "status": "on_sale",
       "description": "Kick back and laugh out loud with some of the funniest folks in Houston at this Friday night comedy show in our speakeasy lounge.",
       "last_updated": "2026-07-25T00:50:18.761Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "c3733f6b841d42f0",
@@ -295,7 +308,8 @@
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "3389882b9d9178f1",
@@ -315,7 +329,8 @@
       "status": "on_sale",
       "description": "Get ready for a night of raunchy jokes and adult humor at The Late Night Dirty Show: X Rated Comedy LIVE at The Secret Group!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "77071f7d4bcddb43",
@@ -335,7 +350,8 @@
       "status": "on_sale",
       "description": "Get ready to laugh! Adrian Alvarez (aka Skits and Giggles) brings his viral Tío Papi family chaos & relatable humor live!",
       "last_updated": "2026-08-04T02:27:10.703Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "84463bf4359b219d",
@@ -355,7 +371,8 @@
       "status": "on_sale",
       "description": "Catch Tom Shillue live at The Riot Comedy Club upstairs at GuadalaHARRY's in downtown Conroe with tasty food, cold drinks, fun vibes.",
       "last_updated": "2026-07-25T00:50:20.730Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "f6ca795ebeb1eeb4",
@@ -378,7 +395,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "4c8c648d7b7a4ea9",
@@ -401,7 +419,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "b06fc13709b89a0e",
@@ -421,7 +440,8 @@
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "a3b7769dd9d43fb6",
@@ -444,7 +464,8 @@
       "status": "cancelled",
       "description": "Doors: 8pm This show is 18+ years and older ONLY Chris Higgins is a native of Boulder, CO, and a Chicago-based stand-up comic. Since moving to Chicago, he has become a staple at clubs and shows around town such as The Comedy Bar, Zanies, and The Laugh Factory. He now tours clubs around the country. His new album, \"Good Boy\" just debuted #1 on iTunes. He is also featured in VICE TV's new show Tumbleweeds starring Killer Mike. His Tik Tok series @god_n_angel is the dumbest thing on the internet and has over one million followers. Come get a high five after the show! All General Admission Tickets are Seated IMPORTANT: WHITE OAK MUSIC HALL IS A CASHLESS VENUE. Please be sure to bring a debit or credit card.",
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "a1154ec234a558e6",
@@ -464,7 +485,8 @@
       "status": "on_sale",
       "description": "Kick back and laugh out loud with some of the funniest folks in Houston at this Saturday night comedy show in our speakeasy lounge.",
       "last_updated": "2026-07-25T00:50:18.761Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "b1b11b7cd974106b",
@@ -484,7 +506,8 @@
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "f79ec91f0c140e3f",
@@ -504,7 +527,8 @@
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "62780d1d1e3561d1",
@@ -524,7 +548,8 @@
       "status": "on_sale",
       "description": "Speedball open mic is back, Saturdays at 11:59 for some quick, raw, and unfiltered comedy!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": true
+      "is_open_mic": true,
+      "performer_requests": true
     },
     {
       "id": "6053086b92a1fd9b",
@@ -547,7 +572,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "c73a812515693dea",
@@ -567,7 +593,8 @@
       "status": "on_sale",
       "description": "Get ready to laugh! Adrian Alvarez (aka Skits and Giggles) brings his viral Tío Papi family chaos & relatable humor live!",
       "last_updated": "2026-08-04T02:27:10.703Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "ea036bd04f62d505",
@@ -590,7 +617,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "9a4e2121fd65145e",
@@ -610,7 +638,8 @@
       "status": "on_sale",
       "description": "A Sunday Comedy showcase hosted by: Shane Tucker and Trip Truman Sponsored by 8th Wonder Brewery",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "26c9d2328803b2fa",
@@ -633,7 +662,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "04553a668a3392c2",
@@ -653,7 +683,8 @@
       "status": "on_sale",
       "description": "Get ready for a night of surprises and mystery lineup of comedians at The (secret) Secret Show LIVE at The Secret Group!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "3e00f9b2d34884fb",
@@ -673,7 +704,8 @@
       "status": "on_sale",
       "description": "Laughs are earned, not given.",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": true
+      "is_open_mic": true,
+      "performer_requests": true
     },
     {
       "id": "bce4eb4c17d2eaf5",
@@ -693,7 +725,8 @@
       "status": "on_sale",
       "description": "MONDAY NIGHT COMEDY! With Mason James, Matt BC & Dylan Kendrick . Every Monday night at 8PM!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "1c784008b0986d18",
@@ -713,7 +746,8 @@
       "status": "on_sale",
       "description": "Get your hump day kicks on Route 66...er Polk Street rather, with Houston's favorite comedic troupe every Monday night at 10.",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "014a297cdfcfca04",
@@ -733,7 +767,8 @@
       "status": "on_sale",
       "description": "A weekly comedy open mic every Monday at The Secret Group!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": true
+      "is_open_mic": true,
+      "performer_requests": true
     },
     {
       "id": "fa5c0740599a8d8b",
@@ -756,7 +791,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-08-06T02:29:17.639Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "134492f6f6e623ff",
@@ -776,7 +812,8 @@
       "status": "on_sale",
       "description": "A stand-up comedy show that celebrates the vibrant humor and unique perspectives of a diverse lineup of comics!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "cdbae8d24a0d990e",
@@ -796,7 +833,8 @@
       "status": "on_sale",
       "description": "Weekly stand-up comedy showcase at Big Ben Tavern in Sugar Land. Free RSVP. Seating 7:30 PM, show starts at 8 PM.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "de71470908c9de45",
@@ -816,7 +854,8 @@
       "status": "on_sale",
       "description": "Discover C U Next Tuesday: a weekly comedy show hosted by Corlis DeLauren and Tess Vergult at The Secret Group!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "011cf6f5528e070d",
@@ -836,7 +875,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "f498410e4a36a1f5",
@@ -856,7 +896,8 @@
       "status": "on_sale",
       "description": "Get ready to grab the mic and make 'em laugh at our Comedy Open Mic night every Tuesday night!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": true
+      "is_open_mic": true,
+      "performer_requests": true
     },
     {
       "id": "bad7d2ea10ebcf2b",
@@ -879,7 +920,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "b69f3835d499156d",
@@ -902,7 +944,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "d56714b9da2a8892",
@@ -922,7 +965,8 @@
       "status": "on_sale",
       "description": "An evening of comedy, beer and tequila featuring some of Houston's best comedians!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "7c53602840995232",
@@ -942,7 +986,8 @@
       "status": "on_sale",
       "description": "A Burlesque Experience & Content Creator Mixer",
       "last_updated": "2026-08-05T15:59:03.236Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "81c1efc2b2b9e093",
@@ -962,7 +1007,8 @@
       "status": "on_sale",
       "description": "An Unhinged Comedy Debate Show - Hosted by Blythe Payne & Quinn Doran",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "4d88bc78addb0aba",
@@ -982,7 +1028,8 @@
       "status": "on_sale",
       "description": "Join us at The Secret Group for a night of laughs with longer sets from comedy pros and quick 5-minute sets from up-and-coming amateurs!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": true
+      "is_open_mic": true,
+      "performer_requests": true
     },
     {
       "id": "3aeb9bb9b59ddf45",
@@ -1002,7 +1049,8 @@
       "status": "on_sale",
       "description": "Catch the funniest laughs live at East End Comedy Showcase, happening at Wonky Power! Don't miss out!",
       "last_updated": "2026-07-30T15:48:00.585Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "2106ec2e807bd4ab",
@@ -1025,7 +1073,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "bf5e5165fef8fd94",
@@ -1048,7 +1097,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "d40978badd2c73e8",
@@ -1068,7 +1118,8 @@
       "status": "on_sale",
       "description": "Kick back and laugh out loud with some of the funniest folks in Houston at this Thursday night comedy show in our speakeasy lounge.",
       "last_updated": "2026-07-25T00:50:18.761Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "43fbf144590de957",
@@ -1088,7 +1139,8 @@
       "status": "on_sale",
       "description": "Come catch some of the nation's best up-and-coming comics stretch their legs and perfect their craft every Thursday!",
       "last_updated": "2026-08-04T02:27:08.510Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "e66ba6ad8ee291c2",
@@ -1108,7 +1160,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "9a1a6550cd736f6b",
@@ -1128,7 +1181,8 @@
       "status": "on_sale",
       "description": "A comedy open mic featuring some of Houston's best comedians!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": true
+      "is_open_mic": true,
+      "performer_requests": true
     },
     {
       "id": "ddb2076d4a19838f",
@@ -1151,7 +1205,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "50fa3a0a88ce7354",
@@ -1171,7 +1226,8 @@
       "status": "on_sale",
       "description": "Daniela Inés Calvo (Netflix is ​​a Joke) llega a Houston con su comedia en español! Compra tus entradas ahora.",
       "last_updated": "2026-07-25T00:50:18.761Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "89f5f21158801779",
@@ -1194,7 +1250,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "1fcb205123d475ad",
@@ -1214,7 +1271,8 @@
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "5af4acfb8f2b9a34",
@@ -1234,7 +1292,8 @@
       "status": "on_sale",
       "description": "Kick back and laugh out loud with some of the funniest folks in Houston at this Friday night comedy show in our speakeasy lounge.",
       "last_updated": "2026-07-25T00:50:18.761Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "87843e825197bac1",
@@ -1254,7 +1313,8 @@
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "e0b219b341a17967",
@@ -1274,7 +1334,8 @@
       "status": "on_sale",
       "description": "Get ready for a night of raunchy jokes and adult humor at The Late Night Dirty Show: X Rated Comedy LIVE at The Secret Group!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "af934984e791b130",
@@ -1297,7 +1358,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "a6fbcdec566fded4",
@@ -1320,7 +1382,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "aafde67a865db93c",
@@ -1340,7 +1403,8 @@
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "9b33bdc23eb980f0",
@@ -1360,7 +1424,8 @@
       "status": "on_sale",
       "description": "Join us for an evening with Jed Harrelson with guest Carson Lewis on August 15, 2026!",
       "last_updated": "2026-08-04T02:27:07.756Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "ae83868fc7072ced",
@@ -1380,7 +1445,8 @@
       "status": "on_sale",
       "description": "Kick back and laugh out loud with some of the funniest folks in Houston at this Saturday night comedy show in our speakeasy lounge.",
       "last_updated": "2026-07-25T00:50:18.762Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "e4fc63ee7c431fc6",
@@ -1400,7 +1466,8 @@
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "63cc58df604f06a3",
@@ -1420,7 +1487,8 @@
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "57a945c23b698c5b",
@@ -1440,7 +1508,8 @@
       "status": "on_sale",
       "description": "Speedball open mic is back, Saturdays at 11:59 for some quick, raw, and unfiltered comedy!",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": true
+      "is_open_mic": true,
+      "performer_requests": true
     },
     {
       "id": "776589c8e58a24c0",
@@ -1463,7 +1532,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "942e67523929ddf3",
@@ -1483,7 +1553,8 @@
       "status": "on_sale",
       "description": "A Sunday Comedy showcase hosted by: Shane Tucker and Trip Truman Sponsored by 8th Wonder Brewery",
       "last_updated": "2026-08-04T16:08:41.943Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "cc84ac7e62b3ff7d",
@@ -1506,7 +1577,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "0ecff5871e1f3612",
@@ -1526,7 +1598,8 @@
       "status": "on_sale",
       "description": "Get ready for a night of surprises and mystery lineup of comedians at The (secret) Secret Show LIVE at The Secret Group!",
       "last_updated": "2026-08-04T16:08:41.943Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "699daadd003ecce9",
@@ -1546,7 +1619,8 @@
       "status": "on_sale",
       "description": "Laughs are earned, not given.",
       "last_updated": "2026-08-04T16:08:41.943Z",
-      "is_open_mic": true
+      "is_open_mic": true,
+      "performer_requests": true
     },
     {
       "id": "428cebf962ed9952",
@@ -1566,7 +1640,8 @@
       "status": "on_sale",
       "description": "MONDAY NIGHT COMEDY! With Mason James, Matt BC & Dylan Kendrick . Every Monday night at 8PM!",
       "last_updated": "2026-08-04T16:08:41.943Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "fd067b4c98491364",
@@ -1586,7 +1661,8 @@
       "status": "on_sale",
       "description": "Get your hump day kicks on Route 66...er Polk Street rather, with Houston's favorite comedic troupe every Monday night at 10.",
       "last_updated": "2026-08-04T16:08:41.943Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "341c4851938e8748",
@@ -1606,7 +1682,8 @@
       "status": "on_sale",
       "description": "A weekly comedy open mic every Monday at The Secret Group!",
       "last_updated": "2026-08-04T16:08:41.943Z",
-      "is_open_mic": true
+      "is_open_mic": true,
+      "performer_requests": true
     },
     {
       "id": "579052107f7a8496",
@@ -1629,7 +1706,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-08-01T02:42:46.947Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "9bcd3d2a68b2c581",
@@ -1649,7 +1727,8 @@
       "status": "on_sale",
       "description": "A stand-up comedy show that celebrates the vibrant humor and unique perspectives of a diverse lineup of comics!",
       "last_updated": "2026-08-04T16:08:41.943Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "33294b0b475e5bce",
@@ -1669,7 +1748,8 @@
       "status": "on_sale",
       "description": "Weekly stand-up comedy showcase at Big Ben Tavern in Sugar Land. Free RSVP. Seating 7:30 PM, show starts at 8 PM.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "f307a6baa3173070",
@@ -1689,7 +1769,8 @@
       "status": "on_sale",
       "description": "Discover C U Next Tuesday: a weekly comedy show hosted by Corlis DeLauren and Tess Vergult at The Secret Group!",
       "last_updated": "2026-08-04T16:08:41.943Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "1803191f0329f960",
@@ -1709,7 +1790,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "5fb5622d83605f29",
@@ -1729,7 +1811,8 @@
       "status": "on_sale",
       "description": "Get ready to grab the mic and make 'em laugh at our Comedy Open Mic night every Tuesday night!",
       "last_updated": "2026-08-04T16:08:41.943Z",
-      "is_open_mic": true
+      "is_open_mic": true,
+      "performer_requests": true
     },
     {
       "id": "e643433a7ae519a3",
@@ -1749,7 +1832,8 @@
       "status": "on_sale",
       "description": "Raq Baby Live at The Secret Group August 19th",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "1cd5a5f1fda674c1",
@@ -1772,7 +1856,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "3ed7953a3e861eb1",
@@ -1792,7 +1877,8 @@
       "status": "on_sale",
       "description": "An evening of comedy, beer and tequila featuring some of Houston's best comedians!",
       "last_updated": "2026-08-04T16:08:41.943Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "aa687a6dab70a3a5",
@@ -1812,7 +1898,8 @@
       "status": "on_sale",
       "description": "An Unhinged Comedy Debate Show - Hosted by Blythe Payne & Quinn Doran",
       "last_updated": "2026-08-04T16:08:41.943Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "76a81d417b910842",
@@ -1832,7 +1919,8 @@
       "status": "on_sale",
       "description": "Join us at The Secret Group for a night of laughs with longer sets from comedy pros and quick 5-minute sets from up-and-coming amateurs!",
       "last_updated": "2026-08-04T16:08:41.943Z",
-      "is_open_mic": true
+      "is_open_mic": true,
+      "performer_requests": true
     },
     {
       "id": "80e09954d5dd27d2",
@@ -1852,7 +1940,8 @@
       "status": "on_sale",
       "description": "Catch the funniest laughs live at East End Comedy Showcase, happening at Wonky Power! Don't miss out!",
       "last_updated": "2026-07-30T15:48:00.585Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "c5280e21e44b4ffa",
@@ -1875,7 +1964,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "65d3246fc25a5b35",
@@ -1898,7 +1988,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "6fe3f62cc1c22514",
@@ -1918,7 +2009,8 @@
       "status": "on_sale",
       "description": "Kick back and laugh out loud with some of the funniest folks in Houston at this Thursday night comedy show in our speakeasy lounge.",
       "last_updated": "2026-07-25T00:50:18.762Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "9c605b22888f3e6a",
@@ -1938,7 +2030,8 @@
       "status": "on_sale",
       "description": "The things you can't say in the meeting, said out loud. A stand-up + sketch group-therapy session for everyone with a job.",
       "last_updated": "2026-08-05T15:59:07.204Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "7d7042f8cf8d78ed",
@@ -1958,7 +2051,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "43e6b11701dadfe6",
@@ -1978,7 +2072,8 @@
       "status": "on_sale",
       "description": "A comedy open mic featuring some of Houston's best comedians!",
       "last_updated": "2026-08-04T16:08:41.943Z",
-      "is_open_mic": true
+      "is_open_mic": true,
+      "performer_requests": true
     },
     {
       "id": "9354063dd6554212",
@@ -2001,7 +2096,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "a4808ba7bf1d3c50",
@@ -2021,7 +2117,8 @@
       "status": "on_sale",
       "description": "Kick back and laugh out loud with some of the funniest folks in Houston at this Friday night comedy show in our speakeasy lounge.",
       "last_updated": "2026-07-25T00:50:18.762Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "e70bcee5fb340f2b",
@@ -2044,7 +2141,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.081Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "4d1409574c812712",
@@ -2064,7 +2162,8 @@
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
       "last_updated": "2026-08-04T16:08:41.943Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "634bb6aa21cc168b",
@@ -2084,7 +2183,8 @@
       "status": "on_sale",
       "description": "Kick back and laugh out loud with some of the funniest folks in Houston at this Friday night comedy show in our speakeasy lounge.",
       "last_updated": "2026-07-25T00:50:18.762Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "7be06527c1e3d9ea",
@@ -2104,7 +2204,8 @@
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
       "last_updated": "2026-08-04T16:08:41.944Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "592b835f6a194802",
@@ -2124,7 +2225,8 @@
       "status": "on_sale",
       "description": "Get ready for a night of raunchy jokes and adult humor at The Late Night Dirty Show: X Rated Comedy LIVE at The Secret Group!",
       "last_updated": "2026-08-04T16:08:41.943Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "2b237bf0fdda428d",
@@ -2144,7 +2246,8 @@
       "status": "on_sale",
       "description": "Always wanted to try stand up? Write real jokes, find your voice, and perform your first set live. No experience required.",
       "last_updated": "2026-07-29T15:47:12.539Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "bfa9f367691618f7",
@@ -2167,7 +2270,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "ca9b0c02dcaed944",
@@ -2190,7 +2294,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "f95b73fd69280d41",
@@ -2210,7 +2315,8 @@
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
       "last_updated": "2026-08-04T16:08:41.943Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "ece10b68e4350355",
@@ -2230,7 +2336,8 @@
       "status": "on_sale",
       "description": "Kick back and laugh out loud with some of the funniest folks in Houston at this Saturday night comedy show in our speakeasy lounge.",
       "last_updated": "2026-07-25T00:50:18.762Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "8beba68f9a4be0bd",
@@ -2250,7 +2357,8 @@
       "status": "on_sale",
       "description": "Class up your comedy nights with Comedy & Cocktails at Avant Garden featuring a Live Jazz Band, Top Tier Comedians and Delicious Cocktails!",
       "last_updated": "2026-07-27T02:51:05.343Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "71859c1b340e1402",
@@ -2270,7 +2378,8 @@
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
       "last_updated": "2026-08-04T16:08:41.944Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "654b22aa3e5a6087",
@@ -2290,7 +2399,8 @@
       "status": "on_sale",
       "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
       "last_updated": "2026-08-04T16:08:41.943Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "44a74fc576d3bd29",
@@ -2310,7 +2420,8 @@
       "status": "on_sale",
       "description": "Speedball open mic is back, Saturdays at 11:59 for some quick, raw, and unfiltered comedy!",
       "last_updated": "2026-08-04T16:08:41.943Z",
-      "is_open_mic": true
+      "is_open_mic": true,
+      "performer_requests": true
     },
     {
       "id": "e496e01d08ccf74d",
@@ -2333,7 +2444,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "922ad6bc4f1662cb",
@@ -2356,7 +2468,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "5f97a3582f47ed0c",
@@ -2376,7 +2489,8 @@
       "status": "on_sale",
       "description": "Weekly stand-up comedy showcase at Big Ben Tavern in Sugar Land. Free RSVP. Seating 7:30 PM, show starts at 8 PM.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "20e6ee302ea35a5f",
@@ -2396,7 +2510,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "a28774349fe4da2a",
@@ -2419,7 +2534,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "114d293f41dad18f",
@@ -2439,7 +2555,8 @@
       "status": "on_sale",
       "description": "A Burlesque Experience & Content Creator Mixer",
       "last_updated": "2026-08-05T15:59:03.236Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "99cdc8c9e2cf8b96",
@@ -2459,7 +2576,8 @@
       "status": "on_sale",
       "description": "Catch the funniest laughs live at East End Comedy Showcase, happening at Wonky Power! Don't miss out!",
       "last_updated": "2026-07-30T15:48:00.585Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "24543ce267da2920",
@@ -2482,7 +2600,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "4052cbfb86a2e7f2",
@@ -2502,7 +2621,8 @@
       "status": "on_sale",
       "description": "Kick back and laugh out loud with some of the funniest folks in Houston at this Thursday night comedy show in our speakeasy lounge.",
       "last_updated": "2026-07-30T02:21:00.532Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "80f6671da2ddf16b",
@@ -2522,7 +2642,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "abe671e9adbe350e",
@@ -2545,7 +2666,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "07be3d42ae39c089",
@@ -2565,7 +2687,8 @@
       "status": "on_sale",
       "description": "Get ready to laugh! Puerto Rican comedian Lisandra Vazquez brings sharp wit, bold satire & cultural commentary you can't miss!",
       "last_updated": "2026-07-25T00:50:18.762Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "14cec3f604838ce7",
@@ -2588,7 +2711,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "b400813f5bfb9a32",
@@ -2608,7 +2732,8 @@
       "status": "on_sale",
       "description": "Don’t miss Uncle Lazer live upstairs at The Riot Comedy Club inside GuadalaHARRY’s! All the fun vibes, cold drinks & big laughs.",
       "last_updated": "2026-07-25T00:50:20.730Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "e3351c22c1407daf",
@@ -2628,7 +2753,8 @@
       "status": "on_sale",
       "description": "Kick back and laugh out loud with some of the funniest folks in Houston at this Friday night comedy show in our speakeasy lounge.",
       "last_updated": "2026-07-30T02:21:00.532Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "80f7715fceeb89e5",
@@ -2651,7 +2777,8 @@
       "status": "on_sale",
       "description": "Doors will open 30 minutes prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "b74e95bb2950fb7c",
@@ -2674,7 +2801,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "e8011918bafe7737",
@@ -2697,7 +2825,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "28682e8b08314393",
@@ -2717,7 +2846,8 @@
       "status": "on_sale",
       "description": "Don’t miss Uncle Lazer live upstairs at The Riot Comedy Club inside GuadalaHARRY’s! All the fun vibes, cold drinks & big laughs.",
       "last_updated": "2026-07-25T00:50:20.730Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "7f5e8ce1de330316",
@@ -2737,7 +2867,8 @@
       "status": "on_sale",
       "description": "Kick back and laugh out loud with some of the funniest folks in Houston at this Saturday night comedy show in our speakeasy lounge.",
       "last_updated": "2026-07-30T02:21:00.532Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "cff0c51c6823f6f8",
@@ -2760,7 +2891,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "3f8ab7ce938e77cb",
@@ -2783,7 +2915,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "685e53c54fe0ee11",
@@ -2803,7 +2936,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "95b0535288c69fc8",
@@ -2826,7 +2960,8 @@
       "status": "cancelled",
       "description": "Unfortunately, the Event Organizer has had to cancel your event. You don't need to do a thing. We'll issue a refund to the [original method of payment](https://help.ticketmaster.com/hc/en-us/articles/9614074869009) used at time of purchase, as soon as funds are received from the Event Organizer. It should appear on your account within 14-21 days. Please Note: If the tickets were transferred to you, the refund will go to the fan who originally purchased the tickets from Ticketmaster. Please see our [Purchase Policy](https://help.ticketmaster.com/hc/en-us/articles/10465798887953-Purchase-Policy) for more information.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "09ce99e9642e308b",
@@ -2849,7 +2984,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "a264abdb6bedb045",
@@ -2869,7 +3005,8 @@
       "status": "on_sale",
       "description": "Catch the funniest laughs live at East End Comedy Showcase, happening at Wonky Power! Don't miss out!",
       "last_updated": "2026-07-30T15:48:00.586Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "8df47cbfe4dbb675",
@@ -2892,7 +3029,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "475cecfb7e2c7b20",
@@ -2915,7 +3053,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "2da84741c9998015",
@@ -2935,7 +3074,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "a670802a96b73dc4",
@@ -2958,7 +3098,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "c625987f543e98d6",
@@ -2981,7 +3122,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "ef59452e85c0d78c",
@@ -3004,7 +3146,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "17ece7ede1f69d37",
@@ -3027,7 +3170,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "52152e51a85656c7",
@@ -3047,7 +3191,8 @@
       "status": "on_sale",
       "description": "Catch Steve Byrne  live at The Riot Comedy Club upstairs at GuadalaHARRY's in downtown Conroe with tasty food, cold drinks, fun vibes!",
       "last_updated": "2026-07-25T00:50:20.730Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "c1d8d0cd2a0cfa3c",
@@ -3070,7 +3215,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "1a12fe702ed7998f",
@@ -3090,7 +3236,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "77d0385727e61a6a",
@@ -3113,7 +3260,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "7a4c628d7cdb00b3",
@@ -3136,7 +3284,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "010900e57d96d20a",
@@ -3156,7 +3305,8 @@
       "status": "on_sale",
       "description": "Catch the funniest laughs live at East End Comedy Showcase, happening at Wonky Power! Don't miss out!",
       "last_updated": "2026-07-30T15:48:00.586Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "fd6af3ed2cc768d1",
@@ -3179,7 +3329,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "913927720852ea19",
@@ -3199,7 +3350,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "4c87b01c793e3852",
@@ -3222,7 +3374,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "a34aba53cff3b7c5",
@@ -3245,7 +3398,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "b1d8b2c67f052756",
@@ -3268,7 +3422,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "1f95f0856657fe7c",
@@ -3291,7 +3446,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "41fd1f0b01c8c242",
@@ -3314,7 +3470,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "60bcf388b14349c7",
@@ -3334,7 +3491,8 @@
       "status": "on_sale",
       "description": "UnoTheActivist live at The Secret Group Sat, Sep 12 at 7:00 PM",
       "last_updated": "2026-07-25T00:50:15.986Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "63e6cc1af7646ea4",
@@ -3357,7 +3515,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "fad593f8556c7597",
@@ -3380,7 +3539,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "39d211e3a71b2613",
@@ -3400,7 +3560,8 @@
       "status": "on_sale",
       "description": "Join Billy Wayne Davis at The Secret Group on Monday September 14th for this live filmed event!",
       "last_updated": "2026-07-25T00:50:14.792Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "7cc49ed6eab3d642",
@@ -3420,7 +3581,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "3e82aec093a1adfd",
@@ -3443,7 +3605,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "b7d7795979acd8b4",
@@ -3463,7 +3626,8 @@
       "status": "on_sale",
       "description": "Catch the funniest laughs live at East End Comedy Showcase, happening at Wonky Power! Don't miss out!",
       "last_updated": "2026-07-30T15:48:00.586Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "107fcbe5d9fe3523",
@@ -3486,7 +3650,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "b18196fd5b68b32b",
@@ -3506,7 +3671,8 @@
       "status": "on_sale",
       "description": "Michael Turner (Don't Tell) is known for high-energy storytelling and crowd work that turns every show into its own experience. Get tickets!",
       "last_updated": "2026-07-25T00:50:18.762Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "10d7eba0306d3779",
@@ -3526,7 +3692,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "ff503b4572c9c196",
@@ -3549,7 +3716,8 @@
       "status": "rescheduled",
       "description": "Doors will open 30 minutes prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-29T02:33:17.527Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "9f6804b673e68dff",
@@ -3569,7 +3737,8 @@
       "status": "on_sale",
       "description": "Michael Turner (Don't Tell) is known for high-energy storytelling and crowd work that turns every show into its own experience. Get tickets!",
       "last_updated": "2026-07-25T00:50:18.762Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "355599699eeca06a",
@@ -3589,7 +3758,8 @@
       "status": "on_sale",
       "description": "Catch Aaron Weber live at The Riot Comedy Club upstairs at GuadalaHARRY's in downtown Conroe with tasty food, cold drinks, fun vibes.",
       "last_updated": "2026-07-25T00:50:20.730Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "237afbcb29498d3b",
@@ -3612,7 +3782,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "fca2e9156b96b9a6",
@@ -3635,7 +3806,8 @@
       "status": "off_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-08-05T15:59:00.333Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "dd0eaadebda67d9e",
@@ -3655,7 +3827,8 @@
       "status": "on_sale",
       "description": "Catch Aaron Weber live at The Riot Comedy Club upstairs at GuadalaHARRY's in downtown Conroe with tasty food, cold drinks, fun vibes.",
       "last_updated": "2026-07-25T00:50:20.730Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "6ac3c9e0a6e4ec31",
@@ -3678,7 +3851,8 @@
       "status": "rescheduled",
       "description": "Originally scheduled Jan 2, 2027 at Punch line Houston. Previously purchased tickets will be honored for the new date. Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-29T02:33:17.527Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "811b8c07515961c3",
@@ -3701,7 +3875,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "eef3ef95139bda0d",
@@ -3721,7 +3896,8 @@
       "status": "on_sale",
       "description": "Valerie Tosi (Conan, Netflix Is A Joke Fest, Beach Trash) brings whip-smart stand-up and big laughs to Houston. Get tix!",
       "last_updated": "2026-07-25T00:50:18.762Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "d4cb773de238db6a",
@@ -3744,7 +3920,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "76d4af08841cd7dd",
@@ -3764,7 +3941,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "a3093cb21b43eeff",
@@ -3787,7 +3965,8 @@
       "status": "on_sale",
       "description": "BOX OFFICE: 6:00 DOORS: 7:00 Ages 21+ w/ Valid ID We're cashless! All points of sale will only accept credit, debit or mobile pay (such as Apple Pay or Google Pay). Will call tickets can be picked up on day of show at the Box Office. Box Office opens 1 hour prior to door times. You will need a valid photo ID and the credit card used for purchase. Accessible tickets can be purchased online - you do not need to call the box office to place an order. Look for the logo on the Find Tickets page to view all available accessible seats. We do have accessible seating in every price range but be advised it may sell out. We have very limited seating available for guests on the day of the event so please make sure you purchase accessible seating when you order tickets. Bags up to 12\" x 6\" x 12\" are allowed in the venue. All bags will be searched prior to entry. For more FAQs please visit www.houston.houseofblues.com/faq",
       "last_updated": "2026-07-29T15:47:05.458Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "0b4dfdbecac6f841",
@@ -3810,7 +3989,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "3b44b965d3bcf350",
@@ -3833,7 +4013,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "f0f2e5d7c2d20a0c",
@@ -3853,7 +4034,8 @@
       "status": "on_sale",
       "description": "Catch the funniest laughs live at East End Comedy Showcase, happening at Wonky Power! Don't miss out!",
       "last_updated": "2026-07-30T15:48:00.586Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "8910d009f33516b5",
@@ -3876,7 +4058,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "e0e9b3e69a64c869",
@@ -3899,7 +4082,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "de47b45fbec812a8",
@@ -3919,7 +4103,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "0d6ce83bb7f1df5d",
@@ -3942,7 +4127,8 @@
       "status": "on_sale",
       "description": "BOX OFFICE: 6:00 PM DOORS: 7:00 PM SHOW: 8:00 PM All Ages Welcome We're cashless! All points of sale will only accept credit, debit or mobile pay (such as Apple Pay or Google Pay). Will call tickets can be picked up on day of show at the Box Office. Box Office opens 1 hour prior to door times. You will need a valid photo ID and the credit card used for purchase. ADA tickets can be purchased online - you do not need to call the box office to place an order. Look for the logo on the Find Tickets page to view all available accessible seats. We do have accessible seating in every price range but be advised it may sell out. We have very limited seating available for guests on the day of the event so please make sure you purchase accessible seating when you order tickets. Bags up to 12\" x 6\" x 12\" are allowed in the venue. All bags will be searched prior to entry. For more FAQs please visit www.houston.houseofblues.com/faq",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "8127929369bb610f",
@@ -3965,7 +4151,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "eedbd3a700952d54",
@@ -3988,7 +4175,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "799c44a1bd57014b",
@@ -4008,7 +4196,8 @@
       "status": "on_sale",
       "description": "Craig Gass (Family Guy, Howard Stern) & Chris Kael (Five Finger Death Punch) stand up and live podcast taping!",
       "last_updated": "2026-07-25T00:50:14.792Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "ff230588c9e60551",
@@ -4031,7 +4220,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "4fe951f3566f31f9",
@@ -4054,7 +4244,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "25ab69964ef373ee",
@@ -4074,7 +4265,8 @@
       "status": "on_sale",
       "description": "Craig Gass (Family Guy, Howard Stern) & Chris Kael (Five Finger Death Punch) stand up and live podcast taping!",
       "last_updated": "2026-07-25T00:50:14.792Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "4492e4ef639491fd",
@@ -4094,7 +4286,8 @@
       "status": "on_sale",
       "description": "Catch Craig Shoemaker live at The Riot Comedy Club upstairs at GuadalaHARRY's in Downtown Conroe with tasty food, cold drinks, fun vibes.",
       "last_updated": "2026-07-25T00:50:20.730Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "13516c6b6c923b28",
@@ -4117,7 +4310,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "623bce7f9c902dda",
@@ -4140,7 +4334,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "dccc48f401d905e7",
@@ -4163,7 +4358,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "f002ba5eb67885f6",
@@ -4183,7 +4379,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "1720b7500db8c345",
@@ -4206,7 +4403,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "48a875497e87bb6c",
@@ -4229,7 +4427,8 @@
       "status": "rescheduled",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "b080a9f829ce0841",
@@ -4249,7 +4448,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "4013620fa0d1b3d8",
@@ -4272,7 +4472,8 @@
       "status": "rescheduled",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "e3a814d504e61ec9",
@@ -4292,7 +4493,8 @@
       "status": "on_sale",
       "description": "Mason James (Don't Tell, Comedy Mothership) is one of the fastest-rising comics in the country. Grab your tickets before the shows sell out.",
       "last_updated": "2026-07-25T00:50:18.761Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "df3fe9d201f3a4d2",
@@ -4312,7 +4514,8 @@
       "status": "on_sale",
       "description": "Catch Jeff Dye live at The Riot Comedy Club upstairs at GuadalaHARRY's in Downtown Conroe with tasty food, cold drinks, fun vibes.",
       "last_updated": "2026-07-25T00:50:20.730Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "43f0a0cc6972b63c",
@@ -4335,7 +4538,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "269d4656d15317e2",
@@ -4358,7 +4562,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "7afdde0e599ab09d",
@@ -4378,7 +4583,8 @@
       "status": "on_sale",
       "description": "Mason James (Don't Tell, Comedy Mothership) is one of the fastest-rising comics in the country. Grab your tickets before the shows sell out.",
       "last_updated": "2026-07-25T00:50:18.761Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "b2ad8ca4d38994a0",
@@ -4401,7 +4607,8 @@
       "status": "rescheduled",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "8819a48ddaf91244",
@@ -4424,7 +4631,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "cddbb94893309ff2",
@@ -4444,7 +4652,8 @@
       "status": "on_sale",
       "description": "Catch Jeff Dye live at The Riot Comedy Club upstairs at GuadalaHARRY's in Downtown Conroe with tasty food, cold drinks, fun vibes.",
       "last_updated": "2026-07-25T00:50:20.730Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "ee9d14dfbb0fd841",
@@ -4467,7 +4676,8 @@
       "status": "on_sale",
       "description": "Doors: 7PM Show: 8PM Age Limit: 18+",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "984399bf616ae0b8",
@@ -4487,7 +4697,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "be416fce04dd2175",
@@ -4510,7 +4721,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "156fd23bf1b4b0a5",
@@ -4533,7 +4745,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "02a56769972a250f",
@@ -4556,7 +4769,8 @@
       "status": "on_sale",
       "description": "Doors: 7pm This show is 13+ All General Admission Tickets are Standing Room only IMPORTANT: WHITE OAK MUSIC HALL IS A CASHLESS VENUE. Please be sure to bring a debit or credit card.",
       "last_updated": "2026-07-31T15:58:31.573Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "e964ddc5d1d96b84",
@@ -4579,7 +4793,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "99ccebf53f5fe3ca",
@@ -4599,7 +4814,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "8ad79008eb51e8b1",
@@ -4622,7 +4838,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "0d89b6d8b4d517d5",
@@ -4642,7 +4859,8 @@
       "status": "on_sale",
       "description": "Sophie Hunter - Friday, Oct 09, 2026",
       "last_updated": "2026-07-25T00:50:14.792Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "a333e6a0a30e75f7",
@@ -4665,7 +4883,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "4b18c5aada75e68b",
@@ -4688,7 +4907,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "5f7fd6557b66798a",
@@ -4711,7 +4931,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "f18512438d70ce7d",
@@ -4734,7 +4955,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-08-04T16:08:38.519Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "9427413075b52cc2",
@@ -4757,7 +4979,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "001eb003fb72a7e1",
@@ -4777,7 +5000,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "d257018e0a83872b",
@@ -4800,7 +5024,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "16813c804528bc42",
@@ -4823,7 +5048,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "d2edd9fe06746e57",
@@ -4843,7 +5069,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "a1a62c4d95a12667",
@@ -4866,7 +5093,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "3175c088c292ff0f",
@@ -4889,7 +5117,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "83cd6be2e27b2cb3",
@@ -4912,7 +5141,8 @@
       "status": "on_sale",
       "description": "Doors will open 30 minutes prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T00:50:13.082Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "008e888bd1e074b6",
@@ -4935,7 +5165,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T14:57:53.279Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "1b061843a0a4b645",
@@ -4958,7 +5189,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T14:57:53.279Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "2c4ead85218f95b0",
@@ -4981,7 +5213,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-25T14:57:53.279Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "9546a39e92de95ee",
@@ -5004,7 +5237,8 @@
       "status": "on_sale",
       "description": "Doors will open 30 minutes prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-25T14:57:53.279Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "acc9b2a239f577e8",
@@ -5027,7 +5261,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-07-26T15:00:01.248Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "2d4221fa621baf28",
@@ -5050,7 +5285,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-07-30T15:47:53.923Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "7136541041af2e0d",
@@ -5073,7 +5309,8 @@
       "status": "cancelled",
       "description": "BOX OFFICE: 6:00 PM DOORS: 7:00 PM All Ages Welcome We're cashless! All points of sale will only accept credit, debit or mobile pay (such as Apple Pay or Google Pay). Will call tickets can be picked up on day of show at the Box Office. Box Office opens 1 hour prior to door times. You will need a valid photo ID and the credit card used for purchase. ADA tickets can be purchased online - you do not need to call the box office to place an order. Look for the logo on the Find Tickets page to view all available accessible seats. We do have accessible seating in every price range but be advised it may sell out. We have very limited seating available for guests on the day of the event so please make sure you purchase accessible seating when you order tickets. Bags up to 12\" x 6\" x 12\" are allowed in the venue. All bags will be searched prior to entry. For more FAQs please visit www.houston.houseofblues.com/faq",
       "last_updated": "2026-07-31T15:58:31.574Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "101c28031c9ba0af",
@@ -5093,7 +5330,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "8470f64ec39d1104",
@@ -5116,7 +5354,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-08-01T02:42:46.948Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "060972590fd8edcb",
@@ -5139,7 +5378,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-08-01T14:55:26.842Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "a49cb07773c9ebe0",
@@ -5162,7 +5402,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-08-01T14:55:26.842Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "1d0db91269b6ef97",
@@ -5185,7 +5426,8 @@
       "status": "on_sale",
       "description": null,
       "last_updated": "2026-08-01T14:55:26.842Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "c7803f57ca185c57",
@@ -5205,7 +5447,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-25T00:50:17.250Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "898ad1d97bd8067d",
@@ -5228,7 +5471,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-08-01T14:55:26.842Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "320758f1805da138",
@@ -5251,7 +5495,8 @@
       "status": "on_sale",
       "description": "Doors: 6:00 PM Show: 7:00 PM Age Limit: All Ages",
       "last_updated": "2026-08-01T14:55:26.842Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "df93ece1832caf3b",
@@ -5274,7 +5519,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-08-02T02:42:06.741Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "8860de11264b1079",
@@ -5297,7 +5543,8 @@
       "status": "on_sale",
       "description": "This is an all ages seated floor event. Doors open at 6PM. Show begins at approximately 7PM.",
       "last_updated": "2026-08-02T14:57:37.800Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "9946ca22362a11e4",
@@ -5317,7 +5564,8 @@
       "status": "on_sale",
       "description": "Sorry Ghost - Sun, 25 Oct, 8:00 PM",
       "last_updated": "2026-07-27T16:12:36.419Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "e8e592d606211b74",
@@ -5337,7 +5585,8 @@
       "status": "on_sale",
       "description": "Pushing 30 by Abby Govindan",
       "last_updated": "2026-08-05T02:26:51.642Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "e56c6c1fa87f9ff8",
@@ -5360,7 +5609,8 @@
       "status": "on_sale",
       "description": "Doors: 6:00 PM Show: 7:00 PM Age Limit: 16+ Suggested",
       "last_updated": "2026-08-02T14:57:37.800Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "8045bafb090b6993",
@@ -5383,7 +5633,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-08-02T14:57:37.800Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "7b955db57b927377",
@@ -5403,7 +5654,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-29T15:47:11.108Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "346cb22fc835e96e",
@@ -5426,7 +5678,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-08-02T14:57:37.800Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "cf7ca0036e49bcf0",
@@ -5449,7 +5702,8 @@
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
       "last_updated": "2026-08-07T02:36:41.820Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "a7e423ad7db18905",
@@ -5469,7 +5723,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-07-31T15:58:35.749Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     },
     {
       "id": "a9af98b710a24271",
@@ -5489,7 +5744,8 @@
       "status": "on_sale",
       "description": "A curated traveling comedy show delivering top talent, strong laughs, and a classy, professional production.",
       "last_updated": "2026-08-05T15:59:04.133Z",
-      "is_open_mic": false
+      "is_open_mic": false,
+      "performer_requests": true
     }
   ]
 }
