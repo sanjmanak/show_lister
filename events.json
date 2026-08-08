@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-08-07T14:50:21.560Z",
-  "total_events": 253,
+  "last_updated": "2026-08-08T01:29:31.870Z",
+  "total_events": 254,
   "events": [
     {
       "id": "72f7285ae1c0d7d8",
@@ -20,9 +20,9 @@
       "image_url": "https://s1.ticketm.net/dam/a/ca0/1f5b6d32-ff79-4568-be1b-08ae5b1e4ca0_SOURCE",
       "source": "ticketmaster",
       "age_restriction": null,
-      "status": "on_sale",
+      "status": "off_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
-      "last_updated": "2026-07-25T00:50:13.081Z",
+      "last_updated": "2026-08-08T01:27:29.258Z",
       "is_open_mic": false,
       "performer_requests": false
     },
@@ -41,9 +41,9 @@
       "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176821301%2F428099579998%2F1%2Foriginal.20260205-211729?auto=format%2Ccompress&q=75&sharp=10&s=1b5a27798566a11721b19bfcc9902d20",
       "source": "eventbrite",
       "age_restriction": null,
-      "status": "on_sale",
+      "status": "started",
       "description": "Catch Tom Shillue live at The Riot Comedy Club upstairs at GuadalaHARRY's in downtown Conroe with tasty food, cold drinks, fun vibes.",
-      "last_updated": "2026-07-25T00:50:20.730Z",
+      "last_updated": "2026-08-08T01:27:35.349Z",
       "is_open_mic": false,
       "performer_requests": false
     },
@@ -65,9 +65,9 @@
       "image_url": "https://s1.ticketm.net/dam/a/996/9387f28e-f924-478e-acb0-c82e51c61996_SOURCE",
       "source": "ticketmaster",
       "age_restriction": null,
-      "status": "on_sale",
+      "status": "off_sale",
       "description": null,
-      "last_updated": "2026-07-25T00:50:13.081Z",
+      "last_updated": "2026-08-08T01:27:29.258Z",
       "is_open_mic": false,
       "performer_requests": false
     },
@@ -1006,6 +1006,27 @@
       "last_updated": "2026-07-25T00:50:15.986Z",
       "is_open_mic": true,
       "performer_requests": true
+    },
+    {
+      "id": "b969b489d46214bd",
+      "name": "Secret Headliner with Andrew Youngblood",
+      "venue": "The Secret Group",
+      "date": "2026-08-13",
+      "time": "11:00 PM",
+      "day_of_week": "Thursday",
+      "price_min": 34.21,
+      "price_max": 37.67,
+      "currency": "USD",
+      "price_source": "api",
+      "ticket_url": "https://www.eventbrite.com/e/secret-headliner-with-andrew-youngblood-tickets-1997099661849",
+      "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190558653%2F3558237521%2F1%2Foriginal.20260807-170220?auto=format%2Ccompress&q=75&sharp=10&s=45af85e1f2c80018a6858f163410f60c",
+      "source": "eventbrite",
+      "age_restriction": null,
+      "status": "on_sale",
+      "description": "\"Who's that COMEDIAN?\" Is it perhaps Kevin Hart himself?",
+      "last_updated": "2026-08-08T01:27:31.361Z",
+      "is_open_mic": false,
+      "performer_requests": false
     },
     {
       "id": "ddb2076d4a19838f",
@@ -3626,9 +3647,9 @@
       "image_url": "https://s1.ticketm.net/dam/a/204/1cf0a6ef-fc13-449d-a78a-210f4ddbd204_SOURCE",
       "source": "ticketmaster",
       "age_restriction": null,
-      "status": "off_sale",
+      "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
-      "last_updated": "2026-08-05T15:59:00.333Z",
+      "last_updated": "2026-08-08T01:27:29.260Z",
       "is_open_mic": false,
       "performer_requests": false
     },
@@ -3930,8 +3951,8 @@
       "performer_requests": true
     },
     {
-      "id": "0d6ce83bb7f1df5d",
-      "name": "Starbomb: Probably The Only Tour Ever",
+      "id": "5e514c0f7c0b6b0e",
+      "name": "Starbomb featuring DJ Commander Meouch - Probably The Only Tour Ever",
       "genre": "Comedy",
       "venue": "House of Blues Houston",
       "venue_state": "TX",
@@ -3943,13 +3964,13 @@
       "price_max": null,
       "currency": "USD",
       "price_source": null,
-      "ticket_url": "https://www.ticketmaster.com/starbomb-probably-the-only-tour-ever-houston-texas-09-25-2026/event/3A0064AEF1FF1CE5",
+      "ticket_url": "https://www.ticketmaster.com/starbomb-featuring-dj-commander-meouch-probably-houston-texas-09-25-2026/event/3A0064AEF1FF1CE5",
       "image_url": "https://s1.ticketm.net/dam/a/97b/cfee6cdb-a7a9-4a81-9823-963cf9f9f97b_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "source": "ticketmaster",
       "age_restriction": null,
       "status": "on_sale",
       "description": "BOX OFFICE: 6:00 PM DOORS: 7:00 PM SHOW: 8:00 PM All Ages Welcome We're cashless! All points of sale will only accept credit, debit or mobile pay (such as Apple Pay or Google Pay). Will call tickets can be picked up on day of show at the Box Office. Box Office opens 1 hour prior to door times. You will need a valid photo ID and the credit card used for purchase. ADA tickets can be purchased online - you do not need to call the box office to place an order. Look for the logo on the Find Tickets page to view all available accessible seats. We do have accessible seating in every price range but be advised it may sell out. We have very limited seating available for guests on the day of the event so please make sure you purchase accessible seating when you order tickets. Bags up to 12\" x 6\" x 12\" are allowed in the venue. All bags will be searched prior to entry. For more FAQs please visit www.houston.houseofblues.com/faq",
-      "last_updated": "2026-07-25T00:50:13.082Z",
+      "last_updated": "2026-08-08T01:27:29.260Z",
       "is_open_mic": false,
       "performer_requests": false
     },
