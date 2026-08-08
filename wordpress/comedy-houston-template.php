@@ -94,7 +94,8 @@ if (!defined('ABSPATH')) exit;
   <!-- FOOTER -->
   <div class="ch-footer">
     Updated automatically twice daily &middot; Data from
-    <a href="https://www.ticketmaster.com" target="_blank" rel="noopener">Ticketmaster</a> &amp;
-    <a href="https://www.eventbrite.com" target="_blank" rel="noopener">Eventbrite</a>
+    <a href="https://www.ticketmaster.com" target="_blank" rel="noopener">Ticketmaster</a>,
+    <a href="https://www.eventbrite.com" target="_blank" rel="noopener">Eventbrite</a> &amp;
+    venue box offices
   </div>
   <?php endif; ?>

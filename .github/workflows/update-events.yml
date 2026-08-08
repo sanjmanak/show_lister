@@ -25,9 +25,11 @@ env:
 jobs:
   fetch-and-deploy:
     runs-on: ubuntu-latest
-    # Fetch normally takes <30s; cap at 15 min so a hung HTTPS socket can never
-    # burn the default 6h job timeout.
-    timeout-minutes: 15
+    # The API fetches take <30s, but the StandupTix harvest honors the
+    # platform's robots.txt Crawl-Delay of 3s per event page (~70 pages ≈
+    # 3.5–4 min per venue in config/standuptix-venues.json). Cap at 25 min so
+    # a hung HTTPS socket still can't burn the default 6h job timeout.
+    timeout-minutes: 25
 
     steps:
       - name: Checkout repository
@@ -38,6 +40,9 @@ jobs:
         with:
           node-version: '20'
 
+      # Ticketmaster + Eventbrite via their APIs, plus StandupTix venue sites
+      # (config/standuptix-venues.json) via sitemap + JSON-LD harvest — no
+      # secret needed for that source.
       - name: Fetch events from APIs
         env:
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
@@ -48,7 +53,7 @@ jobs:
         run: |
           node -e "
             const d = require('./events.json');
-            for (const s of ['ticketmaster', 'eventbrite']) {
+            for (const s of ['ticketmaster', 'eventbrite', 'standuptix']) {
               const g = d.events.filter(e => e.source === s);
               const missing = g.filter(e => e.price_min == null).length;
               console.log(s + ': ' + g.length + ' events, ' + missing + ' without price');

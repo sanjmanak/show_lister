@@ -1,0 +1,41 @@
+{
+  "_readme": [
+    "StandupTix venues harvested by scripts/fetch-events.js (source:",
+    "'standuptix'). StandupTix is an all-in-one ticketing+website platform",
+    "used by many comedy clubs; it has no public REST API (/api/events",
+    "returns 401) but every venue site exposes the same structured data:",
+    "",
+    "  1. GET {base_url}/site-maps/upcoming-events — an XML sitemap whose",
+    "     <loc> entries are the venue's upcoming event pages.",
+    "  2. Each event page embeds a schema.org ComedyEvent JSON-LD block",
+    "     (<script type=\"application/ld+json\">) with name, startDate (ISO",
+    "     8601 with timezone offset), location+address, offers",
+    "     (price/currency/availability/url), image, description, organizer.",
+    "",
+    "To add a venue, append an entry here — the recipe is identical for any",
+    "StandupTix-powered club. Fields per venue:",
+    "  name        — fallback venue name when the event JSON-LD carries no",
+    "                location.name. Should match (or alias to) a venue in",
+    "                config/venues.json.",
+    "  base_url    — the venue site's origin, no trailing slash.",
+    "  force_venue — OPTIONAL: pin every event from this site to one",
+    "                canonical venue name, ignoring the per-event",
+    "                location.name (same idea as the Eventbrite Conroe",
+    "                organizer's forceVenue). Leave unset when the site may",
+    "                list shows at more than one room — per-event",
+    "                location.name + config/venues.json aliases then decide.",
+    "  enabled     — per-venue kill switch.",
+    "",
+    "Fetch etiquette: the platform's robots.txt sets Crawl-Delay: 3, so the",
+    "harvester sleeps ~3s between page fetches (~70 events ≈ 3.5 min per",
+    "venue). Keep the venue list short enough to fit the Action's timeout."
+  ],
+  "venues": [
+    {
+      "name": "The Riot Comedy Club",
+      "base_url": "https://www.theriothtx.com",
+      "enabled": true,
+      "note": "The Riot's new Washington Ave home runs on StandupTix (moved off Eventbrite). Event JSON-LD names the location 'The Riot Houston', aliased to 'The Riot Comedy Club' in config/venues.json. No force_venue on purpose: if the site ever lists Conroe shows, their own location.name should win."
+    }
+  ]
+}

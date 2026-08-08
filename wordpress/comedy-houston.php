@@ -2557,7 +2557,7 @@ class Comedy_Houston_Plugin {
                     <tr><td><code>filter</code></td><td>all, today, tomorrow, weekend, week, month</td><td>all</td></tr>
                     <tr><td><code>max_price</code></td><td>number — only shows with price_min &le; this value (free shows included)</td><td><em>none</em></td></tr>
                     <tr><td><code>venue</code></td><td>venue name string</td><td><em>all venues</em></td></tr>
-                    <tr><td><code>source</code></td><td>ticketmaster, eventbrite</td><td><em>all sources</em></td></tr>
+                    <tr><td><code>source</code></td><td>ticketmaster, eventbrite, standuptix</td><td><em>all sources</em></td></tr>
                     <tr><td><code>title</code></td><td>custom hero title text</td><td>Every Comedy Show in Houston</td></tr>
                     <tr><td><code>theme</code></td><td>dark, light, auto</td><td><em>global setting</em></td></tr>
                     <tr><td><code>show_hero</code></td><td>true, false</td><td>true</td></tr>

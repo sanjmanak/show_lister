@@ -2,8 +2,10 @@
 
 /**
  * Comedy Houston — Event Fetcher
- * Pulls comedy events from Ticketmaster and Eventbrite APIs,
- * normalizes them into a single schema, deduplicates, and writes events.json + index.html.
+ * Pulls comedy events from the Ticketmaster and Eventbrite APIs plus
+ * StandupTix venue sites (sitemap + JSON-LD harvest — see config/
+ * standuptix-venues.json), normalizes them into a single schema,
+ * deduplicates, and writes events.json + index.html.
  */
 
 const https = require("https");
@@ -54,6 +56,7 @@ const TEMPLATE_PATH = path.join(OUTPUT_DIR, "index.html");
 const FILTERS_JSON_PATH = path.join(OUTPUT_DIR, "config", "filters.json");
 const EXCLUDED_JSON_PATH = path.join(OUTPUT_DIR, "excluded-events.json");
 const OPEN_MICS_JSON_PATH = path.join(OUTPUT_DIR, "config", "open-mics.json");
+const STANDUPTIX_VENUES_JSON_PATH = path.join(OUTPUT_DIR, "config", "standuptix-venues.json");
 const PERFORMER_REQUESTS_JSON_PATH = path.join(OUTPUT_DIR, "config", "performer-requests.json");
 const PRICE_CACHE_PATH = path.join(OUTPUT_DIR, "config", "price-cache.json");
 
@@ -844,6 +847,298 @@ function normalizeEB(ev, orgFallbackName, forceVenue) {
 }
 
 // ---------------------------------------------------------------------------
+// StandupTix (config/standuptix-venues.json)
+//
+// StandupTix is the all-in-one ticketing+website platform The Riot's new
+// Washington Ave room runs on (and many other comedy clubs). There is no
+// public REST API (/api/events → 401), but every venue site exposes the same
+// two structured surfaces, so this is a scripted harvest, not HTML scraping:
+//
+//   1. {base_url}/site-maps/upcoming-events — XML sitemap of event page URLs
+//   2. each event page — a schema.org ComedyEvent JSON-LD block with name,
+//      startDate (ISO 8601 with tz offset), location+address, offers, image
+//
+// Etiquette: the platform's robots.txt sets Crawl-Delay: 3, so page fetches
+// are spaced STANDUPTIX_PAGE_DELAY_MS apart (~70 events ≈ 3.5 min/venue —
+// fine for the scheduled Action, which runs the other sources in parallel).
+// fetchPage() already sends a plain browser UA, which the platform's
+// Cloudflare front end serves normally.
+// ---------------------------------------------------------------------------
+
+// Env-overridable so tests (and a future faster venue) don't sit through the
+// real crawl delay; defaults to robots.txt's Crawl-Delay: 3.
+const STANDUPTIX_PAGE_DELAY_MS = Number(process.env.STANDUPTIX_PAGE_DELAY_MS ?? 3000);
+
+function loadStandupTixConfig() {
+  try {
+    const raw = JSON.parse(fs.readFileSync(STANDUPTIX_VENUES_JSON_PATH, "utf8"));
+    return {
+      venues: (Array.isArray(raw.venues) ? raw.venues : [])
+        .filter((v) => v && v.enabled !== false && v.base_url)
+        .map((v) => ({
+          name: String(v.name || "").trim(),
+          baseUrl: String(v.base_url).replace(/\/+$/, ""),
+          forceVenue: v.force_venue ? String(v.force_venue).trim() : null,
+        })),
+    };
+  } catch (err) {
+    console.warn(`Could not load ${STANDUPTIX_VENUES_JSON_PATH}: ${err.message} — StandupTix skipped.`);
+    return { venues: [] };
+  }
+}
+
+/** <loc> URLs from a sitemap, XML-entity-decoded, order preserved. */
+function parseSitemapLocs(xml) {
+  const locs = [];
+  const re = /<loc>\s*([\s\S]*?)\s*<\/loc>/gi;
+  let m;
+  while ((m = re.exec(String(xml))) !== null) {
+    const url = m[1]
+      .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
+      .replace(/&amp;/g, "&")
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&quot;/g, '"')
+      .replace(/&apos;/g, "'")
+      .trim();
+    if (url) locs.push(url);
+  }
+  return locs;
+}
+
+/**
+ * The schema.org Event node in a page's JSON-LD, or null. Pages can carry
+ * several ld+json blocks (Organization, BreadcrumbList, ...) — pick the one
+ * whose @type is Event or an Event subtype (ComedyEvent, TheaterEvent, ...),
+ * looking inside arrays and @graph wrappers like parseJsonLdPrices does.
+ */
+function pickEventJsonLd(html) {
+  let found = null;
+  const visit = (node) => {
+    if (found || !node || typeof node !== "object") return;
+    if (Array.isArray(node)) {
+      for (const n of node) visit(n);
+      return;
+    }
+    const type = [].concat(node["@type"] || []).join(",");
+    if (/Event/i.test(type) && node.name && node.startDate) {
+      found = node;
+      return;
+    }
+    if (node["@graph"]) visit(node["@graph"]);
+  };
+  for (const block of extractJsonLdBlocks(html)) {
+    visit(block);
+    if (found) break;
+  }
+  return found;
+}
+
+/** schema.org offers.availability ("InStock" or a schema.org URL) → the
+ * feed's status vocabulary. Unknown/absent values stay "on_sale" — the page
+ * is in the venue's *upcoming* sitemap, so on sale is the safe default. */
+function mapStandupTixStatus(node) {
+  const eventStatus = String((node && node.eventStatus) || "");
+  if (/EventCancelled/i.test(eventStatus)) return "cancelled";
+  if (/EventPostponed/i.test(eventStatus)) return "postponed";
+  if (/EventRescheduled/i.test(eventStatus)) return "rescheduled";
+  const offers = node && node.offers;
+  const availability = String(
+    (Array.isArray(offers) ? offers[0] && offers[0].availability : offers && offers.availability) || ""
+  );
+  if (/SoldOut|OutOfStock|Discontinued/i.test(availability)) return "off_sale";
+  return "on_sale";
+}
+
+function normalizeStandupTix(node, pageUrl, venueCfg) {
+  // startDate arrives with the venue's own tz offset ("2026-08-14T21:00:00
+  // -05:00"), so the leading date/time substrings ARE local wall-clock —
+  // exactly what the feed stores (same treatment as Eventbrite's start.local).
+  const startRaw = String(node.startDate || "");
+  const dm = startRaw.match(/^(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2})/);
+  const dateStr = dm ? dm[1] : (startRaw.slice(0, 10) || null);
+  const timeRaw = dm ? dm[2] : null;
+
+  const location = node.location && typeof node.location === "object" ? node.location : {};
+  const address = location.address && typeof location.address === "object" ? location.address : {};
+  const venue = venueCfg.forceVenue
+    ? venueCfg.forceVenue
+    : normalizeVenueName(location.name || venueCfg.name || "Unknown Venue");
+
+  const offers = Array.isArray(node.offers) ? node.offers[0] || {} : node.offers || {};
+  const toNum = (v) => {
+    if (v === null || v === undefined || typeof v === "object") return null;
+    const n = parseFloat(String(v).replace(/[^0-9.]/g, ""));
+    return Number.isFinite(n) && n > 0 ? n : null;
+  };
+  const priceMin = toNum(offers.price) ?? toNum(offers.lowPrice);
+  const priceMax = toNum(offers.highPrice) ?? priceMin;
+
+  const image = Array.isArray(node.image) ? node.image.find((i) => typeof i === "string") || null : node.image || null;
+  const description = typeof node.description === "string" && node.description.trim()
+    ? node.description.trim()
+    : null;
+
+  return {
+    id: makeId(node.name, dateStr, venue),
+    name: String(node.name).trim() || "Untitled Event",
+    venue,
+    venue_state: address.addressRegion || null,
+    venue_city: address.addressLocality || null,
+    date: dateStr,
+    time: formatTime(timeRaw),
+    day_of_week: dateStr ? getDayOfWeek(dateStr) : null,
+    price_min: priceMin,
+    price_max: priceMax,
+    currency: offers.priceCurrency || "USD",
+    // Structured data from the venue's own ticketing platform = face value,
+    // same semantics as the API sources (not a fee-inclusive "page" scrape).
+    price_source: priceMin !== null ? "api" : null,
+    ticket_url: (typeof offers.url === "string" && /^https?:\/\//i.test(offers.url) ? offers.url : null) || pageUrl,
+    image_url: typeof image === "string" ? image : null,
+    source: "standuptix",
+    age_restriction: null,
+    status: mapStandupTixStatus(node),
+    description,
+    last_updated: new Date().toISOString(),
+  };
+}
+
+/** fetchPage with retries for the one-per-venue sitemap request. Event-page
+ * fetches stay single-shot (a per-event miss is skipped and recovered on the
+ * next scheduled run), but a transient failure on the sitemap itself would
+ * wipe the venue's whole feed — worth three attempts. */
+async function fetchPageWithRetries(url, retries = 3) {
+  let lastErr;
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    if (attempt > 0) {
+      const wait = attempt * 2000;
+      console.log(`  [StandupTix] Retrying in ${wait / 1000}s...`);
+      await sleep(wait);
+    }
+    try {
+      return await fetchPage(url);
+    } catch (err) {
+      lastErr = err;
+      console.log(`  [StandupTix] Fetch failed for ${url}: ${err.message}`);
+    }
+  }
+  throw lastErr;
+}
+
+async function fetchStandupTix(configOverride) {
+  const config = configOverride || loadStandupTixConfig();
+  if (config.venues.length === 0) {
+    console.log("[StandupTix] No enabled venues configured — skipping.");
+    return [];
+  }
+
+  console.log(`[StandupTix] Harvesting ${config.venues.length} venue site(s)...`);
+  const events = [];
+  // Same partial-publish stance as the Eventbrite per-organizer guard: if a
+  // venue's sitemap can't be fetched at all, fail the run rather than
+  // silently publishing a feed missing that venue. Per-EVENT failures below
+  // are tolerated — one bad page shouldn't hide the other ~69 shows.
+  const failedVenues = [];
+
+  for (const venueCfg of config.venues) {
+    const sitemapUrl = `${venueCfg.baseUrl}/site-maps/upcoming-events`;
+    let locs;
+    try {
+      const xml = await fetchPageWithRetries(sitemapUrl);
+      locs = parseSitemapLocs(xml);
+    } catch (err) {
+      console.error(`[StandupTix] Sitemap fetch failed for ${venueCfg.name}: ${err.message}`);
+      failedVenues.push(venueCfg.name);
+      continue;
+    }
+    // Identical URLs can repeat in the sitemap; slug VARIANTS of the same
+    // show (e.g. "...-the-riot-houston" and timestamp-suffixed copies) can't
+    // be told apart by URL — those are folded below by the JSON-LD
+    // name+startDate key after each page is read.
+    const urls = Array.from(new Set(locs));
+    console.log(`[StandupTix] ${venueCfg.name}: ${urls.length} event page(s) in sitemap.`);
+
+    // Key: normalized name + full startDate (offset included). The sitemap
+    // lists the same show under several slugs; every variant carries the
+    // same JSON-LD, so this collapses them while keeping two same-named
+    // shows at different times distinct.
+    const byShow = new Map();
+    let skipped = 0;
+    for (const url of urls) {
+      await sleep(STANDUPTIX_PAGE_DELAY_MS);
+      let node;
+      try {
+        const html = await fetchPage(url);
+        node = pickEventJsonLd(html);
+      } catch (err) {
+        console.warn(`  [StandupTix] Page fetch failed, skipping: ${url} (${err.message})`);
+        skipped++;
+        continue;
+      }
+      if (!node) {
+        console.warn(`  [StandupTix] No Event JSON-LD on ${url} — skipping.`);
+        skipped++;
+        continue;
+      }
+      const ev = normalizeStandupTix(node, url, venueCfg);
+      if (!ev.date) {
+        console.warn(`  [StandupTix] Unparseable startDate "${node.startDate}" on ${url} — skipping.`);
+        skipped++;
+        continue;
+      }
+      const key =
+        String(ev.name).toLowerCase().replace(/[^a-z0-9]/g, "") + "|" + String(node.startDate);
+      const existing = byShow.get(key);
+      if (!existing) {
+        byShow.set(key, ev);
+      } else {
+        // Duplicate slug of the same show — keep the fuller record.
+        const winner = mergePreferenceScore(ev) > mergePreferenceScore(existing) ? ev : existing;
+        const loser = winner === ev ? existing : ev;
+        backfillEvent(winner, loser);
+        byShow.set(key, winner);
+      }
+    }
+
+    const venueEvents = Array.from(byShow.values());
+    console.log(
+      `[StandupTix] ${venueCfg.name}: ${venueEvents.length} unique event(s)` +
+        (urls.length - venueEvents.length - skipped > 0
+          ? ` (${urls.length - venueEvents.length - skipped} duplicate listing(s) folded)`
+          : "") +
+        (skipped > 0 ? `, ${skipped} page(s) skipped` : "") +
+        "."
+    );
+    events.push(...venueEvents);
+  }
+
+  if (failedVenues.length > 0) {
+    throw new Error(
+      `[StandupTix] ${failedVenues.length}/${config.venues.length} venue sitemap ` +
+        `fetch(es) failed after retries: ${failedVenues.join(", ")}. ` +
+        `Refusing to publish a partial StandupTix feed — keeping last good data.`
+    );
+  }
+
+  // Same date window the API sources request server-side: from the start of
+  // today (Central) through MAX_DAYS_AHEAD. The upcoming-events sitemap can
+  // reach further out than the feed publishes.
+  const now = new Date();
+  const endDate = new Date(now);
+  endDate.setDate(endDate.getDate() + MAX_DAYS_AHEAD);
+  const minDay = centralDay(now);
+  const maxDay = centralDay(endDate);
+  const inWindow = events.filter((e) => e.date >= minDay && e.date <= maxDay);
+  if (inWindow.length < events.length) {
+    console.log(`[StandupTix] ${events.length - inWindow.length} event(s) outside the ${MAX_DAYS_AHEAD}-day window dropped.`);
+  }
+
+  console.log(`[StandupTix] Total: ${inWindow.length} events.`);
+  return inWindow;
+}
+
+// ---------------------------------------------------------------------------
 // Utilities
 // ---------------------------------------------------------------------------
 
@@ -1289,11 +1584,16 @@ function isOpenMicEvent(ev, openMicConfig) {
 // Stamps an explicit `performer_requests` boolean on every event (default
 // false). The WordPress plugin renders the "🎤 Interested in performing?"
 // CTA only on flagged events. Eligibility is a manual allowlist — open mics
-// (via is_open_mic, when include_open_mics) plus recurring local showcase
-// series — NOT a classifier. See PERFORMER_REQUESTS.md for the experiment.
+// (via is_open_mic, when include_open_mics), recurring local showcase
+// series, and per-venue rules — NOT a classifier. See PERFORMER_REQUESTS.md
+// for the experiment.
 // ---------------------------------------------------------------------------
 
 function loadPerformerRequestsConfig() {
+  const lc = (arr) =>
+    (Array.isArray(arr) ? arr : [])
+      .map((s) => String(s).toLowerCase().trim())
+      .filter(Boolean);
   try {
     const raw = JSON.parse(fs.readFileSync(PERFORMER_REQUESTS_JSON_PATH, "utf8"));
     return {
@@ -1306,10 +1606,23 @@ function loadPerformerRequestsConfig() {
           venueMatch: String(r.venue_match || "").toLowerCase().trim(),
         }))
         .filter((r) => r.titleMatch),
+      // Venue-wide eligibility: a rule flags every show at a matching venue,
+      // optionally narrowed to titles containing a title_include keyword and
+      // always minus title_exclude matches (headliner wording). Added
+      // 2026-08-08 when the owner opened up The Secret Group wholesale —
+      // per-series entries couldn't keep up with that venue's catalog.
+      venueRules: (Array.isArray(raw.venue_rules) ? raw.venue_rules : [])
+        .filter((r) => r && r.enabled !== false)
+        .map((r) => ({
+          venueMatch: String(r.venue_match || "").toLowerCase().trim(),
+          titleInclude: lc(r.title_include),
+          titleExclude: lc(r.title_exclude),
+        }))
+        .filter((r) => r.venueMatch),
     };
   } catch (err) {
     console.warn(`Could not load ${PERFORMER_REQUESTS_JSON_PATH}: ${err.message} — performer_requests defaults to false.`);
-    return { enabled: false, includeOpenMics: false, seriesAllowlist: [] };
+    return { enabled: false, includeOpenMics: false, seriesAllowlist: [], venueRules: [] };
   }
 }
 
@@ -1319,8 +1632,18 @@ function isPerformerRequestEvent(ev, cfg) {
 
   const name = String(ev.name || "").toLowerCase().replace(/-/g, " ");
   const venue = String(ev.venue || "").toLowerCase();
-  return cfg.seriesAllowlist.some(
-    (r) => name.includes(r.titleMatch) && (!r.venueMatch || venue.includes(r.venueMatch))
+  if (
+    cfg.seriesAllowlist.some(
+      (r) => name.includes(r.titleMatch) && (!r.venueMatch || venue.includes(r.venueMatch))
+    )
+  ) {
+    return true;
+  }
+  return cfg.venueRules.some(
+    (r) =>
+      venue.includes(r.venueMatch) &&
+      (r.titleInclude.length === 0 || r.titleInclude.some((kw) => name.includes(kw))) &&
+      !r.titleExclude.some((kw) => name.includes(kw))
   );
 }
 
@@ -1407,14 +1730,16 @@ async function main() {
   console.log(`Time: ${new Date().toISOString()}`);
   console.log("");
 
-  const [tmEvents, ebEvents] = await Promise.all([
+  const [tmEvents, ebEvents, stEvents] = await Promise.all([
     fetchTicketmaster(),
     fetchEventbrite(),
+    fetchStandupTix(),
   ]);
 
   console.log("");
   console.log(`Ticketmaster: ${tmEvents.length} events`);
   console.log(`Eventbrite:   ${ebEvents.length} events`);
+  console.log(`StandupTix:   ${stEvents.length} events`);
 
   // Source-collapse guard. On 2026-06-11 Eventbrite's WAF started 403-ing
   // every API call; the fetcher logged the errors, got 0 events, and
@@ -1430,6 +1755,7 @@ async function main() {
       const checks = [
         ["eventbrite", ebEvents.length],
         ["ticketmaster", tmEvents.length],
+        ["standuptix", stEvents.length],
       ];
       for (const [source, count] of checks) {
         const prevCount = prevEvents.filter((e) => e.source === source).length;
@@ -1454,7 +1780,7 @@ async function main() {
   // config/filters.json. Runs before dedup so junk can't win a merge.
   const filters = loadRelevanceFilters();
   const { kept: relevantEvents, excluded } = applyRelevanceFilters(
-    [...tmEvents, ...ebEvents],
+    [...tmEvents, ...ebEvents, ...stEvents],
     filters
   );
   if (excluded.length > 0) {
@@ -1648,6 +1974,13 @@ module.exports = {
   applyRelevanceFilters,
   loadOpenMicConfig,
   isOpenMicEvent,
+  loadPerformerRequestsConfig,
+  isPerformerRequestEvent,
+  loadStandupTixConfig,
+  fetchStandupTix,
+  parseSitemapLocs,
+  pickEventJsonLd,
+  normalizeStandupTix,
   parseJsonLdPrices,
   extractJsonLdBlocks,
   enrichPrices,

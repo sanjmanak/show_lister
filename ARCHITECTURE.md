@@ -32,7 +32,7 @@ Imagine you love comedy and live in Houston. There are dozens of comedy shows ev
 
 **Show Lister fixes that.** It's a robot that:
 
-1. **Checks Ticketmaster and Eventbrite twice a day** for every comedy show happening in Houston
+1. **Checks Ticketmaster, Eventbrite, and StandupTix venue sites twice a day** for every comedy show happening in Houston (StandupTix venues — like The Riot's new Washington Ave room — are harvested from each site's sitemap + schema.org JSON-LD, configured in `config/standuptix-venues.json`)
 2. **Removes duplicates** (the same show often appears on both platforms)
 3. **Builds a beautiful dark-themed website** listing every show with dates, prices, and ticket links
 4. **Publishes it automatically** — no human has to press any buttons
@@ -66,7 +66,7 @@ There are **eight major components** that work together:
 
 | # | Component | What It Does | Tech |
 |---|-----------|-------------|------|
-| 1 | **Event Fetcher** | Pulls shows from Ticketmaster + Eventbrite, deduplicates, writes JSON + HTML | Node.js script |
+| 1 | **Event Fetcher** | Pulls shows from Ticketmaster + Eventbrite APIs and StandupTix venue sites, deduplicates, writes JSON + HTML | Node.js script |
 | 2 | **Static Website** | The public-facing show listing page (dark theme, filters, search) | Plain HTML/CSS/JS |
 | 3 | **Blog Generator** | Weekly AI-written blog post + Instagram caption + hero image | Node.js + OpenAI API |
 | 4 | **Comedian Post Generator** | Per-comedian 600-word SEO blog posts with source links and fact-checking | Node.js + OpenAI API |
@@ -619,7 +619,7 @@ Every event from both APIs is normalized to this structure:
 | `currency` | string | Usually "USD" |
 | `ticket_url` | string | Direct link to buy tickets |
 | `image_url` | string | Event/artist image, or null |
-| `source` | string | `"ticketmaster"` or `"eventbrite"` |
+| `source` | string | `"ticketmaster"`, `"eventbrite"`, or `"standuptix"` |
 | `age_restriction` | string | `"18+"`, `"21+"`, or null |
 | `status` | string | `"on_sale"`, `"off_sale"`, `"cancelled"`, `"postponed"`, `"rescheduled"`, `"unknown"` |
 | `description` | string | Event description, or null |

@@ -14,7 +14,7 @@
  *       filter:   "all"|"today"|"tomorrow"|"weekend"|"week"|"month",
  *       maxPrice: number|null,
  *       venue:    ""|"Venue Name",
- *       source:   ""|"ticketmaster"|"eventbrite"
+ *       source:   ""|"ticketmaster"|"eventbrite"|"standuptix"
  *     }
  *   }
  */
