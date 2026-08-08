@@ -974,7 +974,22 @@ function normalizeStandupTix(node, pageUrl, venueCfg) {
   const priceMin = toNum(offers.price) ?? toNum(offers.lowPrice);
   const priceMax = toNum(offers.highPrice) ?? priceMin;
 
-  const image = Array.isArray(node.image) ? node.image.find((i) => typeof i === "string") || null : node.image || null;
+  // StandupTix emits site-RELATIVE asset paths in the JSON-LD ("/img/shows/
+  // ...-large-thumb.png"). The front-end and WP plugin only render http(s)
+  // URLs (isSafeHttpUrl), so resolve everything against the event page's URL
+  // — absolute URLs pass through new URL() unchanged.
+  const resolveUrl = (u) => {
+    if (typeof u !== "string" || !u.trim()) return null;
+    try {
+      const abs = new URL(u.trim(), pageUrl).toString();
+      return /^https?:\/\//i.test(abs) ? abs : null;
+    } catch (e) {
+      return null;
+    }
+  };
+  const image = resolveUrl(
+    Array.isArray(node.image) ? node.image.find((i) => typeof i === "string") : node.image
+  );
   const description = typeof node.description === "string" && node.description.trim()
     ? node.description.trim()
     : null;
@@ -994,8 +1009,8 @@ function normalizeStandupTix(node, pageUrl, venueCfg) {
     // Structured data from the venue's own ticketing platform = face value,
     // same semantics as the API sources (not a fee-inclusive "page" scrape).
     price_source: priceMin !== null ? "api" : null,
-    ticket_url: (typeof offers.url === "string" && /^https?:\/\//i.test(offers.url) ? offers.url : null) || pageUrl,
-    image_url: typeof image === "string" ? image : null,
+    ticket_url: resolveUrl(offers.url) || pageUrl,
+    image_url: image,
     source: "standuptix",
     age_restriction: null,
     status: mapStandupTixStatus(node),
