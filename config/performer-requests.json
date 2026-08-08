@@ -49,10 +49,10 @@
     },
     {
       "venue_match": "Riot Comedy Club",
-      "title_include": ["showcase", "best of", "late night", "open mic", "new faces"],
+      "title_include": ["showcase", "best of", "late night", "late show", "open mic", "new faces"],
       "title_exclude": ["headliner", "headlines"],
       "enabled": true,
-      "note": "Matches both Riot rooms (Houston + Conroe). The Riot's bread and butter is touring-headliner shows, so this is include-based: only obviously-local multi-comic formats (showcase / best of / late night / open mic / new faces) get the CTA, and headliner wording still vetoes. Extend title_include as more recurring Riot formats show up in the StandupTix feed."
+      "note": "Matches both Riot rooms (Houston + Conroe). The Riot's bread and butter is touring-headliner shows, so this is include-based: only obviously-local multi-comic formats (showcase / best of / late night / late show / open mic / new faces) get the CTA, and headliner wording still vetoes. 'late show' added after the first live harvest — 'Saturday Night Standup Comedy Late Show!' is the showcase's late slot, not a headliner set. Extend title_include as more recurring Riot formats show up in the StandupTix feed."
     }
   ],
   "series_allowlist": [
