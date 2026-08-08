@@ -15,6 +15,12 @@
     "     case-insensitive substring of the event title (hyphens normalized to",
     "     spaces), and venue_match (if present) a case-insensitive substring",
     "     of the venue name.",
+    "  3. It matches an enabled entry in `venue_rules`: venue_match is a",
+    "     substring of the venue name; if `title_include` is present the title",
+    "     must contain at least one of its keywords (omit it to cover EVERY",
+    "     show at the venue); any `title_exclude` keyword in the title vetoes",
+    "     the flag. All matching is case-insensitive substring, hyphens in",
+    "     titles normalized to spaces — same as series_allowlist.",
     "",
     "To turn the whole experiment off: set `enabled` to false (takes effect",
     "on the next fetch run, ~twice daily, or run scripts/fetch-events.js).",
@@ -34,6 +40,21 @@
   ],
   "enabled": true,
   "include_open_mics": true,
+  "venue_rules": [
+    {
+      "venue_match": "Secret Group",
+      "title_exclude": ["headliner", "headlines", "unotheactivist", "sorry ghost", "wax"],
+      "enabled": true,
+      "note": "Owner call 2026-08-08: essentially everything The Secret Group runs is a local multi-comic production (C U Next Tuesday, The Last Laugh with Shane & Trip, The Late Night Dirty Show, ...), so flag the whole venue and veto only headliner-branded titles ('Best of TSG Headliner Series - <name>', 'Secret Headliner with ...'). The extra excludes are current MUSIC bookings at the venue (UnoTheActivist, Sorry Ghost, Wax) — a performer CTA on a concert is noise. Keep adding one-off touring/music titles here as they appear; bare-name touring comics (e.g. 'Jed Harrelson', 'Abby Govindan') currently stay flagged per the venue-wide call — veto individually if submissions there turn out to be junk."
+    },
+    {
+      "venue_match": "Riot Comedy Club",
+      "title_include": ["showcase", "best of", "late night", "open mic", "new faces"],
+      "title_exclude": ["headliner", "headlines"],
+      "enabled": true,
+      "note": "Matches both Riot rooms (Houston + Conroe). The Riot's bread and butter is touring-headliner shows, so this is include-based: only obviously-local multi-comic formats (showcase / best of / late night / open mic / new faces) get the CTA, and headliner wording still vetoes. Extend title_include as more recurring Riot formats show up in the StandupTix feed."
+    }
+  ],
   "series_allowlist": [
     {
       "title_match": "Social Comedy Nite",

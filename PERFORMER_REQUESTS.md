@@ -77,6 +77,30 @@ Punch Line, Riot Conroe touring acts), Kill Tony, podcast tapings, and "The
 Best of TSG **Headliner** Series — {name}" (single named headliner; the
 title_match is scoped so it doesn't catch these).
 
+### Cohort expansion: venue-wide rules (2026-08-08)
+
+Per-series entries couldn't keep up with The Secret Group's catalog — nearly
+everything that venue runs is a local multi-comic production, and each new
+series name (C U Next Tuesday, The Last Laugh, The Passing Lane, ...) needed
+its own allowlist line. The config now also supports **`venue_rules`**:
+
+- `venue_match` — substring of the venue name; the rule covers every show
+  there.
+- `title_include` (optional) — if present, the title must contain at least
+  one of these keywords. Omit it to flag the venue wholesale.
+- `title_exclude` — any of these keywords in the title vetoes the flag.
+
+Two rules ship with the expansion:
+
+| Rule | Effect |
+|---|---|
+| The Secret Group, exclude `headliner`/`headlines` | Every TSG show gets the CTA except headliner-branded ones ("Best of TSG Headliner Series — {name}", "Secret Headliner with ...") |
+| Riot Comedy Club (both rooms), include `showcase` / `best of` / `late night` / `open mic` / `new faces`, exclude `headliner`/`headlines` | The Riot mostly books touring headliners, so only its obviously-local multi-comic formats qualify — fed by the new StandupTix harvest of theriothtx.com |
+
+`series_allowlist` still works and still applies (the TSG series entries are
+now redundant with the venue rule but kept as a fallback if the venue-wide
+rule is ever rolled back).
+
 ### Why a boolean, not a status enum
 
 `performer_requests: true|false` is enough for phase one — there is exactly
