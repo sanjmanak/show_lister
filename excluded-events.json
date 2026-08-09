@@ -1,12 +1,12 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-08-09T14:42:09.846Z",
+  "last_updated": "2026-08-09T17:18:19.703Z",
   "total_excluded": 21,
   "events": [
     {
       "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
       "venue": "The Secret Group",
-      "venue_city": null,
+      "venue_city": "Houston",
       "date": "2026-08-09",
       "time": "9:00 PM",
       "source": "eventbrite",
@@ -17,7 +17,7 @@
     {
       "name": "Karaoke every THURSDAY!",
       "venue": "The Secret Group",
-      "venue_city": null,
+      "venue_city": "Houston",
       "date": "2026-08-13",
       "time": "9:00 PM",
       "source": "eventbrite",
@@ -39,7 +39,7 @@
     {
       "name": "NOTHING MATTERS Emo | Indie | Punk Dance Party",
       "venue": "The Secret Group",
-      "venue_city": null,
+      "venue_city": "Houston",
       "date": "2026-08-14",
       "time": "9:00 PM",
       "source": "eventbrite",
@@ -50,7 +50,7 @@
     {
       "name": "DIAL UP: 90s & Y2K Dance Party!",
       "venue": "The Secret Group",
-      "venue_city": null,
+      "venue_city": "Houston",
       "date": "2026-08-15",
       "time": "9:00 PM",
       "source": "eventbrite",
@@ -61,7 +61,7 @@
     {
       "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
       "venue": "The Secret Group",
-      "venue_city": null,
+      "venue_city": "Houston",
       "date": "2026-08-16",
       "time": "9:00 PM",
       "source": "eventbrite",
@@ -72,7 +72,7 @@
     {
       "name": "Slow Joy - I Love You So Much I Could Die Tour",
       "venue": "The Secret Group",
-      "venue_city": null,
+      "venue_city": "Houston",
       "date": "2026-08-16",
       "time": "7:00 PM",
       "source": "eventbrite",
@@ -83,7 +83,7 @@
     {
       "name": "Karaoke every THURSDAY!",
       "venue": "The Secret Group",
-      "venue_city": null,
+      "venue_city": "Houston",
       "date": "2026-08-20",
       "time": "9:00 PM",
       "source": "eventbrite",
@@ -105,7 +105,7 @@
     {
       "name": "NOTHING MATTERS Emo | Indie | Punk Dance Party",
       "venue": "The Secret Group",
-      "venue_city": null,
+      "venue_city": "Houston",
       "date": "2026-08-21",
       "time": "9:00 PM",
       "source": "eventbrite",
@@ -116,7 +116,7 @@
     {
       "name": "DIAL UP: 90s & Y2K Dance Party!",
       "venue": "The Secret Group",
-      "venue_city": null,
+      "venue_city": "Houston",
       "date": "2026-08-22",
       "time": "9:00 PM",
       "source": "eventbrite",
@@ -127,7 +127,7 @@
     {
       "name": "Emarosa presents: High Horse Heaven Tour",
       "venue": "The Secret Group",
-      "venue_city": null,
+      "venue_city": "Houston",
       "date": "2026-08-23",
       "time": "6:30 PM",
       "source": "eventbrite",
@@ -138,7 +138,7 @@
     {
       "name": "Royale Lynn",
       "venue": "The Secret Group",
-      "venue_city": null,
+      "venue_city": "Houston",
       "date": "2026-08-25",
       "time": "6:00 PM",
       "source": "eventbrite",
@@ -149,7 +149,7 @@
     {
       "name": "Luh Tyler",
       "venue": "The Secret Group",
-      "venue_city": null,
+      "venue_city": "Houston",
       "date": "2026-08-29",
       "time": "7:00 PM",
       "source": "eventbrite",
@@ -160,7 +160,7 @@
     {
       "name": "KING KHEMOO",
       "venue": "The Secret Group",
-      "venue_city": null,
+      "venue_city": "Houston",
       "date": "2026-09-12",
       "time": "7:00 PM",
       "source": "eventbrite",
@@ -171,7 +171,7 @@
     {
       "name": "SINCE ENTERTAINMENT PRESENTS NINO PAID SOMEWHERE OVER THE RAINBOW  TOUR",
       "venue": "The Secret Group",
-      "venue_city": null,
+      "venue_city": "Houston",
       "date": "2026-09-13",
       "time": "8:00 PM",
       "source": "eventbrite",
@@ -193,7 +193,7 @@
     {
       "name": "Born Without Bones",
       "venue": "The Secret Group",
-      "venue_city": null,
+      "venue_city": "Houston",
       "date": "2026-09-19",
       "time": "7:00 PM",
       "source": "eventbrite",
@@ -215,7 +215,7 @@
     {
       "name": "MILLIONAIRE$ - My Sweet 16 Pt 2 Tour",
       "venue": "The Secret Group",
-      "venue_city": null,
+      "venue_city": "Houston",
       "date": "2026-09-26",
       "time": "6:00 PM",
       "source": "eventbrite",
