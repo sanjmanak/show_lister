@@ -52,6 +52,7 @@ const EB_ORGANIZERS = [
   // show started in NYC), so the TX-only post-filter below is what keeps
   // any out-of-state listings from this account out of the feed.
   { id: "10025720196", name: "Greatest Show Ever (Live at the Barbershop)" },
+  { id: "121191502413", name: "The Pink Flamingo Comedy Club" },
 ];
 
 const OUTPUT_DIR = path.resolve(__dirname, "..");
