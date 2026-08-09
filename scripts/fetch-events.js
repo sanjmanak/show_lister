@@ -47,6 +47,11 @@ const EB_ORGANIZERS = [
     name: "The Riot Comedy Club — Conroe",
     forceVenue: "The Riot Comedy Club — Conroe",
   },
+  // "Live at the Barbershop" — stand-up in a working Heights barbershop,
+  // BYOB, secret lineups. Greatest Show Ever is a national producer (the
+  // show started in NYC), so the TX-only post-filter below is what keeps
+  // any out-of-state listings from this account out of the feed.
+  { id: "10025720196", name: "Greatest Show Ever (Live at the Barbershop)" },
 ];
 
 const OUTPUT_DIR = path.resolve(__dirname, "..");
@@ -791,8 +796,18 @@ async function fetchEventbrite() {
     );
   }
 
-  console.log(`[Eventbrite] Total: ${events.length} events.`);
-  return events;
+  // Same TX-only safety filter the Ticketmaster fetch applies. Most EB
+  // organizers here are Houston-only producers, but Greatest Show Ever runs
+  // shows nationally from one account; unknown state (no venue on the
+  // event) is kept, matching the TM behavior.
+  const txEvents = events.filter((e) => !e.venue_state || e.venue_state === "TX");
+  const removed = events.length - txEvents.length;
+  if (removed > 0) {
+    console.log(`[Eventbrite] Filtered out ${removed} non-TX events.`);
+  }
+
+  console.log(`[Eventbrite] Total: ${txEvents.length} events.`);
+  return txEvents;
 }
 
 function normalizeEB(ev, orgFallbackName, forceVenue) {
@@ -804,6 +819,14 @@ function normalizeEB(ev, orgFallbackName, forceVenue) {
     : normalizeVenueName(
         ev.venue && ev.venue.name ? ev.venue.name : orgFallbackName
       );
+
+  // City/state from the expanded venue (requested via expand=venue). TM
+  // records have carried these since day one; stamping them here lets the
+  // TX-only safety filter and config/filters.json city blocklist apply to
+  // Eventbrite events too. Null when the event has no venue (e.g. online).
+  const address = ev.venue && ev.venue.address ? ev.venue.address : null;
+  const venueState = address ? address.region || null : null;
+  const venueCity = address ? address.city || null : null;
 
   const startLocal = ev.start ? ev.start.local : null; // "2026-02-15T19:30:00"
   const dateStr = startLocal ? startLocal.slice(0, 10) : null;
@@ -829,6 +852,8 @@ function normalizeEB(ev, orgFallbackName, forceVenue) {
     id: makeId(ev.name ? ev.name.text : "Untitled", dateStr, venueName),
     name: ev.name ? ev.name.text : "Untitled Event",
     venue: venueName,
+    venue_state: venueState,
+    venue_city: venueCity,
     date: dateStr,
     time: formatTime(timeRaw),
     day_of_week: dateStr ? getDayOfWeek(dateStr) : null,
