@@ -62,6 +62,7 @@ const FILTERS_JSON_PATH = path.join(OUTPUT_DIR, "config", "filters.json");
 const EXCLUDED_JSON_PATH = path.join(OUTPUT_DIR, "excluded-events.json");
 const OPEN_MICS_JSON_PATH = path.join(OUTPUT_DIR, "config", "open-mics.json");
 const STANDUPTIX_VENUES_JSON_PATH = path.join(OUTPUT_DIR, "config", "standuptix-venues.json");
+const DONTTELL_JSON_PATH = path.join(OUTPUT_DIR, "config", "donttellcomedy.json");
 const PERFORMER_REQUESTS_JSON_PATH = path.join(OUTPUT_DIR, "config", "performer-requests.json");
 const PRICE_CACHE_PATH = path.join(OUTPUT_DIR, "config", "price-cache.json");
 
@@ -1179,6 +1180,238 @@ async function fetchStandupTix(configOverride) {
 }
 
 // ---------------------------------------------------------------------------
+// Don't Tell Comedy (config/donttellcomedy.json)
+//
+// DTC produces secret-location pop-up shows. No API and no JSON-LD, but the
+// city page (/cities/{slug}/) is server-rendered with machine-readable
+// hooks the site's own filter script relies on:
+//
+//   <div class="card ..." data-show-date="2026-08-15" ...>
+//     ... Houston - Katy, TX ...            (area line; venue stays secret)
+//     <span class="badge ...">21+</span>
+//     <a href="/shows/houston-20217/" data-show-slug="houston-20217">
+//       Buy 7:00 PM Tickets</a>             (one button per showtime)
+//
+// Each show's own page (/shows/{slug}/) carries the checkout select —
+//   <option data-remaining="66" ...> 7:00 PM - General Admission ($27) —
+// plus og:image / og:description, so a second fetch per show recovers
+// price, seat availability, image, and description. This is attribute-level
+// HTML parsing (more fragile than JSON-LD): if DTC redesigns, the card
+// parser returns 0 events, the run logs it loudly, and the source-collapse
+// guard in main() keeps the last good feed.
+//
+// DTC's robots.txt allows crawling with no Crawl-Delay; fetches are spaced
+// DONTTELL_PAGE_DELAY_MS apart anyway (~12 show pages per run).
+// ---------------------------------------------------------------------------
+
+const DONTTELL_PAGE_DELAY_MS = Number(process.env.DONTTELL_PAGE_DELAY_MS ?? 1000);
+
+function loadDontTellConfig() {
+  try {
+    const raw = JSON.parse(fs.readFileSync(DONTTELL_JSON_PATH, "utf8"));
+    return {
+      cities: (Array.isArray(raw.cities) ? raw.cities : [])
+        .filter((c) => c && c.enabled !== false && c.slug)
+        .map((c) => ({
+          slug: String(c.slug).trim(),
+          label: String(c.label || "Don't Tell Comedy").trim(),
+          venue: String(c.venue || "Don't Tell Comedy (Secret Location)").trim(),
+        })),
+    };
+  } catch (err) {
+    console.warn(`Could not load ${DONTTELL_JSON_PATH}: ${err.message} — Don't Tell Comedy skipped.`);
+    return { cities: [] };
+  }
+}
+
+/**
+ * Show cards from a DTC city page. Returns one entry per SHOWTIME:
+ * {date, area, slug, time, ageRestriction, cardImage}. A card can carry two
+ * Buy buttons (early/late show, distinct slugs), and every button appears
+ * twice in the markup (desktop + mobile layouts) — deduped by slug.
+ */
+function parseDontTellCityPage(html) {
+  const shows = [];
+  const cardRe = /data-show-date="(\d{4}-\d{2}-\d{2})"/g;
+  const cardStarts = [];
+  let m;
+  while ((m = cardRe.exec(html)) !== null) cardStarts.push({ date: m[1], index: m.index });
+
+  for (let i = 0; i < cardStarts.length; i++) {
+    const seg = html.slice(cardStarts[i].index, cardStarts[i + 1] ? cardStarts[i + 1].index : html.length);
+    const date = cardStarts[i].date;
+
+    // "Houston - Katy, TX" / "Houston - Rice Village" → area after the dash.
+    const areaMatch = seg.match(/class="font-weight-bold mb-2">\s*([^<]+?)\s*</);
+    let area = areaMatch ? areaMatch[1].trim() : null;
+    let state = null;
+    if (area) {
+      const dash = area.indexOf(" - ");
+      if (dash !== -1) area = area.slice(dash + 3).trim();
+      const st = area.match(/,\s*([A-Z]{2})$/);
+      if (st) {
+        state = st[1];
+        area = area.replace(/,\s*[A-Z]{2}$/, "").trim();
+      }
+    }
+
+    const badges = [...seg.matchAll(/badge badge-secondary">\s*([^<]+?)\s*<\/span>/g)].map((b) => b[1].trim());
+    const ageRestriction = badges.find((b) => /^\d{1,2}\+$/.test(b)) || null;
+
+    const imgMatch = seg.match(/<img\s+src="\s*(https?:\/\/[^"]+)"/);
+    const cardImage = imgMatch ? imgMatch[1].trim() : null;
+
+    const seen = new Set();
+    for (const btn of seg.matchAll(
+      /data-show-slug="([a-z0-9-]+)"[^>]*>\s*Buy\s+(\d{1,2}:\d{2}\s*[AP]M)\s+Tickets/gi
+    )) {
+      const slug = btn[1];
+      if (seen.has(slug)) continue;
+      seen.add(slug);
+      shows.push({ date, area, state, slug, time: btn[2].toUpperCase().replace(/\s+/, " "), ageRestriction, cardImage });
+    }
+  }
+  return shows;
+}
+
+/**
+ * Price / availability / image / description from a DTC show page.
+ * The checkout <option>s look like " 7:00 PM - General Admission ($27) "
+ * with data-remaining="66"; a page whose every option has remaining 0 is
+ * sold out. Returns nulls for anything it can't find — the caller keeps
+ * the event either way.
+ */
+function parseDontTellShowPage(html) {
+  const prices = [];
+  let anyRemaining = null;
+  for (const opt of html.matchAll(/<option\b[^>]*>([^<]*\(\$\s?(\d{1,3}(?:\.\d{2})?)\)[^<]*)<\/option>/gi)) {
+    const p = parseFloat(opt[2]);
+    if (Number.isFinite(p) && p > 0 && p < 5000) prices.push(p);
+  }
+  for (const rem of html.matchAll(/data-remaining="(\d+)"/g)) {
+    const n = parseInt(rem[1], 10);
+    anyRemaining = anyRemaining === null ? n > 0 : anyRemaining || n > 0;
+  }
+  const ogAll = (prop) => {
+    const out = [];
+    const re = new RegExp(
+      `<meta[^>]*(?:property="og:${prop}"[^>]*content="([^"]+)"|content="([^"]+)"[^>]*property="og:${prop}")`,
+      "g"
+    );
+    let mm;
+    while ((mm = re.exec(html)) !== null) out.push((mm[1] || mm[2]).trim());
+    return out;
+  };
+  // The base template emits a site-logo og:image before the show-specific
+  // photo; real show art lives on DTC's Cloudinary CDN — prefer that, and
+  // return null otherwise so the caller falls back to the city-card image
+  // (also Cloudinary) instead of publishing the logo.
+  const image = ogAll("image").find((u) => /cloudinary/i.test(u)) || null;
+  return {
+    priceMin: prices.length ? Math.min(...prices) : null,
+    priceMax: prices.length ? Math.max(...prices) : null,
+    soldOut: anyRemaining === false,
+    image,
+    description: ogAll("description")[0] || null,
+  };
+}
+
+async function fetchDontTell(configOverride) {
+  const config = configOverride || loadDontTellConfig();
+  if (config.cities.length === 0) {
+    console.log("[DontTell] No enabled cities configured — skipping.");
+    return [];
+  }
+
+  const BASE = "https://www.donttellcomedy.com";
+  console.log(`[DontTell] Harvesting ${config.cities.length} city page(s)...`);
+  const events = [];
+  const failedCities = [];
+
+  for (const city of config.cities) {
+    let cards;
+    try {
+      const html = await fetchPageWithRetries(`${BASE}/cities/${city.slug}/`);
+      cards = parseDontTellCityPage(html);
+    } catch (err) {
+      console.error(`[DontTell] City page fetch failed for ${city.slug}: ${err.message}`);
+      failedCities.push(city.slug);
+      continue;
+    }
+    if (cards.length === 0) {
+      // Zero cards on a page that fetched fine = the markup changed out from
+      // under the parser. Treat like a fetch failure so the run refuses to
+      // silently publish a feed missing this source.
+      console.error(`[DontTell] ${city.slug}: page fetched but 0 show cards parsed — markup change?`);
+      failedCities.push(city.slug);
+      continue;
+    }
+    console.log(`[DontTell] ${city.slug}: ${cards.length} showtime(s) on the city page.`);
+
+    for (const card of cards) {
+      const ticketUrl = `${BASE}/shows/${card.slug}/`;
+      // Second fetch per show for price/availability/art. A miss here is
+      // tolerated — the card alone is a valid (price-TBA) listing.
+      let detail = { priceMin: null, priceMax: null, soldOut: false, image: null, description: null };
+      await sleep(DONTTELL_PAGE_DELAY_MS);
+      try {
+        detail = parseDontTellShowPage(await fetchPage(ticketUrl));
+      } catch (err) {
+        console.warn(`  [DontTell] Show page fetch failed (${card.slug}): ${err.message} — keeping card data only.`);
+      }
+
+      const area = card.area || "Secret Location";
+      // Time in the name on purpose: the dedupe id hashes name|date|venue,
+      // and the same area hosts early+late shows on one date.
+      const name = `${city.label}: ${area} (${card.time} Show)`;
+      events.push({
+        id: makeId(name, card.date, city.venue),
+        name,
+        venue: city.venue,
+        venue_state: card.state || null,
+        venue_city: area,
+        date: card.date,
+        time: card.time,
+        day_of_week: getDayOfWeek(card.date),
+        price_min: detail.priceMin,
+        price_max: detail.priceMax !== null ? detail.priceMax : detail.priceMin,
+        currency: "USD",
+        price_source: detail.priceMin !== null ? "api" : null,
+        ticket_url: ticketUrl,
+        image_url: detail.image || card.cardImage,
+        source: "donttellcomedy",
+        age_restriction: card.ageRestriction,
+        status: detail.soldOut ? "off_sale" : "on_sale",
+        description: detail.description,
+        last_updated: new Date().toISOString(),
+      });
+    }
+  }
+
+  if (failedCities.length > 0) {
+    throw new Error(
+      `[DontTell] ${failedCities.length}/${config.cities.length} city ` +
+        `harvest(s) failed: ${failedCities.join(", ")}. ` +
+        `Refusing to publish a partial Don't Tell Comedy feed — keeping last good data.`
+    );
+  }
+
+  // Same publish window as every other source.
+  const now = new Date();
+  const endDate = new Date(now);
+  endDate.setDate(endDate.getDate() + MAX_DAYS_AHEAD);
+  const minDay = centralDay(now);
+  const maxDay = centralDay(endDate);
+  const inWindow = events.filter((e) => e.date >= minDay && e.date <= maxDay);
+  if (inWindow.length < events.length) {
+    console.log(`[DontTell] ${events.length - inWindow.length} event(s) outside the ${MAX_DAYS_AHEAD}-day window dropped.`);
+  }
+
+  console.log(`[DontTell] Total: ${inWindow.length} events.`);
+  return inWindow;
+}
+
+// ---------------------------------------------------------------------------
 // Utilities
 // ---------------------------------------------------------------------------
 
@@ -1770,16 +2003,18 @@ async function main() {
   console.log(`Time: ${new Date().toISOString()}`);
   console.log("");
 
-  const [tmEvents, ebEvents, stEvents] = await Promise.all([
+  const [tmEvents, ebEvents, stEvents, dtcEvents] = await Promise.all([
     fetchTicketmaster(),
     fetchEventbrite(),
     fetchStandupTix(),
+    fetchDontTell(),
   ]);
 
   console.log("");
-  console.log(`Ticketmaster: ${tmEvents.length} events`);
-  console.log(`Eventbrite:   ${ebEvents.length} events`);
-  console.log(`StandupTix:   ${stEvents.length} events`);
+  console.log(`Ticketmaster:      ${tmEvents.length} events`);
+  console.log(`Eventbrite:        ${ebEvents.length} events`);
+  console.log(`StandupTix:        ${stEvents.length} events`);
+  console.log(`Don't Tell Comedy: ${dtcEvents.length} events`);
 
   // Source-collapse guard. On 2026-06-11 Eventbrite's WAF started 403-ing
   // every API call; the fetcher logged the errors, got 0 events, and
@@ -1796,6 +2031,7 @@ async function main() {
         ["eventbrite", ebEvents.length],
         ["ticketmaster", tmEvents.length],
         ["standuptix", stEvents.length],
+        ["donttellcomedy", dtcEvents.length],
       ];
       for (const [source, count] of checks) {
         const prevCount = prevEvents.filter((e) => e.source === source).length;
@@ -1820,7 +2056,7 @@ async function main() {
   // config/filters.json. Runs before dedup so junk can't win a merge.
   const filters = loadRelevanceFilters();
   const { kept: relevantEvents, excluded } = applyRelevanceFilters(
-    [...tmEvents, ...ebEvents, ...stEvents],
+    [...tmEvents, ...ebEvents, ...stEvents, ...dtcEvents],
     filters
   );
   if (excluded.length > 0) {
@@ -2021,6 +2257,10 @@ module.exports = {
   parseSitemapLocs,
   pickEventJsonLd,
   normalizeStandupTix,
+  loadDontTellConfig,
+  fetchDontTell,
+  parseDontTellCityPage,
+  parseDontTellShowPage,
   parseJsonLdPrices,
   extractJsonLdBlocks,
   enrichPrices,
