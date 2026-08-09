@@ -1292,17 +1292,27 @@ function parseDontTellShowPage(html) {
     const n = parseInt(rem[1], 10);
     anyRemaining = anyRemaining === null ? n > 0 : anyRemaining || n > 0;
   }
-  const og = (prop) => {
-    const mm = html.match(new RegExp(`property="og:${prop}"\\s+content="([^"]+)"`)) ||
-      html.match(new RegExp(`content="([^"]+)"\\s+property="og:${prop}"`));
-    return mm ? mm[1].trim() : null;
+  const ogAll = (prop) => {
+    const out = [];
+    const re = new RegExp(
+      `<meta[^>]*(?:property="og:${prop}"[^>]*content="([^"]+)"|content="([^"]+)"[^>]*property="og:${prop}")`,
+      "g"
+    );
+    let mm;
+    while ((mm = re.exec(html)) !== null) out.push((mm[1] || mm[2]).trim());
+    return out;
   };
+  // The base template emits a site-logo og:image before the show-specific
+  // photo; real show art lives on DTC's Cloudinary CDN — prefer that, and
+  // return null otherwise so the caller falls back to the city-card image
+  // (also Cloudinary) instead of publishing the logo.
+  const image = ogAll("image").find((u) => /cloudinary/i.test(u)) || null;
   return {
     priceMin: prices.length ? Math.min(...prices) : null,
     priceMax: prices.length ? Math.max(...prices) : null,
     soldOut: anyRemaining === false,
-    image: og("image"),
-    description: og("description"),
+    image,
+    description: ogAll("description")[0] || null,
   };
 }
 
