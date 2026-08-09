@@ -53,7 +53,7 @@ jobs:
         run: |
           node -e "
             const d = require('./events.json');
-            for (const s of ['ticketmaster', 'eventbrite', 'standuptix']) {
+            for (const s of ['ticketmaster', 'eventbrite', 'standuptix', 'donttellcomedy']) {
               const g = d.events.filter(e => e.source === s);
               const missing = g.filter(e => e.price_min == null).length;
               console.log(s + ': ' + g.length + ' events, ' + missing + ' without price');

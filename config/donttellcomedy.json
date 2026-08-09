@@ -1,0 +1,39 @@
+{
+  "_readme": [
+    "Don't Tell Comedy cities harvested by scripts/fetch-events.js (source:",
+    "'donttellcomedy'). DTC produces secret-location pop-up shows: the city",
+    "page at https://www.donttellcomedy.com/cities/{slug}/ server-renders one",
+    "card per show with machine-readable hooks:",
+    "",
+    "  data-show-date=\"YYYY-MM-DD\"      on each card",
+    "  data-show-slug=\"houston-20217\"   on each Buy button (one per showtime;",
+    "                                    a card can hold two showtimes)",
+    "  'Buy 7:00 PM Tickets'             button text carries the start time",
+    "  'Houston - Katy, TX'              area line (venue stays secret until",
+    "                                    day-of; neighborhood only)",
+    "",
+    "There is no JSON-LD and no public API — this is attribute-level HTML",
+    "parsing, so if DTC redesigns the city page the adapter logs a warning",
+    "and the source-collapse guard keeps the last good feed.",
+    "",
+    "Fields per city:",
+    "  slug        — the /cities/{slug}/ path segment.",
+    "  label       — prefix used in event names: '{label_prefix}: {Area}'.",
+    "  venue       — the single venue name all of this city's shows list",
+    "                under (location is secret; the area goes in the event",
+    "                name and venue_city instead).",
+    "  enabled     — per-city kill switch.",
+    "",
+    "Event names always include the showtime ('… (7:00 PM Show)') because",
+    "the same area can host an early and a late show on one date, and the",
+    "feed's dedupe id hashes name|date|venue."
+  ],
+  "cities": [
+    {
+      "slug": "houston",
+      "label": "Don't Tell Comedy",
+      "venue": "Don't Tell Comedy (Secret Location)",
+      "enabled": true
+    }
+  ]
+}
