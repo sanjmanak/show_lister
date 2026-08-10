@@ -1,33 +1,15 @@
 {
   "posted": [
     {
-      "slug": "affion-crockett-houston-improv-2026-08-06",
-      "comedianName": "Affion Crockett",
-      "igFeedMediaId": "18175405516422692",
-      "igStoryMediaId": "17907698694460068",
-      "fbFeedPostId": "1368018298756245",
-      "fbStoryPostId": "1406167188041094",
-      "postedAt": "2026-08-03T17:58:45.189Z"
-    },
-    {
-      "slug": "ron-funches-punch-line-houston-2026-08-07",
-      "comedianName": "Ron Funches",
-      "igFeedMediaId": "18202532146365546",
-      "igStoryMediaId": "17942372385267621",
-      "fbFeedPostId": "1368189738739101",
-      "fbStoryPostId": "1943985502937332",
-      "postedAt": "2026-08-03T23:11:14.943Z"
-    },
-    {
-      "slug": "tom-shillue-the-riot-comedy-club-conroe-2026-08-07",
-      "comedianName": "Tom Shillue",
-      "igFeedMediaId": "18096122471111357",
-      "igStoryMediaId": "18119713933852542",
-      "fbFeedPostId": "1368427088715366",
-      "fbStoryPostId": "954997857635036",
-      "postedAt": "2026-08-04T06:34:57.822Z"
+      "slug": "mark-normand-houston-improv-2026-08-13",
+      "comedianName": "Mark Normand",
+      "igFeedMediaId": "18117030220917887",
+      "igStoryMediaId": "18127064560733119",
+      "fbFeedPostId": "1373965638161511",
+      "fbStoryPostId": "1367051111510636",
+      "postedAt": "2026-08-10T17:00:52.776Z"
     }
   ],
-  "week_range": "August 3 – August 9, 2026",
-  "manifest_version": 1785779541256
+  "week_range": "August 10 – August 16, 2026",
+  "manifest_version": 1786380891122
 }
