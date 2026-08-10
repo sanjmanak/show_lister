@@ -1,29 +1,21 @@
 {
-  "generated_at": "2026-08-03T17:03:21.372Z",
-  "week_range": "August 3 – August 9, 2026",
+  "generated_at": "2026-08-10T15:48:48.837Z",
+  "week_range": "August 10 – August 16, 2026",
   "comedians": [
     {
-      "name": "Affion Crockett",
-      "show": "Affion Crockett",
-      "imageUrl": "https://s1.ticketm.net/dam/a/996/9387f28e-f924-478e-acb0-c82e51c61996_SOURCE",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/AffionCrockett1_%28cropped%29.jpg/960px-AffionCrockett1_%28cropped%29.jpg",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/AffionCrockett1_%28cropped%29.jpg/960px-AffionCrockett1_%28cropped%29.jpg",
+      "name": "Mark Normand",
+      "show": "Mark Normand",
+      "imageUrl": "https://s1.ticketm.net/dam/a/8c1/7a8f11c3-7869-4fcf-8216-924cad5328c1_SOURCE",
+      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Mark_Normand.png/960px-Mark_Normand.png?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail",
+      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Mark_Normand.png/960px-Mark_Normand.png?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail",
       "imageSource": "headshot"
     },
     {
-      "name": "Ron Funches",
-      "show": "Ron Funches",
-      "imageUrl": "https://s1.ticketm.net/dam/a/ca0/1f5b6d32-ff79-4568-be1b-08ae5b1e4ca0_SOURCE",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/4/40/Ron_Funches_SXSW_2015.jpg",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/4/40/Ron_Funches_SXSW_2015.jpg",
-      "imageSource": "headshot"
-    },
-    {
-      "name": "Tom Shillue",
-      "show": "Comedian Tom Shillue (Gutfeld!, The Tonight Show) Live in Conroe",
-      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176821301%2F428099579998%2F1%2Foriginal.20260205-211729?auto=format%2Ccompress&q=75&sharp=10&s=1b5a27798566a11721b19bfcc9902d20",
-      "headshotUrl": "https://cdn.prod.website-files.com/6940f208cb91aa0c946611df/6944dff02595f2b24df63297_Tom-Shillue-Official-Site.png",
-      "displayImage": "https://cdn.prod.website-files.com/6940f208cb91aa0c946611df/6944dff02595f2b24df63297_Tom-Shillue-Official-Site.png",
+      "name": "Josh Wolf",
+      "show": "Josh Wolf: Touring Hard",
+      "imageUrl": "https://s1.ticketm.net/dam/a/5ee/4bf7ddf6-f681-4c50-a892-d789ef9875ee_SOURCE",
+      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/3/37/Josh_Wolf_2025.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail_unscaled",
+      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/3/37/Josh_Wolf_2025.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail_unscaled",
       "imageSource": "headshot"
     }
   ]
