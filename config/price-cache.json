@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-08-10T15:12:29.734Z",
+  "last_updated": "2026-08-12T02:11:00.704Z",
   "entries": {
     "b69f3835d499156d": {
       "price_min": 31.4,
@@ -17,22 +17,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/tony-dabas-houston-improv-tickets/14856833?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-07-19T00:21:04.597Z"
-    },
-    "237afbcb29498d3b": {
-      "price_min": 27.69,
-      "price_max": 27.69,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/maddy-smith-presents-bad-genes-houston-improv-tickets/14657913?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-07-19T00:21:27.308Z"
-    },
-    "811b8c07515961c3": {
-      "price_min": 27.69,
-      "price_max": 27.69,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/maddy-smith-presents-bad-genes-houston-improv-tickets/14657943?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-07-19T00:21:28.540Z"
     },
     "3b44b965d3bcf350": {
       "price_min": 43.76,
