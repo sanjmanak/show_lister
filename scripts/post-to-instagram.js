@@ -11,6 +11,10 @@
  *   3. Facebook Page   — square image + caption
  *   4. Facebook Story  — story-sized image
  *
+ * Every published post is also appended to state.cleanup_queue, the ledger
+ * delete-comedian-posts.js reads to take spotlights down once the show they
+ * promote is past. See that script for why it can't just read `posted`.
+ *
  * Uses the Meta Graph API (Content Publishing API). The same Page Access
  * Token works for both Instagram and Facebook since the IG Business account
  * is linked to the Facebook Page.
@@ -63,7 +67,7 @@ function loadState() {
   if (fs.existsSync(STATE_PATH)) {
     return JSON.parse(fs.readFileSync(STATE_PATH, "utf8"));
   }
-  return { posted: [], week_range: null, manifest_version: null };
+  return { posted: [], cleanup_queue: [], week_range: null, manifest_version: null };
 }
 
 function saveState(state) {
@@ -599,7 +603,7 @@ async function main() {
   const results = await publishEverywhere(nextPost);
 
   // Update state
-  state.posted.push({
+  const record = {
     slug: nextPost.slug,
     comedianName: nextPost.comedianName,
     igFeedMediaId: results.igFeed,
@@ -607,7 +611,16 @@ async function main() {
     fbFeedPostId: results.fbFeed,
     fbStoryPostId: results.fbStory,
     postedAt: new Date().toISOString(),
-  });
+  };
+  state.posted.push(record);
+
+  // Separate ledger for delete-comedian-posts.js. `posted` is the
+  // this-week dedupe list and getNextToPost() wipes it when week_range
+  // rolls over, which would strand every media ID from the previous week
+  // and leave those spotlights up forever. cleanup_queue is never reset.
+  if (!Array.isArray(state.cleanup_queue)) state.cleanup_queue = [];
+  state.cleanup_queue.push({ ...record });
+
   saveState(state);
 
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);

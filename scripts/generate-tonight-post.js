@@ -10,7 +10,11 @@
  *   blog/tonight/tonight-YYYY-MM-DD-caption.txt  templated caption
  *   blog/tonight/tonight-meta.json               handoff for post-tonight.js
  *
- * Design intent: one big promise ("TONIGHT."), then proof — the lineup.
+ * Design intent: an OPEN LOOP, not a schedule. The graphic leads with the
+ * number of shows, adds one data-derived hook line, teases a handful of
+ * rows, and names what it is withholding ("+ 7 more, with prices &
+ * tickets"). The old six-row card answered the question in-feed, so nobody
+ * clicked; the count plus a partial list implies a list worth opening.
  * Typographic, high-contrast, zero clutter. No headshots, no AI calls —
  * this has to work every single day, unattended, for free.
  *
@@ -31,8 +35,13 @@ const EVENTS_PATH = path.join(ROOT, "events.json");
 const TONIGHT_DIR = path.join(ROOT, "blog", "tonight");
 const META_PATH = path.join(TONIGHT_DIR, "tonight-meta.json");
 
-const MAX_GRAPHIC_ROWS = 6; // rows on the image; the rest become "+N more"
-const MAX_CAPTION_ROWS = 8; // lines in the caption
+const MAX_GRAPHIC_ROWS = 4; // rows on the image; the rest become "+N more"
+const MAX_CAPTION_ROWS = 3; // lines in the caption
+
+// Comment-to-DM keyword (e.g. "TONIGHT"). Empty = the line is omitted.
+// Only set this once an auto-DM tool is actually wired up — an unattended
+// cron job can't answer the comments the prompt invites.
+const DM_KEYWORD = (process.env.TONIGHT_DM_KEYWORD || "").trim();
 
 // One short line a day, in the house voice: plain words, one person,
 // a reason to go out tonight. Rotates by weekday so regulars don't see
@@ -102,9 +111,17 @@ function truncate(str, max) {
 const NON_COMEDY_PATTERNS =
   /dance party|emo night|karaoke|trivia night|burlesque|drag brunch|open jam|wrestling|bingo/i;
 
+// Genre is a DENY-list signal only. Requiring /comedy/ used to silently drop
+// every Ticketmaster headliner filed under "Miscellaneous" or "Theatre" —
+// Mark Normand, Jay Pharoah, Jo Koy, Kill Tony — i.e. exactly the names that
+// stop a scroll, and it understated the nightly count too. Both feeds are
+// already scoped to comedy upstream, so anything that isn't explicitly
+// another segment stays in.
+const NON_COMEDY_GENRES = /^(music|sports|film|family|fair|festival)$/i;
+
 function isComedyish(ev) {
   if (NON_COMEDY_PATTERNS.test(ev.name || "")) return false;
-  if (ev.genre && !/comedy/i.test(ev.genre)) return false;
+  if (ev.genre && NON_COMEDY_GENRES.test(String(ev.genre).trim())) return false;
   return true;
 }
 
@@ -112,15 +129,37 @@ function isComedyish(ev) {
 // listings dump: age-restriction suffixes, redundant showtime tokens,
 // "at <venue>" tails (the venue gets its own line).
 function cleanShowName(name, venue) {
-  let s = String(name || "").trim();
+  const original = String(name || "").trim();
+  let s = original;
   s = s.replace(/\s*[-–—|]?\s*ages?\s*\d+\s*\+.*$/i, "");
   s = s.replace(/\s*[-–—|]?\s*w\/?\s*valid id.*$/i, "");
   s = s.replace(/\s*\d{1,2}(:\d{2})?\s*(am|pm)\s*show\s*$/i, "");
+
+  // Drop a trailing venue name however it's attached — "at The Den",
+  // "en Den Comedy Club", "Headlines The Riot Comedy Club". The venue gets
+  // its own line underneath, so repeating it here just burns the character
+  // budget and forces a mid-word ellipsis on the card.
   if (venue) {
-    const at = s.toLowerCase().lastIndexOf(` at ${venue.toLowerCase()}`);
-    if (at > 0) s = s.slice(0, at);
+    const v = String(venue).trim().replace(/^the\s+/i, "");
+    if (v.length >= 4) {
+      const escaped = v.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      s = s.replace(
+        new RegExp(
+          `\\s*(?:[-–—|,:]\\s*)?(?:live\\s+)?(?:at|in|en|@|headlin(?:es|ing)|presents?)?\\s*(?:the\\s+)?${escaped}\\s*$`,
+          "i"
+        ),
+        ""
+      );
+    }
   }
-  return s.trim() || String(name || "").trim();
+
+  // Trailing showtime token ("… Comedy Showcase 8pm") and any connector or
+  // punctuation left dangling by the strips above.
+  s = s.replace(/\s*[-–—|,:]?\s*\d{1,2}(:\d{2})?\s*(am|pm)\s*$/i, "");
+  s = s.replace(/\s*(?:at|in|en|with|w\/|presents?|headlines?|live)\s*$/i, "");
+  s = s.replace(/\s*[-–—|,:·]\s*$/, "").replace(/\s{2,}/g, " ");
+
+  return s.trim() || original;
 }
 
 function loadTonightsEvents(today) {
@@ -194,6 +233,65 @@ function pickGraphicRows(events, n) {
 }
 
 // ---------------------------------------------------------------------------
+// Open-loop helpers — what the card shows vs. what it holds back
+// ---------------------------------------------------------------------------
+
+/**
+ * How many rows to print. The card must ALWAYS hold something back, so a
+ * thin night (4 shows) doesn't get a card listing all four — that closes
+ * the loop and there is nothing left to click for. Below 4 total there is
+ * no useful teaser left; show them all and let the CTA sell prices instead.
+ */
+function rowCountFor(total) {
+  if (total <= 3) return total;
+  if (total <= 5) return Math.max(2, total - 2);
+  return MAX_GRAPHIC_ROWS;
+}
+
+// Cheapest ticket is quoted rounded UP: price_min carries cents (Eventbrite
+// returns 27.06), and a quoted price must never undercut the real one.
+function money(n) {
+  return `$${Math.ceil(n)}`;
+}
+
+/**
+ * One line under the headline, derived from tonight's data — the reason to
+ * open the list rather than admire the graphic. Ordered strongest first;
+ * falls back to the weekday tagline when the night has no stand-out fact.
+ *
+ * "Free" is strictly price_min === 0. A null price means UNKNOWN (most
+ * Ticketmaster rows are null) and must never be advertised as free.
+ */
+function buildHook(events, tagline) {
+  const free = events.filter((ev) => ev.price_min === 0).length;
+  const venues = new Set(
+    events.map((ev) => (ev.venue || "").toLowerCase().trim()).filter(Boolean)
+  ).size;
+  const paidPrices = events
+    .map((ev) => ev.price_min)
+    .filter((p) => typeof p === "number" && p > 0);
+  const cheapest = paidPrices.length > 0 ? Math.min(...paidPrices) : null;
+
+  // Both free rules must outrank the price rule: quoting "cheapest ticket:
+  // $8" on a night that has a free show is simply false.
+  if (free >= 2) return `${free} of them are free.`;
+  if (free === 1) return "One of them is free.";
+  if (cheapest !== null && cheapest <= 30) return `Cheapest ticket: ${money(cheapest)}.`;
+  if (venues >= 4) return `${venues} venues. One list.`;
+  return tagline;
+}
+
+/**
+ * The call to action — names the withheld value explicitly. "+N more shows"
+ * on its own withheld nothing anyone wanted; prices and ticket availability
+ * are the things the card genuinely cannot carry.
+ */
+function buildCta(extraCount) {
+  if (extraCount <= 0) return "Prices, tickets & tomorrow's lineup →";
+  return `+ ${extraCount} more, with prices & tickets →`;
+}
+
+// ---------------------------------------------------------------------------
 // Creative HTML
 // ---------------------------------------------------------------------------
 
@@ -201,7 +299,7 @@ function pickGraphicRows(events, n) {
 // hero (Inter, #0a0a0f → #16213e gradient, warm accent) so the feed looks
 // like one brand. The accent gradient is the "marquee" — everything else
 // stays quiet so the lineup reads in under two seconds.
-function buildCreativeHTML({ width, height, rows, extraCount, weekday, monthDay, tagline, isStory }) {
+function buildCreativeHTML({ width, height, rows, total, extraCount, weekday, monthDay, hook, isStory }) {
   const rowItems = rows
     .map(
       (ev) => `      <div class="row">
@@ -214,10 +312,18 @@ function buildCreativeHTML({ width, height, rows, extraCount, weekday, monthDay,
     )
     .join("\n");
 
-  const moreLine =
-    extraCount > 0
-      ? `    <div class="more">+ ${extraCount} more show${extraCount === 1 ? "" : "s"} tonight</div>`
-      : "";
+  const ctaLine = `    <div class="cta">${escapeHTML(buildCta(extraCount))}</div>`;
+
+  // Stories can carry a tappable link sticker, but the Content Publishing
+  // API cannot place one — it has to be dropped on by hand. The band is
+  // deliberately empty so there is somewhere obvious to put it, and the
+  // arrow line below points at it.
+  // Kept in the lower third, where link stickers actually get placed and
+  // where the thumb already is.
+  const stickerBand = isStory ? `    <div class="sticker-band"></div>` : "";
+  const tapLine = isStory
+    ? `    <div class="tap">TAP THE LINK FOR ALL ${total} &nbsp;↓</div>`
+    : "";
 
   return `<!DOCTYPE html>
 <html>
@@ -267,29 +373,42 @@ function buildCreativeHTML({ width, height, rows, extraCount, weekday, monthDay,
       color: rgba(240, 240, 245, 0.55);
       white-space: nowrap;
     }
+    /* The count IS the hook — it implies a list the image can't hold.
+       "TONIGHT." keeps the gradient so the post is still recognisable
+       at grid size. */
     .headline {
-      font-size: ${isStory ? 168 : 138}px;
       font-weight: 900;
-      line-height: 1.0;
+      line-height: 0.94;
       letter-spacing: -0.03em;
-      margin: ${isStory ? "18px 0 10px" : "10px 0 6px"};
+      margin: ${isStory ? "16px 0 12px" : "8px 0 8px"};
       background: linear-gradient(90deg, #ffffff 30%, #ff9966 75%, #ff5e62 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
-    .tagline {
-      font-size: ${isStory ? 36 : 30}px;
-      font-weight: 600;
-      color: rgba(240, 240, 245, 0.72);
-      margin-bottom: ${isStory ? 48 : 28}px;
+    .count { font-size: ${isStory ? 168 : 128}px; }
+    .unit  { font-size: ${isStory ? 104 : 82}px; letter-spacing: -0.01em; }
+    .tonight { display: block; font-size: ${isStory ? 150 : 116}px; }
+    .hook {
+      font-size: ${isStory ? 40 : 33}px;
+      font-weight: 700;
+      color: #ff9966;
+      margin-bottom: ${isStory ? 40 : 22}px;
+    }
+    .sticker-band { height: 200px; flex: 0 0 auto; }
+    .tap {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: #ff9966;
+      margin-top: 40px;
     }
     .lineup { width: 100%; }
     .row {
       display: flex;
       align-items: center;
       gap: 32px;
-      padding: ${isStory ? "24px 0" : "15px 0"};
+      padding: ${isStory ? "26px 0" : "23px 0"};
       border-top: 1px solid rgba(255, 255, 255, 0.10);
     }
     .row:last-of-type { border-bottom: 1px solid rgba(255, 255, 255, 0.10); }
@@ -303,7 +422,7 @@ function buildCreativeHTML({ width, height, rows, extraCount, weekday, monthDay,
     }
     .what { min-width: 0; }
     .show {
-      font-size: ${isStory ? 40 : 34}px;
+      font-size: ${isStory ? 40 : 36}px;
       font-weight: 700;
       white-space: nowrap;
       overflow: hidden;
@@ -318,11 +437,11 @@ function buildCreativeHTML({ width, height, rows, extraCount, weekday, monthDay,
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    .more {
-      font-size: ${isStory ? 32 : 26}px;
-      font-weight: 700;
+    .cta {
+      font-size: ${isStory ? 34 : 29}px;
+      font-weight: 800;
       color: #ff9966;
-      margin-top: ${isStory ? 28 : 16}px;
+      margin-top: ${isStory ? 30 : 20}px;
     }
     .footer {
       margin-top: auto;
@@ -347,15 +466,17 @@ function buildCreativeHTML({ width, height, rows, extraCount, weekday, monthDay,
 <body>
   <div class="inner">
     <div class="kicker">Houston Comedy · ${escapeHTML(weekday)}, ${escapeHTML(monthDay)}</div>
-    <div class="headline">TONIGHT.</div>
-    <div class="tagline">${escapeHTML(tagline)}</div>
+    <div class="headline"><span class="count">${total}</span><span class="unit"> SHOWS</span><span class="tonight">TONIGHT.</span></div>
+    <div class="hook">${escapeHTML(hook)}</div>
     <div class="lineup">
 ${rowItems}
     </div>
-${moreLine}
+${ctaLine}
+${tapLine}
+${stickerBand}
     <div class="footer">
       <div class="site">comedyhouston.com</div>
-      <div class="promise">every show, every night</div>
+      <div class="promise">link in bio</div>
     </div>
   </div>
 </body>
@@ -366,28 +487,46 @@ ${moreLine}
 // Caption
 // ---------------------------------------------------------------------------
 
-function buildCaption({ events, weekday, monthDay, tagline }) {
-  const picked = pickGraphicRows(events, MAX_CAPTION_ROWS);
+/**
+ * Instagram truncates the caption at ~125 characters behind a "more" link,
+ * and most readers never expand it. So line one carries the whole pitch —
+ * the count and the hook — and everything else (teaser rows, CTA, the
+ * weekday tagline as a sign-off) sits below that fold.
+ */
+function buildCaption({ events, weekday, monthDay, tagline, hook }) {
+  const total = events.length;
+  const picked = pickGraphicRows(events, Math.min(MAX_CAPTION_ROWS, rowCountFor(total)));
   const lines = picked.map((ev) => {
-    const time = ev.time ? `, ${ev.time}` : "";
-    return `• ${truncate(cleanShowName(ev.name, ev.venue), 60)} — ${ev.venue}${time}`;
+    const time = ev.time ? `${ev.time} — ` : "";
+    return `• ${time}${truncate(cleanShowName(ev.name, ev.venue), 55)}, ${ev.venue}`;
   });
-  const extra = events.length - picked.length;
+  const extra = total - picked.length;
 
   const parts = [
-    tagline,
+    `${total} comedy show${total === 1 ? "" : "s"} in Houston tonight. ${hook}`,
     "",
-    `Tonight in Houston — ${weekday}, ${monthDay}:`,
+    `${weekday}, ${monthDay}. A few of them:`,
     "",
     ...lines,
+    "",
   ];
-  if (extra > 0) {
-    parts.push(`…plus ${extra} more on the full calendar.`);
+
+  parts.push(
+    extra > 0
+      ? `The other ${extra} — with prices, showtimes and who still has tickets — are on the site.`
+      : "Prices, showtimes and ticket links are all on the site."
+  );
+  parts.push("");
+  parts.push("👉 comedyhouston.com (link in bio)");
+  if (DM_KEYWORD) {
+    parts.push(`💬 Or comment ${DM_KEYWORD} and I'll DM you the link.`);
   }
   parts.push("");
-  parts.push("Every show, every night: comedyhouston.com (link in bio)");
+  parts.push(tagline);
   parts.push("");
-  parts.push("#HoustonComedy #StandUp #LiveComedy #HoustonTonight #ThingsToDoInHouston");
+  parts.push(
+    "#HoustonComedy #StandUp #LiveComedy #HoustonTonight #ThingsToDoInHouston #HoustonNightlife"
+  );
 
   return parts.join("\n");
 }
@@ -479,25 +618,29 @@ async function main() {
     return;
   }
 
-  const rows = pickGraphicRows(events, MAX_GRAPHIC_ROWS).map((ev) => ({
+  const total = events.length;
+  const hook = buildHook(events, tagline);
+  const rows = pickGraphicRows(events, rowCountFor(total)).map((ev) => ({
     ...ev,
     name: cleanShowName(ev.name, ev.venue),
   }));
-  const extraCount = events.length - rows.length;
+  const extraCount = total - rows.length;
+  console.log(`\nHook: "${hook}"`);
+  console.log(`Rows: ${rows.length} of ${total}  →  CTA: "${buildCta(extraCount)}"`);
 
   console.log("\nRendering square (1080×1080)…");
   const squareHTML = buildCreativeHTML({
-    width: 1080, height: 1080, rows, extraCount, weekday, monthDay, tagline, isStory: false,
+    width: 1080, height: 1080, rows, total, extraCount, weekday, monthDay, hook, isStory: false,
   });
   await screenshotHTML(squareHTML, 1080, 1080, path.join(TONIGHT_DIR, meta.square));
 
   console.log("Rendering story (1080×1920)…");
   const storyHTML = buildCreativeHTML({
-    width: 1080, height: 1920, rows, extraCount, weekday, monthDay, tagline, isStory: true,
+    width: 1080, height: 1920, rows, total, extraCount, weekday, monthDay, hook, isStory: true,
   });
   await screenshotHTML(storyHTML, 1080, 1920, path.join(TONIGHT_DIR, meta.story));
 
-  const caption = buildCaption({ events, weekday, monthDay, tagline });
+  const caption = buildCaption({ events, weekday, monthDay, tagline, hook });
   fs.writeFileSync(path.join(TONIGHT_DIR, meta.caption), caption + "\n");
   console.log(`Caption written (${caption.length} chars).`);
 

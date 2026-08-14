@@ -1,11 +1,11 @@
-name: Delete Old Tonight Posts
+name: Delete Old Comedian Posts
 
 on:
-  # Daily at 17:00 UTC — 3 hours BEFORE post-tonight's 20:00 slot and ~20
-  # hours after its last push, so the two workflows never race the state
-  # commit on main.
+  # Daily at 13:00 UTC (8 AM CT) — sits between post-to-instagram's 10:00
+  # and 16:00 UTC slots so the shared concurrency group never has to queue
+  # a posting run behind this one.
   schedule:
-    - cron: '0 17 * * *'
+    - cron: '0 13 * * *'
 
   # Manual trigger — dry_run logs what would be deleted without touching
   # anything (recommended for the first run after a change).
@@ -16,17 +16,17 @@ on:
         type: boolean
         default: false
       retention_days:
-        description: 'Delete posts older than this many days'
+        description: 'Delete spotlights older than this many days'
         type: string
-        default: '1'
+        default: '5'
 
 permissions:
   contents: write
 
-# SAME group as post-tonight.yml — serializes the two workflows' writes to
-# blog/tonight/tonight-post-state.json and their pushes to main.
+# SAME group as post-to-instagram.yml — serializes the two workflows' writes
+# to blog/comedians/ig-post-state.json and their pushes to main.
 concurrency:
-  group: post-tonight
+  group: post-to-instagram
   cancel-in-progress: false
 
 env:
@@ -46,16 +46,16 @@ jobs:
         with:
           node-version: '20'
 
-      # No npm install — the cleanup script is zero-dependency (unlike
-      # post-tonight, there is no Puppeteer image generation here).
-      - name: Delete aged Tonight posts
+      # No npm install — the cleanup script is zero-dependency (unlike the
+      # posters, there is no Puppeteer image generation here).
+      - name: Delete aged comedian spotlights
         timeout-minutes: 10
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
-          TONIGHT_RETENTION_DAYS: ${{ inputs.retention_days || '1' }}
+          COMEDIAN_RETENTION_DAYS: ${{ inputs.retention_days || '5' }}
           DRY_RUN: ${{ inputs.dry_run == true && '1' || '' }}
-        run: node scripts/delete-tonight-posts.js
+        run: node scripts/delete-comedian-posts.js
 
       - name: Commit cleanup state
         # always() so partial progress (some IDs deleted before a failure)
@@ -65,11 +65,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add blog/tonight/tonight-post-state.json
+          git add blog/comedians/ig-post-state.json
           if git diff --staged --quiet; then
             echo "No state changes to commit."
           else
-            git commit -m "Tonight in Houston cleanup — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
+            git commit -m "Comedian spotlight cleanup — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
             pushed=false
             for i in 1 2 3 4; do
               echo "Push attempt $i…"
@@ -92,7 +92,7 @@ jobs:
           fi
 
   # Failure notifier lives in its own job so a broken notifier can never
-  # block the cleanup — same pattern as post-tonight.yml.
+  # block the cleanup — same pattern as delete-old-tonight-posts.yml.
   notify-failure:
     needs: delete-old-posts
     if: failure()
@@ -114,16 +114,16 @@ jobs:
           {
             echo "From: ${SMTP_FROM}"
             echo "To: ${NOTIFY_EMAIL}"
-            echo "Subject: [Comedy Houston] Tonight-post CLEANUP failed"
+            echo "Subject: [Comedy Houston] Comedian-spotlight CLEANUP failed"
             echo "Content-Type: text/plain; charset=UTF-8"
             echo
-            echo "The Tonight in Houston cleanup workflow failed — aged posts"
+            echo "The comedian spotlight cleanup workflow failed — aged posts"
             echo "may still be live on Instagram/Facebook. Failed IDs stay in"
             echo "the state file and tomorrow's run retries automatically."
             echo "Check the logs:"
             echo
             echo "Run: ${RUN_URL}"
-          } > "${RUNNER_TEMP}/tonight-cleanup-failure-email.txt"
+          } > "${RUNNER_TEMP}/comedian-cleanup-failure-email.txt"
 
           if [ "${SMTP_PORT}" = "465" ]; then
             URL="smtps://${SMTP_SERVER}:${SMTP_PORT}"
@@ -136,5 +136,5 @@ jobs:
             --user "${SMTP_USERNAME}:${SMTP_PASSWORD}" \
             --mail-from "${SMTP_FROM}" \
             --mail-rcpt "${NOTIFY_EMAIL}" \
-            --upload-file "${RUNNER_TEMP}/tonight-cleanup-failure-email.txt"
+            --upload-file "${RUNNER_TEMP}/comedian-cleanup-failure-email.txt"
           echo "Failure notification email sent."

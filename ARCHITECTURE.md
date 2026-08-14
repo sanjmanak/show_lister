@@ -392,13 +392,49 @@ Logs every ticket click with: timestamp, original URL, final URL (with affiliate
 The daily post guarantees at least one Instagram post per day regardless of
 how many recognizable comedians the weekly pipeline found. Key design points:
 
+- **The card is an open loop, not a schedule** (rewritten August 2026). It
+  leads with the *count* ("11 SHOWS TONIGHT."), adds one data-derived hook
+  line, shows 4 rows, and names what it withholds ("+ 7 more, with prices &
+  tickets →"). The previous six-row card answered the question in-feed —
+  a reader had the whole night's lineup and no reason to click, which is
+  why a growing follower count wasn't moving site traffic. `rowCountFor()`
+  guarantees something is always held back: ≤5 shows drops to 2–3 rows, and
+  at ≤3 the CTA switches to selling prices instead of shows.
+- **The hook line** (`buildHook`) is picked from tonight's data, no AI:
+  `N of them are free` → `One of them is free` → `Cheapest ticket: $X` →
+  `N venues. One list.` → the weekday tagline as fallback. Both free rules
+  MUST outrank the price rule — quoting a cheapest paid ticket on a night
+  that has a free show is simply false. "Free" is strictly
+  `price_min === 0`; a null price means UNKNOWN (most Ticketmaster rows)
+  and is never advertised as free. Prices are quoted rounded UP, so a
+  quoted number can never undercut the real one.
+- **Caption structure** mirrors that: line one carries the count and the
+  hook, because Instagram truncates at ~125 characters and most readers
+  never expand. Teaser rows drop to 3, and the weekday tagline moves to the
+  bottom as a sign-off. A comment-to-DM prompt is wired behind
+  `TONIGHT_DM_KEYWORD` and stays off until an auto-DM tool exists — an
+  unattended cron job can't answer the comments the prompt invites.
+- **Story creative** reserves an empty band in the lower third with a
+  "TAP THE LINK FOR ALL N ↓" pointer. The Content Publishing API cannot
+  attach link stickers, so the sticker is placed by hand; the band is where
+  it goes.
 - **Row selection** prefers headliner-named shows ("Rob Schneider", "Tumua")
   over generic showcases — show-name shape is the ranking signal, NOT ticket
   price (Eventbrite `price_max` includes VIP tables; TM headliners are often
   null) and NOT start time (which buries 7:30 headliners under 6 PM showcases).
-- **Non-comedy filtering**: name patterns (dance party, karaoke, …) plus the
-  `genre` field that `fetch-events.js` now stamps on Ticketmaster events
-  (filters out leaked touring musicals like Spamilton).
+- **Show-name cleaning** (`cleanShowName`) strips a trailing venue however
+  it's attached — "at The Den", "en Den Comedy Club", "Headlines The Riot
+  Comedy Club" — plus trailing showtime tokens and dangling connectors. The
+  venue has its own line underneath, so repeating it there forced mid-word
+  ellipses on the card.
+- **Non-comedy filtering**: name patterns (dance party, karaoke, …) plus a
+  `genre` DENY-list. Genre used to be a require-`/comedy/` test, which
+  silently dropped every Ticketmaster headliner filed under "Miscellaneous"
+  or "Theatre" — Mark Normand, Jay Pharoah, Jo Koy, Kill Tony — i.e.
+  exactly the names that stop a scroll, and it understated the nightly
+  count too. Both feeds are already scoped to comedy upstream, so anything
+  not explicitly another segment (music, sports, film, family, fair,
+  festival) now stays in.
 - Images are served to Meta from **raw.githubusercontent.com** (no GitHub
   Pages build to wait on) with date-stamped filenames (no CDN staleness).
 - `tonight-post-state.json` records the last posted date so re-runs can't
@@ -436,13 +472,20 @@ The Instagram Feed post is the primary channel — if it fails, the run fails an
 |-------|-------|
 | **Schedule** | Daily: `0 17 * * *` UTC — 3 h before post-tonight and ~20 h after its last push, so the two never race the state commit |
 | **Manual trigger** | Yes (`workflow_dispatch` with `dry_run` and `retention_days` inputs) |
-| **What it runs** | `delete-tonight-posts.js` — deletes IG/FB posts recorded in the state's `posted` array once they age past `TONIGHT_RETENTION_DAYS` (default 3) |
+| **What it runs** | `delete-tonight-posts.js` — deletes IG/FB posts recorded in the state's `posted` array once they age past `TONIGHT_RETENTION_DAYS` (default 1) |
 | **Secrets used** | `INSTAGRAM_ACCESS_TOKEN`, `INSTAGRAM_USER_ID` |
 | **Commits** | `blog/tonight/tonight-post-state.json` (entries removed as their posts are deleted) |
 | **Cost** | Free (Graph API `DELETE /{id}`; deletes don't count against the IG publish quota) |
 
 The daily lineup card is stale the morning after, so posts are taken down
-after 3 days. Design points:
+after 1 day. The window is a *grid* decision, not a data decision: posts go
+out at 20:00 UTC and cleanup runs at 17:00 UTC, so a post from N days ago is
+N×24−3 hours old when cleanup sees it. At the old default of 3 that cleared
+day −4 and older, leaving −1, −2, −3 plus tonight's — four near-identical
+TONIGHT cards filling the profile a first-time visitor scrolls before
+deciding whether to tap the bio link. At 1 the grid holds two (briefly one,
+between cleanup and the 15:00 CT post) and each post still lives ~44 hours.
+Design points:
 
 - **Forward-only by decision**: only posts recorded in the `posted` array
   (i.e., made after this feature shipped) are ever deleted. The legacy
@@ -482,6 +525,40 @@ after 3 days. Design points:
   progress always lands.
 - Rate limits follow the posting convention: `RATE_LIMITED` stops the run
   with exit 0 and the next cron picks up where it left off.
+
+#### Workflow 7: Delete Old Comedian Posts (`.github/workflows/delete-old-comedian-posts.yml`)
+
+| Field | Value |
+|-------|-------|
+| **Schedule** | Daily: `0 13 * * *` UTC (8 AM CT) — between post-to-instagram's 10:00 and 16:00 slots, so the shared concurrency group never queues a posting run behind a cleanup |
+| **Manual trigger** | Yes (`workflow_dispatch` with `dry_run` and `retention_days` inputs) |
+| **What it runs** | `delete-comedian-posts.js` — deletes IG/FB spotlights recorded in the state's `cleanup_queue` array once they age past `COMEDIAN_RETENTION_DAYS` (default 5) |
+| **Secrets used** | `INSTAGRAM_ACCESS_TOKEN`, `INSTAGRAM_USER_ID` |
+| **Commits** | `blog/comedians/ig-post-state.json` (entries removed as their posts are deleted) |
+| **Cost** | Free (Graph API `DELETE /{id}`; deletes don't count against the IG publish quota) |
+
+A spotlight sells one show on one date; once that date passes it is dead
+weight on the grid. The **blog post it links to stays** — that's the SEO
+asset, with its own lifecycle in `noindex-comedian-posts.js`. Only the
+social posts come down.
+
+- **`cleanup_queue`, not `posted`.** `post-to-instagram.js` appends every
+  published spotlight to BOTH arrays. `posted` is the this-week dedupe
+  ledger and `getNextToPost()` wipes it whenever the manifest's
+  `week_range` rolls over — reading it from the cleanup job would strand
+  every media ID from the previous week and leave those spotlights up
+  forever. `cleanup_queue` is never reset; entries leave it only when their
+  posts are gone (or provably undeletable).
+- **Shared delete rules.** The per-channel logic (scope-dependent `(#10)`
+  handling, story pruning, rate-limit halt, force-drop horizon) lives in
+  `scripts/lib/post-cleanup.js` and is shared verbatim with the Tonight
+  cleanup — see Workflow 6 for the reasoning behind each rule. Only the
+  retry horizon differs: 21 days here vs. 14, since spotlights are posted
+  weekly rather than nightly.
+- **Forward-only**, with one seeded exception: the two spotlights live when
+  the feature shipped (Mark Normand, Josh Wolf — August 2026) were copied
+  into `cleanup_queue` by hand so the first run would clear them. Anything
+  older has no queue entry and is never touched.
 
 ---
 
@@ -795,18 +872,21 @@ show_lister/
 │       ├── generate-comedian-posts.yml  # Cron: weekly per-comedian SEO posts
 │       ├── post-to-instagram.yml       # Cron: staggered IG posting (every 6h)
 │       ├── post-tonight.yml            # Cron: daily "Tonight in Houston" post (3 PM CT)
-│       └── delete-old-tonight-posts.yml # Cron: delete Tonight posts older than 3 days
+│       ├── delete-old-tonight-posts.yml # Cron: delete Tonight posts older than 1 day
+│       └── delete-old-comedian-posts.yml # Cron: delete comedian spotlights older than 5 days
 │
 ├── scripts/
 │   ├── lib/
 │   │   ├── image-utils.js               # Shared headshot strict-gate pipeline
 │   │   ├── meta-api.js                  # Shared Meta Graph API plumbing (both posters)
+│   │   ├── post-cleanup.js              # Shared aged-post delete rules (both cleanups)
 │   │   ├── sanitize-html.js             # AI-output HTML sanitizer
 │   │   └── tonight-state.js             # Shared tonight-post-state.json load/save/migrate
 │   ├── fetch-events.js                  # Core fetcher (~550 lines, venue normalization + genre)
 │   ├── generate-blog-post.js            # AI blog generator (~2,300 lines, 6-tile hero w/ event backfill)
 │   ├── generate-comedian-post.js        # Per-comedian SEO post generator
-│   ├── delete-tonight-posts.js          # Deletes Tonight posts past retention (3 days)
+│   ├── delete-tonight-posts.js          # Deletes Tonight posts past retention (1 day)
+│   ├── delete-comedian-posts.js         # Deletes comedian spotlights past retention (5 days)
 │   ├── generate-tonight-post.js         # Daily lineup graphic + caption (no AI, ~$0)
 │   ├── post-to-instagram.js             # Weekly comedian poster: IG carousel/story + FB feed/story
 │   ├── post-tonight.js                  # Daily Tonight-in-Houston poster (4 channels)
