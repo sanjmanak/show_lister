@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-08-13T15:13:19.288Z",
+  "last_updated": "2026-08-14T02:12:49.979Z",
   "entries": {
     "cc84ac7e62b3ff7d": {
       "price_min": 31.4,
@@ -9,14 +9,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/tony-dabas-houston-improv-tickets/14856833?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-07-19T00:21:04.597Z"
-    },
-    "3b44b965d3bcf350": {
-      "price_min": 43.76,
-      "price_max": 43.76,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/liz-faublas-wallace-houston-improv-tickets/14202124?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-07-19T00:21:30.414Z"
     },
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
