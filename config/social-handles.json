@@ -1,0 +1,192 @@
+{
+  "_readme": [
+    "Instagram handles for VENUES and SHOW SERIES (producers/bookers).",
+    "",
+    "Why this file exists: comedian handles are already resolved automatically",
+    "— generate-blog-post.js runs lookupInstagramHandles() (LLM web search),",
+    "validates each one with a HEAD to instagram.com/{handle}/, and writes it",
+    "to the comedian manifest as `instagramHandle`; post-to-instagram.js then",
+    "reads it via resolveHandle() and tags the comedian in the feed photo.",
+    "Nothing did the equivalent for the rooms and the people booking them, so",
+    "the nightly 'Tonight in Houston' post currently tags nobody.",
+    "",
+    "Handles are researched by hand, not generated, because a fabricated tag",
+    "is worse than no tag — it publicly @s a stranger. `confidence` records",
+    "how each one was established:",
+    "",
+    "  confirmed  — a live instagram.com/{handle}/ profile URL was returned",
+    "               by search for this exact venue/series.",
+    "  unverified — the handle was asserted in prose (an event listing, a",
+    "               venue site) but no profile URL was seen. Do NOT tag on",
+    "               these until checked by eye; they are recorded so nobody",
+    "               re-does the research.",
+    "",
+    "  null       — searched, nothing found (see `note`). Leave it null",
+    "               rather than guessing.",
+    "",
+    "Matching mirrors the other config files: `match` is a case-insensitive",
+    "substring of the event's venue name; `title_match` (series) is a",
+    "case-insensitive substring of the event title. Venue matching wins when",
+    "both apply — tag the room AND the series where both are known.",
+    "",
+    "ORDER MATTERS: take the FIRST match, and keep the list most-specific",
+    "first. 'The Riot Comedy Club' is a substring of 'The Riot Comedy Club",
+    "— Conroe', so the Conroe entry sits above it — otherwise Conroe shows",
+    "get tagged with the Houston account, which is a different room with a",
+    "different audience.",
+    "",
+    "Instagram allows 20 user_tags per feed photo. Tagging is not wired up",
+    "yet; this file is the data it will read.",
+    "",
+    "Researched 2026-08-14. Handles rot — re-check before a big push."
+  ],
+
+  "venues": [
+    {
+      "match": "Riot Comedy Club — Conroe",
+      "instagram": "riotconroe",
+      "confidence": "confirmed",
+      "note": "Separate account from @theriothtx. Runs inside GuadalaHARRY's. MUST stay above the Houston Riot entry — its name contains that one as a substring."
+    },
+    {
+      "match": "The Riot Comedy Club",
+      "instagram": "theriothtx",
+      "confidence": "confirmed",
+      "note": "205 events — by far the highest-volume room in the feed. Moved from Rudyards to 1925 Washington Ave."
+    },
+    {
+      "match": "Punch Line Houston",
+      "instagram": "punchlinehouston",
+      "confidence": "confirmed",
+      "note": "~27K followers."
+    },
+    {
+      "match": "Houston Improv",
+      "instagram": "improvhouston",
+      "confidence": "confirmed",
+      "note": "~68K followers — the largest audience of any room in the feed."
+    },
+    {
+      "match": "The Secret Group",
+      "instagram": "secretgrouphtx",
+      "confidence": "confirmed",
+      "note": "Also the home of every open mic in config/open-mics.json."
+    },
+    {
+      "match": "The Den Comedy Club",
+      "instagram": "thedencomedyclub",
+      "confidence": "confirmed",
+      "note": "Do not confuse with @uhdenbar (the UH student bar, also 'The Den')."
+    },
+    {
+      "match": "Notsuoh",
+      "instagram": "notsuoh314main",
+      "confidence": "confirmed",
+      "note": "Hosts Social Comedy Nite. 314 Main St."
+    },
+    {
+      "match": "Social Beer Garden HTX",
+      "instagram": "socialbeergardenhtx",
+      "confidence": "confirmed",
+      "note": "~32K followers. Hosts the Thursday Social Comedy Nite."
+    },
+    {
+      "match": "Wonky Power",
+      "instagram": "wonkypower",
+      "confidence": "confirmed",
+      "note": "Home of the East End Comedy Showcase (Thursdays)."
+    },
+    {
+      "match": "1008 Prairie",
+      "instagram": "pinkflamingocomedy",
+      "confidence": "confirmed",
+      "note": "12 events land under the bare street address '1008 Prairie St' — this is The Pink Flamingo. Venue-name normalization gap in fetch-events.js, worth fixing separately."
+    },
+    {
+      "match": "Cutthroat Barbers",
+      "instagram": "cutthroatbarbers",
+      "confidence": "confirmed",
+      "note": "The barbershop itself. For comedy nights prefer the series handle below — that's the audience that cares."
+    },
+    {
+      "match": "House of Blues Houston",
+      "instagram": "hobhouston",
+      "confidence": "confirmed",
+      "note": null
+    },
+    {
+      "match": "Bayou Music Center",
+      "instagram": "bayoumusiccenter",
+      "confidence": "confirmed",
+      "note": null
+    },
+    {
+      "match": "White Oak Music Hall",
+      "instagram": "whiteoakmh",
+      "confidence": "confirmed",
+      "note": "Matches both the Upstairs and Downstairs rooms."
+    },
+    {
+      "match": "Smart Financial Centre",
+      "instagram": "smartlivetx",
+      "confidence": "confirmed",
+      "note": null
+    },
+    {
+      "match": "AvantGarden",
+      "instagram": "avantgardenhouston",
+      "confidence": "confirmed",
+      "note": "Not @avantgardenweddings, which is the events-rental account."
+    },
+    {
+      "match": "MATCH - Midtown Arts",
+      "instagram": "matchouston",
+      "confidence": "unverified",
+      "note": "Asserted in prose; only IG location pages surfaced, no profile URL. Check by eye before tagging."
+    },
+    {
+      "match": "Big Ben Tavern",
+      "instagram": null,
+      "confidence": null,
+      "note": "Sugar Land gastropub, hosts free Tuesday comedy. Active on Facebook (/p/Big-Ben-Tavern-100067731071518/); no Instagram account found."
+    },
+    {
+      "match": "Don't Tell Comedy (Secret Location)",
+      "instagram": "donttellcomedy",
+      "confidence": "confirmed",
+      "note": "National account, ~1M followers. City accounts exist (@donttellaustin, @donttellphx) but no Houston equivalent was found — the naming pattern is inconsistent, so don't assume @donttellhouston without checking."
+    }
+  ],
+
+  "series": [
+    {
+      "title_match": "Live at the Barbershop",
+      "instagram": "barbershopcomedyshow",
+      "confidence": "unverified",
+      "note": "Named as the show's account on its own Eventbrite listing, but no profile URL surfaced. Better tag than the barbershop's own account if it checks out."
+    },
+    {
+      "title_match": "Social Comedy Nite",
+      "instagram": null,
+      "confidence": null,
+      "note": "No dedicated account found — the series runs across Notsuoh, Social Beer Garden and Big Ben Tavern and is hosted by Taylor Needham of Play & Improv. Tag the venue instead. Worth asking the host directly whether the show has its own handle."
+    },
+    {
+      "title_match": "Cat Dad Comedy",
+      "instagram": "catdadcomedy",
+      "confidence": "unverified",
+      "note": "An Eventbrite organizer in fetch-events.js. @catdadcomedy and @catdadscomedy both exist and neither was confirmed as the Houston producer. Check before tagging."
+    }
+  ],
+
+  "not_researched": {
+    "_note": "One event each in the current feed (~11 of 460 total, 2%). Large non-comedy rooms — low tagging value, so the research was stopped here rather than guessed at.",
+    "venues": [
+      "Toyota Center - TX",
+      "Cullen Performance Hall",
+      "The Grand 1894 Opera House - TX",
+      "D&T Drive Inn",
+      "Nathaniel Center"
+    ]
+  }
+}
