@@ -1,19 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-08-14T02:10:59.218Z",
-  "total_excluded": 20,
+  "last_updated": "2026-08-14T15:05:51.761Z",
+  "total_excluded": 19,
   "events": [
-    {
-      "name": "Karaoke every THURSDAY!",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-08-13",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/karaoke-every-thursday-tickets-1994281747391",
-      "reason": "title keyword blocklisted: \"karaoke\""
-    },
     {
       "name": "Classic Movie Night At The Jefferson Clueless",
       "venue": "Jefferson Theatre",
