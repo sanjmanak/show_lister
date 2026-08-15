@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.10.0
+ * Version: 2.11.0
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.10.0';
+    const VERSION      = '2.11.0';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -136,8 +136,14 @@ class Comedy_Houston_Plugin {
         add_filter('rank_math/frontend/title', [$this, 'filter_seo_plugin_title'], 20);
         add_filter('aioseo_title', [$this, 'filter_seo_plugin_title'], 20);
         add_filter('seopress_titles_title', [$this, 'filter_seo_plugin_title'], 20);
-        add_filter('wpseo_metadesc', [$this, 'filter_seo_plugin_title'], 20);
-        add_filter('rank_math/frontend/description', [$this, 'filter_seo_plugin_title'], 20);
+        add_filter('wpseo_metadesc', [$this, 'filter_seo_plugin_description'], 20);
+        add_filter('rank_math/frontend/description', [$this, 'filter_seo_plugin_description'], 20);
+
+        // Keep the SEO plugin's robots directives and XML sitemap in
+        // agreement with our ch_noindex flag — see force_noindex_robots().
+        add_filter('rank_math/frontend/robots', [$this, 'force_noindex_robots'], 20);
+        add_filter('wpseo_robots_array', [$this, 'force_noindex_robots_list'], 20);
+        add_filter('rank_math/sitemap/entry', [$this, 'exclude_noindexed_from_sitemap'], 20, 3);
 
         // Create clicks table on activation
         register_activation_hook(__FILE__, [$this, 'create_clicks_table']);
@@ -986,14 +992,103 @@ class Comedy_Houston_Plugin {
     }
 
     /**
-     * When an SEO plugin owns the title, it also owns the stored title
-     * string — so tokens have to be expanded on ITS output instead. Without
-     * this, a site running Yoast or Rank Math would render the literal text
-     * "{weekend_range}" in its <title>. Registered for every supported
-     * plugin; the filters simply never fire for the ones not installed.
+     * Title, when an SEO plugin owns the <title> tag.
+     *
+     * filter_document_title() bails out whenever Yoast/Rank Math/AIOSEO/
+     * SEOPress is active, because those plugins own titles. That left
+     * `_ch_meta_title` — the string the landing-page sync writes from
+     * config/landing-pages.json — completely unused on this site, which
+     * runs Rank Math. The visible symptom was H1s carrying live dates while
+     * the SERP-visible <title> stayed frozen: the H1 comes from our own
+     * `_ch_h1` meta, the title came from Rank Math's stored value, and only
+     * one of the two had tokens in it. Expanding tokens on the SEO plugin's
+     * output isn't enough — its string never contained a token to expand.
+     *
+     * So: when `_ch_meta_title` is set for this page, it wins, expanded.
+     * When it isn't, the SEO plugin's own title passes through (still token-
+     * expanded, in case someone typed a token into the Rank Math UI).
+     *
+     * Consequence worth knowing: for the pages listed in landing-pages.json,
+     * editing the title in Rank Math's UI will have no visible effect —
+     * landing-pages.json is the source of truth for those, and the sync
+     * workflow is how you change them.
      */
     public function filter_seo_plugin_title($title) {
-        return $this->expand_date_tokens($title);
+        $custom = $this->queried_post_meta('_ch_meta_title');
+        return $this->expand_date_tokens($custom !== '' ? $custom : $title);
+    }
+
+    /** Same arrangement for the meta description. */
+    public function filter_seo_plugin_description($desc) {
+        $custom = $this->queried_post_meta('_ch_meta_description');
+        return $this->expand_date_tokens($custom !== '' ? $custom : $desc);
+    }
+
+    /** Post meta of the currently queried singular page/post, or ''. */
+    private function queried_post_meta($key) {
+        if (!is_singular(['page', 'post'])) return '';
+        $post = get_queried_object();
+        if (!$post || empty($post->ID)) return '';
+        $val = get_post_meta($post->ID, $key, true);
+        return is_string($val) ? $val : '';
+    }
+
+    // -------------------------------------------------------------------------
+    // NOINDEX ↔ SEO PLUGIN RECONCILIATION
+    // -------------------------------------------------------------------------
+
+    /**
+     * Should the currently queried post be noindexed?
+     * (`_ch_allow_index` is the operator's per-post override.)
+     */
+    private function post_is_noindexed($post_id) {
+        return (bool) get_post_meta($post_id, '_ch_noindex', true)
+            && !get_post_meta($post_id, '_ch_allow_index', true);
+    }
+
+    /**
+     * Force an SEO plugin's robots directives to noindex on posts we've
+     * flagged.
+     *
+     * Emitting our own `<meta name="robots" content="noindex, follow">`
+     * alongside Rank Math's `index, follow` put two contradictory robots
+     * tags on the same page — Google resolves that conflict by taking the
+     * most restrictive, so the pages were noindexed, but the SEO plugin
+     * still believed they were indexable and kept listing all 15 in its
+     * sitemap. A sitemap that advertises noindexed URLs is a Search Console
+     * error in its own right and burns crawl budget on pages we've decided
+     * shouldn't rank.
+     *
+     * Telling the SEO plugin instead of shouting over it fixes both halves:
+     * one robots tag, and the sitemap filter below can then agree with it.
+     */
+    public function force_noindex_robots($robots) {
+        if (!is_singular(['post', 'page'])) return $robots;
+        $post = get_queried_object();
+        if (!$post || empty($post->ID) || !$this->post_is_noindexed($post->ID)) {
+            return $robots;
+        }
+        if (!is_array($robots)) $robots = [];
+        $robots['index']  = 'noindex';
+        $robots['follow'] = 'follow';
+        return $robots;
+    }
+
+    /** Yoast passes a flat list rather than a keyed map. */
+    public function force_noindex_robots_list($robots) {
+        $keyed = $this->force_noindex_robots(is_array($robots) ? $robots : []);
+        return $keyed;
+    }
+
+    /**
+     * Drop noindexed posts from Rank Math's XML sitemap. Without this the
+     * sitemap and the robots tag contradict each other on 15 URLs.
+     */
+    public function exclude_noindexed_from_sitemap($url, $type = '', $object = null) {
+        if ($type !== 'post' || !is_object($object) || empty($object->ID)) {
+            return $url;
+        }
+        return $this->post_is_noindexed($object->ID) ? false : $url;
     }
 
     /**
@@ -1317,6 +1412,18 @@ class Comedy_Houston_Plugin {
      */
     private function bump_listing_lastmod($ids) {
         global $wpdb;
+
+        // The homepage renders the same twice-daily event data but reaches
+        // it through the theme's front-page template rather than the
+        // shortcode, so listing_page_ids() misses it and its lastmod sat 22
+        // days stale — on the most important URL on the site. Add it
+        // explicitly. (A front page set to "latest posts" has no ID, in
+        // which case there is no lastmod to fix.)
+        $front_id = (int) get_option('page_on_front');
+        if ($front_id > 0 && !in_array($front_id, array_map('intval', (array) $ids), true)) {
+            $ids[] = $front_id;
+        }
+
         if (empty($ids)) return 0;
 
         $now_gmt   = gmdate('Y-m-d H:i:s');
@@ -1740,14 +1847,23 @@ class Comedy_Houston_Plugin {
     }
 
     /**
-     * Robots noindex for flagged posts. Emitted unconditionally (even with
-     * an SEO plugin active): when multiple robots meta tags are present,
-     * Google honors the most restrictive directive, so this safely wins
-     * over Rank Math's default index. "follow" is kept so internal links on
-     * the posts keep passing signals to venue/landing pages.
+     * Robots noindex for flagged posts, for sites with NO SEO plugin.
+     *
+     * This used to emit unconditionally, on the reasoning that Google takes
+     * the most restrictive directive when robots tags conflict. That is
+     * true, and the pages were duly noindexed — but it left Rank Math still
+     * believing they were indexable, so it kept all 15 in its XML sitemap
+     * while the page itself said noindex. A sitemap advertising noindexed
+     * URLs is its own Search Console error and wastes crawl budget.
+     *
+     * With an SEO plugin active we now tell IT instead (see
+     * force_noindex_robots + exclude_noindexed_from_sitemap), which yields
+     * one robots tag and a sitemap that agrees with it. "follow" is kept
+     * either way so internal links keep passing signals to the venue and
+     * landing pages.
      */
     public function emit_noindex_meta() {
-        if (!is_singular('post')) {
+        if (!is_singular('post') || $this->seo_plugin_handles_schema()) {
             return;
         }
         $id = get_queried_object_id();

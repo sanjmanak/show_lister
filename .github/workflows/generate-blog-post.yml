@@ -1,14 +1,19 @@
 name: Generate Weekly Blog Post
 
 on:
-  # Monday: full blog generation + WordPress weekly roundup publish
-  # Thursday: refresh the "This Weekend" evergreen post with current events
+  # Monday: full blog generation + WordPress weekly roundup publish.
+  #
+  # The Thursday cron is gone. Its only job was refreshing the
+  # /houston-comedy-shows-this-weekend/ blog post, which is retired — that
+  # post duplicated the evergreen /this-weekend/ page and now 301s to it.
+  # Left in place the Thursday run would have spent OpenAI calls and CI
+  # minutes every week building copy for a URL nobody can reach.
+  #
   # CT is UTC-6 (CST) or UTC-5 (CDT)
   # 9am CDT = 14:00 UTC, 9am CST = 15:00 UTC
   # Using 15:00 UTC to cover both (runs at 9am CST / 10am CDT)
   schedule:
     - cron: '0 15 * * 1'   # Every Monday ~9am CT (full run)
-    - cron: '0 15 * * 4'   # Every Thursday ~9am CT (weekend post refresh)
 
   # Manual trigger from the Actions tab (great for testing!)
   workflow_dispatch:
@@ -16,7 +21,7 @@ on:
 permissions:
   contents: write
 
-# Prevent a manual run from racing the Mon/Thu cron — both call WordPress and
+# Prevent a manual run from racing the Monday cron — both call WordPress and
 # both push to main. f6dabb1's slug-dedup keeps WP safe; this keeps git safe.
 concurrency:
   group: generate-blog-post
@@ -44,21 +49,10 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Check if today is Thursday (weekend-only refresh)
-        id: day-check
-        run: |
-          DAY=$(date +%u)  # 1=Mon, 4=Thu
-          if [ "$DAY" = "4" ]; then
-            echo "is_thursday=true" >> $GITHUB_OUTPUT
-          else
-            echo "is_thursday=false" >> $GITHUB_OUTPUT
-          fi
-
       # Puppeteer must be installed BEFORE generate-blog-post.js runs because
-      # that script now renders the weekly hero PNG inline (so the WordPress
+      # that script renders the weekly hero PNG inline (so the WordPress
       # weekly-roundup publish gets *this* week's image, not last week's).
       - name: Install Puppeteer
-        if: steps.day-check.outputs.is_thursday != 'true'
         run: npm install puppeteer
 
       - name: Generate blog post from events
@@ -82,7 +76,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # Stage all blog files that exist (Thursday won't generate hero/caption)
+          # Stage all blog files that exist.
           # top-comedians.json is the handoff file consumed by generate-comedian-post.js;
           # if it's not committed, the comedian workflow can't reuse the strict-gated
           # displayImage and re-runs identifyTopComedians() unnecessarily.
@@ -93,11 +87,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
-            if [ "${{ steps.day-check.outputs.is_thursday }}" = "true" ]; then
-              git commit -m "Weekend post refresh — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
-            else
-              git commit -m "Weekly blog post — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
-            fi
+            git commit -m "Weekly blog post — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
             # Integrate any commits that landed on main since this job's
             # checkout BEFORE pushing. Two ways this bites otherwise:
             #   1. Live race — another workflow (update-events, post-to-
@@ -137,7 +127,7 @@ jobs:
       # push failed, main still serves LAST week's hero PNG and Meta would
       # fetch and post it under this week's caption.
       - name: Auto-post weekly roundup to Instagram + Facebook
-        if: ${{ !cancelled() && steps.commit-blog.outcome == 'success' && steps.day-check.outputs.is_thursday != 'true' }}
+        if: ${{ !cancelled() && steps.commit-blog.outcome == 'success' }}
         timeout-minutes: 12
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
@@ -146,7 +136,7 @@ jobs:
         run: node scripts/post-weekly-roundup.js
 
       - name: Commit weekly posting state
-        if: ${{ !cancelled() && steps.day-check.outputs.is_thursday != 'true' }}
+        if: ${{ !cancelled() }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -177,7 +167,7 @@ jobs:
           fi
 
       - name: Check if email is configured
-        if: ${{ !cancelled() && steps.day-check.outputs.is_thursday != 'true' }}
+        if: ${{ !cancelled() }}
         id: email-check
         env:
           HAS_SMTP: ${{ secrets.SMTP_SERVER }}
