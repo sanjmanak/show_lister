@@ -288,6 +288,52 @@ Before any per-comedian publish runs, `wpPreflight()` calls `GET /wp-json/wp/v2/
 
 ### 4. WordPress Plugin (`wordpress/`)
 
+**Dynamic date tokens in titles, descriptions and H1s.** A listing page's
+real advantage in a SERP snippet is that it is *current*: "Comedy Shows in
+Houston This Weekend — Aug 14–16, 2026" tells a searcher the page knows what
+weekend it is, while "Comedy Shows in Houston This Weekend" does not. The
+alternative — minting a dated URL per week — splits authority across URLs
+that go stale, so the evergreen URL renders live dates at request time
+instead. `meta_title`, `meta_description` and `h1` in
+`config/landing-pages.json` may contain:
+
+| Token | Renders as |
+|---|---|
+| `{weekend_range}` | `Friday, August 14 – Sunday, August 16, 2026` |
+| `{weekend_range_short}` | `Aug 14–16, 2026` |
+| `{week_range}` | `August 14 – August 16, 2026` |
+| `{today}` / `{today_long}` / `{today_short}` | `Friday, August 14` / `…, 2026` / `Fri, Aug 14` |
+| `{month_year}` / `{year}` | `August 2026` / `2026` |
+
+Design points:
+
+- **Token presence IS the opt-in.** `expand_date_tokens()` returns any
+  string without a `{` untouched, so a page gets live dates only if whoever
+  wrote its title asked for them. No feature flag to forget.
+- **Short forms exist for the `<title>` budget.** Google truncates around 60
+  characters and `{weekend_range}` alone is 43 of them. Use the short token
+  in `meta_title`, the long one in `h1` where there is no length limit.
+- **`h1` is a separate meta (`_ch_h1`), not the post title.** `the_title()`
+  also feeds nav menus, breadcrumbs and the admin list; a literal
+  `{weekend_range}` there would be worse than the static heading it
+  replaced. `filter_entry_title()` is fenced to the main-loop render of the
+  queried page via `in_the_loop() && is_main_query()`.
+- **Works with or without an SEO plugin.** When none is active the existing
+  `pre_get_document_title` path expands the tokens. When Yoast, Rank Math,
+  AIOSEO or SEOPress owns the title, it also owns the stored string — so
+  the same expander is registered on each plugin's title/description filter.
+  Without that, an SEO-plugin site would render the literal `{weekend_range}`.
+- **One weekend window, two consumers.** `weekend_window()` is shared by
+  `filter_events()` and `date_tokens()`, so the dates in the headline can
+  never disagree with the events listed under them. It looks BACKWARD on
+  Sat/Sun so a Sunday visitor still sees the whole weekend.
+- **Caching.** `send_cache_headers()` already expires listing pages at the
+  next Houston midnight, which covers a daily-changing title. Note the
+  existing README caveat: a host-level full-page cache that ignores
+  `Cache-Control` must exclude these pages, or the dates freeze.
+
+
+
 **Version 2.4.0. ~900 lines of PHP + 460 lines of JS + 639 lines of CSS.**
 
 A full-featured WordPress plugin that embeds show listings on any WordPress site.

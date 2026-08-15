@@ -124,6 +124,18 @@ class Comedy_Houston_Plugin {
         add_filter('pre_get_document_title', [$this, 'filter_document_title'], 20);
         add_action('wp_head', [$this, 'emit_meta_description'], 1);
 
+        // Live dates in titles/H1s ({weekend_range} etc — see
+        // expand_date_tokens). The SEO-plugin filters below only ever fire
+        // on sites running that plugin, and each is a no-op on a string
+        // with no token, so registering all of them is free.
+        add_filter('the_title', [$this, 'filter_entry_title'], 20, 2);
+        add_filter('wpseo_title', [$this, 'filter_seo_plugin_title'], 20);
+        add_filter('rank_math/frontend/title', [$this, 'filter_seo_plugin_title'], 20);
+        add_filter('aioseo_title', [$this, 'filter_seo_plugin_title'], 20);
+        add_filter('seopress_titles_title', [$this, 'filter_seo_plugin_title'], 20);
+        add_filter('wpseo_metadesc', [$this, 'filter_seo_plugin_title'], 20);
+        add_filter('rank_math/frontend/description', [$this, 'filter_seo_plugin_title'], 20);
+
         // Create clicks table on activation
         register_activation_hook(__FILE__, [$this, 'create_clicks_table']);
     }
@@ -683,7 +695,16 @@ class Comedy_Houston_Plugin {
      * plugin is active (an active SEO plugin owns titles/descriptions).
      */
     public function register_page_seo_fields() {
-        foreach (['ch_meta_title' => '_ch_meta_title', 'ch_meta_description' => '_ch_meta_description'] as $field => $meta_key) {
+        $fields = [
+            'ch_meta_title'       => '_ch_meta_title',
+            'ch_meta_description' => '_ch_meta_description',
+            // Dynamic H1 override — see expand_date_tokens(). Kept separate
+            // from post_title so the stored title stays clean in nav menus,
+            // breadcrumbs and the admin list while the rendered H1 carries
+            // live dates.
+            'ch_h1'               => '_ch_h1',
+        ];
+        foreach ($fields as $field => $meta_key) {
             register_rest_field(['page', 'post'], $field, [
                 'schema' => [
                     'description' => 'SEO ' . str_replace('ch_meta_', '', $field) . ' for this page.',
@@ -705,6 +726,87 @@ class Comedy_Houston_Plugin {
         }
     }
 
+    // -------------------------------------------------------------------------
+    // DYNAMIC DATE TOKENS
+    // -------------------------------------------------------------------------
+
+    /**
+     * Live date values for titles, descriptions and H1s.
+     *
+     * A listing page's real selling point in a SERP snippet is that it is
+     * CURRENT — "Houston Comedy Shows This Weekend — Friday, August 14 –
+     * Sunday, August 16, 2026" tells a searcher the page knows what weekend
+     * it is; "Comedy Shows in Houston This Weekend" does not. Rather than
+     * mint a dated URL per week (which splits authority across URLs that go
+     * stale — see the /this-weekend/ vs /houston-comedy-shows-this-weekend/
+     * consolidation), the evergreen URL renders live dates at request time.
+     *
+     * Windows are computed with houston_date() for the same reason
+     * filter_events() does: these are Houston events and the market
+     * timezone is a constant, not a WP admin setting.
+     */
+    private function date_tokens() {
+        list($fri, $sat, $sun) = $this->weekend_window();
+
+        $fri_ts = strtotime($fri . ' 12:00:00');
+        $sun_ts = strtotime($sun . ' 12:00:00');
+
+        // "Friday, August 14 – Sunday, August 16, 2026", collapsing the year
+        // to the end. Across a month boundary both months are named; across
+        // a year boundary (Dec 31 – Jan 2) both years are, or the range
+        // would claim the wrong year for the Friday.
+        $same_year = date('Y', $fri_ts) === date('Y', $sun_ts);
+        $weekend_range = $same_year
+            ? date('l, F j', $fri_ts) . ' – ' . date('l, F j, Y', $sun_ts)
+            : date('l, F j, Y', $fri_ts) . ' – ' . date('l, F j, Y', $sun_ts);
+
+        $dow          = (int) $this->houston_date('w');
+        $week_end_ts  = strtotime($this->houston_date('Y-m-d', '+' . (7 - $dow) . ' days') . ' 12:00:00');
+        $today_ts     = strtotime($this->houston_date('Y-m-d') . ' 12:00:00');
+        $week_range   = date('Y', $today_ts) === date('Y', $week_end_ts)
+            ? date('F j', $today_ts) . ' – ' . date('F j, Y', $week_end_ts)
+            : date('F j, Y', $today_ts) . ' – ' . date('F j, Y', $week_end_ts);
+
+        // Short forms exist because Google truncates a SERP title around 60
+        // characters: "Friday, August 14 – Sunday, August 16, 2026" alone is
+        // 43 of them and would push the actual keyword out of the snippet.
+        // Use the short token in <title>, the long one in the H1, where
+        // there is no length budget and the fuller phrasing reads better.
+        $weekend_short = date('M j', $fri_ts)
+            . '–'
+            . (date('M', $fri_ts) === date('M', $sun_ts) ? date('j', $sun_ts) : date('M j', $sun_ts))
+            . ', ' . date('Y', $sun_ts);
+
+        return [
+            // Longest keys first: strtr() is greedy but matches longest-first
+            // only within equal-length keys, so {weekend_range_short} must
+            // not be shadowed by {weekend_range}. PHP's strtr() with an array
+            // does try longest keys first, but ordering it here makes the
+            // intent explicit for anyone adding tokens later.
+            '{weekend_range_short}' => $weekend_short,
+            '{weekend_range}'       => $weekend_range,
+            '{week_range}'          => $week_range,
+            '{today_long}'          => date('l, F j, Y', $today_ts),
+            '{today_short}'         => date('D, M j', $today_ts),
+            '{today}'               => date('l, F j', $today_ts),
+            '{month_year}'          => date('F Y', $today_ts),
+            '{year}'                => date('Y', $today_ts),
+        ];
+    }
+
+    /**
+     * Replace {weekend_range} and friends. Strings with no token are
+     * returned untouched, which is what makes this opt-in: a page gets
+     * live dates only if whoever wrote its title asked for them.
+     */
+    public function expand_date_tokens($str) {
+        if (!is_string($str) || $str === '' || strpos($str, '{') === false) {
+            return $str;
+        }
+        $tokens = $this->date_tokens();
+        return strtr($str, $tokens);
+    }
+
     public function filter_document_title($title) {
         if ($this->seo_plugin_handles_schema() || !is_singular(['page', 'post'])) {
             return $title;
@@ -714,7 +816,42 @@ class Comedy_Houston_Plugin {
             return $title;
         }
         $custom = get_post_meta($post->ID, '_ch_meta_title', true);
-        return (is_string($custom) && $custom !== '') ? $custom : $title;
+        return (is_string($custom) && $custom !== '')
+            ? $this->expand_date_tokens($custom)
+            : $title;
+    }
+
+    /**
+     * When an SEO plugin owns the title, it also owns the stored title
+     * string — so tokens have to be expanded on ITS output instead. Without
+     * this, a site running Yoast or Rank Math would render the literal text
+     * "{weekend_range}" in its <title>. Registered for every supported
+     * plugin; the filters simply never fire for the ones not installed.
+     */
+    public function filter_seo_plugin_title($title) {
+        return $this->expand_date_tokens($title);
+    }
+
+    /**
+     * Dynamic H1, read from the `_ch_h1` meta rather than post_title.
+     *
+     * the_title() also runs for nav menus, breadcrumbs, related-post lists
+     * and the admin list table, so this is fenced to the single main-loop
+     * render of the queried page. Anywhere else, the clean stored title is
+     * what the reader should see.
+     */
+    public function filter_entry_title($title, $post_id = 0) {
+        if (is_admin() || !$post_id || !is_singular() || !in_the_loop() || !is_main_query()) {
+            return $title;
+        }
+        if ((int) $post_id !== (int) get_queried_object_id()) {
+            return $title;
+        }
+        $h1 = get_post_meta($post_id, '_ch_h1', true);
+        if (!is_string($h1) || $h1 === '') {
+            return $title;
+        }
+        return $this->expand_date_tokens($h1);
     }
 
     public function emit_meta_description() {
@@ -727,7 +864,7 @@ class Comedy_Houston_Plugin {
         }
         $desc = get_post_meta($post->ID, '_ch_meta_description', true);
         if (is_string($desc) && $desc !== '') {
-            echo '<meta name="description" content="' . esc_attr($desc) . '">' . "\n";
+            echo '<meta name="description" content="' . esc_attr($this->expand_date_tokens($desc)) . '">' . "\n";
         }
     }
 
@@ -1570,6 +1707,39 @@ class Comedy_Houston_Plugin {
     }
 
     /**
+     * The Fri/Sat/Sun dates of "this weekend" as Y-m-d, Houston time.
+     *
+     * On Sat/Sun this looks BACKWARD to the Friday just gone, so a Sunday
+     * visitor still sees the whole weekend rather than next weekend's. Used
+     * by both the weekend event filter and the {weekend_range} title token,
+     * so the headline dates can never disagree with the events listed under
+     * them.
+     */
+    private function weekend_window() {
+        $dow = (int) $this->houston_date('w');
+        if ($dow === 0) {
+            return [
+                $this->houston_date('Y-m-d', '-2 days'),
+                $this->houston_date('Y-m-d', '-1 day'),
+                $this->houston_date('Y-m-d'),
+            ];
+        }
+        if ($dow === 6) {
+            return [
+                $this->houston_date('Y-m-d', '-1 day'),
+                $this->houston_date('Y-m-d'),
+                $this->houston_date('Y-m-d', '+1 day'),
+            ];
+        }
+        $days_to_fri = 5 - $dow;
+        return [
+            $this->houston_date('Y-m-d', "+{$days_to_fri} days"),
+            $this->houston_date('Y-m-d', '+' . ($days_to_fri + 1) . ' days'),
+            $this->houston_date('Y-m-d', '+' . ($days_to_fri + 2) . ' days'),
+        ];
+    }
+
+    /**
      * Filter events server-side (mirrors JS getFiltered() logic).
      */
     private function filter_events($events, $atts) {
@@ -1583,22 +1753,10 @@ class Comedy_Houston_Plugin {
         $type_filter = $atts['type'];
         $max_date = $this->houston_date('Y-m-d', '+90 days');
 
-        // Weekend: Fri-Sat-Sun (mirrors JS logic)
+        // Weekend: Fri-Sat-Sun (mirrors JS logic). Shared with the
+        // {weekend_range} title token so headline and listings agree.
         $dow = (int) $this->houston_date('w');
-        if ($dow === 0) {
-            $fri_date = $this->houston_date('Y-m-d', '-2 days');
-            $sat_date = $this->houston_date('Y-m-d', '-1 day');
-            $sun_date = $today;
-        } elseif ($dow === 6) {
-            $fri_date = $this->houston_date('Y-m-d', '-1 day');
-            $sat_date = $today;
-            $sun_date = $tomorrow;
-        } else {
-            $days_to_fri = 5 - $dow;
-            $fri_date = $this->houston_date('Y-m-d', "+{$days_to_fri} days");
-            $sat_date = $this->houston_date('Y-m-d', '+' . ($days_to_fri + 1) . ' days');
-            $sun_date = $this->houston_date('Y-m-d', '+' . ($days_to_fri + 2) . ' days');
-        }
+        list($fri_date, $sat_date, $sun_date) = $this->weekend_window();
 
         $end_of_week = $this->houston_date('Y-m-d', '+' . (7 - $dow) . ' days');
         $end_of_month = $this->houston_date('Y-m-t');

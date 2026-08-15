@@ -14,6 +14,8 @@
     "is worse than no tag — it publicly @s a stranger. `confidence` records",
     "how each one was established:",
     "",
+    "  owner-confirmed — the site owner confirmed it from their own",
+    "               knowledge of the scene. Highest confidence.",
     "  confirmed  — a live instagram.com/{handle}/ profile URL was returned",
     "               by search for this exact venue/series.",
     "  unverified — the handle was asserted in prose (an event listing, a",
@@ -26,8 +28,11 @@
     "",
     "Matching mirrors the other config files: `match` is a case-insensitive",
     "substring of the event's venue name; `title_match` (series) is a",
-    "case-insensitive substring of the event title. Venue matching wins when",
-    "both apply — tag the room AND the series where both are known.",
+    "case-insensitive substring of the event title. Both can apply to one",
+    "event: tag the room AND the series when both are known. A series entry",
+    "with `also_tag_venue: true` says so explicitly — the show account may",
+    "be a national brand while the room is the Houston-local audience, and",
+    "both are worth reaching.",
     "",
     "ORDER MATTERS: take the FIRST match, and keep the list most-specific",
     "first. 'The Riot Comedy Club' is a substring of 'The Riot Comedy Club",
@@ -97,10 +102,10 @@
       "note": "Home of the East End Comedy Showcase (Thursdays)."
     },
     {
-      "match": "1008 Prairie",
+      "match": "Pink Flamingo",
       "instagram": "pinkflamingocomedy",
       "confidence": "confirmed",
-      "note": "12 events land under the bare street address '1008 Prairie St' — this is The Pink Flamingo. Venue-name normalization gap in fetch-events.js, worth fixing separately."
+      "note": "Eventbrite ships this room as the bare address '1008 Prairie St'; VENUE_ALIASES in fetch-events.js now normalizes it to the real name. Match on the name, not the address."
     },
     {
       "match": "Cutthroat Barbers",
@@ -163,7 +168,8 @@
       "title_match": "Live at the Barbershop",
       "instagram": "barbershopcomedyshow",
       "confidence": "unverified",
-      "note": "Named as the show's account on its own Eventbrite listing, but no profile URL surfaced. Better tag than the barbershop's own account if it checks out."
+      "also_tag_venue": true,
+      "note": "The show's account, and the better of the two tags — but CHECK THE SPELLING before the first tagged post. Owner referred to it as '@Barbershopcomedy'; the Eventbrite listing says '@barbershopcomedyshow'. These are different handles and only one exists. Owner's call: tag the venue (@cutthroatbarbers) alongside it, since the room is Houston-local and the show account is a national brand."
     },
     {
       "title_match": "Social Comedy Nite",
@@ -174,8 +180,8 @@
     {
       "title_match": "Cat Dad Comedy",
       "instagram": "catdadcomedy",
-      "confidence": "unverified",
-      "note": "An Eventbrite organizer in fetch-events.js. @catdadcomedy and @catdadscomedy both exist and neither was confirmed as the Houston producer. Check before tagging."
+      "confidence": "owner-confirmed",
+      "note": "Confirmed by the site owner 2026-08-15. Not @catdadscomedy, which also exists."
     }
   ],
 

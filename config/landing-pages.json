@@ -5,22 +5,34 @@
     "Each entry creates/updates a WP page by slug. intro_html is placed",
     "above the [comedy_houston] shortcode. meta_title/meta_description are",
     "stored in page meta and emitted by the Comedy Houston plugin when no",
+    "SEO plugin is active. meta_title, meta_description and h1 may contain",
+    "DATE TOKENS expanded at render time by the plugin, so an evergreen URL",
+    "shows live dates without minting a new dated URL each week:",
+    "  {weekend_range}        Friday, August 14 - Sunday, August 16, 2026",
+    "  {weekend_range_short}  Aug 14-16, 2026   (use in meta_title: Google",
+    "                         truncates a SERP title near 60 characters)",
+    "  {week_range}           August 14 - August 16, 2026",
+    "  {today} {today_long} {today_short} {month_year} {year}",
+    "`h1` overrides the on-page heading only; the WP post title stays clean",
+    "for nav menus and breadcrumbs. Omit h1 to leave the heading alone.",
     "SEO plugin is active. Edit copy here, then re-run the workflow."
   ],
   "pages": [
     {
       "slug": "tonight",
       "title": "Comedy Shows in Houston Tonight",
-      "meta_title": "Comedy Shows in Houston Tonight | Comedy Houston",
-      "meta_description": "Every stand-up comedy show in Houston tonight — headliners, showcases, and open mics across every club, with showtimes, prices, and direct ticket links. Updated twice daily.",
+      "meta_title": "Comedy Shows in Houston Tonight — {today_short}",
+      "h1": "Comedy Shows in Houston Tonight — {today}",
+      "meta_description": "Every stand-up comedy show in Houston tonight, {today} — headliners, showcases and open mics across every club, with showtimes, prices and direct ticket links. Updated twice daily.",
       "intro_html": "<p>Looking for comedy shows in Houston tonight? This list covers every stand-up show happening across the city — touring headliners at the Improv and Punch Line, showcases at The Secret Group and The Riot, speakeasy shows at The Den, and the free open mics where Houston's next headliners are working out new material. We update this page twice a day with showtimes, prices, and direct ticket links, so what you see is what's actually still on sale. Most weeknight shows start between 7:30 and 8:00, and the late shows kick off after 10 if your night's just getting started.</p>",
       "shortcode": "[comedy_houston filter=\"today\" show_hero=\"false\" show_controls=\"false\"]"
     },
     {
       "slug": "this-weekend",
       "title": "Comedy Shows in Houston This Weekend",
-      "meta_title": "Comedy Shows in Houston This Weekend | Comedy Houston",
-      "meta_description": "Every comedy show in Houston this weekend in one place — Friday, Saturday, and Sunday shows at every club, with prices, showtimes, and ticket links.",
+      "meta_title": "Comedy Shows in Houston This Weekend — {weekend_range_short}",
+      "h1": "Houston Comedy Shows This Weekend — {weekend_range}",
+      "meta_description": "Every comedy show in Houston this weekend ({weekend_range}) in one place — Friday, Saturday and Sunday shows at every club, with prices, showtimes and ticket links. Updated twice daily.",
       "intro_html": "<p>Every comedy show happening in Houston this weekend, all in one place. Friday and Saturday nights are when the big touring names roll through the Improv and Punch Line, but the weekend runs deeper than that — late-night showcases, uncensored after-hours shows, Sunday night lineups, and free rooms that don't cost you anything but the drink in your hand. We pull listings from every club and independent room in the city and update twice daily, so you can compare showtimes and prices without opening six different websites. Planning a date night or a group outing? Grab tickets early — weekend headliner shows in Houston sell out more often than you'd think.</p>",
       "shortcode": "[comedy_houston filter=\"weekend\" show_hero=\"false\" show_controls=\"false\"]"
     },
