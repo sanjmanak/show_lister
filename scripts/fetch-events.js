@@ -56,6 +56,8 @@ const EB_ORGANIZERS = [
 ];
 
 const OUTPUT_DIR = path.resolve(__dirname, "..");
+const { fixMojibake } = require("./lib/fix-mojibake");
+
 const EVENTS_JSON_PATH = path.join(OUTPUT_DIR, "events.json");
 const INDEX_HTML_PATH = path.join(OUTPUT_DIR, "index.html");
 const TEMPLATE_PATH = path.join(OUTPUT_DIR, "index.html");
@@ -66,6 +68,7 @@ const STANDUPTIX_VENUES_JSON_PATH = path.join(OUTPUT_DIR, "config", "standuptix-
 const DONTTELL_JSON_PATH = path.join(OUTPUT_DIR, "config", "donttellcomedy.json");
 const PERFORMER_REQUESTS_JSON_PATH = path.join(OUTPUT_DIR, "config", "performer-requests.json");
 const PRICE_CACHE_PATH = path.join(OUTPUT_DIR, "config", "price-cache.json");
+const SHOW_TAGS_JSON_PATH = path.join(OUTPUT_DIR, "config", "show-tags.json");
 
 // Price-enrichment pacing. Ticketmaster's Discovery API allows 5 req/s, so
 // detail calls are spaced 250ms apart. Ticket-page fetches hit the vendors'
@@ -1872,6 +1875,48 @@ function isOpenMicEvent(ev, openMicConfig) {
 // for the experiment.
 // ---------------------------------------------------------------------------
 
+/**
+ * Curated show tags (config/show-tags.json). Only rules with
+ * `verified: true` are loaded — unverified entries are review-queue
+ * suggestions and MUST NOT be applied automatically (cultural/identity
+ * tags in particular go through human review by design).
+ */
+function loadShowTagsConfig() {
+  const empty = { titleRules: [], comedianRules: [] };
+  try {
+    const raw = JSON.parse(fs.readFileSync(SHOW_TAGS_JSON_PATH, "utf8"));
+    const norm = (r, key) => ({
+      match: String(r[key] || "").toLowerCase().trim(),
+      tags: (Array.isArray(r.tags) ? r.tags : []).map(String).filter(Boolean),
+    });
+    return {
+      titleRules: (Array.isArray(raw.title_rules) ? raw.title_rules : [])
+        .filter((r) => r && r.verified === true)
+        .map((r) => norm(r, "contains"))
+        .filter((r) => r.match && r.tags.length),
+      comedianRules: (Array.isArray(raw.comedian_rules) ? raw.comedian_rules : [])
+        .filter((r) => r && r.verified === true)
+        .map((r) => norm(r, "name"))
+        .filter((r) => r.match && r.tags.length),
+    };
+  } catch (e) {
+    console.warn(`Could not load show-tags config: ${e.message}`);
+    return empty;
+  }
+}
+
+function tagsForEvent(ev, cfg) {
+  const title = String(ev.name || "").toLowerCase();
+  const tags = new Set();
+  for (const r of cfg.titleRules) {
+    if (title.includes(r.match)) r.tags.forEach((t) => tags.add(t));
+  }
+  for (const r of cfg.comedianRules) {
+    if (title.includes(r.match)) r.tags.forEach((t) => tags.add(t));
+  }
+  return [...tags].sort();
+}
+
 function loadPerformerRequestsConfig() {
   const lc = (arr) =>
     (Array.isArray(arr) ? arr : [])
@@ -2095,6 +2140,22 @@ async function main() {
   // in that file's `manual_mics` are reference data and are NOT expanded
   // into events.json (owner call, 2026-07-31 — the dateless placeholder
   // cards cluttered the home page).
+  // Repair upstream mojibake BEFORE any title matching (open mics, tags),
+  // so config rules match clean text ("(En Español)", not "(En Espaã±Ol)").
+  {
+    let repaired = 0;
+    for (const ev of deduped) {
+      for (const field of ["name", "description", "venue"]) {
+        const fixed = fixMojibake(ev[field]);
+        if (fixed !== ev[field]) {
+          ev[field] = fixed;
+          repaired++;
+        }
+      }
+    }
+    if (repaired) console.log(`Mojibake: repaired ${repaired} field(s)`);
+  }
+
   const openMicConfig = loadOpenMicConfig();
   for (const ev of deduped) {
     ev.is_open_mic = isOpenMicEvent(ev, openMicConfig);
@@ -2111,6 +2172,16 @@ async function main() {
     ev.performer_requests = isPerformerRequestEvent(ev, performerConfig);
   }
   console.log(`Performer requests: ${deduped.filter((e) => e.performer_requests).length} flagged`);
+
+  // Curated show tags — see config/show-tags.json. Only `verified: true`
+  // rules are applied; unverified entries are suggestions awaiting human
+  // review and must never reach events.json. Every event gets an explicit
+  // tags array (possibly empty) so the WP plugin can filter on it.
+  const showTagsConfig = loadShowTagsConfig();
+  for (const ev of deduped) {
+    ev.tags = tagsForEvent(ev, showTagsConfig);
+  }
+  console.log(`Show tags: ${deduped.filter((e) => e.tags.length).length} events tagged`);
 
   // Sort by date, then time. Times are 12-hour strings ("8:00 PM"), so a
   // string compare puts "10:00 PM" before "8:00 PM" — compare minutes instead.

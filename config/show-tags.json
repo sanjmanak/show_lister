@@ -1,0 +1,49 @@
+{
+  "_readme": [
+    "Curated show tags applied by scripts/fetch-events.js at ingest time.",
+    "Each matched event gets a `tags: [...]` array in events.json, and the",
+    "WP plugin's [comedy_houston tag=\"...\"] shortcode filters on it — one",
+    "mechanism for every curated landing page (black-comedy, en-espanol, ...).",
+    "",
+    "  title_rules    — case-insensitive substring match against the event",
+    "                   title (AFTER mojibake repair, so match clean text).",
+    "  comedian_rules — case-insensitive substring match of a comedian's name",
+    "                   against the event title; used for touring headliners",
+    "                   whose events are titled with their name.",
+    "",
+    "  verified: true  — applied at ingest.",
+    "  verified: false — SUGGESTION ONLY, never applied. A human must review",
+    "                    and flip it to true. Cultural/identity tags MUST go",
+    "                    through this review; do not let automation flip them.",
+    "",
+    "Tags in use:",
+    "  black-comedy — shows for /black-comedy-shows-houston/",
+    "  en-espanol   — Spanish-language shows",
+    "  kreyol       — Haitian Creole shows"
+  ],
+  "title_rules": [
+    { "contains": "for the culture", "tags": ["black-comedy"], "verified": true,
+      "note": "FOR THE CULTURE weekly showcase at The Secret Group — the show's own billing." },
+    { "contains": "en español", "tags": ["en-espanol"], "verified": true },
+    { "contains": "en espanol", "tags": ["en-espanol"], "verified": true },
+    { "contains": "en vivo", "tags": ["en-espanol"], "verified": true,
+      "note": "Spanish-language billing used by Den Comedy Club shows." },
+    { "contains": "standoperos", "tags": ["en-espanol"], "verified": true,
+      "note": "Spanish-language stand-up collective." },
+    { "contains": "an kreyòl", "tags": ["kreyol"], "verified": true },
+    { "contains": "an kreyol", "tags": ["kreyol"], "verified": true }
+  ],
+  "comedian_rules": [
+    { "name": "TK Kirkland", "tags": ["black-comedy"], "verified": false },
+    { "name": "D'Lai", "tags": ["black-comedy"], "verified": false },
+    { "name": "Correy Bell", "tags": ["black-comedy"], "verified": false },
+    { "name": "Na'im Lynn", "tags": ["black-comedy"], "verified": false },
+    { "name": "Tee Sanders", "tags": ["black-comedy"], "verified": false },
+    { "name": "Just Nesh", "tags": ["black-comedy"], "verified": false },
+    { "name": "Keisha Hunt", "tags": ["black-comedy"], "verified": false },
+    { "name": "Arnez J", "tags": ["black-comedy"], "verified": false },
+    { "name": "Jay Pharoah", "tags": ["black-comedy"], "verified": false },
+    { "name": "Marlon Wayans", "tags": ["black-comedy"], "verified": false },
+    { "name": "Tommy Davidson", "tags": ["black-comedy"], "verified": false }
+  ]
+}
