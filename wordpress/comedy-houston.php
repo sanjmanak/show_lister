@@ -129,6 +129,9 @@ class Comedy_Houston_Plugin {
         // on sites running that plugin, and each is a no-op on a string
         // with no token, so registering all of them is free.
         add_filter('the_title', [$this, 'filter_entry_title'], 20, 2);
+
+        // "This show has already happened" banner on dated event posts.
+        add_filter('the_content', [$this, 'prepend_past_event_notice'], 20);
         add_filter('wpseo_title', [$this, 'filter_seo_plugin_title'], 20);
         add_filter('rank_math/frontend/title', [$this, 'filter_seo_plugin_title'], 20);
         add_filter('aioseo_title', [$this, 'filter_seo_plugin_title'], 20);
@@ -388,6 +391,14 @@ class Comedy_Houston_Plugin {
         $legacy = [
             '/open-mics'                   => '/open-mic-comedy-houston/',
             '/every-open-mic-night-houston' => '/open-mic-comedy-houston/',
+            // Straight duplicate of /this-weekend/: same 31-event ItemList,
+            // both self-canonical, both indexable. Two URLs don't stack the
+            // keyword — Google picks one per site and flips between them,
+            // splitting whatever links either earns. /this-weekend/ wins on
+            // internal links (it's in the nav; nothing links to this post,
+            // not even the post itself) and now carries the dated title that
+            // was this URL's only real advantage.
+            '/houston-comedy-shows-this-weekend' => '/this-weekend/',
         ];
         $trimmed = rtrim($path, '/');
         if (isset($legacy[$trimmed])) {
@@ -647,6 +658,153 @@ class Comedy_Houston_Plugin {
      * carry schema via the in-body prepend from the generator, so coverage
      * never drops below the current baseline.
      */
+    // -------------------------------------------------------------------------
+    // PAST-EVENT HANDLING
+    // -------------------------------------------------------------------------
+
+    /**
+     * schema.org node types this plugin treats as events.
+     */
+    private static $event_types = ['Event', 'ComedyEvent', 'TheaterEvent'];
+
+    private function is_event_node($node) {
+        if (!is_array($node) || empty($node['@type'])) return false;
+        $types = (array) $node['@type'];
+        foreach ($types as $t) {
+            if (in_array($t, self::$event_types, true)) return true;
+        }
+        return false;
+    }
+
+    /** Unix time of a node's start, or null when unparseable. */
+    private function event_start_ts($node) {
+        if (!is_array($node) || empty($node['startDate'])) return null;
+        $ts = strtotime((string) $node['startDate']);
+        return $ts === false ? null : $ts;
+    }
+
+    /**
+     * Has the show begun? Governs `offers`: once doors are open, tickets are
+     * not "InStock", and an Offer with availability InStock on a past
+     * startDate is the exact condition Google Search Console reports as an
+     * error. Left unfixed it doesn't just flag the one URL — repeated
+     * invalid event markup is how a domain's event data stops being trusted.
+     */
+    private function event_has_started($node) {
+        $ts = $this->event_start_ts($node);
+        return $ts !== null && $ts < time();
+    }
+
+    /**
+     * Has the show finished? A separate, later threshold from
+     * event_has_started() on purpose: at 8:05pm on the night, tickets are
+     * genuinely gone but "This show has already happened" would be a lie to
+     * a reader standing outside the venue. Offers go at the start; the
+     * banner waits for the end.
+     */
+    private function event_has_finished($node) {
+        $start = $this->event_start_ts($node);
+        if ($start === null) return false;
+        $end = !empty($node['endDate']) ? strtotime((string) $node['endDate']) : false;
+        if ($end === false) {
+            $end = $start + (3 * HOUR_IN_SECONDS);
+        }
+        return $end < time();
+    }
+
+    /**
+     * Remove `offers` from every event node whose start time has passed.
+     *
+     * This runs at render time rather than in generate-comedian-post.js
+     * deliberately. The generator writes the graph once, at publish, when
+     * the offers are accurate — a fix there would only protect posts made
+     * from that day forward and would leave every already-published post
+     * emitting InStock forever, needing a backfill over the whole archive.
+     * Guarding on output fixes the entire back catalogue at once and keeps
+     * working as each future show ages out, with no scheduled job to fail.
+     *
+     * `eventStatus` is deliberately left as EventScheduled: the show was
+     * scheduled and it happened. EventCancelled/EventPostponed would be a
+     * factual claim about a show that went ahead.
+     */
+    private function strip_past_event_offers($graph) {
+        if (!is_array($graph)) return $graph;
+
+        if (isset($graph['@graph']) && is_array($graph['@graph'])) {
+            foreach ($graph['@graph'] as $i => $node) {
+                if ($this->is_event_node($node) && $this->event_has_started($node)) {
+                    unset($graph['@graph'][$i]['offers']);
+                }
+            }
+            // Re-index: json_encode turns an array with gaps into an object,
+            // which would silently change @graph from a list to a map.
+            $graph['@graph'] = array_values($graph['@graph']);
+            return $graph;
+        }
+
+        if ($this->is_event_node($graph) && $this->event_has_started($graph)) {
+            unset($graph['offers']);
+        }
+        return $graph;
+    }
+
+    /**
+     * The event node of the currently queried post, if it has one.
+     */
+    private function post_event_node($post_id) {
+        $json = get_post_meta($post_id, '_ch_schema_graph', true);
+        if (!is_string($json) || $json === '') return null;
+        $decoded = json_decode($json, true);
+        if (!is_array($decoded)) return null;
+        $nodes = isset($decoded['@graph']) && is_array($decoded['@graph'])
+            ? $decoded['@graph']
+            : [$decoded];
+        foreach ($nodes as $node) {
+            if ($this->is_event_node($node)) return $node;
+        }
+        return null;
+    }
+
+    /**
+     * Prepend a "this show has passed" banner to a dated event post whose
+     * show is over.
+     *
+     * Without it these posts stay in the present tense — "This August, he
+     * brings his sharp, observational humor to the Houston Improv" — for a
+     * show that happened last week, which reads as an abandoned site to a
+     * visitor and to a quality rater. The banner also turns each dead end
+     * into a link to /tonight/, which is the page we actually want ranking.
+     */
+    public function prepend_past_event_notice($content) {
+        if (is_admin() || !is_singular('post') || !in_the_loop() || !is_main_query()) {
+            return $content;
+        }
+        $post_id = get_the_ID();
+        if (!$post_id) return $content;
+
+        $node = $this->post_event_node($post_id);
+        if (!$node || !$this->event_has_finished($node)) {
+            return $content;
+        }
+
+        $start = $this->event_start_ts($node);
+        $when  = $start ? $this->houston_date_from_ts('l, F j, Y', $start) : '';
+
+        // Inline styles rather than a class: the plugin stylesheet is only
+        // enqueued on pages carrying the shortcode, and these posts don't.
+        // Colours are explicit so the banner reads on any theme.
+        $notice =
+            '<div style="border-left:4px solid #ff5e62;background:#fff5f5;color:#1a1a1a;'
+            . 'padding:16px 20px;margin:0 0 24px;border-radius:4px;font-size:16px;line-height:1.5;">'
+            . '<strong>This show has already happened.</strong>'
+            . ($when ? ' <span style="color:#555;">It was on ' . esc_html($when) . '.</span>' : '')
+            . '<br><a href="' . esc_url(home_url('/tonight/')) . '" style="color:#c0392b;font-weight:600;">'
+            . 'See every comedy show in Houston tonight →</a>'
+            . '</div>';
+
+        return $notice . $content;
+    }
+
     public function emit_comedian_schema_head() {
         if (!is_singular(['post', 'page'])) {
             return;
@@ -673,6 +831,12 @@ class Comedy_Houston_Plugin {
         if ($decoded === null && json_last_error() !== JSON_ERROR_NONE) {
             return;
         }
+        // The graph was frozen into post meta when the post was generated,
+        // when the show was still in the future and its offers were true.
+        // Time passes; the meta doesn't. Strip offers at RENDER time so a
+        // past show never advertises availability — see
+        // strip_past_event_offers() for why this can't live in the generator.
+        $decoded = $this->strip_past_event_offers($decoded);
         // JSON_HEX_TAG: encode < and > as </> so a "</script>" inside
         // any string value can't terminate the script block (XSS breakout).
         $clean = wp_json_encode($decoded, JSON_UNESCAPED_SLASHES | JSON_HEX_TAG);
@@ -1088,34 +1252,100 @@ class Comedy_Houston_Plugin {
         update_option('ch_events_hash', $fetched['hash'], false);
 
         $purged = [];
+        $bumped = 0;
         if ($changed || $force) {
             $purged = $this->purge_listing_cache();
+        }
+        // lastmod only moves on a REAL data change, never on $force alone:
+        // a manual webhook re-fire or a cache-clear is not new content, and
+        // telling Google a page changed when it didn't is the fastest way
+        // to have it stop believing lastmod at all.
+        if ($changed) {
+            $bumped = $this->bump_listing_lastmod($this->listing_page_ids());
         }
         return [
             'refreshed' => true,
             'changed'   => $changed,
             'purged'    => count($purged),
+            'bumped'    => $bumped,
             'urls'      => $purged,
         ];
     }
 
     /**
-     * Purge the page cache for the homepage and every published page/post
-     * containing the [comedy_houston] shortcode — /tonight/, /this-weekend/,
-     * /free/, the open-mics page, /this-week/, and all venue pages, whatever
-     * their current slugs. The litespeed_* actions are no-ops when LiteSpeed
-     * Cache isn't active, so this is safe on any host.
+     * Every published page/post containing the [comedy_houston] shortcode —
+     * /tonight/, /this-weekend/, /free/, the open-mics page, /this-week/ and
+     * all venue pages, whatever their current slugs. Found by content match
+     * rather than a hardcoded ID list so a new listing page is covered the
+     * day it is created.
      */
-    private function purge_listing_cache() {
+    private function listing_page_ids() {
         global $wpdb;
         $like = '%' . $wpdb->esc_like('[' . self::SHORTCODE) . '%';
-        $ids = $wpdb->get_col($wpdb->prepare(
+        return $wpdb->get_col($wpdb->prepare(
             "SELECT ID FROM {$wpdb->posts}
              WHERE post_status = 'publish'
                AND post_type IN ('page', 'post')
                AND post_content LIKE %s",
             $like
         ));
+    }
+
+    /**
+     * Move `post_modified` on the listing pages whose rendered content just
+     * changed, so the XML sitemap's <lastmod> tells the truth.
+     *
+     * These pages render from events.json through a shortcode and are never
+     * re-saved, so post_modified froze on the day each page was created —
+     * sitemaps were advertising a three-week-old lastmod on pages whose
+     * bodies change twice a day. Google reads lastmod as its recrawl signal,
+     * so it stops coming back, keeps serving an old snapshot, and any stale
+     * markup in that snapshot (see strip_past_event_offers) stays in the
+     * index. The stale lastmod is upstream of the schema problem, not a
+     * separate one.
+     *
+     * Only called when the events hash actually changed, so the claim is
+     * honest — an unchanged import moves nothing.
+     *
+     * Raw SQL rather than wp_update_post() on purpose. wp_update_post()
+     * re-saves post_content through wp_kses when no user is present, which
+     * is exactly the case under WP-Cron, and would quietly rewrite the
+     * pages' HTML on a schedule. The cache invalidation wp_update_post()
+     * would have given us is done explicitly instead: clean_post_cache()
+     * here, and the LiteSpeed purge in purge_listing_cache() which runs
+     * alongside this on the same refresh.
+     */
+    private function bump_listing_lastmod($ids) {
+        global $wpdb;
+        if (empty($ids)) return 0;
+
+        $now_gmt   = gmdate('Y-m-d H:i:s');
+        $now_local = get_date_from_gmt($now_gmt);
+        $bumped    = 0;
+
+        foreach ($ids as $id) {
+            $ok = $wpdb->update(
+                $wpdb->posts,
+                ['post_modified' => $now_local, 'post_modified_gmt' => $now_gmt],
+                ['ID' => (int) $id],
+                ['%s', '%s'],
+                ['%d']
+            );
+            if ($ok !== false) {
+                clean_post_cache((int) $id);
+                $bumped++;
+            }
+        }
+        return $bumped;
+    }
+
+    /**
+     * Purge the page cache for the homepage and every listing page. The
+     * litespeed_* actions are no-ops when LiteSpeed Cache isn't active, so
+     * this is safe on any host.
+     */
+    private function purge_listing_cache() {
+        $ids = $this->listing_page_ids();
 
         $urls = [home_url('/')];
         foreach ($ids as $id) {
@@ -2092,7 +2322,15 @@ class Comedy_Houston_Plugin {
             // an Offer whenever there's a ticket URL, and add the price
             // fields only when the price is actually known (including 0 for
             // free shows). We never fabricate a price.
-            if (!empty($ev['ticket_url'])) {
+            //
+            // …and never on a show that has already started. The weekend
+            // filter deliberately keeps Friday and Saturday shows visible
+            // through Sunday so a Sunday visitor sees the whole weekend —
+            // which means /this-weekend/ carries past events for two days
+            // out of seven. Advertising InStock on those is the same GSC
+            // error the dated post pages had.
+            $event_started = strtotime($start_date) !== false && strtotime($start_date) < time();
+            if (!empty($ev['ticket_url']) && !$event_started) {
                 $offer = [
                     '@type' => 'Offer',
                     'url' => $ev['ticket_url'],
