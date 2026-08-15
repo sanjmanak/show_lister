@@ -34,8 +34,17 @@ const {
   shutdown,
 } = require("./lib/meta-api");
 
+const { venueHandlesForEvents, toUserTags } = require("./lib/social-handles");
+
 const ROOT = path.resolve(__dirname, "..");
 const BLOG_DIR = path.join(ROOT, "blog");
+const EVENTS_PATH = path.join(ROOT, "events.json");
+
+// Instagram allows 20 photo tags; this is deliberately far below that.
+// A weekly post tagging the week's busiest rooms is an editorial choice —
+// tagging every room every week is a tag farm, and the venues on the
+// receiving end are the ones who decide which it looks like.
+const MAX_VENUE_TAGS = 6;
 const META_PATH = path.join(BLOG_DIR, "weekly-meta.json");
 const STATE_PATH = path.join(BLOG_DIR, "weekly-post-state.json");
 
@@ -54,6 +63,40 @@ function currentWeekMonday() {
   const d = new Date(todayStr + "T12:00:00Z");
   d.setUTCDate(d.getUTCDate() - ((d.getUTCDay() + 6) % 7));
   return d.toISOString().slice(0, 10);
+}
+
+/**
+ * The rooms carrying this week's shows, busiest first.
+ *
+ * Derived from events.json for Monday..Sunday of the posted week rather
+ * than from the hero tiles: the hero shows six named comedians, but the
+ * roundup post is about the whole week, and a venue with four shows has
+ * more claim to the tag than one that happens to have a famous name on
+ * Saturday. Never fatal — a missing or unreadable events.json just means
+ * the post goes out untagged, as it always has.
+ */
+function weekVenueTags(weekMonday) {
+  try {
+    const raw = JSON.parse(fs.readFileSync(EVENTS_PATH, "utf8"));
+    const events = Array.isArray(raw) ? raw : raw.events || [];
+    const start = weekMonday;
+    const endDate = new Date(weekMonday + "T12:00:00Z");
+    endDate.setUTCDate(endDate.getUTCDate() + 6);
+    const end = endDate.toISOString().slice(0, 10);
+
+    const inWeek = events.filter(
+      (ev) =>
+        ev &&
+        ev.date >= start &&
+        ev.date <= end &&
+        ev.status !== "cancelled" &&
+        ev.status !== "postponed"
+    );
+    return venueHandlesForEvents(inWeek, MAX_VENUE_TAGS);
+  } catch (err) {
+    console.warn(`  ⚠ Could not derive venue tags: ${err.message}. Posting untagged.`);
+    return [];
+  }
 }
 
 async function main() {
@@ -98,9 +141,14 @@ async function main() {
   // to Meta with no error anywhere.
   const heroUrl = `https://raw.githubusercontent.com/sanjmanak/show_lister/main/blog/${meta.hero || "weekly-hero.png"}?v=${weekMonday}`;
 
+  const userTags = toUserTags(weekVenueTags(weekMonday));
+
   console.log(`Week: ${meta.week_range} (Monday ${weekMonday})`);
   console.log(`Hero: ${heroUrl}`);
   console.log(`Caption: ${caption.length} chars`);
+  console.log(
+    `Venue tags: ${userTags.length ? userTags.map((t) => "@" + t.username).join(", ") : "(none)"}`
+  );
 
   // --- Token + Page ---
   await validateTokenAndGuards();
@@ -116,7 +164,7 @@ async function main() {
   console.log("\n  IG FEED — Weekly Roundup");
   try {
     results.igFeed = await withTimeout(
-      postIgFeedImage(heroUrl, caption),
+      postIgFeedImage(heroUrl, caption, userTags),
       "IG Feed",
       CHANNEL_TIMEOUT_MS
     );

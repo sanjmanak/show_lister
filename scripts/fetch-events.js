@@ -1468,6 +1468,15 @@ const VENUE_ALIASES = {
   // at — do NOT alias it here.
   "the riot comedy club upstairs at rudyards": "The Riot Comedy Club",
   "the riot comedy club upstairs at rudyard's": "The Riot Comedy Club",
+  // Eventbrite ships this room with no venue name at all, just its street
+  // address, so 12 listings told a customer to go to "1008 Prairie St".
+  // The club's own event titles ("Friday Night Comedy at The Pink Flamingo")
+  // and its Eventbrite organizer page both confirm the name.
+  "1008 prairie st": "The Pink Flamingo Comedy Club",
+  "1008 prairie": "The Pink Flamingo Comedy Club",
+  "1008 prairie street": "The Pink Flamingo Comedy Club",
+  "the pink flamingo": "The Pink Flamingo Comedy Club",
+  "pink flamingo comedy club": "The Pink Flamingo Comedy Club",
 };
 
 // Merge venue aliases from config/venues.json — the single source of truth

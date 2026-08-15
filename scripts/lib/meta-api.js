@@ -581,13 +581,51 @@ async function validateTokenAndGuards() {
 // lives). Used by post-tonight.js.
 // ---------------------------------------------------------------------------
 
-async function postIgFeedImage(imageUrl, caption) {
+/**
+ * Create a media container, degrading the tag list rather than losing the
+ * post — or the good tags — when Meta rejects one.
+ *
+ * `userTags` is PRIORITY ORDERED. On a user-tag rejection the LAST tag is
+ * dropped and the call retried, down to no tags at all. Meta doesn't say
+ * WHICH handle it objected to, so dropping the whole list (the old
+ * behaviour) meant one stale venue handle silently cost the comedian tag —
+ * the valuable one. Callers put the most important tag first.
+ */
+async function createTaggedContainer(params, userTags = []) {
+  let tags = (userTags || []).filter(Boolean);
+  for (;;) {
+    const attempt = { ...params };
+    if (tags.length > 0) {
+      attempt.user_tags = JSON.stringify(tags);
+    } else {
+      delete attempt.user_tags;
+    }
+    try {
+      return await graphRequest("POST", `/${IG_USER_ID}/media`, attempt);
+    } catch (err) {
+      if (tags.length === 0 || !isUserTagError(err)) throw err;
+      const dropped = tags[tags.length - 1];
+      tags = tags.slice(0, -1);
+      console.warn(
+        `   ⚠ Meta rejected the tag set (${err.message.split("\n")[0]}). ` +
+        `Meta doesn't reliably say WHICH handle it objected to, so dropping ` +
+        `the lowest-priority one (@${dropped.username}) and retrying with ` +
+        `${tags.length} tag(s).`
+      );
+    }
+  }
+}
+
+async function postIgFeedImage(imageUrl, caption, userTags = []) {
   console.log("   Creating media container…");
-  const container = await graphRequest("POST", `/${IG_USER_ID}/media`, {
+  if (userTags.length > 0) {
+    console.log(`   Tagging: ${userTags.map((t) => "@" + t.username).join(", ")}`);
+  }
+  const container = await createTaggedContainer({
     image_url: imageUrl,
     caption,
     access_token: IG_ACCESS_TOKEN,
-  });
+  }, userTags);
   console.log(`   Container: ${container.id}`);
   await waitForContainer(container.id);
   console.log("   Publishing…");
@@ -768,6 +806,7 @@ module.exports = {
   withTimeout,
   resolveFacebookPageId,
   validateTokenAndGuards,
+  createTaggedContainer,
   postIgFeedImage,
   postIgStoryImage,
   postFbFeedPhoto,

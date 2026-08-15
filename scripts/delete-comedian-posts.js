@@ -1,34 +1,37 @@
 #!/usr/bin/env node
 
 /**
- * Comedy Houston — Deletes aged "Tonight in Houston" social posts.
+ * Comedy Houston — Deletes aged comedian-spotlight social posts.
  *
- * The daily lineup post is only useful on the night it covers, so this
- * script removes each night's posts once they age past the retention
- * window (default 1 day). Runs from delete-old-tonight-posts.yml daily
- * at 17:00 UTC — 3h before post-tonight's 20:00 slot, in the same
- * concurrency group, so the two never race the state commit.
+ * A spotlight sells one show on one date. Once that show has passed, the
+ * post is dead weight on the grid — and the grid is the profile's
+ * conversion surface, the thing a first-time visitor scrolls before
+ * deciding whether to tap the bio link. So spotlights come down after
+ * COMEDIAN_RETENTION_DAYS (default 5). The blog post they link to STAYS —
+ * that's the SEO asset, and it has its own lifecycle in
+ * noindex-comedian-posts.js.
  *
- * Why the default is 1, not 3: the window controls how many TONIGHT cards
- * occupy the grid, which is the profile's conversion surface. Posts go out
- * at 20:00 UTC and cleanup runs at 17:00 UTC, so a post from N days ago is
- * N×24−3 hours old when cleanup sees it. At 3 days that clears day −4 and
- * older, leaving −1, −2, −3 plus tonight's = four near-identical cards. At
- * 1 day it clears −2 and older, so the grid holds two (briefly one, between
- * cleanup and the 15:00 CT post) and each post still lives ~44 hours.
+ * ID source: the `cleanup_queue` array in blog/comedians/ig-post-state.json,
+ * appended by post-to-instagram.js. Deliberately NOT the `posted` array —
+ * that one is the this-week dedupe ledger and post-to-instagram.js wipes it
+ * whenever the manifest's week_range rolls over, which would strand every
+ * media ID from the previous week. cleanup_queue is never reset; entries
+ * leave it only when their posts are gone (or provably undeletable).
  *
- * ID source: the `posted` array in blog/tonight/tonight-post-state.json,
- * appended by post-tonight.js. Forward-only by design — posts made before
- * the array existed are never touched (user decision; see ARCHITECTURE.md).
+ * Forward-only, like the tonight cleanup: spotlights posted before this
+ * feature shipped have no queue entry and are never touched.
  *
  * The per-channel delete rules live in lib/post-cleanup.js, shared with the
- * comedian-spotlight cleanup.
+ * "Tonight in Houston" cleanup.
  *
  * Env:
- *   TONIGHT_RETENTION_DAYS  days a post stays up (default 1, min 1)
- *   DRY_RUN                 truthy → log what would be deleted, change nothing
- *   IG_CHANNEL_TIMEOUT_MS   per-delete timeout (same var the posters use)
+ *   COMEDIAN_RETENTION_DAYS  days a spotlight stays up (default 5, min 1)
+ *   DRY_RUN                  truthy → log what would be deleted, change nothing
+ *   IG_CHANNEL_TIMEOUT_MS    per-delete timeout (same var the posters use)
  */
+
+const fs = require("fs");
+const path = require("path");
 
 const {
   IG_ACCESS_TOKEN,
@@ -38,37 +41,39 @@ const {
   tokenHasManageContents,
   shutdown,
 } = require("./lib/meta-api");
-const { loadTonightState, saveTonightState } = require("./lib/tonight-state");
 const { isRateLimited, cleanupAgedEntries, printResults } = require("./lib/post-cleanup");
 
-const RETENTION_DAYS = parseInt(process.env.TONIGHT_RETENTION_DAYS || "1", 10);
-const MAX_RETRY_AGE_DAYS = 14;
+const STATE_PATH = path.resolve(
+  __dirname, "..", "blog", "comedians", "ig-post-state.json"
+);
+
+const RETENTION_DAYS = parseInt(process.env.COMEDIAN_RETENTION_DAYS || "5", 10);
+const MAX_RETRY_AGE_DAYS = 21;
 const DRY_RUN = /^(1|true|yes)$/i.test(process.env.DRY_RUN || "");
 const CHANNEL_TIMEOUT_MS = parseInt(process.env.IG_CHANNEL_TIMEOUT_MS || "180000", 10);
 
-/**
- * When a post went out. Falls back to end-of-day Houston time for entries
- * missing postedAt; an unparseable entry counts as ancient (still eligible —
- * the delete call itself decides whether the IDs are real).
- */
 function entryTimeMs(entry) {
-  const t = Date.parse(entry.postedAt || `${entry.date}T23:59:59-05:00`);
+  const t = Date.parse(entry.postedAt);
   return Number.isNaN(t) ? 0 : t;
 }
 
 async function main() {
-  console.log("=== Comedy Houston — Tonight in Houston Cleanup ===");
+  console.log("=== Comedy Houston — Comedian Spotlight Cleanup ===");
   console.log(`    Time: ${new Date().toISOString()}`);
   console.log(`    Retention: ${RETENTION_DAYS} day(s)${DRY_RUN ? "  [DRY RUN]" : ""}\n`);
 
   if (Number.isNaN(RETENTION_DAYS) || RETENTION_DAYS < 1) {
-    throw new Error(`Invalid TONIGHT_RETENTION_DAYS: ${process.env.TONIGHT_RETENTION_DAYS}`);
+    throw new Error(`Invalid COMEDIAN_RETENTION_DAYS: ${process.env.COMEDIAN_RETENTION_DAYS}`);
   }
   if (!IG_ACCESS_TOKEN || !IG_USER_ID) {
     throw new Error(
       "INSTAGRAM_ACCESS_TOKEN / INSTAGRAM_USER_ID secrets are not set. " +
       "Add them in GitHub repo → Settings → Secrets → Actions."
     );
+  }
+  if (!fs.existsSync(STATE_PATH)) {
+    console.log(`No state file at ${STATE_PATH} — nothing has been posted yet.`);
+    return [];
   }
 
   // Lightweight token check only — NOT validateTokenAndGuards(): its expiry
@@ -83,9 +88,6 @@ async function main() {
 
   const fbPageId = await resolveFacebookPageId();
 
-  // IG media deletes need instagram_manage_contents (Dec 2025 addition).
-  // null = debug_token unreadable; treated as "unknown" → (#10)s keep the
-  // ID for retry rather than pruning, so nothing is dropped on a fluke.
   console.log("\nChecking token for instagram_manage_contents…");
   const hasManageContents = await tokenHasManageContents();
   if (hasManageContents === true) {
@@ -98,12 +100,14 @@ async function main() {
     );
   }
 
-  const state = loadTonightState();
+  const state = JSON.parse(fs.readFileSync(STATE_PATH, "utf8"));
+  if (!Array.isArray(state.cleanup_queue)) state.cleanup_queue = [];
+
   const cutoff = Date.now() - RETENTION_DAYS * 86400000;
-  const eligibleCount = state.posted.filter((e) => entryTimeMs(e) < cutoff).length;
+  const eligibleCount = state.cleanup_queue.filter((e) => entryTimeMs(e) < cutoff).length;
 
   const result = await cleanupAgedEntries({
-    entries: state.posted,
+    entries: state.cleanup_queue,
     retentionDays: RETENTION_DAYS,
     maxRetryAgeDays: MAX_RETRY_AGE_DAYS,
     dryRun: DRY_RUN,
@@ -111,20 +115,19 @@ async function main() {
     fbPageId,
     hasManageContents,
     entryTimeMs,
-    describeEntry: (e) => `${e.date} (posted ${e.postedAt || "unknown"})`,
+    describeEntry: (e) =>
+      `${e.comedianName || e.slug} (posted ${e.postedAt || "unknown"})`,
   });
 
-  const { failures } = result;
-
   if (!DRY_RUN) {
-    state.posted = result.kept;
-    console.log("");
-    saveTonightState(state);
+    state.cleanup_queue = result.kept;
+    fs.writeFileSync(STATE_PATH, JSON.stringify(state, null, 2) + "\n");
+    console.log(`\nState saved → ${STATE_PATH}`);
   }
 
-  printResults("Tonight in Houston cleanup", result, { dryRun: DRY_RUN, eligibleCount });
+  printResults("Comedian spotlight cleanup", result, { dryRun: DRY_RUN, eligibleCount });
 
-  return failures;
+  return result.failures;
 }
 
 main()

@@ -11,6 +11,10 @@
  *   3. Facebook Page   — square image + caption
  *   4. Facebook Story  — story-sized image
  *
+ * Every published post is also appended to state.cleanup_queue, the ledger
+ * delete-comedian-posts.js reads to take spotlights down once the show they
+ * promote is past. See that script for why it can't just read `posted`.
+ *
  * Uses the Meta Graph API (Content Publishing API). The same Page Access
  * Token works for both Instagram and Facebook since the IG Business account
  * is linked to the Facebook Page.
@@ -34,12 +38,16 @@ const {
   verifyImageUrl,
   waitForContainer,
   publishWithRetry,
-  isUserTagError,
+  createTaggedContainer,
   withTimeout,
   resolveFacebookPageId,
   validateTokenAndGuards,
   shutdown,
 } = require("./lib/meta-api");
+
+// Venue / series handles for the second tag on the feed photo — see
+// config/social-handles.json and lib/social-handles.js.
+const { handlesForEvent, toUserTags } = require("./lib/social-handles");
 
 // ---------------------------------------------------------------------------
 // Config
@@ -63,7 +71,7 @@ function loadState() {
   if (fs.existsSync(STATE_PATH)) {
     return JSON.parse(fs.readFileSync(STATE_PATH, "utf8"));
   }
-  return { posted: [], week_range: null, manifest_version: null };
+  return { posted: [], cleanup_queue: [], week_range: null, manifest_version: null };
 }
 
 function saveState(state) {
@@ -205,40 +213,19 @@ async function findTeaserImages(slug) {
  * attached to the child container at creation time. We tag only slide 1
  * (the comedian's main image).
  *
- * If the handle is bad (private/invalid/deleted), Meta rejects the create
- * call. Retry once without user_tags so the post still goes out — the
- * caption already references @handle as text. Returns the child id and a
- * boolean indicating whether the tag was dropped.
+ * If a handle is bad (private/invalid/deleted), Meta rejects the create
+ * call. createTaggedContainer drops the lowest-priority tag and retries,
+ * down to none, so the post still goes out — the caption already
+ * references the comedian's @handle as text.
  */
-async function createCarouselChild(imageUrl, handle = null) {
+async function createCarouselChild(imageUrl, userTags = []) {
   const baseParams = {
     image_url: imageUrl,
     is_carousel_item: true,
     access_token: IG_ACCESS_TOKEN,
   };
-  const params = handle
-    ? {
-        ...baseParams,
-        user_tags: JSON.stringify([{ username: handle, x: 0.5, y: 0.5 }]),
-      }
-    : baseParams;
 
-  let child;
-  let tagDropped = false;
-  try {
-    child = await graphRequest("POST", `/${IG_USER_ID}/media`, params);
-  } catch (err) {
-    if (handle && isUserTagError(err)) {
-      console.warn(
-        `   ⚠ Meta rejected user_tag @${handle} (${err.message.split("\n")[0]}). ` +
-        `Retrying without the tag — caption still references the handle.`
-      );
-      child = await graphRequest("POST", `/${IG_USER_ID}/media`, baseParams);
-      tagDropped = true;
-    } else {
-      throw err;
-    }
-  }
+  const child = await createTaggedContainer(baseParams, userTags);
   // Do NOT poll a carousel *child* item container's status. Unlike single-image
   // and parent carousel containers, the Graph API rejects a status GET on a
   // child item with GraphMethodException code 100 / subcode 33 ("Authorization
@@ -246,10 +233,10 @@ async function createCarouselChild(imageUrl, handle = null) {
   // (every poll, not a transient race) in production. Child readiness is
   // reflected by the PARENT carousel container's status, which IS pollable and
   // which we wait on before publishing. So just return the child ID.
-  return { id: child.id, tagDropped };
+  return child.id;
 }
 
-async function postInstagramFeed(post, caption, handle) {
+async function postInstagramFeed(post, caption, userTags) {
   const squareUrl = `${IMAGES_BASE_URL}/${post.slug}-square.png`;
 
   console.log(`\n  IG FEED — ${post.comedianName}`);
@@ -269,16 +256,11 @@ async function postInstagramFeed(post, caption, handle) {
     const childIds = [];
     for (let i = 0; i < allImages.length; i++) {
       console.log(`   Creating carousel child ${i + 1}/${allImages.length}…`);
-      const childHandle = i === 0 ? handle : null;
-      const { id: childId, tagDropped } = await createCarouselChild(
-        allImages[i],
-        childHandle
-      );
+      const childTags = i === 0 ? userTags : [];
+      const childId = await createCarouselChild(allImages[i], childTags);
       childIds.push(childId);
-      const tagNote = childHandle
-        ? tagDropped
-          ? ` (tag @${childHandle} dropped — invalid/private)`
-          : ` (tagged @${childHandle})`
+      const tagNote = childTags.length > 0
+        ? ` (tagging ${childTags.map((t) => "@" + t.username).join(", ")})`
         : "";
       console.log(`   Child ${i + 1}: ${childId}${tagNote}`);
     }
@@ -315,29 +297,12 @@ async function postInstagramFeed(post, caption, handle) {
       access_token: IG_ACCESS_TOKEN,
     };
 
-    if (handle) {
-      mediaParams.user_tags = JSON.stringify([
-        { username: handle, x: 0.5, y: 0.5 },
-      ]);
-      console.log(`   Tagging: @${handle}`);
+    if (userTags.length > 0) {
+      console.log(`   Tagging: ${userTags.map((t) => "@" + t.username).join(", ")}`);
     }
 
     console.log("   Creating media container…");
-    let container;
-    try {
-      container = await graphRequest("POST", `/${IG_USER_ID}/media`, mediaParams);
-    } catch (err) {
-      if (handle && isUserTagError(err)) {
-        console.warn(
-          `   ⚠ Meta rejected user_tag @${handle} (${err.message.split("\n")[0]}). ` +
-          `Retrying without the tag — caption still references the handle.`
-        );
-        delete mediaParams.user_tags;
-        container = await graphRequest("POST", `/${IG_USER_ID}/media`, mediaParams);
-      } else {
-        throw err;
-      }
-    }
+    const container = await createTaggedContainer(mediaParams, userTags);
     console.log(`   Container: ${container.id}`);
 
     await waitForContainer(container.id);
@@ -458,10 +423,20 @@ async function publishEverywhere(post) {
   const caption = loadCaption(post);
   const handle = resolveHandle(post, caption);
 
+  // Tag the comedian AND the room. The comic is the tag that earns —
+  // comics reshare posts about themselves — so it goes FIRST, which is
+  // also the order createTaggedContainer degrades in: a stale venue handle
+  // gets dropped before the comedian's ever does. Only confirmed handles
+  // are returned (see lib/social-handles.js), so an unverified entry in
+  // the config can never reach a live post.
+  const venueTags = handlesForEvent({ name: post.show || post.comedianName, venue: post.venue });
+  const userTags = toUserTags([handle, ...venueTags].filter(Boolean));
+
   console.log(`\n📸 Publishing: ${post.comedianName}`);
   console.log(`   Caption length: ${caption.length} chars`);
   console.log(`   Caption preview: ${caption.slice(0, 120)}…`);
   console.log(`   Comedian handle: ${handle ? "@" + handle : "(not found)"}`);
+  console.log(`   Venue/series tags: ${venueTags.length ? venueTags.map((h) => "@" + h).join(", ") : "(none)"}`);
   console.log(`   Per-channel timeout: ${Math.round(CHANNEL_TIMEOUT_MS / 1000)}s`);
 
   const results = {
@@ -477,7 +452,7 @@ async function publishEverywhere(post) {
   // can't hang the workflow indefinitely.
   try {
     results.igFeed = await withTimeout(
-      postInstagramFeed(post, caption, handle),
+      postInstagramFeed(post, caption, userTags),
       "IG Feed",
       CHANNEL_TIMEOUT_MS
     );
@@ -599,7 +574,7 @@ async function main() {
   const results = await publishEverywhere(nextPost);
 
   // Update state
-  state.posted.push({
+  const record = {
     slug: nextPost.slug,
     comedianName: nextPost.comedianName,
     igFeedMediaId: results.igFeed,
@@ -607,7 +582,16 @@ async function main() {
     fbFeedPostId: results.fbFeed,
     fbStoryPostId: results.fbStory,
     postedAt: new Date().toISOString(),
-  });
+  };
+  state.posted.push(record);
+
+  // Separate ledger for delete-comedian-posts.js. `posted` is the
+  // this-week dedupe list and getNextToPost() wipes it when week_range
+  // rolls over, which would strand every media ID from the previous week
+  // and leave those spotlights up forever. cleanup_queue is never reset.
+  if (!Array.isArray(state.cleanup_queue)) state.cleanup_queue = [];
+  state.cleanup_queue.push({ ...record });
+
   saveState(state);
 
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);

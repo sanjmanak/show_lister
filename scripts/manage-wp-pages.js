@@ -119,7 +119,7 @@ async function findPageBySlug(slug) {
  * Create or update (by slug) a WordPress page.
  * Returns the page object from the WP response.
  */
-async function syncPage({ slug, title, content, parent = 0, metaTitle, metaDescription, schemaGraph }) {
+async function syncPage({ slug, title, content, parent = 0, metaTitle, metaDescription, h1, schemaGraph }) {
   const pageData = {
     title,
     content,
@@ -130,6 +130,12 @@ async function syncPage({ slug, title, content, parent = 0, metaTitle, metaDescr
   };
   if (metaTitle) pageData.ch_meta_title = metaTitle;
   if (metaDescription) pageData.ch_meta_description = metaDescription;
+  // Dynamic H1 override. Kept out of `title` on purpose: the stored post
+  // title feeds nav menus, breadcrumbs and the admin list, and a literal
+  // "{weekend_range}" showing up there would be worse than the static
+  // heading it replaced. The plugin expands the tokens at render time and
+  // only for the main-loop H1.
+  if (h1) pageData.ch_h1 = h1;
   if (schemaGraph) pageData.ch_schema_graph = JSON.stringify(schemaGraph);
 
   const existing = await findPageBySlug(slug);
@@ -180,6 +186,7 @@ async function syncLandingPages() {
         content,
         metaTitle: p.meta_title,
         metaDescription: p.meta_description,
+        h1: p.h1,
       });
       results.push({ slug: p.slug, link: page.link, ok: true });
     } catch (err) {
