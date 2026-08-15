@@ -2108,9 +2108,57 @@ async function main() {
  * they have stable canonical URLs, and they're meant for evergreen
  * always-current content. Exactly what an IG bio link needs.
  */
+/**
+ * Resolve an internal link target by page slug, falling back to a path we
+ * know exists.
+ *
+ * The /this-week/ template used to hardcode https://comedyhouston.com/all-shows/,
+ * a page that does not exist — so every Monday's run republished a 404 onto
+ * one of the site's better pages. Hardcoding is the bug: a slug that is
+ * right today silently rots when a page is renamed, and nothing in this
+ * pipeline would ever notice.
+ *
+ * Looking the slug up through the REST API we are already authenticated
+ * against costs one request, is cached for the run, and degrades to a
+ * known-good path with a loud warning rather than shipping a dead link.
+ */
+const internalUrlCache = new Map();
+
+async function resolveInternalUrl(slug, fallbackPath) {
+  if (internalUrlCache.has(slug)) return internalUrlCache.get(slug);
+
+  const base = WP_SITE_URL.replace(/\/$/, "") || "https://comedyhouston.com";
+  let url = `${base}${fallbackPath}`;
+
+  try {
+    const pages = await wpRequest(
+      "GET",
+      `/wp-json/wp/v2/pages?slug=${encodeURIComponent(slug)}&status=publish`,
+      null
+    );
+    if (Array.isArray(pages) && pages.length > 0 && pages[0].link) {
+      url = pages[0].link;
+    } else {
+      console.warn(
+        `  Link target /${slug}/ not found — falling back to ${fallbackPath}. ` +
+        `If that page was renamed, update the slug in updateThisWeekLandingPage().`
+      );
+    }
+  } catch (err) {
+    console.warn(`  Could not resolve /${slug}/ (${err.message}) — using ${fallbackPath}.`);
+  }
+
+  internalUrlCache.set(slug, url);
+  return url;
+}
+
 async function updateThisWeekLandingPage(topComedians, weekRange, monday, sunday) {
   const slug = "this-week";
   const title = `Houston Comedy This Week — ${weekRange}`;
+
+  // Resolved rather than hardcoded — see resolveInternalUrl().
+  const allShowsUrl = await resolveInternalUrl("houston-comedy-shows-this-month", "/");
+  const weekendUrl = await resolveInternalUrl("this-weekend", "/");
 
   // Build the comedian card grid. Each card links to the per-comedian post
   // (which itself has the internal-link footer back to the rest of the week).
@@ -2173,9 +2221,9 @@ async function updateThisWeekLandingPage(topComedians, weekRange, monday, sunday
   </div>
 
   <div class="cta-block">
-    <h2>Get the full weekly roundup</h2>
-    <p>Day-by-day breakdown, ticket links, and the inside take on every show.</p>
-    <a class="btn" href="https://comedyhouston.com/category/comedy-shows/">Read the full weekly roundup →</a>
+    <h2>Going out this weekend?</h2>
+    <p>Friday, Saturday and Sunday shows at every club in the city, with prices and ticket links.</p>
+    <a class="btn" href="${weekendUrl}">See this weekend's shows →</a>
   </div>
 
   <div class="secondary-cta">
@@ -2185,7 +2233,7 @@ async function updateThisWeekLandingPage(topComedians, weekRange, monday, sunday
 
   <h2>Browse every show in Houston</h2>
   <p>Looking for something specific? Our live event tracker pulls comedy shows from every venue in Houston — Improv, Riot, Secret Group, and more — twice a day.</p>
-  <p><a href="https://comedyhouston.com/all-shows/"><strong>See every Houston comedy show →</strong></a></p>
+  <p><a href="${allShowsUrl}"><strong>See every Houston comedy show →</strong></a></p>
 
   <p style="margin-top: 3rem; color: #888; font-size: 0.85rem; text-align: center;">Last updated: ${escapeHTML(new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" }))}</p>
 
