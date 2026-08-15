@@ -288,6 +288,56 @@ Before any per-comedian publish runs, `wpPreflight()` calls `GET /wp-json/wp/v2/
 
 ### 4. WordPress Plugin (`wordpress/`)
 
+**Past-event handling (August 2026).** Google Search Console reports an
+`offers.availability: InStock` on a past `startDate` as an error, and
+repeated invalid event markup is how a domain's event data stops being
+trusted — not just the one URL. Three fixes, all at render time:
+
+- `strip_past_event_offers()` removes `offers` from any event node whose
+  start time has passed, applied in `emit_comedian_schema_head()`. **This
+  deliberately does not live in `generate-comedian-post.js`.** The generator
+  writes the graph once at publish, when the offers are accurate; a fix
+  there would only protect future posts and leave the whole published
+  archive emitting InStock forever, needing a backfill job that can fail.
+  Guarding on output fixes the entire back catalogue at once and keeps
+  working as each show ages out. `eventStatus` stays `EventScheduled` — the
+  show was scheduled and it happened; `EventCancelled` would be a false
+  claim.
+- `render_jsonld()` applies the same rule per event. The weekend filter
+  deliberately keeps Friday/Saturday shows visible through Sunday so a
+  Sunday visitor sees the whole weekend, which means `/this-weekend/`
+  carries past events two days out of seven and had the identical defect.
+- `prepend_past_event_notice()` puts a "This show has already happened"
+  banner on dated posts whose show is over, linking to `/tonight/`. Without
+  it those posts stay in the present tense for a show that happened last
+  week, and each is a dead end rather than a link to the page we want
+  ranking.
+
+Two thresholds, on purpose: `event_has_started()` (start time) governs
+offers, because tickets are not InStock once doors open;
+`event_has_finished()` (endDate, or start + 3h) governs the banner, because
+"this show has already happened" at 8:05pm on the night would be a lie to a
+reader standing outside the venue.
+
+**Truthful sitemap `lastmod`.** Listing pages render from `events.json`
+through a shortcode and are never re-saved, so `post_modified` froze on the
+day each page was created — sitemaps advertised a three-week-old `lastmod`
+on pages whose bodies change twice daily. Google reads `lastmod` as its
+recrawl signal, so it stops coming back, keeps serving an old snapshot, and
+any stale markup in that snapshot stays indexed: the frozen `lastmod` is
+upstream of the schema problem rather than a separate one.
+`bump_listing_lastmod()` moves it from `refresh_events_and_purge()`, and:
+
+- only when the events hash **actually changed**, never on `$force` alone.
+  A manual webhook re-fire is not new content, and claiming a change that
+  didn't happen is the fastest way to have Google stop believing `lastmod`.
+- via raw SQL, not `wp_update_post()`. That function re-saves
+  `post_content` through `wp_kses` when no user is present — exactly the
+  case under WP-Cron — and would quietly rewrite the pages' HTML on a
+  schedule. The cache invalidation it would have provided is done
+  explicitly instead: `clean_post_cache()` plus the existing LiteSpeed
+  purge, which runs on the same refresh.
+
 **Dynamic date tokens in titles, descriptions and H1s.** A listing page's
 real advantage in a SERP snippet is that it is *current*: "Comedy Shows in
 Houston This Weekend — Aug 14–16, 2026" tells a searcher the page knows what
