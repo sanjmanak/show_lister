@@ -288,6 +288,50 @@ Before any per-comedian publish runs, `wpPreflight()` calls `GET /wp-json/wp/v2/
 
 ### 4. WordPress Plugin (`wordpress/`)
 
+**SEO-plugin reconciliation (August 2026).** This site runs Rank Math, and
+an active SEO plugin owns titles, descriptions, robots directives and the
+XML sitemap. Two bugs came from talking past it rather than to it:
+
+- **Titles were static while H1s were dynamic.** `filter_document_title()`
+  bails whenever an SEO plugin is active, so `_ch_meta_title` — the string
+  the landing-page sync writes from `config/landing-pages.json` — was never
+  used on this site at all. The H1 carried live dates (it comes from our own
+  `_ch_h1` meta) while the SERP-visible `<title>` stayed frozen. Expanding
+  tokens on the SEO plugin's output was not enough: its stored string never
+  contained a token to expand. `filter_seo_plugin_title()` now returns
+  `_ch_meta_title` (expanded) when it is set, and passes the plugin's own
+  title through otherwise. Consequence: for pages in `landing-pages.json`,
+  editing the title in Rank Math's UI has no effect — that file is the
+  source of truth and the sync workflow is how you change them.
+- **Sitemap and robots contradicted each other on 15 URLs.**
+  `emit_noindex_meta()` used to print our own `noindex` tag unconditionally,
+  reasoning that Google takes the most restrictive directive when robots
+  tags conflict. True — the pages were noindexed — but Rank Math still
+  believed they were indexable and kept all 15 in its sitemap, which is its
+  own Search Console error and burns crawl budget. The plugin now tells the
+  SEO plugin instead of shouting over it: `force_noindex_robots()` on
+  `rank_math/frontend/robots` and `wpseo_robots_array`, and
+  `exclude_noindexed_from_sitemap()` on `rank_math/sitemap/entry`. Our own
+  tag is emitted only when no SEO plugin is active. `_ch_allow_index`
+  remains the per-post override in both paths.
+
+**Retired: the "This Weekend" blog post.** `updateWeekendPost()` in
+`generate-blog-post.js` republished `/houston-comedy-shows-this-weekend/`
+weekly. It duplicated the evergreen `/this-weekend/` page — same 31-event
+ItemList, both indexable, both self-canonical — so the two competed for one
+query. Redirecting was not sufficient on its own: the function recreated the
+post with `status: "publish"` whenever it was missing, so drafting or
+deleting it in WP admin only bought a week before it reappeared in the
+sitemap. Publishing is removed; the URL 301s in the plugin.
+
+This was deliberately **not** done by disabling `generate-blog-post.yml`.
+That workflow also produces the weekly hero, the Instagram caption and
+`top-comedians.json`, which `post-weekly-roundup.js` consumes — killing the
+workflow would have silently killed the weekly social post with it. The
+Thursday cron *is* gone, because its only output was that post; leaving it
+would have spent OpenAI calls every week writing copy for an unreachable
+URL. A manual dispatch on any day now does the full run.
+
 **Past-event handling (August 2026).** Google Search Console reports an
 `offers.availability: InStock` on a past `startDate` as an error, and
 repeated invalid event markup is how a domain's event data stops being
@@ -327,6 +371,11 @@ recrawl signal, so it stops coming back, keeps serving an old snapshot, and
 any stale markup in that snapshot stays indexed: the frozen `lastmod` is
 upstream of the schema problem rather than a separate one.
 `bump_listing_lastmod()` moves it from `refresh_events_and_purge()`, and:
+
+- the front page is added explicitly. It renders the same twice-daily data
+  through the theme's front-page template rather than the shortcode, so
+  `listing_page_ids()` missed it and its `lastmod` sat 22 days stale on the
+  most important URL on the site.
 
 - only when the events hash **actually changed**, never on `$force` alone.
   A manual webhook re-fire is not new content, and claiming a change that

@@ -1637,14 +1637,6 @@ async function main() {
   // false alert. (Fresh checkouts won't have it, but local re-runs might.)
   try { if (fs.existsSync(WP_STATUS_PATH)) fs.unlinkSync(WP_STATUS_PATH); } catch (_) {}
 
-  // Detect if this is a Thursday "weekend-only" refresh
-  const dayOfWeek = new Date().getDay(); // 0=Sun, 4=Thu
-  const isThursdayRefresh = dayOfWeek === 4;
-  if (isThursdayRefresh) {
-    console.log("Thursday detected — running weekend post refresh only.");
-    console.log("");
-  }
-
   // Load and filter events
   const { events, monday, sunday } = loadThisWeeksEvents();
 
@@ -1657,68 +1649,13 @@ async function main() {
   console.log(`Week range: ${weekRange}`);
   console.log("");
 
-  // Thursday: only update the weekend post, then exit
-  if (isThursdayRefresh) {
-    if (WP_ENABLED) {
-      console.log("Updating 'This Weekend' evergreen post on WordPress...");
-      // Quick comedian identification for the weekend post
-      let quickComedians = [];
-      let quickResearch = "";
-      let quickSourceLinks = {};
-      try {
-        const topComediansRaw = await identifyTopComedians(events);
-        const jsonStr = topComediansRaw.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
-        const parsed = JSON.parse(jsonStr);
-        quickComedians = parsed.map((c) => {
-          const matchedEvent = events.find(
-            (ev) => ev.name === c.show || ev.name.toLowerCase().includes(c.name.toLowerCase())
-          );
-          return { name: c.name, show: c.show, imageUrl: matchedEvent?.image_url || null };
-        });
-        // Deduplicate (punctuation-insensitive: "D. L. Hughley" == "DL Hughley")
-        const seen = new Set();
-        quickComedians = quickComedians.filter((c) => {
-          const key = comedianDedupeKey(c.name);
-          if (seen.has(key)) return false;
-          seen.add(key);
-          return true;
-        });
-        console.log(`Comedians identified: ${quickComedians.map((c) => c.name).join(", ")}`);
-
-        // Quick research for weekend post copy
-        if (quickComedians.length > 0) {
-          const researchRaw = await researchComedians(quickComedians.map((c) => c.name));
-          const researchJson = researchRaw.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
-          try {
-            const researchParsed = JSON.parse(researchJson);
-            const summaries = [];
-            for (const entry of researchParsed) {
-              if (entry.name && entry.summary) summaries.push(`**${entry.name}**: ${entry.summary}`);
-              if (entry.name && entry.sourceUrls) quickSourceLinks[entry.name] = entry.sourceUrls;
-            }
-            quickResearch = summaries.join("\n\n");
-          } catch (_) {
-            quickResearch = researchRaw;
-          }
-        }
-      } catch (err) {
-        console.warn(`Comedian identification failed: ${err.message}`);
-      }
-
-      try {
-        await updateWeekendPost(events, weekRange, quickComedians, quickResearch, quickSourceLinks);
-      } catch (err) {
-        console.error(`ERROR: Weekend post update failed: ${err.message}`);
-        wpFailures.push(`weekend post (Thursday): ${err.message}`);
-      }
-    } else {
-      console.log("WordPress not configured — nothing to do on Thursday.");
-    }
-    console.log("");
-    reportWpFailures(wpFailures, "thursday-refresh");
-    console.log("Done! (Thursday refresh)");
-    return;
-  }
+  // Thursday used to run a cut-down refresh whose only output was the
+  // /houston-comedy-shows-this-weekend/ blog post. That post is retired
+  // (it duplicated the evergreen /this-weekend/ page and now 301s to it),
+  // so the branch had nothing left to publish — it just spent OpenAI calls
+  // on comedian identification and research that were then thrown away.
+  // The Thursday cron is removed from generate-blog-post.yml too; a manual
+  // dispatch on any day now does the full run.
 
   // Ensure blog directory exists
   if (!fs.existsSync(BLOG_DIR)) {
@@ -2120,17 +2057,23 @@ async function main() {
     console.log("");
   }
 
-  // Step 8: Update the "This Weekend" evergreen WordPress post
-  if (WP_ENABLED) {
-    console.log("Updating 'This Weekend' evergreen post on WordPress...");
-    try {
-      await updateWeekendPost(events, weekRange, topComedians, comedianResearch, comedianSourceLinks);
-    } catch (err) {
-      console.error(`ERROR: Weekend post update failed: ${err.message}`);
-      wpFailures.push(`weekend post: ${err.message}`);
-    }
-    console.log("");
-  }
+  // Step 8: (retired) The "This Weekend" blog POST used to be republished
+  // here. It duplicated the evergreen /this-weekend/ PAGE - same 31-event
+  // ItemList, both indexable, both self-canonical - so the two competed for
+  // one query and Google flipped between them, splitting whatever links
+  // either earned. /this-weekend/ won on internal links (it is in the nav;
+  // nothing linked to the post, not even the post itself) and now carries
+  // the dated title that was the post's only real advantage.
+  //
+  // The URL 301s to /this-weekend/ in the plugin. Publishing had to stop as
+  // well, not just redirect: updateWeekendPost() recreated the post with
+  // status "publish" whenever it was missing, so drafting or deleting it in
+  // WP admin only bought a week before it reappeared in the sitemap.
+  //
+  // Deliberately NOT done by disabling generate-blog-post.yml. That workflow
+  // also builds the weekly hero, the Instagram caption and
+  // top-comedians.json, which post-weekly-roundup.js consumes - killing the
+  // workflow would have silently killed the weekly social post with it.
 
   // Step 9: Update the /this-week/ landing page on WordPress.
   // This is the page your Instagram bio link points at — it never changes URL,
@@ -2285,135 +2228,6 @@ async function updateThisWeekLandingPage(topComedians, weekRange, monday, sunday
 // "This Weekend" evergreen post updater
 // ---------------------------------------------------------------------------
 
-async function updateWeekendPost(allEvents, weekRange, topComedians, comedianResearch, comedianSourceLinks) {
-  // Filter to Friday–Sunday events
-  const weekendEvents = allEvents.filter((ev) => {
-    const dow = (ev.day_of_week || "").toLowerCase();
-    return dow === "friday" || dow === "saturday" || dow === "sunday";
-  });
-
-  if (weekendEvents.length === 0) {
-    console.log("  No weekend events found — skipping update.");
-    return;
-  }
-
-  // Find the existing post by slug
-  const slug = "houston-comedy-shows-this-weekend";
-  let existingPost = null;
-  try {
-    const posts = await wpRequest("GET", `/wp-json/wp/v2/posts?slug=${slug}&status=publish`, null);
-    if (Array.isArray(posts) && posts.length > 0) {
-      existingPost = posts[0];
-      console.log(`  Found existing post (ID: ${existingPost.id}): ${existingPost.link}`);
-    }
-  } catch (err) {
-    console.warn(`  Could not find existing weekend post: ${err.message}`);
-  }
-
-  if (!existingPost) {
-    console.log("  No existing 'this weekend' post found — creating new one.");
-  }
-
-  // Build the weekend date range string
-  const fridayEvents = weekendEvents.filter((ev) => (ev.day_of_week || "").toLowerCase() === "friday");
-  const sundayEvents = weekendEvents.filter((ev) => (ev.day_of_week || "").toLowerCase() === "sunday");
-  const firstDate = weekendEvents[0]?.date || "";
-  const lastDate = weekendEvents[weekendEvents.length - 1]?.date || firstDate;
-  const weekendRangeStr = firstDate === lastDate
-    ? formatDateForDisplay(firstDate)
-    : `${formatDateForDisplay(firstDate).replace(/,\s*\d{4}$/, "")} – ${formatDateForDisplay(lastDate)}`;
-
-  // Identify which top comedians are performing this weekend
-  const weekendComedianNames = [];
-  for (const comedian of topComedians) {
-    const hasWeekendShow = weekendEvents.some((ev) =>
-      ev.name.toLowerCase().includes(comedian.name.toLowerCase())
-    );
-    if (hasWeekendShow) weekendComedianNames.push(comedian.name);
-  }
-
-  // Generate editorial copy via OpenAI
-  const weekendResearch = comedianResearch || "";
-  let sourceLinksHint = "";
-  if (comedianSourceLinks && weekendComedianNames.length > 0) {
-    sourceLinksHint = "\n\nSOURCE LINKS (use 1-2 as hyperlinks per comedian you mention):\n";
-    for (const name of weekendComedianNames) {
-      if (comedianSourceLinks[name]) sourceLinksHint += `- ${name}: ${comedianSourceLinks[name].join(", ")}\n`;
-    }
-  }
-
-  const weekendPrompt = `Write a short, punchy editorial intro for the "Houston Comedy Shows This Weekend" page on ComedyHouston.com.
-
-Weekend: ${weekendRangeStr}
-Total shows: ${weekendEvents.length}
-${weekendComedianNames.length > 0 ? `Notable comedians this weekend: ${weekendComedianNames.join(", ")}` : "No major national headliners this weekend — it's a great time to discover local talent."}
-
-${weekendResearch ? `COMEDIAN RESEARCH:\n${weekendResearch}\n` : ""}${sourceLinksHint}
-
-RULES:
-- 150-200 words MAX. This text sits ABOVE a live event widget, so keep it tight.
-- Open with a hook that names the biggest act or most interesting show this weekend.
-- Mention 2-3 specific shows with real details (venue, time, what makes them worth attending).
-- If you mention a comedian, include 1 hyperlink to a credible source (Wikipedia, Netflix, YouTube).
-- End with a single sentence nudge: "Scroll down for the full lineup and ticket links."
-- NO generic filler. NO "Houston's comedy scene is thriving." NO "Whether you're looking for..."
-- BANNED PHRASES: "don't miss", "side-splitting", "a night to remember", "something for everyone", "buckle up", "prepare to"
-- Write like a friend recommending weekend plans, not a press release.
-- Output ONLY the HTML paragraphs (2-3 <p> tags). No headings, no wrapper tags.`;
-
-  let editorialContent = "";
-  try {
-    editorialContent = await callOpenAI(weekendPrompt,
-      "You write short, specific recommendations for a Houston comedy event page. Your voice is warm, knowing, and concise — like a friend who actually goes to shows. You never use filler or hype. Every sentence has a specific fact or recommendation."
-    );
-    editorialContent = editorialContent.replace(/^```html\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
-    console.log("  Weekend editorial copy generated.");
-  } catch (err) {
-    console.warn(`  Weekend editorial generation failed: ${err.message}`);
-    editorialContent = `<p>Here are all the comedy shows happening in Houston this weekend (${weekendRangeStr}). Grab your tickets before they sell out.</p>`;
-  }
-
-  // Build the full post content: dynamic editorial + static SEO copy + shortcode
-  const updatedDate = new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
-  const postContent = `${editorialContent}
-
-<p>Houston is one of the best cities in the country for live comedy, with shows happening every night of the week at venues like the <strong>Houston Improv</strong>, <strong>The Secret Group</strong>, <strong>The Riot</strong>, <strong>Joke Joint Comedy Showcase</strong>, and more. It can be hard to keep track of every comedy show happening across the city — and to tell the difference between open mics and proper headliner shows you'd want to take a date or a group of friends to.</p>
-
-<p>The list below is updated every week and includes all <strong>comedy shows in Houston this weekend</strong>, <strong>excluding open mic comedy</strong>, so you only see featured shows and touring headliners. Whether you're looking for stand-up comedy, improv, or a late-night variety show, this is the most complete weekend comedy calendar for Houston.</p>
-
-<p>If you have any suggestions on shows we didn't list here, please use our <a href="https://www.comedyhouston.com/contact">contact page to message us</a>.</p>
-
-<p><em>Last updated: ${updatedDate}</em></p>
-
-[comedy_houston filter="weekend"]
-
-<p>Looking for shows beyond the weekend? Check out our <a href="https://www.comedyhouston.com">full Houston comedy calendar</a> for every show this month, or read our <a href="https://www.comedyhouston.com/blog/">weekly comedy roundup</a> for in-depth previews of the biggest acts coming to town.</p>`;
-
-  const postTitle = `Houston Comedy Shows This Weekend — ${weekendRangeStr}`;
-
-  if (existingPost) {
-    // Update the existing post
-    const updateData = {
-      content: postContent,
-      title: postTitle,
-    };
-    const updated = await wpRequest("POST", `/wp-json/wp/v2/posts/${existingPost.id}`, updateData);
-    console.log(`  Weekend post updated: ${updated.link}`);
-  } else {
-    // Create a new post
-    const categoryId = await wpGetCategoryBySlug("comedy-shows");
-    const newPostData = {
-      title: postTitle,
-      content: postContent,
-      status: "publish",
-      slug: slug,
-      comment_status: "closed",
-    };
-    if (categoryId) newPostData.categories = [categoryId];
-    const created = await wpRequest("POST", "/wp-json/wp/v2/posts", newPostData);
-    console.log(`  Weekend post created: ${created.link}`);
-  }
-}
 
 // Only run the full generator when invoked directly (`node generate-blog-post.js`).
 // Exporting the pure builders lets tests/previews render the hero creative
