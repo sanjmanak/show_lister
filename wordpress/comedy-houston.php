@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.12.0
+ * Version: 2.13.0
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,11 +19,19 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.12.0';
+    const VERSION      = '2.13.0';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
     const CLICKS_TABLE = 'ch_clicks';
+
+    // Meta Pixel — deliberately the SAME pixel as sanjaycomedy.com and the
+    // Eventbrite listings so purchase/visit signal pools into one audience
+    // (per-property segmentation is done with URL rules in Ads Manager).
+    // Emitted from wp_head by this plugin instead of a third-party pixel
+    // module so the custom conversions (TicketClick, Lead) can fire from the
+    // same code paths as the GA4 events. Empty string disables everything.
+    const META_PIXEL_ID = '822551924791710';
 
     private $defaults = [
         'github_user'         => 'sanjmanak',
@@ -123,6 +131,11 @@ class Comedy_Houston_Plugin {
         add_action('rest_api_init', [$this, 'register_page_seo_fields']);
         add_filter('pre_get_document_title', [$this, 'filter_document_title'], 20);
         add_action('wp_head', [$this, 'emit_meta_description'], 1);
+
+        // Meta Pixel base code (PageView) — custom events fire from
+        // comedy-houston.js (TicketClick, performer Lead) and the corporate
+        // inquiry form (Lead).
+        add_action('wp_head', [$this, 'emit_meta_pixel'], 7);
 
         // Live dates in titles/H1s ({weekend_range} etc — see
         // expand_date_tokens). The SEO-plugin filters below only ever fire
@@ -1117,6 +1130,32 @@ class Comedy_Houston_Plugin {
         return $this->expand_date_tokens($h1);
     }
 
+    /** Meta Pixel base snippet. Guarded so fbq is never double-defined. */
+    public function emit_meta_pixel() {
+        if (!self::META_PIXEL_ID) {
+            return;
+        }
+        ?>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '<?php echo esc_js(self::META_PIXEL_ID); ?>');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+        <?php
+    }
+
     public function emit_meta_description() {
         if ($this->seo_plugin_handles_schema() || !is_singular(['page', 'post'])) {
             return;
@@ -1802,6 +1841,7 @@ class Comedy_Houston_Plugin {
     .then(function(res){
       if (res.ok) {
         if (typeof gtag === 'function') { gtag('event', 'corporate_inquiry'); }
+        if (typeof fbq === 'function') { fbq('track', 'Lead', {content_name: 'corporate_inquiry'}); }
         form.innerHTML = '<p class="ch-iq-msg ok" style="display:block;font-size:17px">Got it — thanks. We\'ll reply from <?php echo esc_js($this->inquiry_email()); ?> with comedian recommendations, usually within one business day.</p>';
       } else {
         btn.disabled = false;

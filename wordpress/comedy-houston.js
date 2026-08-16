@@ -491,6 +491,18 @@
         outbound_url: link.href
       });
     }
+
+    // Mirror to the Meta Pixel (base code emitted by the plugin from
+    // wp_head). Custom event so it can be registered as a conversion in
+    // Ads Manager without colliding with Eventbrite's own purchase events
+    // on the shared pixel.
+    if (typeof fbq === "function") {
+      fbq("trackCustom", "TicketClick", {
+        content_name: eventName,
+        venue_name: venueName,
+        price_info: priceText.trim()
+      });
+    }
   }
 
   // ================================================================
@@ -543,14 +555,29 @@
   }
 
   function performerGtag(name) {
-    if (typeof gtag !== "function" || !performerMeta) return;
-    gtag("event", name, {
-      event_category: "performer_mvp",
-      event_label: performerMeta.event_name,
-      event_id: performerMeta.event_id,
-      venue_name: performerMeta.venue,
-      event_date: performerMeta.event_date
-    });
+    if (!performerMeta) return;
+    if (typeof gtag === "function") {
+      gtag("event", name, {
+        event_category: "performer_mvp",
+        event_label: performerMeta.event_name,
+        event_id: performerMeta.event_id,
+        venue_name: performerMeta.venue,
+        event_date: performerMeta.event_date
+      });
+    }
+    // Meta Pixel mirror: a completed submission is a Lead (standard event,
+    // usable for conversion optimization); the click stays a custom event.
+    if (typeof fbq === "function") {
+      var fbParams = {
+        content_name: performerMeta.event_name,
+        venue_name: performerMeta.venue
+      };
+      if (name === "performer_interest_submitted") {
+        fbq("track", "Lead", fbParams);
+      } else {
+        fbq("trackCustom", name, fbParams);
+      }
+    }
   }
 
   function buildPerformerModal() {
