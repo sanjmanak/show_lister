@@ -47,6 +47,9 @@ jobs:
         env:
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
           EVENTBRITE_TOKEN: ${{ secrets.EVENTBRITE_TOKEN }}
+          # Show-tag classification of new show names (fail-open: the import
+          # runs fine without it, new shows just stay untagged that run).
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: node scripts/fetch-events.js
 
       - name: Price coverage summary

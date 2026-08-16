@@ -62,6 +62,7 @@
     ? scParams.maxPrice : null;
   var showOpenMic = scParams.showOpenMic !== false;
   var typeFilter = scParams.type || "";
+  var tagFilter = scParams.tag || "";
   // Initial render window (days) for the "all" view — the rest of the list
   // is revealed by the "Show all" button. Mirrors initial_days in PHP.
   var initialDays = typeof scParams.initialDays === "number" ? scParams.initialDays : 14;
@@ -327,6 +328,10 @@
       if (currentTimeFilter === "tomorrow" && ev.date !== tomorrow) continue;
       if (currentTimeFilter === "week" && ev.date > endOfWeek) continue;
       if (currentTimeFilter === "month" && ev.date > endOfMonth) continue;
+
+      // Curated tag filter (mirrors PHP filter_events; events without a
+      // tags array never match, so old payloads degrade safely).
+      if (tagFilter && (!ev.tags || ev.tags.indexOf(tagFilter) === -1)) continue;
 
       if (currentVenueFilter !== "all" && ev.venue !== currentVenueFilter) continue;
       if (currentSourceFilter !== "all" && ev.source !== currentSourceFilter) continue;

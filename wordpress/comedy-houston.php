@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.11.0
+ * Version: 2.12.0
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.11.0';
+    const VERSION      = '2.12.0';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -199,6 +199,9 @@ class Comedy_Houston_Plugin {
             'show_sort'         => 'true',
             'show_open_mic'     => 'true',
             'type'              => '',
+            // Curated tag filter (config/show-tags.json → events.json tags[]),
+            // e.g. [comedy_houston tag="black-comedy"].
+            'tag'               => '',
             // Initial render window in days for the unfiltered ("all") view.
             // The full list (hundreds of events through +90 days) is only
             // rendered after the visitor clicks "Show all". 0 disables.
@@ -221,6 +224,7 @@ class Comedy_Houston_Plugin {
             'source'   => sanitize_text_field($atts['source']),
             'showOpenMic' => strtolower($atts['show_open_mic']) !== 'false',
             'type' => sanitize_text_field($atts['type']),
+            'tag' => sanitize_text_field($atts['tag']),
             'initialDays' => max(0, intval($atts['initial_days'])),
         ];
 
@@ -2097,6 +2101,7 @@ class Comedy_Houston_Plugin {
         $max_price = $atts['max_price'] !== '' ? floatval($atts['max_price']) : null;
         $show_open_mic = strtolower($atts['show_open_mic']) !== 'false';
         $type_filter = $atts['type'];
+        $tag_filter = $atts['tag'] ?? '';
         $max_date = $this->houston_date('Y-m-d', '+90 days');
 
         // Weekend: Fri-Sat-Sun (mirrors JS logic). Shared with the
@@ -2126,6 +2131,11 @@ class Comedy_Houston_Plugin {
             if ($filter === 'tomorrow' && $date !== $tomorrow) continue;
             if ($filter === 'week' && $date > $end_of_week) continue;
             if ($filter === 'month' && $date > $end_of_month) continue;
+
+            // Curated tag filter — events carry tags[] from ingest
+            // (config/show-tags.json). Events without the field simply
+            // never match, so old events.json payloads degrade safely.
+            if ($tag_filter !== '' && !in_array($tag_filter, (array) ($ev['tags'] ?? []), true)) continue;
 
             if (!empty($venue_filter) && $venue_filter !== 'all' && ($ev['venue'] ?? '') !== $venue_filter) continue;
             if (!empty($source_filter) && $source_filter !== 'all' && ($ev['source'] ?? '') !== $source_filter) continue;
