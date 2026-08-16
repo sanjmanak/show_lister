@@ -142,9 +142,19 @@ function wpUploadImage(buffer, contentType, filename) {
   });
 }
 
+// House style: no em dashes in anything that ships to readers. This is the
+// final gate before WordPress — fail loudly rather than publish one.
+function lintNoEmDash(label, text) {
+  if (text && text.includes("—")) {
+    throw new Error(`em dash found in ${label}; house style forbids them in published copy`);
+  }
+}
+
 async function publishEssay(essay, categoryId) {
   const htmlPath = path.join(ROOT, essay.file);
   const raw = fs.readFileSync(htmlPath, "utf8");
+  lintNoEmDash(essay.file, raw);
+  lintNoEmDash(`${essay.slug} excerpt`, essay.excerpt);
 
   const h1Match = raw.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
   if (!h1Match) throw new Error(`No <h1> found in ${essay.file}`);

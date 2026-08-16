@@ -1,0 +1,145 @@
+name: Essay Promo Creative (email for approval)
+
+# Generates Instagram quote-card creative for the comedian essay series and
+# EMAILS it for approval — it does not auto-post. Runs Wednesdays after the
+# WP-scheduled essay goes live (15:00 UTC publish, this fires 16:30 UTC), and
+# quietly no-ops once every live essay has had its creative generated.
+#
+# Manual dispatch accepts an optional slug to (re)generate a specific essay's
+# cards, e.g. for the evergreen recycling rotation.
+on:
+  schedule:
+    - cron: '30 16 * * 3'   # Wednesdays 16:30 UTC (11:30am CDT)
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Essay slug to force (blank = next unpromoted live essay)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: essay-promo
+  cancel-in-progress: false
+
+env:
+  TZ: America/Chicago
+
+jobs:
+  promo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Puppeteer
+        run: npm install puppeteer
+
+      - name: Generate quote cards
+        run: |
+          if [ -n "${{ github.event.inputs.slug }}" ]; then
+            node scripts/generate-essay-graphics.js --slug="${{ github.event.inputs.slug }}"
+          else
+            node scripts/generate-essay-graphics.js
+          fi
+
+      - name: Check whether creative was produced
+        id: creative
+        run: |
+          if [ -f blog/essays/graphics/latest.json ]; then
+            echo "ready=true" >> $GITHUB_OUTPUT
+            echo "PROMO_SLUG=$(node -p "require('./blog/essays/graphics/latest.json').slug")" >> $GITHUB_ENV
+            echo "PROMO_TITLE=$(node -p "require('./blog/essays/graphics/latest.json').title")" >> $GITHUB_ENV
+          else
+            echo "ready=false" >> $GITHUB_OUTPUT
+            echo "Nothing to promote this run."
+          fi
+
+      - name: Commit graphics and state
+        if: steps.creative.outputs.ready == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add blog/essays/graphics/ blog/essays/promo-state.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Essay promo creative — ${PROMO_SLUG} — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
+            pushed=false
+            for i in 1 2 3 4; do
+              echo "Push attempt $i…"
+              git pull --rebase origin main --no-edit || { git rebase --abort 2>/dev/null || true; }
+              if git push origin main; then
+                pushed=true
+                break
+              fi
+              sleep $i
+            done
+            if [ "$pushed" != "true" ]; then
+              echo "ERROR: git push failed after 4 attempts."
+              exit 1
+            fi
+          fi
+
+      - name: Check if email is configured
+        if: steps.creative.outputs.ready == 'true'
+        id: email-check
+        env:
+          HAS_SMTP: ${{ secrets.SMTP_SERVER }}
+        run: |
+          if [ -n "$HAS_SMTP" ]; then
+            echo "send_email=true" >> $GITHUB_OUTPUT
+          else
+            echo "send_email=false" >> $GITHUB_OUTPUT
+            echo "SMTP not configured — creative is committed to the repo, no email sent."
+          fi
+
+      - name: Load caption for email
+        if: steps.creative.outputs.ready == 'true' && steps.email-check.outputs.send_email == 'true'
+        run: |
+          delim="CAPTION_EOF_${RANDOM}${RANDOM}"
+          echo "CAPTION<<${delim}" >> $GITHUB_ENV
+          cat "blog/essays/graphics/${PROMO_SLUG}-caption.txt" >> $GITHUB_ENV
+          echo "" >> $GITHUB_ENV
+          echo "${delim}" >> $GITHUB_ENV
+
+      - name: Email creative for approval
+        if: steps.creative.outputs.ready == 'true' && steps.email-check.outputs.send_email == 'true'
+        uses: dawidd6/action-send-mail@4226df7daafa6fc901a43789c49bf7ab309066e7 # v3 (SHA-pinned: action receives SMTP secrets)
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "[Comedy Houston] Essay promo creative for approval — ${{ env.PROMO_TITLE }}"
+          to: ${{ secrets.NOTIFY_EMAIL }}
+          from: ${{ secrets.SMTP_FROM }}
+          body: |
+            Quote-card creative for the essay "${{ env.PROMO_TITLE }}" is
+            attached: three 1080x1080 feed squares (one per pull quote) and one
+            1080x1920 story. NOTHING HAS BEEN POSTED — this is the approval
+            step. Pick the card you like, post it with the caption below, or
+            reply to yourself with edits and rerun the workflow.
+
+            Essay: https://comedyhouston.com/${{ env.PROMO_SLUG }}/
+
+            -----------------------------------------------
+            INSTAGRAM CAPTION (copy & paste)
+            -----------------------------------------------
+
+            ${{ env.CAPTION }}
+
+            -----------------------------------------------
+
+            All cards are also committed to the repo under
+            blog/essays/graphics/ for reuse — every card in the series is
+            evergreen and can be recycled any time.
+          attachments: blog/essays/graphics/${{ env.PROMO_SLUG }}-q1.png,blog/essays/graphics/${{ env.PROMO_SLUG }}-q2.png,blog/essays/graphics/${{ env.PROMO_SLUG }}-q3.png,blog/essays/graphics/${{ env.PROMO_SLUG }}-story.png
