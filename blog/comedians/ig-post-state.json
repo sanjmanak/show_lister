@@ -21,24 +21,5 @@
   ],
   "week_range": "August 10 – August 16, 2026",
   "manifest_version": 1786380891122,
-  "cleanup_queue": [
-    {
-      "slug": "mark-normand-houston-improv-2026-08-13",
-      "comedianName": "Mark Normand",
-      "igFeedMediaId": "18117030220917887",
-      "igStoryMediaId": "18127064560733119",
-      "fbFeedPostId": "1373965638161511",
-      "fbStoryPostId": "1367051111510636",
-      "postedAt": "2026-08-10T17:00:52.776Z"
-    },
-    {
-      "slug": "josh-wolf-punch-line-houston-2026-08-13",
-      "comedianName": "Josh Wolf",
-      "igFeedMediaId": "18003726395780261",
-      "igStoryMediaId": "18117770995718514",
-      "fbFeedPostId": "1374166821474726",
-      "fbStoryPostId": "1582881919995111",
-      "postedAt": "2026-08-10T22:47:00.676Z"
-    }
-  ]
+  "cleanup_queue": []
 }
