@@ -1,0 +1,35 @@
+name: Publish Comedian Essays
+
+# Manual-only: publishes/updates the comedian essay series (config/essays.json
+# + blog/essays/*.html) to WordPress. Safe to re-run — the script dedupes by
+# slug and updates in place, reuses featured images, and never demotes an
+# already-published post back to scheduled.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-essays
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Publish essays to WordPress
+        env:
+          WP_SITE_URL: ${{ secrets.WP_SITE_URL }}
+          WP_APP_USER: ${{ secrets.WP_APP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+        run: node scripts/publish-essays.js
