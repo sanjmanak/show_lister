@@ -29,7 +29,10 @@ jobs:
     # platform's robots.txt Crawl-Delay of 3s per event page (~70 pages ≈
     # 3.5–4 min per venue in config/standuptix-venues.json). Cap at 25 min so
     # a hung HTTPS socket still can't burn the default 6h job timeout.
-    timeout-minutes: 25
+    # Cold-cache worst case: ~330 Riot pages x 3s Crawl-Delay ≈ 17 min of
+    # sleeping plus API fetches. Warm-cache runs (the normal case since the
+    # standuptix-cache.json lastmod cache) finish in a few minutes.
+    timeout-minutes: 35
 
     steps:
       - name: Checkout repository

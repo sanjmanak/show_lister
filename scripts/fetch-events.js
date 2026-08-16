@@ -71,6 +71,13 @@ const PERFORMER_REQUESTS_JSON_PATH = path.join(OUTPUT_DIR, "config", "performer-
 const PRICE_CACHE_PATH = path.join(OUTPUT_DIR, "config", "price-cache.json");
 const SHOW_TAGS_JSON_PATH = path.join(OUTPUT_DIR, "config", "show-tags.json");
 const SHOW_TAGS_CACHE_PATH = path.join(OUTPUT_DIR, "config", "show-tags-cache.json");
+const STANDUPTIX_CACHE_PATH = path.join(OUTPUT_DIR, "config", "standuptix-cache.json");
+
+// StandupTix pages whose cached event starts within this many days are
+// re-fetched even on a lastmod cache hit: near-term status/price changes
+// (sell-outs) don't reliably bump the sitemap's lastmod, and these are the
+// shows surfacing on /tonight/ and /this-weekend/.
+const STANDUPTIX_REFRESH_DAYS = 7;
 
 // Price-enrichment pacing. Ticketmaster's Discovery API allows 5 req/s, so
 // detail calls are spaced 250ms apart. Ticket-page fetches hit the vendors'
@@ -920,6 +927,33 @@ function loadStandupTixConfig() {
 }
 
 /** <loc> URLs from a sitemap, XML-entity-decoded, order preserved. */
+/**
+ * <url> entries from a sitemap as { url, lastmod } pairs (lastmod may be
+ * null). Used by the StandupTix harvest to skip re-fetching event pages
+ * whose lastmod hasn't moved since the cached copy.
+ */
+function parseSitemapEntries(xml) {
+  const entries = [];
+  const blockRe = /<url>([\s\S]*?)<\/url>/gi;
+  let b;
+  while ((b = blockRe.exec(String(xml))) !== null) {
+    const block = b[1];
+    const locM = /<loc>\s*([\s\S]*?)\s*<\/loc>/i.exec(block);
+    if (!locM) continue;
+    const url = locM[1]
+      .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
+      .replace(/&amp;/g, "&")
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&quot;/g, '"')
+      .replace(/&apos;/g, "'")
+      .trim();
+    const lmM = /<lastmod>\s*([\s\S]*?)\s*<\/lastmod>/i.exec(block);
+    entries.push({ url, lastmod: lmM ? lmM[1].trim() : null });
+  }
+  return entries;
+}
+
 function parseSitemapLocs(xml) {
   const locs = [];
   const re = /<loc>\s*([\s\S]*?)\s*<\/loc>/gi;
@@ -1088,12 +1122,31 @@ async function fetchStandupTix(configOverride) {
   // are tolerated — one bad page shouldn't hide the other ~69 shows.
   const failedVenues = [];
 
+  // Page cache keyed by URL: { lastmod, node }. A page is only re-fetched
+  // when it's new, its sitemap lastmod moved, or its show starts within
+  // STANDUPTIX_REFRESH_DAYS (near-term freshness guard) — this is what keeps
+  // the harvest minutes instead of tens of minutes: with Crawl-Delay: 3 the
+  // full ~330-page crawl alone costs ~17 minutes of mandatory sleeping.
+  // The raw JSON-LD node is cached (not the normalized event) so
+  // normalizeStandupTix() changes take effect without a re-fetch.
+  let pageCache = { pages: {} };
+  try {
+    const rawCache = JSON.parse(fs.readFileSync(STANDUPTIX_CACHE_PATH, "utf8"));
+    if (rawCache && typeof rawCache.pages === "object") pageCache = rawCache;
+  } catch (e) {
+    // Cold cache — full crawl this run.
+  }
+  const refreshCutoff = new Date();
+  refreshCutoff.setDate(refreshCutoff.getDate() + STANDUPTIX_REFRESH_DAYS);
+  const seenUrls = new Set();
+  let cacheStats = { fetched: 0, hits: 0, nearTermRefresh: 0 };
+
   for (const venueCfg of config.venues) {
     const sitemapUrl = `${venueCfg.baseUrl}/site-maps/upcoming-events`;
-    let locs;
+    let entries;
     try {
       const xml = await fetchPageWithRetries(sitemapUrl);
-      locs = parseSitemapLocs(xml);
+      entries = parseSitemapEntries(xml);
     } catch (err) {
       console.error(`[StandupTix] Sitemap fetch failed for ${venueCfg.name}: ${err.message}`);
       failedVenues.push(venueCfg.name);
@@ -1103,7 +1156,9 @@ async function fetchStandupTix(configOverride) {
     // show (e.g. "...-the-riot-houston" and timestamp-suffixed copies) can't
     // be told apart by URL — those are folded below by the JSON-LD
     // name+startDate key after each page is read.
-    const urls = Array.from(new Set(locs));
+    const byUrl = new Map();
+    for (const e of entries) if (!byUrl.has(e.url)) byUrl.set(e.url, e);
+    const urls = Array.from(byUrl.keys());
     console.log(`[StandupTix] ${venueCfg.name}: ${urls.length} event page(s) in sitemap.`);
 
     // Key: normalized name + full startDate (offset included). The sitemap
@@ -1113,18 +1168,47 @@ async function fetchStandupTix(configOverride) {
     const byShow = new Map();
     let skipped = 0;
     for (const url of urls) {
-      await sleep(STANDUPTIX_PAGE_DELAY_MS);
-      let node;
-      try {
-        const html = await fetchPage(url);
-        node = pickEventJsonLd(html);
-      } catch (err) {
-        console.warn(`  [StandupTix] Page fetch failed, skipping: ${url} (${err.message})`);
-        skipped++;
-        continue;
+      seenUrls.add(url);
+      const sitemapLastmod = byUrl.get(url).lastmod;
+      const cached = pageCache.pages[url];
+
+      // Cache hit: same lastmod, and the show isn't near-term.
+      let node = null;
+      if (cached && cached.node && sitemapLastmod && cached.lastmod === sitemapLastmod) {
+        const start = Date.parse(cached.node.startDate || "");
+        if (!isNaN(start) && start > refreshCutoff.getTime()) {
+          node = cached.node;
+          cacheStats.hits++;
+        } else {
+          cacheStats.nearTermRefresh++;
+        }
+      }
+
+      if (!node) {
+        await sleep(STANDUPTIX_PAGE_DELAY_MS);
+        try {
+          const html = await fetchPage(url);
+          node = pickEventJsonLd(html);
+          cacheStats.fetched++;
+        } catch (err) {
+          if (cached && cached.node) {
+            // Transient page failure with a cached copy — serve stale rather
+            // than dropping the show from the feed.
+            console.warn(`  [StandupTix] Page fetch failed, using cached copy: ${url} (${err.message})`);
+            node = cached.node;
+          } else {
+            console.warn(`  [StandupTix] Page fetch failed, skipping: ${url} (${err.message})`);
+            skipped++;
+            continue;
+          }
+        }
+        if (node) {
+          pageCache.pages[url] = { lastmod: sitemapLastmod || null, node };
+        }
       }
       if (!node) {
         console.warn(`  [StandupTix] No Event JSON-LD on ${url} — skipping.`);
+        delete pageCache.pages[url];
         skipped++;
         continue;
       }
@@ -1167,6 +1251,22 @@ async function fetchStandupTix(configOverride) {
         `Refusing to publish a partial StandupTix feed — keeping last good data.`
     );
   }
+
+  // Prune pages that left every sitemap (past shows), then persist. Only
+  // reached on full success — a failed venue above throws first, so its
+  // cached pages are never pruned by a run that couldn't see its sitemap.
+  for (const url of Object.keys(pageCache.pages)) {
+    if (!seenUrls.has(url)) delete pageCache.pages[url];
+  }
+  try {
+    fs.writeFileSync(STANDUPTIX_CACHE_PATH, JSON.stringify(pageCache, null, 2) + "\n");
+  } catch (e) {
+    console.warn(`[StandupTix] Could not write page cache: ${e.message}`);
+  }
+  console.log(
+    `[StandupTix] Pages: ${cacheStats.fetched} fetched, ${cacheStats.hits} cache hits, ` +
+      `${cacheStats.nearTermRefresh} near-term refreshes (cache: ${Object.keys(pageCache.pages).length} pages)`
+  );
 
   // Same date window the API sources request server-side: from the start of
   // today (Central) through MAX_DAYS_AHEAD. The upcoming-events sitemap can
