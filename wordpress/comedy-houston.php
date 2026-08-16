@@ -33,6 +33,10 @@ class Comedy_Houston_Plugin {
     // same code paths as the GA4 events. Empty string disables everything.
     const META_PIXEL_ID = '822551924791710';
 
+    // Meta Business Manager domain verification for comedyhouston.com.
+    // Meta rechecks this periodically — removing it un-verifies the domain.
+    const META_DOMAIN_VERIFICATION = 'xce3s1kpqu8xg5242jx2qj5co2auht';
+
     private $defaults = [
         'github_user'         => 'sanjmanak',
         'repo'                => 'show_lister',
@@ -1130,8 +1134,14 @@ class Comedy_Houston_Plugin {
         return $this->expand_date_tokens($h1);
     }
 
-    /** Meta Pixel base snippet. Guarded so fbq is never double-defined. */
+    /** Meta Pixel base snippet + domain verification. Guarded so fbq is never double-defined. */
     public function emit_meta_pixel() {
+        if (self::META_DOMAIN_VERIFICATION) {
+            printf(
+                '<meta name="facebook-domain-verification" content="%s" />' . "\n",
+                esc_attr(self::META_DOMAIN_VERIFICATION)
+            );
+        }
         if (!self::META_PIXEL_ID) {
             return;
         }
