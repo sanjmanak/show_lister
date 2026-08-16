@@ -51,5 +51,10 @@
     { "name": "Marlon Wayans", "tags": ["black-comedy"] },
     { "name": "Tommy Davidson", "tags": ["black-comedy"] }
   ],
-  "exclusions": []
+  "exclusions": [
+    { "contains": "bob biggerstaff", "tags": ["black-comedy"] },
+    { "contains": "alfred robles", "tags": ["black-comedy"] },
+    { "contains": "jay badlani", "tags": ["black-comedy"] },
+    { "contains": "one minute comedy showdown", "tags": ["black-comedy"] }
+  ]
 }
