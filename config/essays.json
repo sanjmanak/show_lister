@@ -1,0 +1,54 @@
+{
+  "comment": "Comedian essay series. Consumed by scripts/publish-essays.js (workflow: publish-essays.yml, manual dispatch). Each entry publishes/updates one WP post in the comedy-advice category, indexed (no ch_noindex). schedule_gmt=null publishes immediately; a future ISO date creates a scheduled ('future') post; a past date publishes immediately. Images are Unsplash (free license, no attribution required).",
+  "category_slug": "comedy-advice",
+  "essays": [
+    {
+      "slug": "why-nobody-is-watching-your-stand-up-clips",
+      "file": "blog/essays/why-nobody-is-watching-your-stand-up-clips.html",
+      "excerpt": "You're funny live. Your clips die at 200 views. The problem isn't the algorithm — it's the first two seconds. How to cut stand-up clips that strangers actually watch.",
+      "image_url": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1600&q=80&fm=jpg",
+      "image_alt": "Comedy club stage under colored lights with a crowd raising phones",
+      "schedule_gmt": null
+    },
+    {
+      "slug": "crowd-work-isnt-killing-stand-up",
+      "file": "blog/essays/crowd-work-isnt-killing-stand-up.html",
+      "excerpt": "The green room says crowd work clips are ruining stand-up. The box office says they're filling it. Why crowd work is the free ad campaign for your written hour.",
+      "image_url": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&q=80&fm=jpg",
+      "image_alt": "Audience seated in a dark showroom watching a live performance",
+      "schedule_gmt": "2026-08-19T15:00:00"
+    },
+    {
+      "slug": "the-only-comedy-credit-that-sells-tickets",
+      "file": "blog/essays/the-only-comedy-credit-that-sells-tickets.html",
+      "excerpt": "We list every comedy show in Houston, so we see who fills the big rooms. None of them did it with festival laurels. What replaced the credit system, and what to do about it.",
+      "image_url": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1600&q=80&fm=jpg",
+      "image_alt": "Packed arena crowd facing a bright stage",
+      "schedule_gmt": "2026-08-26T15:00:00"
+    },
+    {
+      "slug": "stage-time-problem-distribution-problem",
+      "file": "blog/essays/stage-time-problem-distribution-problem.html",
+      "excerpt": "Stage time makes you good. It has never made anyone known. The open mic math nobody wants to do, and the second job every working comic now has.",
+      "image_url": "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=1600&q=80&fm=jpg",
+      "image_alt": "Close-up of a microphone on a dark stage",
+      "schedule_gmt": "2026-09-02T15:00:00"
+    },
+    {
+      "slug": "stop-promoting-your-show-to-other-comedians",
+      "file": "blog/essays/stop-promoting-your-show-to-other-comedians.html",
+      "excerpt": "41 likes on the flyer, 38 from comics, 9 paid at the door. Why show promotion stays trapped inside the scene, and how to sell the night instead of the lineup.",
+      "image_url": "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1600&q=80&fm=jpg",
+      "image_alt": "Group of friends laughing together at a table",
+      "schedule_gmt": "2026-09-09T15:00:00"
+    },
+    {
+      "slug": "your-followers-are-not-your-audience",
+      "file": "blog/essays/your-followers-are-not-your-audience.html",
+      "excerpt": "8,000 followers, 19 in the room. Followers are rented; an email list is owned. The stool-sign system that turns full rooms into an audience you keep.",
+      "image_url": "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=1600&q=80&fm=jpg",
+      "image_alt": "Phone screen showing a mail app icon with unread badge",
+      "schedule_gmt": "2026-09-16T15:00:00"
+    }
+  ]
+}
