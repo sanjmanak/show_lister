@@ -1,249 +1,7 @@
 {
-  "last_updated": "2026-08-16T02:40:14.323Z",
-  "total_events": 453,
+  "last_updated": "2026-08-16T14:37:30.601Z",
+  "total_events": 449,
   "events": [
-    {
-      "id": "af934984e791b130",
-      "name": "Josh Wolf: Touring Hard",
-      "genre": "Comedy",
-      "venue": "Punch Line Houston",
-      "venue_state": "TX",
-      "venue_city": "Houston",
-      "date": "2026-08-15",
-      "time": "7:00 PM",
-      "day_of_week": "Saturday",
-      "price_min": null,
-      "price_max": null,
-      "currency": "USD",
-      "price_source": null,
-      "ticket_url": "https://www.ticketmaster.com/josh-wolf-touring-hard-houston-texas-08-15-2026/event/3A006494AF6AB9E6",
-      "image_url": "https://s1.ticketm.net/dam/a/5ee/4bf7ddf6-f681-4c50-a892-d789ef9875ee_SOURCE",
-      "source": "ticketmaster",
-      "age_restriction": null,
-      "status": "off_sale",
-      "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
-      "last_updated": "2026-08-16T02:19:00.512Z",
-      "is_open_mic": false,
-      "performer_requests": false,
-      "tags": []
-    },
-    {
-      "id": "aafde67a865db93c",
-      "name": "The Best of the Secret Group Comedy Showcase 7pm",
-      "venue": "The Secret Group",
-      "venue_state": "TX",
-      "venue_city": "Houston",
-      "date": "2026-08-15",
-      "time": "7:00 PM",
-      "day_of_week": "Saturday",
-      "price_min": 18.06,
-      "price_max": 21.51,
-      "currency": "USD",
-      "price_source": "api",
-      "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-7pm-tickets-1994281767451",
-      "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1189052779%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=32ed7c355544a262f5b2bb9b83493dc0",
-      "source": "eventbrite",
-      "age_restriction": null,
-      "status": "on_sale",
-      "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
-      "last_updated": "2026-08-16T02:19:02.827Z",
-      "is_open_mic": false,
-      "performer_requests": true,
-      "tags": []
-    },
-    {
-      "id": "9b33bdc23eb980f0",
-      "name": "Jed Harrelson",
-      "venue": "The Secret Group",
-      "venue_state": "TX",
-      "venue_city": "Houston",
-      "date": "2026-08-15",
-      "time": "8:00 PM",
-      "day_of_week": "Saturday",
-      "price_min": 26.13,
-      "price_max": 60.75,
-      "currency": "USD",
-      "price_source": "api",
-      "ticket_url": "https://www.eventbrite.com/e/jed-harrelson-tickets-1988849379031",
-      "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1183835055%2F3558237521%2F1%2Foriginal.20260505-171736?auto=format%2Ccompress&q=75&sharp=10&s=2a488c4dddd69e30dea670d742b02d6c",
-      "source": "eventbrite",
-      "age_restriction": null,
-      "status": "on_sale",
-      "description": "Join us for an evening with Jed Harrelson with guest Carson Lewis on August 15, 2026!",
-      "last_updated": "2026-08-16T02:19:02.827Z",
-      "is_open_mic": false,
-      "performer_requests": true,
-      "tags": []
-    },
-    {
-      "id": "ae83868fc7072ced",
-      "name": "Comedy & Drinks in a Speakeasy: Saturday",
-      "venue": "The Den Comedy Club",
-      "venue_state": "TX",
-      "venue_city": "Houston",
-      "date": "2026-08-15",
-      "time": "8:00 PM",
-      "day_of_week": "Saturday",
-      "price_min": 27.06,
-      "price_max": 227.33,
-      "currency": "USD",
-      "price_source": "api",
-      "ticket_url": "https://www.eventbrite.com/e/comedy-drinks-in-a-speakeasy-saturday-tickets-1993343273390",
-      "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1180439921%2F2991795842957%2F1%2Foriginal.20260323-033807?auto=format%2Ccompress&q=75&sharp=10&s=66133803980ac4e6d87ae4c5ef941e02",
-      "source": "eventbrite",
-      "age_restriction": null,
-      "status": "on_sale",
-      "description": "Kick back and laugh out loud with some of the funniest folks in Houston at this Saturday night comedy show in our speakeasy lounge.",
-      "last_updated": "2026-08-16T02:19:05.107Z",
-      "is_open_mic": false,
-      "performer_requests": true,
-      "tags": []
-    },
-    {
-      "id": "e4fc63ee7c431fc6",
-      "name": "The Best of the Secret Group Comedy Showcase 9pm",
-      "venue": "The Secret Group",
-      "venue_state": "TX",
-      "venue_city": "Houston",
-      "date": "2026-08-15",
-      "time": "9:00 PM",
-      "day_of_week": "Saturday",
-      "price_min": 18.06,
-      "price_max": 21.51,
-      "currency": "USD",
-      "price_source": "api",
-      "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-9pm-tickets-1994281776478",
-      "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1189052783%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=7497b0a593d040e20d31ecac3695a9f4",
-      "source": "eventbrite",
-      "age_restriction": null,
-      "status": "on_sale",
-      "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
-      "last_updated": "2026-08-16T02:19:02.827Z",
-      "is_open_mic": false,
-      "performer_requests": true,
-      "tags": []
-    },
-    {
-      "id": "9634082478caa9a0",
-      "name": "Don't Tell Comedy: Katy (9:00 PM Show)",
-      "venue": "Don't Tell Comedy (Secret Location)",
-      "venue_state": "TX",
-      "venue_city": "Katy",
-      "date": "2026-08-15",
-      "time": "9:00 PM",
-      "day_of_week": "Saturday",
-      "price_min": 27,
-      "price_max": 27,
-      "currency": "USD",
-      "price_source": "api",
-      "ticket_url": "https://www.donttellcomedy.com/shows/houston-20218/",
-      "image_url": "https://dont-tell-comedy.mo.cloudinary.net/private/jersey-shop-lucas_EKKMkFu.webp",
-      "source": "donttellcomedy",
-      "age_restriction": "21+",
-      "status": "on_sale",
-      "description": "Get tickets to a secret comedy show in Katy, TX on 8/15/26. Experience live comedy in Houston like never before! See details here.",
-      "last_updated": "2026-08-16T02:19:01.839Z",
-      "is_open_mic": false,
-      "performer_requests": false,
-      "tags": []
-    },
-    {
-      "id": "a6fbcdec566fded4",
-      "name": "Mark Normand",
-      "genre": "Miscellaneous",
-      "venue": "Houston Improv",
-      "venue_state": "TX",
-      "venue_city": "Houston",
-      "date": "2026-08-15",
-      "time": "9:30 PM",
-      "day_of_week": "Saturday",
-      "price_min": null,
-      "price_max": null,
-      "currency": "USD",
-      "price_source": null,
-      "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7-8oV",
-      "image_url": "https://s1.ticketm.net/dam/a/8c1/7a8f11c3-7869-4fcf-8216-924cad5328c1_SOURCE",
-      "source": "ticketmaster",
-      "age_restriction": null,
-      "status": "on_sale",
-      "description": null,
-      "last_updated": "2026-08-16T02:19:00.512Z",
-      "is_open_mic": false,
-      "performer_requests": false,
-      "tags": []
-    },
-    {
-      "id": "63cc58df604f06a3",
-      "name": "The Best of the Secret Group RATED R Comedy Showcase 11pm",
-      "venue": "The Secret Group",
-      "venue_state": "TX",
-      "venue_city": "Houston",
-      "date": "2026-08-15",
-      "time": "11:00 PM",
-      "day_of_week": "Saturday",
-      "price_min": 11.13,
-      "price_max": 14.59,
-      "currency": "USD",
-      "price_source": "api",
-      "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-rated-r-comedy-showcase-11pm-tickets-1994281812586",
-      "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1189052799%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=aab4c7d7ed86100382da019a2371564b",
-      "source": "eventbrite",
-      "age_restriction": null,
-      "status": "on_sale",
-      "description": "Catch some great local comics in the newly renovated back room of TSG \"The Box\"!",
-      "last_updated": "2026-08-16T02:19:02.827Z",
-      "is_open_mic": false,
-      "performer_requests": true,
-      "tags": []
-    },
-    {
-      "id": "e799d05921fa711d",
-      "name": "The Riot Comedy Club Presents Saturday Night Standup Comedy Late Show!",
-      "venue": "The Riot Comedy Club",
-      "venue_state": "TX",
-      "venue_city": "Houston",
-      "date": "2026-08-15",
-      "time": "11:00 PM",
-      "day_of_week": "Saturday",
-      "price_min": 15,
-      "price_max": 15,
-      "currency": "USD",
-      "price_source": "api",
-      "ticket_url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-15",
-      "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-13-Saturday-11pm-20db1248-large-thumb.png",
-      "source": "standuptix",
-      "age_restriction": null,
-      "status": "on_sale",
-      "description": "Get ready for the most unpredictable and chaotic showtime in the comedy scene! The Late Show offers an intimate late-night experience where the crowd is loose, the vibes are electric, and the laughs are nonstop.This showcase features a mix of headline comedians who sell out venues and local talent who know how to steal the show, making every performance an unforgettable experience.Whether you&rsquo;re looking for a fun night out or just love the thrill of late-night comedy, this show will have you laughing until it hurts.????️ Reserve your tickets now and join us for a late-night comedy event like no other!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-      "last_updated": "2026-08-16T02:19:03.376Z",
-      "is_open_mic": false,
-      "performer_requests": true,
-      "tags": []
-    },
-    {
-      "id": "57a945c23b698c5b",
-      "name": "SPEEDBALL: Saturday Open Mic Comedy",
-      "venue": "The Secret Group",
-      "venue_state": "TX",
-      "venue_city": "Houston",
-      "date": "2026-08-15",
-      "time": "11:59 PM",
-      "day_of_week": "Saturday",
-      "price_min": 0,
-      "price_max": 0,
-      "currency": "USD",
-      "price_source": "api",
-      "ticket_url": "https://www.eventbrite.com/e/speedball-saturday-open-mic-comedy-tickets-1994281829637",
-      "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1065628803%2F3558237521%2F1%2Foriginal.20250703-001512?auto=format%2Ccompress&q=75&sharp=10&s=61b8871824c7fc4b25eb3b46b0c8c63e",
-      "source": "eventbrite",
-      "age_restriction": null,
-      "status": "on_sale",
-      "description": "Speedball open mic is back, Saturdays at 11:59 for some quick, raw, and unfiltered comedy!",
-      "last_updated": "2026-08-16T02:19:02.827Z",
-      "is_open_mic": true,
-      "performer_requests": true,
-      "tags": []
-    },
     {
       "id": "776589c8e58a24c0",
       "name": "Tee Sanders",
@@ -849,12 +607,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of fast-paced, side-splitting fun at the One Minute Comedy Showdown! Hosted by the hilarious Jeff Joe, this unique stand-up comedy competition puts the spotlight on 15 of Houston&rsquo;s funniest comedians (plus special surprise guests).Here&rsquo;s how it works:&bull; Each comedian performs a 1-minute set to win over the crowd.&bull; YOU get to decide who moves on to the next round.&bull; The competition heats up as comedians perform longer sets until only one is left standing as the One Minute Comedy Showdown Champion!It&rsquo;s unpredictable, high-energy, and packed with laughs from start to finish. Don&rsquo;t miss your chance to experience the most exciting comedy competition in Houston!Reserve your tickets now and be part of the action!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-      "last_updated": "2026-08-16T02:19:31.800Z",
+      "last_updated": "2026-08-16T14:16:59.178Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "aa687a6dab70a3a5",
@@ -1071,12 +827,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come catch some of the nation's best up-and-coming comics stretch their legs and perfect their craft every Thursday!",
-      "last_updated": "2026-08-16T02:19:02.828Z",
+      "last_updated": "2026-08-16T14:16:37.005Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "7d7042f8cf8d78ed",
@@ -1243,12 +997,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-08-16T02:19:00.512Z",
+      "last_updated": "2026-08-16T14:16:35.458Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "4d1409574c812712",
@@ -1535,12 +1287,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-08-16T02:19:00.512Z",
+      "last_updated": "2026-08-16T14:16:35.458Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "f95b73fd69280d41",
@@ -1853,12 +1603,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-08-16T02:19:00.512Z",
+      "last_updated": "2026-08-16T14:16:35.458Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "73c563ae4566437d",
@@ -2120,12 +1868,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of fast-paced, side-splitting fun at the One Minute Comedy Showdown! Hosted by the hilarious Jeff Joe, this unique stand-up comedy competition puts the spotlight on 15 of Houston&rsquo;s funniest comedians (plus special surprise guests).Here&rsquo;s how it works:&bull; Each comedian performs a 1-minute set to win over the crowd.&bull; YOU get to decide who moves on to the next round.&bull; The competition heats up as comedians perform longer sets until only one is left standing as the One Minute Comedy Showdown Champion!It&rsquo;s unpredictable, high-energy, and packed with laughs from start to finish. Don&rsquo;t miss your chance to experience the most exciting comedy competition in Houston!Reserve your tickets now and be part of the action!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-      "last_updated": "2026-08-16T02:20:27.735Z",
+      "last_updated": "2026-08-16T14:17:51.042Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "90894ebbf814fcb6",
@@ -2270,12 +2016,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Come catch some of the nation's best up-and-coming comics stretch their legs and perfect their craft every Thursday!",
-      "last_updated": "2026-08-16T02:19:02.828Z",
+      "last_updated": "2026-08-16T14:16:37.005Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "80f6671da2ddf16b",
@@ -2395,10 +2139,12 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Courtney Gilmour is an award-winning comedian and television writer. In 2017 she delivered a breakout performance at the Just For Laughs Festival in Montreal&nbsp;by becoming the first female to win the prestigious Homegrown Comics Competition as Canada&rsquo;s top comedian. Her stand-up has been featured on Don&rsquo;t Tell Comedy and multiple national broadcasts from festivals including the Winnipeg Comedy Festival, Halifax Comedy Festival, JFL Vancouver as well as Kevin Hart&rsquo;s LOL Network and the Howie Mandel All Stars Gala at Just For Laughs Montreal. In 2022 she was a&nbsp;Finalist in the second season of Canada&rsquo;s Got Talent. Courtney made her U.S. Network debut on Comic&rsquo;s Unleashed and as an actor, appears in season 13 of Trailer Park Boys and is the voice of Lizzy on Nickelodeon&rsquo;s Paw Patrol. She&rsquo;s written for and made appearances on This Hour Has 22 Minutes, CBC&rsquo;s The Debaters, Space Dragon &amp; Kim and CBC&rsquo;s Humor Resources alongside Jon Dore and Sarah Silverman as well as multiple&nbsp;appearances on Roast Battle Canada. Her solo show, Congratulations! Stories of Achievement, Embarrassment &amp; Self- Worth debuted at the Toronto Fringe Festival in 2019 and was met with sold out shows as well as multiple awards including Best of Fringe and Patrons&rsquo; Pick. Courtney&rsquo;s albums, Let Me Hold Your Baby and Wonder Woman were both nominated for JUNO Awards for Comedy Album of the Year and can both be&nbsp;regularly heard on SiriusXM.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-      "last_updated": "2026-08-16T02:20:38.073Z",
+      "last_updated": "2026-08-16T14:18:01.295Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": []
+      "tags": [
+        "black-comedy"
+      ]
     },
     {
       "id": "14cec3f604838ce7",
@@ -2645,10 +2391,12 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Courtney Gilmour is an award-winning comedian and television writer. In 2017 she delivered a breakout performance at the Just For Laughs Festival in Montreal&nbsp;by becoming the first female to win the prestigious Homegrown Comics Competition as Canada&rsquo;s top comedian. Her stand-up has been featured on Don&rsquo;t Tell Comedy and multiple national broadcasts from festivals including the Winnipeg Comedy Festival, Halifax Comedy Festival, JFL Vancouver as well as Kevin Hart&rsquo;s LOL Network and the Howie Mandel All Stars Gala at Just For Laughs Montreal. In 2022 she was a&nbsp;Finalist in the second season of Canada&rsquo;s Got Talent. Courtney made her U.S. Network debut on Comic&rsquo;s Unleashed and as an actor, appears in season 13 of Trailer Park Boys and is the voice of Lizzy on Nickelodeon&rsquo;s Paw Patrol. She&rsquo;s written for and made appearances on This Hour Has 22 Minutes, CBC&rsquo;s The Debaters, Space Dragon &amp; Kim and CBC&rsquo;s Humor Resources alongside Jon Dore and Sarah Silverman as well as multiple&nbsp;appearances on Roast Battle Canada. Her solo show, Congratulations! Stories of Achievement, Embarrassment &amp; Self- Worth debuted at the Toronto Fringe Festival in 2019 and was met with sold out shows as well as multiple awards including Best of Fringe and Patrons&rsquo; Pick. Courtney&rsquo;s albums, Let Me Hold Your Baby and Wonder Woman were both nominated for JUNO Awards for Comedy Album of the Year and can both be&nbsp;regularly heard on SiriusXM.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-      "last_updated": "2026-08-16T02:20:48.651Z",
+      "last_updated": "2026-08-16T14:18:11.828Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": []
+      "tags": [
+        "black-comedy"
+      ]
     },
     {
       "id": "7f5e8ce1de330316",
@@ -3131,12 +2879,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of fast-paced, side-splitting fun at the One Minute Comedy Showdown! Hosted by the hilarious Jeff Joe, this unique stand-up comedy competition puts the spotlight on 15 of Houston&rsquo;s funniest comedians (plus special surprise guests).Here&rsquo;s how it works:&bull; Each comedian performs a 1-minute set to win over the crowd.&bull; YOU get to decide who moves on to the next round.&bull; The competition heats up as comedians perform longer sets until only one is left standing as the One Minute Comedy Showdown Champion!It&rsquo;s unpredictable, high-energy, and packed with laughs from start to finish. Don&rsquo;t miss your chance to experience the most exciting comedy competition in Houston!Reserve your tickets now and be part of the action!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-      "last_updated": "2026-08-16T02:21:24.465Z",
+      "last_updated": "2026-08-16T14:18:45.461Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "a264abdb6bedb045",
@@ -4039,12 +3785,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of fast-paced, side-splitting fun at the One Minute Comedy Showdown! Hosted by the hilarious Jeff Joe, this unique stand-up comedy competition puts the spotlight on 15 of Houston&rsquo;s funniest comedians (plus special surprise guests).Here&rsquo;s how it works:&bull; Each comedian performs a 1-minute set to win over the crowd.&bull; YOU get to decide who moves on to the next round.&bull; The competition heats up as comedians perform longer sets until only one is left standing as the One Minute Comedy Showdown Champion!It&rsquo;s unpredictable, high-energy, and packed with laughs from start to finish. Don&rsquo;t miss your chance to experience the most exciting comedy competition in Houston!Reserve your tickets now and be part of the action!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-      "last_updated": "2026-08-16T02:22:20.801Z",
+      "last_updated": "2026-08-16T14:19:39.834Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "7a4c628d7cdb00b3",
@@ -4385,12 +4129,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Houston’s own Bob Biggerstaff has appeared on NBC’s Last Comic Standing and HBO’s Captain Miserable with Dave Attell",
-      "last_updated": "2026-08-16T02:19:08.414Z",
+      "last_updated": "2026-08-16T14:16:41.416Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "c7d277e4893c800d",
@@ -4608,12 +4350,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Houston’s own Bob Biggerstaff has appeared on NBC’s Last Comic Standing and HBO’s Captain Miserable with Dave Attell",
-      "last_updated": "2026-08-16T02:19:08.414Z",
+      "last_updated": "2026-08-16T14:16:41.416Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "56ea05724ce67c6c",
@@ -4977,12 +4717,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of fast-paced, side-splitting fun at the One Minute Comedy Showdown! Hosted by the hilarious Jeff Joe, this unique stand-up comedy competition puts the spotlight on 15 of Houston&rsquo;s funniest comedians (plus special surprise guests).Here&rsquo;s how it works:&bull; Each comedian performs a 1-minute set to win over the crowd.&bull; YOU get to decide who moves on to the next round.&bull; The competition heats up as comedians perform longer sets until only one is left standing as the One Minute Comedy Showdown Champion!It&rsquo;s unpredictable, high-energy, and packed with laughs from start to finish. Don&rsquo;t miss your chance to experience the most exciting comedy competition in Houston!Reserve your tickets now and be part of the action!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-      "last_updated": "2026-08-16T02:23:20.434Z",
+      "last_updated": "2026-08-16T14:20:38.725Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "b7d7795979acd8b4",
@@ -5473,6 +5211,30 @@
       "tags": []
     },
     {
+      "id": "6ecd540a6b22ecb8",
+      "name": "Don't Tell Comedy: Pasadena (8:00 PM Show)",
+      "venue": "Don't Tell Comedy (Secret Location)",
+      "venue_state": null,
+      "venue_city": "Pasadena",
+      "date": "2026-09-19",
+      "time": "8:00 PM",
+      "day_of_week": "Saturday",
+      "price_min": 27,
+      "price_max": 27,
+      "currency": "USD",
+      "price_source": "api",
+      "ticket_url": "https://www.donttellcomedy.com/shows/houston-20889/",
+      "image_url": "https://dont-tell-comedy.mo.cloudinary.net/private/arttheater_opie_OuvJCLW.webp",
+      "source": "donttellcomedy",
+      "age_restriction": "21+",
+      "status": "on_sale",
+      "description": "Get tickets to a secret comedy show in Pasadena on 9/19/26. Experience live comedy in Houston like never before! See details here.",
+      "last_updated": "2026-08-16T14:16:48.336Z",
+      "is_open_mic": false,
+      "performer_requests": false,
+      "tags": []
+    },
+    {
       "id": "c7294402c86307ee",
       "name": "The Riot Comedy Club Presents Saturday Night Standup Comedy Late Show!",
       "venue": "The Riot Comedy Club",
@@ -5807,12 +5569,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of fast-paced, side-splitting fun at the One Minute Comedy Showdown! Hosted by the hilarious Jeff Joe, this unique stand-up comedy competition puts the spotlight on 15 of Houston&rsquo;s funniest comedians (plus special surprise guests).Here&rsquo;s how it works:&bull; Each comedian performs a 1-minute set to win over the crowd.&bull; YOU get to decide who moves on to the next round.&bull; The competition heats up as comedians perform longer sets until only one is left standing as the One Minute Comedy Showdown Champion!It&rsquo;s unpredictable, high-energy, and packed with laughs from start to finish. Don&rsquo;t miss your chance to experience the most exciting comedy competition in Houston!Reserve your tickets now and be part of the action!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-      "last_updated": "2026-08-16T02:24:16.753Z",
+      "last_updated": "2026-08-16T14:21:34.796Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "f0f2e5d7c2d20a0c",
@@ -6640,12 +6400,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of fast-paced, side-splitting fun at the One Minute Comedy Showdown! Hosted by the hilarious Jeff Joe, this unique stand-up comedy competition puts the spotlight on 15 of Houston&rsquo;s funniest comedians (plus special surprise guests).Here&rsquo;s how it works:&bull; Each comedian performs a 1-minute set to win over the crowd.&bull; YOU get to decide who moves on to the next round.&bull; The competition heats up as comedians perform longer sets until only one is left standing as the One Minute Comedy Showdown Champion!It&rsquo;s unpredictable, high-energy, and packed with laughs from start to finish. Don&rsquo;t miss your chance to experience the most exciting comedy competition in Houston!Reserve your tickets now and be part of the action!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-      "last_updated": "2026-08-16T02:25:13.269Z",
+      "last_updated": "2026-08-16T14:22:31.145Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "1cd328754d3aef02",
@@ -7207,12 +6965,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-08-16T02:19:00.514Z",
+      "last_updated": "2026-08-16T14:16:35.459Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "ee9d14dfbb0fd841",
@@ -7478,12 +7234,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of fast-paced, side-splitting fun at the One Minute Comedy Showdown! Hosted by the hilarious Jeff Joe, this unique stand-up comedy competition puts the spotlight on 15 of Houston&rsquo;s funniest comedians (plus special surprise guests).Here&rsquo;s how it works:&bull; Each comedian performs a 1-minute set to win over the crowd.&bull; YOU get to decide who moves on to the next round.&bull; The competition heats up as comedians perform longer sets until only one is left standing as the One Minute Comedy Showdown Champion!It&rsquo;s unpredictable, high-energy, and packed with laughs from start to finish. Don&rsquo;t miss your chance to experience the most exciting comedy competition in Houston!Reserve your tickets now and be part of the action!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-      "last_updated": "2026-08-16T02:26:09.921Z",
+      "last_updated": "2026-08-16T14:23:27.536Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "02a56769972a250f",
@@ -8161,12 +7915,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of fast-paced, side-splitting fun at the One Minute Comedy Showdown! Hosted by the hilarious Jeff Joe, this unique stand-up comedy competition puts the spotlight on 15 of Houston&rsquo;s funniest comedians (plus special surprise guests).Here&rsquo;s how it works:&bull; Each comedian performs a 1-minute set to win over the crowd.&bull; YOU get to decide who moves on to the next round.&bull; The competition heats up as comedians perform longer sets until only one is left standing as the One Minute Comedy Showdown Champion!It&rsquo;s unpredictable, high-energy, and packed with laughs from start to finish. Don&rsquo;t miss your chance to experience the most exciting comedy competition in Houston!Reserve your tickets now and be part of the action!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-      "last_updated": "2026-08-16T02:27:05.640Z",
+      "last_updated": "2026-08-16T14:24:23.677Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "d257018e0a83872b",
@@ -8188,10 +7940,12 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
-      "last_updated": "2026-08-16T02:19:00.514Z",
+      "last_updated": "2026-08-16T14:16:35.460Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": []
+      "tags": [
+        "black-comedy"
+      ]
     },
     {
       "id": "e81042451325feb8",
@@ -9008,12 +8762,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of fast-paced, side-splitting fun at the One Minute Comedy Showdown! Hosted by the hilarious Jeff Joe, this unique stand-up comedy competition puts the spotlight on 15 of Houston&rsquo;s funniest comedians (plus special surprise guests).Here&rsquo;s how it works:&bull; Each comedian performs a 1-minute set to win over the crowd.&bull; YOU get to decide who moves on to the next round.&bull; The competition heats up as comedians perform longer sets until only one is left standing as the One Minute Comedy Showdown Champion!It&rsquo;s unpredictable, high-energy, and packed with laughs from start to finish. Don&rsquo;t miss your chance to experience the most exciting comedy competition in Houston!Reserve your tickets now and be part of the action!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-      "last_updated": "2026-08-16T02:28:01.918Z",
+      "last_updated": "2026-08-16T14:25:20.057Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "795ee9d2ddf269a9",
@@ -9740,12 +9492,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of fast-paced, side-splitting fun at the One Minute Comedy Showdown! Hosted by the hilarious Jeff Joe, this unique stand-up comedy competition puts the spotlight on 15 of Houston&rsquo;s funniest comedians (plus special surprise guests).Here&rsquo;s how it works:&bull; Each comedian performs a 1-minute set to win over the crowd.&bull; YOU get to decide who moves on to the next round.&bull; The competition heats up as comedians perform longer sets until only one is left standing as the One Minute Comedy Showdown Champion!It&rsquo;s unpredictable, high-energy, and packed with laughs from start to finish. Don&rsquo;t miss your chance to experience the most exciting comedy competition in Houston!Reserve your tickets now and be part of the action!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-      "last_updated": "2026-08-16T02:28:58.610Z",
+      "last_updated": "2026-08-16T14:26:16.464Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "b32d09e5de7118c5",
@@ -10353,12 +10103,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of fast-paced, side-splitting fun at the One Minute Comedy Showdown! Hosted by the hilarious Jeff Joe, this unique stand-up comedy competition puts the spotlight on 15 of Houston&rsquo;s funniest comedians (plus special surprise guests).Here&rsquo;s how it works:&bull; Each comedian performs a 1-minute set to win over the crowd.&bull; YOU get to decide who moves on to the next round.&bull; The competition heats up as comedians perform longer sets until only one is left standing as the One Minute Comedy Showdown Champion!It&rsquo;s unpredictable, high-energy, and packed with laughs from start to finish. Don&rsquo;t miss your chance to experience the most exciting comedy competition in Houston!Reserve your tickets now and be part of the action!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-      "last_updated": "2026-08-16T02:29:55.214Z",
+      "last_updated": "2026-08-16T14:27:13.078Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "9baf123b10edc322",
@@ -10453,10 +10201,12 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
-      "last_updated": "2026-08-16T02:19:00.515Z",
+      "last_updated": "2026-08-16T14:16:35.460Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": []
+      "tags": [
+        "black-comedy"
+      ]
     },
     {
       "id": "0bf1a86bf3b864a3",
@@ -10526,10 +10276,12 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
-      "last_updated": "2026-08-16T02:19:00.515Z",
+      "last_updated": "2026-08-16T14:16:35.460Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": []
+      "tags": [
+        "black-comedy"
+      ]
     },
     {
       "id": "e37266535b168599",
@@ -10681,6 +10433,60 @@
       "is_open_mic": false,
       "performer_requests": true,
       "tags": []
+    },
+    {
+      "id": "1b79296b5a8f8cd2",
+      "name": "Alonzo Bodden",
+      "genre": "Comedy",
+      "venue": "Punch Line Houston",
+      "venue_state": "TX",
+      "venue_city": "Houston",
+      "date": "2026-11-07",
+      "time": "7:00 PM",
+      "day_of_week": "Saturday",
+      "price_min": null,
+      "price_max": null,
+      "currency": "USD",
+      "price_source": null,
+      "ticket_url": "https://www.ticketmaster.com/alonzo-bodden-houston-texas-11-07-2026/event/3A0064EDA2566AB1",
+      "image_url": "https://s1.ticketm.net/dam/a/ad7/5d9195ef-4e6d-4757-bb42-48500f56dad7_SOURCE",
+      "source": "ticketmaster",
+      "age_restriction": null,
+      "status": "on_sale",
+      "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
+      "last_updated": "2026-08-16T14:16:35.460Z",
+      "is_open_mic": false,
+      "performer_requests": false,
+      "tags": [
+        "black-comedy"
+      ]
+    },
+    {
+      "id": "e0277b03a49633ce",
+      "name": "Desi Banks",
+      "genre": "Other",
+      "venue": "Houston Improv",
+      "venue_state": "TX",
+      "venue_city": "Houston",
+      "date": "2026-11-07",
+      "time": "7:00 PM",
+      "day_of_week": "Saturday",
+      "price_min": null,
+      "price_max": null,
+      "currency": "USD",
+      "price_source": null,
+      "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7O8F-",
+      "image_url": "https://s1.ticketm.net/dam/a/dd0/6249797d-9753-46d0-9f7a-97a273a5bdd0_SOURCE",
+      "source": "ticketmaster",
+      "age_restriction": null,
+      "status": "on_sale",
+      "description": null,
+      "last_updated": "2026-08-16T14:16:35.460Z",
+      "is_open_mic": false,
+      "performer_requests": false,
+      "tags": [
+        "black-comedy"
+      ]
     },
     {
       "id": "caec11b13ca15bf1",
@@ -10965,12 +10771,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Get ready for a night of fast-paced, side-splitting fun at the One Minute Comedy Showdown! Hosted by the hilarious Jeff Joe, this unique stand-up comedy competition puts the spotlight on 15 of Houston&rsquo;s funniest comedians (plus special surprise guests).Here&rsquo;s how it works:&bull; Each comedian performs a 1-minute set to win over the crowd.&bull; YOU get to decide who moves on to the next round.&bull; The competition heats up as comedians perform longer sets until only one is left standing as the One Minute Comedy Showdown Champion!It&rsquo;s unpredictable, high-energy, and packed with laughs from start to finish. Don&rsquo;t miss your chance to experience the most exciting comedy competition in Houston!Reserve your tickets now and be part of the action!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-      "last_updated": "2026-08-16T02:30:51.871Z",
+      "last_updated": "2026-08-16T14:28:09.506Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "82bbd411d1f1a290",
@@ -11063,12 +10867,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "Jay Badlani is a stand-up comedian, writer, and actor based in Atlanta, GA. Known for his unflinching attitude and sharp, charismatic voice, Jay has built one of the more impressive digital followings in the independent comedy space, with over 200 million views and 200,000+ followers across his platforms through a steady output of live stand-up and online content.A regular at the Laughing Skull Lounge, Jay is a fixture of the Atlanta comedy scene while simultaneously headlining rooms across the country. Recent and ongoing performances have taken him to Mic Drop Comedy in Arizona, The Lincoln Lodge in Chicago, and various Don&#39;t Tell Comedy showcases, alongside a recurring series of his own, Jay Badlani and Friends, which he produces and headlines in Atlanta.A respected festival presence, Jay is an alumnus of the Laughing Skull Comedy Festival, Red Clay Fest, Rogue Island Comedy Festival, and the North Carolina Comedy Festival. He has shared the stage with Jeff Garlin, Clayton English, and Dina Hashem.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-      "last_updated": "2026-08-16T02:31:02.169Z",
+      "last_updated": "2026-08-16T14:28:19.615Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "black-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "f16213232e0f3488",
@@ -11114,6 +10916,78 @@
       "status": "on_sale",
       "description": "Get ready for the most unpredictable and chaotic showtime in the comedy scene! The Late Show offers an intimate late-night experience where the crowd is loose, the vibes are electric, and the laughs are nonstop.This showcase features a mix of headline comedians who sell out venues and local talent who know how to steal the show, making every performance an unforgettable experience.Whether you&rsquo;re looking for a fun night out or just love the thrill of late-night comedy, this show will have you laughing until it hurts.Reserve your tickets now and join us for a late-night comedy event like no other!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
       "last_updated": "2026-08-16T02:31:09.477Z",
+      "is_open_mic": false,
+      "performer_requests": true,
+      "tags": []
+    },
+    {
+      "id": "f7e017d544735813",
+      "name": "The Riot Presents Saturday Night Early Standup Comedy Showcase",
+      "venue": "The Riot Comedy Club",
+      "venue_state": "TX",
+      "venue_city": "Houston",
+      "date": "2026-11-14",
+      "time": "7:00 PM",
+      "day_of_week": "Saturday",
+      "price_min": 20,
+      "price_max": 20,
+      "currency": "USD",
+      "price_source": "api",
+      "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-early-standup-comedy-showcase-the-riot-houston-12",
+      "image_url": "https://www.theriothtx.com/img/events/saturday-7-9bfc0960-large-thumb.jpg",
+      "source": "standuptix",
+      "age_restriction": null,
+      "status": "on_sale",
+      "description": "Come join us for a hilarious evening of laughter at The Riot presents Saturday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you&#39;re a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+      "last_updated": "2026-08-16T14:28:30.171Z",
+      "is_open_mic": false,
+      "performer_requests": true,
+      "tags": []
+    },
+    {
+      "id": "b0d6bd1934a5f57f",
+      "name": "The Riot Presents Saturday Night Standup Comedy Showcase",
+      "venue": "The Riot Comedy Club",
+      "venue_state": "TX",
+      "venue_city": "Houston",
+      "date": "2026-11-14",
+      "time": "9:00 PM",
+      "day_of_week": "Saturday",
+      "price_min": 19,
+      "price_max": 19,
+      "currency": "USD",
+      "price_source": "api",
+      "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-24",
+      "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-22-31130d5b-large-thumb.png",
+      "source": "standuptix",
+      "age_restriction": null,
+      "status": "on_sale",
+      "description": "Come join us for a hilarious evening of laughter at The Riot presents Saturday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you&#39;re a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+      "last_updated": "2026-08-16T14:28:33.737Z",
+      "is_open_mic": false,
+      "performer_requests": true,
+      "tags": []
+    },
+    {
+      "id": "4f4bd225ed14ad43",
+      "name": "The Riot Comedy Club Presents Saturday Night Standup Comedy Late Show!",
+      "venue": "The Riot Comedy Club",
+      "venue_state": "TX",
+      "venue_city": "Houston",
+      "date": "2026-11-14",
+      "time": "11:00 PM",
+      "day_of_week": "Saturday",
+      "price_min": 15,
+      "price_max": 15,
+      "currency": "USD",
+      "price_source": "api",
+      "ticket_url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-28",
+      "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-13-Saturday-11pm-20db1248-large-thumb.png",
+      "source": "standuptix",
+      "age_restriction": null,
+      "status": "on_sale",
+      "description": "Get ready for the most unpredictable and chaotic showtime in the comedy scene! The Late Show offers an intimate late-night experience where the crowd is loose, the vibes are electric, and the laughs are nonstop.This showcase features a mix of headline comedians who sell out venues and local talent who know how to steal the show, making every performance an unforgettable experience.Whether you&rsquo;re looking for a fun night out or just love the thrill of late-night comedy, this show will have you laughing until it hurts.????️ Reserve your tickets now and join us for a late-night comedy event like no other!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+      "last_updated": "2026-08-16T14:28:37.327Z",
       "is_open_mic": false,
       "performer_requests": true,
       "tags": []

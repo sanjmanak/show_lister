@@ -1,19 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-08-16T02:38:11.572Z",
+  "last_updated": "2026-08-16T14:35:27.696Z",
   "total_excluded": 17,
   "events": [
-    {
-      "name": "DIAL UP: 90s & Y2K Dance Party!",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-08-15",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/dial-up-90s-y2k-dance-party-tickets-1994281766448",
-      "reason": "title keyword blocklisted: \"dance party\""
-    },
     {
       "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
       "venue": "The Secret Group",
@@ -189,6 +178,17 @@
       "genre": "Comedy",
       "ticket_url": "https://www.ticketmaster.com/gabriel-iglesias-the-1976-tour-beaumont-texas-10-03-2026/event/3A00642FDFB855D4",
       "reason": "venue blocklisted: Doggett Ford Park"
+    },
+    {
+      "name": "The Unknown Tour",
+      "venue": "Julie Rogers Theatre",
+      "venue_city": "Beaumont",
+      "date": "2026-11-07",
+      "time": "6:00 PM",
+      "source": "ticketmaster",
+      "genre": "Theatre",
+      "ticket_url": "https://www.ticketmaster.com/the-unknown-tour-beaumont-texas-11-07-2026/event/3A0064B6A631B025",
+      "reason": "city blocklisted: Beaumont"
     }
   ]
 }
