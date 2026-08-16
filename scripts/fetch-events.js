@@ -57,6 +57,7 @@ const EB_ORGANIZERS = [
 
 const OUTPUT_DIR = path.resolve(__dirname, "..");
 const { fixMojibake } = require("./lib/fix-mojibake");
+const { classifyShowTags, cacheKey: showTagCacheKey } = require("./lib/classify-show-tags");
 
 const EVENTS_JSON_PATH = path.join(OUTPUT_DIR, "events.json");
 const INDEX_HTML_PATH = path.join(OUTPUT_DIR, "index.html");
@@ -69,6 +70,7 @@ const DONTTELL_JSON_PATH = path.join(OUTPUT_DIR, "config", "donttellcomedy.json"
 const PERFORMER_REQUESTS_JSON_PATH = path.join(OUTPUT_DIR, "config", "performer-requests.json");
 const PRICE_CACHE_PATH = path.join(OUTPUT_DIR, "config", "price-cache.json");
 const SHOW_TAGS_JSON_PATH = path.join(OUTPUT_DIR, "config", "show-tags.json");
+const SHOW_TAGS_CACHE_PATH = path.join(OUTPUT_DIR, "config", "show-tags-cache.json");
 
 // Price-enrichment pacing. Ticketmaster's Discovery API allows 5 req/s, so
 // detail calls are spaced 250ms apart. Ticket-page fetches hit the vendors'
@@ -1876,28 +1878,27 @@ function isOpenMicEvent(ev, openMicConfig) {
 // ---------------------------------------------------------------------------
 
 /**
- * Curated show tags (config/show-tags.json). Only rules with
- * `verified: true` are loaded — unverified entries are review-queue
- * suggestions and MUST NOT be applied automatically (cultural/identity
- * tags in particular go through human review by design).
+ * Curated show tags (config/show-tags.json). Everything auto-applies —
+ * title rules, comedian rules, and the model classifier — and the
+ * `exclusions` list is the opt-out kill switch that always wins (the
+ * owner's weekly false-positive review edits only that list).
  */
 function loadShowTagsConfig() {
-  const empty = { titleRules: [], comedianRules: [] };
+  const empty = { titleRules: [], comedianRules: [], exclusions: [] };
   try {
     const raw = JSON.parse(fs.readFileSync(SHOW_TAGS_JSON_PATH, "utf8"));
     const norm = (r, key) => ({
       match: String(r[key] || "").toLowerCase().trim(),
       tags: (Array.isArray(r.tags) ? r.tags : []).map(String).filter(Boolean),
     });
+    const load = (arr, key) =>
+      (Array.isArray(arr) ? arr : [])
+        .map((r) => norm(r, key))
+        .filter((r) => r.match && r.tags.length);
     return {
-      titleRules: (Array.isArray(raw.title_rules) ? raw.title_rules : [])
-        .filter((r) => r && r.verified === true)
-        .map((r) => norm(r, "contains"))
-        .filter((r) => r.match && r.tags.length),
-      comedianRules: (Array.isArray(raw.comedian_rules) ? raw.comedian_rules : [])
-        .filter((r) => r && r.verified === true)
-        .map((r) => norm(r, "name"))
-        .filter((r) => r.match && r.tags.length),
+      titleRules: load(raw.title_rules, "contains"),
+      comedianRules: load(raw.comedian_rules, "name"),
+      exclusions: load(raw.exclusions, "contains"),
     };
   } catch (e) {
     console.warn(`Could not load show-tags config: ${e.message}`);
@@ -1905,7 +1906,12 @@ function loadShowTagsConfig() {
   }
 }
 
-function tagsForEvent(ev, cfg) {
+/**
+ * Merge config-rule tags with model-classified tags, then apply exclusions.
+ * `modelTags` is the Map returned by classifyShowTags (may be empty when the
+ * API key is absent or the call failed — fail open, config rules still work).
+ */
+function tagsForEvent(ev, cfg, modelTags) {
   const title = String(ev.name || "").toLowerCase();
   const tags = new Set();
   for (const r of cfg.titleRules) {
@@ -1913,6 +1919,13 @@ function tagsForEvent(ev, cfg) {
   }
   for (const r of cfg.comedianRules) {
     if (title.includes(r.match)) r.tags.forEach((t) => tags.add(t));
+  }
+  const fromModel = modelTags && modelTags.get(showTagCacheKey(ev.name));
+  if (Array.isArray(fromModel)) fromModel.forEach((t) => tags.add(t));
+  for (const r of cfg.exclusions) {
+    if (!title.includes(r.match)) continue;
+    if (r.tags.includes("*")) return [];
+    r.tags.forEach((t) => tags.delete(t));
   }
   return [...tags].sort();
 }
@@ -2173,13 +2186,14 @@ async function main() {
   }
   console.log(`Performer requests: ${deduped.filter((e) => e.performer_requests).length} flagged`);
 
-  // Curated show tags — see config/show-tags.json. Only `verified: true`
-  // rules are applied; unverified entries are suggestions awaiting human
-  // review and must never reach events.json. Every event gets an explicit
-  // tags array (possibly empty) so the WP plugin can filter on it.
+  // Curated show tags — see config/show-tags.json. Config rules plus the
+  // model classifier all auto-apply; the config's `exclusions` list is the
+  // opt-out that always wins. Every event gets an explicit tags array
+  // (possibly empty) so the WP plugin can filter on it.
   const showTagsConfig = loadShowTagsConfig();
+  const modelTags = await classifyShowTags(deduped, SHOW_TAGS_CACHE_PATH);
   for (const ev of deduped) {
-    ev.tags = tagsForEvent(ev, showTagsConfig);
+    ev.tags = tagsForEvent(ev, showTagsConfig, modelTags);
   }
   console.log(`Show tags: ${deduped.filter((e) => e.tags.length).length} events tagged`);
 
