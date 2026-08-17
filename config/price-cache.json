@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-08-17T14:24:27.984Z",
+  "last_updated": "2026-08-17T14:45:22.006Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -41,6 +41,126 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/craig-conant-houston-improv-tickets/14824993?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-07-19T00:21:45.367Z"
+    },
+    "579052107f7a8496": {
+      "price_min": 25.74,
+      "price_max": 25.74,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/keisha-hunt-houston-improv-tickets/15003503?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-08-17T14:44:11.620Z"
+    },
+    "65d3246fc25a5b35": {
+      "price_min": 25.22,
+      "price_max": 25.22,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/mario-superstar-salazar-houston-improv-tickets/14253054?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-08-17T14:44:14.085Z"
+    },
+    "383a34b53d1a8b7c": {
+      "price_min": 12.86,
+      "price_max": 12.86,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/houston-af-houston-improv-tickets/15030053?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-08-17T14:44:18.975Z"
+    },
+    "d91c5804c0e8f702": {
+      "price_min": 50,
+      "price_max": 50,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/andrew-schulz-houston-improv-tickets/15036083?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-08-17T14:44:37.553Z"
+    },
+    "53f23e331d929715": {
+      "price_min": 50,
+      "price_max": 50,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/andrew-schulz-houston-improv-tickets/15036103?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-08-17T14:44:39.413Z"
+    },
+    "7f459232414387cc": {
+      "price_min": 31.4,
+      "price_max": 31.4,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/justin-whitehead-houston-improv-tickets/15034033?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-08-17T14:44:41.627Z"
+    },
+    "a00405af7c0400e7": {
+      "price_min": 25.22,
+      "price_max": 25.22,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/just-nesh-houston-improv-tickets/15025113?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-08-17T14:44:47.095Z"
+    },
+    "b62b297c78546832": {
+      "price_min": 56.12,
+      "price_max": 56.12,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/damitas-histeria-houston-improv-tickets/15030183?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-08-17T14:44:50.911Z"
+    },
+    "5f7fd6557b66798a": {
+      "price_min": 31.4,
+      "price_max": 31.4,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/craig-conant-houston-improv-tickets/14825023?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-08-17T14:44:55.337Z"
+    },
+    "9427413075b52cc2": {
+      "price_min": 43.76,
+      "price_max": 43.76,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/don-mcmillan-20-now-powered-houston-improv-tickets/14846803?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-08-17T14:44:56.541Z"
+    },
+    "16813c804528bc42": {
+      "price_min": 62.3,
+      "price_max": 62.3,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/ivn-fematt-la-mole-en-houston-improv-tickets/14891023?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-08-17T14:44:58.437Z"
+    },
+    "060972590fd8edcb": {
+      "price_min": 49.94,
+      "price_max": 49.94,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/standoperosla-tmbola-houston-improv-tickets/14267614?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-08-17T14:45:05.442Z"
+    },
+    "1d0db91269b6ef97": {
+      "price_min": 25.22,
+      "price_max": 25.22,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/eva-evans-houston-improv-tickets/14243884?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-08-17T14:45:06.675Z"
+    },
+    "fb79d8c874a3588f": {
+      "price_min": 43.76,
+      "price_max": 43.76,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/group-therapy-session-2-houston-improv-tickets/15032193?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-08-17T14:45:11.678Z"
+    },
+    "618d33b89fa9b0d1": {
+      "price_min": 25.22,
+      "price_max": 25.22,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-08-17T14:45:13.479Z"
     }
   }
 }
