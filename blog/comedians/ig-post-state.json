@@ -1,25 +1,26 @@
 {
   "posted": [
     {
-      "slug": "mark-normand-houston-improv-2026-08-13",
-      "comedianName": "Mark Normand",
-      "igFeedMediaId": "18117030220917887",
-      "igStoryMediaId": "18127064560733119",
-      "fbFeedPostId": "1373965638161511",
-      "fbStoryPostId": "1367051111510636",
-      "postedAt": "2026-08-10T17:00:52.776Z"
-    },
-    {
-      "slug": "josh-wolf-punch-line-houston-2026-08-13",
-      "comedianName": "Josh Wolf",
-      "igFeedMediaId": "18003726395780261",
-      "igStoryMediaId": "18117770995718514",
-      "fbFeedPostId": "1374166821474726",
-      "fbStoryPostId": "1582881919995111",
-      "postedAt": "2026-08-10T22:47:00.676Z"
+      "slug": "bob-biggerstaff-the-secret-group-2026-08-20",
+      "comedianName": "Bob Biggerstaff",
+      "igFeedMediaId": "17893300650393883",
+      "igStoryMediaId": "18014247368736916",
+      "fbFeedPostId": "1379935460897862",
+      "fbStoryPostId": "2638961806523708",
+      "postedAt": "2026-08-17T16:36:18.900Z"
     }
   ],
-  "week_range": "August 10 – August 16, 2026",
-  "manifest_version": 1786380891122,
-  "cleanup_queue": []
+  "week_range": "August 17 – August 23, 2026",
+  "manifest_version": 1786984237177,
+  "cleanup_queue": [
+    {
+      "slug": "bob-biggerstaff-the-secret-group-2026-08-20",
+      "comedianName": "Bob Biggerstaff",
+      "igFeedMediaId": "17893300650393883",
+      "igStoryMediaId": "18014247368736916",
+      "fbFeedPostId": "1379935460897862",
+      "fbStoryPostId": "2638961806523708",
+      "postedAt": "2026-08-17T16:36:18.900Z"
+    }
+  ]
 }
