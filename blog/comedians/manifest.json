@@ -1,42 +1,96 @@
 {
-  "generated_at": "2026-08-10T16:54:51.122Z",
-  "manifest_version": 1786380891122,
-  "week_range": "August 10 – August 16, 2026",
+  "generated_at": "2026-08-17T16:30:37.177Z",
+  "manifest_version": 1786984237177,
+  "week_range": "August 17 – August 23, 2026",
   "posts": [
     {
-      "comedianName": "Mark Normand",
-      "venue": "Houston Improv",
-      "date": "2026-08-13",
-      "filename": "mark-normand-houston-improv-2026-08-13.html",
-      "imageUrl": "https://s1.ticketm.net/dam/a/8c1/7a8f11c3-7869-4fcf-8216-924cad5328c1_SOURCE",
-      "graphicImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Mark_Normand.png/960px-Mark_Normand.png?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail",
-      "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7-8oM",
-      "slug": "mark-normand-houston-improv-2026-08-13",
-      "wpLink": "https://comedyhouston.com/mark-normand-houston-improv-2026-08-13/",
-      "caption": "Mark Normand just dropped his latest Netflix special, \"None Too Pleased,\" and he's bringing that sharp, punchline-heavy style to Houston. Known for turning social quirks and awkward truths into rapid-fire comedy, Mark’s live show is a must-see. If you love comedy that’s both smart and self-deprecating, this is your night. Houston Improv · Thursday, August 13, 2026. Link in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #MarkNormand\n\n@marknormand",
-      "instagramHandle": "@marknormand",
+      "comedianName": "Bob Biggerstaff",
+      "venue": "The Secret Group",
+      "date": "2026-08-20",
+      "filename": "bob-biggerstaff-the-secret-group-2026-08-20.html",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176743871%2F3558237521%2F1%2Foriginal.20260205-024409?auto=format%2Ccompress&q=75&sharp=10&s=70e5049026424875ceb7fb9cbafc7ae9",
+      "graphicImageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176743871%2F3558237521%2F1%2Foriginal.20260205-024409?auto=format%2Ccompress&q=75&sharp=10&s=70e5049026424875ceb7fb9cbafc7ae9",
+      "ticketUrl": "https://www.eventbrite.com/e/the-best-of-tsg-headliner-series-bob-biggerstaff-tickets-1997396377333",
+      "slug": "bob-biggerstaff-the-secret-group-2026-08-20",
+      "wpLink": "https://comedyhouston.com/bob-biggerstaff-the-secret-group-2026-08-20/",
+      "caption": "Houston, did you know Bob Biggerstaff was a semifinalist on NBC's Last Comic Standing? This hometown hero blends self-deprecating humor with sports tales, making for a night of laughter and relatability. He's graced stages like The Comedy Cellar in NYC and now he's back in town. Catch the show at The Secret Group · Thursday, August 20, 2026. 🎤 Link in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #BobBiggerstaff",
+      "instagramHandle": "",
       "graphicFiles": [
-        "mark-normand-houston-improv-2026-08-13-square.png",
-        "mark-normand-houston-improv-2026-08-13-portrait.png",
-        "mark-normand-houston-improv-2026-08-13-story.png"
+        "bob-biggerstaff-the-secret-group-2026-08-20-square.png",
+        "bob-biggerstaff-the-secret-group-2026-08-20-portrait.png",
+        "bob-biggerstaff-the-secret-group-2026-08-20-story.png"
       ]
     },
     {
-      "comedianName": "Josh Wolf",
+      "comedianName": "Gabriel Rutledge",
       "venue": "Punch Line Houston",
-      "date": "2026-08-13",
-      "filename": "josh-wolf-punch-line-houston-2026-08-13.html",
-      "imageUrl": "https://s1.ticketm.net/dam/a/5ee/4bf7ddf6-f681-4c50-a892-d789ef9875ee_SOURCE",
-      "graphicImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/37/Josh_Wolf_2025.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail_unscaled",
-      "ticketUrl": "https://www.ticketmaster.com/josh-wolf-touring-hard-houston-texas-08-13-2026/event/3A006494AF53B999",
-      "slug": "josh-wolf-punch-line-houston-2026-08-13",
-      "wpLink": "https://comedyhouston.com/josh-wolf-punch-line-houston-2026-08-13/",
-      "caption": "Saw \"The Campfire Special\" on YouTube? Houston, now's your chance to see Josh Wolf live. Josh’s comedy feels like a chat with your funniest friend. His stories about family and everyday life will leave you nodding and laughing. Don't miss his engaging style and personal touch. Punch Line Houston · Thursday, August 13, 2026. Link in bio for tickets. Tag someone you'd bring. \n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #JoshWolf  \n@joshwolfcomedy",
-      "instagramHandle": "@joshwolfcomedy",
+      "date": "2026-08-21",
+      "filename": "gabriel-rutledge-punch-line-houston-2026-08-21.html",
+      "imageUrl": "https://s1.ticketm.net/dam/a/89e/6396cf7b-d938-4e7f-8c94-6da4ccd7689e_SOURCE",
+      "graphicImageUrl": "https://s1.ticketm.net/dam/a/89e/6396cf7b-d938-4e7f-8c94-6da4ccd7689e_SOURCE",
+      "ticketUrl": "https://www.ticketmaster.com/gabriel-rutledge-houston-texas-08-21-2026/event/3A006494C3BDDFA0",
+      "slug": "gabriel-rutledge-punch-line-houston-2026-08-21",
+      "wpLink": "https://comedyhouston.com/gabriel-rutledge-punch-line-houston-2026-08-21/",
+      "caption": "Seen Gabriel Rutledge on Comedy Central’s “Live at Gotham”? 🎤 If not, Houston, you're in for a treat. This Friday, catch his quick wit and relatable humor live at Punch Line. Gabriel's stories about family life and personal mishaps are both hilarious and heartfelt. Straight from his \"Don't Read the Comments Tour,\" he's ready to make you laugh out loud. \n\nPunch Line Houston · Friday, August 21, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #GabrielRutledge",
+      "instagramHandle": "",
       "graphicFiles": [
-        "josh-wolf-punch-line-houston-2026-08-13-square.png",
-        "josh-wolf-punch-line-houston-2026-08-13-portrait.png",
-        "josh-wolf-punch-line-houston-2026-08-13-story.png"
+        "gabriel-rutledge-punch-line-houston-2026-08-21-square.png",
+        "gabriel-rutledge-punch-line-houston-2026-08-21-portrait.png",
+        "gabriel-rutledge-punch-line-houston-2026-08-21-story.png"
+      ]
+    },
+    {
+      "comedianName": "Joey Avery",
+      "venue": "The Riot Comedy Club",
+      "date": "2026-08-21",
+      "filename": "joey-avery-the-riot-comedy-club-2026-08-21.html",
+      "imageUrl": "https://www.theriothtx.com/img/shows/IMG-0430-7d560785-large-thumb.jpg",
+      "graphicImageUrl": "https://assets.cdn.filesafe.space/230MMDSPTccsfTvCU9Ei/media/6907a771a0261a70efa30e15.png",
+      "ticketUrl": "https://www.theriothtx.com/events/joey-avery-don-t-kill-comedy-headlines-the-riot-comedy-club",
+      "slug": "joey-avery-the-riot-comedy-club-2026-08-21",
+      "wpLink": "https://comedyhouston.com/joey-avery-the-riot-comedy-club-2026-08-21/",
+      "caption": "Joey Avery just dropped his debut special, \"Live in San Francisco.\" Houston, you don't want to miss this. Joey's blend of improvised standup and spot-on material has been lighting up stages worldwide. Catch him live and see why he's a favorite on \"The Yak\" and \"Bad Monkey\" with Vince Vaughn. The Riot Comedy Club · Friday, August 21, 2026. Link in bio for tickets. Tag someone you'd bring. #HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #JoeyAvery @joeyavery",
+      "instagramHandle": "@joeyavery",
+      "graphicFiles": [
+        "joey-avery-the-riot-comedy-club-2026-08-21-square.png",
+        "joey-avery-the-riot-comedy-club-2026-08-21-portrait.png",
+        "joey-avery-the-riot-comedy-club-2026-08-21-story.png"
+      ]
+    },
+    {
+      "comedianName": "Alfred Robles",
+      "venue": "Houston Improv",
+      "date": "2026-08-21",
+      "filename": "alfred-robles-houston-improv-2026-08-21.html",
+      "imageUrl": "https://s1.ticketm.net/dam/a/1da/59f86268-e95d-401d-a46d-4bac1eaca1da_SOURCE",
+      "graphicImageUrl": "https://www.newjerseystage.com/events2026/njpac-July29.jpg",
+      "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7-8ub",
+      "slug": "alfred-robles-houston-improv-2026-08-21",
+      "wpLink": "https://comedyhouston.com/alfred-robles-houston-improv-2026-08-21/",
+      "caption": "Houston, Alfred Robles brings his \"Vatos with Gatos\" special to life. Known from Comedy Central's \"Stand Up Revolution,\" Alfred's sharp humor and crowd work make every show unique. He’ll have you laughing at everyday life and personal stories. It's like hanging out with a friend who always knows what to say.\n\nHouston Improv · Friday, August 21, 2026\n\nLink in bio for tickets. Tag someone you'd bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #AlfredRobles",
+      "instagramHandle": "",
+      "graphicFiles": [
+        "alfred-robles-houston-improv-2026-08-21-square.png",
+        "alfred-robles-houston-improv-2026-08-21-portrait.png",
+        "alfred-robles-houston-improv-2026-08-21-story.png"
+      ]
+    },
+    {
+      "comedianName": "Erin Jackson",
+      "venue": "Punch Line Houston",
+      "date": "2026-08-23",
+      "filename": "erin-jackson-punch-line-houston-2026-08-23.html",
+      "imageUrl": "https://s1.ticketm.net/dam/a/a07/6eb7e092-f129-47c7-ab66-d8f36070da07_SOURCE",
+      "graphicImageUrl": "https://www.tribecacomedyclub.com/img/imagetest/erin-jackson-comedian-headshot-2023a-jpg-8fb61426-erin-jackson-comedian-headshot-2023a-jpg.jpg?1752605494",
+      "ticketUrl": "https://www.ticketmaster.com/erin-jackson-houston-texas-08-23-2026/event/3A0064C3CE6BDB35",
+      "slug": "erin-jackson-punch-line-houston-2026-08-23",
+      "wpLink": "https://comedyhouston.com/erin-jackson-punch-line-houston-2026-08-23/",
+      "caption": "Seen Erin Jackson on \"Tiffany Haddish Presents: They Ready\"? Houston, she's here live. Erin's comedy is like sharing a laugh with your tell-it-to-you-straight girlfriend. Observational, relatable, and always engaging. Experience her storytelling magic, filled with everyday life and family tales. A night with Erin is a night well spent. \n\nPunch Line Houston · Sunday, August 23, 2026\n\nLink in bio for tickets. Tag someone you'd bring. \n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #ErinJackson\n\n@ejthecomic",
+      "instagramHandle": "@ejthecomic",
+      "graphicFiles": [
+        "erin-jackson-punch-line-houston-2026-08-23-square.png",
+        "erin-jackson-punch-line-houston-2026-08-23-portrait.png",
+        "erin-jackson-punch-line-houston-2026-08-23-story.png"
       ]
     }
   ]
