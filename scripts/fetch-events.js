@@ -241,6 +241,116 @@ function fetchPage(url, redirectsLeft = 5) {
   });
 }
 
+// ---------------------------------------------------------------------------
+// Headless-browser page fetching (Ticketmaster / TicketWeb)
+//
+// 2026-08-17: Ticketmaster began returning HTTP 401 to plain HTTPS fetches
+// even from residential IPs — the page now requires JavaScript + cookies to
+// pass bot detection. A real headless Chrome (Puppeteer) still gets the full
+// page, JSON-LD included. This path is used ONLY for domains that need it;
+// Eventbrite et al. keep the cheap fetchPage() above. Puppeteer is an
+// optional dependency on purpose: the scheduled GitHub runs don't install it
+// (TM blocks datacenter IPs regardless, so a browser there is wasted money),
+// and when it's absent this degrades to exactly the old behavior. The local
+// update-prices.sh installs it automatically.
+// ---------------------------------------------------------------------------
+
+const BROWSER_PRICE_DOMAINS = /(^|\.)(ticketmaster\.com|ticketweb\.com|livenation\.com|concerts\.livenation\.com)$/i;
+const BROWSER_NAV_TIMEOUT_MS = 30_000;
+// Extra politeness gap on top of PAGE_FETCH_DELAY_MS: browser fetches hit
+// bot-detection-sensitive vendors, so pace them like a slow human.
+const BROWSER_FETCH_DELAY_MS = 2_000;
+// Hard ceiling on total browser time per run. If TM re-escalates and every
+// nav crawls to timeout, this stops the bleeding instead of burning an hour.
+const BROWSER_BUDGET_MS = 15 * 60 * 1000;
+
+let _priceBrowser = null;
+let _browserStartMs = 0;
+let _browserUnavailableReason = null;
+
+function urlNeedsBrowser(url) {
+  try {
+    return BROWSER_PRICE_DOMAINS.test(new URL(url).hostname);
+  } catch (e) {
+    return false;
+  }
+}
+
+async function getPriceBrowser() {
+  if (_priceBrowser) return _priceBrowser;
+  if (_browserUnavailableReason) throw new Error(_browserUnavailableReason);
+  let puppeteer;
+  try {
+    puppeteer = require("puppeteer");
+  } catch (e) {
+    _browserUnavailableReason =
+      "puppeteer not installed (run: npm install puppeteer)";
+    console.log(
+      `  [prices] NOTE: ${_browserUnavailableReason} — Ticketmaster/TicketWeb pages will be skipped this run.`
+    );
+    throw new Error(_browserUnavailableReason);
+  }
+  console.log("  [prices] Launching headless Chrome for vendor pages...");
+  _priceBrowser = await puppeteer.launch({
+    headless: "new",
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-blink-features=AutomationControlled",
+    ],
+  });
+  _browserStartMs = Date.now();
+  return _priceBrowser;
+}
+
+async function closePriceBrowser() {
+  if (_priceBrowser) {
+    try {
+      await _priceBrowser.close();
+    } catch (e) {
+      /* already dead is fine */
+    }
+    _priceBrowser = null;
+  }
+}
+
+/** Fetch a page's rendered HTML through headless Chrome. Throws on nav
+ * failure, HTTP >= 400, missing puppeteer, or exhausted time budget — the
+ * caller's existing per-event catch (stale-cache fallback) handles all of
+ * those identically to a fetchPage() failure. */
+async function fetchPageWithBrowser(url) {
+  if (_browserStartMs && Date.now() - _browserStartMs > BROWSER_BUDGET_MS) {
+    throw new Error("browser time budget exhausted for this run");
+  }
+  const browser = await getPriceBrowser();
+  await sleep(BROWSER_FETCH_DELAY_MS);
+  const page = await browser.newPage();
+  try {
+    // Look like the Chrome we actually are, minus the automation tells.
+    const ua = (await browser.userAgent()).replace("HeadlessChrome", "Chrome");
+    await page.setUserAgent(ua);
+    await page.setViewport({ width: 1366, height: 900 });
+    await page.evaluateOnNewDocument(() => {
+      Object.defineProperty(navigator, "webdriver", { get: () => undefined });
+    });
+    const resp = await page.goto(url, {
+      waitUntil: "networkidle2",
+      timeout: BROWSER_NAV_TIMEOUT_MS,
+    });
+    const status = resp ? resp.status() : 0;
+    if (status >= 400) {
+      throw new Error(`HTTP ${status} (browser) for ${url}`);
+    }
+    return await page.content();
+  } finally {
+    try {
+      await page.close();
+    } catch (e) {
+      /* page already gone is fine */
+    }
+  }
+}
+
 /** All parseable <script type="application/ld+json"> payloads in a page. */
 function extractJsonLdBlocks(html) {
   const blocks = [];
@@ -468,7 +578,22 @@ async function enrichPrices(events) {
       await sleep(PAGE_FETCH_DELAY_MS);
       const stale = cache[e.id];
       try {
-        const html = await fetchPage(e.ticket_url);
+        let html;
+        if (urlNeedsBrowser(e.ticket_url)) {
+          // TM/TicketWeb 401 plain fetches since 2026-08 — go straight to Chrome.
+          html = await fetchPageWithBrowser(e.ticket_url);
+        } else {
+          try {
+            html = await fetchPage(e.ticket_url);
+          } catch (err) {
+            // A vendor that newly turns on bot detection gets one browser retry.
+            if (/HTTP (401|403)/.test(err.message)) {
+              html = await fetchPageWithBrowser(e.ticket_url);
+            } else {
+              throw err;
+            }
+          }
+        }
         const p = parseJsonLdPrices(html);
         if (p) {
           applyPrice(e, p.min, p.max, p.currency, "page");
@@ -508,6 +633,8 @@ async function enrichPrices(events) {
       }
     }
   }
+
+  await closePriceBrowser();
 
   // Prune cache entries for events no longer in the feed, then persist —
   // but only when the entries actually changed, so a run that recovers

@@ -36,6 +36,13 @@ fi
 echo "==> Pulling latest data from GitHub..."
 git pull --rebase origin main
 
+# Ticketmaster/TicketWeb 401 plain fetches (since Aug 2026), so those pages
+# are loaded through headless Chrome. First run downloads Chrome (~200MB).
+if ! node -e "require('puppeteer')" >/dev/null 2>&1; then
+  echo "==> Installing puppeteer (one-time, includes a ~200MB Chrome download)..."
+  npm install puppeteer --no-save
+fi
+
 echo "==> Scraping prices from your home IP (this is the part GitHub's servers can't do)..."
 node scripts/fetch-events.js --prices-only
 
