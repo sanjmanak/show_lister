@@ -269,6 +269,12 @@ const BROWSER_BUDGET_MS = 30 * 60 * 1000;
 let _priceBrowser = null;
 let _browserStartMs = 0;
 let _browserUnavailableReason = null;
+// Circuit breaker: N consecutive 4xx responses means the vendor has
+// rate-limited this IP (observed 2026-08-17 after three back-to-back runs:
+// every page 403'd). Hammering the remaining pages only deepens the block —
+// stop for the run and let the weekly cadence retry naturally.
+let _browserConsecutive4xx = 0;
+const BROWSER_4XX_BREAKER = 5;
 
 function urlNeedsBrowser(url) {
   try {
@@ -321,6 +327,9 @@ async function closePriceBrowser() {
  * caller's existing per-event catch (stale-cache fallback) handles all of
  * those identically to a fetchPage() failure. */
 async function fetchPageWithBrowser(url) {
+  if (_browserUnavailableReason) {
+    throw new Error(_browserUnavailableReason);
+  }
   if (_browserStartMs && Date.now() - _browserStartMs > BROWSER_BUDGET_MS) {
     throw new Error("browser time budget exhausted for this run");
   }
@@ -355,8 +364,19 @@ async function fetchPageWithBrowser(url) {
       status = resp ? resp.status() : 0;
     }
     if (status >= 400) {
+      // 404s are dead events, not rate limiting — only 401/403 trip the breaker.
+      if (status === 401 || status === 403) {
+        _browserConsecutive4xx++;
+        if (_browserConsecutive4xx >= BROWSER_4XX_BREAKER) {
+          _browserUnavailableReason =
+            `vendor is rate-limiting this IP (${BROWSER_4XX_BREAKER} consecutive ` +
+            `4xx) — skipping remaining browser fetches; retry tomorrow or next week`;
+          console.log(`  [prices] CIRCUIT BREAKER: ${_browserUnavailableReason}`);
+        }
+      }
       throw new Error(`HTTP ${status} (browser) for ${url}`);
     }
+    _browserConsecutive4xx = 0;
     // Wait for the client-rendered price slider (where the price range
     // lives); fall through on timeout — JSON-LD pages don't have one.
     await page
