@@ -49,7 +49,7 @@ jobs:
         run: node scripts/generate-comedian-post.js
 
       - name: Install Puppeteer
-        run: npm install puppeteer
+        run: npm install puppeteer --no-save
 
       - name: Screenshot comedian Instagram graphics
         run: node scripts/screenshot-comedian-graphics.js
