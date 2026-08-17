@@ -333,11 +333,22 @@ async function fetchPageWithBrowser(url) {
     await page.evaluateOnNewDocument(() => {
       Object.defineProperty(navigator, "webdriver", { get: () => undefined });
     });
-    const resp = await page.goto(url, {
+    let resp = await page.goto(url, {
       waitUntil: "networkidle2",
       timeout: BROWSER_NAV_TIMEOUT_MS,
     });
-    const status = resp ? resp.status() : 0;
+    let status = resp ? resp.status() : 0;
+    // TM's anti-bot serves a 401 challenge page on the first-ever request;
+    // its JS sets cookies and a reload then gets the real page. Cookies are
+    // browser-wide, so this usually happens once per run, not per event.
+    if (status === 401 || status === 403) {
+      await sleep(10_000);
+      resp = await page.goto(url, {
+        waitUntil: "networkidle2",
+        timeout: BROWSER_NAV_TIMEOUT_MS,
+      });
+      status = resp ? resp.status() : 0;
+    }
     if (status >= 400) {
       throw new Error(`HTTP ${status} (browser) for ${url}`);
     }
@@ -349,6 +360,27 @@ async function fetchPageWithBrowser(url) {
       /* page already gone is fine */
     }
   }
+}
+
+/**
+ * Fallback price extraction for Ticketmaster's 2026 event pages, which
+ * dropped the offers block from their JSON-LD. The rendered page's
+ * price-filter slider carries the event's true range as attributes:
+ *   <input aria-label="Minimum price $41" min="41" max="55" ...>
+ * Same sanity bounds as the JSON-LD path; slider prices are per-ticket and
+ * treated as price_source "page" (labeled "incl. fees" in the UI).
+ */
+function parseTmSliderPrices(html) {
+  const grab = (re) => {
+    const m = html.match(re);
+    if (!m) return null;
+    const n = parseFloat(m[1].replace(/,/g, ""));
+    return Number.isFinite(n) && n >= 1 && n <= 5000 ? n : null;
+  };
+  const min = grab(/aria-label="Minimum price \$([0-9][0-9,]*\.?[0-9]*)"/i);
+  const max = grab(/aria-label="Maximum price \$([0-9][0-9,]*\.?[0-9]*)"/i);
+  if (min === null) return null;
+  return { min, max: max !== null && max >= min ? max : min, currency: "USD" };
 }
 
 /** All parseable <script type="application/ld+json"> payloads in a page. */
@@ -594,7 +626,7 @@ async function enrichPrices(events) {
             }
           }
         }
-        const p = parseJsonLdPrices(html);
+        const p = parseJsonLdPrices(html) || parseTmSliderPrices(html);
         if (p) {
           applyPrice(e, p.min, p.max, p.currency, "page");
           cache[e.id] = {
