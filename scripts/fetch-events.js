@@ -262,7 +262,9 @@ const BROWSER_NAV_TIMEOUT_MS = 30_000;
 const BROWSER_FETCH_DELAY_MS = 2_000;
 // Hard ceiling on total browser time per run. If TM re-escalates and every
 // nav crawls to timeout, this stops the bleeding instead of burning an hour.
-const BROWSER_BUDGET_MS = 15 * 60 * 1000;
+// 30 min: ~110 pages at ~5s + 2s pacing fits with headroom (15 min didn't —
+// the 2026-08-17 run hit the ceiling with 55 events still unattempted).
+const BROWSER_BUDGET_MS = 30 * 60 * 1000;
 
 let _priceBrowser = null;
 let _browserStartMs = 0;
@@ -333,8 +335,11 @@ async function fetchPageWithBrowser(url) {
     await page.evaluateOnNewDocument(() => {
       Object.defineProperty(navigator, "webdriver", { get: () => undefined });
     });
+    // domcontentloaded, not networkidle2: TM pages keep ad/analytics sockets
+    // open long past useful render, and waiting for them made runs blow the
+    // time budget. The price slider appearing is the actual readiness signal.
     let resp = await page.goto(url, {
-      waitUntil: "networkidle2",
+      waitUntil: "domcontentloaded",
       timeout: BROWSER_NAV_TIMEOUT_MS,
     });
     let status = resp ? resp.status() : 0;
@@ -344,7 +349,7 @@ async function fetchPageWithBrowser(url) {
     if (status === 401 || status === 403) {
       await sleep(10_000);
       resp = await page.goto(url, {
-        waitUntil: "networkidle2",
+        waitUntil: "domcontentloaded",
         timeout: BROWSER_NAV_TIMEOUT_MS,
       });
       status = resp ? resp.status() : 0;
@@ -352,6 +357,11 @@ async function fetchPageWithBrowser(url) {
     if (status >= 400) {
       throw new Error(`HTTP ${status} (browser) for ${url}`);
     }
+    // Wait for the client-rendered price slider (where the price range
+    // lives); fall through on timeout — JSON-LD pages don't have one.
+    await page
+      .waitForSelector('input[aria-label^="Minimum price"]', { timeout: 8_000 })
+      .catch(() => {});
     return await page.content();
   } finally {
     try {
