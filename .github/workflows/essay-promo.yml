@@ -41,7 +41,7 @@ jobs:
           node-version: '20'
 
       - name: Install Puppeteer
-        run: npm install puppeteer
+        run: npm install puppeteer --no-save
 
       - name: Generate quote cards
         run: |

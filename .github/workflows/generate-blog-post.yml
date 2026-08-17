@@ -53,7 +53,7 @@ jobs:
       # that script renders the weekly hero PNG inline (so the WordPress
       # weekly-roundup publish gets *this* week's image, not last week's).
       - name: Install Puppeteer
-        run: npm install puppeteer
+        run: npm install puppeteer --no-save
 
       - name: Generate blog post from events
         env:
@@ -101,6 +101,11 @@ jobs:
             for i in 1 2 3 4; do
               echo "Push attempt $i…"
               # Abort a half-applied rebase so the next attempt starts clean.
+              # A dirty tracked file (e.g. package.json from a stray npm
+              # install) makes `pull --rebase` refuse and killed all 4
+              # retries on 2026-08-17. Only committed work matters here —
+              # drop any incidental tracked-file dirt before rebasing.
+              git checkout -- package.json 2>/dev/null || true
               git pull --rebase origin main --no-edit || { git rebase --abort 2>/dev/null || true; }
               if git push origin main; then
                 echo "Push succeeded on attempt $i."
@@ -127,6 +132,7 @@ jobs:
       # push failed, main still serves LAST week's hero PNG and Meta would
       # fetch and post it under this week's caption.
       - name: Auto-post weekly roundup to Instagram + Facebook
+        id: autopost
         if: ${{ !cancelled() && steps.commit-blog.outcome == 'success' }}
         timeout-minutes: 12
         env:
@@ -149,6 +155,11 @@ jobs:
             for i in 1 2 3 4; do
               echo "Push attempt $i…"
               # Abort a half-applied rebase so the next attempt starts clean.
+              # A dirty tracked file (e.g. package.json from a stray npm
+              # install) makes `pull --rebase` refuse and killed all 4
+              # retries on 2026-08-17. Only committed work matters here —
+              # drop any incidental tracked-file dirt before rebasing.
+              git checkout -- package.json 2>/dev/null || true
               git pull --rebase origin main --no-edit || { git rebase --abort 2>/dev/null || true; }
               if git push origin main; then
                 echo "Push succeeded on attempt $i."
@@ -191,7 +202,11 @@ jobs:
           echo "${delim}" >> $GITHUB_ENV
 
       - name: Email weekly creative + caption
-        if: ${{ !cancelled() && steps.email-check.outputs.send_email == 'true' }}
+        # Only claims "auto-posted" when the auto-post step actually ran and
+        # succeeded. On 2026-08-17 this email fired after the post was
+        # SKIPPED (commit failed), asserting a post that never happened —
+        # the not-posted variant below covers that case honestly.
+        if: ${{ !cancelled() && steps.email-check.outputs.send_email == 'true' && steps.autopost.outcome == 'success' }}
         uses: dawidd6/action-send-mail@4226df7daafa6fc901a43789c49bf7ab309066e7 # v3 (SHA-pinned: action receives SMTP secrets)
         with:
           server_address: ${{ secrets.SMTP_SERVER }}
@@ -216,6 +231,44 @@ jobs:
             -----------------------------------------------
 
             Blog post: https://sanjmanak.github.io/show_lister/blog/
+          attachments: blog/weekly-hero.png
+
+      - name: Email weekly creative — NOT posted, manual action needed
+        if: ${{ !cancelled() && steps.email-check.outputs.send_email == 'true' && steps.autopost.outcome != 'success' }}
+        uses: dawidd6/action-send-mail@4226df7daafa6fc901a43789c49bf7ab309066e7 # v3 (SHA-pinned: action receives SMTP secrets)
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "[Comedy Houston] Weekly creative NOT posted - post manually"
+          to: ${{ secrets.NOTIFY_EMAIL }}
+          from: ${{ secrets.SMTP_FROM }}
+          body: |
+            This week's creative was generated but was NOT posted to
+            Instagram or Facebook (auto-post step outcome:
+            ${{ steps.autopost.outcome }}). Usually this means the git
+            commit/push failed, and posting was skipped on purpose so the
+            wrong week's image could not go out.
+
+            Two options:
+
+            1. Re-run the workflow from the Actions tab once the failure
+               cause is fixed (it regenerates and auto-posts):
+               https://github.com/${{ github.repository }}/actions/workflows/generate-blog-post.yml
+
+            2. Or post manually right now: the hero image is attached and
+               the caption is below.
+
+            -----------------------------------------------
+            INSTAGRAM CAPTION (copy & paste)
+            -----------------------------------------------
+
+            ${{ env.CAPTION }}
+
+            -----------------------------------------------
+
+            Run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
           attachments: blog/weekly-hero.png
 
       # WordPress publishing is best-effort. When it fails but Instagram/
