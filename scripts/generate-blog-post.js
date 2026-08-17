@@ -2079,10 +2079,15 @@ async function main() {
   // This is the page your Instagram bio link points at — it never changes URL,
   // but the contents are refreshed every Monday so every IG impression lands
   // on this week's headliners + ticket links + email capture.
-  if (WP_ENABLED && topComedians.length > 0) {
+  // heroEntries, not topComedians: on a quiet week with zero "recognizable"
+  // names the old topComedians gate skipped this update entirely and the
+  // page (the IG bio link target) kept showing LAST week's dated title for
+  // seven days (2026-08-17). The hero's notable-event backfill exists for
+  // exactly this case — use the same lineup here.
+  if (WP_ENABLED && heroEntries.length > 0) {
     console.log("Updating '/this-week/' landing page on WordPress...");
     try {
-      await updateThisWeekLandingPage(topComedians, weekRange, monday, sunday);
+      await updateThisWeekLandingPage(heroEntries, weekRange, monday, sunday);
     } catch (err) {
       console.error(`ERROR: This-week landing page update failed: ${err.message}`);
       wpFailures.push(`this-week landing page: ${err.message}`);
