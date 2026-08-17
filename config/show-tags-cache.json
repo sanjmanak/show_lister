@@ -1024,6 +1024,13 @@
       "tags": [],
       "model": "gpt-4o-mini",
       "classified_at": "2026-08-16"
+    },
+    "franco escamilla \"el juicio\"": {
+      "tags": [
+        "en-espanol"
+      ],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-17"
     }
   }
 }

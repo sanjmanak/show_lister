@@ -457,7 +457,7 @@
       }
     },
     "https://www.theriothtx.com/events/joey-avery-don-t-kill-comedy-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-08-14T11:08:00-05:00",
+      "lastmod": "2026-08-17T08:56:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -496,21 +496,21 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Mason James"
-          },
-          {
-            "@type": "Person",
             "name": "Joey Avery"
           },
           {
             "@type": "Person",
             "name": "John Meyer"
+          },
+          {
+            "@type": "Person",
+            "name": "Jeff Joe"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-16": {
-      "lastmod": "2026-08-14T11:08:00-05:00",
+      "lastmod": "2026-08-17T08:56:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -561,21 +561,21 @@
           },
           {
             "@type": "Person",
-            "name": "Quinton Jones"
-          },
-          {
-            "@type": "Person",
             "name": "Jacob Guidry"
           },
           {
             "@type": "Person",
             "name": "Aaron Heltz"
+          },
+          {
+            "@type": "Person",
+            "name": "Jeff Joe"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-14": {
-      "lastmod": "2026-08-14T11:08:00-05:00",
+      "lastmod": "2026-08-17T08:56:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -941,7 +941,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-1": {
-      "lastmod": "2026-08-14T11:37:00-05:00",
+      "lastmod": "2026-08-17T09:04:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -1006,7 +1006,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-monday-night-standup-comedy-open-mic-2026-08-24210000": {
-      "lastmod": "2026-08-14T11:37:00-05:00",
+      "lastmod": "2026-08-17T09:04:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -1045,7 +1045,7 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Mackenzie jewell"
+            "name": "Cody Walker"
           }
         ]
       }

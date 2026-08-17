@@ -1,15 +1,7 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-08-14T02:12:49.979Z",
+  "last_updated": "2026-08-17T14:24:27.984Z",
   "entries": {
-    "cc84ac7e62b3ff7d": {
-      "price_min": 31.4,
-      "price_max": 31.4,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/tony-dabas-houston-improv-tickets/14856833?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-07-19T00:21:04.597Z"
-    },
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
       "price_max": 37.58,
