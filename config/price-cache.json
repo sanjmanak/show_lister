@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-08-17T14:45:22.006Z",
+  "last_updated": "2026-08-17T15:30:20.502Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -161,6 +161,254 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
+    },
+    "1cd5a5f1fda674c1": {
+      "price_min": 34,
+      "price_max": 48,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/heated-rivalry-comedy-show-houston-texas-08-19-2026/event/3A00648ACA8CE604",
+      "fetched_at": "2026-08-17T15:15:01.741Z"
+    },
+    "c5280e21e44b4ffa": {
+      "price_min": 47,
+      "price_max": 68,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/chris-andrade-mutar-en-espanol-houston-texas-08-20-2026/event/3A0064A1227216BD",
+      "fetched_at": "2026-08-17T15:15:14.557Z"
+    },
+    "9354063dd6554212": {
+      "price_min": 34,
+      "price_max": 48,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/gabriel-rutledge-houston-texas-08-21-2026/event/3A006494C3BDDFA0",
+      "fetched_at": "2026-08-17T15:15:28.508Z"
+    },
+    "bfa9f367691618f7": {
+      "price_min": 34,
+      "price_max": 48,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/gabriel-rutledge-houston-texas-08-22-2026/event/3A006494C3D2E00D",
+      "fetched_at": "2026-08-17T15:15:47.755Z"
+    },
+    "e496e01d08ccf74d": {
+      "price_min": 29,
+      "price_max": 44,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/erin-jackson-houston-texas-08-23-2026/event/3A0064C3CE6BDB35",
+      "fetched_at": "2026-08-17T15:16:07.674Z"
+    },
+    "a28774349fe4da2a": {
+      "price_min": 21,
+      "price_max": 32,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/matt-hyams-friends-houston-texas-08-26-2026/event/3A0064E6ADF774CE",
+      "fetched_at": "2026-08-17T15:16:27.290Z"
+    },
+    "24543ce267da2920": {
+      "price_min": 27,
+      "price_max": 42,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/francisco-ramos-en-espanol-houston-texas-08-27-2026/event/3A00648AD043ED3A",
+      "fetched_at": "2026-08-17T15:16:40.226Z"
+    },
+    "abe671e9adbe350e": {
+      "price_min": 31,
+      "price_max": 45,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/francisco-ramos-houston-texas-08-28-2026/event/3A00648AD04AED48",
+      "fetched_at": "2026-08-17T15:16:52.889Z"
+    },
+    "80f7715fceeb89e5": {
+      "price_min": 31,
+      "price_max": 45,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/correy-bell-houston-texas-08-28-2026/event/3A0064B128270F62",
+      "fetched_at": "2026-08-17T15:17:11.754Z"
+    },
+    "b74e95bb2950fb7c": {
+      "price_min": 34,
+      "price_max": 48,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/francisco-ramos-houston-texas-08-29-2026/event/3A00648AD051ED55",
+      "fetched_at": "2026-08-17T15:17:23.889Z"
+    },
+    "cff0c51c6823f6f8": {
+      "price_min": 34,
+      "price_max": 48,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/sydney-castillo-houston-texas-08-30-2026/event/3A0064BF1CB3F033",
+      "fetched_at": "2026-08-17T15:17:41.301Z"
+    },
+    "09ce99e9642e308b": {
+      "price_min": 16,
+      "price_max": 36,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/the-medium-spicy-show-houston-texas-09-02-2026/event/3A0064ED9EA4650B",
+      "fetched_at": "2026-08-17T15:18:24.548Z"
+    },
+    "8df47cbfe4dbb675": {
+      "price_min": 34,
+      "price_max": 48,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/naim-lynn-houston-texas-09-03-2026/event/3A006494B7BBC77E",
+      "fetched_at": "2026-08-17T15:18:57.337Z"
+    },
+    "2bd10ca5f13c9342": {
+      "price_min": 16,
+      "price_max": 42,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/jokes-over-brunch-houston-texas-09-05-2026/event/3A00650ABDF29E00",
+      "fetched_at": "2026-08-17T15:21:03.901Z"
+    },
+    "ef59452e85c0d78c": {
+      "price_min": 34,
+      "price_max": 48,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/naim-lynn-houston-texas-09-05-2026/event/3A006494B7D4C7C4",
+      "fetched_at": "2026-08-17T15:21:30.577Z"
+    },
+    "c1d8d0cd2a0cfa3c": {
+      "price_min": 41,
+      "price_max": 55,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/sejoe-an-kreyol-houston-texas-09-06-2026/event/3A0064A91B6F880F",
+      "fetched_at": "2026-08-17T15:22:06.093Z"
+    },
+    "77d0385727e61a6a": {
+      "price_min": 29,
+      "price_max": 44,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/kat-bird-ramsey-badawi-houston-texas-09-09-2026/event/3A0064BF1E3BF1A2",
+      "fetched_at": "2026-08-17T15:22:29.195Z"
+    },
+    "7a4c628d7cdb00b3": {
+      "price_min": 32,
+      "price_max": 45,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/mario-adrion-houston-texas-09-10-2026/event/3A00644179AB3DA0",
+      "fetched_at": "2026-08-17T15:22:52.811Z"
+    },
+    "b1d8b2c67f052756": {
+      "price_min": 41,
+      "price_max": 61,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/splou-houston-texas-09-11-2026/event/3A0064CD14345EFE",
+      "fetched_at": "2026-08-17T15:24:03.065Z"
+    },
+    "63e6cc1af7646ea4": {
+      "price_min": 31,
+      "price_max": 52,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/abelardo-en-espanol-houston-texas-09-13-2026/event/3A0064F5CF58E8B5",
+      "fetched_at": "2026-08-17T15:25:06.257Z"
+    },
+    "3e82aec093a1adfd": {
+      "price_min": 29,
+      "price_max": 44,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/ryan-goodcase-houston-texas-09-16-2026/event/3A006477C431A750",
+      "fetched_at": "2026-08-17T15:25:40.350Z"
+    },
+    "107fcbe5d9fe3523": {
+      "price_min": 27,
+      "price_max": 42,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/daniela-mora-houston-texas-09-17-2026/event/3A0064B123000AF6",
+      "fetched_at": "2026-08-17T15:26:06.821Z"
+    },
+    "ff503b4572c9c196": {
+      "price_min": 34,
+      "price_max": 48,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/ruby-setnik-houston-texas-09-18-2026/event/3A0064EDF283D505",
+      "fetched_at": "2026-08-17T15:26:33.078Z"
+    },
+    "97db29f3fddabece": {
+      "price_min": 31,
+      "price_max": 45,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/will-pepper-houston-texas-09-18-2026/event/3A00650CC08B99AC",
+      "fetched_at": "2026-08-17T15:26:59.176Z"
+    },
+    "6ac3c9e0a6e4ec31": {
+      "price_min": 31,
+      "price_max": 45,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/ruby-setnik-houston-texas-09-19-2026/event/3A0064EDF272D4EE",
+      "fetched_at": "2026-08-17T15:27:24.044Z"
+    },
+    "d4cb773de238db6a": {
+      "price_min": 41,
+      "price_max": 55,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/therapy-gecko-houston-texas-09-20-2026/event/3A006462D3BAD4E4",
+      "fetched_at": "2026-08-17T15:27:49.496Z"
+    },
+    "a3093cb21b43eeff": {
+      "price_min": 52,
+      "price_max": 125,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/unpopular-opinions-night-ages-21-houston-texas-09-23-2026/event/3A0064F7EA66997D",
+      "fetched_at": "2026-08-17T15:28:20.073Z"
+    },
+    "0b4dfdbecac6f841": {
+      "price_min": 31,
+      "price_max": 45,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/jenny-tian-ripe-houston-texas-09-23-2026/event/3A0064A91C4E8B4F",
+      "fetched_at": "2026-08-17T15:28:44.986Z"
+    },
+    "8910d009f33516b5": {
+      "price_min": 41,
+      "price_max": 55,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/rocky-dale-davis-houston-texas-09-24-2026/event/3A006498231AFB49",
+      "fetched_at": "2026-08-17T15:29:09.727Z"
+    },
+    "5e514c0f7c0b6b0e": {
+      "price_min": 71,
+      "price_max": 72,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/starbomb-featuring-dj-commander-meouch-probably-houston-texas-09-25-2026/event/3A0064AEF1FF1CE5",
+      "fetched_at": "2026-08-17T15:29:34.323Z"
+    },
+    "8127929369bb610f": {
+      "price_min": 41,
+      "price_max": 55,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketmaster.com/rocky-dale-davis-houston-texas-09-25-2026/event/3A0064982322FB57",
+      "fetched_at": "2026-08-17T15:29:58.193Z"
     }
   }
 }
