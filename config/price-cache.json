@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-08-17T15:30:20.502Z",
+  "last_updated": "2026-08-18T01:11:19.912Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -369,14 +369,6 @@
       "source": "page",
       "url": "https://www.ticketmaster.com/therapy-gecko-houston-texas-09-20-2026/event/3A006462D3BAD4E4",
       "fetched_at": "2026-08-17T15:27:49.496Z"
-    },
-    "a3093cb21b43eeff": {
-      "price_min": 52,
-      "price_max": 125,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/unpopular-opinions-night-ages-21-houston-texas-09-23-2026/event/3A0064F7EA66997D",
-      "fetched_at": "2026-08-17T15:28:20.073Z"
     },
     "0b4dfdbecac6f841": {
       "price_min": 31,

@@ -1,72 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase": {
-      "lastmod": "2026-08-11T07:37:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Monday Night Standup Comedy Showcase!",
-        "startDate": "2026-08-17T19:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase",
-          "priceCurrency": "USD",
-          "price": "8.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-09T09:59:56-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase",
-        "image": "/img/shows/HTX-Houston-s-Funniest-Showcase-2-1-1afe120b-large-thumb.png",
-        "description": "Start your week with a night of standup comedy and plenty of laughs at The Riot Comedy Club!Join us Monday night at The Riot on Washington&nbsp; for a hilarious lineup featuring some of the best comedy talent in the city. With an intimate atmosphere, great drinks, and live standup, it’s the perfect way to shake off the Monday blues and start the week on a high note.Tickets are limited, so grab yours in advance and make Monday night something to look forward to. Come hang out, have a drink, and kick off your week with a night of great comedy at The Riot.All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "James Vogt"
-          },
-          {
-            "@type": "Person",
-            "name": "Brian Gendron"
-          },
-          {
-            "@type": "Person",
-            "name": "Luis Dejesus"
-          },
-          {
-            "@type": "Person",
-            "name": "Daniel Contreras"
-          },
-          {
-            "@type": "Person",
-            "name": "Andy Huggins"
-          },
-          {
-            "@type": "Person",
-            "name": "Keisha Hunt"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/monday-open-mic-the-riot-houston-2": {
-      "lastmod": "2026-08-12T11:39:00-05:00",
+      "lastmod": "2026-08-17T03:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -111,7 +46,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-20": {
-      "lastmod": "2026-08-12T11:26:00-05:00",
+      "lastmod": "2026-08-17T09:43:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -162,21 +97,21 @@
           },
           {
             "@type": "Person",
-            "name": "Will Loden"
-          },
-          {
-            "@type": "Person",
             "name": "Jeff Joe"
           },
           {
             "@type": "Person",
             "name": "Luis Dejesus"
+          },
+          {
+            "@type": "Person",
+            "name": "Marlo Ray"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/tuesday-open-mic-the-riot-houston": {
-      "lastmod": "2026-08-12T11:26:00-05:00",
+      "lastmod": "2026-08-17T09:43:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -1051,7 +986,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-1-1": {
-      "lastmod": "2026-08-14T11:36:00-05:00",
+      "lastmod": "2026-08-17T09:39:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -1116,7 +1051,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-08-25210000": {
-      "lastmod": "2026-08-14T11:36:00-05:00",
+      "lastmod": "2026-08-17T09:39:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -1155,7 +1090,7 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Marz Pimentel"
+            "name": "Hannah Zoe (Philibert)"
           }
         ]
       }
@@ -1803,7 +1738,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-2-1": {
-      "lastmod": "2026-08-10T03:24:00-05:00",
+      "lastmod": "2026-08-17T09:33:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -1843,7 +1778,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-09-01210000": {
-      "lastmod": "2026-08-12T11:27:00-05:00",
+      "lastmod": "2026-08-17T09:33:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -1882,7 +1817,7 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Marz Pimentel"
+            "name": "Blythe Payne"
           }
         ]
       }
@@ -13882,6 +13817,51 @@
           {
             "@type": "Person",
             "name": "Alvin Kuai"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/luke-touma-headlines-the-riot-houston": {
+      "lastmod": "2026-08-17T03:27:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Luke Touma Headlines The Riot Houston",
+        "startDate": "2027-01-09T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/luke-touma-headlines-the-riot-houston",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-17T15:20:27-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/luke-touma-headlines-the-riot-houston",
+        "image": "/img/events/luke-website-bd850a93-large-thumb.jpg",
+        "description": "Luke Touma is New York City-based stand-up comedian. At just 24 years old, he has toured across North America and has been featured in Timeout New York, the New York Comedy Festival, and on Sirius XM.He came up in the Boston comedy scene, the comedy pressure cooker that made many of our greatest modern comedians. It&rsquo;s the perfect storm for hecklers, and the enormous amount of challenging stage experience Luke received is apparent in his comedy.After moving to New York, he&rsquo;s become a producer of one of the top indie shows in New York, Too Many Cooks, which recently got a plug on Conan. He&rsquo;s opened for Louis CK, Mark Normand, and his mother has once taken down a heckler for him.All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Luke Touma"
           }
         ]
       }

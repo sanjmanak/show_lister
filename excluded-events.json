@@ -1,7 +1,7 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-08-17T14:22:31.090Z",
-  "total_excluded": 15,
+  "last_updated": "2026-08-18T01:10:18.065Z",
+  "total_excluded": 19,
   "events": [
     {
       "name": "Karaoke every THURSDAY!",
@@ -59,6 +59,17 @@
       "reason": "music artist blocklisted: \"emarosa\""
     },
     {
+      "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-08-23",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/our-mic-is-your-mic-emo-karaoke-tickets-1998225098059",
+      "reason": "title keyword blocklisted: \"karaoke\""
+    },
+    {
       "name": "Royale Lynn",
       "venue": "The Secret Group",
       "venue_city": "Houston",
@@ -68,6 +79,39 @@
       "genre": null,
       "ticket_url": "https://www.eventbrite.com/e/royale-lynn-tickets-1989794938224",
       "reason": "music artist blocklisted: \"royale lynn\""
+    },
+    {
+      "name": "Karaoke every THURSDAY!",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-08-27",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/karaoke-every-thursday-tickets-1998225244497",
+      "reason": "title keyword blocklisted: \"karaoke\""
+    },
+    {
+      "name": "NOTHING MATTERS Emo | Indie | Punk Dance Party",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-08-28",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/nothing-matters-emo-indie-punk-dance-party-tickets-1998225312701",
+      "reason": "title keyword blocklisted: \"dance party\""
+    },
+    {
+      "name": "DIAL UP: 90s & Y2K Dance Party!",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-08-29",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/dial-up-90s-y2k-dance-party-tickets-1998225327746",
+      "reason": "title keyword blocklisted: \"dance party\""
     },
     {
       "name": "Luh Tyler",
