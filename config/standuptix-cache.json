@@ -1,52 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/monday-open-mic-the-riot-houston-2": {
-      "lastmod": "2026-08-17T03:03:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Riot Comedy Club presents Monday Night Standup Comedy Open Mic",
-        "startDate": "2026-08-17T21:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/monday-open-mic-the-riot-houston-2",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-11T18:17:14-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/monday-open-mic-the-riot-houston-2",
-        "image": "/img/shows/Open-Mic-July-19-2023-at-14-42-02-8-da410ef7-large-thumb.png",
-        "description": "Looking for a night full of laughs &mdash; and totally FREE? Join us at TheRiot Comedy Club&nbsp; for our Open Mic Comedy Night, where you can catch a dozen comedians taking the stage! From fresh new comics finding their voice to seasoned pros testing out brand-new material, it&rsquo;s always a wild mix of creativity, courage, and comedy gold.Every show is different, every joke is fresh, and every seat comes with a front-row view of the next big thing in Texas comedy.So grab your crew, order a drink, and come laugh with us &mdash; no tickets, no pressure, just pure fun.ALL SHOWS ARE AGES 21 &amp; UP--Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Mackenzie jewell"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-20": {
-      "lastmod": "2026-08-17T09:43:00-05:00",
+      "lastmod": "2026-08-18T09:21:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -111,7 +66,7 @@
       }
     },
     "https://www.theriothtx.com/events/tuesday-open-mic-the-riot-houston": {
-      "lastmod": "2026-08-17T09:43:00-05:00",
+      "lastmod": "2026-08-18T09:21:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
