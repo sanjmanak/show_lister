@@ -1036,6 +1036,30 @@
       "tags": [],
       "model": "gpt-4o-mini",
       "classified_at": "2026-08-18"
+    },
+    "ari matti": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-19"
+    },
+    "kam franklin - house of the neon sun  free show!": {
+      "tags": [
+        "black-comedy"
+      ],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-19"
+    },
+    "kam franklin - land of the neon sun  album release": {
+      "tags": [
+        "black-comedy"
+      ],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-19"
+    },
+    "the riot presents  wednesday night houston's funniest standup comedy showcase": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-19"
     }
   }
 }
