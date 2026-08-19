@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-08-18T01:11:19.912Z",
+  "last_updated": "2026-08-19T14:28:53.687Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -41,14 +41,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/craig-conant-houston-improv-tickets/14824993?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-07-19T00:21:45.367Z"
-    },
-    "579052107f7a8496": {
-      "price_min": 25.74,
-      "price_max": 25.74,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/keisha-hunt-houston-improv-tickets/15003503?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-08-17T14:44:11.620Z"
     },
     "65d3246fc25a5b35": {
       "price_min": 25.22,

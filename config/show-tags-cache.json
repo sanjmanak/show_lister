@@ -1060,6 +1060,11 @@
       "tags": [],
       "model": "gpt-4o-mini",
       "classified_at": "2026-08-19"
+    },
+    "ha ha halloween showcase": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-19"
     }
   }
 }
