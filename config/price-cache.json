@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-08-19T14:28:53.687Z",
+  "last_updated": "2026-08-20T14:32:25.813Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -153,14 +153,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
-    },
-    "1cd5a5f1fda674c1": {
-      "price_min": 34,
-      "price_max": 48,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/heated-rivalry-comedy-show-houston-texas-08-19-2026/event/3A00648ACA8CE604",
-      "fetched_at": "2026-08-17T15:15:01.741Z"
     },
     "c5280e21e44b4ffa": {
       "price_min": 47,
