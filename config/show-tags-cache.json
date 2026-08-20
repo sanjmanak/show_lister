@@ -1065,6 +1065,23 @@
       "tags": [],
       "model": "gpt-4o-mini",
       "classified_at": "2026-08-19"
+    },
+    "dave lawson & friends": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-20"
+    },
+    "the last laugh with james vogt & trip truman": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-20"
+    },
+    "comedian ashton womack (comedy central)  headlines the riot houston": {
+      "tags": [
+        "black-comedy"
+      ],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-20"
     }
   }
 }
