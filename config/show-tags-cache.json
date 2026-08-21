@@ -1082,6 +1082,13 @@
       ],
       "model": "gpt-4o-mini",
       "classified_at": "2026-08-20"
+    },
+    "rex navarrete": {
+      "tags": [
+        "en-espanol"
+      ],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-21"
     }
   }
 }
