@@ -1,19 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-08-21T01:16:34.425Z",
-  "total_excluded": 19,
+  "last_updated": "2026-08-21T14:29:38.033Z",
+  "total_excluded": 18,
   "events": [
-    {
-      "name": "Karaoke every THURSDAY!",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-08-20",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/karaoke-every-thursday-tickets-1996543354920",
-      "reason": "title keyword blocklisted: \"karaoke\""
-    },
     {
       "name": "Classic Movie Night At The Jefferson Ferris Bueller's Day Off",
       "venue": "Jefferson Theatre",
