@@ -1089,6 +1089,13 @@
       ],
       "model": "gpt-4o-mini",
       "classified_at": "2026-08-21"
+    },
+    "alfred robles: vatos with gatos tour": {
+      "tags": [
+        "en-espanol"
+      ],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-22"
     }
   }
 }
