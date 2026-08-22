@@ -1,30 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-08-22T01:10:10.329Z",
-  "total_excluded": 18,
+  "last_updated": "2026-08-22T14:16:32.300Z",
+  "total_excluded": 16,
   "events": [
-    {
-      "name": "Classic Movie Night At The Jefferson Ferris Bueller's Day Off",
-      "venue": "Jefferson Theatre",
-      "venue_city": "Beaumont",
-      "date": "2026-08-21",
-      "time": "7:00 PM",
-      "source": "ticketmaster",
-      "genre": "Comedy",
-      "ticket_url": "https://www.ticketmaster.com/classic-movie-night-at-the-jefferson-beaumont-texas-08-21-2026/event/3A0064EAFAA315DC",
-      "reason": "venue blocklisted: Jefferson Theatre"
-    },
-    {
-      "name": "NOTHING MATTERS Emo | Indie | Punk Dance Party",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-08-21",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/nothing-matters-emo-indie-punk-dance-party-tickets-1996543364950",
-      "reason": "title keyword blocklisted: \"dance party\""
-    },
     {
       "name": "DIAL UP: 90s & Y2K Dance Party!",
       "venue": "The Secret Group",

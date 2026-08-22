@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-08-21T14:30:45.643Z",
+  "last_updated": "2026-08-22T14:17:37.730Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -145,14 +145,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
-    },
-    "9354063dd6554212": {
-      "price_min": 34,
-      "price_max": 48,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/gabriel-rutledge-houston-texas-08-21-2026/event/3A006494C3BDDFA0",
-      "fetched_at": "2026-08-17T15:15:28.508Z"
     },
     "bfa9f367691618f7": {
       "price_min": 34,

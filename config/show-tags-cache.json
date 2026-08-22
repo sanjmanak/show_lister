@@ -1096,6 +1096,26 @@
       ],
       "model": "gpt-4o-mini",
       "classified_at": "2026-08-22"
+    },
+    "david koechner": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-22"
+    },
+    "yaqiao yang live in houston": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-22"
+    },
+    "michael rowland (hbomax, late night with jimmy fallon, comedy central) headlines the riot comedy club": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-22"
+    },
+    "don't tell comedy: westbury (8:00 pm show)": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-22"
     }
   }
 }
