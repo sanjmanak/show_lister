@@ -26,7 +26,12 @@
         "Houston Improv Comedy Club",
         "The Houston Improv"
       ],
-      "address": { "street": "7620 Katy Fwy #431", "locality": "Houston", "region": "TX", "postal": "77024" },
+      "address": {
+        "street": "7620 Katy Fwy #431",
+        "locality": "Houston",
+        "region": "TX",
+        "postal": "77024"
+      },
       "phone": "",
       "website": "",
       "schema_type": "ComedyClub",
@@ -41,8 +46,17 @@
     {
       "name": "Punch Line Houston",
       "slug": "punch-line-houston",
-      "aliases": ["Punch Line Comedy Club Houston", "Punch Line Comedy Club - Houston", "The Punch Line Houston"],
-      "address": { "street": "2930 Sage Rd", "locality": "Houston", "region": "TX", "postal": "77056" },
+      "aliases": [
+        "Punch Line Comedy Club Houston",
+        "Punch Line Comedy Club - Houston",
+        "The Punch Line Houston"
+      ],
+      "address": {
+        "street": "2930 Sage Rd",
+        "locality": "Houston",
+        "region": "TX",
+        "postal": "77056"
+      },
       "phone": "",
       "website": "",
       "schema_type": "ComedyClub",
@@ -57,8 +71,16 @@
     {
       "name": "The Secret Group",
       "slug": "the-secret-group",
-      "aliases": ["Secret Group", "The Secret Group Houston"],
-      "address": { "street": "2101 Polk St", "locality": "Houston", "region": "TX", "postal": "77003" },
+      "aliases": [
+        "Secret Group",
+        "The Secret Group Houston"
+      ],
+      "address": {
+        "street": "2101 Polk St",
+        "locality": "Houston",
+        "region": "TX",
+        "postal": "77003"
+      },
       "phone": "",
       "website": "",
       "schema_type": "ComedyClub",
@@ -81,7 +103,12 @@
         "The Riot Houston"
       ],
       "_address_note": "RELOCATED from Upstairs at Rudyard's (2010 Waugh Dr, 77006 — now stale) to its new main home at 1925 Washington Ave, Houston, TX 77007 (address + zip owner-verified). The Riot's separate Conroe, TX location (at GuadalaHARRY's) is its own venue entry below — do not fold it in here.",
-      "address": { "street": "1925 Washington Ave", "locality": "Houston", "region": "TX", "postal": "77007" },
+      "address": {
+        "street": "1925 Washington Ave",
+        "locality": "Houston",
+        "region": "TX",
+        "postal": "77007"
+      },
       "phone": "",
       "website": "",
       "schema_type": "ComedyClub",
@@ -105,7 +132,12 @@
         "Guadalaharrys"
       ],
       "_venue_note": "The Riot Comedy Club's second location, hosted at GuadalaHARRY's in Conroe, TX. Fed by its own Eventbrite organizer (120648602531), which fetch-events.js pins to this venue via `forceVenue` regardless of the raw Eventbrite venue string. Address, zip, and phone owner-verified.",
-      "address": { "street": "219 Simonton St", "locality": "Conroe", "region": "TX", "postal": "77301" },
+      "address": {
+        "street": "219 Simonton St",
+        "locality": "Conroe",
+        "region": "TX",
+        "postal": "77301"
+      },
       "phone": "(713) 264-8664",
       "website": "",
       "schema_type": "ComedyClub",
@@ -120,17 +152,25 @@
     {
       "name": "The Den Comedy Club",
       "slug": "the-den-comedy-club",
-      "aliases": ["The Den", "Den Comedy Club"],
-      "address": { "street": "201 Woodard St", "locality": "Houston", "region": "TX", "postal": "77009" },
+      "aliases": [
+        "The Den",
+        "Den Comedy Club"
+      ],
+      "address": {
+        "street": "201 Woodard St",
+        "locality": "Houston",
+        "region": "TX",
+        "postal": "77009"
+      },
       "phone": "(713) 730-9298",
-      "website": "",
+      "website": "https://www.thedencomedyclub.com/",
       "schema_type": "ComedyClub",
       "page": {
         "enabled": true,
         "title": "The Den Comedy Club — Shows, Tickets & Info",
-        "meta_title": "The Den Comedy Club — Shows, Tickets & Info | Comedy Houston",
-        "meta_description": "Upcoming shows at The Den Comedy Club in Houston — an intimate speakeasy-style stand-up room with curated showcases, prices, and ticket links, updated daily.",
-        "description_html": "<p>The Den Comedy Club is a speakeasy-style stand-up room at 201 Woodard St in Houston — a small, intimate space where the crowd is close enough that every show feels like a private set. The lineup leans on curated showcases of Houston's working comics with touring guests mixed in, and the smaller room means shows regularly sell out on word of mouth alone.</p>\n<p>Tickets are sold through Eventbrite; check the listings below for what's coming up.</p>\n<p><!-- TODO(owner): verify and fill in — age policy, BYOB or bar service, parking, official website/Instagram --></p>"
+        "meta_title": "The Den Comedy Club Houston — Shows, Tickets & Info | Comedy Houston",
+        "meta_description": "The Den Comedy Club: Houston's speakeasy stand-up room inside Wolfsmiths in Lindale Park. Real cocktails, no drink minimum, shows Thursday to Saturday. Every date, price, and ticket link, updated daily.",
+        "description_html": "<p>The Den Comedy Club is Houston's speakeasy comedy room: a hidden stand-up club tucked above Wolfsmiths, the cafe and cocktail bar at 201 Woodard St in Lindale Park, one neighborhood over from the Heights. There is no sign outside. You walk into Wolfsmiths, look for the white orchids, and slip into a room built with wood accents, soft lighting, and seats close enough that every show feels like a private set.</p>\n<p>The club opened in March 2026 and is owned by working Houston comedians Janan Araujo-Siam and Onkar Singh, which shapes everything about it. Lineups are curated showcases of the city's best working comics with touring guests mixed in: the kind of bill a comic books to impress other comics, performed for a crowd that found the room on purpose. The space is small enough that shows regularly sell out on word of mouth alone.</p>\n<h2>The Den vs. Houston Improv vs. Punch Line: which club for which night?</h2>\n<p>The <a href=\"/venues/houston-improv/\">Houston Improv</a> is the national-headliner room: names you know from Netflix playing multi-night weekend runs at the Marq*E center on the Katy Freeway, with big-club pricing and the standard two-item minimum. <a href=\"/venues/punch-line-houston/\">Punch Line Houston</a> is the classic club in the middle: strong touring headliners, 18 and up, two-beverage minimum per person. Both are reliable nights out, and if the goal is seeing someone you already know from TV, that is where they will be.</p>\n<p>The Den is the other kind of great night. You may not recognize the names on the lineup yet, and that is the point: this is where Houston's best working comics do their sharpest sets in a room small enough to hear the table next to you lose it. Tickets usually cost less than parking near the big clubs, and the intimacy does the rest. Ask a Houston comic where they would take a date to watch stand-up and The Den comes up more often than any room its size should.</p>\n<h2>Food and drinks: Wolfsmiths downstairs, and no drink minimum</h2>\n<p>Because The Den lives upstairs from Wolfsmiths, you get real food and real cocktails with table service during the show: a full menu from the kitchen, drinks built by the house mixologist, plus wine, beer, and non-alcoholic options. And unlike the big clubs, The Den does not lean on a drink minimum. Order because the cocktails are good, not because the fine print says two items. Come early, eat downstairs, then head up for the show.</p>\n<h2>Know before you go</h2>\n<ul>\n<li><strong>Where:</strong> 201 Woodard St, Houston, TX 77009, inside Wolfsmiths in Lindale Park, minutes from the Heights.</li>\n<li><strong>Finding it:</strong> no signage. Enter Wolfsmiths and look for the white orchids.</li>\n<li><strong>Show nights:</strong> Thursday through Saturday, with specials in between.</li>\n<li><strong>Tickets:</strong> sold through Eventbrite; every upcoming date is listed below with prices and direct links.</li>\n<li><strong>Follow the club:</strong> <a href=\"https://www.thedencomedyclub.com/\" rel=\"noopener\">thedencomedyclub.com</a> and <a href=\"https://www.instagram.com/thedencomedyclub/\" rel=\"noopener\">@thedencomedyclub</a>.</li>\n</ul>\n<p>Every show at The Den appears in the listings below automatically, updated twice a day, alongside <a href=\"/\">every other comedy show in Houston</a>. If it is on sale, it is here.</p>"
       }
     }
   ]
