@@ -1,19 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-08-23T01:16:14.376Z",
-  "total_excluded": 20,
+  "last_updated": "2026-08-23T14:18:27.446Z",
+  "total_excluded": 19,
   "events": [
-    {
-      "name": "DIAL UP: 90s & Y2K Dance Party!",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-08-22",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/dial-up-90s-y2k-dance-party-tickets-1996543374980",
-      "reason": "title keyword blocklisted: \"dance party\""
-    },
     {
       "name": "Emarosa presents: High Horse Heaven Tour",
       "venue": "The Secret Group",

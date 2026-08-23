@@ -1116,6 +1116,30 @@
       "tags": [],
       "model": "gpt-4o-mini",
       "classified_at": "2026-08-22"
+    },
+    "adrian uribe: 50 y pico tour": {
+      "tags": [
+        "en-espanol"
+      ],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-23"
+    },
+    "kev adams": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-23"
+    },
+    "clint coley": {
+      "tags": [
+        "black-comedy"
+      ],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-23"
+    },
+    "ellen skrmetti": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-23"
     }
   }
 }
