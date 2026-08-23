@@ -101,21 +101,24 @@
         "The Secret Group Houston"
       ],
       "address": {
-        "street": "2101 Polk St",
+        "street": "2101 Polk St #A",
         "locality": "Houston",
         "region": "TX",
         "postal": "77003"
       },
       "phone": "",
-      "website": "",
+      "website": "https://www.thesecretgrouphtx.com/",
       "schema_type": "ComedyClub",
       "page": {
         "enabled": true,
         "title": "The Secret Group — Shows, Tickets & Info",
-        "meta_title": "The Secret Group — Shows, Tickets & Info | Comedy Houston",
-        "meta_description": "Upcoming comedy at The Secret Group in EaDo Houston — alternative touring comics, showcases, and open mics with prices and ticket links, updated twice daily.",
-        "description_html": "<p>The Secret Group is an independent comedy venue and bar at 2101 Polk St in EaDo (East Downtown), and the center of gravity for Houston's alternative comedy scene. Across its rooms you'll find touring alt-comedy and podcast acts, local showcases, themed shows, and some of the most consistent open mics in the city — there's comedy on the calendar most nights of the week.</p>\n<p>The venue also hosts non-comedy nights (music, karaoke, dance parties); we filter those out automatically, so the list below is only the comedy. Tickets for most shows are sold through Eventbrite, and plenty of the weekly programming is cheap or free.</p>\n<p><!-- TODO(owner): verify and fill in — age policy per room (21+ bar shows?), parking situation in EaDo, food options, official website URL --></p>"
-      }
+        "meta_title": "The Secret Group — Comedy Shows, Tickets & Info | Comedy Houston",
+        "meta_description": "The Secret Group in EaDo: comedy almost every night, most tickets under $10, no drink minimum, and more open mics than anywhere in Houston. Every show, price, and ticket link, updated daily.",
+        "description_html": "<p>The Secret Group is an independent comedy venue and bar at 2101 Polk St in EaDo, on the corner of Polk and St. Emanuel, and it is the engine room of Houston's alternative comedy scene. There are two stages under one roof: the main showroom, and a smaller room called The Box with its own marked entrance on Polk. Between them there is stand-up on the calendar essentially every night of the week, which is not true of any other room in the city.</p>\n<p>What makes it matter is the volume and the price. A typical week here runs open mics, weekly series with names like $2 Bill and Master Debaters, late-night dirty shows, headliner showcases, and touring alt-comedy and podcast acts passing through. A lot of it costs under ten dollars and a good deal of it is free. This is where Houston comics build hours, and where an audience can watch the scene actually happen rather than watch a finished product.</p>\n<h2>The Secret Group vs. the big clubs: which one for which night?</h2>\n<p>The <a href=\"/venues/houston-improv/\">Houston Improv</a> and <a href=\"/venues/punch-line-houston/\">Punch Line</a> sell you a known quantity: a touring headliner, a two-item or two-drink minimum, and a ticket priced accordingly. The Secret Group sells the opposite. You will often not recognize a single name on the bill, the ticket is under ten dollars, and there is no minimum at all, so the whole night can cost less than parking downtown.</p>\n<p>The other practical difference is that the big clubs run on a weekend rhythm. If it is a Monday or a Tuesday and you want to see live stand-up, The Secret Group and <a href=\"/venues/the-riot-comedy-club/\">The Riot</a> are realistically your two options. For an audience willing to gamble on unfamiliar names, that is a feature: weeknight rooms are where comics try the material that is not ready yet.</p>\n<h2>Open mics, and going up yourself</h2>\n<p>The Secret Group hosts more open mics than anywhere else in Houston, one most nights of the week, and they are listed on our <a href=\"/open-mic-comedy-houston/\">Houston open mic page</a> with sign-up details. If you are trying stand-up for the first time, this is the most likely place in the city for it to happen. If you are just watching, an open mic is free and unpredictable in roughly equal measure.</p>\n<h2>Food, drinks, and no drink minimum</h2>\n<p>There is a full bar and, in the club's own words, no drink minimum of any kind, which is unusual for a comedy room and is a real part of why a night here stays cheap. Non-alcoholic options include locally roasted Cruiser cold brew on a nitro tap.</p>\n<p>The venue does not have a kitchen, and rather than pretend otherwise it lets you bring food in from outside. EaDo has plenty within a short walk, and eating before or during the show is entirely normal here. One rule worth knowing: photos and video are not allowed during comedy sets.</p>\n<h2>Know before you go</h2>\n<ul>\n<li><strong>Where:</strong> 2101 Polk St #A, Houston, TX 77003, in EaDo. The club entrance is at the corner of Polk and St. Emanuel; The Box has its own entrance on Polk.</li>\n<li><strong>Age:</strong> comedy shows starting before 10pm are 18 and up, shows starting after 10pm are 21 and up. Concerts are generally all ages. Check the individual event.</li>\n<li><strong>Minimum:</strong> none. No drink minimum, which is rare for a comedy club.</li>\n<li><strong>Food:</strong> no kitchen, but outside food is welcome inside the venue.</li>\n<li><strong>Parking:</strong> street parking on the surrounding blocks, metered in places but free after 6pm, plus pay lots nearby usually running $10 to $20. Rideshare is often easier.</li>\n<li><strong>Dress code:</strong> none.</li>\n<li><strong>Tickets:</strong> sold through Eventbrite. There is no staffed box office, so most shows can also be bought at the door on the day, though anything likely to sell out is safer online.</li>\n<li><strong>Hours:</strong> 5pm to 2am daily.</li>\n<li><strong>Follow the club:</strong> <a href=\"https://www.thesecretgrouphtx.com/\" rel=\"noopener\">thesecretgrouphtx.com</a> and <a href=\"https://www.instagram.com/secretgrouphtx/\" rel=\"noopener\">@secretgrouphtx</a>.</li>\n</ul>\n<p>The Secret Group also runs music, karaoke and other non-comedy nights. Those are filtered out of the list below, which is comedy only, updated twice a day, alongside <a href=\"/\">every other comedy show in Houston</a>.</p>"
+      },
+      "same_as": [
+        "https://www.instagram.com/secretgrouphtx/"
+      ]
     },
     {
       "name": "The Riot Comedy Club",
@@ -127,7 +130,7 @@
         "The Riot",
         "The Riot Houston"
       ],
-      "_address_note": "RELOCATED from Upstairs at Rudyard's (2010 Waugh Dr, 77006 — now stale) to its new main home at 1925 Washington Ave, Houston, TX 77007 (address + zip owner-verified). The Riot's separate Conroe, TX location (at GuadalaHARRY's) is its own venue entry below — do not fold it in here.",
+      "_address_note": "Moved from Upstairs at Rudyard's (2010 Waugh Dr, 77006 — stale) to a purpose-built 150-seat room at 1925 Washington Ave, Houston, TX 77007 (Old Sixth Ward), open since August 2026. The Riot's separate Conroe location is its own venue entry below — do not fold it in here.",
       "address": {
         "street": "1925 Washington Ave",
         "locality": "Houston",
@@ -135,20 +138,24 @@
         "postal": "77007"
       },
       "phone": "",
-      "website": "",
+      "website": "https://www.theriothtx.com/",
       "schema_type": "ComedyClub",
       "page": {
         "enabled": true,
         "title": "The Riot Comedy Club — Shows, Tickets & Info",
         "meta_title": "The Riot Comedy Club — Shows, Tickets & Info | Comedy Houston",
-        "meta_description": "Upcoming shows from The Riot Comedy Club — now at a new home on Washington Ave in Houston — weekend headliner showcases with prices and direct ticket links.",
-        "description_html": "<p>The Riot Comedy Club has relocated to a new home at 1925 Washington Ave in Houston, moving on from its long run in the upstairs room at Rudyard's in Montrose. (The Riot also runs a separate room in Conroe — see The Riot Comedy Club — Conroe.) Its bread and butter is tightly-booked weekend headliner showcases — touring comics with credits like Kill Tony, Don't Tell Comedy, and late-night TV, backed by strong Houston openers.</p>\n<p>Tickets are sold through Eventbrite and the shows are intimate by design, so popular weekends genuinely do sell out. The Riot also produces occasional shows at other Houston venues — those appear in our listings under the venue actually hosting them.</p>\n<p><!-- TODO(owner): confirm the Washington Ave open date if the room is still fitting out, and verify age policy, drink minimums, parking, and official website URL. --></p>"
-      }
+        "meta_description": "The Riot Comedy Club on Washington Ave: a purpose-built 150-seat room with stand-up seven nights a week, tickets from free to $25. Every show, price, and ticket link, updated daily.",
+        "description_html": "<p>The Riot Comedy Club is Houston's busiest comedy room, and as of August 2026 it has a permanent home built for the job: a 4,700 square foot venue at 1925 Washington Ave in the Old Sixth Ward, with a custom 150-seat showroom, a daytime coffee shop and cafe, a full evening bar, and full ADA accessibility. It sits next door to Julep, the James Beard Award winning cocktail bar, which makes the block an easy night out before you even buy a ticket.</p>\n<p>The club spent years upstairs at Rudyard's in Montrose and outgrew it. Founder Brian Gendron put the reason for moving plainly: as the club grew, it needed a space that fully delivered the experience it wanted to give guests, comedians and staff. The new room is the result, and it is purpose-built rather than borrowed, which is still rare in Houston comedy.</p>\n<h2>Seven nights a week, and what that actually means</h2>\n<p>The Riot runs shows every night of the week, usually at 7pm and 9pm, which is more comedy than any other room in the city puts on. Tickets are mostly in the eight to twenty-five dollar range and a meaningful number of the weeknight shows are free. That combination is the whole proposition: you do not have to plan around a headliner's weekend run, because there is a show tonight, and it costs about what a cocktail costs.</p>\n<p>The booking leans on tightly curated showcases rather than one comic for ninety minutes. A typical bill is several working comics in a row, often with a touring name carrying credits from Kill Tony, Don't Tell Comedy, or late-night TV. Because the room seats 150, a strong weekend show genuinely does sell out.</p>\n<h2>The Riot vs. the Improv and Punch Line: which one tonight?</h2>\n<p>The <a href=\"/venues/houston-improv/\">Houston Improv</a> and <a href=\"/venues/punch-line-houston/\">Punch Line</a> are the rooms for a name you already know, with the ticket price and the drink minimum that go with it. The Riot is the neighborhood-club answer: cheaper, smaller, no minimum, and open on the nights the big clubs are dark. If you want a specific comic, check the big two. If you want to go see stand-up tonight without a plan, The Riot is usually the answer.</p>\n<p>Against the other small rooms, the difference is consistency. <a href=\"/venues/the-secret-group/\">The Secret Group</a> is the cheaper, scrappier, more experimental end of the same idea, and <a href=\"/venues/the-den-comedy-club/\">The Den</a> is the intimate speakeasy option. The Riot sits between them: a real club with a real showroom, running at a volume nothing else in the city matches.</p>\n<h2>Know before you go</h2>\n<ul>\n<li><strong>Where:</strong> 1925 Washington Ave, Houston, TX 77007, in the Old Sixth Ward, next door to Julep.</li>\n<li><strong>Show nights:</strong> seven nights a week, with evening shows typically at 7pm and 9pm.</li>\n<li><strong>The room:</strong> a custom 150-seat showroom, purpose-built for comedy, fully ADA accessible.</li>\n<li><strong>Food and drink:</strong> a coffee shop and cafe during the day, a full bar and food service in the evening.</li>\n<li><strong>Parking:</strong> ample parking at the new location, a clear upgrade on the old Montrose room.</li>\n<li><strong>Tickets:</strong> sold through the club's own site. Weekend shows sell out at 150 seats, so book ahead.</li>\n<li><strong>Also in Conroe:</strong> The Riot runs a second room north of Houston. See <a href=\"/venues/the-riot-comedy-club-conroe/\">The Riot Comedy Club in Conroe</a>.</li>\n<li><strong>Follow the club:</strong> <a href=\"https://www.theriothtx.com/\" rel=\"noopener\">theriothtx.com</a> and <a href=\"https://www.instagram.com/theriothtx/\" rel=\"noopener\">@theriothtx</a>.</li>\n</ul>\n<p>Every Riot show appears in the listings below automatically, updated twice a day, alongside <a href=\"/\">every other comedy show in Houston</a>. If it is on sale, it is here.</p>"
+      },
+      "same_as": [
+        "https://www.instagram.com/theriothtx/"
+      ]
     },
     {
       "name": "The Riot Comedy Club — Conroe",
       "slug": "the-riot-comedy-club-conroe",
       "aliases": [
+        "The Riot Conroe",
         "The Riot Comedy Club Conroe",
         "Riot Comedy Club at GuadalaHARRY's",
         "The Riot Comedy Club at GuadalaHARRY's",
@@ -156,7 +163,7 @@
         "GuadalaHarry's",
         "Guadalaharrys"
       ],
-      "_venue_note": "The Riot Comedy Club's second location, hosted at GuadalaHARRY's in Conroe, TX. Fed by its own Eventbrite organizer (120648602531), which fetch-events.js pins to this venue via `forceVenue` regardless of the raw Eventbrite venue string. Address, zip, and phone owner-verified.",
+      "_venue_note": "The Riot Comedy Club's second location, hosted at GuadalaHARRY's in Conroe, TX. Now ticketed on StandupTix at riotconroe.com (config/standuptix-venues.json pins it with force_venue); its old Eventbrite organizer (120648602531) has gone quiet but is left wired up in fetch-events.js in case it revives. The site's event JSON-LD names the location 'The Riot Conroe', which is aliased here. Address, zip, and phone owner-verified.",
       "address": {
         "street": "219 Simonton St",
         "locality": "Conroe",
@@ -164,15 +171,18 @@
         "postal": "77301"
       },
       "phone": "(713) 264-8664",
-      "website": "",
+      "website": "https://www.riotconroe.com/",
       "schema_type": "ComedyClub",
       "page": {
         "enabled": true,
         "title": "The Riot Comedy Club (Conroe) — Shows, Tickets & Info",
         "meta_title": "The Riot Comedy Club Conroe — Shows, Tickets & Info | Comedy Houston",
-        "meta_description": "Upcoming shows at The Riot Comedy Club's Conroe room inside GuadalaHARRY's — touring headliner stand-up north of Houston, with prices and direct ticket links.",
-        "description_html": "<p>The Riot Comedy Club's Conroe location runs inside GuadalaHARRY's at 219 Simonton St in Conroe, TX, bringing the club's headliner comedy north of Houston. Like the flagship room, it books tightly-curated weekend showcases of touring comics backed by strong Houston-area openers.</p>\n<p>Tickets are sold through Eventbrite, and the room doubles as a full-service Tex-Mex restaurant, so you can grab food and drinks with the show.</p>\n<p><!-- TODO(owner): verify and fill in — age policy, showtimes/room capacity, parking, and official website URL. --></p>"
-      }
+        "meta_description": "The Riot Comedy Club's Conroe room inside GuadalaHARRY's: touring headliner stand-up Thursday to Saturday north of Houston, with dinner in the same room. Every show, price, and ticket link.",
+        "description_html": "<p>The Riot Comedy Club's Conroe room runs inside GuadalaHARRY's at 219 Simonton St in downtown Conroe, about forty miles up I-45 from Houston. It is the second location of <a href=\"/venues/the-riot-comedy-club/\">The Riot</a>, booked by the same people who run the Washington Ave club, which means Montgomery County gets the same touring comics without the drive into the city.</p>\n<p>Shows run Thursday, Friday and Saturday nights. The format matches the flagship: tightly curated showcases of touring headliners backed by strong Houston-area openers, rather than one comic stretched over a full evening. Because the room is inside a working Tex-Mex bar and grill, dinner and the show are the same trip rather than two stops.</p>\n<h2>Worth the drive, or worth staying local?</h2>\n<p>If you are already north of the Beltway, Conroe is the easy answer, and on a Thursday it is very likely the closest live stand-up to you. If you are inside the loop, the honest comparison is that The Riot's <a href=\"/venues/the-riot-comedy-club/\">Washington Ave room</a> books the same caliber of comic seven nights a week, so the drive north only makes sense if Conroe has a specific name you want to see or you are making a night of downtown Conroe.</p>\n<p>The reverse is worth saying too: Conroe audiences have spent years driving to Houston for a real comedy club. This room exists so they do not have to, and it books like it means it.</p>\n<h2>Know before you go</h2>\n<ul>\n<li><strong>Where:</strong> 219 Simonton St, Conroe, TX 77301, inside GuadalaHARRY's in downtown Conroe.</li>\n<li><strong>Show nights:</strong> Thursday, Friday and Saturday.</li>\n<li><strong>Food and drink:</strong> full Tex-Mex menu and bar, since the room is inside the restaurant.</li>\n<li><strong>Phone:</strong> (713) 264-8664.</li>\n<li><strong>Tickets:</strong> sold through the club's own site. Every upcoming date is listed below with prices and direct links.</li>\n<li><strong>Follow the club:</strong> <a href=\"https://www.riotconroe.com/\" rel=\"noopener\">riotconroe.com</a> and <a href=\"https://www.instagram.com/riotconroe/\" rel=\"noopener\">@riotconroe</a>. The Conroe room has its own account, separate from the Houston club.</li>\n</ul>\n<p>Every Conroe show appears in the listings below automatically, updated twice a day, alongside <a href=\"/\">every other comedy show in the Houston area</a>. If it is on sale, it is here.</p>"
+      },
+      "same_as": [
+        "https://www.instagram.com/riotconroe/"
+      ]
     },
     {
       "name": "The Den Comedy Club",

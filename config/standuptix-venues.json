@@ -36,6 +36,13 @@
       "base_url": "https://www.theriothtx.com",
       "enabled": true,
       "note": "The Riot's new Washington Ave home runs on StandupTix (moved off Eventbrite). Event JSON-LD names the location 'The Riot Houston', aliased to 'The Riot Comedy Club' in config/venues.json. No force_venue on purpose: if the site ever lists Conroe shows, their own location.name should win."
+    },
+    {
+      "name": "The Riot Comedy Club — Conroe",
+      "base_url": "https://www.riotconroe.com",
+      "force_venue": "The Riot Comedy Club — Conroe",
+      "enabled": true,
+      "note": "The Riot's Conroe room (inside GuadalaHARRY's) moved off Eventbrite onto StandupTix, which left it invisible in events.json — the old organizer 120648602531 stopped producing events and nothing replaced it. Its event JSON-LD names the location 'The Riot Conroe'; force_venue pins every event to the canonical Conroe name so it can never merge into the Houston room."
     }
   ]
 }
