@@ -13,6 +13,26 @@
  * The page CONTENT is a short intro + the [comedy_houston] shortcode, so the
  * event listings on these pages stay live via the plugin — the pages only
  * need re-syncing when the copy in the config files changes.
+ *
+ * OWNERSHIP, and the reason the two page types behave differently:
+ *
+ *   Landing pages  — always overwritten. Their titles and H1s carry date
+ *                    tokens ({weekend_range} and friends) that the plugin
+ *                    expands at render time, so config/landing-pages.json
+ *                    has to stay the source of truth or the dates go stale.
+ *
+ *   Venue pages    — CREATE-ONLY. config/venues.json seeds a venue page the
+ *                    first time it is published; after that WordPress owns
+ *                    it, because the whole point is to hand-edit the body
+ *                    copy, add links, and drop in images natively in the WP
+ *                    editor. A venue page that already exists is skipped,
+ *                    not updated, so a stray workflow run can never clobber
+ *                    that work.
+ *
+ * To deliberately push repo copy over a venue page that already exists (e.g.
+ * after rewriting it here), set OVERWRITE_SLUGS to a comma-separated slug
+ * list — the workflow exposes this as its `overwrite` input. Use "venues"
+ * for the /venues/ parent page and "all" for everything.
  */
 
 "use strict";
@@ -32,6 +52,23 @@ const VENUES_CONFIG = path.join(ROOT, "config", "venues.json");
 const EVENTS_JSON = path.join(ROOT, "events.json");
 
 const REQUEST_TIMEOUT_MS = 30_000;
+
+/**
+ * Venue-page slugs the caller explicitly wants overwritten this run, from the
+ * workflow's `overwrite` input. Empty by default: venue pages are create-only
+ * so that manual WordPress edits survive (see the header comment). "all"
+ * overwrites every venue page, and "venues" covers the /venues/ parent.
+ */
+const OVERWRITE_SLUGS = new Set(
+  (process.env.OVERWRITE_SLUGS || "")
+    .split(",")
+    .map((s) => s.trim().toLowerCase())
+    .filter(Boolean)
+);
+
+function shouldOverwrite(slug) {
+  return OVERWRITE_SLUGS.has("all") || OVERWRITE_SLUGS.has(String(slug).toLowerCase());
+}
 
 function wpRequest(method, apiPath, body) {
   return new Promise((resolve, reject) => {
@@ -117,9 +154,14 @@ async function findPageBySlug(slug) {
 
 /**
  * Create or update (by slug) a WordPress page.
- * Returns the page object from the WP response.
+ *
+ * With `createOnly`, an existing page is left completely untouched and
+ * reported as "skipped" — no title, content, meta or schema write. That is
+ * the venue-page default so hand-edits in the WordPress editor survive.
+ *
+ * Returns { page, action } where action is "created" | "updated" | "skipped".
  */
-async function syncPage({ slug, title, content, parent = 0, metaTitle, metaDescription, h1, schemaGraph }) {
+async function syncPage({ slug, title, content, parent = 0, metaTitle, metaDescription, h1, schemaGraph, createOnly = false }) {
   const pageData = {
     title,
     content,
@@ -139,6 +181,10 @@ async function syncPage({ slug, title, content, parent = 0, metaTitle, metaDescr
   if (schemaGraph) pageData.ch_schema_graph = JSON.stringify(schemaGraph);
 
   const existing = await findPageBySlug(slug);
+  if (existing && createOnly) {
+    console.log(`  Skipped  /${slug}/ (ID ${existing.id}) — WordPress owns this page`);
+    return { page: existing, action: "skipped" };
+  }
   let page;
   if (existing) {
     page = await wpRequest("POST", `/wp-json/wp/v2/pages/${existing.id}`, pageData);
@@ -147,7 +193,7 @@ async function syncPage({ slug, title, content, parent = 0, metaTitle, metaDescr
     page = await wpRequest("POST", "/wp-json/wp/v2/pages", pageData);
     console.log(`  Created  /${slug}/ (ID ${page.id}): ${page.link}`);
   }
-  return page;
+  return { page, action: existing ? "updated" : "created" };
 }
 
 /** Cross-link block appended to each landing page (excluding itself). */
@@ -180,7 +226,7 @@ async function syncLandingPages() {
   for (const p of pages) {
     const content = `${p.intro_html}\n\n${p.shortcode}\n\n${landingCrossLinks(pages, p.slug)}`;
     try {
-      const page = await syncPage({
+      const { page, action } = await syncPage({
         slug: p.slug,
         title: p.title,
         content,
@@ -188,7 +234,7 @@ async function syncLandingPages() {
         metaDescription: p.meta_description,
         h1: p.h1,
       });
-      results.push({ slug: p.slug, link: page.link, ok: true });
+      results.push({ slug: p.slug, link: page.link, action, ok: true });
     } catch (err) {
       console.error(`  ERROR syncing /${p.slug}/: ${err.message}`);
       results.push({ slug: p.slug, ok: false, error: err.message });
@@ -277,13 +323,22 @@ async function syncVenuePages() {
     console.log(`  (events.json unreadable — venue priceRange skipped: ${err.message})`);
   }
 
+  const overwriting = venues.filter((v) => shouldOverwrite(v.slug)).map((v) => v.slug);
   console.log(`\nSyncing venues parent page + ${venues.length} venue page(s)...`);
+  console.log(
+    "  Venue pages are create-only: existing pages are left alone so WordPress edits survive."
+  );
+  console.log(
+    overwriting.length > 0
+      ? `  Overwriting on request: ${overwriting.join(", ")}`
+      : "  Overwriting: nothing (pass the workflow's `overwrite` input to force a specific slug)."
+  );
 
   // Parent page /venues/ so children live at /venues/{slug}/.
   const venueLinks = venues
     .map((v) => `<li><a href="/venues/${v.slug}/">${escapeHTML(v.name)}</a></li>`)
     .join("\n");
-  const parent = await syncPage({
+  const { page: parent, action: parentAction } = await syncPage({
     slug: "venues",
     title: "Houston Comedy Venues",
     content:
@@ -291,7 +346,26 @@ async function syncVenuePages() {
     metaTitle: "Houston Comedy Clubs & Venues | Comedy Houston",
     metaDescription:
       "Guides to every comedy club in Houston — Houston Improv, Punch Line, The Secret Group, The Riot, The Den — with upcoming shows, tickets, and venue info.",
+    createOnly: !shouldOverwrite("venues"),
   });
+
+  // The parent page is a hand-editable list, so we don't rewrite it. That
+  // means a newly added venue would silently never get linked from /venues/,
+  // which is the one thing create-only can quietly break. Check and say so
+  // rather than leaving it to be noticed months later in Search Console.
+  if (parentAction === "skipped") {
+    const parentHTML = (parent.content && parent.content.rendered) || "";
+    const missing = venues.filter((v) => !parentHTML.includes(`/venues/${v.slug}/`));
+    if (missing.length > 0) {
+      console.log(
+        `  NOTE: /venues/ does not link to ${missing.length} venue page(s): ` +
+          missing.map((v) => `${v.name} (/venues/${v.slug}/)`).join(", ")
+      );
+      console.log(
+        "        Add the link(s) by hand in the WordPress editor, or re-run with overwrite=venues to regenerate the list."
+      );
+    }
+  }
 
   const results = [];
   for (const v of venues) {
@@ -305,7 +379,7 @@ async function syncVenuePages() {
     ].join("\n\n");
 
     try {
-      const page = await syncPage({
+      const { page, action } = await syncPage({
         slug: v.slug,
         title: p.title || `${v.name} — Shows, Tickets & Info`,
         content,
@@ -315,8 +389,9 @@ async function syncVenuePages() {
         schemaGraph: v.address && v.address.street
           ? buildVenueSchema(v, deriveVenuePriceRange(v, events))
           : null,
+        createOnly: !shouldOverwrite(v.slug),
       });
-      results.push({ slug: `venues/${v.slug}`, link: page.link, ok: true });
+      results.push({ slug: `venues/${v.slug}`, link: page.link, action, ok: true });
     } catch (err) {
       console.error(`  ERROR syncing /venues/${v.slug}/: ${err.message}`);
       results.push({ slug: `venues/${v.slug}`, ok: false, error: err.message });
@@ -341,7 +416,11 @@ async function main() {
 
   const all = [...landing, ...venuesRes];
   const failed = all.filter((r) => !r.ok);
-  console.log(`\nDone: ${all.length - failed.length}/${all.length} pages synced.`);
+  const count = (a) => all.filter((r) => r.ok && r.action === a).length;
+  console.log(
+    `\nDone: ${count("created")} created, ${count("updated")} updated, ` +
+      `${count("skipped")} skipped (WordPress-owned), ${failed.length} failed.`
+  );
   if (failed.length > 0) {
     console.error(`Failed: ${failed.map((f) => f.slug).join(", ")}`);
     process.exit(1);
