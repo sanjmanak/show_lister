@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.13.0
+ * Version: 2.13.1
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.13.0';
+    const VERSION      = '2.13.1';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -2627,14 +2627,17 @@ src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>
         $key = $this->normalize_venue_key($venue_name);
 
         $map = [
+            // Punch Line relocated from 2930 Sage Rd (Galleria) to the
+            // GreenStreet complex downtown, in the old House of Blues
+            // restaurant space. Verified against punchlinehtx.com/visit.
             'punch line houston' => [
-                'street' => '2930 Sage Rd',
+                'street' => '1204 Caroline St',
                 'locality' => 'Houston',
                 'region' => 'TX',
-                'postal' => '77056',
+                'postal' => '77002',
             ],
             'houston improv' => [
-                'street' => '7620 Katy Fwy #431',
+                'street' => '7620 Katy Fwy Ste 455',
                 'locality' => 'Houston',
                 'region' => 'TX',
                 'postal' => '77024',

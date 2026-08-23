@@ -1,18 +1,37 @@
 {
   "_readme": [
-    "Single source of truth for venue data. Consumed by:",
+    "Single source of truth for venue DATA. Consumed by:",
     "  - scripts/fetch-events.js  — `aliases` are merged into venue-name normalization",
-    "  - scripts/manage-wp-pages.js — creates/updates /venues/{slug}/ pages (page.*)",
+    "  - scripts/manage-wp-pages.js — seeds /venues/{slug}/ pages (page.*)",
     "  - wordpress/comedy-houston.php — fetches this file from GitHub raw for",
     "    JSON-LD venue addresses and for linking event-card venue names to venue pages",
     "",
-    "Addresses were hand-verified against the plugin's existing map. `website`",
-    "and `phone` are left empty where unverified — fill them in and re-run the",
-    "Manage WordPress Pages workflow (`phone` maps to schema.org telephone;",
-    "`website` maps to url). LocalBusiness schema is only emitted for",
-    "venues with a street address, so TODO-address venues degrade gracefully.",
-    "Set page.enabled=false to stop syncing a venue's page (it is never",
-    "deleted automatically)."
+    "PAGE COPY OWNERSHIP — read this before editing page.description_html.",
+    "Venue pages are CREATE-ONLY. The `page.*` fields below seed a venue page",
+    "the first time it is published; after that WORDPRESS IS THE SOURCE OF",
+    "TRUTH, so body copy, links and images are edited in the WP editor and the",
+    "sync will not touch them. Expect the copy here to drift from the live page,",
+    "and do not treat it as a mirror. To deliberately push copy from here over a",
+    "live page, run the Manage WordPress Pages workflow with that slug in its",
+    "`overwrite` input.",
+    "",
+    "The non-page fields are still live config and DO take effect on every run",
+    "of anything that reads them: `aliases`, `address`, `phone`, `website`,",
+    "`same_as`, `schema_type`. LocalBusiness schema is only emitted for venues",
+    "with a street address, so TODO-address venues degrade gracefully. Note the",
+    "schema is written at page-create time, so correcting an address here does",
+    "not update an already-published page's JSON-LD without an `overwrite` run.",
+    "",
+    "`page.enabled` is NOT just a sync switch — the plugin reads it to decide",
+    "whether event-card venue names link to /venues/{slug}/. Setting it false",
+    "stops syncing AND unlinks the venue sitewide (the page is never deleted).",
+    "",
+    "SEO caveat: the site runs Rank Math, but the plugin makes the synced",
+    "_ch_meta_title / _ch_meta_description post meta win over it (see",
+    "filter_seo_plugin_title in comedy-houston.php). On a page that has been",
+    "synced, editing the SEO title or description in Rank Math's UI will have",
+    "no visible effect — change page.meta_title / page.meta_description here",
+    "and re-run with `overwrite` instead."
   ],
   "venues": [
     {
@@ -27,21 +46,24 @@
         "The Houston Improv"
       ],
       "address": {
-        "street": "7620 Katy Fwy #431",
+        "street": "7620 Katy Fwy Ste 455",
         "locality": "Houston",
         "region": "TX",
         "postal": "77024"
       },
-      "phone": "",
-      "website": "",
+      "phone": "(713) 333-8800",
+      "website": "https://improvtx.com/houston/",
       "schema_type": "ComedyClub",
       "page": {
         "enabled": true,
         "title": "Houston Improv — Shows, Tickets & Info",
-        "meta_title": "Houston Improv — Shows, Tickets & Info | Comedy Houston",
-        "meta_description": "Upcoming shows at the Houston Improv with prices and direct ticket links, updated twice daily — plus location and venue info for Houston's biggest comedy club.",
-        "description_html": "<p>The Houston Improv is the city's stop on the nationwide Improv comedy club circuit, located at 7620 Katy Fwy #431 in the Marq*E entertainment district on the Katy Freeway. It's the room where the biggest national touring headliners play when they come through Houston — the calendar below regularly features comics you know from Netflix specials, late-night TV, and the big podcasts, often for multi-night weekend runs with early and late shows.</p>\n<p>Tickets for most shows are sold through Ticketmaster and the club's box office, and headliner weekends sell out routinely — if a Friday or Saturday name show is on your list, book early rather than at the door.</p>\n<p><!-- TODO(owner): verify and fill in — food/drink minimum policy, age restrictions (18+?), parking specifics (Marq*E garage?), box office hours, official website URL --></p>"
-      }
+        "meta_title": "Houston Improv Comedy Club — Shows, Tickets & Info | Comedy Houston",
+        "meta_description": "Houston Improv at the Marq*E on the Katy Freeway: national headliners, two-item minimum, free parking, tickets sold by the table. Every upcoming show, price, and ticket link, updated daily.",
+        "description_html": "<p>The Houston Improv is the city's big room for national headliners, tucked into the Marq*E entertainment center at 7620 Katy Fwy, on the Katy Freeway just west of the 610 Loop. It is Houston's stop on the Improv circuit, the chain that has set the template for the American comedy club since Budd Friedman opened the original in New York in 1963, and it books like it: multi-night weekend runs from comics you already know off Netflix specials, late night TV, and the big podcasts.</p>\n<p>The room holds around 450 at tables, dinner theater style, with a curtain that pulls back to shrink the space for smaller bills. That layout is the one thing worth understanding before you book, because tickets here are sold as complete tables unless a listing says otherwise. A pair buying two seats may end up sharing a table with strangers, and a group of six can claim a table outright by buying the whole thing. It is a different transaction from most clubs, and it rewards deciding your party size before you check out.</p>\n<h2>Houston Improv vs. Punch Line vs. the small rooms: which one tonight?</h2>\n<p>If the goal is seeing a name you already recognize, the Improv is usually the answer, and the calendar below will show you why. <a href=\"/venues/punch-line-houston/\">Punch Line Houston</a>, downtown at GreenStreet, is the other room booking that tier of touring comic, and the practical difference is how you sit: Punch Line is general admission, first come first served, so getting there early is what buys you a good seat, while the Improv sells you the table itself. One rewards punctuality, the other rewards planning.</p>\n<p>Then there is the other half of Houston comedy. <a href=\"/venues/the-den-comedy-club/\">The Den</a> and <a href=\"/venues/the-riot-comedy-club/\">The Riot</a> are the small rooms, where tickets cost less than parking downtown and the lineups are the city's best working comics rather than television names. Those rooms are not competing with the Improv so much as covering the night the Improv does not: no minimum, no table math, no headliner premium.</p>\n<p>Worth knowing if the headliner price gives you pause: the Improv's own weeknight local showcases run at a fraction of a weekend ticket, usually in the low teens against thirty or forty dollars for a touring act. Same room, same stage, same free parking, a good deal less money. They show up on the calendar below alongside everything else.</p>\n<h2>Food, drinks, and the two-item minimum</h2>\n<p>Every guest owes a two-item minimum, and the club counts it generously: any food item or beverage, with or without alcohol, counts toward it. A soda and an appetizer settles it. There is a full kitchen and table service through the show, so plan to eat during rather than before if that suits you.</p>\n<p>Parking is complimentary behind the venue and across the Marq*E lot, which quietly does more for the price of the night than it sounds like. Add a downtown garage to a comparable ticket elsewhere and the Improv often comes out even.</p>\n<h2>Know before you go</h2>\n<ul>\n<li><strong>Where:</strong> 7620 Katy Fwy Ste 455, Houston, TX 77024, inside the Marq*E entertainment center on the Katy Freeway.</li>\n<li><strong>Age:</strong> 18 and up to get in, 21 and up to drink. Bring a photo ID, they check.</li>\n<li><strong>Minimum:</strong> two items per person. Food or drink, alcoholic or not, both count.</li>\n<li><strong>Seating:</strong> tickets are sold as complete tables unless the listing says otherwise.</li>\n<li><strong>Parking:</strong> free, behind the club and throughout the Marq*E lot.</li>\n<li><strong>Box office:</strong> Monday to Wednesday 10am to 5pm, Thursday 10am to 8pm, Friday and Saturday 10am to 10pm, Sunday noon to 8pm.</li>\n<li><strong>Show nights:</strong> Wednesday through Sunday, with early and late shows on headliner weekends.</li>\n<li><strong>Tickets:</strong> sold through Ticketmaster and the club box office. Headliner weekends sell out, so book ahead rather than at the door.</li>\n<li><strong>Follow the club:</strong> <a href=\"https://improvtx.com/houston/\" rel=\"noopener\">improvtx.com/houston</a> and <a href=\"https://www.instagram.com/improvhouston/\" rel=\"noopener\">@improvhouston</a>.</li>\n</ul>\n<p>Every show at the Houston Improv appears in the listings below automatically, updated twice a day, alongside <a href=\"/\">every other comedy show in Houston</a>. If it is on sale, it is here.</p>"
+      },
+      "same_as": [
+        "https://www.instagram.com/improvhouston/"
+      ]
     },
     {
       "name": "Punch Line Houston",
@@ -52,21 +74,24 @@
         "The Punch Line Houston"
       ],
       "address": {
-        "street": "2930 Sage Rd",
+        "street": "1204 Caroline St",
         "locality": "Houston",
         "region": "TX",
-        "postal": "77056"
+        "postal": "77002"
       },
-      "phone": "",
-      "website": "",
+      "phone": "(713) 565-4001",
+      "website": "https://www.punchlinehtx.com/",
       "schema_type": "ComedyClub",
       "page": {
         "enabled": true,
         "title": "Punch Line Houston — Shows, Tickets & Info",
-        "meta_title": "Punch Line Houston — Shows, Tickets & Info | Comedy Houston",
-        "meta_description": "Upcoming shows at Punch Line Comedy Club Houston in the Galleria — national headliners and Spanish-language nights, with prices and direct ticket links.",
-        "description_html": "<p>Punch Line Houston is a dedicated stand-up club at 2930 Sage Rd in the Galleria area, and one of the busiest rooms in the city — most weeks it runs shows Wednesday through Sunday, mixing national touring headliners with strong club regulars and Spanish-language shows (look for the \"en Español\" listings). It's the kind of room where you can catch a Daily Show correspondent on Friday and a rising club comic finding their hour on Sunday.</p>\n<p>Tickets are sold through Ticketmaster; weekend headliner shows frequently sell out, and seating is typically assigned at the door by arrival time.</p>\n<p><!-- TODO(owner): verify and fill in — drink/food minimum policy, age restriction, parking (Galleria-area garage/lot?), seating policy confirmation, official website URL --></p>"
-      }
+        "meta_title": "Punch Line Comedy Club Houston — Shows, Tickets & Info | Comedy Houston",
+        "meta_description": "Punch Line Houston, downtown at GreenStreet: national headliners, Spanish-language nights, 18+, two-drink minimum, general admission seating. Every show, price, and ticket link, updated daily.",
+        "description_html": "<p>Punch Line Houston is the downtown stand-up room at 1204 Caroline St, inside the GreenStreet complex, in the space that used to be the House of Blues restaurant and now runs as a club with its own entrance. It seats about 250, which makes it the middle size in Houston comedy: better funded and better booked than the neighborhood rooms, small enough that the back row still feels close to the stage.</p>\n<p>The club opened downtown in September 2024 as the fourth Punch Line, a name that traces back to the original San Francisco room and its run as a proving ground for touring comics since 1978. Under head of comedy operations Amanda Kyser it books more than 350 shows a year and puts Houston comics on the bill ahead of the touring headliners, which is rarer at this size than it ought to be. If you have watched a local open mic and wondered where those comics go next, a fair number of them go here.</p>\n<h2>Punch Line vs. Houston Improv vs. the small rooms: which one tonight?</h2>\n<p>Punch Line and the <a href=\"/venues/houston-improv/\">Houston Improv</a> are the two rooms in the city booking national touring comics week in and week out, and choosing between them is mostly logistics. Punch Line is downtown, general admission, and first come first served, so arriving early is what gets you a good seat. The Improv is out on the Katy Freeway with free parking and sells tickets as whole tables. Downtown means a garage or valet here; the Katy Freeway means a free lot there. Factor that in and the ticket prices sit closer together than they look.</p>\n<p>For a cheaper and smaller night, <a href=\"/venues/the-den-comedy-club/\">The Den</a> and <a href=\"/venues/the-riot-comedy-club/\">The Riot</a> run rooms where the lineups are Houston's best working comics rather than names off television, at a fraction of the ticket. Punch Line sits deliberately between the two: touring headliners most weekends, local showcases and one-off series on the weeknights.</p>\n<h2>Comedia en Español and the local bills</h2>\n<p>Punch Line programs Spanish-language stand-up more consistently than any other large room in Houston. Look for the shows marked en Español on the calendar below, where touring Spanish-language comics play the same stage as the English bills rather than getting pushed to an off night. Every one of them is also collected on our <a href=\"/spanish-comedy-houston/\">Spanish comedy in Houston</a> page if that is what you came for.</p>\n<h2>Food, drinks, and the two-drink minimum</h2>\n<p>There is a two beverage minimum per guest in the showroom, and the club counts non-alcoholic drinks toward it: mocktails, sodas, and juices all satisfy the requirement, so it is not a tax on not drinking. The kitchen runs a full menu with table service through the show.</p>\n<p>Standard downtown club rules otherwise: no outside food or drink, and bags larger than 10 by 10 inches, backpacks, and professional cameras stay in the car.</p>\n<h2>Know before you go</h2>\n<ul>\n<li><strong>Where:</strong> 1204 Caroline St, Houston, TX 77002, inside GreenStreet downtown.</li>\n<li><strong>Age:</strong> 18 and up, unless you are with a parent or legal guardian. Photo ID required.</li>\n<li><strong>Minimum:</strong> two beverages per guest in the showroom. Non-alcoholic drinks count.</li>\n<li><strong>Seating:</strong> general admission, first come first served. The club cannot hold or reserve specific seats, so groups should arrive at least 45 minutes early and walk in together.</li>\n<li><strong>Doors:</strong> one hour before showtime, except late shows. The box office opens an hour before the first show, on show days only.</li>\n<li><strong>Parking:</strong> valet on site, or the GreenStreet garage on Clay between Main and Fannin, which connects by skybridge.</li>\n<li><strong>Show nights:</strong> Tuesday through Sunday most weeks, with the touring headliners on Friday and Saturday.</li>\n<li><strong>Tickets:</strong> sold through Ticketmaster. Every upcoming date is listed below with prices and direct links.</li>\n<li><strong>Follow the club:</strong> <a href=\"https://www.punchlinehtx.com/\" rel=\"noopener\">punchlinehtx.com</a> and <a href=\"https://www.instagram.com/punchlinehouston/\" rel=\"noopener\">@punchlinehouston</a>.</li>\n</ul>\n<p>Every show at Punch Line Houston appears in the listings below automatically, updated twice a day, alongside <a href=\"/\">every other comedy show in Houston</a>. If it is on sale, it is here.</p>"
+      },
+      "same_as": [
+        "https://www.instagram.com/punchlinehouston/"
+      ]
     },
     {
       "name": "The Secret Group",

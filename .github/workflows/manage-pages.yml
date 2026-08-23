@@ -2,11 +2,30 @@ name: Manage WordPress Pages
 
 # Syncs the SEO landing pages (config/landing-pages.json) and venue pages
 # (config/venues.json) to WordPress. Pages embed the [comedy_houston]
-# shortcode, so their event listings stay live without re-syncing — run this
-# only after editing the config copy (or to create the pages the first time).
+# shortcode, so their event listings stay live without re-syncing.
+#
+# The two page types are treated differently on purpose:
+#
+#   Landing pages (/tonight/, /this-weekend/, ...) are ALWAYS overwritten.
+#   Their titles and H1s carry date tokens the plugin expands at render time,
+#   so the config has to stay the source of truth or the dates go stale.
+#
+#   Venue pages (/venues/{slug}/) are CREATE-ONLY. The config seeds a venue
+#   page the first time it is published; after that WordPress owns it, so you
+#   can add links, copy and images in the WP editor without a workflow run
+#   overwriting them. Existing venue pages are skipped, not updated.
+#
+# To deliberately push repo copy over a venue page that already exists, put
+# its slug in the `overwrite` input below (comma-separated). Use "venues" for
+# the /venues/ parent page and "all" for every venue page.
 
 on:
   workflow_dispatch:
+    inputs:
+      overwrite:
+        description: 'Venue slugs to overwrite, comma-separated (e.g. houston-improv,punch-line-houston). Leave empty to only create missing pages. "venues" = the /venues/ parent, "all" = every venue page.'
+        required: false
+        default: ''
 
 permissions:
   contents: read
@@ -37,4 +56,5 @@ jobs:
           WP_SITE_URL: ${{ secrets.WP_SITE_URL }}
           WP_APP_USER: ${{ secrets.WP_APP_USER }}
           WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          OVERWRITE_SLUGS: ${{ inputs.overwrite }}
         run: node scripts/manage-wp-pages.js
