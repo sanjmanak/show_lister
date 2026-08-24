@@ -48,15 +48,5 @@
   ],
   "week_range": "August 17 – August 23, 2026",
   "manifest_version": 1786984237177,
-  "cleanup_queue": [
-    {
-      "slug": "erin-jackson-punch-line-houston-2026-08-23",
-      "comedianName": "Erin Jackson",
-      "igFeedMediaId": "18552277720078957",
-      "igStoryMediaId": "17969798052068537",
-      "fbFeedPostId": "1380788304145911",
-      "fbStoryPostId": "2119435595670216",
-      "postedAt": "2026-08-18T16:39:31.845Z"
-    }
-  ]
+  "cleanup_queue": []
 }
