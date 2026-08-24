@@ -1,21 +1,13 @@
 {
-  "generated_at": "2026-08-10T15:48:48.837Z",
-  "week_range": "August 10 – August 16, 2026",
+  "generated_at": "2026-08-24T15:28:06.204Z",
+  "week_range": "August 24 – August 30, 2026",
   "comedians": [
     {
-      "name": "Mark Normand",
-      "show": "Mark Normand",
-      "imageUrl": "https://s1.ticketm.net/dam/a/8c1/7a8f11c3-7869-4fcf-8216-924cad5328c1_SOURCE",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Mark_Normand.png/960px-Mark_Normand.png?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Mark_Normand.png/960px-Mark_Normand.png?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail",
-      "imageSource": "headshot"
-    },
-    {
-      "name": "Josh Wolf",
-      "show": "Josh Wolf: Touring Hard",
-      "imageUrl": "https://s1.ticketm.net/dam/a/5ee/4bf7ddf6-f681-4c50-a892-d789ef9875ee_SOURCE",
-      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/3/37/Josh_Wolf_2025.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail_unscaled",
-      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/3/37/Josh_Wolf_2025.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail_unscaled",
+      "name": "Jay Pharoah",
+      "show": "Jay Pharoah",
+      "imageUrl": "https://s1.ticketm.net/dam/a/1b3/53d2df21-06ac-426c-8edf-ca9ddcc961b3_SOURCE",
+      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jay_Pharoah_by_Gage_Skidmore.jpg/960px-Jay_Pharoah_by_Gage_Skidmore.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail",
+      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jay_Pharoah_by_Gage_Skidmore.jpg/960px-Jay_Pharoah_by_Gage_Skidmore.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail",
       "imageSource": "headshot"
     }
   ]
