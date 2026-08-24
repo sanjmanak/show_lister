@@ -1263,6 +1263,23 @@
       "tags": [],
       "model": "gpt-4o-mini",
       "classified_at": "2026-08-24"
+    },
+    "corey holcomb": {
+      "tags": [
+        "black-comedy"
+      ],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-24"
+    },
+    "like roses": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-24"
+    },
+    "riot comedy club presents \"you look like\" roast contest": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "classified_at": "2026-08-24"
     }
   }
 }

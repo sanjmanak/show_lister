@@ -1,30 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-08-24T01:16:54.814Z",
-  "total_excluded": 23,
+  "last_updated": "2026-08-24T14:36:56.133Z",
+  "total_excluded": 21,
   "events": [
-    {
-      "name": "Emarosa presents: High Horse Heaven Tour",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-08-23",
-      "time": "6:30 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/emarosa-presents-high-horse-heaven-tour-tickets-1989794469823",
-      "reason": "music artist blocklisted: \"emarosa\""
-    },
-    {
-      "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-08-23",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/our-mic-is-your-mic-emo-karaoke-tickets-1998225098059",
-      "reason": "title keyword blocklisted: \"karaoke\""
-    },
     {
       "name": "Royale Lynn",
       "venue": "The Secret Group",

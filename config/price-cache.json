@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-08-23T14:19:34.662Z",
+  "last_updated": "2026-08-24T14:38:07.101Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -145,14 +145,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
-    },
-    "e496e01d08ccf74d": {
-      "price_min": 29,
-      "price_max": 44,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/erin-jackson-houston-texas-08-23-2026/event/3A0064C3CE6BDB35",
-      "fetched_at": "2026-08-17T15:16:07.674Z"
     },
     "a28774349fe4da2a": {
       "price_min": 21,
