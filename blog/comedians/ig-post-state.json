@@ -1,52 +1,26 @@
 {
   "posted": [
     {
-      "slug": "bob-biggerstaff-the-secret-group-2026-08-20",
-      "comedianName": "Bob Biggerstaff",
-      "igFeedMediaId": "17893300650393883",
-      "igStoryMediaId": "18014247368736916",
-      "fbFeedPostId": "1379935460897862",
-      "fbStoryPostId": "2638961806523708",
-      "postedAt": "2026-08-17T16:36:18.900Z"
-    },
-    {
-      "slug": "gabriel-rutledge-punch-line-houston-2026-08-21",
-      "comedianName": "Gabriel Rutledge",
-      "igFeedMediaId": "18373178572225104",
-      "igStoryMediaId": "18092434787451390",
-      "fbFeedPostId": "1380142594210482",
-      "fbStoryPostId": "4585132005065795",
-      "postedAt": "2026-08-17T22:31:36.281Z"
-    },
-    {
-      "slug": "joey-avery-the-riot-comedy-club-2026-08-21",
-      "comedianName": "Joey Avery",
-      "igFeedMediaId": "18167355559455635",
-      "igStoryMediaId": "18138833440593788",
-      "fbFeedPostId": "1380331594191582",
-      "fbStoryPostId": "1688766852190214",
-      "postedAt": "2026-08-18T04:42:32.915Z"
-    },
-    {
-      "slug": "alfred-robles-houston-improv-2026-08-21",
-      "comedianName": "Alfred Robles",
-      "igFeedMediaId": "18090965180542344",
-      "igStoryMediaId": "18003584414976320",
-      "fbFeedPostId": "1380549127503162",
-      "fbStoryPostId": "1290424537488080",
-      "postedAt": "2026-08-18T10:36:24.580Z"
-    },
-    {
-      "slug": "erin-jackson-punch-line-houston-2026-08-23",
-      "comedianName": "Erin Jackson",
-      "igFeedMediaId": "18552277720078957",
-      "igStoryMediaId": "17969798052068537",
-      "fbFeedPostId": "1380788304145911",
-      "fbStoryPostId": "2119435595670216",
-      "postedAt": "2026-08-18T16:39:31.845Z"
+      "slug": "jay-pharoah-houston-improv-2026-08-28",
+      "comedianName": "Jay Pharoah",
+      "igFeedMediaId": "18110340854094818",
+      "igStoryMediaId": "18130421626658696",
+      "fbFeedPostId": "1385869476971127",
+      "fbStoryPostId": "1382964834008767",
+      "postedAt": "2026-08-24T16:47:40.796Z"
     }
   ],
-  "week_range": "August 17 – August 23, 2026",
-  "manifest_version": 1786984237177,
-  "cleanup_queue": []
+  "week_range": "August 24 – August 30, 2026",
+  "manifest_version": 1787589437467,
+  "cleanup_queue": [
+    {
+      "slug": "jay-pharoah-houston-improv-2026-08-28",
+      "comedianName": "Jay Pharoah",
+      "igFeedMediaId": "18110340854094818",
+      "igStoryMediaId": "18130421626658696",
+      "fbFeedPostId": "1385869476971127",
+      "fbStoryPostId": "1382964834008767",
+      "postedAt": "2026-08-24T16:47:40.796Z"
+    }
+  ]
 }
