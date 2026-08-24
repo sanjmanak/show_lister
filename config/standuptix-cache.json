@@ -1,135 +1,5 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-33": {
-      "lastmod": "2026-08-20T03:01:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents \"Houston's Funniest\" Sunday Comedy Showcase",
-        "startDate": "2026-08-23T18:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-33",
-          "priceCurrency": "USD",
-          "price": "10.00",
-          "availability": "InStock",
-          "validFrom": "2026-05-18T13:48:03-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-33",
-        "image": "/img/shows/Showcase-Templates-4-17bb0cfb-large-thumb.png",
-        "description": "The Riot presents &ldquo;Houston&rsquo;s Funniest,&rdquo; a weekly Sunday showcase celebrating the best comedians in the city. Featuring a rotating lineup of Houston comics who have headlined or featured in Rudyard&rsquo;s legendary comedy room, this show is a true highlight of the local scene.&nbsp;Come hang with The Riot and discover some of the funniest talent Houston has to offer&mdash;it&#39;s the perfect way to end your weekend on a high note.All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Grady Pruitt"
-          },
-          {
-            "@type": "Person",
-            "name": "Kris Atkins"
-          },
-          {
-            "@type": "Person",
-            "name": "Luis Dejesus"
-          },
-          {
-            "@type": "Person",
-            "name": "Keisha Hunt"
-          },
-          {
-            "@type": "Person",
-            "name": "Andy Huggins"
-          },
-          {
-            "@type": "Person",
-            "name": "Jeff Joe"
-          }
-        ]
-      }
-    },
-    "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-16": {
-      "lastmod": "2026-08-20T03:37:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Comedy Club Presents Sunday Night Standup Comedy Showcase",
-        "startDate": "2026-08-23T20:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-16",
-          "priceCurrency": "USD",
-          "price": "10.00",
-          "availability": "InStock",
-          "validFrom": "2026-05-18T13:48:53-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-16",
-        "image": "/img/shows/Showcase-Templates-15-Saturday-11pm-0fd71212-large-thumb.png",
-        "description": "Join us for a hilarious Sunday night of stand-up comedy at The Riot! Get ready for nonstop laughs in one of Houston&rsquo;s most iconic and intimate venues. With a cozy atmosphere, great drinks, and a friendly vibe, it&rsquo;s the perfect spot to kick back and end your weekend on a high note.We&rsquo;re bringing some of the best comedians in the city to the stage for a night full of big laughs, good energy, and unforgettable moments.Tickets are limited, so grab yours early and don&rsquo;t miss out&mdash;this is your Sunday night plan.All shows Ages 21 &amp; Up. Photo ID Required for Entry.--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google thousands of reviews!Delicious Food &amp; DrinksEnjoy tasty food, draft beer, wine, coffee, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Tess Vergult"
-          },
-          {
-            "@type": "Person",
-            "name": "Ray Etc"
-          },
-          {
-            "@type": "Person",
-            "name": "Prince Elias"
-          },
-          {
-            "@type": "Person",
-            "name": "Christian Alexander"
-          },
-          {
-            "@type": "Person",
-            "name": "Tre Tutson"
-          },
-          {
-            "@type": "Person",
-            "name": "Matt B.C."
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-1": {
       "lastmod": "2026-08-17T09:04:00-05:00",
       "node": {
@@ -13482,6 +13352,2196 @@
           {
             "@type": "Person",
             "name": "Ian Fidance"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-chris-munch-live-in-conroe": {
+      "lastmod": "2026-08-14T11:58:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Chris Munch Live in Conroe",
+        "startDate": "2026-08-27T19:30:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-chris-munch-live-in-conroe",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-06-07T20:07:31-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-chris-munch-live-in-conroe",
+        "image": "/img/events/Guadalaharrys-54-eaf10ba5-large-thumb.png",
+        "description": "Riot Comedy Conroe Presents Comedian Chris Munch Live in ConroeDon&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.Chris is a multi-talented actor, comedian, and writer. For over 20 years he has been performing in front of cameras and live audiences alike. Whether in front of thousands at his home church&#39;s legendary live Christmas shows or literally millions with YouTube videos like the&nbsp;&ldquo;Dad Life&rdquo;, he loves bringing laughter and joy to audiences. He&rsquo;s the creator of the unsettling, yet hilarious, personas &ldquo;Stephen Stephens&rdquo;, &ldquo;Chad&rdquo;, as well as the good hearted southern minister &ldquo;Pastor Bobby&rdquo;. His characters have millions of views and over 300k followers on social media.---You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Barry Laminack"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-uncle-lazer-live-in-conroe": {
+      "lastmod": "2026-08-14T12:00:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Uncle Lazer Live in Conroe",
+        "startDate": "2026-08-28T19:30:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-uncle-lazer-live-in-conroe",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T12:17:33-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-uncle-lazer-live-in-conroe",
+        "image": "/img/events/Uncle-Lazer28730-df180ada-large-thumb.png",
+        "description": "",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Uncle Lazer"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-uncle-lazer-live-in-conroe-1": {
+      "lastmod": "2026-08-14T12:00:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Uncle Lazer Live in Conroe",
+        "startDate": "2026-08-28T21:30:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-uncle-lazer-live-in-conroe-1",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T12:23:53-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-uncle-lazer-live-in-conroe-1",
+        "image": "/img/events/Uncle-Lazer28-beaf0a2c-large-thumb.png",
+        "description": "",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Uncle Lazer"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-uncle-lazer-live-in-conroe-2": {
+      "lastmod": "2026-08-14T12:01:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Uncle Lazer Live in Conroe",
+        "startDate": "2026-08-29T19:30:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-uncle-lazer-live-in-conroe-2",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T12:25:54-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-uncle-lazer-live-in-conroe-2",
+        "image": "/img/events/Uncle-Lazer730-ca630a82-large-thumb.png",
+        "description": "",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Uncle Lazer"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-uncle-lazer-live-in-conroe-3": {
+      "lastmod": "2026-08-14T12:01:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Uncle Lazer Live in Conroe",
+        "startDate": "2026-08-29T21:30:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-uncle-lazer-live-in-conroe-3",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T12:28:58-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-uncle-lazer-live-in-conroe-3",
+        "image": "/img/events/Uncle-Lazer930-ca1f0a70-large-thumb.png",
+        "description": "",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Uncle Lazer"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-27": {
+      "lastmod": "2026-08-10T04:19:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
+        "startDate": "2026-09-03T20:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-27",
+          "priceCurrency": "USD",
+          "price": "9.00",
+          "availability": "InStock",
+          "validFrom": "2026-05-14T22:38:48-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-27",
+        "image": "/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature&nbsp;4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night.✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/average-joey-headlines-the-riot-comedy-club": {
+      "lastmod": "2026-08-10T08:55:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Average Joey Headlines The Riot Comedy Club",
+        "startDate": "2026-09-04T19:30:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/average-joey-headlines-the-riot-comedy-club",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-10T20:52:20-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/average-joey-headlines-the-riot-comedy-club",
+        "image": "/img/events/IMG-0487-7db0078a-large-thumb.jpg",
+        "description": "Average Joey is Georgia-bred comedian Joey Leonard, a combat veteran, professional skydiver and former construction worker who jumped into stand-up in late 2019. He&rsquo;s built a fast-rising following with sharp, blue-collar storytelling, quick pivots, and high-energy sets that mine everyday misadventures. His social clips rack up millions of views, and the self-made Mullet Gang ethos threads through his onstage persona with playful swagger and grit.At his live show you&rsquo;ll get punchy, personal life experience bits, nimble crowd work, and the kind of timing that keeps laughter rolling from the first tag to the last callback. If you want comedy that tells a story you will remember for a lifetime this is your night out.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.---",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/average-joey-headlines-the-riot-comedy-club-the-riot-conroe": {
+      "lastmod": "2026-08-10T08:55:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Average Joey Headlines The Riot Comedy Club",
+        "startDate": "2026-09-05T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/average-joey-headlines-the-riot-comedy-club-the-riot-conroe",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-10T20:55:38-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/average-joey-headlines-the-riot-comedy-club-the-riot-conroe",
+        "image": "/img/events/IMG-0487-7db0078a-large-thumb.jpg",
+        "description": "Average Joey is Georgia-bred comedian Joey Leonard, a combat veteran, professional skydiver and former construction worker who jumped into stand-up in late 2019. He’s built a fast-rising following with sharp, blue-collar storytelling, quick pivots, and high-energy sets that mine everyday misadventures. His social clips rack up millions of views, and the self-made Mullet Gang ethos threads through his onstage persona with playful swagger and grit.At his live show you’ll get punchy, personal life experience bits, nimble crowd work, and the kind of timing that keeps laughter rolling from the first tag to the last callback. If you want comedy that tells a story you will remember for a lifetime this is your night out.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.---",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-21": {
+      "lastmod": "2026-08-10T04:31:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
+        "startDate": "2026-09-05T21:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-21",
+          "priceCurrency": "USD",
+          "price": "15.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-01T14:19:56-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-21",
+        "image": "/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature&nbsp;4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-28": {
+      "lastmod": "2026-08-10T04:19:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
+        "startDate": "2026-09-10T20:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-28",
+          "priceCurrency": "USD",
+          "price": "9.00",
+          "availability": "InStock",
+          "validFrom": "2026-05-14T22:39:35-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-28",
+        "image": "/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature&nbsp;4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night.✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-graham-kay-the-tonight-show-colbert-nateland-live-in-conroe": {
+      "lastmod": "2026-07-02T12:06:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Graham Kay (The Tonight Show, Colbert, Nateland) Live in Conroe",
+        "startDate": "2026-09-11T19:30:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-graham-kay-the-tonight-show-colbert-nateland-live-in-conroe",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T12:40:50-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-graham-kay-the-tonight-show-colbert-nateland-live-in-conroe",
+        "image": "/img/events/Graham-Kay-11-12-d9e60a7a-large-thumb.png",
+        "description": "He began his comedic odyssey back when he was growing up in Ottawa Canada at Yuk Yuk&#39;s Comedy Cabaret and Absolute Comedy Club. Since then he has appeared in many venues in Europe and New York, including, Times Square Arts Centre (former Laugh Factory), and the Comedy Village NYC. Graham has also appeared in various small films as well as television appearances for VBS.TV. and the CBC. And when he is not busy proving his elementary teachers wrong, that you can in fact work as a class clown, you can find him at the local bar practicing how to drink a beer.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Graham Kay"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-graham-kay-the-tonight-show-colbert-nateland-live-in-conroe-1": {
+      "lastmod": "2026-07-02T12:09:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Graham Kay (The Tonight Show, Colbert, Nateland) Live in Conroe",
+        "startDate": "2026-09-12T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-graham-kay-the-tonight-show-colbert-nateland-live-in-conroe-1",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T12:47:41-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-graham-kay-the-tonight-show-colbert-nateland-live-in-conroe-1",
+        "image": "/img/events/Graham-Kay-11-12-d9790a66-large-thumb.png",
+        "description": "",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-19": {
+      "lastmod": "2026-08-10T04:31:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
+        "startDate": "2026-09-12T21:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-19",
+          "priceCurrency": "USD",
+          "price": "15.00",
+          "availability": "InStock",
+          "validFrom": "2026-05-14T22:43:19-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-19",
+        "image": "/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature&nbsp;4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-29": {
+      "lastmod": "2026-08-10T04:19:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
+        "startDate": "2026-09-17T20:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-29",
+          "priceCurrency": "USD",
+          "price": "9.00",
+          "availability": "InStock",
+          "validFrom": "2026-05-14T22:41:05-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-29",
+        "image": "/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature&nbsp;4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night.✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-aaron-weber-nateland-podcast-the-tonight-show-live-in-conroe": {
+      "lastmod": "2026-07-02T12:10:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Aaron Weber (Nateland Podcast, The Tonight Show) Live in Conroe",
+        "startDate": "2026-09-18T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-aaron-weber-nateland-podcast-the-tonight-show-live-in-conroe",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T12:49:31-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-aaron-weber-nateland-podcast-the-tonight-show-live-in-conroe",
+        "image": "/img/events/Aaron-Weber18-19-de630ac4-large-thumb.png",
+        "description": "",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-aaron-weber-nateland-podcast-the-tonight-show-live-in-conroe-1": {
+      "lastmod": "2026-07-02T12:11:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Aaron Weber (Nateland Podcast, The Tonight Show) Live in Conroe",
+        "startDate": "2026-09-18T21:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-aaron-weber-nateland-podcast-the-tonight-show-live-in-conroe-1",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T12:51:06-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-aaron-weber-nateland-podcast-the-tonight-show-live-in-conroe-1",
+        "image": "/img/events/Aaron-Weber18-19-dcf40ab5-large-thumb.png",
+        "description": "",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-aaron-weber-nateland-podcast-the-tonight-show-live-in-conroe-2": {
+      "lastmod": "2026-07-02T12:11:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Aaron Weber (Nateland Podcast, The Tonight Show) Live in Conroe",
+        "startDate": "2026-09-19T18:30:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-aaron-weber-nateland-podcast-the-tonight-show-live-in-conroe-2",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T12:52:54-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-aaron-weber-nateland-podcast-the-tonight-show-live-in-conroe-2",
+        "image": "/img/events/Aaron-Weber18-19-dd200abb-large-thumb.png",
+        "description": "",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-aaron-weber-nateland-podcast-the-tonight-show-live-in-conroe-3": {
+      "lastmod": "2026-07-02T12:20:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Aaron Weber (Nateland Podcast, The Tonight Show) Live in Conroe",
+        "startDate": "2026-09-19T20:30:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-aaron-weber-nateland-podcast-the-tonight-show-live-in-conroe-3",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T12:54:49-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-aaron-weber-nateland-podcast-the-tonight-show-live-in-conroe-3",
+        "image": "/img/events/Aaron-Weber18-19-dd8a0ab8-large-thumb.png",
+        "description": "",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-30": {
+      "lastmod": "2026-08-10T04:19:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
+        "startDate": "2026-09-24T20:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-30",
+          "priceCurrency": "USD",
+          "price": "9.00",
+          "availability": "InStock",
+          "validFrom": "2026-05-14T22:41:06-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-30",
+        "image": "/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature&nbsp;4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night.✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-craig-shoemaker-showtime-comedy-central-live-in-conroe": {
+      "lastmod": "2026-07-02T12:20:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Craig Shoemaker (SHOWTIME & Comedy Central) Live in Conroe",
+        "startDate": "2026-09-25T19:30:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-craig-shoemaker-showtime-comedy-central-live-in-conroe",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T12:57:52-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-craig-shoemaker-showtime-comedy-central-live-in-conroe",
+        "image": "/img/events/Craig-Shoemaker25-f2b60bc3-large-thumb.png",
+        "description": "",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-craig-shoemaker-showtime-comedy-central-live-in-conroe-1": {
+      "lastmod": "2026-07-02T12:20:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Craig Shoemaker (SHOWTIME & Comedy Central) Live in Conroe",
+        "startDate": "2026-09-26T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-craig-shoemaker-showtime-comedy-central-live-in-conroe-1",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T12:59:45-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-craig-shoemaker-showtime-comedy-central-live-in-conroe-1",
+        "image": "/img/events/Craig-Shoemaker26-f3cc0bcd-large-thumb.png",
+        "description": "",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-20": {
+      "lastmod": "2026-08-10T04:31:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
+        "startDate": "2026-09-26T21:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-20",
+          "priceCurrency": "USD",
+          "price": "15.00",
+          "availability": "InStock",
+          "validFrom": "2026-05-14T22:43:19-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-20",
+        "image": "/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature&nbsp;4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-31": {
+      "lastmod": "2026-08-10T04:19:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
+        "startDate": "2026-10-01T20:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-31",
+          "priceCurrency": "USD",
+          "price": "9.00",
+          "availability": "InStock",
+          "validFrom": "2026-05-14T22:41:06-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-31",
+        "image": "/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature&nbsp;4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night.✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-jeff-dye-gutfeld-the-tonight-show-live-in-conroe": {
+      "lastmod": "2026-07-02T12:25:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Jeff Dye (Gutfeld!, The Tonight Show) Live in Conroe",
+        "startDate": "2026-10-02T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-jeff-dye-gutfeld-the-tonight-show-live-in-conroe",
+          "priceCurrency": "USD",
+          "price": "40.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T13:01:54-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-jeff-dye-gutfeld-the-tonight-show-live-in-conroe",
+        "image": "/img/events/Jeff-Dye23-9a7b08e0-large-thumb.png",
+        "description": "",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-jeff-dye-gutfeld-the-tonight-show-live-in-conroe-1": {
+      "lastmod": "2026-07-02T12:25:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Jeff Dye (Gutfeld!, The Tonight Show) Live in Conroe",
+        "startDate": "2026-10-02T21:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-jeff-dye-gutfeld-the-tonight-show-live-in-conroe-1",
+          "priceCurrency": "USD",
+          "price": "40.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T13:03:40-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-jeff-dye-gutfeld-the-tonight-show-live-in-conroe-1",
+        "image": "/img/events/Jeff-Dye23-99ba08d4-large-thumb.png",
+        "description": "",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-jeff-dye-gutfeld-the-tonight-show-live-in-conroe-2": {
+      "lastmod": "2026-07-02T12:25:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Jeff Dye (Gutfeld!, The Tonight Show) Live in Conroe",
+        "startDate": "2026-10-03T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-jeff-dye-gutfeld-the-tonight-show-live-in-conroe-2",
+          "priceCurrency": "USD",
+          "price": "40.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T13:05:13-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-jeff-dye-gutfeld-the-tonight-show-live-in-conroe-2",
+        "image": "/img/events/Jeff-Dye23-9b3308e7-large-thumb.png",
+        "description": "",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-jeff-dye-gutfeld-the-tonight-show-live-in-conroe-3": {
+      "lastmod": "2026-07-02T12:26:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Jeff Dye (Gutfeld!, The Tonight Show) Live in Conroe",
+        "startDate": "2026-10-03T21:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-jeff-dye-gutfeld-the-tonight-show-live-in-conroe-3",
+          "priceCurrency": "USD",
+          "price": "40.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T13:06:34-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-jeff-dye-gutfeld-the-tonight-show-live-in-conroe-3",
+        "image": "/img/events/Jeff-Dye23-9af608e9-large-thumb.png",
+        "description": "",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-nathan-macintosh-live-in-conroe": {
+      "lastmod": "2026-07-02T12:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Nathan Macintosh Live in Conroe",
+        "startDate": "2026-10-09T19:30:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-nathan-macintosh-live-in-conroe",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-06-17T17:34:01-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-nathan-macintosh-live-in-conroe",
+        "image": "/img/events/Guadalaharrys-55-1-00080bdd-large-thumb.png",
+        "description": "NATHAN MACINTOSH!!Energetic, loud, and always funny, Nathan Macintosh is quickly becoming one of the best comedians touring the country today.His comedy has received numerous accolades. The NY Times named his special, MONEY NEVER WAKES, the &quot;best Youtube Special of 2023&quot; and his debut album, I WASN&#39;T TALKING was featured in Exc!aim Magazine&#39;s &#39;Top Ten Hilariously Good Comedy Moments&#39; of the year. Variety named him one of their &#39;10 COMICS TO WATCH&#39; in 2024 andhis newest special, DOWN WITH TECH, has received acclaim from Vulture and The NY Times and the clips from the special have been watched by millions on TikTok and Instagram.Nathan has performed on CONAN, The Late Show w/ Stephen Colbert and he&#39;s a regular on The Tonight Show. He also writes and stars in the Canadian series TRAPPED and he can be heard regularly on Sirius Satellite Radio and CBC Radio&#39;s THE DEBATERS.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.--",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Nathan Macintosh"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-nathan-macintosh-conan-the-tonight-show-live-in-conroe": {
+      "lastmod": "2026-07-02T12:31:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Nathan Macintosh (CONAN, The Tonight Show) Live in Conroe",
+        "startDate": "2026-10-10T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-nathan-macintosh-conan-the-tonight-show-live-in-conroe",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-06-17T17:42:53-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-nathan-macintosh-conan-the-tonight-show-live-in-conroe",
+        "image": "/img/events/Guadalaharrys-55-2-01bf0bf6-large-thumb.png",
+        "description": "NATHAN MACINTOSH!!Energetic, loud, and always funny, Nathan Macintosh is quickly becoming one of the best comedians touring the country today.His comedy has received numerous accolades. The NY Times named his special, MONEY NEVER WAKES, the &quot;best Youtube Special of 2023&quot; and his debut album, I WASN&#39;T TALKING was featured in Exc!aim Magazine&#39;s &#39;Top Ten Hilariously Good Comedy Moments&#39; of the year. Variety named him one of their &#39;10 COMICS TO WATCH&#39; in 2024 andhis newest special, DOWN WITH TECH, has received acclaim from Vulture and The NY Times and the clips from the special have been watched by millions on TikTok and Instagram.Nathan has performed on CONAN, The Late Show w/ Stephen Colbert and he&#39;s a regular on The Tonight Show. He also writes and stars in the Canadian series TRAPPED and he can be heard regularly on Sirius Satellite Radio and CBC Radio&#39;s THE DEBATERS.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.--",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Nathan Macintosh"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-22": {
+      "lastmod": "2026-08-10T04:31:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
+        "startDate": "2026-10-10T21:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-22",
+          "priceCurrency": "USD",
+          "price": "15.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-01T14:25:03-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-22",
+        "image": "/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature&nbsp;4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-michael-palascak-tonight-show-comedy-central-live-in-conroe": {
+      "lastmod": "2026-07-02T12:31:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Michael Palascak (Tonight Show, Comedy Central) Live in Conroe",
+        "startDate": "2026-10-16T20:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-michael-palascak-tonight-show-comedy-central-live-in-conroe",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T13:08:13-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-michael-palascak-tonight-show-comedy-central-live-in-conroe",
+        "image": "/img/events/Michael-Palascak16-17-24ed0ca8-large-thumb.png",
+        "description": "",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-michael-palascak-tonight-show-comedy-central-live-in-conroe-1": {
+      "lastmod": "2026-07-02T12:32:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Michael Palascak (Tonight Show, Comedy Central) Live in Conroe",
+        "startDate": "2026-10-17T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-michael-palascak-tonight-show-comedy-central-live-in-conroe-1",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T13:09:48-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-michael-palascak-tonight-show-comedy-central-live-in-conroe-1",
+        "image": "/img/events/Michael-Palascak16-17-25530ca6-large-thumb.png",
+        "description": "",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-23": {
+      "lastmod": "2026-08-10T04:31:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
+        "startDate": "2026-10-17T21:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-23",
+          "priceCurrency": "USD",
+          "price": "15.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-01T14:25:03-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-23",
+        "image": "/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature&nbsp;4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-chinedu-ogu-headlines-the-riot-comedy-club": {
+      "lastmod": "2026-08-17T09:15:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Chinedu Ogu Headlines The Riot Comedy Club",
+        "startDate": "2026-10-23T19:30:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-chinedu-ogu-headlines-the-riot-comedy-club",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-17T09:11:54-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-chinedu-ogu-headlines-the-riot-comedy-club",
+        "image": "/img/events/Guadalaharrys-63-eaf90b99-large-thumb.png",
+        "description": "CHINEDU is a stand up comedian, content creator, and host from Houston, TX. He is best known for his hilarious viral videos about Houston and Texas culture, along with his work in sports and stand up comedy. He has hosted several events across the country including rodeos, galas, and award shows. His comedic style is family friendly that is suitable for all ages and walks of life. Along with his stand up comedy tours, he also produces content for companies such as Pepsi, Whataburger, Blue Bell Ice Cream, MLS, NBA, NFL, and CBS Sports. CHINEDU is currently on his 7th comedy tour while preparing to produce and film his upcoming 5th stand up special.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.---",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Chinedu Ogu"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-chinedu-ogu-headlines-the-riot-comedy-club-2026-10-24190000": {
+      "lastmod": "2026-08-17T09:16:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Chinedu Ogu Headlines The Riot Comedy Club",
+        "startDate": "2026-10-24T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-chinedu-ogu-headlines-the-riot-comedy-club-2026-10-24190000",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-17T09:13:27-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-chinedu-ogu-headlines-the-riot-comedy-club-2026-10-24190000",
+        "image": "/img/events/Guadalaharrys-63-1-03180bf5-large-thumb.png",
+        "description": "CHINEDU is a stand up comedian, content creator, and host from Houston, TX. He is best known for his hilarious viral videos about Houston and Texas culture, along with his work in sports and stand up comedy. He has hosted several events across the country including rodeos, galas, and award shows. His comedic style is family friendly that is suitable for all ages and walks of life. Along with his stand up comedy tours, he also produces content for companies such as Pepsi, Whataburger, Blue Bell Ice Cream, MLS, NBA, NFL, and CBS Sports. CHINEDU is currently on his 7th comedy tour while preparing to produce and film his upcoming 5th stand up special.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.---",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Chinedu Ogu"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-24": {
+      "lastmod": "2026-08-10T04:31:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
+        "startDate": "2026-10-24T21:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-24",
+          "priceCurrency": "USD",
+          "price": "15.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-01T14:28:21-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-24",
+        "image": "/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature&nbsp;4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/riot-comedy-club-presents-friday-night-standup-comedy-in-conroe-16": {
+      "lastmod": "2026-08-10T04:20:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Riot Comedy Club presents Friday Night Standup Comedy in Conroe!",
+        "startDate": "2026-10-30T19:30:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-friday-night-standup-comedy-in-conroe-16",
+          "priceCurrency": "USD",
+          "price": "12.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-01T14:27:11-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-friday-night-standup-comedy-in-conroe-16",
+        "image": "/img/shows/friday-conroe-bece0abe-large-thumb.jpg",
+        "description": "Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ????✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-the-riot-conroe-6": {
+      "lastmod": "2026-08-10T04:21:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Riot Comedy Club presents Saturday Night Early Standup Comedy in Conroe!",
+        "startDate": "2026-10-31T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-the-riot-conroe-6",
+          "priceCurrency": "USD",
+          "price": "36.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-01T14:27:41-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-the-riot-conroe-6",
+        "image": "/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature&nbsp;4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-25": {
+      "lastmod": "2026-08-10T04:31:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
+        "startDate": "2026-10-31T21:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-25",
+          "priceCurrency": "USD",
+          "price": "15.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-01T14:28:21-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-25",
+        "image": "/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature&nbsp;4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-karen-morgan-dry-bar-comedy-live-in-conroe": {
+      "lastmod": "2026-07-02T12:49:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Karen Morgan (Dry Bar Comedy) Live in Conroe",
+        "startDate": "2026-11-06T19:30:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-karen-morgan-dry-bar-comedy-live-in-conroe",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T13:11:49-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-karen-morgan-dry-bar-comedy-live-in-conroe",
+        "image": "/img/events/Karen-Morgan6-c1670a67-large-thumb.png",
+        "description": "",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/jon-polar-bear-gonzale-live-in-conroe": {
+      "lastmod": "2026-08-13T02:53:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Jon \"Polar Bear\" Gonzalez Live in Conroe",
+        "startDate": "2026-11-13T19:30:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/jon-polar-bear-gonzale-live-in-conroe",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-13T14:25:55-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/jon-polar-bear-gonzale-live-in-conroe",
+        "image": "/img/events/Guadalaharrys-67-eafa0b9a-large-thumb.png",
+        "description": "Welcome to Riot Comedy Conroe &ndash; Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, great food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.Come see Jon &ldquo;Polar Bear&rdquo; Gonzalez! Jon&rsquo;s best known for his White VS Hispanic skits, however Jon first started doing comedy in July of 2011. What started off as making his family laugh on road trips, soon led to him stumbling upon Chris Farley and stand up comedy, which eventually led to him pursuing a full time career in stand up. After getting involved in the local comedy scene in Austin, Jon quickly found success through the release of multiple comedy skits which went viral receiving millions of views on Facebook and shortly after, TikTok. Since then Jon has toured all over the country performing his live standup show while also growing his fan base through social media. He&rsquo;s currently working on his new hour and is getting it as close to perfection as possible for his new nationwide tour in 2027. Make sure to catch Polar Bear&rsquo;s live show when he comes through your city. You won&rsquo;t wanna miss it!ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.--",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Jon Gonzalez"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-jon-polar-bear-gonzale-live-in-conroe-2026-11-14190000": {
+      "lastmod": "2026-08-13T02:53:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Jon \"Polar Bear\" Gonzalez Live in Conroe",
+        "startDate": "2026-11-14T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-jon-polar-bear-gonzale-live-in-conroe-2026-11-14190000",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-13T14:35:37-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-jon-polar-bear-gonzale-live-in-conroe-2026-11-14190000",
+        "image": "/img/events/Guadalaharrys-67-1-03b00c03-large-thumb.png",
+        "description": "Welcome to Riot Comedy Conroe &ndash; Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, great food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.Come see Jon &ldquo;Polar Bear&rdquo; Gonzalez! Jon&rsquo;s best known for his White VS Hispanic skits, however Jon first started doing comedy in July of 2011. What started off as making his family laugh on road trips, soon led to him stumbling upon Chris Farley and stand up comedy, which eventually led to him pursuing a full time career in stand up. After getting involved in the local comedy scene in Austin, Jon quickly found success through the release of multiple comedy skits which went viral receiving millions of views on Facebook and shortly after, TikTok. Since then Jon has toured all over the country performing his live standup show while also growing his fan base through social media. He&rsquo;s currently working on his new hour and is getting it as close to perfection as possible for his new nationwide tour in 2027. Make sure to catch Polar Bear&rsquo;s live show when he comes through your city. You won&rsquo;t wanna miss it!ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.--",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Jon Gonzalez"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe": {
+      "lastmod": "2026-07-02T12:50:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Gabriel Rutledge (Amazon Prime Video, Comedy Central) Live at the Riot in Conroe",
+        "startDate": "2026-12-18T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-06-18T14:58:13-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe",
+        "image": "/img/events/Guadalaharrys-57-ebfc0ba5-large-thumb.png",
+        "description": "&quot;Gabriel Rutledge is a quick thinking, fast talking, hard working badass.&quot; - Louisville WeeklyA past winner of both the Seattle International Comedy Competition and The Laughing Skull Comedy Festival in Atlanta, Gabriel has made numerous television appearances including Comedy Central&#39;s Live at Gotham, Nickelodeon&#39;s Nickmom Night Out, Laughs on FOX, and Inside Joke streaming on Amazon Prime Video. His Dry Bar Comedy special &ldquo;A Third of the Room,&rdquo; as well as his YouTube special &ldquo;Nectarine&rdquo; have garnered millions of views online. He is also the author of the book &quot;Happiness Isn&#39;t Funny: True Stories of a Road Comic.&rdquo;---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe-1": {
+      "lastmod": "2026-07-02T12:51:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Gabriel Rutledge (Amazon Prime Video, Comedy Central) Live at the Riot in Conroe",
+        "startDate": "2026-12-18T21:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe-1",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-06-18T17:43:58-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe-1",
+        "image": "/img/events/Guadalaharrys-57-1-03d50c00-large-thumb.png",
+        "description": "&quot;Gabriel Rutledge is a quick thinking, fast talking, hard working badass.&quot; - Louisville WeeklyA past winner of both the Seattle International Comedy Competition and The Laughing Skull Comedy Festival in Atlanta, Gabriel has made numerous television appearances including Comedy Central&#39;s Live at Gotham, Nickelodeon&#39;s Nickmom Night Out, Laughs on FOX, and Inside Joke streaming on Amazon Prime Video. His Dry Bar Comedy special &ldquo;A Third of the Room,&rdquo; as well as his YouTube special &ldquo;Nectarine&rdquo; have garnered millions of views online. He is also the author of the book &quot;Happiness Isn&#39;t Funny: True Stories of a Road Comic.&rdquo;---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe": {
+      "lastmod": "2026-07-02T12:51:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Gabriel Rutledge (Amazon Prime Video, Comedy Central) Live at the Riot in Conroe",
+        "startDate": "2026-12-19T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-06-18T17:43:01-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe",
+        "image": "/img/events/Guadalaharrys-57-3-02b50bf4-large-thumb.png",
+        "description": "&quot;Gabriel Rutledge is a quick thinking, fast talking, hard working badass.&quot; - Louisville WeeklyA past winner of both the Seattle International Comedy Competition and The Laughing Skull Comedy Festival in Atlanta, Gabriel has made numerous television appearances including Comedy Central&#39;s Live at Gotham, Nickelodeon&#39;s Nickmom Night Out, Laughs on FOX, and Inside Joke streaming on Amazon Prime Video. His Dry Bar Comedy special &ldquo;A Third of the Room,&rdquo; as well as his YouTube special &ldquo;Nectarine&rdquo; have garnered millions of views online. He is also the author of the book &quot;Happiness Isn&#39;t Funny: True Stories of a Road Comic.&rdquo;---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe-2": {
+      "lastmod": "2026-07-02T12:51:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Gabriel Rutledge (Amazon Prime Video, Comedy Central) Live at the Riot in Conroe",
+        "startDate": "2026-12-19T21:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe-2",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-06-18T17:44:08-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe-2",
+        "image": "/img/events/Guadalaharrys-57-2-02d10c00-large-thumb.png",
+        "description": "&quot;Gabriel Rutledge is a quick thinking, fast talking, hard working badass.&quot; - Louisville WeeklyA past winner of both the Seattle International Comedy Competition and The Laughing Skull Comedy Festival in Atlanta, Gabriel has made numerous television appearances including Comedy Central&#39;s Live at Gotham, Nickelodeon&#39;s Nickmom Night Out, Laughs on FOX, and Inside Joke streaming on Amazon Prime Video. His Dry Bar Comedy special &ldquo;A Third of the Room,&rdquo; as well as his YouTube special &ldquo;Nectarine&rdquo; have garnered millions of views online. He is also the author of the book &quot;Happiness Isn&#39;t Funny: True Stories of a Road Comic.&rdquo;---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/lace-larrabee-america-s-got-talent-sirius-xm-headlines-the-riot-comedy-club": {
+      "lastmod": "2026-07-02T04:10:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Lace Larrabee (America's Got Talent, Sirius XM) Headlines The Riot Comedy Club",
+        "startDate": "2027-01-09T19:30:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/lace-larrabee-america-s-got-talent-sirius-xm-headlines-the-riot-comedy-club",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-07-02T16:07:48-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/lace-larrabee-america-s-got-talent-sirius-xm-headlines-the-riot-comedy-club",
+        "image": "/img/events/lace-conroe-ad8409f4-large-thumb.png",
+        "description": "If you haven&rsquo;t heard of Lace Larrabee, you will soon. Lace is a nationally touring comedian, actor, and host whose debut comedy album, White Trash Cinderella, produced by 800 Pound Gorilla Records, sealed the number one spot on the comedy charts. The accompanying YouTube special amassed over 2 million views and counting. She&rsquo;s a comedy favorite on Sirius XM and a regular celebrity guest on tv&rsquo;s 25 Words or Less. A former southern beauty queen, Lace ditched the pageants but kept her dominant stage presence, unrivaled timing and trademark sass. As a season 17 semifinalist on America&rsquo;s Got Talent, America loved her charming wit so much, NBC brought her back to roast Simon Cowell alongside Roastmaster General himself, Jeff Ross. Lace turned her appearance on AGT into a Vegas residency as host of America&rsquo;s Got Talent Superstars Live. For over a decade, Lace has been honing her self-deprecating humor and hilarious personal anecdotes into a style that is fiercely her own. Lace can captivate a room and garner laughs as big as her personality. From tales of growing up in a trailer to relatable observations on friends, family, love and aging, Lace turns life&rsquo;s humiliating moments into an indomitable act of comedy. Lace&rsquo;s candor, perspicacity, and refreshingly real takes on life leave audiences wanting to be best friends with her.---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe": {
+      "lastmod": "2026-08-13T10:39:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Steve Byrne (The Late Show & Jimmy Kimmel) Live in Conroe",
+        "startDate": "2027-01-15T19:30:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T12:30:58-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe",
+        "image": "/img/events/Guadalaharrys-54-eaa10b91-large-thumb.png",
+        "description": "Riot Comedy Conroe Presents Comedian Steve Byrne Live in ConroeDon’t miss your chance to catch the best live standup in Downtown Conroe at the city’s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.Over the last few years, comedian Steve Byrne has solidified his status as one of the most innovative, versatile and established entertainers working in his field. From starting his career at established clubs in NYC likeThe Comedy Cellar and Gotham to cementing his work ethic in LA atThe Comedy Store and The Improv, his career has ascended to a national touring act backed by an impressive resume.Apart from being a late night talk show regular: “Conan”, “Jimmy Kimmel” “The LateLate Show”, even appearing on “The Tonight Show” 10 times, Steve starred, produced and wrote on his own sitcom that ran for 3 seasons on TBS, “Sullivan &amp; Son” producedby Vince Vaughn and Peter Billingsley. Rebounding from tv, Steve directed the documentary “Always Amazing” about comic-magician The Amazing Johnathan” that was given a home with Bill Burr’s All Things Comedy. He then wrote and directed his first feature film “The Opening Act”, about a comedian’s first time on the road with Jimmy O Yang, Cedric the Entertainer, Bill Burr, Whitney Cummings, Ken Jeong, Iliza Schlesinger, Tom Segura and many more. The film premiered to rave reviews and sits at 84% Fresh on Rotten Tomatoes.Steve has been touring non stop as a regular at all the top clubs in the nation, usually insupport of his 5 hour specials, his first two “Happy Hour” and “Byrne Identity” released on Comedy Central. “Champion” released on Netflix, “Tell the Damn Joke” on Showtime and most recently, released in Dec 2022, “The Last Late Night” on AmazonPrime, a late night talk show disguised as an hour special, that’s rated 4.8 stars.With the release of his last hour, Steve is currently working on his next 2 feature film projects, touring material for the next special and his two podcasts: “Two Cool Moms” with Joe Gatto and “Comedy Piñata”.---You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-1": {
+      "lastmod": "2026-07-02T12:52:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Steve Byrne (The Late Show & Jimmy Kimmel) Live in Conroe",
+        "startDate": "2027-01-15T21:30:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-1",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T12:34:18-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-1",
+        "image": "/img/events/Guadalaharrys-54-e93b0b76-large-thumb.png",
+        "description": "Riot Comedy Conroe Presents Comedian Steve Byrne Live in ConroeDon&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.Over the last few years, comedian Steve Byrne has solidified his status as one of the most innovative, versatile and established entertainers working in his field. From starting his career at established clubs in NYC likeThe Comedy Cellar and Gotham to cementing his work ethic in LA atThe Comedy Store and The Improv, his career has ascended to a national touring act backed by an impressive resume.Apart from being a late night talk show regular: &ldquo;Conan&rdquo;, &ldquo;Jimmy Kimmel&rdquo; &ldquo;The LateLate Show&rdquo;, even appearing on &ldquo;The Tonight Show&rdquo; 10 times, Steve starred, produced and wrote on his own sitcom that ran for 3 seasons on TBS, &ldquo;Sullivan &amp; Son&rdquo; producedby Vince Vaughn and Peter Billingsley. Rebounding from tv, Steve directed the documentary &ldquo;Always Amazing&rdquo; about comic-magician The Amazing Johnathan&rdquo; that was given a home with Bill Burr&rsquo;s All Things Comedy. He then wrote and directed his first feature film &ldquo;The Opening Act&rdquo;, about a comedian&rsquo;s first time on the road with Jimmy O Yang, Cedric the Entertainer, Bill Burr, Whitney Cummings, Ken Jeong, Iliza Schlesinger, Tom Segura and many more. The film premiered to rave reviews and sits at 84% Fresh on Rotten Tomatoes.Steve has been touring non stop as a regular at all the top clubs in the nation, usually insupport of his 5 hour specials, his first two &ldquo;Happy Hour&rdquo; and &ldquo;Byrne Identity&rdquo; released on Comedy Central. &ldquo;Champion&rdquo; released on Netflix, &ldquo;Tell the Damn Joke&rdquo; on Showtime and most recently, released in Dec 2022, &ldquo;The Last Late Night&rdquo; on AmazonPrime, a late night talk show disguised as an hour special, that&rsquo;s rated 4.8 stars.With the release of his last hour, Steve is currently working on his next 2 feature film projects, touring material for the next special and his two podcasts: &ldquo;Two Cool Moms&rdquo; with Joe Gatto and &ldquo;Comedy Pi&ntilde;ata&rdquo;.---You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-2": {
+      "lastmod": "2026-07-02T12:53:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Steve Byrne (The Late Show & Jimmy Kimmel) Live in Conroe",
+        "startDate": "2027-01-16T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-2",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T12:35:48-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-2",
+        "image": "/img/events/Guadalaharrys-54-de740b59-large-thumb.png",
+        "description": "Riot Comedy Conroe Presents Comedian Steve Byrne Live in ConroeDon&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.Over the last few years, comedian Steve Byrne has solidified his status as one of the most innovative, versatile and established entertainers working in his field. From starting his career at established clubs in NYC likeThe Comedy Cellar and Gotham to cementing his work ethic in LA atThe Comedy Store and The Improv, his career has ascended to a national touring act backed by an impressive resume.Apart from being a late night talk show regular: &ldquo;Conan&rdquo;, &ldquo;Jimmy Kimmel&rdquo; &ldquo;The LateLate Show&rdquo;, even appearing on &ldquo;The Tonight Show&rdquo; 10 times, Steve starred, produced and wrote on his own sitcom that ran for 3 seasons on TBS, &ldquo;Sullivan &amp; Son&rdquo; producedby Vince Vaughn and Peter Billingsley. Rebounding from tv, Steve directed the documentary &ldquo;Always Amazing&rdquo; about comic-magician The Amazing Johnathan&rdquo; that was given a home with Bill Burr&rsquo;s All Things Comedy. He then wrote and directed his first feature film &ldquo;The Opening Act&rdquo;, about a comedian&rsquo;s first time on the road with Jimmy O Yang, Cedric the Entertainer, Bill Burr, Whitney Cummings, Ken Jeong, Iliza Schlesinger, Tom Segura and many more. The film premiered to rave reviews and sits at 84% Fresh on Rotten Tomatoes.Steve has been touring non stop as a regular at all the top clubs in the nation, usually insupport of his 5 hour specials, his first two &ldquo;Happy Hour&rdquo; and &ldquo;Byrne Identity&rdquo; released on Comedy Central. &ldquo;Champion&rdquo; released on Netflix, &ldquo;Tell the Damn Joke&rdquo; on Showtime and most recently, released in Dec 2022, &ldquo;The Last Late Night&rdquo; on AmazonPrime, a late night talk show disguised as an hour special, that&rsquo;s rated 4.8 stars.With the release of his last hour, Steve is currently working on his next 2 feature film projects, touring material for the next special and his two podcasts: &ldquo;Two Cool Moms&rdquo; with Joe Gatto and &ldquo;Comedy Pi&ntilde;ata&rdquo;.---You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-3": {
+      "lastmod": "2026-07-02T12:53:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Steve Byrne (The Late Show & Jimmy Kimmel) Live in Conroe",
+        "startDate": "2027-01-16T21:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-3",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T12:38:33-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-3",
+        "image": "/img/events/Guadalaharrys-54-ea990b97-large-thumb.png",
+        "description": "Riot Comedy Conroe Presents Comedian Steve Byrne Live in ConroeDon&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.Over the last few years, comedian Steve Byrne has solidified his status as one of the most innovative, versatile and established entertainers working in his field. From starting his career at established clubs in NYC likeThe Comedy Cellar and Gotham to cementing his work ethic in LA atThe Comedy Store and The Improv, his career has ascended to a national touring act backed by an impressive resume.Apart from being a late night talk show regular: &ldquo;Conan&rdquo;, &ldquo;Jimmy Kimmel&rdquo; &ldquo;The LateLate Show&rdquo;, even appearing on &ldquo;The Tonight Show&rdquo; 10 times, Steve starred, produced and wrote on his own sitcom that ran for 3 seasons on TBS, &ldquo;Sullivan &amp; Son&rdquo; producedby Vince Vaughn and Peter Billingsley. Rebounding from tv, Steve directed the documentary &ldquo;Always Amazing&rdquo; about comic-magician The Amazing Johnathan&rdquo; that was given a home with Bill Burr&rsquo;s All Things Comedy. He then wrote and directed his first feature film &ldquo;The Opening Act&rdquo;, about a comedian&rsquo;s first time on the road with Jimmy O Yang, Cedric the Entertainer, Bill Burr, Whitney Cummings, Ken Jeong, Iliza Schlesinger, Tom Segura and many more. The film premiered to rave reviews and sits at 84% Fresh on Rotten Tomatoes.Steve has been touring non stop as a regular at all the top clubs in the nation, usually insupport of his 5 hour specials, his first two &ldquo;Happy Hour&rdquo; and &ldquo;Byrne Identity&rdquo; released on Comedy Central. &ldquo;Champion&rdquo; released on Netflix, &ldquo;Tell the Damn Joke&rdquo; on Showtime and most recently, released in Dec 2022, &ldquo;The Last Late Night&rdquo; on AmazonPrime, a late night talk show disguised as an hour special, that&rsquo;s rated 4.8 stars.With the release of his last hour, Steve is currently working on his next 2 feature film projects, touring material for the next special and his two podcasts: &ldquo;Two Cool Moms&rdquo; with Joe Gatto and &ldquo;Comedy Pi&ntilde;ata&rdquo;.---You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-dave-landau-comedy-central-the-joe-rogan-exp-live-in-conroe-1": {
+      "lastmod": "2026-07-08T04:56:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Dave Landau (Comedy Central, The Joe Rogan Exp)Live in Conroe",
+        "startDate": "2027-01-22T19:30:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-dave-landau-comedy-central-the-joe-rogan-exp-live-in-conroe-1",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T13:15:32-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-dave-landau-comedy-central-the-joe-rogan-exp-live-in-conroe-1",
+        "image": "/img/events/22-51f8060f-large-thumb.png",
+        "description": "Welcome to Riot Comedy Conroe &ndash; Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, great food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.Getting his start in Detroit at the Second City&rsquo;s Conservatory, Dave Landau has risen to become one of the most sought-after comedic headliners today. Dave&rsquo;s laid-back demeanor and dark style of comedy landed him on Comedy Central&rsquo;s This is Not Happening and as a season 8 finalist on NBC&rsquo;s Last Comic Standing.Dave&rsquo;s impressive resume includes The Artie Lange and Anthony Cumia Show, The Anthony Cumia Show with Dave Landau, and The Joe Rogan Experience. He has also appeared on Kill Tony, Fox Across America, Gutfeld, Fox Saturday Night, and regularly performs at clubs and theaters across the country.---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Dave Landau"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-dave-landau-comedy-central-the-joe-rogan-exp-live-in-conroe": {
+      "lastmod": "2026-07-08T04:57:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Dave Landau (Comedy Central, The Joe Rogan Exp)Live in Conroe",
+        "startDate": "2027-01-23T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-dave-landau-comedy-central-the-joe-rogan-exp-live-in-conroe",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-04-24T06:38:00-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-dave-landau-comedy-central-the-joe-rogan-exp-live-in-conroe",
+        "image": "/img/events/Guadalaharrys-55-2-f5e70baf-large-thumb.png",
+        "description": "Welcome to Riot Comedy Conroe &ndash; Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, great food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.Getting his start in Detroit at the Second City&rsquo;s Conservatory, Dave Landau has risen to become one of the most sought-after comedic headliners today. Dave&rsquo;s laid-back demeanor and dark style of comedy landed him on Comedy Central&rsquo;s This is Not Happening and as a season 8 finalist on NBC&rsquo;s Last Comic Standing.Dave&rsquo;s impressive resume includes The Artie Lange and Anthony Cumia Show, The Anthony Cumia Show with Dave Landau, and The Joe Rogan Experience. He has also appeared on Kill Tony, Fox Across America, Gutfeld, Fox Saturday Night, and regularly performs at clubs and theaters across the country.---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Dave Landau"
           }
         ]
       }
