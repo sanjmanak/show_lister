@@ -116,7 +116,7 @@
      }
     ]
    },
-   "shortcode": "[comedy_houston tag=\"clean-comedy\" show_hero=\"false\" show_controls=\"false\"]"
+   "shortcode": "[comedy_houston tag=\"clean-comedy\" show_hero=\"false\" show_controls=\"false\" initial_days=\"120\"]"
   }
  ]
 }
