@@ -52,8 +52,9 @@
   "description_rules": [
     { "contains": "clean comedy", "tags": ["clean-comedy"],
       "note": "Description matching is HIGH-PRECISION phrases only. Bare 'all ages' is deliberately absent — an all-ages venue policy does not mean clean material." },
-    { "contains": "family friendly comedy", "tags": ["clean-comedy"] },
-    { "contains": "family-friendly comedy", "tags": ["clean-comedy"] },
+    { "contains": "family friendly", "tags": ["clean-comedy"],
+      "note": "Audited 2026-08-25: the only description hit is Chinedu Ogu's genuinely clean billing. If venue boilerplate ever abuses the phrase, kill it per show via exclusions." },
+    { "contains": "family-friendly", "tags": ["clean-comedy"] },
     { "contains": "squeaky clean", "tags": ["clean-comedy"] }
   ],
   "comedian_rules": [
@@ -81,6 +82,8 @@
     { "contains": "bob biggerstaff", "tags": ["black-comedy"] },
     { "contains": "alfred robles", "tags": ["black-comedy"] },
     { "contains": "jay badlani", "tags": ["black-comedy"] },
-    { "contains": "one minute comedy showdown", "tags": ["black-comedy"] }
+    { "contains": "one minute comedy showdown", "tags": ["black-comedy"] },
+    { "contains": "henry sir", "tags": ["clean-comedy"],
+      "note": "Model false positive 2026-08-25 — almost certainly confused with Henry Cho. Henry Sir is a dry-wit club comic with no clean billing." }
   ]
 }
