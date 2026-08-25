@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-25T18:00:52.349Z",
+  "last_updated": "2026-08-25T18:05:50.768Z",
   "total_events": 518,
   "events": [
     {
@@ -6874,12 +6874,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-08-25T17:58:40.445Z",
+      "last_updated": "2026-08-25T18:04:00.078Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "clean-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "df3fe9d201f3a4d2",
@@ -7197,12 +7195,10 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": null,
-      "last_updated": "2026-08-25T17:58:40.445Z",
+      "last_updated": "2026-08-25T18:04:00.078Z",
       "is_open_mic": false,
       "performer_requests": false,
-      "tags": [
-        "clean-comedy"
-      ]
+      "tags": []
     },
     {
       "id": "cddbb94893309ff2",
@@ -9554,11 +9550,12 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "CHINEDU is a stand up comedian, content creator, and host from Houston, TX. He is best known for his hilarious viral videos about Houston and Texas culture, along with his work in sports and stand up comedy. He has hosted several events across the country including rodeos, galas, and award shows. His comedic style is family friendly that is suitable for all ages and walks of life. Along with his stand up comedy tours, he also produces content for companies such as Pepsi, Whataburger, Blue Bell Ice Cream, MLS, NBA, NFL, and CBS Sports. CHINEDU is currently on his 7th comedy tour while preparing to produce and film his upcoming 5th stand up special.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.---",
-      "last_updated": "2026-08-24T01:15:50.742Z",
+      "last_updated": "2026-08-25T18:04:17.082Z",
       "is_open_mic": false,
       "performer_requests": false,
       "tags": [
-        "black-comedy"
+        "black-comedy",
+        "clean-comedy"
       ]
     },
     {
@@ -9750,11 +9747,12 @@
       "age_restriction": null,
       "status": "on_sale",
       "description": "CHINEDU is a stand up comedian, content creator, and host from Houston, TX. He is best known for his hilarious viral videos about Houston and Texas culture, along with his work in sports and stand up comedy. He has hosted several events across the country including rodeos, galas, and award shows. His comedic style is family friendly that is suitable for all ages and walks of life. Along with his stand up comedy tours, he also produces content for companies such as Pepsi, Whataburger, Blue Bell Ice Cream, MLS, NBA, NFL, and CBS Sports. CHINEDU is currently on his 7th comedy tour while preparing to produce and film his upcoming 5th stand up special.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.---",
-      "last_updated": "2026-08-24T01:15:54.104Z",
+      "last_updated": "2026-08-25T18:04:17.082Z",
       "is_open_mic": false,
       "performer_requests": false,
       "tags": [
-        "black-comedy"
+        "black-comedy",
+        "clean-comedy"
       ]
     },
     {
