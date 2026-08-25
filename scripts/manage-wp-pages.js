@@ -224,7 +224,12 @@ async function syncLandingPages() {
 
   const results = [];
   for (const p of pages) {
-    const content = `${p.intro_html}\n\n${p.shortcode}\n\n${landingCrossLinks(pages, p.slug)}`;
+    // outro_html (optional) lands BELOW the live listings — long-form guide
+    // copy and FAQs go there so they don't push the shows off the first
+    // screen. intro_html stays short and above the fold.
+    const content = [p.intro_html, p.shortcode, p.outro_html, landingCrossLinks(pages, p.slug)]
+      .filter(Boolean)
+      .join("\n\n");
     try {
       const { page, action } = await syncPage({
         slug: p.slug,
@@ -233,6 +238,7 @@ async function syncLandingPages() {
         metaTitle: p.meta_title,
         metaDescription: p.meta_description,
         h1: p.h1,
+        schemaGraph: p.schema_graph,
       });
       results.push({ slug: p.slug, link: page.link, action, ok: true });
     } catch (err) {
