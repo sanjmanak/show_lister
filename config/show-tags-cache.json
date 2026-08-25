@@ -56,139 +56,166 @@
     "matt hyams & friends": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "francisco ramos (en español)": {
       "tags": [
         "en-espanol"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "houston af": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "francisco ramos": {
-      "tags": [],
+      "tags": [
+        "en-espanol"
+      ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "jay pharoah": {
       "tags": [
         "black-comedy"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "correy bell": {
       "tags": [
         "black-comedy"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "sydney castillo": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "lemaire lee": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the medium spicy show": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "na'im lynn": {
       "tags": [
         "black-comedy"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "russell peters": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedy allstars": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "jokes over brunch": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "sejoe (an kreyòl)": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "kat bird & ramsey badawi": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "mario adrion": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "arnez j": {
       "tags": [
         "black-comedy"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "splou": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "abelardo (en español)": {
       "tags": [
         "en-espanol"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "ryan goodcase": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "daniela mora": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "ruby setnik": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "andrew schulz": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "will pepper": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "therapy gecko": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "unpopular opinions night - ages 21+": {
       "tags": [],
@@ -198,335 +225,388 @@
     "jenny tian: ripe": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "justin whitehead": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "rocky dale davis": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "martin amini": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "starbomb featuring dj commander meouch - probably the only tour ever": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "dan and phil": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "chinedu": {
       "tags": [
         "black-comedy"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "poly diaz (en español)": {
       "tags": [
         "en-espanol"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "kevin sullivan": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "rick glassman": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "just nesh": {
-      "tags": [
-        "black-comedy"
-      ],
+      "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "jo koy": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "vidura bandara rajapaksa: the paradise gothic tour": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "rodney carrington": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "i'm ready foundation presents: tommy davidson live & uncut": {
       "tags": [
         "black-comedy"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "damitas histeria": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "insecure: the 10th anniversary tour": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "holmes": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "richie o’farrill - en español": {
       "tags": [
         "en-espanol"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "gauri b: years in the breaking": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "winston hodges": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "jeffrey keller": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "craig conant": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "john mulaney": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "don mcmillan 2.0: now powered by ai": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "desi comedy fest - texas edition": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "funjelah live podcast taping w/ anjelah johnson-reyes & special guest": {
-      "tags": [
-        "black-comedy"
-      ],
+      "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "iván fematt la mole (en español)": {
       "tags": [
         "en-espanol"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "janeane garofalo": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "marlon wayans": {
       "tags": [
         "black-comedy"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "tk kirkland": {
       "tags": [
         "black-comedy"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "kill tony": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "foos gone wild: the foos gone wild tour 2026": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "sarper güven": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "joanne mcnally: pinotphile": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "standoperos: la tómbola": {
       "tags": [
         "en-espanol"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "josh gondelman": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "eva evans": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "pauly shore": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "seth meyers: live": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "yohay sponder: genesis": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "daniel sloss: bitter  (brand new tour!)": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "dovi neuburger": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "group therapy: session 2": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "marito lopez": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "d'lai": {
-      "tags": [
-        "black-comedy"
-      ],
+      "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "giulio gallarotti: live in houston": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "steve byrne": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "pandji": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "oct (on company time)": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "alonzo bodden": {
       "tags": [
         "black-comedy"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "desi banks": {
-      "tags": [
-        "black-comedy"
-      ],
+      "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "nikki glaser": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "ramiro gonzalez (en español)": {
       "tags": [
         "en-espanol"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the riot comedy club presents monday night standup comedy open mic": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the riot comedy club presents tuesday night standup comedy open mic": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "beardo & weirdo with craig gass  & chris kael live podcast taping! 5pm show": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "beardo & weirdo with craig gass  & chris kael live podcast taping! 7pm show": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "y'all asked !?! with billy wayne davis": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "sophie hunter": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "wax": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "raq baby": {
       "tags": [],
@@ -536,12 +616,14 @@
     "unotheactivist": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "sorry ghost": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the last laugh with shane tucker & trip truman": {
       "tags": [],
@@ -551,109 +633,130 @@
     "the (secret) secret show": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedy dojo: sunday open mic comedy": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "monday night comedy!": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the passing lane with andrew youngblood, will loden & blake jones": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "night court: monday open mic comedy": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "for the culture: a tuesday comedy show for the culture": {
       "tags": [
         "black-comedy"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "c u next tuesday: weekly comedy hosted by corlis delauren and tess vergult": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "pass the mic: tuesday open mic comedy": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "$2 bill two dollar comedy show every wednesday!": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "master debaters": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "witchy wednesdays: wednesday open mic comedy": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "back of the bus: thursday open mic comedy": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the best of the secret group comedy showcase 8pm": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the late night dirty show: x rated comedy": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the best of the secret group comedy showcase 7pm": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the best of the secret group rated r comedy showcase 11pm": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "speedball: saturday open mic comedy": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the best of the secret group comedy showcase 10pm": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the best of the secret group comedy showcase 9pm": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "abby govindan": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "kinky wednesdays": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the best of tsg headliner series - bob biggerstaff": {
       "tags": [],
@@ -663,22 +766,26 @@
     "the best of tsg headliner series - all freeman": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "jay buchanan": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "social comedy nite": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "mason james live at the den comedy club": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedy & drinks in a speakeasy: thursdays": {
       "tags": [],
@@ -693,29 +800,34 @@
     "comedy & drinks in a speakeasy: saturday": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "michael turner live at the den comedy club": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "valerie tosi live at the den comedy club": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedy & drinks in a speakeasy: friday 9pm": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "lisandra vazquez live at the den comedy club": {
       "tags": [
         "en-espanol"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "intro to stand up comedy course": {
       "tags": [],
@@ -725,22 +837,26 @@
     "comedy & drinks in a speakeasy: thursday": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedy & drinks in a speakeasy: friday": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedy & cocktails @ avant garden": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "east end comedy showcase thursdays at wonky power!": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "sinners booth: a confessional comedy show": {
       "tags": [],
@@ -750,7 +866,8 @@
     "punchlines & pie summer edition at d & t drive inn!": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "corporate therapy houston: stand-up comedy about your stand up": {
       "tags": [],
@@ -760,29 +877,32 @@
     "live at the barbershop houston: stand up comedy in a real barbershop · byob": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "saul trujillo live in houston": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "bob biggerstaff live in houston": {
-      "tags": [
-        "black-comedy"
-      ],
+      "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "gus, ryan, sean: live!": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "pat o’neill live in houston": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "collin sledge and acquaintances": {
       "tags": [],
@@ -792,7 +912,8 @@
     "jessie “jetski” johnson live in houston": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "harrison loftin and friends: a kinda clean comedy show": {
       "tags": [],
@@ -802,54 +923,64 @@
     "friday night comedy at the pink flamingo": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "saturday night comedy at the pink flamingo": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the riot presents \"houston's funniest\" sunday comedy showcase": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the riot comedy club presents sunday night standup comedy showcase": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the riot presents monday night standup comedy showcase!": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the riot presents tuesday night standup comedy showcase!": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the riot presents wednesday night standup comedy showcase \"hump day\"": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the riot presents  the one minute comedy showdown with jeff joe": {
       "tags": [
         "black-comedy"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the riot presents thursday night standup comedy showcase!": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the riot presents thursday night late standup comedy showcase!": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "joey avery (don't kill comedy) headlines the riot comedy club": {
       "tags": [],
@@ -859,116 +990,140 @@
     "the riot presents friday night standup comedy showcase": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the riot comedy club presents friday night standup comedy late showcase!": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the riot comedy club presents saturday night standup comedy late show!": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the new riot on washington ave grand opening comedy show": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the riot presents \"swipe right\" comedy dating game for singles & couples": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedian courtney gilmour (don’t tell comedy) headlines the riot houston": {
-      "tags": [
-        "black-comedy"
-      ],
+      "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the riot presents saturday night standup comedy showcase": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "audrey stewart (don't tell comedy, netflix is a joke fest) headlines the riot comedy club": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "colin armstrong headlines the riot comedy club": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "graham kay (tonight show, colbert, nateland)": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedian jon rudnitsky (snl, netflix, hbo) headlines the riot comedy club": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "hassan phills (don’t tell comedy) headlines the riot comedy club in houston": {
       "tags": [
         "black-comedy"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "bo johnson (don't tell comedy) headlines the riot comedy club": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "peyton ruddy (kill tony)headlines the riot comedy club": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "henry sir (don't tell comedy) headlines the riot comedy club": {
-      "tags": [],
+      "tags": [
+        "clean-comedy"
+      ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "heather shaw (the today show) headlines the riot comedy club": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the riot comedy club presents headliner will abeles": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "kerryn feehan (netflix, comedy central) headlines the riot comedy club": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "liz miele (comedy central) headlines the riot comedy club": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedian shane torres (the late show, comedy central) headlines the riot houston": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "keegan tindall headlines the riot comedy club": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "jay badlani (don't tell comedy) headlines the riot comedy club": {
-      "tags": [],
+      "tags": [
+        "black-comedy"
+      ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the riot presents saturday night early standup comedy showcase": {
       "tags": [],
@@ -978,47 +1133,56 @@
     "don't tell comedy: kingwood (8:00 pm show)": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "don't tell comedy: webster (9:00 pm show)": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "don't tell comedy: the woodlands (7:00 pm show)": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "don't tell comedy: galveston (8:00 pm show)": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "don't tell comedy: katy (7:00 pm show)": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "don't tell comedy: katy (9:00 pm show)": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "don't tell comedy: jersey village (8:00 pm show)": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "don't tell comedy: mont belvieu (7:00 pm show)": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "don't tell comedy: rice village (8:00 pm show)": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "don't tell comedy: pasadena (8:00 pm show)": {
       "tags": [],
@@ -1030,31 +1194,34 @@
         "en-espanol"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-17"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "something different presents: unpopular opinion houston - ages 21+": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-18"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "ari matti": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-19"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "kam franklin - house of the neon sun  free show!": {
-      "tags": [
-        "black-comedy"
-      ],
+      "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-19"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "kam franklin - land of the neon sun  album release": {
       "tags": [
         "black-comedy"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-19"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the riot presents  wednesday night houston's funniest standup comedy showcase": {
       "tags": [],
@@ -1064,31 +1231,34 @@
     "ha ha halloween showcase": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-19"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "dave lawson & friends": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-20"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the last laugh with james vogt & trip truman": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-20"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedian ashton womack (comedy central)  headlines the riot houston": {
       "tags": [
         "black-comedy"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-20"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "rex navarrete": {
-      "tags": [
-        "en-espanol"
-      ],
+      "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-21"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "alfred robles: vatos with gatos tour": {
       "tags": [
@@ -1100,169 +1270,192 @@
     "david koechner": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-22"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "yaqiao yang live in houston": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-22"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "michael rowland (hbomax, late night with jimmy fallon, comedy central) headlines the riot comedy club": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-22"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "don't tell comedy: westbury (8:00 pm show)": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-22"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "adrian uribe: 50 y pico tour": {
-      "tags": [
-        "en-espanol"
-      ],
+      "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-23"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "kev adams": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-23"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "clint coley": {
-      "tags": [
-        "black-comedy"
-      ],
+      "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-23"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "ellen skrmetti": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-23"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "christopher titus: doomed to repeat": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the best of tsg headliner series - nathaniel amador": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the best of tsg headliner series - canice nnanna": {
       "tags": [
         "black-comedy"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the best of tsg headliner series - ku egenti": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the best of tsg headliner series - chelby morgan": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the best of tsg headliner series - arielle isaac norman": {
-      "tags": [
-        "black-comedy"
-      ],
+      "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedian chris munch live in conroe": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedian uncle lazer live in conroe": {
-      "tags": [
-        "black-comedy"
-      ],
+      "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "the riot comedy club presents thursday night standup comedy show live in conroe!": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "average joey headlines the riot comedy club": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "riot comedy club presents saturday night standup comedy in conroe!": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedian graham kay (the tonight show, colbert, nateland) live in conroe": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedian aaron weber (nateland podcast, the tonight show) live in conroe": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedian craig shoemaker (showtime & comedy central) live in conroe": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedian jeff dye (gutfeld!, the tonight show) live in conroe": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedian nathan macintosh live in conroe": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedian nathan macintosh (conan, the tonight show) live in conroe": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedian michael palascak (tonight show, comedy central) live in conroe": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedian chinedu ogu headlines the riot comedy club": {
       "tags": [
         "black-comedy"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "riot comedy club presents friday night standup comedy in conroe!": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "riot comedy club presents saturday night early standup comedy in conroe!": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedian karen morgan (dry bar comedy) live in conroe": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "comedian jon \"polar bear\" gonzalez live in conroe": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "corey holcomb": {
       "tags": [
@@ -1274,41 +1467,49 @@
     "like roses": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "riot comedy club presents \"you look like\" roast contest": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-25"
     },
     "zahid dewji": {
       "tags": [],
       "model": "gpt-4o-mini",
+      "taxonomy": 2,
       "classified_at": "2026-08-25"
     },
     "jokes & justice": {
       "tags": [],
       "model": "gpt-4o-mini",
+      "taxonomy": 2,
       "classified_at": "2026-08-25"
     },
     "roast battle houston": {
       "tags": [],
       "model": "gpt-4o-mini",
+      "taxonomy": 2,
       "classified_at": "2026-08-25"
     },
     "comedian chad goes deep headlines the riot comedy club": {
       "tags": [],
       "model": "gpt-4o-mini",
+      "taxonomy": 2,
       "classified_at": "2026-08-25"
     },
     "comedian jesse peyton (fox, iheartradio) headlines the riot comedy club": {
       "tags": [],
       "model": "gpt-4o-mini",
+      "taxonomy": 2,
       "classified_at": "2026-08-25"
     },
     "kirblagoop & wifigawd": {
       "tags": [],
       "model": "gpt-4o-mini",
+      "taxonomy": 2,
       "classified_at": "2026-08-25"
     }
   }
