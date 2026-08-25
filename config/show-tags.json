@@ -47,7 +47,11 @@
     { "contains": "squeaky clean", "tags": ["clean-comedy"] },
     { "contains": "christian comedy", "tags": ["clean-comedy"] },
     { "contains": "kid friendly", "tags": ["clean-comedy"] },
-    { "contains": "kid-friendly", "tags": ["clean-comedy"] }
+    { "contains": "kid-friendly", "tags": ["clean-comedy"] },
+    { "contains": "dry bar", "tags": ["clean-comedy"],
+      "note": "Dry Bar Comedy in a billing is an explicit clean signal — the brand is clean comedy." },
+    { "contains": "nateland", "tags": ["clean-comedy"],
+      "note": "Nateland (Bargatze's podcast/label) in a billing signals the clean-comedy orbit." }
   ],
   "description_rules": [
     { "contains": "clean comedy", "tags": ["clean-comedy"],
@@ -76,7 +80,17 @@
     { "name": "Henry Cho", "tags": ["clean-comedy"] },
     { "name": "John Crist", "tags": ["clean-comedy"] },
     { "name": "Dusty Slay", "tags": ["clean-comedy"] },
-    { "name": "Preacher Lawson", "tags": ["clean-comedy"] }
+    { "name": "Preacher Lawson", "tags": ["clean-comedy"] },
+    { "name": "Aaron Weber", "tags": ["clean-comedy"],
+      "note": "Verified 2026-08-25: self-described clean, Nateland/Bargatze opener." },
+    { "name": "Don McMillan", "tags": ["clean-comedy"],
+      "note": "Verified 2026-08-25: clean corporate comedian (Clean Comedians roster)." },
+    { "name": "Karen Morgan", "tags": ["clean-comedy"],
+      "note": "Dry Bar Comedy family comic." },
+    { "name": "Michael Palascak", "tags": ["clean-comedy"],
+      "note": "Verified 2026-08-25: billed everywhere as a clean comedian, no swearing." },
+    { "name": "Ellen Skrmetti", "tags": ["clean-comedy"],
+      "note": "Verified 2026-08-25: clean Christian/Southern comic, Hey Jesus It's Me author." }
   ],
   "exclusions": [
     { "contains": "bob biggerstaff", "tags": ["black-comedy"] },
