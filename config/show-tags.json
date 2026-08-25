@@ -24,7 +24,10 @@
     "Tags in use:",
     "  black-comedy — /black-comedy-shows-houston/",
     "  en-espanol   — /spanish-comedy-houston/",
-    "  kreyol       — Haitian Creole shows"
+    "  kreyol       — Haitian Creole shows",
+    "  clean-comedy — /clean-comedy-shows-houston/ (STRICT: explicit billing",
+    "                 or a headliner widely known for working clean — a wrong",
+    "                 tag on this page is worse than a missing show)"
   ],
   "title_rules": [
     { "contains": "for the culture", "tags": ["black-comedy"],
@@ -36,7 +39,22 @@
     { "contains": "standoperos", "tags": ["en-espanol"],
       "note": "Spanish-language stand-up collective." },
     { "contains": "an kreyòl", "tags": ["kreyol"] },
-    { "contains": "an kreyol", "tags": ["kreyol"] }
+    { "contains": "an kreyol", "tags": ["kreyol"] },
+    { "contains": "clean comedy", "tags": ["clean-comedy"],
+      "note": "Explicit billing — also catches 'a kinda clean comedy show'." },
+    { "contains": "family friendly", "tags": ["clean-comedy"] },
+    { "contains": "family-friendly", "tags": ["clean-comedy"] },
+    { "contains": "squeaky clean", "tags": ["clean-comedy"] },
+    { "contains": "christian comedy", "tags": ["clean-comedy"] },
+    { "contains": "kid friendly", "tags": ["clean-comedy"] },
+    { "contains": "kid-friendly", "tags": ["clean-comedy"] }
+  ],
+  "description_rules": [
+    { "contains": "clean comedy", "tags": ["clean-comedy"],
+      "note": "Description matching is HIGH-PRECISION phrases only. Bare 'all ages' is deliberately absent — an all-ages venue policy does not mean clean material." },
+    { "contains": "family friendly comedy", "tags": ["clean-comedy"] },
+    { "contains": "family-friendly comedy", "tags": ["clean-comedy"] },
+    { "contains": "squeaky clean", "tags": ["clean-comedy"] }
   ],
   "comedian_rules": [
     { "name": "TK Kirkland", "tags": ["black-comedy"] },
@@ -49,7 +67,15 @@
     { "name": "Arnez J", "tags": ["black-comedy"] },
     { "name": "Jay Pharoah", "tags": ["black-comedy"] },
     { "name": "Marlon Wayans", "tags": ["black-comedy"] },
-    { "name": "Tommy Davidson", "tags": ["black-comedy"] }
+    { "name": "Tommy Davidson", "tags": ["black-comedy"] },
+    { "name": "Nate Bargatze", "tags": ["clean-comedy"] },
+    { "name": "Jim Gaffigan", "tags": ["clean-comedy"] },
+    { "name": "Brian Regan", "tags": ["clean-comedy"] },
+    { "name": "Leanne Morgan", "tags": ["clean-comedy"] },
+    { "name": "Henry Cho", "tags": ["clean-comedy"] },
+    { "name": "John Crist", "tags": ["clean-comedy"] },
+    { "name": "Dusty Slay", "tags": ["clean-comedy"] },
+    { "name": "Preacher Lawson", "tags": ["clean-comedy"] }
   ],
   "exclusions": [
     { "contains": "bob biggerstaff", "tags": ["black-comedy"] },

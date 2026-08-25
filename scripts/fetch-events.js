@@ -2173,7 +2173,7 @@ function isOpenMicEvent(ev, openMicConfig) {
  * owner's weekly false-positive review edits only that list).
  */
 function loadShowTagsConfig() {
-  const empty = { titleRules: [], comedianRules: [], exclusions: [] };
+  const empty = { titleRules: [], comedianRules: [], descriptionRules: [], exclusions: [] };
   try {
     const raw = JSON.parse(fs.readFileSync(SHOW_TAGS_JSON_PATH, "utf8"));
     const norm = (r, key) => ({
@@ -2187,6 +2187,7 @@ function loadShowTagsConfig() {
     return {
       titleRules: load(raw.title_rules, "contains"),
       comedianRules: load(raw.comedian_rules, "name"),
+      descriptionRules: load(raw.description_rules, "contains"),
       exclusions: load(raw.exclusions, "contains"),
     };
   } catch (e) {
@@ -2208,6 +2209,13 @@ function tagsForEvent(ev, cfg, modelTags) {
   }
   for (const r of cfg.comedianRules) {
     if (title.includes(r.match)) r.tags.forEach((t) => tags.add(t));
+  }
+  // Description rules run against the event description (ticketing-page
+  // boilerplate lives here, so config keeps these to explicit billing
+  // phrases only — see the note in show-tags.json).
+  const desc = String(ev.description || "").toLowerCase();
+  for (const r of cfg.descriptionRules) {
+    if (desc.includes(r.match)) r.tags.forEach((t) => tags.add(t));
   }
   const fromModel = modelTags && modelTags.get(showTagCacheKey(ev.name));
   if (Array.isArray(fromModel)) fromModel.forEach((t) => tags.add(t));

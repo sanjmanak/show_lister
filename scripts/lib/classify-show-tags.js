@@ -21,13 +21,24 @@
  * Taxonomy is intentionally tiny — only tags that have a landing page:
  *   black-comedy — Black comedy shows/showcases and Black headliners
  *   en-espanol   — shows performed in Spanish
+ *   clean-comedy — explicitly billed clean/family-friendly shows or
+ *                  headliners widely known for working clean. STRICT,
+ *                  unlike the others: this tag feeds a page that church
+ *                  groups and families act on, so a false positive is
+ *                  worse than a miss.
+ *
+ * TAXONOMY_VERSION: bump it whenever a tag is added to TAGS. Cached
+ * entries stamped with an older version are reclassified on the next
+ * import (one-time API cost), because their tags[] was decided before
+ * the new tag existed.
  */
 "use strict";
 
 const https = require("https");
 const fs = require("fs");
 
-const TAGS = ["black-comedy", "en-espanol"];
+const TAGS = ["black-comedy", "en-espanol", "clean-comedy"];
+const TAXONOMY_VERSION = 2;
 const BATCH_SIZE = 60;
 const TIMEOUT_MS = 90000;
 
@@ -40,6 +51,14 @@ const SYSTEM_PROMPT = [
   "  reasonably confident, tag it; light false positives are acceptable and",
   "  a human reviews the page weekly.",
   '  "en-espanol": the show is performed in Spanish.',
+  '  "clean-comedy": the show is explicitly billed as clean, family friendly,',
+  "  or wholesome, OR the headliner is a comedian widely known for working",
+  "  clean (for example Nate Bargatze, Jim Gaffigan, Brian Regan, Henry Cho,",
+  "  Leanne Morgan). Be STRICT with this tag, the opposite of black-comedy:",
+  "  tag only on explicit billing or a well-known clean act. Never infer",
+  "  cleanness from the absence of adult-content signals, and never tag a",
+  "  show just because the venue allows all ages. Families and church groups",
+  "  act on this tag, so a missed show is fine and a wrong one is not.",
   "",
   "Use your knowledge of working comedians. If a name is unknown to you and",
   "the title/description give no signal, assign no tags.",
@@ -122,7 +141,9 @@ async function classifyShowTags(events, cachePath) {
   const seen = new Set();
   for (const ev of events) {
     const key = cacheKey(ev.name);
-    if (!key || seen.has(key) || cache.shows[key]) continue;
+    if (!key || seen.has(key)) continue;
+    const hit = cache.shows[key];
+    if (hit && (hit.taxonomy || 1) >= TAXONOMY_VERSION) continue;
     seen.add(key);
     unknown.push({
       key,
@@ -153,6 +174,7 @@ async function classifyShowTags(events, cachePath) {
           cache.shows[batch[idx].key] = {
             tags,
             model,
+            taxonomy: TAXONOMY_VERSION,
             classified_at: new Date().toISOString().slice(0, 10),
           };
         }
