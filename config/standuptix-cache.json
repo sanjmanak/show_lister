@@ -306,7 +306,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-courtney-gilmour-don-t-tell-comedy-headlines-the-riot-houston": {
-      "lastmod": "2026-08-24T09:54:00-05:00",
+      "lastmod": "2026-08-25T01:09:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -355,7 +355,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-17": {
-      "lastmod": "2026-08-24T09:54:00-05:00",
+      "lastmod": "2026-08-25T01:09:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -416,7 +416,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-15": {
-      "lastmod": "2026-08-24T09:54:00-05:00",
+      "lastmod": "2026-08-25T01:09:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -459,10 +459,6 @@
           },
           {
             "@type": "Person",
-            "name": "Larry Goodwell"
-          },
-          {
-            "@type": "Person",
             "name": "Blythe Payne"
           },
           {
@@ -477,7 +473,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-courtney-gilmour-don-t-tell-comedy-headlines-the-riot-houston-the-riot-houston-1": {
-      "lastmod": "2026-08-24T09:57:00-05:00",
+      "lastmod": "2026-08-25T01:26:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -526,7 +522,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-16": {
-      "lastmod": "2026-08-24T09:57:00-05:00",
+      "lastmod": "2026-08-25T01:26:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -566,12 +562,32 @@
           {
             "@type": "Person",
             "name": "Andy Huggins"
+          },
+          {
+            "@type": "Person",
+            "name": "TBD"
+          },
+          {
+            "@type": "Person",
+            "name": "Brian Gendron"
+          },
+          {
+            "@type": "Person",
+            "name": "Matt B.C."
+          },
+          {
+            "@type": "Person",
+            "name": "Luis Dejesus"
+          },
+          {
+            "@type": "Person",
+            "name": "Tre Tutson"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-17": {
-      "lastmod": "2026-08-24T09:57:00-05:00",
+      "lastmod": "2026-08-25T01:26:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -607,7 +623,36 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Christian Alexander"
+          },
+          {
+            "@type": "Person",
+            "name": "Julia Cook"
+          },
+          {
+            "@type": "Person",
+            "name": "Onkar Singh"
+          },
+          {
+            "@type": "Person",
+            "name": "Jeff Joe"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Loden"
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
+          },
+          {
+            "@type": "Person",
+            "name": "Prince Elias"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-34": {
