@@ -1462,7 +1462,8 @@
         "black-comedy"
       ],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-24"
+      "taxonomy": 2,
+      "classified_at": "2026-08-26"
     },
     "like roses": {
       "tags": [],

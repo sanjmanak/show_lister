@@ -1,72 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-1-1": {
-      "lastmod": "2026-08-25T01:03:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Tuesday Night Standup Comedy Showcase!",
-        "startDate": "2026-08-25T19:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-1-1",
-          "priceCurrency": "USD",
-          "price": "8.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-09T10:26:06-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-1-1",
-        "image": "/img/shows/HTX-Saturday-Night-Showcases-1-2-e1ae10f9-large-thumb.png",
-        "description": "Keep the week rolling with a night of live standup comedy at The New Riot on Washington!Join us Tuesday night for a killer lineup of comedians bringing their best to the stage. Whether you’re looking to break up the workweek, grab drinks with friends, or just need a good laugh, Tuesday night at The Riot is the place to be.Tickets are limited, so grab yours in advance and make some midweek plans worth looking forward to. Great comedy, great drinks, and a room built for laughs — we’ll see you Tuesday night at The New Riot on Washington.All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Danny Guerrero"
-          },
-          {
-            "@type": "Person",
-            "name": "Jamal Rahal"
-          },
-          {
-            "@type": "Person",
-            "name": "Hannah Abney"
-          },
-          {
-            "@type": "Person",
-            "name": "Luis Dejesus"
-          },
-          {
-            "@type": "Person",
-            "name": "Keisha Hunt"
-          },
-          {
-            "@type": "Person",
-            "name": "Onkar Singh"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-08-25210000": {
-      "lastmod": "2026-08-24T03:13:00-05:00",
+      "lastmod": "2026-08-25T03:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -306,7 +241,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-courtney-gilmour-don-t-tell-comedy-headlines-the-riot-houston": {
-      "lastmod": "2026-08-25T01:09:00-05:00",
+      "lastmod": "2026-08-25T03:50:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -355,7 +290,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-17": {
-      "lastmod": "2026-08-25T01:09:00-05:00",
+      "lastmod": "2026-08-25T03:50:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -416,7 +351,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-15": {
-      "lastmod": "2026-08-25T01:09:00-05:00",
+      "lastmod": "2026-08-25T03:50:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -468,12 +403,16 @@
           {
             "@type": "Person",
             "name": "Christian Alexander"
+          },
+          {
+            "@type": "Person",
+            "name": "Prince Elias"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/comedian-courtney-gilmour-don-t-tell-comedy-headlines-the-riot-houston-the-riot-houston-1": {
-      "lastmod": "2026-08-25T01:26:00-05:00",
+      "lastmod": "2026-08-25T03:51:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -522,7 +461,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-16": {
-      "lastmod": "2026-08-25T01:26:00-05:00",
+      "lastmod": "2026-08-25T03:51:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -587,7 +526,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-17": {
-      "lastmod": "2026-08-25T01:26:00-05:00",
+      "lastmod": "2026-08-25T03:51:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -650,13 +589,13 @@
           },
           {
             "@type": "Person",
-            "name": "Prince Elias"
+            "name": "Brandon Green"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-34": {
-      "lastmod": "2026-08-10T04:06:00-05:00",
+      "lastmod": "2026-08-25T02:13:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -692,11 +631,36 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Luis Dejesus"
+          },
+          {
+            "@type": "Person",
+            "name": "Ricky Murphy"
+          },
+          {
+            "@type": "Person",
+            "name": "Nick Palermo"
+          },
+          {
+            "@type": "Person",
+            "name": "Andy Huggins"
+          },
+          {
+            "@type": "Person",
+            "name": "Christian Alexander"
+          },
+          {
+            "@type": "Person",
+            "name": "Mason James"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-17": {
-      "lastmod": "2026-08-10T04:07:00-05:00",
+      "lastmod": "2026-08-25T02:13:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -732,7 +696,32 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "A.D. Hodge"
+          },
+          {
+            "@type": "Person",
+            "name": "Matt B.C."
+          },
+          {
+            "@type": "Person",
+            "name": "Ruben Medina"
+          },
+          {
+            "@type": "Person",
+            "name": "Brian Gendron"
+          },
+          {
+            "@type": "Person",
+            "name": "Lotto Marie"
+          },
+          {
+            "@type": "Person",
+            "name": "Tre Tutson"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-2": {
