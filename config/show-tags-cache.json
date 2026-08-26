@@ -1512,6 +1512,26 @@
       "model": "gpt-4o-mini",
       "taxonomy": 2,
       "classified_at": "2026-08-25"
+    },
+    "laughter heals": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-08-26"
+    },
+    "manuel ángel redondo (en español)": {
+      "tags": [
+        "en-espanol"
+      ],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-08-26"
+    },
+    "andy huggins & friends": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-08-26"
     }
   }
 }

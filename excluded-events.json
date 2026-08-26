@@ -1,19 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-08-26T01:14:57.306Z",
-  "total_excluded": 20,
+  "last_updated": "2026-08-26T14:39:43.818Z",
+  "total_excluded": 19,
   "events": [
-    {
-      "name": "Royale Lynn",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-08-25",
-      "time": "6:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/royale-lynn-tickets-1989794938224",
-      "reason": "music artist blocklisted: \"royale lynn\""
-    },
     {
       "name": "Karaoke every THURSDAY!",
       "venue": "The Secret Group",
