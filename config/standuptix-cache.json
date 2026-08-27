@@ -1,111 +1,5 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-17": {
-      "lastmod": "2026-08-20T11:58:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Wednesday Night Standup Comedy Showcase \"Hump Day\"",
-        "startDate": "2026-08-26T19:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-17",
-          "priceCurrency": "USD",
-          "price": "8.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-08T12:06:58-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-17",
-        "image": "/img/shows/Showcase-Templates-6-239d0d36-large-thumb.png",
-        "description": "Join us for a hilarious night of laughter at The Riot&#39;s Wednesday Night Standup Comedy Showcase, lovingly dubbed &quot;Hump Day.&quot; Get ready to unwind and have a great time as our talented lineup of comedians takes the stage to tickle your funny bone.Featuring Mason James, the winner of 2022 &amp; 2023 The Riot Funniest Person In Houston Contest. https://www.instagram.com/mason_james_silly/Don&#39;t miss out on this unforgettable night of comedy. Mark your calendars, gather your crew, and make your way to The Riot for a guaranteed fun-filled Wednesday night. See you there!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "A.D. Hodge"
-          },
-          {
-            "@type": "Person",
-            "name": "Kate Vance"
-          },
-          {
-            "@type": "Person",
-            "name": "Keisha Hunt"
-          },
-          {
-            "@type": "Person",
-            "name": "Ebad Jann"
-          },
-          {
-            "@type": "Person",
-            "name": "Andy Huggins"
-          }
-        ]
-      }
-    },
-    "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-15": {
-      "lastmod": "2026-08-20T11:58:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents  The One Minute Comedy Showdown with Jeff Joe",
-        "startDate": "2026-08-26T21:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-15",
-          "priceCurrency": "USD",
-          "price": "10.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-09T10:34:15-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-15",
-        "image": "/img/shows/https-cdn-evbuc-com-images-921782813-428099579998-1-original-282c1848-large-thumb.jpg",
-        "description": "Get ready for a night of fast-paced, side-splitting fun at the One Minute Comedy Showdown! Hosted by the hilarious Jeff Joe, this unique stand-up comedy competition puts the spotlight on 15 of Houston&rsquo;s funniest comedians (plus special surprise guests).Here&rsquo;s how it works:&bull; Each comedian performs a 1-minute set to win over the crowd.&bull; YOU get to decide who moves on to the next round.&bull; The competition heats up as comedians perform longer sets until only one is left standing as the One Minute Comedy Showdown Champion!It&rsquo;s unpredictable, high-energy, and packed with laughs from start to finish. Don&rsquo;t miss your chance to experience the most exciting comedy competition in Houston!Reserve your tickets now and be part of the action!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Jeff Joe"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-new-riot-on-washington-ave-grand-opening-comedy-show": {
       "lastmod": "2026-08-10T03:51:00-05:00",
       "node": {
@@ -196,7 +90,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-courtney-gilmour-don-t-tell-comedy-headlines-the-riot-houston": {
-      "lastmod": "2026-08-25T03:50:00-05:00",
+      "lastmod": "2026-08-26T11:13:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -239,13 +133,13 @@
           },
           {
             "@type": "Person",
-            "name": "Lotto Marie"
+            "name": "Brian Gendron"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-17": {
-      "lastmod": "2026-08-25T03:50:00-05:00",
+      "lastmod": "2026-08-26T11:13:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -306,7 +200,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-15": {
-      "lastmod": "2026-08-25T03:50:00-05:00",
+      "lastmod": "2026-08-26T11:13:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -937,46 +831,6 @@
             "name": "Jeff Joe"
           }
         ]
-      }
-    },
-    "https://www.theriothtx.com/events/audrey-stewart-don-t-tell-comedy-netflix-is-a-joke-fest-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-08-03T05:31:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Audrey Stewart (Don't Tell Comedy, Netflix is a Joke fest) Headlines The Riot Comedy Club",
-        "startDate": "2026-09-03T19:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/audrey-stewart-don-t-tell-comedy-netflix-is-a-joke-fest-headlines-the-riot-comedy-club",
-          "priceCurrency": "USD",
-          "price": "20.00",
-          "availability": "InStock",
-          "validFrom": "2026-07-02T14:22:13-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/audrey-stewart-don-t-tell-comedy-netflix-is-a-joke-fest-headlines-the-riot-comedy-club",
-        "image": "/img/events/IMG-0433-7e290786-large-thumb.png",
-        "description": "Audrey Stewart is a Los Angeles-based actress and stand-up comedian. She is a regular at the Hollywood Improv and is currently in Development at the World Famous Comedy Store. She also performs at clubs around the world. In 2023, she was named a New Face at the Just for Laughs Festival in Montreal, Canada, and performed at the 2024 Netflix Is a Joke Festival in Los Angeles. Additionally, she sold out her headlining show at the New York Comedy Festival this past year. Stewart has appeared on NBC, The Drew Barrymore Show, Netflix Is a Joke Radio, National Lampoon, America&#39;s Funniest Home Videos, and Facebook Watch, and has a set with Don&rsquo;t Tell Comedy. She is also a cast member of the new YouTube prank series from the creator of Punk&#39;d, called Prank U.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": []
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-thursday-night-late-standup-comedy-showcase-the-riot-houston-7": {
@@ -15571,6 +15425,46 @@
           "@type": "Organization",
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-27": {
+      "lastmod": "2026-08-26T11:37:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "The Riot Presents Thursday Night Standup Comedy Showcase!",
+        "startDate": "2026-09-03T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-27",
+          "priceCurrency": "USD",
+          "price": "10.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-08T12:10:49-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-27",
+        "image": "/img/shows/CTX-Thursday-Showcase-2-48800df6-large-thumb.png",
+        "description": "Join us for a hilarious night of standup comedy - Get ready for a night of non-stop laughter!Located at the Riot on Washington Ave this event promises a cozy and intimate atmosphere that'll make you feel right at home. With its friendly staff and great drinks, The Riot is the perfect venue to enjoy a night of comedy. So come on down and be part of the fun!Tickets are limited, so make sure to secure yours in advance. Don't miss out on this incredible opportunity to see some of the best talent in the city live on stage. Get ready for a night filled with laughter, good vibes, and unforgettable memories. We can't wait to see you there!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
         },
         "performer": []
       }

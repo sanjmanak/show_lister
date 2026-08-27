@@ -1532,6 +1532,36 @@
       "model": "gpt-4o-mini",
       "taxonomy": 2,
       "classified_at": "2026-08-26"
+    },
+    "comedy & drinks in a speakeasy: thursday 7:30pm": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-08-27"
+    },
+    "comedy & drinks in a speakeasy: saturday 8pm": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-08-27"
+    },
+    "comedy & drinks in a speakeasy: friday 8pm": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-08-27"
+    },
+    "comedy & drinks in a speakeasy: thursday 9:30pm": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-08-27"
+    },
+    "comedy & drinks in a speakeasy: saturday 9pm": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-08-27"
     }
   }
 }
