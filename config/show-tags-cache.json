@@ -1562,6 +1562,26 @@
       "model": "gpt-4o-mini",
       "taxonomy": 2,
       "classified_at": "2026-08-27"
+    },
+    "father": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-08-27"
+    },
+    "martin phillips live in houston": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-08-27"
+    },
+    "comedian bryan torresdey & joshua jay nieto co-headline the riot houston": {
+      "tags": [
+        "en-espanol"
+      ],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-08-27"
     }
   }
 }

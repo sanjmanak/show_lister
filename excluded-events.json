@@ -1,7 +1,7 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-08-27T07:43:33.792Z",
-  "total_excluded": 19,
+  "last_updated": "2026-08-27T23:31:44.625Z",
+  "total_excluded": 22,
   "events": [
     {
       "name": "Karaoke every THURSDAY!",
@@ -200,6 +200,39 @@
       "genre": "Comedy",
       "ticket_url": "https://www.ticketmaster.com/gabriel-iglesias-the-1976-tour-beaumont-texas-10-03-2026/event/3A00642FDFB855D4",
       "reason": "venue blocklisted: Doggett Ford Park"
+    },
+    {
+      "name": "Classic Movie Night At The Jefferson The Addams Family",
+      "venue": "Jefferson Theatre",
+      "venue_city": "Beaumont",
+      "date": "2026-10-25",
+      "time": "7:00 PM",
+      "source": "ticketmaster",
+      "genre": "Comedy",
+      "ticket_url": "https://www.ticketmaster.com/classic-movie-night-at-the-jefferson-beaumont-texas-10-25-2026/event/3A006519EC2420F1",
+      "reason": "venue blocklisted: Jefferson Theatre"
+    },
+    {
+      "name": "Classic Movie Night At The Jefferson Little Shop Of Horrors",
+      "venue": "Jefferson Theatre",
+      "venue_city": "Beaumont",
+      "date": "2026-10-27",
+      "time": "7:00 PM",
+      "source": "ticketmaster",
+      "genre": "Comedy",
+      "ticket_url": "https://www.ticketmaster.com/classic-movie-night-at-the-jefferson-beaumont-texas-10-27-2026/event/3A006519EEE32568",
+      "reason": "venue blocklisted: Jefferson Theatre"
+    },
+    {
+      "name": "Classic Movie Night At The Jefferson Hocus Pocus",
+      "venue": "Jefferson Theatre",
+      "venue_city": "Beaumont",
+      "date": "2026-10-29",
+      "time": "7:00 PM",
+      "source": "ticketmaster",
+      "genre": "Comedy",
+      "ticket_url": "https://www.ticketmaster.com/classic-movie-night-at-the-jefferson-beaumont-texas-10-29-2026/event/3A006519F1002A58",
+      "reason": "venue blocklisted: Jefferson Theatre"
     },
     {
       "name": "The Unknown Tour",

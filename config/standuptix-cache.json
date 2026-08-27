@@ -1,47 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-new-riot-on-washington-ave-grand-opening-comedy-show": {
-      "lastmod": "2026-08-10T03:51:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The NEW Riot on Washington Ave GRAND OPENING COMEDY SHOW",
-        "startDate": "2026-08-27T18:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-new-riot-on-washington-ave-grand-opening-comedy-show",
-          "priceCurrency": "USD",
-          "price": "15.00",
-          "availability": "InStock",
-          "validFrom": "2026-05-18T13:34:11-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-new-riot-on-washington-ave-grand-opening-comedy-show",
-        "image": "/img/events/ChatGPT-Image-Aug-10-2026-12-08-07-PM-f97c0f7c-large-thumb.png",
-        "description": "Join us for a hilarious night of standup comedy - Get ready for a night of non-stop laughter!Located at the Riot on Washington Ave this event promises a cozy and intimate atmosphere that&#39;ll make you feel right at home. With its friendly staff and great drinks, The Riot is the perfect venue to enjoy a night of comedy. So come on down and be part of the fun!Tickets are limited, so make sure to secure yours in advance. Don&#39;t miss out on this incredible opportunity to see some of the best talent in the city live on stage. Get ready for a night filled with laughter, good vibes, and unforgettable memories. We can&#39;t wait to see you there!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": []
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-swipe-right-comedy-dating-game-for-singles-couples-7": {
-      "lastmod": "2026-08-24T02:00:00-05:00",
+      "lastmod": "2026-08-27T03:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -574,7 +534,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-2": {
-      "lastmod": "2026-08-09T09:59:00-05:00",
+      "lastmod": "2026-08-27T12:59:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -610,11 +570,20 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Christian Alexander"
+          },
+          {
+            "@type": "Person",
+            "name": "Andy Huggins"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-monday-night-standup-comedy-open-mic-2026-08-31210000": {
-      "lastmod": "2026-08-12T11:39:00-05:00",
+      "lastmod": "2026-08-27T12:59:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -749,7 +718,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-18": {
-      "lastmod": "2026-08-10T03:50:00-05:00",
+      "lastmod": "2026-08-27T01:00:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -785,11 +754,20 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Andy Huggins"
+          },
+          {
+            "@type": "Person",
+            "name": "Mason James"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-16": {
-      "lastmod": "2026-08-11T01:41:00-05:00",
+      "lastmod": "2026-08-27T01:00:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -834,7 +812,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-thursday-night-late-standup-comedy-showcase-the-riot-houston-7": {
-      "lastmod": "2026-08-10T03:52:00-05:00",
+      "lastmod": "2026-08-27T05:21:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -874,7 +852,7 @@
       }
     },
     "https://www.theriothtx.com/events/colin-armstrong-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-08-03T05:31:00-05:00",
+      "lastmod": "2026-08-27T01:01:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -919,7 +897,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-18": {
-      "lastmod": "2026-08-20T03:30:00-05:00",
+      "lastmod": "2026-08-27T01:01:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -955,11 +933,16 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Andy Huggins"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-16": {
-      "lastmod": "2026-08-10T03:57:00-05:00",
+      "lastmod": "2026-08-27T01:01:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -2529,46 +2512,6 @@
         "url": "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-37",
         "image": "/img/shows/Showcase-Templates-4-17bb0cfb-large-thumb.png",
         "description": "The Riot presents &ldquo;Houston&rsquo;s Funniest,&rdquo; a weekly Sunday showcase celebrating the best comedians in the city. Featuring a rotating lineup of Houston comics who have headlined or featured in Rudyard&rsquo;s legendary comedy room, this show is a true highlight of the local scene.&nbsp;Come hang with The Riot and discover some of the funniest talent Houston has to offer&mdash;it&#39;s the perfect way to end your weekend on a high note.All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": []
-      }
-    },
-    "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-20": {
-      "lastmod": "2026-08-10T04:07:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Comedy Club Presents Sunday Night Standup Comedy Showcase",
-        "startDate": "2026-09-20T20:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-20",
-          "priceCurrency": "USD",
-          "price": "10.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-08T12:48:27-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-20",
-        "image": "/img/shows/Showcase-Templates-15-Saturday-11pm-0fd71212-large-thumb.png",
-        "description": "Join us for a hilarious Sunday night of stand-up comedy at The Riot! Get ready for nonstop laughs in one of Houston&rsquo;s most iconic and intimate venues. With a cozy atmosphere, great drinks, and a friendly vibe, it&rsquo;s the perfect spot to kick back and end your weekend on a high note.We&rsquo;re bringing some of the best comedians in the city to the stage for a night full of big laughs, good energy, and unforgettable moments.Tickets are limited, so grab yours early and don&rsquo;t miss out&mdash;this is your Sunday night plan.All shows Ages 21 &amp; Up. Photo ID Required for Entry.--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Houston",
@@ -10792,46 +10735,6 @@
         "performer": []
       }
     },
-    "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-1-14": {
-      "lastmod": "2026-08-10T03:53:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Friday Night Early Standup Comedy Showcase ",
-        "startDate": "2026-12-18T19:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-1-14",
-          "priceCurrency": "USD",
-          "price": "19.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-10T14:55:06-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-1-14",
-        "image": "/img/shows/friday-7-8bbb088f-large-thumb.jpg",
-        "description": "Come join us for a hilarious evening of laughter at The Riot presents Friday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you&#39;re a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone. You can expect a diverse lineup with 5-7 comedians from Houston and around the country.Find information about the lineup on our instagram page: https://instagram.com/theriothtxAll shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per PersonLooking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": []
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-33": {
       "lastmod": "2026-08-20T03:30:00-05:00",
       "node": {
@@ -10904,86 +10807,6 @@
         "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-29",
         "image": "/img/shows/Showcase-Templates-18-2f410d5b-large-thumb.png",
         "description": "Get ready for the most unpredictable and chaotic showtime in the comedy scene! The Late Show offers an intimate late-night experience where the crowd is loose, the vibes are electric, and the laughs are nonstop.This showcase features a mix of headline comedians who sell out venues and local talent who know how to steal the show, making every performance an unforgettable experience.Whether you&rsquo;re looking for a fun night out or just love the thrill of late-night comedy, this show will have you laughing until it hurts.Reserve your tickets now and join us for a late-night comedy event like no other!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": []
-      }
-    },
-    "https://www.theriothtx.com/events/the-riot-presents-saturday-night-early-standup-comedy-showcase-the-riot-houston-14": {
-      "lastmod": "2026-08-10T03:59:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Saturday Night Early Standup Comedy Showcase",
-        "startDate": "2026-12-19T19:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-early-standup-comedy-showcase-the-riot-houston-14",
-          "priceCurrency": "USD",
-          "price": "20.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-10T14:51:36-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-early-standup-comedy-showcase-the-riot-houston-14",
-        "image": "/img/events/saturday-7-9bfc0960-large-thumb.jpg",
-        "description": "Come join us for a hilarious evening of laughter at The Riot presents Saturday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you&#39;re a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": []
-      }
-    },
-    "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-27": {
-      "lastmod": "2026-08-20T03:34:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Saturday Night Standup Comedy Showcase",
-        "startDate": "2026-12-19T21:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-27",
-          "priceCurrency": "USD",
-          "price": "19.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-10T14:50:06-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-27",
-        "image": "/img/shows/Showcase-Templates-22-31130d5b-large-thumb.png",
-        "description": "Come join us for a hilarious evening of laughter at The Riot presents Saturday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you&#39;re a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone.All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Come join us for a hilarious evening of laughter at The Riot presents Friday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you&#39;re a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone. You can expect a diverse lineup with 5-7 comedians from Houston and around the country.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google thousands of reviews!Delicious Food &amp; DrinksEnjoy tasty food, draft beer, wine, coffee, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Houston",
@@ -12542,51 +12365,6 @@
         ]
       }
     },
-    "https://www.theriothtx.com/events/comedian-alvin-kuai-sirius-xm-amazon-prime-headlines-the-riot-houston-the-riot-houston": {
-      "lastmod": "2026-08-07T12:21:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Comedian Alvin Kuai (Sirius XM, Amazon Prime) Headlines The Riot Houston",
-        "startDate": "2027-03-06T19:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/comedian-alvin-kuai-sirius-xm-amazon-prime-headlines-the-riot-houston-the-riot-houston",
-          "priceCurrency": "USD",
-          "price": "20.00",
-          "availability": "InStock",
-          "validFrom": "2026-07-30T13:46:07-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/comedian-alvin-kuai-sirius-xm-amazon-prime-headlines-the-riot-houston-the-riot-houston",
-        "image": "/img/events/unnamed-85d70893-large-thumb.jpg",
-        "description": "Alvin Kuai is based in NYC where he performs at the Comedy Cellar. He&rsquo;s been featured on Amazon Prime and Sirius XM.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Alvin Kuai"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/luke-touma-headlines-the-riot-houston": {
       "lastmod": "2026-08-17T03:27:00-05:00",
       "node": {
@@ -13023,7 +12801,7 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-chris-munch-live-in-conroe": {
-      "lastmod": "2026-08-25T11:10:00-05:00",
+      "lastmod": "2026-08-27T06:20:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -13062,17 +12840,13 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Barry Laminack"
-          },
-          {
-            "@type": "Person",
             "name": "Adam Bush"
           }
         ]
       }
     },
     "https://www.riotconroe.com/events/comedian-uncle-lazer-live-in-conroe": {
-      "lastmod": "2026-08-14T12:00:00-05:00",
+      "lastmod": "2026-08-27T06:21:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -13112,12 +12886,16 @@
           {
             "@type": "Person",
             "name": "Uncle Lazer"
+          },
+          {
+            "@type": "Person",
+            "name": "Blake Jones"
           }
         ]
       }
     },
     "https://www.riotconroe.com/events/comedian-uncle-lazer-live-in-conroe-1": {
-      "lastmod": "2026-08-14T12:00:00-05:00",
+      "lastmod": "2026-08-27T06:21:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -13157,6 +12935,10 @@
           {
             "@type": "Person",
             "name": "Uncle Lazer"
+          },
+          {
+            "@type": "Person",
+            "name": "Blake Jones"
           }
         ]
       }
@@ -15467,6 +15249,316 @@
           "url": "https://www.theriothtx.com"
         },
         "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-2026-09-06220000": {
+      "lastmod": "2026-08-27T01:46:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "The Riot Comedy Club Presents Sunday Night Standup Comedy Showcase",
+        "startDate": "2026-09-06T22:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-2026-09-06220000",
+          "priceCurrency": "USD",
+          "price": "10.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-27T13:46:31-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-2026-09-06220000",
+        "image": "/img/shows/Showcase-Templates-15-Saturday-11pm-0fd71212-large-thumb.png",
+        "description": "Join us for a hilarious Sunday night of stand-up comedy at The Riot! Get ready for nonstop laughs in one of Houston’s most iconic and intimate venues. With a cozy atmosphere, great drinks, and a friendly vibe, it’s the perfect spot to kick back and end your weekend on a high note.We’re bringing some of the best comedians in the city to the stage for a night full of big laughs, good energy, and unforgettable moments.Tickets are limited, so grab yours early and don’t miss out—this is your Sunday night plan.All shows Ages 21 &amp; Up. Photo ID Required for Entry.--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-bryan-torresdey-joshua-jay-nieto-co-headline-the-riot-houston": {
+      "lastmod": "2026-08-27T12:16:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Bryan Torresdey & Joshua Jay Nieto Co-Headline The Riot Houston",
+        "startDate": "2026-09-20T20:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-bryan-torresdey-joshua-jay-nieto-co-headline-the-riot-houston",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-27T12:13:32-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-bryan-torresdey-joshua-jay-nieto-co-headline-the-riot-houston",
+        "image": "/img/events/RIOT-COMEDY-CLUB-d3320a45-large-thumb.jpg",
+        "description": "Bryan Torresdey is a stand-up comedian known for his sharp takes on culture, relationships, and growing up in a first-generation Latino household. His viral content has garnered hundreds of millions of views, and he&rsquo;s been featured in GQ and ABC News. He recently wrote and directed his first feature film, MIGRANTS: The Movie, set for release in fall 2026.Joshua Jay Nieto is a stand-up comic out of New Braunfels, Texas, known for his fearless crowd work, sharp punchlines, and high energy. He&rsquo;s earned his stripes on the Teachers Gone Bad tour, headlined comedy clubs across the country, and appeared alongside heavyweights like Gabriel Iglesias and Martin Moreno. He focuses on being real, funny, and giving his audience a true comedy experience. All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Joshua Nieto"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-sophie-buddle-the-tonight-show-sirius-xm-kevin-hart-s-lol-headlines-the-riot-comedy-club": {
+      "lastmod": "2026-08-27T12:09:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Sophie Buddle (The Tonight Show, Sirius XM, Kevin Hart's LOL) Headlines The Riot Comedy Club",
+        "startDate": "2026-12-18T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-sophie-buddle-the-tonight-show-sirius-xm-kevin-hart-s-lol-headlines-the-riot-comedy-club",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-27T12:02:36-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-sophie-buddle-the-tonight-show-sirius-xm-kevin-hart-s-lol-headlines-the-riot-comedy-club",
+        "image": "/img/events/Guadalaharrys-70-eaf30b9a-large-thumb.png",
+        "description": "Sophie Buddle is a stand-up, a TV writer, and a podcaster. She has just wrapped as the head monologue writer for &ldquo;After Midnight with Taylor Tomlinson.&rdquo; She has also appeared on &ldquo;The Tonight Show&rdquo;, &ldquo;The Late Late Show with James Corden&rdquo;, and on CBC&rsquo;s &ldquo;This Hour Has 22 Minutes as a correspondent and staff writer. She&amp;#39;s also been featured on CTV&rsquo;s &amp;quot;Roast Battle&amp;quot;, JFL All Access, Kevin Hart&amp;#39;s LOL Network, the Winnipeg Comedy Festival and the Halifax Comedy Festival. She was a featured performer at the Just For Laughs Comedy Festival in Montreal and in 2022 had the esteemed privilege of delivering the Canadian Keynote Address on Comedy. Sophie released her first album in 2019, &amp;quot;Lil Bit Of Buddle,&amp;quot; which won the 2020 Juno Award for Best Comedy Album of the Year, making her the first female comic to win that award. She released the album herself so you can find it on iTunes in the genre &amp;quot;easy listening&amp;quot;, which was a mistake, but it is easy to listen to, so it&amp;#39;s OK. Her podcast &amp;quot;Obsessed with Sophie Buddle&amp;quot;, which tackles people&rsquo;s obsessions (from Beyonc&eacute; to American politics to checking if the door is locked to revenge) is currently available on Apple Podcasts. She is a three-time runner up (but fourth time&rsquo;s the charm!) for Canada&amp;#39;s biggest stand-up contest, SiriusXM Top Comic, and can currently be seen headlining across the country.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Sophie Buddle"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-sophie-buddle-the-tonight-show-sirius-xm-kevin-hart-s-lol-headlines-the-riot-comedy-club-2026-12-19190000": {
+      "lastmod": "2026-08-27T12:09:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Sophie Buddle (The Tonight Show, Sirius XM, Kevin Hart's LOL) Headlines The Riot Comedy Club",
+        "startDate": "2026-12-19T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-sophie-buddle-the-tonight-show-sirius-xm-kevin-hart-s-lol-headlines-the-riot-comedy-club-2026-12-19190000",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-27T12:09:58-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-sophie-buddle-the-tonight-show-sirius-xm-kevin-hart-s-lol-headlines-the-riot-comedy-club-2026-12-19190000",
+        "image": "/img/events/Guadalaharrys-70-eaf30b9a-large-thumb.png",
+        "description": "Sophie Buddle is a stand-up, a TV writer, and a podcaster. She has just wrapped as the head monologue writer for “After Midnight with Taylor Tomlinson.” She has also appeared on “The Tonight Show”, “The Late Late Show with James Corden”, and on CBC’s “This Hour Has 22 Minutes as a correspondent and staff writer. She&amp;#39;s also been featured on CTV’s &amp;quot;Roast Battle&amp;quot;, JFL All Access, Kevin Hart&amp;#39;s LOL Network, the Winnipeg Comedy Festival and the Halifax Comedy Festival. She was a featured performer at the Just For Laughs Comedy Festival in Montreal and in 2022 had the esteemed privilege of delivering the Canadian Keynote Address on Comedy. Sophie released her first album in 2019, &amp;quot;Lil Bit Of Buddle,&amp;quot; which won the 2020 Juno Award for Best Comedy Album of the Year, making her the first female comic to win that award. She released the album herself so you can find it on iTunes in the genre &amp;quot;easy listening&amp;quot;, which was a mistake, but it is easy to listen to, so it&amp;#39;s OK. Her podcast &amp;quot;Obsessed with Sophie Buddle&amp;quot;, which tackles people’s obsessions (from Beyoncé to American politics to checking if the door is locked to revenge) is currently available on Apple Podcasts. She is a three-time runner up (but fourth time’s the charm!) for Canada&amp;#39;s biggest stand-up contest, SiriusXM Top Comic, and can currently be seen headlining across the country.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Sophie Buddle"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-sophie-buddle-the-tonight-show-sirius-xm-kevin-hart-s-lol-headlines-the-riot-comedy-club-2026-12-19210000": {
+      "lastmod": "2026-08-27T12:10:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Sophie Buddle (The Tonight Show, Sirius XM, Kevin Hart's LOL) Headlines The Riot Comedy Club",
+        "startDate": "2026-12-19T21:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-sophie-buddle-the-tonight-show-sirius-xm-kevin-hart-s-lol-headlines-the-riot-comedy-club-2026-12-19210000",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-27T12:10:07-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-sophie-buddle-the-tonight-show-sirius-xm-kevin-hart-s-lol-headlines-the-riot-comedy-club-2026-12-19210000",
+        "image": "/img/events/Guadalaharrys-70-eaf30b9a-large-thumb.png",
+        "description": "Sophie Buddle is a stand-up, a TV writer, and a podcaster. She has just wrapped as the head monologue writer for “After Midnight with Taylor Tomlinson.” She has also appeared on “The Tonight Show”, “The Late Late Show with James Corden”, and on CBC’s “This Hour Has 22 Minutes as a correspondent and staff writer. She&amp;#39;s also been featured on CTV’s &amp;quot;Roast Battle&amp;quot;, JFL All Access, Kevin Hart&amp;#39;s LOL Network, the Winnipeg Comedy Festival and the Halifax Comedy Festival. She was a featured performer at the Just For Laughs Comedy Festival in Montreal and in 2022 had the esteemed privilege of delivering the Canadian Keynote Address on Comedy. Sophie released her first album in 2019, &amp;quot;Lil Bit Of Buddle,&amp;quot; which won the 2020 Juno Award for Best Comedy Album of the Year, making her the first female comic to win that award. She released the album herself so you can find it on iTunes in the genre &amp;quot;easy listening&amp;quot;, which was a mistake, but it is easy to listen to, so it&amp;#39;s OK. Her podcast &amp;quot;Obsessed with Sophie Buddle&amp;quot;, which tackles people’s obsessions (from Beyoncé to American politics to checking if the door is locked to revenge) is currently available on Apple Podcasts. She is a three-time runner up (but fourth time’s the charm!) for Canada&amp;#39;s biggest stand-up contest, SiriusXM Top Comic, and can currently be seen headlining across the country.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Sophie Buddle"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-ron-g-hbo-headlines-the-riot-houston": {
+      "lastmod": "2026-08-27T11:53:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Ron G (HBO) Headlines The Riot Houston",
+        "startDate": "2027-04-02T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-ron-g-hbo-headlines-the-riot-houston",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-07-30T13:46:07-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-ron-g-hbo-headlines-the-riot-houston",
+        "image": "/img/events/image0-78da07f1-large-thumb.jpg",
+        "description": "Emmy&reg; Award-winning producer, actor, and stand-up powerhouse Ron G is a rare, multi-hyphenate talent whose career is defined by high-octane energy and a &quot;no-miss&quot; reputation. A cornerstone of the modern entertainment landscape, Ron G has become a sought-after collaborator for industry titans, from his breakout as a finalist on Last Comic Standing to his scene-stealing roles in HBO&rsquo;s Insecure and the Lionsgate feature 2 Minutes of Fame starring Jay Pharoah and Katt Williams.What sets Ron G apart is his remarkable demographic versatility and his ability to masterfully dissect the complexities of modern human connection. A premier voice in the &quot;relationship comedy&quot; space, Ron&rsquo;s material offers a sharp, hilarious, and often vulnerable look at the evolution of dating, manhood, and the search for authentic partnership in a digital age. He seamlessly transitions from the gritty authenticity of the stand-up stage to family-friendly leading roles on Nickelodeon&rsquo;s Cousins for Life and Disney&rsquo;s Stuck in the Middle, while currently starring as the brother of the legendary MC Lyte on the hit sitcom Partners in Rhyme.Beyond the screen, Ron G is a decorated creator, earning an Emmy&reg;for his visionary production work on CNN&rsquo;s United Shades of America. As the long-standing host of the iconic Chocolate Sundaes at the World Famous Laugh Factory, he remains the pulse of the Los Angeles comedy scene, commanding a loyal, sold-out following of over 600 guests every Sunday. All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Ron G"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-ron-g-hbo-headlines-the-riot-houston-2027-04-03190000": {
+      "lastmod": "2026-08-27T11:53:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Ron G (HBO) Headlines The Riot Houston",
+        "startDate": "2027-04-03T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-ron-g-hbo-headlines-the-riot-houston-2027-04-03190000",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-08-27T11:53:20-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-ron-g-hbo-headlines-the-riot-houston-2027-04-03190000",
+        "image": "/img/events/image0-78da07f1-large-thumb.jpg",
+        "description": "Emmy® Award-winning producer, actor, and stand-up powerhouse Ron G is a rare, multi-hyphenate talent whose career is defined by high-octane energy and a \"no-miss\" reputation. A cornerstone of the modern entertainment landscape, Ron G has become a sought-after collaborator for industry titans, from his breakout as a finalist on Last Comic Standing to his scene-stealing roles in HBO’s Insecure and the Lionsgate feature 2 Minutes of Fame starring Jay Pharoah and Katt Williams.What sets Ron G apart is his remarkable demographic versatility and his ability to masterfully dissect the complexities of modern human connection. A premier voice in the \"relationship comedy\" space, Ron’s material offers a sharp, hilarious, and often vulnerable look at the evolution of dating, manhood, and the search for authentic partnership in a digital age. He seamlessly transitions from the gritty authenticity of the stand-up stage to family-friendly leading roles on Nickelodeon’s Cousins for Life and Disney’s Stuck in the Middle, while currently starring as the brother of the legendary MC Lyte on the hit sitcom Partners in Rhyme.Beyond the screen, Ron G is a decorated creator, earning an Emmy®for his visionary production work on CNN’s United Shades of America. As the long-standing host of the iconic Chocolate Sundaes at the World Famous Laugh Factory, he remains the pulse of the Los Angeles comedy scene, commanding a loyal, sold-out following of over 600 guests every Sunday. All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Ron G"
+          }
+        ]
       }
     }
   }
