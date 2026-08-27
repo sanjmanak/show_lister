@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-27T13:11:58.750Z",
+ "generated_at": "2026-08-27T13:57:23.339Z",
  "account": {
   "followers_count": 304,
   "media_count": 90,
@@ -14,7 +14,13 @@
    "caption_head": "7 comedy shows in Houston tonight. One of them is free.\n\nWednesday, August 26. A few of th",
    "likes": 0,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 23,
+    "saved": 0,
+    "shares": 0,
+    "views": 42,
+    "total_interactions": 0
+   }
   },
   {
    "id": "17937474876359005",
@@ -24,7 +30,13 @@
    "caption_head": "6 comedy shows in Houston tonight. 5 of them are free.\n\nTuesday, August 25. A few of them:",
    "likes": 1,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 34,
+    "saved": 0,
+    "shares": 0,
+    "views": 55,
+    "total_interactions": 1
+   }
   },
   {
    "id": "18110340854094818",
@@ -34,7 +46,13 @@
    "caption_head": "SNL alum Jay Pharoah is hosting Fox's 'The Quiz with Balls'—don't miss his live show, Hous",
    "likes": 1,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 27,
+    "saved": 0,
+    "shares": 0,
+    "views": 86,
+    "total_interactions": 1
+   }
   },
   {
    "id": "17953867494238218",
@@ -44,7 +62,13 @@
    "caption_head": "Houston, Jay Pharoah is bringing his SNL impressions to the Improv this weekend. Remember ",
    "likes": 6,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 69,
+    "saved": 0,
+    "shares": 0,
+    "views": 125,
+    "total_interactions": 6
+   }
   },
   {
    "id": "18122911048888708",
@@ -54,7 +78,13 @@
    "caption_head": "Houston. Wednesday. Punch Line. The perimenopause material is coming to you live.\n\nIf you ",
    "likes": 113,
    "comments": 13,
-   "insights": null
+   "insights": {
+    "reach": 7634,
+    "saved": 3,
+    "shares": 4,
+    "views": 10372,
+    "total_interactions": 134
+   }
   },
   {
    "id": "18088886729179605",
@@ -64,7 +94,13 @@
    "caption_head": "Fun August with Houston comedy open mics at @themoodroomhouston and @bigbentavern and a fe",
    "likes": 20,
    "comments": 3,
-   "insights": null
+   "insights": {
+    "reach": 321,
+    "saved": 0,
+    "shares": 4,
+    "views": 689,
+    "total_interactions": 30
+   }
   },
   {
    "id": "18107073818520642",
@@ -74,7 +110,13 @@
    "caption_head": "😍❤️😃 hey our first produced comedy show in Houston at @matchouston exceeded expectations",
    "likes": 15,
    "comments": 1,
-   "insights": null
+   "insights": {
+    "reach": 120,
+    "saved": 0,
+    "shares": 1,
+    "views": 306,
+    "total_interactions": 18
+   }
   },
   {
    "id": "17997172187797162",
@@ -84,7 +126,13 @@
    "caption_head": "We put out our best tips on how to edit stand up clips for social media.  Remember viral d",
    "likes": 0,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 60,
+    "saved": 0,
+    "shares": 0,
+    "views": 113,
+    "total_interactions": 0
+   }
   },
   {
    "id": "18090051086379804",
@@ -94,7 +142,13 @@
    "caption_head": "Houston, this week is for comedy lovers. Catch Chris Andrade’s \"M.U.T.A.R\" at Punch Line H",
    "likes": 4,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 74,
+    "saved": 0,
+    "shares": 0,
+    "views": 125,
+    "total_interactions": 4
+   }
   },
   {
    "id": "18404848021080368",
@@ -104,7 +158,13 @@
    "caption_head": "Your clip didn’t flop because the algorithm hates you. It flopped in the first 2 seconds.\n",
    "likes": 0,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 85,
+    "saved": 1,
+    "shares": 0,
+    "views": 142,
+    "total_interactions": 1
+   }
   },
   {
    "id": "17913286203451834",
@@ -114,7 +174,13 @@
    "caption_head": "Houston we are 75% full for the show with 4 days to go still.  Super excited so please boo",
    "likes": 1,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 55,
+    "saved": 0,
+    "shares": 0,
+    "views": 80,
+    "total_interactions": 1
+   }
   },
   {
    "id": "18075101693375058",
@@ -124,7 +190,13 @@
    "caption_head": "Houston, ready for some laughs? Mark Normand, the guy behind 'None Too Pleased,' is bringi",
    "likes": 0,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 61,
+    "saved": 0,
+    "shares": 0,
+    "views": 119,
+    "total_interactions": 0
+   }
   },
   {
    "id": "18096122471111357",
@@ -134,7 +206,13 @@
    "caption_head": "Seen Tom Shillue on \"The Daily Show\"? Houston, you're in for a treat. Known for his clean,",
    "likes": 0,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 31,
+    "saved": 0,
+    "shares": 0,
+    "views": 83,
+    "total_interactions": 0
+   }
   },
   {
    "id": "18127244869731533",
@@ -144,7 +222,13 @@
    "caption_head": "Remember Ashy Larry from Chappelle’s Show? He’s coming to Houston. 🎤\n\nDonnell Rawlings br",
    "likes": 0,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 40,
+    "saved": 0,
+    "shares": 0,
+    "views": 104,
+    "total_interactions": 0
+   }
   },
   {
    "id": "18134902816526153",
@@ -154,7 +238,13 @@
    "caption_head": "We spend 40 hours a week somewhere we can’t actually say what we think.\n\nSo now there is a",
    "likes": 10,
    "comments": 1,
-   "insights": null
+   "insights": {
+    "reach": 240,
+    "saved": 2,
+    "shares": 6,
+    "views": 536,
+    "total_interactions": 21
+   }
   },
   {
    "id": "18111720425078836",
@@ -164,7 +254,13 @@
    "caption_head": "Some lovely moments from @notsuoh314main with @socialcomedynite and @bigbentavern \n\ntag em",
    "likes": 17,
    "comments": 2,
-   "insights": null
+   "insights": {
+    "reach": 407,
+    "saved": 0,
+    "shares": 7,
+    "views": 871,
+    "total_interactions": 29
+   }
   },
   {
    "id": "18157904584490041",
@@ -174,7 +270,13 @@
    "caption_head": "Usama Siddiquee, your favorite semifinalist from \"America's Got Talent,\" is bringing his h",
    "likes": 3,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 54,
+    "saved": 0,
+    "shares": 0,
+    "views": 120,
+    "total_interactions": 3
+   }
   },
   {
    "id": "17954072424188906",
@@ -184,7 +286,13 @@
    "caption_head": "Some pics from few weeks back at @catdadcomedy Tag em if you know them @wonkypower",
    "likes": 16,
    "comments": 1,
-   "insights": null
+   "insights": {
+    "reach": 113,
+    "saved": 0,
+    "shares": 0,
+    "views": 236,
+    "total_interactions": 19
+   }
   },
   {
    "id": "18132575260613179",
@@ -194,7 +302,13 @@
    "caption_head": "List of stage time in Houston credit @3nickb #houstonComedy",
    "likes": 18,
    "comments": 3,
-   "insights": null
+   "insights": {
+    "reach": 355,
+    "saved": 3,
+    "shares": 8,
+    "views": 253,
+    "total_interactions": 34
+   }
   },
   {
    "id": "18121018894695161",
@@ -204,7 +318,13 @@
    "caption_head": "Some pics from @thedencomedyclub the last two months. Tag them if you know them. #houstonc",
    "likes": 12,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 275,
+    "saved": 0,
+    "shares": 13,
+    "views": 764,
+    "total_interactions": 25
+   }
   },
   {
    "id": "18104264767848418",
@@ -214,7 +334,13 @@
    "caption_head": "Some long overdue pics from @improvhouston with @will_loden and friends (tag em if you kno",
    "likes": 14,
    "comments": 3,
-   "insights": null
+   "insights": {
+    "reach": 203,
+    "saved": 0,
+    "shares": 4,
+    "views": 509,
+    "total_interactions": 21
+   }
   },
   {
    "id": "17966902721937967",
@@ -224,7 +350,13 @@
    "caption_head": "Houston, remember Gary Owen from BET's \"Comic View\"? 🎤 He's back and bringing his \"No Har",
    "likes": 0,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 29,
+    "saved": 0,
+    "shares": 0,
+    "views": 63,
+    "total_interactions": 0
+   }
   },
   {
    "id": "17890391238580083",
@@ -234,7 +366,13 @@
    "caption_head": "Medium Spicy Show at @punchlinehouston was a blast with some hilarious Texas comics and be",
    "likes": 17,
    "comments": 2,
-   "insights": null
+   "insights": {
+    "reach": 167,
+    "saved": 0,
+    "shares": 2,
+    "views": 395,
+    "total_interactions": 23
+   }
   },
   {
    "id": "18090248729373014",
@@ -244,7 +382,13 @@
    "caption_head": "From \"Saturday Night Live\" to the Houston Improv, Rob Schneider brings his satirical and s",
    "likes": 0,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 17,
+    "saved": 0,
+    "shares": 0,
+    "views": 35,
+    "total_interactions": 0
+   }
   },
   {
    "id": "18454037947111030",
@@ -254,7 +398,13 @@
    "caption_head": "Seen Francis Ellis on \"Gilly and Keeves\"? Houston, you're in for a treat.\n\nFrancis brings ",
    "likes": 0,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 14,
+    "saved": 0,
+    "shares": 0,
+    "views": 17,
+    "total_interactions": 0
+   }
   },
   {
    "id": "18097599041478287",
@@ -264,7 +414,13 @@
    "caption_head": "Wow, Memphis. What a ride. 💙🎤\n\nFor years, this page has been dedicated to highlighting t",
    "likes": 39,
    "comments": 13,
-   "insights": null
+   "insights": {
+    "reach": 201,
+    "saved": 0,
+    "shares": 2,
+    "views": 562,
+    "total_interactions": 55
+   }
   },
   {
    "id": "18562418236007899",
@@ -274,7 +430,13 @@
    "caption_head": "Sold out, Memphis.\n\nIf you’re coming tonight…get there early, grab a drink, and grab a sea",
    "likes": 3,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 88,
+    "saved": 0,
+    "shares": 1,
+    "views": 152,
+    "total_interactions": 4
+   }
   },
   {
    "id": "17918533227268783",
@@ -284,7 +446,13 @@
    "caption_head": "80% sold. Memphis doesn’t wait.\n\nValentine’s plans? Bring a date.\nNo date? Bring your best",
    "likes": 6,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 65,
+    "saved": 0,
+    "shares": 3,
+    "views": 130,
+    "total_interactions": 9
+   }
   },
   {
    "id": "17993588219867817",
@@ -294,7 +462,13 @@
    "caption_head": "Well, this is new for us. It’s only Tuesday and early bird tickets are almost gone.\n\nJust ",
    "likes": 4,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 218,
+    "saved": 0,
+    "shares": 2,
+    "views": 302,
+    "total_interactions": 7
+   }
   },
   {
    "id": "17907704142338244",
@@ -304,7 +478,13 @@
    "caption_head": "Valentine’s Day plans? Make them funny.\n\n💘 Drafts & Laughs lands Feb 14th, 7:30–9PM at Me",
    "likes": 16,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 269,
+    "saved": 0,
+    "shares": 4,
+    "views": 430,
+    "total_interactions": 21
+   }
   },
   {
    "id": "18083004563272807",
@@ -314,7 +494,13 @@
    "caption_head": "Memphis! Tickets now live for the valentines show! #choose901 #comedy @memphismadebrew #li",
    "likes": 2,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 101,
+    "saved": 0,
+    "shares": 1,
+    "views": 169,
+    "total_interactions": 9
+   }
   },
   {
    "id": "17847186465634589",
@@ -324,7 +510,13 @@
    "caption_head": "Memphis!  You brought the best of your city for another sold out show and our first of 202",
    "likes": 15,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 71,
+    "saved": 0,
+    "shares": 0,
+    "views": 153,
+    "total_interactions": 15
+   }
   },
   {
    "id": "18082498343138552",
@@ -334,7 +526,13 @@
    "caption_head": "See you tomorrow folks! #choose901 #comedy",
    "likes": 3,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 87,
+    "saved": 0,
+    "shares": 1,
+    "views": 182,
+    "total_interactions": 4
+   }
   },
   {
    "id": "18084223313323163",
@@ -344,7 +542,13 @@
    "caption_head": "Memphis about 5 days to go and we are almost sold out of early birds #linkInBio you don’t ",
    "likes": 3,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 67,
+    "saved": 0,
+    "shares": 0,
+    "views": 133,
+    "total_interactions": 3
+   }
   },
   {
    "id": "17909025327291690",
@@ -354,7 +558,13 @@
    "caption_head": "Memphis, thank you for an unreal 2025 🙏🏼❤️\n\nWhat started in partnership with @commacomed",
    "likes": 46,
    "comments": 8,
-   "insights": null
+   "insights": {
+    "reach": 1131,
+    "saved": 0,
+    "shares": 7,
+    "views": 2813,
+    "total_interactions": 62
+   }
   },
   {
    "id": "17935372317120621",
@@ -364,7 +574,13 @@
    "caption_head": "Memphis, this one’s for people who like their beer cold and their jokes reckless.\nDrafts. ",
    "likes": 17,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 404,
+    "saved": 1,
+    "shares": 8,
+    "views": 779,
+    "total_interactions": 26
+   }
   },
   {
    "id": "17981079728785450",
@@ -374,7 +590,13 @@
    "caption_head": "Memphis you brought the heat at @memphismadebrew and we thank you for another sold out sho",
    "likes": 9,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 234,
+    "saved": 0,
+    "shares": 4,
+    "views": 575,
+    "total_interactions": 14
+   }
   },
   {
    "id": "18066128411426925",
@@ -384,7 +606,13 @@
    "caption_head": "Wow over 70 of you came and packed out @memphismadebrew more pics to come! #choose901 Next",
    "likes": 19,
    "comments": 3,
-   "insights": null
+   "insights": {
+    "reach": 205,
+    "saved": 0,
+    "shares": 2,
+    "views": 419,
+    "total_interactions": 24
+   }
   },
   {
    "id": "18119652190490432",
@@ -394,7 +622,13 @@
    "caption_head": "And we are down to the last ten tickets Memphis! See you tonight! #choose901 #comedy",
    "likes": 9,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 129,
+    "saved": 0,
+    "shares": 2,
+    "views": 247,
+    "total_interactions": 11
+   }
   },
   {
    "id": "18115331215602156",
@@ -404,7 +638,13 @@
    "caption_head": "Memphis we are almost sold out with a few days to go.  Please book by tmrw morning at late",
    "likes": 0,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 52,
+    "saved": 0,
+    "shares": 0,
+    "views": 146,
+    "total_interactions": 0
+   }
   },
   {
    "id": "18087713863791162",
@@ -414,7 +654,13 @@
    "caption_head": "This Saturday night at Memphis Made Brewery, someone in the crowd is gonna spit their beer",
    "likes": 9,
    "comments": 1,
-   "insights": null
+   "insights": {
+    "reach": 145,
+    "saved": 2,
+    "shares": 5,
+    "views": 301,
+    "total_interactions": 18
+   }
   },
   {
    "id": "17885964057391580",
@@ -424,7 +670,13 @@
    "caption_head": "Our crowds have been rocking and rolling each month at @memphismadebrew.  Stay tuned for t",
    "likes": 17,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 214,
+    "saved": 0,
+    "shares": 3,
+    "views": 511,
+    "total_interactions": 20
+   }
   },
   {
    "id": "18044644154461738",
@@ -434,7 +686,13 @@
    "caption_head": "🚨 MEMPHIS — TONIGHT’S THE NIGHT! 🚨\nLooking for last-minute Saturday plans? Grab your cre",
    "likes": 8,
    "comments": 1,
-   "insights": null
+   "insights": {
+    "reach": 923,
+    "saved": 0,
+    "shares": 8,
+    "views": 1972,
+    "total_interactions": 19
+   }
   },
   {
    "id": "17843669682580327",
@@ -444,7 +702,13 @@
    "caption_head": "🎤 MEMPHIS — are you ready to laugh ‘til your cheeks hurt? 🍻🤣\n\nDrafts & Laughs Comedy Sh",
    "likes": 7,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 115,
+    "saved": 0,
+    "shares": 1,
+    "views": 506,
+    "total_interactions": 8
+   }
   },
   {
    "id": "18076747888968691",
@@ -454,7 +718,13 @@
    "caption_head": "🎤 What. A. Night.\n100 people packed in, the drinks were cold, the laughs were loud, and M",
    "likes": 14,
    "comments": 1,
-   "insights": null
+   "insights": {
+    "reach": 244,
+    "saved": 0,
+    "shares": 1,
+    "views": 661,
+    "total_interactions": 16
+   }
   },
   {
    "id": "17970113798775863",
@@ -464,7 +734,13 @@
    "caption_head": "See you tonight! #memphiscomedy #choose901",
    "likes": 1,
    "comments": 1,
-   "insights": null
+   "insights": {
+    "reach": 49,
+    "saved": 0,
+    "shares": 0,
+    "views": 383,
+    "total_interactions": 2
+   }
   },
   {
    "id": "18090943891672762",
@@ -474,7 +750,13 @@
    "caption_head": "#memphis early bird sold out in record time get your last few seats for saturday! #comedy ",
    "likes": 3,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 49,
+    "saved": 0,
+    "shares": 0,
+    "views": 376,
+    "total_interactions": 3
+   }
   },
   {
    "id": "17891982021294196",
@@ -484,7 +766,13 @@
    "caption_head": "🎤 MEMPHIS, IT’S ON.\nCold beers. 🔥 comedians. Zero excuses.\n📍 Memphis Made Brewing Co\n📅",
    "likes": 7,
    "comments": 0,
-   "insights": null
+   "insights": {
+    "reach": 264,
+    "saved": 0,
+    "shares": 1,
+    "views": 663,
+    "total_interactions": 8
+   }
   },
   {
    "id": "18048994769544244",
@@ -494,7 +782,13 @@
    "caption_head": "🔥 100+ comedy lovers PACKED out Memphis Made Brewing this past Saturday!\nSeats sold out f",
    "likes": 16,
    "comments": 3,
-   "insights": null
+   "insights": {
+    "reach": 324,
+    "saved": 1,
+    "shares": 10,
+    "views": 930,
+    "total_interactions": 30
+   }
   },
   {
    "id": "17899926678232148",
@@ -504,7 +798,13 @@
    "caption_head": "few tickets left at the door but Wow this is a record for us! tonight is gonna be awesome ",
    "likes": 9,
    "comments": 1,
-   "insights": null
+   "insights": {
+    "reach": 59,
+    "saved": 0,
+    "shares": 0,
+    "views": 327,
+    "total_interactions": 10
+   }
   }
  ]
 }
