@@ -1,0 +1,32 @@
+name: Instagram Insights
+
+on:
+  workflow_dispatch:
+
+concurrency: instagram-insights
+
+jobs:
+  insights:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Pull Instagram insights
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+        run: node scripts/instagram-insights.js
+
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports/instagram-insights.json
+          git diff --cached --quiet || git commit -m "Instagram insights report [skip ci]"
+          git pull --rebase origin main
+          git push
