@@ -1777,6 +1777,7 @@ src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>
 .ch-inquiry .ch-iq-submit{display:inline-block;border:0;cursor:pointer;background:#e6483d;color:#fff;font-weight:700;font-size:16px;padding:15px 27px;border-radius:3px}
 .ch-inquiry .ch-iq-submit:hover{background:#f05a4f}
 .ch-inquiry .ch-iq-submit[disabled]{opacity:.6;cursor:wait}
+.ch-inquiry .ch-iq-reassure{display:inline-block;margin-top:8px;font-size:13px;color:#777}
 .ch-inquiry .ch-iq-msg{margin:12px 0 0;font-weight:600;display:none}
 .ch-inquiry .ch-iq-msg.err{color:#b3261e;display:block}
 .ch-inquiry .ch-iq-msg.ok{color:#2e7d32;display:block}
@@ -1820,7 +1821,8 @@ src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>
     <div class="ch-iq-hp" aria-hidden="true"><label for="ch-iq-web">Website</label><input id="ch-iq-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
   </div>
   <input type="hidden" name="ch_token" value="">
-  <p style="margin-top:18px"><button type="submit" class="ch-iq-submit">Request comedian recommendations</button></p>
+  <p style="margin-top:18px"><button type="submit" class="ch-iq-submit">Get My Free Quote</button><br>
+  <span class="ch-iq-reassure">Free and no obligation. We reply within one business day.</span></p>
   <p class="ch-iq-msg" role="status" aria-live="polite"></p>
   <p class="ch-iq-alt">Prefer email? <a href="mailto:<?php echo $mailto; ?>?subject=Clean%20comedian%20for%20Houston%20event">Send the details to <?php echo esc_html($this->inquiry_email()); ?></a>. A complete inquiry does not obligate you to book.</p>
 </form>
