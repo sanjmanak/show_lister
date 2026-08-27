@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.13.1
+ * Version: 2.14.0
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.13.1';
+    const VERSION      = '2.14.0';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -1688,12 +1688,16 @@ src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>
 
         // Performer fields — only what the MVP needs.
         $instagram  = ltrim($field('instagram', 60), '@');
+        $email      = sanitize_email((string) $request->get_param('email'));
         $set_length = $field('set_length', 10);
         $clip_url   = esc_url_raw((string) $request->get_param('clip_url'), ['http', 'https']);
         $note       = mb_substr(sanitize_textarea_field((string) $request->get_param('note')), 0, 2000);
 
         if ($instagram === '' || !preg_match('/^[A-Za-z0-9._]{1,30}$/', $instagram)) {
             return new WP_Error('ch_perf_fields', 'Please enter your Instagram handle (letters, numbers, dots, underscores).', ['status' => 400]);
+        }
+        if (!is_email($email)) {
+            return new WP_Error('ch_perf_fields', 'Please enter a valid email address so the producer can reach you.', ['status' => 400]);
         }
         if (!in_array($set_length, ['5', '10', '15', '20+'], true)) {
             return new WP_Error('ch_perf_fields', 'Please pick a set length.', ['status' => 400]);
@@ -1724,14 +1728,12 @@ src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>
             '',
             '— Performer —',
             'Instagram:  @' . $instagram . '  (https://www.instagram.com/' . rawurlencode($instagram) . '/)',
+            'Email:      ' . $email,
             'Set length: ' . $set_length . ' minutes',
             'Clip:       ' . ($clip_url !== '' ? $clip_url : '—'),
             '',
             'Note:',
             $note !== '' ? $note : '—',
-            '',
-            'Next step (manual concierge): vet the clip/IG, then intro them to',
-            'the show\'s producer. See PERFORMER_REQUESTS.md in the repo.',
         ];
         $subject = sprintf(
             'Performer interest — %s @ %s, %s',
@@ -1740,7 +1742,10 @@ src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>
             $event_date !== '' ? $event_date : 'unknown date'
         );
 
-        if (!wp_mail($this->performer_email(), $subject, implode("\n", $lines))) {
+        // Reply-To is the performer, so hitting reply in any mail client
+        // answers the comic directly instead of the site's own address.
+        $headers = ['Reply-To: ' . $email];
+        if (!wp_mail($this->performer_email(), $subject, implode("\n", $lines), $headers)) {
             return new WP_Error('ch_perf_mail', 'Could not send right now — please try again in a minute.', ['status' => 500]);
         }
         return rest_ensure_response(['ok' => true]);

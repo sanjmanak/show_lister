@@ -597,6 +597,9 @@
       '<div class="ch-perf-ig"><span>@</span>' +
       '<input id="chPerfIg" name="instagram" type="text" required maxlength="30" ' +
       'placeholder="yourhandle" autocomplete="username" autocapitalize="none" spellcheck="false"></div>' +
+      '<label for="chPerfEmail">Email *</label>' +
+      '<input id="chPerfEmail" name="email" type="email" required maxlength="120" ' +
+      'placeholder="you@example.com" autocomplete="email" spellcheck="false">' +
       '<label for="chPerfLen">Set length *</label>' +
       '<select id="chPerfLen" name="set_length" required>' +
       '<option value="">Select&hellip;</option>' +
@@ -677,10 +680,16 @@
     msg.textContent = "";
 
     var handle = (form.querySelector("#chPerfIg").value || "").trim().replace(/^@/, "");
+    var email = (form.querySelector("#chPerfEmail").value || "").trim();
     var setLen = form.querySelector("#chPerfLen").value;
     if (!/^[A-Za-z0-9._]{1,30}$/.test(handle)) {
       msg.className = "ch-perf-msg err";
       msg.textContent = "Please enter your Instagram handle (letters, numbers, dots, underscores).";
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      msg.className = "ch-perf-msg err";
+      msg.textContent = "Please enter a valid email so the producer can reach you.";
       return;
     }
     if (!setLen) {
@@ -700,6 +709,7 @@
         ch_token: token,
         website: form.querySelector("#chPerfWeb").value,
         instagram: handle,
+        email: email,
         set_length: setLen,
         clip_url: (form.querySelector("#chPerfClip").value || "").trim(),
         note: (form.querySelector("#chPerfNote").value || "").trim(),
@@ -727,8 +737,8 @@
         var thanks = document.createElement("p");
         thanks.className = "ch-perf-thanks";
         thanks.innerHTML = "Got it — you’re on the list for this show. " +
-          "If it’s a fit, we’ll reach out on Instagram to connect you " +
-          "with the person who books it.";
+          "If it’s a fit, we’ll reach out by email or Instagram to connect " +
+          "you with the person who books it.";
         form.parentNode.appendChild(thanks);
       } else {
         btn.disabled = false;
