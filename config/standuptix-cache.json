@@ -1,54 +1,5 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-swipe-right-comedy-dating-game-for-singles-couples-7": {
-      "lastmod": "2026-08-27T03:03:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents \"Swipe Right\" Comedy Dating Game for Singles & Couples",
-        "startDate": "2026-08-27T21:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-swipe-right-comedy-dating-game-for-singles-couples-7",
-          "priceCurrency": "USD",
-          "price": "10.00",
-          "availability": "InStock",
-          "validFrom": "2026-05-18T13:39:07-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-swipe-right-comedy-dating-game-for-singles-couples-7",
-        "image": "/img/shows/swipe-72ae07e4-large-thumb.jpg",
-        "description": "Maybe find love? Definitely find a good time. The Dating app game is a such a gamble, let’s take it back to the old school… Live dating games. Come as a contestant or come to just watch.What happens when you put around a hundred single people together in a room and mess with a few of them on stage? We hope… love. Couples are welcome to come party too as hilarious comedians Jeff Joe and Lotto Marie play a series of games with newly matched singles and couples. At the end, only one couple will stand as a winner. We will setup the winner with prizes for their first date!Stick around and mingle at the after show mixer.All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Jeff Joe"
-          },
-          {
-            "@type": "Person",
-            "name": "Lotto Marie"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/comedian-courtney-gilmour-don-t-tell-comedy-headlines-the-riot-houston": {
       "lastmod": "2026-08-26T11:13:00-05:00",
       "node": {
@@ -12796,51 +12747,6 @@
           {
             "@type": "Person",
             "name": "Ian Fidance"
-          }
-        ]
-      }
-    },
-    "https://www.riotconroe.com/events/comedian-chris-munch-live-in-conroe": {
-      "lastmod": "2026-08-27T06:20:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Comedian Chris Munch Live in Conroe",
-        "startDate": "2026-08-27T19:30:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Conroe",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "219 Simonton Street",
-            "addressLocality": "Conroe",
-            "postalCode": "77301",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.riotconroe.com/events/comedian-chris-munch-live-in-conroe",
-          "priceCurrency": "USD",
-          "price": "25.00",
-          "availability": "InStock",
-          "validFrom": "2026-06-07T20:07:31-05:00"
-        },
-        "url": "https://www.riotconroe.com/events/comedian-chris-munch-live-in-conroe",
-        "image": "/img/events/Guadalaharrys-54-eaf10ba5-large-thumb.png",
-        "description": "Riot Comedy Conroe Presents Comedian Chris Munch Live in ConroeDon&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.Chris is a multi-talented actor, comedian, and writer. For over 20 years he has been performing in front of cameras and live audiences alike. Whether in front of thousands at his home church&#39;s legendary live Christmas shows or literally millions with YouTube videos like the&nbsp;&ldquo;Dad Life&rdquo;, he loves bringing laughter and joy to audiences. He&rsquo;s the creator of the unsettling, yet hilarious, personas &ldquo;Stephen Stephens&rdquo;, &ldquo;Chad&rdquo;, as well as the good hearted southern minister &ldquo;Pastor Bobby&rdquo;. His characters have millions of views and over 300k followers on social media.---You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Conroe",
-          "url": "https://www.riotconroe.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Adam Bush"
           }
         ]
       }

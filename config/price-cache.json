@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-08-27T07:45:06.515Z",
+  "last_updated": "2026-08-28T09:47:27.688Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -41,14 +41,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/craig-conant-houston-improv-tickets/14824993?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-07-19T00:21:45.367Z"
-    },
-    "383a34b53d1a8b7c": {
-      "price_min": 12.86,
-      "price_max": 12.86,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/houston-af-houston-improv-tickets/15030053?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-08-17T14:44:18.975Z"
     },
     "d91c5804c0e8f702": {
       "price_min": 50,
@@ -145,14 +137,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
-    },
-    "24543ce267da2920": {
-      "price_min": 27,
-      "price_max": 42,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/francisco-ramos-en-espanol-houston-texas-08-27-2026/event/3A00648AD043ED3A",
-      "fetched_at": "2026-08-17T15:16:40.226Z"
     },
     "abe671e9adbe350e": {
       "price_min": 31,
