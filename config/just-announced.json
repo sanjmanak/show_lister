@@ -1,4 +1,75 @@
 {
- "updated": "2026-08-28T19:46:19.163Z",
- "announcements": []
+ "updated": "2026-08-28T23:24:35.337Z",
+ "announcements": [
+  {
+   "id": "8e8fbd9a07c7e39e",
+   "name": "EMO NITE - HTX",
+   "venue": "The Secret Group",
+   "date": "2026-09-05",
+   "time": "9:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192136303%2F3558237521%2F1%2Foriginal.20260828-175706?auto=format%2Ccompress&q=75&sharp=10&s=f51c74dc3f185d1a64baf86e307d784b",
+   "ticket_url": "https://www.eventbrite.com/e/emo-nite-htx-tickets-1999116012809",
+   "source": "eventbrite",
+   "notable": false,
+   "first_seen": "2026-08-28T23:24:35.337Z"
+  },
+  {
+   "id": "a00462ff2839a101",
+   "name": "Clint Coley",
+   "venue": "Punch Line Houston",
+   "date": "2026-11-12",
+   "time": "7:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/84d/6f42b922-5aa3-4667-bee0-ae827060884d_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/clint-coley-houston-texas-11-12-2026/event/3A0064F335EF12DC",
+   "source": "ticketmaster",
+   "notable": false,
+   "first_seen": "2026-08-28T23:24:35.337Z"
+  },
+  {
+   "id": "6b85772a84b825cf",
+   "name": "Ellen Skrmetti",
+   "venue": "Houston Improv",
+   "date": "2026-11-12",
+   "time": "7:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+   "ticket_url": "https://www.ticketweb.com/event/ellen-skrmetti-houston-improv-tickets/15024353?REFERRAL_ID=tmfeed",
+   "source": "ticketmaster",
+   "notable": false,
+   "first_seen": "2026-08-28T23:24:35.337Z"
+  },
+  {
+   "id": "ee3501add706d6a7",
+   "name": "Christopher Titus: Doomed To Repeat",
+   "venue": "Punch Line Houston",
+   "date": "2026-11-13",
+   "time": "7:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/c08/441cbaa3-6959-425b-ad68-f249f10d9c08_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/christopher-titus-doomed-to-repeat-houston-texas-11-13-2026/event/3A0064E6AD6473C5",
+   "source": "ticketmaster",
+   "notable": false,
+   "first_seen": "2026-08-28T23:24:35.337Z"
+  },
+  {
+   "id": "117e2e6a6fcc648e",
+   "name": "Deric Poston Live in Houston",
+   "venue": "The Pink Flamingo Comedy Club",
+   "date": "2026-11-21",
+   "time": "8:00 PM",
+   "price_min": 25.09,
+   "price_max": 25.09,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192132548%2F2996872667695%2F1%2Foriginal.20260828-170749?auto=format%2Ccompress&q=75&sharp=10&s=69c959d17796bd1d4db13cd7201725dc",
+   "ticket_url": "https://www.eventbrite.com/e/deric-poston-live-in-houston-tickets-1999114030881",
+   "source": "eventbrite",
+   "notable": false,
+   "first_seen": "2026-08-28T23:24:35.337Z"
+  }
+ ]
 }
