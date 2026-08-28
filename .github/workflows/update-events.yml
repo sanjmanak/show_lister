@@ -55,6 +55,9 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: node scripts/fetch-events.js
 
+      - name: Detect just-announced shows
+        run: node scripts/just-announced.js
+
       - name: Price coverage summary
         run: |
           node -e "
@@ -78,7 +81,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add events.json index.html excluded-events.json config/price-cache.json \
-                  config/show-tags-cache.json config/standuptix-cache.json
+                  config/show-tags-cache.json config/standuptix-cache.json \
+                  config/announced-seen.json config/just-announced.json
           # Only commit if there are changes
           if git diff --staged --quiet; then
             echo "No changes to commit."
