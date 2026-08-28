@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.14.1
+ * Version: 2.15.0
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.14.1';
+    const VERSION      = '2.15.0';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -62,6 +62,7 @@ class Comedy_Houston_Plugin {
 
         // Click redirect endpoint
         add_action('init', [$this, 'register_redirect_endpoint']);
+        add_action('init', [$this, 'register_lead_cpt']);
         add_action('template_redirect', [$this, 'handle_redirect']);
 
         // Cache-Control for pages containing the shortcode: the listings are
@@ -1642,6 +1643,9 @@ src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>
             $notes !== '' ? $notes : '—',
         ];
         $subject = sprintf('Corporate comedy inquiry — %s, %s', $event_type, $event_date);
+        $this->store_lead('inquiry', $subject . ' — ' . $name, implode("\n", $lines), [
+            'name' => $name, 'email' => $email, 'event_type' => $event_type, 'event_date' => $event_date,
+        ]);
         $headers = ['Reply-To: ' . $name . ' <' . $email . '>'];
 
         if (!wp_mail($this->inquiry_email(), $subject, implode("\n", $lines), $headers)) {
@@ -1659,6 +1663,49 @@ src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>
     // show. Submissions are emailed to the admin for manual concierge
     // matching — no accounts, no producer dashboard, no storage beyond email.
     // =========================================================================
+
+    /**
+     * Lead storage. Every form submission is stored as a private "Lead"
+     * post BEFORE the notification email is attempted, so a wp_mail failure
+     * (or a broken forwarder downstream) never loses the lead. Browse them
+     * in WP admin under the "Leads" menu; the post body is the same text as
+     * the notification email.
+     */
+    public function register_lead_cpt() {
+        register_post_type('ch_lead', [
+            'labels' => [
+                'name'          => 'Leads',
+                'singular_name' => 'Lead',
+                'menu_name'     => 'Leads',
+            ],
+            'public'          => false,
+            'show_ui'         => true,
+            'show_in_rest'    => false,
+            'menu_icon'       => 'dashicons-email-alt',
+            'menu_position'   => 26,
+            'supports'        => ['title', 'editor'],
+            'capability_type' => 'post',
+            'map_meta_cap'    => true,
+        ]);
+    }
+
+    private function store_lead($type, $title, $body, $meta = []) {
+        $post_id = wp_insert_post([
+            'post_type'    => 'ch_lead',
+            'post_status'  => 'private',
+            'post_title'   => $title,
+            'post_content' => $body,
+        ], true);
+        if (is_wp_error($post_id)) {
+            error_log('Comedy Houston: lead storage failed: ' . $post_id->get_error_message());
+            return 0;
+        }
+        update_post_meta($post_id, '_ch_lead_type', sanitize_key($type));
+        foreach ($meta as $k => $v) {
+            update_post_meta($post_id, '_ch_lead_' . sanitize_key($k), sanitize_text_field((string) $v));
+        }
+        return $post_id;
+    }
 
     private function performer_email() {
         return apply_filters('comedy_houston_performer_email', $this->inquiry_email());
@@ -1742,6 +1789,10 @@ src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>
             $event_date !== '' ? $event_date : 'unknown date'
         );
 
+        $this->store_lead('performer', 'Performer — @' . $instagram . ' — ' . ($event_name !== '' ? $event_name : 'unknown show'), implode("\n", $lines), [
+            'instagram' => $instagram, 'email' => $email, 'event_id' => $event_id,
+            'event_name' => $event_name, 'venue' => $venue, 'event_date' => $event_date,
+        ]);
         // Reply-To is the performer, so hitting reply in any mail client
         // answers the comic directly instead of the site's own address.
         $headers = ['Reply-To: ' . $email];
