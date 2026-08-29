@@ -1,19 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-08-28T23:22:52.462Z",
-  "total_excluded": 21,
+  "last_updated": "2026-08-29T05:48:30.372Z",
+  "total_excluded": 20,
   "events": [
-    {
-      "name": "NOTHING MATTERS Emo | Indie | Punk Dance Party",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-08-28",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/nothing-matters-emo-indie-punk-dance-party-tickets-1998225312701",
-      "reason": "title keyword blocklisted: \"dance party\""
-    },
     {
       "name": "DIAL UP: 90s & Y2K Dance Party!",
       "venue": "The Secret Group",

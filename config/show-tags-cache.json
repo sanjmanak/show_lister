@@ -1596,6 +1596,18 @@
       "model": "gpt-4o-mini",
       "taxonomy": 2,
       "classified_at": "2026-08-28"
+    },
+    "nurse john": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-08-29"
+    },
+    "the riot presents friday night early standup comedy showcase": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-08-29"
     }
   }
 }

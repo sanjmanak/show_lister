@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-28T23:24:35.337Z",
+ "updated": "2026-08-29T05:50:10.698Z",
  "announcements": [
   {
    "id": "8e8fbd9a07c7e39e",
@@ -70,6 +70,90 @@
    "source": "eventbrite",
    "notable": false,
    "first_seen": "2026-08-28T23:24:35.337Z"
+  },
+  {
+   "id": "4a63376c2a61b36e",
+   "name": "Corey Holcomb",
+   "venue": "Houston Improv",
+   "date": "2026-11-13",
+   "time": "7:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/168/ad8a409d-f583-4333-896e-c605ce02c168_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7xFb8",
+   "source": "ticketmaster",
+   "notable": false,
+   "first_seen": "2026-08-29T05:50:10.698Z"
+  },
+  {
+   "id": "989f8bf75eaff755",
+   "name": "Nurse John",
+   "venue": "Smart Financial Centre at Sugar Land",
+   "date": "2026-11-13",
+   "time": "7:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/c5b/7ab28ae8-0253-4f76-ac58-eb4fbab24c5b_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A70_kF",
+   "source": "ticketmaster",
+   "notable": true,
+   "first_seen": "2026-08-29T05:50:10.698Z"
+  },
+  {
+   "id": "426355fbc2038be6",
+   "name": "The Riot Presents Friday Night Early Standup Comedy Showcase",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-11-27",
+   "time": "7:00 PM",
+   "price_min": 19,
+   "price_max": 19,
+   "image_url": "https://www.theriothtx.com/img/shows/friday-7-8bbb088f-large-thumb.jpg",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-1-13",
+   "source": "standuptix",
+   "notable": false,
+   "first_seen": "2026-08-29T05:50:10.698Z"
+  },
+  {
+   "id": "49bb65a695d01520",
+   "name": "Live at the Barbershop Houston: Stand Up Comedy in a Real Barbershop · BYOB",
+   "venue": "Cutthroat Barbers - Houston Barbershop in The Heights - Men's Barbershop",
+   "date": "2026-11-27",
+   "time": "8:30 PM",
+   "price_min": 17.85,
+   "price_max": 17.85,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186073370%2F17937490607%2F1%2Foriginal.20260603-161601?auto=format%2Ccompress&q=75&sharp=10&s=20c19f0df3041e183dd945f749ef8cb9",
+   "ticket_url": "https://www.eventbrite.com/e/live-at-the-barbershop-houston-stand-up-comedy-in-a-real-barbershop-byob-tickets-1998989819361",
+   "source": "eventbrite",
+   "notable": false,
+   "first_seen": "2026-08-29T05:50:10.698Z"
+  },
+  {
+   "id": "5a02b22d97c55d7f",
+   "name": "The Riot Presents Friday Night Standup Comedy Showcase",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-11-27",
+   "time": "9:00 PM",
+   "price_min": 19,
+   "price_max": 19,
+   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-20-friday-night-9pm-602b1388-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-30",
+   "source": "standuptix",
+   "notable": false,
+   "first_seen": "2026-08-29T05:50:10.698Z"
+  },
+  {
+   "id": "c04e17c65d11396f",
+   "name": "The Riot Comedy Club Presents Friday Night Standup Comedy Late Showcase!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-11-27",
+   "time": "11:00 PM",
+   "price_min": 15,
+   "price_max": 15,
+   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-18-2f410d5b-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-26",
+   "source": "standuptix",
+   "notable": false,
+   "first_seen": "2026-08-29T05:50:10.698Z"
   }
  ]
 }

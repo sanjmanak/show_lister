@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-08-28T09:47:27.688Z",
+  "last_updated": "2026-08-29T05:50:08.476Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -137,22 +137,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
-    },
-    "abe671e9adbe350e": {
-      "price_min": 31,
-      "price_max": 45,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/francisco-ramos-houston-texas-08-28-2026/event/3A00648AD04AED48",
-      "fetched_at": "2026-08-17T15:16:52.889Z"
-    },
-    "80f7715fceeb89e5": {
-      "price_min": 31,
-      "price_max": 45,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/correy-bell-houston-texas-08-28-2026/event/3A0064B128270F62",
-      "fetched_at": "2026-08-17T15:17:11.754Z"
     },
     "b74e95bb2950fb7c": {
       "price_min": 34,
