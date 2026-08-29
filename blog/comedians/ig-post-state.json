@@ -12,15 +12,5 @@
   ],
   "week_range": "August 24 – August 30, 2026",
   "manifest_version": 1787589437467,
-  "cleanup_queue": [
-    {
-      "slug": "jay-pharoah-houston-improv-2026-08-28",
-      "comedianName": "Jay Pharoah",
-      "igFeedMediaId": "18110340854094818",
-      "igStoryMediaId": "18130421626658696",
-      "fbFeedPostId": "1385869476971127",
-      "fbStoryPostId": "1382964834008767",
-      "postedAt": "2026-08-24T16:47:40.796Z"
-    }
-  ]
+  "cleanup_queue": []
 }
