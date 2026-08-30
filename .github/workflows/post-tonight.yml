@@ -1,10 +1,15 @@
 name: Tonight in Houston
 
 on:
-  # Daily at 20:00 UTC = 3 PM CDT (2 PM CST in winter). Houston is on
-  # daylight time most of the comedy season; GitHub cron can't follow DST.
+  # Target: ~2:40 PM CDT (1:40 PM CST in winter; GitHub cron can't follow
+  # DST). Scheduled off the top of the hour because GitHub queues :00 crons
+  # under peak load and was delivering this one 2-8 hours late (Aug 2026:
+  # two "tonight" posts landed after 9 PM). The second cron is a backstop:
+  # if the first fired, the tonight-post-state.json date check makes the
+  # backstop a no-op, so it never double-posts.
   schedule:
-    - cron: '0 20 * * *'
+    - cron: '37 19 * * *'   # ~2:37 PM CDT primary
+    - cron: '7 21 * * *'    # ~4:07 PM CDT backstop (no-op if primary ran)
 
   # Manual trigger for testing
   workflow_dispatch:
