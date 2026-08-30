@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-30T03:53:27.088Z",
+ "updated": "2026-08-30T17:55:06.959Z",
  "announcements": [
   {
    "id": "8e8fbd9a07c7e39e",
@@ -196,6 +196,90 @@
    "source": "ticketmaster",
    "notable": true,
    "first_seen": "2026-08-30T03:53:27.088Z"
+  },
+  {
+   "id": "fe4a5621e4927d75",
+   "name": "Christopher Titus: Doomed To Repeat",
+   "venue": "Punch Line Houston",
+   "date": "2026-11-14",
+   "time": "7:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/c08/441cbaa3-6959-425b-ad68-f249f10d9c08_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/christopher-titus-doomed-to-repeat-houston-texas-11-14-2026/event/3A0064E6AD7473E2",
+   "source": "ticketmaster",
+   "notable": false,
+   "first_seen": "2026-08-30T17:55:06.959Z"
+  },
+  {
+   "id": "f1ec42800c774d41",
+   "name": "Corey Holcomb",
+   "venue": "Houston Improv",
+   "date": "2026-11-14",
+   "time": "7:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/168/ad8a409d-f583-4333-896e-c605ce02c168_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7xFbA",
+   "source": "ticketmaster",
+   "notable": false,
+   "first_seen": "2026-08-30T17:55:06.959Z"
+  },
+  {
+   "id": "0d9eb8559044fd0b",
+   "name": "Gaby Mendoza & Jose Luis Zagar ",
+   "venue": "Arena Theatre",
+   "date": "2026-11-14",
+   "time": "8:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/e/a1f/41617ee0-3c82-484c-ac48-6fde2dc06a1f_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/gaby-mendoza-jose-luis-zagar-houston-texas-11-14-2026/event/3A0064C99EEEA712",
+   "source": "ticketmaster",
+   "notable": true,
+   "first_seen": "2026-08-30T17:55:06.959Z"
+  },
+  {
+   "id": "72d5cd90890fc8a0",
+   "name": "The Riot Presents Saturday Night Early Standup Comedy Showcase",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-11-28",
+   "time": "7:00 PM",
+   "price_min": 20,
+   "price_max": 20,
+   "image_url": "https://www.theriothtx.com/img/events/saturday-7-9bfc0960-large-thumb.jpg",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-early-standup-comedy-showcase-the-riot-houston-13",
+   "source": "standuptix",
+   "notable": false,
+   "first_seen": "2026-08-30T17:55:06.959Z"
+  },
+  {
+   "id": "91f2be1f343ca559",
+   "name": "The Riot Presents Saturday Night Standup Comedy Showcase",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-11-28",
+   "time": "9:00 PM",
+   "price_min": 19,
+   "price_max": 19,
+   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-22-31130d5b-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-26",
+   "source": "standuptix",
+   "notable": false,
+   "first_seen": "2026-08-30T17:55:06.959Z"
+  },
+  {
+   "id": "2e16fdfb1b1194fc",
+   "name": "The Riot Comedy Club Presents Saturday Night Standup Comedy Late Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-11-28",
+   "time": "11:00 PM",
+   "price_min": 15,
+   "price_max": 15,
+   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-13-Saturday-11pm-20db1248-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-30",
+   "source": "standuptix",
+   "notable": false,
+   "first_seen": "2026-08-30T17:55:06.959Z"
   }
  ]
 }

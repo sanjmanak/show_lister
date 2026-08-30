@@ -1128,7 +1128,8 @@
     "the riot presents saturday night early standup comedy showcase": {
       "tags": [],
       "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "taxonomy": 2,
+      "classified_at": "2026-08-30"
     },
     "don't tell comedy: kingwood (8:00 pm show)": {
       "tags": [],
@@ -1613,6 +1614,14 @@
     "leanne morgan": {
       "tags": [
         "clean-comedy"
+      ],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-08-30"
+    },
+    "gaby mendoza & jose luis zagar": {
+      "tags": [
+        "en-espanol"
       ],
       "model": "gpt-4o-mini",
       "taxonomy": 2,
