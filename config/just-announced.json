@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-29T17:31:03.624Z",
+ "updated": "2026-08-30T03:53:27.088Z",
  "announcements": [
   {
    "id": "8e8fbd9a07c7e39e",
@@ -154,6 +154,48 @@
    "source": "standuptix",
    "notable": false,
    "first_seen": "2026-08-29T05:50:10.698Z"
+  },
+  {
+   "id": "6ecd540a6b22ecb8",
+   "name": "Don't Tell Comedy: Pasadena (8:00 PM Show)",
+   "venue": "Don't Tell Comedy (Secret Location)",
+   "date": "2026-09-19",
+   "time": "8:00 PM",
+   "price_min": 27,
+   "price_max": 27,
+   "image_url": "https://dont-tell-comedy.mo.cloudinary.net/private/arttheater_opie_OuvJCLW.webp",
+   "ticket_url": "https://www.donttellcomedy.com/shows/houston-20889/",
+   "source": "donttellcomedy",
+   "notable": false,
+   "first_seen": "2026-08-30T03:53:27.088Z"
+  },
+  {
+   "id": "4bd5ae714653a486",
+   "name": "Don't Tell Comedy: Webster (9:00 PM Show)",
+   "venue": "Don't Tell Comedy (Secret Location)",
+   "date": "2026-09-19",
+   "time": "9:00 PM",
+   "price_min": 27,
+   "price_max": 27,
+   "image_url": "https://dont-tell-comedy.mo.cloudinary.net/private/eventspace-lasvegas-malecomiccrowd_4u9JU9W.webp",
+   "ticket_url": "https://www.donttellcomedy.com/shows/houston-21069/",
+   "source": "donttellcomedy",
+   "notable": false,
+   "first_seen": "2026-08-30T03:53:27.088Z"
+  },
+  {
+   "id": "8b1d041b75608b1f",
+   "name": "Leanne Morgan",
+   "venue": "Toyota Center - TX",
+   "date": "2026-11-14",
+   "time": "7:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/da9/e244b269-a579-4c18-9104-2f8f21c13da9_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+   "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7xZ8y",
+   "source": "ticketmaster",
+   "notable": true,
+   "first_seen": "2026-08-30T03:53:27.088Z"
   }
  ]
 }

@@ -1,7 +1,7 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-08-29T17:29:24.295Z",
-  "total_excluded": 20,
+  "last_updated": "2026-08-30T03:51:52.564Z",
+  "total_excluded": 19,
   "events": [
     {
       "name": "DIAL UP: 90s & Y2K Dance Party!",
@@ -13,17 +13,6 @@
       "genre": null,
       "ticket_url": "https://www.eventbrite.com/e/dial-up-90s-y2k-dance-party-tickets-1998225327746",
       "reason": "title keyword blocklisted: \"dance party\""
-    },
-    {
-      "name": "Luh Tyler",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-08-29",
-      "time": "7:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/luh-tyler-tickets-1993042465666",
-      "reason": "music artist blocklisted: \"luh tyler\""
     },
     {
       "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
