@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-2": {
-      "lastmod": "2026-08-30T05:23:00-05:00",
+      "lastmod": "2026-08-31T01:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -396,7 +396,7 @@
       }
     },
     "https://www.theriothtx.com/events/colin-armstrong-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-08-30T01:58:00-05:00",
+      "lastmod": "2026-08-31T12:52:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -420,7 +420,7 @@
           "@type": "Offer",
           "url": "https://www.theriothtx.com/events/colin-armstrong-headlines-the-riot-comedy-club",
           "priceCurrency": "USD",
-          "price": "20.00",
+          "price": "0.00",
           "availability": "InStock",
           "validFrom": "2026-06-18T12:55:30-05:00"
         },
@@ -445,7 +445,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-18": {
-      "lastmod": "2026-08-30T01:58:00-05:00",
+      "lastmod": "2026-08-31T12:56:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -469,7 +469,7 @@
           "@type": "Offer",
           "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-18",
           "priceCurrency": "USD",
-          "price": "19.00",
+          "price": "0.00",
           "availability": "InStock",
           "validFrom": "2026-08-08T12:27:00-05:00"
         },
@@ -575,7 +575,7 @@
       }
     },
     "https://www.theriothtx.com/events/colin-armstrong-headlines-the-riot-comedy-club-the-riot-houston": {
-      "lastmod": "2026-08-30T05:19:00-05:00",
+      "lastmod": "2026-08-31T12:58:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -599,7 +599,7 @@
           "@type": "Offer",
           "url": "https://www.theriothtx.com/events/colin-armstrong-headlines-the-riot-comedy-club-the-riot-houston",
           "priceCurrency": "USD",
-          "price": "20.00",
+          "price": "0.00",
           "availability": "InStock",
           "validFrom": "2026-06-18T13:01:14-05:00"
         },
@@ -965,7 +965,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-09-08-26-07-00-pm": {
-      "lastmod": "2026-08-10T03:27:00-05:00",
+      "lastmod": "2026-08-31T10:40:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -12594,7 +12594,7 @@
       }
     },
     "https://www.riotconroe.com/events/average-joey-headlines-the-riot-comedy-club-the-riot-conroe": {
-      "lastmod": "2026-08-10T08:55:00-05:00",
+      "lastmod": "2026-08-31T09:13:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -12634,7 +12634,7 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-21": {
-      "lastmod": "2026-08-10T04:31:00-05:00",
+      "lastmod": "2026-08-31T09:13:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -12670,7 +12670,28 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Javier Negrete"
+          },
+          {
+            "@type": "Person",
+            "name": "Barry Laminack"
+          },
+          {
+            "@type": "Person",
+            "name": "Waldo Rodas"
+          },
+          {
+            "@type": "Person",
+            "name": "Jessi Saldaña"
+          },
+          {
+            "@type": "Person",
+            "name": "Keelain Smith"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-28": {

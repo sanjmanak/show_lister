@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-31T03:56:25.228Z",
+ "updated": "2026-08-31T19:51:06.092Z",
  "announcements": [
   {
    "id": "8e8fbd9a07c7e39e",
@@ -672,6 +672,90 @@
    "source": "eventbrite",
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z"
+  },
+  {
+   "id": "63b783b5b8c78f5c",
+   "name": "Kinky Wednesdays",
+   "venue": "The Secret Group",
+   "date": "2026-09-09",
+   "time": "8:00 PM",
+   "price_min": 20.36,
+   "price_max": 20.36,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190346996%2F3558237521%2F1%2Foriginal.20260805-044049?auto=format%2Ccompress&q=75&sharp=10&s=0c01a2cbcc2731cf070211cd24251ad9",
+   "ticket_url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999294670178",
+   "source": "eventbrite",
+   "notable": false,
+   "first_seen": "2026-08-31T19:51:06.092Z"
+  },
+  {
+   "id": "c68ec018e7fb4374",
+   "name": "Kinky Wednesdays",
+   "venue": "The Secret Group",
+   "date": "2026-09-23",
+   "time": "8:00 PM",
+   "price_min": 20.36,
+   "price_max": 20.36,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190346996%2F3558237521%2F1%2Foriginal.20260805-044049?auto=format%2Ccompress&q=75&sharp=10&s=0c01a2cbcc2731cf070211cd24251ad9",
+   "ticket_url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999295803568",
+   "source": "eventbrite",
+   "notable": false,
+   "first_seen": "2026-08-31T19:51:06.092Z"
+  },
+  {
+   "id": "70a1eb2a6825e2c4",
+   "name": "Kinky Wednesdays",
+   "venue": "The Secret Group",
+   "date": "2026-10-14",
+   "time": "8:00 PM",
+   "price_min": 20.36,
+   "price_max": 20.36,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190346996%2F3558237521%2F1%2Foriginal.20260805-044049?auto=format%2Ccompress&q=75&sharp=10&s=0c01a2cbcc2731cf070211cd24251ad9",
+   "ticket_url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999296122522",
+   "source": "eventbrite",
+   "notable": false,
+   "first_seen": "2026-08-31T19:51:06.092Z"
+  },
+  {
+   "id": "cdb8239bb77b819b",
+   "name": "Kinky Wednesdays",
+   "venue": "The Secret Group",
+   "date": "2026-10-28",
+   "time": "8:00 PM",
+   "price_min": 20.36,
+   "price_max": 20.36,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190346996%2F3558237521%2F1%2Foriginal.20260805-044049?auto=format%2Ccompress&q=75&sharp=10&s=0c01a2cbcc2731cf070211cd24251ad9",
+   "ticket_url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999296198750",
+   "source": "eventbrite",
+   "notable": false,
+   "first_seen": "2026-08-31T19:51:06.092Z"
+  },
+  {
+   "id": "e5bdde9bf204c102",
+   "name": "The Riot Presents \"Houston's Funniest\" Sunday Comedy Showcase",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-11-29",
+   "time": "6:00 PM",
+   "price_min": 10,
+   "price_max": 10,
+   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-4-17bb0cfb-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-64",
+   "source": "standuptix",
+   "notable": false,
+   "first_seen": "2026-08-31T19:51:06.092Z"
+  },
+  {
+   "id": "afaf02e0143254bf",
+   "name": "The Riot Comedy Club Presents Sunday Night Standup Comedy Showcase",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-11-29",
+   "time": "8:00 PM",
+   "price_min": 10,
+   "price_max": 10,
+   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-15-Saturday-11pm-0fd71212-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-30",
+   "source": "standuptix",
+   "notable": false,
+   "first_seen": "2026-08-31T19:51:06.092Z"
   }
  ]
 }
