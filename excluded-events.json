@@ -1,7 +1,7 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-08-30T17:53:29.618Z",
-  "total_excluded": 18,
+  "last_updated": "2026-08-31T03:54:39.514Z",
+  "total_excluded": 22,
   "events": [
     {
       "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
@@ -92,6 +92,17 @@
       "reason": "music artist blocklisted: \"king khemoo\""
     },
     {
+      "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-09-13",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/our-mic-is-your-mic-emo-karaoke-tickets-1999225347833",
+      "reason": "title keyword blocklisted: \"karaoke\""
+    },
+    {
       "name": "SINCE ENTERTAINMENT PRESENTS NINO PAID SOMEWHERE OVER THE RAINBOW  TOUR",
       "venue": "The Secret Group",
       "venue_city": "Houston",
@@ -101,6 +112,28 @@
       "genre": null,
       "ticket_url": "https://www.eventbrite.com/e/since-entertainment-presents-nino-paid-somewhere-over-the-rainbow-tour-tickets-1992961697085",
       "reason": "music artist blocklisted: \"nino paid\""
+    },
+    {
+      "name": "Karaoke every THURSDAY!",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-09-17",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/karaoke-every-thursday-tickets-1999225383941",
+      "reason": "title keyword blocklisted: \"karaoke\""
+    },
+    {
+      "name": "NOTHING MATTERS Emo | Indie | Punk Dance Party",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-09-18",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/nothing-matters-emo-indie-punk-dance-party-tickets-1999225435094",
+      "reason": "title keyword blocklisted: \"dance party\""
     },
     {
       "name": "Bored Teachers: \"Is It Friday Yet?!\" Comedy Tour",
@@ -123,6 +156,17 @@
       "genre": null,
       "ticket_url": "https://www.eventbrite.com/e/born-without-bones-tickets-1989107136992",
       "reason": "music artist blocklisted: \"born without bones\""
+    },
+    {
+      "name": "DIAL UP: 90s & Y2K Dance Party!",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-09-19",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/dial-up-90s-y2k-dance-party-tickets-1999225437100",
+      "reason": "title keyword blocklisted: \"dance party\""
     },
     {
       "name": "Classic Movie Night At The Jefferson Some Like It Hot",
