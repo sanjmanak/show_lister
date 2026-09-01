@@ -55,7 +55,25 @@ const { handlesForEvent, toUserTags } = require("./lib/social-handles");
 
 const OUTPUT_DIR = path.resolve(__dirname, "..");
 const COMEDIANS_DIR = path.join(OUTPUT_DIR, "blog", "comedians");
-const MANIFEST_PATH = path.join(COMEDIANS_DIR, "manifest.json");
+// Manifests are week-keyed (manifest-YYYY-MM-DD.json, keyed by the Monday
+// of the week they cover) because generate-comedian-post.js now writes them
+// ~3 weeks ahead. Resolve the one covering the CURRENT week; fall back to
+// the legacy single manifest.json only if its week_range matches today, so
+// a leftover future- or past-week file can never post early or repost.
+function currentMondayStr() {
+  const now = new Date();
+  const monday = new Date(now);
+  monday.setDate(now.getDate() - ((now.getDay() + 6) % 7));
+  const y = monday.getFullYear();
+  const m = String(monday.getMonth() + 1).padStart(2, "0");
+  const d = String(monday.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+}
+const MANIFEST_PATH = (() => {
+  const weekly = path.join(COMEDIANS_DIR, `manifest-${currentMondayStr()}.json`);
+  if (fs.existsSync(weekly)) return weekly;
+  return path.join(COMEDIANS_DIR, "manifest.json"); // legacy fallback
+})();
 const STATE_PATH = path.join(COMEDIANS_DIR, "ig-post-state.json");
 const IMAGES_BASE_URL =
   "https://sanjmanak.github.io/show_lister/blog/comedians/images";
@@ -539,6 +557,19 @@ async function main() {
   }
 
   const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, "utf8"));
+
+  // Legacy-fallback guard: never post from a manifest that does not cover
+  // the current week (e.g. a stale manifest.json from before the week-keyed
+  // scheme, or a future week whose Monday has not arrived yet).
+  if (MANIFEST_PATH.endsWith("manifest.json")) {
+    const wr = String(manifest.week_range || "");
+    const today = new Date().toISOString().slice(0, 10);
+    const dates = wr.match(/\d{4}-\d{2}-\d{2}/g) || [];
+    if (dates.length === 2 && (today < dates[0] || today > dates[1])) {
+      console.log(`Legacy manifest.json covers ${wr}, not today — skipping.`);
+      return;
+    }
+  }
   if (!manifest.posts || manifest.posts.length === 0) {
     console.log("\nManifest has no posts — nothing to post. Exiting.");
     process.exit(0);

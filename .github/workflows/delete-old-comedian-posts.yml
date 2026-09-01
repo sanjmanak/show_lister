@@ -57,6 +57,19 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run == true && '1' || '' }}
         run: node scripts/delete-comedian-posts.js
 
+      # Blog-post reaper: once a spotlight week's last show date has passed
+      # (plus a 1-day grace), delete the WordPress posts themselves and
+      # archive that week's manifest. Indexable spotlights must not pile up
+      # as stale thin content — see scripts/delete-comedian-blog-posts.js.
+      - name: Delete finished-week spotlight blog posts
+        timeout-minutes: 10
+        env:
+          WP_SITE_URL: ${{ secrets.WP_SITE_URL }}
+          WP_APP_USER: ${{ secrets.WP_APP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          DRY_RUN: ${{ inputs.dry_run == true && '1' || '' }}
+        run: node scripts/delete-comedian-blog-posts.js
+
       - name: Commit cleanup state
         # always() so partial progress (some IDs deleted before a failure)
         # still lands — the script writes state before choosing its exit
@@ -65,7 +78,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add blog/comedians/ig-post-state.json
+          git add blog/comedians/
           if git diff --staged --quiet; then
             echo "No state changes to commit."
           else

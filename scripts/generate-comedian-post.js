@@ -58,11 +58,19 @@ const COMEDIANS_DIR = path.join(OUTPUT_DIR, "blog", "comedians");
 // Date helpers
 // ---------------------------------------------------------------------------
 
+// How many weeks ahead of the current week to generate for. 3 (the cron
+// default) publishes each spotlight ~3 weeks before the show so the post
+// has time to index and rank for "[comedian] [venue] houston" searches
+// before the IG push and the show itself. Override per-run via the
+// workflow_dispatch lead_weeks input (0 = the old same-week behavior,
+// used for transition backfills).
+const LEAD_WEEKS = Math.max(0, parseInt(process.env.LEAD_WEEKS || "3", 10) || 0);
+
 function getCurrentWeekRange() {
   const now = new Date();
   const day = now.getDay();
   const monday = new Date(now);
-  monday.setDate(now.getDate() - ((day + 6) % 7));
+  monday.setDate(now.getDate() - ((day + 6) % 7) + LEAD_WEEKS * 7);
   monday.setHours(0, 0, 0, 0);
   const sunday = new Date(monday);
   sunday.setDate(monday.getDate() + 6);
@@ -1741,14 +1749,13 @@ async function publishToWordPress(comedianName, venue, date, slug, htmlContent, 
     status: "publish",
     slug: slug,
     comment_status: "closed",
-    // Per-comedian preview posts are noindexed by default (plugin v2.8.0
-    // emits the robots meta): they exist for Instagram creative and the
-    // event cards' "More info" internal links, but ~90 near-template posts
-    // indexed on a low-traffic domain were a sitewide quality drag. To keep
-    // a specific post indexable (it earns real GSC clicks), add a
-    // ch_allow_index=1 custom field in WP admin — it overrides this flag,
-    // so re-publishes can't flip it back.
-    ch_noindex: 1,
+    // Spotlights are INDEXABLE as of the 3-week-lead pipeline (2026-09-01):
+    // each post publishes ~3 weeks before its show to rank for
+    // "[comedian] [venue] houston" searches, and is deleted the week after
+    // the show by delete-comedian-blog-posts.js. Only ~18 are live at any
+    // time and none go stale, which is what fixed the earlier quality-drag
+    // concern that motivated ch_noindex: 1 (see git history).
+    ch_noindex: 0,
   };
 
   if (featuredMediaId) {
@@ -2340,11 +2347,14 @@ async function main() {
       week_range: weekRange,
       posts: generatedPosts,
     };
+    // Week-keyed filename so several future weeks can be in flight at once;
+    // post-to-instagram.js resolves the file matching the CURRENT week.
+    const manifestName = `manifest-${toLocalDateStr(monday)}.json`;
     fs.writeFileSync(
-      path.join(COMEDIANS_DIR, "manifest.json"),
+      path.join(COMEDIANS_DIR, manifestName),
       JSON.stringify(manifest, null, 2)
     );
-    console.log(`Wrote: blog/comedians/manifest.json`);
+    console.log(`Wrote: blog/comedians/${manifestName}`);
 
     // Write email summary for the workflow email step
     const names = generatedPosts.map((p) => p.comedianName);

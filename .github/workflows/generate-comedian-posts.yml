@@ -7,8 +7,14 @@ on:
   schedule:
     - cron: '0 16 * * 1'   # Every Monday ~10am CT
 
-  # Manual trigger from the Actions tab (use this for testing!)
+  # Manual trigger from the Actions tab. lead_weeks lets a backfill run
+  # target a nearer week during the 3-week-lead transition (0 = this week).
   workflow_dispatch:
+    inputs:
+      lead_weeks:
+        description: 'Weeks ahead of the current week to generate for'
+        type: string
+        default: '3'
 
 permissions:
   contents: write
@@ -22,6 +28,8 @@ concurrency:
 
 env:
   TZ: America/Chicago
+  # Cron runs use the 3-week lead; manual runs can override via input.
+  LEAD_WEEKS: ${{ inputs.lead_weeks || '3' }}
 
 jobs:
   generate-comedian-posts:

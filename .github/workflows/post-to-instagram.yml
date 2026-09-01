@@ -39,11 +39,14 @@ jobs:
       - name: Check if manifest exists
         id: check
         run: |
-          if [ ! -f blog/comedians/manifest.json ]; then
-            echo "skip=true" >> $GITHUB_OUTPUT
-            echo "No manifest.json found — skipping."
-          else
+          # Week-keyed manifests (manifest-YYYY-MM-DD.json) or the legacy
+          # manifest.json both count; post-to-instagram.js resolves which
+          # one actually covers the current week.
+          if ls blog/comedians/manifest*.json >/dev/null 2>&1; then
             echo "skip=false" >> $GITHUB_OUTPUT
+          else
+            echo "skip=true" >> $GITHUB_OUTPUT
+            echo "No manifest files found — skipping."
           fi
 
       - name: Set up Node.js
@@ -51,6 +54,41 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      # Week-of creative: replace each current-week comedian's square/story
+      # PNGs with live screenshots of their (by now hopefully ranking) blog
+      # post. Runs once per comedian per week via .live-refreshed markers.
+      # Must be committed and pushed BEFORE posting — Meta fetches the
+      # images from GitHub Pages. Non-fatal throughout: a failed refresh
+      # just means the pre-generated designed graphics get posted instead.
+      - name: Refresh live creative for current week
+        if: steps.check.outputs.skip != 'true'
+        timeout-minutes: 10
+        continue-on-error: true
+        run: |
+          npm install puppeteer --no-save
+          node scripts/refresh-live-creative.js
+
+      - name: Commit refreshed creative
+        if: steps.check.outputs.skip != 'true'
+        continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add blog/comedians/images/
+          if git diff --staged --quiet; then
+            echo "No creative changes to commit."
+          else
+            git commit -m "Live spotlight creative — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
+            for i in 1 2 3 4; do
+              git pull --rebase origin main --no-edit || { git rebase --abort 2>/dev/null || true; }
+              if git push origin main; then break; fi
+              sleep $i
+            done
+            # Give GitHub Pages a moment to deploy the new PNGs before the
+            # poster hands Meta the URLs.
+            sleep 90
+          fi
 
       - name: Post next comedian to Instagram
         if: steps.check.outputs.skip != 'true'
