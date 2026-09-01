@@ -12404,7 +12404,7 @@
       }
     },
     "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-27": {
-      "lastmod": "2026-08-10T04:19:00-05:00",
+      "lastmod": "2026-09-01T08:51:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -12440,11 +12440,32 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Grady Pruitt"
+          },
+          {
+            "@type": "Person",
+            "name": "Justin Smith htx"
+          },
+          {
+            "@type": "Person",
+            "name": "Son Tran"
+          },
+          {
+            "@type": "Person",
+            "name": "Waldo Rodas"
+          },
+          {
+            "@type": "Person",
+            "name": "Keelain Smith"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/average-joey-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-08-10T08:55:00-05:00",
+      "lastmod": "2026-09-01T10:06:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -12480,11 +12501,20 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Blake Jones"
+          },
+          {
+            "@type": "Person",
+            "name": "Joseph Leonard"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/average-joey-headlines-the-riot-comedy-club-the-riot-conroe": {
-      "lastmod": "2026-08-31T09:13:00-05:00",
+      "lastmod": "2026-09-01T10:07:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -12520,11 +12550,20 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Blake Jones"
+          },
+          {
+            "@type": "Person",
+            "name": "Joseph Leonard"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-21": {
-      "lastmod": "2026-08-31T09:13:00-05:00",
+      "lastmod": "2026-09-01T10:07:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
