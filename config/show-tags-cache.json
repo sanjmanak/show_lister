@@ -1670,6 +1670,18 @@
       "model": "gpt-4o-mini",
       "taxonomy": 2,
       "classified_at": "2026-08-31"
+    },
+    "chat pile - who loves the sun tour 2026 - early show": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-09-01"
+    },
+    "chat pile - who loves the sun tour 2026 - late show": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-09-01"
     }
   }
 }
