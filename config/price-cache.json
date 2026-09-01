@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-08-31T19:51:06.006Z",
+  "last_updated": "2026-09-01T18:01:57.054Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -289,6 +289,62 @@
       "source": "page",
       "url": "https://www.ticketmaster.com/rocky-dale-davis-houston-texas-09-25-2026/event/3A0064982322FB57",
       "fetched_at": "2026-08-17T15:29:58.193Z"
+    },
+    "568f61af84f32a90": {
+      "price_min": 12.86,
+      "price_max": 12.86,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/zahid-dewji-houston-improv-tickets/14280854?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-09-01T17:47:25.901Z"
+    },
+    "137b9ca9693f86ec": {
+      "price_min": 31.4,
+      "price_max": 31.4,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/rex-navarrete-houston-improv-tickets/14277314?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-09-01T17:48:56.441Z"
+    },
+    "d3daae8094cdecd4": {
+      "price_min": 31.4,
+      "price_max": 31.4,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/dave-lawson-friends-houston-improv-tickets/15043813?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-09-01T17:49:07.436Z"
+    },
+    "a9d8a939231a3e5f": {
+      "price_min": 37.58,
+      "price_max": 37.58,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/ari-matti-houston-improv-tickets/15045013?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-09-01T17:50:54.518Z"
+    },
+    "88b1f8dcf12bab83": {
+      "price_min": 37.58,
+      "price_max": 37.58,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/ari-matti-houston-improv-tickets/15045033?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-09-01T17:51:33.716Z"
+    },
+    "f3f2fc613ede0656": {
+      "price_min": 31.4,
+      "price_max": 31.4,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/kev-adams-houston-improv-tickets/14277964?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-09-01T18:00:29.002Z"
+    },
+    "6b85772a84b825cf": {
+      "price_min": 31.4,
+      "price_max": 31.4,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.ticketweb.com/event/ellen-skrmetti-houston-improv-tickets/15024353?REFERRAL_ID=tmfeed",
+      "fetched_at": "2026-09-01T18:00:54.755Z"
     }
   }
 }
