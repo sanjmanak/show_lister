@@ -1,5 +1,5 @@
 {
-  "last_posted_date": "2026-09-01",
+  "last_posted_date": "2026-09-02",
   "posted": [
     {
       "date": "2026-09-01",
@@ -8,6 +8,14 @@
       "fbFeedPostId": "1392677656290309",
       "fbStoryPostId": "1062354509733439",
       "postedAt": "2026-09-01T21:59:37.602Z"
+    },
+    {
+      "date": "2026-09-02",
+      "igFeedMediaId": "17921631468202479",
+      "igStoryMediaId": "18107436233153158",
+      "fbFeedPostId": "1393505009540907",
+      "fbStoryPostId": "1357231886176217",
+      "postedAt": "2026-09-02T21:58:54.402Z"
     }
   ]
 }
