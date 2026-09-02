@@ -5,7 +5,7 @@ on:
   # 10am CDT = 15:00 UTC, 10am CST = 16:00 UTC
   # Using 16:00 UTC to cover both
   schedule:
-    - cron: '0 16 * * 1'   # Every Monday ~10am CT
+    - cron: '19 15 * * 1'  # Mondays ~10:19am CDT (off :00)
 
   # Manual trigger from the Actions tab. lead_weeks lets a backfill run
   # target a nearer week during the 3-week-lead transition (0 = this week).

@@ -5,7 +5,7 @@ on:
   # Mon 4pm CT, Mon 10pm CT, Tue 4am CT, Tue 10am CT, Tue 4pm CT, ...
   # 4pm CDT = 21:00 UTC, 4pm CST = 22:00 UTC — using 22:00 to cover both
   schedule:
-    - cron: '0 4,10,16,22 * * *'  # Every 6 hours, daily
+    - cron: '23 4,10,16,22 * * *'  # Every 6 hours (minute 23: GitHub delays :00 crons)
 
   # Manual trigger for testing
   workflow_dispatch:

@@ -5,7 +5,7 @@ on:
   # hours after its last push, so the two workflows never race the state
   # commit on main.
   schedule:
-    - cron: '0 17 * * *'
+    - cron: '13 17 * * *'  # off :00
 
   # Manual trigger — dry_run logs what would be deleted without touching
   # anything (recommended for the first run after a change).

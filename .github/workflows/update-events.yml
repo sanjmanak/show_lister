@@ -5,8 +5,8 @@ on:
   # with DST: 14:00 UTC = 8am CST / 9am CDT; 00:00 UTC = 6pm CST / 7pm CDT.
   # (Most of the year Houston is on CDT, so in practice ~9am and ~7pm.)
   schedule:
-    - cron: '0 14 * * *'   # ~8am CT
-    - cron: '0 0 * * *'    # ~6pm CT
+    - cron: '17 13 * * *'  # ~8:17am CDT (off :00 — GitHub delays top-of-hour crons)
+    - cron: '47 23 * * *'  # ~6:47pm CDT (off :00)
 
   # Manual trigger from the Actions tab
   workflow_dispatch:

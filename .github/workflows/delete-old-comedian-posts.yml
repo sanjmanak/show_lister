@@ -5,7 +5,7 @@ on:
   # and 16:00 UTC slots so the shared concurrency group never has to queue
   # a posting run behind this one.
   schedule:
-    - cron: '0 13 * * *'
+    - cron: '31 13 * * *'  # off :00; still between the IG slots
 
   # Manual trigger — dry_run logs what would be deleted without touching
   # anything (recommended for the first run after a change).

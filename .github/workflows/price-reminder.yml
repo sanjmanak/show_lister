@@ -10,7 +10,7 @@ name: Weekly Price Refresh Reminder
 on:
   schedule:
     # GitHub cron is UTC: 14:00 = 8am CST / 9am CDT, Mondays.
-    - cron: '0 14 * * 1'
+    - cron: '41 14 * * 1'  # off :00
   workflow_dispatch:
 
 permissions:
