@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-02T03:07:23.729Z",
+ "updated": "2026-09-02T17:12:53.131Z",
  "announcements": [
   {
    "id": "8e8fbd9a07c7e39e",
@@ -1092,6 +1092,104 @@
    "source": "eventbrite",
    "notable": false,
    "first_seen": "2026-09-01T17:34:48.899Z"
+  },
+  {
+   "id": "225c658d74973a03",
+   "name": "Don't Tell Comedy: Katy (8:00 PM Show)",
+   "venue": "Don't Tell Comedy (Secret Location)",
+   "date": "2026-09-26",
+   "time": "8:00 PM",
+   "price_min": 27,
+   "price_max": 27,
+   "image_url": "https://dont-tell-comedy.mo.cloudinary.net/private/coffee_shop3_NQ24Txt.webp",
+   "ticket_url": "https://www.donttellcomedy.com/shows/houston-21367/",
+   "source": "donttellcomedy",
+   "notable": false,
+   "first_seen": "2026-09-02T17:12:53.131Z"
+  },
+  {
+   "id": "c6d744e12a5fa846",
+   "name": "Chaunte Wayans",
+   "venue": "Punch Line Houston",
+   "date": "2026-10-16",
+   "time": "7:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/811/01c641b8-c700-40e6-8b6f-a994aa7a2811_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/chaunte-wayans-houston-texas-10-16-2026/event/3A00651FCBA6283C",
+   "source": "ticketmaster",
+   "notable": false,
+   "first_seen": "2026-09-02T17:12:53.131Z"
+  },
+  {
+   "id": "f3d021047e83d99d",
+   "name": "Chaunte Wayans",
+   "venue": "Punch Line Houston",
+   "date": "2026-10-17",
+   "time": "7:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/811/01c641b8-c700-40e6-8b6f-a994aa7a2811_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/chaunte-wayans-houston-texas-10-17-2026/event/3A00651FCBAF2859",
+   "source": "ticketmaster",
+   "notable": false,
+   "first_seen": "2026-09-02T17:12:53.131Z"
+  },
+  {
+   "id": "a93fc7c66e2e44cb",
+   "name": "Chaunte Wayans",
+   "venue": "Punch Line Houston",
+   "date": "2026-10-18",
+   "time": "7:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/811/01c641b8-c700-40e6-8b6f-a994aa7a2811_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/chaunte-wayans-houston-texas-10-18-2026/event/3A00651FCBB92897",
+   "source": "ticketmaster",
+   "notable": false,
+   "first_seen": "2026-09-02T17:12:53.131Z"
+  },
+  {
+   "id": "7c5836847e43c95e",
+   "name": "The Riot Presents Tuesday Night Standup Comedy Showcase!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-01",
+   "time": "7:00 PM",
+   "price_min": 8,
+   "price_max": 8,
+   "image_url": "https://www.theriothtx.com/img/shows/HTX-Saturday-Night-Showcases-1-2-e1ae10f9-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-12-01-26-07-00-pm",
+   "source": "standuptix",
+   "notable": false,
+   "first_seen": "2026-09-02T17:12:53.131Z"
+  },
+  {
+   "id": "57680dd4d6d1f785",
+   "name": "The Riot Comedy Club presents Tuesday Night Standup Comedy Open Mic",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-01",
+   "time": "9:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190626541%2F428099579998%2F1%2Foriginal.20260808-225241?auto=format%2Ccompress&q=75&sharp=10&s=595ec7210f45adddef0828933b948bea",
+   "ticket_url": "https://www.eventbrite.com/e/the-riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-tickets-1997283952066",
+   "source": "eventbrite",
+   "notable": false,
+   "first_seen": "2026-09-02T17:12:53.131Z"
+  },
+  {
+   "id": "97bd3b018a321edd",
+   "name": "Social Comedy Nite",
+   "venue": "Notsuoh",
+   "date": "2026-12-01",
+   "time": "10:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177329624%2F2986074715451%2F1%2Foriginal.20260211-230247?auto=format%2Ccompress&q=75&sharp=10&s=9520d1a7668651771ff71d5f1bcd6333",
+   "ticket_url": "https://www.eventbrite.com/e/social-comedy-nite-tickets-1982925746286",
+   "source": "eventbrite",
+   "notable": false,
+   "first_seen": "2026-09-02T17:12:53.131Z"
   }
  ]
 }

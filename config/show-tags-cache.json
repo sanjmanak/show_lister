@@ -1682,6 +1682,20 @@
       "model": "gpt-4o-mini",
       "taxonomy": 2,
       "classified_at": "2026-09-01"
+    },
+    "chaunte wayans": {
+      "tags": [
+        "black-comedy"
+      ],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-09-02"
+    },
+    "don't tell comedy: katy (8:00 pm show)": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-09-02"
     }
   }
 }

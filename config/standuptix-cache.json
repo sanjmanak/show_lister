@@ -176,7 +176,7 @@
       }
     },
     "https://www.theriothtx.com/events/colin-armstrong-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-09-01T07:56:00-05:00",
+      "lastmod": "2026-09-02T10:29:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -223,13 +223,13 @@
           },
           {
             "@type": "Person",
-            "name": "Dylan Kendrick"
+            "name": "Zahid Dewji"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-18": {
-      "lastmod": "2026-09-01T07:56:00-05:00",
+      "lastmod": "2026-09-02T10:29:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -285,12 +285,16 @@
           {
             "@type": "Person",
             "name": "Christian Alexander"
+          },
+          {
+            "@type": "Person",
+            "name": "jesse peyton"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-16": {
-      "lastmod": "2026-09-01T07:56:00-05:00",
+      "lastmod": "2026-09-02T10:29:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
