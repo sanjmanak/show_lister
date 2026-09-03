@@ -1696,6 +1696,12 @@
       "model": "gpt-4o-mini",
       "taxonomy": 2,
       "classified_at": "2026-09-02"
+    },
+    "labor day weekend comedy & drinks in a speakeasy: sunday 6:30pm": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-09-03"
     }
   }
 }

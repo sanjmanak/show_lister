@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-02T17:12:53.131Z",
+ "updated": "2026-09-03T01:31:40.306Z",
  "announcements": [
   {
    "id": "8e8fbd9a07c7e39e",
@@ -1190,6 +1190,20 @@
    "source": "eventbrite",
    "notable": false,
    "first_seen": "2026-09-02T17:12:53.131Z"
+  },
+  {
+   "id": "49171ba05e8c1b1b",
+   "name": "Labor Day Weekend Comedy & Drinks in a Speakeasy: Sunday 6:30pm",
+   "venue": "The Den Comedy Club",
+   "date": "2026-09-06",
+   "time": "6:30 PM",
+   "price_min": 19,
+   "price_max": 154.46,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192526788%2F2991795842957%2F1%2Foriginal.20260902-224421?auto=format%2Ccompress&q=75&sharp=10&s=61e287c695bd9f24255e047393dd3c18",
+   "ticket_url": "https://www.eventbrite.com/e/labor-day-weekend-comedy-drinks-in-a-speakeasy-sunday-630pm-tickets-1999622918979",
+   "source": "eventbrite",
+   "notable": true,
+   "first_seen": "2026-09-03T01:31:40.306Z"
   }
  ]
 }

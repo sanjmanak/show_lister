@@ -1,68 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-18": {
-      "lastmod": "2026-08-30T01:30:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Wednesday Night Standup Comedy Showcase \"Hump Day\"",
-        "startDate": "2026-09-02T19:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-18",
-          "priceCurrency": "USD",
-          "price": "8.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-08T12:06:59-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-18",
-        "image": "/img/shows/Showcase-Templates-6-239d0d36-large-thumb.png",
-        "description": "Join us for a hilarious night of laughter at The Riot&#39;s Wednesday Night Standup Comedy Showcase, lovingly dubbed &quot;Hump Day.&quot; Get ready to unwind and have a great time as our talented lineup of comedians takes the stage to tickle your funny bone.Featuring Mason James, the winner of 2022 &amp; 2023 The Riot Funniest Person In Houston Contest. https://www.instagram.com/mason_james_silly/Don&#39;t miss out on this unforgettable night of comedy. Mark your calendars, gather your crew, and make your way to The Riot for a guaranteed fun-filled Wednesday night. See you there!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Andy Huggins"
-          },
-          {
-            "@type": "Person",
-            "name": "Mason James"
-          },
-          {
-            "@type": "Person",
-            "name": "Onkar Singh"
-          },
-          {
-            "@type": "Person",
-            "name": "Bob Biggerstaff"
-          },
-          {
-            "@type": "Person",
-            "name": "Darius Gullett"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-16": {
-      "lastmod": "2026-08-30T01:30:00-05:00",
+      "lastmod": "2026-09-02T03:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -542,7 +481,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-35": {
-      "lastmod": "2026-08-30T02:15:00-05:00",
+      "lastmod": "2026-09-02T05:20:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -581,10 +520,6 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "James Vogt"
-          },
-          {
-            "@type": "Person",
             "name": "Mason James"
           },
           {
@@ -602,12 +537,16 @@
           {
             "@type": "Person",
             "name": "Keisha Hunt"
+          },
+          {
+            "@type": "Person",
+            "name": "Dylan Kendrick"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-18": {
-      "lastmod": "2026-08-30T02:15:00-05:00",
+      "lastmod": "2026-09-02T05:20:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -663,6 +602,10 @@
           {
             "@type": "Person",
             "name": "A.D. Hodge"
+          },
+          {
+            "@type": "Person",
+            "name": "Jessi Saldaña"
           }
         ]
       }
@@ -1642,7 +1585,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-29": {
-      "lastmod": "2026-08-10T03:51:00-05:00",
+      "lastmod": "2026-09-02T04:39:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -1682,7 +1625,7 @@
       }
     },
     "https://www.theriothtx.com/events/hassan-phills-don-t-tell-comedy-headlines-the-riot-comedy-club-in-houston": {
-      "lastmod": "2026-08-03T05:32:00-05:00",
+      "lastmod": "2026-09-02T04:39:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -1718,7 +1661,12 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Matt B.C."
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/bo-johnson-don-t-tell-comedy-headlines-the-riot-comedy-club": {
@@ -12412,7 +12360,7 @@
       }
     },
     "https://www.riotconroe.com/events/average-joey-headlines-the-riot-comedy-club-the-riot-conroe": {
-      "lastmod": "2026-09-01T07:27:00-05:00",
+      "lastmod": "2026-09-02T04:36:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -12461,7 +12409,7 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-21": {
-      "lastmod": "2026-09-01T07:30:00-05:00",
+      "lastmod": "2026-09-02T04:36:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -12500,10 +12448,6 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Javier Negrete"
-          },
-          {
-            "@type": "Person",
             "name": "Barry Laminack"
           },
           {
@@ -12517,6 +12461,10 @@
           {
             "@type": "Person",
             "name": "Keelain Smith"
+          },
+          {
+            "@type": "Person",
+            "name": "Jamal Rahal"
           }
         ]
       }
@@ -13876,46 +13824,6 @@
         ]
       }
     },
-    "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe": {
-      "lastmod": "2026-08-24T03:45:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Comedian Gabriel Rutledge (Amazon Prime Video, Comedy Central) Live at the Riot in Conroe",
-        "startDate": "2026-12-18T19:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Conroe",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "219 Simonton Street",
-            "addressLocality": "Conroe",
-            "postalCode": "77301",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "InStock",
-          "validFrom": "2026-06-18T14:58:13-05:00"
-        },
-        "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe",
-        "image": "/img/events/Guadalaharrys-56-e92a0b7f-large-thumb.png",
-        "description": "&quot;Gabriel Rutledge is a quick thinking, fast talking, hard working badass.&quot; - Louisville WeeklyA past winner of both the Seattle International Comedy Competition and The Laughing Skull Comedy Festival in Atlanta, Gabriel has made numerous television appearances including Comedy Central&#39;s Live at Gotham, Nickelodeon&#39;s Nickmom Night Out, Laughs on FOX, and Inside Joke streaming on Amazon Prime Video. His Dry Bar Comedy special &ldquo;A Third of the Room,&rdquo; as well as his YouTube special &ldquo;Nectarine&rdquo; have garnered millions of views online. He is also the author of the book &quot;Happiness Isn&#39;t Funny: True Stories of a Road Comic.&rdquo;---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Conroe",
-          "url": "https://www.riotconroe.com"
-        },
-        "performer": []
-      }
-    },
     "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe-1": {
       "lastmod": "2026-08-24T03:47:00-05:00",
       "node": {
@@ -14597,7 +14505,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-2026-09-06220000": {
-      "lastmod": "2026-08-30T02:15:00-05:00",
+      "lastmod": "2026-09-02T05:20:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -14633,7 +14541,32 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Jordan Cavarrubio"
+          },
+          {
+            "@type": "Person",
+            "name": "Danny Guerrero"
+          },
+          {
+            "@type": "Person",
+            "name": "Onkar Singh"
+          },
+          {
+            "@type": "Person",
+            "name": "Tess Vergult"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Loden"
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/comedian-bryan-torresdey-joshua-jay-nieto-co-headline-the-riot-houston": {
@@ -14904,6 +14837,136 @@
             "name": "Ron G"
           }
         ]
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-michael-longfellow-snl-netflix-is-a-joke-fest-headlines-the-riot-comedy-club": {
+      "lastmod": "2026-09-02T01:47:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Michael Longfellow (SNL, Netflix is a Joke Fest) Headlines The Riot Comedy Club",
+        "startDate": "2027-05-21T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-michael-longfellow-snl-netflix-is-a-joke-fest-headlines-the-riot-comedy-club",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-02T13:37:22-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-michael-longfellow-snl-netflix-is-a-joke-fest-headlines-the-riot-comedy-club",
+        "image": "/img/events/MICHAEL-HEADSHOT-cfd50a2c-large-thumb.jpg",
+        "description": "Michael Longfellow is a comedian and stepson from Phoenix who completed three seasons as a cast member on SATURDAY NIGHT LIVE. Prior to SNL, Michael was just one of eight comedians chosen for the inaugural &ldquo;Netflix Introducing&hellip;&rdquo; next stars of comedy showcase at the Netflix is a Joke Festival. He was also selected as one of TBS&#39;s &ldquo;Comics To Watch&rdquo; at the New York Comedy Festival, and went on to make his late night debut on CONAN. He was a favorite on NBC&rsquo;s comedy talent series Bring The Funny. Michael also regularly tours festivals and clubs around the countryAll shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Michael Longfellow"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-michael-longfellow-snl-netflix-is-a-joke-fest-headlines-the-riot-comedy-club-2027-05-22190000": {
+      "lastmod": "2026-09-02T01:47:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Michael Longfellow (SNL, Netflix is a Joke Fest) Headlines The Riot Comedy Club",
+        "startDate": "2027-05-22T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-michael-longfellow-snl-netflix-is-a-joke-fest-headlines-the-riot-comedy-club-2027-05-22190000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-02T13:47:49-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-michael-longfellow-snl-netflix-is-a-joke-fest-headlines-the-riot-comedy-club-2027-05-22190000",
+        "image": "/img/events/MICHAEL-HEADSHOT-cfd50a2c-large-thumb.jpg",
+        "description": "Michael Longfellow is a comedian and stepson from Phoenix who completed three seasons as a cast member on SATURDAY NIGHT LIVE. Prior to SNL, Michael was just one of eight comedians chosen for the inaugural “Netflix Introducing…” next stars of comedy showcase at the Netflix is a Joke Festival. He was also selected as one of TBS's “Comics To Watch” at the New York Comedy Festival, and went on to make his late night debut on CONAN. He was a favorite on NBC’s comedy talent series Bring The Funny. Michael also regularly tours festivals and clubs around the countryAll shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Michael Longfellow"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-2026-12-18190000": {
+      "lastmod": "2026-09-02T01:50:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Gabriel Rutledge (Amazon Prime Video, Comedy Central) Live at the Riot in Conroe",
+        "startDate": "2026-12-18T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-2026-12-18190000",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-02T13:50:21-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-2026-12-18190000",
+        "image": "/img/events/Guadalaharrys-56-e92a0b7f-large-thumb.png",
+        "description": "\"Gabriel Rutledge is a quick thinking, fast talking, hard working badass.\" - Louisville WeeklyA past winner of both the Seattle International Comedy Competition and The Laughing Skull Comedy Festival in Atlanta, Gabriel has made numerous television appearances including Comedy Central's Live at Gotham, Nickelodeon's Nickmom Night Out, Laughs on FOX, and Inside Joke streaming on Amazon Prime Video. His Dry Bar Comedy special “A Third of the Room,” as well as his YouTube special “Nectarine” have garnered millions of views online. He is also the author of the book \"Happiness Isn't Funny: True Stories of a Road Comic.”---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
       }
     }
   }
