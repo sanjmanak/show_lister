@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-03T01:31:40.306Z",
+ "updated": "2026-09-03T17:05:36.343Z",
  "announcements": [
   {
    "id": "8e8fbd9a07c7e39e",
@@ -1204,6 +1204,48 @@
    "source": "eventbrite",
    "notable": true,
    "first_seen": "2026-09-03T01:31:40.306Z"
+  },
+  {
+   "id": "283f11a8c6b3dc62",
+   "name": "Keith Pedro: Job Your Love Tour",
+   "venue": "Punch Line Houston",
+   "date": "2026-11-15",
+   "time": "7:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/826/063ae51c-88bb-4023-b529-8028419f8826_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/keith-pedro-job-your-love-tour-houston-texas-11-15-2026/event/3A00650AB9A4971E",
+   "source": "ticketmaster",
+   "notable": false,
+   "first_seen": "2026-09-03T17:05:36.343Z"
+  },
+  {
+   "id": "3b53037e57f289f2",
+   "name": "The Riot Presents Wednesday Night Standup Comedy Showcase \"Hump Day\"",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-02",
+   "time": "7:00 PM",
+   "price_min": 8,
+   "price_max": 8,
+   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-6-239d0d36-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-31",
+   "source": "standuptix",
+   "notable": false,
+   "first_seen": "2026-09-03T17:05:36.343Z"
+  },
+  {
+   "id": "535b44cc4ad2073a",
+   "name": "The Riot Presents  The One Minute Comedy Showdown with Jeff Joe",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-02",
+   "time": "9:00 PM",
+   "price_min": 10,
+   "price_max": 10,
+   "image_url": "https://www.theriothtx.com/img/shows/https-cdn-evbuc-com-images-921782813-428099579998-1-original-282c1848-large-thumb.jpg",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-29",
+   "source": "standuptix",
+   "notable": false,
+   "first_seen": "2026-09-03T17:05:36.343Z"
   }
  ]
 }

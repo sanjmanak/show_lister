@@ -1702,6 +1702,12 @@
       "model": "gpt-4o-mini",
       "taxonomy": 2,
       "classified_at": "2026-09-03"
+    },
+    "keith pedro: job your love tour": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-09-03"
     }
   }
 }
