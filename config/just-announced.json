@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-03T17:05:36.343Z",
+ "updated": "2026-09-04T01:26:13.422Z",
  "announcements": [
   {
    "id": "8e8fbd9a07c7e39e",
@@ -1246,6 +1246,20 @@
    "source": "standuptix",
    "notable": false,
    "first_seen": "2026-09-03T17:05:36.343Z"
+  },
+  {
+   "id": "7d42e456bc951878",
+   "name": "Davide De Pierro",
+   "venue": "Zilkha Hall at the Hobby Center",
+   "date": "2026-11-15",
+   "time": "7:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/119/6be0af86-1e4c-42a4-8273-a17aea993119_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/davide-de-pierro-houston-texas-11-15-2026/event/3A00647FB83EDF3A",
+   "source": "ticketmaster",
+   "notable": true,
+   "first_seen": "2026-09-04T01:26:13.422Z"
   }
  ]
 }
