@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-04T01:26:13.422Z",
+ "updated": "2026-09-04T16:55:02.114Z",
  "announcements": [
   {
    "id": "8e8fbd9a07c7e39e",
@@ -1260,6 +1260,76 @@
    "source": "ticketmaster",
    "notable": true,
    "first_seen": "2026-09-04T01:26:13.422Z"
+  },
+  {
+   "id": "93d3f7c35e8c80d2",
+   "name": "Dark and Darker: A Dark Comedy Show",
+   "venue": "Punch Line Houston",
+   "date": "2026-10-07",
+   "time": "7:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/dd9/20a647cf-fbbc-4e03-b66e-411f44ff2dd9_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+   "ticket_url": "https://www.ticketmaster.com/dark-and-darker-a-dark-comedy-houston-texas-10-07-2026/event/3A006523B08CC2B9",
+   "source": "ticketmaster",
+   "notable": false,
+   "first_seen": "2026-09-04T16:55:02.114Z"
+  },
+  {
+   "id": "b8d5ab81ef5cad5e",
+   "name": "Corey Holcomb",
+   "venue": "Houston Improv",
+   "date": "2026-11-15",
+   "time": "7:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/168/ad8a409d-f583-4333-896e-c605ce02c168_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7xFbk",
+   "source": "ticketmaster",
+   "notable": false,
+   "first_seen": "2026-09-04T16:55:02.114Z"
+  },
+  {
+   "id": "1900e00a577bac79",
+   "name": "The Riot Presents Thursday Night Standup Comedy Showcase!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-03",
+   "time": "7:00 PM",
+   "price_min": 10,
+   "price_max": 10,
+   "image_url": "https://www.theriothtx.com/img/shows/CTX-Thursday-Showcase-2-48800df6-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-40",
+   "source": "standuptix",
+   "notable": false,
+   "first_seen": "2026-09-04T16:55:02.114Z"
+  },
+  {
+   "id": "f35eef00513bcc82",
+   "name": "Social Comedy Nite",
+   "venue": "Social Beer Garden HTX",
+   "date": "2026-12-03",
+   "time": "9:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1172745141%2F2986074715451%2F1%2Foriginal.20251211-045839?auto=format%2Ccompress&q=75&sharp=10&s=fe0c2b5e4fcc79f9f124523374a88594",
+   "ticket_url": "https://www.eventbrite.com/e/social-comedy-nite-tickets-1977579589788",
+   "source": "eventbrite",
+   "notable": false,
+   "first_seen": "2026-09-04T16:55:02.114Z"
+  },
+  {
+   "id": "7670739750e930e1",
+   "name": "The Riot Presents Thursday Night Late Standup Comedy Showcase!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-03",
+   "time": "9:00 PM",
+   "price_min": 10,
+   "price_max": 10,
+   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-24-1-49f70dad-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-thursday-night-late-standup-comedy-showcase-the-riot-houston-15",
+   "source": "standuptix",
+   "notable": false,
+   "first_seen": "2026-09-04T16:55:02.114Z"
   }
  ]
 }

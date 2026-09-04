@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-09-03T17:05:34.211Z",
+  "last_updated": "2026-09-04T16:54:59.880Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -137,14 +137,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
-    },
-    "8df47cbfe4dbb675": {
-      "price_min": 34,
-      "price_max": 48,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/naim-lynn-houston-texas-09-03-2026/event/3A006494B7BBC77E",
-      "fetched_at": "2026-08-17T15:18:57.337Z"
     },
     "2bd10ca5f13c9342": {
       "price_min": 16,

@@ -1714,6 +1714,12 @@
       "model": "gpt-4o-mini",
       "taxonomy": 2,
       "classified_at": "2026-09-04"
+    },
+    "dark and darker: a dark comedy show": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-09-04"
     }
   }
 }
