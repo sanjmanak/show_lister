@@ -1,60 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/colin-armstrong-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-09-03T03:26:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Colin Armstrong Headlines The Riot Comedy Club",
-        "startDate": "2026-09-04T19:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/colin-armstrong-headlines-the-riot-comedy-club",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "InStock",
-          "validFrom": "2026-06-18T12:55:30-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/colin-armstrong-headlines-the-riot-comedy-club",
-        "image": "/img/shows/IMG-0434-7e1d078e-large-thumb.png",
-        "description": "Join us for a hilarious evening of laughter with&nbsp;Colin Armstrong&nbsp;at The Riot Comedy Club!Colin Armstrong is quickly becoming one of comedy&#39;s names to watch. Born and raised in New Jersey, Colin&#39;s sharp, relatable humor has earned him a devoted following&mdash;his viral comedy videos have amassed tens of millions of views across social media. He&#39;s been featured on SiriusXM Radio, won the 2024 Jersey Shore Top Comic Competition, and earned spots at prestigious festivals like SF Sketchfest and Flyover Comedy Festival. Most recently, he took the stage at the 2026 Lil&#39; Rhody Laugh Riot Comedy Festival alongside comedic giants like John Mulaney and Marc Maron. When he isn&#39;t headlining he can be seen touring with comedy heavyweights like Rachel Feinstein and Chris Gethard, or as a fixture in comedy clubs across New York. Come see him live before he gives up and gets a real job at a deli or something.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Colin Armstrong"
-          },
-          {
-            "@type": "Person",
-            "name": "Christian Alexander"
-          },
-          {
-            "@type": "Person",
-            "name": "Zahid Dewji"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-18": {
-      "lastmod": "2026-09-03T03:26:00-05:00",
+      "lastmod": "2026-09-04T03:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -119,7 +66,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-16": {
-      "lastmod": "2026-09-03T03:26:00-05:00",
+      "lastmod": "2026-09-04T05:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -12146,59 +12093,6 @@
         ]
       }
     },
-    "https://www.riotconroe.com/events/average-joey-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-09-03T10:47:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Average Joey Headlines The Riot Comedy Club",
-        "startDate": "2026-09-04T19:30:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Conroe",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "219 Simonton Street",
-            "addressLocality": "Conroe",
-            "postalCode": "77301",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.riotconroe.com/events/average-joey-headlines-the-riot-comedy-club",
-          "priceCurrency": "USD",
-          "price": "20.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-10T20:52:20-05:00"
-        },
-        "url": "https://www.riotconroe.com/events/average-joey-headlines-the-riot-comedy-club",
-        "image": "/img/events/IMG-0487-7db0078a-large-thumb.jpg",
-        "description": "Average Joey is Georgia-bred comedian Joey Leonard, a combat veteran, professional skydiver and former construction worker who jumped into stand-up in late 2019. He’s built a fast-rising following with sharp, blue-collar storytelling, quick pivots, and high-energy sets that mine everyday misadventures. His social clips rack up millions of views, and the self-made Mullet Gang ethos threads through his onstage persona with playful swagger and grit.At his live show you’ll get punchy, personal life experience bits, nimble crowd work, and the kind of timing that keeps laughter rolling from the first tag to the last callback. If you want comedy that tells a story you will remember for a lifetime this is your night out.ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS---",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Conroe",
-          "url": "https://www.riotconroe.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Blake Jones"
-          },
-          {
-            "@type": "Person",
-            "name": "Joseph Leonard"
-          },
-          {
-            "@type": "Person",
-            "name": "Malay Vyas"
-          }
-        ]
-      }
-    },
     "https://www.riotconroe.com/events/average-joey-headlines-the-riot-comedy-club-the-riot-conroe": {
       "lastmod": "2026-09-03T10:48:00-05:00",
       "node": {
@@ -14789,6 +14683,136 @@
           {
             "@type": "Person",
             "name": "Alvin Kuai"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/jeremy-alder-sirius-xm-headlines-the-riot-comedy-club": {
+      "lastmod": "2026-09-04T02:08:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Jeremy Alder (Sirius XM) Headlines The Riot Comedy Club",
+        "startDate": "2026-12-10T20:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/jeremy-alder-sirius-xm-headlines-the-riot-comedy-club",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-04T14:05:09-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/jeremy-alder-sirius-xm-headlines-the-riot-comedy-club",
+        "image": "/img/events/IMG-0488-700c072c-large-thumb.jpg",
+        "description": "Jeremy Alder is a warm, dry, delightfully irreverent comedian with the vibe of a former church kid finally saying, &quot;Y&#39;all aren&#39;t ready for this conversation... but here we go.&quot; Raised homeschooled in a deeply religious Texas family, he now turns that world into quietly audacious, deceptively sharp comedy&mdash;exploring faith, doubt, marriage, parenting, and growing up &quot;Texas&quot; with a calm, precise delivery that draws audiences into conversations they didn&#39;t expect but can&#39;t stop laughing through.Headlining nationwide, Jeremy&rsquo;s Dry Bar Comedy special has earned over 7 million views; he&#39;s been featured on Nate Bargatze&#39;s Nateland Presents, and he&#39;s in regular rotation on SiriusXM. His debut album,Almost a Grown Man, and his online series, Christians Who Don&#39;t Suck, showcase the same probing humor that&#39;s cemented his place as comedy&#39;s favorite soft-spoken agent of chaos. If you like your comedy hilarious, thoughtful, and a little spicy, Jeremy&#39;s your guy.ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS---",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-ivan-decker-netflix-conan-live-in-conroe": {
+      "lastmod": "2026-09-04T02:18:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Ivan Decker (Netflix, Conan) Live in Conroe",
+        "startDate": "2027-01-29T19:30:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-ivan-decker-netflix-conan-live-in-conroe",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-04T14:13:58-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-ivan-decker-netflix-conan-live-in-conroe",
+        "image": "/img/events/IMG-0489-76f40752-large-thumb.jpg",
+        "description": "Known for his sharp, polished, and multi-layered observational comedy, Ivan Decker continues to achieve success as a writer, stand-up, and actor. After being named &ldquo;A Comic to Watch&rdquo; at the New York Comedy Festival, Netflix then released his Comedy Special, &ldquo;Underwater Scissors&rdquo; to rave reviews. Ivan made his American television debut on &ldquo;Conan&rdquo; and his comedy album &ldquo;I Wanted to be a Dinosaur&rdquo; was the recipient of the JUNO award for &ldquo;Comedy Album of the Year.&rdquo; He can be seen and heard on the popular CBC radio program &ldquo;The Debaters&rdquo; and his newest special, &ldquo;Popcorn,&rdquo; was released by 800 Pound Gorilla Media and was nominated for a 2025 JUNO Award for &quot;Comedy Album of the Year.&quot;ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS--",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Ivan Decker"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-ivan-decker-netflix-conan-live-in-conroe-2027-01-30190000": {
+      "lastmod": "2026-09-04T02:18:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Ivan Decker (Netflix, Conan) Live in Conroe",
+        "startDate": "2027-01-30T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-ivan-decker-netflix-conan-live-in-conroe-2027-01-30190000",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-04T14:18:39-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-ivan-decker-netflix-conan-live-in-conroe-2027-01-30190000",
+        "image": "/img/events/IMG-0489-76f40752-large-thumb.jpg",
+        "description": "Known for his sharp, polished, and multi-layered observational comedy, Ivan Decker continues to achieve success as a writer, stand-up, and actor. After being named “A Comic to Watch” at the New York Comedy Festival, Netflix then released his Comedy Special, “Underwater Scissors” to rave reviews. Ivan made his American television debut on “Conan” and his comedy album “I Wanted to be a Dinosaur” was the recipient of the JUNO award for “Comedy Album of the Year.” He can be seen and heard on the popular CBC radio program “The Debaters” and his newest special, “Popcorn,” was released by 800 Pound Gorilla Media and was nominated for a 2025 JUNO Award for \"Comedy Album of the Year.\"ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS--",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Ivan Decker"
           }
         ]
       }
