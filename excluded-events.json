@@ -1,19 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-09-05T01:27:52.084Z",
-  "total_excluded": 24,
+  "last_updated": "2026-09-05T16:05:27.899Z",
+  "total_excluded": 23,
   "events": [
-    {
-      "name": "NOTHING MATTERS Emo | Indie | Punk Dance Party",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-09-04",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/nothing-matters-emo-indie-punk-dance-party-tickets-1998652448275",
-      "reason": "title keyword blocklisted: \"dance party\""
-    },
     {
       "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
       "venue": "The Secret Group",

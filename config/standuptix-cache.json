@@ -1,141 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-18": {
-      "lastmod": "2026-09-04T03:03:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Friday Night Standup Comedy Showcase",
-        "startDate": "2026-09-04T21:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-18",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-08T12:27:00-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-18",
-        "image": "/img/shows/Showcase-Templates-20-friday-night-9pm-602b1388-large-thumb.png",
-        "description": "Come join us for a hilarious evening of laughter at The Riot presents Friday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you&#39;re a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone. You can expect a diverse lineup with 5-7 comedians from Houston and around the country.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google thousands of reviews!Delicious Food &amp; DrinksEnjoy tasty food, draft beer, wine, coffee, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Andy Huggins"
-          },
-          {
-            "@type": "Person",
-            "name": "Ku Egenti"
-          },
-          {
-            "@type": "Person",
-            "name": "Colin Armstrong"
-          },
-          {
-            "@type": "Person",
-            "name": "Will Owens"
-          },
-          {
-            "@type": "Person",
-            "name": "Christian Alexander"
-          },
-          {
-            "@type": "Person",
-            "name": "jesse peyton"
-          }
-        ]
-      }
-    },
-    "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-16": {
-      "lastmod": "2026-09-04T05:03:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Comedy Club Presents Friday Night Standup Comedy Late Showcase!",
-        "startDate": "2026-09-04T23:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-16",
-          "priceCurrency": "USD",
-          "price": "15.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-08T12:34:10-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-16",
-        "image": "/img/shows/Showcase-Templates-18-2f410d5b-large-thumb.png",
-        "description": "Get ready for the most unpredictable and chaotic showtime in the comedy scene! The Late Show offers an intimate late-night experience where the crowd is loose, the vibes are electric, and the laughs are nonstop.This showcase features a mix of headline comedians who sell out venues and local talent who know how to steal the show, making every performance an unforgettable experience.Whether you&rsquo;re looking for a fun night out or just love the thrill of late-night comedy, this show will have you laughing until it hurts.Reserve your tickets now and join us for a late-night comedy event like no other!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Mackenzie jewell"
-          },
-          {
-            "@type": "Person",
-            "name": "Matthew Zane"
-          },
-          {
-            "@type": "Person",
-            "name": "Lotto Marie"
-          },
-          {
-            "@type": "Person",
-            "name": "Matt B.C."
-          },
-          {
-            "@type": "Person",
-            "name": "Grady Pruitt"
-          },
-          {
-            "@type": "Person",
-            "name": "Ebad Jann"
-          },
-          {
-            "@type": "Person",
-            "name": "Keisha Hunt"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/colin-armstrong-headlines-the-riot-comedy-club-the-riot-houston": {
-      "lastmod": "2026-09-03T10:50:00-05:00",
+      "lastmod": "2026-09-05T09:25:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -188,7 +54,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-17": {
-      "lastmod": "2026-09-03T10:50:00-05:00",
+      "lastmod": "2026-09-05T09:23:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",

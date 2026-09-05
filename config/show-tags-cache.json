@@ -1720,6 +1720,36 @@
       "model": "gpt-4o-mini",
       "taxonomy": 2,
       "classified_at": "2026-09-04"
+    },
+    "luke kidgell - live in the usa": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-09-05"
+    },
+    "heroes off duty": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-09-05"
+    },
+    "josh blue": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-09-05"
+    },
+    "phil hanley": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-09-05"
+    },
+    "comedian jeff dean (cbs, netflix is a joke fest) headlines the riot comedy club": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-09-05"
     }
   }
 }
