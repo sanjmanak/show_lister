@@ -30,33 +30,5 @@
   ],
   "week_range": "August 31 – September 6, 2026",
   "manifest_version": 1788211266600,
-  "cleanup_queue": [
-    {
-      "slug": "russell-peters-houston-improv-2026-09-03",
-      "comedianName": "Russell Peters",
-      "igFeedMediaId": "17900135790592386",
-      "igStoryMediaId": "18250753135307904",
-      "fbFeedPostId": "1391822076375867",
-      "fbStoryPostId": "1087754640364723",
-      "postedAt": "2026-08-31T21:25:05.052Z"
-    },
-    {
-      "slug": "naim-lynn-punch-line-houston-2026-09-03",
-      "comedianName": "Na'im Lynn",
-      "igFeedMediaId": "18116810273102555",
-      "igStoryMediaId": "18134138464620513",
-      "fbFeedPostId": "1391927253032016",
-      "fbStoryPostId": "1384681179751725",
-      "postedAt": "2026-09-01T01:11:13.277Z"
-    },
-    {
-      "slug": "zahid-dewji-houston-improv-2026-09-02",
-      "comedianName": "Zahid Dewji",
-      "igFeedMediaId": "17876814531627196",
-      "igStoryMediaId": "18126772750755649",
-      "fbFeedPostId": "1392192009672207",
-      "fbStoryPostId": "2198316157392983",
-      "postedAt": "2026-09-01T09:20:11.088Z"
-    }
-  ]
+  "cleanup_queue": []
 }
