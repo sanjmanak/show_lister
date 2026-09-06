@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-05T16:07:18.078Z",
+ "updated": "2026-09-06T01:24:02.956Z",
  "announcements": [
   {
    "id": "8e8fbd9a07c7e39e",
@@ -1470,6 +1470,48 @@
    "source": "standuptix",
    "notable": false,
    "first_seen": "2026-09-05T16:07:18.078Z"
+  },
+  {
+   "id": "be46119c5108402c",
+   "name": "Comedy & Drinks in a Speakeasy: Saturday 8pm",
+   "venue": "The Den Comedy Club",
+   "date": "2026-09-26",
+   "time": "8:00 PM",
+   "price_min": 27.06,
+   "price_max": 227.33,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1180439921%2F2991795842957%2F1%2Foriginal.20260323-033807?auto=format%2Ccompress&q=75&sharp=10&s=66133803980ac4e6d87ae4c5ef941e02",
+   "ticket_url": "https://www.eventbrite.com/e/comedy-drinks-in-a-speakeasy-saturday-8pm-tickets-1999865107371",
+   "source": "eventbrite",
+   "notable": true,
+   "first_seen": "2026-09-06T01:24:02.956Z"
+  },
+  {
+   "id": "965aa3f1aec040c6",
+   "name": "Comedy & Drinks in a Speakeasy: Thursday 7:30pm",
+   "venue": "The Den Comedy Club",
+   "date": "2026-10-01",
+   "time": "7:30 PM",
+   "price_min": 19,
+   "price_max": 154.46,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186716898%2F2991795842957%2F1%2Foriginal.20260611-214230?auto=format%2Ccompress&q=75&sharp=10&s=8c88be66110c684cd1911f877e541c2d",
+   "ticket_url": "https://www.eventbrite.com/e/comedy-drinks-in-a-speakeasy-thursday-730pm-tickets-1998996143276",
+   "source": "eventbrite",
+   "notable": true,
+   "first_seen": "2026-09-06T01:24:02.956Z"
+  },
+  {
+   "id": "03a5263feb275d68",
+   "name": "Phil Hanley",
+   "venue": "Houston Improv",
+   "date": "2026-11-20",
+   "time": "7:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+   "ticket_url": "https://www.ticketweb.com/event/phil-hanley-houston-improv-tickets/14124874?REFERRAL_ID=tmfeed",
+   "source": "ticketmaster",
+   "notable": false,
+   "first_seen": "2026-09-06T01:24:02.956Z"
   }
  ]
 }
