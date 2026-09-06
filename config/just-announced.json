@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-06T01:24:02.956Z",
+ "updated": "2026-09-06T16:19:17.933Z",
  "announcements": [
   {
    "id": "8e8fbd9a07c7e39e",
@@ -1512,6 +1512,104 @@
    "source": "ticketmaster",
    "notable": false,
    "first_seen": "2026-09-06T01:24:02.956Z"
+  },
+  {
+   "id": "f086a47054eda33f",
+   "name": "Don't Tell Comedy: Webster (9:00 PM Show)",
+   "venue": "Don't Tell Comedy (Secret Location)",
+   "date": "2026-10-10",
+   "time": "9:00 PM",
+   "price_min": 27,
+   "price_max": 27,
+   "image_url": "https://dont-tell-comedy.mo.cloudinary.net/private/aviator-fullstageview_VU698Z2.webp",
+   "ticket_url": "https://www.donttellcomedy.com/shows/houston-21070/",
+   "source": "donttellcomedy",
+   "notable": false,
+   "first_seen": "2026-09-06T16:19:17.933Z"
+  },
+  {
+   "id": "b6145ab2716509d7",
+   "name": "Santi Espinosa - ME Time (English/Spanish Show)",
+   "venue": "Punch Line Houston",
+   "date": "2026-11-20",
+   "time": "9:15 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/c02/46472016-9bb6-4eee-af3e-549764f97c02_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/santi-espinosa-me-time-englishspanish-show-houston-texas-11-20-2026/event/3A0064FF3B48DC13",
+   "source": "ticketmaster",
+   "notable": false,
+   "first_seen": "2026-09-06T16:19:17.933Z"
+  },
+  {
+   "id": "87e31c24df2c0a80",
+   "name": "Josh Blue",
+   "venue": "Punch Line Houston",
+   "date": "2026-11-21",
+   "time": "6:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/1a5/1bb49469-9a04-4981-ab58-98c759b8e1a5_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/josh-blue-houston-texas-11-21-2026/event/3A0064F908F82B81",
+   "source": "ticketmaster",
+   "notable": false,
+   "first_seen": "2026-09-06T16:19:17.933Z"
+  },
+  {
+   "id": "b85f5eacda3eef47",
+   "name": "Phil Hanley",
+   "venue": "Houston Improv",
+   "date": "2026-11-21",
+   "time": "7:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+   "ticket_url": "https://www.ticketweb.com/event/phil-hanley-houston-improv-tickets/14124904?REFERRAL_ID=tmfeed",
+   "source": "ticketmaster",
+   "notable": false,
+   "first_seen": "2026-09-06T16:19:17.933Z"
+  },
+  {
+   "id": "8bf298ff4a044261",
+   "name": "CHELSEA HANDLER: THE HIGH AND MIGHTY TOUR",
+   "venue": "713 Music Hall",
+   "date": "2026-11-21",
+   "time": "8:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/e90/38e0c356-6bcb-4cd2-ab5d-97809a77ce90_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/chelsea-handler-the-high-and-mighty-houston-texas-11-21-2026/event/3A006473ABD4BB3E",
+   "source": "ticketmaster",
+   "notable": true,
+   "first_seen": "2026-09-06T16:19:17.933Z"
+  },
+  {
+   "id": "e1c5963a9619d543",
+   "name": "Jeremiah Watkins (Amazon Prime, HBO) Headlines The Riot Comedy Club",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-05",
+   "time": "7:00 PM",
+   "price_min": 20,
+   "price_max": 20,
+   "image_url": "https://www.theriothtx.com/img/shows/IMG-0449-7e420796-large-thumb.jpg",
+   "ticket_url": "https://www.theriothtx.com/events/jeremiah-watkins-amazon-prime-hbo-headlines-the-riot-comedy-club",
+   "source": "standuptix",
+   "notable": false,
+   "first_seen": "2026-09-06T16:19:17.933Z"
+  },
+  {
+   "id": "9544f716c413db91",
+   "name": "The Riot Comedy Club Presents Saturday Night Standup Comedy Late Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-05",
+   "time": "11:00 PM",
+   "price_min": 15,
+   "price_max": 15,
+   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-13-Saturday-11pm-20db1248-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-31",
+   "source": "standuptix",
+   "notable": false,
+   "first_seen": "2026-09-06T16:19:17.933Z"
   }
  ]
 }

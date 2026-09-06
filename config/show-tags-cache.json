@@ -1750,6 +1750,26 @@
       "model": "gpt-4o-mini",
       "taxonomy": 2,
       "classified_at": "2026-09-05"
+    },
+    "santi espinosa - me time (english/spanish show)": {
+      "tags": [
+        "en-espanol"
+      ],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-09-06"
+    },
+    "chelsea handler: the high and mighty tour": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-09-06"
+    },
+    "jeremiah watkins (amazon prime, hbo) headlines the riot comedy club": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-09-06"
     }
   }
 }
