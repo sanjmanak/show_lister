@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-08-31T20:27:19.070Z",
-  "week_range": "August 31 – September 6, 2026",
+  "generated_at": "2026-09-07T19:07:33.828Z",
+  "week_range": "September 7 – September 13, 2026",
   "comedians": [
     {
-      "name": "Russell Peters",
-      "show": "Russell Peters",
-      "imageUrl": "https://s1.ticketm.net/dam/a/7cc/5822d04f-2a7b-4279-a63a-1fe32c3107cc_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "headshotUrl": "https://www.russellpeters.com/cdn/shop/files/NEW_RP_Signature.png?v=1667369410",
-      "displayImage": "https://www.russellpeters.com/cdn/shop/files/NEW_RP_Signature.png?v=1667369410",
+      "name": "Arnez J",
+      "show": "Arnez J",
+      "imageUrl": "https://s1.ticketm.net/dam/a/c2c/e24fae74-94ae-475f-9128-6b0b14a3dc2c_SOURCE",
+      "headshotUrl": "https://assets.cdn.filesafe.space/du1EMpQ3fkBlY34t9dhy/media/691f2bb2129603aaa1dc38eb.webp",
+      "displayImage": "https://assets.cdn.filesafe.space/du1EMpQ3fkBlY34t9dhy/media/691f2bb2129603aaa1dc38eb.webp",
       "imageSource": "headshot"
     },
     {
-      "name": "Na'im Lynn",
-      "show": "Na'im Lynn",
-      "imageUrl": "https://s1.ticketm.net/dam/a/d66/e9d37a9f-488f-4aca-9e27-741e9df31d66_SOURCE",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/a/d66/e9d37a9f-488f-4aca-9e27-741e9df31d66_SOURCE",
-      "imageSource": "event"
+      "name": "Jon Rudnitsky",
+      "show": "Comedian Jon Rudnitsky (SNL, Netflix, HBO) Headlines The Riot Comedy Club",
+      "imageUrl": "https://www.theriothtx.com/img/events/IMG-0486-7de90786-large-thumb.jpg",
+      "headshotUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Jon_Rudnitsky.jpg/1280px-Jon_Rudnitsky.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail",
+      "displayImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Jon_Rudnitsky.jpg/1280px-Jon_Rudnitsky.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail",
+      "imageSource": "headshot"
     },
     {
-      "name": "Zahid Dewji",
-      "show": "Zahid Dewji",
-      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "headshotUrl": null,
-      "displayImage": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "imageSource": "event"
+      "name": "Graham Kay",
+      "show": "Graham Kay (Tonight Show, Colbert, Nateland)",
+      "imageUrl": "https://www.theriothtx.com/img/events/IMG-0436-7dc5078d-large-thumb.jpg",
+      "headshotUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Graham_Kay.jpg/1280px-Graham_Kay.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail",
+      "displayImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Graham_Kay.jpg/1280px-Graham_Kay.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail",
+      "imageSource": "headshot"
     }
   ]
 }
