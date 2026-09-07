@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-09-06T16:19:15.415Z",
+  "last_updated": "2026-09-07T18:18:17.569Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -137,14 +137,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
-    },
-    "c1d8d0cd2a0cfa3c": {
-      "price_min": 41,
-      "price_max": 55,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/sejoe-an-kreyol-houston-texas-09-06-2026/event/3A0064A91B6F880F",
-      "fetched_at": "2026-08-17T15:22:06.093Z"
     },
     "77d0385727e61a6a": {
       "price_min": 29,
