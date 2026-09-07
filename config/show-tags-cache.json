@@ -1770,6 +1770,12 @@
       "model": "gpt-4o-mini",
       "taxonomy": 2,
       "classified_at": "2026-09-06"
+    },
+    "don't tell comedy: spring (8:00 pm show)": {
+      "tags": [],
+      "model": "gpt-4o-mini",
+      "taxonomy": 2,
+      "classified_at": "2026-09-07"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-06T16:19:17.933Z",
+ "updated": "2026-09-07T01:21:58.293Z",
  "announcements": [
   {
    "id": "8e8fbd9a07c7e39e",
@@ -1610,6 +1610,20 @@
    "source": "standuptix",
    "notable": false,
    "first_seen": "2026-09-06T16:19:17.933Z"
+  },
+  {
+   "id": "1bfeeb59265d65b0",
+   "name": "Don't Tell Comedy: Spring (8:00 PM Show)",
+   "venue": "Don't Tell Comedy (Secret Location)",
+   "date": "2026-10-17",
+   "time": "8:00 PM",
+   "price_min": 27,
+   "price_max": 27,
+   "image_url": "https://dont-tell-comedy.mo.cloudinary.net/private/communitycenter_florida_1_0ZwQw4D.webp",
+   "ticket_url": "https://www.donttellcomedy.com/shows/houston-20903/",
+   "source": "donttellcomedy",
+   "notable": false,
+   "first_seen": "2026-09-07T01:21:58.293Z"
   }
  ]
 }
