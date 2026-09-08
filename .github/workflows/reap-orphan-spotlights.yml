@@ -1,0 +1,25 @@
+name: Reap Orphan Spotlights (one-off)
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Log only'
+        type: boolean
+        default: true
+permissions:
+  contents: read
+jobs:
+  reap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - env:
+          WP_SITE_URL: ${{ secrets.WP_SITE_URL }}
+          WP_APP_USER: ${{ secrets.WP_APP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          DRY_RUN: ${{ inputs.dry_run == true && '1' || '' }}
+        run: node scripts/reap-orphan-spotlights.js
