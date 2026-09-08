@@ -14,7 +14,7 @@ on:
 permissions:
   contents: write
 
-# Prevent two scheduled/manual runs from racing on events.json + index.html.
+# Prevent two scheduled/manual runs from racing on events.json.
 concurrency:
   group: update-events
   cancel-in-progress: false
@@ -80,7 +80,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add events.json index.html excluded-events.json config/price-cache.json \
+          git add events.json excluded-events.json config/price-cache.json \
                   config/show-tags-cache.json config/standuptix-cache.json \
                   config/announced-seen.json config/just-announced.json
           # Only commit if there are changes

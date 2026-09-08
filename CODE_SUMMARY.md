@@ -2,26 +2,23 @@
 
 ## What This Project Does
 
-Show Lister (`houston-comedy-shows`) is an automated event aggregator for Houston comedy shows. It pulls events from two APIs, merges and deduplicates them, and publishes a static website — updated twice daily with zero manual effort.
+Show Lister (`houston-comedy-shows`) is an automated event aggregator for Houston comedy shows. It pulls events from Ticketmaster, Eventbrite and StandupTix venue sites, merges and deduplicates them, and publishes `events.json` for the comedyhouston.com WordPress plugin — updated twice daily with zero manual effort.
 
 ## Architecture
 
 ```
   Ticketmaster API ──┐
-                     ├──▶ fetch-events.js ──▶ events.json
-  Eventbrite API ────┘        │                  │
-                              ▼                  ▼
-                         index.html ──▶ GitHub Pages (static site)
+  Eventbrite API ────┼──▶ fetch-events.js ──▶ events.json ──▶ WordPress plugin (comedyhouston.com)
+  StandupTix sites ──┘
 ```
 
-**Pipeline:** GitHub Actions (cron) → Node.js script → static files → GitHub Pages
+**Pipeline:** GitHub Actions (cron) → Node.js script → events.json on `main` → WP plugin fetches from raw.githubusercontent.com
 
 ## Key Files
 
 | File | Purpose |
 |------|---------|
 | `scripts/fetch-events.js` | Core script (~500 lines). Fetches, normalizes, deduplicates events and generates output files. |
-| `index.html` | Static frontend with embedded event data. Dark theme, search/filter UI, responsive. |
 | `.github/workflows/update-events.yml` | GitHub Actions workflow. Runs at 8 AM and 6 PM CT on a cron schedule. |
 | `events.json` | Generated data file containing all normalized events. |
 | `package.json` | Project metadata. Single script: `npm run fetch`. |
@@ -54,17 +51,10 @@ Events are deduplicated by a 16-character SHA-256 hash of `name|date|venue` (low
 ### 4. Output Generation
 
 - `events.json` — Written with all event data plus metadata (`last_updated`, `total_events`).
-- `index.html` — The script reads the existing HTML template and replaces placeholder variables (`EVENTS_DATA = []` and `LAST_UPDATED = ""`) with real data, embedding everything into the static file.
 
-## Frontend (`index.html`)
+## Frontend
 
-A self-contained single-page app with no external dependencies:
-
-- **Dark theme** with gradient accents
-- **Filters:** venue, date range, price, time of day, age restriction, event status, source
-- **Search:** text search across event names
-- **Event cards:** image, title, venue, date/time, price, ticket link
-- **Data source:** reads from the embedded `EVENTS_DATA` JavaScript variable (injected at build time)
+The WordPress plugin in `wordpress/` (`[comedy_houston]` shortcode) renders the listings on comedyhouston.com from `events.json`. The old static `index.html` mirror on GitHub Pages was retired in Sept 2026 (noindexed, unlinked, 866KB of churn per commit).
 
 ## CI/CD Pipeline
 
@@ -73,12 +63,11 @@ The GitHub Actions workflow (`.github/workflows/update-events.yml`):
 1. Triggers on cron (`0 14 * * *` and `0 0 * * *` UTC, ~8 AM / 6 PM CT) or manual dispatch
 2. Checks out the repo, sets up Node.js v20
 3. Runs `node scripts/fetch-events.js` with API keys from GitHub Secrets
-4. Commits and pushes `events.json` and `index.html` only if they changed
-5. GitHub Pages automatically rebuilds from the updated files
+4. Commits and pushes `events.json` only if it changed, then purges the plugin's cache
 
 ## Tech Stack
 
 - **Node.js v20** — built-in modules only (`https`, `fs`, `crypto`, `path`), no npm dependencies
 - **Plain HTML/CSS/JS** — no frontend frameworks
 - **GitHub Actions** — scheduled automation
-- **GitHub Pages** — static hosting
+- **GitHub Pages** — serves the Instagram graphics only

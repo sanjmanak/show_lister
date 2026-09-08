@@ -2,8 +2,10 @@
 
 /**
  * Comedy Houston — Weekly Blog Post Generator
- * Reads events.json, filters to this week's events, calls OpenAI to write
- * a blog post, and outputs blog/index.html.
+ * Reads events.json, filters to this week's events, identifies the notable
+ * comedians, renders the weekly hero creative + Instagram caption, and
+ * refreshes the /this-week/ page on WordPress. (The static blog/index.html
+ * mirror on GitHub Pages was retired in Sept 2026: noindexed, unlinked.)
  */
 
 const https = require("https");
@@ -47,7 +49,6 @@ const SCRIPT_START_MS = Date.now();
 const OUTPUT_DIR = path.resolve(__dirname, "..");
 const EVENTS_JSON_PATH = path.join(OUTPUT_DIR, "events.json");
 const BLOG_DIR = path.join(OUTPUT_DIR, "blog");
-const BLOG_HTML_PATH = path.join(BLOG_DIR, "index.html");
 const BLOG_HERO_HTML_PATH = path.join(BLOG_DIR, "weekly-hero.html");
 const BLOG_CAPTION_PATH = path.join(BLOG_DIR, "instagram-caption.txt");
 
@@ -887,41 +888,6 @@ ${extraSection}
 </html>`;
 }
 
-function generateInlineHeroHTML(comedians, weekRange) {
-  // Pick up to 6 comedians with images for a 3x2 grid.
-  const resolve = (c) => c.displayImage || c.imageUrl || "";
-  const withImages = comedians.filter((c) => resolve(c)).slice(0, 6);
-  const gridItems = withImages
-    .map(
-      (c) => `        <div class="hero-grid-item">
-          <img src="${escapeHTML(resolve(c))}" alt="${escapeHTML(c.name)}">
-          <div class="hero-grid-name">${escapeHTML(c.name)}</div>
-        </div>`
-    )
-    .join("\n");
-
-  // List remaining names
-  const gridNames = new Set(withImages.map((c) => c.name));
-  const extraNames = comedians.filter((c) => !gridNames.has(c.name));
-  const extraItems = extraNames
-    .map((c) => `        <span class="hero-extra-name">${escapeHTML(c.name)}</span>`)
-    .join("\n");
-  const extraSection =
-    extraNames.length > 0
-      ? `      <div class="hero-extra-lineup">\n${extraItems}\n      </div>`
-      : "";
-
-  return `    <div class="hero-creative">
-      <div class="hero-label">This Week In</div>
-      <div class="hero-title">Houston Comedy</div>
-      <div class="hero-grid">
-${gridItems}
-      </div>
-${extraSection}
-      <div class="hero-dates">${escapeHTML(weekRange)}</div>
-    </div>`;
-}
-
 // ---------------------------------------------------------------------------
 // Instagram caption generation
 // ---------------------------------------------------------------------------
@@ -1120,373 +1086,6 @@ You write in clean, semantic HTML using the CSS classes specified in the prompt.
 
 // ---------------------------------------------------------------------------
 // HTML template
-// ---------------------------------------------------------------------------
-
-function wrapInHTML(blogContent, weekRange, generatedAt, inlineHeroHTML) {
-
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>This Week in Houston Comedy — ${weekRange}</title>
-  <meta name="description" content="Your weekly roundup of every comedy show in Houston for ${weekRange}. Find shows at Houston Improv, The Riot, The Secret Group, and more.">
-  <meta property="og:image" content="weekly-hero.png">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg-primary: #0a0a0f;
-      --bg-secondary: #12121a;
-      --bg-card: #1a1a26;
-      --border: #2a2a3a;
-      --text-primary: #f0f0f5;
-      --text-secondary: #9999aa;
-      --text-muted: #666677;
-      --accent: #ff4d6a;
-      --accent-hover: #ff6b83;
-      --accent-secondary: #7c5cff;
-      --radius: 12px;
-      --transition: 0.2s ease;
-    }
-
-    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.7;
-      min-height: 100vh;
-    }
-
-    a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
-    a:hover { color: var(--accent-hover); text-decoration: underline; }
-
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 40px 24px 80px;
-    }
-
-    .header-nav {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 40px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .header-nav a {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .header-nav .brand {
-      font-size: 1.1rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .header-nav .sep { color: var(--text-muted); }
-
-    .hero-creative {
-      background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 48px 32px;
-      margin-bottom: 32px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-creative::before,
-    .hero-creative::after {
-      content: '';
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      filter: blur(100px);
-      opacity: 0.15;
-    }
-
-    .hero-creative::before {
-      background: var(--accent);
-      top: -100px;
-      right: -50px;
-    }
-
-    .hero-creative::after {
-      background: var(--accent-secondary);
-      bottom: -100px;
-      left: -50px;
-    }
-
-    .hero-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-title {
-      font-size: 2rem;
-      font-weight: 900;
-      letter-spacing: -1px;
-      margin-bottom: 24px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px 24px;
-      justify-items: center;
-      margin-bottom: 20px;
-      position: relative;
-      z-index: 1;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .hero-grid-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .hero-grid-item img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid rgba(255, 77, 106, 0.4);
-    }
-
-    .hero-grid-name {
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-align: center;
-      max-width: 120px;
-    }
-
-    .hero-extra-lineup {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-extra-name {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-      padding: 2px 10px;
-      border-left: 2px solid var(--accent);
-    }
-
-    .hero-dates {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      position: relative;
-      z-index: 1;
-    }
-
-    article h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.2;
-      margin-bottom: 8px;
-    }
-
-    .meta {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin-bottom: 32px;
-    }
-
-    article h3 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-top: 36px;
-      margin-bottom: 16px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--border);
-      color: var(--accent);
-    }
-
-    article p {
-      margin-bottom: 16px;
-      color: var(--text-secondary);
-    }
-
-    article strong { color: var(--text-primary); }
-
-    article ul, article ol {
-      margin-bottom: 16px;
-      padding-left: 24px;
-      color: var(--text-secondary);
-    }
-
-    article li { margin-bottom: 8px; }
-
-    .show-card {
-      display: flex;
-      gap: 20px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-      margin-bottom: 20px;
-      transition: border-color var(--transition);
-    }
-
-    .show-card:hover {
-      border-color: #3a3a4f;
-    }
-
-    .show-img {
-      width: 180px;
-      min-width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-      flex-shrink: 0;
-    }
-
-    .show-info {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .show-info p {
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-    }
-
-    .show-info strong {
-      font-size: 1.1rem;
-    }
-
-    .show-info .blurb {
-      font-style: italic;
-      color: var(--text-secondary);
-      margin-top: 4px;
-      margin-bottom: 10px;
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-
-    .show-info .details {
-      color: var(--text-muted);
-      font-size: 0.88rem;
-    }
-
-    .ticket-link {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 6px 16px;
-      background: var(--accent);
-      color: #fff !important;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: background var(--transition);
-    }
-
-    .ticket-link:hover {
-      background: var(--accent-hover);
-      text-decoration: none !important;
-    }
-
-    @media (max-width: 640px) {
-      .show-card {
-        flex-direction: column;
-        gap: 14px;
-      }
-
-      .show-img {
-        width: 100%;
-        min-width: unset;
-        height: 200px;
-      }
-    }
-
-    .footer {
-      margin-top: 60px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      text-align: center;
-    }
-
-    @media (max-width: 640px) {
-      article h2 { font-size: 1.5rem; }
-      article h3 { font-size: 1.15rem; }
-      .container { padding: 24px 16px 60px; }
-      .hero-creative { padding: 32px 20px; }
-      .hero-grid-item img { width: 80px; height: 80px; }
-      .hero-grid-name { font-size: 0.8rem; }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <nav class="header-nav">
-      <a href="/" class="brand">Comedy Houston</a>
-      <span class="sep">/</span>
-      <a href="/blog/">Weekly Blog</a>
-    </nav>
-${inlineHeroHTML}
-
-    <article>
-${blogContent}
-    </article>
-
-    <div class="meta" style="margin-top: 24px;">
-      Generated on ${generatedAt}
-    </div>
-
-    <footer class="footer">
-      <p>
-        <a href="/">Browse all shows</a> &middot;
-        Powered by Comedy Houston &middot;
-        Updated weekly
-      </p>
-    </footer>
-  </div>
-</body>
-</html>`;
-}
-
-// ---------------------------------------------------------------------------
-// Main
-// ---------------------------------------------------------------------------
-
 async function main() {
   console.log("=== Comedy Houston — Weekly Blog Post Generator ===");
   console.log(`Time: ${new Date().toISOString()}`);
@@ -1696,12 +1295,10 @@ async function main() {
   const backfillEntries = heroEntries.filter((e) => e.isEventBackfill);
 
   // Step 3: Generate hero creative HTML (replaces DALL-E)
-  let inlineHeroHTML = "";
   if (heroEntries.length > 0) {
     const heroHTML = generateHeroCreativeHTML(heroEntries, weekRange);
     fs.writeFileSync(BLOG_HERO_HTML_PATH, heroHTML);
     console.log(`Wrote hero creative HTML: ${BLOG_HERO_HTML_PATH}`);
-    inlineHeroHTML = generateInlineHeroHTML(heroEntries, weekRange);
 
     // Render the hero HTML to PNG immediately so any downstream consumer
     // (especially the WordPress weekly-roundup publish below) uses *this*
@@ -1752,17 +1349,6 @@ async function main() {
   console.log("Blog post generated successfully.");
   console.log("");
 
-  // Write the HTML file
-  const generatedAt = new Date().toLocaleDateString("en-US", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  });
-  const html = wrapInHTML(blogContent, weekRange, generatedAt, inlineHeroHTML);
-  fs.writeFileSync(BLOG_HTML_PATH, html);
-  console.log(`Wrote ${BLOG_HTML_PATH}`);
-  console.log("");
 
   // Step 5: Look up Instagram handles via web search
   let instagramHandles = {}; // { "Comedian Name": "@handle" or null }
@@ -1872,7 +1458,7 @@ async function main() {
   // "houston comedy shows this week". The WordPress plugin (v2.7.0) now 301s
   // the existing dated URLs to /this-week/, which Step 9 below refreshes in
   // place every Monday. The hero PNG + caption still ship to Instagram via
-  // post-weekly-roundup.js, and blog/index.html still gets the full article.
+  // post-weekly-roundup.js.
   if (WP_ENABLED) {
     // Arm the cumulative WP budget for Steps 8-9. After this many ms across
     // ALL WP calls in the script, every subsequent call short-circuits with a
@@ -2120,6 +1706,5 @@ if (require.main === module) {
 
 module.exports = {
   generateHeroCreativeHTML,
-  generateInlineHeroHTML,
   escapeHTML,
 };

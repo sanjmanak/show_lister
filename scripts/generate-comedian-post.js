@@ -4,7 +4,8 @@
  * Comedy Houston — Per-Comedian SEO Blog Post Generator (MVP)
  *
  * Reads events.json, identifies headliners, and generates individual
- * 600-word blog posts for each notable comedian. Outputs to blog/comedians/.
+ * 400-word blog posts for each notable comedian, publishes them to WordPress,
+ * and writes the Instagram graphics + manifest to blog/comedians/.
  *
  * Four-call pipeline per comedian (see scripts/lib/openai.js for the model
  * policy):
@@ -577,9 +578,7 @@ ${items}
 }
 
 // ---------------------------------------------------------------------------
-// Schema.org helpers (shared by wrapInHTML head injection AND the WordPress
-// post body injection). Single source of truth so the GitHub Pages HTML and
-// the WordPress post carry identical structured data.
+// Schema.org helpers for the WordPress post's ch_schema_graph field.
 // ---------------------------------------------------------------------------
 
 /**
@@ -751,9 +750,8 @@ function extractPerformerSameAs(research) {
 
 /**
  * Build the full schema.org @graph for a comedian post. Returns a JS object
- * ready to pass to JSON.stringify — the SAME graph is injected into the
- * GitHub Pages HTML <head> (via wrapInHTML) AND into the WordPress post body
- * (via the main loop), so search engines see identical data on both.
+ * ready to pass to JSON.stringify and send as the WordPress post's
+ * ch_schema_graph field.
  */
 function buildComedianSchemaGraph({
   comedianName,
@@ -849,321 +847,6 @@ function renderSchemaScriptTag(graph) {
   return `<script type="application/ld+json">${json}</script>`;
 }
 
-function wrapInHTML(blogContent, comedianName, venue, date, generatedAt, imageUrl, ticketUrl, schemaGraph) {
-  const title = `${comedianName} at ${venue} — ${formatDateForDisplay(date)} | Houston Comedy`;
-  const description = `${comedianName} performs live at ${venue} in Houston, TX on ${formatDateForDisplay(date)}. Get show details, comedian background, and ticket info at ComedyHouston.com.`;
-
-  // JSON-LD structured data. If the caller passed a pre-built graph (from
-  // buildComedianSchemaGraph), use it — that guarantees the GitHub Pages HTML
-  // and the WordPress post body carry identical structured data. Otherwise
-  // fall back to a minimal Person + ComedyEvent graph so older callsites still
-  // emit something valid.
-  // Escape "<" (see renderSchemaScriptTag) so third-party event text can't
-  // close the script block.
-  let jsonLd;
-  if (schemaGraph) {
-    jsonLd = JSON.stringify(schemaGraph).replace(/</g, "\\u003c");
-  } else {
-    const fallbackGraph = buildComedianSchemaGraph({
-      comedianName,
-      venue,
-      date,
-      time: null,
-      imageUrl,
-      ticketUrl,
-      priceMin: null,
-      priceMax: null,
-      currency: "USD",
-      description,
-      research: "",
-      lastUpdated: null,
-    });
-    jsonLd = JSON.stringify(fallbackGraph).replace(/</g, "\\u003c");
-  }
-
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${escapeHTML(title)} | Comedy Houston</title>
-  <meta name="description" content="${escapeHTML(description)}">
-  <meta property="og:title" content="${escapeHTML(title)}">
-  <meta property="og:description" content="${escapeHTML(description)}">
-  <meta property="og:type" content="article">
-${imageUrl ? `  <meta property="og:image" content="${escapeHTML(imageUrl)}">` : ""}
-  <meta property="og:site_name" content="Comedy Houston">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="robots" content="noindex">
-  <link rel="canonical" href="https://comedyhouston.com/${escapeHTML(`${slugify(comedianName)}-${slugify(venue)}-${date}`)}/">
-  <script type="application/ld+json">${jsonLd}</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg-primary: #0a0a0f;
-      --bg-card: #1a1a26;
-      --border: #2a2a3a;
-      --text-primary: #f0f0f5;
-      --text-secondary: #9999aa;
-      --text-muted: #666677;
-      --accent: #ff4d6a;
-      --accent-hover: #ff6b83;
-      --accent-secondary: #7c5cff;
-      --radius: 12px;
-      --transition: 0.2s ease;
-    }
-
-    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.7;
-      min-height: 100vh;
-    }
-
-    a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
-    a:hover { color: var(--accent-hover); text-decoration: underline; }
-
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 40px 24px 80px;
-    }
-
-    .header-nav {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 40px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .header-nav a { color: var(--text-secondary); font-size: 0.9rem; font-weight: 500; }
-
-    .header-nav .brand {
-      font-size: 1.1rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .header-nav .sep { color: var(--text-muted); }
-
-    .hero-image {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: var(--radius);
-      margin-bottom: 32px;
-    }
-
-    article h1 {
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.2;
-      margin-bottom: 8px;
-    }
-
-    .meta {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin-bottom: 32px;
-    }
-
-    article h2 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-top: 32px;
-      margin-bottom: 12px;
-      color: var(--accent);
-    }
-
-    article p {
-      margin-bottom: 16px;
-      color: var(--text-secondary);
-    }
-
-    article strong { color: var(--text-primary); }
-
-    .ticket-link {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 10px 24px;
-      background: var(--accent);
-      color: #fff !important;
-      border-radius: 6px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      transition: background var(--transition);
-    }
-
-    .ticket-link:hover {
-      background: var(--accent-hover);
-      text-decoration: none !important;
-    }
-
-    .event-details {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-      margin: 24px 0;
-    }
-
-    .event-details p {
-      margin-bottom: 6px;
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-    }
-
-    .event-details strong { color: var(--text-primary); }
-
-    .post-footer {
-      margin-top: 40px;
-      padding: 24px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-    }
-
-    .post-footer p {
-      margin-bottom: 8px;
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-    }
-
-    .post-footer p:last-child { margin-bottom: 0; }
-
-    .footer {
-      margin-top: 60px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      text-align: center;
-    }
-
-    @media (max-width: 640px) {
-      article h1 { font-size: 1.5rem; }
-      .container { padding: 24px 16px 60px; }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <nav class="header-nav">
-      <a href="/" class="brand">Comedy Houston</a>
-      <span class="sep">/</span>
-      <a href="/blog/">Blog</a>
-      <span class="sep">/</span>
-      <a href="/blog/comedians/">Comedians</a>
-    </nav>
-
-${imageUrl ? `    <img src="${escapeHTML(imageUrl)}" alt="${escapeHTML(comedianName)}" class="hero-image">` : ""}
-
-    <article>
-${blogContent}
-    </article>
-
-    <div class="meta" style="margin-top: 24px;">
-      Published ${generatedAt} by Comedy Houston
-    </div>
-
-    <footer class="footer">
-      <p>
-        <a href="/">Browse all shows</a> &middot;
-        <a href="/blog/">Weekly roundup</a> &middot;
-        Powered by Comedy Houston
-      </p>
-    </footer>
-  </div>
-</body>
-</html>`;
-}
-
-// ---------------------------------------------------------------------------
-// Generate index page for blog/comedians/
-// ---------------------------------------------------------------------------
-
-function generateComediansIndex(posts) {
-  const postLinks = posts
-    .map(
-      (p) =>
-        `      <li><a href="${p.filename}">${escapeHTML(p.comedianName)}</a> — ${escapeHTML(p.venue)}, ${formatDateForDisplay(p.date)}</li>`
-    )
-    .join("\n");
-
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Houston Comedian Spotlights | Comedy Houston</title>
-  <meta name="description" content="In-depth profiles of comedians performing live in Houston this week.">
-  <meta name="robots" content="noindex">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #0a0a0f;
-      color: #f0f0f5;
-      line-height: 1.7;
-      min-height: 100vh;
-    }
-    a { color: #ff4d6a; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
-    h1 { font-size: 2rem; font-weight: 800; margin-bottom: 8px; }
-    .subtitle { color: #9999aa; margin-bottom: 32px; }
-    ul { list-style: none; }
-    li {
-      padding: 12px 0;
-      border-bottom: 1px solid #2a2a3a;
-      color: #9999aa;
-    }
-    li a { font-weight: 600; font-size: 1.05rem; }
-    .nav { margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #2a2a3a; }
-    .nav a { color: #9999aa; font-size: 0.9rem; font-weight: 500; }
-    .brand {
-      font-size: 1.1rem; font-weight: 800;
-      background: linear-gradient(135deg, #ff4d6a, #7c5cff);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .sep { color: #666677; margin: 0 4px; }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <nav class="nav">
-      <a href="/" class="brand">Comedy Houston</a>
-      <span class="sep">/</span>
-      <a href="/blog/">Blog</a>
-      <span class="sep">/</span>
-      <a href="/blog/comedians/">Comedians</a>
-    </nav>
-    <h1>Comedian Spotlights</h1>
-    <p class="subtitle">In-depth profiles of comedians performing live in Houston this week.</p>
-    <ul>
-${postLinks}
-    </ul>
-  </div>
-</body>
-</html>`;
-}
-
-// ---------------------------------------------------------------------------
-// WordPress REST API helpers
 // ---------------------------------------------------------------------------
 
 /** Make an HTTP/HTTPS request and return the parsed JSON response. */
@@ -1238,7 +921,7 @@ function wpRequest(method, urlPath, body) {
  * Preflight WordPress auth check. Calls /wp-json/wp/v2/users/me once before
  * we start publishing posts. If the credentials, IP, or host firewall are
  * broken, we want to find out *now* with a loud, specific error — not after
- * silently writing 25 posts to GitHub Pages only.
+ * silently skipping every publish.
  *
  * Returns true on success, false on failure (caller decides whether to
  * proceed). On failure, the underlying detailed error is logged.
@@ -1544,7 +1227,7 @@ async function main() {
   console.log("");
 
   // Preflight WordPress auth once, up front. If it fails, we still generate
-  // posts to GitHub Pages but we skip publishing — and the failure reason is
+  // graphics and captions but we skip publishing — and the failure reason is
   // logged loudly so it's the first thing visible in the workflow log.
   let wpReady = WP_ENABLED;
   if (WP_ENABLED) {
@@ -1796,12 +1479,10 @@ async function main() {
     }
     finalContent = addSponsoredRelToTicketLinks(sanitized.html);
 
-    // Build the schema.org @graph ONCE. It flows to two emitters:
-    //   1. The static GitHub Pages HTML, via wrapInHTML — injected into
-    //      <head> further below.
-    //   2. The WordPress post, via the `ch_schema_graph` REST field in
-    //      publishToWordPress — the Comedy Houston plugin (v2.4.2+) stores
-    //      it in post meta and emits it from wp_head on singular views.
+    // Build the schema.org @graph ONCE. It goes to WordPress via the
+    // `ch_schema_graph` REST field in publishToWordPress — the Comedy
+    // Houston plugin (v2.4.2+) stores it in post meta and emits it from
+    // wp_head on singular views.
     // The schema is NOT prepended to finalContent. An earlier version did
     // that as a belt-and-suspenders during the plugin refactor transition;
     // it has been removed now that the plugin path is verified live. Keeping
@@ -1824,26 +1505,8 @@ async function main() {
       lastUpdated: matchedEvent.last_updated || null,
     });
 
-    // Generate filename
-    const dateSlug = date; // YYYY-MM-DD
-    const nameSlug = slugify(headliner.name);
-    const venueSlug = slugify(venue);
-    const filename = `${nameSlug}-${venueSlug}-${dateSlug}.html`;
-    const postSlug = `${nameSlug}-${venueSlug}-${dateSlug}`;
-
-    // Wrap in HTML template
-    const generatedAt = new Date().toLocaleDateString("en-US", {
-      weekday: "long",
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    });
-    const html = wrapInHTML(finalContent, headliner.name, venue, date, generatedAt, eventImageUrl, ticketUrl, schemaGraph);
-
-    // Write file to GitHub Pages
-    const filePath = path.join(COMEDIANS_DIR, filename);
-    fs.writeFileSync(filePath, html);
-    console.log(`  Wrote: blog/comedians/${filename}`);
+    // Slug: name + venue + show date. Also the WordPress post slug.
+    const postSlug = `${slugify(headliner.name)}-${slugify(venue)}-${date}`;
 
     // Step 4: Generate Instagram graphics (3 sizes)
     console.log("  Step 4: Generating Instagram graphic templates...");
@@ -1895,7 +1558,7 @@ async function main() {
         );
       } catch (err) {
         console.error(`  WordPress publish failed: ${err.message}`);
-        console.log("  Post saved to GitHub Pages only.");
+        console.log("  Graphics and caption still ship; the post itself is not live.");
       }
     }
     console.log("");
@@ -1904,7 +1567,6 @@ async function main() {
       comedianName: headliner.name,
       venue: venue,
       date: date,
-      filename: filename,
       imageUrl: eventImageUrl,
       graphicImageUrl: graphicImageUrl,
       ticketUrl: ticketUrl,
@@ -1913,13 +1575,11 @@ async function main() {
       caption: caption,
       instagramHandle: instagramHandle, // "@name" or "" — poster uses this to tag the comedian in the IG photo
       graphicFiles: graphicFiles.map((gf) => gf.pngFile),
-      // Stash the post body, metadata, and the pre-built schema graph so the
-      // second pass below can append the internal-linking section, re-wrap
-      // the HTML, and re-publish without re-running the 4-call OpenAI
-      // pipeline. The schema graph is reused verbatim — same structured data
-      // in round 1 and round 2.
+      // Stash the post body and the pre-built schema graph so the second
+      // pass below can append the internal-linking section and re-publish
+      // without re-running the OpenAI pipeline. The schema graph is reused
+      // verbatim — same structured data in round 1 and round 2.
       _finalContent: finalContent,
-      _generatedAt: generatedAt,
       _schemaGraph: schemaGraph,
     });
   }
@@ -1927,11 +1587,10 @@ async function main() {
   // ─────────────────────────────────────────────────────────────────────────
   // Second pass: internal linking ("Also performing this week" footer block)
   // ─────────────────────────────────────────────────────────────────────────
-  // Now that every comedian post has been written and (optionally) published,
-  // we know all the slugs and WP URLs. Walk the manifest a second time and
-  // append a cross-link section to each post pointing at the OTHER comedians
-  // this week. Re-write the GitHub Pages HTML and re-publish to WordPress
-  // (slug-dedupe handles the in-place update).
+  // Now that every comedian post has been published, we know all the slugs
+  // and WP URLs. Walk the manifest a second time and append a cross-link
+  // section to each post pointing at the OTHER comedians this week, then
+  // re-publish to WordPress (slug-dedupe handles the in-place update).
   if (generatedPosts.length > 1) {
     console.log("");
     console.log("━━━ Second pass: adding internal links between comedian posts ━━━");
@@ -1939,23 +1598,6 @@ async function main() {
       try {
         const linkSection = buildAlsoThisWeekSection(post.slug, generatedPosts);
         const linkedContent = post._finalContent + linkSection;
-
-        // Rewrite GitHub Pages HTML. Pass the pre-built schema graph so the
-        // <head> JSON-LD matches what's already embedded at the top of the
-        // post body (the script block was prepended to _finalContent in the
-        // first pass, and buildAlsoThisWeekSection only appends — never
-        // touches the head of the body content).
-        const linkedHtml = wrapInHTML(
-          linkedContent,
-          post.comedianName,
-          post.venue,
-          post.date,
-          post._generatedAt,
-          post.imageUrl,
-          post.ticketUrl,
-          post._schemaGraph
-        );
-        fs.writeFileSync(path.join(COMEDIANS_DIR, post.filename), linkedHtml);
 
         // Re-publish to WordPress (slug-dedupe will UPDATE the existing post
         // in place — no -2 suffixed duplicate). Skip if WP isn't ready or
@@ -1976,17 +1618,12 @@ async function main() {
   // Strip the internal-only fields before they hit manifest.json
   for (const post of generatedPosts) {
     delete post._finalContent;
-    delete post._generatedAt;
     delete post._schemaGraph;
   }
 
-  // Generate index page
   if (generatedPosts.length > 0) {
-    const indexHTML = generateComediansIndex(generatedPosts);
-    fs.writeFileSync(path.join(COMEDIANS_DIR, "index.html"), indexHTML);
-    console.log(`Wrote: blog/comedians/index.html`);
-
-    // Write manifest JSON (used by Phase 2 WordPress publishing)
+    // Write manifest JSON (consumed by post-to-instagram.js, the reaper,
+    // and ensure-comedian-graphics.js)
     // `manifest_version` is a monotonic stamp that changes every time this
     // script runs — the IG poster uses it to detect mid-week manifest
     // regeneration and prune state entries whose slugs no longer exist.
@@ -2018,7 +1655,7 @@ async function main() {
       if (post.wpLink) {
         emailBody += `Blog post: ${post.wpLink}\n`;
       } else {
-        emailBody += `Blog post: https://sanjmanak.github.io/show_lister/blog/comedians/${post.filename}\n`;
+        emailBody += `Blog post: NOT PUBLISHED (WordPress publish failed — see the run log)\n`;
       }
       emailBody += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
       if (post.caption) {

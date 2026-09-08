@@ -2,7 +2,7 @@
 
 **Every event in a city. One place.**
 
-This is an automated event aggregator that pulls comedy shows from Ticketmaster and Eventbrite, deduplicates them, and publishes a static site to GitHub Pages — updated twice daily.
+This is an automated event aggregator that pulls comedy shows from Ticketmaster, Eventbrite and StandupTix venue sites, deduplicates them, and publishes `events.json`, which the comedyhouston.com WordPress plugin renders — updated twice daily. GitHub Pages stays enabled only to serve the Instagram graphics in `blog/comedians/images/`.
 
 ## Data Sources
 
@@ -13,8 +13,8 @@ This is an automated event aggregator that pulls comedy shows from Ticketmaster 
 
 1. A GitHub Action runs at **8 AM and 6 PM Central** (and can be triggered manually)
 2. `scripts/fetch-events.js` calls both APIs, normalizes events into a common schema, and deduplicates
-3. The script writes `events.json` and injects data into `index.html`
-4. The Action commits and pushes — GitHub Pages rebuilds automatically
+3. The script writes `events.json`
+4. The Action commits and pushes; the WordPress plugin fetches the new file from raw.githubusercontent.com and purges its cache
 
 ## Setup
 
@@ -40,12 +40,9 @@ This is an automated event aggregator that pulls comedy shows from Ticketmaster 
 5. Add `TICKETMASTER_API_KEY` with your Ticketmaster Consumer Key
 6. Add `EVENTBRITE_TOKEN` with your Eventbrite Private Token
 
-### 3. Enable GitHub Pages
+### 3. Enable GitHub Pages (images only)
 
-1. Go to **Settings > Pages** (in the left sidebar)
-2. Under **Source**, select **Deploy from a branch**
-3. Set branch to `main` (or `master`) and folder to `/ (root)`
-4. Click **Save**
+Settings > Pages > deploy from `main` / root. Only `blog/comedians/images/` is served from it (the Instagram poster hands those URLs to Meta).
 
 ### 4. Run It
 
@@ -53,7 +50,7 @@ This is an automated event aggregator that pulls comedy shows from Ticketmaster 
 - Click **Update Comedy Events** in the left sidebar
 - Click **Run workflow** button
 - Wait for it to finish (check the green checkmark)
-- Visit `https://<your-username>.github.io/<repo-name>/`
+- `events.json` on `main` is updated; comedyhouston.com picks it up within the hour
 
 ## Local Development
 
@@ -65,8 +62,8 @@ export EVENTBRITE_TOKEN="your-token-here"
 # Run the fetcher
 node scripts/fetch-events.js
 
-# Open index.html in your browser
-open index.html
+# Inspect the output
+head -c 2000 events.json
 ```
 
 ## File Structure
@@ -74,10 +71,9 @@ open index.html
 ```
 ├── .github/workflows/update-events.yml   # Scheduled GitHub Action
 ├── scripts/fetch-events.js               # API fetcher & normalizer
-├── events.json                           # Generated event data
-├── index.html                            # Static site (dark theme, responsive)
+├── events.json                           # Generated event data (read by the WP plugin)
 ├── wordpress/
-│   ├── comedy-houston.php                # WordPress plugin (v2.3.0)
+│   ├── comedy-houston.php                # WordPress plugin (v2.16.0)
 │   ├── comedy-houston-template.php       # Plugin HTML template
 │   ├── comedy-houston.js                 # Client-side filtering & sorting
 │   └── comedy-houston.css                # Plugin styles (dark/light/auto)
@@ -112,7 +108,7 @@ refreshed by a short local run:
 One command does everything: pulls the latest `events.json`, scrapes the
 missing prices from each event's ticket page (no API keys needed — the
 `--prices-only` mode never calls the TM/EB APIs), and commits + pushes
-`events.json`, `index.html`, and `config/price-cache.json` back to `main`.
+`events.json` and `config/price-cache.json` back to `main`.
 On a Mac, double-clicking `update-prices.command` in Finder does the same.
 To refresh prices without publishing, run `npm run prices` and inspect the
 diff yourself.
@@ -141,6 +137,6 @@ after midnight.
 |---------|-----|
 | Action fails with 401 | API key expired or wrong — update the secret |
 | Action fails with 429 | Rate limit hit — the script retries automatically, but if persistent, reduce call frequency |
-| Page shows 0 events | Check Action logs; one or both APIs may be down. Events load from embedded data or `events.json` |
-| Page not updating | Check that GitHub Pages is enabled and pointing to the right branch |
+| Site shows 0 events | Check Action logs; one or both APIs may be down |
+| Site not updating | The plugin caches events.json; the update workflow purges it, and an hourly cron purges as a fallback |
 | Events look stale | Trigger a manual workflow run from the Actions tab |

@@ -80,7 +80,7 @@ jobs:
           # top-comedians.json is the handoff file consumed by generate-comedian-post.js;
           # if it's not committed, the comedian workflow can't reuse the strict-gated
           # displayImage and re-runs identifyTopComedians() unnecessarily.
-          for f in blog/index.html blog/weekly-hero.html blog/weekly-hero.png blog/instagram-caption.txt blog/top-comedians.json blog/weekly-meta.json; do
+          for f in blog/weekly-hero.html blog/weekly-hero.png blog/instagram-caption.txt blog/top-comedians.json blog/weekly-meta.json; do
             [ -f "$f" ] && git add "$f"
           done
           # Only commit if there are changes
@@ -230,7 +230,7 @@ jobs:
 
             -----------------------------------------------
 
-            Blog post: https://sanjmanak.github.io/show_lister/blog/
+            This week's page: https://comedyhouston.com/this-week/
           attachments: blog/weekly-hero.png
 
       - name: Email weekly creative — NOT posted, manual action needed

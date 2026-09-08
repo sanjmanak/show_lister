@@ -9,7 +9,7 @@
 #
 #   1. pulls the latest events.json from GitHub,
 #   2. scrapes missing prices from each event's own ticket page (JSON-LD),
-#   3. commits and pushes events.json + index.html + config/price-cache.json.
+#   3. commits and pushes events.json + config/price-cache.json.
 #
 # After the push, the twice-daily Action reuses the recovered prices from
 # config/price-cache.json on every run, so once a week is plenty. No API keys
@@ -47,7 +47,7 @@ echo "==> Scraping prices from your home IP (this is the part GitHub's servers c
 node scripts/fetch-events.js --prices-only
 
 echo "==> Publishing to GitHub..."
-git add events.json index.html config/price-cache.json
+git add events.json config/price-cache.json
 if git diff --staged --quiet; then
   echo "No price changes to publish — everything was already up to date. Done."
   exit 0

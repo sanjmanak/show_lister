@@ -73,7 +73,7 @@ There are **eight major components** that work together:
 | 5 | **Social Media Auto-Poster** | Publishes comedian spotlights to Instagram feed + stories, Facebook Page feed + stories, with comedian tagging | Node.js + Meta Graph API |
 | 6 | **WordPress Plugin** | Embeds show listings on any WordPress site with filtering, themes, affiliate tracking, GA4 event tracking | PHP + JS + CSS |
 | 7 | **GitHub Actions** | Six automated workflows: twice-daily fetch + weekly blog + weekly comedian posts + staggered IG posting + daily "Tonight in Houston" post + daily cleanup of aged Tonight posts | YAML workflow files |
-| 8 | **GitHub Pages** | Free static hosting — serves the website, JSON data, and blog posts | GitHub infrastructure |
+| 8 | **GitHub Pages** | Serves the Instagram graphics in `blog/comedians/images/` (the only thing still hosted there) | GitHub infrastructure |
 
 ---
 
@@ -106,32 +106,15 @@ There are **eight major components** that work together:
 
 4. **Deduplicates** using a SHA-256 hash of `name|date|venue` (lowercased, first 16 chars). When duplicates exist across sources, the event with more complete data wins (scored by presence of: image, price, description, ticket URL, time).
 
-5. **Writes two files:**
-   - `events.json` — all events as structured data
-   - `index.html` — reads the existing HTML template and injects event data directly into JavaScript variables (`EVENTS_DATA` and `LAST_UPDATED`), so the page loads instantly with zero API calls from the browser
+5. **Writes `events.json`** — all events as structured data. The WordPress plugin fetches it from raw.githubusercontent.com (and the workflow purges the plugin's cache after each push).
 
 #### Runtime: ~3 seconds
 
 ---
 
-### 2. Static Website (`index.html`)
+### 2. Static Website (retired Sept 2026)
 
-**~8,285 lines. Single self-contained HTML file. No frameworks, no build tools, no external dependencies** (except Google Fonts).
-
-#### Features:
-- **Dark theme** with gradient accents and smooth animations
-- **Filters:** time period (today, tomorrow, weekend, week, month), venue dropdown, text search, sort options (date, price, name)
-- **Event cards:** show image (or venue placeholder), name, venue, date/time, price range, age restriction, status badge, source badge, "Get Tickets" button
-- **Smart date labels:** "Tonight", "Tomorrow", "This Friday", etc.
-- **Responsive grid:** auto-fill columns, 300px minimum width
-- **Zero-latency first paint:** all event data is embedded directly in the HTML at build time — no fetch requests needed
-
-#### How data gets in:
-The fetcher script finds these lines in the HTML and replaces them:
-```javascript
-const EVENTS_DATA = [];        // → replaced with actual event array
-const LAST_UPDATED = "";       // → replaced with ISO timestamp
-```
+The repo used to carry an 866KB `index.html` with the event data embedded, rewritten twice a day and served from GitHub Pages. It was `noindex`, had no analytics, and nothing linked to it; the WordPress plugin reads `events.json` from raw.githubusercontent.com directly. It was deleted along with the static `blog/index.html` and `blog/comedians/*.html` mirrors (also noindexed, only ever linked from fallback lines in the Monday emails). Only `blog/comedians/images/` is still served from GitHub Pages, because the Instagram poster hands those URLs to Meta.
 
 ---
 
@@ -169,7 +152,6 @@ const LAST_UPDATED = "";       // → replaced with ISO timestamp
 #### Files generated:
 | File | Purpose |
 |------|---------|
-| `blog/index.html` | Full blog post (served on GitHub Pages) |
 | `blog/weekly-hero.html` | Hero creative as HTML (source for screenshot) |
 | `blog/weekly-hero.png` | 1080×1080 PNG screenshot (Instagram-ready) |
 | `blog/instagram-caption.txt` | Ready-to-paste Instagram caption |
@@ -278,8 +260,7 @@ Both env vars are plain overrides, so a bad model day is an env change, not a co
 #### Files generated:
 | File | Purpose |
 |------|---------|
-| `blog/comedians/{slug}.html` | Individual comedian blog post |
-| `blog/comedians/index.html` | Index page listing all comedian posts |
+| (WordPress) `/{slug}/` | The comedian post itself lives only on comedyhouston.com |
 | `blog/comedians/manifest-YYYY-MM-DD.json` | Post metadata + `manifest_version` stamp, keyed by the Monday of the week it covers (used by the IG poster, the self-heal script and the reaper) |
 | `blog/comedians/images/{slug}-{square,portrait,story}.{html,png}` | Designed Instagram graphics (event image + name / date / venue) |
 | `blog/comedians/email-attachments.txt` | Exact PNG list for this run's email (images/ holds three weeks of graphics at once) |
@@ -290,7 +271,7 @@ Both env vars are plain overrides, so a bad model day is an env change, not a co
 
 #### WordPress publishing — preflight & error logging
 
-Before any per-comedian publish runs, `wpPreflight()` calls `GET /wp-json/wp/v2/users/me?context=edit` once. If it fails, WordPress publishing is disabled for the rest of the run and the failure reason is logged loudly at the top of the workflow output (with hints: stale app password, username mismatch, Hostinger/LiteSpeed blocking the runner IP, LiteSpeed stripping the Authorization header). Posts still get written to GitHub Pages so nothing is lost. This replaces the old behavior where a 401 from the first category lookup would silently bail out per-comedian and the only sign of trouble was 25 "Post saved to GitHub Pages only" lines deep in the log.
+Before any per-comedian publish runs, `wpPreflight()` calls `GET /wp-json/wp/v2/users/me?context=edit` once. If it fails, WordPress publishing is disabled for the rest of the run and the failure reason is logged loudly at the top of the workflow output (with hints: stale app password, username mismatch, Hostinger/LiteSpeed blocking the runner IP, LiteSpeed stripping the Authorization header). Graphics, captions and the manifest still get written so the social side keeps working. This replaces the old behavior where a 401 from the first category lookup would silently bail out per-comedian deep in the log.
 
 `wpRequest()` errors now include the HTTP method, path, a relevant subset of response headers (`content-type`, `www-authenticate`, `x-litespeed-cache`, `cf-ray`, `server`), and the first 1500 chars of the response body — enough to distinguish credential failures (`rest_not_logged_in` JSON) from host firewall blocks (HTML body, no JSON code) from payload validation errors (`rest_invalid_param`) from rate-limiting (429).
 
@@ -495,7 +476,7 @@ Logs every ticket click with: timestamp, original URL, final URL (with affiliate
 | **Manual trigger** | Yes (`workflow_dispatch`) |
 | **What it runs** | `node scripts/fetch-events.js` |
 | **Secrets used** | `TICKETMASTER_API_KEY`, `EVENTBRITE_TOKEN` |
-| **Commits** | `events.json` + `index.html` (only if changed) |
+| **Commits** | `events.json` (only if changed) |
 | **Commit message** | `Update events data — {timestamp in CT}` |
 
 #### Workflow 2: Generate Blog Post (`.github/workflows/generate-blog-post.yml`)
@@ -506,7 +487,7 @@ Logs every ticket click with: timestamp, original URL, final URL (with affiliate
 | **Manual trigger** | Yes (`workflow_dispatch`) |
 | **What it runs** | `generate-blog-post.js` (which calls `screenshot-hero.js` inline) → `git commit/push` → email (conditional) |
 | **Secrets used** | `OPENAI_API_KEY` + optionally all SMTP secrets |
-| **Commits** | `blog/index.html`, `blog/weekly-hero.html`, `blog/weekly-hero.png`, `blog/instagram-caption.txt`, `blog/top-comedians.json` |
+| **Commits** | `blog/weekly-hero.html`, `blog/weekly-hero.png`, `blog/instagram-caption.txt`, `blog/top-comedians.json`, `blog/weekly-meta.json` |
 | **Job timeout** | `timeout-minutes: 20` (down from 30 — script-side per-call WP timeouts make this a fail-safe, not the primary kill switch) |
 | **Auto-post** | After the commit/push, `post-weekly-roundup.js` posts the hero + caption to IG feed (anchor) + FB feed via `scripts/lib/meta-api.js`. Freshness is proven by `blog/weekly-meta.json` (written only when this week's caption + hero both exist); `blog/weekly-post-state.json` is week-keyed so Thursday runs and re-runs can't double-post; the hero URL carries a week-keyed cache-buster so the raw CDN can't serve last week's PNG. |
 | **Email** | Sends whenever `SMTP_SERVER` is set AND the caption + hero files exist on disk — now a receipt/backup for the auto-post rather than a to-do. Crucially, the `Commit and push`, auto-post, and email steps all run under `if: ${{ !cancelled() }}` — so if `node scripts/generate-blog-post.js` exits non-zero (e.g. WordPress publish failure), the operator still gets the Instagram caption + hero PNG by email and can post manually. |
@@ -519,7 +500,7 @@ Logs every ticket click with: timestamp, original URL, final URL (with affiliate
 | **Manual trigger** | Yes (`workflow_dispatch`) |
 | **What it runs** | `generate-comedian-post.js`, then `screenshot-comedian-graphics.js` (Puppeteer renders the square / portrait / story HTML to PNG) |
 | **Secrets used** | `OPENAI_API_KEY`, `WP_*`, SMTP |
-| **Commits** | `blog/comedians/*.html`, `blog/comedians/manifest-YYYY-MM-DD.json`, `blog/comedians/images/*`, `sitemap.xml` |
+| **Commits** | `blog/comedians/manifest-YYYY-MM-DD.json`, `blog/comedians/*-caption.txt`, `blog/comedians/images/*`, `sitemap.xml` |
 | **Cost** | ~$0.60–1.75 per run (5 API calls per comedian, typically 3–5 comedians) |
 
 #### Workflow 4: Social Media Auto-Poster (`.github/workflows/post-to-instagram.yml`)
@@ -751,15 +732,8 @@ the day after the show week ends, along with its local files and graphics.
 
 - **Source:** `main` branch, root folder (`/`)
 - **URL:** `https://sanjmanak.github.io/show_lister/`
-- **What's served:**
-  - `/` → `index.html` (main show listing)
-  - `/events.json` → raw event data (consumed by WordPress plugin)
-  - `/blog/` → `blog/index.html` (weekly blog post)
-  - `/blog/weekly-hero.png` → hero image
-  - `/blog/comedians/` → individual comedian spotlight posts
-  - `/blog/comedians/manifest.json` → post metadata for WordPress publishing
-
-GitHub Pages rebuilds automatically whenever the Actions workflow pushes a commit.
+- **What's still used:** `/blog/comedians/images/*.png` — the Instagram poster gives Meta these URLs for every spotlight feed image, story and carousel slide. Everything else that used to be served here (the listing, the blog mirrors) was retired in Sept 2026.
+- The daily Tonight post and the weekly roundup fetch their images from raw.githubusercontent.com instead. Moving the spotlight images the same way would let Pages be switched off entirely; it needs one test post first because Meta is selective about image hosts.
 
 ---
 
@@ -784,23 +758,19 @@ GitHub Pages rebuilds automatically whenever the Actions workflow pushes a commi
 ║           │  • Sort by date       │                                     ║
 ║           └─────────┬─────────────┘                                     ║
 ║                     │                                                   ║
-║           ┌─────────┴─────────┐                                         ║
-║           ▼                   ▼                                         ║
-║    ┌─────────────┐    ┌─────────────┐                                   ║
-║    │ events.json │    │ index.html  │                                   ║
-║    │ (raw data)  │    │ (embedded)  │                                   ║
-║    └──────┬──────┘    └──────┬──────┘                                   ║
-║           │                  │                                          ║
-║           └────────┬─────────┘                                          ║
-║                    ▼                                                    ║
+║                     ▼                                                   ║
+║              ┌─────────────┐                                            ║
+║              │ events.json │                                            ║
+║              └──────┬──────┘                                            ║
+║                     ▼                                                   ║
 ║           ┌───────────────────┐                                         ║
 ║           │  git commit + push │                                        ║
 ║           └────────┬──────────┘                                         ║
 ║                    ▼                                                    ║
-║           ┌───────────────────┐                                         ║
-║           │  GitHub Pages     │──── serves ───▶  Visitors               ║
-║           │  (auto-rebuild)   │──── serves ───▶  WordPress Plugin       ║
-║           └───────────────────┘                  (fetches events.json)  ║
+║           ┌────────────────────────┐                                    ║
+║           │ raw.githubusercontent  │──── fetched by ──▶ WordPress plugin ║
+║           │ (cache purged by CI)   │                    (comedyhouston) ║
+║           └────────────────────────┘                                    ║
 ║                                                                        ║
 ╠══════════════════════════════════════════════════════════════════════════╣
 ║                     WEEKLY (Monday 9 AM CT)                            ║
@@ -819,11 +789,11 @@ GitHub Pages rebuilds automatically whenever the Actions workflow pushes a commi
 ║    │  • Build hero HTML       │                                         ║
 ║    └───────────┬──────────────┘                                         ║
 ║                │                                                        ║
-║    ┌───────────┴──────────────────────────┐                             ║
-║    ▼              ▼            ▼           ▼                             ║
-║  blog/        blog/         blog/       blog/                           ║
-║  index.html   weekly-       weekly-     instagram-                      ║
-║  (blog post)  hero.html     hero.png    caption.txt                     ║
+║    ┌───────────┴──────────────┐                                         ║
+║    ▼              ▼            ▼                                         ║
+║  blog/        blog/         blog/                                       ║
+║  weekly-      weekly-       instagram-                                  ║
+║  hero.html    hero.png      caption.txt                                 ║
 ║                             (Puppeteer                                  ║
 ║                              screenshot)                                ║
 ║                │                                                        ║
@@ -1092,18 +1062,14 @@ show_lister/
 │   └── comedy-houston.css               # Plugin styles, 3 themes (~639 lines)
 │
 ├── blog/
-│   ├── index.html                       # Generated weekly blog post
 │   ├── weekly-hero.html                 # Hero creative (HTML source)
 │   ├── weekly-hero.png                  # Hero creative (1080×1080 PNG)
 │   ├── instagram-caption.txt            # Generated Instagram caption
 │   └── comedians/                       # Per-comedian spotlight posts
-│       ├── index.html                   # Index listing all comedian posts
 │       ├── manifest-YYYY-MM-DD.json     # Post metadata per week (three weeks in flight)
 │       ├── images/                      # Designed graphics + week-of teaser screenshots
 │       ├── ig-post-state.json           # Tracks which comedians have been posted to IG
-│       └── {comedian-slug}.html         # Individual comedian blog posts
 │
-├── index.html                           # Main static website (~8,285 lines)
 ├── events.json                          # Generated event data
 ├── package.json                         # Project metadata (no dependencies)
 ├── README.md                            # Setup guide
@@ -1121,10 +1087,9 @@ show_lister/
 
 | Component | Impact | Severity | Fix |
 |-----------|--------|----------|-----|
-| **GitHub Pages** | Pages on free plans require public repos. Your site at `sanjmanak.github.io/show_lister/` will go offline. | **HIGH** | Upgrade to GitHub Pro ($4/month) which allows Pages on private repos. Or use a different host (Netlify, Cloudflare Pages — both have free tiers for private repos). |
+| **GitHub Pages** | Pages on free plans require public repos. The Instagram graphics at `sanjmanak.github.io/show_lister/blog/comedians/images/` would go offline and spotlight posts would fail. | **HIGH** | Upgrade to GitHub Pro ($4/month), or move the images to a public data repo / CDN (see ROADMAP). |
 | **WordPress plugin** | The plugin fetches `events.json` from `raw.githubusercontent.com`. Private repos return 404 for unauthenticated requests. | **HIGH** | Option A: Add a GitHub personal access token (PAT) to the plugin's fetch logic. Option B: Serve `events.json` from a different public endpoint (e.g., a CDN, S3 bucket, or Cloudflare Worker). Option C: Keep the JSON file hosted elsewhere. |
 | **GitHub Actions** | Workflows continue to work on private repos — no change. | **NONE** | N/A |
-| **Blog posts** | Blog pages are served via GitHub Pages, so same impact as above. | **HIGH** | Same fix as GitHub Pages above. |
 | **`events.json` as a public API** | Anyone currently consuming this URL will lose access. | **LOW** | Likely only your own WordPress plugin consumes this. |
 
 ### What doesn't break:
@@ -1138,7 +1103,7 @@ show_lister/
 
 1. **Upgrade to GitHub Pro** ($4/month) — this is the simplest fix. Private repo + GitHub Pages just works.
 2. **Or** move hosting to **Cloudflare Pages** (free tier, supports private repos, auto-deploys from GitHub).
-3. For the WordPress plugin, if you go with GitHub Pro, `raw.githubusercontent.com` still works for private repos if you add a token. But cleaner would be to have the plugin fetch from your Pages URL (e.g., `https://sanjmanak.github.io/show_lister/events.json`) instead of the raw GitHub URL.
+3. For the WordPress plugin, `raw.githubusercontent.com` still works for private repos if you add a token to the fetch. Cleaner is a small public data repo that CI pushes `events.json` and the images to (see ROADMAP).
 
 ---
 
@@ -1256,7 +1221,7 @@ Here's what each API costs and how someone could theoretically abuse it:
 | **Eventbrite** | Free (1,000 calls/hour limit) | ~4 calls/day | Can't run up a bill — it's free. Worst case: rate limited. | $0 |
 | **OpenAI** | Pay-per-use (~$0.01–0.03/1K tokens + web search) | ~$3–12/week (blog + comedian posts) | If `workflow_dispatch` triggered repeatedly: ~$10/run × N runs | **Potentially significant** — set a spend cap |
 | **GitHub Actions** | Free (2,000 min/month for free tier) | ~5 min/day (fetch) + ~15 min/week (blog + comedian posts) | If workflows triggered excessively, you'd hit the free tier limit and they'd just stop. | $0 (just stops running) |
-| **GitHub Pages** | Free | Continuous | No billing risk. If traffic spikes, GitHub may throttle (soft limit ~100GB/month bandwidth). | $0 |
+| **GitHub Pages** | Free | Serves Instagram graphics only | No billing risk. | $0 |
 | **SMTP (email)** | Depends on provider | ~4 emails/month | If blog workflow triggered repeatedly, more emails sent. Most providers have daily limits. | Minimal |
 
 ### Bottom Line on Billing Risk
@@ -1272,7 +1237,7 @@ Here's what each API costs and how someone could theoretically abuse it:
 If you're an AI agent working on this codebase, here's what you need to know:
 
 - **To update the event fetching logic:** Edit `scripts/fetch-events.js`. Test locally with `TICKETMASTER_API_KEY` and `EVENTBRITE_TOKEN` env vars set.
-- **To change the website appearance:** Edit `index.html` — all CSS and JS is inline. The `EVENTS_DATA` variable at the top gets replaced at build time, so don't move it.
+- **To change the listing appearance:** Edit the WordPress plugin in `wordpress/` (`comedy-houston.css` / `.js` / template) and deploy with `~/showList/.deploy/deploy-plugin.sh`. There is no static site anymore.
 - **To modify the weekly blog generation:** Edit `scripts/generate-blog-post.js`. The OpenAI prompts are in functions like `buildPrompt()`, `generateInstagramCaption()`, `identifyTopComedians()`.
 - **To modify per-comedian blog posts:** Edit `scripts/generate-comedian-post.js`. Key functions: `researchComedian()` (research prompt), `writeBlogPost()` (writing prompt with source links), `factCheckPost()` (editorial pass). The writing prompt includes banned phrase lists, source URL requirements, and the Comedy Houston footer.
 - **To change the WordPress plugin:** Edit files in `wordpress/`. The PHP file handles server-side logic + admin click analytics dashboard; the JS file handles client-side filtering + GA4 event tracking; the CSS file has three theme variants.

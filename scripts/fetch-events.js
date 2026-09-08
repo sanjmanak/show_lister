@@ -5,7 +5,9 @@
  * Pulls comedy events from the Ticketmaster and Eventbrite APIs plus
  * StandupTix venue sites (sitemap + JSON-LD harvest — see config/
  * standuptix-venues.json), normalizes them into a single schema,
- * deduplicates, and writes events.json + index.html.
+ * deduplicates, and writes events.json (the WordPress plugin reads it from
+ * raw.githubusercontent.com). The static index.html mirror was retired in
+ * Sept 2026: nothing read it and it added 866KB of churn to every commit.
  */
 
 const https = require("https");
@@ -60,8 +62,6 @@ const { fixMojibake } = require("./lib/fix-mojibake");
 const { classifyShowTags, cacheKey: showTagCacheKey } = require("./lib/classify-show-tags");
 
 const EVENTS_JSON_PATH = path.join(OUTPUT_DIR, "events.json");
-const INDEX_HTML_PATH = path.join(OUTPUT_DIR, "index.html");
-const TEMPLATE_PATH = path.join(OUTPUT_DIR, "index.html");
 const FILTERS_JSON_PATH = path.join(OUTPUT_DIR, "config", "filters.json");
 const EXCLUDED_JSON_PATH = path.join(OUTPUT_DIR, "excluded-events.json");
 const OPEN_MICS_JSON_PATH = path.join(OUTPUT_DIR, "config", "open-mics.json");
@@ -2325,41 +2325,6 @@ function writeExcludedLog(excluded, updatedAt) {
 }
 
 // ---------------------------------------------------------------------------
-// HTML Generation
-// ---------------------------------------------------------------------------
-
-function generateHTML(events, updatedAt) {
-  // Escape "<" so organizer-supplied text containing "</script>" can't break
-  // out of the inline <script> block ("<" is a valid JS string escape).
-  const eventsJSON = JSON.stringify(events, null, 2).replace(/</g, "\\u003c");
-  return buildFullHTML(eventsJSON, updatedAt);
-}
-
-function buildFullHTML(eventsJSON, updatedAt) {
-  // Read the template HTML
-  let html = fs.readFileSync(TEMPLATE_PATH, "utf8");
-
-  // Replace the event data (handles both the empty placeholder and previously-
-  // embedded data). The pretty-printed JSON's only column-0 "]" is the final
-  // top-level close, so anchoring on "\n];" can't stop early at a "];" inside
-  // an event's text (JSON strings can't contain raw newlines). Replacer
-  // functions, not replacement strings: event text containing "$&"/"$'"
-  // would otherwise be expanded as replacement patterns.
-  html = html.replace(
-    /const EVENTS_DATA = (?:\[\]|\[[\s\S]*?\n\]);/,
-    () => `const EVENTS_DATA = ${eventsJSON};`
-  );
-
-  // Replace the updated timestamp (handles both empty and previously-set values)
-  html = html.replace(
-    /const LAST_UPDATED = ".*?";/,
-    () => `const LAST_UPDATED = "${updatedAt}";`
-  );
-
-  return html;
-}
-
-// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
@@ -2539,16 +2504,6 @@ async function main() {
   fs.writeFileSync(EVENTS_JSON_PATH, JSON.stringify(output, null, 2));
   console.log(`Wrote ${EVENTS_JSON_PATH}`);
 
-  // Generate HTML with embedded data
-  try {
-    const html = generateHTML(deduped, updatedAt);
-    fs.writeFileSync(INDEX_HTML_PATH, html);
-    console.log(`Wrote ${INDEX_HTML_PATH}`);
-  } catch (err) {
-    console.error(`HTML generation failed: ${err.message}`);
-    console.log("index.html will use events.json at runtime via fetch().");
-  }
-
   console.log("");
   console.log("Done!");
 }
@@ -2590,7 +2545,7 @@ async function pricesOnlyMain() {
 
   const changed = events.filter((e) => before.get(e.id) !== priceKey(e));
   if (changed.length === 0) {
-    console.log("No price changes — events.json and index.html left untouched.");
+    console.log("No price changes — events.json left untouched.");
     return;
   }
 
@@ -2606,15 +2561,6 @@ async function pricesOnlyMain() {
   };
   fs.writeFileSync(EVENTS_JSON_PATH, JSON.stringify(output, null, 2));
   console.log(`Wrote ${EVENTS_JSON_PATH} (${changed.length} event(s) re-priced)`);
-
-  try {
-    const html = generateHTML(events, updatedAt);
-    fs.writeFileSync(INDEX_HTML_PATH, html);
-    console.log(`Wrote ${INDEX_HTML_PATH}`);
-  } catch (err) {
-    console.error(`HTML generation failed: ${err.message}`);
-    console.log("index.html will use events.json at runtime via fetch().");
-  }
 
   console.log("");
   console.log("Done!");
