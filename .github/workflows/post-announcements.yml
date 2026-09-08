@@ -65,7 +65,7 @@ jobs:
 
       # Media must be on main before Meta can fetch it (raw.githubusercontent).
       - name: Commit rendered assets + gate state
-        if: steps.pending.outputs.count != '0' || env.DRY_RUN == ''
+        if: env.DRY_RUN == ''
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -82,7 +82,7 @@ jobs:
           fi
 
       - name: Post to Instagram + Facebook
-        if: steps.pending.outputs.count != '0'
+        if: steps.pending.outputs.count != '0' && env.DRY_RUN == ''
         timeout-minutes: 15
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
