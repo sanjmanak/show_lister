@@ -217,7 +217,7 @@
       }
     },
     "https://www.theriothtx.com/events/graham-kay-tonight-show-colbert-nateland": {
-      "lastmod": "2026-09-03T06:11:00-05:00",
+      "lastmod": "2026-09-08T10:34:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -270,7 +270,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-swipe-right-comedy-dating-game-for-singles-couples-8": {
-      "lastmod": "2026-09-03T06:11:00-05:00",
+      "lastmod": "2026-09-08T10:34:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -498,7 +498,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-jon-rudnitsky-netflix-hbo-comedy-central-headlines-the-riot-comedy-club-the-riot-houston": {
-      "lastmod": "2026-09-07T05:22:00-05:00",
+      "lastmod": "2026-09-08T10:44:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -551,7 +551,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-jon-rudnitsky-netflix-hbo-comedy-central-headlines-the-riot-comedy-club-the-riot-houston-1": {
-      "lastmod": "2026-09-07T05:22:00-05:00",
+      "lastmod": "2026-09-08T10:44:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -604,7 +604,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-19": {
-      "lastmod": "2026-09-07T05:22:00-05:00",
+      "lastmod": "2026-09-08T10:44:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -663,17 +663,17 @@
           },
           {
             "@type": "Person",
-            "name": "Genivive Clinton"
+            "name": "Slade Ham"
           },
           {
             "@type": "Person",
-            "name": "Slade Ham"
+            "name": "Will Owens"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-36": {
-      "lastmod": "2026-09-08T10:08:00-05:00",
+      "lastmod": "2026-09-08T10:39:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -712,10 +712,6 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Victor Ramos"
-          },
-          {
-            "@type": "Person",
             "name": "Matt B.C."
           },
           {
@@ -733,12 +729,16 @@
           {
             "@type": "Person",
             "name": "Will Loden"
+          },
+          {
+            "@type": "Person",
+            "name": "Grady Pruitt"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-19": {
-      "lastmod": "2026-09-08T10:08:00-05:00",
+      "lastmod": "2026-09-08T10:39:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -803,7 +803,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-4": {
-      "lastmod": "2026-08-09T09:59:00-05:00",
+      "lastmod": "2026-09-08T10:18:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -839,11 +839,36 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Jordan Cavarrubio"
+          },
+          {
+            "@type": "Person",
+            "name": "Jimmy Pineapple"
+          },
+          {
+            "@type": "Person",
+            "name": "Ruben Medina"
+          },
+          {
+            "@type": "Person",
+            "name": "Mason James"
+          },
+          {
+            "@type": "Person",
+            "name": "Andy Huggins"
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-monday-night-standup-comedy-open-mic-2026-09-14210000": {
-      "lastmod": "2026-08-12T11:39:00-05:00",
+      "lastmod": "2026-09-08T10:18:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -11723,7 +11748,7 @@
       }
     },
     "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-28": {
-      "lastmod": "2026-09-01T07:30:00-05:00",
+      "lastmod": "2026-09-08T10:41:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -11759,11 +11784,32 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Malay Vyas"
+          },
+          {
+            "@type": "Person",
+            "name": "Mike Ryan"
+          },
+          {
+            "@type": "Person",
+            "name": "Waldo Rodas"
+          },
+          {
+            "@type": "Person",
+            "name": "Matthew Zane"
+          },
+          {
+            "@type": "Person",
+            "name": "Bob Biggerstaff"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/comedian-graham-kay-the-tonight-show-colbert-nateland-live-in-conroe": {
-      "lastmod": "2026-07-02T12:06:00-05:00",
+      "lastmod": "2026-09-08T10:37:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -11803,12 +11849,20 @@
           {
             "@type": "Person",
             "name": "Graham Kay"
+          },
+          {
+            "@type": "Person",
+            "name": "Josh Stokes"
+          },
+          {
+            "@type": "Person",
+            "name": "Barry Laminack"
           }
         ]
       }
     },
     "https://www.riotconroe.com/events/comedian-graham-kay-the-tonight-show-colbert-nateland-live-in-conroe-1": {
-      "lastmod": "2026-07-02T12:09:00-05:00",
+      "lastmod": "2026-09-08T10:46:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -11844,11 +11898,24 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Grady Pruitt"
+          },
+          {
+            "@type": "Person",
+            "name": "Josh Stokes"
+          },
+          {
+            "@type": "Person",
+            "name": "Graham Kay"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-19": {
-      "lastmod": "2026-09-01T07:30:00-05:00",
+      "lastmod": "2026-09-08T10:46:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -11884,7 +11951,28 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Waldo Rodas"
+          },
+          {
+            "@type": "Person",
+            "name": "Grady Pruitt"
+          },
+          {
+            "@type": "Person",
+            "name": "Josh Stokes"
+          },
+          {
+            "@type": "Person",
+            "name": "Graham Kay"
+          },
+          {
+            "@type": "Person",
+            "name": "Keelain Smith"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-29": {
