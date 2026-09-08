@@ -673,7 +673,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-36": {
-      "lastmod": "2026-09-07T05:24:00-05:00",
+      "lastmod": "2026-09-08T10:08:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -709,11 +709,36 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Victor Ramos"
+          },
+          {
+            "@type": "Person",
+            "name": "Matt B.C."
+          },
+          {
+            "@type": "Person",
+            "name": "Cody Greenlee"
+          },
+          {
+            "@type": "Person",
+            "name": "Tramaine Mahone"
+          },
+          {
+            "@type": "Person",
+            "name": "Brandon Green"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Loden"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-19": {
-      "lastmod": "2026-09-07T05:24:00-05:00",
+      "lastmod": "2026-09-08T10:08:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -753,6 +778,26 @@
           {
             "@type": "Person",
             "name": "Lotto Marie"
+          },
+          {
+            "@type": "Person",
+            "name": "Christian Alexander"
+          },
+          {
+            "@type": "Person",
+            "name": "Larry Goodwell"
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
+          },
+          {
+            "@type": "Person",
+            "name": "Jeff Joe"
+          },
+          {
+            "@type": "Person",
+            "name": "Tess Vergult"
           }
         ]
       }

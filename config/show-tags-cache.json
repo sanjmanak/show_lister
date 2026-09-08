@@ -1776,6 +1776,12 @@
       "model": "gpt-4o-mini",
       "taxonomy": 2,
       "classified_at": "2026-09-07"
+    },
+    "cu next thursday comedy show hosted by corlis & tess": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-09-08"
     }
   }
 }
