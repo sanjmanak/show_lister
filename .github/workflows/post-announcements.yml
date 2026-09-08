@@ -1,0 +1,136 @@
+name: Post Just-Announced Shows
+
+# Daily, after the morning events refresh (08:1x CT) has had time to land
+# new listings in config/just-announced.json. Renders and posts at most
+# ANNOUNCE_MAX (default 1) notable announcement per run, gated by an LLM
+# check that it is a named headliner. See scripts/post-announcements.js.
+on:
+  schedule:
+    - cron: '37 15 * * *'   # 10:37 AM CT
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Render + gate only, no posting, no state changes'
+        type: boolean
+        default: false
+      max:
+        description: 'Max announcements to post this run'
+        type: string
+        default: '1'
+      window_hours:
+        description: 'How far back to look for new announcements'
+        type: string
+        default: '48'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: post-announcements
+  cancel-in-progress: false
+
+env:
+  TZ: America/Chicago
+  DRY_RUN: ${{ inputs.dry_run == true && '1' || '' }}
+  ANNOUNCE_MAX: ${{ inputs.max || '1' }}
+  ANNOUNCE_WINDOW_HOURS: ${{ inputs.window_hours || '48' }}
+
+jobs:
+  announce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Install Puppeteer
+        run: npm install puppeteer --no-save
+
+      - name: Gate + render (LLM check, card, optional reel)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node scripts/post-announcements.js --render
+
+      - name: Check for anything to post
+        id: pending
+        run: |
+          n=$(node -e "const p=require('./blog/announce/pending.json'); console.log((p.items||[]).length)")
+          echo "count=$n" >> $GITHUB_OUTPUT
+          echo "Pending announcements: $n"
+
+      # Media must be on main before Meta can fetch it (raw.githubusercontent).
+      - name: Commit rendered assets + gate state
+        if: steps.pending.outputs.count != '0' || env.DRY_RUN == ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add blog/announce/ config/announced-posted.json
+          if git diff --staged --quiet; then
+            echo "Nothing to commit."
+          else
+            git commit -m "Just announced creative — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
+            for i in 1 2 3 4; do
+              git pull --rebase origin main --no-edit || { git rebase --abort 2>/dev/null || true; }
+              if git push origin main; then break; fi
+              sleep $i
+            done
+          fi
+
+      - name: Post to Instagram + Facebook
+        if: steps.pending.outputs.count != '0'
+        timeout-minutes: 15
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          IG_CHANNEL_TIMEOUT_MS: '300000'
+        run: node scripts/post-announcements.js --post
+
+      - name: Commit posting state
+        if: always() && steps.pending.outputs.count != '0' && env.DRY_RUN == ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add blog/announce/pending.json config/announced-posted.json
+          if git diff --staged --quiet; then
+            echo "No state changes."
+          else
+            git commit -m "Just announced posted — $(TZ=America/Chicago date +'%B %d, %Y %I:%M %p CT')"
+            for i in 1 2 3 4; do
+              git pull --rebase origin main --no-edit || { git rebase --abort 2>/dev/null || true; }
+              if git push origin main; then break; fi
+              sleep $i
+            done
+          fi
+
+      - name: Upload dry-run creative
+        if: env.DRY_RUN != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: announce-dry-run
+          path: |
+            blog/announce/*.png
+            blog/announce/*.mp4
+            blog/announce/pending.json
+          if-no-files-found: ignore
+
+      - name: Notify on failure
+        if: failure() && env.HAS_SMTP == 'true'
+        env:
+          HAS_SMTP: ${{ secrets.SMTP_SERVER != '' }}
+        uses: dawidd6/action-send-mail@4226df7daafa6fc901a43789c49bf7ab309066e7 # v3 (SHA-pinned: action receives SMTP secrets)
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "[Comedy Houston] post-announcements FAILED"
+          to: ${{ secrets.NOTIFY_EMAIL }}
+          from: ${{ secrets.SMTP_FROM }}
+          body: |
+            The just-announced autoposter failed.
+            Run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
