@@ -12,18 +12,14 @@ const fs = require("fs");
 const path = require("path");
 const { spawnSync } = require("child_process");
 
-// Shared image pipeline: URL blocklists, HEAD validation, dimension parser,
-// strict-gate headshot finder, and the inverted display-image policy that
-// prefers the event image unless a scraped headshot clears the quality bar.
-// See scripts/lib/image-utils.js for the full rationale.
-const imageUtils = require("./lib/image-utils");
-const {
-  findBestHeadshot,
-  evaluateHeadshotCandidate,
-  isUsableImageUrl,
-  buildInitialsPlaceholder,
-  pickDisplayImage,
-} = imageUtils;
+// Image policy: the event's own ticket image is the display image. The
+// only helpers left are a URL-shape check and the initials placeholder.
+// See scripts/lib/image-utils.js.
+const { isUsableImageUrl, pickDisplayImage } = require("./lib/image-utils");
+
+// Shared OpenAI plumbing (model policy + parameter shapes). See
+// scripts/lib/openai.js.
+const openai = require("./lib/openai");
 
 // Regex-based scrub for the LLM's blog HTML — strips <script>, on*= handlers,
 // javascript:/data: URLs, and a handful of other injection shapes. Zero npm
@@ -35,8 +31,8 @@ const { addBlogPostingToGraph, wpGmtToIso } = require("./lib/schema-utils");
 // Config
 // ---------------------------------------------------------------------------
 
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY || "";
-const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-4o";
+const OPENAI_API_KEY = openai.OPENAI_API_KEY;
+const OPENAI_MODEL = openai.OPENAI_MODEL;
 
 // WordPress publishing config (optional — skipped if not set)
 const WP_SITE_URL = process.env.WP_SITE_URL || "";
@@ -158,133 +154,21 @@ function loadThisWeeksEvents() {
 // commit/email steps that depend on `if: !cancelled()`. Chat completions
 // usually return in <30s; web-search Responses calls can run longer and
 // get their own larger budget.
-const OPENAI_CHAT_TIMEOUT_MS = 90_000;
-const OPENAI_RESPONSES_TIMEOUT_MS = 120_000;
-
+/** Chat completion via the shared lib (see scripts/lib/openai.js). */
 function callOpenAI(prompt, systemPrompt) {
-  return new Promise((resolve, reject) => {
-    const body = JSON.stringify({
-      model: OPENAI_MODEL,
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: prompt },
-      ],
-      temperature: 0.7,
-      max_tokens: 8000,
-    });
-
-    const options = {
-      hostname: "api.openai.com",
-      path: "/v1/chat/completions",
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${OPENAI_API_KEY}`,
-        "Content-Length": Buffer.byteLength(body),
-      },
-    };
-
-    const req = https.request(options, (res) => {
-      let data = "";
-      res.on("data", (chunk) => (data += chunk));
-      res.on("end", () => {
-        if (res.statusCode >= 400) {
-          return reject(
-            new Error(`OpenAI API error ${res.statusCode}: ${data.slice(0, 500)}`)
-          );
-        }
-        try {
-          const parsed = JSON.parse(data);
-          const content = parsed.choices[0].message.content;
-          const usage = parsed.usage;
-          console.log(
-            `OpenAI usage — prompt: ${usage.prompt_tokens}, completion: ${usage.completion_tokens}, total: ${usage.total_tokens}`
-          );
-          resolve(content);
-        } catch (e) {
-          reject(new Error(`Failed to parse OpenAI response: ${e.message}`));
-        }
-      });
-    });
-
-    req.setTimeout(OPENAI_CHAT_TIMEOUT_MS, () => {
-      req.destroy(new Error(`OpenAI chat request timed out after ${OPENAI_CHAT_TIMEOUT_MS}ms`));
-    });
-    req.on("error", (err) => reject(err));
-    req.write(body);
-    req.end();
+  return openai.chatCompletion({
+    system: systemPrompt,
+    user: prompt,
+    temperature: 0.7,
+    maxTokens: 8000,
+    effort: "low",
   });
 }
 
-// ---------------------------------------------------------------------------
-// OpenAI Responses API (with web search)
-// ---------------------------------------------------------------------------
-
+/** Responses API with web search via the shared lib. */
 function callOpenAIResponses(input, instructions) {
-  return new Promise((resolve, reject) => {
-    const body = JSON.stringify({
-      model: OPENAI_MODEL,
-      instructions: instructions,
-      input: input,
-      tools: [{ type: "web_search_preview" }],
-    });
-
-    const options = {
-      hostname: "api.openai.com",
-      path: "/v1/responses",
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${OPENAI_API_KEY}`,
-        "Content-Length": Buffer.byteLength(body),
-      },
-    };
-
-    const req = https.request(options, (res) => {
-      let data = "";
-      res.on("data", (chunk) => (data += chunk));
-      res.on("end", () => {
-        if (res.statusCode >= 400) {
-          return reject(
-            new Error(`OpenAI Responses API error ${res.statusCode}: ${data.slice(0, 500)}`)
-          );
-        }
-        try {
-          const parsed = JSON.parse(data);
-          const textOutput = parsed.output
-            .filter((item) => item.type === "message")
-            .flatMap((item) => item.content)
-            .filter((c) => c.type === "output_text")
-            .map((c) => c.text)
-            .join("\n");
-
-          if (parsed.usage) {
-            console.log(
-              `OpenAI Responses usage — input: ${parsed.usage.input_tokens}, output: ${parsed.usage.output_tokens}, total: ${parsed.usage.total_tokens}`
-            );
-          }
-          resolve(textOutput);
-        } catch (e) {
-          reject(new Error(`Failed to parse Responses API response: ${e.message}`));
-        }
-      });
-    });
-
-    req.setTimeout(OPENAI_RESPONSES_TIMEOUT_MS, () => {
-      req.destroy(new Error(`OpenAI Responses request timed out after ${OPENAI_RESPONSES_TIMEOUT_MS}ms`));
-    });
-    req.on("error", (err) => reject(err));
-    req.write(body);
-    req.end();
-  });
+  return openai.webResearch({ input, instructions, effort: "low" });
 }
-
-// ---------------------------------------------------------------------------
-// Headshot extraction — moved to scripts/lib/image-utils.js
-// fetchPage, validateImageUrl, extractImageCandidates, findBestHeadshot,
-// isUsableImageUrl, and buildInitialsPlaceholder all live in the shared
-// lib now so generate-comedian-post.js uses the same strict-gate pipeline.
-// ---------------------------------------------------------------------------
 
 // ---------------------------------------------------------------------------
 // WordPress REST API helpers
@@ -556,19 +440,17 @@ For EACH comedian, return a JSON object with these fields:
 {
   "name": "Comedian Name",
   "summary": "3-4 sentence research summary with SPECIFIC special titles, show names, podcast names. No generic praise.",
-  "sourceUrls": ["https://en.wikipedia.org/wiki/...", "https://www.netflix.com/title/...", "https://www.youtube.com/..."],
-  "headshotPageUrls": ["https://en.wikipedia.org/wiki/Comedian_Name", "https://www.imdb.com/name/...", "https://comedianname.com"]
+  "sourceUrls": ["https://en.wikipedia.org/wiki/...", "https://www.netflix.com/title/...", "https://www.youtube.com/..."]
 }
 
 IMPORTANT:
 - "sourceUrls": 2-3 real, verifiable URLs where readers can learn more (Wikipedia, IMDB, Netflix page, YouTube special, interview). These will be hyperlinked in the blog post.
-- "headshotPageUrls": 2-4 pages likely to have a good headshot photo (Wikipedia, IMDB, official site, press page). These are for image extraction, NOT displayed to users.
 - "summary": Use SPECIFIC NAMES AND TITLES, not generic descriptions. If you can't find reliable info, say so.
 
 Return ONLY a JSON array of these objects, no other text.`;
 
   const instructions =
-    "You are a comedy research assistant. Search the web to find accurate, current information about each comedian. Cite specific show titles, special names, and verifiable facts. Return structured JSON with source URLs and headshot page URLs. If you cannot find information about a comedian, say so rather than guessing.";
+    "You are a comedy research assistant. Search the web to find accurate, current information about each comedian. Cite specific show titles, special names, and verifiable facts. Return structured JSON with source URLs. If you cannot find information about a comedian, say so rather than guessing.";
 
   return callOpenAIResponses(input, instructions);
 }
@@ -824,23 +706,14 @@ function escapeHTML(str) {
     .replace(/"/g, "&quot;");
 }
 
-// isUsableImageUrl + buildInitialsPlaceholder are imported from the shared
-// image-utils lib. The hero creative below uses pickDisplayImage() to apply
-// the inverted preference rule: event image is the floor, scraped headshot
-// only wins if it cleared the strict gate earlier in the pipeline.
 
 function generateHeroCreativeHTML(comedians, weekRange) {
-  // Take up to 6 comedians. Each one's displayImage is set via the inverted
-  // preference rule in pickDisplayImage(): event image first, strict-gated
-  // headshot only if it beat the floor, branded initials SVG as last resort.
+  // Take up to 6 comedians. displayImage is the event image (or the
+  // initials SVG when the event has none), resolved once in main().
   const featured = comedians.slice(0, 6).map((c) => {
-    // Respect an already-chosen displayImage (set upstream by the strict-gate
-    // pipeline in main() so both the hero and the per-comedian spotlights use
-    // the same decision).
     if (c.displayImage) return { ...c };
     const { displayImage } = pickDisplayImage({
       eventImageUrl: c.imageUrl,
-      validatedHeadshotUrl: c.headshotUrl,
       comedianName: c.name,
     });
     return { ...c, displayImage };
@@ -1015,9 +888,7 @@ ${extraSection}
 }
 
 function generateInlineHeroHTML(comedians, weekRange) {
-  // Pick up to 6 comedians with images for a 3x2 grid. Prefer the
-  // already-validated displayImage (set by Step 2b in main) and fall back
-  // to the event image for any comedian that didn't run through 2b.
+  // Pick up to 6 comedians with images for a 3x2 grid.
   const resolve = (c) => c.displayImage || c.imageUrl || "";
   const withImages = comedians.filter((c) => resolve(c)).slice(0, 6);
   const gridItems = withImages
@@ -1722,7 +1593,6 @@ async function main() {
   // Step 2: Research comedians via web search (returns structured JSON now)
   let comedianResearch = "";
   let comedianSourceLinks = {}; // { "Name": ["url1", "url2"] }
-  let comedianHeadshotPages = {}; // { "Name": ["page1", "page2"] }
   if (topComedianNames.length > 0) {
     console.log("Researching comedians via web search...");
     try {
@@ -1737,14 +1607,10 @@ async function main() {
           if (entry.name && entry.sourceUrls && entry.sourceUrls.length > 0) {
             comedianSourceLinks[entry.name] = entry.sourceUrls;
           }
-          if (entry.name && entry.headshotPageUrls && entry.headshotPageUrls.length > 0) {
-            comedianHeadshotPages[entry.name] = entry.headshotPageUrls;
-          }
         }
         comedianResearch = summaries.join("\n\n");
         console.log(`Research completed for ${researchParsed.length} comedian(s).`);
         console.log(`Source links found for: ${Object.keys(comedianSourceLinks).join(", ") || "none"}`);
-        console.log(`Headshot pages found for: ${Object.keys(comedianHeadshotPages).join(", ") || "none"}`);
       } catch (parseErr) {
         // Fallback: treat as plain text if JSON parsing fails
         console.warn(`Warning: Research JSON parse failed, using as plain text: ${parseErr.message}`);
@@ -1758,62 +1624,27 @@ async function main() {
     }
   }
 
-  // Step 2b: Try to upgrade each comedian's image. The event (ticket) image
-  // is the FLOOR — we only replace it if a scraped headshot clears the
-  // strict gate (URL blocklist + HEAD + bytes >= 20KB + dims >= 300x300 +
-  // aspect ratio in [0.65, 1.55]). This inverts the old behavior, where
-  // any HEAD-passing scraped image won over the event image and gave us
-  // Instagram glyphs / silhouettes.
-  //
-  // Each comedian ends up with:
-  //   - headshotUrl: strict-gated scraped headshot (or null)
-  //   - displayImage: the final rendered image via pickDisplayImage()
-  //   - imageSource: "headshot" | "event" | "initials" (for logging + handoff)
+  // Step 2b: Resolve each comedian's display image. It is the event's own
+  // ticket image (Ticketmaster 16:9, Eventbrite, StandupTix card); the
+  // branded initials SVG is the only fallback. The old Wikipedia/official-
+  // site headshot scrape was retired in Sept 2026: it was slow, and its
+  // "wins" included product shots and logos.
   if (topComedians.length > 0) {
-    console.log("Finding headshot images for comedians (event image is the floor)...");
+    console.log("Resolving display images (event image)...");
     for (const comedian of topComedians) {
-      const pageUrls = comedianHeadshotPages[comedian.name] || [];
-      if (pageUrls.length > 0) {
-        try {
-          console.log(`  ${comedian.name}: searching ${pageUrls.length} page(s)...`);
-          const headshot = await findBestHeadshot(pageUrls, comedian.name);
-          if (headshot) {
-            console.log(`  ${comedian.name}: scraped headshot cleared strict gate → upgrade`);
-            comedian.headshotUrl = headshot;
-          } else {
-            console.log(`  ${comedian.name}: no scraped candidate beat the strict gate → keeping event image`);
-          }
-        } catch (err) {
-          console.log(`  ${comedian.name}: headshot search failed: ${err.message}`);
-        }
-      } else {
-        console.log(`  ${comedian.name}: no candidate pages → keeping event image`);
-      }
-
-      // Apply the inverted preference rule once, store on the comedian
-      // object so every downstream consumer (weekly hero HTML, inline
-      // hero, WP landing page, handoff file for generate-comedian-post.js)
-      // renders the same decision.
       const pick = pickDisplayImage({
         eventImageUrl: comedian.imageUrl,
-        validatedHeadshotUrl: comedian.headshotUrl,
         comedianName: comedian.name,
       });
       comedian.displayImage = pick.displayImage;
       comedian.imageSource = pick.source;
-      console.log(`  ${comedian.name}: displayImage source = ${pick.source}`);
+      console.log(`  ${comedian.name}: ${pick.source}`);
     }
     console.log("");
 
-    // Persist the selection so generate-comedian-post.js can consume it and
-    // guarantee both workflows render the exact same comedians with the
-    // exact same images (instead of each making its own OpenAI + scrape
-    // round-trip and disagreeing).
-    //
-    // The `displayImage` field is the already-validated URL (either the
-    // event image or a strict-gate-winning scraped headshot). The comedian
-    // workflow reuses it directly and skips re-scraping — one round of
-    // network work, not two, and guaranteed visual consistency.
+    // Persist the lineup so generate-comedian-post.js covers the exact same
+    // comedians as the weekly roundup (and skips its own identification
+    // call when the week matches).
     try {
       const handoffPath = path.join(BLOG_DIR, "top-comedians.json");
       fs.writeFileSync(
@@ -1826,7 +1657,6 @@ async function main() {
               name: c.name,
               show: c.show,
               imageUrl: c.imageUrl || null,
-              headshotUrl: c.headshotUrl || null,
               displayImage: c.displayImage || null,
               imageSource: c.imageSource || null,
             })),
@@ -2169,16 +1999,12 @@ async function updateThisWeekLandingPage(topComedians, weekRange, monday, sunday
   // (which itself has the internal-link footer back to the rest of the week).
   const cardsHtml = topComedians
     .map((c) => {
-      // Use the already-validated displayImage set by Step 2b in main().
-      // It applies the inverted preference rule: event image is the floor,
-      // strict-gated scraped headshot only if it beat the floor, initials
-      // SVG as the absolute last resort.
+      // displayImage is the event image resolved in main(); data: URIs
+      // (the initials SVG) are rendered as a text placeholder instead.
       let usable = "";
       if (c.displayImage && !c.displayImage.startsWith("data:")) {
         usable = c.displayImage;
       } else if (c.imageUrl && isUsableImageUrl(c.imageUrl)) {
-        // Fallback for comedians that didn't go through Step 2b (e.g. the
-        // Thursday refresh path where we skip headshot scraping).
         usable = c.imageUrl;
       }
       const imgHtml = usable

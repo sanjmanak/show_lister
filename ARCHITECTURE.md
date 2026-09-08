@@ -137,7 +137,7 @@ const LAST_UPDATED = "";       // → replaced with ISO timestamp
 
 ### 3. Weekly Blog Post Generator (`scripts/generate-blog-post.js`)
 
-**~1,950 lines. The AI-powered content pipeline.** Runs once a week (Monday mornings). Image-pipeline helpers (URL blocklists, HEAD validation, real-dimension parser, strict-gate headshot finder, inverted display-image policy) live in `scripts/lib/image-utils.js` and are shared with `generate-comedian-post.js`.
+**~2,100 lines. The AI-powered content pipeline.** Runs once a week (Monday mornings). OpenAI plumbing (model policy, request shapes) lives in `scripts/lib/openai.js`; the small image helpers (URL-shape check, initials placeholder) in `scripts/lib/image-utils.js`. Both are shared with `generate-comedian-post.js`.
 
 #### What it does, step by step:
 
@@ -158,7 +158,7 @@ const LAST_UPDATED = "";       // → replaced with ISO timestamp
    - 2-sentence comedian blurbs with specific credits (not generic praise)
    - "Get Tickets" links for each show
 
-6. **Generates a hero creative** — an HTML file (`blog/weekly-hero.html`) that renders a 1080×1080 image with a 3×2 grid of comedian headshots and a gradient overlay with the week range
+6. **Generates a hero creative** — an HTML file (`blog/weekly-hero.html`) that renders a 1080×1080 image with a 3×2 grid of event images (circular crop) and a gradient overlay with the week range
 
 7. **Screenshots the hero** — uses Puppeteer to render the HTML to a PNG (`blog/weekly-hero.png`)
 
@@ -179,19 +179,19 @@ const LAST_UPDATED = "";       // → replaced with ISO timestamp
 
 **Slug dedupe on WordPress publish.** Before creating a roundup post, the script looks up any existing post with the same slug and `POST /wp-json/wp/v2/posts/{id}` to update in place. Prevents "-2" suffixed duplicates when the workflow is re-run on the same Monday. The per-comedian publisher uses the same pattern.
 
-#### Image pipeline — inverted preference + strict gate (`scripts/lib/image-utils.js`)
+#### Image policy — the event image, everywhere (`scripts/lib/image-utils.js`)
 
-The hero used to render Instagram glyphs and silhouette PNGs because the headshot validator was HEAD-only (status + content-type + ≥8KB bytes). Social-CDN profile icons and default-avatar PNGs sailed through that gate, and `findBestHeadshot()` returned the first match — so the Eventbrite/Ticketmaster event image was never reached via the `c.headshotUrl || c.imageUrl` short-circuit.
+Every comedian tile, spotlight graphic and WordPress featured image uses the **event's own ticket image**: Ticketmaster (largest 16:9 rendition), Eventbrite (`logo.original`), StandupTix venue card, or Don't Tell's Cloudinary image. It is the image the venue chose for the show and the one the comedian's own promo uses.
 
-The new policy treats the **event image as the floor**, not a fallback:
+Until Sept 2026 the scripts also asked the research call for "headshot pages", scraped them for `<img>` candidates and ran a strict gate (HEAD + real-dimension parse + aspect ratio) before letting a scraped photo replace the event image. The gate stopped the Instagram-glyph class of bug but still let through product shots and logos from official sites (a hot-sauce lineup for Arnez J on the 2026-09-07 hero), and it added a slow, flaky network round per comedian. The whole scrape was retired; git history has it.
 
-1. **`scripts/lib/image-utils.js`** is the single source of truth for the URL blocklists, HEAD validation, candidate extraction, and the strict gate. Strict gate = URL not in expanded social-CDN blocklist (`pbs.twimg.com`, `cdninstagram`, `lookaside.fb`, `profile_image`, `/400x400/`, etc.) → HEAD `200` + `image/*` + `Content-Length ≥ 20_000` → real pixel dimensions parsed from the first 32KB via a ranged GET (JPEG SOFn / PNG IHDR / WebP VP8/VP8L/VP8X / GIF) → width & height ≥ 300 → aspect ratio in `[0.65, 1.55]`. A scraped headshot only replaces the event image if it beats the entire bar.
+What remains in `image-utils.js`:
 
-2. **`pickDisplayImage(eventImageUrl, validatedHeadshotUrl, comedianName)`** applies the inverted rule once. Both the weekly hero, the inline hero on `blog/index.html`, the `/this-week/` landing page card grid, and the per-comedian Instagram graphics consume the same decision so they always render the same image for the same comedian.
+1. **`isUsableImageUrl(url)`** — cheap URL-shape check against social-CDN profile-glyph patterns and vector/animated extensions. The renderers skip an image that fails it rather than draw junk.
+2. **`buildInitialsPlaceholder(name)`** — branded initials SVG for an event with no image at all.
+3. **`pickDisplayImage({eventImageUrl, comedianName})`** — event image if usable, otherwise the placeholder. Returns `{displayImage, source: "event" | "initials"}`.
 
-3. **`blog/top-comedians.json` handoff** is now written *after* the strict-gate step and includes `imageUrl`, `headshotUrl`, `displayImage`, and `imageSource` (`"event" | "headshot" | "initials"`) for each comedian. `generate-comedian-post.js` reuses the pre-validated `displayImage` directly and skips re-scraping — one round of network work, not two, and guaranteed visual consistency between weekly hero and per-comedian spotlights.
-
-4. The same library is `require()`d by both blog scripts, deleting ~340 lines of drifted duplicate code (the comedian script's old copy carried `openmicnight` in its blocklist while the blog script's didn't, etc.).
+`blog/top-comedians.json` (the handoff to `generate-comedian-post.js`) carries `imageUrl`, `displayImage` and `imageSource` per comedian so both Monday scripts agree on the lineup.
 
 #### WordPress publish reliability — per-request timeouts + cumulative budget
 
@@ -209,15 +209,19 @@ Every `wpRequest` / `wpUploadImage` / `downloadImage` failure is already swallow
 
 The workflow YAML reinforces the same idea: every step from `Commit and push blog post` onward runs under `if: ${{ !cancelled() }}`, so a non-zero exit from `node scripts/generate-blog-post.js` no longer skips the email. Job-level `timeout-minutes` is now `20` (down from 30), and the script's per-call + cumulative timeouts mean it should never come close to that ceiling.
 
-#### OpenAI models used:
-- **Chat Completions API** (`/v1/chat/completions`) — for blog writing, comedian identification, caption generation
-- **Responses API** (`/v1/responses`) — for web search (comedian research, Instagram handle lookup)
+#### OpenAI models used (`scripts/lib/openai.js`):
+- **`OPENAI_MODEL`** (default `gpt-5.6-terra`, $2 in / $12 out per 1M tokens) — blog writing, comedian identification, research, fact-check, polish, captions. Replaced `gpt-4o` ($2.50 / $10) in Sept 2026 at roughly the same cost; Chat Completions calls run with `reasoning_effort: "low"` and `max_completion_tokens` (reasoning models reject a non-default `temperature`, so it is only sent when effort is `"none"`).
+- **`OPENAI_MODEL_LIGHT`** (default `gpt-5.6-luna`, $0.20 / $1.20) — the show-tag classifier in `lib/classify-show-tags.js` (JSON mode, no reasoning). Replaced `gpt-4o-mini`.
+- **Chat Completions API** (`/v1/chat/completions`) — everything except research
+- **Responses API** (`/v1/responses`) with the `web_search` tool ($10 per 1k calls plus search content at model rates; `web_search_preview` is kept only for gpt-4o) — comedian research, Instagram handle lookup
+
+Both env vars are plain overrides, so a bad model day is an env change, not a code change.
 
 ---
 
 ### 3b. Per-Comedian SEO Blog Post Generator (`scripts/generate-comedian-post.js`)
 
-**~1,940 lines of Node.js. Zero npm dependencies.** Runs once a week (Monday mornings, 1 hour after the weekly blog post). Shares all image-pipeline code with `generate-blog-post.js` via `scripts/lib/image-utils.js` (see §3 above) — no more drifted duplicate copies.
+**~2,050 lines of Node.js. Zero npm dependencies.** Runs once a week (Monday mornings, shortly after the weekly blog post), generating for the week **three weeks out** (`LEAD_WEEKS`, default 3). Shares the OpenAI and image helpers with `generate-blog-post.js` (see §3 above); the Instagram graphic templates live in `scripts/lib/comedian-graphics.js` so `ensure-comedian-graphics.js` can rebuild a missing PNG identically.
 
 #### What it does, step by step:
 
@@ -259,7 +263,11 @@ The workflow YAML reinforces the same idea: every step from `Commit and push blo
 
    **Final safety net — `stripEditorMarkers()`**: a regex pass that removes any `[VERIFY]`, `[CHECK]`, `[CITATION NEEDED]`, `[TODO]`, `[CONFIRM]`, `[FACT-CHECK]` tokens that slipped past both LLM passes. The published post is guaranteed to have no bracketed editor notes.
 
-4. **Picks the display image without re-scraping.** For each headliner, the script first looks at the pre-validated `displayImage` written by `generate-blog-post.js` into `blog/top-comedians.json`. That image already cleared the strict gate (URL blocklist + HEAD ≥ 20KB + real-dimension check + aspect ratio in [0.65, 1.55]) so it's reused as-is for the Instagram square / portrait / story graphics — no second round of network work, and the per-comedian spotlight visually matches the weekly hero. Only when the handoff is missing or stale (different `week_range`) does the script fall back to the same shared `findBestHeadshot()` from `scripts/lib/image-utils.js` and run the strict gate fresh.
+4. **Uses the event image.** The matched event's `image_url` is the WordPress featured image, the `og:image`, the static page hero and the photo on the Instagram square / portrait / story graphics (skipped on the graphics only if `isUsableImageUrl()` rejects the URL shape). No scraping, no second network round.
+
+   **Cleanup is date-scoped.** At startup the script prunes only files whose slug date is more than two days in the past. It used to wipe `blog/comedians/images/` entirely, which with the 3-week lead deleted the *current* week's PNGs every Monday and made the next IG run 404 (2026-09-07). `delete-comedian-blog-posts.js` remains the real reaper.
+
+   **WordPress hero figure is centered.** The inline `<figure>` at the top of the post carries `aligncenter` plus `width:fit-content; margin:auto`, so the Astra theme's figure box-shadow hugs the image instead of drawing a full-width white box with a square poster stuck to its left edge. Plugin CSS v2.16.0 applies the same rule to older posts.
 
 5. **Writes individual HTML files** to `blog/comedians/` — one per comedian
 
@@ -272,11 +280,13 @@ The workflow YAML reinforces the same idea: every step from `Commit and push blo
 |------|---------|
 | `blog/comedians/{slug}.html` | Individual comedian blog post |
 | `blog/comedians/index.html` | Index page listing all comedian posts |
-| `blog/comedians/manifest.json` | Post metadata + `manifest_version` stamp (used by WP publishing + IG poster state reconciliation) |
+| `blog/comedians/manifest-YYYY-MM-DD.json` | Post metadata + `manifest_version` stamp, keyed by the Monday of the week it covers (used by the IG poster, the self-heal script and the reaper) |
+| `blog/comedians/images/{slug}-{square,portrait,story}.{html,png}` | Designed Instagram graphics (event image + name / date / venue) |
+| `blog/comedians/email-attachments.txt` | Exact PNG list for this run's email (images/ holds three weeks of graphics at once) |
 | `blog/top-comedians.json` | Headliner handoff written by the weekly blog generator and consumed by this script so both workflows agree on the comedian list |
 
 #### Cost per run:
-~$0.16–0.32 per comedian (4 API calls — research, write, fact-check, polish). Typical weekly run with 3–5 comedians: **$0.55–1.60**.
+~$0.15–0.35 per comedian (research with web search, write, fact-check, polish, caption). Typical weekly run with 3–5 comedians: **$0.60–1.75**.
 
 #### WordPress publishing — preflight & error logging
 
@@ -507,10 +517,10 @@ Logs every ticket click with: timestamp, original URL, final URL (with affiliate
 |-------|-------|
 | **Schedule** | Weekly: `0 16 * * 1` UTC (Monday ~10–11 AM Central, 1 hour after blog post) |
 | **Manual trigger** | Yes (`workflow_dispatch`) |
-| **What it runs** | `generate-comedian-post.js` |
-| **Secrets used** | `OPENAI_API_KEY` |
-| **Commits** | `blog/comedians/*.html`, `blog/comedians/manifest.json` |
-| **Cost** | ~$0.50–1.50 per run (3 API calls per comedian, typically 3–5 comedians) |
+| **What it runs** | `generate-comedian-post.js`, then `screenshot-comedian-graphics.js` (Puppeteer renders the square / portrait / story HTML to PNG) |
+| **Secrets used** | `OPENAI_API_KEY`, `WP_*`, SMTP |
+| **Commits** | `blog/comedians/*.html`, `blog/comedians/manifest-YYYY-MM-DD.json`, `blog/comedians/images/*`, `sitemap.xml` |
+| **Cost** | ~$0.60–1.75 per run (5 API calls per comedian, typically 3–5 comedians) |
 
 #### Workflow 4: Social Media Auto-Poster (`.github/workflows/post-to-instagram.yml`)
 
@@ -518,7 +528,7 @@ Logs every ticket click with: timestamp, original URL, final URL (with affiliate
 |-------|-------|
 | **Schedule** | Every 6 hours: `0 4,10,16,22 * * *` UTC (covers Mon 4pm CT onward) |
 | **Manual trigger** | Yes (`workflow_dispatch`) |
-| **What it runs** | `post-to-instagram.js` — posts the next comedian across 4 channels |
+| **What it runs** | `ensure-comedian-graphics.js` (rebuilds any missing designed PNG for the current week), `refresh-live-creative.js` (one 1080×1080 screenshot of each published post, the week of the show, as the carousel's second slide), then `post-to-instagram.js` — posts the next comedian across 4 channels |
 | **Secrets used** | `INSTAGRAM_ACCESS_TOKEN`, `INSTAGRAM_USER_ID` |
 | **Commits** | `blog/comedians/ig-post-state.json` |
 | **Cost** | Free (Meta Graph API has no per-call cost) |
@@ -596,7 +606,7 @@ how many recognizable comedians the weekly pipeline found. Key design points:
 
 | Channel | Image | Caption | Comedian Tag |
 |---------|-------|---------|-------------|
-| Instagram Feed | **Carousel**: slide 1 = square graphic, slide 2 = single blog post teaser (top of post; falls back to a single image if the teaser doesn't exist) | Full caption + hashtags | Tagged in photo via `user_tags` |
+| Instagram Feed | **Carousel**: slide 1 = designed square graphic (event image + name / date / venue), slide 2 = live screenshot of the top of the published post (falls back to a single image if the screenshot never happened) | Full caption + hashtags | Tagged in photo via `user_tags` |
 | Instagram Story | Story (1080×1920) | None (API limitation) | Not supported in Stories API |
 | Facebook Page Feed | Square (1080×1080) | Full caption + hashtags | N/A |
 | Facebook Page Story | Story (1080×1920) | None | N/A |
@@ -637,7 +647,9 @@ Mechanics, in `scripts/lib/social-handles.js` and `createTaggedContainer()`:
 - **A missing or broken handle config is never fatal.** Worst case a post
   goes out untagged, exactly as it did before tagging existed.
 
-**Carousel teasers** are generated by `screenshot-blog-teasers.js` during the Monday comedian post generation workflow. Each comedian gets **one** 1080×1080 screenshot of the top of their blog post (hero + intro). Sharing a second mid-article shot was giving away too much of the post, so it was removed. If the teaser image doesn't exist (e.g., older posts), the feed post falls back to a single square image automatically.
+**Carousel teasers** (`{slug}-teaser-1.png`) are taken by `refresh-live-creative.js` in the poster workflow, the week of the show, so the screenshot shows the post as it looks after three weeks of indexing rather than the day it was written. One 1080×1080 shot of the top of the post (hero + intro); a second mid-article shot gave away too much. The page is loaded with third-party requests (pixel, analytics, popups) blocked and the popup overlay hidden, waiting on the `load` event rather than network idle: waiting for idle on the full page timed out three times in a row on 2026-09-07. A `{slug}.live-refreshed` marker makes it run once per comedian. If the screenshot never happens the feed post falls back to the single designed image.
+
+**Self-heal.** `ensure-comedian-graphics.js` runs first in the same step and rebuilds any missing square / portrait / story PNG for the current week from the manifest (name, venue, date, event image) using the shared template, so a deleted or never-rendered graphic cannot 404 the post. `--all` does every manifest (used once locally after the 2026-09-07 wipe).
 
 #### Workflow 6: Delete Old Tonight Posts (`.github/workflows/delete-old-tonight-posts.yml`)
 
@@ -711,9 +723,9 @@ Design points:
 | **Cost** | Free (Graph API `DELETE /{id}`; deletes don't count against the IG publish quota) |
 
 A spotlight sells one show on one date; once that date passes it is dead
-weight on the grid. The **blog post it links to stays** — that's the SEO
-asset, with its own lifecycle in `noindex-comedian-posts.js`. Only the
-social posts come down.
+weight on the grid. The **blog post** has its own lifecycle in
+`delete-comedian-blog-posts.js` (same workflow, second step): it comes down
+the day after the show week ends, along with its local files and graphics.
 
 - **`cleanup_queue`, not `posted`.** `post-to-instagram.js` appends every
   published spotlight to BOTH arrays. `posted` is the this-week dedupe
@@ -1046,11 +1058,16 @@ show_lister/
 │       ├── post-to-instagram.yml       # Cron: staggered IG posting (every 6h)
 │       ├── post-tonight.yml            # Cron: daily "Tonight in Houston" post (3 PM CT)
 │       ├── delete-old-tonight-posts.yml # Cron: delete Tonight posts older than 1 day
-│       └── delete-old-comedian-posts.yml # Cron: delete comedian spotlights older than 5 days
+│       ├── delete-old-comedian-posts.yml # Cron: delete comedian spotlights + finished-week blog posts
+│       ├── price-reminder.yml           # Cron: Monday email when a local price refresh is due
+│       ├── essay-promo.yml              # Cron: Wednesday essay quote-card creative, emailed for approval
+│       └── manage-pages.yml             # Manual: seed/overwrite evergreen WP pages from config
 │
 ├── scripts/
 │   ├── lib/
-│   │   ├── image-utils.js               # Shared headshot strict-gate pipeline
+│   │   ├── openai.js                    # Shared OpenAI plumbing + model policy
+│   │   ├── comedian-graphics.js         # Spotlight square/portrait/story HTML templates
+│   │   ├── image-utils.js               # URL-shape check + initials placeholder
 │   │   ├── meta-api.js                  # Shared Meta Graph API plumbing (both posters)
 │   │   ├── post-cleanup.js              # Shared aged-post delete rules (both cleanups)
 │   │   ├── sanitize-html.js             # AI-output HTML sanitizer
@@ -1063,8 +1080,10 @@ show_lister/
 │   ├── generate-tonight-post.js         # Daily lineup graphic + caption (no AI, ~$0)
 │   ├── post-to-instagram.js             # Weekly comedian poster: IG carousel/story + FB feed/story
 │   ├── post-tonight.js                  # Daily Tonight-in-Houston poster (4 channels)
-│   ├── screenshot-blog-teasers.js       # Puppeteer blog teaser cards for carousel slides
-│   └── screenshot-hero.js               # Puppeteer PNG screenshotter
+│   ├── screenshot-comedian-graphics.js  # Puppeteer: spotlight HTML → PNG (Monday)
+│   ├── ensure-comedian-graphics.js      # Puppeteer: rebuild missing spotlight PNGs (before posting)
+│   ├── refresh-live-creative.js         # Puppeteer: week-of screenshot of the post (carousel slide 2)
+│   └── screenshot-hero.js               # Puppeteer PNG screenshotter (weekly hero)
 │
 ├── wordpress/
 │   ├── comedy-houston.php               # Main plugin file (~900 lines) — includes click analytics dashboard
@@ -1079,7 +1098,8 @@ show_lister/
 │   ├── instagram-caption.txt            # Generated Instagram caption
 │   └── comedians/                       # Per-comedian spotlight posts
 │       ├── index.html                   # Index listing all comedian posts
-│       ├── manifest.json                # Post metadata (for WordPress publishing)
+│       ├── manifest-YYYY-MM-DD.json     # Post metadata per week (three weeks in flight)
+│       ├── images/                      # Designed graphics + week-of teaser screenshots
 │       ├── ig-post-state.json           # Tracks which comedians have been posted to IG
 │       └── {comedian-slug}.html         # Individual comedian blog posts
 │

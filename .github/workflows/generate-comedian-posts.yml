@@ -41,12 +41,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Generate per-comedian blog posts + graphics + captions
         env:
@@ -61,9 +61,6 @@ jobs:
 
       - name: Screenshot comedian Instagram graphics
         run: node scripts/screenshot-comedian-graphics.js
-
-      - name: Screenshot blog post teasers (for Instagram carousels)
-        run: node scripts/screenshot-blog-teasers.js
 
       - name: Commit and push comedian posts
         run: |
@@ -134,10 +131,9 @@ jobs:
         if: steps.email-check.outputs.send_email == 'true'
         id: attachments
         run: |
-          # Build comma-separated list of all PNG files in images dir
-          PNGS=$(find blog/comedians/images -name '*.png' 2>/dev/null | sort | tr '\n' ',')
-          # Remove trailing comma
-          PNGS="${PNGS%,}"
+          # Only this run's graphics: images/ now holds three weeks of PNGs
+          # at once, so globbing the directory would attach all of them.
+          PNGS=$(tr -d '\n' < blog/comedians/email-attachments.txt 2>/dev/null || true)
           echo "files=${PNGS}" >> $GITHUB_OUTPUT
           echo "Found attachments: ${PNGS}"
 

@@ -34,7 +34,7 @@
  */
 "use strict";
 
-const https = require("https");
+const { chatCompletion, OPENAI_MODEL_LIGHT } = require("./openai");
 const fs = require("fs");
 
 const TAGS = ["black-comedy", "en-espanol", "clean-comedy"];
@@ -67,51 +67,23 @@ const SYSTEM_PROMPT = [
   'tags, e.g. {"1": ["black-comedy"], "2": [], "3": ["en-espanol"]}.',
 ].join("\n");
 
-function callOpenAI(apiKey, model, userPrompt) {
-  return new Promise((resolve, reject) => {
-    const body = JSON.stringify({
-      model,
-      messages: [
-        { role: "system", content: SYSTEM_PROMPT },
-        { role: "user", content: userPrompt },
-      ],
-      temperature: 0,
-      response_format: { type: "json_object" },
-      max_tokens: 4000,
-    });
-    const req = https.request(
-      {
-        hostname: "api.openai.com",
-        path: "/v1/chat/completions",
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Length": Buffer.byteLength(body),
-        },
-      },
-      (res) => {
-        let data = "";
-        res.on("data", (c) => (data += c));
-        res.on("end", () => {
-          if (res.statusCode >= 400) {
-            return reject(new Error(`OpenAI ${res.statusCode}: ${data.slice(0, 300)}`));
-          }
-          try {
-            resolve(JSON.parse(JSON.parse(data).choices[0].message.content));
-          } catch (e) {
-            reject(new Error(`Bad OpenAI response: ${e.message}`));
-          }
-        });
-      }
-    );
-    req.setTimeout(TIMEOUT_MS, () =>
-      req.destroy(new Error(`OpenAI request timed out after ${TIMEOUT_MS}ms`))
-    );
-    req.on("error", reject);
-    req.write(body);
-    req.end();
+async function callOpenAI(apiKey, model, userPrompt) {
+  // JSON mode + zero reasoning: this is a lookup, not an essay. The system
+  // prompt says "JSON", which json_object mode requires.
+  const content = await chatCompletion({
+    model,
+    system: SYSTEM_PROMPT,
+    user: userPrompt,
+    temperature: 0,
+    maxTokens: 4000,
+    effort: "none",
+    jsonMode: true,
   });
+  try {
+    return JSON.parse(content);
+  } catch (e) {
+    throw new Error(`Bad OpenAI response: ${e.message}`);
+  }
 }
 
 function cacheKey(name) {
@@ -134,7 +106,7 @@ function loadCache(cachePath) {
  */
 async function classifyShowTags(events, cachePath) {
   const apiKey = process.env.OPENAI_API_KEY || "";
-  const model = process.env.OPENAI_MODEL || "gpt-4o-mini";
+  const model = OPENAI_MODEL_LIGHT;
   const cache = loadCache(cachePath);
 
   const unknown = [];

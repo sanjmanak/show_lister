@@ -937,3 +937,25 @@ body.ch-perf-lock {
     padding: 22px 18px calc(22px + env(safe-area-inset-bottom));
   }
 }
+
+/* ------------------------------------------------------------------
+   Single-post hero image (comedian spotlights and other posts whose
+   first block is an image). The theme draws a box-shadow around the
+   whole <figure>, which is full-width, so a square Eventbrite poster or
+   a portrait headshot sat at the left edge of a wide white box. Let the
+   figure hug the image and center it instead. Posts published from
+   2026-09-08 also carry this inline; the rule covers older posts.
+   ------------------------------------------------------------------ */
+.single-post .entry-content > figure.wp-block-image:first-child,
+.single-post .entry-content figure.ch-post-hero {
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.single-post .entry-content > figure.wp-block-image:first-child img,
+.single-post .entry-content figure.ch-post-hero img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

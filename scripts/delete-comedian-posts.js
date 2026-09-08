@@ -7,9 +7,9 @@
  * post is dead weight on the grid — and the grid is the profile's
  * conversion surface, the thing a first-time visitor scrolls before
  * deciding whether to tap the bio link. So spotlights come down after
- * COMEDIAN_RETENTION_DAYS (default 5). The blog post they link to STAYS —
- * that's the SEO asset, and it has its own lifecycle in
- * noindex-comedian-posts.js.
+ * COMEDIAN_RETENTION_DAYS (default 5). The blog post they link to has its
+ * own lifecycle in delete-comedian-blog-posts.js (it comes down the day
+ * after the show week ends).
  *
  * ID source: the `cleanup_queue` array in blog/comedians/ig-post-state.json,
  * appended by post-to-instagram.js. Deliberately NOT the `posted` array —

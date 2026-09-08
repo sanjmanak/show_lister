@@ -34,7 +34,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Check if manifest exists
         id: check
@@ -51,9 +51,9 @@ jobs:
 
       - name: Set up Node.js
         if: steps.check.outputs.skip != 'true'
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '22'
 
       # Week-of creative: replace each current-week comedian's square/story
       # PNGs with live screenshots of their (by now hopefully ranking) blog
@@ -61,12 +61,20 @@ jobs:
       # Must be committed and pushed BEFORE posting — Meta fetches the
       # images from GitHub Pages. Non-fatal throughout: a failed refresh
       # just means the pre-generated designed graphics get posted instead.
-      - name: Refresh live creative for current week
+      # Two Puppeteer passes, both best-effort:
+      #   1. ensure-comedian-graphics.js rebuilds any designed square /
+      #      portrait / story PNG that is missing for the current week
+      #      (self-heal: the 2026-09-07 failure was a 404 on a PNG that a
+      #      cleanup step had deleted).
+      #   2. refresh-live-creative.js screenshots each published post once,
+      #      the week of the show, as the carousel's second slide.
+      - name: Rebuild missing graphics + refresh live creative
         if: steps.check.outputs.skip != 'true'
-        timeout-minutes: 10
+        timeout-minutes: 12
         continue-on-error: true
         run: |
           npm install puppeteer --no-save
+          node scripts/ensure-comedian-graphics.js
           node scripts/refresh-live-creative.js
 
       - name: Commit refreshed creative
@@ -153,52 +161,32 @@ jobs:
   # job at setup, even when it's only meant to run on failure. Keeping the email
   # action out of the posting job guarantees a broken notifier can never block
   # posting. This job only spins up when post-to-instagram fails.
+  # Separate job so the email goes out even when the posting job's own
+  # cleanup steps fail. Uses the same SHA-pinned mail action as every other
+  # workflow: the previous hand-rolled curl SMTP call failed with "MAIL
+  # failed: 555" the one time it was needed (2026-09-07), so the failure
+  # alert itself never arrived.
   notify-failure:
     needs: post-to-instagram
     if: failure()
     runs-on: ubuntu-latest
     steps:
-      # Send the alert via curl's built-in SMTP support rather than a
-      # third-party action. curl ships on every ubuntu-latest runner, so there
-      # is no action archive to download and nothing that a moved/unservable
-      # upstream tag can break — the exact failure mode that took posting down.
-      - name: Notify on failure (SMTP via curl)
+      - name: Notify on failure
         if: env.HAS_SMTP == 'true'
         env:
           HAS_SMTP: ${{ secrets.SMTP_SERVER != '' }}
-          SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
-          SMTP_PORT: ${{ secrets.SMTP_PORT }}
-          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
-          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-          SMTP_FROM: ${{ secrets.SMTP_FROM }}
-          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
-          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        run: |
-          set -euo pipefail
-          {
-            echo "From: ${SMTP_FROM}"
-            echo "To: ${NOTIFY_EMAIL}"
-            echo "Subject: [Comedy Houston] post-to-instagram FAILED"
-            echo "Content-Type: text/plain; charset=UTF-8"
-            echo
-            echo "The post-to-instagram workflow failed. The state file may or may"
-            echo "not have advanced — check the run logs to see whether the next"
-            echo "scheduled run will retry the same comedian or move on."
-            echo
-            echo "Run: ${RUN_URL}"
-          } > "${RUNNER_TEMP}/ig-failure-email.txt"
+        uses: dawidd6/action-send-mail@4226df7daafa6fc901a43789c49bf7ab309066e7 # v3 (SHA-pinned: action receives SMTP secrets)
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "[Comedy Houston] post-to-instagram FAILED"
+          to: ${{ secrets.NOTIFY_EMAIL }}
+          from: ${{ secrets.SMTP_FROM }}
+          body: |
+            The post-to-instagram workflow failed. The state file may or may
+            not have advanced. Check the run logs to see whether the next
+            scheduled run will retry the same comedian or move on.
 
-          # Port 465 = implicit TLS (smtps://); 587/25 = STARTTLS (smtp:// + --ssl-reqd).
-          if [ "${SMTP_PORT}" = "465" ]; then
-            URL="smtps://${SMTP_SERVER}:${SMTP_PORT}"
-          else
-            URL="smtp://${SMTP_SERVER}:${SMTP_PORT}"
-          fi
-
-          curl --silent --show-error --fail --ssl-reqd \
-            --url "${URL}" \
-            --user "${SMTP_USERNAME}:${SMTP_PASSWORD}" \
-            --mail-from "${SMTP_FROM}" \
-            --mail-rcpt "${NOTIFY_EMAIL}" \
-            --upload-file "${RUNNER_TEMP}/ig-failure-email.txt"
-          echo "Failure notification email sent."
+            Run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}

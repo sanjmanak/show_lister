@@ -6,10 +6,16 @@
  * Reads events.json, identifies headliners, and generates individual
  * 600-word blog posts for each notable comedian. Outputs to blog/comedians/.
  *
- * Three-call pipeline per comedian:
+ * Four-call pipeline per comedian (see scripts/lib/openai.js for the model
+ * policy):
  *   1. Deep research via OpenAI Responses API (web search)
  *   2. Write the blog post via OpenAI Chat
  *   3. Fact-check pass via OpenAI Chat (editor role)
+ *   4. Polish pass (voice, rhythm, length)
+ *
+ * Images: the event's own ticket image (Ticketmaster / Eventbrite /
+ * StandupTix) is used everywhere — WordPress featured image, the static
+ * page, and the Instagram graphics. No headshot scraping.
  *
  * Zero npm dependencies — uses only built-in Node modules.
  */
@@ -19,17 +25,17 @@ const fs = require("fs");
 const path = require("path");
 const http = require("http");
 
-// Shared image pipeline — single source of truth for URL blocklists,
-// HEAD validation, real-dimension parsing, and the inverted preference
-// rule that keeps the event image as the floor. See
-// scripts/lib/image-utils.js for the full rationale.
-const imageUtils = require("./lib/image-utils");
-const {
-  findBestHeadshot,
-  evaluateHeadshotCandidate,
-  pickDisplayImage,
-  isUsableImageUrl,
-} = imageUtils;
+// Cheap URL-shape check that keeps social-CDN glyphs and vector files out
+// of the rendered graphics. See scripts/lib/image-utils.js.
+const { isUsableImageUrl } = require("./lib/image-utils");
+
+// Shared OpenAI plumbing (model policy, parameter shapes per model family,
+// web-search research call). See scripts/lib/openai.js.
+const openai = require("./lib/openai");
+
+// Instagram graphic templates (square / portrait / story), shared with the
+// self-heal script ensure-comedian-graphics.js.
+const { writeComedianGraphics } = require("./lib/comedian-graphics");
 
 // Regex-based scrub for LLM-produced HTML. Runs after the fact-check and
 // polish passes, right before we wrap the body in the final template.
@@ -41,8 +47,8 @@ const { addBlogPostingToGraph, wpGmtToIso } = require("./lib/schema-utils");
 // Config
 // ---------------------------------------------------------------------------
 
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY || "";
-const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-4o";
+const OPENAI_API_KEY = openai.OPENAI_API_KEY;
+const OPENAI_MODEL = openai.OPENAI_MODEL;
 
 // WordPress publishing config (optional — skipped if not set)
 const WP_SITE_URL = process.env.WP_SITE_URL || "";          // e.g. https://www.comedyhouston.com
@@ -179,135 +185,25 @@ function loadThisWeeksEvents() {
 // commit/email steps downstream. Chat completion typically returns in
 // <30s; web-search Responses calls get a larger budget since the tool
 // latency tail is longer.
-const OPENAI_CHAT_TIMEOUT_MS = 90_000;
-const OPENAI_RESPONSES_TIMEOUT_MS = 120_000;
-
+/**
+ * Chat completion. `temperature` is honored only on models that accept it
+ * (legacy gpt-4o); reasoning models run at their default with low effort,
+ * which is what the prose passes want anyway. See scripts/lib/openai.js.
+ */
 function callOpenAI(prompt, systemPrompt, temperature) {
-  return new Promise((resolve, reject) => {
-    const body = JSON.stringify({
-      model: OPENAI_MODEL,
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: prompt },
-      ],
-      temperature: temperature !== undefined ? temperature : 0.7,
-      max_tokens: 8000,
-    });
-
-    const options = {
-      hostname: "api.openai.com",
-      path: "/v1/chat/completions",
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${OPENAI_API_KEY}`,
-        "Content-Length": Buffer.byteLength(body),
-      },
-    };
-
-    const req = https.request(options, (res) => {
-      let data = "";
-      res.on("data", (chunk) => (data += chunk));
-      res.on("end", () => {
-        if (res.statusCode >= 400) {
-          return reject(
-            new Error(`OpenAI API error ${res.statusCode}: ${data.slice(0, 500)}`)
-          );
-        }
-        try {
-          const parsed = JSON.parse(data);
-          const content = parsed.choices[0].message.content;
-          const usage = parsed.usage;
-          console.log(
-            `  OpenAI usage — prompt: ${usage.prompt_tokens}, completion: ${usage.completion_tokens}, total: ${usage.total_tokens}`
-          );
-          resolve(content);
-        } catch (e) {
-          reject(new Error(`Failed to parse OpenAI response: ${e.message}`));
-        }
-      });
-    });
-
-    req.setTimeout(OPENAI_CHAT_TIMEOUT_MS, () => {
-      req.destroy(new Error(`OpenAI chat request timed out after ${OPENAI_CHAT_TIMEOUT_MS}ms`));
-    });
-    req.on("error", (err) => reject(err));
-    req.write(body);
-    req.end();
+  return openai.chatCompletion({
+    system: systemPrompt,
+    user: prompt,
+    temperature: temperature !== undefined ? temperature : 0.7,
+    maxTokens: 8000,
+    effort: "low",
   });
 }
 
-// ---------------------------------------------------------------------------
-// OpenAI Responses API (with web search)
-// ---------------------------------------------------------------------------
-
+/** Responses API with web search. */
 function callOpenAIResponses(input, instructions) {
-  return new Promise((resolve, reject) => {
-    const body = JSON.stringify({
-      model: OPENAI_MODEL,
-      instructions: instructions,
-      input: input,
-      tools: [{ type: "web_search_preview" }],
-    });
-
-    const options = {
-      hostname: "api.openai.com",
-      path: "/v1/responses",
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${OPENAI_API_KEY}`,
-        "Content-Length": Buffer.byteLength(body),
-      },
-    };
-
-    const req = https.request(options, (res) => {
-      let data = "";
-      res.on("data", (chunk) => (data += chunk));
-      res.on("end", () => {
-        if (res.statusCode >= 400) {
-          return reject(
-            new Error(`OpenAI Responses API error ${res.statusCode}: ${data.slice(0, 500)}`)
-          );
-        }
-        try {
-          const parsed = JSON.parse(data);
-          const textOutput = parsed.output
-            .filter((item) => item.type === "message")
-            .flatMap((item) => item.content)
-            .filter((c) => c.type === "output_text")
-            .map((c) => c.text)
-            .join("\n");
-
-          if (parsed.usage) {
-            console.log(
-              `  OpenAI Responses usage — input: ${parsed.usage.input_tokens}, output: ${parsed.usage.output_tokens}, total: ${parsed.usage.total_tokens}`
-            );
-          }
-          resolve(textOutput);
-        } catch (e) {
-          reject(new Error(`Failed to parse Responses API response: ${e.message}`));
-        }
-      });
-    });
-
-    req.setTimeout(OPENAI_RESPONSES_TIMEOUT_MS, () => {
-      req.destroy(new Error(`OpenAI Responses request timed out after ${OPENAI_RESPONSES_TIMEOUT_MS}ms`));
-    });
-    req.on("error", (err) => reject(err));
-    req.write(body);
-    req.end();
-  });
+  return openai.webResearch({ input, instructions, effort: "low" });
 }
-
-// ---------------------------------------------------------------------------
-// Two-stage headshot finder — now lives in scripts/lib/image-utils.js
-//   Stage A: OpenAI finds candidate pages (official site, bio, press)
-//   Stage B: Shared lib fetches pages, extracts image URLs, runs the
-//            strict-gate pipeline (URL blocklist + HEAD + real-dimensions
-//            + aspect ratio) and returns only candidates that beat the
-//            event image as a quality floor.
-// ---------------------------------------------------------------------------
 
 // ---------------------------------------------------------------------------
 // Step 0: Identify headliners (reuses existing pattern)
@@ -377,7 +273,6 @@ Return a JSON object with these fields (leave null/empty if you cannot verify):
   "notable_bits_or_quotes": [],
   "unverifiable_claims_to_avoid": [],
   "background_story": "",
-  "headshot_page_urls": [],
   "source_urls": [
     {"label": "Wikipedia", "url": ""},
     {"label": "Netflix special page or IMDB", "url": ""},
@@ -389,13 +284,6 @@ Return a JSON object with these fields (leave null/empty if you cannot verify):
 For recent_hook: This is the SINGLE MOST IMPORTANT field. Find the freshest piece of news about this comedian — ideally from the last 90 days, no older than 12 months. A new tour announcement, a recent podcast/interview, an album, a Netflix release, a public comment, a project in development. Include a real verbatim quote if you can find one, with the publication name, URL, and date. If you cannot find anything from the last 12 months, leave it null — do NOT pad with old material. The blog post will be built around this hook, so it must be specific and recent.
 
 For unverifiable_claims_to_avoid: List any "facts" you encountered during research that appeared in low-quality sources, fan wikis, or AI-generated summaries that you could NOT independently verify (e.g. "supposedly appeared in X show"). The writer will be told to never use these.
-
-For headshot_page_urls: Find 2-4 web pages that are likely to contain a clean, professional headshot or portrait photo of this comedian. Our code will fetch these pages and extract the actual image. Prioritize in this order:
-  1. The comedian's official website (especially /bio, /about, /press, or homepage)
-  2. Their Wikipedia page (if they have one)
-  3. A press/media/EPK page
-  4. A profile page on a major platform (IMDB, comedy club bio page)
-Return the full page URLs as an array of strings. Do NOT try to return direct image file URLs — just the pages where a photo is likely to exist. If no relevant pages are found, leave as an empty array [].
 
 For source_urls: include 3-6 real, working URLs you found during research. These should be the actual pages you pulled facts from — Wikipedia, IMDB, Netflix, YouTube specials, podcast episodes, magazine interviews, etc. Only include URLs you actually visited and verified. Leave the array empty if you cannot find reliable sources.
 
@@ -595,218 +483,8 @@ function stripEditorMarkers(html) {
   return cleaned;
 }
 
-// ---------------------------------------------------------------------------
-// Instagram graphic HTML templates (3 sizes per comedian)
-// ---------------------------------------------------------------------------
-
-const IMAGES_DIR = path.join(COMEDIANS_DIR, "images");
-
-/**
- * Generate an Instagram graphic HTML template for a comedian.
- * Sizes: square (1080×1080), portrait (1080×1350), story (1080×1920)
- */
-function generateComedianGraphicHTML(name, venue, dateStr, imageUrl, size) {
-  const displayDate = formatDateForDisplay(dateStr);
-  const safeName = name
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-  const safeVenue = (venue || "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-  const safeDate = displayDate
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-  const safeImage = (imageUrl || "")
-    .replace(/&/g, "&amp;")
-    .replace(/"/g, "&quot;");
-
-  const dims = {
-    square:   { w: 1080, h: 1080 },
-    portrait: { w: 1080, h: 1350 },
-    story:    { w: 1080, h: 1920 },
-  };
-  const { w, h } = dims[size];
-
-  // --- Size-specific layout tuning ---
-  // Square: tight crop, text fills bottom third
-  // Portrait: more breathing room, slight pullback
-  // Story: full vertical, photo top 55%, details fill bottom
-  const config = {
-    square: {
-      photoHeight: "68%",
-      gradientHeight: "55%",
-      objectPosition: "center 20%",
-      nameFontSize: "80px",
-      dateFontSize: "36px",
-      venueFontSize: "29px",
-      brandFontSize: "20px",
-      bottomPadding: "48px",
-      sidePadding: "56px",
-      accentWidth: "52px",
-      accentHeight: "4px",
-    },
-    portrait: {
-      photoHeight: "62%",
-      gradientHeight: "52%",
-      objectPosition: "center 15%",
-      nameFontSize: "84px",
-      dateFontSize: "38px",
-      venueFontSize: "31px",
-      brandFontSize: "20px",
-      bottomPadding: "56px",
-      sidePadding: "56px",
-      accentWidth: "52px",
-      accentHeight: "4px",
-    },
-    story: {
-      photoHeight: "55%",
-      gradientHeight: "55%",
-      objectPosition: "center 15%",
-      nameFontSize: "88px",
-      dateFontSize: "40px",
-      venueFontSize: "33px",
-      brandFontSize: "22px",
-      bottomPadding: "64px",
-      sidePadding: "60px",
-      accentWidth: "56px",
-      accentHeight: "5px",
-    },
-  };
-  const c = config[size];
-
-  return `<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      width: ${w}px;
-      height: ${h}px;
-      font-family: 'Inter', sans-serif;
-      overflow: hidden;
-      position: relative;
-      background: #0a0a0f;
-    }
-    .photo {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: ${c.photoHeight};
-      object-fit: cover;
-      object-position: ${c.objectPosition};
-    }
-    .gradient {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: ${c.gradientHeight};
-      background: linear-gradient(
-        to bottom,
-        rgba(10, 10, 15, 0) 0%,
-        rgba(10, 10, 15, 0.55) 30%,
-        rgba(10, 10, 15, 0.88) 55%,
-        rgba(10, 10, 15, 1) 75%
-      );
-    }
-    .content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 0 ${c.sidePadding} ${c.bottomPadding};
-      z-index: 2;
-    }
-    .accent-line {
-      width: ${c.accentWidth};
-      height: ${c.accentHeight};
-      background: #ff4d6a;
-      margin-bottom: 20px;
-    }
-    .name {
-      font-size: ${c.nameFontSize};
-      font-weight: 900;
-      color: #ffffff;
-      letter-spacing: -0.03em;
-      line-height: 1.05;
-      margin-bottom: 16px;
-      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
-    }
-    .date {
-      font-size: ${c.dateFontSize};
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.95);
-      line-height: 1.3;
-      margin-bottom: 6px;
-    }
-    .venue {
-      font-size: ${c.venueFontSize};
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.7);
-      line-height: 1.3;
-      margin-bottom: 24px;
-    }
-    .brand {
-      font-size: ${c.brandFontSize};
-      font-weight: 700;
-      letter-spacing: 3px;
-      color: #ff4d6a;
-      z-index: 2;
-    }
-  </style>
-</head>
-<body>
-  ${imageUrl ? `<img class="photo" src="${safeImage}" alt="${safeName}">` : ""}
-  <div class="gradient"></div>
-  <div class="content">
-    <div class="accent-line"></div>
-    <div class="name">${safeName}</div>
-    <div class="date">${safeDate}</div>
-    <div class="venue">${safeVenue}</div>
-    <div class="brand">COMEDYHOUSTON.COM</div>
-  </div>
-</body>
-</html>`;
-}
-
-/**
- * Write all 3 Instagram graphic HTML files for a comedian.
- * Returns array of { htmlPath, pngPath, size, slug } objects.
- */
-function writeComedianGraphics(name, venue, date, imageUrl, slug) {
-  if (!fs.existsSync(IMAGES_DIR)) {
-    fs.mkdirSync(IMAGES_DIR, { recursive: true });
-  }
-
-  const sizes = ["square", "portrait", "story"];
-  const results = [];
-
-  for (const size of sizes) {
-    const html = generateComedianGraphicHTML(name, venue, date, imageUrl, size);
-    const htmlFile = `${slug}-${size}.html`;
-    const pngFile = `${slug}-${size}.png`;
-    const htmlPath = path.join(IMAGES_DIR, htmlFile);
-    fs.writeFileSync(htmlPath, html);
-    results.push({
-      htmlPath,
-      pngPath: path.join(IMAGES_DIR, pngFile),
-      pngFile,
-      size,
-      slug,
-    });
-  }
-
-  return results;
-}
+// Instagram graphic templates live in scripts/lib/comedian-graphics.js
+// (shared with ensure-comedian-graphics.js so a rebuilt PNG matches).
 
 // ---------------------------------------------------------------------------
 // Per-comedian Instagram caption
@@ -1735,7 +1413,11 @@ async function publishToWordPress(comedianName, venue, date, slug, htmlContent, 
 
   // Inject the image at the top of the post content
   if (wpImageUrl) {
-    const imgTag = `<figure class="wp-block-image size-large"><img src="${wpImageUrl}" alt="${comedianName.replace(/"/g, '&quot;')}" class="wp-image-${featuredMediaId}"/></figure>\n\n`;
+    // aligncenter + width:fit-content make the figure hug the image, so the
+    // theme's figure box-shadow wraps the photo instead of a full-width
+    // white box with the image stuck to its left edge (square Eventbrite
+    // posters and portrait headshots both hit this).
+    const imgTag = `<figure class="wp-block-image size-large aligncenter ch-post-hero" style="width:fit-content;max-width:100%;margin-left:auto;margin-right:auto"><img src="${wpImageUrl}" alt="${comedianName.replace(/"/g, '&quot;')}" class="wp-image-${featuredMediaId}" style="display:block;max-width:100%;height:auto"/></figure>\n\n`;
     wpContent = imgTag + wpContent;
   }
 
@@ -1877,25 +1559,36 @@ async function main() {
     fs.mkdirSync(COMEDIANS_DIR, { recursive: true });
   }
 
-  // Clean up previous run's generated files (images, captions, email files)
-  // This prevents stale content from being emailed or committed
-  console.log("Cleaning up previous run's files...");
-  const imagesDir = path.join(COMEDIANS_DIR, "images");
-  if (fs.existsSync(imagesDir)) {
-    const oldFiles = fs.readdirSync(imagesDir);
-    for (const f of oldFiles) {
-      fs.unlinkSync(path.join(imagesDir, f));
+  // Prune files that belong to shows that have already happened. Nothing
+  // for the current or future weeks is touched: with the 3-week lead this
+  // run writes week N+3 while post-to-instagram.js is still serving weeks
+  // N, N+1 and N+2 from the same images/ directory. (Wiping the whole
+  // directory here, as an earlier version did, deleted the current week's
+  // PNGs every Monday and the next IG run 404'd on them: 2026-09-07.)
+  // delete-comedian-blog-posts.js is the real reaper; this is a backstop
+  // for orphans it never saw (re-runs that swapped comedians, etc.).
+  console.log("Pruning files for past shows...");
+  {
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 2);
+    const cutoff = toLocalDateStr(yesterday);
+    const datedFile = /-(\d{4}-\d{2}-\d{2})(?:-(?:square|portrait|story|teaser-\d)\.(?:png|html)|-caption\.txt|\.live-refreshed)$/;
+    let pruned = 0;
+    const dirs = [COMEDIANS_DIR, IMAGES_DIR].filter((d) => fs.existsSync(d));
+    for (const dir of dirs) {
+      for (const f of fs.readdirSync(dir)) {
+        const m = f.match(datedFile);
+        if (m && m[1] < cutoff) {
+          fs.unlinkSync(path.join(dir, f));
+          pruned++;
+        }
+      }
     }
-    console.log(`  Removed ${oldFiles.length} old file(s) from blog/comedians/images/`);
+    console.log(`  Removed ${pruned} file(s) for shows before ${cutoff}.`);
   }
-  // Remove old caption files
-  const oldCaptions = fs.readdirSync(COMEDIANS_DIR).filter((f) => f.endsWith("-caption.txt"));
-  for (const f of oldCaptions) {
-    fs.unlinkSync(path.join(COMEDIANS_DIR, f));
-  }
-  if (oldCaptions.length > 0) console.log(`  Removed ${oldCaptions.length} old caption file(s)`);
-  // Remove old email files
-  for (const f of ["email-subject.txt", "email-body.txt"]) {
+  // Email summary files are rewritten every run; drop stale copies so a
+  // run that generates nothing cannot email last week's assets.
+  for (const f of ["email-subject.txt", "email-body.txt", "email-attachments.txt"]) {
     const p = path.join(COMEDIANS_DIR, f);
     if (fs.existsSync(p)) fs.unlinkSync(p);
   }
@@ -2028,57 +1721,13 @@ async function main() {
       research = JSON.stringify({ full_name: headliner.name, note: "Research unavailable" });
     }
 
-    // Image selection (inverted preference):
-    //
-    //   1. Event image (Ticketmaster/Eventbrite) is the FLOOR.
-    //   2. If the blog-post handoff already picked a displayImage for this
-    //      comedian via the strict gate, reuse it — no re-scrape, guaranteed
-    //      visual consistency with the weekly hero.
-    //   3. Otherwise try to upgrade via headshot scrape + strict gate.
-    //
-    // graphicImageUrl = what we render into the Instagram graphics (square,
-    // portrait, story). It MUST be an http URL, not a data URI, because the
-    // headless screenshot reads it over HTTP.
-    let graphicImageUrl = eventImageUrl;
-
-    // Look up the pre-validated handoff pick (if any) for this headliner.
-    const handoffPick = (headliner.displayImage && !headliner.displayImage.startsWith("data:"))
-      ? headliner.displayImage
-      : null;
-    if (handoffPick) {
-      console.log(`  Handoff: using pre-validated displayImage (source=${headliner.imageSource || "unknown"}).`);
-      graphicImageUrl = handoffPick;
-    } else {
-      // Fall back to scraping. This path runs when the comedian was
-      // identified by generate-comedian-post.js's own OpenAI call (no
-      // handoff file, or a week_range mismatch). Reuse the shared
-      // strict-gate pipeline — same quality bar as the weekly hero.
-      try {
-        const cleanResearch = research.replace(/^```json\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
-        const researchObj = JSON.parse(cleanResearch);
-        const pageUrls = researchObj.headshot_page_urls || [];
-        if (pageUrls.length > 0) {
-          console.log(`  Found ${pageUrls.length} candidate page(s) — running strict-gate headshot scrape...`);
-          const headshot = await findBestHeadshot(pageUrls, headliner.name);
-          if (headshot) {
-            console.log(`  Strict-gate accepted scraped headshot: ${headshot}`);
-            graphicImageUrl = headshot;
-          } else {
-            console.log("  No scraped candidate beat the strict gate — keeping event image.");
-          }
-        } else {
-          console.log("  No headshot candidate pages in research — keeping event image.");
-        }
-      } catch (_) {
-        console.log("  Could not parse research for headshot pages — keeping event image.");
-      }
-    }
-
-    // Final safety: if whatever we ended up with is an obvious placeholder
-    // URL or fails the URL-shape check, drop back to the event image. This
-    // mirrors the hero policy: event image is the floor, never falls below.
-    if (!graphicImageUrl || !isUsableImageUrl(graphicImageUrl)) {
-      graphicImageUrl = eventImageUrl;
+    // Image: the event's own ticket image, everywhere. It is what the venue
+    // and the comedian already use to promote this show. If the URL shape
+    // is a known social-CDN glyph the graphic renders without a photo
+    // (name/date/venue on the dark card) rather than with junk.
+    const graphicImageUrl = isUsableImageUrl(eventImageUrl) ? eventImageUrl : "";
+    if (!graphicImageUrl) {
+      console.log("  No usable event image — graphics will render text-only.");
     }
 
     // Step 2: Write the blog post
@@ -2384,8 +2033,15 @@ async function main() {
 
     fs.writeFileSync(path.join(COMEDIANS_DIR, "email-subject.txt"), subject);
     fs.writeFileSync(path.join(COMEDIANS_DIR, "email-body.txt"), emailBody);
+    // Exact attachment list for THIS run. images/ now holds three weeks of
+    // graphics at once, so the workflow must not glob the whole directory.
+    const attachments = generatedPosts
+      .flatMap((p) => (p.graphicFiles || []).map((f) => `blog/comedians/images/${f}`))
+      .join(",");
+    fs.writeFileSync(path.join(COMEDIANS_DIR, "email-attachments.txt"), attachments + "\n");
     console.log(`Wrote: blog/comedians/email-subject.txt`);
     console.log(`Wrote: blog/comedians/email-body.txt`);
+    console.log(`Wrote: blog/comedians/email-attachments.txt`);
   }
 
   // ─────────────────────────────────────────────────────────────────────────
