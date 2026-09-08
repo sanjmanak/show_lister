@@ -47,6 +47,9 @@ const MIN_DAYS_OUT = 5;        // a show this week is not an "announcement"
 const REPOST_GAP_DAYS = 45;    // same performer not twice in this window
 const RETENTION_DAYS = 14;     // rendered assets pruned after this
 const REEL_SECONDS = 10;
+// Where in the track the reel's audio starts (seconds). Intros are usually
+// quiet; 20s in is normally the hook. Override with REEL_MUSIC_START.
+const MUSIC_START = Math.max(0, parseFloat(process.env.REEL_MUSIC_START || "20") || 0);
 
 const args = process.argv.slice(2);
 const PHASE = args.includes("--post") ? "post" : "render";
@@ -133,7 +136,7 @@ function renderReel(storyPng, music, outMp4) {
     "-y", "-loglevel", "error",
     "-loop", "1", "-i", storyPng,
     "-i", music,
-    "-filter_complex", `[0:v]${vf}[v];[1:a]apad,atrim=0:${REEL_SECONDS},afade=t=in:st=0:d=0.5,afade=t=out:st=${REEL_SECONDS - 1.5}:d=1.5[a]`,
+    "-filter_complex", `[0:v]${vf}[v];[1:a]apad,atrim=${MUSIC_START}:${MUSIC_START + REEL_SECONDS},asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.5,afade=t=out:st=${REEL_SECONDS - 1.5}:d=1.5[a]`,
     "-map", "[v]", "-map", "[a]",
     "-t", String(REEL_SECONDS),
     "-c:v", "libx264", "-preset", "medium", "-crf", "23", "-r", "30",
@@ -206,7 +209,7 @@ async function renderPhase() {
   pruneOld();
   const music = pickMusic();
   const reelsOn = !!music && haveFfmpeg();
-  console.log(`Reel mode: ${reelsOn ? "ON (" + path.basename(music) + ")" : "off (" + (music ? "no ffmpeg" : "no track in assets/music") + ")"}`);
+  console.log(`Reel mode: ${reelsOn ? "ON (" + path.basename(music) + ", from " + MUSIC_START + "s)" : "off (" + (music ? "no ffmpeg" : "no track in assets/music") + ")"}`);
 
   const browser = await puppeteer.launch({ headless: "new", args: ["--no-sandbox", "--disable-setuid-sandbox"] });
   const items = [];
