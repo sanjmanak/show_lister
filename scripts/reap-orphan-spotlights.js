@@ -32,7 +32,7 @@ function wpRequest(method, urlPath) {
   const url = new URL(WP_SITE_URL + urlPath);
   const auth = Buffer.from(`${WP_APP_USER}:${WP_APP_PASSWORD}`).toString("base64");
   return new Promise((resolve, reject) => {
-    const req = https.request(url, { method, headers: { Authorization: `Basic ${auth}` }, timeout: 30000 }, (res) => {
+    const req = https.request(url, { method, headers: { Authorization: `Basic ${auth}`, "User-Agent": "ComedyHouston-BlogBot/1.0" }, timeout: 30000 }, (res) => {
       let data = "";
       res.on("data", (c) => (data += c));
       res.on("end", () => {
