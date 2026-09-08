@@ -45,6 +45,11 @@ function displayName(a) {
   return a.performer_name || a.name;
 }
 
+/** "Toyota Center - TX" -> "Toyota Center"; Ticketmaster suffixes the state. */
+function displayVenue(v) {
+  return String(v || "").replace(/\s*[-\u2013]\s*TX$/i, "").trim();
+}
+
 function cardHTML(a, photoDataUri, size = "portrait") {
   const { w: W, h: H } = SIZES[size] || SIZES.portrait;
   const story = size === "story";
@@ -80,7 +85,7 @@ body{width:${W}px;height:${H}px;font-family:'Inter',sans-serif;color:#fff;overfl
   <div class="bottom">
     <div class="flag">JUST ANNOUNCED</div>
     <div class="name">${esc(name)}</div>
-    <div class="meta">${esc(a.venue)} &middot; ${esc(niceDate(a.date))}</div>
+    <div class="meta">${esc(displayVenue(a.venue))} &middot; ${esc(niceDate(a.date))}</div>
     <div class="row"><div class="chip">${esc(price)}</div><div class="url">comedyhouston.com</div></div>
   </div>
 </div>
@@ -101,4 +106,4 @@ function slugify(name) {
   return String(name).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 50);
 }
 
-module.exports = { SIZES, cardHTML, photoDataUri, niceDate, slugify, displayName };
+module.exports = { SIZES, cardHTML, photoDataUri, niceDate, slugify, displayName, displayVenue };

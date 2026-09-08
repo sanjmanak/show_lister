@@ -76,8 +76,9 @@ async function llmGate(a) {
     "someone with specials, TV, a national tour, or a large following. Showcases, open mics, recurring series, " +
     "improv nights, drag brunches, tribute acts, festivals without a named headliner, and anything you cannot " +
     "identify with confidence do NOT qualify. Never invent credits. Reply with JSON only.";
+  const { displayVenue } = require("./lib/announce-card");
   const user = `Listing title: ${a.name}
-Venue: ${a.venue}
+Venue: ${displayVenue(a.venue)}
 Date: ${a.date}${a.time ? " " + a.time : ""}
 Price: ${a.price_min != null ? "$" + a.price_min : "unknown"}${a.price_max != null ? " to $" + a.price_max : ""}
 Source: ${a.source}
@@ -88,7 +89,7 @@ Return JSON:
   "performer_name": "the comedian's name as fans write it, or null",
   "confidence": 0.0-1.0,
   "reason": "one short sentence",
-  "hook": "one line, max 110 characters: a concrete credential or reason to care (a named special, a show they host, a tour name, a milestone). Do NOT mention the venue, the city or the date here. No hype words, no exclamation points, no emojis, no em dashes.",
+  "hook": "one line, max 110 characters, written like a headline a comedy editor would run: a concrete credential or reason to care (a named special, a show they host, a tour name, a milestone) with some attitude. Examples of the register: 'Two Netflix specials and a sitcom later, the Tennessee grandmother is playing arenas.' / 'The Chelsea Lately host, back on the road with new material.' Do NOT mention the venue, the city or the date here. No hype words, no exclamation points, no emojis, no em dashes.",
   "caption": "1 to 2 short sentences that do NOT repeat the hook: where and when (venue name, date written out), plus one specific detail if you have one. Then end with exactly: Tickets on sale now. Link in bio. No hashtags, no emojis, no em dashes, no exclamation points."
 }
 
@@ -200,7 +201,7 @@ async function renderPhase() {
   if (!picks.length) { saveJson(PENDING, { items: [] }); console.log("Nothing to post."); return; }
 
   const puppeteer = require("puppeteer");
-  const { cardHTML, photoDataUri, slugify, SIZES } = require("./lib/announce-card");
+  const { cardHTML, photoDataUri, slugify, SIZES, displayVenue } = require("./lib/announce-card");
   fs.mkdirSync(OUT_DIR, { recursive: true });
   pruneOld();
   const music = pickMusic();
@@ -237,7 +238,7 @@ async function renderPhase() {
           console.log(`  reel render failed (${err.message}); posting the image instead`);
         }
       }
-      const venueLine = `${a.performer_name} at ${a.venue}, ${new Date(a.date + "T12:00:00").toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}.`;
+      const venueLine = `${a.performer_name} at ${displayVenue(a.venue)}, ${new Date(a.date + "T12:00:00").toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}.`;
       const caption = [a.hook, a.caption || venueLine, "", "#houstoncomedy #comedyhouston #standupcomedy #houston"].join("\n");
       items.push({ id: a.id, name: a.name, performer_name: a.performer_name, venue: a.venue, date: a.date, ticket_url: a.ticket_url, files, caption, confidence: a.confidence });
     }

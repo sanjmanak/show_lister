@@ -48,8 +48,12 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Install Puppeteer
-        run: npm install puppeteer --no-save
+      - name: Install Puppeteer + ffmpeg
+        run: |
+          npm install puppeteer --no-save
+          # ffmpeg is not on the hosted image; needed only for reel mode.
+          sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq ffmpeg >/dev/null
+          ffmpeg -version | head -1
 
       - name: Gate + render (LLM check, card, optional reel)
         env:
