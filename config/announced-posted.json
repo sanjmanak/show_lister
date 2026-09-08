@@ -1,1 +1,89 @@
-{"posted":[],"skipped":[]}
+{
+  "posted": [],
+  "skipped": [
+    {
+      "id": "be46119c5108402c",
+      "name": "Comedy & Drinks in a Speakeasy: Saturday 8pm",
+      "reason": "title pattern",
+      "at": "2026-09-08T16:04:19.077Z"
+    },
+    {
+      "id": "f167aa6f885c2c48",
+      "name": "Comedy & Drinks in a Speakeasy: Friday 8pm",
+      "reason": "title pattern",
+      "at": "2026-09-08T16:04:19.077Z"
+    },
+    {
+      "id": "f5be591beadea54c",
+      "name": "Comedy & Drinks in a Speakeasy: Saturday 8pm",
+      "reason": "title pattern",
+      "at": "2026-09-08T16:04:19.077Z"
+    },
+    {
+      "id": "bc5cb6d2b8183894",
+      "name": "Comedy & Drinks in a Speakeasy: Friday 8pm",
+      "reason": "title pattern",
+      "at": "2026-09-08T16:04:19.077Z"
+    },
+    {
+      "id": "0ec85a52073167d3",
+      "name": "Comedy & Drinks in a Speakeasy: Saturday 8pm",
+      "reason": "title pattern",
+      "at": "2026-09-08T16:04:19.077Z"
+    },
+    {
+      "id": "d9e96a2675209192",
+      "name": "Comedy & Drinks in a Speakeasy: Friday 8pm",
+      "reason": "title pattern",
+      "at": "2026-09-08T16:04:19.077Z"
+    },
+    {
+      "id": "73c5d0efb091a5ec",
+      "name": "Comedy & Drinks in a Speakeasy: Saturday 8pm",
+      "reason": "title pattern",
+      "at": "2026-09-08T16:04:19.077Z"
+    },
+    {
+      "id": "8188c5eba0114112",
+      "name": "Comedy & Drinks in a Speakeasy: Friday 8pm",
+      "reason": "title pattern",
+      "at": "2026-09-08T16:04:19.077Z"
+    },
+    {
+      "id": "965aa3f1aec040c6",
+      "name": "Comedy & Drinks in a Speakeasy: Thursday 7:30pm",
+      "reason": "title pattern",
+      "at": "2026-09-08T16:04:19.077Z"
+    },
+    {
+      "id": "df44e7ee69dde9d4",
+      "name": "CU Next Thursday Comedy Show hosted by Corlis & Tess",
+      "reason": "This appears to be a hosted recurring comedy show, not a headline set by a recognizable named comedian.",
+      "at": "2026-09-08T16:04:22.423Z"
+    },
+    {
+      "id": "c25a3664df94a2e5",
+      "name": "Comedy & Drinks in a Speakeasy: Thursday 7:30pm",
+      "reason": "title pattern",
+      "at": "2026-09-08T16:04:22.423Z"
+    },
+    {
+      "id": "c6aac43f67ec79ea",
+      "name": "Comedy & Drinks in a Speakeasy: Thursday 7:30pm",
+      "reason": "title pattern",
+      "at": "2026-09-08T16:04:22.423Z"
+    },
+    {
+      "id": "6aa13f8903dd81c9",
+      "name": "Comedy & Drinks in a Speakeasy: Thursday 7:30pm",
+      "reason": "title pattern",
+      "at": "2026-09-08T16:04:22.423Z"
+    },
+    {
+      "id": "389a650cae725212",
+      "name": "Comedy & Drinks in a Speakeasy: Thursday 7:30pm",
+      "reason": "title pattern",
+      "at": "2026-09-08T16:04:22.423Z"
+    }
+  ]
+}
