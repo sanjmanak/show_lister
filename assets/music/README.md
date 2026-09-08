@@ -1,6 +1,6 @@
 # Music for announcement reels
 
-Drop `.mp3` files here and `scripts/post-announcements.js` will post "Just
+Drop `.mp3`, `.m4a`, `.wav`, or a video (`.mp4`, `.mov`) here; only the audio track is used and `scripts/post-announcements.js` will post "Just
 announced" cards as Reels (still card + slow zoom + a random track from this
 folder, faded out at the end) instead of static images.
 

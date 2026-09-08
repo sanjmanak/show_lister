@@ -110,7 +110,9 @@ function pruneOld() {
 
 function pickMusic() {
   if (!fs.existsSync(MUSIC_DIR)) return null;
-  const tracks = fs.readdirSync(MUSIC_DIR).filter((f) => /\.(mp3|m4a|wav)$/i.test(f));
+  // Audio files or videos: ffmpeg maps the audio stream ([1:a]) either way,
+  // so an .mp4/.mov with a song in it works without a conversion step.
+  const tracks = fs.readdirSync(MUSIC_DIR).filter((f) => /\.(mp3|m4a|wav|aac|ogg|mp4|mov|m4v)$/i.test(f));
   if (!tracks.length) return null;
   return path.join(MUSIC_DIR, tracks[Math.floor(Math.random() * tracks.length)]);
 }
@@ -130,7 +132,7 @@ function renderReel(storyPng, music, outMp4) {
     "-y", "-loglevel", "error",
     "-loop", "1", "-i", storyPng,
     "-i", music,
-    "-filter_complex", `[0:v]${vf}[v];[1:a]atrim=0:${REEL_SECONDS},afade=t=in:st=0:d=0.5,afade=t=out:st=${REEL_SECONDS - 1.5}:d=1.5[a]`,
+    "-filter_complex", `[0:v]${vf}[v];[1:a]apad,atrim=0:${REEL_SECONDS},afade=t=in:st=0:d=0.5,afade=t=out:st=${REEL_SECONDS - 1.5}:d=1.5[a]`,
     "-map", "[v]", "-map", "[a]",
     "-t", String(REEL_SECONDS),
     "-c:v", "libx264", "-preset", "medium", "-crf", "23", "-r", "30",
