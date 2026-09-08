@@ -1,20 +1,3 @@
 {
-  "generated_at": "2026-09-08T16:04:36.378Z",
-  "dry_run": false,
-  "items": [
-    {
-      "id": "8bf298ff4a044261",
-      "name": "CHELSEA HANDLER: THE HIGH AND MIGHTY TOUR",
-      "performer_name": "Chelsea Handler",
-      "venue": "713 Music Hall",
-      "date": "2026-11-21",
-      "ticket_url": "https://www.ticketmaster.com/chelsea-handler-the-high-and-mighty-houston-texas-11-21-2026/event/3A006473ABD4BB3E",
-      "files": {
-        "portrait": "2026-11-21-chelsea-handler-portrait.png",
-        "story": "2026-11-21-chelsea-handler-story.png"
-      },
-      "caption": "Chelsea Handler’s The High and Mighty Tour follows her latest stand-up era.\nChelsea Handler performs at 713 Music Hall on November 21, 2026. Her tour is titled The High and Mighty Tour. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
-      "confidence": 0.99
-    }
-  ]
+  "items": []
 }
