@@ -1,7 +1,7 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-09-07T18:16:36.639Z",
-  "total_excluded": 22,
+  "last_updated": "2026-09-08T01:26:41.103Z",
+  "total_excluded": 26,
   "events": [
     {
       "name": "Karaoke every THURSDAY!",
@@ -189,6 +189,50 @@
       "genre": null,
       "ticket_url": "https://www.eventbrite.com/e/millionaire-my-sweet-16-pt-2-tour-tickets-1993624749292",
       "reason": "music artist blocklisted: \"millionaire$\""
+    },
+    {
+      "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-09-27",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/our-mic-is-your-mic-emo-karaoke-tickets-2000052600167",
+      "reason": "title keyword blocklisted: \"karaoke\""
+    },
+    {
+      "name": "Karaoke every THURSDAY!",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-10-01",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/karaoke-every-thursday-tickets-2000052792743",
+      "reason": "title keyword blocklisted: \"karaoke\""
+    },
+    {
+      "name": "NOTHING MATTERS Emo | Indie | Punk Dance Party",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-10-02",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/nothing-matters-emo-indie-punk-dance-party-tickets-2000052819824",
+      "reason": "title keyword blocklisted: \"dance party\""
+    },
+    {
+      "name": "DIAL UP: 90s & Y2K Dance Party!",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-10-03",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/dial-up-90s-y2k-dance-party-tickets-2000052854929",
+      "reason": "title keyword blocklisted: \"dance party\""
     },
     {
       "name": "Gabriel Iglesias The 1976 Tour ",

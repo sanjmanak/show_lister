@@ -1,72 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-3": {
-      "lastmod": "2026-09-07T01:03:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Monday Night Standup Comedy Showcase!",
-        "startDate": "2026-09-07T19:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-3",
-          "priceCurrency": "USD",
-          "price": "8.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-09T09:59:56-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-3",
-        "image": "/img/shows/HTX-Houston-s-Funniest-Showcase-2-1-1afe120b-large-thumb.png",
-        "description": "Start your week with a night of standup comedy and plenty of laughs at The Riot Comedy Club!Join us Monday night at The Riot on Washington&nbsp; for a hilarious lineup featuring some of the best comedy talent in the city. With an intimate atmosphere, great drinks, and live standup, it’s the perfect way to shake off the Monday blues and start the week on a high note.Tickets are limited, so grab yours in advance and make Monday night something to look forward to. Come hang out, have a drink, and kick off your week with a night of great comedy at The Riot.All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Luis Dejesus"
-          },
-          {
-            "@type": "Person",
-            "name": "Son Tran"
-          },
-          {
-            "@type": "Person",
-            "name": "Malay Vyas"
-          },
-          {
-            "@type": "Person",
-            "name": "Will Loden"
-          },
-          {
-            "@type": "Person",
-            "name": "Ku Egenti"
-          },
-          {
-            "@type": "Person",
-            "name": "Christian Alexander"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-monday-night-standup-comedy-open-mic-2026-09-07210000": {
-      "lastmod": "2026-09-06T11:17:00-05:00",
+      "lastmod": "2026-09-07T03:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -111,7 +46,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-09-08-26-07-00-pm": {
-      "lastmod": "2026-09-06T11:32:00-05:00",
+      "lastmod": "2026-09-07T01:54:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -176,7 +111,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-09-08210000": {
-      "lastmod": "2026-09-06T11:32:00-05:00",
+      "lastmod": "2026-09-07T01:54:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -221,7 +156,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-19": {
-      "lastmod": "2026-09-06T12:37:00-05:00",
+      "lastmod": "2026-09-07T02:02:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -282,7 +217,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-17": {
-      "lastmod": "2026-09-06T12:37:00-05:00",
+      "lastmod": "2026-09-07T02:02:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -429,7 +364,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-jon-rudnitsky-netflix-hbo-comedy-central-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-09-03T03:22:00-05:00",
+      "lastmod": "2026-09-07T05:02:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -482,7 +417,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-19": {
-      "lastmod": "2026-09-03T03:22:00-05:00",
+      "lastmod": "2026-09-07T05:02:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -518,11 +453,36 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Christian Alexander"
+          },
+          {
+            "@type": "Person",
+            "name": "Jon Rudnitsky"
+          },
+          {
+            "@type": "Person",
+            "name": "Timely Rain Watson"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Owens"
+          },
+          {
+            "@type": "Person",
+            "name": "Jay Legend"
+          },
+          {
+            "@type": "Person",
+            "name": "Prince Elias"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-17": {
-      "lastmod": "2026-09-03T03:22:00-05:00",
+      "lastmod": "2026-09-07T05:02:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -558,11 +518,32 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "A.D. Hodge"
+          },
+          {
+            "@type": "Person",
+            "name": "Janan"
+          },
+          {
+            "@type": "Person",
+            "name": "Tony Martinez"
+          },
+          {
+            "@type": "Person",
+            "name": "Mackenzie jewell"
+          },
+          {
+            "@type": "Person",
+            "name": "Matthew Zane"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/comedian-jon-rudnitsky-netflix-hbo-comedy-central-headlines-the-riot-comedy-club-the-riot-houston": {
-      "lastmod": "2026-09-03T06:19:00-05:00",
+      "lastmod": "2026-09-07T05:22:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -615,7 +596,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-jon-rudnitsky-netflix-hbo-comedy-central-headlines-the-riot-comedy-club-the-riot-houston-1": {
-      "lastmod": "2026-09-03T06:19:00-05:00",
+      "lastmod": "2026-09-07T05:22:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -668,7 +649,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-19": {
-      "lastmod": "2026-09-03T06:19:00-05:00",
+      "lastmod": "2026-09-07T05:22:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -708,12 +689,36 @@
           {
             "@type": "Person",
             "name": "Andy Huggins"
+          },
+          {
+            "@type": "Person",
+            "name": "Lotto Marie"
+          },
+          {
+            "@type": "Person",
+            "name": "Ben Daniel"
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
+          },
+          {
+            "@type": "Person",
+            "name": "Jeff Joe"
+          },
+          {
+            "@type": "Person",
+            "name": "Genivive Clinton"
+          },
+          {
+            "@type": "Person",
+            "name": "Slade Ham"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-36": {
-      "lastmod": "2026-08-10T04:06:00-05:00",
+      "lastmod": "2026-09-07T05:24:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -753,7 +758,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-19": {
-      "lastmod": "2026-08-10T04:07:00-05:00",
+      "lastmod": "2026-09-07T05:24:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -789,7 +794,12 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Lotto Marie"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-4": {
