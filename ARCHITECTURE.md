@@ -632,6 +632,21 @@ Mechanics, in `scripts/lib/social-handles.js` and `createTaggedContainer()`:
 
 **Self-heal.** `ensure-comedian-graphics.js` runs first in the same step and rebuilds any missing square / portrait / story PNG for the current week from the manifest (name, venue, date, event image) using the shared template, so a deleted or never-rendered graphic cannot 404 the post. `--all` does every manifest (used once locally after the 2026-09-07 wipe).
 
+#### Workflow 5b: Post Just-Announced Shows (`.github/workflows/post-announcements.yml`)
+
+| Field | Value |
+|-------|-------|
+| **Schedule** | Daily: `37 15 * * *` UTC (10:37 AM CT), after the morning events refresh has landed new listings |
+| **Manual trigger** | Yes (`dry_run`, `max`, `window_hours` inputs; a dry run uploads the rendered cards as an artifact and changes nothing) |
+| **What it runs** | `post-announcements.js --render` then `--post` |
+| **Gate** | `just-announced.js` flags "notable" listings (big rooms or price ≥ $60). A title filter drops obvious series (showcases, "Comedy & Drinks", open mics). Then gpt-5.6-terra answers: is this a headline show by a named, recognizable comedian? Only `qualifies` with confidence ≥ 0.75 goes out, at most `ANNOUNCE_MAX` (1) per day, never the same performer twice in 45 days, never a show fewer than 5 days away. Skips are recorded in `config/announced-posted.json` so a listing is judged once. |
+| **Creative** | `lib/announce-card.js` renders the branded card (show's own image) at 1080×1350 for the feed and 1080×1920 for the story. If `assets/music/` holds a track and ffmpeg is present, the story card becomes a 10 s Reel (slow push-in, faded audio) and is posted as `media_type: REELS` with `share_to_feed`; otherwise the feed gets the image. Assets live in `blog/announce/` (served via raw.githubusercontent, pruned after 14 days). |
+| **Caption** | Model-written: a credential hook line plus venue/date, ending "Tickets on sale now. Link in bio." Venue tagged via `social-handles.json`. |
+| **Secrets used** | `OPENAI_API_KEY`, `INSTAGRAM_ACCESS_TOKEN`, `INSTAGRAM_USER_ID` |
+| **Commits** | `blog/announce/*`, `config/announced-posted.json` |
+
+The local launchd job (`~/showList/growth-loop/daily-announce.sh`) still renders preview cards and notifies; it is no longer the posting path.
+
 #### Workflow 6: Delete Old Tonight Posts (`.github/workflows/delete-old-tonight-posts.yml`)
 
 | Field | Value |
@@ -1027,6 +1042,7 @@ show_lister/
 │       ├── generate-comedian-posts.yml  # Cron: weekly per-comedian SEO posts
 │       ├── post-to-instagram.yml       # Cron: staggered IG posting (every 6h)
 │       ├── post-tonight.yml            # Cron: daily "Tonight in Houston" post (3 PM CT)
+│       ├── post-announcements.yml      # Cron: daily LLM-gated "Just announced" post (10:37 AM CT)
 │       ├── delete-old-tonight-posts.yml # Cron: delete Tonight posts older than 1 day
 │       ├── delete-old-comedian-posts.yml # Cron: delete comedian spotlights + finished-week blog posts
 │       ├── price-reminder.yml           # Cron: Monday email when a local price refresh is due
@@ -1037,6 +1053,7 @@ show_lister/
 │   ├── lib/
 │   │   ├── openai.js                    # Shared OpenAI plumbing + model policy
 │   │   ├── comedian-graphics.js         # Spotlight square/portrait/story HTML templates
+│   │   ├── announce-card.js             # Just-announced card template (portrait + story)
 │   │   ├── image-utils.js               # URL-shape check + initials placeholder
 │   │   ├── meta-api.js                  # Shared Meta Graph API plumbing (both posters)
 │   │   ├── post-cleanup.js              # Shared aged-post delete rules (both cleanups)
