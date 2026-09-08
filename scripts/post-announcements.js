@@ -88,9 +88,11 @@ Return JSON:
   "performer_name": "the comedian's name as fans write it, or null",
   "confidence": 0.0-1.0,
   "reason": "one short sentence",
-  "hook": "one line, max 110 characters, a specific reason Houston should care (a credit, a special, a tour name). No hype words, no exclamation points, no emojis, no em dashes.",
-  "caption": "2 to 3 short sentences for the Instagram caption in a dry, confident voice. Include the venue and the date written out. End with: Tickets on sale now. Link in bio. No hashtags, no emojis, no em dashes, no exclamation points."
-}`;
+  "hook": "one line, max 110 characters: a concrete credential or reason to care (a named special, a show they host, a tour name, a milestone). Do NOT mention the venue, the city or the date here. No hype words, no exclamation points, no emojis, no em dashes.",
+  "caption": "1 to 2 short sentences that do NOT repeat the hook: where and when (venue name, date written out), plus one specific detail if you have one. Then end with exactly: Tickets on sale now. Link in bio. No hashtags, no emojis, no em dashes, no exclamation points."
+}
+
+Banned words and shapes anywhere in hook or caption: "brings", "takes the stage", "comes to", "heads to", "hits", "don't miss", "must-see", "get ready", "hilarious", "iconic", "legendary", rhetorical questions.`;
   const text = await chatCompletion({ system, user, maxTokens: 600, effort: "low", jsonMode: true });
   const parsed = JSON.parse(stripFences(text));
   return parsed;
