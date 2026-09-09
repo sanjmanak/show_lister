@@ -1,3 +1,21 @@
 {
-  "items": []
+  "generated_at": "2026-09-09T18:50:23.276Z",
+  "dry_run": false,
+  "items": [
+    {
+      "id": "cd29653447ef4ce7",
+      "name": "Watch What Crappens: In The Mix Tour",
+      "performer_name": "Watch What Crappens",
+      "venue": "House of Blues Houston",
+      "date": "2026-11-15",
+      "ticket_url": "https://www.ticketmaster.com/watch-what-crappens-in-the-mix-houston-texas-11-15-2026/event/3A006524D89C2CB0",
+      "files": {
+        "portrait": "2026-11-15-watch-what-crappens-portrait.png",
+        "story": "2026-11-15-watch-what-crappens-story.png",
+        "reel": "2026-11-15-watch-what-crappens.mp4"
+      },
+      "caption": "Bravo recap podcast Watch What Crappens puts Ben Mandelker and Ronnie Karam In The Mix.\nWatch What Crappens plays House of Blues Houston on November 15, 2026. Ben Mandelker and Ronnie Karam bring their Bravo obsessions to the In The Mix Tour. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
+      "confidence": 0.98
+    }
+  ]
 }
