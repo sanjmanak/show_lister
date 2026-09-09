@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-09T01:38:16.075Z",
+ "updated": "2026-09-09T15:37:10.965Z",
  "announcements": [
   {
    "id": "8e8fbd9a07c7e39e",
@@ -13,7 +13,9 @@
    "ticket_url": "https://www.eventbrite.com/e/emo-nite-htx-tickets-1999116012809",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-28T23:24:35.337Z"
+   "first_seen": "2026-08-28T23:24:35.337Z",
+   "tier": null,
+   "notable_reason": "only -4d out (min 14)"
   },
   {
    "id": "a00462ff2839a101",
@@ -26,8 +28,10 @@
    "image_url": "https://s1.ticketm.net/dam/a/84d/6f42b922-5aa3-4667-bee0-ae827060884d_SOURCE",
    "ticket_url": "https://www.ticketmaster.com/clint-coley-houston-texas-11-12-2026/event/3A0064F335EF12DC",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-08-28T23:24:35.337Z"
+   "notable": true,
+   "first_seen": "2026-08-28T23:24:35.337Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "6b85772a84b825cf",
@@ -40,8 +44,10 @@
    "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
    "ticket_url": "https://www.ticketweb.com/event/ellen-skrmetti-houston-improv-tickets/15024353?REFERRAL_ID=tmfeed",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-08-28T23:24:35.337Z"
+   "notable": true,
+   "first_seen": "2026-08-28T23:24:35.337Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "ee3501add706d6a7",
@@ -54,8 +60,10 @@
    "image_url": "https://s1.ticketm.net/dam/a/c08/441cbaa3-6959-425b-ad68-f249f10d9c08_SOURCE",
    "ticket_url": "https://www.ticketmaster.com/christopher-titus-doomed-to-repeat-houston-texas-11-13-2026/event/3A0064E6AD6473C5",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-08-28T23:24:35.337Z"
+   "notable": true,
+   "first_seen": "2026-08-28T23:24:35.337Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "117e2e6a6fcc648e",
@@ -69,7 +77,9 @@
    "ticket_url": "https://www.eventbrite.com/e/deric-poston-live-in-houston-tickets-1999114030881",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-28T23:24:35.337Z"
+   "first_seen": "2026-08-28T23:24:35.337Z",
+   "tier": null,
+   "notable_reason": "small room"
   },
   {
    "id": "4a63376c2a61b36e",
@@ -82,8 +92,10 @@
    "image_url": "https://s1.ticketm.net/dam/a/168/ad8a409d-f583-4333-896e-c605ce02c168_SOURCE",
    "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7xFb8",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-08-29T05:50:10.698Z"
+   "notable": true,
+   "first_seen": "2026-08-29T05:50:10.698Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "989f8bf75eaff755",
@@ -97,7 +109,9 @@
    "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A70_kF",
    "source": "ticketmaster",
    "notable": true,
-   "first_seen": "2026-08-29T05:50:10.698Z"
+   "first_seen": "2026-08-29T05:50:10.698Z",
+   "tier": "big_room",
+   "notable_reason": "big room"
   },
   {
    "id": "426355fbc2038be6",
@@ -111,7 +125,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-1-13",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-08-29T05:50:10.698Z"
+   "first_seen": "2026-08-29T05:50:10.698Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "49bb65a695d01520",
@@ -125,7 +141,9 @@
    "ticket_url": "https://www.eventbrite.com/e/live-at-the-barbershop-houston-stand-up-comedy-in-a-real-barbershop-byob-tickets-1998989819361",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-29T05:50:10.698Z"
+   "first_seen": "2026-08-29T05:50:10.698Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "5a02b22d97c55d7f",
@@ -139,7 +157,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-30",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-08-29T05:50:10.698Z"
+   "first_seen": "2026-08-29T05:50:10.698Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "c04e17c65d11396f",
@@ -153,7 +173,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-26",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-08-29T05:50:10.698Z"
+   "first_seen": "2026-08-29T05:50:10.698Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "6ecd540a6b22ecb8",
@@ -167,7 +189,9 @@
    "ticket_url": "https://www.donttellcomedy.com/shows/houston-20889/",
    "source": "donttellcomedy",
    "notable": false,
-   "first_seen": "2026-08-30T03:53:27.088Z"
+   "first_seen": "2026-08-30T03:53:27.088Z",
+   "tier": null,
+   "notable_reason": "only 10d out (min 14)"
   },
   {
    "id": "4bd5ae714653a486",
@@ -181,7 +205,9 @@
    "ticket_url": "https://www.donttellcomedy.com/shows/houston-21069/",
    "source": "donttellcomedy",
    "notable": false,
-   "first_seen": "2026-08-30T03:53:27.088Z"
+   "first_seen": "2026-08-30T03:53:27.088Z",
+   "tier": null,
+   "notable_reason": "only 10d out (min 14)"
   },
   {
    "id": "8b1d041b75608b1f",
@@ -195,7 +221,9 @@
    "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7xZ8y",
    "source": "ticketmaster",
    "notable": true,
-   "first_seen": "2026-08-30T03:53:27.088Z"
+   "first_seen": "2026-08-30T03:53:27.088Z",
+   "tier": "big_room",
+   "notable_reason": "big room"
   },
   {
    "id": "fe4a5621e4927d75",
@@ -208,8 +236,10 @@
    "image_url": "https://s1.ticketm.net/dam/a/c08/441cbaa3-6959-425b-ad68-f249f10d9c08_SOURCE",
    "ticket_url": "https://www.ticketmaster.com/christopher-titus-doomed-to-repeat-houston-texas-11-14-2026/event/3A0064E6AD7473E2",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-08-30T17:55:06.959Z"
+   "notable": true,
+   "first_seen": "2026-08-30T17:55:06.959Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "f1ec42800c774d41",
@@ -222,8 +252,10 @@
    "image_url": "https://s1.ticketm.net/dam/a/168/ad8a409d-f583-4333-896e-c605ce02c168_SOURCE",
    "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7xFbA",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-08-30T17:55:06.959Z"
+   "notable": true,
+   "first_seen": "2026-08-30T17:55:06.959Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "0d9eb8559044fd0b",
@@ -237,7 +269,9 @@
    "ticket_url": "https://www.ticketmaster.com/gaby-mendoza-jose-luis-zagar-houston-texas-11-14-2026/event/3A0064C99EEEA712",
    "source": "ticketmaster",
    "notable": true,
-   "first_seen": "2026-08-30T17:55:06.959Z"
+   "first_seen": "2026-08-30T17:55:06.959Z",
+   "tier": "big_room",
+   "notable_reason": "big room"
   },
   {
    "id": "72d5cd90890fc8a0",
@@ -251,7 +285,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-early-standup-comedy-showcase-the-riot-houston-13",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-08-30T17:55:06.959Z"
+   "first_seen": "2026-08-30T17:55:06.959Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "91f2be1f343ca559",
@@ -265,7 +301,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-26",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-08-30T17:55:06.959Z"
+   "first_seen": "2026-08-30T17:55:06.959Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "2e16fdfb1b1194fc",
@@ -279,7 +317,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-30",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-08-30T17:55:06.959Z"
+   "first_seen": "2026-08-30T17:55:06.959Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "463649d48d58934f",
@@ -293,7 +333,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-last-laugh-with-james-vogt-trip-truman-tickets-1999225340812",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "dcda851330316449",
@@ -307,7 +349,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-secret-secret-show-tickets-1999225342818",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "71bdaa462041dc0c",
@@ -321,7 +365,9 @@
    "ticket_url": "https://www.eventbrite.com/e/comedy-dojo-sunday-open-mic-comedy-tickets-1999225345827",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "fda3159e69fdfd62",
@@ -335,7 +381,9 @@
    "ticket_url": "https://www.eventbrite.com/e/monday-night-comedy-tickets-1999225349839",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 5d out (min 14)"
   },
   {
    "id": "d9a1aa4a66db2a01",
@@ -349,7 +397,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-passing-lane-with-andrew-youngblood-will-loden-blake-jones-tickets-1999225351845",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 5d out (min 14)"
   },
   {
    "id": "4cc6d9b0382ee2f5",
@@ -363,7 +413,9 @@
    "ticket_url": "https://www.eventbrite.com/e/night-court-monday-open-mic-comedy-tickets-1999225355857",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 5d out (min 14)"
   },
   {
    "id": "ca476d324aaac241",
@@ -377,7 +429,9 @@
    "ticket_url": "https://www.eventbrite.com/e/for-the-culture-a-tuesday-comedy-show-for-the-culture-tickets-1999225434091",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 6d out (min 14)"
   },
   {
    "id": "4267a97a879c76a7",
@@ -391,7 +445,9 @@
    "ticket_url": "https://www.eventbrite.com/e/c-u-next-tuesday-weekly-comedy-hosted-by-corlis-delauren-and-tess-vergult-tickets-1999225362878",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 6d out (min 14)"
   },
   {
    "id": "43ee1e7e3cdc4aff",
@@ -405,7 +461,9 @@
    "ticket_url": "https://www.eventbrite.com/e/pass-the-mic-tuesday-open-mic-comedy-tickets-1999225365887",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 6d out (min 14)"
   },
   {
    "id": "256f5ea77811406b",
@@ -419,7 +477,9 @@
    "ticket_url": "https://www.eventbrite.com/e/2-bill-two-dollar-comedy-show-every-wednesday-tickets-1999225367893",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 7d out (min 14)"
   },
   {
    "id": "791d83e5fa9f3c30",
@@ -433,7 +493,9 @@
    "ticket_url": "https://www.eventbrite.com/e/master-debaters-tickets-1999225369899",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 7d out (min 14)"
   },
   {
    "id": "cb9aae3002efa142",
@@ -447,7 +509,9 @@
    "ticket_url": "https://www.eventbrite.com/e/witchy-wednesdays-wednesday-open-mic-comedy-tickets-1999225375917",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 7d out (min 14)"
   },
   {
    "id": "cc5add06a852a8ad",
@@ -461,7 +525,9 @@
    "ticket_url": "https://www.eventbrite.com/e/back-of-the-bus-thursday-open-mic-comedy-tickets-1999225387953",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 8d out (min 14)"
   },
   {
    "id": "b4b6469b369aeaf2",
@@ -475,7 +541,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-8pm-tickets-1999225389959",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "4657cb058756c296",
@@ -489,7 +557,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-10pm-tickets-1999225393971",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "e357803e9a11f38b",
@@ -503,7 +573,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-late-night-dirty-show-x-rated-comedy-tickets-1999225394974",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "b2b4936117be4436",
@@ -517,7 +589,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-7pm-tickets-1999225399989",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 10d out (min 14)"
   },
   {
    "id": "8acdae70472f0449",
@@ -531,7 +605,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-9pm-tickets-1999225400992",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 10d out (min 14)"
   },
   {
    "id": "56acb60c0e2757d5",
@@ -545,7 +621,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-rated-r-comedy-showcase-11pm-tickets-1999225404001",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 10d out (min 14)"
   },
   {
    "id": "1eaa25e03d6af969",
@@ -559,7 +637,9 @@
    "ticket_url": "https://www.eventbrite.com/e/speedball-saturday-open-mic-comedy-tickets-1999225407010",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "only 10d out (min 14)"
   },
   {
    "id": "e06342ed174de781",
@@ -573,7 +653,9 @@
    "ticket_url": "https://www.eventbrite.com/e/this-wild-life-tickets-1999223795189",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "small room"
   },
   {
    "id": "37ec84fe9dee4546",
@@ -587,7 +669,9 @@
    "ticket_url": "https://www.donttellcomedy.com/shows/houston-20890/",
    "source": "donttellcomedy",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "small room"
   },
   {
    "id": "3d616fa07c8dd27b",
@@ -601,7 +685,9 @@
    "ticket_url": "https://www.eventbrite.com/e/cortisa-star-for-all-the-dolls-tour-tickets-1999222901516",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "small room"
   },
   {
    "id": "3e94c20ecbeb54a9",
@@ -615,7 +701,9 @@
    "ticket_url": "https://www.eventbrite.com/e/comeback-kid-tickets-1999223194392",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "small room"
   },
   {
    "id": "0ec20430e27c9e4b",
@@ -629,7 +717,9 @@
    "ticket_url": "https://www.eventbrite.com/e/post-animal-maybe-you-have-to-tour-tickets-1999224299698",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "small room"
   },
   {
    "id": "fbde67c3e67f3f9b",
@@ -643,7 +733,9 @@
    "ticket_url": "https://www.eventbrite.com/e/chrissy-chlapecka-tickets-1999224556466",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "small room"
   },
   {
    "id": "7a966f2adf9a9241",
@@ -657,7 +749,9 @@
    "ticket_url": "https://www.eventbrite.com/e/distant-into-despair-us-tour-tickets-1999224452154",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "small room"
   },
   {
    "id": "2f75a5303c83766e",
@@ -671,7 +765,9 @@
    "ticket_url": "https://www.eventbrite.com/e/halocene-tickets-1999224501301",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T03:56:25.228Z"
+   "first_seen": "2026-08-31T03:56:25.228Z",
+   "tier": null,
+   "notable_reason": "small room"
   },
   {
    "id": "63b783b5b8c78f5c",
@@ -685,7 +781,9 @@
    "ticket_url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999294670178",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T19:51:06.092Z"
+   "first_seen": "2026-08-31T19:51:06.092Z",
+   "tier": null,
+   "notable_reason": "only 0d out (min 14)"
   },
   {
    "id": "c68ec018e7fb4374",
@@ -699,7 +797,9 @@
    "ticket_url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999295803568",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T19:51:06.092Z"
+   "first_seen": "2026-08-31T19:51:06.092Z",
+   "tier": null,
+   "notable_reason": "recurring series (4 weeks)"
   },
   {
    "id": "70a1eb2a6825e2c4",
@@ -713,7 +813,9 @@
    "ticket_url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999296122522",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T19:51:06.092Z"
+   "first_seen": "2026-08-31T19:51:06.092Z",
+   "tier": null,
+   "notable_reason": "recurring series (4 weeks)"
   },
   {
    "id": "cdb8239bb77b819b",
@@ -727,7 +829,9 @@
    "ticket_url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999296198750",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-08-31T19:51:06.092Z"
+   "first_seen": "2026-08-31T19:51:06.092Z",
+   "tier": null,
+   "notable_reason": "recurring series (4 weeks)"
   },
   {
    "id": "e5bdde9bf204c102",
@@ -741,7 +845,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-64",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-08-31T19:51:06.092Z"
+   "first_seen": "2026-08-31T19:51:06.092Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "afaf02e0143254bf",
@@ -755,7 +861,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-30",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-08-31T19:51:06.092Z"
+   "first_seen": "2026-08-31T19:51:06.092Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "06bdab87e76a88ec",
@@ -769,7 +877,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-last-laugh-with-james-vogt-trip-truman-tickets-1999307681094",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "only 11d out (min 14)"
   },
   {
    "id": "29c863225892fe63",
@@ -783,7 +893,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-secret-secret-show-tickets-1999307690121",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "only 11d out (min 14)"
   },
   {
    "id": "18937402e95e8bed",
@@ -797,7 +909,9 @@
    "ticket_url": "https://www.eventbrite.com/e/comedy-dojo-sunday-open-mic-comedy-tickets-1999307697142",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "only 11d out (min 14)"
   },
   {
    "id": "344a73d11d930c9d",
@@ -811,7 +925,9 @@
    "ticket_url": "https://www.eventbrite.com/e/monday-night-comedy-tickets-1999307712187",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "only 12d out (min 14)"
   },
   {
    "id": "c798d0f7a1fe2798",
@@ -825,7 +941,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-passing-lane-with-andrew-youngblood-will-loden-blake-jones-tickets-1999307757322",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "only 12d out (min 14)"
   },
   {
    "id": "3741f1062ca5aeab",
@@ -839,7 +957,9 @@
    "ticket_url": "https://www.eventbrite.com/e/night-court-monday-open-mic-comedy-tickets-1999307762337",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "only 12d out (min 14)"
   },
   {
    "id": "229ae589b03d2528",
@@ -853,7 +973,9 @@
    "ticket_url": "https://www.eventbrite.com/e/for-the-culture-a-tuesday-comedy-show-for-the-culture-tickets-1999307801454",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "only 13d out (min 14)"
   },
   {
    "id": "7a78eab9405ada81",
@@ -867,7 +989,9 @@
    "ticket_url": "https://www.eventbrite.com/e/c-u-next-tuesday-weekly-comedy-hosted-by-corlis-delauren-and-tess-vergult-tickets-1999307809478",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "only 13d out (min 14)"
   },
   {
    "id": "5b59fb9ad5f1b12a",
@@ -881,7 +1005,9 @@
    "ticket_url": "https://www.eventbrite.com/e/pass-the-mic-tuesday-open-mic-comedy-tickets-1999307813490",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "only 13d out (min 14)"
   },
   {
    "id": "fbe0fc199b15e541",
@@ -895,7 +1021,9 @@
    "ticket_url": "https://www.eventbrite.com/e/2-bill-two-dollar-comedy-show-every-wednesday-tickets-1999307816499",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "9fe20f3f5e5ea99e",
@@ -909,7 +1037,9 @@
    "ticket_url": "https://www.eventbrite.com/e/master-debaters-tickets-1999307819508",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "recurring series (4 weeks)"
   },
   {
    "id": "b42714ec75916392",
@@ -923,7 +1053,9 @@
    "ticket_url": "https://www.eventbrite.com/e/witchy-wednesdays-wednesday-open-mic-comedy-tickets-1999307858625",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "000ae4368d69b6a4",
@@ -937,7 +1069,9 @@
    "ticket_url": "https://www.eventbrite.com/e/back-of-the-bus-thursday-open-mic-comedy-tickets-1999307917802",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "df7f5d04ac72e46c",
@@ -951,7 +1085,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-8pm-tickets-1999307921814",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "11b5b2db52ec934c",
@@ -965,7 +1101,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-10pm-tickets-1999307930841",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "fa3e6d328144dd39",
@@ -979,7 +1117,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-late-night-dirty-show-x-rated-comedy-tickets-1999307968955",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "5a056a5b70a0f36c",
@@ -993,7 +1133,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-7pm-tickets-1999307980991",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "07a2c0063c54cd7b",
@@ -1007,7 +1149,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-9pm-tickets-1999308520605",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "4066f5a6b09ad476",
@@ -1021,7 +1165,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-rated-r-comedy-showcase-11pm-tickets-1999308527626",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "12c05781cb2ee623",
@@ -1035,7 +1181,9 @@
    "ticket_url": "https://www.eventbrite.com/e/speedball-saturday-open-mic-comedy-tickets-1999308533644",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "3bd7c5ec93a781c0",
@@ -1049,7 +1197,9 @@
    "ticket_url": "https://www.eventbrite.com/e/chat-pile-who-loves-the-sun-tour-2026-early-show-tickets-1999297781484",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "small room"
   },
   {
    "id": "f77e033eedafc224",
@@ -1063,7 +1213,9 @@
    "ticket_url": "https://www.eventbrite.com/e/chat-pile-who-loves-the-sun-tour-2026-late-show-tickets-1999298219795",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z"
+   "first_seen": "2026-09-01T03:48:09.310Z",
+   "tier": null,
+   "notable_reason": "small room"
   },
   {
    "id": "4a66125eadfcfe8d",
@@ -1077,7 +1229,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-15",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-09-01T17:34:48.899Z"
+   "first_seen": "2026-09-01T17:34:48.899Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "71db137200807e36",
@@ -1091,7 +1245,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-riot-comedy-club-presents-monday-night-standup-comedy-open-mic-tickets-1997283576944",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-01T17:34:48.899Z"
+   "first_seen": "2026-09-01T17:34:48.899Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "225c658d74973a03",
@@ -1105,7 +1261,9 @@
    "ticket_url": "https://www.donttellcomedy.com/shows/houston-21367/",
    "source": "donttellcomedy",
    "notable": false,
-   "first_seen": "2026-09-02T17:12:53.131Z"
+   "first_seen": "2026-09-02T17:12:53.131Z",
+   "tier": null,
+   "notable_reason": "small room"
   },
   {
    "id": "c6d744e12a5fa846",
@@ -1118,8 +1276,10 @@
    "image_url": "https://s1.ticketm.net/dam/a/811/01c641b8-c700-40e6-8b6f-a994aa7a2811_SOURCE",
    "ticket_url": "https://www.ticketmaster.com/chaunte-wayans-houston-texas-10-16-2026/event/3A00651FCBA6283C",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-09-02T17:12:53.131Z"
+   "notable": true,
+   "first_seen": "2026-09-02T17:12:53.131Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "f3d021047e83d99d",
@@ -1132,8 +1292,10 @@
    "image_url": "https://s1.ticketm.net/dam/a/811/01c641b8-c700-40e6-8b6f-a994aa7a2811_SOURCE",
    "ticket_url": "https://www.ticketmaster.com/chaunte-wayans-houston-texas-10-17-2026/event/3A00651FCBAF2859",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-09-02T17:12:53.131Z"
+   "notable": true,
+   "first_seen": "2026-09-02T17:12:53.131Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "a93fc7c66e2e44cb",
@@ -1146,8 +1308,10 @@
    "image_url": "https://s1.ticketm.net/dam/a/811/01c641b8-c700-40e6-8b6f-a994aa7a2811_SOURCE",
    "ticket_url": "https://www.ticketmaster.com/chaunte-wayans-houston-texas-10-18-2026/event/3A00651FCBB92897",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-09-02T17:12:53.131Z"
+   "notable": true,
+   "first_seen": "2026-09-02T17:12:53.131Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "7c5836847e43c95e",
@@ -1161,7 +1325,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-12-01-26-07-00-pm",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-09-02T17:12:53.131Z"
+   "first_seen": "2026-09-02T17:12:53.131Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "57680dd4d6d1f785",
@@ -1175,7 +1341,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-tickets-1997283952066",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-02T17:12:53.131Z"
+   "first_seen": "2026-09-02T17:12:53.131Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "97bd3b018a321edd",
@@ -1189,7 +1357,9 @@
    "ticket_url": "https://www.eventbrite.com/e/social-comedy-nite-tickets-1982925746286",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-02T17:12:53.131Z"
+   "first_seen": "2026-09-02T17:12:53.131Z",
+   "tier": null,
+   "notable_reason": "recurring series (13 weeks)"
   },
   {
    "id": "49171ba05e8c1b1b",
@@ -1202,8 +1372,10 @@
    "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192526788%2F2991795842957%2F1%2Foriginal.20260902-224421?auto=format%2Ccompress&q=75&sharp=10&s=61e287c695bd9f24255e047393dd3c18",
    "ticket_url": "https://www.eventbrite.com/e/labor-day-weekend-comedy-drinks-in-a-speakeasy-sunday-630pm-tickets-1999622918979",
    "source": "eventbrite",
-   "notable": true,
-   "first_seen": "2026-09-03T01:31:40.306Z"
+   "notable": false,
+   "first_seen": "2026-09-03T01:31:40.306Z",
+   "tier": null,
+   "notable_reason": "only -3d out (min 14)"
   },
   {
    "id": "283f11a8c6b3dc62",
@@ -1216,8 +1388,10 @@
    "image_url": "https://s1.ticketm.net/dam/a/826/063ae51c-88bb-4023-b529-8028419f8826_SOURCE",
    "ticket_url": "https://www.ticketmaster.com/keith-pedro-job-your-love-tour-houston-texas-11-15-2026/event/3A00650AB9A4971E",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-09-03T17:05:36.343Z"
+   "notable": true,
+   "first_seen": "2026-09-03T17:05:36.343Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "3b53037e57f289f2",
@@ -1231,7 +1405,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-31",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-09-03T17:05:36.343Z"
+   "first_seen": "2026-09-03T17:05:36.343Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "535b44cc4ad2073a",
@@ -1245,7 +1421,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-29",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-09-03T17:05:36.343Z"
+   "first_seen": "2026-09-03T17:05:36.343Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "7d42e456bc951878",
@@ -1259,7 +1437,9 @@
    "ticket_url": "https://www.ticketmaster.com/davide-de-pierro-houston-texas-11-15-2026/event/3A00647FB83EDF3A",
    "source": "ticketmaster",
    "notable": true,
-   "first_seen": "2026-09-04T01:26:13.422Z"
+   "first_seen": "2026-09-04T01:26:13.422Z",
+   "tier": "big_room",
+   "notable_reason": "big room"
   },
   {
    "id": "93d3f7c35e8c80d2",
@@ -1273,7 +1453,9 @@
    "ticket_url": "https://www.ticketmaster.com/dark-and-darker-a-dark-comedy-houston-texas-10-07-2026/event/3A006523B08CC2B9",
    "source": "ticketmaster",
    "notable": false,
-   "first_seen": "2026-09-04T16:55:02.114Z"
+   "first_seen": "2026-09-04T16:55:02.114Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "b8d5ab81ef5cad5e",
@@ -1286,8 +1468,10 @@
    "image_url": "https://s1.ticketm.net/dam/a/168/ad8a409d-f583-4333-896e-c605ce02c168_SOURCE",
    "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7xFbk",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-09-04T16:55:02.114Z"
+   "notable": true,
+   "first_seen": "2026-09-04T16:55:02.114Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "1900e00a577bac79",
@@ -1301,7 +1485,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-40",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-09-04T16:55:02.114Z"
+   "first_seen": "2026-09-04T16:55:02.114Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "f35eef00513bcc82",
@@ -1315,7 +1501,9 @@
    "ticket_url": "https://www.eventbrite.com/e/social-comedy-nite-tickets-1977579589788",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-04T16:55:02.114Z"
+   "first_seen": "2026-09-04T16:55:02.114Z",
+   "tier": null,
+   "notable_reason": "recurring series (13 weeks)"
   },
   {
    "id": "7670739750e930e1",
@@ -1329,7 +1517,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-thursday-night-late-standup-comedy-showcase-the-riot-houston-15",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-09-04T16:55:02.114Z"
+   "first_seen": "2026-09-04T16:55:02.114Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "909e6c9bc23ca6ca",
@@ -1343,7 +1533,9 @@
    "ticket_url": "https://www.donttellcomedy.com/shows/houston-21336/",
    "source": "donttellcomedy",
    "notable": false,
-   "first_seen": "2026-09-05T16:07:18.078Z"
+   "first_seen": "2026-09-05T16:07:18.078Z",
+   "tier": null,
+   "notable_reason": "small room"
   },
   {
    "id": "173fc23bec77ef46",
@@ -1356,8 +1548,10 @@
    "image_url": "https://s1.ticketm.net/dam/a/ef4/43eff045-db29-49d7-b366-91d33d4ebef4_TABLET_LANDSCAPE_LARGE_16_9.jpg",
    "ticket_url": "https://www.ticketmaster.com/luke-kidgell-live-in-the-usa-houston-texas-11-18-2026/event/3A0064C3CC1BD7DC",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-09-05T16:07:18.078Z"
+   "notable": true,
+   "first_seen": "2026-09-05T16:07:18.078Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "59d44dc0ffd3b7fb",
@@ -1370,8 +1564,10 @@
    "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
    "ticket_url": "https://www.ticketweb.com/event/-heroes-off-duty-houston-improv-tickets/14952343?REFERRAL_ID=tmfeed",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-09-05T16:07:18.078Z"
+   "notable": true,
+   "first_seen": "2026-09-05T16:07:18.078Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "2056acc27f4fda34",
@@ -1384,8 +1580,10 @@
    "image_url": "https://s1.ticketm.net/dam/a/1a5/1bb49469-9a04-4981-ab58-98c759b8e1a5_SOURCE",
    "ticket_url": "https://www.ticketmaster.com/josh-blue-houston-texas-11-19-2026/event/3A0064F908E72B37",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-09-05T16:07:18.078Z"
+   "notable": true,
+   "first_seen": "2026-09-05T16:07:18.078Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "079296984d08bbbc",
@@ -1398,8 +1596,10 @@
    "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
    "ticket_url": "https://www.ticketweb.com/event/phil-hanley-houston-improv-tickets/14124864?REFERRAL_ID=tmfeed",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-09-05T16:07:18.078Z"
+   "notable": true,
+   "first_seen": "2026-09-05T16:07:18.078Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "6edcd04abe36be30",
@@ -1412,8 +1612,10 @@
    "image_url": "https://s1.ticketm.net/dam/a/1a5/1bb49469-9a04-4981-ab58-98c759b8e1a5_SOURCE",
    "ticket_url": "https://www.ticketmaster.com/josh-blue-houston-texas-11-20-2026/event/3A0064F908F02B63",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-09-05T16:07:18.078Z"
+   "notable": true,
+   "first_seen": "2026-09-05T16:07:18.078Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "d5340be94ee25baa",
@@ -1426,8 +1628,10 @@
    "image_url": "https://www.theriothtx.com/img/events/IMG-0485-75a80748-large-thumb.jpg",
    "ticket_url": "https://www.theriothtx.com/events/comedian-jeff-dean-headlines-the-riot-comedy-club",
    "source": "standuptix",
-   "notable": false,
-   "first_seen": "2026-09-05T16:07:18.078Z"
+   "notable": true,
+   "first_seen": "2026-09-05T16:07:18.078Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "fcadfdb3fa493673",
@@ -1441,7 +1645,9 @@
    "ticket_url": "https://www.eventbrite.com/e/live-at-the-barbershop-houston-stand-up-comedy-in-a-real-barbershop-byob-tickets-1998989830394",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-05T16:07:18.078Z"
+   "first_seen": "2026-09-05T16:07:18.078Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "b34b81fdffc7663b",
@@ -1455,7 +1661,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-31",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-09-05T16:07:18.078Z"
+   "first_seen": "2026-09-05T16:07:18.078Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "7095b671944f97f6",
@@ -1469,7 +1677,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-27",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-09-05T16:07:18.078Z"
+   "first_seen": "2026-09-05T16:07:18.078Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "be46119c5108402c",
@@ -1482,8 +1692,10 @@
    "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1180439921%2F2991795842957%2F1%2Foriginal.20260323-033807?auto=format%2Ccompress&q=75&sharp=10&s=66133803980ac4e6d87ae4c5ef941e02",
    "ticket_url": "https://www.eventbrite.com/e/comedy-drinks-in-a-speakeasy-saturday-8pm-tickets-1999865107371",
    "source": "eventbrite",
-   "notable": true,
-   "first_seen": "2026-09-06T01:24:02.956Z"
+   "notable": false,
+   "first_seen": "2026-09-06T01:24:02.956Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "965aa3f1aec040c6",
@@ -1496,8 +1708,10 @@
    "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186716898%2F2991795842957%2F1%2Foriginal.20260611-214230?auto=format%2Ccompress&q=75&sharp=10&s=8c88be66110c684cd1911f877e541c2d",
    "ticket_url": "https://www.eventbrite.com/e/comedy-drinks-in-a-speakeasy-thursday-730pm-tickets-1998996143276",
    "source": "eventbrite",
-   "notable": true,
-   "first_seen": "2026-09-06T01:24:02.956Z"
+   "notable": false,
+   "first_seen": "2026-09-06T01:24:02.956Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "03a5263feb275d68",
@@ -1510,8 +1724,10 @@
    "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
    "ticket_url": "https://www.ticketweb.com/event/phil-hanley-houston-improv-tickets/14124874?REFERRAL_ID=tmfeed",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-09-06T01:24:02.956Z"
+   "notable": true,
+   "first_seen": "2026-09-06T01:24:02.956Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "f086a47054eda33f",
@@ -1525,7 +1741,9 @@
    "ticket_url": "https://www.donttellcomedy.com/shows/houston-21070/",
    "source": "donttellcomedy",
    "notable": false,
-   "first_seen": "2026-09-06T16:19:17.933Z"
+   "first_seen": "2026-09-06T16:19:17.933Z",
+   "tier": null,
+   "notable_reason": "small room"
   },
   {
    "id": "b6145ab2716509d7",
@@ -1538,8 +1756,10 @@
    "image_url": "https://s1.ticketm.net/dam/a/c02/46472016-9bb6-4eee-af3e-549764f97c02_SOURCE",
    "ticket_url": "https://www.ticketmaster.com/santi-espinosa-me-time-englishspanish-show-houston-texas-11-20-2026/event/3A0064FF3B48DC13",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-09-06T16:19:17.933Z"
+   "notable": true,
+   "first_seen": "2026-09-06T16:19:17.933Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "87e31c24df2c0a80",
@@ -1552,8 +1772,10 @@
    "image_url": "https://s1.ticketm.net/dam/a/1a5/1bb49469-9a04-4981-ab58-98c759b8e1a5_SOURCE",
    "ticket_url": "https://www.ticketmaster.com/josh-blue-houston-texas-11-21-2026/event/3A0064F908F82B81",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-09-06T16:19:17.933Z"
+   "notable": true,
+   "first_seen": "2026-09-06T16:19:17.933Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "b85f5eacda3eef47",
@@ -1566,8 +1788,10 @@
    "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
    "ticket_url": "https://www.ticketweb.com/event/phil-hanley-houston-improv-tickets/14124904?REFERRAL_ID=tmfeed",
    "source": "ticketmaster",
-   "notable": false,
-   "first_seen": "2026-09-06T16:19:17.933Z"
+   "notable": true,
+   "first_seen": "2026-09-06T16:19:17.933Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "8bf298ff4a044261",
@@ -1581,7 +1805,9 @@
    "ticket_url": "https://www.ticketmaster.com/chelsea-handler-the-high-and-mighty-houston-texas-11-21-2026/event/3A006473ABD4BB3E",
    "source": "ticketmaster",
    "notable": true,
-   "first_seen": "2026-09-06T16:19:17.933Z"
+   "first_seen": "2026-09-06T16:19:17.933Z",
+   "tier": "big_room",
+   "notable_reason": "big room"
   },
   {
    "id": "e1c5963a9619d543",
@@ -1594,8 +1820,10 @@
    "image_url": "https://www.theriothtx.com/img/shows/IMG-0449-7e420796-large-thumb.jpg",
    "ticket_url": "https://www.theriothtx.com/events/jeremiah-watkins-amazon-prime-hbo-headlines-the-riot-comedy-club",
    "source": "standuptix",
-   "notable": false,
-   "first_seen": "2026-09-06T16:19:17.933Z"
+   "notable": true,
+   "first_seen": "2026-09-06T16:19:17.933Z",
+   "tier": "headliner_room",
+   "notable_reason": "headliner room"
   },
   {
    "id": "9544f716c413db91",
@@ -1609,7 +1837,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-31",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-09-06T16:19:17.933Z"
+   "first_seen": "2026-09-06T16:19:17.933Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "1bfeeb59265d65b0",
@@ -1623,7 +1853,9 @@
    "ticket_url": "https://www.donttellcomedy.com/shows/houston-20903/",
    "source": "donttellcomedy",
    "notable": false,
-   "first_seen": "2026-09-07T01:21:58.293Z"
+   "first_seen": "2026-09-07T01:21:58.293Z",
+   "tier": null,
+   "notable_reason": "small room"
   },
   {
    "id": "d164cdea7632d0e0",
@@ -1637,7 +1869,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-48",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-09-07T18:18:17.648Z"
+   "first_seen": "2026-09-07T18:18:17.648Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "a07e2a498a0b861a",
@@ -1651,7 +1885,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-31",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-09-07T18:18:17.648Z"
+   "first_seen": "2026-09-07T18:18:17.648Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "8f85a95fe20d7918",
@@ -1665,7 +1901,9 @@
    "ticket_url": "https://www.eventbrite.com/e/live-at-the-barbershop-houston-stand-up-comedy-in-a-real-barbershop-byob-tickets-2000044288306",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "only 3d out (min 14)"
   },
   {
    "id": "cd916c351c73e9f5",
@@ -1679,7 +1917,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-last-laugh-with-james-vogt-trip-truman-tickets-2000052211003",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "recurring series (3 weeks)"
   },
   {
    "id": "cb091dfc9be9c6b6",
@@ -1693,7 +1933,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-secret-secret-show-tickets-2000052218024",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "ba6fe384dd0f73d0",
@@ -1707,7 +1949,9 @@
    "ticket_url": "https://www.eventbrite.com/e/comedy-dojo-sunday-open-mic-comedy-tickets-2000052596155",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "46f86371a1fde417",
@@ -1721,7 +1965,9 @@
    "ticket_url": "https://www.eventbrite.com/e/monday-night-comedy-tickets-2000052602173",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "recurring series (3 weeks)"
   },
   {
    "id": "45004a1c53c9686a",
@@ -1735,7 +1981,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-passing-lane-with-andrew-youngblood-will-loden-blake-jones-tickets-2000052630257",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "recurring series (3 weeks)"
   },
   {
    "id": "3d696e76dde360a9",
@@ -1749,7 +1997,9 @@
    "ticket_url": "https://www.eventbrite.com/e/night-court-monday-open-mic-comedy-tickets-2000052632263",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "d66040b97effac9e",
@@ -1763,7 +2013,9 @@
    "ticket_url": "https://www.eventbrite.com/e/for-the-culture-a-tuesday-comedy-show-for-the-culture-tickets-2000052636275",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "1776c41455ed02f0",
@@ -1777,7 +2029,9 @@
    "ticket_url": "https://www.eventbrite.com/e/c-u-next-tuesday-weekly-comedy-hosted-by-corlis-delauren-and-tess-vergult-tickets-2000052642293",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "7039e3fa17620233",
@@ -1791,7 +2045,9 @@
    "ticket_url": "https://www.eventbrite.com/e/pass-the-mic-tuesday-open-mic-comedy-tickets-2000052651320",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "df7ee3ce21cc3ddc",
@@ -1805,7 +2061,9 @@
    "ticket_url": "https://www.eventbrite.com/e/2-bill-two-dollar-comedy-show-every-wednesday-tickets-2000053209991",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "ca646a3bdc4db894",
@@ -1819,7 +2077,9 @@
    "ticket_url": "https://www.eventbrite.com/e/master-debaters-tickets-2000052776695",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "recurring series (4 weeks)"
   },
   {
    "id": "d1183f86b3d36a08",
@@ -1833,7 +2093,9 @@
    "ticket_url": "https://www.eventbrite.com/e/witchy-wednesdays-wednesday-open-mic-comedy-tickets-2000052783716",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "6f36d58793bdcc8e",
@@ -1847,7 +2109,9 @@
    "ticket_url": "https://www.eventbrite.com/e/back-of-the-bus-thursday-open-mic-comedy-tickets-2000052808791",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "25398b45524cd9cb",
@@ -1861,7 +2125,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-8pm-tickets-2000052814809",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "c7420654c8af4619",
@@ -1875,7 +2141,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-10pm-tickets-2000052824839",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "38f83164afd94b25",
@@ -1889,7 +2157,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-late-night-dirty-show-x-rated-comedy-tickets-2000052845902",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "ee8c60a49c476fcb",
@@ -1903,7 +2173,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-7pm-tickets-2000052866965",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "5ba4db81c344e990",
@@ -1917,7 +2189,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-9pm-tickets-2000052870977",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "58093543a68d2413",
@@ -1931,7 +2205,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-rated-r-comedy-showcase-11pm-tickets-2000052873986",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "e718e64c6fedd5eb",
@@ -1945,7 +2221,9 @@
    "ticket_url": "https://www.eventbrite.com/e/speedball-saturday-open-mic-comedy-tickets-2000052920124",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T01:28:15.647Z"
+   "first_seen": "2026-09-08T01:28:15.647Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "df44e7ee69dde9d4",
@@ -1958,8 +2236,10 @@
    "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192965121%2F2991795842957%2F1%2Foriginal.20260908-133520?auto=format%2Ccompress&q=75&sharp=10&s=799a2f1759ec62f8332e9208e45806e5",
    "ticket_url": "https://www.eventbrite.com/e/cu-next-thursday-comedy-show-hosted-by-corlis-tess-tickets-2000166883993",
    "source": "eventbrite",
-   "notable": true,
-   "first_seen": "2026-09-08T15:14:43.441Z"
+   "notable": false,
+   "first_seen": "2026-09-08T15:14:43.441Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "c25a3664df94a2e5",
@@ -1972,8 +2252,10 @@
    "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186716898%2F2991795842957%2F1%2Foriginal.20260611-214230?auto=format%2Ccompress&q=75&sharp=10&s=8c88be66110c684cd1911f877e541c2d",
    "ticket_url": "https://www.eventbrite.com/e/comedy-drinks-in-a-speakeasy-thursday-730pm-tickets-2000174106596",
    "source": "eventbrite",
-   "notable": true,
-   "first_seen": "2026-09-08T15:14:43.441Z"
+   "notable": false,
+   "first_seen": "2026-09-08T15:14:43.441Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "f167aa6f885c2c48",
@@ -1986,8 +2268,10 @@
    "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1179479239%2F2991795842957%2F1%2Foriginal.20260310-132745?auto=format%2Ccompress&q=75&sharp=10&s=83d22d5a4ddd3e9086b6761c1fbb3708",
    "ticket_url": "https://www.eventbrite.com/e/comedy-drinks-in-a-speakeasy-friday-8pm-tickets-2000174636180",
    "source": "eventbrite",
-   "notable": true,
-   "first_seen": "2026-09-08T15:14:43.441Z"
+   "notable": false,
+   "first_seen": "2026-09-08T15:14:43.441Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "f5be591beadea54c",
@@ -2000,8 +2284,10 @@
    "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1180439921%2F2991795842957%2F1%2Foriginal.20260323-033807?auto=format%2Ccompress&q=75&sharp=10&s=66133803980ac4e6d87ae4c5ef941e02",
    "ticket_url": "https://www.eventbrite.com/e/comedy-drinks-in-a-speakeasy-saturday-8pm-tickets-2000174909999",
    "source": "eventbrite",
-   "notable": true,
-   "first_seen": "2026-09-08T15:14:43.441Z"
+   "notable": false,
+   "first_seen": "2026-09-08T15:14:43.441Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "c6aac43f67ec79ea",
@@ -2014,8 +2300,10 @@
    "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186716898%2F2991795842957%2F1%2Foriginal.20260611-214230?auto=format%2Ccompress&q=75&sharp=10&s=8c88be66110c684cd1911f877e541c2d",
    "ticket_url": "https://www.eventbrite.com/e/comedy-drinks-in-a-speakeasy-thursday-730pm-tickets-2000176850804",
    "source": "eventbrite",
-   "notable": true,
-   "first_seen": "2026-09-08T15:14:43.441Z"
+   "notable": false,
+   "first_seen": "2026-09-08T15:14:43.441Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "bc5cb6d2b8183894",
@@ -2028,8 +2316,10 @@
    "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1179479239%2F2991795842957%2F1%2Foriginal.20260310-132745?auto=format%2Ccompress&q=75&sharp=10&s=83d22d5a4ddd3e9086b6761c1fbb3708",
    "ticket_url": "https://www.eventbrite.com/e/comedy-drinks-in-a-speakeasy-friday-8pm-tickets-2000177554910",
    "source": "eventbrite",
-   "notable": true,
-   "first_seen": "2026-09-08T15:14:43.441Z"
+   "notable": false,
+   "first_seen": "2026-09-08T15:14:43.441Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "0ec85a52073167d3",
@@ -2042,8 +2332,10 @@
    "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1180439921%2F2991795842957%2F1%2Foriginal.20260323-033807?auto=format%2Ccompress&q=75&sharp=10&s=66133803980ac4e6d87ae4c5ef941e02",
    "ticket_url": "https://www.eventbrite.com/e/comedy-drinks-in-a-speakeasy-saturday-8pm-tickets-2000177642171",
    "source": "eventbrite",
-   "notable": true,
-   "first_seen": "2026-09-08T15:14:43.441Z"
+   "notable": false,
+   "first_seen": "2026-09-08T15:14:43.441Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "6aa13f8903dd81c9",
@@ -2056,8 +2348,10 @@
    "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186716898%2F2991795842957%2F1%2Foriginal.20260611-214230?auto=format%2Ccompress&q=75&sharp=10&s=8c88be66110c684cd1911f877e541c2d",
    "ticket_url": "https://www.eventbrite.com/e/comedy-drinks-in-a-speakeasy-thursday-730pm-tickets-2000177744477",
    "source": "eventbrite",
-   "notable": true,
-   "first_seen": "2026-09-08T15:14:43.441Z"
+   "notable": false,
+   "first_seen": "2026-09-08T15:14:43.441Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "d9e96a2675209192",
@@ -2070,8 +2364,10 @@
    "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1179479239%2F2991795842957%2F1%2Foriginal.20260310-132745?auto=format%2Ccompress&q=75&sharp=10&s=83d22d5a4ddd3e9086b6761c1fbb3708",
    "ticket_url": "https://www.eventbrite.com/e/comedy-drinks-in-a-speakeasy-friday-8pm-tickets-2000180079461",
    "source": "eventbrite",
-   "notable": true,
-   "first_seen": "2026-09-08T15:14:43.441Z"
+   "notable": false,
+   "first_seen": "2026-09-08T15:14:43.441Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "73c5d0efb091a5ec",
@@ -2084,8 +2380,10 @@
    "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1180439921%2F2991795842957%2F1%2Foriginal.20260323-033807?auto=format%2Ccompress&q=75&sharp=10&s=66133803980ac4e6d87ae4c5ef941e02",
    "ticket_url": "https://www.eventbrite.com/e/comedy-drinks-in-a-speakeasy-saturday-8pm-tickets-2000180137635",
    "source": "eventbrite",
-   "notable": true,
-   "first_seen": "2026-09-08T15:14:43.441Z"
+   "notable": false,
+   "first_seen": "2026-09-08T15:14:43.441Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "389a650cae725212",
@@ -2098,8 +2396,10 @@
    "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186716898%2F2991795842957%2F1%2Foriginal.20260611-214230?auto=format%2Ccompress&q=75&sharp=10&s=8c88be66110c684cd1911f877e541c2d",
    "ticket_url": "https://www.eventbrite.com/e/comedy-drinks-in-a-speakeasy-thursday-730pm-tickets-2000180935020",
    "source": "eventbrite",
-   "notable": true,
-   "first_seen": "2026-09-08T15:14:43.441Z"
+   "notable": false,
+   "first_seen": "2026-09-08T15:14:43.441Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "8188c5eba0114112",
@@ -2112,8 +2412,10 @@
    "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1179479239%2F2991795842957%2F1%2Foriginal.20260310-132745?auto=format%2Ccompress&q=75&sharp=10&s=83d22d5a4ddd3e9086b6761c1fbb3708",
    "ticket_url": "https://www.eventbrite.com/e/comedy-drinks-in-a-speakeasy-friday-8pm-tickets-2000181635114",
    "source": "eventbrite",
-   "notable": true,
-   "first_seen": "2026-09-08T15:14:43.441Z"
+   "notable": false,
+   "first_seen": "2026-09-08T15:14:43.441Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "e1759624360046a0",
@@ -2127,7 +2429,9 @@
    "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-16",
    "source": "standuptix",
    "notable": false,
-   "first_seen": "2026-09-08T15:14:43.441Z"
+   "first_seen": "2026-09-08T15:14:43.441Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "4bb048736befcf90",
@@ -2141,7 +2445,9 @@
    "ticket_url": "https://www.eventbrite.com/e/the-riot-comedy-club-presents-monday-night-standup-comedy-open-mic-tickets-1997283577947",
    "source": "eventbrite",
    "notable": false,
-   "first_seen": "2026-09-08T15:14:43.441Z"
+   "first_seen": "2026-09-08T15:14:43.441Z",
+   "tier": null,
+   "notable_reason": "title pattern"
   },
   {
    "id": "80c70288ee3827c4",
@@ -2155,7 +2461,9 @@
    "ticket_url": "https://www.ticketmaster.com/comedy-allstars-houston-texas-09-13-2026/event/3A006528C9F9C676",
    "source": "ticketmaster",
    "notable": false,
-   "first_seen": "2026-09-09T01:38:16.075Z"
+   "first_seen": "2026-09-09T01:38:16.075Z",
+   "tier": null,
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "fca2e9156b96b9a6",
@@ -2169,7 +2477,9 @@
    "ticket_url": "https://www.ticketmaster.com/comedy-allstars-houston-texas-09-18-2026/event/3A006528E579F9FF",
    "source": "ticketmaster",
    "notable": false,
-   "first_seen": "2026-09-09T01:38:16.075Z"
+   "first_seen": "2026-09-09T01:38:16.075Z",
+   "tier": null,
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "8a805b7659802da6",
@@ -2183,7 +2493,9 @@
    "ticket_url": "https://www.ticketmaster.com/comedy-allstars-houston-texas-09-19-2026/event/3A006528E573F9ED",
    "source": "ticketmaster",
    "notable": false,
-   "first_seen": "2026-09-09T01:38:16.075Z"
+   "first_seen": "2026-09-09T01:38:16.075Z",
+   "tier": null,
+   "notable_reason": "only 10d out (min 14)"
   }
  ]
 }

@@ -10,6 +10,7 @@
  *
  * Usage:
  *   node scripts/announce-cards.js            cards for notable entries first_seen in the last 36h
+ *                                            ("notable" per config/announce-venues.json, see lib/announce-rules.js)
  *   node scripts/announce-cards.js --all      cards for ALL entries in the last 36h
  *   node scripts/announce-cards.js --demo     card for the newest notable entry regardless of age
  *   node scripts/announce-cards.js --hours=72 widen the window

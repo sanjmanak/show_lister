@@ -4,9 +4,9 @@
  * Comedy Houston — "Just announced" autoposter.
  *
  * Turns notable new listings (config/just-announced.json, written by
- * just-announced.js inside the events workflow) into an Instagram post the
- * same day, with an LLM gate in front so only real headliner announcements
- * go out: a named comedian, a compelling one-line hook, a caption in house
+ * just-announced.js inside the events workflow using the venue tiers in
+ * config/announce-venues.json) into an Instagram post the same day, with an
+ * LLM gate in front so only real headliner announcements go out: a named comedian, a compelling one-line hook, a caption in house
  * style. Showcases, open mics, "Comedy & Drinks" series and anything the
  * model cannot identify as a touring comic are skipped and recorded so
  * they are not re-evaluated every run.
@@ -43,7 +43,8 @@ const RAW_BASE = "https://raw.githubusercontent.com/sanjmanak/show_lister/main/b
 const MAX = Math.max(1, parseInt(process.env.ANNOUNCE_MAX || "1", 10) || 1);
 const WINDOW_H = parseInt(process.env.ANNOUNCE_WINDOW_HOURS || "48", 10) || 48;
 const DRY_RUN = !!process.env.DRY_RUN && process.env.DRY_RUN !== "false";
-const MIN_DAYS_OUT = 5;        // a show this week is not an "announcement"
+const rules = require("./lib/announce-rules");
+const MIN_DAYS_OUT = rules.loadConfig().minDaysOut; // config/announce-venues.json
 const REPOST_GAP_DAYS = 45;    // same performer not twice in this window
 const RETENTION_DAYS = 14;     // rendered assets pruned after this
 const REEL_SECONDS = 10;
@@ -166,11 +167,12 @@ async function renderPhase() {
   console.log(`Candidates in the last ${WINDOW_H}h: ${candidates.length}`);
   if (!candidates.length) { saveJson(PENDING, { items: [] }); return; }
 
-  // Cheapest filter first: obvious series/showcase titles never reach the model.
-  const junk = /open mic|showcase|comedy & drinks|comedy and drinks|speakeasy|karaoke|trivia|drag|improv night|brunch|variety|new faces|roast battle|bring your own/i;
+  // Cheapest filter first: obvious series/showcase titles never reach the
+  // model (same pattern the feed flagger uses; belt and braces).
   const picks = [];
-  for (const a of candidates.sort((x, y) => (y.price_max || 0) - (x.price_max || 0))) {
-    if (junk.test(a.name)) {
+  const tierRank = { big_room: 0, headliner_room: 1, unlisted_price: 2 };
+  for (const a of candidates.sort((x, y) => (tierRank[x.tier] ?? 3) - (tierRank[y.tier] ?? 3) || (y.price_min || 0) - (x.price_min || 0))) {
+    if (rules.isJunkTitle(a.name)) {
       console.log(`  skip (title pattern): ${a.name}`);
       state.skipped.push({ id: a.id, name: a.name, reason: "title pattern", at: new Date().toISOString() });
       continue;
