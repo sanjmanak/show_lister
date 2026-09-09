@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-09T15:37:10.965Z",
+ "updated": "2026-09-09T17:12:29.667Z",
  "announcements": [
   {
    "id": "8e8fbd9a07c7e39e",
@@ -2496,6 +2496,86 @@
    "first_seen": "2026-09-09T01:38:16.075Z",
    "tier": null,
    "notable_reason": "only 10d out (min 14)"
+  },
+  {
+   "id": "1cb21afc050c660c",
+   "name": "Jokes Over Brunch",
+   "venue": "Punch Line Houston",
+   "date": "2026-10-11",
+   "time": "2:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/b11/a0e7b7bf-0c09-49c4-af86-5f47895b9b11_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/jokes-over-brunch-houston-texas-10-11-2026/event/3A006528AD598BDD",
+   "source": "ticketmaster",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-09-09T17:12:29.667Z"
+  },
+  {
+   "id": "cd29653447ef4ce7",
+   "name": "Watch What Crappens: In The Mix Tour",
+   "venue": "House of Blues Houston",
+   "date": "2026-11-15",
+   "time": "7:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/29d/bdb9c3bf-8b96-42ba-a736-85650feb029d_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+   "ticket_url": "https://www.ticketmaster.com/watch-what-crappens-in-the-mix-houston-texas-11-15-2026/event/3A006524D89C2CB0",
+   "source": "ticketmaster",
+   "notable": true,
+   "tier": "big_room",
+   "notable_reason": "big room",
+   "first_seen": "2026-09-09T17:12:29.667Z"
+  },
+  {
+   "id": "b103cb982da96388",
+   "name": "The Riot Presents Tuesday Night Standup Comedy Showcase!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-08",
+   "time": "7:00 PM",
+   "price_min": 8,
+   "price_max": 8,
+   "image_url": "https://www.theriothtx.com/img/shows/HTX-Saturday-Night-Showcases-1-2-e1ae10f9-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-12-08-26-07-00-pm",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-09-09T17:12:29.667Z"
+  },
+  {
+   "id": "f2f7831d51cee2b6",
+   "name": "The Riot Comedy Club presents Tuesday Night Standup Comedy Open Mic",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-08",
+   "time": "9:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190626541%2F428099579998%2F1%2Foriginal.20260808-225241?auto=format%2Ccompress&q=75&sharp=10&s=595ec7210f45adddef0828933b948bea",
+   "ticket_url": "https://www.eventbrite.com/e/the-riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-tickets-1997283953069",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-09-09T17:12:29.667Z"
+  },
+  {
+   "id": "4201a31c4e8caea3",
+   "name": "Social Comedy Nite",
+   "venue": "Notsuoh",
+   "date": "2026-12-08",
+   "time": "10:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177329624%2F2986074715451%2F1%2Foriginal.20260211-230247?auto=format%2Ccompress&q=75&sharp=10&s=9520d1a7668651771ff71d5f1bcd6333",
+   "ticket_url": "https://www.eventbrite.com/e/social-comedy-nite-tickets-1982925747289",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "recurring series (13 weeks)",
+   "first_seen": "2026-09-09T17:12:29.667Z"
   }
  ]
 }

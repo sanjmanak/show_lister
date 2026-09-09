@@ -1782,6 +1782,12 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-09-08"
+    },
+    "watch what crappens: in the mix tour": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-09-09"
     }
   }
 }
