@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-09-07T18:18:17.569Z",
+  "last_updated": "2026-09-09T01:38:15.995Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -90,14 +90,6 @@
       "url": "https://www.ticketweb.com/event/craig-conant-houston-improv-tickets/14825023?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:44:55.337Z"
     },
-    "9427413075b52cc2": {
-      "price_min": 43.76,
-      "price_max": 43.76,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/don-mcmillan-20-now-powered-houston-improv-tickets/14846803?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-08-17T14:44:56.541Z"
-    },
     "16813c804528bc42": {
       "price_min": 62.3,
       "price_max": 62.3,
@@ -186,14 +178,6 @@
       "url": "https://www.ticketmaster.com/daniela-mora-houston-texas-09-17-2026/event/3A0064B123000AF6",
       "fetched_at": "2026-08-17T15:26:06.821Z"
     },
-    "ff503b4572c9c196": {
-      "price_min": 34,
-      "price_max": 48,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/ruby-setnik-houston-texas-09-18-2026/event/3A0064EDF283D505",
-      "fetched_at": "2026-08-17T15:26:33.078Z"
-    },
     "97db29f3fddabece": {
       "price_min": 31,
       "price_max": 45,
@@ -201,14 +185,6 @@
       "source": "page",
       "url": "https://www.ticketmaster.com/will-pepper-houston-texas-09-18-2026/event/3A00650CC08B99AC",
       "fetched_at": "2026-08-17T15:26:59.176Z"
-    },
-    "6ac3c9e0a6e4ec31": {
-      "price_min": 31,
-      "price_max": 45,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/ruby-setnik-houston-texas-09-19-2026/event/3A0064EDF272D4EE",
-      "fetched_at": "2026-08-17T15:27:24.044Z"
     },
     "d4cb773de238db6a": {
       "price_min": 41,
@@ -297,6 +273,334 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/ellen-skrmetti-houston-improv-tickets/15024353?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-09-01T18:00:54.755Z"
+    },
+    "256f5ea77811406b": {
+      "price_min": 5.36,
+      "price_max": 5.36,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/2-bill-two-dollar-comedy-show-every-wednesday-tickets-1999225367893",
+      "fetched_at": "2026-09-09T01:37:30.452Z"
+    },
+    "791d83e5fa9f3c30": {
+      "price_min": 8.82,
+      "price_max": 8.82,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/master-debaters-tickets-1999225369899",
+      "fetched_at": "2026-09-09T01:37:30.850Z"
+    },
+    "b4b6469b369aeaf2": {
+      "price_min": 18.06,
+      "price_max": 21.51,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-8pm-tickets-1999225389959",
+      "fetched_at": "2026-09-09T01:37:33.430Z"
+    },
+    "4657cb058756c296": {
+      "price_min": 18.06,
+      "price_max": 21.51,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-10pm-tickets-1999225393971",
+      "fetched_at": "2026-09-09T01:37:33.824Z"
+    },
+    "e357803e9a11f38b": {
+      "price_min": 8.82,
+      "price_max": 8.82,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/the-late-night-dirty-show-x-rated-comedy-tickets-1999225394974",
+      "fetched_at": "2026-09-09T01:37:34.793Z"
+    },
+    "b2b4936117be4436": {
+      "price_min": 18.06,
+      "price_max": 21.51,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-7pm-tickets-1999225399989",
+      "fetched_at": "2026-09-09T01:37:35.687Z"
+    },
+    "8acdae70472f0449": {
+      "price_min": 18.06,
+      "price_max": 21.51,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-9pm-tickets-1999225400992",
+      "fetched_at": "2026-09-09T01:37:36.575Z"
+    },
+    "56acb60c0e2757d5": {
+      "price_min": 11.13,
+      "price_max": 14.59,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-rated-r-comedy-showcase-11pm-tickets-1999225404001",
+      "fetched_at": "2026-09-09T01:37:37.465Z"
+    },
+    "63b783b5b8c78f5c": {
+      "price_min": 20.36,
+      "price_max": 20.36,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999294670178",
+      "fetched_at": "2026-09-09T01:37:39.954Z"
+    },
+    "c68ec018e7fb4374": {
+      "price_min": 20.36,
+      "price_max": 20.36,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999295803568",
+      "fetched_at": "2026-09-09T01:37:40.824Z"
+    },
+    "70a1eb2a6825e2c4": {
+      "price_min": 20.36,
+      "price_max": 20.36,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999296122522",
+      "fetched_at": "2026-09-09T01:37:41.697Z"
+    },
+    "cdb8239bb77b819b": {
+      "price_min": 20.36,
+      "price_max": 20.36,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999296198750",
+      "fetched_at": "2026-09-09T01:37:42.593Z"
+    },
+    "3bd7c5ec93a781c0": {
+      "price_min": 34.79,
+      "price_max": 34.79,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/chat-pile-who-loves-the-sun-tour-2026-early-show-tickets-1999297781484",
+      "fetched_at": "2026-09-09T01:37:43.714Z"
+    },
+    "f77e033eedafc224": {
+      "price_min": 34.79,
+      "price_max": 34.79,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/chat-pile-who-loves-the-sun-tour-2026-late-show-tickets-1999298219795",
+      "fetched_at": "2026-09-09T01:37:44.102Z"
+    },
+    "06bdab87e76a88ec": {
+      "price_min": 8.82,
+      "price_max": 8.82,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/the-last-laugh-with-james-vogt-trip-truman-tickets-1999307681094",
+      "fetched_at": "2026-09-09T01:37:44.959Z"
+    },
+    "29c863225892fe63": {
+      "price_min": 14.59,
+      "price_max": 14.59,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/the-secret-secret-show-tickets-1999307690121",
+      "fetched_at": "2026-09-09T01:37:45.842Z"
+    },
+    "344a73d11d930c9d": {
+      "price_min": 8.82,
+      "price_max": 8.82,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/monday-night-comedy-tickets-1999307712187",
+      "fetched_at": "2026-09-09T01:37:47.561Z"
+    },
+    "fbe0fc199b15e541": {
+      "price_min": 5.36,
+      "price_max": 5.36,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/2-bill-two-dollar-comedy-show-every-wednesday-tickets-1999307816499",
+      "fetched_at": "2026-09-09T01:37:52.872Z"
+    },
+    "9fe20f3f5e5ea99e": {
+      "price_min": 8.82,
+      "price_max": 8.82,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/master-debaters-tickets-1999307819508",
+      "fetched_at": "2026-09-09T01:37:53.886Z"
+    },
+    "df7f5d04ac72e46c": {
+      "price_min": 18.06,
+      "price_max": 21.51,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-8pm-tickets-1999307921814",
+      "fetched_at": "2026-09-09T01:37:56.662Z"
+    },
+    "11b5b2db52ec934c": {
+      "price_min": 18.06,
+      "price_max": 21.51,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-10pm-tickets-1999307930841",
+      "fetched_at": "2026-09-09T01:37:57.552Z"
+    },
+    "fa3e6d328144dd39": {
+      "price_min": 8.82,
+      "price_max": 8.82,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/the-late-night-dirty-show-x-rated-comedy-tickets-1999307968955",
+      "fetched_at": "2026-09-09T01:37:58.441Z"
+    },
+    "5a056a5b70a0f36c": {
+      "price_min": 18.06,
+      "price_max": 21.51,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-7pm-tickets-1999307980991",
+      "fetched_at": "2026-09-09T01:37:59.495Z"
+    },
+    "07a2c0063c54cd7b": {
+      "price_min": 18.06,
+      "price_max": 21.51,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-9pm-tickets-1999308520605",
+      "fetched_at": "2026-09-09T01:38:00.557Z"
+    },
+    "4066f5a6b09ad476": {
+      "price_min": 11.13,
+      "price_max": 14.59,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-rated-r-comedy-showcase-11pm-tickets-1999308527626",
+      "fetched_at": "2026-09-09T01:38:01.623Z"
+    },
+    "cd916c351c73e9f5": {
+      "price_min": 8.82,
+      "price_max": 8.82,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/the-last-laugh-with-james-vogt-trip-truman-tickets-2000052211003",
+      "fetched_at": "2026-09-09T01:38:03.672Z"
+    },
+    "010900e57d96d20a": {
+      "price_min": 7.18,
+      "price_max": 7.18,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/east-end-comedy-showcase-thursdays-at-wonky-power-tickets-1995325471197",
+      "fetched_at": "2026-09-09T01:38:04.677Z"
+    },
+    "b7d7795979acd8b4": {
+      "price_min": 7.18,
+      "price_max": 7.18,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/east-end-comedy-showcase-thursdays-at-wonky-power-tickets-1995325472200",
+      "fetched_at": "2026-09-09T01:38:05.601Z"
+    },
+    "f0f2e5d7c2d20a0c": {
+      "price_min": 7.18,
+      "price_max": 7.18,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/east-end-comedy-showcase-thursdays-at-wonky-power-tickets-1995325473203",
+      "fetched_at": "2026-09-09T01:38:06.472Z"
+    },
+    "95cc9761e6ffc8e9": {
+      "price_min": 25.09,
+      "price_max": 25.09,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/saul-trujillo-live-in-houston-tickets-1987000184039",
+      "fetched_at": "2026-09-09T01:38:07.424Z"
+    },
+    "b5dbe50390c9799b": {
+      "price_min": 19.32,
+      "price_max": 25.09,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/bob-biggerstaff-live-in-houston-tickets-1987001228162",
+      "fetched_at": "2026-09-09T01:38:08.317Z"
+    },
+    "3dff550549f389df": {
+      "price_min": 19.32,
+      "price_max": 25.09,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/bob-biggerstaff-live-in-houston-tickets-1987001229165",
+      "fetched_at": "2026-09-09T01:38:09.209Z"
+    },
+    "48f07e083715e0c8": {
+      "price_min": 25.09,
+      "price_max": 25.09,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/gus-ryan-sean-live-tickets-1991931685292",
+      "fetched_at": "2026-09-09T01:38:10.081Z"
+    },
+    "c5ae7639f82d6033": {
+      "price_min": 25.09,
+      "price_max": 30.87,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/pat-oneill-live-in-houston-tickets-1992457840035",
+      "fetched_at": "2026-09-09T01:38:10.472Z"
+    },
+    "b177beb6186d7230": {
+      "price_min": 25.09,
+      "price_max": 30.87,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/pat-oneill-live-in-houston-tickets-1992457859092",
+      "fetched_at": "2026-09-09T01:38:11.335Z"
+    },
+    "049d7ceb1a71c35e": {
+      "price_min": 30.87,
+      "price_max": 30.87,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/jessie-jetski-johnson-live-in-houston-tickets-1996055663221",
+      "fetched_at": "2026-09-09T01:38:12.402Z"
+    },
+    "77c0070c29605a16": {
+      "price_min": 30.87,
+      "price_max": 30.87,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/jessie-jetski-johnson-live-in-houston-tickets-1996055676260",
+      "fetched_at": "2026-09-09T01:38:12.790Z"
+    },
+    "735cd3851322fc99": {
+      "price_min": 30.87,
+      "price_max": 53.98,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/yaqiao-yang-live-in-houston-tickets-1997877925657",
+      "fetched_at": "2026-09-09T01:38:13.804Z"
+    },
+    "542ab5927e701262": {
+      "price_min": 19.32,
+      "price_max": 25.09,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/roast-battle-houston-tickets-1998832052476",
+      "fetched_at": "2026-09-09T01:38:14.692Z"
+    },
+    "e16cb5589a34af08": {
+      "price_min": 13.54,
+      "price_max": 30.87,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/martin-phillips-live-in-houston-tickets-1999027667566",
+      "fetched_at": "2026-09-09T01:38:15.079Z"
+    },
+    "117e2e6a6fcc648e": {
+      "price_min": 25.09,
+      "price_max": 25.09,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.eventbrite.com/e/deric-poston-live-in-houston-tickets-1999114030881",
+      "fetched_at": "2026-09-09T01:38:15.994Z"
     }
   }
 }
