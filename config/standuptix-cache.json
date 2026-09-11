@@ -1,54 +1,5 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-swipe-right-comedy-dating-game-for-singles-couples-8": {
-      "lastmod": "2026-09-10T03:03:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents \"Swipe Right\" Comedy Dating Game for Singles & Couples",
-        "startDate": "2026-09-10T21:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-swipe-right-comedy-dating-game-for-singles-couples-8",
-          "priceCurrency": "USD",
-          "price": "10.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-09T09:26:13-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-swipe-right-comedy-dating-game-for-singles-couples-8",
-        "image": "/img/shows/swipe-72ae07e4-large-thumb.jpg",
-        "description": "Maybe find love? Definitely find a good time. The Dating app game is a such a gamble, let’s take it back to the old school… Live dating games. Come as a contestant or come to just watch.What happens when you put around a hundred single people together in a room and mess with a few of them on stage? We hope… love. Couples are welcome to come party too as hilarious comedians Jeff Joe and Lotto Marie play a series of games with newly matched singles and couples. At the end, only one couple will stand as a winner. We will setup the winner with prizes for their first date!Stick around and mingle at the after show mixer.All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Jeff Joe"
-          },
-          {
-            "@type": "Person",
-            "name": "Lotto Marie"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/comedian-jon-rudnitsky-netflix-hbo-comedy-central-headlines-the-riot-comedy-club": {
       "lastmod": "2026-09-10T07:08:00-05:00",
       "node": {
@@ -13993,46 +13944,6 @@
         ]
       }
     },
-    "https://www.theriothtx.com/events/the-riot-presents-thursday-night-late-standup-comedy-showcase-2026-09-17210000": {
-      "lastmod": "2026-09-10T05:47:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Thursday Night Late Standup Comedy Showcase!",
-        "startDate": "2026-09-17T21:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-thursday-night-late-standup-comedy-showcase-2026-09-17210000",
-          "priceCurrency": "USD",
-          "price": "10.00",
-          "availability": "InStock",
-          "validFrom": "2026-09-10T17:47:06-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-thursday-night-late-standup-comedy-showcase-2026-09-17210000",
-        "image": "/img/shows/Showcase-Templates-24-1-49f70dad-large-thumb.png",
-        "description": "Join us for a hilarious night of standup comedy - Get ready for a night of non-stop laughter!Located at Rudyard's, this event promises a cozy and intimate atmosphere that'll make you feel right at home. With its friendly staff and great drinks, Rudyard's is the perfect venue to enjoy a night of comedy. So come on down and be part of the fun!Tickets are limited, so make sure to secure yours in advance. Don't miss out on this incredible opportunity to see some of the best talent in the city live on stage. Get ready for a night filled with laughter, good vibes, and unforgettable memories. We can't wait to see you there!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": []
-      }
-    },
     "https://www.theriothtx.com/events/comedian-alingon-mitra-conan-comedy-central-headlines-the-riot-comedy-club": {
       "lastmod": "2026-09-10T03:14:00-05:00",
       "node": {
@@ -14303,51 +14214,6 @@
         ]
       }
     },
-    "https://www.theriothtx.com/events/comedian-peter-revello-the-tonight-show-headlines-the-riot-comedy-club-in-houston": {
-      "lastmod": "2026-09-10T03:22:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Comedian Peter Revello (The Tonight Show) headlines The Riot Comedy Club in Houston",
-        "startDate": "2027-04-23T19:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/comedian-peter-revello-the-tonight-show-headlines-the-riot-comedy-club-in-houston",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "InStock",
-          "validFrom": "2026-06-09T19:30:58-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/comedian-peter-revello-the-tonight-show-headlines-the-riot-comedy-club-in-houston",
-        "image": "/img/events/Screenshot-125-cd4d0a84-large-thumb.png",
-        "description": "Peter Revello is a stand-up comedian, actor, and writer, based in New York City who was born and raised in Staten Island. Because Peter is one of the few Staten Islanders not currently in a union, he has a unique perspective he shares with anyone who who&#39;ll listen. Most recently, Peter made his late night debut on the Tonight Show starring Jimmy Fallon.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Peter Revello"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/comedian-peter-revello-the-tonight-show-headlines-the-riot-comedy-club-in-houston-2027-04-24190000": {
       "lastmod": "2026-09-10T04:27:00-05:00",
       "node": {
@@ -14479,6 +14345,96 @@
           {
             "@type": "Person",
             "name": "Lachlan Patterson"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/hassan-phills-don-t-tell-comedy-headlines-the-riot-comedy-club-in-houston": {
+      "lastmod": "2026-09-11T08:16:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Hassan Phills (Don't Tell Comedy) headlines The Riot Comedy Club in Houston",
+        "startDate": "2026-09-17T21:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/hassan-phills-don-t-tell-comedy-headlines-the-riot-comedy-club-in-houston",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-06-09T19:30:58-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/hassan-phills-don-t-tell-comedy-headlines-the-riot-comedy-club-in-houston",
+        "image": "/img/events/https-cdn-evbuc-com-images-1183840730-2831147533841-1-original-4c54186b-large-thumb.jpg",
+        "description": "All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Matt B.C."
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-peter-revello-the-tonight-show-headlines-the-riot-comedy-club-in-houston-2027-04-23190000": {
+      "lastmod": "2026-09-11T08:22:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Peter Revello (The Tonight Show) headlines The Riot Comedy Club in Houston",
+        "startDate": "2027-04-23T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-peter-revello-the-tonight-show-headlines-the-riot-comedy-club-in-houston-2027-04-23190000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-11T08:22:07-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-peter-revello-the-tonight-show-headlines-the-riot-comedy-club-in-houston-2027-04-23190000",
+        "image": "/img/events/Screenshot-125-cd4d0a84-large-thumb.png",
+        "description": "Peter Revello is a stand-up comedian, actor, and writer, based in New York City who was born and raised in Staten Island. Because Peter is one of the few Staten Islanders not currently in a union, he has a unique perspective he shares with anyone who who'll listen. Most recently, Peter made his late night debut on the Tonight Show starring Jimmy Fallon.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Peter Revello"
           }
         ]
       }

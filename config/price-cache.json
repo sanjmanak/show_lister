@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-09-11T01:34:11.976Z",
+  "last_updated": "2026-09-11T17:04:15.782Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -129,14 +129,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
-    },
-    "7a4c628d7cdb00b3": {
-      "price_min": 32,
-      "price_max": 45,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/mario-adrion-houston-texas-09-10-2026/event/3A00644179AB3DA0",
-      "fetched_at": "2026-08-17T15:22:52.811Z"
     },
     "b1d8b2c67f052756": {
       "price_min": 41,
@@ -465,14 +457,6 @@
       "source": "page",
       "url": "https://www.eventbrite.com/e/the-last-laugh-with-james-vogt-trip-truman-tickets-2000052211003",
       "fetched_at": "2026-09-09T01:38:03.672Z"
-    },
-    "010900e57d96d20a": {
-      "price_min": 7.18,
-      "price_max": 7.18,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/east-end-comedy-showcase-thursdays-at-wonky-power-tickets-1995325471197",
-      "fetched_at": "2026-09-09T01:38:04.677Z"
     },
     "b7d7795979acd8b4": {
       "price_min": 7.18,
