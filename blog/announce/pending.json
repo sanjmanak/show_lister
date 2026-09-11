@@ -1,21 +1,3 @@
 {
-  "generated_at": "2026-09-11T18:44:47.276Z",
-  "dry_run": false,
-  "items": [
-    {
-      "id": "d75776b83310ea1c",
-      "name": "Brett Goldstein: Sex, Death & Small Talk",
-      "performer_name": "Brett Goldstein",
-      "venue": "Bayou Music Center",
-      "date": "2026-11-22",
-      "ticket_url": "https://www.ticketmaster.com/brett-goldstein-sex-death-small-talk-houston-texas-11-22-2026/event/3A00650E8C9F6D98",
-      "files": {
-        "portrait": "2026-11-22-brett-goldstein-portrait.png",
-        "story": "2026-11-22-brett-goldstein-story.png",
-        "reel": "2026-11-22-brett-goldstein.mp4"
-      },
-      "caption": "Ted Lasso’s Roy Kent is touring Sex, Death & Small Talk.\nBrett Goldstein performs at Bayou Music Center on November 22, 2026. His live show is titled Sex, Death & Small Talk. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
-      "confidence": 0.99
-    }
-  ]
+  "items": []
 }
