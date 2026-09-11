@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-09-09T01:38:15.995Z",
+  "last_updated": "2026-09-11T01:34:11.976Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -129,14 +129,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
-    },
-    "77d0385727e61a6a": {
-      "price_min": 29,
-      "price_max": 44,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/kat-bird-ramsey-badawi-houston-texas-09-09-2026/event/3A0064BF1E3BF1A2",
-      "fetched_at": "2026-08-17T15:22:29.195Z"
     },
     "7a4c628d7cdb00b3": {
       "price_min": 32,
@@ -337,14 +329,6 @@
       "source": "page",
       "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-rated-r-comedy-showcase-11pm-tickets-1999225404001",
       "fetched_at": "2026-09-09T01:37:37.465Z"
-    },
-    "63b783b5b8c78f5c": {
-      "price_min": 20.36,
-      "price_max": 20.36,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999294670178",
-      "fetched_at": "2026-09-09T01:37:39.954Z"
     },
     "c68ec018e7fb4374": {
       "price_min": 20.36,

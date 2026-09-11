@@ -1,105 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-17": {
-      "lastmod": "2026-09-09T03:03:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents  The One Minute Comedy Showdown with Jeff Joe",
-        "startDate": "2026-09-09T21:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-17",
-          "priceCurrency": "USD",
-          "price": "10.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-09T10:34:15-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-17",
-        "image": "/img/shows/https-cdn-evbuc-com-images-921782813-428099579998-1-original-282c1848-large-thumb.jpg",
-        "description": "Get ready for a night of fast-paced, side-splitting fun at the One Minute Comedy Showdown! Hosted by the hilarious Jeff Joe, this unique stand-up comedy competition puts the spotlight on 15 of Houston&rsquo;s funniest comedians (plus special surprise guests).Here&rsquo;s how it works:&bull; Each comedian performs a 1-minute set to win over the crowd.&bull; YOU get to decide who moves on to the next round.&bull; The competition heats up as comedians perform longer sets until only one is left standing as the One Minute Comedy Showdown Champion!It&rsquo;s unpredictable, high-energy, and packed with laughs from start to finish. Don&rsquo;t miss your chance to experience the most exciting comedy competition in Houston!Reserve your tickets now and be part of the action!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Jeff Joe"
-          }
-        ]
-      }
-    },
-    "https://www.theriothtx.com/events/graham-kay-tonight-show-colbert-nateland": {
-      "lastmod": "2026-09-08T10:34:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Graham Kay (Tonight Show, Colbert, Nateland)",
-        "startDate": "2026-09-10T19:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/graham-kay-tonight-show-colbert-nateland",
-          "priceCurrency": "USD",
-          "price": "15.00",
-          "availability": "InStock",
-          "validFrom": "2026-05-19T23:16:18-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/graham-kay-tonight-show-colbert-nateland",
-        "image": "/img/events/IMG-0436-7dc5078d-large-thumb.jpg",
-        "description": "",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "John Meyer"
-          },
-          {
-            "@type": "Person",
-            "name": "Andy Huggins"
-          },
-          {
-            "@type": "Person",
-            "name": "Graham Kay"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-swipe-right-comedy-dating-game-for-singles-couples-8": {
-      "lastmod": "2026-09-08T10:34:00-05:00",
+      "lastmod": "2026-09-10T03:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -148,7 +50,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-jon-rudnitsky-netflix-hbo-comedy-central-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-09-08T04:15:00-05:00",
+      "lastmod": "2026-09-10T07:08:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -201,7 +103,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-19": {
-      "lastmod": "2026-09-08T04:15:00-05:00",
+      "lastmod": "2026-09-10T07:08:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -252,21 +154,21 @@
           },
           {
             "@type": "Person",
-            "name": "Jay Legend"
-          },
-          {
-            "@type": "Person",
             "name": "Prince Elias"
           },
           {
             "@type": "Person",
             "name": "Danny Guerrero"
+          },
+          {
+            "@type": "Person",
+            "name": "Josh Stokes"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-17": {
-      "lastmod": "2026-09-08T04:15:00-05:00",
+      "lastmod": "2026-09-10T07:08:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -322,6 +224,14 @@
           {
             "@type": "Person",
             "name": "Ebad Jann"
+          },
+          {
+            "@type": "Person",
+            "name": "Marlo Ray"
+          },
+          {
+            "@type": "Person",
+            "name": "Daniel Contreras"
           }
         ]
       }
@@ -742,7 +652,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-09-15-26-07-00-pm": {
-      "lastmod": "2026-08-10T03:31:00-05:00",
+      "lastmod": "2026-09-10T09:19:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -782,7 +692,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-09-15210000": {
-      "lastmod": "2026-08-12T11:27:00-05:00",
+      "lastmod": "2026-09-10T09:19:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -818,12 +728,7 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Marz Pimentel"
-          }
-        ]
+        "performer": []
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-20": {
@@ -949,51 +854,6 @@
           "url": "https://www.theriothtx.com"
         },
         "performer": []
-      }
-    },
-    "https://www.theriothtx.com/events/hassan-phills-don-t-tell-comedy-headlines-the-riot-comedy-club-in-houston": {
-      "lastmod": "2026-09-02T04:39:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Hassan Phills (Don’t Tell Comedy) headlines The Riot Comedy Club in Houston",
-        "startDate": "2026-09-17T21:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/hassan-phills-don-t-tell-comedy-headlines-the-riot-comedy-club-in-houston",
-          "priceCurrency": "USD",
-          "price": "20.00",
-          "availability": "InStock",
-          "validFrom": "2026-06-09T19:30:58-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/hassan-phills-don-t-tell-comedy-headlines-the-riot-comedy-club-in-houston",
-        "image": "/img/events/IMG-0437-76ad0752-large-thumb.png",
-        "description": "Hassan&nbsp;Phills&nbsp;is one of Canada&#39;s fastest rising comedians, known for his engaging and interactive stand-up shows. Recently featured in Crave&#39;s original series &#39;The Office Movers&#39; and with appearances at Just For Laughs and Moontower Comedy Festival,&nbsp;Hassan&nbsp;has firmly established himself as a dynamic force in entertainment. Dubbed one of the Canadians to watch in comedy,&nbsp;Hassan&nbsp;has a rapidly growing fanbase including your favourite rappers and athletes.The Toronto-native has a track record of selling out theatres across Canada and the U.S.. Hassan&#39;s comedic stylings combine exceptional storytelling with spontaneous crowd interaction, creating a unique, intimate experience that makes every performance unmissable.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Matt B.C."
-          }
-        ]
       }
     },
     "https://www.theriothtx.com/events/bo-johnson-don-t-tell-comedy-headlines-the-riot-comedy-club": {
@@ -1402,7 +1262,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-09-22210000": {
-      "lastmod": "2026-08-12T11:27:00-05:00",
+      "lastmod": "2026-09-10T09:14:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -2086,7 +1946,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-09-29210000": {
-      "lastmod": "2026-08-12T11:27:00-05:00",
+      "lastmod": "2026-09-10T09:14:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -2741,7 +2601,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-10-06210000": {
-      "lastmod": "2026-08-12T11:27:00-05:00",
+      "lastmod": "2026-09-10T09:14:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -3380,7 +3240,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-10-13210000": {
-      "lastmod": "2026-08-12T11:27:00-05:00",
+      "lastmod": "2026-09-10T09:14:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -3510,7 +3370,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-33": {
-      "lastmod": "2026-08-10T03:51:00-05:00",
+      "lastmod": "2026-09-10T05:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -3546,11 +3406,16 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Atul Patel"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-headliner-will-abeles": {
-      "lastmod": "2026-08-03T06:03:00-05:00",
+      "lastmod": "2026-09-10T05:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -3595,7 +3460,7 @@
       }
     },
     "https://www.theriothtx.com/events/kerryn-feehan-netflix-comedy-central-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-08-03T06:22:00-05:00",
+      "lastmod": "2026-09-10T05:04:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -3640,7 +3505,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-24": {
-      "lastmod": "2026-08-20T03:30:00-05:00",
+      "lastmod": "2026-09-10T05:04:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -3676,11 +3541,16 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Atul Patel"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-21": {
-      "lastmod": "2026-08-10T03:57:00-05:00",
+      "lastmod": "2026-09-10T05:04:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -4010,7 +3880,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-10-20210000": {
-      "lastmod": "2026-08-12T11:27:00-05:00",
+      "lastmod": "2026-09-10T09:14:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -4684,7 +4554,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-10-27210000": {
-      "lastmod": "2026-08-12T11:27:00-05:00",
+      "lastmod": "2026-09-10T09:14:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -5349,7 +5219,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-11-03210000": {
-      "lastmod": "2026-08-12T11:27:00-05:00",
+      "lastmod": "2026-09-10T09:14:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -6014,7 +5884,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-11-10210000": {
-      "lastmod": "2026-08-12T11:27:00-05:00",
+      "lastmod": "2026-09-10T09:14:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -6638,7 +6508,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-11-17210000": {
-      "lastmod": "2026-08-12T11:27:00-05:00",
+      "lastmod": "2026-09-10T09:14:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -7303,7 +7173,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-11-24210000": {
-      "lastmod": "2026-08-12T11:27:00-05:00",
+      "lastmod": "2026-09-10T09:14:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -7958,7 +7828,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-12-01210000": {
-      "lastmod": "2026-08-12T11:27:00-05:00",
+      "lastmod": "2026-09-10T09:14:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -8623,7 +8493,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-12-08210000": {
-      "lastmod": "2026-08-12T11:27:00-05:00",
+      "lastmod": "2026-09-10T09:14:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -9302,7 +9172,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-12-15210000": {
-      "lastmod": "2026-08-12T11:27:00-05:00",
+      "lastmod": "2026-09-10T09:14:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -9837,7 +9707,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-12-22210000": {
-      "lastmod": "2026-08-12T11:27:00-05:00",
+      "lastmod": "2026-09-10T09:14:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -10492,7 +10362,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-12-29210000": {
-      "lastmod": "2026-08-12T11:27:00-05:00",
+      "lastmod": "2026-09-10T09:14:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -11576,69 +11446,8 @@
         ]
       }
     },
-    "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-28": {
-      "lastmod": "2026-09-08T10:41:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
-        "startDate": "2026-09-10T20:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Conroe",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "219 Simonton Street",
-            "addressLocality": "Conroe",
-            "postalCode": "77301",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-28",
-          "priceCurrency": "USD",
-          "price": "9.00",
-          "availability": "InStock",
-          "validFrom": "2026-05-14T22:39:35-05:00"
-        },
-        "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-28",
-        "image": "/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
-        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night.✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Conroe",
-          "url": "https://www.riotconroe.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Malay Vyas"
-          },
-          {
-            "@type": "Person",
-            "name": "Mike Ryan"
-          },
-          {
-            "@type": "Person",
-            "name": "Waldo Rodas"
-          },
-          {
-            "@type": "Person",
-            "name": "Matthew Zane"
-          },
-          {
-            "@type": "Person",
-            "name": "Bob Biggerstaff"
-          }
-        ]
-      }
-    },
     "https://www.riotconroe.com/events/comedian-graham-kay-the-tonight-show-colbert-nateland-live-in-conroe": {
-      "lastmod": "2026-09-09T04:30:00-05:00",
+      "lastmod": "2026-09-10T04:54:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -11681,17 +11490,17 @@
           },
           {
             "@type": "Person",
-            "name": "Josh Stokes"
+            "name": "Barry Laminack"
           },
           {
             "@type": "Person",
-            "name": "Barry Laminack"
+            "name": "James Holder"
           }
         ]
       }
     },
     "https://www.riotconroe.com/events/comedian-graham-kay-the-tonight-show-colbert-nateland-live-in-conroe-1": {
-      "lastmod": "2026-09-08T04:07:00-05:00",
+      "lastmod": "2026-09-10T04:57:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -11734,17 +11543,17 @@
           },
           {
             "@type": "Person",
-            "name": "Josh Stokes"
+            "name": "Graham Kay"
           },
           {
             "@type": "Person",
-            "name": "Graham Kay"
+            "name": "Will Loden"
           }
         ]
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-19": {
-      "lastmod": "2026-09-08T04:07:00-05:00",
+      "lastmod": "2026-09-10T04:57:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -14180,6 +13989,496 @@
           {
             "@type": "Person",
             "name": "Ivan Decker"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/the-riot-presents-thursday-night-late-standup-comedy-showcase-2026-09-17210000": {
+      "lastmod": "2026-09-10T05:47:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "The Riot Presents Thursday Night Late Standup Comedy Showcase!",
+        "startDate": "2026-09-17T21:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/the-riot-presents-thursday-night-late-standup-comedy-showcase-2026-09-17210000",
+          "priceCurrency": "USD",
+          "price": "10.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-10T17:47:06-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/the-riot-presents-thursday-night-late-standup-comedy-showcase-2026-09-17210000",
+        "image": "/img/shows/Showcase-Templates-24-1-49f70dad-large-thumb.png",
+        "description": "Join us for a hilarious night of standup comedy - Get ready for a night of non-stop laughter!Located at Rudyard's, this event promises a cozy and intimate atmosphere that'll make you feel right at home. With its friendly staff and great drinks, Rudyard's is the perfect venue to enjoy a night of comedy. So come on down and be part of the fun!Tickets are limited, so make sure to secure yours in advance. Don't miss out on this incredible opportunity to see some of the best talent in the city live on stage. Get ready for a night filled with laughter, good vibes, and unforgettable memories. We can't wait to see you there!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-alingon-mitra-conan-comedy-central-headlines-the-riot-comedy-club": {
+      "lastmod": "2026-09-10T03:14:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Alingon Mitra (Conan, Comedy Central) Headlines The Riot Comedy Club",
+        "startDate": "2027-02-19T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-alingon-mitra-conan-comedy-central-headlines-the-riot-comedy-club",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-10T15:09:26-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-alingon-mitra-conan-comedy-central-headlines-the-riot-comedy-club",
+        "image": "/img/events/Screenshot-124-c29a0a55-large-thumb.png",
+        "description": "Alingon is a stand-up comedian and comedy writer living in New York. He has written for THE DAILY SHOW WITH TREVOR NOAH on Comedy Central and was also staffed on ADAM RUINS EVERYTHING for TruTV. He has done stand-up on THE LATE SHOW WITH STEPHEN COLBERT, CONAN, LATE NIGHT WITH CRAIG FERGUSON, and ADAM DEVINE&rsquo;S HOUSE PARTY. After becoming a semi-finalist on LAST COMIC STANDING, Alingon won the coveted &ldquo;Comic Comeback&rdquo; award to appear in the season finale. He was selected to be a new face at Just For Laughs Comedy Festival in Montreal in 2015. Alingon graduated from Harvard, where he was a writer for the illustrious Harvard Lampoon.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Alingon Mitra"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-alingon-mitra-conan-comedy-central-headlines-the-riot-comedy-club-2027-02-19210000": {
+      "lastmod": "2026-09-10T03:14:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Alingon Mitra (Conan, Comedy Central) Headlines The Riot Comedy Club",
+        "startDate": "2027-02-19T21:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-alingon-mitra-conan-comedy-central-headlines-the-riot-comedy-club-2027-02-19210000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-10T15:14:41-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-alingon-mitra-conan-comedy-central-headlines-the-riot-comedy-club-2027-02-19210000",
+        "image": "/img/events/Screenshot-124-c29a0a55-large-thumb.png",
+        "description": "Alingon is a stand-up comedian and comedy writer living in New York. He has written for THE DAILY SHOW WITH TREVOR NOAH on Comedy Central and was also staffed on ADAM RUINS EVERYTHING for TruTV. He has done stand-up on THE LATE SHOW WITH STEPHEN COLBERT, CONAN, LATE NIGHT WITH CRAIG FERGUSON, and ADAM DEVINE’S HOUSE PARTY. After becoming a semi-finalist on LAST COMIC STANDING, Alingon won the coveted “Comic Comeback” award to appear in the season finale. He was selected to be a new face at Just For Laughs Comedy Festival in Montreal in 2015. Alingon graduated from Harvard, where he was a writer for the illustrious Harvard Lampoon.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Alingon Mitra"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-alingon-mitra-conan-comedy-central-headlines-the-riot-comedy-club-2027-02-20190000": {
+      "lastmod": "2026-09-10T03:14:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Alingon Mitra (Conan, Comedy Central) Headlines The Riot Comedy Club",
+        "startDate": "2027-02-20T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-alingon-mitra-conan-comedy-central-headlines-the-riot-comedy-club-2027-02-20190000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-10T15:14:41-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-alingon-mitra-conan-comedy-central-headlines-the-riot-comedy-club-2027-02-20190000",
+        "image": "/img/events/Screenshot-124-c29a0a55-large-thumb.png",
+        "description": "Alingon is a stand-up comedian and comedy writer living in New York. He has written for THE DAILY SHOW WITH TREVOR NOAH on Comedy Central and was also staffed on ADAM RUINS EVERYTHING for TruTV. He has done stand-up on THE LATE SHOW WITH STEPHEN COLBERT, CONAN, LATE NIGHT WITH CRAIG FERGUSON, and ADAM DEVINE’S HOUSE PARTY. After becoming a semi-finalist on LAST COMIC STANDING, Alingon won the coveted “Comic Comeback” award to appear in the season finale. He was selected to be a new face at Just For Laughs Comedy Festival in Montreal in 2015. Alingon graduated from Harvard, where he was a writer for the illustrious Harvard Lampoon.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Alingon Mitra"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-alingon-mitra-conan-comedy-central-headlines-the-riot-comedy-club-2027-02-20210000": {
+      "lastmod": "2026-09-10T03:14:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Alingon Mitra (Conan, Comedy Central) Headlines The Riot Comedy Club",
+        "startDate": "2027-02-20T21:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-alingon-mitra-conan-comedy-central-headlines-the-riot-comedy-club-2027-02-20210000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-10T15:14:41-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-alingon-mitra-conan-comedy-central-headlines-the-riot-comedy-club-2027-02-20210000",
+        "image": "/img/events/Screenshot-124-c29a0a55-large-thumb.png",
+        "description": "Alingon is a stand-up comedian and comedy writer living in New York. He has written for THE DAILY SHOW WITH TREVOR NOAH on Comedy Central and was also staffed on ADAM RUINS EVERYTHING for TruTV. He has done stand-up on THE LATE SHOW WITH STEPHEN COLBERT, CONAN, LATE NIGHT WITH CRAIG FERGUSON, and ADAM DEVINE’S HOUSE PARTY. After becoming a semi-finalist on LAST COMIC STANDING, Alingon won the coveted “Comic Comeback” award to appear in the season finale. He was selected to be a new face at Just For Laughs Comedy Festival in Montreal in 2015. Alingon graduated from Harvard, where he was a writer for the illustrious Harvard Lampoon.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Alingon Mitra"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-brendan-sagalow-barstool-sports-headlines-the-riot-comedy-club-in-houston": {
+      "lastmod": "2026-09-10T03:37:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Brendan Sagalow (Barstool Sports) headlines The Riot Comedy Club in Houston",
+        "startDate": "2027-03-12T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-brendan-sagalow-barstool-sports-headlines-the-riot-comedy-club-in-houston",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-10T15:23:31-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-brendan-sagalow-barstool-sports-headlines-the-riot-comedy-club-in-houston",
+        "image": "/img/events/Screenshot-126-ce740a9c-large-thumb.png",
+        "description": "With equal parts confident social observation and cutting self-deprecation, New York City-based comedian Brendan Sagalow has deftly and defiantly owned the stage for over 10 years. His debut full-hour comedy special, Thin Lips, was released in August 2024 on Youtube and continues to receive critical acclaim. Brendan performed as a &ldquo;New Face&rdquo; in the 2022 Just For Laughs Comedy Festival. He has also taken part in the Rogue Island Comedy Festival, Skankfest, and the New York Comedy Festival. He was a finalist in 2018&rsquo;s New York&rsquo;s Funniest, 2017&rsquo;s Carolines Comedy Club Competition, and 2017&rsquo;s Carolines March Madness Competition. He has written for MTV&#39;s Joking Off, and appeared on ViceTV&rsquo;s Tumbleweeds with Killer Mike and the popular Barstool Sports series Answer the Internet. He is a recurring guest on The Jim and Sam Show, Barstool Sports&rsquo; KFC Radio, and The Bonfire with Big Jay Oakerson and Dan Soder. Brendan co-hosted Here&rsquo;s the Scenario podcast with fellow comedians Mike Cannon and Mike Feeney, and now hosts his own show, Sagdaddy Da Pod. He has been a guest on a wide array of popular podcasts, including Are You Garbage?, Tuesdays with Stories, and Legion of Skanks. When not touring nationally, Brendan can be seen performing at clubs across New York City.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Brendan Sagalow"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-brendan-sagalow-barstool-sports-headlines-the-riot-comedy-club-in-houston-2027-03-13190000": {
+      "lastmod": "2026-09-10T03:37:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Brendan Sagalow (Barstool Sports) headlines The Riot Comedy Club in Houston",
+        "startDate": "2027-03-13T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-brendan-sagalow-barstool-sports-headlines-the-riot-comedy-club-in-houston-2027-03-13190000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-10T15:37:52-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-brendan-sagalow-barstool-sports-headlines-the-riot-comedy-club-in-houston-2027-03-13190000",
+        "image": "/img/events/Screenshot-126-ce740a9c-large-thumb.png",
+        "description": "With equal parts confident social observation and cutting self-deprecation, New York City-based comedian Brendan Sagalow has deftly and defiantly owned the stage for over 10 years. His debut full-hour comedy special, Thin Lips, was released in August 2024 on Youtube and continues to receive critical acclaim. Brendan performed as a “New Face” in the 2022 Just For Laughs Comedy Festival. He has also taken part in the Rogue Island Comedy Festival, Skankfest, and the New York Comedy Festival. He was a finalist in 2018’s New York’s Funniest, 2017’s Carolines Comedy Club Competition, and 2017’s Carolines March Madness Competition. He has written for MTV's Joking Off, and appeared on ViceTV’s Tumbleweeds with Killer Mike and the popular Barstool Sports series Answer the Internet. He is a recurring guest on The Jim and Sam Show, Barstool Sports’ KFC Radio, and The Bonfire with Big Jay Oakerson and Dan Soder. Brendan co-hosted Here’s the Scenario podcast with fellow comedians Mike Cannon and Mike Feeney, and now hosts his own show, Sagdaddy Da Pod. He has been a guest on a wide array of popular podcasts, including Are You Garbage?, Tuesdays with Stories, and Legion of Skanks. When not touring nationally, Brendan can be seen performing at clubs across New York City.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Brendan Sagalow"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-peter-revello-the-tonight-show-headlines-the-riot-comedy-club-in-houston": {
+      "lastmod": "2026-09-10T03:22:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Peter Revello (The Tonight Show) headlines The Riot Comedy Club in Houston",
+        "startDate": "2027-04-23T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-peter-revello-the-tonight-show-headlines-the-riot-comedy-club-in-houston",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-06-09T19:30:58-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-peter-revello-the-tonight-show-headlines-the-riot-comedy-club-in-houston",
+        "image": "/img/events/Screenshot-125-cd4d0a84-large-thumb.png",
+        "description": "Peter Revello is a stand-up comedian, actor, and writer, based in New York City who was born and raised in Staten Island. Because Peter is one of the few Staten Islanders not currently in a union, he has a unique perspective he shares with anyone who who&#39;ll listen. Most recently, Peter made his late night debut on the Tonight Show starring Jimmy Fallon.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Peter Revello"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-peter-revello-the-tonight-show-headlines-the-riot-comedy-club-in-houston-2027-04-24190000": {
+      "lastmod": "2026-09-10T04:27:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Peter Revello (The Tonight Show) headlines The Riot Comedy Club in Houston",
+        "startDate": "2027-04-24T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-peter-revello-the-tonight-show-headlines-the-riot-comedy-club-in-houston-2027-04-24190000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-10T16:27:34-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-peter-revello-the-tonight-show-headlines-the-riot-comedy-club-in-houston-2027-04-24190000",
+        "image": "/img/events/Screenshot-125-cd4d0a84-large-thumb.png",
+        "description": "Peter Revello is a stand-up comedian, actor, and writer, based in New York City who was born and raised in Staten Island. Because Peter is one of the few Staten Islanders not currently in a union, he has a unique perspective he shares with anyone who who'll listen. Most recently, Peter made his late night debut on the Tonight Show starring Jimmy Fallon.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Peter Revello"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-lachlan-patterson-the-tonight-show-comedy-central-america-s-got-talent-live-in-conroe": {
+      "lastmod": "2026-09-10T03:04:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Lachlan Patterson (The Tonight Show, Comedy Central, America's Got Talent) Live in Conroe",
+        "startDate": "2026-11-20T19:30:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-lachlan-patterson-the-tonight-show-comedy-central-america-s-got-talent-live-in-conroe",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-10T15:01:20-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-lachlan-patterson-the-tonight-show-comedy-central-america-s-got-talent-live-in-conroe",
+        "image": "/img/events/200408-Lachlan-Patterson-155-74f90e6d-large-thumb.jpg",
+        "description": "Lachlan Patterson is an accomplished stand-up comedian with more than 25 years of experienceentertaining audiences around the world. He gained national recognition with his standout run on NBC&rsquo;sLast Comic Standing and renowned appearances on The Tonight Show, CBS&rsquo;s The Late Late Show,Comedy Central&rsquo;s Tosh.0, FX&rsquo;s Legit, and most recently, NBC&rsquo;s America&rsquo;s Got Talent. He has releasedthree comedy albums on Spotify, including Jokes to Make Love To, as well as two full-length comedyspecials: Live From Venice Beach, available on Amazon, and Dark White, available on YouTube. Fanscan also watch him on The Lach&rsquo;d In Podcast Show.Lachlan has built a career around his signature blend of sharp, offbeat, observational humor and a laid-back stage presence. His material draws from a unique perspective on everyday life, delivered with drywit and effortless charm. His approach is smart without being pretentious, observational without beingpredictable, and always grounded in his distinctive point of view.Lachlan can be seen touring clubs and venues around the world, as well as performing in theaters andarenas with some of comedy&rsquo;s biggest names, including Nate Bargatze, Daniel Tosh, and Russell Peters.He is also available for private events, corporate bookings, and special engagements.The main change is &ldquo;as well as two full-length comedy specials,&rdquo; which reads a little more naturally than&ldquo;and two.&rdquo; Otherwise, I think this is very close to your finished website bio.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.---",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Lachlan Patterson"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-lachlan-patterson-the-tonight-show-comedy-central-america-s-got-talent-live-in-conroe-2026-11-21190000": {
+      "lastmod": "2026-09-10T03:04:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Lachlan Patterson (The Tonight Show, Comedy Central, America's Got Talent) Live in Conroe",
+        "startDate": "2026-11-21T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-lachlan-patterson-the-tonight-show-comedy-central-america-s-got-talent-live-in-conroe-2026-11-21190000",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-10T15:04:23-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-lachlan-patterson-the-tonight-show-comedy-central-america-s-got-talent-live-in-conroe-2026-11-21190000",
+        "image": "/img/events/200408-Lachlan-Patterson-155-74f90e6d-large-thumb.jpg",
+        "description": "Lachlan Patterson is an accomplished stand-up comedian with more than 25 years of experienceentertaining audiences around the world. He gained national recognition with his standout run on NBC’sLast Comic Standing and renowned appearances on The Tonight Show, CBS’s The Late Late Show,Comedy Central’s Tosh.0, FX’s Legit, and most recently, NBC’s America’s Got Talent. He has releasedthree comedy albums on Spotify, including Jokes to Make Love To, as well as two full-length comedyspecials: Live From Venice Beach, available on Amazon, and Dark White, available on YouTube. Fanscan also watch him on The Lach’d In Podcast Show.Lachlan has built a career around his signature blend of sharp, offbeat, observational humor and a laid-back stage presence. His material draws from a unique perspective on everyday life, delivered with drywit and effortless charm. His approach is smart without being pretentious, observational without beingpredictable, and always grounded in his distinctive point of view.Lachlan can be seen touring clubs and venues around the world, as well as performing in theaters andarenas with some of comedy’s biggest names, including Nate Bargatze, Daniel Tosh, and Russell Peters.He is also available for private events, corporate bookings, and special engagements.The main change is “as well as two full-length comedy specials,” which reads a little more naturally than“and two.” Otherwise, I think this is very close to your finished website bio.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.---",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Lachlan Patterson"
           }
         ]
       }

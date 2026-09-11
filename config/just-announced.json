@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-10T01:32:28.654Z",
+ "updated": "2026-09-11T01:34:14.633Z",
  "announcements": [
   {
    "id": "8e8fbd9a07c7e39e",
@@ -15,7 +15,7 @@
    "notable": false,
    "first_seen": "2026-08-28T23:24:35.337Z",
    "tier": null,
-   "notable_reason": "only -5d out (min 14)"
+   "notable_reason": "only -6d out (min 14)"
   },
   {
    "id": "a00462ff2839a101",
@@ -191,7 +191,7 @@
    "notable": false,
    "first_seen": "2026-08-30T03:53:27.088Z",
    "tier": null,
-   "notable_reason": "only 9d out (min 14)"
+   "notable_reason": "only 8d out (min 14)"
   },
   {
    "id": "4bd5ae714653a486",
@@ -207,7 +207,7 @@
    "notable": false,
    "first_seen": "2026-08-30T03:53:27.088Z",
    "tier": null,
-   "notable_reason": "only 9d out (min 14)"
+   "notable_reason": "only 8d out (min 14)"
   },
   {
    "id": "8b1d041b75608b1f",
@@ -335,7 +335,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 3d out (min 14)"
+   "notable_reason": "only 2d out (min 14)"
   },
   {
    "id": "dcda851330316449",
@@ -351,7 +351,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 3d out (min 14)"
+   "notable_reason": "only 2d out (min 14)"
   },
   {
    "id": "71bdaa462041dc0c",
@@ -367,7 +367,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 3d out (min 14)"
+   "notable_reason": "only 2d out (min 14)"
   },
   {
    "id": "fda3159e69fdfd62",
@@ -383,7 +383,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 4d out (min 14)"
+   "notable_reason": "only 3d out (min 14)"
   },
   {
    "id": "d9a1aa4a66db2a01",
@@ -399,7 +399,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 4d out (min 14)"
+   "notable_reason": "only 3d out (min 14)"
   },
   {
    "id": "4cc6d9b0382ee2f5",
@@ -415,7 +415,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 4d out (min 14)"
+   "notable_reason": "only 3d out (min 14)"
   },
   {
    "id": "ca476d324aaac241",
@@ -431,7 +431,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 5d out (min 14)"
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "4267a97a879c76a7",
@@ -447,7 +447,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 5d out (min 14)"
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "43ee1e7e3cdc4aff",
@@ -463,7 +463,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 5d out (min 14)"
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "256f5ea77811406b",
@@ -479,7 +479,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 6d out (min 14)"
+   "notable_reason": "only 5d out (min 14)"
   },
   {
    "id": "791d83e5fa9f3c30",
@@ -495,7 +495,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 6d out (min 14)"
+   "notable_reason": "only 5d out (min 14)"
   },
   {
    "id": "cb9aae3002efa142",
@@ -511,7 +511,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 6d out (min 14)"
+   "notable_reason": "only 5d out (min 14)"
   },
   {
    "id": "cc5add06a852a8ad",
@@ -527,7 +527,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 7d out (min 14)"
+   "notable_reason": "only 6d out (min 14)"
   },
   {
    "id": "b4b6469b369aeaf2",
@@ -543,7 +543,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 8d out (min 14)"
+   "notable_reason": "only 7d out (min 14)"
   },
   {
    "id": "4657cb058756c296",
@@ -559,7 +559,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 8d out (min 14)"
+   "notable_reason": "only 7d out (min 14)"
   },
   {
    "id": "e357803e9a11f38b",
@@ -575,7 +575,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 8d out (min 14)"
+   "notable_reason": "only 7d out (min 14)"
   },
   {
    "id": "b2b4936117be4436",
@@ -591,7 +591,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 9d out (min 14)"
+   "notable_reason": "only 8d out (min 14)"
   },
   {
    "id": "8acdae70472f0449",
@@ -607,7 +607,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 9d out (min 14)"
+   "notable_reason": "only 8d out (min 14)"
   },
   {
    "id": "56acb60c0e2757d5",
@@ -623,7 +623,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 9d out (min 14)"
+   "notable_reason": "only 8d out (min 14)"
   },
   {
    "id": "1eaa25e03d6af969",
@@ -639,7 +639,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 9d out (min 14)"
+   "notable_reason": "only 8d out (min 14)"
   },
   {
    "id": "e06342ed174de781",
@@ -783,7 +783,7 @@
    "notable": false,
    "first_seen": "2026-08-31T19:51:06.092Z",
    "tier": null,
-   "notable_reason": "only -1d out (min 14)"
+   "notable_reason": "only -2d out (min 14)"
   },
   {
    "id": "c68ec018e7fb4374",
@@ -799,7 +799,7 @@
    "notable": false,
    "first_seen": "2026-08-31T19:51:06.092Z",
    "tier": null,
-   "notable_reason": "only 13d out (min 14)"
+   "notable_reason": "only 12d out (min 14)"
   },
   {
    "id": "70a1eb2a6825e2c4",
@@ -815,7 +815,7 @@
    "notable": false,
    "first_seen": "2026-08-31T19:51:06.092Z",
    "tier": null,
-   "notable_reason": "recurring series (4 weeks)"
+   "notable_reason": "recurring series (3 weeks)"
   },
   {
    "id": "cdb8239bb77b819b",
@@ -831,7 +831,7 @@
    "notable": false,
    "first_seen": "2026-08-31T19:51:06.092Z",
    "tier": null,
-   "notable_reason": "recurring series (4 weeks)"
+   "notable_reason": "recurring series (3 weeks)"
   },
   {
    "id": "e5bdde9bf204c102",
@@ -879,7 +879,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 10d out (min 14)"
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "29c863225892fe63",
@@ -895,7 +895,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 10d out (min 14)"
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "18937402e95e8bed",
@@ -911,7 +911,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 10d out (min 14)"
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "344a73d11d930c9d",
@@ -927,7 +927,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 11d out (min 14)"
+   "notable_reason": "only 10d out (min 14)"
   },
   {
    "id": "c798d0f7a1fe2798",
@@ -943,7 +943,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 11d out (min 14)"
+   "notable_reason": "only 10d out (min 14)"
   },
   {
    "id": "3741f1062ca5aeab",
@@ -959,7 +959,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 11d out (min 14)"
+   "notable_reason": "only 10d out (min 14)"
   },
   {
    "id": "229ae589b03d2528",
@@ -975,7 +975,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 12d out (min 14)"
+   "notable_reason": "only 11d out (min 14)"
   },
   {
    "id": "7a78eab9405ada81",
@@ -991,7 +991,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 12d out (min 14)"
+   "notable_reason": "only 11d out (min 14)"
   },
   {
    "id": "5b59fb9ad5f1b12a",
@@ -1007,7 +1007,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 12d out (min 14)"
+   "notable_reason": "only 11d out (min 14)"
   },
   {
    "id": "fbe0fc199b15e541",
@@ -1023,7 +1023,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 13d out (min 14)"
+   "notable_reason": "only 12d out (min 14)"
   },
   {
    "id": "9fe20f3f5e5ea99e",
@@ -1039,7 +1039,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 13d out (min 14)"
+   "notable_reason": "only 12d out (min 14)"
   },
   {
    "id": "b42714ec75916392",
@@ -1055,7 +1055,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 13d out (min 14)"
+   "notable_reason": "only 12d out (min 14)"
   },
   {
    "id": "000ae4368d69b6a4",
@@ -1071,7 +1071,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "title pattern"
+   "notable_reason": "only 13d out (min 14)"
   },
   {
    "id": "df7f5d04ac72e46c",
@@ -1375,7 +1375,7 @@
    "notable": false,
    "first_seen": "2026-09-03T01:31:40.306Z",
    "tier": null,
-   "notable_reason": "only -4d out (min 14)"
+   "notable_reason": "only -5d out (min 14)"
   },
   {
    "id": "283f11a8c6b3dc62",
@@ -1903,7 +1903,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 2d out (min 14)"
+   "notable_reason": "only 1d out (min 14)"
   },
   {
    "id": "cd916c351c73e9f5",
@@ -2079,7 +2079,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "recurring series (4 weeks)"
+   "notable_reason": "recurring series (3 weeks)"
   },
   {
    "id": "d1183f86b3d36a08",
@@ -2239,7 +2239,7 @@
    "notable": false,
    "first_seen": "2026-09-08T15:14:43.441Z",
    "tier": null,
-   "notable_reason": "title pattern"
+   "notable_reason": "only 13d out (min 14)"
   },
   {
    "id": "c25a3664df94a2e5",
@@ -2463,7 +2463,7 @@
    "notable": false,
    "first_seen": "2026-09-09T01:38:16.075Z",
    "tier": null,
-   "notable_reason": "only 3d out (min 14)"
+   "notable_reason": "only 2d out (min 14)"
   },
   {
    "id": "fca2e9156b96b9a6",
@@ -2479,7 +2479,7 @@
    "notable": false,
    "first_seen": "2026-09-09T01:38:16.075Z",
    "tier": null,
-   "notable_reason": "only 8d out (min 14)"
+   "notable_reason": "only 7d out (min 14)"
   },
   {
    "id": "8a805b7659802da6",
@@ -2495,7 +2495,7 @@
    "notable": false,
    "first_seen": "2026-09-09T01:38:16.075Z",
    "tier": null,
-   "notable_reason": "only 9d out (min 14)"
+   "notable_reason": "only 8d out (min 14)"
   },
   {
    "id": "1cb21afc050c660c",
@@ -2576,6 +2576,86 @@
    "tier": null,
    "notable_reason": "recurring series (13 weeks)",
    "first_seen": "2026-09-09T17:12:29.667Z"
+  },
+  {
+   "id": "3cc8ee7f59ef6a7a",
+   "name": "The Riot Presents Thursday Night Late Standup Comedy Showcase!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-09-17",
+   "time": "9:00 PM",
+   "price_min": 10,
+   "price_max": 10,
+   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-24-1-49f70dad-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-thursday-night-late-standup-comedy-showcase-2026-09-17210000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "only 6d out (min 14)",
+   "first_seen": "2026-09-11T01:34:14.633Z"
+  },
+  {
+   "id": "7b946253bf8091bf",
+   "name": "Comedian Lachlan Patterson (The Tonight Show, Comedy Central, America's Got Talent) Live in Conroe",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-11-20",
+   "time": "7:30 PM",
+   "price_min": 20,
+   "price_max": 20,
+   "image_url": "https://www.riotconroe.com/img/events/200408-Lachlan-Patterson-155-74f90e6d-large-thumb.jpg",
+   "ticket_url": "https://www.riotconroe.com/events/comedian-lachlan-patterson-the-tonight-show-comedy-central-america-s-got-talent-live-in-conroe",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-11T01:34:14.633Z"
+  },
+  {
+   "id": "3e29b8652cd9b593",
+   "name": "Comedian Lachlan Patterson (The Tonight Show, Comedy Central, America's Got Talent) Live in Conroe",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-11-21",
+   "time": "7:00 PM",
+   "price_min": 20,
+   "price_max": 20,
+   "image_url": "https://www.riotconroe.com/img/events/200408-Lachlan-Patterson-155-74f90e6d-large-thumb.jpg",
+   "ticket_url": "https://www.riotconroe.com/events/comedian-lachlan-patterson-the-tonight-show-comedy-central-america-s-got-talent-live-in-conroe-2026-11-21190000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-11T01:34:14.633Z"
+  },
+  {
+   "id": "1677e845ea1bf5f9",
+   "name": "The Riot Presents Wednesday Night Standup Comedy Showcase \"Hump Day\"",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-09",
+   "time": "7:00 PM",
+   "price_min": 8,
+   "price_max": 8,
+   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-6-239d0d36-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-32",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-09-11T01:34:14.633Z"
+  },
+  {
+   "id": "2e08733c64147b0d",
+   "name": "The Riot Presents  The One Minute Comedy Showdown with Jeff Joe",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-09",
+   "time": "9:00 PM",
+   "price_min": 10,
+   "price_max": 10,
+   "image_url": "https://www.theriothtx.com/img/shows/https-cdn-evbuc-com-images-921782813-428099579998-1-original-282c1848-large-thumb.jpg",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-30",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-09-11T01:34:14.633Z"
   }
  ]
 }
