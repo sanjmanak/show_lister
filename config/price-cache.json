@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-09-11T17:04:15.782Z",
+  "last_updated": "2026-09-12T16:22:02.657Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -129,14 +129,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
-    },
-    "b1d8b2c67f052756": {
-      "price_min": 41,
-      "price_max": 61,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/splou-houston-texas-09-11-2026/event/3A0064CD14345EFE",
-      "fetched_at": "2026-08-17T15:24:03.065Z"
     },
     "63e6cc1af7646ea4": {
       "price_min": 31,
@@ -481,14 +473,6 @@
       "source": "page",
       "url": "https://www.eventbrite.com/e/saul-trujillo-live-in-houston-tickets-1987000184039",
       "fetched_at": "2026-09-09T01:38:07.424Z"
-    },
-    "b5dbe50390c9799b": {
-      "price_min": 19.32,
-      "price_max": 25.09,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/bob-biggerstaff-live-in-houston-tickets-1987001228162",
-      "fetched_at": "2026-09-09T01:38:08.317Z"
     },
     "3dff550549f389df": {
       "price_min": 19.32,
