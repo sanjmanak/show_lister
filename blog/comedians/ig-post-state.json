@@ -32,24 +32,6 @@
   "manifest_version": 1788289990827,
   "cleanup_queue": [
     {
-      "slug": "graham-kay-the-riot-comedy-club-2026-09-10",
-      "comedianName": "Graham Kay",
-      "igFeedMediaId": "18077050472706257",
-      "igStoryMediaId": "18103388501249632",
-      "fbFeedPostId": "1397244125833662",
-      "fbStoryPostId": "1709184606849821",
-      "postedAt": "2026-09-07T09:33:32.993Z"
-    },
-    {
-      "slug": "arnez-j-houston-improv-2026-09-10",
-      "comedianName": "Arnez J",
-      "igFeedMediaId": "18020115905878140",
-      "igStoryMediaId": "18085856195680064",
-      "fbFeedPostId": "1397503689141039",
-      "fbStoryPostId": "1549056596420373",
-      "postedAt": "2026-09-07T15:57:00.170Z"
-    },
-    {
       "slug": "jon-rudnitsky-the-riot-comedy-club-2026-09-11",
       "comedianName": "Jon Rudnitsky",
       "igFeedMediaId": "17998522707007551",
