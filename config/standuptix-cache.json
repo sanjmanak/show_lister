@@ -1,60 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/comedian-jon-rudnitsky-netflix-hbo-comedy-central-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-09-10T07:08:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Comedian Jon Rudnitsky (SNL, Netflix, HBO) Headlines The Riot Comedy Club",
-        "startDate": "2026-09-11T19:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/comedian-jon-rudnitsky-netflix-hbo-comedy-central-headlines-the-riot-comedy-club",
-          "priceCurrency": "USD",
-          "price": "20.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-09T22:39:27-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/comedian-jon-rudnitsky-netflix-hbo-comedy-central-headlines-the-riot-comedy-club",
-        "image": "/img/events/IMG-0486-7de90786-large-thumb.jpg",
-        "description": "Jon Rudnitsky can be seen in the upcoming films INTO THE SKY with Sam Richardson and SUPER TROOPERS 3, and currently in I LOVE YOU FOREVER on HBO, Netflix’s OUR LITTLE SECRET with Lindsay Lohan, and Amazon’s THE RED ONE opposite Dwayne Johnson.He was the sole new cast member hired for the 41st season of Saturday Night Live. His screen credits include starring opposite George Clooney in Hulu’s CATCH-22, playing Young Larry in the latest season of CURB YOUR ENTHUSIASM, and starring opposite Reese Witherspoon in Nancy Meyers’ HOME AGAIN. Additional film work includes Edward Burns’ SUMMER DAYS AND SUMMER NIGHTS, Netflix’s SET IT UP, Tyler Perry’s NOBODY’S FOOL, and THE YOUNG WIFE with Kiersey Clemons and Judith Light. He also voices principal roles in Disney’s WISH and Paramount’s UNDER THE BOARDWALK.On television, he starred in Fox’s THE BIG LEAP and has appeared on NBC’s CHAMPIONS, Disney’s BIG HERO 6, Amazon’s RED OAKS, and the Broken Lizard series TACOMA FD.As a stand-up comedian, Rudnitsky has appeared on CONAN and Comedy Central’s THE COMEDY JAM, where he performed “Footloose” with Kenny Loggins. He tours nationally and was selected as a “New Face” at the Just For Laughs Festival in Montreal.He graduated from USC’s BFA Acting Conservatory, where he received the John Ritter Memorial Award for Outstanding Comedic Performance. Born and raised in New Jersey, he now lives in New York City and performs regularly at The Comedy Cellar.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Jon Rudnitsky"
-          },
-          {
-            "@type": "Person",
-            "name": "Matt B.C."
-          },
-          {
-            "@type": "Person",
-            "name": "Luis Dejesus"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-19": {
-      "lastmod": "2026-09-10T07:08:00-05:00",
+      "lastmod": "2026-09-11T03:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -113,13 +60,13 @@
           },
           {
             "@type": "Person",
-            "name": "Josh Stokes"
+            "name": "Andy Huggins"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-17": {
-      "lastmod": "2026-09-10T07:08:00-05:00",
+      "lastmod": "2026-09-11T05:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -188,7 +135,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-jon-rudnitsky-netflix-hbo-comedy-central-headlines-the-riot-comedy-club-the-riot-houston": {
-      "lastmod": "2026-09-08T10:44:00-05:00",
+      "lastmod": "2026-09-11T06:26:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -235,13 +182,13 @@
           },
           {
             "@type": "Person",
-            "name": "Luis Dejesus"
+            "name": "Onkar Singh"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/comedian-jon-rudnitsky-netflix-hbo-comedy-central-headlines-the-riot-comedy-club-the-riot-houston-1": {
-      "lastmod": "2026-09-08T10:44:00-05:00",
+      "lastmod": "2026-09-11T06:26:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -294,7 +241,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-19": {
-      "lastmod": "2026-09-08T10:44:00-05:00",
+      "lastmod": "2026-09-11T06:26:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -603,12 +550,12 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-09-15-26-07-00-pm": {
-      "lastmod": "2026-09-10T09:19:00-05:00",
+      "lastmod": "2026-09-11T07:44:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents Tuesday Night Standup Comedy Showcase!",
-        "startDate": "2026-09-15T19:00:00-05:00",
+        "startDate": "2026-09-15T19:30:00-05:00",
         "location": {
           "@type": "Place",
           "name": "The Riot Houston",
@@ -1173,12 +1120,12 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-09-22-26-07-00-pm": {
-      "lastmod": "2026-08-10T03:32:00-05:00",
+      "lastmod": "2026-09-11T07:45:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents Tuesday Night Standup Comedy Showcase!",
-        "startDate": "2026-09-22T19:00:00-05:00",
+        "startDate": "2026-09-22T19:30:00-05:00",
         "location": {
           "@type": "Place",
           "name": "The Riot Houston",
@@ -1213,7 +1160,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-09-22210000": {
-      "lastmod": "2026-09-10T09:14:00-05:00",
+      "lastmod": "2026-09-11T04:11:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -1252,7 +1199,7 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Marz Pimentel"
+            "name": "Natia Simon"
           }
         ]
       }
@@ -1857,12 +1804,12 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-09-29-26-07-00-pm": {
-      "lastmod": "2026-08-10T03:33:00-05:00",
+      "lastmod": "2026-09-11T07:45:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents Tuesday Night Standup Comedy Showcase!",
-        "startDate": "2026-09-29T19:00:00-05:00",
+        "startDate": "2026-09-29T19:30:00-05:00",
         "location": {
           "@type": "Place",
           "name": "The Riot Houston",
@@ -2512,12 +2459,12 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-10-06-26-07-00-pm": {
-      "lastmod": "2026-08-10T03:34:00-05:00",
+      "lastmod": "2026-09-11T07:46:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents Tuesday Night Standup Comedy Showcase!",
-        "startDate": "2026-10-06T19:00:00-05:00",
+        "startDate": "2026-10-06T19:30:00-05:00",
         "location": {
           "@type": "Place",
           "name": "The Riot Houston",
@@ -3151,12 +3098,12 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-10-13-26-07-00-pm": {
-      "lastmod": "2026-08-10T03:35:00-05:00",
+      "lastmod": "2026-09-11T07:46:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents Tuesday Night Standup Comedy Showcase!",
-        "startDate": "2026-10-13T19:00:00-05:00",
+        "startDate": "2026-10-13T19:30:00-05:00",
         "location": {
           "@type": "Place",
           "name": "The Riot Houston",
@@ -11397,61 +11344,8 @@
         ]
       }
     },
-    "https://www.riotconroe.com/events/comedian-graham-kay-the-tonight-show-colbert-nateland-live-in-conroe": {
-      "lastmod": "2026-09-10T04:54:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Comedian Graham Kay (The Tonight Show, Colbert, Nateland) Live in Conroe",
-        "startDate": "2026-09-11T19:30:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Conroe",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "219 Simonton Street",
-            "addressLocality": "Conroe",
-            "postalCode": "77301",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.riotconroe.com/events/comedian-graham-kay-the-tonight-show-colbert-nateland-live-in-conroe",
-          "priceCurrency": "USD",
-          "price": "20.00",
-          "availability": "InStock",
-          "validFrom": "2026-04-24T12:40:50-05:00"
-        },
-        "url": "https://www.riotconroe.com/events/comedian-graham-kay-the-tonight-show-colbert-nateland-live-in-conroe",
-        "image": "/img/events/Graham-Kay-11-12-d9e60a7a-large-thumb.png",
-        "description": "He began his comedic odyssey back when he was growing up in Ottawa Canada at Yuk Yuk&#39;s Comedy Cabaret and Absolute Comedy Club. Since then he has appeared in many venues in Europe and New York, including, Times Square Arts Centre (former Laugh Factory), and the Comedy Village NYC. Graham has also appeared in various small films as well as television appearances for VBS.TV. and the CBC. And when he is not busy proving his elementary teachers wrong, that you can in fact work as a class clown, you can find him at the local bar practicing how to drink a beer.",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Conroe",
-          "url": "https://www.riotconroe.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Graham Kay"
-          },
-          {
-            "@type": "Person",
-            "name": "Barry Laminack"
-          },
-          {
-            "@type": "Person",
-            "name": "James Holder"
-          }
-        ]
-      }
-    },
     "https://www.riotconroe.com/events/comedian-graham-kay-the-tonight-show-colbert-nateland-live-in-conroe-1": {
-      "lastmod": "2026-09-10T04:57:00-05:00",
+      "lastmod": "2026-09-11T07:30:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -11504,7 +11398,7 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-19": {
-      "lastmod": "2026-09-10T04:57:00-05:00",
+      "lastmod": "2026-09-11T07:30:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -11551,15 +11445,15 @@
           },
           {
             "@type": "Person",
-            "name": "Josh Stokes"
-          },
-          {
-            "@type": "Person",
             "name": "Graham Kay"
           },
           {
             "@type": "Person",
             "name": "Keelain Smith"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Loden"
           }
         ]
       }
