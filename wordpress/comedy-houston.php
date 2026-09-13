@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.16.0
+ * Version: 2.16.1
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.16.0';
+    const VERSION      = '2.16.1';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -1430,13 +1430,19 @@ src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>
      */
     private function listing_page_ids() {
         global $wpdb;
-        $like = '%' . $wpdb->esc_like('[' . self::SHORTCODE) . '%';
+        // Match the bare shortcode and the attributed form only. A bare
+        // prefix match also caught [comedy_houston_inquiry] (the corporate
+        // booking form), so that page's lastmod was bumped twice a day
+        // although its content never changes.
+        $bare = '%' . $wpdb->esc_like('[' . self::SHORTCODE . ']') . '%';
+        $attr = '%' . $wpdb->esc_like('[' . self::SHORTCODE . ' ') . '%';
         return $wpdb->get_col($wpdb->prepare(
             "SELECT ID FROM {$wpdb->posts}
              WHERE post_status = 'publish'
                AND post_type IN ('page', 'post')
-               AND post_content LIKE %s",
-            $like
+               AND (post_content LIKE %s OR post_content LIKE %s)",
+            $bare,
+            $attr
         ));
     }
 
