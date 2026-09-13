@@ -1,21 +1,3 @@
 {
-  "generated_at": "2026-09-13T18:20:10.225Z",
-  "dry_run": false,
-  "items": [
-    {
-      "id": "6a4f2661b95c294e",
-      "name": "Erica Rhodes (Americas Got Talent, Don’t Tell Comedy, Netflix is a Joke Fest) Headlines The Riot Comedy Club",
-      "performer_name": "Erica Rhodes",
-      "venue": "The Riot Comedy Club",
-      "date": "2026-12-11",
-      "ticket_url": "https://www.theriothtx.com/events/erica-rhodes-headlines-the-riot-comedy-club",
-      "files": {
-        "portrait": "2026-12-11-erica-rhodes-portrait.png",
-        "story": "2026-12-11-erica-rhodes-story.png",
-        "reel": "2026-12-11-erica-rhodes.mp4"
-      },
-      "caption": "Erica Rhodes’ special La Vie en Rhodes spotlights her deadpan character comedy.\nErica Rhodes performs at The Riot Comedy Club on December 11, 2026. The America’s Got Talent alum is known for character-driven stand-up. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
-      "confidence": 0.93
-    }
-  ]
+  "items": []
 }
