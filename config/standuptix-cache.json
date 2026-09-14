@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-4": {
-      "lastmod": "2026-09-13T01:44:00-05:00",
+      "lastmod": "2026-09-14T01:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -44,10 +44,6 @@
           },
           {
             "@type": "Person",
-            "name": "Jimmy Pineapple"
-          },
-          {
-            "@type": "Person",
             "name": "Ruben Medina"
           },
           {
@@ -61,12 +57,16 @@
           {
             "@type": "Person",
             "name": "Keisha Hunt"
+          },
+          {
+            "@type": "Person",
+            "name": "Christian Alexander"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-monday-night-standup-comedy-open-mic-2026-09-14210000": {
-      "lastmod": "2026-09-13T01:44:00-05:00",
+      "lastmod": "2026-09-14T10:33:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -111,7 +111,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-09-15-26-07-00-pm": {
-      "lastmod": "2026-09-13T03:17:00-05:00",
+      "lastmod": "2026-09-14T11:57:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -176,7 +176,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-09-15210000": {
-      "lastmod": "2026-09-13T03:17:00-05:00",
+      "lastmod": "2026-09-14T11:57:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -215,7 +215,7 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Dylan Kendrick"
+            "name": "John Meyer"
           }
         ]
       }
@@ -392,7 +392,7 @@
       }
     },
     "https://www.theriothtx.com/events/bo-johnson-don-t-tell-comedy-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-09-13T02:47:00-05:00",
+      "lastmod": "2026-09-14T11:42:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -436,12 +436,16 @@
           {
             "@type": "Person",
             "name": "Bo Johnson"
+          },
+          {
+            "@type": "Person",
+            "name": "Quinton Jones"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-20": {
-      "lastmod": "2026-09-13T02:47:00-05:00",
+      "lastmod": "2026-09-14T11:42:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -480,10 +484,6 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Lotto Marie"
-          },
-          {
-            "@type": "Person",
             "name": "Tess Vergult"
           },
           {
@@ -501,12 +501,16 @@
           {
             "@type": "Person",
             "name": "Quinton Jones"
+          },
+          {
+            "@type": "Person",
+            "name": "Luis Dejesus"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-18": {
-      "lastmod": "2026-09-13T02:47:00-05:00",
+      "lastmod": "2026-09-14T11:42:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -575,7 +579,7 @@
       }
     },
     "https://www.theriothtx.com/events/bo-johnson-don-t-tell-comedy-headlines-the-riot-comedy-club-2026-05-12093949": {
-      "lastmod": "2026-09-13T02:33:00-05:00",
+      "lastmod": "2026-09-14T11:43:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -619,12 +623,16 @@
           {
             "@type": "Person",
             "name": "Bo Johnson"
+          },
+          {
+            "@type": "Person",
+            "name": "Quinton Jones"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/bo-johnson-don-t-tell-comedy-headlines-the-riot-comedy-club-2026-05-12093955": {
-      "lastmod": "2026-09-13T02:33:00-05:00",
+      "lastmod": "2026-09-14T11:43:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -668,12 +676,16 @@
           {
             "@type": "Person",
             "name": "Bo Johnson"
+          },
+          {
+            "@type": "Person",
+            "name": "Quinton Jones"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-20": {
-      "lastmod": "2026-09-13T02:33:00-05:00",
+      "lastmod": "2026-09-14T11:43:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",

@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-09-13T17:01:39.285Z",
+  "last_updated": "2026-09-14T18:40:57.703Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -129,14 +129,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
-    },
-    "63e6cc1af7646ea4": {
-      "price_min": 31,
-      "price_max": 52,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/abelardo-en-espanol-houston-texas-09-13-2026/event/3A0064F5CF58E8B5",
-      "fetched_at": "2026-08-17T15:25:06.257Z"
     },
     "3e82aec093a1adfd": {
       "price_min": 29,
@@ -529,14 +521,6 @@
       "source": "page",
       "url": "https://www.eventbrite.com/e/roast-battle-houston-tickets-1998832052476",
       "fetched_at": "2026-09-09T01:38:14.692Z"
-    },
-    "e16cb5589a34af08": {
-      "price_min": 13.54,
-      "price_max": 30.87,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/martin-phillips-live-in-houston-tickets-1999027667566",
-      "fetched_at": "2026-09-09T01:38:15.079Z"
     },
     "117e2e6a6fcc648e": {
       "price_min": 25.09,
