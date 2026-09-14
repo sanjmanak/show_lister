@@ -1,3 +1,21 @@
 {
-  "items": []
+  "generated_at": "2026-09-14T19:57:35.327Z",
+  "dry_run": false,
+  "items": [
+    {
+      "id": "6e6a42cc9972ddf1",
+      "name": "Dave Chappelle Karmageddon",
+      "performer_name": "Dave Chappelle",
+      "venue": "Toyota Center",
+      "date": "2026-10-28",
+      "ticket_url": "https://www.toyotacenter.com/events/detail/dave-chappelle-2026",
+      "files": {
+        "portrait": "2026-10-28-dave-chappelle-portrait.png",
+        "story": "2026-10-28-dave-chappelle-story.png",
+        "reel": "2026-10-28-dave-chappelle.mp4"
+      },
+      "caption": "The Chappelle's Show creator returns with the Karmageddon tour.\nDave Chappelle performs at Toyota Center on October 28, 2026. The Karmageddon tour is listed for 7:30 PM. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
+      "confidence": 0.99
+    }
+  ]
 }
