@@ -1900,6 +1900,14 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-09-16"
+    },
+    "dave chappelle": {
+      "tags": [
+        "black-comedy"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-09-17"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-09-14T18:40:57.703Z",
+  "last_updated": "2026-09-17T17:40:46.871Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -130,14 +130,6 @@
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
     },
-    "3e82aec093a1adfd": {
-      "price_min": 29,
-      "price_max": 44,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/ryan-goodcase-houston-texas-09-16-2026/event/3A006477C431A750",
-      "fetched_at": "2026-08-17T15:25:40.350Z"
-    },
     "107fcbe5d9fe3523": {
       "price_min": 27,
       "price_max": 42,
@@ -241,22 +233,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/ellen-skrmetti-houston-improv-tickets/15024353?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-09-01T18:00:54.755Z"
-    },
-    "256f5ea77811406b": {
-      "price_min": 5.36,
-      "price_max": 5.36,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/2-bill-two-dollar-comedy-show-every-wednesday-tickets-1999225367893",
-      "fetched_at": "2026-09-09T01:37:30.452Z"
-    },
-    "791d83e5fa9f3c30": {
-      "price_min": 8.82,
-      "price_max": 8.82,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/master-debaters-tickets-1999225369899",
-      "fetched_at": "2026-09-09T01:37:30.850Z"
     },
     "b4b6469b369aeaf2": {
       "price_min": 18.06,
