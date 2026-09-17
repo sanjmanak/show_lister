@@ -156,12 +156,15 @@ function loadThisWeeksEvents() {
 // usually return in <30s; web-search Responses calls can run longer and
 // get their own larger budget.
 /** Chat completion via the shared lib (see scripts/lib/openai.js). */
-function callOpenAI(prompt, systemPrompt) {
+function callOpenAI(prompt, systemPrompt, maxTokens = 12000) {
   return openai.chatCompletion({
     system: systemPrompt,
     user: prompt,
     temperature: 0.7,
-    maxTokens: 8000,
+    // Reasoning models spend part of this budget on hidden reasoning. The
+    // 2026-09-14 run hit the old 8000 cap exactly and returned 0 visible
+    // chars, so the budget is larger and the caller retries once on empty.
+    maxTokens,
     effort: "low",
   });
 }
@@ -1326,7 +1329,15 @@ async function main() {
 
   let blogContent = await callOpenAI(prompt, SYSTEM_PROMPT);
   // Strip markdown code fences that OpenAI sometimes wraps around HTML output
-  blogContent = blogContent.replace(/^```html\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
+  const stripFences = (s) => s.replace(/^```html\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
+  blogContent = stripFences(blogContent);
+  if (blogContent.length < 400) {
+    // Empty/near-empty output is usually the reasoning budget running out
+    // before any visible text was emitted (2026-09-14). One retry with a
+    // bigger budget before we give up and alert.
+    console.warn(`  Blog content came back with ${blogContent.length} chars — retrying once with a larger token budget...`);
+    blogContent = stripFences(await callOpenAI(prompt, SYSTEM_PROMPT, 20000));
+  }
 
   // Minimum-length sanity check. If the model returned an empty string, a
   // safety refusal, or a single-sentence "I can't help with that" we do NOT

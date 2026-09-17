@@ -1257,7 +1257,9 @@ async function main() {
     const cutoff = toLocalDateStr(yesterday);
     const datedFile = /-(\d{4}-\d{2}-\d{2})(?:-(?:square|portrait|story|teaser-\d)\.(?:png|html)|-caption\.txt|\.live-refreshed)$/;
     let pruned = 0;
-    const dirs = [COMEDIANS_DIR, IMAGES_DIR].filter((d) => fs.existsSync(d));
+    // IMAGES_DIR was removed in the 2026-09-07 cleanup (event image only);
+    // referencing it here crashed the 2026-09-14 run with a ReferenceError.
+    const dirs = [COMEDIANS_DIR].filter((d) => fs.existsSync(d));
     for (const dir of dirs) {
       for (const f of fs.readdirSync(dir)) {
         const m = f.match(datedFile);
