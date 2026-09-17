@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-16T17:40:47.648Z",
+ "updated": "2026-09-17T01:47:03.870Z",
  "announcements": [
   {
    "id": "4bd5ae714653a486",
@@ -15,7 +15,7 @@
    "notable": false,
    "first_seen": "2026-08-30T03:53:27.088Z",
    "tier": null,
-   "notable_reason": "only 3d out (min 14)"
+   "notable_reason": "only 2d out (min 14)"
   },
   {
    "id": "8b1d041b75608b1f",
@@ -143,7 +143,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only -3d out (min 14)"
+   "notable_reason": "only -4d out (min 14)"
   },
   {
    "id": "dcda851330316449",
@@ -159,7 +159,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only -3d out (min 14)"
+   "notable_reason": "only -4d out (min 14)"
   },
   {
    "id": "71bdaa462041dc0c",
@@ -175,7 +175,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only -3d out (min 14)"
+   "notable_reason": "only -4d out (min 14)"
   },
   {
    "id": "fda3159e69fdfd62",
@@ -191,7 +191,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only -2d out (min 14)"
+   "notable_reason": "only -3d out (min 14)"
   },
   {
    "id": "d9a1aa4a66db2a01",
@@ -207,7 +207,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only -2d out (min 14)"
+   "notable_reason": "only -3d out (min 14)"
   },
   {
    "id": "4cc6d9b0382ee2f5",
@@ -223,7 +223,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only -2d out (min 14)"
+   "notable_reason": "only -3d out (min 14)"
   },
   {
    "id": "ca476d324aaac241",
@@ -239,7 +239,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only -1d out (min 14)"
+   "notable_reason": "only -2d out (min 14)"
   },
   {
    "id": "4267a97a879c76a7",
@@ -255,7 +255,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only -1d out (min 14)"
+   "notable_reason": "only -2d out (min 14)"
   },
   {
    "id": "43ee1e7e3cdc4aff",
@@ -271,7 +271,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only -1d out (min 14)"
+   "notable_reason": "only -2d out (min 14)"
   },
   {
    "id": "256f5ea77811406b",
@@ -287,7 +287,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 0d out (min 14)"
+   "notable_reason": "only -1d out (min 14)"
   },
   {
    "id": "791d83e5fa9f3c30",
@@ -303,7 +303,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 0d out (min 14)"
+   "notable_reason": "only -1d out (min 14)"
   },
   {
    "id": "cb9aae3002efa142",
@@ -319,7 +319,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 0d out (min 14)"
+   "notable_reason": "only -1d out (min 14)"
   },
   {
    "id": "cc5add06a852a8ad",
@@ -335,7 +335,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 1d out (min 14)"
+   "notable_reason": "only 0d out (min 14)"
   },
   {
    "id": "b4b6469b369aeaf2",
@@ -351,7 +351,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 2d out (min 14)"
+   "notable_reason": "only 1d out (min 14)"
   },
   {
    "id": "4657cb058756c296",
@@ -367,7 +367,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 2d out (min 14)"
+   "notable_reason": "only 1d out (min 14)"
   },
   {
    "id": "e357803e9a11f38b",
@@ -383,7 +383,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 2d out (min 14)"
+   "notable_reason": "only 1d out (min 14)"
   },
   {
    "id": "b2b4936117be4436",
@@ -399,7 +399,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 3d out (min 14)"
+   "notable_reason": "only 2d out (min 14)"
   },
   {
    "id": "8acdae70472f0449",
@@ -415,7 +415,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 3d out (min 14)"
+   "notable_reason": "only 2d out (min 14)"
   },
   {
    "id": "56acb60c0e2757d5",
@@ -431,7 +431,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 3d out (min 14)"
+   "notable_reason": "only 2d out (min 14)"
   },
   {
    "id": "1eaa25e03d6af969",
@@ -447,7 +447,7 @@
    "notable": false,
    "first_seen": "2026-08-31T03:56:25.228Z",
    "tier": null,
-   "notable_reason": "only 3d out (min 14)"
+   "notable_reason": "only 2d out (min 14)"
   },
   {
    "id": "e06342ed174de781",
@@ -591,7 +591,7 @@
    "notable": false,
    "first_seen": "2026-08-31T19:51:06.092Z",
    "tier": null,
-   "notable_reason": "only -7d out (min 14)"
+   "notable_reason": "only -8d out (min 14)"
   },
   {
    "id": "c68ec018e7fb4374",
@@ -607,7 +607,7 @@
    "notable": false,
    "first_seen": "2026-08-31T19:51:06.092Z",
    "tier": null,
-   "notable_reason": "only 7d out (min 14)"
+   "notable_reason": "only 6d out (min 14)"
   },
   {
    "id": "70a1eb2a6825e2c4",
@@ -687,7 +687,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 4d out (min 14)"
+   "notable_reason": "only 3d out (min 14)"
   },
   {
    "id": "29c863225892fe63",
@@ -703,7 +703,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 4d out (min 14)"
+   "notable_reason": "only 3d out (min 14)"
   },
   {
    "id": "18937402e95e8bed",
@@ -719,7 +719,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 4d out (min 14)"
+   "notable_reason": "only 3d out (min 14)"
   },
   {
    "id": "344a73d11d930c9d",
@@ -735,7 +735,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 5d out (min 14)"
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "c798d0f7a1fe2798",
@@ -751,7 +751,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 5d out (min 14)"
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "3741f1062ca5aeab",
@@ -767,7 +767,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 5d out (min 14)"
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "229ae589b03d2528",
@@ -783,7 +783,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 6d out (min 14)"
+   "notable_reason": "only 5d out (min 14)"
   },
   {
    "id": "7a78eab9405ada81",
@@ -799,7 +799,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 6d out (min 14)"
+   "notable_reason": "only 5d out (min 14)"
   },
   {
    "id": "5b59fb9ad5f1b12a",
@@ -815,7 +815,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 6d out (min 14)"
+   "notable_reason": "only 5d out (min 14)"
   },
   {
    "id": "fbe0fc199b15e541",
@@ -831,7 +831,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 7d out (min 14)"
+   "notable_reason": "only 6d out (min 14)"
   },
   {
    "id": "9fe20f3f5e5ea99e",
@@ -847,7 +847,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 7d out (min 14)"
+   "notable_reason": "only 6d out (min 14)"
   },
   {
    "id": "b42714ec75916392",
@@ -863,7 +863,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 7d out (min 14)"
+   "notable_reason": "only 6d out (min 14)"
   },
   {
    "id": "000ae4368d69b6a4",
@@ -879,7 +879,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 8d out (min 14)"
+   "notable_reason": "only 7d out (min 14)"
   },
   {
    "id": "df7f5d04ac72e46c",
@@ -895,7 +895,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 9d out (min 14)"
+   "notable_reason": "only 8d out (min 14)"
   },
   {
    "id": "11b5b2db52ec934c",
@@ -911,7 +911,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 9d out (min 14)"
+   "notable_reason": "only 8d out (min 14)"
   },
   {
    "id": "fa3e6d328144dd39",
@@ -927,7 +927,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 9d out (min 14)"
+   "notable_reason": "only 8d out (min 14)"
   },
   {
    "id": "5a056a5b70a0f36c",
@@ -943,7 +943,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 10d out (min 14)"
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "07a2c0063c54cd7b",
@@ -959,7 +959,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 10d out (min 14)"
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "4066f5a6b09ad476",
@@ -975,7 +975,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 10d out (min 14)"
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "12c05781cb2ee623",
@@ -991,7 +991,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 10d out (min 14)"
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "3bd7c5ec93a781c0",
@@ -1071,7 +1071,7 @@
    "notable": false,
    "first_seen": "2026-09-02T17:12:53.131Z",
    "tier": null,
-   "notable_reason": "only 10d out (min 14)"
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "c6d744e12a5fa846",
@@ -1183,7 +1183,7 @@
    "notable": false,
    "first_seen": "2026-09-03T01:31:40.306Z",
    "tier": null,
-   "notable_reason": "only -10d out (min 14)"
+   "notable_reason": "only -11d out (min 14)"
   },
   {
    "id": "283f11a8c6b3dc62",
@@ -1343,7 +1343,7 @@
    "notable": false,
    "first_seen": "2026-09-05T16:07:18.078Z",
    "tier": null,
-   "notable_reason": "only 11d out (min 14)"
+   "notable_reason": "only 10d out (min 14)"
   },
   {
    "id": "173fc23bec77ef46",
@@ -1503,7 +1503,7 @@
    "notable": false,
    "first_seen": "2026-09-06T01:24:02.956Z",
    "tier": null,
-   "notable_reason": "only 10d out (min 14)"
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "965aa3f1aec040c6",
@@ -1711,7 +1711,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only -4d out (min 14)"
+   "notable_reason": "only -5d out (min 14)"
   },
   {
    "id": "cd916c351c73e9f5",
@@ -1727,7 +1727,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 11d out (min 14)"
+   "notable_reason": "only 10d out (min 14)"
   },
   {
    "id": "cb091dfc9be9c6b6",
@@ -1743,7 +1743,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 11d out (min 14)"
+   "notable_reason": "only 10d out (min 14)"
   },
   {
    "id": "ba6fe384dd0f73d0",
@@ -1759,7 +1759,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 11d out (min 14)"
+   "notable_reason": "only 10d out (min 14)"
   },
   {
    "id": "46f86371a1fde417",
@@ -1775,7 +1775,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 12d out (min 14)"
+   "notable_reason": "only 11d out (min 14)"
   },
   {
    "id": "45004a1c53c9686a",
@@ -1791,7 +1791,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 12d out (min 14)"
+   "notable_reason": "only 11d out (min 14)"
   },
   {
    "id": "3d696e76dde360a9",
@@ -1807,7 +1807,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 12d out (min 14)"
+   "notable_reason": "only 11d out (min 14)"
   },
   {
    "id": "d66040b97effac9e",
@@ -1823,7 +1823,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 13d out (min 14)"
+   "notable_reason": "only 12d out (min 14)"
   },
   {
    "id": "1776c41455ed02f0",
@@ -1839,7 +1839,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 13d out (min 14)"
+   "notable_reason": "only 12d out (min 14)"
   },
   {
    "id": "7039e3fa17620233",
@@ -1855,7 +1855,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 13d out (min 14)"
+   "notable_reason": "only 12d out (min 14)"
   },
   {
    "id": "df7ee3ce21cc3ddc",
@@ -1871,7 +1871,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "title pattern"
+   "notable_reason": "only 13d out (min 14)"
   },
   {
    "id": "ca646a3bdc4db894",
@@ -1887,7 +1887,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "recurring series (3 weeks)"
+   "notable_reason": "only 13d out (min 14)"
   },
   {
    "id": "d1183f86b3d36a08",
@@ -1903,7 +1903,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "title pattern"
+   "notable_reason": "only 13d out (min 14)"
   },
   {
    "id": "6f36d58793bdcc8e",
@@ -2047,7 +2047,7 @@
    "notable": false,
    "first_seen": "2026-09-08T15:14:43.441Z",
    "tier": null,
-   "notable_reason": "only 8d out (min 14)"
+   "notable_reason": "only 7d out (min 14)"
   },
   {
    "id": "c25a3664df94a2e5",
@@ -2271,7 +2271,7 @@
    "notable": false,
    "first_seen": "2026-09-09T01:38:16.075Z",
    "tier": null,
-   "notable_reason": "only -3d out (min 14)"
+   "notable_reason": "only -4d out (min 14)"
   },
   {
    "id": "fca2e9156b96b9a6",
@@ -2287,7 +2287,7 @@
    "notable": false,
    "first_seen": "2026-09-09T01:38:16.075Z",
    "tier": null,
-   "notable_reason": "only 2d out (min 14)"
+   "notable_reason": "only 1d out (min 14)"
   },
   {
    "id": "8a805b7659802da6",
@@ -2303,7 +2303,7 @@
    "notable": false,
    "first_seen": "2026-09-09T01:38:16.075Z",
    "tier": null,
-   "notable_reason": "only 3d out (min 14)"
+   "notable_reason": "only 2d out (min 14)"
   },
   {
    "id": "1cb21afc050c660c",
@@ -2398,7 +2398,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 1d out (min 14)",
+   "notable_reason": "only 0d out (min 14)",
    "first_seen": "2026-09-11T01:34:14.633Z"
   },
   {
@@ -2574,7 +2574,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-09-12T01:38:26.604Z"
   },
   {
@@ -2846,7 +2846,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 1d out (min 14)",
+   "notable_reason": "only 0d out (min 14)",
    "first_seen": "2026-09-14T01:46:13.137Z"
   },
   {
@@ -2862,7 +2862,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 2d out (min 14)",
+   "notable_reason": "only 1d out (min 14)",
    "first_seen": "2026-09-14T01:46:13.137Z"
   },
   {
@@ -2878,7 +2878,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-09-14T18:41:02.630Z"
   },
   {
@@ -3086,7 +3086,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-09-16T01:45:37.373Z"
   },
   {
