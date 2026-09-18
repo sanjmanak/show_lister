@@ -1908,6 +1908,32 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-09-17"
+    },
+    "hou laugh society": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-09-18"
+    },
+    "nick cannon presents: wild 'n out live - the next generation": {
+      "tags": [
+        "black-comedy"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-09-18"
+    },
+    "the riot presents 2026 funniest person in houston (fpih) comedy competition": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-09-18"
+    },
+    "the riot presents 2026 funniest person in houston (fpih) comedy competition finals": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-09-18"
     }
   }
 }
