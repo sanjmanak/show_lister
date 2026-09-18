@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-09-17T17:40:46.871Z",
+  "last_updated": "2026-09-18T17:08:04.226Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -130,14 +130,6 @@
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
     },
-    "107fcbe5d9fe3523": {
-      "price_min": 27,
-      "price_max": 42,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/daniela-mora-houston-texas-09-17-2026/event/3A0064B123000AF6",
-      "fetched_at": "2026-08-17T15:26:06.821Z"
-    },
     "97db29f3fddabece": {
       "price_min": 31,
       "price_max": 45,
@@ -185,14 +177,6 @@
       "source": "page",
       "url": "https://www.ticketmaster.com/rocky-dale-davis-houston-texas-09-25-2026/event/3A0064982322FB57",
       "fetched_at": "2026-08-17T15:29:58.193Z"
-    },
-    "137b9ca9693f86ec": {
-      "price_min": 31.4,
-      "price_max": 31.4,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/rex-navarrete-houston-improv-tickets/14277314?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-09-01T17:48:56.441Z"
     },
     "d3daae8094cdecd4": {
       "price_min": 31.4,
@@ -417,14 +401,6 @@
       "source": "page",
       "url": "https://www.eventbrite.com/e/the-last-laugh-with-james-vogt-trip-truman-tickets-2000052211003",
       "fetched_at": "2026-09-09T01:38:03.672Z"
-    },
-    "b7d7795979acd8b4": {
-      "price_min": 7.18,
-      "price_max": 7.18,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/east-end-comedy-showcase-thursdays-at-wonky-power-tickets-1995325472200",
-      "fetched_at": "2026-09-09T01:38:05.601Z"
     },
     "f0f2e5d7c2d20a0c": {
       "price_min": 7.18,
