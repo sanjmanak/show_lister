@@ -1940,6 +1940,18 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-09-19"
+    },
+    "comedian sophie buddle (the tonight show, sirius xm, kevin hart's lol) headlines the riot comedy club": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-09-19"
+    },
+    "comedian gabriel rutledge (amazon prime video, comedy central) live at the riot in conroe": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-09-19"
     }
   }
 }

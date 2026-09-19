@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-09-18T17:08:04.226Z",
+  "last_updated": "2026-09-19T16:33:05.886Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -41,14 +41,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/craig-conant-houston-improv-tickets/14824993?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-07-19T00:21:45.367Z"
-    },
-    "d91c5804c0e8f702": {
-      "price_min": 50,
-      "price_max": 50,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/andrew-schulz-houston-improv-tickets/15036083?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-08-17T14:44:37.553Z"
     },
     "53f23e331d929715": {
       "price_min": 50,
@@ -130,14 +122,6 @@
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
     },
-    "97db29f3fddabece": {
-      "price_min": 31,
-      "price_max": 45,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/will-pepper-houston-texas-09-18-2026/event/3A00650CC08B99AC",
-      "fetched_at": "2026-08-17T15:26:59.176Z"
-    },
     "d4cb773de238db6a": {
       "price_min": 41,
       "price_max": 55,
@@ -217,30 +201,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/ellen-skrmetti-houston-improv-tickets/15024353?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-09-01T18:00:54.755Z"
-    },
-    "b4b6469b369aeaf2": {
-      "price_min": 18.06,
-      "price_max": 21.51,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-8pm-tickets-1999225389959",
-      "fetched_at": "2026-09-09T01:37:33.430Z"
-    },
-    "4657cb058756c296": {
-      "price_min": 18.06,
-      "price_max": 21.51,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-10pm-tickets-1999225393971",
-      "fetched_at": "2026-09-09T01:37:33.824Z"
-    },
-    "e357803e9a11f38b": {
-      "price_min": 8.82,
-      "price_max": 8.82,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/the-late-night-dirty-show-x-rated-comedy-tickets-1999225394974",
-      "fetched_at": "2026-09-09T01:37:34.793Z"
     },
     "b2b4936117be4436": {
       "price_min": 18.06,

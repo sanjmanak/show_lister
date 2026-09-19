@@ -1,147 +1,5 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-20": {
-      "lastmod": "2026-09-18T03:03:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Friday Night Standup Comedy Showcase",
-        "startDate": "2026-09-18T21:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-20",
-          "priceCurrency": "USD",
-          "price": "19.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-08T12:27:00-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-20",
-        "image": "/img/shows/Showcase-Templates-20-friday-night-9pm-602b1388-large-thumb.png",
-        "description": "Come join us for a hilarious evening of laughter at The Riot presents Friday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you&#39;re a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone. You can expect a diverse lineup with 5-7 comedians from Houston and around the country.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google thousands of reviews!Delicious Food &amp; DrinksEnjoy tasty food, draft beer, wine, coffee, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Tess Vergult"
-          },
-          {
-            "@type": "Person",
-            "name": "Brian Gendron"
-          },
-          {
-            "@type": "Person",
-            "name": "Bo Johnson"
-          },
-          {
-            "@type": "Person",
-            "name": "Quinton Jones"
-          },
-          {
-            "@type": "Person",
-            "name": "Luis Dejesus"
-          },
-          {
-            "@type": "Person",
-            "name": "Daniela Mora"
-          },
-          {
-            "@type": "Person",
-            "name": "Hassan Phills"
-          }
-        ]
-      }
-    },
-    "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-18": {
-      "lastmod": "2026-09-18T05:03:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Comedy Club Presents Friday Night Standup Comedy Late Showcase!",
-        "startDate": "2026-09-18T23:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-18",
-          "priceCurrency": "USD",
-          "price": "15.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-08T12:34:10-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-18",
-        "image": "/img/shows/Showcase-Templates-18-2f410d5b-large-thumb.png",
-        "description": "Get ready for the most unpredictable and chaotic showtime in the comedy scene! The Late Show offers an intimate late-night experience where the crowd is loose, the vibes are electric, and the laughs are nonstop.This showcase features a mix of headline comedians who sell out venues and local talent who know how to steal the show, making every performance an unforgettable experience.Whether you&rsquo;re looking for a fun night out or just love the thrill of late-night comedy, this show will have you laughing until it hurts.Reserve your tickets now and join us for a late-night comedy event like no other!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Christian Alexander"
-          },
-          {
-            "@type": "Person",
-            "name": "George Brito"
-          },
-          {
-            "@type": "Person",
-            "name": "Timely Rain Watson"
-          },
-          {
-            "@type": "Person",
-            "name": "Matthew Zane"
-          },
-          {
-            "@type": "Person",
-            "name": "Ebad Jann"
-          },
-          {
-            "@type": "Person",
-            "name": "Kris Atkins"
-          },
-          {
-            "@type": "Person",
-            "name": "Brandon Green"
-          },
-          {
-            "@type": "Person",
-            "name": "Daniela Mora"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/bo-johnson-don-t-tell-comedy-headlines-the-riot-comedy-club-2026-05-12093949": {
       "lastmod": "2026-09-18T03:00:00-05:00",
       "node": {
@@ -10336,55 +10194,6 @@
         ]
       }
     },
-    "https://www.riotconroe.com/events/comedian-aaron-weber-nateland-podcast-the-tonight-show-live-in-conroe-1": {
-      "lastmod": "2026-09-15T12:08:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Comedian Aaron Weber (Nateland Podcast, The Tonight Show) Live in Conroe",
-        "startDate": "2026-09-18T21:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Conroe",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "219 Simonton Street",
-            "addressLocality": "Conroe",
-            "postalCode": "77301",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.riotconroe.com/events/comedian-aaron-weber-nateland-podcast-the-tonight-show-live-in-conroe-1",
-          "priceCurrency": "USD",
-          "price": "25.00",
-          "availability": "InStock",
-          "validFrom": "2026-04-24T12:51:06-05:00"
-        },
-        "url": "https://www.riotconroe.com/events/comedian-aaron-weber-nateland-podcast-the-tonight-show-live-in-conroe-1",
-        "image": "/img/events/Aaron-Weber18-19-dcf40ab5-large-thumb.png",
-        "description": "",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Conroe",
-          "url": "https://www.riotconroe.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Aaron Weber"
-          },
-          {
-            "@type": "Person",
-            "name": "Grady Pruitt"
-          }
-        ]
-      }
-    },
     "https://www.riotconroe.com/events/comedian-aaron-weber-nateland-podcast-the-tonight-show-live-in-conroe-2": {
       "lastmod": "2026-09-13T03:12:00-05:00",
       "node": {
@@ -13573,6 +13382,126 @@
         "url": "https://www.theriothtx.com/events/the-riot-presents-2026-funniest-person-in-houston-fpih-comedy-competition-2026-10-29190000",
         "image": "/img/shows/FTIH-FPIH-1-9c0f0887-large-thumb.png",
         "description": "Don&rsquo;t miss an opportunity to come enjoy the show and help decide which of Houston&rsquo;s funniest comedians wins the title of 2026 Funniest Person in Houston (FPiH) A great night of comedy with celebrity judges, drink and food specials, and the funniest standup comedy you&rsquo;ll find on a Thursday night. Everyone attending gets two votes!LINEUP:&nbsp;TBAThis fifth annual Comedy Contest will have 72 of Houston comedians competing for the title of Funniest Person in Houston (FPiH). One winner gets all the bragging rights and $500, but the top six finalists will move on to compete in the National Riot Comedy Contest held April 3-6, 2025 at the Riot Comedy Festival for a chance at $2500.00 and title of the Riot National Comedy Champion.2025 Winner&nbsp;2024 Winner Canice, Runner-Up Jeff Joe, 3rd Danny Guerrero2023 Winner Mason James, Runner-Up Connor Carter, 3rd Jeff Joe2022 Winner Mason James, Runner-Up Will Loden, 3rd J CookieCheck for lineup information on our instagram page: instagram.com/theriohtxAll shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/dylan-carlino-headlines-the-riot-comedy-club": {
+      "lastmod": "2026-09-18T10:08:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Dylan Carlino Headlines The Riot Comedy Club",
+        "startDate": "2027-04-16T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/dylan-carlino-headlines-the-riot-comedy-club",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-18T22:03:41-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/dylan-carlino-headlines-the-riot-comedy-club",
+        "image": "/img/events/IMG-0494-7ee10790-large-thumb.jpg",
+        "description": "Dylan Carlino is a hilariously funny comedian, writer and actor with a genuinely unique point of view. &nbsp;After beginning his career in the Berkshires, he spent several years in Portland, OR before moving to Austin, TX where he won the Austin&#39;s Funniest competition in 2023. Dylan&#39;s been featured in multiple festivals including the Mass Moca Comedy Festival, the Moontower Comedy Festival and he was presented by Netflix is a Joke in their &quot;Featuring...&quot; showcase in 2024. Dylan host&#39;s the podcast, SOME OF THIS IS BAD, w/ comedian Colton Dowling and his own podcast, FEELIN&#39; GIRLY. Recently, Dylan&#39;s audience has grown to over 1.8 million followers across TikTok and Instagram where his series, &quot;If I Was A Girl...&quot; has over 100 million views.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/dylan-carlino-headlines-the-riot-comedy-club-2027-04-17190000": {
+      "lastmod": "2026-09-18T10:08:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Dylan Carlino Headlines The Riot Comedy Club",
+        "startDate": "2027-04-17T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/dylan-carlino-headlines-the-riot-comedy-club-2027-04-17190000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-18T22:08:56-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/dylan-carlino-headlines-the-riot-comedy-club-2027-04-17190000",
+        "image": "/img/events/IMG-0494-7ee10790-large-thumb.jpg",
+        "description": "Dylan Carlino is a hilariously funny comedian, writer and actor with a genuinely unique point of view. &nbsp;After beginning his career in the Berkshires, he spent several years in Portland, OR before moving to Austin, TX where he won the Austin's Funniest competition in 2023. Dylan's been featured in multiple festivals including the Mass Moca Comedy Festival, the Moontower Comedy Festival and he was presented by Netflix is a Joke in their \"Featuring...\" showcase in 2024. Dylan host's the podcast, SOME OF THIS IS BAD, w/ comedian Colton Dowling and his own podcast, FEELIN' GIRLY. Recently, Dylan's audience has grown to over 1.8 million followers across TikTok and Instagram where his series, \"If I Was A Girl...\" has over 100 million views.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/dylan-carlino-headlines-the-riot-comedy-club-2027-04-17210000": {
+      "lastmod": "2026-09-18T10:08:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Dylan Carlino Headlines The Riot Comedy Club",
+        "startDate": "2027-04-17T21:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/dylan-carlino-headlines-the-riot-comedy-club-2027-04-17210000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-18T22:08:57-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/dylan-carlino-headlines-the-riot-comedy-club-2027-04-17210000",
+        "image": "/img/events/IMG-0494-7ee10790-large-thumb.jpg",
+        "description": "Dylan Carlino is a hilariously funny comedian, writer and actor with a genuinely unique point of view. &nbsp;After beginning his career in the Berkshires, he spent several years in Portland, OR before moving to Austin, TX where he won the Austin's Funniest competition in 2023. Dylan's been featured in multiple festivals including the Mass Moca Comedy Festival, the Moontower Comedy Festival and he was presented by Netflix is a Joke in their \"Featuring...\" showcase in 2024. Dylan host's the podcast, SOME OF THIS IS BAD, w/ comedian Colton Dowling and his own podcast, FEELIN' GIRLY. Recently, Dylan's audience has grown to over 1.8 million followers across TikTok and Instagram where his series, \"If I Was A Girl...\" has over 100 million views.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Houston",
