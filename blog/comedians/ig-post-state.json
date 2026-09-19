@@ -50,24 +50,6 @@
   "manifest_version": 1788290278973,
   "cleanup_queue": [
     {
-      "slug": "billy-wayne-davis-the-secret-group-2026-09-14",
-      "comedianName": "Billy Wayne Davis",
-      "igFeedMediaId": "18335928184260354",
-      "igStoryMediaId": "18335448682287106",
-      "fbFeedPostId": "1403115201913221",
-      "fbStoryPostId": "1398836909068652",
-      "postedAt": "2026-09-14T10:03:06.778Z"
-    },
-    {
-      "slug": "andrew-youngblood-the-secret-group-2026-09-14",
-      "comedianName": "Andrew Youngblood",
-      "igFeedMediaId": "18132296350654789",
-      "igStoryMediaId": "18347639215271227",
-      "fbFeedPostId": "1403389601885781",
-      "fbStoryPostId": "1768187074444840",
-      "postedAt": "2026-09-14T16:25:45.309Z"
-    },
-    {
       "slug": "rex-navarrete-houston-improv-2026-09-17",
       "comedianName": "Rex Navarrete",
       "igFeedMediaId": "18088434758678153",
