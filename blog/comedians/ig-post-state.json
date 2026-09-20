@@ -48,33 +48,5 @@
   ],
   "week_range": "September 14 – September 20, 2026",
   "manifest_version": 1788290278973,
-  "cleanup_queue": [
-    {
-      "slug": "rex-navarrete-houston-improv-2026-09-17",
-      "comedianName": "Rex Navarrete",
-      "igFeedMediaId": "18088434758678153",
-      "igStoryMediaId": "17966641691965095",
-      "fbFeedPostId": "1403657901858951",
-      "fbStoryPostId": "1065986816320529",
-      "postedAt": "2026-09-15T00:45:04.852Z"
-    },
-    {
-      "slug": "hassan-phills-the-riot-comedy-club-2026-09-17",
-      "comedianName": "Hassan Phills",
-      "igFeedMediaId": "17860957410692824",
-      "igStoryMediaId": "17875429437564080",
-      "fbFeedPostId": "1403957651828976",
-      "fbStoryPostId": "3569787349862868",
-      "postedAt": "2026-09-15T09:31:24.256Z"
-    },
-    {
-      "slug": "bo-johnson-the-riot-comedy-club-2026-09-18",
-      "comedianName": "Bo Johnson",
-      "igFeedMediaId": "17947869048297310",
-      "igStoryMediaId": "18336674185257301",
-      "fbFeedPostId": "1404181425139932",
-      "fbStoryPostId": "2312590439543723",
-      "postedAt": "2026-09-15T15:07:45.078Z"
-    }
-  ]
+  "cleanup_queue": []
 }
