@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-09-19T16:33:05.886Z",
+  "last_updated": "2026-09-20T16:50:38.506Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -41,14 +41,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/craig-conant-houston-improv-tickets/14824993?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-07-19T00:21:45.367Z"
-    },
-    "53f23e331d929715": {
-      "price_min": 50,
-      "price_max": 50,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/andrew-schulz-houston-improv-tickets/15036103?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-08-17T14:44:39.413Z"
     },
     "7f459232414387cc": {
       "price_min": 31.4,
@@ -201,30 +193,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/ellen-skrmetti-houston-improv-tickets/15024353?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-09-01T18:00:54.755Z"
-    },
-    "b2b4936117be4436": {
-      "price_min": 18.06,
-      "price_max": 21.51,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-7pm-tickets-1999225399989",
-      "fetched_at": "2026-09-09T01:37:35.687Z"
-    },
-    "8acdae70472f0449": {
-      "price_min": 18.06,
-      "price_max": 21.51,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-9pm-tickets-1999225400992",
-      "fetched_at": "2026-09-09T01:37:36.575Z"
-    },
-    "56acb60c0e2757d5": {
-      "price_min": 11.13,
-      "price_max": 14.59,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-rated-r-comedy-showcase-11pm-tickets-1999225404001",
-      "fetched_at": "2026-09-09T01:37:37.465Z"
     },
     "c68ec018e7fb4374": {
       "price_min": 20.36,
