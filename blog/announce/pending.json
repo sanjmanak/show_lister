@@ -1,3 +1,21 @@
 {
-  "items": []
+  "generated_at": "2026-09-20T18:17:50.798Z",
+  "dry_run": false,
+  "items": [
+    {
+      "id": "7e2a936809d4c19f",
+      "name": "Comedian Sophie Buddle (The Tonight Show, Sirius XM, Kevin Hart's LOL) Headlines The Riot Comedy Club",
+      "performer_name": "Sophie Buddle",
+      "venue": "The Riot Comedy Club",
+      "date": "2026-12-18",
+      "ticket_url": "https://www.theriothtx.com/events/comedian-sophie-buddle-the-tonight-show-sirius-xm-kevin-hart-s-lol-headlines-the-riot-comedy-club",
+      "files": {
+        "portrait": "2026-12-18-sophie-buddle-portrait.png",
+        "story": "2026-12-18-sophie-buddle-story.png",
+        "reel": "2026-12-18-sophie-buddle.mp4"
+      },
+      "caption": "The Juno-winning comic behind Lil Bit of Buddle is back with sharp new stand-up.\nSophie Buddle performs at The Riot Comedy Club on December 18, 2026. She has appeared on The Tonight Show and Kevin Hart's LOL Network. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
+      "confidence": 0.97
+    }
+  ]
 }
