@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-09-20T16:50:38.506Z",
+  "last_updated": "2026-09-21T18:44:49.345Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -114,14 +114,6 @@
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
     },
-    "d4cb773de238db6a": {
-      "price_min": 41,
-      "price_max": 55,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/therapy-gecko-houston-texas-09-20-2026/event/3A006462D3BAD4E4",
-      "fetched_at": "2026-08-17T15:27:49.496Z"
-    },
     "0b4dfdbecac6f841": {
       "price_min": 31,
       "price_max": 45,
@@ -153,14 +145,6 @@
       "source": "page",
       "url": "https://www.ticketmaster.com/rocky-dale-davis-houston-texas-09-25-2026/event/3A0064982322FB57",
       "fetched_at": "2026-08-17T15:29:58.193Z"
-    },
-    "d3daae8094cdecd4": {
-      "price_min": 31.4,
-      "price_max": 31.4,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/dave-lawson-friends-houston-improv-tickets/15043813?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-09-01T17:49:07.436Z"
     },
     "a9d8a939231a3e5f": {
       "price_min": 37.58,
@@ -233,22 +217,6 @@
       "source": "page",
       "url": "https://www.eventbrite.com/e/chat-pile-who-loves-the-sun-tour-2026-late-show-tickets-1999298219795",
       "fetched_at": "2026-09-09T01:37:44.102Z"
-    },
-    "06bdab87e76a88ec": {
-      "price_min": 8.82,
-      "price_max": 8.82,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/the-last-laugh-with-james-vogt-trip-truman-tickets-1999307681094",
-      "fetched_at": "2026-09-09T01:37:44.959Z"
-    },
-    "29c863225892fe63": {
-      "price_min": 14.59,
-      "price_max": 14.59,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/the-secret-secret-show-tickets-1999307690121",
-      "fetched_at": "2026-09-09T01:37:45.842Z"
     },
     "344a73d11d930c9d": {
       "price_min": 8.82,

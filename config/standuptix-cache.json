@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-5": {
-      "lastmod": "2026-09-20T02:19:00-05:00",
+      "lastmod": "2026-09-21T01:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -441,7 +441,7 @@
       }
     },
     "https://www.theriothtx.com/events/peyton-ruddy-kill-tony-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-09-20T02:38:00-05:00",
+      "lastmod": "2026-09-21T12:14:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -481,12 +481,20 @@
           {
             "@type": "Person",
             "name": "Peyton Ruddy"
+          },
+          {
+            "@type": "Person",
+            "name": "Matt B.C."
+          },
+          {
+            "@type": "Person",
+            "name": "Andy Huggins"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-21": {
-      "lastmod": "2026-09-20T01:58:00-05:00",
+      "lastmod": "2026-09-21T12:10:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -530,12 +538,28 @@
           {
             "@type": "Person",
             "name": "Tony Wellons"
+          },
+          {
+            "@type": "Person",
+            "name": "Peyton Ruddy"
+          },
+          {
+            "@type": "Person",
+            "name": "Brian Gendron"
+          },
+          {
+            "@type": "Person",
+            "name": "Jeff Joe"
+          },
+          {
+            "@type": "Person",
+            "name": "Christian Alexander"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-19": {
-      "lastmod": "2026-09-20T02:16:00-05:00",
+      "lastmod": "2026-09-21T12:10:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -600,7 +624,7 @@
       }
     },
     "https://www.theriothtx.com/events/peyton-ruddy-kill-tony-headlines-the-riot-comedy-club-2026-05-12094413": {
-      "lastmod": "2026-09-20T02:40:00-05:00",
+      "lastmod": "2026-09-21T01:20:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -636,11 +660,20 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Christian Alexander"
+          },
+          {
+            "@type": "Person",
+            "name": "Peyton Ruddy"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-18": {
-      "lastmod": "2026-09-11T11:31:00-05:00",
+      "lastmod": "2026-09-21T01:20:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -684,12 +717,28 @@
           {
             "@type": "Person",
             "name": "Tony Wellons"
+          },
+          {
+            "@type": "Person",
+            "name": "Peyton Ruddy"
+          },
+          {
+            "@type": "Person",
+            "name": "Brian Gendron"
+          },
+          {
+            "@type": "Person",
+            "name": "Brandon Green"
+          },
+          {
+            "@type": "Person",
+            "name": "Jeff Joe"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-21": {
-      "lastmod": "2026-09-11T11:31:00-05:00",
+      "lastmod": "2026-09-21T01:20:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -729,12 +778,28 @@
           {
             "@type": "Person",
             "name": "christophe jean"
+          },
+          {
+            "@type": "Person",
+            "name": "Luis Dejesus"
+          },
+          {
+            "@type": "Person",
+            "name": "Danny Guerrero"
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
+          },
+          {
+            "@type": "Person",
+            "name": "Onkar Singh"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-55": {
-      "lastmod": "2026-09-16T02:10:00-05:00",
+      "lastmod": "2026-09-21T01:25:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -774,12 +839,32 @@
           {
             "@type": "Person",
             "name": "Tony Wellons"
+          },
+          {
+            "@type": "Person",
+            "name": "George Brito"
+          },
+          {
+            "@type": "Person",
+            "name": "Cody Greenlee"
+          },
+          {
+            "@type": "Person",
+            "name": "Tess Vergult"
+          },
+          {
+            "@type": "Person",
+            "name": "Malay Vyas"
+          },
+          {
+            "@type": "Person",
+            "name": "Jcann"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-21": {
-      "lastmod": "2026-09-16T02:10:00-05:00",
+      "lastmod": "2026-09-21T01:25:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -815,7 +900,32 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Luis Dejesus"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Owens"
+          },
+          {
+            "@type": "Person",
+            "name": "Brian Gendron"
+          },
+          {
+            "@type": "Person",
+            "name": "Julia Cook"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Loden"
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-6": {
