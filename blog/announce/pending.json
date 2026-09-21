@@ -1,3 +1,21 @@
 {
-  "items": []
+  "generated_at": "2026-09-21T20:07:27.634Z",
+  "dry_run": false,
+  "items": [
+    {
+      "id": "5c2e9adc897afe67",
+      "name": "CHARLIE BERENS THE LOST AND FOUND TOUR",
+      "performer_name": "Charlie Berens",
+      "venue": "Cullen Performance Hall",
+      "date": "2026-10-24",
+      "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1AAvI-S",
+      "files": {
+        "portrait": "2026-10-24-charlie-berens-portrait.png",
+        "story": "2026-10-24-charlie-berens-story.png",
+        "reel": "2026-10-24-charlie-berens.mp4"
+      },
+      "caption": "Manitowoc Minute creator Charlie Berens is out with The Lost and Found Tour.\nCharlie Berens performs at Cullen Performance Hall on October 24, 2026. The Wisconsin comic is known for his Midwest-focused Manitowoc Minute videos. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
+      "confidence": 0.98
+    }
+  ]
 }
