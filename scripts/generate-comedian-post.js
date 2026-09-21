@@ -130,6 +130,30 @@ function comedianDedupeKey(name) {
   return (name || "").toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 
+// Event identity: title + venue, punctuation stripped. A four-night run at
+// one club is ONE event, and — the reason this exists — every recognizable
+// comedian on a shared bill maps to the same key. Without it, the 2026-09-21
+// handoff (Dan Howell, Phil Lester, Arin Hanson, Dan Avidan, Brian Wecht)
+// would have produced five spotlight posts and fifteen graphics for exactly
+// two shows, each carrying the same ticket image, while Martin Amini, Justin
+// Whitehead and Chelby Morgan got nothing.
+function eventDedupeKey(ev) {
+  if (!ev) return "";
+  const title = (ev.name || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  const venue = (ev.venue || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  if (!title && !venue) return "";
+  return `${title}@${venue}`;
+}
+
+/** The event a headliner entry refers to, using the same match as the loop. */
+function matchHeadlinerEvent(headliner, events) {
+  return events.find(
+    (ev) =>
+      ev.name === headliner.show ||
+      ev.name.toLowerCase().includes((headliner.name || "").toLowerCase())
+  );
+}
+
 /** Turn "Ali Siddiq: The Domino Effect Tour" into "ali-siddiq-domino-effect-tour" */
 function slugify(str) {
   return str
@@ -1296,7 +1320,9 @@ async function main() {
         Array.isArray(handoff.comedians) &&
         handoff.comedians.length > 0
       ) {
-        headliners = handoff.comedians.slice(0, 5);
+        // Capped below, AFTER the per-event dedupe — slicing first would
+        // spend the five slots on five names from two shows.
+        headliners = handoff.comedians;
         console.log(
           `Using ${headliners.length} headliner(s) from blog handoff: ${headliners.map((c) => c.name).join(", ")}`
         );
@@ -1333,12 +1359,8 @@ async function main() {
       seen.add(key);
       return true;
     });
-    // Hard cap: max 5 comedian posts per week
-    if (headliners.length > 5) {
-      console.log(`Found ${headliners.length} headliners — capping at 5.`);
-      headliners = headliners.slice(0, 5);
-    }
-    console.log(`Processing ${headliners.length} headliner(s): ${headliners.map((c) => c.name).join(", ")}`);
+    // The 5-post cap is applied after the per-event dedupe below.
+    console.log(`Identified ${headliners.length} headliner(s): ${headliners.map((c) => c.name).join(", ")}`);
   } catch (err) {
     console.error(`Failed to identify headliners: ${err.message}`);
     process.exit(1);
@@ -1356,6 +1378,41 @@ async function main() {
       return true;
     });
   }
+
+  // One post per SHOW. Co-headliners of the same bill collapse onto the
+  // first (highest-ranked) entry, which keeps the others' names so the post
+  // can name the full lineup instead of pretending it's a solo date.
+  {
+    const seenEvents = new Map();
+    const perEvent = [];
+    for (const c of headliners) {
+      const key = eventDedupeKey(matchHeadlinerEvent(c, events));
+      if (!key) {
+        perEvent.push(c);
+        continue;
+      }
+      const existing = seenEvents.get(key);
+      if (existing) {
+        existing.names = existing.names || [existing.name];
+        if (!existing.names.includes(c.name)) existing.names.push(c.name);
+        console.log(`  ${c.name} shares a bill with ${existing.name} — one post covers both.`);
+        continue;
+      }
+      seenEvents.set(key, c);
+      perEvent.push(c);
+    }
+    if (perEvent.length !== headliners.length) {
+      console.log(`${headliners.length} headliner(s) → ${perEvent.length} show(s) after grouping.`);
+    }
+    headliners = perEvent;
+  }
+
+  // Hard cap: max 5 spotlight posts per week.
+  if (headliners.length > 5) {
+    console.log(`Found ${headliners.length} shows — capping at 5.`);
+    headliners = headliners.slice(0, 5);
+  }
+  console.log(`Processing ${headliners.length} show(s): ${headliners.map((c) => c.name).join(", ")}`);
 
   if (headliners.length === 0) {
     console.log("No recognizable headliners this week. Skipping.");

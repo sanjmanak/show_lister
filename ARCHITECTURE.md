@@ -173,7 +173,21 @@ What remains in `image-utils.js`:
 2. **`buildInitialsPlaceholder(name)`** — branded initials SVG for an event with no image at all.
 3. **`pickDisplayImage({eventImageUrl, comedianName})`** — event image if usable, otherwise the placeholder. Returns `{displayImage, source: "event" | "initials"}`.
 
-`blog/top-comedians.json` (the handoff to `generate-comedian-post.js`) carries `imageUrl`, `displayImage` and `imageSource` per comedian so both Monday scripts agree on the lineup.
+`blog/top-comedians.json` (the handoff to `generate-comedian-post.js`) carries `imageUrl`, `displayImage` and `imageSource` so both Monday scripts agree on the lineup.
+
+#### One tile per EVENT, not per performer
+
+`identifyTopComedians()` answers "which recognizable comedians play Houston this week", so a show with several recognizable names comes back as several entries pointing at the same event. On 2026-09-21 that meant Dan Howell **and** Phil Lester for the one "Dan and Phil" date, plus Arin Hanson **and** Dan Avidan **and** Brian Wecht for the one Starbomb date: the hero rendered five circles showing two pictures, and the handoff would have spent all five spotlight posts on two shows while Martin Amini, Justin Whitehead and Chelby Morgan got none.
+
+`groupComediansByEvent()` collapses those entries on `eventDedupeKey(event)` — normalized title + venue, which also folds a four-night run at one club into a single entry. Each group keeps:
+
+| Field | Meaning |
+|---|---|
+| `name` | Tile label — the act's name from the event title when it is short and specific ("Dan and Phil", "Starbomb"), else "A & B", else "Headliner + N more" |
+| `names` | Every recognizable comedian on that bill, highest-ranked first |
+| `show` / `venue` / `date` / `eventKey` | The matched event |
+
+Everything visual is per-event from there: hero tiles, the `/this-week/` cards (which print `names` under the heading when the label is the act's), the backfill's "already covered" check, and the handoff. `topComedians` stays per-person for research and Instagram @-mentions. `generate-comedian-post.js` applies the same `eventDedupeKey` grouping to whichever list it ends up with — handoff or its own OpenAI call — **before** the 5-post cap, so five slots buy five different shows.
 
 #### WordPress publish reliability — per-request timeouts + cumulative budget
 
@@ -199,6 +213,12 @@ The workflow YAML reinforces the same idea: every step from `Commit and push blo
 
 Both env vars are plain overrides, so a bad model day is an env change, not a code change.
 
+#### OpenAI call reliability — timeouts + transient retry
+
+Every request goes through `postJsonWithRetry()`: a socket timeout (120s for Chat Completions, 180s for Responses) plus `OPENAI_MAX_ATTEMPTS` (default 2) tries on the classes a retry can actually fix — socket timeout, `ECONNRESET` / `ETIMEDOUT` / DNS blips, 408, 409, 429, 5xx — with a `OPENAI_RETRY_BASE_MS` × attempt backoff. A 400 or 401 is deterministic and still fails immediately, so a bad key alerts in seconds rather than minutes.
+
+The blog body is the longest single generation (60–70 events in, a full HTML post out) and gets its own budget: `BLOG_BODY_TIMEOUT_MS` (default 240s) and `BLOG_BODY_ATTEMPTS` (default 3). Run #77 (2026-09-21) died on a single 120s timeout on exactly that call, four minutes into a run that had already paid for identification, research and the hero render — and because the caption and `weekly-meta.json` are written *after* it, the auto-post then skipped on stale meta and the creative email went out carrying the previous fortnight's caption. Hence also the freshness gate on the email step (below).
+
 ---
 
 ### 3b. Per-Comedian SEO Blog Post Generator (`scripts/generate-comedian-post.js`)
@@ -209,7 +229,7 @@ Both env vars are plain overrides, so a bad model day is an env change, not a co
 
 1. **Reads `events.json`** and filters to this week's events (Monday–Sunday)
 
-2. **Identifies headliners** — prefers `blog/top-comedians.json`, a handoff file written by `generate-blog-post.js` earlier on Monday. This guarantees the weekly roundup and the per-comedian posts cover the exact same comedians and saves one OpenAI call. Falls back to its own OpenAI call (with JSON-array extraction as a second-chance parser) only if the handoff file is missing or stale (different `week_range`).
+2. **Identifies headliners** — prefers `blog/top-comedians.json`, a handoff file written by `generate-blog-post.js` earlier on Monday. This guarantees the weekly roundup and the per-comedian posts cover the exact same shows and saves one OpenAI call. Falls back to its own OpenAI call (with JSON-array extraction as a second-chance parser) only if the handoff file is missing or stale (different `week_range`). Either way the list is deduped by name **and** by event (`eventDedupeKey`) before the 5-post cap, so co-headliners of one bill produce one post rather than three identical ones.
 
 3. **For each headliner, runs a 4-call pipeline:**
 
@@ -490,7 +510,7 @@ Logs every ticket click with: timestamp, original URL, final URL (with affiliate
 | **Commits** | `blog/weekly-hero.html`, `blog/weekly-hero.png`, `blog/instagram-caption.txt`, `blog/top-comedians.json`, `blog/weekly-meta.json` |
 | **Job timeout** | `timeout-minutes: 20` (down from 30 — script-side per-call WP timeouts make this a fail-safe, not the primary kill switch) |
 | **Auto-post** | After the commit/push, `post-weekly-roundup.js` posts the hero + caption to IG feed (anchor) + FB feed via `scripts/lib/meta-api.js`. Freshness is proven by `blog/weekly-meta.json` (written only when this week's caption + hero both exist); `blog/weekly-post-state.json` is week-keyed so Thursday runs and re-runs can't double-post; the hero URL carries a week-keyed cache-buster so the raw CDN can't serve last week's PNG. |
-| **Email** | Sends whenever `SMTP_SERVER` is set AND the caption + hero files exist on disk — now a receipt/backup for the auto-post rather than a to-do. Crucially, the `Commit and push`, auto-post, and email steps all run under `if: ${{ !cancelled() }}` — so if `node scripts/generate-blog-post.js` exits non-zero (e.g. WordPress publish failure), the operator still gets the Instagram caption + hero PNG by email and can post manually. |
+| **Email** | Sends whenever `SMTP_SERVER` is set AND the caption + hero files exist on disk AND `blog/weekly-meta.json` names the current week — now a receipt/backup for the auto-post rather than a to-do. The freshness gate matters because last week's caption and hero are *always* in the checkout: when generation died partway (runs #76 and #77), the old existence-only check mailed those stale files out as "this week's creative", twice, with a comedian whose show had already happened. Crucially, the `Commit and push`, auto-post, and email steps all run under `if: ${{ !cancelled() }}` — so if `node scripts/generate-blog-post.js` exits non-zero (e.g. WordPress publish failure), the operator still gets the Instagram caption + hero PNG by email and can post manually. |
 
 #### Workflow 3: Generate Comedian Posts (`.github/workflows/generate-comedian-posts.yml`)
 
