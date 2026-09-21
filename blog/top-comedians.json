@@ -1,61 +1,78 @@
 {
-  "generated_at": "2026-09-21T19:59:19.886Z",
+  "generated_at": "2026-09-21T23:13:41.299Z",
   "week_range": "September 21 – September 27, 2026",
   "comedians": [
     {
       "name": "Dan Howell",
+      "displayName": "Dan and Phil",
+      "names": [
+        "Dan Howell",
+        "Phil Lester"
+      ],
       "show": "Dan and Phil",
-      "imageUrl": "https://s1.ticketm.net/dam/a/415/040df804-f51a-4e21-8137-d17f51f0e415_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/415/040df804-f51a-4e21-8137-d17f51f0e415_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Phil Lester",
-      "show": "Dan and Phil",
+      "venue": "Cullen Performance Hall",
+      "date": "2026-09-26",
+      "eventKey": "danandphil@cullenperformancehall",
       "imageUrl": "https://s1.ticketm.net/dam/a/415/040df804-f51a-4e21-8137-d17f51f0e415_SOURCE",
       "displayImage": "https://s1.ticketm.net/dam/a/415/040df804-f51a-4e21-8137-d17f51f0e415_SOURCE",
       "imageSource": "event"
     },
     {
       "name": "Arin Hanson",
+      "displayName": "Starbomb",
+      "names": [
+        "Arin Hanson",
+        "Dan Avidan",
+        "Brian Wecht"
+      ],
       "show": "Starbomb featuring DJ Commander Meouch - Probably The Only Tour Ever",
-      "imageUrl": "https://s1.ticketm.net/dam/a/97b/cfee6cdb-a7a9-4a81-9823-963cf9f9f97b_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "displayImage": "https://s1.ticketm.net/dam/a/97b/cfee6cdb-a7a9-4a81-9823-963cf9f9f97b_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "imageSource": "event"
-    },
-    {
-      "name": "Dan Avidan",
-      "show": "Starbomb featuring DJ Commander Meouch - Probably The Only Tour Ever",
-      "imageUrl": "https://s1.ticketm.net/dam/a/97b/cfee6cdb-a7a9-4a81-9823-963cf9f9f97b_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "displayImage": "https://s1.ticketm.net/dam/a/97b/cfee6cdb-a7a9-4a81-9823-963cf9f9f97b_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "imageSource": "event"
-    },
-    {
-      "name": "Brian Wecht",
-      "show": "Starbomb featuring DJ Commander Meouch - Probably The Only Tour Ever",
+      "venue": "House of Blues Houston",
+      "date": "2026-09-25",
+      "eventKey": "starbombfeaturingdjcommandermeouchprobablytheonlytourever@houseofblueshouston",
       "imageUrl": "https://s1.ticketm.net/dam/a/97b/cfee6cdb-a7a9-4a81-9823-963cf9f9f97b_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "displayImage": "https://s1.ticketm.net/dam/a/97b/cfee6cdb-a7a9-4a81-9823-963cf9f9f97b_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "imageSource": "event"
     },
     {
       "name": "Martin Amini",
+      "displayName": "Martin Amini",
+      "names": [
+        "Martin Amini"
+      ],
       "show": "Martin Amini",
+      "venue": "Houston Improv",
+      "date": "2026-09-24",
+      "eventKey": "martinamini@houstonimprov",
       "imageUrl": "https://s1.ticketm.net/dam/a/d35/942690b6-50b2-4028-9530-65dbd2e40d35_SOURCE",
       "displayImage": "https://s1.ticketm.net/dam/a/d35/942690b6-50b2-4028-9530-65dbd2e40d35_SOURCE",
       "imageSource": "event"
     },
     {
       "name": "Justin Whitehead",
+      "displayName": "Justin Whitehead",
+      "names": [
+        "Justin Whitehead"
+      ],
       "show": "Justin Whitehead",
+      "venue": "Houston Improv",
+      "date": "2026-09-23",
+      "eventKey": "justinwhitehead@houstonimprov",
       "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "displayImage": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "imageSource": "event"
     },
     {
-      "name": "Chelby Morgan",
-      "show": "The Best of TSG Headliner Series - CHELBY MORGAN",
-      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176743871%2F3558237521%2F1%2Foriginal.20260205-024409?auto=format%2Ccompress&q=75&sharp=10&s=70e5049026424875ceb7fb9cbafc7ae9",
-      "displayImage": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176743871%2F3558237521%2F1%2Foriginal.20260205-024409?auto=format%2Ccompress&q=75&sharp=10&s=70e5049026424875ceb7fb9cbafc7ae9",
+      "name": "Rocky Dale Davis",
+      "displayName": "Rocky Dale Davis",
+      "names": [
+        "Rocky Dale Davis"
+      ],
+      "show": "Rocky Dale Davis",
+      "venue": "Punch Line Houston",
+      "date": "2026-09-24",
+      "eventKey": "rockydaledavis@punchlinehouston",
+      "imageUrl": "https://s1.ticketm.net/dam/a/05b/49497952-1608-4c15-a56b-c094d75bc05b_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/05b/49497952-1608-4c15-a56b-c094d75bc05b_SOURCE",
       "imageSource": "event"
     }
   ]
