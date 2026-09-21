@@ -183,8 +183,22 @@ jobs:
         env:
           HAS_SMTP: ${{ secrets.SMTP_SERVER }}
         run: |
-          if [ -n "$HAS_SMTP" ] && [ -f blog/instagram-caption.txt ] && [ -f blog/weekly-hero.png ]; then
+          # File existence proves nothing about freshness: LAST week's caption
+          # and hero are always in the checkout. When generate-blog-post.js
+          # dies partway (2026-09-14, 2026-09-21) they are exactly what is on
+          # disk, and this step used to mail them out as "this week's
+          # creative" — Arnez J's caption went out twice, weeks after his
+          # show. weekly-meta.json is only written on a clean generate, so
+          # gate on it naming the CURRENT week.
+          dow=$(date +%u)
+          current_monday=$(date -d "-$((dow - 1)) days" +%Y-%m-%d)
+          meta_week=$(node -e "try { process.stdout.write(String(require('./blog/weekly-meta.json').week_monday || '')) } catch (e) {}" 2>/dev/null || true)
+          echo "Current week Monday: $current_monday / weekly-meta.json: ${meta_week:-<none>}"
+          if [ -n "$HAS_SMTP" ] && [ -f blog/instagram-caption.txt ] && [ -f blog/weekly-hero.png ] && [ "$meta_week" = "$current_monday" ]; then
             echo "send_email=true" >> $GITHUB_OUTPUT
+          elif [ -n "$HAS_SMTP" ] && [ "$meta_week" != "$current_monday" ]; then
+            echo "send_email=false" >> $GITHUB_OUTPUT
+            echo "Skipping creative email — caption/hero on disk are NOT this week's (generation failed). The failure alert covers it."
           else
             echo "send_email=false" >> $GITHUB_OUTPUT
             echo "Skipping email — SMTP not configured or files missing."

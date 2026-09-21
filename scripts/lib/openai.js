@@ -38,6 +38,35 @@ const OPENAI_MODEL_LIGHT = process.env.OPENAI_MODEL_LIGHT || "gpt-5.6-luna";
 const CHAT_TIMEOUT_MS = 120_000;
 const RESPONSES_TIMEOUT_MS = 180_000;
 
+// Transient-failure retry. Before this, ONE socket timeout killed the whole
+// run: the 2026-09-21 weekly post spent ~4 minutes on identify + research +
+// hero render, then died because the blog-body completion took longer than
+// the 120s socket timeout (reasoning models on a 12k budget regularly do).
+// Nothing downstream recovered — the caption/meta were never rewritten, so
+// the auto-post skipped on stale meta and the "creative" email went out with
+// LAST week's caption. Retrying the transient classes (socket timeout, reset,
+// DNS blip, 408/429/5xx) costs one extra call and saves the week.
+const MAX_ATTEMPTS = parseInt(process.env.OPENAI_MAX_ATTEMPTS || "2", 10);
+const RETRY_BASE_MS = parseInt(process.env.OPENAI_RETRY_BASE_MS || "3000", 10);
+
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+// Retry only what a retry can fix. A 400 (bad request) or 401 (bad key) is
+// deterministic — retrying just burns the job budget and delays the alert.
+function isTransientError(err) {
+  const msg = String((err && err.message) || err || "");
+  if (/timed out after/i.test(msg)) return true;
+  if (/ECONNRESET|ETIMEDOUT|ECONNREFUSED|EAI_AGAIN|ENOTFOUND|socket hang up/i.test(msg)) return true;
+  const status = msg.match(/error (\d{3}):/);
+  if (status) {
+    const code = parseInt(status[1], 10);
+    return code === 408 || code === 409 || code === 429 || code >= 500;
+  }
+  return false;
+}
+
 function isReasoningModel(model) {
   return /^(gpt-5|gpt-6|o[1-9])/i.test(model || "");
 }
@@ -82,12 +111,38 @@ function postJson(path, body, timeoutMs, label) {
 }
 
 /**
+ * postJson + bounded retry on transient failures. `attempts` is the TOTAL
+ * number of tries (1 = no retry).
+ */
+async function postJsonWithRetry(path, body, timeoutMs, label, attempts) {
+  const total = Math.max(1, attempts || MAX_ATTEMPTS);
+  let lastErr;
+  for (let attempt = 1; attempt <= total; attempt++) {
+    try {
+      return await postJson(path, body, timeoutMs, label);
+    } catch (err) {
+      lastErr = err;
+      if (attempt >= total || !isTransientError(err)) throw err;
+      const wait = RETRY_BASE_MS * attempt;
+      console.warn(
+        `  ${label} attempt ${attempt}/${total} failed (${err.message}) — retrying in ${wait}ms...`
+      );
+      await sleep(wait);
+    }
+  }
+  throw lastErr;
+}
+
+/**
  * Chat completion. Returns the assistant message text.
  *
  * opts: { model, system, user, temperature, maxTokens, effort, jsonMode }
  *   - temperature is only sent when provided (reasoning models accept it,
  *     but the default is fine for prose and omitting it is safest).
  *   - effort: "none" | "low" | "medium" | "high" (reasoning models only).
+ *   - timeoutMs: per-request socket timeout (default CHAT_TIMEOUT_MS). Long
+ *     generations on a big token budget need more than the 120s default.
+ *   - attempts: total tries on transient failures (default MAX_ATTEMPTS).
  */
 async function chatCompletion(opts) {
   const model = opts.model || OPENAI_MODEL;
@@ -111,7 +166,13 @@ async function chatCompletion(opts) {
   }
   if (opts.jsonMode) body.response_format = { type: "json_object" };
 
-  const parsed = await postJson("/v1/chat/completions", body, CHAT_TIMEOUT_MS, "OpenAI API");
+  const parsed = await postJsonWithRetry(
+    "/v1/chat/completions",
+    body,
+    opts.timeoutMs || CHAT_TIMEOUT_MS,
+    "OpenAI API",
+    opts.attempts
+  );
   const content = parsed.choices && parsed.choices[0] && parsed.choices[0].message
     ? parsed.choices[0].message.content
     : "";
@@ -137,7 +198,13 @@ async function webResearch(opts) {
   };
   if (reasoning) body.reasoning = { effort: opts.effort || "low" };
 
-  const parsed = await postJson("/v1/responses", body, RESPONSES_TIMEOUT_MS, "OpenAI Responses API");
+  const parsed = await postJsonWithRetry(
+    "/v1/responses",
+    body,
+    opts.timeoutMs || RESPONSES_TIMEOUT_MS,
+    "OpenAI Responses API",
+    opts.attempts
+  );
   const text = (parsed.output || [])
     .filter((item) => item.type === "message")
     .flatMap((item) => item.content || [])

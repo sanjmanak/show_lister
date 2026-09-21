@@ -156,7 +156,7 @@ function loadThisWeeksEvents() {
 // usually return in <30s; web-search Responses calls can run longer and
 // get their own larger budget.
 /** Chat completion via the shared lib (see scripts/lib/openai.js). */
-function callOpenAI(prompt, systemPrompt, maxTokens = 12000) {
+function callOpenAI(prompt, systemPrompt, maxTokens = 12000, timeoutMs) {
   return openai.chatCompletion({
     system: systemPrompt,
     user: prompt,
@@ -166,8 +166,17 @@ function callOpenAI(prompt, systemPrompt, maxTokens = 12000) {
     // chars, so the budget is larger and the caller retries once on empty.
     maxTokens,
     effort: "low",
+    timeoutMs,
   });
 }
+
+// The blog body is the longest single generation in the run (60-70 events in,
+// a full HTML post out). On 2026-09-21 it ran past the shared 120s socket
+// timeout and killed the whole job after 4 minutes of completed work, so it
+// gets its own budget: a longer socket timeout and one extra retry on top of
+// the lib default. Worst case ~12 minutes, inside the job's 20-minute cap.
+const BLOG_BODY_TIMEOUT_MS = parseInt(process.env.BLOG_BODY_TIMEOUT_MS || "240000", 10);
+const BLOG_BODY_ATTEMPTS = parseInt(process.env.BLOG_BODY_ATTEMPTS || "3", 10);
 
 /** Responses API with web search via the shared lib. */
 function callOpenAIResponses(input, instructions) {
@@ -570,6 +579,85 @@ function comedianDedupeKey(name) {
   return (name || "").toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 
+// Normalize an event into a key that survives a multi-night run. Title +
+// venue, punctuation stripped: "Martin Amini" at Houston Improv on Wed, Thu,
+// Fri and Sat is ONE event key, and so is a show whose title differs only by
+// punctuation between feeds.
+function eventDedupeKey(ev) {
+  if (!ev) return "";
+  const title = (ev.name || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  const venue = (ev.venue || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  if (!title && !venue) return "";
+  return `${title}@${venue}`;
+}
+
+// "A" / "A & B" / "A, B & C"
+function joinNames(names) {
+  if (names.length <= 1) return names[0] || "";
+  if (names.length === 2) return `${names[0]} & ${names[1]}`;
+  return `${names.slice(0, -1).join(", ")} & ${names[names.length - 1]}`;
+}
+
+// A tile label for a group of comedians who all play the SAME event. When the
+// event title is the act's own name ("Dan and Phil", "Starbomb") that reads
+// better than a list of legal names; otherwise list the names, and fall back
+// to "Headliner + N more" when even that is too long for the circle.
+const GROUP_LABEL_MAX = 30;
+function groupLabel(names, showTitle) {
+  if (names.length <= 1) return names[0] || eventTileName(showTitle);
+  const fromTitle = eventTileName(showTitle);
+  const titleIsGeneric = GENERIC_EVENT_PATTERNS.some((pat) =>
+    fromTitle.toLowerCase().includes(pat)
+  );
+  if (fromTitle && fromTitle.length <= 24 && !titleIsGeneric) return fromTitle;
+  const joined = joinNames(names);
+  if (joined.length <= GROUP_LABEL_MAX) return joined;
+  return `${names[0]} + ${names.length - 1} more`;
+}
+
+// ONE tile per EVENT, not per performer.
+//
+// identifyTopComedians() answers "which recognizable comedians play Houston
+// this week", so a single show with several recognizable names comes back as
+// several entries — Dan Howell AND Phil Lester for the one "Dan and Phil"
+// date, Arin Hanson AND Dan Avidan AND Brian Wecht for the one Starbomb date.
+// Each entry then matched the same event and carried the same ticket image,
+// so the 2026-09-21 hero rendered 5 circles showing 2 pictures (and the
+// handoff sent 5 near-identical spotlight posts for 2 shows). Collapsing on
+// the event key fixes both, and keeps every name for the caption/@-mentions.
+function groupComediansByEvent(comedians) {
+  const groups = [];
+  const byKey = new Map();
+  for (const c of comedians) {
+    // No matched event (or no usable key) => can't prove it's the same show,
+    // so it stays its own entry keyed by the comedian.
+    const key = c.eventKey || `name:${comedianDedupeKey(c.name)}`;
+    const existing = byKey.get(key);
+    if (existing) {
+      existing.names.push(c.name);
+      // Earlier entries are higher-ranked, so keep their image/show/date and
+      // only fill blanks from the co-headliners.
+      existing.imageUrl = existing.imageUrl || c.imageUrl || null;
+      existing.displayImage = existing.displayImage || c.displayImage || null;
+      existing.venue = existing.venue || c.venue || null;
+      existing.date = existing.date || c.date || null;
+      continue;
+    }
+    const entry = { ...c, names: [c.name] };
+    byKey.set(key, entry);
+    groups.push(entry);
+  }
+  for (const g of groups) {
+    g.name = groupLabel(g.names, g.show);
+    if (g.names.length > 1) {
+      console.log(
+        `  Grouped ${g.names.length} comedians onto one event → "${g.name}" (${g.show}): ${g.names.join(", ")}`
+      );
+    }
+  }
+  return groups;
+}
+
 function identifyTopComedians(events) {
   const filtered = filterSpotlightEvents(events);
 
@@ -613,8 +701,13 @@ function eventTileName(title) {
   // "Riot Comedy Club Presents \"The Show\"" → "The Show"
   const presents = name.match(/\bpresents[:\s]+["“]?(.+?)["”]?$/i);
   if (presents && presents[1].trim().length >= 4) name = presents[1].trim();
-  const first = name.split(/\s*[|–—]\s*|:\s/)[0].trim();
+  // Tour/support tails: "Starbomb featuring DJ Commander Meouch - Probably
+  // The Only Tour Ever" is the act "Starbomb" as far as a 1080px circle is
+  // concerned. Split on the separators first, then drop a featuring clause.
+  const first = name.split(/\s*[|–—]\s*|\s+-\s+|:\s/)[0].trim();
   if (first.length >= 4) name = first;
+  const feat = name.split(/\s+(?:featuring|feat\.|ft\.)\s+/i)[0].trim();
+  if (feat.length >= 4) name = feat;
   if (name.length > 36) name = name.slice(0, 33).trimEnd() + "…";
   return name;
 }
@@ -629,19 +722,30 @@ function eventTileName(title) {
 function buildHeroBackfillEntries(events, existingEntries, needed) {
   if (needed <= 0) return [];
 
-  const covered = existingEntries.map((c) => ({
-    name: (c.name || "").toLowerCase(),
-    show: (c.show || "").toLowerCase(),
-  }));
+  // Every name on a featured bill counts as covered, not just the tile
+  // label: "Starbomb" must not come back as a backfill tile because the
+  // headline entry is labelled after the act rather than Arin Hanson.
+  const covered = existingEntries.flatMap((c) =>
+    (c.names && c.names.length ? c.names : [c.name]).map((n) => ({
+      name: (n || "").toLowerCase(),
+      show: (c.show || "").toLowerCase(),
+    }))
+  );
+  const coveredKeys = new Set(
+    existingEntries.map((c) => c.eventKey).filter(Boolean)
+  );
 
   const seenTitles = new Set();
   const collect = (pool) => {
     const out = [];
     for (const ev of pool) {
-      const key = (ev.name || "").trim().toLowerCase();
-      if (!key || seenTitles.has(key)) continue;
+      const title = (ev.name || "").trim().toLowerCase();
+      // Key on title+venue so a three-night run is one candidate, not three.
+      const key = eventDedupeKey(ev);
+      if (!title || !key || seenTitles.has(key)) continue;
+      if (coveredKeys.has(key)) continue;
       const isCovered = covered.some(
-        (c) => (c.show && key === c.show) || (c.name && key.includes(c.name))
+        (c) => (c.show && title === c.show) || (c.name && title.includes(c.name))
       );
       if (isCovered) continue;
       seenTitles.add(key);
@@ -685,11 +789,14 @@ function buildHeroBackfillEntries(events, existingEntries, needed) {
       eventImageUrl: ev.image_url,
       comedianName: ev.name,
     });
+    const label = eventTileName(ev.name);
     return {
-      name: eventTileName(ev.name),
+      name: label,
+      names: [label],
       show: ev.name,
       venue: ev.venue || null,
       date: ev.date || null,
+      eventKey: eventDedupeKey(ev),
       imageUrl: ev.image_url || null,
       displayImage: pick.displayImage,
       imageSource: pick.source,
@@ -1137,7 +1244,8 @@ async function main() {
 
   // Step 1: Identify top comedians
   console.log("Identifying top comedians...");
-  let topComedians = []; // [{name, show, imageUrl}]
+  let topComedians = []; // per person: [{name, show, imageUrl, venue, date, eventKey}]
+  let eventEntries = []; // per event: [{name (label), names[], show, venue, date, ...}]
 
   try {
     const topComediansRaw = await identifyTopComedians(events);
@@ -1153,6 +1261,11 @@ async function main() {
         name: c.name,
         show: c.show,
         imageUrl: matchedEvent?.image_url || null,
+        // Kept so co-headliners on one show collapse to a single hero tile
+        // (and a single spotlight post) — see groupComediansByEvent().
+        venue: matchedEvent?.venue || null,
+        date: matchedEvent?.date || null,
+        eventKey: eventDedupeKey(matchedEvent),
       };
     });
     // Deduplicate by comedian name (OpenAI sometimes returns the same person
@@ -1244,9 +1357,23 @@ async function main() {
     }
     console.log("");
 
+    // Collapse co-headliners of the same show into one entry. Everything
+    // visual (hero tiles, /this-week/ cards, spotlight posts) is per-event
+    // from here on; topComedians stays per-person for research + @-mentions.
+    eventEntries = groupComediansByEvent(topComedians);
+    if (eventEntries.length !== topComedians.length) {
+      console.log(
+        `${topComedians.length} comedians → ${eventEntries.length} event(s) after grouping.`
+      );
+      console.log("");
+    }
+
     // Persist the lineup so generate-comedian-post.js covers the exact same
-    // comedians as the weekly roundup (and skips its own identification
-    // call when the week matches).
+    // shows as the weekly roundup (and skips its own identification call
+    // when the week matches). One entry per EVENT: `name` is the top-billed
+    // comedian (what the spotlight post researches and is titled after),
+    // `displayName` the tile label, `names` every recognizable comedian on
+    // that bill.
     try {
       const handoffPath = path.join(BLOG_DIR, "top-comedians.json");
       fs.writeFileSync(
@@ -1255,9 +1382,14 @@ async function main() {
           {
             generated_at: new Date().toISOString(),
             week_range: weekRange,
-            comedians: topComedians.map((c) => ({
-              name: c.name,
+            comedians: eventEntries.map((c) => ({
+              name: c.names[0],
+              displayName: c.name,
+              names: c.names,
               show: c.show,
+              venue: c.venue || null,
+              date: c.date || null,
+              eventKey: c.eventKey || null,
               imageUrl: c.imageUrl || null,
               displayImage: c.displayImage || null,
               imageSource: c.imageSource || null,
@@ -1280,16 +1412,16 @@ async function main() {
   // top-comedians.json handoff, so the per-comedian deep-research posts
   // still only cover real headliners.
   const HERO_TILE_COUNT = 6;
-  let heroEntries = [...topComedians];
+  let heroEntries = [...eventEntries];
   if (heroEntries.length < HERO_TILE_COUNT) {
     const backfill = buildHeroBackfillEntries(
       events,
-      topComedians,
+      eventEntries,
       HERO_TILE_COUNT - heroEntries.length
     );
     if (backfill.length > 0) {
       console.log(
-        `Hero backfill: only ${topComedians.length} comedian(s) found — adding ${backfill.length} notable event(s): ${backfill.map((e) => e.name).join(", ")}`
+        `Hero backfill: only ${eventEntries.length} headline event(s) found — adding ${backfill.length} notable event(s): ${backfill.map((e) => e.name).join(", ")}`
       );
       console.log("");
     }
@@ -1327,7 +1459,15 @@ async function main() {
   const prompt = buildPrompt(events, weekRange, comedianResearch, comedianSourceLinks);
   console.log(`Sending ${events.length} events to OpenAI (${OPENAI_MODEL})...`);
 
-  let blogContent = await callOpenAI(prompt, SYSTEM_PROMPT);
+  let blogContent = await openai.chatCompletion({
+    system: SYSTEM_PROMPT,
+    user: prompt,
+    temperature: 0.7,
+    maxTokens: 12000,
+    effort: "low",
+    timeoutMs: BLOG_BODY_TIMEOUT_MS,
+    attempts: BLOG_BODY_ATTEMPTS,
+  });
   // Strip markdown code fences that OpenAI sometimes wraps around HTML output
   const stripFences = (s) => s.replace(/^```html\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
   blogContent = stripFences(blogContent);
@@ -1336,7 +1476,9 @@ async function main() {
     // before any visible text was emitted (2026-09-14). One retry with a
     // bigger budget before we give up and alert.
     console.warn(`  Blog content came back with ${blogContent.length} chars — retrying once with a larger token budget...`);
-    blogContent = stripFences(await callOpenAI(prompt, SYSTEM_PROMPT, 20000));
+    blogContent = stripFences(
+      await callOpenAI(prompt, SYSTEM_PROMPT, 20000, BLOG_BODY_TIMEOUT_MS)
+    );
   }
 
   // Minimum-length sanity check. If the model returned an empty string, a
@@ -1608,10 +1750,19 @@ async function updateThisWeekLandingPage(topComedians, weekRange, monday, sunday
         ? `<img src="${escapeHTML(usable)}" alt="${escapeHTML(c.name)}" loading="lazy" />`
         : `<div class="placeholder">${escapeHTML(c.name.split(" ").map((w) => w[0]).join("").slice(0, 2))}</div>`;
       const showLine = c.show ? `<p class="show">${escapeHTML(c.show)}</p>` : "";
+      // A card is one EVENT. When several recognizable comedians share that
+      // bill the heading may be the act's name ("Starbomb"), so list who is
+      // actually on it underneath.
+      const names = c.names && c.names.length > 1 ? c.names : null;
+      const lineupLine =
+        names && !names.every((n) => c.name.includes(n))
+          ? `<p class="lineup">${escapeHTML(names.join(" · "))}</p>`
+          : "";
       return `
   <div class="comedian-card">
     ${imgHtml}
     <h3>${escapeHTML(c.name)}</h3>
+    ${lineupLine}
     ${showLine}
   </div>`;
     })
@@ -1630,6 +1781,7 @@ async function updateThisWeekLandingPage(topComedians, weekRange, monday, sunday
 .this-week-landing .comedian-card img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; margin-bottom: 12px; }
 .this-week-landing .comedian-card .placeholder { width: 100%; aspect-ratio: 1; border-radius: 8px; background: linear-gradient(135deg, #ff4d6a, #7c5cff); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 800; margin-bottom: 12px; }
 .this-week-landing .comedian-card h3 { margin: 0 0 4px; font-size: 1.05rem; }
+.this-week-landing .comedian-card .lineup { font-size: 0.9rem; color: #555; margin: 0 0 4px; }
 .this-week-landing .comedian-card .show { font-size: 0.85rem; color: #777; margin: 0; }
 .this-week-landing .cta-block { background: #0a0a0f; color: #fff; padding: 32px; border-radius: 16px; text-align: center; margin: 2.5rem 0; }
 .this-week-landing .cta-block h2 { margin-top: 0; color: #fff; }
@@ -1718,4 +1870,8 @@ if (require.main === module) {
 module.exports = {
   generateHeroCreativeHTML,
   escapeHTML,
+  eventDedupeKey,
+  eventTileName,
+  groupComediansByEvent,
+  buildHeroBackfillEntries,
 };
