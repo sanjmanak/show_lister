@@ -43,6 +43,7 @@ const { writeComedianGraphics } = require("./lib/comedian-graphics");
 // See scripts/lib/sanitize-html.js.
 const { sanitizeAiHtml, addSponsoredRelToTicketLinks } = require("./lib/sanitize-html");
 const { ensureShowDetails } = require("./lib/show-details");
+const { verifyOutboundLinks } = require("./lib/link-check");
 const { addBlogPostingToGraph, wpGmtToIso } = require("./lib/schema-utils");
 
 // ---------------------------------------------------------------------------
@@ -1599,6 +1600,25 @@ async function main() {
       );
     }
     finalContent = addSponsoredRelToTicketLinks(sanitized.html);
+
+    // Ask the web whether every cited source URL exists. The writer invents
+    // links now and then (youtube.com/watch?v=xyz123 shipped on 2026-09-01)
+    // and the fact-checker has no way to tell a real URL from a plausible
+    // one. Dead links (404/410, or a YouTube id oEmbed rejects) are unwrapped
+    // so the sentence keeps its text; anything ambiguous (403/timeout) stays.
+    try {
+      const links = await verifyOutboundLinks(finalContent);
+      if (links.removed.length > 0) {
+        console.log(`  Dead source links unwrapped: ${links.removed.join(", ")}`);
+      }
+      const unknown = links.checked.filter((c) => c.verdict === "unknown");
+      if (unknown.length > 0) {
+        console.log(`  Links left as-is (inconclusive): ${unknown.map((c) => `${c.href} [${c.status}]`).join(", ")}`);
+      }
+      finalContent = links.html;
+    } catch (err) {
+      console.warn(`  Link verification failed (non-fatal, links kept): ${err.message}`);
+    }
 
     // Deterministic backstop: whatever the three passes did, the body names
     // the show date and links to tickets before it leaves this function.

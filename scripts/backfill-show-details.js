@@ -13,6 +13,9 @@
  *                    credentials are set: reads the public rendered content)
  *   SLUGS=a,b,c      limit to these slugs
  *   INCLUDE_PAST=1   also touch posts whose show already happened
+ *   VERIFY_LINKS=0   skip the dead-link pass (on by default: every external
+ *                    source link is fetched and dead ones are unwrapped, see
+ *                    scripts/lib/link-check.js)
  */
 
 const fs = require("fs");
@@ -20,6 +23,7 @@ const path = require("path");
 const https = require("https");
 const http = require("http");
 const { ensureShowDetails, hasShowDate, hasTicketLink } = require("./lib/show-details");
+const { verifyOutboundLinks } = require("./lib/link-check");
 
 const ROOT = path.join(__dirname, "..");
 const COMEDIANS_DIR = path.join(ROOT, "blog", "comedians");
@@ -30,6 +34,7 @@ const HAS_CREDS = !!(WP_APP_USER && WP_APP_PASSWORD);
 const DRY_RUN = process.env.DRY_RUN === "1" || !HAS_CREDS;
 const ONLY = (process.env.SLUGS || "").split(",").map((s) => s.trim()).filter(Boolean);
 const INCLUDE_PAST = process.env.INCLUDE_PAST === "1";
+const VERIFY_LINKS = process.env.VERIFY_LINKS !== "0";
 
 function wpRequest(method, urlPath, body) {
   return new Promise((resolve, reject) => {
@@ -107,15 +112,27 @@ async function main() {
       if (typeof html !== "string" || !html) { console.log(`  ${c.slug}: no content returned`); failed++; continue; }
 
       const res = ensureShowDetails(html, c);
-      const status = `date ${res.dateMissing ? "MISSING" : "ok"}, ticket link ${res.ticketMissing ? "MISSING" : "ok"}`;
-      if (!res.inserted) { console.log(`  ${c.slug}: leave (${status})`); skipped++; continue; }
+      let next = res.html;
+      let changed = res.inserted;
+      let status = `date ${res.dateMissing ? "MISSING" : "ok"}, ticket link ${res.ticketMissing ? "MISSING" : "ok"}`;
+      if (VERIFY_LINKS) {
+        const links = await verifyOutboundLinks(next);
+        if (links.removed.length > 0) {
+          next = links.html;
+          changed = true;
+          status += `, dead links: ${links.removed.join(" ")}`;
+        } else {
+          status += `, links ok (${links.checked.length} checked)`;
+        }
+      }
+      if (!changed) { console.log(`  ${c.slug}: leave (${status})`); skipped++; continue; }
 
       if (DRY_RUN) {
-        console.log(`  ${c.slug}: WOULD INSERT (${status})`);
+        console.log(`  ${c.slug}: WOULD UPDATE (${status})`);
         updated++;
         continue;
       }
-      await wpRequest("POST", `/wp-json/wp/v2/posts/${post.id}`, { content: res.html });
+      await wpRequest("POST", `/wp-json/wp/v2/posts/${post.id}`, { content: next });
       // Read back and prove the sentence landed.
       const check = await wpRequest("GET", `/wp-json/wp/v2/posts/${post.id}?context=edit`, null);
       const raw = check.content && check.content.raw ? check.content.raw : "";
