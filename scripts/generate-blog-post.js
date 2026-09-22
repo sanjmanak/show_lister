@@ -1463,7 +1463,11 @@ async function main() {
     system: SYSTEM_PROMPT,
     user: prompt,
     temperature: 0.7,
-    maxTokens: 12000,
+    // 20000, not 12000: the 2026-09-21 re-run still came back with 0 chars at
+    // 12000 (all of it spent on hidden reasoning) and only the 20000 retry
+    // produced the post, at 15441 completion tokens. The cap is a ceiling,
+    // not a charge, so the bigger first try is the cheaper one.
+    maxTokens: 20000,
     effort: "low",
     timeoutMs: BLOG_BODY_TIMEOUT_MS,
     attempts: BLOG_BODY_ATTEMPTS,
@@ -1477,7 +1481,7 @@ async function main() {
     // bigger budget before we give up and alert.
     console.warn(`  Blog content came back with ${blogContent.length} chars — retrying once with a larger token budget...`);
     blogContent = stripFences(
-      await callOpenAI(prompt, SYSTEM_PROMPT, 20000, BLOG_BODY_TIMEOUT_MS)
+      await callOpenAI(prompt, SYSTEM_PROMPT, 24000, BLOG_BODY_TIMEOUT_MS)
     );
   }
 
