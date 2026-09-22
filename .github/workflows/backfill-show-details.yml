@@ -1,0 +1,45 @@
+name: Backfill Show Details
+
+# One-off / occasional: insert the "<Name> plays <Venue> on <Date>. Get
+# Tickets." sentence into spotlight posts already live on WordPress whose
+# body lacks the show date or a ticket link. No OpenAI calls. Defaults to a
+# dry run that only reports; flip dry_run to false to write.
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Report only, write nothing'
+        type: boolean
+        default: true
+      slugs:
+        description: 'Comma-separated slugs to limit to (blank = every future-dated post)'
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+
+env:
+  TZ: America/Chicago
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Backfill show details
+        env:
+          WP_SITE_URL: ${{ secrets.WP_SITE_URL }}
+          WP_APP_USER: ${{ secrets.WP_APP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+          SLUGS: ${{ inputs.slugs }}
+        run: node scripts/backfill-show-details.js
