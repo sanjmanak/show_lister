@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-09-21T18:44:49.345Z",
+  "last_updated": "2026-09-22T17:45:33.105Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -217,14 +217,6 @@
       "source": "page",
       "url": "https://www.eventbrite.com/e/chat-pile-who-loves-the-sun-tour-2026-late-show-tickets-1999298219795",
       "fetched_at": "2026-09-09T01:37:44.102Z"
-    },
-    "344a73d11d930c9d": {
-      "price_min": 8.82,
-      "price_max": 8.82,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/monday-night-comedy-tickets-1999307712187",
-      "fetched_at": "2026-09-09T01:37:47.561Z"
     },
     "fbe0fc199b15e541": {
       "price_min": 5.36,
