@@ -942,30 +942,59 @@ function wpRequest(method, urlPath, body) {
 }
 
 /**
- * Preflight WordPress auth check. Calls /wp-json/wp/v2/users/me once before
- * we start publishing posts. If the credentials, IP, or host firewall are
+ * Preflight WordPress auth check. Calls /wp-json/wp/v2/users/me before we
+ * start publishing posts. If the credentials, IP, or host firewall are
  * broken, we want to find out *now* with a loud, specific error — not after
  * silently skipping every publish.
+ *
+ * Hostinger's edge ("hcdn") intermittently answers the GitHub runner with a
+ * 403 "Checking your browser before accessing" HTML page instead of the API
+ * (2026-09-07 weekly run, 2026-09-22 backfill). The page itself says to
+ * refresh in 30s, and a second dispatch 20 minutes later sailed through, so
+ * a 403 / 5xx / network error is retried after WP_PREFLIGHT_RETRY_MS. A 401
+ * (bad app password) or 400 is deterministic and fails on the first try.
  *
  * Returns true on success, false on failure (caller decides whether to
  * proceed). On failure, the underlying detailed error is logged.
  */
+const WP_PREFLIGHT_ATTEMPTS = parseInt(process.env.WP_PREFLIGHT_ATTEMPTS || "4", 10);
+const WP_PREFLIGHT_RETRY_MS = parseInt(process.env.WP_PREFLIGHT_RETRY_MS || "35000", 10);
+
+function isRetryablePreflightError(err) {
+  const m = /WordPress API (\d{3})/.exec(err && err.message ? err.message : "");
+  if (!m) return true; // network / DNS / socket error — no HTTP status at all
+  const status = parseInt(m[1], 10);
+  return status === 403 || status === 408 || status === 429 || status >= 500;
+}
+
 async function wpPreflight() {
-  console.log("Preflight: checking WordPress auth via /wp-json/wp/v2/users/me ...");
-  try {
-    const me = await wpRequest("GET", "/wp-json/wp/v2/users/me?context=edit", null);
-    console.log(`  WP auth OK — authenticated as "${me.name}" (id=${me.id}, slug=${me.slug})`);
-    return true;
-  } catch (err) {
-    console.error("  WP PREFLIGHT FAILED — publishing will be skipped this run.");
-    console.error(`  ${err.message}`);
-    console.error("  Common causes:");
-    console.error("    • WP_APP_PASSWORD secret in GitHub is stale (regenerate in WP → Users → Application Passwords)");
-    console.error("    • WP_APP_USER does not match the user the password belongs to");
-    console.error("    • Hostinger / LiteSpeed / security plugin is blocking the GitHub Actions runner IP (check hPanel security logs)");
-    console.error("    • LiteSpeed Cache is stripping the Authorization header (exclude /wp-json/ from cache)");
-    return false;
+  const total = Math.max(1, WP_PREFLIGHT_ATTEMPTS);
+  let lastErr = null;
+  for (let attempt = 1; attempt <= total; attempt++) {
+    console.log(`Preflight: checking WordPress auth via /wp-json/wp/v2/users/me (attempt ${attempt}/${total}) ...`);
+    try {
+      const me = await wpRequest("GET", "/wp-json/wp/v2/users/me?context=edit", null);
+      console.log(`  WP auth OK — authenticated as "${me.name}" (id=${me.id}, slug=${me.slug})`);
+      return true;
+    } catch (err) {
+      lastErr = err;
+      const isChallenge = /Checking your browser/i.test(err.message || "");
+      console.error(`  attempt ${attempt}/${total} failed: ${(err.message || "").slice(0, 200)}`);
+      if (isChallenge) console.error("  (Hostinger bot-challenge page, not the API — the host is screening the runner IP)");
+      if (attempt >= total || !isRetryablePreflightError(err)) break;
+      console.error(`  retrying in ${Math.round(WP_PREFLIGHT_RETRY_MS / 1000)}s...`);
+      await new Promise((r) => setTimeout(r, WP_PREFLIGHT_RETRY_MS));
+    }
   }
+  console.error("  WP PREFLIGHT FAILED.");
+  console.error(`  ${lastErr ? lastErr.message : "unknown error"}`);
+  console.error("  Common causes:");
+  console.error("    • Hostinger edge (hcdn) bot challenge on the GitHub Actions runner IP — usually clears in minutes; re-dispatch the workflow");
+  console.error("    • WP_APP_PASSWORD secret in GitHub is stale (regenerate in WP → Users → Application Passwords)");
+  console.error("    • WP_APP_USER does not match the user the password belongs to");
+  console.error("    • LiteSpeed / security plugin is blocking the runner IP (check hPanel security logs)");
+  console.error("    • LiteSpeed Cache is stripping the Authorization header (exclude /wp-json/ from cache)");
+  return false;
 }
 
 /**
@@ -1250,14 +1279,25 @@ async function main() {
   console.log(`Week range: ${weekRange}`);
   console.log("");
 
-  // Preflight WordPress auth once, up front. If it fails, we still generate
-  // graphics and captions but we skip publishing — and the failure reason is
-  // logged loudly so it's the first thing visible in the workflow log.
+  // Preflight WordPress auth once, up front, before a single OpenAI call.
+  // It used to log the failure and carry on generating: the 2026-09-22
+  // backfill spent the full research/write/polish budget on five posts it
+  // then could not publish, and the manifest it committed had no wpLink for
+  // the IG poster to use. A spotlight without its post is not worth paying
+  // for, so a failed preflight now ends the run here. The workflow's
+  // notify-on-failure step sends the alert; re-dispatch once the host clears.
+  // WP_PREFLIGHT_SOFT=1 restores the old carry-on behaviour for a deliberate
+  // graphics-only run.
   let wpReady = WP_ENABLED;
   if (WP_ENABLED) {
     wpReady = await wpPreflight();
     if (!wpReady) {
-      console.warn("WordPress publishing DISABLED for this run due to preflight failure.\n");
+      if (process.env.WP_PREFLIGHT_SOFT === "1") {
+        console.warn("WordPress publishing DISABLED for this run due to preflight failure (WP_PREFLIGHT_SOFT=1, continuing).\n");
+      } else {
+        console.error("Aborting before any OpenAI spend: nothing generated, nothing to publish. Re-run the workflow once WordPress is reachable.");
+        process.exit(1);
+      }
     }
   }
 
