@@ -1,342 +1,6 @@
 {
- "updated": "2026-09-21T18:44:51.959Z",
+ "updated": "2026-09-22T01:58:53.716Z",
  "announcements": [
-  {
-   "id": "63b783b5b8c78f5c",
-   "name": "Kinky Wednesdays",
-   "venue": "The Secret Group",
-   "date": "2026-09-09",
-   "time": "8:00 PM",
-   "price_min": 20.36,
-   "price_max": 20.36,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190346996%2F3558237521%2F1%2Foriginal.20260805-044049?auto=format%2Ccompress&q=75&sharp=10&s=0c01a2cbcc2731cf070211cd24251ad9",
-   "ticket_url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999294670178",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-08-31T19:51:06.092Z",
-   "tier": null,
-   "notable_reason": "only -12d out (min 14)"
-  },
-  {
-   "id": "c68ec018e7fb4374",
-   "name": "Kinky Wednesdays",
-   "venue": "The Secret Group",
-   "date": "2026-09-23",
-   "time": "8:00 PM",
-   "price_min": 20.36,
-   "price_max": 20.36,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190346996%2F3558237521%2F1%2Foriginal.20260805-044049?auto=format%2Ccompress&q=75&sharp=10&s=0c01a2cbcc2731cf070211cd24251ad9",
-   "ticket_url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999295803568",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-08-31T19:51:06.092Z",
-   "tier": null,
-   "notable_reason": "only 2d out (min 14)"
-  },
-  {
-   "id": "70a1eb2a6825e2c4",
-   "name": "Kinky Wednesdays",
-   "venue": "The Secret Group",
-   "date": "2026-10-14",
-   "time": "8:00 PM",
-   "price_min": 20.36,
-   "price_max": 20.36,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190346996%2F3558237521%2F1%2Foriginal.20260805-044049?auto=format%2Ccompress&q=75&sharp=10&s=0c01a2cbcc2731cf070211cd24251ad9",
-   "ticket_url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999296122522",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-08-31T19:51:06.092Z",
-   "tier": null,
-   "notable_reason": "recurring series (3 weeks)"
-  },
-  {
-   "id": "cdb8239bb77b819b",
-   "name": "Kinky Wednesdays",
-   "venue": "The Secret Group",
-   "date": "2026-10-28",
-   "time": "8:00 PM",
-   "price_min": 20.36,
-   "price_max": 20.36,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190346996%2F3558237521%2F1%2Foriginal.20260805-044049?auto=format%2Ccompress&q=75&sharp=10&s=0c01a2cbcc2731cf070211cd24251ad9",
-   "ticket_url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999296198750",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-08-31T19:51:06.092Z",
-   "tier": null,
-   "notable_reason": "recurring series (3 weeks)"
-  },
-  {
-   "id": "e5bdde9bf204c102",
-   "name": "The Riot Presents \"Houston's Funniest\" Sunday Comedy Showcase",
-   "venue": "The Riot Comedy Club",
-   "date": "2026-11-29",
-   "time": "6:00 PM",
-   "price_min": 10,
-   "price_max": 10,
-   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-4-17bb0cfb-large-thumb.png",
-   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-64",
-   "source": "standuptix",
-   "notable": false,
-   "first_seen": "2026-08-31T19:51:06.092Z",
-   "tier": null,
-   "notable_reason": "title pattern"
-  },
-  {
-   "id": "afaf02e0143254bf",
-   "name": "The Riot Comedy Club Presents Sunday Night Standup Comedy Showcase",
-   "venue": "The Riot Comedy Club",
-   "date": "2026-11-29",
-   "time": "8:00 PM",
-   "price_min": 10,
-   "price_max": 10,
-   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-15-Saturday-11pm-0fd71212-large-thumb.png",
-   "ticket_url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-30",
-   "source": "standuptix",
-   "notable": false,
-   "first_seen": "2026-08-31T19:51:06.092Z",
-   "tier": null,
-   "notable_reason": "title pattern"
-  },
-  {
-   "id": "06bdab87e76a88ec",
-   "name": "The Last Laugh with James Vogt & Trip Truman",
-   "venue": "The Secret Group",
-   "date": "2026-09-20",
-   "time": "7:00 PM",
-   "price_min": 8.82,
-   "price_max": 8.82,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1191459227%2F3558237521%2F1%2Foriginal.20260819-201134?auto=format%2Ccompress&q=75&sharp=10&s=cea7a34ee27a983a6dc54f88c3210522",
-   "ticket_url": "https://www.eventbrite.com/e/the-last-laugh-with-james-vogt-trip-truman-tickets-1999307681094",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z",
-   "tier": null,
-   "notable_reason": "only -1d out (min 14)"
-  },
-  {
-   "id": "29c863225892fe63",
-   "name": "The (secret) Secret Show",
-   "venue": "The Secret Group",
-   "date": "2026-09-20",
-   "time": "9:00 PM",
-   "price_min": 14.59,
-   "price_max": 14.59,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1182517711%2F3558237521%2F1%2Foriginal.20260419-192309?auto=format%2Ccompress&q=75&sharp=10&s=9360a990100667a0306d4f4d57bb4300",
-   "ticket_url": "https://www.eventbrite.com/e/the-secret-secret-show-tickets-1999307690121",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z",
-   "tier": null,
-   "notable_reason": "only -1d out (min 14)"
-  },
-  {
-   "id": "18937402e95e8bed",
-   "name": "COMEDY DOJO: Sunday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-09-20",
-   "time": "11:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1115718973%2F3558237521%2F1%2Foriginal.20250905-193245?auto=format%2Ccompress&q=75&sharp=10&s=0f3508786faa5dc4d3f3540085034564",
-   "ticket_url": "https://www.eventbrite.com/e/comedy-dojo-sunday-open-mic-comedy-tickets-1999307697142",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z",
-   "tier": null,
-   "notable_reason": "only -1d out (min 14)"
-  },
-  {
-   "id": "344a73d11d930c9d",
-   "name": "MONDAY NIGHT COMEDY!",
-   "venue": "The Secret Group",
-   "date": "2026-09-21",
-   "time": "8:00 PM",
-   "price_min": 8.82,
-   "price_max": 8.82,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1084977123%2F3558237521%2F1%2Foriginal.20250730-234417?auto=format%2Ccompress&q=75&sharp=10&s=27248b634d602f36b66580f6e67573f3",
-   "ticket_url": "https://www.eventbrite.com/e/monday-night-comedy-tickets-1999307712187",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z",
-   "tier": null,
-   "notable_reason": "only 0d out (min 14)"
-  },
-  {
-   "id": "c798d0f7a1fe2798",
-   "name": "The Passing Lane with Andrew Youngblood, Will Loden & Blake Jones",
-   "venue": "The Secret Group",
-   "date": "2026-09-21",
-   "time": "10:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1175278655%2F3558237521%2F1%2Foriginal.20260119-212007?auto=format%2Ccompress&q=75&sharp=10&s=5a09ff467498732e5fdea29b56ad6e85",
-   "ticket_url": "https://www.eventbrite.com/e/the-passing-lane-with-andrew-youngblood-will-loden-blake-jones-tickets-1999307757322",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z",
-   "tier": null,
-   "notable_reason": "only 0d out (min 14)"
-  },
-  {
-   "id": "3741f1062ca5aeab",
-   "name": "NIGHT COURT: Monday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-09-21",
-   "time": "11:30 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176335183%2F3558237521%2F1%2Foriginal.20260131-175517?auto=format%2Ccompress&q=75&sharp=10&s=aadd8de34a66a713db9766a3e110f224",
-   "ticket_url": "https://www.eventbrite.com/e/night-court-monday-open-mic-comedy-tickets-1999307762337",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z",
-   "tier": null,
-   "notable_reason": "only 0d out (min 14)"
-  },
-  {
-   "id": "229ae589b03d2528",
-   "name": "FOR THE CULTURE: A Tuesday Comedy Show for The Culture",
-   "venue": "The Secret Group",
-   "date": "2026-09-22",
-   "time": "8:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1171686511%2F3558237521%2F1%2Foriginal.20251124-232548?auto=format%2Ccompress&q=75&sharp=10&s=f229ff3250f6ec814bce4550095dd7d0",
-   "ticket_url": "https://www.eventbrite.com/e/for-the-culture-a-tuesday-comedy-show-for-the-culture-tickets-1999307801454",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z",
-   "tier": null,
-   "notable_reason": "only 1d out (min 14)"
-  },
-  {
-   "id": "7a78eab9405ada81",
-   "name": "C U Next Tuesday: Weekly Comedy hosted by Corlis DeLauren and Tess Vergult",
-   "venue": "The Secret Group",
-   "date": "2026-09-22",
-   "time": "10:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192316537%2F68532713233%2F1%2Foriginal.20240802-211725?auto=format%2Ccompress&q=75&sharp=10&s=40901f1724169b2e2bfed211b34491e2",
-   "ticket_url": "https://www.eventbrite.com/e/c-u-next-tuesday-weekly-comedy-hosted-by-corlis-delauren-and-tess-vergult-tickets-1999307809478",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z",
-   "tier": null,
-   "notable_reason": "only 1d out (min 14)"
-  },
-  {
-   "id": "5b59fb9ad5f1b12a",
-   "name": "PASS THE MIC: Tuesday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-09-22",
-   "time": "11:30 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192316555%2F68532713233%2F1%2Foriginal.20240806-170802?auto=format%2Ccompress&q=75&sharp=10&s=1b4366d26b68b0175fb8d0455ac285b4",
-   "ticket_url": "https://www.eventbrite.com/e/pass-the-mic-tuesday-open-mic-comedy-tickets-1999307813490",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z",
-   "tier": null,
-   "notable_reason": "only 1d out (min 14)"
-  },
-  {
-   "id": "fbe0fc199b15e541",
-   "name": "$2 BILL Two Dollar Comedy Show every Wednesday!",
-   "venue": "The Secret Group",
-   "date": "2026-09-23",
-   "time": "8:00 PM",
-   "price_min": 5.36,
-   "price_max": 5.36,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192316563%2F284483032458%2F1%2Foriginal.20210608-153141?auto=format%2Ccompress&q=75&sharp=10&s=f88869c955abe66aa265f5e278016851",
-   "ticket_url": "https://www.eventbrite.com/e/2-bill-two-dollar-comedy-show-every-wednesday-tickets-1999307816499",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z",
-   "tier": null,
-   "notable_reason": "only 2d out (min 14)"
-  },
-  {
-   "id": "9fe20f3f5e5ea99e",
-   "name": "Master Debaters",
-   "venue": "The Secret Group",
-   "date": "2026-09-23",
-   "time": "10:00 PM",
-   "price_min": 8.82,
-   "price_max": 8.82,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186105427%2F3558237521%2F1%2Foriginal.20260603-215732?auto=format%2Ccompress&q=75&sharp=10&s=d6cb2dc6efbb6740f97bbfc6a7ded544",
-   "ticket_url": "https://www.eventbrite.com/e/master-debaters-tickets-1999307819508",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z",
-   "tier": null,
-   "notable_reason": "only 2d out (min 14)"
-  },
-  {
-   "id": "b42714ec75916392",
-   "name": "WITCHY WEDNESDAYS: Wednesday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-09-23",
-   "time": "11:59 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1116853183%2F3558237521%2F1%2Foriginal.20250907-205756?auto=format%2Ccompress&q=75&sharp=10&s=4afa07037c4ed3981e9c168d7d882705",
-   "ticket_url": "https://www.eventbrite.com/e/witchy-wednesdays-wednesday-open-mic-comedy-tickets-1999307858625",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z",
-   "tier": null,
-   "notable_reason": "only 2d out (min 14)"
-  },
-  {
-   "id": "000ae4368d69b6a4",
-   "name": "BACK OF THE BUS: Thursday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-09-24",
-   "time": "9:30 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192316614%2F65406453537%2F1%2Foriginal.20210519-142609?auto=format%2Ccompress&q=75&sharp=10&s=66c3769c081c9ab8f69248cd8d190fc0",
-   "ticket_url": "https://www.eventbrite.com/e/back-of-the-bus-thursday-open-mic-comedy-tickets-1999307917802",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z",
-   "tier": null,
-   "notable_reason": "only 3d out (min 14)"
-  },
-  {
-   "id": "df7f5d04ac72e46c",
-   "name": "The Best of the Secret Group Comedy Showcase 8pm",
-   "venue": "The Secret Group",
-   "date": "2026-09-25",
-   "time": "8:00 PM",
-   "price_min": 18.06,
-   "price_max": 21.51,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192316626%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=1d604cc41c74dc8261685e74978c7163",
-   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-8pm-tickets-1999307921814",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z",
-   "tier": null,
-   "notable_reason": "only 4d out (min 14)"
-  },
-  {
-   "id": "11b5b2db52ec934c",
-   "name": "The Best of the Secret Group Comedy Showcase 10pm",
-   "venue": "The Secret Group",
-   "date": "2026-09-25",
-   "time": "10:00 PM",
-   "price_min": 18.06,
-   "price_max": 21.51,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192316665%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=9f654936ef8142d8efe8211fb4aeaa0b",
-   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-10pm-tickets-1999307930841",
-   "source": "eventbrite",
-   "notable": false,
-   "first_seen": "2026-09-01T03:48:09.310Z",
-   "tier": null,
-   "notable_reason": "only 4d out (min 14)"
-  },
   {
    "id": "fa3e6d328144dd39",
    "name": "The Late Night Dirty Show: X Rated Comedy",
@@ -351,7 +15,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 4d out (min 14)"
+   "notable_reason": "only 3d out (min 14)"
   },
   {
    "id": "5a056a5b70a0f36c",
@@ -367,7 +31,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 5d out (min 14)"
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "07a2c0063c54cd7b",
@@ -383,7 +47,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 5d out (min 14)"
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "4066f5a6b09ad476",
@@ -399,7 +63,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 5d out (min 14)"
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "12c05781cb2ee623",
@@ -415,7 +79,7 @@
    "notable": false,
    "first_seen": "2026-09-01T03:48:09.310Z",
    "tier": null,
-   "notable_reason": "only 5d out (min 14)"
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "3bd7c5ec93a781c0",
@@ -495,7 +159,7 @@
    "notable": false,
    "first_seen": "2026-09-02T17:12:53.131Z",
    "tier": null,
-   "notable_reason": "only 5d out (min 14)"
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "c6d744e12a5fa846",
@@ -607,7 +271,7 @@
    "notable": false,
    "first_seen": "2026-09-03T01:31:40.306Z",
    "tier": null,
-   "notable_reason": "only -15d out (min 14)"
+   "notable_reason": "only -16d out (min 14)"
   },
   {
    "id": "283f11a8c6b3dc62",
@@ -767,7 +431,7 @@
    "notable": false,
    "first_seen": "2026-09-05T16:07:18.078Z",
    "tier": null,
-   "notable_reason": "only 6d out (min 14)"
+   "notable_reason": "only 5d out (min 14)"
   },
   {
    "id": "173fc23bec77ef46",
@@ -927,7 +591,7 @@
    "notable": false,
    "first_seen": "2026-09-06T01:24:02.956Z",
    "tier": null,
-   "notable_reason": "only 5d out (min 14)"
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "965aa3f1aec040c6",
@@ -943,7 +607,7 @@
    "notable": false,
    "first_seen": "2026-09-06T01:24:02.956Z",
    "tier": null,
-   "notable_reason": "only 10d out (min 14)"
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "03a5263feb275d68",
@@ -1135,7 +799,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only -9d out (min 14)"
+   "notable_reason": "only -10d out (min 14)"
   },
   {
    "id": "cd916c351c73e9f5",
@@ -1151,7 +815,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 6d out (min 14)"
+   "notable_reason": "only 5d out (min 14)"
   },
   {
    "id": "cb091dfc9be9c6b6",
@@ -1167,7 +831,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 6d out (min 14)"
+   "notable_reason": "only 5d out (min 14)"
   },
   {
    "id": "ba6fe384dd0f73d0",
@@ -1183,7 +847,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 6d out (min 14)"
+   "notable_reason": "only 5d out (min 14)"
   },
   {
    "id": "46f86371a1fde417",
@@ -1199,7 +863,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 7d out (min 14)"
+   "notable_reason": "only 6d out (min 14)"
   },
   {
    "id": "45004a1c53c9686a",
@@ -1215,7 +879,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 7d out (min 14)"
+   "notable_reason": "only 6d out (min 14)"
   },
   {
    "id": "3d696e76dde360a9",
@@ -1231,7 +895,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 7d out (min 14)"
+   "notable_reason": "only 6d out (min 14)"
   },
   {
    "id": "d66040b97effac9e",
@@ -1247,7 +911,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 8d out (min 14)"
+   "notable_reason": "only 7d out (min 14)"
   },
   {
    "id": "1776c41455ed02f0",
@@ -1263,7 +927,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 8d out (min 14)"
+   "notable_reason": "only 7d out (min 14)"
   },
   {
    "id": "7039e3fa17620233",
@@ -1279,7 +943,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 8d out (min 14)"
+   "notable_reason": "only 7d out (min 14)"
   },
   {
    "id": "df7ee3ce21cc3ddc",
@@ -1295,7 +959,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 9d out (min 14)"
+   "notable_reason": "only 8d out (min 14)"
   },
   {
    "id": "ca646a3bdc4db894",
@@ -1311,7 +975,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 9d out (min 14)"
+   "notable_reason": "only 8d out (min 14)"
   },
   {
    "id": "d1183f86b3d36a08",
@@ -1327,7 +991,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 9d out (min 14)"
+   "notable_reason": "only 8d out (min 14)"
   },
   {
    "id": "6f36d58793bdcc8e",
@@ -1343,7 +1007,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 10d out (min 14)"
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "25398b45524cd9cb",
@@ -1359,7 +1023,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 11d out (min 14)"
+   "notable_reason": "only 10d out (min 14)"
   },
   {
    "id": "c7420654c8af4619",
@@ -1375,7 +1039,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 11d out (min 14)"
+   "notable_reason": "only 10d out (min 14)"
   },
   {
    "id": "38f83164afd94b25",
@@ -1391,7 +1055,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 11d out (min 14)"
+   "notable_reason": "only 10d out (min 14)"
   },
   {
    "id": "ee8c60a49c476fcb",
@@ -1407,7 +1071,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 12d out (min 14)"
+   "notable_reason": "only 11d out (min 14)"
   },
   {
    "id": "5ba4db81c344e990",
@@ -1423,7 +1087,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 12d out (min 14)"
+   "notable_reason": "only 11d out (min 14)"
   },
   {
    "id": "58093543a68d2413",
@@ -1439,7 +1103,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 12d out (min 14)"
+   "notable_reason": "only 11d out (min 14)"
   },
   {
    "id": "e718e64c6fedd5eb",
@@ -1455,7 +1119,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 12d out (min 14)"
+   "notable_reason": "only 11d out (min 14)"
   },
   {
    "id": "df44e7ee69dde9d4",
@@ -1471,7 +1135,7 @@
    "notable": false,
    "first_seen": "2026-09-08T15:14:43.441Z",
    "tier": null,
-   "notable_reason": "only 3d out (min 14)"
+   "notable_reason": "only 2d out (min 14)"
   },
   {
    "id": "c25a3664df94a2e5",
@@ -1695,7 +1359,7 @@
    "notable": false,
    "first_seen": "2026-09-09T01:38:16.075Z",
    "tier": null,
-   "notable_reason": "only -8d out (min 14)"
+   "notable_reason": "only -9d out (min 14)"
   },
   {
    "id": "fca2e9156b96b9a6",
@@ -1711,7 +1375,7 @@
    "notable": false,
    "first_seen": "2026-09-09T01:38:16.075Z",
    "tier": null,
-   "notable_reason": "only -3d out (min 14)"
+   "notable_reason": "only -4d out (min 14)"
   },
   {
    "id": "8a805b7659802da6",
@@ -1727,7 +1391,7 @@
    "notable": false,
    "first_seen": "2026-09-09T01:38:16.075Z",
    "tier": null,
-   "notable_reason": "only -2d out (min 14)"
+   "notable_reason": "only -3d out (min 14)"
   },
   {
    "id": "1cb21afc050c660c",
@@ -1822,7 +1486,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -4d out (min 14)",
+   "notable_reason": "only -5d out (min 14)",
    "first_seen": "2026-09-11T01:34:14.633Z"
   },
   {
@@ -1998,7 +1662,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-09-12T01:38:26.604Z"
   },
   {
@@ -2270,7 +1934,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -4d out (min 14)",
+   "notable_reason": "only -5d out (min 14)",
    "first_seen": "2026-09-14T01:46:13.137Z"
   },
   {
@@ -2286,7 +1950,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -3d out (min 14)",
+   "notable_reason": "only -4d out (min 14)",
    "first_seen": "2026-09-14T01:46:13.137Z"
   },
   {
@@ -2302,7 +1966,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-09-14T18:41:02.630Z"
   },
   {
@@ -2462,7 +2126,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (3 weeks)",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-09-15T17:43:19.371Z"
   },
   {
@@ -2510,7 +2174,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-09-16T01:45:37.373Z"
   },
   {
@@ -2526,7 +2190,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-09-16T17:40:47.648Z"
   },
   {
@@ -2686,7 +2350,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-09-18T01:40:32.124Z"
   },
   {
@@ -2702,7 +2366,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-09-18T01:40:32.124Z"
   },
   {
@@ -3102,7 +2766,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-09-21T18:44:51.959Z"
   },
   {
@@ -3200,6 +2864,342 @@
    "tier": null,
    "notable_reason": "title pattern",
    "first_seen": "2026-09-21T18:44:51.959Z"
+  },
+  {
+   "id": "aad53d915f69f0b9",
+   "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-10-08",
+   "time": "8:00 PM",
+   "price_min": 9,
+   "price_max": 9,
+   "image_url": "https://www.riotconroe.com/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
+   "ticket_url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-10-08200000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "7166b9005483296a",
+   "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-10-15",
+   "time": "8:00 PM",
+   "price_min": 9,
+   "price_max": 9,
+   "image_url": "https://www.riotconroe.com/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
+   "ticket_url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-10-15200000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "88833ead606a7dfd",
+   "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-10-22",
+   "time": "8:00 PM",
+   "price_min": 9,
+   "price_max": 9,
+   "image_url": "https://www.riotconroe.com/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
+   "ticket_url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-10-22200000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "d68ad66a27f95f79",
+   "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-10-29",
+   "time": "8:00 PM",
+   "price_min": 9,
+   "price_max": 9,
+   "image_url": "https://www.riotconroe.com/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
+   "ticket_url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-10-29200000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "c4249a7d4bd4f07f",
+   "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-11-05",
+   "time": "8:00 PM",
+   "price_min": 9,
+   "price_max": 9,
+   "image_url": "https://www.riotconroe.com/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
+   "ticket_url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-11-05200000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "ef254e9efcaf3b9a",
+   "name": "Riot Comedy Club presents Saturday Night Early Standup Comedy in Conroe!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-11-07",
+   "time": "7:00 PM",
+   "price_min": 36,
+   "price_max": 36,
+   "image_url": "https://www.riotconroe.com/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
+   "ticket_url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-2026-11-07190000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "aeaeb6f499633a9d",
+   "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-11-07",
+   "time": "9:00 PM",
+   "price_min": 15,
+   "price_max": 15,
+   "image_url": "https://www.riotconroe.com/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
+   "ticket_url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-07210000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "9d415b69b075cc86",
+   "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-11-12",
+   "time": "8:00 PM",
+   "price_min": 9,
+   "price_max": 9,
+   "image_url": "https://www.riotconroe.com/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
+   "ticket_url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-11-12200000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "075041003fbb08da",
+   "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-11-14",
+   "time": "9:00 PM",
+   "price_min": 15,
+   "price_max": 15,
+   "image_url": "https://www.riotconroe.com/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
+   "ticket_url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-14210000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "51cf4b7992adefc5",
+   "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-11-19",
+   "time": "8:00 PM",
+   "price_min": 9,
+   "price_max": 9,
+   "image_url": "https://www.riotconroe.com/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
+   "ticket_url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-11-19200000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "f0a4a442d47e31d0",
+   "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-11-21",
+   "time": "9:00 PM",
+   "price_min": 15,
+   "price_max": 15,
+   "image_url": "https://www.riotconroe.com/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
+   "ticket_url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-21210000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "8ae98194dea72562",
+   "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-11-26",
+   "time": "8:00 PM",
+   "price_min": 9,
+   "price_max": 9,
+   "image_url": "https://www.riotconroe.com/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
+   "ticket_url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-11-26200000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "4a5f6e678e54edf3",
+   "name": "Riot Comedy Club presents Friday Night Standup Comedy in Conroe!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-11-27",
+   "time": "7:30 PM",
+   "price_min": 12,
+   "price_max": 12,
+   "image_url": "https://www.riotconroe.com/img/shows/friday-conroe-bece0abe-large-thumb.jpg",
+   "ticket_url": "https://www.riotconroe.com/events/riot-comedy-club-presents-friday-night-standup-comedy-in-conroe-2026-11-27193000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "6143df9f415f55e8",
+   "name": "Riot Comedy Club presents Saturday Night Early Standup Comedy in Conroe!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-11-28",
+   "time": "7:00 PM",
+   "price_min": 36,
+   "price_max": 36,
+   "image_url": "https://www.riotconroe.com/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
+   "ticket_url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-2026-11-28190000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "2ee9b45127f270c7",
+   "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-11-28",
+   "time": "9:00 PM",
+   "price_min": 15,
+   "price_max": 15,
+   "image_url": "https://www.riotconroe.com/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
+   "ticket_url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-28210000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "3efa4ecab3d6d184",
+   "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-12-03",
+   "time": "8:00 PM",
+   "price_min": 9,
+   "price_max": 9,
+   "image_url": "https://www.riotconroe.com/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
+   "ticket_url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-12-03200000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "c4d38f40d197f07b",
+   "name": "Riot Comedy Club presents Friday Night Standup Comedy in Conroe!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-12-04",
+   "time": "7:30 PM",
+   "price_min": 12,
+   "price_max": 12,
+   "image_url": "https://www.riotconroe.com/img/shows/friday-conroe-bece0abe-large-thumb.jpg",
+   "ticket_url": "https://www.riotconroe.com/events/riot-comedy-club-presents-friday-night-standup-comedy-in-conroe-2026-12-04193000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "aa9f54d53d8e126a",
+   "name": "Riot Comedy Club presents Saturday Night Early Standup Comedy in Conroe!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-12-05",
+   "time": "7:00 PM",
+   "price_min": 36,
+   "price_max": 36,
+   "image_url": "https://www.riotconroe.com/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
+   "ticket_url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-2026-12-05190000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "fe8bb613e3520a43",
+   "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-12-05",
+   "time": "9:00 PM",
+   "price_min": 15,
+   "price_max": 15,
+   "image_url": "https://www.riotconroe.com/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
+   "ticket_url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-12-05210000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "bba9d34262364d2f",
+   "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-12-12",
+   "time": "9:00 PM",
+   "price_min": 15,
+   "price_max": 15,
+   "image_url": "https://www.riotconroe.com/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
+   "ticket_url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-12-12210000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
+  },
+  {
+   "id": "dc008a5b0101c627",
+   "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2026-12-17",
+   "time": "8:00 PM",
+   "price_min": 9,
+   "price_max": 9,
+   "image_url": "https://www.riotconroe.com/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
+   "ticket_url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-12-17200000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-09-22T01:58:53.716Z"
   }
  ]
 }

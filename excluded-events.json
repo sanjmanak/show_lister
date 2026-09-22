@@ -1,7 +1,7 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-09-21T18:42:35.259Z",
-  "total_excluded": 15,
+  "last_updated": "2026-09-22T01:56:47.596Z",
+  "total_excluded": 14,
   "events": [
     {
       "name": "Karaoke every THURSDAY!",
@@ -156,17 +156,6 @@
       "genre": "Theatre",
       "ticket_url": "https://www.ticketmaster.com/the-unknown-tour-beaumont-texas-11-07-2026/event/3A0064B6A631B025",
       "reason": "city blocklisted: Beaumont"
-    },
-    {
-      "name": "John Crist Live!",
-      "venue": "Jefferson Theatre",
-      "venue_city": "Beaumont",
-      "date": "2026-12-03",
-      "time": "7:00 PM",
-      "source": "ticketmaster",
-      "genre": "Comedy",
-      "ticket_url": "https://www.ticketmaster.com/john-crist-live-beaumont-texas-12-03-2026/event/3A00646BC90FDBFA",
-      "reason": "venue blocklisted: Jefferson Theatre"
     }
   ]
 }
