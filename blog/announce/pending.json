@@ -1,21 +1,3 @@
 {
-  "generated_at": "2026-09-22T19:05:58.852Z",
-  "dry_run": false,
-  "items": [
-    {
-      "id": "1422d54256e6400a",
-      "name": "CHRIS FLEMING LIVE",
-      "performer_name": "Chris Fleming",
-      "venue": "Cullen Performance Hall",
-      "date": "2026-11-20",
-      "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1AAvI-V",
-      "files": {
-        "portrait": "2026-11-20-chris-fleming-portrait.png",
-        "story": "2026-11-20-chris-fleming-story.png",
-        "reel": "2026-11-20-chris-fleming.mp4"
-      },
-      "caption": "The creator of cult YouTube matriarch Gayle is back on the road.\nChris Fleming performs at Cullen Performance Hall on November 20, 2026. His stand-up special is Showpig. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
-      "confidence": 0.98
-    }
-  ]
+  "items": []
 }
