@@ -42,6 +42,7 @@ const { writeComedianGraphics } = require("./lib/comedian-graphics");
 // polish passes, right before we wrap the body in the final template.
 // See scripts/lib/sanitize-html.js.
 const { sanitizeAiHtml, addSponsoredRelToTicketLinks } = require("./lib/sanitize-html");
+const { ensureShowDetails } = require("./lib/show-details");
 const { addBlogPostingToGraph, wpGmtToIso } = require("./lib/schema-utils");
 
 // ---------------------------------------------------------------------------
@@ -433,25 +434,30 @@ OUTPUT: Return ONLY the HTML blog post content. Use semantic HTML: <h1> for the 
 // Step 3: Fact-check / editorial pass
 // ---------------------------------------------------------------------------
 
-function factCheckPost(research, draft) {
+function factCheckPost(research, draft, showFacts) {
   const systemPrompt = `You are a senior editorial fact-checker at a major publication. Your job is to compare a draft article against verified source research and silently remove anything that is not supported. You are ruthless about accuracy. The output you produce is FINAL and will be published as-is to WordPress with no human review. You never add content, only subtract or lightly rephrase for flow.`;
 
   const prompt = `RESEARCH DATA:
 ${research}
+
+SHOW FACTS (verified from the Comedy Houston listings, NOT part of the research data above, and they MUST be kept):
+${showFacts}
 
 DRAFT ARTICLE:
 ${draft}
 
 Review this article against the research data. For each claim:
 1. If it appears in the research data → keep it
-2. If it is NOT in the research and cannot be verified → REMOVE the entire sentence and lightly stitch the surrounding sentences for flow
+2. If it states a SHOW FACT (the venue, the date, the time, the price, the ticket link) → keep it; those are verified by us
+3. If it is NOT in the research and cannot be verified → REMOVE the entire sentence and lightly stitch the surrounding sentences for flow
 
 Also remove:
 - Any generic sentence that could describe any comedian (e.g., "audiences are in for a treat")
 - Any adjective not backed by a specific reference
 - Any fabricated quotes or bit descriptions not in the research
 - Any of these banned phrases: "don't miss," "must-see," "side-splitting," "comedic genius," "hilarity ensues," "get ready," "a night of laughs"
-- Any rhetorical question, any "isn't just X, it's Y" construction, any closing CTA paragraph
+- Any rhetorical question, any "isn't just X, it's Y" construction, any hype-only closing paragraph that carries no show fact and no ticket link
+- Do NOT remove the sentence that names the show date and venue, and do NOT remove the <a class="ticket-link"> Get Tickets link. One plain sentence pointing to tickets is required, not a CTA to cut.
 
 CRITICAL — THIS IS THE FINAL VERSION:
 - The output goes straight to WordPress. There is NO human review.
@@ -472,7 +478,7 @@ IMPORTANT:
 // Step 4: Polish pass — voice & rhythm critique, no new facts
 // ---------------------------------------------------------------------------
 
-function polishPost(draft) {
+function polishPost(draft, showFacts) {
   const systemPrompt = `You are a copy chief at a respected magazine. You take a fact-checked draft and tighten it for voice, rhythm, and specificity. You never add facts. You aggressively cut LLM-tells. The version you return is the version that publishes — no flags, no notes.`;
 
   const prompt = `Here is a fact-checked draft. Score it silently against this rubric, then return ONLY the rewritten HTML:
@@ -487,11 +493,14 @@ RUBRIC (do not output, just apply):
 REWRITE RULES:
 - Do NOT add any new facts, names, credits, quotes, or claims. You can only cut and rearrange existing content.
 - Keep the <h1> title.
+- Keep the sentence that names the show date and venue, and keep the <a class="ticket-link"> Get Tickets link. If you cut a paragraph, it must not be that one. The 400-word ceiling excludes that sentence and the post-footer.
 - Keep all <a href="..."> hyperlinks pointing to real sources.
 - Keep the <div class="post-footer"> at the end exactly as-is.
 - NEVER emit "[VERIFY]" or any bracketed editor's note. This is the final version.
 - Return ONLY the HTML. No preamble, no explanation, no scoring.
 
+SHOW FACTS (verified by us, keep them):
+${showFacts}
 DRAFT:
 ${draft}`;
 
@@ -1527,11 +1536,24 @@ async function main() {
       continue;
     }
 
+    // The editors get the show logistics as a separate verified block. They
+    // are not in the research JSON, and "remove anything not in the research"
+    // used to strip the date sentence and the ticket link (11/20 posts named
+    // the date, 5/20 linked tickets, as of 2026-09-22).
+    const showFacts = [
+      `Comedian: ${headliner.name}`,
+      `Venue: ${venue}, Houston, TX`,
+      `Date: ${formatDateForDisplay(date)}`,
+      `Time: ${time || "See venue for time"}`,
+      `Price: ${price || "See venue for pricing"}`,
+      `Ticket URL: ${ticketUrl}`,
+    ].join("\n");
+
     // Step 3: Fact-check pass
     console.log("  Step 3: Fact-checking...");
     let finalContent = draft;
     try {
-      finalContent = await factCheckPost(research, draft);
+      finalContent = await factCheckPost(research, draft, showFacts);
       finalContent = finalContent.replace(/^```html\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
       console.log("  Fact-check complete.");
     } catch (err) {
@@ -1541,7 +1563,7 @@ async function main() {
     // Step 4: Polish pass — voice, rhythm, length (no new facts)
     console.log("  Step 4: Polish pass...");
     try {
-      const polished = await polishPost(finalContent);
+      const polished = await polishPost(finalContent, showFacts);
       const cleanedPolish = polished.replace(/^```html\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
       if (cleanedPolish && cleanedPolish.length > 200) {
         finalContent = cleanedPolish;
@@ -1577,6 +1599,20 @@ async function main() {
       );
     }
     finalContent = addSponsoredRelToTicketLinks(sanitized.html);
+
+    // Deterministic backstop: whatever the three passes did, the body names
+    // the show date and links to tickets before it leaves this function.
+    {
+      const guard = ensureShowDetails(finalContent, {
+        comedianName: headliner.name, venue, date, time, ticketUrl,
+      });
+      finalContent = guard.html;
+      if (guard.inserted) {
+        console.log(
+          `  Show details sentence inserted (date missing: ${guard.dateMissing}, ticket link missing: ${guard.ticketMissing}).`
+        );
+      }
+    }
 
     // Build the schema.org @graph ONCE. It goes to WordPress via the
     // `ch_schema_graph` REST field in publishToWordPress — the Comedy
