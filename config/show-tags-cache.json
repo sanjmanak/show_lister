@@ -2022,6 +2022,18 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-09-22"
+    },
+    "bad parenting comedy tour": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-09-23"
+    },
+    "comedy & cocktails at avant garden": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-09-23"
     }
   }
 }
