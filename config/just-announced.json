@@ -1,38 +1,6 @@
 {
- "updated": "2026-09-23T17:54:50.404Z",
+ "updated": "2026-09-24T01:43:05.621Z",
  "announcements": [
-  {
-   "id": "c6d744e12a5fa846",
-   "name": "Chaunte Wayans",
-   "venue": "Punch Line Houston",
-   "date": "2026-10-16",
-   "time": "7:00 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/a/811/01c641b8-c700-40e6-8b6f-a994aa7a2811_SOURCE",
-   "ticket_url": "https://www.ticketmaster.com/chaunte-wayans-houston-texas-10-16-2026/event/3A00651FCBA6283C",
-   "source": "ticketmaster",
-   "notable": true,
-   "first_seen": "2026-09-02T17:12:53.131Z",
-   "tier": "headliner_room",
-   "notable_reason": "headliner room"
-  },
-  {
-   "id": "f3d021047e83d99d",
-   "name": "Chaunte Wayans",
-   "venue": "Punch Line Houston",
-   "date": "2026-10-17",
-   "time": "7:00 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/a/811/01c641b8-c700-40e6-8b6f-a994aa7a2811_SOURCE",
-   "ticket_url": "https://www.ticketmaster.com/chaunte-wayans-houston-texas-10-17-2026/event/3A00651FCBAF2859",
-   "source": "ticketmaster",
-   "notable": true,
-   "first_seen": "2026-09-02T17:12:53.131Z",
-   "tier": "headliner_room",
-   "notable_reason": "headliner room"
-  },
   {
    "id": "a93fc7c66e2e44cb",
    "name": "Chaunte Wayans",
@@ -111,7 +79,7 @@
    "notable": false,
    "first_seen": "2026-09-03T01:31:40.306Z",
    "tier": null,
-   "notable_reason": "only -17d out (min 14)"
+   "notable_reason": "only -18d out (min 14)"
   },
   {
    "id": "283f11a8c6b3dc62",
@@ -191,7 +159,7 @@
    "notable": false,
    "first_seen": "2026-09-04T16:55:02.114Z",
    "tier": null,
-   "notable_reason": "title pattern"
+   "notable_reason": "only 13d out (min 14)"
   },
   {
    "id": "b8d5ab81ef5cad5e",
@@ -271,7 +239,7 @@
    "notable": false,
    "first_seen": "2026-09-05T16:07:18.078Z",
    "tier": null,
-   "notable_reason": "only 4d out (min 14)"
+   "notable_reason": "only 3d out (min 14)"
   },
   {
    "id": "173fc23bec77ef46",
@@ -431,7 +399,7 @@
    "notable": false,
    "first_seen": "2026-09-06T01:24:02.956Z",
    "tier": null,
-   "notable_reason": "only 3d out (min 14)"
+   "notable_reason": "only 2d out (min 14)"
   },
   {
    "id": "965aa3f1aec040c6",
@@ -447,7 +415,7 @@
    "notable": false,
    "first_seen": "2026-09-06T01:24:02.956Z",
    "tier": null,
-   "notable_reason": "only 8d out (min 14)"
+   "notable_reason": "only 7d out (min 14)"
   },
   {
    "id": "03a5263feb275d68",
@@ -639,7 +607,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only -11d out (min 14)"
+   "notable_reason": "only -12d out (min 14)"
   },
   {
    "id": "cd916c351c73e9f5",
@@ -655,7 +623,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 4d out (min 14)"
+   "notable_reason": "only 3d out (min 14)"
   },
   {
    "id": "cb091dfc9be9c6b6",
@@ -671,7 +639,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 4d out (min 14)"
+   "notable_reason": "only 3d out (min 14)"
   },
   {
    "id": "ba6fe384dd0f73d0",
@@ -687,7 +655,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 4d out (min 14)"
+   "notable_reason": "only 3d out (min 14)"
   },
   {
    "id": "46f86371a1fde417",
@@ -703,7 +671,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 5d out (min 14)"
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "45004a1c53c9686a",
@@ -719,7 +687,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 5d out (min 14)"
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "3d696e76dde360a9",
@@ -735,7 +703,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 5d out (min 14)"
+   "notable_reason": "only 4d out (min 14)"
   },
   {
    "id": "d66040b97effac9e",
@@ -751,7 +719,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 6d out (min 14)"
+   "notable_reason": "only 5d out (min 14)"
   },
   {
    "id": "1776c41455ed02f0",
@@ -767,7 +735,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 6d out (min 14)"
+   "notable_reason": "only 5d out (min 14)"
   },
   {
    "id": "7039e3fa17620233",
@@ -783,7 +751,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 6d out (min 14)"
+   "notable_reason": "only 5d out (min 14)"
   },
   {
    "id": "df7ee3ce21cc3ddc",
@@ -799,7 +767,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 7d out (min 14)"
+   "notable_reason": "only 6d out (min 14)"
   },
   {
    "id": "ca646a3bdc4db894",
@@ -815,7 +783,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 7d out (min 14)"
+   "notable_reason": "only 6d out (min 14)"
   },
   {
    "id": "d1183f86b3d36a08",
@@ -831,7 +799,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 7d out (min 14)"
+   "notable_reason": "only 6d out (min 14)"
   },
   {
    "id": "6f36d58793bdcc8e",
@@ -847,7 +815,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 8d out (min 14)"
+   "notable_reason": "only 7d out (min 14)"
   },
   {
    "id": "25398b45524cd9cb",
@@ -863,7 +831,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 9d out (min 14)"
+   "notable_reason": "only 8d out (min 14)"
   },
   {
    "id": "c7420654c8af4619",
@@ -879,7 +847,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 9d out (min 14)"
+   "notable_reason": "only 8d out (min 14)"
   },
   {
    "id": "38f83164afd94b25",
@@ -895,7 +863,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 9d out (min 14)"
+   "notable_reason": "only 8d out (min 14)"
   },
   {
    "id": "ee8c60a49c476fcb",
@@ -911,7 +879,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 10d out (min 14)"
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "5ba4db81c344e990",
@@ -927,7 +895,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 10d out (min 14)"
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "58093543a68d2413",
@@ -943,7 +911,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 10d out (min 14)"
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "e718e64c6fedd5eb",
@@ -959,7 +927,7 @@
    "notable": false,
    "first_seen": "2026-09-08T01:28:15.647Z",
    "tier": null,
-   "notable_reason": "only 10d out (min 14)"
+   "notable_reason": "only 9d out (min 14)"
   },
   {
    "id": "df44e7ee69dde9d4",
@@ -975,7 +943,7 @@
    "notable": false,
    "first_seen": "2026-09-08T15:14:43.441Z",
    "tier": null,
-   "notable_reason": "only 1d out (min 14)"
+   "notable_reason": "only 0d out (min 14)"
   },
   {
    "id": "c25a3664df94a2e5",
@@ -1199,7 +1167,7 @@
    "notable": false,
    "first_seen": "2026-09-09T01:38:16.075Z",
    "tier": null,
-   "notable_reason": "only -10d out (min 14)"
+   "notable_reason": "only -11d out (min 14)"
   },
   {
    "id": "fca2e9156b96b9a6",
@@ -1215,7 +1183,7 @@
    "notable": false,
    "first_seen": "2026-09-09T01:38:16.075Z",
    "tier": null,
-   "notable_reason": "only -5d out (min 14)"
+   "notable_reason": "only -6d out (min 14)"
   },
   {
    "id": "8a805b7659802da6",
@@ -1231,7 +1199,7 @@
    "notable": false,
    "first_seen": "2026-09-09T01:38:16.075Z",
    "tier": null,
-   "notable_reason": "only -4d out (min 14)"
+   "notable_reason": "only -5d out (min 14)"
   },
   {
    "id": "1cb21afc050c660c",
@@ -1326,7 +1294,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -6d out (min 14)",
+   "notable_reason": "only -7d out (min 14)",
    "first_seen": "2026-09-11T01:34:14.633Z"
   },
   {
@@ -1502,7 +1470,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 2d out (min 14)",
+   "notable_reason": "only 1d out (min 14)",
    "first_seen": "2026-09-12T01:38:26.604Z"
   },
   {
@@ -1774,7 +1742,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -6d out (min 14)",
+   "notable_reason": "only -7d out (min 14)",
    "first_seen": "2026-09-14T01:46:13.137Z"
   },
   {
@@ -1790,7 +1758,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -5d out (min 14)",
+   "notable_reason": "only -6d out (min 14)",
    "first_seen": "2026-09-14T01:46:13.137Z"
   },
   {
@@ -1806,7 +1774,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 2d out (min 14)",
+   "notable_reason": "only 1d out (min 14)",
    "first_seen": "2026-09-14T18:41:02.630Z"
   },
   {
@@ -1966,7 +1934,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-09-15T17:43:19.371Z"
   },
   {
@@ -2014,7 +1982,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-09-16T01:45:37.373Z"
   },
   {
@@ -2030,7 +1998,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-09-16T17:40:47.648Z"
   },
   {
@@ -2190,7 +2158,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-09-18T01:40:32.124Z"
   },
   {
@@ -2206,7 +2174,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-09-18T01:40:32.124Z"
   },
   {
@@ -2606,7 +2574,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-09-21T18:44:51.959Z"
   },
   {
@@ -3102,7 +3070,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-09-23T01:52:29.299Z"
   },
   {
@@ -3118,7 +3086,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-09-23T17:54:50.404Z"
   },
   {
@@ -3200,6 +3168,38 @@
    "tier": null,
    "notable_reason": "recurring series (13 weeks)",
    "first_seen": "2026-09-23T17:54:50.404Z"
+  },
+  {
+   "id": "a6a5e39da7d85ded",
+   "name": "Stand-Up Comedy - Reem Edan live at the Den Comedy Club",
+   "venue": "The Den Comedy Club",
+   "date": "2026-11-12",
+   "time": "7:30 PM",
+   "price_min": 30.87,
+   "price_max": 244.57,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194219395%2F2991795842957%2F1%2Foriginal.20260923-184205?auto=format%2Ccompress&q=75&sharp=10&s=a5f36902b8d6a8c94611d6489fdcd5bf",
+   "ticket_url": "https://www.eventbrite.com/e/stand-up-comedy-reem-edan-live-at-the-den-comedy-club-tickets-2002163279265",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "small room",
+   "first_seen": "2026-09-24T01:43:05.621Z"
+  },
+  {
+   "id": "f5991e3715afa582",
+   "name": "Leanna Firestone",
+   "venue": "The Secret Group",
+   "date": "2026-11-25",
+   "time": "7:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194231514%2F3558237521%2F1%2Foriginal.20260923-205236?auto=format%2Ccompress&q=75&sharp=10&s=3afda4d1593983058824a4481986a8ff",
+   "ticket_url": "https://www.eventbrite.com/e/leanna-firestone-tickets-2002172767645",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "small room",
+   "first_seen": "2026-09-24T01:43:05.621Z"
   }
  ]
 }

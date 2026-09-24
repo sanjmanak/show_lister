@@ -2034,6 +2034,18 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-09-23"
+    },
+    "leanna firestone": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-09-24"
+    },
+    "stand-up comedy - reem edan live at the den comedy club": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-09-24"
     }
   }
 }
