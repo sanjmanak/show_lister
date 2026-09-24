@@ -1,50 +1,5 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-19": {
-      "lastmod": "2026-09-23T03:03:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents  The One Minute Comedy Showdown with Jeff Joe",
-        "startDate": "2026-09-23T21:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-19",
-          "priceCurrency": "USD",
-          "price": "10.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-09T10:34:15-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-19",
-        "image": "/img/shows/https-cdn-evbuc-com-images-921782813-428099579998-1-original-282c1848-large-thumb.jpg",
-        "description": "Get ready for a night of fast-paced, side-splitting fun at the One Minute Comedy Showdown! Hosted by the hilarious Jeff Joe, this unique stand-up comedy competition puts the spotlight on 15 of Houston&rsquo;s funniest comedians (plus special surprise guests).Here&rsquo;s how it works:&bull; Each comedian performs a 1-minute set to win over the crowd.&bull; YOU get to decide who moves on to the next round.&bull; The competition heats up as comedians perform longer sets until only one is left standing as the One Minute Comedy Showdown Champion!It&rsquo;s unpredictable, high-energy, and packed with laughs from start to finish. Don&rsquo;t miss your chance to experience the most exciting comedy competition in Houston!Reserve your tickets now and be part of the action!All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet ParkingLooking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Jeff Joe"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-30": {
       "lastmod": "2026-09-20T01:58:00-05:00",
       "node": {
@@ -982,46 +937,6 @@
         "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-22",
         "image": "/img/shows/Showcase-Templates-20-friday-night-9pm-602b1388-large-thumb.png",
         "description": "Come join us for a hilarious evening of laughter at The Riot presents Friday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you&#39;re a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone. You can expect a diverse lineup with 5-7 comedians from Houston and around the country.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google thousands of reviews!Delicious Food &amp; DrinksEnjoy tasty food, draft beer, wine, coffee, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": []
-      }
-    },
-    "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-20": {
-      "lastmod": "2026-08-10T03:57:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Comedy Club Presents Friday Night Standup Comedy Late Showcase!",
-        "startDate": "2026-10-02T23:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-20",
-          "priceCurrency": "USD",
-          "price": "15.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-08T12:34:11-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-20",
-        "image": "/img/shows/Showcase-Templates-18-2f410d5b-large-thumb.png",
-        "description": "Get ready for the most unpredictable and chaotic showtime in the comedy scene! The Late Show offers an intimate late-night experience where the crowd is loose, the vibes are electric, and the laughs are nonstop.This showcase features a mix of headline comedians who sell out venues and local talent who know how to steal the show, making every performance an unforgettable experience.Whether you&rsquo;re looking for a fun night out or just love the thrill of late-night comedy, this show will have you laughing until it hurts.Reserve your tickets now and join us for a late-night comedy event like no other!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Houston",
@@ -14123,6 +14038,291 @@
           "url": "https://www.riotconroe.com"
         },
         "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/riot-comedy-club-presents-you-look-like-roast-contest-2026-10-02230000": {
+      "lastmod": "2026-09-24T07:18:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Riot Comedy Club Presents \"You Look Like\" Roast Contest ",
+        "startDate": "2026-10-02T23:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/riot-comedy-club-presents-you-look-like-roast-contest-2026-10-02230000",
+          "priceCurrency": "USD",
+          "price": "15.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-24T07:18:23-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/riot-comedy-club-presents-you-look-like-roast-contest-2026-10-02230000",
+        "image": null,
+        "description": "Get ready for one of the wildest, most hilarious nights of comedy in town! The Riot presents \"You Look Like\" — the ultimate roast battle showdown featuring The Riot's sharpest, meanest, and funniest comedians going head-to-head in no-holds-barred insult battles. And here's the twist: YOU — the audience — decide who takes home the crown as The Riot’s Roast Champion.This is not your average comedy show — it’s fast, fierce, and full of savage comebacks that'll have you laughing till it hurts. Don’t believe us? Clips from the show have already racked up tens of millions of views on social media.Come see what all the hype is about. Grab your tickets now before they sell out!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with thousands of Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-cristina-mariani-kill-tony-comedy-mothership-headlines-the-riot-comedy-club": {
+      "lastmod": "2026-09-24T11:02:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Cristina Mariani (Kill Tony, Comedy Mothership) Headlines The Riot Comedy Club",
+        "startDate": "2027-05-06T21:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-cristina-mariani-kill-tony-comedy-mothership-headlines-the-riot-comedy-club",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-24T10:59:28-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-cristina-mariani-kill-tony-comedy-mothership-headlines-the-riot-comedy-club",
+        "image": "/img/events/Screenshot-140-cd160a89-large-thumb.png",
+        "description": "Cristina Mariani is a rising stand-up comedian, with a quirky, dark sense of humor. She performs regularly at her home club The Comedy Mothership in Austin, Texas. She has toured with Theo Von and opened for big names including Tom Segura, Christina Pazsitzky, Ron White, Harland Williams, Brian Simpson, Ari Shaffir and Freddie Gibbs. She has made several appearances on &quot;Kill Tony&quot; and many of her stand up videos have garnered millions of viewsAll shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-cristina-mariani-kill-tony-comedy-mothership-headlines-the-riot-comedy-club-2027-05-07190000": {
+      "lastmod": "2026-09-24T11:04:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Cristina Mariani (Kill Tony, Comedy Mothership) Headlines The Riot Comedy Club",
+        "startDate": "2027-05-07T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-cristina-mariani-kill-tony-comedy-mothership-headlines-the-riot-comedy-club-2027-05-07190000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-24T11:04:24-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-cristina-mariani-kill-tony-comedy-mothership-headlines-the-riot-comedy-club-2027-05-07190000",
+        "image": "/img/events/Screenshot-140-cd160a89-large-thumb.png",
+        "description": "Cristina Mariani is a rising stand-up comedian, with a quirky, dark sense of humor. She performs regularly at her home club The Comedy Mothership in Austin, Texas. She has toured with Theo Von and opened for big names including Tom Segura, Christina Pazsitzky, Ron White, Harland Williams, Brian Simpson, Ari Shaffir and Freddie Gibbs. She has made several appearances on \"Kill Tony\" and many of her stand up videos have garnered millions of viewsAll shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-cristina-mariani-kill-tony-comedy-mothership-headlines-the-riot-comedy-club-2027-05-07210000": {
+      "lastmod": "2026-09-24T11:04:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Cristina Mariani (Kill Tony, Comedy Mothership) Headlines The Riot Comedy Club",
+        "startDate": "2027-05-07T21:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-cristina-mariani-kill-tony-comedy-mothership-headlines-the-riot-comedy-club-2027-05-07210000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-24T11:04:25-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-cristina-mariani-kill-tony-comedy-mothership-headlines-the-riot-comedy-club-2027-05-07210000",
+        "image": "/img/events/Screenshot-140-cd160a89-large-thumb.png",
+        "description": "Cristina Mariani is a rising stand-up comedian, with a quirky, dark sense of humor. She performs regularly at her home club The Comedy Mothership in Austin, Texas. She has toured with Theo Von and opened for big names including Tom Segura, Christina Pazsitzky, Ron White, Harland Williams, Brian Simpson, Ari Shaffir and Freddie Gibbs. She has made several appearances on \"Kill Tony\" and many of her stand up videos have garnered millions of viewsAll shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-cristina-mariani-kill-tony-comedy-mothership-headlines-the-riot-comedy-club-2027-05-08190000": {
+      "lastmod": "2026-09-24T11:04:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Cristina Mariani (Kill Tony, Comedy Mothership) Headlines The Riot Comedy Club",
+        "startDate": "2027-05-08T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-cristina-mariani-kill-tony-comedy-mothership-headlines-the-riot-comedy-club-2027-05-08190000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-24T11:04:25-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-cristina-mariani-kill-tony-comedy-mothership-headlines-the-riot-comedy-club-2027-05-08190000",
+        "image": "/img/events/Screenshot-140-cd160a89-large-thumb.png",
+        "description": "Cristina Mariani is a rising stand-up comedian, with a quirky, dark sense of humor. She performs regularly at her home club The Comedy Mothership in Austin, Texas. She has toured with Theo Von and opened for big names including Tom Segura, Christina Pazsitzky, Ron White, Harland Williams, Brian Simpson, Ari Shaffir and Freddie Gibbs. She has made several appearances on \"Kill Tony\" and many of her stand up videos have garnered millions of viewsAll shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-cristina-mariani-kill-tony-comedy-mothership-headlines-the-riot-comedy-club-2027-05-08210000": {
+      "lastmod": "2026-09-24T11:04:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Cristina Mariani (Kill Tony, Comedy Mothership) Headlines The Riot Comedy Club",
+        "startDate": "2027-05-08T21:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-cristina-mariani-kill-tony-comedy-mothership-headlines-the-riot-comedy-club-2027-05-08210000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-24T11:04:25-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-cristina-mariani-kill-tony-comedy-mothership-headlines-the-riot-comedy-club-2027-05-08210000",
+        "image": "/img/events/Screenshot-140-cd160a89-large-thumb.png",
+        "description": "Cristina Mariani is a rising stand-up comedian, with a quirky, dark sense of humor. She performs regularly at her home club The Comedy Mothership in Austin, Texas. She has toured with Theo Von and opened for big names including Tom Segura, Christina Pazsitzky, Ron White, Harland Williams, Brian Simpson, Ari Shaffir and Freddie Gibbs. She has made several appearances on \"Kill Tony\" and many of her stand up videos have garnered millions of viewsAll shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-janet-mcnamara-headlines-the-riot-comedy-club": {
+      "lastmod": "2026-09-24T11:18:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Janet McNamara Headlines The Riot Comedy Club",
+        "startDate": "2027-01-08T19:30:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-janet-mcnamara-headlines-the-riot-comedy-club",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "InStock",
+          "validFrom": "2026-09-24T11:13:50-05:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-janet-mcnamara-headlines-the-riot-comedy-club",
+        "image": "/img/events/image-6fcd07a5-large-thumb.jpg",
+        "description": "Janet McNamara&nbsp;is a Boston-bred comedian now based in New York City, where she recently became a regular at The Comedy Cellar following the viral success of her debut special,\r\nNot Smart Enough. Her special was also just featured on&nbsp;Vulture&rsquo;s 2026 &ldquo;9 New Comedy Specials You Should Definitely Watch&rdquo; List.After spending 15 years balancing stand-up with a career in accounting in her hometown of Summerville, MA, Janet has emerged as one of comedy&rsquo;s most distinctive voices&mdash;pairing razor-sharp joke writing with an unbothered, plainspoken delivery that sneaks up on you and then levels the room.Praised by Maria Bamford as &ldquo;a fantastic comic with an amazing delivery and enviable timing of very unique material,&rdquo; Janet has also had her stand-up shared by Amy Schumer and Bill Burr, further cementing her reputation as a comic&rsquo;s comic with mainstream heat.Her offbeat perspective has been featured on &quot;Don&#39;t Tell Comedy&rdquo;, &ldquo;America&rsquo;s Got Talent&rdquo; and &ldquo;American Idol&rdquo; (yes, really). Janet has opened for Maria Bamford, Jessica Kirson, and Eugene Mirman, and has performed at festivals including the Women in Comedy Festival, Asheville Comedy Festival, Rogue Island Comedy Festival, Boston Comedy Festival, Big Sky Comedy Festival, and Hampton Beach Comedy Festival.Her debut comedy album,\r\nNot Smart Enough, is available now on PGF Records.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.---",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Janet McNamara"
+          }
+        ]
       }
     }
   }

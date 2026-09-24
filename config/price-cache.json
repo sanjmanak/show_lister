@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-09-22T17:45:33.105Z",
+  "last_updated": "2026-09-24T17:56:13.495Z",
   "entries": {
     "e0e9b3e69a64c869": {
       "price_min": 37.58,
@@ -41,14 +41,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/craig-conant-houston-improv-tickets/14824993?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-07-19T00:21:45.367Z"
-    },
-    "7f459232414387cc": {
-      "price_min": 31.4,
-      "price_max": 31.4,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/justin-whitehead-houston-improv-tickets/15034033?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-08-17T14:44:41.627Z"
     },
     "a00405af7c0400e7": {
       "price_min": 25.22,
@@ -114,14 +106,6 @@
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
     },
-    "0b4dfdbecac6f841": {
-      "price_min": 31,
-      "price_max": 45,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/jenny-tian-ripe-houston-texas-09-23-2026/event/3A0064A91C4E8B4F",
-      "fetched_at": "2026-08-17T15:28:44.986Z"
-    },
     "8910d009f33516b5": {
       "price_min": 41,
       "price_max": 55,
@@ -178,14 +162,6 @@
       "url": "https://www.ticketweb.com/event/ellen-skrmetti-houston-improv-tickets/15024353?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-09-01T18:00:54.755Z"
     },
-    "c68ec018e7fb4374": {
-      "price_min": 20.36,
-      "price_max": 20.36,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999295803568",
-      "fetched_at": "2026-09-09T01:37:40.824Z"
-    },
     "70a1eb2a6825e2c4": {
       "price_min": 20.36,
       "price_max": 20.36,
@@ -217,22 +193,6 @@
       "source": "page",
       "url": "https://www.eventbrite.com/e/chat-pile-who-loves-the-sun-tour-2026-late-show-tickets-1999298219795",
       "fetched_at": "2026-09-09T01:37:44.102Z"
-    },
-    "fbe0fc199b15e541": {
-      "price_min": 5.36,
-      "price_max": 5.36,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/2-bill-two-dollar-comedy-show-every-wednesday-tickets-1999307816499",
-      "fetched_at": "2026-09-09T01:37:52.872Z"
-    },
-    "9fe20f3f5e5ea99e": {
-      "price_min": 8.82,
-      "price_max": 8.82,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/master-debaters-tickets-1999307819508",
-      "fetched_at": "2026-09-09T01:37:53.886Z"
     },
     "df7f5d04ac72e46c": {
       "price_min": 18.06,
