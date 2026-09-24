@@ -247,6 +247,12 @@
       "name": "Bad Parenting Comedy Tour",
       "reason": "The listing does not identify a recognizable named comedian or comedy act.",
       "at": "2026-09-23T19:12:08.814Z"
+    },
+    {
+      "id": "d9bb1fb375e763c4",
+      "name": "Nick Cannon Presents: MTV Wild 'N Out Live",
+      "reason": "This is a branded ensemble live show rather than a headline stand-up set by a clearly identified comedian.",
+      "at": "2026-09-24T19:29:20.724Z"
     }
   ]
 }
