@@ -1,56 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-swipe-right-comedy-dating-game-for-singles-couples-9": {
-      "lastmod": "2026-09-24T08:32:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents \"Swipe Right\" Comedy Dating Game for Singles & Couples",
-        "startDate": "2026-09-24T21:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-swipe-right-comedy-dating-game-for-singles-couples-9",
-          "priceCurrency": "USD",
-          "price": "10.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-09T09:26:13-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-swipe-right-comedy-dating-game-for-singles-couples-9",
-        "image": "/img/shows/swipe-72ae07e4-large-thumb.jpg",
-        "description": "Maybe find love? Definitely find a good time. The Dating app game is a such a gamble, let&rsquo;s take it back to the old school&hellip; Live dating games. Come as a contestant or come to just watch.What happens when you put around a hundred single people together in a room and mess with a few of them on stage? We hope&hellip; love. Couples are welcome to come party too as hilarious comedians Jeff Joe and Lotto Marie play a series of games with newly matched singles and couples. At the end, only one couple will stand as a winner. We will setup the winner with prizes for their first date!Stick around and mingle at the after show mixer.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Jeff Joe"
-          },
-          {
-            "@type": "Person",
-            "name": "Lotto Marie"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/peyton-ruddy-kill-tony-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-09-24T03:12:00-05:00",
+      "lastmod": "2026-09-25T10:00:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -9727,7 +9678,7 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-craig-shoemaker-showtime-comedy-central-live-in-conroe": {
-      "lastmod": "2026-09-22T11:49:00-05:00",
+      "lastmod": "2026-09-25T11:32:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -9767,12 +9718,20 @@
           {
             "@type": "Person",
             "name": "Grady Pruitt"
+          },
+          {
+            "@type": "Person",
+            "name": "Craig Shoemaker"
+          },
+          {
+            "@type": "Person",
+            "name": "Tedd lzatt"
           }
         ]
       }
     },
     "https://www.riotconroe.com/events/comedian-craig-shoemaker-showtime-comedy-central-live-in-conroe-1": {
-      "lastmod": "2026-09-22T11:51:00-05:00",
+      "lastmod": "2026-09-25T11:32:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -9812,12 +9771,20 @@
           {
             "@type": "Person",
             "name": "James Holder"
+          },
+          {
+            "@type": "Person",
+            "name": "Craig Shoemaker"
+          },
+          {
+            "@type": "Person",
+            "name": "Tedd lzatt"
           }
         ]
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-20": {
-      "lastmod": "2026-09-22T06:58:00-05:00",
+      "lastmod": "2026-09-25T10:26:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -9872,7 +9839,7 @@
           },
           {
             "@type": "Person",
-            "name": "TBD"
+            "name": "Craig Shoemaker"
           }
         ]
       }

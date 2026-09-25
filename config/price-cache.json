@@ -1,15 +1,7 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-09-24T17:56:13.495Z",
+  "last_updated": "2026-09-25T18:00:36.070Z",
   "entries": {
-    "e0e9b3e69a64c869": {
-      "price_min": 37.58,
-      "price_max": 37.58,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/martin-amini-houston-improv-tickets/14135094?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-07-19T00:21:31.645Z"
-    },
     "eedbd3a700952d54": {
       "price_min": 37.58,
       "price_max": 37.58,
@@ -105,14 +97,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
-    },
-    "8910d009f33516b5": {
-      "price_min": 41,
-      "price_max": 55,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketmaster.com/rocky-dale-davis-houston-texas-09-24-2026/event/3A006498231AFB49",
-      "fetched_at": "2026-08-17T15:29:09.727Z"
     },
     "5e514c0f7c0b6b0e": {
       "price_min": 71,
@@ -249,14 +233,6 @@
       "source": "page",
       "url": "https://www.eventbrite.com/e/the-last-laugh-with-james-vogt-trip-truman-tickets-2000052211003",
       "fetched_at": "2026-09-09T01:38:03.672Z"
-    },
-    "f0f2e5d7c2d20a0c": {
-      "price_min": 7.18,
-      "price_max": 7.18,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/east-end-comedy-showcase-thursdays-at-wonky-power-tickets-1995325473203",
-      "fetched_at": "2026-09-09T01:38:06.472Z"
     },
     "95cc9761e6ffc8e9": {
       "price_min": 25.09,
