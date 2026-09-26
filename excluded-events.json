@@ -1,30 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-09-26T02:03:27.301Z",
-  "total_excluded": 14,
+  "last_updated": "2026-09-26T17:10:59.036Z",
+  "total_excluded": 12,
   "events": [
-    {
-      "name": "Classic Movie Night At The Jefferson Some Like It Hot",
-      "venue": "Jefferson Theatre",
-      "venue_city": "Beaumont",
-      "date": "2026-09-25",
-      "time": "7:00 PM",
-      "source": "ticketmaster",
-      "genre": "Comedy",
-      "ticket_url": "https://www.ticketmaster.com/classic-movie-night-at-the-jefferson-beaumont-texas-09-25-2026/event/3A0064EA005920A6",
-      "reason": "venue blocklisted: Jefferson Theatre"
-    },
-    {
-      "name": "NOTHING MATTERS Emo | Indie | Punk Dance Party",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-09-25",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/nothing-matters-emo-indie-punk-dance-party-tickets-1999307925826",
-      "reason": "title keyword blocklisted: \"dance party\""
-    },
     {
       "name": "DIAL UP: 90s & Y2K Dance Party!",
       "venue": "The Secret Group",
