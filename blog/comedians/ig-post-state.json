@@ -50,24 +50,6 @@
   "manifest_version": 1788290607922,
   "cleanup_queue": [
     {
-      "slug": "rocky-dale-davis-punch-line-houston-2026-09-24",
-      "comedianName": "Rocky Dale Davis",
-      "igFeedMediaId": "18047569508814199",
-      "igStoryMediaId": "18391199287160516",
-      "fbFeedPostId": "1408958661328875",
-      "fbStoryPostId": "2551220635344881",
-      "postedAt": "2026-09-21T10:08:04.174Z"
-    },
-    {
-      "slug": "martin-amini-houston-improv-2026-09-24",
-      "comedianName": "Martin Amini",
-      "igFeedMediaId": "18491362738102151",
-      "igStoryMediaId": "18474115948116150",
-      "fbFeedPostId": "1409216397969768",
-      "fbStoryPostId": "4999435183616454",
-      "postedAt": "2026-09-21T16:32:36.677Z"
-    },
-    {
       "slug": "peyton-ruddy-the-riot-comedy-club-2026-09-25",
       "comedianName": "Peyton Ruddy",
       "igFeedMediaId": "17986916427099712",
