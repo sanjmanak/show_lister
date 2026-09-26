@@ -1,21 +1,3 @@
 {
-  "generated_at": "2026-09-26T18:42:29.341Z",
-  "dry_run": false,
-  "items": [
-    {
-      "id": "97c6e69ff23a61f2",
-      "name": "Michael Yo",
-      "performer_name": "Michael Yo",
-      "venue": "Punch Line Houston",
-      "date": "2026-12-04",
-      "ticket_url": "https://www.ticketmaster.com/michael-yo-houston-texas-12-04-2026/event/3A00650AB86894DD",
-      "files": {
-        "portrait": "2026-12-04-michael-yo-portrait.png",
-        "story": "2026-12-04-michael-yo-story.png",
-        "reel": "2026-12-04-michael-yo.mp4"
-      },
-      "caption": "The Chelsea Lately regular behind the stand-up special I Never Thought is back on the road.\nMichael Yo performs at Punch Line Houston on December 4, 2026. His special I Never Thought chronicled his experiences as a new dad. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
-      "confidence": 0.96
-    }
-  ]
+  "items": []
 }
