@@ -1,56 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/peyton-ruddy-kill-tony-headlines-the-riot-comedy-club-2026-05-12094413": {
-      "lastmod": "2026-09-24T03:12:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Peyton Ruddy (Kill Tony)Headlines The Riot Comedy Club",
-        "startDate": "2026-09-26T19:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/peyton-ruddy-kill-tony-headlines-the-riot-comedy-club-2026-05-12094413",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "InStock",
-          "validFrom": "2026-05-12T09:44:13-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/peyton-ruddy-kill-tony-headlines-the-riot-comedy-club-2026-05-12094413",
-        "image": "/img/shows/IMG-0439-7e7e0790-large-thumb.jpg",
-        "description": "Peyton Ruddy started comedy in the suburbs of Chicago at 17 years old and quickly grew in popularity to become a favorite in the city. He recently went viral for his appearance on Kill Tony and is a regular at the Comedy Mothership. His style has been referred to as &ldquo;cutesty wootsey fat shit&rdquo;.Peyton is now a national touring headliner but previously has opened for names such as Tim Dillon, Ron White, Chris Distefano, Ari Shaffir, Craig Robinson, Harland Williams, Steph Tolev, Sam Tallent, Harland Williams and Casey Rocket all while still maintaining his rockin&rsquo; hot bod.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Christian Alexander"
-          },
-          {
-            "@type": "Person",
-            "name": "Peyton Ruddy"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-18": {
-      "lastmod": "2026-09-24T08:21:00-05:00",
+      "lastmod": "2026-09-26T05:53:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -123,7 +74,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-21": {
-      "lastmod": "2026-09-24T08:22:00-05:00",
+      "lastmod": "2026-09-26T05:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -573,7 +524,7 @@
       }
     },
     "https://www.theriothtx.com/events/henry-sir-don-t-tell-comedy-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-09-22T11:54:00-05:00",
+      "lastmod": "2026-09-26T06:57:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -653,7 +604,7 @@
       }
     },
     "https://www.theriothtx.com/events/henry-sir-don-t-tell-comedy-headlines-the-riot-comedy-club-2026-05-12094633": {
-      "lastmod": "2026-09-22T11:54:00-05:00",
+      "lastmod": "2026-09-26T06:58:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -1068,7 +1019,7 @@
       }
     },
     "https://www.theriothtx.com/events/heather-shaw-the-today-show-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-09-22T11:59:00-05:00",
+      "lastmod": "2026-09-26T06:58:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -9446,59 +9397,6 @@
           {
             "@type": "Person",
             "name": "Ian Fidance"
-          }
-        ]
-      }
-    },
-    "https://www.riotconroe.com/events/comedian-craig-shoemaker-showtime-comedy-central-live-in-conroe-1": {
-      "lastmod": "2026-09-25T11:32:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Comedian Craig Shoemaker (SHOWTIME & Comedy Central) Live in Conroe",
-        "startDate": "2026-09-26T19:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Conroe",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "219 Simonton Street",
-            "addressLocality": "Conroe",
-            "postalCode": "77301",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.riotconroe.com/events/comedian-craig-shoemaker-showtime-comedy-central-live-in-conroe-1",
-          "priceCurrency": "USD",
-          "price": "25.00",
-          "availability": "InStock",
-          "validFrom": "2026-04-24T12:59:45-05:00"
-        },
-        "url": "https://www.riotconroe.com/events/comedian-craig-shoemaker-showtime-comedy-central-live-in-conroe-1",
-        "image": "/img/events/Craig-Shoemaker26-f3cc0bcd-large-thumb.png",
-        "description": "",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Conroe",
-          "url": "https://www.riotconroe.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "James Holder"
-          },
-          {
-            "@type": "Person",
-            "name": "Craig Shoemaker"
-          },
-          {
-            "@type": "Person",
-            "name": "Tedd lzatt"
           }
         ]
       }
