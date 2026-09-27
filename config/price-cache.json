@@ -1,15 +1,7 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-09-26T17:13:05.064Z",
+  "last_updated": "2026-09-27T17:47:45.592Z",
   "entries": {
-    "4fe951f3566f31f9": {
-      "price_min": 37.58,
-      "price_max": 37.58,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/martin-amini-houston-improv-tickets/14135104?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-07-19T00:21:35.066Z"
-    },
     "156fd23bf1b4b0a5": {
       "price_min": 68.48,
       "price_max": 68.48,
@@ -154,30 +146,6 @@
       "url": "https://www.eventbrite.com/e/chat-pile-who-loves-the-sun-tour-2026-late-show-tickets-1999298219795",
       "fetched_at": "2026-09-09T01:37:44.102Z"
     },
-    "5a056a5b70a0f36c": {
-      "price_min": 18.06,
-      "price_max": 21.51,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-7pm-tickets-1999307980991",
-      "fetched_at": "2026-09-09T01:37:59.495Z"
-    },
-    "07a2c0063c54cd7b": {
-      "price_min": 18.06,
-      "price_max": 21.51,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-9pm-tickets-1999308520605",
-      "fetched_at": "2026-09-09T01:38:00.557Z"
-    },
-    "4066f5a6b09ad476": {
-      "price_min": 11.13,
-      "price_max": 14.59,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-rated-r-comedy-showcase-11pm-tickets-1999308527626",
-      "fetched_at": "2026-09-09T01:38:01.623Z"
-    },
     "cd916c351c73e9f5": {
       "price_min": 8.82,
       "price_max": 8.82,
@@ -217,14 +185,6 @@
       "source": "page",
       "url": "https://www.eventbrite.com/e/pat-oneill-live-in-houston-tickets-1992457859092",
       "fetched_at": "2026-09-09T01:38:11.335Z"
-    },
-    "77c0070c29605a16": {
-      "price_min": 30.87,
-      "price_max": 30.87,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/jessie-jetski-johnson-live-in-houston-tickets-1996055676260",
-      "fetched_at": "2026-09-09T01:38:12.790Z"
     },
     "735cd3851322fc99": {
       "price_min": 30.87,
