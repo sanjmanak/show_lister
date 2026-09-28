@@ -1,52 +1,26 @@
 {
   "posted": [
     {
-      "slug": "rocky-dale-davis-punch-line-houston-2026-09-24",
-      "comedianName": "Rocky Dale Davis",
-      "igFeedMediaId": "18047569508814199",
-      "igStoryMediaId": "18391199287160516",
-      "fbFeedPostId": "1408958661328875",
-      "fbStoryPostId": "2551220635344881",
-      "postedAt": "2026-09-21T10:08:04.174Z"
-    },
-    {
-      "slug": "martin-amini-houston-improv-2026-09-24",
-      "comedianName": "Martin Amini",
-      "igFeedMediaId": "18491362738102151",
-      "igStoryMediaId": "18474115948116150",
-      "fbFeedPostId": "1409216397969768",
-      "fbStoryPostId": "4999435183616454",
-      "postedAt": "2026-09-21T16:32:36.677Z"
-    },
-    {
-      "slug": "peyton-ruddy-the-riot-comedy-club-2026-09-25",
-      "comedianName": "Peyton Ruddy",
-      "igFeedMediaId": "17986916427099712",
-      "igStoryMediaId": "18118745980984691",
-      "fbFeedPostId": "1409483174609757",
-      "fbStoryPostId": "1500381122117389",
-      "postedAt": "2026-09-22T00:57:51.039Z"
-    },
-    {
-      "slug": "craig-shoemaker-the-riot-comedy-club-conroe-2026-09-25",
-      "comedianName": "Craig Shoemaker",
-      "igFeedMediaId": "17945471046341621",
-      "igStoryMediaId": "18500645656097718",
-      "fbFeedPostId": "1409759611248780",
-      "fbStoryPostId": "1097568902728906",
-      "postedAt": "2026-09-22T09:24:36.972Z"
-    },
-    {
-      "slug": "craig-gass-the-secret-group-2026-09-26",
-      "comedianName": "Craig Gass",
-      "igFeedMediaId": "18117512492280972",
-      "igStoryMediaId": "18179416183429635",
-      "fbFeedPostId": "1409982891226452",
-      "fbStoryPostId": "1438591407816537",
-      "postedAt": "2026-09-22T15:04:55.241Z"
+      "slug": "rick-glassman-punch-line-houston-2026-10-01",
+      "comedianName": "Rick Glassman",
+      "igFeedMediaId": "18098809946636530",
+      "igStoryMediaId": "18127193656888067",
+      "fbFeedPostId": "1415322534025821",
+      "fbStoryPostId": "1422792156467669",
+      "postedAt": "2026-09-28T11:08:42.555Z"
     }
   ],
-  "week_range": "September 21 – September 27, 2026",
-  "manifest_version": 1788290607922,
-  "cleanup_queue": []
+  "week_range": "September 28 – October 4, 2026",
+  "manifest_version": 1788808574915,
+  "cleanup_queue": [
+    {
+      "slug": "rick-glassman-punch-line-houston-2026-10-01",
+      "comedianName": "Rick Glassman",
+      "igFeedMediaId": "18098809946636530",
+      "igStoryMediaId": "18127193656888067",
+      "fbFeedPostId": "1415322534025821",
+      "fbStoryPostId": "1422792156467669",
+      "postedAt": "2026-09-28T11:08:42.555Z"
+    }
+  ]
 }
