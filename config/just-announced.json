@@ -1,70 +1,6 @@
 {
- "updated": "2026-09-28T02:03:25.842Z",
+ "updated": "2026-09-28T20:10:41.923Z",
  "announcements": [
-  {
-   "id": "7dbbb9cfe674fcef",
-   "name": "D.R.I.",
-   "venue": "The Secret Group",
-   "date": "2026-12-05",
-   "time": "7:00 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1193624396%2F3558237521%2F1%2Foriginal.20260916-042529?auto=format%2Ccompress&q=75&sharp=10&s=a3ad757c337d7b49f969bc8b895a61af",
-   "ticket_url": "https://www.eventbrite.com/e/dri-tickets-2001154461865",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "small room",
-   "first_seen": "2026-09-16T17:40:47.648Z"
-  },
-  {
-   "id": "46df4b761a2c9ad0",
-   "name": "The Riot Presents Tuesday Night Standup Comedy Showcase!",
-   "venue": "The Riot Comedy Club",
-   "date": "2026-12-15",
-   "time": "7:00 PM",
-   "price_min": 8,
-   "price_max": 8,
-   "image_url": "https://www.theriothtx.com/img/shows/HTX-Saturday-Night-Showcases-1-2-e1ae10f9-large-thumb.png",
-   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-12-15-26-07-00-pm",
-   "source": "standuptix",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "title pattern",
-   "first_seen": "2026-09-16T17:40:47.648Z"
-  },
-  {
-   "id": "2cf630bbd32db48d",
-   "name": "The Riot Comedy Club presents Tuesday Night Standup Comedy Open Mic",
-   "venue": "The Riot Comedy Club",
-   "date": "2026-12-15",
-   "time": "9:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1190626541%2F428099579998%2F1%2Foriginal.20260808-225241?auto=format%2Ccompress&q=75&sharp=10&s=595ec7210f45adddef0828933b948bea",
-   "ticket_url": "https://www.eventbrite.com/e/the-riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-tickets-1997283954072",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "title pattern",
-   "first_seen": "2026-09-16T17:40:47.648Z"
-  },
-  {
-   "id": "8e1fc63472457581",
-   "name": "Social Comedy Nite",
-   "venue": "Notsuoh",
-   "date": "2026-12-15",
-   "time": "10:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177329624%2F2986074715451%2F1%2Foriginal.20260211-230247?auto=format%2Ccompress&q=75&sharp=10&s=9520d1a7668651771ff71d5f1bcd6333",
-   "ticket_url": "https://www.eventbrite.com/e/social-comedy-nite-tickets-1982925748292",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "recurring series (13 weeks)",
-   "first_seen": "2026-09-16T17:40:47.648Z"
-  },
   {
    "id": "b4fa0cfb6f9370cc",
    "name": "Dave Chappelle",
@@ -2254,7 +2190,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (6 weeks)",
+   "notable_reason": "recurring series (5 weeks)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -2574,7 +2510,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (6 weeks)",
+   "notable_reason": "recurring series (5 weeks)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -2894,7 +2830,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (6 weeks)",
+   "notable_reason": "recurring series (5 weeks)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -3200,6 +3136,70 @@
    "tier": null,
    "notable_reason": "title pattern",
    "first_seen": "2026-09-28T02:03:25.842Z"
+  },
+  {
+   "id": "958e62b7fd0e75ad",
+   "name": "The Riot Presents Friday Night Early Standup Comedy Showcase",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-10-02",
+   "time": "7:00 PM",
+   "price_min": 19,
+   "price_max": 19,
+   "image_url": "https://www.theriothtx.com/img/shows/friday-7-8bbb088f-large-thumb.jpg",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-early-standup-comedy-showcase-2026-10-02190000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "only 4d out (min 14)",
+   "first_seen": "2026-09-28T20:10:41.923Z"
+  },
+  {
+   "id": "bb75a8ba606fcfc7",
+   "name": "The Riot Presents Saturday Night Early Standup Comedy Showcase",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-10-03",
+   "time": "7:00 PM",
+   "price_min": 20,
+   "price_max": 20,
+   "image_url": "https://www.theriothtx.com/img/events/saturday-7-9bfc0960-large-thumb.jpg",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-early-standup-comedy-showcase-2026-10-03190000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "only 5d out (min 14)",
+   "first_seen": "2026-09-28T20:10:41.923Z"
+  },
+  {
+   "id": "adeac0f82b5da618",
+   "name": "The Riot Presents \"Houston's Funniest\" Sunday Comedy Showcase",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-27",
+   "time": "6:00 PM",
+   "price_min": 10,
+   "price_max": 10,
+   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-4-17bb0cfb-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-68",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-09-28T20:10:41.923Z"
+  },
+  {
+   "id": "f9dcebf4876338c1",
+   "name": "The Riot Comedy Club Presents Sunday Night Standup Comedy Showcase",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-27",
+   "time": "8:00 PM",
+   "price_min": 10,
+   "price_max": 10,
+   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-15-Saturday-11pm-0fd71212-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-34",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-09-28T20:10:41.923Z"
   }
  ]
 }

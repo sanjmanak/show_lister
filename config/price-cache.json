@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-09-27T17:47:45.592Z",
+  "last_updated": "2026-09-28T20:10:41.850Z",
   "entries": {
     "156fd23bf1b4b0a5": {
       "price_min": 68.48,
@@ -145,14 +145,6 @@
       "source": "page",
       "url": "https://www.eventbrite.com/e/chat-pile-who-loves-the-sun-tour-2026-late-show-tickets-1999298219795",
       "fetched_at": "2026-09-09T01:37:44.102Z"
-    },
-    "cd916c351c73e9f5": {
-      "price_min": 8.82,
-      "price_max": 8.82,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/the-last-laugh-with-james-vogt-trip-truman-tickets-2000052211003",
-      "fetched_at": "2026-09-09T01:38:03.672Z"
     },
     "95cc9761e6ffc8e9": {
       "price_min": 25.09,
