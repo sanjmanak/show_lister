@@ -1,54 +1,6 @@
 {
- "updated": "2026-09-29T02:48:36.348Z",
+ "updated": "2026-09-29T18:42:56.066Z",
  "announcements": [
-  {
-   "id": "721753c8cbe57a68",
-   "name": "The Riot Presents Wednesday Night Standup Comedy Showcase \"Hump Day\"",
-   "venue": "The Riot Comedy Club",
-   "date": "2026-12-16",
-   "time": "7:00 PM",
-   "price_min": 8,
-   "price_max": 8,
-   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-6-239d0d36-large-thumb.png",
-   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-33",
-   "source": "standuptix",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "title pattern",
-   "first_seen": "2026-09-17T17:40:49.647Z"
-  },
-  {
-   "id": "c819bf29658a246a",
-   "name": "The Riot Presents  The One Minute Comedy Showdown with Jeff Joe",
-   "venue": "The Riot Comedy Club",
-   "date": "2026-12-16",
-   "time": "9:00 PM",
-   "price_min": 10,
-   "price_max": 10,
-   "image_url": "https://www.theriothtx.com/img/shows/https-cdn-evbuc-com-images-921782813-428099579998-1-original-282c1848-large-thumb.jpg",
-   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-31",
-   "source": "standuptix",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "title pattern",
-   "first_seen": "2026-09-17T17:40:49.647Z"
-  },
-  {
-   "id": "ed0d83dd08abdd3b",
-   "name": "Hou Laugh Society",
-   "venue": "Houston Improv",
-   "date": "2026-09-27",
-   "time": "7:30 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-   "ticket_url": "https://www.ticketweb.com/event/hou-laugh-society-houston-improv-tickets/14328724?REFERRAL_ID=tmfeed",
-   "source": "ticketmaster",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only -2d out (min 14)",
-   "first_seen": "2026-09-18T01:40:32.124Z"
-  },
   {
    "id": "a2f3723b2fb02262",
    "name": "The Riot presents 2026 Funniest Person in Houston (FPiH) Comedy Competition",
@@ -2222,7 +2174,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (6 weeks)",
+   "notable_reason": "recurring series (5 weeks)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -2238,7 +2190,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (6 weeks)",
+   "notable_reason": "recurring series (5 weeks)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -2542,7 +2494,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (6 weeks)",
+   "notable_reason": "recurring series (5 weeks)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -2558,7 +2510,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (6 weeks)",
+   "notable_reason": "recurring series (5 weeks)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -2862,7 +2814,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (6 weeks)",
+   "notable_reason": "recurring series (5 weeks)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -2878,7 +2830,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (6 weeks)",
+   "notable_reason": "recurring series (5 weeks)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -3200,6 +3152,54 @@
    "tier": null,
    "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-09-29T02:48:36.348Z"
+  },
+  {
+   "id": "d37b689953096b65",
+   "name": "The Riot Presents Monday Night Standup Comedy Showcase!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-28",
+   "time": "7:00 PM",
+   "price_min": 8,
+   "price_max": 8,
+   "image_url": "https://www.theriothtx.com/img/shows/HTX-Houston-s-Funniest-Showcase-2-1-1afe120b-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-19",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-09-29T18:42:56.066Z"
+  },
+  {
+   "id": "a0788b12e34c68d4",
+   "name": "Riot Comedy Club presents Monday Night Standup Comedy Open Mic",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-28",
+   "time": "9:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Open-Mic-July-19-2023-at-14-42-02-8-da410ef7-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/riot-comedy-club-presents-monday-night-standup-comedy-open-mic-2026-12-28210000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-09-29T18:42:56.066Z"
+  },
+  {
+   "id": "8ee89cdc206f0cca",
+   "name": "The Riot Comedy Club presents LATE NIGHT Standup Comedy Open Mic",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-28",
+   "time": "10:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1191460586%2F428099579998%2F1%2Foriginal.20260819-202619?auto=format%2Ccompress&q=75&sharp=10&s=1166089804f0ec6133e43eac90dc4f35",
+   "ticket_url": "https://www.eventbrite.com/e/the-riot-comedy-club-presents-late-night-standup-comedy-open-mic-tickets-1998447266571",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-09-29T18:42:56.066Z"
   }
  ]
 }
