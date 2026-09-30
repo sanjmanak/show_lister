@@ -4,8 +4,7 @@
  * Renders the branded announcement card as HTML for Puppeteer. Two sizes:
  *   portrait 1080x1350 (IG feed / FB feed)
  *   story    1080x1920 (IG story, and the still frame behind a reel)
- * Used by scripts/announce-cards.js (local preview) and
- * scripts/post-announcements.js (CI autoposter).
+ * Used by scripts/post-announcements.js (CI autoposter).
  */
 
 "use strict";

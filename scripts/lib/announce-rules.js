@@ -2,8 +2,8 @@
  * Comedy Houston — "Just announced" business rules (shared).
  *
  * One place that decides whether a listing is announcement-worthy, so the
- * feed flagger (just-announced.js), the local preview cards
- * (announce-cards.js) and the CI autoposter (post-announcements.js) agree.
+ * feed flagger (just-announced.js) and the CI autoposter
+ * (post-announcements.js) agree.
  * The venue tiers and thresholds live in config/announce-venues.json; the
  * title patterns live here because they are code, not data.
  *

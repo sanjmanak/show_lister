@@ -33,20 +33,8 @@ docs to a private repo while code stays public.
   `TicketClick` and `Lead` as custom conversions in Events Manager once events
   accumulate; build first URL-rule audiences (site visitors, /services/
   visitors, TicketClick firers) alongside Eventbrite purchasers.
-- **Essay series is on rails through Sep 16**: WP publishes one essay each
-  Wednesday 10am CT; the essay-promo workflow emails quote-card creative for
-  approval at 11:30am CT the same day. Nothing to do except approve and post.
-
-## After the essay launch run (post Sep 16, 2026)
-
-- **Evergreen quote-card rotation**: 18 recyclable cards exist (3 pull quotes x
-  6 essays, in `blog/essays/graphics/` and regenerable via
-  `generate-essay-graphics.js --all`). Keep one recycled card going out every
-  week or two by dispatching essay-promo with a slug. Candidate upgrade:
-  automate the rotation on a cron.
-- **Promo auto-post upgrade**: when email-for-approval feels routine, swap the
-  email step for the existing Instagram posting path so essay creative posts
-  itself like the weekly roundup does.
+- **Comedian essay series**: archived Sep 28, 2026 (no search traffic). The
+  six essays stay live in WordPress; the promo workflow and graphics were removed.
 
 ## Flywheel gaps (identified Aug 2026, no dates yet)
 

@@ -528,7 +528,7 @@ Logs every ticket click with: timestamp, original URL, final URL (with affiliate
 | **Manual trigger** | Yes (`workflow_dispatch`) |
 | **What it runs** | `generate-comedian-post.js`, then `screenshot-comedian-graphics.js` (Puppeteer renders the square / portrait / story HTML to PNG) |
 | **Secrets used** | `OPENAI_API_KEY`, `WP_*`, SMTP |
-| **Commits** | `blog/comedians/manifest-YYYY-MM-DD.json`, `blog/comedians/*-caption.txt`, `blog/comedians/images/*`, `sitemap.xml` |
+| **Commits** | `blog/comedians/manifest-YYYY-MM-DD.json`, `blog/comedians/*-caption.txt`, `blog/comedians/images/*` |
 | **Cost** | ~$0.60–1.75 per run (5 API calls per comedian, typically 3–5 comedians) |
 
 #### Workflow 4: Social Media Auto-Poster (`.github/workflows/post-to-instagram.yml`)
@@ -1074,7 +1074,6 @@ show_lister/
 │       ├── delete-old-tonight-posts.yml # Cron: delete Tonight posts older than 1 day
 │       ├── delete-old-comedian-posts.yml # Cron: delete comedian spotlights + finished-week blog posts
 │       ├── price-reminder.yml           # Cron: Monday email when a local price refresh is due
-│       ├── essay-promo.yml              # Cron: Wednesday essay quote-card creative, emailed for approval
 │       └── manage-pages.yml             # Manual: seed/overwrite evergreen WP pages from config
 │
 ├── scripts/

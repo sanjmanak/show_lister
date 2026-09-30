@@ -1836,45 +1836,6 @@ async function main() {
     console.log(`Wrote: blog/comedians/email-attachments.txt`);
   }
 
-  // ─────────────────────────────────────────────────────────────────────────
-  // Sitemap generation — write sitemap.xml at repo root.
-  // Submitting this to Google Search Console once means new comedian posts
-  // get crawled within days instead of weeks. The sitemap is regenerated on
-  // every comedian-posts run so it always reflects the current week.
-  // ─────────────────────────────────────────────────────────────────────────
-  if (generatedPosts.length > 0) {
-    try {
-      const today = new Date().toISOString().slice(0, 10);
-      const baseUrl = "https://comedyhouston.com";
-      const urls = [
-        { loc: `${baseUrl}/`, priority: "1.0", changefreq: "daily" },
-        { loc: `${baseUrl}/this-week/`, priority: "0.9", changefreq: "weekly" },
-      ];
-      for (const post of generatedPosts) {
-        const url = post.wpLink || `${baseUrl}/${post.slug}/`;
-        urls.push({ loc: url, priority: "0.8", changefreq: "weekly" });
-      }
-      const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls
-  .map(
-    (u) => `  <url>
-    <loc>${u.loc}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>${u.changefreq}</changefreq>
-    <priority>${u.priority}</priority>
-  </url>`
-  )
-  .join("\n")}
-</urlset>
-`;
-      fs.writeFileSync(path.join(OUTPUT_DIR, "sitemap.xml"), xml);
-      console.log(`Wrote: sitemap.xml (${urls.length} URLs)`);
-    } catch (err) {
-      console.warn(`Sitemap generation failed: ${err.message}`);
-    }
-  }
-
   console.log("");
   console.log(`Done. Generated ${generatedPosts.length} comedian post(s).`);
 }

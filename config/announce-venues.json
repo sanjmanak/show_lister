@@ -2,8 +2,7 @@
   "_readme": [
     "Business rules for what counts as a 'Just announced' show. Consumed by",
     "scripts/lib/announce-rules.js, which is used by just-announced.js (feed",
-    "flagging), announce-cards.js (local preview cards) and post-announcements.js",
-    "(CI autoposter). Matching is case-insensitive substring on the venue name.",
+    "flagging) and post-announcements.js (CI autoposter). Matching is case-insensitive substring on the venue name.",
     "",
     "A listing is NOTABLE only when ALL of these hold:",
     "  1. the show is at least min_days_out days away (announcements are for",
