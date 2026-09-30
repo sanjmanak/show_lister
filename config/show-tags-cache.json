@@ -2122,6 +2122,36 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-09-29"
+    },
+    "ben jackson: brilliant ignorance": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-09-30"
+    },
+    "teenage bottle rocket": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-09-30"
+    },
+    "comedy & cocktails at avant garden-live jazz and live standup": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-09-30"
+    },
+    "don't tell comedy: sugar land (8:00 pm show)": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-09-30"
+    },
+    "don't tell comedy: midtown (6:00 pm show)": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-09-30"
     }
   }
 }

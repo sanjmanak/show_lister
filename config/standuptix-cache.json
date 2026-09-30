@@ -1,115 +1,5 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-09-29-26-07-00-pm": {
-      "lastmod": "2026-09-29T01:33:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Tuesday Night Standup Comedy Showcase!",
-        "startDate": "2026-09-29T19:30:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-09-29-26-07-00-pm",
-          "priceCurrency": "USD",
-          "price": "8.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-09T10:26:07-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-09-29-26-07-00-pm",
-        "image": "/img/shows/HTX-Saturday-Night-Showcases-1-2-e1ae10f9-large-thumb.png",
-        "description": "Keep the week rolling with a night of live standup comedy at The New Riot on Washington!Join us Tuesday night for a killer lineup of comedians bringing their best to the stage. Whether you&rsquo;re looking to break up the workweek, grab drinks with friends, or just need a good laugh, Tuesday night at The Riot is the place to be.Tickets are limited, so grab yours in advance and make some midweek plans worth looking forward to. Great comedy, great drinks, and a room built for laughs &mdash; we&rsquo;ll see you Tuesday night at The New Riot on Washington.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet ParkingLooking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Christian Alexander"
-          },
-          {
-            "@type": "Person",
-            "name": "Brian Gendron"
-          },
-          {
-            "@type": "Person",
-            "name": "Ruben Medina"
-          },
-          {
-            "@type": "Person",
-            "name": "Luis Dejesus"
-          },
-          {
-            "@type": "Person",
-            "name": "JCann"
-          },
-          {
-            "@type": "Person",
-            "name": "Keisha Hunt"
-          }
-        ]
-      }
-    },
-    "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-09-29210000": {
-      "lastmod": "2026-09-27T11:42:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Riot Comedy Club presents Tuesday Night Standup Comedy Open Mic",
-        "startDate": "2026-09-29T21:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-09-29210000",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-12T11:27:04-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-09-29210000",
-        "image": "/img/shows/Open-Mic-July-19-2023-at-14-42-02-7-dac80f0c-large-thumb.png",
-        "description": "Looking for a night full of laughs &mdash; and totally FREE? Join us at TheRiot Comedy Club&nbsp; for our Open Mic Comedy Night, where you can catch a dozen comedians taking the stage! From fresh new comics finding their voice to seasoned pros testing out brand-new material, it&rsquo;s always a wild mix of creativity, courage, and comedy gold.Every show is different, every joke is fresh, and every seat comes with a front-row view of the next big thing in Texas comedy.So grab your crew, order a drink, and come laugh with us &mdash; no tickets, no pressure, just pure fun.ALL SHOWS ARE AGES 21 &amp; UP,&nbsp;Complimentary Valet--Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Sergio Medrano"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-22": {
       "lastmod": "2026-09-27T11:45:00-05:00",
       "node": {
@@ -1876,7 +1766,7 @@
       }
     },
     "https://www.theriothtx.com/events/liz-miele-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-09-29T09:04:00-05:00",
+      "lastmod": "2026-09-29T03:06:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -1921,7 +1811,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-25": {
-      "lastmod": "2026-09-29T09:04:00-05:00",
+      "lastmod": "2026-09-29T03:06:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -1966,7 +1856,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-22": {
-      "lastmod": "2026-09-29T09:04:00-05:00",
+      "lastmod": "2026-09-29T03:06:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",

@@ -1,118 +1,6 @@
 {
- "updated": "2026-09-29T18:42:56.066Z",
+ "updated": "2026-09-30T02:28:59.699Z",
  "announcements": [
-  {
-   "id": "a2f3723b2fb02262",
-   "name": "The Riot presents 2026 Funniest Person in Houston (FPiH) Comedy Competition",
-   "venue": "The Riot Comedy Club",
-   "date": "2026-10-01",
-   "time": "7:00 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://www.theriothtx.com/img/shows/FTIH-FPIH-1-9c0f0887-large-thumb.png",
-   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-2026-funniest-person-in-houston-fpih-comedy-competition-2026-10-01190000",
-   "source": "standuptix",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 2d out (min 14)",
-   "first_seen": "2026-09-18T01:40:32.124Z"
-  },
-  {
-   "id": "bd883998a7cee15b",
-   "name": "The Riot presents 2026 Funniest Person in Houston (FPiH) Comedy Competition",
-   "venue": "The Riot Comedy Club",
-   "date": "2026-10-08",
-   "time": "7:00 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://www.theriothtx.com/img/shows/FTIH-FPIH-1-9c0f0887-large-thumb.png",
-   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-2026-funniest-person-in-houston-fpih-comedy-competition-2026-10-08190000",
-   "source": "standuptix",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 9d out (min 14)",
-   "first_seen": "2026-09-18T01:40:32.124Z"
-  },
-  {
-   "id": "ca855b4f53806ce2",
-   "name": "The Riot presents 2026 Funniest Person in Houston (FPiH) Comedy Competition",
-   "venue": "The Riot Comedy Club",
-   "date": "2026-10-15",
-   "time": "7:00 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://www.theriothtx.com/img/shows/FTIH-FPIH-1-9c0f0887-large-thumb.png",
-   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-2026-funniest-person-in-houston-fpih-comedy-competition-2026-10-15190000",
-   "source": "standuptix",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "title pattern",
-   "first_seen": "2026-09-18T01:40:32.124Z"
-  },
-  {
-   "id": "0f98bd1b033df9e1",
-   "name": "Sarper Güven",
-   "venue": "Punch Line Houston",
-   "date": "2026-10-19",
-   "time": "7:30 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/a/ed9/fb31b4e7-480d-445a-989f-ea2980289ed9_SOURCE",
-   "ticket_url": "https://www.ticketmaster.com/sarper-guven-houston-texas-10-19-2026/event/3A006531CFF93698",
-   "source": "ticketmaster",
-   "notable": true,
-   "tier": "headliner_room",
-   "notable_reason": "headliner room",
-   "first_seen": "2026-09-18T01:40:32.124Z"
-  },
-  {
-   "id": "a5d2c3864c288801",
-   "name": "The Riot presents 2026 Funniest Person in Houston (FPiH) Comedy Competition",
-   "venue": "The Riot Comedy Club",
-   "date": "2026-10-22",
-   "time": "7:00 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://www.theriothtx.com/img/shows/FTIH-FPIH-1-9c0f0887-large-thumb.png",
-   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-2026-funniest-person-in-houston-fpih-comedy-competition-2026-10-22190000",
-   "source": "standuptix",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "title pattern",
-   "first_seen": "2026-09-18T01:40:32.124Z"
-  },
-  {
-   "id": "708d53708ba4e0a2",
-   "name": "The Riot presents 2026 Funniest Person in Houston (FPiH) Comedy Competition FINALS",
-   "venue": "The Riot Comedy Club",
-   "date": "2026-10-29",
-   "time": "7:00 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://www.theriothtx.com/img/shows/FTIH-FPIH-1-9c0f0887-large-thumb.png",
-   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-2026-funniest-person-in-houston-fpih-comedy-competition-2026-10-29190000",
-   "source": "standuptix",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "title pattern",
-   "first_seen": "2026-09-18T01:40:32.124Z"
-  },
-  {
-   "id": "a1fc6ffdb4d06062",
-   "name": "Nick Cannon Presents: Wild 'N Out Live - The Next Generation",
-   "venue": "Toyota Center",
-   "date": "2026-11-21",
-   "time": "8:00 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/a/d03/0e910820-a598-4fdb-9f4d-ec70f74fdd03_SOURCE",
-   "ticket_url": "https://www.toyotacenter.com/events/detail/wild-n-out-2026",
-   "source": "ticketmaster",
-   "notable": true,
-   "tier": "big_room",
-   "notable_reason": "big room",
-   "first_seen": "2026-09-18T01:40:32.124Z"
-  },
   {
    "id": "5298081b95618954",
    "name": "The Riot Presents Thursday Night Standup Comedy Showcase!",
@@ -174,7 +62,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "small room",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-09-19T01:41:16.398Z"
   },
   {
@@ -414,7 +302,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -2d out (min 14)",
+   "notable_reason": "only -3d out (min 14)",
    "first_seen": "2026-09-21T18:44:51.959Z"
   },
   {
@@ -526,7 +414,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-09-22T01:58:53.716Z"
   },
   {
@@ -910,7 +798,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-09-23T01:52:29.299Z"
   },
   {
@@ -926,7 +814,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-09-23T17:54:50.404Z"
   },
   {
@@ -942,7 +830,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-09-23T17:54:50.404Z"
   },
   {
@@ -1054,7 +942,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-09-24T17:56:16.316Z"
   },
   {
@@ -1518,7 +1406,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1534,7 +1422,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1550,7 +1438,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1566,7 +1454,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1582,7 +1470,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1598,7 +1486,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1614,7 +1502,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1630,7 +1518,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1646,7 +1534,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1662,7 +1550,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1678,7 +1566,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1694,7 +1582,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1710,7 +1598,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1726,7 +1614,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1742,7 +1630,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1758,7 +1646,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1774,7 +1662,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1790,7 +1678,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1806,7 +1694,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1822,7 +1710,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1838,7 +1726,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1854,7 +1742,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1870,7 +1758,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1886,7 +1774,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1902,7 +1790,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1918,7 +1806,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1934,7 +1822,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -3086,7 +2974,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-09-28T20:10:41.923Z"
   },
   {
@@ -3102,7 +2990,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-09-28T20:10:41.923Z"
   },
   {
@@ -3150,7 +3038,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-09-29T02:48:36.348Z"
   },
   {
@@ -3200,6 +3088,118 @@
    "tier": null,
    "notable_reason": "title pattern",
    "first_seen": "2026-09-29T18:42:56.066Z"
+  },
+  {
+   "id": "331543baa6872849",
+   "name": "Comedy Allstars",
+   "venue": "Punch Line Houston",
+   "date": "2026-10-04",
+   "time": "7:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/204/1cf0a6ef-fc13-449d-a78a-210f4ddbd204_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/comedy-allstars-houston-texas-10-04-2026/event/3A00653DCA32733B",
+   "source": "ticketmaster",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "only 4d out (min 14)",
+   "first_seen": "2026-09-30T02:28:59.699Z"
+  },
+  {
+   "id": "f11bde9eab019b66",
+   "name": "Comedy & Cocktails at Avant Garden-Live Jazz and Live Standup",
+   "venue": "AvantGarden",
+   "date": "2026-10-09",
+   "time": "10:00 PM",
+   "price_min": 28.52,
+   "price_max": 28.52,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194689726%2F2976463182411%2F1%2Foriginal.20260930-022320?auto=format%2Ccompress&q=75&sharp=10&s=8083276fb79c9ea9cde645c73d74701a",
+   "ticket_url": "https://www.eventbrite.com/e/comedy-cocktails-at-avant-garden-live-jazz-and-live-standup-tickets-2002108341946",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "only 9d out (min 14)",
+   "first_seen": "2026-09-30T02:28:59.699Z"
+  },
+  {
+   "id": "d25b64de8aff9caa",
+   "name": "Ben Jackson: Brilliant Ignorance",
+   "venue": "Houston Improv",
+   "date": "2026-10-11",
+   "time": "7:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+   "ticket_url": "https://www.ticketweb.com/event/ben-jackson-brilliant-ignorance-houston-improv-tickets/14352224?REFERRAL_ID=tmfeed",
+   "source": "ticketmaster",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "only 11d out (min 14)",
+   "first_seen": "2026-09-30T02:28:59.699Z"
+  },
+  {
+   "id": "5ad2123636cc80a0",
+   "name": "Houston Af",
+   "venue": "Houston Improv",
+   "date": "2026-10-14",
+   "time": "7:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+   "ticket_url": "https://www.ticketweb.com/event/houston-af-houston-improv-tickets/14351484?REFERRAL_ID=tmfeed",
+   "source": "ticketmaster",
+   "notable": true,
+   "tier": "headliner_room",
+   "notable_reason": "headliner room",
+   "first_seen": "2026-09-30T02:28:59.699Z"
+  },
+  {
+   "id": "34271cb775e4d4bc",
+   "name": "Don't Tell Comedy: Sugar Land (8:00 PM Show)",
+   "venue": "Don't Tell Comedy (Secret Location)",
+   "date": "2026-10-17",
+   "time": "8:00 PM",
+   "price_min": 27,
+   "price_max": 27,
+   "image_url": "https://dont-tell-comedy.mo.cloudinary.net/private/winebar-cleveland-femaleside_pOdoTui.webp",
+   "ticket_url": "https://www.donttellcomedy.com/shows/houston-21808/",
+   "source": "donttellcomedy",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "small room",
+   "first_seen": "2026-09-30T02:28:59.699Z"
+  },
+  {
+   "id": "d3786a29616c2dcd",
+   "name": "Don't Tell Comedy: Midtown (6:00 PM Show)",
+   "venue": "Don't Tell Comedy (Secret Location)",
+   "date": "2026-10-18",
+   "time": "6:00 PM",
+   "price_min": 27,
+   "price_max": 27,
+   "image_url": "https://dont-tell-comedy.mo.cloudinary.net/private/jersey-shop-lucas_tGxgKW7.webp",
+   "ticket_url": "https://www.donttellcomedy.com/shows/houston-21809/",
+   "source": "donttellcomedy",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "small room",
+   "first_seen": "2026-09-30T02:28:59.699Z"
+  },
+  {
+   "id": "62ee46b31f05f045",
+   "name": "Teenage Bottle Rocket",
+   "venue": "The Secret Group",
+   "date": "2026-12-11",
+   "time": "8:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194671415%2F3558237521%2F1%2Foriginal.20260929-212123?auto=format%2Ccompress&q=75&sharp=10&s=37a7f4f5d923ec2ee5ccc5f57ffc2838",
+   "ticket_url": "https://www.eventbrite.com/e/teenage-bottle-rocket-tickets-2002585803045",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "small room",
+   "first_seen": "2026-09-30T02:28:59.699Z"
   }
  ]
 }
