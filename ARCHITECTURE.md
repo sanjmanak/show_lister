@@ -548,7 +548,7 @@ Logs every ticket click with: timestamp, original URL, final URL (with affiliate
 |-------|-------|
 | **Schedule** | Daily: `0 20 * * *` UTC (~3 PM CDT / 2 PM CST) |
 | **Manual trigger** | Yes (`workflow_dispatch`) |
-| **What it runs** | `generate-tonight-post.js` (graphic + caption) → commit/push → `post-tonight.js` (IG feed + IG story + FB feed + FB story) |
+| **What it runs** | `generate-tonight-post.js` (graphic + caption) → commit/push → `post-tonight.js` (IG story + FB story; stories only since 2026-09-30, the feed square was retired) |
 | **Secrets used** | `INSTAGRAM_ACCESS_TOKEN`, `INSTAGRAM_USER_ID` |
 | **Commits** | `blog/tonight/tonight-{date}-*.png/.txt`, `tonight-meta.json`, `tonight-post-state.json` |
 | **Cost** | $0 — no OpenAI calls; the creative is a deterministic typographic lineup card |

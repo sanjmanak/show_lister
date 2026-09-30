@@ -5,8 +5,10 @@
  *
  * Reads events.json, filters to TODAY (America/Chicago), and renders:
  *
- *   blog/tonight/tonight-YYYY-MM-DD-square.png   1080×1080 IG/FB feed image
  *   blog/tonight/tonight-YYYY-MM-DD-story.png    1080×1920 IG/FB story image
+ *   (the 1080×1080 feed square was dropped 2026-09-30: tonight is stories only;
+ *    the daily feed posts reached 11 to 48 accounts and trained the algorithm
+ *    to bury everything else on the account)
  *   blog/tonight/tonight-YYYY-MM-DD-caption.txt  templated caption
  *   blog/tonight/tonight-meta.json               handoff for post-tonight.js
  *
@@ -314,15 +316,12 @@ function buildCreativeHTML({ width, height, rows, total, extraCount, weekday, mo
 
   const ctaLine = `    <div class="cta">${escapeHTML(buildCta(extraCount))}</div>`;
 
-  // Stories can carry a tappable link sticker, but the Content Publishing
-  // API cannot place one — it has to be dropped on by hand. The band is
-  // deliberately empty so there is somewhere obvious to put it, and the
-  // arrow line below points at it.
-  // Kept in the lower third, where link stickers actually get placed and
-  // where the thumb already is.
-  const stickerBand = isStory ? `    <div class="sticker-band"></div>` : "";
+  // The Graph API cannot attach a link sticker to a story (only manual
+  // posting can), so the story carries the URL as text the viewer can type,
+  // plus "link in bio" in the footer. Kept in the lower third where the
+  // thumb already is.
   const tapLine = isStory
-    ? `    <div class="tap">TAP THE LINK FOR ALL ${total} &nbsp;↓</div>`
+    ? `    <div class="tap">FULL LIST &nbsp;→&nbsp; comedyhouston.com/tonight</div>`
     : "";
 
   return `<!DOCTYPE html>
@@ -366,12 +365,14 @@ function buildCreativeHTML({ width, height, rows, total, extraCount, weekday, mo
     }
     .inner { position: relative; z-index: 1; width: 100%; display: flex; flex-direction: column; height: 100%; }
     .kicker {
-      font-size: ${isStory ? 27 : 26}px;
+      font-size: ${isStory ? 26 : 25}px;
       font-weight: 700;
-      letter-spacing: 0.32em;
+      letter-spacing: 0.22em; /* 0.32em clipped "Wednesday, September 30" at 1080px */
       text-transform: uppercase;
       color: rgba(240, 240, 245, 0.55);
       white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     /* The count IS the hook — it implies a list the image can't hold.
        "TONIGHT." keeps the gradient so the post is still recognisable
@@ -395,7 +396,6 @@ function buildCreativeHTML({ width, height, rows, total, extraCount, weekday, mo
       color: #ff9966;
       margin-bottom: ${isStory ? 40 : 22}px;
     }
-    .sticker-band { height: 200px; flex: 0 0 auto; }
     .tap {
       font-size: 34px;
       font-weight: 800;
@@ -473,7 +473,6 @@ ${rowItems}
     </div>
 ${ctaLine}
 ${tapLine}
-${stickerBand}
     <div class="footer">
       <div class="site">comedyhouston.com</div>
       <div class="promise">link in bio</div>
@@ -607,7 +606,6 @@ async function main() {
     weekday,
     count: events.length,
     generated_at: new Date().toISOString(),
-    square: events.length > 0 ? `tonight-${today}-square.png` : null,
     story: events.length > 0 ? `tonight-${today}-story.png` : null,
     caption: events.length > 0 ? `tonight-${today}-caption.txt` : null,
   };
@@ -627,12 +625,6 @@ async function main() {
   const extraCount = total - rows.length;
   console.log(`\nHook: "${hook}"`);
   console.log(`Rows: ${rows.length} of ${total}  →  CTA: "${buildCta(extraCount)}"`);
-
-  console.log("\nRendering square (1080×1080)…");
-  const squareHTML = buildCreativeHTML({
-    width: 1080, height: 1080, rows, total, extraCount, weekday, monthDay, hook, isStory: false,
-  });
-  await screenshotHTML(squareHTML, 1080, 1080, path.join(TONIGHT_DIR, meta.square));
 
   console.log("Rendering story (1080×1920)…");
   const storyHTML = buildCreativeHTML({

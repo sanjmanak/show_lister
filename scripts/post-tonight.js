@@ -4,14 +4,17 @@
  * Comedy Houston — Daily "Tonight in Houston" poster.
  *
  * Reads blog/tonight/tonight-meta.json (written by generate-tonight-post.js
- * earlier in the same workflow, then committed/pushed so the PNGs are
- * publicly reachable) and publishes across the same four channels as the
- * comedian spotlights:
+ * earlier in the same workflow, then committed/pushed so the PNG is
+ * publicly reachable) and publishes it as a STORY only:
  *
- *   1. Instagram Feed  — square image + caption  (anchor: failure = exit 1)
- *   2. Instagram Story — story image              (best-effort)
- *   3. Facebook Feed   — square image + caption   (best-effort)
- *   4. Facebook Story  — story image              (best-effort)
+ *   1. Instagram Story — story image  (anchor: failure = exit 1)
+ *   2. Facebook Story  — story image  (best-effort)
+ *
+ * Stories only since 2026-09-30. The daily feed post reached 11 to 48
+ * accounts (insights, Aug-Sep 2026), four feed posts a day were burying the
+ * spotlight and announcement posts, and a story disappears on its own after
+ * 24h so nothing has to be reaped. The Graph API cannot attach a link
+ * sticker, so the story image carries the URL as text plus "link in bio".
  *
  * Images are served from raw.githubusercontent.com — available seconds
  * after the push, no GitHub Pages build to wait on, and the date-stamped
@@ -35,9 +38,7 @@ const {
   waitForImageUrl,
   resolveFacebookPageId,
   validateTokenAndGuards,
-  postIgFeedImage,
   postIgStoryImage,
-  postFbFeedPhoto,
   postFbStoryPhoto,
   shutdown,
 } = require("./lib/meta-api");
@@ -81,7 +82,7 @@ async function main() {
     console.log(`Meta is stale (${meta.date} vs today ${today}) — skipping.`);
     return;
   }
-  if (!meta.count || !meta.square) {
+  if (!meta.count || !meta.story) {
     console.log("No shows tonight — nothing to post. Exiting.");
     return;
   }
@@ -92,70 +93,35 @@ async function main() {
     return;
   }
 
-  const captionPath = path.join(TONIGHT_DIR, meta.caption);
-  const caption = fs.existsSync(captionPath)
-    ? fs.readFileSync(captionPath, "utf8").trim()
-    : "";
-  if (!caption) {
-    throw new Error(`Caption file missing or empty: ${captionPath}`);
-  }
-
-  const squareUrl = `${IMAGES_BASE_URL}/${meta.square}`;
   const storyUrl = `${IMAGES_BASE_URL}/${meta.story}`;
 
   console.log(`Tonight: ${meta.weekday} ${meta.date} — ${meta.count} show(s)`);
-  console.log(`Square: ${squareUrl}`);
   console.log(`Story:  ${storyUrl}`);
-  console.log(`Caption: ${caption.length} chars`);
 
   // --- Token + Page ---
   await validateTokenAndGuards();
   const fbPageId = await resolveFacebookPageId();
 
   // --- Wait for the freshly pushed images to be reachable ---
-  console.log("\nVerifying images are publicly reachable…");
-  await waitForImageUrl(squareUrl, 12, 10_000);
-  await waitForImageUrl(storyUrl, 6, 10_000);
+  console.log("\nVerifying the story image is publicly reachable…");
+  await waitForImageUrl(storyUrl, 12, 10_000);
 
+  // Shape kept identical to the feed-era entries so delete-tonight-posts.js
+  // and lib/post-cleanup.js keep working unchanged (null ids are skipped).
   const results = { igFeed: null, igStory: null, fbFeed: null, fbStory: null, errors: [] };
 
-  // --- Instagram Feed (anchor — must succeed) ---
-  console.log("\n  IG FEED — Tonight in Houston");
-  try {
-    results.igFeed = await withTimeout(
-      postIgFeedImage(squareUrl, caption),
-      "IG Feed",
-      CHANNEL_TIMEOUT_MS
-    );
-  } catch (err) {
-    console.error(`\n  ERROR: IG Feed failed — ${err.message}`);
-    // State NOT advanced — a manual re-run of the workflow can retry tonight.
-    throw err;
-  }
-
-  // --- Instagram Story (best-effort) ---
+  // --- Instagram Story (anchor — must succeed) ---
   console.log("\n  IG STORY — Tonight in Houston");
   try {
     results.igStory = await withTimeout(postIgStoryImage(storyUrl), "IG Story", CHANNEL_TIMEOUT_MS);
   } catch (err) {
-    console.error(`\n  WARNING: IG Story failed — ${err.message}`);
-    results.errors.push(`IG Story: ${err.message}`);
+    console.error(`\n  ERROR: IG Story failed — ${err.message}`);
+    // State NOT advanced — a manual re-run of the workflow can retry tonight.
+    throw err;
   }
 
-  // --- Facebook Feed (best-effort) ---
+  // --- Facebook Story (best-effort) ---
   if (fbPageId) {
-    console.log("\n  FB FEED — Tonight in Houston");
-    try {
-      results.fbFeed = await withTimeout(
-        postFbFeedPhoto(fbPageId, squareUrl, caption),
-        "FB Feed",
-        CHANNEL_TIMEOUT_MS
-      );
-    } catch (err) {
-      console.error(`\n  WARNING: FB Feed failed — ${err.message}`);
-      results.errors.push(`FB Feed: ${err.message}`);
-    }
-
     console.log("\n  FB STORY — Tonight in Houston");
     try {
       results.fbStory = await withTimeout(
@@ -191,9 +157,7 @@ async function main() {
 
   console.log(`\n${"=".repeat(60)}`);
   console.log(`RESULTS — Tonight in Houston (${today})`);
-  console.log(`  IG Feed:  ${results.igFeed ? "POSTED (ID: " + results.igFeed + ")" : "FAILED"}`);
-  console.log(`  IG Story: ${results.igStory ? "POSTED (ID: " + results.igStory + ")" : "SKIPPED/FAILED"}`);
-  console.log(`  FB Feed:  ${results.fbFeed ? "POSTED (ID: " + results.fbFeed + ")" : "SKIPPED/FAILED"}`);
+  console.log(`  IG Story: ${results.igStory ? "POSTED (ID: " + results.igStory + ")" : "FAILED"}`);
   console.log(`  FB Story: ${results.fbStory ? "POSTED (ID: " + results.fbStory + ")" : "SKIPPED/FAILED"}`);
   if (results.errors.length > 0) {
     results.errors.forEach((e) => console.log(`    - ${e}`));
