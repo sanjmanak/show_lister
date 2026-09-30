@@ -39,8 +39,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const https = require("https");
-const http = require("http");
+const { createWpClient } = require("./lib/wp");
 
 const WP_SITE_URL = (process.env.WP_SITE_URL || "").replace(/\/+$/, "");
 const WP_APP_USER = process.env.WP_APP_USER || "";
@@ -70,52 +69,14 @@ function shouldOverwrite(slug) {
   return OVERWRITE_SLUGS.has("all") || OVERWRITE_SLUGS.has(String(slug).toLowerCase());
 }
 
-function wpRequest(method, apiPath, body) {
-  return new Promise((resolve, reject) => {
-    const url = new URL(WP_SITE_URL + apiPath);
-    const mod = url.protocol === "http:" ? http : https;
-    const auth = Buffer.from(`${WP_APP_USER}:${WP_APP_PASSWORD}`).toString("base64");
-    const payload = body ? JSON.stringify(body) : null;
 
-    const req = mod.request(
-      url,
-      {
-        method,
-        headers: {
-          Authorization: `Basic ${auth}`,
-          "Content-Type": "application/json",
-          "User-Agent": "ComedyHouston-PageSync/1.0 (+https://comedyhouston.com)",
-          Accept: "application/json",
-          ...(payload ? { "Content-Length": Buffer.byteLength(payload) } : {}),
-        },
-      },
-      (res) => {
-        let data = "";
-        res.on("data", (c) => (data += c));
-        res.on("end", () => {
-          if (res.statusCode >= 200 && res.statusCode < 300) {
-            try {
-              resolve(JSON.parse(data));
-            } catch (e) {
-              reject(new Error(`WP ${method} ${apiPath}: JSON parse error: ${e.message}`));
-            }
-          } else {
-            reject(
-              new Error(
-                `WP ${method} ${apiPath} failed: HTTP ${res.statusCode}\n${data.slice(0, 1000)}`
-              )
-            );
-          }
-        });
-      }
-    );
-    req.setTimeout(REQUEST_TIMEOUT_MS, () => {
-      req.destroy(new Error(`WP ${method} ${apiPath} timed out after ${REQUEST_TIMEOUT_MS}ms`));
-    });
-    req.on("error", reject);
-    if (payload) req.write(payload);
-    req.end();
-  });
+const wpClient = createWpClient({
+  siteUrl: WP_SITE_URL,
+  userAgent: "ComedyHouston-PageSync/1.0 (+https://comedyhouston.com)",
+  timeoutMs: REQUEST_TIMEOUT_MS,
+});
+function wpRequest(method, apiPath, body) {
+  return wpClient.request(method, apiPath, body);
 }
 
 /**

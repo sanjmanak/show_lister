@@ -27,7 +27,8 @@
 
 const fs = require("fs");
 const path = require("path");
-const https = require("https");
+const { createWpClient } = require("./lib/wp");
+const { writeSpotlightIndex } = require("./lib/spotlight-index");
 
 const OUTPUT_DIR = path.resolve(__dirname, "..");
 const COMEDIANS_DIR = path.join(OUTPUT_DIR, "blog", "comedians");
@@ -45,27 +46,9 @@ if (!WP_SITE_URL || !WP_APP_USER || !WP_APP_PASSWORD) {
   process.exit(0);
 }
 
+const wpClient = createWpClient({ siteUrl: WP_SITE_URL, userAgent: "ComedyHouston-Reaper/1.0" });
 function wpRequest(method, urlPath) {
-  const url = new URL(WP_SITE_URL + urlPath);
-  const auth = Buffer.from(`${WP_APP_USER}:${WP_APP_PASSWORD}`).toString("base64");
-  return new Promise((resolve, reject) => {
-    const req = https.request(
-      url,
-      { method, headers: { Authorization: `Basic ${auth}`, "Content-Type": "application/json" }, timeout: 30000 },
-      (res) => {
-        let body = "";
-        res.on("data", (c) => (body += c));
-        res.on("end", () => {
-          if (res.statusCode >= 200 && res.statusCode < 300) {
-            try { resolve(JSON.parse(body)); } catch { resolve(body); }
-          } else reject(new Error(`HTTP ${res.statusCode} ${method} ${urlPath}`));
-        });
-      }
-    );
-    req.on("error", reject);
-    req.on("timeout", () => req.destroy(new Error("timeout")));
-    req.end();
-  });
+  return wpClient.request(method, urlPath);
 }
 
 async function deletePostBySlug(slug) {
@@ -140,6 +123,11 @@ function localDateStr(d) {
       console.log(`  archived ${name}`);
       reaped++;
     }
+  }
+  if (reaped > 0 && !DRY_RUN) {
+    // Drop the reaped posts from the plugin's spotlight index too.
+    const n = writeSpotlightIndex(COMEDIANS_DIR);
+    console.log(`Rewrote spotlight-index.json (${n} posts)`);
   }
   console.log(`Done. ${reaped} week(s) reaped${DRY_RUN ? " (dry run)" : ""}.`);
 })().catch((err) => {

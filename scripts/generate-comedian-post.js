@@ -45,6 +45,8 @@ const { sanitizeAiHtml, addSponsoredRelToTicketLinks } = require("./lib/sanitize
 const { ensureShowDetails } = require("./lib/show-details");
 const { verifyOutboundLinks } = require("./lib/link-check");
 const { addBlogPostingToGraph, wpGmtToIso } = require("./lib/schema-utils");
+const { createWpClient } = require("./lib/wp");
+const { writeSpotlightIndex } = require("./lib/spotlight-index");
 
 // ---------------------------------------------------------------------------
 // Config
@@ -883,72 +885,10 @@ function renderSchemaScriptTag(graph) {
 
 // ---------------------------------------------------------------------------
 
-/** Make an HTTP/HTTPS request and return the parsed JSON response. */
+/** WordPress REST call (shared client, 30s timeout, detailed errors, no retry). */
+const wpClient = createWpClient({ userAgent: "ComedyHouston-BlogBot/1.0" });
 function wpRequest(method, urlPath, body) {
-  return new Promise((resolve, reject) => {
-    const fullUrl = WP_SITE_URL.replace(/\/$/, "") + urlPath;
-    const parsed = new URL(fullUrl);
-    const isHttps = parsed.protocol === "https:";
-    const lib = isHttps ? https : http;
-
-    const auth = Buffer.from(`${WP_APP_USER}:${WP_APP_PASSWORD}`).toString("base64");
-
-    const bodyStr = body ? JSON.stringify(body) : null;
-
-    const options = {
-      hostname: parsed.hostname,
-      port: parsed.port || (isHttps ? 443 : 80),
-      path: parsed.pathname + parsed.search,
-      method: method,
-      headers: {
-        Authorization: `Basic ${auth}`,
-        "Content-Type": "application/json",
-        "User-Agent": "ComedyHouston-BlogBot/1.0",
-      },
-    };
-
-    if (bodyStr) {
-      options.headers["Content-Length"] = Buffer.byteLength(bodyStr);
-    }
-
-    const req = lib.request(options, (res) => {
-      let data = "";
-      res.on("data", (chunk) => (data += chunk));
-      res.on("end", () => {
-        if (res.statusCode >= 400) {
-          // Surface as much detail as possible — status, a relevant subset of
-          // headers, and the first 1500 chars of the body. This makes it
-          // possible to tell apart "WP rejected the credentials" (401 with a
-          // rest_not_logged_in code) from "Hostinger/LiteSpeed blocked us"
-          // (401/403 with HTML body, no JSON code) from "WP rejected the
-          // payload" (400 with rest_invalid_param) from rate-limiting (429).
-          const relevantHeaders = {
-            "content-type": res.headers["content-type"],
-            "www-authenticate": res.headers["www-authenticate"],
-            "x-litespeed-cache": res.headers["x-litespeed-cache"],
-            "cf-ray": res.headers["cf-ray"],
-            server: res.headers["server"],
-          };
-          return reject(
-            new Error(
-              `WordPress API ${res.statusCode} ${method} ${urlPath} | ` +
-              `headers=${JSON.stringify(relevantHeaders)} | ` +
-              `body=${data.slice(0, 1500)}`
-            )
-          );
-        }
-        try {
-          resolve(JSON.parse(data));
-        } catch (e) {
-          reject(new Error(`Failed to parse WP response: ${e.message}`));
-        }
-      });
-    });
-
-    req.on("error", (err) => reject(err));
-    if (bodyStr) req.write(bodyStr);
-    req.end();
-  });
+  return wpClient.request(method, urlPath, body);
 }
 
 /**
@@ -1834,6 +1774,16 @@ async function main() {
     console.log(`Wrote: blog/comedians/email-subject.txt`);
     console.log(`Wrote: blog/comedians/email-body.txt`);
     console.log(`Wrote: blog/comedians/email-attachments.txt`);
+  }
+
+  // Rebuild the plugin's spotlight index from every week-keyed manifest on
+  // disk (see lib/spotlight-index.js). Always, even when nothing was
+  // generated, so a manual re-run repairs the file.
+  try {
+    const n = writeSpotlightIndex(COMEDIANS_DIR);
+    console.log(`Wrote: blog/comedians/spotlight-index.json (${n} posts)`);
+  } catch (err) {
+    console.warn(`Spotlight index write failed: ${err.message}`);
   }
 
   console.log("");

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.16.1
+ * Version: 2.16.2
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.16.1';
+    const VERSION      = '2.16.2';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -1995,36 +1995,48 @@ src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>
     }
 
     /**
-     * Fetch blog/comedians/manifest.json from GitHub with transient caching.
+     * Fetch blog/comedians/spotlight-index.json from GitHub with transient
+     * caching (falls back to the legacy single manifest.json). The index is a
+     * merge of every week-keyed manifest-YYYY-MM-DD.json, written by the
+     * comedian-post generator and the reaper (scripts/lib/spotlight-index.js).
+     * v2.16.2: the plugin fetched manifest.json, which stopped existing on
+     * 2026-09-05, so cards lost their "More info" link for three weeks.
      * Returns the manifest array or [] on failure (callers treat missing as
      * "no comedian posts available" — they still render cards, just without
      * the "More info" internal link).
      */
     public function fetch_manifest_data() {
         $opts = $this->get_options();
-        $cache_key = 'ch_manifest_' . md5($opts['github_user'] . '_' . $opts['repo']);
+        $cache_key = 'ch_spotidx_' . md5($opts['github_user'] . '_' . $opts['repo']);
 
         $cached = get_transient($cache_key);
         if ($cached !== false) {
             return $cached;
         }
 
-        $url = sprintf(
-            'https://raw.githubusercontent.com/%s/%s/main/blog/comedians/manifest.json',
+        $base = sprintf(
+            'https://raw.githubusercontent.com/%s/%s/main/blog/comedians/',
             sanitize_text_field($opts['github_user']),
             sanitize_text_field($opts['repo'])
         );
 
-        $response = wp_remote_get($url, ['timeout' => 10]);
-        if (is_wp_error($response) || wp_remote_retrieve_response_code($response) !== 200) {
+        $data = null;
+        foreach (['spotlight-index.json', 'manifest.json'] as $file) {
+            $response = wp_remote_get($base . $file, ['timeout' => 10]);
+            if (is_wp_error($response) || wp_remote_retrieve_response_code($response) !== 200) {
+                continue;
+            }
+            $data = json_decode(wp_remote_retrieve_body($response), true);
+            if ($data) break;
+        }
+        if (!$data) {
             // Cache the empty result briefly so a 404 doesn't hammer GitHub on
             // every page load. 5 minutes is short enough that a freshly
-            // generated manifest still shows up quickly.
+            // generated index still shows up quickly.
             set_transient($cache_key, [], 5 * MINUTE_IN_SECONDS);
             return [];
         }
 
-        $data = json_decode(wp_remote_retrieve_body($response), true);
         if (!$data || empty($data['posts']) || !is_array($data['posts'])) {
             set_transient($cache_key, [], 5 * MINUTE_IN_SECONDS);
             return [];

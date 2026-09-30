@@ -10,6 +10,7 @@
 
 const https = require("https");
 const http = require("http");
+const { createWpClient, withRetry: withWpRetryLib } = require("./lib/wp");
 const fs = require("fs");
 const path = require("path");
 const { spawnSync } = require("child_process");
@@ -232,53 +233,17 @@ function checkWpDeadline(label) {
 }
 
 /**
- * Decide whether a failed WP call is worth retrying. Retry the transient
- * stuff — WAF 403s, 408/429, 5xx, and network-level errors (timeouts, resets,
- * DNS) that carry no statusCode. Do NOT retry hard failures: 401 (bad app
- * password), 400 (malformed request), 404 (missing) — those won't fix
- * themselves, and the cumulative-budget "skipped" error must not loop either.
+ * Run a WP network operation with exponential backoff on transient errors
+ * (shared logic in lib/wp.js). Stops early if the cumulative WP budget is
+ * blown so retries can't eat the whole job.
  */
-function isRetryableWpError(err) {
-  const code = err && err.statusCode;
-  if (code === 403 || code === 408 || code === 429) return true;
-  if (typeof code === "number" && code >= 500 && code <= 599) return true;
-  if (!code) {
-    const m = (err && err.message) || "";
-    if (/cumulative WP budget/i.test(m)) return false; // budget exhausted — stop
-    if (/timed out|ECONNRESET|ETIMEDOUT|EAI_AGAIN|ENOTFOUND|ECONNREFUSED|EPIPE|socket hang up|network/i.test(m)) {
-      return true;
-    }
-  }
-  return false;
-}
-
-/**
- * Run a WP network operation with exponential backoff on transient errors.
- * Stops early if the cumulative WP budget is blown so retries can't eat the
- * whole job. Non-transient errors throw immediately (no point retrying a bad
- * password). Each individual attempt still has its own per-request timeout.
- */
-async function withWpRetry(label, fn) {
-  let lastErr;
-  for (let attempt = 1; attempt <= WP_MAX_ATTEMPTS; attempt++) {
-    try {
-      return await fn();
-    } catch (err) {
-      lastErr = err;
-      if (attempt >= WP_MAX_ATTEMPTS || !isRetryableWpError(err)) throw err;
-      if (wpDeadline > 0 && Date.now() > wpDeadline) {
-        console.warn(`  ${label}: WP budget exhausted — not retrying.`);
-        throw err;
-      }
-      const delay = WP_RETRY_BASE_MS * Math.pow(2, attempt - 1); // 2s, 4s, 8s…
-      const firstLine = String(err.message || err).split("\n")[0].slice(0, 140);
-      console.warn(
-        `  ${label} failed (${firstLine}) — retry ${attempt}/${WP_MAX_ATTEMPTS - 1} in ${Math.round(delay / 1000)}s…`
-      );
-      await new Promise((r) => setTimeout(r, delay));
-    }
-  }
-  throw lastErr;
+function withWpRetry(label, fn) {
+  return withWpRetryLib(label, fn, {
+    maxAttempts: WP_MAX_ATTEMPTS,
+    baseMs: WP_RETRY_BASE_MS,
+    shouldStop: () => wpDeadline > 0 && Date.now() > wpDeadline,
+    stopReason: "WP budget exhausted",
+  });
 }
 
 /**
@@ -318,50 +283,15 @@ function attachRequestTimeout(req, ms, label) {
   });
 }
 
+const wpClient = createWpClient({ userAgent: "ComedyHouston-BlogBot/1.0", timeoutMs: WP_REQUEST_TIMEOUT_MS });
+
 function wpRequest(method, urlPath, body) {
   return withWpRetry(`WP ${method} ${urlPath}`, () => wpRequestOnce(method, urlPath, body));
 }
 
 function wpRequestOnce(method, urlPath, body) {
-  return new Promise((resolve, reject) => {
-    try { checkWpDeadline(`WP ${method} ${urlPath}`); } catch (e) { return reject(e); }
-    const fullUrl = WP_SITE_URL.replace(/\/$/, "") + urlPath;
-    const parsed = new URL(fullUrl);
-    const isHttps = parsed.protocol === "https:";
-    const lib = isHttps ? https : http;
-    const auth = Buffer.from(`${WP_APP_USER}:${WP_APP_PASSWORD}`).toString("base64");
-    const bodyStr = body ? JSON.stringify(body) : null;
-
-    const options = {
-      hostname: parsed.hostname,
-      port: parsed.port || (isHttps ? 443 : 80),
-      path: parsed.pathname + parsed.search,
-      method: method,
-      headers: {
-        Authorization: `Basic ${auth}`,
-        "Content-Type": "application/json",
-        "User-Agent": "ComedyHouston-BlogBot/1.0",
-      },
-    };
-    if (bodyStr) options.headers["Content-Length"] = Buffer.byteLength(bodyStr);
-
-    const req = lib.request(options, (res) => {
-      let data = "";
-      res.on("data", (chunk) => (data += chunk));
-      res.on("end", () => {
-        if (res.statusCode >= 400) {
-          const e = new Error(`WordPress API ${res.statusCode}: ${data.slice(0, 500)}`);
-          e.statusCode = res.statusCode;
-          return reject(e);
-        }
-        try { resolve(JSON.parse(data)); } catch (e) { reject(new Error(`Failed to parse WP response: ${e.message}`)); }
-      });
-    });
-    attachRequestTimeout(req, WP_REQUEST_TIMEOUT_MS, `WP ${method} ${urlPath}`);
-    req.on("error", (err) => reject(err));
-    if (bodyStr) req.write(bodyStr);
-    req.end();
-  });
+  try { checkWpDeadline(`WP ${method} ${urlPath}`); } catch (e) { return Promise.reject(e); }
+  return wpClient.request(method, urlPath, body);
 }
 
 function downloadImage(imageUrl, redirectsLeft) {

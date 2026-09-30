@@ -20,8 +20,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const https = require("https");
-const http = require("http");
+const { createWpClient } = require("./lib/wp");
 const { ensureShowDetails, hasShowDate, hasTicketLink } = require("./lib/show-details");
 const { verifyOutboundLinks } = require("./lib/link-check");
 
@@ -36,38 +35,9 @@ const ONLY = (process.env.SLUGS || "").split(",").map((s) => s.trim()).filter(Bo
 const INCLUDE_PAST = process.env.INCLUDE_PAST === "1";
 const VERIFY_LINKS = process.env.VERIFY_LINKS !== "0";
 
+const wpClient = createWpClient({ siteUrl: WP_SITE_URL, userAgent: "ComedyHouston-BackfillShowDetails/1.0" });
 function wpRequest(method, urlPath, body) {
-  return new Promise((resolve, reject) => {
-    const parsed = new URL(WP_SITE_URL + urlPath);
-    const lib = parsed.protocol === "https:" ? https : http;
-    const bodyStr = body ? JSON.stringify(body) : null;
-    const headers = {
-      "Content-Type": "application/json",
-      "User-Agent": "ComedyHouston-BackfillShowDetails/1.0",
-    };
-    if (HAS_CREDS) {
-      headers.Authorization = "Basic " + Buffer.from(`${WP_APP_USER}:${WP_APP_PASSWORD}`).toString("base64");
-    }
-    if (bodyStr) headers["Content-Length"] = Buffer.byteLength(bodyStr);
-    const req = lib.request(
-      { hostname: parsed.hostname, port: parsed.port || undefined, path: parsed.pathname + parsed.search, method, headers, timeout: 30000 },
-      (res) => {
-        let data = "";
-        res.on("data", (c) => (data += c));
-        res.on("end", () => {
-          if (res.statusCode >= 200 && res.statusCode < 300) {
-            try { resolve(JSON.parse(data)); } catch (e) { reject(new Error(`Bad JSON from ${urlPath}: ${data.slice(0, 120)}`)); }
-          } else {
-            reject(new Error(`WordPress API ${res.statusCode} ${method} ${urlPath} | ${data.slice(0, 160).replace(/\s+/g, " ")}`));
-          }
-        });
-      }
-    );
-    req.on("timeout", () => req.destroy(new Error(`timeout ${method} ${urlPath}`)));
-    req.on("error", reject);
-    if (bodyStr) req.write(bodyStr);
-    req.end();
-  });
+  return wpClient.request(method, urlPath, body);
 }
 
 function todayChicago() {

@@ -1,0 +1,151 @@
+{
+  "generated_at": "2026-09-30T18:00:30.565Z",
+  "source_manifests": [
+    "manifest-2026-09-28.json",
+    "manifest-2026-10-05.json",
+    "manifest-2026-10-12.json",
+    "manifest-2026-10-19.json"
+  ],
+  "posts": [
+    {
+      "date": "2026-10-01",
+      "comedianName": "Just Nesh",
+      "slug": "just-nesh-houston-improv-2026-10-01",
+      "wpLink": "https://comedyhouston.com/just-nesh-houston-improv-2026-10-01/",
+      "venue": "Houston Improv"
+    },
+    {
+      "date": "2026-10-01",
+      "comedianName": "Rick Glassman",
+      "slug": "rick-glassman-punch-line-houston-2026-10-01",
+      "wpLink": "https://comedyhouston.com/rick-glassman-punch-line-houston-2026-10-01/",
+      "venue": "Punch Line Houston"
+    },
+    {
+      "date": "2026-10-02",
+      "comedianName": "Henry Sir",
+      "slug": "henry-sir-the-riot-comedy-club-2026-10-02",
+      "wpLink": "https://comedyhouston.com/henry-sir-the-riot-comedy-club-2026-10-02/",
+      "venue": "The Riot Comedy Club"
+    },
+    {
+      "date": "2026-10-02",
+      "comedianName": "Jeff Dye",
+      "slug": "jeff-dye-the-riot-comedy-club-conroe-2026-10-02",
+      "wpLink": "https://comedyhouston.com/jeff-dye-the-riot-comedy-club-conroe-2026-10-02/",
+      "venue": "The Riot Comedy Club — Conroe"
+    },
+    {
+      "date": "2026-10-02",
+      "comedianName": "Jo Koy",
+      "slug": "jo-koy-toyota-center-tx-2026-10-02",
+      "wpLink": "https://comedyhouston.com/jo-koy-toyota-center-tx-2026-10-02/",
+      "venue": "Toyota Center - TX"
+    },
+    {
+      "date": "2026-10-06",
+      "comedianName": "Manuel Ángel Redondo",
+      "slug": "manuel-ngel-redondo-punch-line-houston-2026-10-06",
+      "wpLink": "https://comedyhouston.com/manuel-ngel-redondo-punch-line-houston-2026-10-06/",
+      "venue": "Punch Line Houston"
+    },
+    {
+      "date": "2026-10-07",
+      "comedianName": "Richie O’Farrill",
+      "slug": "richie-ofarrill-houston-improv-2026-10-07",
+      "wpLink": "https://comedyhouston.com/richie-ofarrill-houston-improv-2026-10-07/",
+      "venue": "Houston Improv"
+    },
+    {
+      "date": "2026-10-08",
+      "comedianName": "Gauri B",
+      "slug": "gauri-b-white-oak-music-hall-upstairs-2026-10-08",
+      "wpLink": "https://comedyhouston.com/gauri-b-white-oak-music-hall-upstairs-2026-10-08/",
+      "venue": "White Oak Music Hall - Upstairs"
+    },
+    {
+      "date": "2026-10-08",
+      "comedianName": "Winston Hodges",
+      "slug": "winston-hodges-punch-line-houston-2026-10-08",
+      "wpLink": "https://comedyhouston.com/winston-hodges-punch-line-houston-2026-10-08/",
+      "venue": "Punch Line Houston"
+    },
+    {
+      "date": "2026-10-09",
+      "comedianName": "Sophie Hunter",
+      "slug": "sophie-hunter-the-secret-group-2026-10-09",
+      "wpLink": "https://comedyhouston.com/sophie-hunter-the-secret-group-2026-10-09/",
+      "venue": "The Secret Group"
+    },
+    {
+      "date": "2026-10-15",
+      "comedianName": "Anjelah Johnson-Reyes",
+      "slug": "anjelah-johnson-reyes-punch-line-houston-2026-10-15",
+      "wpLink": "https://comedyhouston.com/anjelah-johnson-reyes-punch-line-houston-2026-10-15/",
+      "venue": "Punch Line Houston"
+    },
+    {
+      "date": "2026-10-15",
+      "comedianName": "Iván Fematt La Mole",
+      "slug": "ivn-fematt-la-mole-houston-improv-2026-10-15",
+      "wpLink": "https://comedyhouston.com/ivn-fematt-la-mole-houston-improv-2026-10-15/",
+      "venue": "Houston Improv"
+    },
+    {
+      "date": "2026-10-16",
+      "comedianName": "Chaunte Wayans",
+      "slug": "chaunte-wayans-punch-line-houston-2026-10-16",
+      "wpLink": "https://comedyhouston.com/chaunte-wayans-punch-line-houston-2026-10-16/",
+      "venue": "Punch Line Houston"
+    },
+    {
+      "date": "2026-10-16",
+      "comedianName": "Kerryn Feehan",
+      "slug": "kerryn-feehan-the-riot-comedy-club-2026-10-16",
+      "wpLink": "https://comedyhouston.com/kerryn-feehan-the-riot-comedy-club-2026-10-16/",
+      "venue": "The Riot Comedy Club"
+    },
+    {
+      "date": "2026-10-16",
+      "comedianName": "Mo Amer",
+      "slug": "mo-amer-cullen-performance-hall-2026-10-16",
+      "wpLink": "https://comedyhouston.com/mo-amer-cullen-performance-hall-2026-10-16/",
+      "venue": "Cullen Performance Hall"
+    },
+    {
+      "date": "2026-10-19",
+      "comedianName": "Sarper Güven",
+      "slug": "sarper-gven-punch-line-houston-2026-10-19",
+      "wpLink": "https://comedyhouston.com/sarper-gven-punch-line-houston-2026-10-19/",
+      "venue": "Punch Line Houston"
+    },
+    {
+      "date": "2026-10-20",
+      "comedianName": "Foos Gone Wild",
+      "slug": "foos-gone-wild-house-of-blues-houston-2026-10-20",
+      "wpLink": "https://comedyhouston.com/foos-gone-wild-house-of-blues-houston-2026-10-20/",
+      "venue": "House of Blues Houston"
+    },
+    {
+      "date": "2026-10-21",
+      "comedianName": "Joanne McNally",
+      "slug": "joanne-mcnally-punch-line-houston-2026-10-21",
+      "wpLink": "https://comedyhouston.com/joanne-mcnally-punch-line-houston-2026-10-21/",
+      "venue": "Punch Line Houston"
+    },
+    {
+      "date": "2026-10-21",
+      "comedianName": "José Rafael Guzmán",
+      "slug": "jos-rafael-guzmn-houston-improv-2026-10-21",
+      "wpLink": "https://comedyhouston.com/jos-rafael-guzmn-houston-improv-2026-10-21/",
+      "venue": "Houston Improv"
+    },
+    {
+      "date": "2026-10-22",
+      "comedianName": "Josh Gondelman",
+      "slug": "josh-gondelman-punch-line-houston-2026-10-22",
+      "wpLink": "https://comedyhouston.com/josh-gondelman-punch-line-houston-2026-10-22/",
+      "venue": "Punch Line Houston"
+    }
+  ]
+}
