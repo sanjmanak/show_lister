@@ -1,21 +1,3 @@
 {
-  "generated_at": "2026-10-01T20:29:09.410Z",
-  "dry_run": false,
-  "items": [
-    {
-      "id": "28fc2ebee309047d",
-      "name": "Keropi Sánchez: Remastered (En Español)",
-      "performer_name": "Keropi Sánchez",
-      "venue": "Punch Line Houston",
-      "date": "2026-12-02",
-      "ticket_url": "https://www.ticketmaster.com/keropi-sanchez-remastered-en-espanol-houston-texas-12-02-2026/event/3A00653B2D923F32",
-      "files": {
-        "portrait": "2026-12-02-keropi-s-nchez-portrait.png",
-        "story": "2026-12-02-keropi-s-nchez-story.png",
-        "reel": "2026-12-02-keropi-s-nchez.mp4"
-      },
-      "caption": "Keropi Sánchez is on the road with his Spanish-language Remastered tour.\nKeropi Sánchez performs at Punch Line Houston on December 2, 2026. The solo set is billed as Remastered and performed in Spanish. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
-      "confidence": 0.78
-    }
-  ]
+  "items": []
 }
