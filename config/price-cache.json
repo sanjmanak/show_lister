@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-09-28T20:10:41.850Z",
+  "last_updated": "2026-10-01T18:56:47.291Z",
   "entries": {
     "156fd23bf1b4b0a5": {
       "price_min": 68.48,
@@ -129,22 +129,6 @@
       "source": "page",
       "url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999296198750",
       "fetched_at": "2026-09-09T01:37:42.593Z"
-    },
-    "3bd7c5ec93a781c0": {
-      "price_min": 34.79,
-      "price_max": 34.79,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/chat-pile-who-loves-the-sun-tour-2026-early-show-tickets-1999297781484",
-      "fetched_at": "2026-09-09T01:37:43.714Z"
-    },
-    "f77e033eedafc224": {
-      "price_min": 34.79,
-      "price_max": 34.79,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/chat-pile-who-loves-the-sun-tour-2026-late-show-tickets-1999298219795",
-      "fetched_at": "2026-09-09T01:37:44.102Z"
     },
     "95cc9761e6ffc8e9": {
       "price_min": 25.09,
