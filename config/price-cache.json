@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-10-01T18:56:47.291Z",
+  "last_updated": "2026-10-02T18:29:28.041Z",
   "entries": {
     "156fd23bf1b4b0a5": {
       "price_min": 68.48,
@@ -17,14 +17,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/craig-conant-houston-improv-tickets/14824993?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-07-19T00:21:45.367Z"
-    },
-    "a00405af7c0400e7": {
-      "price_min": 25.22,
-      "price_max": 25.22,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/just-nesh-houston-improv-tickets/15025113?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-08-17T14:44:47.095Z"
     },
     "b62b297c78546832": {
       "price_min": 56.12,
