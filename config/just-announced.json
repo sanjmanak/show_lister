@@ -1,214 +1,6 @@
 {
- "updated": "2026-10-01T18:56:47.376Z",
+ "updated": "2026-10-02T02:39:02.152Z",
  "announcements": [
-  {
-   "id": "761758197b855902",
-   "name": "Dale Elliott Jr.",
-   "venue": "Houston Improv",
-   "date": "2026-12-03",
-   "time": "7:30 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-   "ticket_url": "https://www.ticketweb.com/event/dale-elliott-jr-houston-improv-tickets/15042043?REFERRAL_ID=tmfeed",
-   "source": "ticketmaster",
-   "notable": true,
-   "tier": "headliner_room",
-   "notable_reason": "headliner room",
-   "first_seen": "2026-09-20T16:50:41.263Z"
-  },
-  {
-   "id": "4d153cf84a16d7b0",
-   "name": "Comedian Sophie Buddle (The Tonight Show, Sirius XM, Kevin Hart's LOL) Headlines The Riot Comedy Club",
-   "venue": "The Riot Comedy Club",
-   "date": "2026-12-19",
-   "time": "7:00 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://www.theriothtx.com/img/events/Guadalaharrys-70-eaf30b9a-large-thumb.png",
-   "ticket_url": "https://www.theriothtx.com/events/comedian-sophie-buddle-the-tonight-show-sirius-xm-kevin-hart-s-lol-headlines-the-riot-comedy-club-2026-12-19190000",
-   "source": "standuptix",
-   "notable": true,
-   "tier": "headliner_room",
-   "notable_reason": "headliner room",
-   "first_seen": "2026-09-20T16:50:41.263Z"
-  },
-  {
-   "id": "66c70528b043fd64",
-   "name": "Comedian Gabriel Rutledge (Amazon Prime Video, Comedy Central) Live at the Riot in Conroe",
-   "venue": "The Riot Comedy Club — Conroe",
-   "date": "2026-12-19",
-   "time": "7:00 PM",
-   "price_min": 25,
-   "price_max": 25,
-   "image_url": "https://www.riotconroe.com/img/events/Guadalaharrys-56-e92a0b7f-large-thumb.png",
-   "ticket_url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe",
-   "source": "standuptix",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "venue excluded",
-   "first_seen": "2026-09-20T16:50:41.263Z"
-  },
-  {
-   "id": "fa55f4ba82364f0e",
-   "name": "Leyla Ingalls Live in Houston",
-   "venue": "The Pink Flamingo Comedy Club",
-   "date": "2026-12-19",
-   "time": "8:00 PM",
-   "price_min": 25.09,
-   "price_max": 36.64,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1191192727%2F2996872667695%2F1%2Foriginal.20260816-191551?auto=format%2Ccompress&q=75&sharp=10&s=849f8fa5e42a4fc77cedbee6eddafa64",
-   "ticket_url": "https://www.eventbrite.com/e/leyla-ingalls-live-in-houston-tickets-1998136475988",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "small room",
-   "first_seen": "2026-09-20T16:50:41.263Z"
-  },
-  {
-   "id": "1414a1af72a43133",
-   "name": "The Riot Comedy Club Presents Saturday Night Standup Comedy Late Show!",
-   "venue": "The Riot Comedy Club",
-   "date": "2026-12-19",
-   "time": "11:00 PM",
-   "price_min": 15,
-   "price_max": 15,
-   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-13-Saturday-11pm-20db1248-large-thumb.png",
-   "ticket_url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-33",
-   "source": "standuptix",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "title pattern",
-   "first_seen": "2026-09-20T16:50:41.263Z"
-  },
-  {
-   "id": "944b07c0e83677ec",
-   "name": "Martin Amini",
-   "venue": "Houston Improv",
-   "date": "2026-09-27",
-   "time": "7:30 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/a/d35/942690b6-50b2-4028-9530-65dbd2e40d35_SOURCE",
-   "ticket_url": "https://www.ticketweb.com/event/martin-amini-houston-improv-tickets/14334284?REFERRAL_ID=tmfeed",
-   "source": "ticketmaster",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only -4d out (min 14)",
-   "first_seen": "2026-09-21T18:44:51.959Z"
-  },
-  {
-   "id": "72dcf8a91edce439",
-   "name": "ZETEO AND RISALA PRESENT MEHDI & MO AMER IN HOUSTON",
-   "venue": "Cullen Performance Hall",
-   "date": "2026-10-16",
-   "time": "7:30 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/a/407/e2afafee-20b2-4067-b289-cb171ea40407_SOURCE",
-   "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7PJQ6",
-   "source": "ticketmaster",
-   "notable": true,
-   "tier": "big_room",
-   "notable_reason": "big room",
-   "first_seen": "2026-09-21T18:44:51.959Z"
-  },
-  {
-   "id": "5c2e9adc897afe67",
-   "name": "CHARLIE BERENS THE LOST AND FOUND TOUR",
-   "venue": "Cullen Performance Hall",
-   "date": "2026-10-24",
-   "time": "8:00 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/a/d67/9fc9eace-5c22-47c5-b651-b4602d481d67_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-   "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1AAvI-S",
-   "source": "ticketmaster",
-   "notable": true,
-   "tier": "big_room",
-   "notable_reason": "big room",
-   "first_seen": "2026-09-21T18:44:51.959Z"
-  },
-  {
-   "id": "1422d54256e6400a",
-   "name": "CHRIS FLEMING LIVE",
-   "venue": "Cullen Performance Hall",
-   "date": "2026-11-20",
-   "time": "7:30 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/a/7da/06accf4e-b857-45e8-ae24-e57e6c84d7da_SOURCE",
-   "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1AAvI-V",
-   "source": "ticketmaster",
-   "notable": true,
-   "tier": "big_room",
-   "notable_reason": "big room",
-   "first_seen": "2026-09-21T18:44:51.959Z"
-  },
-  {
-   "id": "01837518d4431c4f",
-   "name": "DON LEMON AND DL HUGHLEY: DL + DL 'ANYTHING GOES'",
-   "venue": "Cullen Performance Hall",
-   "date": "2026-11-21",
-   "time": "7:00 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/a/4af/a7091ede-2fb7-4276-a6fc-5d1f208d74af_SOURCE",
-   "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1AAvZ4A",
-   "source": "ticketmaster",
-   "notable": true,
-   "tier": "big_room",
-   "notable_reason": "big room",
-   "first_seen": "2026-09-21T18:44:51.959Z"
-  },
-  {
-   "id": "afb216a4db07cd36",
-   "name": "The Riot Presents \"Houston's Funniest\" Sunday Comedy Showcase",
-   "venue": "The Riot Comedy Club",
-   "date": "2026-12-20",
-   "time": "6:00 PM",
-   "price_min": 10,
-   "price_max": 10,
-   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-4-17bb0cfb-large-thumb.png",
-   "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-67",
-   "source": "standuptix",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "title pattern",
-   "first_seen": "2026-09-21T18:44:51.959Z"
-  },
-  {
-   "id": "148485c681deffdd",
-   "name": "The Riot Comedy Club Presents Sunday Night Standup Comedy Showcase",
-   "venue": "The Riot Comedy Club",
-   "date": "2026-12-20",
-   "time": "8:00 PM",
-   "price_min": 10,
-   "price_max": 10,
-   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-15-Saturday-11pm-0fd71212-large-thumb.png",
-   "ticket_url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-33",
-   "source": "standuptix",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "title pattern",
-   "first_seen": "2026-09-21T18:44:51.959Z"
-  },
-  {
-   "id": "aad53d915f69f0b9",
-   "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
-   "venue": "The Riot Comedy Club — Conroe",
-   "date": "2026-10-08",
-   "time": "8:00 PM",
-   "price_min": 9,
-   "price_max": 9,
-   "image_url": "https://www.riotconroe.com/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
-   "ticket_url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-10-08200000",
-   "source": "standuptix",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 7d out (min 14)",
-   "first_seen": "2026-09-22T01:58:53.716Z"
-  },
   {
    "id": "7166b9005483296a",
    "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
@@ -222,7 +14,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "venue excluded",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-09-22T01:58:53.716Z"
   },
   {
@@ -590,7 +382,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-09-23T01:52:29.299Z"
   },
   {
@@ -606,7 +398,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-09-23T17:54:50.404Z"
   },
   {
@@ -622,7 +414,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-09-23T17:54:50.404Z"
   },
   {
@@ -734,7 +526,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 1d out (min 14)",
+   "notable_reason": "only 0d out (min 14)",
    "first_seen": "2026-09-24T17:56:16.316Z"
   },
   {
@@ -878,7 +670,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-09-26T17:13:08.095Z"
   },
   {
@@ -1198,7 +990,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1214,7 +1006,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1230,7 +1022,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1246,7 +1038,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1262,7 +1054,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1278,7 +1070,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1294,7 +1086,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1310,7 +1102,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1326,7 +1118,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1342,7 +1134,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1358,7 +1150,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1374,7 +1166,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1390,7 +1182,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1406,7 +1198,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1422,7 +1214,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1438,7 +1230,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1454,7 +1246,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1470,7 +1262,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1486,7 +1278,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1502,7 +1294,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1518,7 +1310,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1534,7 +1326,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1550,7 +1342,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1566,7 +1358,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1582,7 +1374,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1598,7 +1390,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1614,7 +1406,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1630,7 +1422,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1646,7 +1438,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1662,7 +1454,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1678,7 +1470,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -2766,7 +2558,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 1d out (min 14)",
+   "notable_reason": "only 0d out (min 14)",
    "first_seen": "2026-09-28T20:10:41.923Z"
   },
   {
@@ -2782,7 +2574,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 2d out (min 14)",
+   "notable_reason": "only 1d out (min 14)",
    "first_seen": "2026-09-28T20:10:41.923Z"
   },
   {
@@ -2830,7 +2622,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 1d out (min 14)",
+   "notable_reason": "only 0d out (min 14)",
    "first_seen": "2026-09-29T02:48:36.348Z"
   },
   {
@@ -2894,7 +2686,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -2910,7 +2702,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -2926,7 +2718,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -2942,7 +2734,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -3006,7 +2798,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-09-30T18:30:09.420Z"
   },
   {
@@ -3102,7 +2894,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-10-01T18:56:47.376Z"
   },
   {
@@ -3118,7 +2910,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-10-01T18:56:47.376Z"
   },
   {
@@ -3200,6 +2992,214 @@
    "tier": null,
    "notable_reason": "title pattern",
    "first_seen": "2026-10-01T18:56:47.376Z"
+  },
+  {
+   "id": "ad1b786fd3aa53af",
+   "name": "Locals Only: A comedy showcase",
+   "venue": "The Pink Flamingo Comedy Club",
+   "date": "2026-10-14",
+   "time": "8:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194855631%2F2996872667695%2F1%2Foriginal.20261001-204337?auto=format%2Ccompress&q=75&sharp=10&s=3dfe15fdd0b8edfc85312d9e01f8038e",
+   "ticket_url": "https://www.eventbrite.com/e/locals-only-a-comedy-showcase-tickets-2002759260862",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "only 12d out (min 14)",
+   "first_seen": "2026-10-02T02:39:02.152Z"
+  },
+  {
+   "id": "4162e08cd1303fa7",
+   "name": "Thursday Night Comedy at The Pink Flamingo Comedy Club",
+   "venue": "The Pink Flamingo Comedy Club",
+   "date": "2026-10-15",
+   "time": "8:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194855238%2F2996872667695%2F1%2Foriginal.20261001-203925?auto=format%2Ccompress&q=75&sharp=10&s=198236df363335c2a2b12d4c324fb0d9",
+   "ticket_url": "https://www.eventbrite.com/e/thursday-night-comedy-at-the-pink-flamingo-comedy-club-tickets-2002759020142",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "only 13d out (min 14)",
+   "first_seen": "2026-10-02T02:39:02.152Z"
+  },
+  {
+   "id": "bdf4312add3c2ce7",
+   "name": "Thursday Night Comedy at The Pink Flamingo Comedy Club",
+   "venue": "The Pink Flamingo Comedy Club",
+   "date": "2026-10-22",
+   "time": "8:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194855238%2F2996872667695%2F1%2Foriginal.20261001-203925?auto=format%2Ccompress&q=75&sharp=10&s=198236df363335c2a2b12d4c324fb0d9",
+   "ticket_url": "https://www.eventbrite.com/e/thursday-night-comedy-at-the-pink-flamingo-comedy-club-tickets-2002759021145",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "recurring series (9 weeks)",
+   "first_seen": "2026-10-02T02:39:02.152Z"
+  },
+  {
+   "id": "056a77acfeeb8e03",
+   "name": "Locals Only: A comedy showcase",
+   "venue": "The Pink Flamingo Comedy Club",
+   "date": "2026-10-28",
+   "time": "8:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194855631%2F2996872667695%2F1%2Foriginal.20261001-204337?auto=format%2Ccompress&q=75&sharp=10&s=3dfe15fdd0b8edfc85312d9e01f8038e",
+   "ticket_url": "https://www.eventbrite.com/e/locals-only-a-comedy-showcase-tickets-2002759261865",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-02T02:39:02.152Z"
+  },
+  {
+   "id": "58f9ce1e082ae3c7",
+   "name": "Thursday Night Comedy at The Pink Flamingo Comedy Club",
+   "venue": "The Pink Flamingo Comedy Club",
+   "date": "2026-10-29",
+   "time": "8:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194855238%2F2996872667695%2F1%2Foriginal.20261001-203925?auto=format%2Ccompress&q=75&sharp=10&s=198236df363335c2a2b12d4c324fb0d9",
+   "ticket_url": "https://www.eventbrite.com/e/thursday-night-comedy-at-the-pink-flamingo-comedy-club-tickets-2002759022148",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "recurring series (9 weeks)",
+   "first_seen": "2026-10-02T02:39:02.152Z"
+  },
+  {
+   "id": "3b91ce6125f4b430",
+   "name": "Thursday Night Comedy at The Pink Flamingo Comedy Club",
+   "venue": "The Pink Flamingo Comedy Club",
+   "date": "2026-11-05",
+   "time": "8:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194855238%2F2996872667695%2F1%2Foriginal.20261001-203925?auto=format%2Ccompress&q=75&sharp=10&s=198236df363335c2a2b12d4c324fb0d9",
+   "ticket_url": "https://www.eventbrite.com/e/thursday-night-comedy-at-the-pink-flamingo-comedy-club-tickets-2002759023151",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "recurring series (9 weeks)",
+   "first_seen": "2026-10-02T02:39:02.152Z"
+  },
+  {
+   "id": "555339208567f4cd",
+   "name": "Locals Only: A comedy showcase",
+   "venue": "The Pink Flamingo Comedy Club",
+   "date": "2026-11-11",
+   "time": "8:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194855631%2F2996872667695%2F1%2Foriginal.20261001-204337?auto=format%2Ccompress&q=75&sharp=10&s=3dfe15fdd0b8edfc85312d9e01f8038e",
+   "ticket_url": "https://www.eventbrite.com/e/locals-only-a-comedy-showcase-tickets-2002759262868",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-02T02:39:02.152Z"
+  },
+  {
+   "id": "e6aca7ae29f28e65",
+   "name": "Thursday Night Comedy at The Pink Flamingo Comedy Club",
+   "venue": "The Pink Flamingo Comedy Club",
+   "date": "2026-11-12",
+   "time": "8:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194855238%2F2996872667695%2F1%2Foriginal.20261001-203925?auto=format%2Ccompress&q=75&sharp=10&s=198236df363335c2a2b12d4c324fb0d9",
+   "ticket_url": "https://www.eventbrite.com/e/thursday-night-comedy-at-the-pink-flamingo-comedy-club-tickets-2002759024154",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "recurring series (9 weeks)",
+   "first_seen": "2026-10-02T02:39:02.152Z"
+  },
+  {
+   "id": "451f864ebbcec4a9",
+   "name": "Thursday Night Comedy at The Pink Flamingo Comedy Club",
+   "venue": "The Pink Flamingo Comedy Club",
+   "date": "2026-11-19",
+   "time": "8:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194855238%2F2996872667695%2F1%2Foriginal.20261001-203925?auto=format%2Ccompress&q=75&sharp=10&s=198236df363335c2a2b12d4c324fb0d9",
+   "ticket_url": "https://www.eventbrite.com/e/thursday-night-comedy-at-the-pink-flamingo-comedy-club-tickets-2002759025157",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "recurring series (9 weeks)",
+   "first_seen": "2026-10-02T02:39:02.152Z"
+  },
+  {
+   "id": "c72f35772c40a93e",
+   "name": "Locals Only: A comedy showcase",
+   "venue": "The Pink Flamingo Comedy Club",
+   "date": "2026-11-25",
+   "time": "8:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194855631%2F2996872667695%2F1%2Foriginal.20261001-204337?auto=format%2Ccompress&q=75&sharp=10&s=3dfe15fdd0b8edfc85312d9e01f8038e",
+   "ticket_url": "https://www.eventbrite.com/e/locals-only-a-comedy-showcase-tickets-2002759263871",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-02T02:39:02.152Z"
+  },
+  {
+   "id": "9ed4c7d6cf81fe24",
+   "name": "Thursday Night Comedy at The Pink Flamingo Comedy Club",
+   "venue": "The Pink Flamingo Comedy Club",
+   "date": "2026-11-26",
+   "time": "8:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194855238%2F2996872667695%2F1%2Foriginal.20261001-203925?auto=format%2Ccompress&q=75&sharp=10&s=198236df363335c2a2b12d4c324fb0d9",
+   "ticket_url": "https://www.eventbrite.com/e/thursday-night-comedy-at-the-pink-flamingo-comedy-club-tickets-2002759026160",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "recurring series (9 weeks)",
+   "first_seen": "2026-10-02T02:39:02.152Z"
+  },
+  {
+   "id": "d2419a000231fb21",
+   "name": "Thursday Night Comedy at The Pink Flamingo Comedy Club",
+   "venue": "The Pink Flamingo Comedy Club",
+   "date": "2026-12-03",
+   "time": "8:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194855238%2F2996872667695%2F1%2Foriginal.20261001-203925?auto=format%2Ccompress&q=75&sharp=10&s=198236df363335c2a2b12d4c324fb0d9",
+   "ticket_url": "https://www.eventbrite.com/e/thursday-night-comedy-at-the-pink-flamingo-comedy-club-tickets-2002759027163",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "recurring series (9 weeks)",
+   "first_seen": "2026-10-02T02:39:02.152Z"
+  },
+  {
+   "id": "fe661246e84c581a",
+   "name": "Thursday Night Comedy at The Pink Flamingo Comedy Club",
+   "venue": "The Pink Flamingo Comedy Club",
+   "date": "2026-12-10",
+   "time": "8:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194855238%2F2996872667695%2F1%2Foriginal.20261001-203925?auto=format%2Ccompress&q=75&sharp=10&s=198236df363335c2a2b12d4c324fb0d9",
+   "ticket_url": "https://www.eventbrite.com/e/thursday-night-comedy-at-the-pink-flamingo-comedy-club-tickets-2002759028166",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "recurring series (9 weeks)",
+   "first_seen": "2026-10-02T02:39:02.152Z"
   }
  ]
 }
