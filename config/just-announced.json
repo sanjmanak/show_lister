@@ -1,22 +1,6 @@
 {
- "updated": "2026-10-02T18:29:30.671Z",
+ "updated": "2026-10-03T02:23:52.387Z",
  "announcements": [
-  {
-   "id": "aeaeb6f499633a9d",
-   "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
-   "venue": "The Riot Comedy Club — Conroe",
-   "date": "2026-11-07",
-   "time": "9:00 PM",
-   "price_min": 15,
-   "price_max": 15,
-   "image_url": "https://www.riotconroe.com/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
-   "ticket_url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-07210000",
-   "source": "standuptix",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "venue excluded",
-   "first_seen": "2026-09-22T01:58:53.716Z"
-  },
   {
    "id": "9d415b69b075cc86",
    "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
@@ -302,7 +286,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-09-23T01:52:29.299Z"
   },
   {
@@ -318,7 +302,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-09-23T17:54:50.404Z"
   },
   {
@@ -334,7 +318,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-09-23T17:54:50.404Z"
   },
   {
@@ -446,7 +430,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 0d out (min 14)",
+   "notable_reason": "only -1d out (min 14)",
    "first_seen": "2026-09-24T17:56:16.316Z"
   },
   {
@@ -590,7 +574,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-09-26T17:13:08.095Z"
   },
   {
@@ -734,7 +718,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "small room",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-09-27T17:47:47.754Z"
   },
   {
@@ -910,7 +894,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 2d out (min 14)",
+   "notable_reason": "only 1d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -926,7 +910,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 2d out (min 14)",
+   "notable_reason": "only 1d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -942,7 +926,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 2d out (min 14)",
+   "notable_reason": "only 1d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -958,7 +942,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -974,7 +958,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -990,7 +974,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1006,7 +990,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1022,7 +1006,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1038,7 +1022,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1054,7 +1038,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1070,7 +1054,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1086,7 +1070,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1102,7 +1086,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1118,7 +1102,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1134,7 +1118,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1150,7 +1134,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1166,7 +1150,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1182,7 +1166,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1198,7 +1182,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1214,7 +1198,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1230,7 +1214,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1246,7 +1230,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1262,7 +1246,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1278,7 +1262,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1294,7 +1278,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1310,7 +1294,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1326,7 +1310,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1342,7 +1326,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1358,7 +1342,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1374,7 +1358,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1390,7 +1374,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1406,7 +1390,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1422,7 +1406,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1438,7 +1422,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -2478,7 +2462,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 0d out (min 14)",
+   "notable_reason": "only -1d out (min 14)",
    "first_seen": "2026-09-28T20:10:41.923Z"
   },
   {
@@ -2494,7 +2478,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 1d out (min 14)",
+   "notable_reason": "only 0d out (min 14)",
    "first_seen": "2026-09-28T20:10:41.923Z"
   },
   {
@@ -2542,7 +2526,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 0d out (min 14)",
+   "notable_reason": "only -1d out (min 14)",
    "first_seen": "2026-09-29T02:48:36.348Z"
   },
   {
@@ -2606,7 +2590,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 2d out (min 14)",
+   "notable_reason": "only 1d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -2622,7 +2606,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -2638,7 +2622,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -2654,7 +2638,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -2718,7 +2702,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-09-30T18:30:09.420Z"
   },
   {
@@ -2814,7 +2798,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-10-01T18:56:47.376Z"
   },
   {
@@ -2830,7 +2814,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-10-01T18:56:47.376Z"
   },
   {
@@ -2926,7 +2910,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-10-02T02:39:02.152Z"
   },
   {
@@ -2942,7 +2926,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-10-02T02:39:02.152Z"
   },
   {
@@ -3200,6 +3184,22 @@
    "tier": null,
    "notable_reason": "title pattern",
    "first_seen": "2026-10-02T18:29:30.671Z"
+  },
+  {
+   "id": "eeae647870dc2d43",
+   "name": "Comedian Tara Cannistraci Headlines The Riot Houston",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-11-08",
+   "time": "8:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/events/IMG-0502-7eb50787-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/comedian-tara-cannistraci-headlines-the-riot-houston",
+   "source": "standuptix",
+   "notable": true,
+   "tier": "headliner_room",
+   "notable_reason": "headliner room",
+   "first_seen": "2026-10-03T02:23:52.387Z"
   }
  ]
 }
