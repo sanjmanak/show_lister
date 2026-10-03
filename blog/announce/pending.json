@@ -1,3 +1,21 @@
 {
-  "items": []
+  "generated_at": "2026-10-03T18:49:16.872Z",
+  "dry_run": false,
+  "items": [
+    {
+      "id": "eeae647870dc2d43",
+      "name": "Comedian Tara Cannistraci Headlines The Riot Houston",
+      "performer_name": "Tara Cannistraci",
+      "venue": "The Riot Comedy Club",
+      "date": "2026-11-08",
+      "ticket_url": "https://www.theriothtx.com/events/comedian-tara-cannistraci-headlines-the-riot-houston",
+      "files": {
+        "portrait": "2026-11-08-tara-cannistraci-portrait.png",
+        "story": "2026-11-08-tara-cannistraci-story.png",
+        "reel": "2026-11-08-tara-cannistraci.mp4"
+      },
+      "caption": "The comic behind the debut special I'm Just a Girl has family chaos in her sights.\nTara Cannistraci performs at The Riot Comedy Club on November 8, 2026. Her debut special, I'm Just a Girl, is available online. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
+      "confidence": 0.9
+    }
+  ]
 }
