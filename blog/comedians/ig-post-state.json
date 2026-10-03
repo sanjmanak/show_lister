@@ -50,15 +50,6 @@
   "manifest_version": 1788808574915,
   "cleanup_queue": [
     {
-      "slug": "rick-glassman-punch-line-houston-2026-10-01",
-      "comedianName": "Rick Glassman",
-      "igFeedMediaId": "18098809946636530",
-      "igStoryMediaId": "18127193656888067",
-      "fbFeedPostId": "1415322534025821",
-      "fbStoryPostId": "1422792156467669",
-      "postedAt": "2026-09-28T11:08:42.555Z"
-    },
-    {
       "slug": "just-nesh-houston-improv-2026-10-01",
       "comedianName": "Just Nesh",
       "igFeedMediaId": "18360462013301546",
