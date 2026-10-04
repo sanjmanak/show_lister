@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-10-03T17:19:05.349Z",
+  "last_updated": "2026-10-04T17:37:30.412Z",
   "entries": {
     "156fd23bf1b4b0a5": {
       "price_min": 68.48,
@@ -74,14 +74,6 @@
       "url": "https://www.ticketweb.com/event/giulio-gallarotti-live-in-houston-houston-improv-tickets/14811233?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-08-17T14:45:13.479Z"
     },
-    "88b1f8dcf12bab83": {
-      "price_min": 37.58,
-      "price_max": 37.58,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/ari-matti-houston-improv-tickets/15045033?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-09-01T17:51:33.716Z"
-    },
     "f3f2fc613ede0656": {
       "price_min": 31.4,
       "price_max": 31.4,
@@ -129,14 +121,6 @@
       "source": "page",
       "url": "https://www.eventbrite.com/e/gus-ryan-sean-live-tickets-1991931685292",
       "fetched_at": "2026-09-09T01:38:10.081Z"
-    },
-    "b177beb6186d7230": {
-      "price_min": 25.09,
-      "price_max": 30.87,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/pat-oneill-live-in-houston-tickets-1992457859092",
-      "fetched_at": "2026-09-09T01:38:11.335Z"
     },
     "735cd3851322fc99": {
       "price_min": 30.87,
