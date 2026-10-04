@@ -1,47 +1,11 @@
 {
-  "generated_at": "2026-09-30T18:00:30.565Z",
+  "generated_at": "2026-10-04T17:45:59.014Z",
   "source_manifests": [
-    "manifest-2026-09-28.json",
     "manifest-2026-10-05.json",
     "manifest-2026-10-12.json",
     "manifest-2026-10-19.json"
   ],
   "posts": [
-    {
-      "date": "2026-10-01",
-      "comedianName": "Just Nesh",
-      "slug": "just-nesh-houston-improv-2026-10-01",
-      "wpLink": "https://comedyhouston.com/just-nesh-houston-improv-2026-10-01/",
-      "venue": "Houston Improv"
-    },
-    {
-      "date": "2026-10-01",
-      "comedianName": "Rick Glassman",
-      "slug": "rick-glassman-punch-line-houston-2026-10-01",
-      "wpLink": "https://comedyhouston.com/rick-glassman-punch-line-houston-2026-10-01/",
-      "venue": "Punch Line Houston"
-    },
-    {
-      "date": "2026-10-02",
-      "comedianName": "Henry Sir",
-      "slug": "henry-sir-the-riot-comedy-club-2026-10-02",
-      "wpLink": "https://comedyhouston.com/henry-sir-the-riot-comedy-club-2026-10-02/",
-      "venue": "The Riot Comedy Club"
-    },
-    {
-      "date": "2026-10-02",
-      "comedianName": "Jeff Dye",
-      "slug": "jeff-dye-the-riot-comedy-club-conroe-2026-10-02",
-      "wpLink": "https://comedyhouston.com/jeff-dye-the-riot-comedy-club-conroe-2026-10-02/",
-      "venue": "The Riot Comedy Club — Conroe"
-    },
-    {
-      "date": "2026-10-02",
-      "comedianName": "Jo Koy",
-      "slug": "jo-koy-toyota-center-tx-2026-10-02",
-      "wpLink": "https://comedyhouston.com/jo-koy-toyota-center-tx-2026-10-02/",
-      "venue": "Toyota Center - TX"
-    },
     {
       "date": "2026-10-06",
       "comedianName": "Manuel Ángel Redondo",

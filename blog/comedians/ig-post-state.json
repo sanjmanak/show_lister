@@ -50,33 +50,6 @@
   "manifest_version": 1788808574915,
   "cleanup_queue": [
     {
-      "slug": "just-nesh-houston-improv-2026-10-01",
-      "comedianName": "Just Nesh",
-      "igFeedMediaId": "18360462013301546",
-      "igStoryMediaId": "18410498083085974",
-      "fbFeedPostId": "1415794003978674",
-      "fbStoryPostId": "1819846252670899",
-      "postedAt": "2026-09-28T22:11:20.905Z"
-    },
-    {
-      "slug": "henry-sir-the-riot-comedy-club-2026-10-02",
-      "comedianName": "Henry Sir",
-      "igFeedMediaId": "18148806274549603",
-      "igStoryMediaId": "17893603077426633",
-      "fbFeedPostId": "1415921300632611",
-      "fbStoryPostId": "1567144911331848",
-      "postedAt": "2026-09-29T02:07:11.076Z"
-    },
-    {
-      "slug": "jeff-dye-the-riot-comedy-club-conroe-2026-10-02",
-      "comedianName": "Jeff Dye",
-      "igFeedMediaId": "18008496434988326",
-      "igStoryMediaId": "18184476019423312",
-      "fbFeedPostId": "1416250237266384",
-      "fbStoryPostId": "1753665445753409",
-      "postedAt": "2026-09-29T10:49:16.551Z"
-    },
-    {
       "slug": "jo-koy-toyota-center-tx-2026-10-02",
       "comedianName": "Jo Koy",
       "igFeedMediaId": "18018910514947117",
