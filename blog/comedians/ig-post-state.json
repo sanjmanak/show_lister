@@ -14,15 +14,6 @@
   "manifest_version": 1790038778423,
   "cleanup_queue": [
     {
-      "slug": "jo-koy-toyota-center-tx-2026-10-02",
-      "comedianName": "Jo Koy",
-      "igFeedMediaId": "18018910514947117",
-      "igStoryMediaId": "17985527181093756",
-      "fbFeedPostId": "1416686123889462",
-      "fbStoryPostId": "1626519832451642",
-      "postedAt": "2026-09-29T20:56:26.631Z"
-    },
-    {
       "slug": "manuel-ngel-redondo-punch-line-houston-2026-10-06",
       "comedianName": "Manuel Ángel Redondo",
       "igFeedMediaId": "18022783634872294",
