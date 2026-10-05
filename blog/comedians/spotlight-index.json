@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-10-04T17:45:59.014Z",
+  "generated_at": "2026-10-05T22:11:15.364Z",
   "source_manifests": [
     "manifest-2026-10-05.json",
     "manifest-2026-10-12.json",
-    "manifest-2026-10-19.json"
+    "manifest-2026-10-19.json",
+    "manifest-2026-10-26.json"
   ],
   "posts": [
     {
@@ -109,6 +110,41 @@
       "comedianName": "Josh Gondelman",
       "slug": "josh-gondelman-punch-line-houston-2026-10-22",
       "wpLink": "https://comedyhouston.com/josh-gondelman-punch-line-houston-2026-10-22/",
+      "venue": "Punch Line Houston"
+    },
+    {
+      "date": "2026-10-26",
+      "comedianName": "Abby Govindan",
+      "slug": "abby-govindan-the-secret-group-2026-10-26",
+      "wpLink": "https://comedyhouston.com/abby-govindan-the-secret-group-2026-10-26/",
+      "venue": "The Secret Group"
+    },
+    {
+      "date": "2026-10-27",
+      "comedianName": "Daniel Sloss",
+      "slug": "daniel-sloss-bayou-music-center-2026-10-27",
+      "wpLink": "https://comedyhouston.com/daniel-sloss-bayou-music-center-2026-10-27/",
+      "venue": "Bayou Music Center"
+    },
+    {
+      "date": "2026-10-28",
+      "comedianName": "Dave Chappelle",
+      "slug": "dave-chappelle-toyota-center-tx-2026-10-28",
+      "wpLink": "https://comedyhouston.com/dave-chappelle-toyota-center-tx-2026-10-28/",
+      "venue": "Toyota Center - TX"
+    },
+    {
+      "date": "2026-10-28",
+      "comedianName": "Marito Lopez",
+      "slug": "marito-lopez-punch-line-houston-2026-10-28",
+      "wpLink": "https://comedyhouston.com/marito-lopez-punch-line-houston-2026-10-28/",
+      "venue": "Punch Line Houston"
+    },
+    {
+      "date": "2026-10-29",
+      "comedianName": "D'Lai",
+      "slug": "dlai-punch-line-houston-2026-10-29",
+      "wpLink": "https://comedyhouston.com/dlai-punch-line-houston-2026-10-29/",
       "venue": "Punch Line Houston"
     }
   ]
