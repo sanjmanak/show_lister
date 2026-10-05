@@ -2260,6 +2260,92 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-10-04"
+    },
+    "t. murph": {
+      "tags": [
+        "black-comedy"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-05"
+    },
+    "chloe radcliffe": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-05"
+    },
+    "grief sucks: a one man show by kevonstage": {
+      "tags": [
+        "black-comedy"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-05"
+    },
+    "gabby bryan": {
+      "tags": [
+        "black-comedy"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-05"
+    },
+    "the best of tsg headliner series - larry goodwell": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-05"
+    },
+    "the best of tsg headliner series - jamal rahal": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-05"
+    },
+    "the best of tsg headliner series - ben daniel": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-05"
+    },
+    "the best of tsg headliner series - netra netra netra": {
+      "tags": [
+        "black-comedy"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-05"
+    },
+    "the best of tsg headliner series - danny guerrero": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-05"
+    },
+    "the best of tsg headliner series - tess vergult": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-05"
+    },
+    "the best of tsg headliner series - steve cantwell": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-05"
+    },
+    "the best of tsg headliner series - raambo2funny": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-05"
+    },
+    "comedian javi bailon headlines the riot comedy club": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-05"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-10-04T17:37:30.412Z",
+  "last_updated": "2026-10-05T21:15:27.405Z",
   "entries": {
     "156fd23bf1b4b0a5": {
       "price_min": 68.48,
@@ -17,14 +17,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/craig-conant-houston-improv-tickets/14824993?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-07-19T00:21:45.367Z"
-    },
-    "b62b297c78546832": {
-      "price_min": 56.12,
-      "price_max": 56.12,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/damitas-histeria-houston-improv-tickets/15030183?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-08-17T14:44:50.911Z"
     },
     "5f7fd6557b66798a": {
       "price_min": 31.4,
