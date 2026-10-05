@@ -1,53 +1,17 @@
 {
   "posted": [
     {
-      "slug": "rick-glassman-punch-line-houston-2026-10-01",
-      "comedianName": "Rick Glassman",
-      "igFeedMediaId": "18098809946636530",
-      "igStoryMediaId": "18127193656888067",
-      "fbFeedPostId": "1415322534025821",
-      "fbStoryPostId": "1422792156467669",
-      "postedAt": "2026-09-28T11:08:42.555Z"
-    },
-    {
-      "slug": "just-nesh-houston-improv-2026-10-01",
-      "comedianName": "Just Nesh",
-      "igFeedMediaId": "18360462013301546",
-      "igStoryMediaId": "18410498083085974",
-      "fbFeedPostId": "1415794003978674",
-      "fbStoryPostId": "1819846252670899",
-      "postedAt": "2026-09-28T22:11:20.905Z"
-    },
-    {
-      "slug": "henry-sir-the-riot-comedy-club-2026-10-02",
-      "comedianName": "Henry Sir",
-      "igFeedMediaId": "18148806274549603",
-      "igStoryMediaId": "17893603077426633",
-      "fbFeedPostId": "1415921300632611",
-      "fbStoryPostId": "1567144911331848",
-      "postedAt": "2026-09-29T02:07:11.076Z"
-    },
-    {
-      "slug": "jeff-dye-the-riot-comedy-club-conroe-2026-10-02",
-      "comedianName": "Jeff Dye",
-      "igFeedMediaId": "18008496434988326",
-      "igStoryMediaId": "18184476019423312",
-      "fbFeedPostId": "1416250237266384",
-      "fbStoryPostId": "1753665445753409",
-      "postedAt": "2026-09-29T10:49:16.551Z"
-    },
-    {
-      "slug": "jo-koy-toyota-center-tx-2026-10-02",
-      "comedianName": "Jo Koy",
-      "igFeedMediaId": "18018910514947117",
-      "igStoryMediaId": "17985527181093756",
-      "fbFeedPostId": "1416686123889462",
-      "fbStoryPostId": "1626519832451642",
-      "postedAt": "2026-09-29T20:56:26.631Z"
+      "slug": "manuel-ngel-redondo-punch-line-houston-2026-10-06",
+      "comedianName": "Manuel Ángel Redondo",
+      "igFeedMediaId": "18022783634872294",
+      "igStoryMediaId": "18424656586146508",
+      "fbFeedPostId": "1421908483367226",
+      "fbStoryPostId": "2333493737186731",
+      "postedAt": "2026-10-05T11:44:34.818Z"
     }
   ],
-  "week_range": "September 28 – October 4, 2026",
-  "manifest_version": 1788808574915,
+  "week_range": "October 5 – October 11, 2026",
+  "manifest_version": 1790038778423,
   "cleanup_queue": [
     {
       "slug": "jo-koy-toyota-center-tx-2026-10-02",
@@ -57,6 +21,15 @@
       "fbFeedPostId": "1416686123889462",
       "fbStoryPostId": "1626519832451642",
       "postedAt": "2026-09-29T20:56:26.631Z"
+    },
+    {
+      "slug": "manuel-ngel-redondo-punch-line-houston-2026-10-06",
+      "comedianName": "Manuel Ángel Redondo",
+      "igFeedMediaId": "18022783634872294",
+      "igStoryMediaId": "18424656586146508",
+      "fbFeedPostId": "1421908483367226",
+      "fbStoryPostId": "2333493737186731",
+      "postedAt": "2026-10-05T11:44:34.818Z"
     }
   ]
 }
