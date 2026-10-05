@@ -1,117 +1,117 @@
 {
-  "generated_at": "2026-09-28T21:13:19.945Z",
-  "week_range": "September 28 – October 4, 2026",
+  "generated_at": "2026-10-05T21:59:36.054Z",
+  "week_range": "October 5 – October 11, 2026",
   "comedians": [
     {
-      "name": "Jo Koy",
-      "displayName": "Jo Koy",
+      "name": "John Mulaney",
+      "displayName": "John Mulaney",
       "names": [
-        "Jo Koy"
+        "John Mulaney"
       ],
-      "show": "Jo Koy",
-      "venue": "Toyota Center - TX",
-      "date": "2026-10-02",
-      "eventKey": "jokoy@toyotacentertx",
-      "imageUrl": "https://s1.ticketm.net/dam/a/fb8/e45d0f19-ccb4-4ee3-93d3-7c3b1ff8efb8_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/fb8/e45d0f19-ccb4-4ee3-93d3-7c3b1ff8efb8_SOURCE",
+      "show": "John Mulaney",
+      "venue": "The Grand 1894 Opera House - TX",
+      "date": "2026-10-11",
+      "eventKey": "johnmulaney@thegrand1894operahousetx",
+      "imageUrl": "https://s1.ticketm.net/dam/a/b30/ccd9ebe2-c301-4487-bbe4-5bd6be744b30_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/b30/ccd9ebe2-c301-4487-bbe4-5bd6be744b30_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Rodney Carrington",
-      "displayName": "Rodney Carrington",
+      "name": "Heather Shaw",
+      "displayName": "Heather Shaw",
       "names": [
-        "Rodney Carrington"
+        "Heather Shaw"
       ],
-      "show": "Rodney Carrington",
-      "venue": "Smart Financial Centre at Sugar Land",
-      "date": "2026-10-03",
-      "eventKey": "rodneycarrington@smartfinancialcentreatsugarland",
-      "imageUrl": "https://s1.ticketm.net/dam/a/2a5/511e89de-d97c-4259-b7b9-d7c9724552a5_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "displayImage": "https://s1.ticketm.net/dam/a/2a5/511e89de-d97c-4259-b7b9-d7c9724552a5_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "show": "Heather Shaw (The Today Show) Headlines The Riot Comedy Club",
+      "venue": "The Riot Comedy Club",
+      "date": "2026-10-09",
+      "eventKey": "heathershawthetodayshowheadlinestheriotcomedyclub@theriotcomedyclub",
+      "imageUrl": "https://www.theriothtx.com/img/shows/IMG-0442-7d360778-large-thumb.jpg",
+      "displayImage": "https://www.theriothtx.com/img/shows/IMG-0442-7d360778-large-thumb.jpg",
       "imageSource": "event"
     },
     {
-      "name": "Tommy Davidson",
-      "displayName": "Tommy Davidson",
+      "name": "Manuel Ángel Redondo",
+      "displayName": "Manuel Ángel Redondo",
       "names": [
-        "Tommy Davidson"
+        "Manuel Ángel Redondo"
       ],
-      "show": "I'm Ready Foundation Presents: Tommy Davidson Live & Uncut",
-      "venue": "Nathaniel Center",
-      "date": "2026-10-03",
-      "eventKey": "imreadyfoundationpresentstommydavidsonliveuncut@nathanielcenter",
-      "imageUrl": "https://s1.ticketm.net/dam/a/d9e/9a8f8cfa-57c0-4e0c-91f4-d151d795fd9e_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/d9e/9a8f8cfa-57c0-4e0c-91f4-d151d795fd9e_SOURCE",
+      "show": "Manuel Ángel Redondo (En Español)",
+      "venue": "Punch Line Houston",
+      "date": "2026-10-06",
+      "eventKey": "manuelngelredondoenespaol@punchlinehouston",
+      "imageUrl": "https://s1.ticketm.net/dam/e/774/32399a10-04d6-4997-8445-cbef8e39c774_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/e/774/32399a10-04d6-4997-8445-cbef8e39c774_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Just Nesh",
-      "displayName": "Just Nesh",
+      "name": "Craig Conant",
+      "displayName": "Craig Conant",
       "names": [
-        "Just Nesh"
+        "Craig Conant"
       ],
-      "show": "Just Nesh",
+      "show": "Craig Conant",
       "venue": "Houston Improv",
-      "date": "2026-10-01",
-      "eventKey": "justnesh@houstonimprov",
+      "date": "2026-10-09",
+      "eventKey": "craigconant@houstonimprov",
       "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "displayImage": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "imageSource": "event"
     },
     {
-      "name": "Kevin Sullivan",
-      "displayName": "Kevin Sullivan",
+      "name": "Gauri B",
+      "displayName": "Gauri B",
       "names": [
-        "Kevin Sullivan"
+        "Gauri B"
       ],
-      "show": "Kevin Sullivan",
-      "venue": "Punch Line Houston",
-      "date": "2026-09-30",
-      "eventKey": "kevinsullivan@punchlinehouston",
-      "imageUrl": "https://s1.ticketm.net/dam/a/ed4/2cbeec80-fc30-4baa-9eaf-e59d96ea3ed4_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "displayImage": "https://s1.ticketm.net/dam/a/ed4/2cbeec80-fc30-4baa-9eaf-e59d96ea3ed4_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "show": "GAURI B: YEARS IN THE BREAKING",
+      "venue": "White Oak Music Hall - Upstairs",
+      "date": "2026-10-08",
+      "eventKey": "gauribyearsinthebreaking@whiteoakmusichallupstairs",
+      "imageUrl": "https://s1.ticketm.net/dam/e/2aa/53cdaee4-36c6-4d50-bcd5-a158ef0182aa_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "displayImage": "https://s1.ticketm.net/dam/e/2aa/53cdaee4-36c6-4d50-bcd5-a158ef0182aa_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "imageSource": "event"
     },
     {
-      "name": "Rick Glassman",
-      "displayName": "Rick Glassman",
+      "name": "Richie O’Farrill",
+      "displayName": "Richie O’Farrill",
       "names": [
-        "Rick Glassman"
+        "Richie O’Farrill"
       ],
-      "show": "Rick Glassman",
-      "venue": "Punch Line Houston",
-      "date": "2026-10-01",
-      "eventKey": "rickglassman@punchlinehouston",
-      "imageUrl": "https://s1.ticketm.net/dam/a/378/6a83fd48-d1ba-4955-bb12-7c8ae48dd378_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/378/6a83fd48-d1ba-4955-bb12-7c8ae48dd378_SOURCE",
+      "show": "Richie O’Farrill - En Español",
+      "venue": "Houston Improv",
+      "date": "2026-10-07",
+      "eventKey": "richieofarrillenespaol@houstonimprov",
+      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "displayImage": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "imageSource": "event"
     },
     {
-      "name": "Poly Diaz",
-      "displayName": "Poly Diaz",
+      "name": "Winston Hodges",
+      "displayName": "Winston Hodges",
       "names": [
-        "Poly Diaz"
+        "Winston Hodges"
       ],
-      "show": "Poly Diaz (En Español)",
+      "show": "Winston Hodges",
       "venue": "Punch Line Houston",
-      "date": "2026-09-29",
-      "eventKey": "polydiazenespaol@punchlinehouston",
-      "imageUrl": "https://s1.ticketm.net/dam/a/46b/b02509bd-4380-43c8-b78d-f269a917446b_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/46b/b02509bd-4380-43c8-b78d-f269a917446b_SOURCE",
+      "date": "2026-10-08",
+      "eventKey": "winstonhodges@punchlinehouston",
+      "imageUrl": "https://s1.ticketm.net/dam/a/58f/a856a90f-735f-4102-b494-0826dee4458f_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/58f/a856a90f-735f-4102-b494-0826dee4458f_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Jeff Dye",
-      "displayName": "Jeff Dye",
+      "name": "Holmes",
+      "displayName": "Holmes",
       "names": [
-        "Jeff Dye"
+        "Holmes"
       ],
-      "show": "Comedian Jeff Dye (Gutfeld!, The Tonight Show) Live in Conroe",
-      "venue": "The Riot Comedy Club — Conroe",
-      "date": "2026-10-02",
-      "eventKey": "comedianjeffdyegutfeldthetonightshowliveinconroe@theriotcomedyclubconroe",
-      "imageUrl": "https://www.riotconroe.com/img/events/Jeff-Dye23-9a7b08e0-large-thumb.png",
-      "displayImage": "https://www.riotconroe.com/img/events/Jeff-Dye23-9a7b08e0-large-thumb.png",
+      "show": "Holmes",
+      "venue": "Punch Line Houston",
+      "date": "2026-10-07",
+      "eventKey": "holmes@punchlinehouston",
+      "imageUrl": "https://s1.ticketm.net/dam/a/ae9/10bf613c-34b5-4808-9280-20a08fc40ae9_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/ae9/10bf613c-34b5-4808-9280-20a08fc40ae9_SOURCE",
       "imageSource": "event"
     }
   ]
