@@ -1,3 +1,21 @@
 {
-  "items": []
+  "generated_at": "2026-10-06T20:32:35.086Z",
+  "dry_run": false,
+  "items": [
+    {
+      "id": "6cb1691d1db3e595",
+      "name": "Chloe Radcliffe",
+      "performer_name": "Chloe Radcliffe",
+      "venue": "Punch Line Houston",
+      "date": "2026-12-16",
+      "ticket_url": "https://www.ticketmaster.com/chloe-radcliffe-houston-texas-12-16-2026/event/3A0065369C3DD8EB",
+      "files": {
+        "portrait": "2026-12-16-chloe-radcliffe-portrait.png",
+        "story": "2026-12-16-chloe-radcliffe-story.png",
+        "reel": "2026-12-16-chloe-radcliffe.mp4"
+      },
+      "caption": "Her debut special CHEAT turns a messy affair into a tightly built stand-up hour.\nChloe Radcliffe performs at Punch Line Houston on December 16, 2026. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
+      "confidence": 0.89
+    }
+  ]
 }
