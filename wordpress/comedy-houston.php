@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.16.2
+ * Version: 2.16.3
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.16.2';
+    const VERSION      = '2.16.3';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -114,11 +114,13 @@ class Comedy_Houston_Plugin {
         add_action('rest_api_init', [$this, 'register_noindex_fields']);
         add_action('wp_head', [$this, 'emit_noindex_meta'], 0);
 
-        // Keep crawlers away from ?ch_go= redirect URLs (crawl budget).
-        // Only affects WordPress's virtual robots.txt — if a physical
-        // robots.txt file exists on the server, this filter never runs and
-        // the disallow rules must be added to that file by hand.
-        add_filter('robots_txt', [$this, 'filter_robots_txt'], 10, 2);
+        // ?ch_go= redirect URLs are kept out of the index by the X-Robots-Tag
+        // header in handle_redirect(). They are deliberately NOT disallowed in
+        // robots.txt any more: a disallow stops Google from fetching the URL,
+        // so it never sees the noindex and indexes the bare URL from anchor
+        // text instead ("indexed, though blocked by robots.txt"). Search
+        // Console showed /?ch_go= URLs earning impressions for "the den comedy
+        // club" that belong to the venue page (2026-10-05). Removed in 2.16.3.
 
         // Comedian-post schema: receive via REST custom field, emit from wp_head.
         // Keeps the <script type="application/ld+json"> tag out of post_content
@@ -441,8 +443,9 @@ class Comedy_Houston_Plugin {
         }
 
         // Every ?ch_go= URL is a tracking redirect — it must never be indexed
-        // (each base64 payload is a unique URL, so crawlers would otherwise
-        // burn crawl budget on thousands of duplicate redirect URLs).
+        // (each base64 payload is a unique URL). This header is the only
+        // thing keeping them out: do not add a robots.txt disallow for them,
+        // because a blocked URL is never fetched and the noindex never seen.
         if (!headers_sent()) {
             header('X-Robots-Tag: noindex, nofollow', true);
         }
@@ -504,23 +507,6 @@ class Comedy_Houston_Plugin {
         // Redirect — use wp_redirect since it's an external URL
         wp_redirect(esc_url_raw($target_url), 302);
         exit;
-    }
-
-    /**
-     * Append ?ch_go= disallow rules to WordPress's virtual robots.txt.
-     * Every redirect payload is a unique URL; without this, crawlers spend
-     * their budget on thousands of 302s instead of real content pages.
-     */
-    public function filter_robots_txt($output, $public) {
-        if (!$public) {
-            return $output;
-        }
-        $rules = "\n# Comedy Houston: ticket-click redirect URLs (tracking 302s, not content)\n"
-            . "User-agent: *\n"
-            . "Disallow: /?ch_go=\n"
-            . "Disallow: /*?ch_go=\n"
-            . "Disallow: /*&ch_go=\n";
-        return $output . $rules;
     }
 
     /**
