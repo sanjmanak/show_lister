@@ -843,7 +843,7 @@ function normalizeTM(ev) {
   const priceMax = priceRanges.length > 0 ? priceRanges[0].max : null;
   const currency = priceRanges.length > 0 ? priceRanges[0].currency : "USD";
 
-  const image = pickBestImage(ev.images || []);
+  const image = pickEventImage(ev);
   const ageRestriction =
     ev.ageRestrictions && ev.ageRestrictions.legalAgeEnforced ? "18+" : null;
 
@@ -900,13 +900,51 @@ function mapTMStatus(code) {
   return map[code] || "unknown";
 }
 
+/**
+ * Ticketmaster serves a stock "category" photo (stage lights, a crowd) when
+ * an event has no artwork of its own. Those live under /dam/c/ on
+ * s1.ticketm.net; real event art is /dam/e/ and artist photos are /dam/a/.
+ * TicketWeb-fulfilled rooms (Houston Improv) hit this on almost every show,
+ * so 22 Improv events carried the identical stage-lights image in Oct 2026
+ * and the weekly collage ran it next to real headshots.
+ */
+function isTmPlaceholderImage(url) {
+  return typeof url === "string" && /\/dam\/c\//i.test(url);
+}
+
 function pickBestImage(images) {
   if (!images || images.length === 0) return null;
+  // Real artwork beats a category placeholder regardless of size.
+  const real = images.filter((i) => i && i.url && !isTmPlaceholderImage(i.url));
+  const candidates = real.length > 0 ? real : images.filter((i) => i && i.url);
+  if (candidates.length === 0) return null;
   // Prefer 16:9 ratio, largest width
-  const ratio16x9 = images.filter((i) => i.ratio === "16_9");
-  const pool = ratio16x9.length > 0 ? ratio16x9 : images;
+  const ratio16x9 = candidates.filter((i) => i.ratio === "16_9");
+  const pool = ratio16x9.length > 0 ? ratio16x9 : candidates;
   pool.sort((a, b) => (b.width || 0) - (a.width || 0));
   return pool[0].url || null;
+}
+
+/**
+ * Event image, falling back to the headliner's Ticketmaster artist photo
+ * when the event itself only has a category placeholder. The Discovery API
+ * embeds attractions (with their own image sets) on every event, so this
+ * costs no extra request. A placeholder is still returned when nothing
+ * better exists: the site's event cards can show it, and the collage /
+ * spotlight templates reject it via image-utils and use initials instead.
+ */
+function pickEventImage(ev) {
+  const own = pickBestImage(ev.images || []);
+  if (own && !isTmPlaceholderImage(own)) return own;
+  const attractions =
+    ev._embedded && Array.isArray(ev._embedded.attractions)
+      ? ev._embedded.attractions
+      : [];
+  for (const a of attractions) {
+    const pic = pickBestImage(a && a.images ? a.images : []);
+    if (pic && !isTmPlaceholderImage(pic)) return pic;
+  }
+  return own;
 }
 
 // ---------------------------------------------------------------------------
@@ -1946,7 +1984,15 @@ function backfillEvent(winner, loser) {
       winner.price_source = loser.price_source || "api";
     }
   }
-  if (!winner.image_url) winner.image_url = loser.image_url;
+  if (
+    (!winner.image_url || isTmPlaceholderImage(winner.image_url)) &&
+    loser.image_url &&
+    !isTmPlaceholderImage(loser.image_url)
+  ) {
+    winner.image_url = loser.image_url;
+  } else if (!winner.image_url) {
+    winner.image_url = loser.image_url;
+  }
   if (!winner.description) winner.description = loser.description;
   if (!winner.ticket_url) winner.ticket_url = loser.ticket_url;
   if (!winner.time) winner.time = loser.time;
