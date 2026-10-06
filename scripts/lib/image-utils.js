@@ -63,6 +63,9 @@ const SOCIAL_CDN_BLOCKLIST = [
   "/512x512/",
   // allevents.in serves a default profile.png from upload-temp
   "allevents.in/transup",
+  // Ticketmaster category stock art (stage lights etc.): /dam/c/ on
+  // s1.ticketm.net. Real event art is /dam/e/, artist photos /dam/a/.
+  "/dam/c/",
 ];
 
 const EXT_BLOCKLIST = [".svg", ".gif", ".ico"];
