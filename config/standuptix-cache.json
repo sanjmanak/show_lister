@@ -7681,7 +7681,7 @@
       }
     },
     "https://www.theriothtx.com/events/andy-haynes-hbo-late-night-with-jimmy-fallon-headlines-the-riot-comedy-club-the-riot-houston": {
-      "lastmod": "2026-09-17T04:34:00-05:00",
+      "lastmod": "2026-10-07T11:04:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -7766,7 +7766,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-charles-haycock-headlines-the-riot-comedy-club-the-riot-houston": {
-      "lastmod": "2026-09-17T04:41:00-05:00",
+      "lastmod": "2026-10-07T11:05:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -7806,7 +7806,7 @@
       }
     },
     "https://www.theriothtx.com/events/ray-lau-kevin-hart-s-funny-af-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-10-02T12:19:00-05:00",
+      "lastmod": "2026-10-07T11:11:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -7851,7 +7851,7 @@
       }
     },
     "https://www.theriothtx.com/events/ray-lau-kevin-hart-s-funny-af-headlines-the-riot-comedy-club-the-riot-houston": {
-      "lastmod": "2026-09-17T04:46:00-05:00",
+      "lastmod": "2026-10-07T11:12:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -7896,7 +7896,7 @@
       }
     },
     "https://www.theriothtx.com/events/ray-lau-kevin-hart-s-funny-af-headlines-the-riot-comedy-club-the-riot-houston-2": {
-      "lastmod": "2026-09-17T04:46:00-05:00",
+      "lastmod": "2026-10-07T11:13:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -7941,7 +7941,7 @@
       }
     },
     "https://www.theriothtx.com/events/ray-lau-kevin-hart-s-funny-af-headlines-the-riot-comedy-club-the-riot-houston-1": {
-      "lastmod": "2026-09-17T04:46:00-05:00",
+      "lastmod": "2026-10-07T11:14:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -7986,7 +7986,7 @@
       }
     },
     "https://www.theriothtx.com/events/ray-lau-kevin-hart-s-funny-af-headlines-the-riot-comedy-club-the-riot-houston-3": {
-      "lastmod": "2026-09-17T04:46:00-05:00",
+      "lastmod": "2026-10-07T11:15:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -8511,7 +8511,7 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-nathan-macintosh-live-in-conroe": {
-      "lastmod": "2026-10-06T02:32:00-05:00",
+      "lastmod": "2026-10-07T02:06:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -8555,6 +8555,10 @@
           {
             "@type": "Person",
             "name": "Bob Biggerstaff"
+          },
+          {
+            "@type": "Person",
+            "name": "Brittany Ross"
           }
         ]
       }
@@ -8609,7 +8613,7 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-22": {
-      "lastmod": "2026-10-06T02:34:00-05:00",
+      "lastmod": "2026-10-07T02:07:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -8660,11 +8664,11 @@
           },
           {
             "@type": "Person",
-            "name": "TBD"
+            "name": "Brandon Green"
           },
           {
             "@type": "Person",
-            "name": "Brandon Green"
+            "name": "Brittany Ross"
           }
         ]
       }
@@ -10865,7 +10869,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-2026-funniest-person-in-houston-fpih-comedy-competition-2026-10-08190000": {
-      "lastmod": "2026-09-27T09:22:00-05:00",
+      "lastmod": "2026-10-07T01:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -12870,7 +12874,7 @@
       }
     },
     "https://www.theriothtx.com/events/ify-nwadiwe-comedy-central-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-10-05T04:39:00-05:00",
+      "lastmod": "2026-10-07T11:04:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",

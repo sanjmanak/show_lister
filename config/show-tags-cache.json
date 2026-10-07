@@ -2352,6 +2352,20 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-10-07"
+    },
+    "deray davis": {
+      "tags": [
+        "black-comedy"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-07"
+    },
+    "halloween costume contest edition - comedy in a speakeasy: saturday 8pm": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-07"
     }
   }
 }
