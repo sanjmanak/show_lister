@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-06T18:58:49.230Z",
+  "last_updated": "2026-10-07T02:46:00.591Z",
   "total_events": 596,
   "events": [
     {
@@ -20,38 +20,14 @@
       "image_url": "https://s1.ticketm.net/dam/e/774/32399a10-04d6-4997-8445-cbef8e39c774_SOURCE",
       "source": "ticketmaster",
       "age_restriction": null,
-      "status": "on_sale",
+      "status": "off_sale",
       "description": "Doors will open one hour prior to show time. This show is 18 & over with valid, government-issued photo ID. There is a two beverage minimum per person. Cameras and video/audio recording devices are not permitted. $.25 per each ticket sold for a majority of events at Punch Line benefits Comedy Gives Back, a safety net for the comedy community. For more information, please visit www.comedygivesback.com Our events often run for multiple dates/times. Before purchasing, please ensure that you can attend the specific event, date, and time that is listed on the event page. There are no refunds/exchanges unless an event is cancelled/postponed.",
-      "last_updated": "2026-08-28T23:21:40.620Z",
+      "last_updated": "2026-10-07T02:42:25.577Z",
       "is_open_mic": false,
       "performer_requests": false,
       "tags": [
         "en-espanol"
       ]
-    },
-    {
-      "id": "98dd82920b6abcbb",
-      "name": "The Riot Presents Tuesday Night Standup Comedy Showcase!",
-      "venue": "The Riot Comedy Club",
-      "venue_state": "TX",
-      "venue_city": "Houston",
-      "date": "2026-10-06",
-      "time": "7:30 PM",
-      "day_of_week": "Tuesday",
-      "price_min": 8,
-      "price_max": 8,
-      "currency": "USD",
-      "price_source": "api",
-      "ticket_url": "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-10-06-26-07-00-pm",
-      "image_url": "https://www.theriothtx.com/img/shows/HTX-Saturday-Night-Showcases-1-2-e1ae10f9-large-thumb.png",
-      "source": "standuptix",
-      "age_restriction": null,
-      "status": "on_sale",
-      "description": "Keep the week rolling with a night of live standup comedy at The New Riot on Washington!Join us Tuesday night for a killer lineup of comedians bringing their best to the stage. Whether you&rsquo;re looking to break up the workweek, grab drinks with friends, or just need a good laugh, Tuesday night at The Riot is the place to be.Tickets are limited, so grab yours in advance and make some midweek plans worth looking forward to. Great comedy, great drinks, and a room built for laughs &mdash; we&rsquo;ll see you Tuesday night at The New Riot on Washington.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet ParkingLooking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-      "last_updated": "2026-09-22T17:39:34.668Z",
-      "is_open_mic": false,
-      "performer_requests": true,
-      "tags": []
     },
     {
       "id": "f3b6294893de9db4",
@@ -1122,6 +1098,30 @@
       "last_updated": "2026-09-08T15:12:06.725Z",
       "is_open_mic": false,
       "performer_requests": true,
+      "tags": []
+    },
+    {
+      "id": "4a310c80c5504ccf",
+      "name": "Saturday Night Comedy at The Pink Flamingo Comedy Club",
+      "venue": "The Pink Flamingo Comedy Club",
+      "venue_state": "TX",
+      "venue_city": "Houston",
+      "date": "2026-10-10",
+      "time": "8:00 PM",
+      "day_of_week": "Saturday",
+      "price_min": 0,
+      "price_max": 0,
+      "currency": "USD",
+      "price_source": "api",
+      "ticket_url": "https://www.eventbrite.com/e/saturday-night-comedy-at-the-pink-flamingo-comedy-club-tickets-2003022321684",
+      "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1195211519%2F2996872667695%2F1%2Foriginal.20261006-190640?auto=format%2Ccompress&q=75&sharp=10&s=8dd25bface47a37eab799550eca00e21",
+      "source": "eventbrite",
+      "age_restriction": null,
+      "status": "on_sale",
+      "description": "A special free pop up Saturday night show!",
+      "last_updated": "2026-10-07T02:42:43.577Z",
+      "is_open_mic": false,
+      "performer_requests": false,
       "tags": []
     },
     {

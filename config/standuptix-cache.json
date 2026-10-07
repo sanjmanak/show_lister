@@ -1,115 +1,5 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-10-06-26-07-00-pm": {
-      "lastmod": "2026-10-06T01:33:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Tuesday Night Standup Comedy Showcase!",
-        "startDate": "2026-10-06T19:30:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-10-06-26-07-00-pm",
-          "priceCurrency": "USD",
-          "price": "8.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-09T10:26:07-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-10-06-26-07-00-pm",
-        "image": "/img/shows/HTX-Saturday-Night-Showcases-1-2-e1ae10f9-large-thumb.png",
-        "description": "Keep the week rolling with a night of live standup comedy at The New Riot on Washington!Join us Tuesday night for a killer lineup of comedians bringing their best to the stage. Whether you&rsquo;re looking to break up the workweek, grab drinks with friends, or just need a good laugh, Tuesday night at The Riot is the place to be.Tickets are limited, so grab yours in advance and make some midweek plans worth looking forward to. Great comedy, great drinks, and a room built for laughs &mdash; we&rsquo;ll see you Tuesday night at The New Riot on Washington.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet ParkingLooking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Christian Alexander"
-          },
-          {
-            "@type": "Person",
-            "name": "Cody Walker"
-          },
-          {
-            "@type": "Person",
-            "name": "Danny Guerrero"
-          },
-          {
-            "@type": "Person",
-            "name": "Bob Biggerstaff"
-          },
-          {
-            "@type": "Person",
-            "name": "George Brito"
-          },
-          {
-            "@type": "Person",
-            "name": "Tre Tutson"
-          }
-        ]
-      }
-    },
-    "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-10-06210000": {
-      "lastmod": "2026-10-04T06:58:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Riot Comedy Club presents Tuesday Night Standup Comedy Open Mic",
-        "startDate": "2026-10-06T21:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-10-06210000",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-12T11:27:04-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-10-06210000",
-        "image": "/img/shows/Open-Mic-July-19-2023-at-14-42-02-7-dac80f0c-large-thumb.png",
-        "description": "Looking for a night full of laughs &mdash; and totally FREE? Join us at TheRiot Comedy Club&nbsp; for our Open Mic Comedy Night, where you can catch a dozen comedians taking the stage! From fresh new comics finding their voice to seasoned pros testing out brand-new material, it&rsquo;s always a wild mix of creativity, courage, and comedy gold.Every show is different, every joke is fresh, and every seat comes with a front-row view of the next big thing in Texas comedy.So grab your crew, order a drink, and come laugh with us &mdash; no tickets, no pressure, just pure fun.ALL SHOWS ARE AGES 21 &amp; UP,&nbsp;Complimentary Valet--Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Trip Truman"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-21": {
       "lastmod": "2026-09-22T11:43:00-05:00",
       "node": {
@@ -278,7 +168,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-31": {
-      "lastmod": "2026-10-05T06:13:00-05:00",
+      "lastmod": "2026-10-06T06:56:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -329,10 +219,6 @@
           },
           {
             "@type": "Person",
-            "name": "Quinton Jones"
-          },
-          {
-            "@type": "Person",
             "name": "Onkar Singh"
           },
           {
@@ -342,6 +228,10 @@
           {
             "@type": "Person",
             "name": "Tre Tutson"
+          },
+          {
+            "@type": "Person",
+            "name": "Nathaniel Amador"
           }
         ]
       }
@@ -860,7 +750,7 @@
       }
     },
     "https://www.theriothtx.com/events/kerryn-feehan-netflix-comedy-central-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-10-05T07:10:00-05:00",
+      "lastmod": "2026-10-06T02:20:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -909,7 +799,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-24": {
-      "lastmod": "2026-10-05T07:10:00-05:00",
+      "lastmod": "2026-10-06T02:20:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -949,12 +839,20 @@
           {
             "@type": "Person",
             "name": "Atul Patel"
+          },
+          {
+            "@type": "Person",
+            "name": "Kerryn Feehan"
+          },
+          {
+            "@type": "Person",
+            "name": "Tomek Kolecki"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-21": {
-      "lastmod": "2026-10-05T07:10:00-05:00",
+      "lastmod": "2026-10-06T02:20:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -998,6 +896,10 @@
           {
             "@type": "Person",
             "name": "Atul Patel"
+          },
+          {
+            "@type": "Person",
+            "name": "Tomek Kolecki"
           }
         ]
       }
@@ -1133,7 +1035,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-41": {
-      "lastmod": "2026-09-24T08:25:00-05:00",
+      "lastmod": "2026-10-06T02:21:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -1169,7 +1071,12 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Tomek Kolecki"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-9": {
@@ -8604,7 +8511,7 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-nathan-macintosh-live-in-conroe": {
-      "lastmod": "2026-07-02T12:30:00-05:00",
+      "lastmod": "2026-10-06T02:32:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -8644,12 +8551,16 @@
           {
             "@type": "Person",
             "name": "Nathan Macintosh"
+          },
+          {
+            "@type": "Person",
+            "name": "Bob Biggerstaff"
           }
         ]
       }
     },
     "https://www.riotconroe.com/events/comedian-nathan-macintosh-conan-the-tonight-show-live-in-conroe": {
-      "lastmod": "2026-07-02T12:31:00-05:00",
+      "lastmod": "2026-10-06T02:33:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -8689,12 +8600,16 @@
           {
             "@type": "Person",
             "name": "Nathan Macintosh"
+          },
+          {
+            "@type": "Person",
+            "name": "Grady Pruitt"
           }
         ]
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-22": {
-      "lastmod": "2026-09-01T07:30:00-05:00",
+      "lastmod": "2026-10-06T02:34:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -8730,7 +8645,28 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Sandra Dee"
+          },
+          {
+            "@type": "Person",
+            "name": "Nathan Macintosh"
+          },
+          {
+            "@type": "Person",
+            "name": "Grady Pruitt"
+          },
+          {
+            "@type": "Person",
+            "name": "TBD"
+          },
+          {
+            "@type": "Person",
+            "name": "Brandon Green"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/comedian-michael-palascak-tonight-show-comedy-central-live-in-conroe": {
@@ -9604,7 +9540,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-chad-goes-deep-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-10-02T12:05:00-05:00",
+      "lastmod": "2026-10-06T02:21:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -11289,7 +11225,7 @@
       }
     },
     "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-10-08200000": {
-      "lastmod": "2026-09-21T02:47:00-05:00",
+      "lastmod": "2026-10-06T02:28:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -11325,7 +11261,28 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Jacinto Maturino"
+          },
+          {
+            "@type": "Person",
+            "name": "Jeremy Lawrence"
+          },
+          {
+            "@type": "Person",
+            "name": "Marlo Ray"
+          },
+          {
+            "@type": "Person",
+            "name": "Matthew Zane"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Loden"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-10-15200000": {
