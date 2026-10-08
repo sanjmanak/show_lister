@@ -1,15 +1,7 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-10-05T21:15:27.405Z",
+  "last_updated": "2026-10-08T19:19:56.015Z",
   "entries": {
-    "156fd23bf1b4b0a5": {
-      "price_min": 68.48,
-      "price_max": 68.48,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/richie-ofarrill-en-houston-improv-tickets/14219654?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-07-19T00:21:41.647Z"
-    },
     "a333e6a0a30e75f7": {
       "price_min": 31.4,
       "price_max": 31.4,

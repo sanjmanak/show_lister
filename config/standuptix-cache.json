@@ -123,7 +123,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-31": {
-      "lastmod": "2026-10-06T06:56:00-05:00",
+      "lastmod": "2026-10-08T12:48:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -182,11 +182,11 @@
           },
           {
             "@type": "Person",
-            "name": "Tre Tutson"
+            "name": "Nathaniel Amador"
           },
           {
             "@type": "Person",
-            "name": "Nathaniel Amador"
+            "name": "JCann"
           }
         ]
       }
@@ -8466,7 +8466,7 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-nathan-macintosh-live-in-conroe": {
-      "lastmod": "2026-10-07T02:06:00-05:00",
+      "lastmod": "2026-10-08T01:43:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -8519,7 +8519,7 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-nathan-macintosh-conan-the-tonight-show-live-in-conroe": {
-      "lastmod": "2026-10-06T02:33:00-05:00",
+      "lastmod": "2026-10-08T12:45:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -8563,12 +8563,16 @@
           {
             "@type": "Person",
             "name": "Grady Pruitt"
+          },
+          {
+            "@type": "Person",
+            "name": "Brittany Ross"
           }
         ]
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-22": {
-      "lastmod": "2026-10-07T02:07:00-05:00",
+      "lastmod": "2026-10-08T12:45:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -10824,7 +10828,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-2026-funniest-person-in-houston-fpih-comedy-competition-2026-10-08210000": {
-      "lastmod": "2026-09-17T03:50:00-05:00",
+      "lastmod": "2026-10-08T01:00:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
