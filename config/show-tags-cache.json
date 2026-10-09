@@ -906,8 +906,9 @@
     },
     "collin sledge and acquaintances": {
       "tags": [],
-      "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-09"
     },
     "jessie “jetski” johnson live in houston": {
       "tags": [],
@@ -2378,6 +2379,18 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-10-08"
+    },
+    "spill it: 3 min mic - ages 21+": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-09"
+    },
+    "denny love: show love tour": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-09"
     }
   }
 }

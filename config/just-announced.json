@@ -1,54 +1,6 @@
 {
- "updated": "2026-10-09T03:08:33.037Z",
+ "updated": "2026-10-09T18:52:00.005Z",
  "announcements": [
-  {
-   "id": "71a2ce7f6a39aa1e",
-   "name": "The Riot Comedy Club Presents Saturday Night Standup Comedy Late Show!",
-   "venue": "The Riot Comedy Club",
-   "date": "2026-12-26",
-   "time": "11:00 PM",
-   "price_min": 15,
-   "price_max": 15,
-   "image_url": "https://www.theriothtx.com/img/shows/Showcase-Templates-13-Saturday-11pm-20db1248-large-thumb.png",
-   "ticket_url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-34",
-   "source": "standuptix",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "title pattern",
-   "first_seen": "2026-09-27T17:47:47.754Z"
-  },
-  {
-   "id": "a7972a21b5217b83",
-   "name": "The Last Laugh with James Vogt & Trip Truman",
-   "venue": "The Secret Group",
-   "date": "2026-10-04",
-   "time": "7:00 PM",
-   "price_min": 8.82,
-   "price_max": 8.82,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1191459227%2F3558237521%2F1%2Foriginal.20260819-201134?auto=format%2Ccompress&q=75&sharp=10&s=cea7a34ee27a983a6dc54f88c3210522",
-   "ticket_url": "https://www.eventbrite.com/e/the-last-laugh-with-james-vogt-trip-truman-tickets-2002393539981",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only -5d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "c1ce591937bb2fc4",
-   "name": "The (secret) Secret Show",
-   "venue": "The Secret Group",
-   "date": "2026-10-04",
-   "time": "9:00 PM",
-   "price_min": 14.59,
-   "price_max": 14.59,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1182517711%2F3558237521%2F1%2Foriginal.20260419-192309?auto=format%2Ccompress&q=75&sharp=10&s=9360a990100667a0306d4f4d57bb4300",
-   "ticket_url": "https://www.eventbrite.com/e/the-secret-secret-show-tickets-2002393427645",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only -5d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
   {
    "id": "63b688624c6fd0f1",
    "name": "COMEDY DOJO: Sunday Open Mic Comedy",
@@ -2302,7 +2254,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (13 weeks)",
+   "notable_reason": "recurring series (12 weeks)",
    "first_seen": "2026-10-02T18:29:30.671Z"
   },
   {
@@ -3200,6 +3152,54 @@
    "tier": "headliner_room",
    "notable_reason": "headliner room",
    "first_seen": "2026-10-08T19:19:58.340Z"
+  },
+  {
+   "id": "ab109b3de01c0298",
+   "name": "Collin Sledge and Acquaintances",
+   "venue": "The Pink Flamingo Comedy Club",
+   "date": "2026-10-16",
+   "time": "8:00 PM",
+   "price_min": 7.77,
+   "price_max": 19.32,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1195445913%2F2996872667695%2F1%2Foriginal.20261009-130906?auto=format%2Ccompress&q=75&sharp=10&s=64ef0b95c9c6e7b651eff19fe21cae80",
+   "ticket_url": "https://www.eventbrite.com/e/collin-sledge-and-acquaintances-tickets-2003203956960",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "only 7d out (min 14)",
+   "first_seen": "2026-10-09T18:52:00.005Z"
+  },
+  {
+   "id": "77fbf21cc6de4b9f",
+   "name": "SPILL IT: 3 MIN MIC - Ages 21+",
+   "venue": "House of Blues Houston",
+   "date": "2026-11-07",
+   "time": "6:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+   "ticket_url": "https://www.ticketmaster.com/spill-it-3-min-mic-ages-houston-texas-11-07-2026/event/3A006547E77AA75F",
+   "source": "ticketmaster",
+   "notable": true,
+   "tier": "big_room",
+   "notable_reason": "big room",
+   "first_seen": "2026-10-09T18:52:00.005Z"
+  },
+  {
+   "id": "0cc2691307886ba4",
+   "name": "DENNY LOVE: SHOW LOVE TOUR",
+   "venue": "House of Blues Houston",
+   "date": "2026-12-19",
+   "time": "7:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/f92/e1c2e781-7d2e-4630-ab16-df685704af92_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/denny-love-show-love-tour-houston-texas-12-19-2026/event/3A0064BDC97DEB12",
+   "source": "ticketmaster",
+   "notable": true,
+   "tier": "big_room",
+   "notable_reason": "big room",
+   "first_seen": "2026-10-09T18:52:00.005Z"
   }
  ]
 }
