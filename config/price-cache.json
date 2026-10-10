@@ -1,15 +1,7 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-10-08T19:19:56.015Z",
+  "last_updated": "2026-10-10T17:54:34.372Z",
   "entries": {
-    "a333e6a0a30e75f7": {
-      "price_min": 31.4,
-      "price_max": 31.4,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/craig-conant-houston-improv-tickets/14824993?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-07-19T00:21:45.367Z"
-    },
     "5f7fd6557b66798a": {
       "price_min": 31.4,
       "price_max": 31.4,
@@ -97,14 +89,6 @@
       "source": "page",
       "url": "https://www.eventbrite.com/e/saul-trujillo-live-in-houston-tickets-1987000184039",
       "fetched_at": "2026-09-09T01:38:07.424Z"
-    },
-    "48f07e083715e0c8": {
-      "price_min": 25.09,
-      "price_max": 25.09,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/gus-ryan-sean-live-tickets-1991931685292",
-      "fetched_at": "2026-09-09T01:38:10.081Z"
     },
     "735cd3851322fc99": {
       "price_min": 30.87,
