@@ -50,24 +50,6 @@
   "manifest_version": 1790038778423,
   "cleanup_queue": [
     {
-      "slug": "richie-ofarrill-houston-improv-2026-10-07",
-      "comedianName": "Richie O’Farrill",
-      "igFeedMediaId": "18150893512547482",
-      "igStoryMediaId": "17968595379191052",
-      "fbFeedPostId": "1422343259990415",
-      "fbStoryPostId": "1840386353982866",
-      "postedAt": "2026-10-05T22:48:48.163Z"
-    },
-    {
-      "slug": "gauri-b-white-oak-music-hall-upstairs-2026-10-08",
-      "comedianName": "Gauri B",
-      "igFeedMediaId": "17931835200406878",
-      "igStoryMediaId": "17905128603590686",
-      "fbFeedPostId": "1422773826614025",
-      "fbStoryPostId": "1647868830086913",
-      "postedAt": "2026-10-06T11:24:40.723Z"
-    },
-    {
       "slug": "winston-hodges-punch-line-houston-2026-10-08",
       "comedianName": "Winston Hodges",
       "igFeedMediaId": "18179067187427597",

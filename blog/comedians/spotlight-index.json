@@ -1,47 +1,11 @@
 {
-  "generated_at": "2026-10-05T22:11:15.364Z",
+  "generated_at": "2026-10-11T18:18:44.304Z",
   "source_manifests": [
-    "manifest-2026-10-05.json",
     "manifest-2026-10-12.json",
     "manifest-2026-10-19.json",
     "manifest-2026-10-26.json"
   ],
   "posts": [
-    {
-      "date": "2026-10-06",
-      "comedianName": "Manuel Ángel Redondo",
-      "slug": "manuel-ngel-redondo-punch-line-houston-2026-10-06",
-      "wpLink": "https://comedyhouston.com/manuel-ngel-redondo-punch-line-houston-2026-10-06/",
-      "venue": "Punch Line Houston"
-    },
-    {
-      "date": "2026-10-07",
-      "comedianName": "Richie O’Farrill",
-      "slug": "richie-ofarrill-houston-improv-2026-10-07",
-      "wpLink": "https://comedyhouston.com/richie-ofarrill-houston-improv-2026-10-07/",
-      "venue": "Houston Improv"
-    },
-    {
-      "date": "2026-10-08",
-      "comedianName": "Gauri B",
-      "slug": "gauri-b-white-oak-music-hall-upstairs-2026-10-08",
-      "wpLink": "https://comedyhouston.com/gauri-b-white-oak-music-hall-upstairs-2026-10-08/",
-      "venue": "White Oak Music Hall - Upstairs"
-    },
-    {
-      "date": "2026-10-08",
-      "comedianName": "Winston Hodges",
-      "slug": "winston-hodges-punch-line-houston-2026-10-08",
-      "wpLink": "https://comedyhouston.com/winston-hodges-punch-line-houston-2026-10-08/",
-      "venue": "Punch Line Houston"
-    },
-    {
-      "date": "2026-10-09",
-      "comedianName": "Sophie Hunter",
-      "slug": "sophie-hunter-the-secret-group-2026-10-09",
-      "wpLink": "https://comedyhouston.com/sophie-hunter-the-secret-group-2026-10-09/",
-      "venue": "The Secret Group"
-    },
     {
       "date": "2026-10-15",
       "comedianName": "Anjelah Johnson-Reyes",
