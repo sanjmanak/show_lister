@@ -1,102 +1,6 @@
 {
- "updated": "2026-10-11T02:16:06.531Z",
+ "updated": "2026-10-11T18:07:32.734Z",
  "announcements": [
-  {
-   "id": "97b3c8855a845fc6",
-   "name": "Master Debaters",
-   "venue": "The Secret Group",
-   "date": "2026-10-07",
-   "time": "10:00 PM",
-   "price_min": 8.82,
-   "price_max": 8.82,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186105427%2F3558237521%2F1%2Foriginal.20260603-215732?auto=format%2Ccompress&q=75&sharp=10&s=d6cb2dc6efbb6740f97bbfc6a7ded544",
-   "ticket_url": "https://www.eventbrite.com/e/master-debaters-tickets-2002394561035",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only -4d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "57df3b50be99611f",
-   "name": "WITCHY WEDNESDAYS: Wednesday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-10-07",
-   "time": "11:59 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1116853183%2F3558237521%2F1%2Foriginal.20250907-205756?auto=format%2Ccompress&q=75&sharp=10&s=4afa07037c4ed3981e9c168d7d882705",
-   "ticket_url": "https://www.eventbrite.com/e/witchy-wednesdays-wednesday-open-mic-comedy-tickets-2002394568056",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only -4d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "e93f356b8d89fd10",
-   "name": "BACK OF THE BUS: Thursday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-10-08",
-   "time": "9:30 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194471977%2F65406453537%2F1%2Foriginal.20210519-142609?auto=format%2Ccompress&q=75&sharp=10&s=f89833e1acbcedfd9546e1b70cb3cdc5",
-   "ticket_url": "https://www.eventbrite.com/e/back-of-the-bus-thursday-open-mic-comedy-tickets-2002394667353",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only -3d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "6051e410d0782a40",
-   "name": "The Best of the Secret Group Comedy Showcase 8pm",
-   "venue": "The Secret Group",
-   "date": "2026-10-09",
-   "time": "8:00 PM",
-   "price_min": 18.06,
-   "price_max": 21.51,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194471998%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=f006e6e530a90bd7ae2b7f872368798f",
-   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-8pm-tickets-2002394675377",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only -2d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "0bf59efbcef638cb",
-   "name": "The Best of the Secret Group Comedy Showcase 10pm",
-   "venue": "The Secret Group",
-   "date": "2026-10-09",
-   "time": "10:00 PM",
-   "price_min": 18.06,
-   "price_max": 21.51,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194472029%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=493179927a7899647d771a183657e2c2",
-   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-10pm-tickets-2002394687413",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only -2d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "427d8f79d0dbe519",
-   "name": "The Late Night Dirty Show: X Rated Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-10-09",
-   "time": "11:59 PM",
-   "price_min": 8.82,
-   "price_max": 8.82,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F923781843%2F2186820483043%2F1%2Foriginal.20241227-161803?auto=format%2Ccompress&q=75&sharp=10&s=680f9342c7cee46a79ee13f5f9896ffe",
-   "ticket_url": "https://www.eventbrite.com/e/the-late-night-dirty-show-x-rated-comedy-tickets-2002394861935",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only -2d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
   {
    "id": "4898f80822b81bd0",
    "name": "Dave Ross",
@@ -1966,7 +1870,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (10 weeks)",
+   "notable_reason": "recurring series (9 weeks)",
    "first_seen": "2026-10-02T02:39:02.152Z"
   },
   {
@@ -1982,7 +1886,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (10 weeks)",
+   "notable_reason": "recurring series (9 weeks)",
    "first_seen": "2026-10-02T02:39:02.152Z"
   },
   {
@@ -2014,7 +1918,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (10 weeks)",
+   "notable_reason": "recurring series (9 weeks)",
    "first_seen": "2026-10-02T02:39:02.152Z"
   },
   {
@@ -2030,7 +1934,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (10 weeks)",
+   "notable_reason": "recurring series (9 weeks)",
    "first_seen": "2026-10-02T02:39:02.152Z"
   },
   {
@@ -2062,7 +1966,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (10 weeks)",
+   "notable_reason": "recurring series (9 weeks)",
    "first_seen": "2026-10-02T02:39:02.152Z"
   },
   {
@@ -2078,7 +1982,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (10 weeks)",
+   "notable_reason": "recurring series (9 weeks)",
    "first_seen": "2026-10-02T02:39:02.152Z"
   },
   {
@@ -2094,7 +1998,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (10 weeks)",
+   "notable_reason": "recurring series (9 weeks)",
    "first_seen": "2026-10-02T02:39:02.152Z"
   },
   {
@@ -3200,6 +3104,102 @@
    "tier": null,
    "notable_reason": "only -1d out (min 14)",
    "first_seen": "2026-10-11T02:16:06.531Z"
+  },
+  {
+   "id": "0b36341bea9cdc54",
+   "name": "Don't Tell Comedy: Midtown (8:00 PM Show)",
+   "venue": "Don't Tell Comedy (Secret Location)",
+   "date": "2026-11-13",
+   "time": "8:00 PM",
+   "price_min": 27,
+   "price_max": 27,
+   "image_url": "https://dont-tell-comedy.mo.cloudinary.net/private/bizres-purpleroom-comiccenter_DcEx3jv.webp",
+   "ticket_url": "https://www.donttellcomedy.com/shows/houston-21879/",
+   "source": "donttellcomedy",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "recurring series (3 weeks)",
+   "first_seen": "2026-10-11T18:07:32.734Z"
+  },
+  {
+   "id": "c56cf0eef694558d",
+   "name": "DeRay Davis",
+   "venue": "Houston Improv",
+   "date": "2026-12-20",
+   "time": "6:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/332/b7e2b245-267c-402a-a78f-c50f46a63332_SOURCE",
+   "ticket_url": "https://www.ticketweb.com/event/deray-davis-houston-improv-tickets/14950153?REFERRAL_ID=tmfeed",
+   "source": "ticketmaster",
+   "notable": true,
+   "tier": "headliner_room",
+   "notable_reason": "headliner room",
+   "first_seen": "2026-10-11T18:07:32.734Z"
+  },
+  {
+   "id": "c8f67fb80244a583",
+   "name": "LeMaire Lee",
+   "venue": "Punch Line Houston",
+   "date": "2026-12-23",
+   "time": "7:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/f2f/44e51e76-cdfc-43d2-a33d-18f648b58f2f_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/lemaire-lee-houston-texas-12-23-2026/event/3A00651FC275FA9F",
+   "source": "ticketmaster",
+   "notable": true,
+   "tier": "headliner_room",
+   "notable_reason": "headliner room",
+   "first_seen": "2026-10-11T18:07:32.734Z"
+  },
+  {
+   "id": "b2012134ba35273c",
+   "name": "Usama Siddiquee",
+   "venue": "Houston Improv",
+   "date": "2026-12-26",
+   "time": "7:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/a12/f6c544db-b3a3-4d88-b839-922713136a12_EVENT_DETAIL_PAGE_16_9.jpg",
+   "ticket_url": "https://www.ticketweb.com/event/usama-siddiquee-houston-improv-tickets/14926113?REFERRAL_ID=tmfeed",
+   "source": "ticketmaster",
+   "notable": true,
+   "tier": "headliner_room",
+   "notable_reason": "headliner room",
+   "first_seen": "2026-10-11T18:07:32.734Z"
+  },
+  {
+   "id": "1f2c0babfa008fdd",
+   "name": "Luke Touma Headlines The Riot Houston",
+   "venue": "The Riot Comedy Club",
+   "date": "2027-01-09",
+   "time": "7:00 PM",
+   "price_min": 20,
+   "price_max": 20,
+   "image_url": "https://www.theriothtx.com/img/events/luke-website-bd850a93-large-thumb.jpg",
+   "ticket_url": "https://www.theriothtx.com/events/luke-touma-headlines-the-riot-houston",
+   "source": "standuptix",
+   "notable": true,
+   "tier": "headliner_room",
+   "notable_reason": "headliner room",
+   "first_seen": "2026-10-11T18:07:32.734Z"
+  },
+  {
+   "id": "b0647c9d5d0cc874",
+   "name": "Lace Larrabee (America's Got Talent, Sirius XM) Headlines The Riot Comedy Club",
+   "venue": "The Riot Comedy Club — Conroe",
+   "date": "2027-01-09",
+   "time": "7:30 PM",
+   "price_min": 20,
+   "price_max": 20,
+   "image_url": "https://www.riotconroe.com/img/events/lace-conroe-ad8409f4-large-thumb.png",
+   "ticket_url": "https://www.riotconroe.com/events/lace-larrabee-america-s-got-talent-sirius-xm-headlines-the-riot-comedy-club",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "venue excluded",
+   "first_seen": "2026-10-11T18:07:32.734Z"
   }
  ]
 }

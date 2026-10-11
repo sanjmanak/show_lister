@@ -1,19 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-10-11T02:14:09.258Z",
-  "total_excluded": 26,
+  "last_updated": "2026-10-11T18:05:24.594Z",
+  "total_excluded": 25,
   "events": [
-    {
-      "name": "DIAL UP: 90s & Y2K Dance Party!",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-10-10",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/dial-up-90s-y2k-dance-party-tickets-2002394880992",
-      "reason": "title keyword blocklisted: \"dance party\""
-    },
     {
       "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
       "venue": "The Secret Group",
