@@ -14,24 +14,6 @@
   "manifest_version": 1790021523562,
   "cleanup_queue": [
     {
-      "slug": "winston-hodges-punch-line-houston-2026-10-08",
-      "comedianName": "Winston Hodges",
-      "igFeedMediaId": "18179067187427597",
-      "igStoryMediaId": "17916116151459195",
-      "fbFeedPostId": "1423167329908008",
-      "fbStoryPostId": "1687160759442774",
-      "postedAt": "2026-10-06T21:05:49.180Z"
-    },
-    {
-      "slug": "sophie-hunter-the-secret-group-2026-10-09",
-      "comedianName": "Sophie Hunter",
-      "igFeedMediaId": "17900981736378855",
-      "igStoryMediaId": "18221346997331227",
-      "fbFeedPostId": "1423307463227328",
-      "fbStoryPostId": "1061592040258192",
-      "postedAt": "2026-10-07T01:41:53.776Z"
-    },
-    {
       "slug": "anjelah-johnson-reyes-punch-line-houston-2026-10-15",
       "comedianName": "Anjelah Johnson-Reyes",
       "igFeedMediaId": "18564199942076140",
