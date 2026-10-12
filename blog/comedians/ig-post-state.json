@@ -1,53 +1,17 @@
 {
   "posted": [
     {
-      "slug": "manuel-ngel-redondo-punch-line-houston-2026-10-06",
-      "comedianName": "Manuel Ángel Redondo",
-      "igFeedMediaId": "18022783634872294",
-      "igStoryMediaId": "18424656586146508",
-      "fbFeedPostId": "1421908483367226",
-      "fbStoryPostId": "2333493737186731",
-      "postedAt": "2026-10-05T11:44:34.818Z"
-    },
-    {
-      "slug": "richie-ofarrill-houston-improv-2026-10-07",
-      "comedianName": "Richie O’Farrill",
-      "igFeedMediaId": "18150893512547482",
-      "igStoryMediaId": "17968595379191052",
-      "fbFeedPostId": "1422343259990415",
-      "fbStoryPostId": "1840386353982866",
-      "postedAt": "2026-10-05T22:48:48.163Z"
-    },
-    {
-      "slug": "gauri-b-white-oak-music-hall-upstairs-2026-10-08",
-      "comedianName": "Gauri B",
-      "igFeedMediaId": "17931835200406878",
-      "igStoryMediaId": "17905128603590686",
-      "fbFeedPostId": "1422773826614025",
-      "fbStoryPostId": "1647868830086913",
-      "postedAt": "2026-10-06T11:24:40.723Z"
-    },
-    {
-      "slug": "winston-hodges-punch-line-houston-2026-10-08",
-      "comedianName": "Winston Hodges",
-      "igFeedMediaId": "18179067187427597",
-      "igStoryMediaId": "17916116151459195",
-      "fbFeedPostId": "1423167329908008",
-      "fbStoryPostId": "1687160759442774",
-      "postedAt": "2026-10-06T21:05:49.180Z"
-    },
-    {
-      "slug": "sophie-hunter-the-secret-group-2026-10-09",
-      "comedianName": "Sophie Hunter",
-      "igFeedMediaId": "17900981736378855",
-      "igStoryMediaId": "18221346997331227",
-      "fbFeedPostId": "1423307463227328",
-      "fbStoryPostId": "1061592040258192",
-      "postedAt": "2026-10-07T01:41:53.776Z"
+      "slug": "anjelah-johnson-reyes-punch-line-houston-2026-10-15",
+      "comedianName": "Anjelah Johnson-Reyes",
+      "igFeedMediaId": "18564199942076140",
+      "igStoryMediaId": "18359439502221487",
+      "fbFeedPostId": "1428183622739712",
+      "fbStoryPostId": "2871748569860881",
+      "postedAt": "2026-10-12T12:18:10.547Z"
     }
   ],
-  "week_range": "October 5 – October 11, 2026",
-  "manifest_version": 1790038778423,
+  "week_range": "October 12 – October 18, 2026",
+  "manifest_version": 1790021523562,
   "cleanup_queue": [
     {
       "slug": "winston-hodges-punch-line-houston-2026-10-08",
@@ -66,6 +30,15 @@
       "fbFeedPostId": "1423307463227328",
       "fbStoryPostId": "1061592040258192",
       "postedAt": "2026-10-07T01:41:53.776Z"
+    },
+    {
+      "slug": "anjelah-johnson-reyes-punch-line-houston-2026-10-15",
+      "comedianName": "Anjelah Johnson-Reyes",
+      "igFeedMediaId": "18564199942076140",
+      "igStoryMediaId": "18359439502221487",
+      "fbFeedPostId": "1428183622739712",
+      "fbStoryPostId": "2871748569860881",
+      "postedAt": "2026-10-12T12:18:10.547Z"
     }
   ]
 }
