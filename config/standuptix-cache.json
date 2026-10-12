@@ -1,70 +1,5 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-40": {
-      "lastmod": "2026-10-11T12:03:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents \"Houston's Funniest\" Sunday Comedy Showcase",
-        "startDate": "2026-10-11T18:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-40",
-          "priceCurrency": "USD",
-          "price": "10.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-08T12:45:41-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-40",
-        "image": "/img/shows/Showcase-Templates-4-17bb0cfb-large-thumb.png",
-        "description": "The Riot presents &ldquo;Houston&rsquo;s Funniest,&rdquo; a weekly Sunday showcase celebrating the best comedians in the city. Featuring a rotating lineup of Houston comics who have headlined or featured at The Riot&#39;s&nbsp;legendary comedy room, this show is a true highlight of the local scene.&nbsp;Come hang with The Riot and discover some of the funniest talent Houston has to offer&mdash;it&#39;s the perfect way to end your weekend on a high note.All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Complimentary Valet--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "A.D. Hodge"
-          },
-          {
-            "@type": "Person",
-            "name": "Chelby Morgan"
-          },
-          {
-            "@type": "Person",
-            "name": "Mike Ryan"
-          },
-          {
-            "@type": "Person",
-            "name": "Grady Pruitt"
-          },
-          {
-            "@type": "Person",
-            "name": "Will Loden"
-          },
-          {
-            "@type": "Person",
-            "name": "Keisha Hunt"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-8": {
       "lastmod": "2026-10-10T06:19:00-05:00",
       "node": {
@@ -7791,59 +7726,6 @@
         ]
       }
     },
-    "https://www.theriothtx.com/events/comedian-ashton-womack-comedy-central-headlines-the-riot-houston": {
-      "lastmod": "2026-10-10T06:18:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Comedian Ashton Womack (Comedy Central)  Headlines The Riot Houston",
-        "startDate": "2026-10-11T20:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/comedian-ashton-womack-comedy-central-headlines-the-riot-houston",
-          "priceCurrency": "USD",
-          "price": "20.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-19T17:03:53-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/comedian-ashton-womack-comedy-central-headlines-the-riot-houston",
-        "image": "/img/events/B46A9363-1-scaled-d53c0a56-large-thumb.jpg",
-        "description": "Ashton Womack is a standup comic from Houston, Tx, who currently lives in New York City as the newest staff writer for The Daily Show w/ Trevor Noah. In 2019 he was honored as a Just For Laughs New Face of Comedy and has been rising star on the national comedy scene ever since. He&rsquo;s been featured in VICE, Comedy Central, VH1, written for the 2021 Grammys and can currently be seen in Paramount&#39;s &ldquo;Clifford The Big Red Dog&rdquo;. You can currently catch him tearing up stages all across New York City or simply by watching his Comedy Central Digital set currently streaming on YouTube.All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Brian Gendron"
-          },
-          {
-            "@type": "Person",
-            "name": "Tre Tutson"
-          },
-          {
-            "@type": "Person",
-            "name": "Ashton Womack"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/fumi-abe-the-tonight-show-the-late-show-headlines-the-riot-houston": {
       "lastmod": "2026-10-02T12:18:00-05:00",
       "node": {
@@ -12245,6 +12127,806 @@
         "url": "https://www.theriothtx.com/events/ify-nwadiwe-comedy-central-headlines-the-riot-comedy-club",
         "image": "/img/events/IFY-3-685206f6-large-thumb.jpg",
         "description": "Ify&nbsp;Nwadiwe has a whole lot of hyphens!&nbsp;He does stand-up comedy, acts (Workaholics, Comedy Bang! Bang!, Adam Ruins Everything), does improv (The Big Team at UCB), writes for TV (Twisted Metal, Grand Crew, Tigtone), writes for video games (Apex Legends and Borderlands 4),&nbsp;and is the host of the nerdiest Panel show on the internet, Um, Actually on Dropout TV.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-24130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yokes & Jokes - Saturday Brunch Comedy Show! ",
+        "startDate": "2026-10-24T13:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-24130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T13:53:43-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-24130000",
+        "image": "/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+        "description": "Hot Breakfast. Cold Drinks. Big Laughs.Start your Saturday sunny side up with Yolks &amp; Jokes, The Riot's weekly comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Friday night or kicking off your Saturday in style, we've got everything you need for the perfect weekend brunch!???? Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!???? Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.???? Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!☕ Fresh Coffee – For those who need a little caffeine with their comedy.???? Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.???? LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.???? The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-10-25130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show! ",
+        "startDate": "2026-10-25T13:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-10-25130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T14:07:07-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-10-25130000",
+        "image": "/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+        "description": "Start your Sunday sunny side up with Yolks &amp; Jokes, The Riot's weekly Sunday comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Saturday night or wrapping up your weekend in style, we've got everything you need for the perfect Sunday Funday!Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!Fresh Coffee – For those who need a little caffeine with their comedy.Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-31130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yokes & Jokes - Saturday Brunch Comedy Show! ",
+        "startDate": "2026-10-31T13:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-31130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T13:53:43-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-31130000",
+        "image": "/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+        "description": "Hot Breakfast. Cold Drinks. Big Laughs.Start your Saturday sunny side up with Yolks &amp; Jokes, The Riot's weekly comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Friday night or kicking off your Saturday in style, we've got everything you need for the perfect weekend brunch!???? Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!???? Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.???? Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!☕ Fresh Coffee – For those who need a little caffeine with their comedy.???? Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.???? LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.???? The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-01130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show! ",
+        "startDate": "2026-11-01T13:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-01130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T14:07:07-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-01130000",
+        "image": "/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+        "description": "Start your Sunday sunny side up with Yolks &amp; Jokes, The Riot's weekly Sunday comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Saturday night or wrapping up your weekend in style, we've got everything you need for the perfect Sunday Funday!Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!Fresh Coffee – For those who need a little caffeine with their comedy.Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-07130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yokes & Jokes - Saturday Brunch Comedy Show! ",
+        "startDate": "2026-11-07T13:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-07130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T13:53:44-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-07130000",
+        "image": "/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+        "description": "Hot Breakfast. Cold Drinks. Big Laughs.Start your Saturday sunny side up with Yolks &amp; Jokes, The Riot's weekly comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Friday night or kicking off your Saturday in style, we've got everything you need for the perfect weekend brunch!???? Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!???? Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.???? Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!☕ Fresh Coffee – For those who need a little caffeine with their comedy.???? Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.???? LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.???? The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-08130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show! ",
+        "startDate": "2026-11-08T13:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-08130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T14:07:07-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-08130000",
+        "image": "/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+        "description": "Start your Sunday sunny side up with Yolks &amp; Jokes, The Riot's weekly Sunday comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Saturday night or wrapping up your weekend in style, we've got everything you need for the perfect Sunday Funday!Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!Fresh Coffee – For those who need a little caffeine with their comedy.Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-14130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yokes & Jokes - Saturday Brunch Comedy Show! ",
+        "startDate": "2026-11-14T13:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-14130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T13:53:44-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-14130000",
+        "image": "/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+        "description": "Hot Breakfast. Cold Drinks. Big Laughs.Start your Saturday sunny side up with Yolks &amp; Jokes, The Riot's weekly comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Friday night or kicking off your Saturday in style, we've got everything you need for the perfect weekend brunch!???? Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!???? Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.???? Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!☕ Fresh Coffee – For those who need a little caffeine with their comedy.???? Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.???? LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.???? The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-15130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show! ",
+        "startDate": "2026-11-15T13:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-15130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T14:07:08-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-15130000",
+        "image": "/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+        "description": "Start your Sunday sunny side up with Yolks &amp; Jokes, The Riot's weekly Sunday comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Saturday night or wrapping up your weekend in style, we've got everything you need for the perfect Sunday Funday!Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!Fresh Coffee – For those who need a little caffeine with their comedy.Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-21130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yokes & Jokes - Saturday Brunch Comedy Show! ",
+        "startDate": "2026-11-21T13:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-21130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T13:53:44-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-21130000",
+        "image": "/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+        "description": "Hot Breakfast. Cold Drinks. Big Laughs.Start your Saturday sunny side up with Yolks &amp; Jokes, The Riot's weekly comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Friday night or kicking off your Saturday in style, we've got everything you need for the perfect weekend brunch!???? Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!???? Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.???? Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!☕ Fresh Coffee – For those who need a little caffeine with their comedy.???? Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.???? LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.???? The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-22130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show! ",
+        "startDate": "2026-11-22T13:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-22130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T14:07:08-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-22130000",
+        "image": "/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+        "description": "Start your Sunday sunny side up with Yolks &amp; Jokes, The Riot's weekly Sunday comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Saturday night or wrapping up your weekend in style, we've got everything you need for the perfect Sunday Funday!Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!Fresh Coffee – For those who need a little caffeine with their comedy.Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-28130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yokes & Jokes - Saturday Brunch Comedy Show! ",
+        "startDate": "2026-11-28T13:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-28130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T13:53:44-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-28130000",
+        "image": "/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+        "description": "Hot Breakfast. Cold Drinks. Big Laughs.Start your Saturday sunny side up with Yolks &amp; Jokes, The Riot's weekly comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Friday night or kicking off your Saturday in style, we've got everything you need for the perfect weekend brunch!???? Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!???? Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.???? Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!☕ Fresh Coffee – For those who need a little caffeine with their comedy.???? Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.???? LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.???? The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-29130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show! ",
+        "startDate": "2026-11-29T13:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-29130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T14:07:08-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-29130000",
+        "image": "/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+        "description": "Start your Sunday sunny side up with Yolks &amp; Jokes, The Riot's weekly Sunday comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Saturday night or wrapping up your weekend in style, we've got everything you need for the perfect Sunday Funday!Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!Fresh Coffee – For those who need a little caffeine with their comedy.Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-12-05130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yokes & Jokes - Saturday Brunch Comedy Show! ",
+        "startDate": "2026-12-05T13:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-12-05130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T13:53:45-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-12-05130000",
+        "image": "/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+        "description": "Hot Breakfast. Cold Drinks. Big Laughs.Start your Saturday sunny side up with Yolks &amp; Jokes, The Riot's weekly comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Friday night or kicking off your Saturday in style, we've got everything you need for the perfect weekend brunch!???? Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!???? Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.???? Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!☕ Fresh Coffee – For those who need a little caffeine with their comedy.???? Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.???? LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.???? The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-12-06130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show! ",
+        "startDate": "2026-12-06T13:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-12-06130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T14:07:09-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-12-06130000",
+        "image": "/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+        "description": "Start your Sunday sunny side up with Yolks &amp; Jokes, The Riot's weekly Sunday comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Saturday night or wrapping up your weekend in style, we've got everything you need for the perfect Sunday Funday!Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!Fresh Coffee – For those who need a little caffeine with their comedy.Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-12-12130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yokes & Jokes - Saturday Brunch Comedy Show! ",
+        "startDate": "2026-12-12T13:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-12-12130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T13:53:45-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-12-12130000",
+        "image": "/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+        "description": "Hot Breakfast. Cold Drinks. Big Laughs.Start your Saturday sunny side up with Yolks &amp; Jokes, The Riot's weekly comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Friday night or kicking off your Saturday in style, we've got everything you need for the perfect weekend brunch!???? Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!???? Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.???? Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!☕ Fresh Coffee – For those who need a little caffeine with their comedy.???? Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.???? LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.???? The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-12-13130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show! ",
+        "startDate": "2026-12-13T13:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-12-13130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T14:07:09-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-12-13130000",
+        "image": "/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+        "description": "Start your Sunday sunny side up with Yolks &amp; Jokes, The Riot's weekly Sunday comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Saturday night or wrapping up your weekend in style, we've got everything you need for the perfect Sunday Funday!Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!Fresh Coffee – For those who need a little caffeine with their comedy.Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-12-19130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yokes & Jokes - Saturday Brunch Comedy Show! ",
+        "startDate": "2026-12-19T13:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-12-19130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T13:53:45-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-12-19130000",
+        "image": "/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+        "description": "Hot Breakfast. Cold Drinks. Big Laughs.Start your Saturday sunny side up with Yolks &amp; Jokes, The Riot's weekly comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Friday night or kicking off your Saturday in style, we've got everything you need for the perfect weekend brunch!???? Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!???? Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.???? Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!☕ Fresh Coffee – For those who need a little caffeine with their comedy.???? Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.???? LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.???? The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-12-20130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show! ",
+        "startDate": "2026-12-20T13:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-12-20130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T14:07:09-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-12-20130000",
+        "image": "/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+        "description": "Start your Sunday sunny side up with Yolks &amp; Jokes, The Riot's weekly Sunday comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Saturday night or wrapping up your weekend in style, we've got everything you need for the perfect Sunday Funday!Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!Fresh Coffee – For those who need a little caffeine with their comedy.Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-12-26130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yokes & Jokes - Saturday Brunch Comedy Show! ",
+        "startDate": "2026-12-26T13:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-12-26130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T13:53:45-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-12-26130000",
+        "image": "/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+        "description": "Hot Breakfast. Cold Drinks. Big Laughs.Start your Saturday sunny side up with Yolks &amp; Jokes, The Riot's weekly comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Friday night or kicking off your Saturday in style, we've got everything you need for the perfect weekend brunch!???? Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!???? Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.???? Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!☕ Fresh Coffee – For those who need a little caffeine with their comedy.???? Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.???? LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.???? The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-12-27130000": {
+      "lastmod": "2026-10-11T03:30:00-05:00",
+      "node": {
+        "@context": "http://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show! ",
+        "startDate": "2026-12-27T13:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-12-27130000",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "InStock",
+          "validFrom": "2026-10-11T14:07:09-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-12-27130000",
+        "image": "/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+        "description": "Start your Sunday sunny side up with Yolks &amp; Jokes, The Riot's weekly Sunday comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Saturday night or wrapping up your weekend in style, we've got everything you need for the perfect Sunday Funday!Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!Fresh Coffee – For those who need a little caffeine with their comedy.Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Houston",

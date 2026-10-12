@@ -1,342 +1,6 @@
 {
- "updated": "2026-10-11T18:07:32.734Z",
+ "updated": "2026-10-12T02:44:31.090Z",
  "announcements": [
-  {
-   "id": "4898f80822b81bd0",
-   "name": "Dave Ross",
-   "venue": "The Secret Group",
-   "date": "2026-10-10",
-   "time": "7:00 PM",
-   "price_min": 26.13,
-   "price_max": 26.13,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194473097%2F3558237521%2F1%2Foriginal.20260927-205746?auto=format%2Ccompress&q=75&sharp=10&s=6aa4ffc0c380397736fc432a30b83a90",
-   "ticket_url": "https://www.eventbrite.com/e/dave-ross-tickets-2002395259123",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only -1d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "e8063ce6811dfefc",
-   "name": "The Best of the Secret Group Comedy Showcase 9pm",
-   "venue": "The Secret Group",
-   "date": "2026-10-10",
-   "time": "9:00 PM",
-   "price_min": 18.06,
-   "price_max": 21.51,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194472148%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=4367e6e6eeb98d5d887d57b397083fee",
-   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-9pm-tickets-2002394868956",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only -1d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "57b0ce273a7727d4",
-   "name": "The Best of the Secret Group RATED R Comedy Showcase 11pm",
-   "venue": "The Secret Group",
-   "date": "2026-10-10",
-   "time": "11:00 PM",
-   "price_min": 11.13,
-   "price_max": 14.59,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194472166%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=c8b7060ddf86c254757efef9dd41c9ca",
-   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-rated-r-comedy-showcase-11pm-tickets-2002394887010",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only -1d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "b7f81ad7075b24af",
-   "name": "SPEEDBALL: Saturday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-10-10",
-   "time": "11:59 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1065628803%2F3558237521%2F1%2Foriginal.20250703-001512?auto=format%2Ccompress&q=75&sharp=10&s=61b8871824c7fc4b25eb3b46b0c8c63e",
-   "ticket_url": "https://www.eventbrite.com/e/speedball-saturday-open-mic-comedy-tickets-2002394891022",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only -1d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "b183f8ff4cb66b71",
-   "name": "The Last Laugh with James Vogt & Trip Truman",
-   "venue": "The Secret Group",
-   "date": "2026-10-11",
-   "time": "7:00 PM",
-   "price_min": 8.82,
-   "price_max": 8.82,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1191459227%2F3558237521%2F1%2Foriginal.20260819-201134?auto=format%2Ccompress&q=75&sharp=10&s=cea7a34ee27a983a6dc54f88c3210522",
-   "ticket_url": "https://www.eventbrite.com/e/the-last-laugh-with-james-vogt-trip-truman-tickets-2002394974271",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 0d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "aa60e9ea4c156e8c",
-   "name": "The (secret) Secret Show",
-   "venue": "The Secret Group",
-   "date": "2026-10-11",
-   "time": "9:00 PM",
-   "price_min": 14.59,
-   "price_max": 14.59,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1182517711%2F3558237521%2F1%2Foriginal.20260419-192309?auto=format%2Ccompress&q=75&sharp=10&s=9360a990100667a0306d4f4d57bb4300",
-   "ticket_url": "https://www.eventbrite.com/e/the-secret-secret-show-tickets-2002394960229",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 0d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "d433c61232beb97f",
-   "name": "COMEDY DOJO: Sunday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-10-11",
-   "time": "11:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1115718973%2F3558237521%2F1%2Foriginal.20250905-193245?auto=format%2Ccompress&q=75&sharp=10&s=0f3508786faa5dc4d3f3540085034564",
-   "ticket_url": "https://www.eventbrite.com/e/comedy-dojo-sunday-open-mic-comedy-tickets-2002394987310",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 0d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "078e5ef271cbdbe3",
-   "name": "MONDAY NIGHT COMEDY!",
-   "venue": "The Secret Group",
-   "date": "2026-10-12",
-   "time": "8:00 PM",
-   "price_min": 8.82,
-   "price_max": 8.82,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1084977123%2F3558237521%2F1%2Foriginal.20250730-234417?auto=format%2Ccompress&q=75&sharp=10&s=27248b634d602f36b66580f6e67573f3",
-   "ticket_url": "https://www.eventbrite.com/e/monday-night-comedy-tickets-2002394995334",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 1d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "64cb81064cc4f1d6",
-   "name": "The Passing Lane with Andrew Youngblood, Will Loden & Blake Jones",
-   "venue": "The Secret Group",
-   "date": "2026-10-12",
-   "time": "10:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1175278655%2F3558237521%2F1%2Foriginal.20260119-212007?auto=format%2Ccompress&q=75&sharp=10&s=5a09ff467498732e5fdea29b56ad6e85",
-   "ticket_url": "https://www.eventbrite.com/e/the-passing-lane-with-andrew-youngblood-will-loden-blake-jones-tickets-2002394998343",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 1d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "91c777fbbf4df2c4",
-   "name": "NIGHT COURT: Monday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-10-12",
-   "time": "11:30 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176335183%2F3558237521%2F1%2Foriginal.20260131-175517?auto=format%2Ccompress&q=75&sharp=10&s=aadd8de34a66a713db9766a3e110f224",
-   "ticket_url": "https://www.eventbrite.com/e/night-court-monday-open-mic-comedy-tickets-2002395001352",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 1d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "158059709f0388e1",
-   "name": "FOR THE CULTURE: A Tuesday Comedy Show for The Culture",
-   "venue": "The Secret Group",
-   "date": "2026-10-13",
-   "time": "8:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1171686511%2F3558237521%2F1%2Foriginal.20251124-232548?auto=format%2Ccompress&q=75&sharp=10&s=f229ff3250f6ec814bce4550095dd7d0",
-   "ticket_url": "https://www.eventbrite.com/e/for-the-culture-a-tuesday-comedy-show-for-the-culture-tickets-2002395009376",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 2d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "373f308eab119c59",
-   "name": "C U Next Tuesday: Weekly Comedy hosted by Corlis DeLauren and Tess Vergult",
-   "venue": "The Secret Group",
-   "date": "2026-10-13",
-   "time": "10:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194473824%2F68532713233%2F1%2Foriginal.20240802-211725?auto=format%2Ccompress&q=75&sharp=10&s=3a2355b9407101bcefadacad5cd81425",
-   "ticket_url": "https://www.eventbrite.com/e/c-u-next-tuesday-weekly-comedy-hosted-by-corlis-delauren-and-tess-vergult-tickets-2002395953199",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 2d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "61005894dbf40f0f",
-   "name": "PASS THE MIC: Tuesday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-10-13",
-   "time": "11:30 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194473830%2F68532713233%2F1%2Foriginal.20240806-170802?auto=format%2Ccompress&q=75&sharp=10&s=e42470e6da0674f8209d191e956e0bb4",
-   "ticket_url": "https://www.eventbrite.com/e/pass-the-mic-tuesday-open-mic-comedy-tickets-2002395957211",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 2d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "ae0e86a3568364c8",
-   "name": "$2 BILL Two Dollar Comedy Show every Wednesday!",
-   "venue": "The Secret Group",
-   "date": "2026-10-14",
-   "time": "8:00 PM",
-   "price_min": 5.36,
-   "price_max": 5.36,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192637134%2F3558237521%2F1%2Foriginal.20260903-234123?auto=format%2Ccompress&q=75&sharp=10&s=93f8262e1563e28c879354e3f44335de",
-   "ticket_url": "https://www.eventbrite.com/e/2-bill-two-dollar-comedy-show-every-wednesday-tickets-2002395966238",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 3d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "0a4c8ae186fc5155",
-   "name": "Master Debaters",
-   "venue": "The Secret Group",
-   "date": "2026-10-14",
-   "time": "10:00 PM",
-   "price_min": 8.82,
-   "price_max": 8.82,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186105427%2F3558237521%2F1%2Foriginal.20260603-215732?auto=format%2Ccompress&q=75&sharp=10&s=d6cb2dc6efbb6740f97bbfc6a7ded544",
-   "ticket_url": "https://www.eventbrite.com/e/master-debaters-tickets-2002395969247",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 3d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "5abfa8600300680c",
-   "name": "WITCHY WEDNESDAYS: Wednesday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-10-14",
-   "time": "11:59 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1116853183%2F3558237521%2F1%2Foriginal.20250907-205756?auto=format%2Ccompress&q=75&sharp=10&s=4afa07037c4ed3981e9c168d7d882705",
-   "ticket_url": "https://www.eventbrite.com/e/witchy-wednesdays-wednesday-open-mic-comedy-tickets-2002395970250",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 3d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "ec81a970526c0b42",
-   "name": "BACK OF THE BUS: Thursday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-10-15",
-   "time": "9:30 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194474338%2F65406453537%2F1%2Foriginal.20210519-142609?auto=format%2Ccompress&q=75&sharp=10&s=29303cfd0c0213570ab7141bb1b179e8",
-   "ticket_url": "https://www.eventbrite.com/e/back-of-the-bus-thursday-open-mic-comedy-tickets-2002396109667",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 4d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "7d0464bd32677557",
-   "name": "The Best of the Secret Group Comedy Showcase 8pm",
-   "venue": "The Secret Group",
-   "date": "2026-10-16",
-   "time": "8:00 PM",
-   "price_min": 18.06,
-   "price_max": 21.51,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194473909%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=6daee91f83188d4be6be30c5884cdbca",
-   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-8pm-tickets-2002395992316",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 5d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "e72cb76e5066f987",
-   "name": "The Best of the Secret Group Comedy Showcase 10pm",
-   "venue": "The Secret Group",
-   "date": "2026-10-16",
-   "time": "10:00 PM",
-   "price_min": 18.06,
-   "price_max": 21.51,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194473855%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=cd802fbdd3eef79731a9d9186ef68621",
-   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-10pm-tickets-2002395973259",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 5d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "bdb33cb7127bd4e2",
-   "name": "The Late Night Dirty Show: X Rated Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-10-16",
-   "time": "11:59 PM",
-   "price_min": 8.82,
-   "price_max": 8.82,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F923781843%2F2186820483043%2F1%2Foriginal.20241227-161803?auto=format%2Ccompress&q=75&sharp=10&s=680f9342c7cee46a79ee13f5f9896ffe",
-   "ticket_url": "https://www.eventbrite.com/e/the-late-night-dirty-show-x-rated-comedy-tickets-2002395999337",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 5d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "6e091c226bf00dab",
-   "name": "The Best of the Secret Group Comedy Showcase 7pm",
-   "venue": "The Secret Group",
-   "date": "2026-10-17",
-   "time": "7:00 PM",
-   "price_min": 18.06,
-   "price_max": 21.51,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194473868%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=d7280e93aff723cdecccaa511199cf99",
-   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-7pm-tickets-2002395977271",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 6d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
   {
    "id": "1bf7471288e183f3",
    "name": "The Best of the Secret Group Comedy Showcase 9pm",
@@ -350,7 +14,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -366,7 +30,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -382,7 +46,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -398,7 +62,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -414,7 +78,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -430,7 +94,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -446,7 +110,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -462,7 +126,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -478,7 +142,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -494,7 +158,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -510,7 +174,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -526,7 +190,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -542,7 +206,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -558,7 +222,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -574,7 +238,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -590,7 +254,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -606,7 +270,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -622,7 +286,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -638,7 +302,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -654,7 +318,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -670,7 +334,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -686,7 +350,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -702,7 +366,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -718,7 +382,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (5 weeks)",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -734,7 +398,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -750,7 +414,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -1358,7 +1022,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -9d out (min 14)",
+   "notable_reason": "only -10d out (min 14)",
    "first_seen": "2026-09-28T20:10:41.923Z"
   },
   {
@@ -1374,7 +1038,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -8d out (min 14)",
+   "notable_reason": "only -9d out (min 14)",
    "first_seen": "2026-09-28T20:10:41.923Z"
   },
   {
@@ -1422,7 +1086,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -9d out (min 14)",
+   "notable_reason": "only -10d out (min 14)",
    "first_seen": "2026-09-29T02:48:36.348Z"
   },
   {
@@ -1486,7 +1150,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -7d out (min 14)",
+   "notable_reason": "only -8d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -1502,7 +1166,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -2d out (min 14)",
+   "notable_reason": "only -3d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -1518,7 +1182,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 0d out (min 14)",
+   "notable_reason": "only -1d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -1534,7 +1198,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -1550,7 +1214,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -1566,7 +1230,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -1598,7 +1262,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -1d out (min 14)",
+   "notable_reason": "only -2d out (min 14)",
    "first_seen": "2026-09-30T18:30:09.420Z"
   },
   {
@@ -1694,7 +1358,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -2d out (min 14)",
+   "notable_reason": "only -3d out (min 14)",
    "first_seen": "2026-10-01T18:56:47.376Z"
   },
   {
@@ -1710,7 +1374,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -2d out (min 14)",
+   "notable_reason": "only -3d out (min 14)",
    "first_seen": "2026-10-01T18:56:47.376Z"
   },
   {
@@ -1806,7 +1470,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-10-02T02:39:02.152Z"
   },
   {
@@ -1822,7 +1486,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-10-02T02:39:02.152Z"
   },
   {
@@ -1838,7 +1502,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-02T02:39:02.152Z"
   },
   {
@@ -2286,7 +1950,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -3d out (min 14)",
+   "notable_reason": "only -4d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -2302,7 +1966,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -2318,7 +1982,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -2846,7 +2510,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -1d out (min 14)",
+   "notable_reason": "only -2d out (min 14)",
    "first_seen": "2026-10-07T02:46:00.656Z"
   },
   {
@@ -2910,7 +2574,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-10-08T03:01:58.794Z"
   },
   {
@@ -2926,7 +2590,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-10-08T19:19:58.340Z"
   },
   {
@@ -2974,7 +2638,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-10-09T18:52:00.005Z"
   },
   {
@@ -3022,7 +2686,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -1d out (min 14)",
+   "notable_reason": "only -2d out (min 14)",
    "first_seen": "2026-10-10T02:50:31.432Z"
   },
   {
@@ -3102,7 +2766,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -1d out (min 14)",
+   "notable_reason": "only -2d out (min 14)",
    "first_seen": "2026-10-11T02:16:06.531Z"
   },
   {
@@ -3200,6 +2864,342 @@
    "tier": null,
    "notable_reason": "venue excluded",
    "first_seen": "2026-10-11T18:07:32.734Z"
+  },
+  {
+   "id": "5928d10bcc873094",
+   "name": "Yokes & Jokes - Saturday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-10-24",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-24130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "only 12d out (min 14)",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "ef0f746d53b28212",
+   "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-10-25",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-10-25130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "only 13d out (min 14)",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "b9940114c524ac2f",
+   "name": "Yokes & Jokes - Saturday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-10-31",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-31130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "1263941101f9230e",
+   "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-11-01",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-01130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "ba30b71dc04f047e",
+   "name": "Yokes & Jokes - Saturday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-11-07",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-07130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "cb273c615ae4f6fe",
+   "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-11-08",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-08130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "4c65c91cc23ea6c8",
+   "name": "Yokes & Jokes - Saturday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-11-14",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-14130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "0944d8faa2cc40a3",
+   "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-11-15",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-15130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "3288209ef0130784",
+   "name": "Yokes & Jokes - Saturday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-11-21",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-21130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "72c641044105972e",
+   "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-11-22",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-22130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "26a39910e16f1a30",
+   "name": "Yokes & Jokes - Saturday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-11-28",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-28130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "830a704a1c073e36",
+   "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-11-29",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-29130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "34fc73a690a00c8f",
+   "name": "Yokes & Jokes - Saturday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-05",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-12-05130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "b026cfdf27bacc25",
+   "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-06",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-12-06130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "cdd4830762b35b22",
+   "name": "Yokes & Jokes - Saturday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-12",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-12-12130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "8d1dca73dce49c23",
+   "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-13",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-12-13130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "f42eced914f50cca",
+   "name": "Yokes & Jokes - Saturday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-19",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-12-19130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "06fc5b8044df9f4b",
+   "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-20",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-12-20130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "d96c9dcf6df7f114",
+   "name": "Yokes & Jokes - Saturday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-26",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-12-26130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "22df3a479eb3aac5",
+   "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show!",
+   "venue": "The Riot Comedy Club",
+   "date": "2026-12-27",
+   "time": "1:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
+   "ticket_url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-12-27130000",
+   "source": "standuptix",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-12T02:44:31.090Z"
+  },
+  {
+   "id": "4c78b3a3ce98ad7b",
+   "name": "Usama Siddiquee",
+   "venue": "Houston Improv",
+   "date": "2026-12-27",
+   "time": "6:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/a12/f6c544db-b3a3-4d88-b839-922713136a12_EVENT_DETAIL_PAGE_16_9.jpg",
+   "ticket_url": "https://www.ticketweb.com/event/usama-siddiquee-houston-improv-tickets/14926133?REFERRAL_ID=tmfeed",
+   "source": "ticketmaster",
+   "notable": true,
+   "tier": "headliner_room",
+   "notable_reason": "headliner room",
+   "first_seen": "2026-10-12T02:44:31.090Z"
   }
  ]
 }
