@@ -1,19 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-10-12T02:42:11.702Z",
-  "total_excluded": 25,
+  "last_updated": "2026-10-12T21:45:23.940Z",
+  "total_excluded": 24,
   "events": [
-    {
-      "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-10-11",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/our-mic-is-your-mic-emo-karaoke-tickets-2002394977280",
-      "reason": "title keyword blocklisted: \"karaoke\""
-    },
     {
       "name": "Karaoke every THURSDAY!",
       "venue": "The Secret Group",

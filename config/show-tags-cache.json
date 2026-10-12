@@ -2439,6 +2439,34 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-10-12"
+    },
+    "michelle collins": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-12"
+    },
+    "tre tutson & friends": {
+      "tags": [
+        "black-comedy"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-12"
+    },
+    "ismo: live!": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-12"
+    },
+    "vincent bryant headlines the riot comedy club": {
+      "tags": [
+        "black-comedy"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-12"
     }
   }
 }
