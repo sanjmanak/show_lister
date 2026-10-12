@@ -1,117 +1,117 @@
 {
-  "generated_at": "2026-10-05T21:59:36.054Z",
-  "week_range": "October 5 – October 11, 2026",
+  "generated_at": "2026-10-12T22:29:32.916Z",
+  "week_range": "October 12 – October 18, 2026",
   "comedians": [
     {
-      "name": "John Mulaney",
-      "displayName": "John Mulaney",
+      "name": "Tony Hinchcliffe",
+      "displayName": "Tony Hinchcliffe",
       "names": [
-        "John Mulaney"
+        "Tony Hinchcliffe"
       ],
-      "show": "John Mulaney",
-      "venue": "The Grand 1894 Opera House - TX",
-      "date": "2026-10-11",
-      "eventKey": "johnmulaney@thegrand1894operahousetx",
-      "imageUrl": "https://s1.ticketm.net/dam/a/b30/ccd9ebe2-c301-4487-bbe4-5bd6be744b30_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/b30/ccd9ebe2-c301-4487-bbe4-5bd6be744b30_SOURCE",
+      "show": "Kill Tony",
+      "venue": "Smart Financial Centre at Sugar Land",
+      "date": "2026-10-17",
+      "eventKey": "killtony@smartfinancialcentreatsugarland",
+      "imageUrl": "https://s1.ticketm.net/dam/a/bb5/c7d68f46-2707-4c16-8b12-b561ea43ebb5_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "displayImage": "https://s1.ticketm.net/dam/a/bb5/c7d68f46-2707-4c16-8b12-b561ea43ebb5_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "imageSource": "event"
     },
     {
-      "name": "Heather Shaw",
-      "displayName": "Heather Shaw",
+      "name": "Marlon Wayans",
+      "displayName": "Marlon Wayans",
       "names": [
-        "Heather Shaw"
+        "Marlon Wayans"
       ],
-      "show": "Heather Shaw (The Today Show) Headlines The Riot Comedy Club",
-      "venue": "The Riot Comedy Club",
-      "date": "2026-10-09",
-      "eventKey": "heathershawthetodayshowheadlinestheriotcomedyclub@theriotcomedyclub",
-      "imageUrl": "https://www.theriothtx.com/img/shows/IMG-0442-7d360778-large-thumb.jpg",
-      "displayImage": "https://www.theriothtx.com/img/shows/IMG-0442-7d360778-large-thumb.jpg",
-      "imageSource": "event"
-    },
-    {
-      "name": "Manuel Ángel Redondo",
-      "displayName": "Manuel Ángel Redondo",
-      "names": [
-        "Manuel Ángel Redondo"
-      ],
-      "show": "Manuel Ángel Redondo (En Español)",
-      "venue": "Punch Line Houston",
-      "date": "2026-10-06",
-      "eventKey": "manuelngelredondoenespaol@punchlinehouston",
-      "imageUrl": "https://s1.ticketm.net/dam/e/774/32399a10-04d6-4997-8445-cbef8e39c774_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/e/774/32399a10-04d6-4997-8445-cbef8e39c774_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Craig Conant",
-      "displayName": "Craig Conant",
-      "names": [
-        "Craig Conant"
-      ],
-      "show": "Craig Conant",
+      "show": "Marlon Wayans",
       "venue": "Houston Improv",
-      "date": "2026-10-09",
-      "eventKey": "craigconant@houstonimprov",
-      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "displayImage": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "date": "2026-10-16",
+      "eventKey": "marlonwayans@houstonimprov",
+      "imageUrl": "https://s1.ticketm.net/dam/a/649/fc0c18a2-de9c-4378-9212-c7fa46e7e649_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/649/fc0c18a2-de9c-4378-9212-c7fa46e7e649_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Gauri B",
-      "displayName": "Gauri B",
+      "name": "Mo Amer",
+      "displayName": "Mo Amer",
       "names": [
-        "Gauri B"
+        "Mo Amer"
       ],
-      "show": "GAURI B: YEARS IN THE BREAKING",
-      "venue": "White Oak Music Hall - Upstairs",
-      "date": "2026-10-08",
-      "eventKey": "gauribyearsinthebreaking@whiteoakmusichallupstairs",
-      "imageUrl": "https://s1.ticketm.net/dam/e/2aa/53cdaee4-36c6-4d50-bcd5-a158ef0182aa_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "displayImage": "https://s1.ticketm.net/dam/e/2aa/53cdaee4-36c6-4d50-bcd5-a158ef0182aa_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "show": "ZETEO AND RISALA PRESENT MEHDI & MO AMER IN HOUSTON",
+      "venue": "Cullen Performance Hall",
+      "date": "2026-10-16",
+      "eventKey": "zeteoandrisalapresentmehdimoamerinhouston@cullenperformancehall",
+      "imageUrl": "https://s1.ticketm.net/dam/a/407/e2afafee-20b2-4067-b289-cb171ea40407_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/407/e2afafee-20b2-4067-b289-cb171ea40407_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Richie O’Farrill",
-      "displayName": "Richie O’Farrill",
+      "name": "Iván Fematt La Mole",
+      "displayName": "Iván Fematt La Mole",
       "names": [
-        "Richie O’Farrill"
+        "Iván Fematt La Mole"
       ],
-      "show": "Richie O’Farrill - En Español",
+      "show": "Iván Fematt La Mole (En Español)",
       "venue": "Houston Improv",
-      "date": "2026-10-07",
-      "eventKey": "richieofarrillenespaol@houstonimprov",
+      "date": "2026-10-15",
+      "eventKey": "ivnfemattlamoleenespaol@houstonimprov",
       "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "displayImage": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "displayImage": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237c5cff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ff4d6a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2254%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22Inter%2CArial%2Csans-serif%22%20font-size%3D%2280%22%20font-weight%3D%22800%22%20fill%3D%22%23ffffff%22%3EIF%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "imageSource": "initials"
+    },
+    {
+      "name": "Anjelah Johnson-Reyes",
+      "displayName": "Anjelah Johnson-Reyes",
+      "names": [
+        "Anjelah Johnson-Reyes"
+      ],
+      "show": "Funjelah Live Podcast Taping w/ Anjelah Johnson-Reyes & Special Guest",
+      "venue": "Punch Line Houston",
+      "date": "2026-10-15",
+      "eventKey": "funjelahlivepodcasttapingwanjelahjohnsonreyesspecialguest@punchlinehouston",
+      "imageUrl": "https://s1.ticketm.net/dam/a/754/9026b1db-62a7-45e4-8fbc-b4d7b85ee754_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/754/9026b1db-62a7-45e4-8fbc-b4d7b85ee754_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Winston Hodges",
-      "displayName": "Winston Hodges",
+      "name": "TK Kirkland",
+      "displayName": "TK Kirkland",
       "names": [
-        "Winston Hodges"
+        "TK Kirkland"
       ],
-      "show": "Winston Hodges",
+      "show": "TK Kirkland",
       "venue": "Punch Line Houston",
-      "date": "2026-10-08",
-      "eventKey": "winstonhodges@punchlinehouston",
-      "imageUrl": "https://s1.ticketm.net/dam/a/58f/a856a90f-735f-4102-b494-0826dee4458f_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/58f/a856a90f-735f-4102-b494-0826dee4458f_SOURCE",
+      "date": "2026-10-16",
+      "eventKey": "tkkirkland@punchlinehouston",
+      "imageUrl": "https://s1.ticketm.net/dam/a/c65/7e689083-7081-41c0-9606-f8b57a0dbc65_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/c65/7e689083-7081-41c0-9606-f8b57a0dbc65_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Holmes",
-      "displayName": "Holmes",
+      "name": "Chaunte Wayans",
+      "displayName": "Chaunte Wayans",
       "names": [
-        "Holmes"
+        "Chaunte Wayans"
       ],
-      "show": "Holmes",
+      "show": "Chaunte Wayans",
       "venue": "Punch Line Houston",
-      "date": "2026-10-07",
-      "eventKey": "holmes@punchlinehouston",
-      "imageUrl": "https://s1.ticketm.net/dam/a/ae9/10bf613c-34b5-4808-9280-20a08fc40ae9_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/ae9/10bf613c-34b5-4808-9280-20a08fc40ae9_SOURCE",
+      "date": "2026-10-16",
+      "eventKey": "chauntewayans@punchlinehouston",
+      "imageUrl": "https://s1.ticketm.net/dam/a/811/01c641b8-c700-40e6-8b6f-a994aa7a2811_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/811/01c641b8-c700-40e6-8b6f-a994aa7a2811_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "Saul Trujillo",
+      "displayName": "Saul Trujillo",
+      "names": [
+        "Saul Trujillo"
+      ],
+      "show": "Saul Trujillo Live in Houston",
+      "venue": "The Pink Flamingo Comedy Club",
+      "date": "2026-10-16",
+      "eventKey": "saultrujilloliveinhouston@thepinkflamingocomedyclub",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1181708836%2F2996872667695%2F1%2Foriginal.20260408-170702?auto=format%2Ccompress&q=75&sharp=10&s=7d6e846bfc86b5056c825227e8525c73",
+      "displayImage": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1181708836%2F2996872667695%2F1%2Foriginal.20260408-170702?auto=format%2Ccompress&q=75&sharp=10&s=7d6e846bfc86b5056c825227e8525c73",
       "imageSource": "event"
     }
   ]
