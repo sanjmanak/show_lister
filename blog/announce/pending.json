@@ -1,3 +1,21 @@
 {
-  "items": []
+  "generated_at": "2026-10-12T22:35:28.405Z",
+  "dry_run": false,
+  "items": [
+    {
+      "id": "c8f67fb80244a583",
+      "name": "LeMaire Lee",
+      "performer_name": "LeMaire Lee",
+      "venue": "Punch Line Houston",
+      "date": "2026-12-23",
+      "ticket_url": "https://www.ticketmaster.com/lemaire-lee-houston-texas-12-23-2026/event/3A00651FC275FA9F",
+      "files": {
+        "portrait": "2026-12-23-lemaire-lee-portrait.png",
+        "story": "2026-12-23-lemaire-lee-story.png",
+        "reel": "2026-12-23-lemaire-lee.mp4"
+      },
+      "caption": "Matt and Shane’s Secret Podcast producer LeMaire Lee is putting his own stand-up front and center.\nLeMaire Lee performs at Punch Line Houston on December 23, 2026. He also hosts the podcast Panties in the Mouth. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
+      "confidence": 0.88
+    }
+  ]
 }
