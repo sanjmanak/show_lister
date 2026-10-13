@@ -2467,6 +2467,14 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-10-12"
+    },
+    "ali siddiq presents: the jive turkeys": {
+      "tags": [
+        "black-comedy"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-13"
     }
   }
 }
