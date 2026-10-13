@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-10-13-26-07-00-pm": {
-      "lastmod": "2026-10-10T09:56:00-05:00",
+      "lastmod": "2026-10-13T01:33:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -209,7 +209,7 @@
       }
     },
     "https://www.theriothtx.com/events/kerryn-feehan-netflix-comedy-central-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-10-10T09:56:00-05:00",
+      "lastmod": "2026-10-13T10:13:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -253,12 +253,16 @@
           {
             "@type": "Person",
             "name": "Will Abeles"
+          },
+          {
+            "@type": "Person",
+            "name": "Brian Gendron"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-24": {
-      "lastmod": "2026-10-10T09:56:00-05:00",
+      "lastmod": "2026-10-13T10:13:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -309,21 +313,21 @@
           },
           {
             "@type": "Person",
-            "name": "Derrick Stroup"
-          },
-          {
-            "@type": "Person",
             "name": "Brian Gendron"
           },
           {
             "@type": "Person",
             "name": "Christian Alexander"
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-21": {
-      "lastmod": "2026-10-10T09:56:00-05:00",
+      "lastmod": "2026-10-13T11:29:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -374,21 +378,25 @@
           },
           {
             "@type": "Person",
-            "name": "Derrick Stroup"
-          },
-          {
-            "@type": "Person",
-            "name": "Mason James"
-          },
-          {
-            "@type": "Person",
             "name": "Keisha Hunt"
+          },
+          {
+            "@type": "Person",
+            "name": "Luis Dejesus"
+          },
+          {
+            "@type": "Person",
+            "name": "Ruben Medina"
+          },
+          {
+            "@type": "Person",
+            "name": "Jake Baker"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/kerryn-feehan-netflix-comedy-central-headlines-the-riot-comedy-club-the-riot-houston": {
-      "lastmod": "2026-10-09T07:10:00-05:00",
+      "lastmod": "2026-10-13T11:33:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -428,12 +436,20 @@
           {
             "@type": "Person",
             "name": "Kerryn Feehan"
+          },
+          {
+            "@type": "Person",
+            "name": "Brian Gendron"
+          },
+          {
+            "@type": "Person",
+            "name": "Luis Dejesus"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-20": {
-      "lastmod": "2026-10-09T07:10:00-05:00",
+      "lastmod": "2026-10-13T02:22:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -476,17 +492,29 @@
           },
           {
             "@type": "Person",
-            "name": "TBD"
+            "name": "Kylie Kaiser"
           },
           {
             "@type": "Person",
-            "name": "Kylie Kaiser"
+            "name": "Brian Gendron"
+          },
+          {
+            "@type": "Person",
+            "name": "Christian Alexander"
+          },
+          {
+            "@type": "Person",
+            "name": "Matt B.C."
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-24": {
-      "lastmod": "2026-10-09T07:10:00-05:00",
+      "lastmod": "2026-10-13T11:33:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -526,6 +554,26 @@
           {
             "@type": "Person",
             "name": "Kylie Kaiser"
+          },
+          {
+            "@type": "Person",
+            "name": "Lotto Marie"
+          },
+          {
+            "@type": "Person",
+            "name": "Mackenzie jewell"
+          },
+          {
+            "@type": "Person",
+            "name": "Dylan Kendrick"
+          },
+          {
+            "@type": "Person",
+            "name": "Timely Rain Watson"
+          },
+          {
+            "@type": "Person",
+            "name": "Brandon Green"
           }
         ]
       }
