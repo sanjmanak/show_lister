@@ -471,6 +471,21 @@
   // ================================================================
   // GA4 EVENT TRACKING — fires when visitor clicks "Get Tickets"
   // ================================================================
+  // Reverse of buildTicketUrl: pull the vendor URL back out of a ?ch_go=
+  // wrapper (URL-safe base64, no padding). Falls back to the input.
+  function decodeTicketUrl(href) {
+    var m = /[?&]ch_go=([A-Za-z0-9_-]+)/.exec(href || "");
+    if (!m) return href || "";
+    try {
+      var b64 = m[1].replace(/-/g, "+").replace(/_/g, "/");
+      while (b64.length % 4) b64 += "=";
+      var decoded = atob(b64);
+      return isSafeHttpUrl(decoded) ? decoded : href;
+    } catch (_) {
+      return href;
+    }
+  }
+
   function handleTicketClick(e) {
     var link = e.currentTarget;
     var card = link.closest(".event-card");
@@ -479,6 +494,12 @@
     var eventName = (card.querySelector(".card-name") || {}).textContent || "Unknown";
     var venueName = (card.querySelector(".card-venue") || {}).textContent || "Unknown";
     var priceText = (card.querySelector(".card-price") || {}).textContent || "";
+    // The href is the ?ch_go= tracking wrapper; report the real vendor URL
+    // so the GA4 outbound_url dimension reads "ticketmaster.com/..." instead
+    // of a base64 blob (2.17.0).
+    var destUrl = decodeTicketUrl(link.href);
+    var vendorDomain = "";
+    try { vendorDomain = new URL(destUrl).hostname.replace(/^www\./, ""); } catch (_) {}
 
     // Fire GA4 event if gtag is available (injected by Site Kit)
     if (typeof gtag === "function") {
@@ -488,7 +509,8 @@
         comedian_name: eventName,
         venue_name: venueName,
         price_info: priceText.trim(),
-        outbound_url: link.href
+        outbound_url: destUrl,
+        vendor_domain: vendorDomain
       });
     }
 

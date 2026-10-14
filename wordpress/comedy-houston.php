@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.16.3
+ * Version: 2.17.0
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.16.3';
+    const VERSION      = '2.17.0';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -144,6 +144,12 @@ class Comedy_Houston_Plugin {
         // inquiry form (Lead).
         add_action('wp_head', [$this, 'emit_meta_pixel'], 7);
 
+        // 2.17.0: email leads. Agents and comics who email creative@ never
+        // touch a form, so GA4 saw nothing. This footer snippet reports
+        // email_click (mailto: link clicked) and email_copy (address copied
+        // or right-clicked) on every page; the events need no GA4 setup.
+        add_action('wp_footer', [$this, 'emit_email_lead_tracker'], 20);
+
         // Live dates in titles/H1s ({weekend_range} etc — see
         // expand_date_tokens). The SEO-plugin filters below only ever fire
         // on sites running that plugin, and each is a no-op on a string
@@ -182,18 +188,22 @@ class Comedy_Houston_Plugin {
     // =========================================================================
 
     public function register_assets() {
+        // Cache-buster = VERSION plus the file's mtime, so a JS/CSS file
+        // replaced through hPanel's file manager (Hostinger's FTP rejects
+        // text uploads over ~12 KB) is picked up without a PHP redeploy.
+        $dir = plugin_dir_path(__FILE__);
         wp_register_style(
             'comedy-houston-style',
             plugin_dir_url(__FILE__) . 'comedy-houston.css',
             [],
-            self::VERSION
+            self::VERSION . '.' . (int) @filemtime($dir . 'comedy-houston.css')
         );
 
         wp_register_script(
             'comedy-houston-app',
             plugin_dir_url(__FILE__) . 'comedy-houston.js',
             [],
-            self::VERSION,
+            self::VERSION . '.' . (int) @filemtime($dir . 'comedy-houston.js'),
             true
         );
     }
@@ -1119,6 +1129,39 @@ class Comedy_Houston_Plugin {
             return $title;
         }
         return $this->expand_date_tokens($h1);
+    }
+
+    /**
+     * Inline email-lead tracker (all front-end pages). Sends GA4 events via
+     * the Site Kit gtag when present, mirrors to the Meta Pixel "Contact"
+     * standard event. Parameters: email_address, page_path, method.
+     */
+    public function emit_email_lead_tracker() {
+        if (is_admin()) {
+            return;
+        }
+        ?>
+<script>
+(function(){
+  function send(name, addr, method){
+    var p = {email_address: addr, page_path: location.pathname, method: method};
+    if (typeof gtag === "function") { gtag("event", name, p); }
+    if (name === "email_click" && typeof fbq === "function") { fbq("track", "Contact", {content_name: addr}); }
+  }
+  function mailtoOf(el){
+    var a = el && el.closest ? el.closest('a[href^="mailto:"]') : null;
+    return a ? a.getAttribute("href").replace(/^mailto:/i, "").split("?")[0] : "";
+  }
+  document.addEventListener("click", function(e){ var m = mailtoOf(e.target); if (m) send("email_click", m, "click"); }, true);
+  document.addEventListener("contextmenu", function(e){ var m = mailtoOf(e.target); if (m) send("email_copy", m, "context_menu"); }, true);
+  document.addEventListener("copy", function(){
+    var t = String(window.getSelection && window.getSelection() || "");
+    var m = /[A-Za-z0-9._%+-]+@comedyhouston\.com/i.exec(t);
+    if (m) send("email_copy", m[0].toLowerCase(), "copy");
+  }, true);
+})();
+</script>
+        <?php
     }
 
     /** Meta Pixel base snippet + domain verification. Guarded so fbq is never double-defined. */
