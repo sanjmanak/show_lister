@@ -1,22 +1,6 @@
 {
- "updated": "2026-10-14T02:14:33.469Z",
+ "updated": "2026-10-14T18:03:52.180Z",
  "announcements": [
-  {
-   "id": "4620e4e76deb36e2",
-   "name": "NIGHT COURT: Monday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-10-19",
-   "time": "11:30 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176335183%2F3558237521%2F1%2Foriginal.20260131-175517?auto=format%2Ccompress&q=75&sharp=10&s=aadd8de34a66a713db9766a3e110f224",
-   "ticket_url": "https://www.eventbrite.com/e/night-court-monday-open-mic-comedy-tickets-2002396131733",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 5d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
   {
    "id": "a9b2d97a085fbe63",
    "name": "FOR THE CULTURE: A Tuesday Comedy Show for The Culture",
@@ -3200,6 +3184,22 @@
    "tier": null,
    "notable_reason": "small room",
    "first_seen": "2026-10-14T02:14:33.469Z"
+  },
+  {
+   "id": "167e6e0412ff50db",
+   "name": "Comedy Allstars",
+   "venue": "Punch Line Houston",
+   "date": "2026-12-18",
+   "time": "9:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/204/1cf0a6ef-fc13-449d-a78a-210f4ddbd204_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/comedy-allstars-houston-texas-12-18-2026/event/3A00654B3E7E4DF8",
+   "source": "ticketmaster",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-14T18:03:52.180Z"
   }
  ]
 }

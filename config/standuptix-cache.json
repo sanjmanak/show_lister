@@ -404,7 +404,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-24": {
-      "lastmod": "2026-10-13T11:33:00-05:00",
+      "lastmod": "2026-10-14T11:34:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -464,6 +464,10 @@
           {
             "@type": "Person",
             "name": "Brandon Green"
+          },
+          {
+            "@type": "Person",
+            "name": "Jake Baker"
           }
         ]
       }
