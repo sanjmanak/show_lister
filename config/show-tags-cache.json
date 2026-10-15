@@ -2487,6 +2487,12 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-10-15"
+    },
+    "punchlines & pie: fall edition 11/14": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-15"
     }
   }
 }

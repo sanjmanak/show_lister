@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-headliner-will-abeles": {
-      "lastmod": "2026-10-10T01:42:00-05:00",
+      "lastmod": "2026-10-15T03:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -10126,7 +10126,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-2026-funniest-person-in-houston-fpih-comedy-competition-2026-10-15190000": {
-      "lastmod": "2026-10-10T01:42:00-05:00",
+      "lastmod": "2026-10-15T01:03:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
