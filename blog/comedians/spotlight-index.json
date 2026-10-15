@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T21:03:21.072Z",
+  "generated_at": "2026-10-15T21:12:36.543Z",
   "source_manifests": [
     "manifest-2026-10-12.json",
     "manifest-2026-10-19.json",
@@ -46,35 +46,35 @@
       "date": "2026-10-19",
       "comedianName": "Sarper Güven",
       "slug": "sarper-gven-punch-line-houston-2026-10-19",
-      "wpLink": "https://comedyhouston.com/sarper-gven-punch-line-houston-2026-10-19/",
+      "wpLink": "https://comedyhouston.com/comedians/sarper-guven/",
       "venue": "Punch Line Houston"
     },
     {
       "date": "2026-10-20",
-      "comedianName": "Foos Gone Wild",
+      "comedianName": "FOOS GONE WILD",
       "slug": "foos-gone-wild-house-of-blues-houston-2026-10-20",
-      "wpLink": "https://comedyhouston.com/foos-gone-wild-house-of-blues-houston-2026-10-20/",
+      "wpLink": "https://comedyhouston.com/comedians/foos-gone-wild/",
       "venue": "House of Blues Houston"
     },
     {
       "date": "2026-10-21",
       "comedianName": "Joanne McNally",
       "slug": "joanne-mcnally-punch-line-houston-2026-10-21",
-      "wpLink": "https://comedyhouston.com/joanne-mcnally-punch-line-houston-2026-10-21/",
+      "wpLink": "https://comedyhouston.com/comedians/joanne-mcnally/",
       "venue": "Punch Line Houston"
-    },
-    {
-      "date": "2026-10-21",
-      "comedianName": "José Rafael Guzmán",
-      "slug": "jos-rafael-guzmn-houston-improv-2026-10-21",
-      "wpLink": "https://comedyhouston.com/jos-rafael-guzmn-houston-improv-2026-10-21/",
-      "venue": "Houston Improv"
     },
     {
       "date": "2026-10-22",
       "comedianName": "Josh Gondelman",
       "slug": "josh-gondelman-punch-line-houston-2026-10-22",
-      "wpLink": "https://comedyhouston.com/josh-gondelman-punch-line-houston-2026-10-22/",
+      "wpLink": "https://comedyhouston.com/comedians/josh-gondelman/",
+      "venue": "Punch Line Houston"
+    },
+    {
+      "date": "2026-10-23",
+      "comedianName": "Pauly Shore",
+      "slug": "pauly-shore-punch-line-houston-2026-10-23",
+      "wpLink": "https://comedyhouston.com/comedians/pauly-shore/",
       "venue": "Punch Line Houston"
     },
     {

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-10-15T21:03:21.070Z",
+  "updated_at": "2026-10-15T21:12:36.540Z",
   "comedians": [
     {
       "slug": "abby-govindan",
@@ -299,6 +299,44 @@
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/dovi-neuburger-houston-1.jpg"
     },
     {
+      "slug": "foos-gone-wild",
+      "name": "FOOS GONE WILD",
+      "match": [
+        "foos gone wild"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T21:07:13.503Z",
+      "profile_written_at": "2026-10-15T21:08:20.473Z",
+      "profile_html": "<p>In July 2026, will.i.am’s video for <a href=\"https://www.youtube.com/watch?v=jw8_fRqSWIY\">“SICK ASS FOO’S”</a>, featuring Lil Mr. E and Toxica, credited “Original Music: will.i.am &amp; FOOS GONE WILD.”</p>\n\n<p>FOOS GONE WILD began as an Instagram account in 2018, built on user-submitted photos and videos, captions, high-pitched voice-over commentary, original animations, and music. A 2019 <a href=\"https://lataco.com/where-is-this-foo-going-behind-the-foo-phenomenon-of-foosgonewild\">L.A. TACO profile</a> described the anonymous operation as a collective connected to Tijuana, Los Angeles, San Diego, and Oxnard. Its working definition: “A foo is a foo, you just know one when you see one.”</p>\n\n<p>Lowriders, party lines, West Coast rap, G-funk, tube socks, Cortez shoes, and the social taxonomy of the foo recur. Drug slang comes with anti-drug disclaimers. “The Higher The Socks (The Downer The Foo).”</p>\n\n<p>Lil Mr. E told <a href=\"https://lataco.com/foos-gone-wild-the-album\">L.A. TACO</a> in 2020 that the project combined comedy, cartoons, and music. The 16-track <a href=\"https://music.apple.com/us/album/tortas-feat-lil-mr-e/6774796703?i=6774796870\">WELCOME TO FOOVILLE</a> arrived in June 2026.</p>",
+      "research_json": "{\n  \"full_name\": \"Foos Gone Wild\",\n  \"hometown\": \"\",\n  \"career_start_year\": 2018,\n  \"specials\": [],\n  \"podcast_appearances\": [],\n  \"tv_appearances\": [],\n  \"comedy_style\": {\n    \"tone\": \"Barrio-rooted, irreverent, satirical, and nostalgia-driven.\",\n    \"structure\": \"Uses user-submitted clips alongside witty captions, high-pitched voice-over roasting, original animations, music, and recurring character-based material.\",\n    \"recurring_themes\": [\n      \"Southern California barrio life\",\n      \"Cholo-adjacent culture\",\n      \"Foo archetypes\",\n      \"Lowriders\",\n      \"Party lines\",\n      \"West Coast rap and G-funk\",\n      \"Tube socks and Cortez shoes\",\n      \"Drug slang framed with anti-drug disclaimers\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"\",\n  \"recent_activity_2025_2026\": \"Foos Gone Wild released the 16-track album \\\"WELCOME TO FOOVILLE\\\" on June 5, 2026. Its official YouTube channel announced its first-ever headlining tour on June 9, 2026. Ticketmaster currently marks the remaining listed October 2026 tour dates as cancelled. Lil Mr. E also appeared on will.i.am's July 2026 single and music video \\\"SICK ASS FOO'S,\\\" whose official video credits original music to will.i.am and Foos Gone Wild.\",\n  \"recent_hook\": {\n    \"summary\": \"will.i.am released the official music video for \\\"SICK ASS FOO'S,\\\" featuring Lil Mr. E and Toxica; the video credits Foos Gone Wild as a co-creator of the original music.\",\n    \"quote\": \"Original Music: will.i.am & Foos Gone Wild\",\n    \"source_publication\": \"will.i.am Official YouTube Channel\",\n    \"source_url\": \"https://www.youtube.com/watch?v=jw8_fRqSWIY\",\n    \"date\": \"2026-07-02\"\n  },\n  \"instagram_handle\": \"@foosgonewild\",\n  \"notable_bits_or_quotes\": [\n    \"\\\"A foo is a foo, you just know one when you see one.\\\"\",\n    \"\\\"It's cholo folk art.\\\"\",\n    \"\\\"It's a comedy page, bro. It's not to be taken serious.\\\"\",\n    \"\\\"The Higher The Socks (The Downer The Foo)\\\"\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"The full legal name of Foos Gone Wild's anonymous administrator.\",\n    \"Claims that Foos Gone Wild was founded by a named \\\"San Diego Chicano activist\\\"; this characterization appeared in an EverybodyWiki entry and was not independently verified.\",\n    \"Claims that Foos Gone Wild has released a Netflix comedy special or appeared in a Netflix production.\",\n    \"Claims that an animated Foos Gone Wild series for Netflix or Adult Swim was produced or released; verified interviews describe this only as an aspiration or planned project.\",\n    \"Claims that Foos Gone Wild's 2026 tour was completed successfully; Ticketmaster currently lists the remaining posted October 2026 dates as cancelled.\",\n    \"Claims that Foos Gone Wild is a conventional stand-up act with individually verified television or podcast credits.\"\n  ],\n  \"background_story\": \"Foos Gone Wild began as an Instagram account in 2018 that satirized barrio life and cholo culture. A 2019 L.A. TACO profile described the anonymous administrator as \\\"King Foo\\\" and said the account turned user-submitted photos and videos into captioned, voice-over comedy and original animations; the administrator described FGW as a collective connected to Tijuana, Los Angeles, San Diego, and Oxnard. In a 2020 L.A. TACO interview, Lil Mr. E was identified as Foos Gone Wild's founder and said the project was designed to combine comedy, cartoons, and music.\",\n  \"source_urls\": [\n    {\n      \"label\": \"L.A. TACO profile/interview\",\n      \"url\": \"https://lataco.com/where-is-this-foo-going-behind-the-foo-phenomenon-of-foosgonewild\"\n    },\n    {\n      \"label\": \"L.A. TACO album interview\",\n      \"url\": \"https://lataco.com/foos-gone-wild-the-album\"\n    },\n    {\n      \"label\": \"Apple Music — WELCOME TO FOOVILLE\",\n      \"url\": \"https://music.apple.com/us/album/tortas-feat-lil-mr-e/6774796703?i=6774796870\"\n    },\n    {\n      \"label\": \"Foos Gone Wild official YouTube — The Foos Gone Wild Tour 2026\",\n      \"url\": \"https://www.youtube.com/watch?v=m-U16VN7FJk\"\n    },\n    {\n      \"label\": \"will.i.am official YouTube — SICK ASS FOO'S\",\n      \"url\": \"https://www.youtube.com/watch?v=jw8_fRqSWIY\"\n    },\n    {\n      \"label\": \"Ticketmaster — Foos Gone Wild\",\n      \"url\": \"https://www.ticketmaster.com/foos-gone-wild-tickets/artist/2789935?tt_scene=anchor_view\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.youtube.com/watch?v=jw8_fRqSWIY",
+        "https://www.youtube.com/watch?v=m-U16VN7FJk",
+        "https://www.instagram.com/foosgonewild/"
+      ],
+      "instagramHandle": "@foosgonewild",
+      "imageUrl": "https://s1.ticketm.net/dam/a/5e3/fd510e97-d4b0-4d3a-89be-b442fef295e3_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "wpPageId": 2231,
+      "wpLink": "https://comedyhouston.com/comedians/foos-gone-wild/",
+      "wpImageMediaId": 2230,
+      "legacy_slugs": [
+        "foos-gone-wild-house-of-blues-houston-2026-10-20"
+      ],
+      "shows": [
+        {
+          "date": "2026-10-20",
+          "venue": "House of Blues Houston",
+          "time": "7:00 PM",
+          "name": "FOOS GONE WILD: The FOOS GONE WILD Tour 2026",
+          "ticket_url": "https://www.ticketmaster.com/foos-gone-wild-the-foos-gone-houston-texas-10-20-2026/event/3A0064C5D687EBAE",
+          "event_id": "7136541041af2e0d",
+          "image_url": "https://s1.ticketm.net/dam/a/5e3/fd510e97-d4b0-4d3a-89be-b442fef295e3_TABLET_LANDSCAPE_LARGE_16_9.jpg"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/foos-gone-wild-houston.jpg"
+    },
+    {
       "slug": "ivan-fematt-la-mole",
       "name": "Iván Fematt La Mole",
       "match": [
@@ -333,6 +371,81 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/ivan-fematt-la-mole-houston.jpg"
+    },
+    {
+      "slug": "joanne-mcnally",
+      "name": "Joanne McNally",
+      "match": [
+        "joanne mcnally"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T21:08:33.751Z",
+      "profile_written_at": "2026-10-15T21:09:39.809Z",
+      "profile_html": "<p>Joanne McNally came to stand-up after appearing in Una McKevitt’s 2014 stage show <i>Singlehood</i>, following work in public relations and for a mental-health charity. Her 2016 one-woman show <i>Bite Me</i> drew on her experience of eating disorders. Dating, female friendship, nightlife, class and Irish identity remain in the mix. Her <a href=\"https://en.wikipedia.org/wiki/Joanne_McNally\">background</a> supplies the stories.</p>\n\n<p>Her stand-up runs on conversational riffing and quick timing. A bald man gets no evasive courtesy: “I’ll stop you there, you know you’re bald? This conversation sounds like you think you’ve got a full head of hair.” McNally also takes aim at her own background: “I do say I’m from a posh part of Dublin and then I slag them.”</p>\n\n<p>On television, McNally co-hosted RTÉ2’s <i>Republic of Telly</i> and competed on Channel 4’s <i>Taskmaster</i> Series 17. She appeared on <i>Taskmaster: The Podcast</i> in 2024 and <i>Off Menu</i> in 2025.</p>",
+      "research_json": "{\n  \"full_name\": \"Joanne McNally\",\n  \"hometown\": \"Killiney, County Dublin, Ireland\",\n  \"career_start_year\": 2014,\n  \"specials\": [],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Taskmaster: The Podcast\",\n      \"year_approx\": 2024\n    },\n    {\n      \"show\": \"The Laughs Of Your Life with Doireann Garrihy\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"Off Menu\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"Evil Genius\",\n      \"year_approx\": null\n    },\n    {\n      \"show\": \"CTRL, ALT, DELETE\",\n      \"year_approx\": null\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Republic of Telly\",\n      \"context\": \"Co-host of the RTÉ2 comedy show.\"\n    },\n    {\n      \"show\": \"Taskmaster\",\n      \"context\": \"Contestant on Channel 4's Series 17.\"\n    },\n    {\n      \"show\": \"The Blame Game\",\n      \"context\": \"Appeared on the BBC Northern Ireland comedy panel show.\"\n    },\n    {\n      \"show\": \"Women on the Verge\",\n      \"context\": \"Appeared on the UKTV comedy-drama.\"\n    },\n    {\n      \"show\": \"The Late Late Show\",\n      \"context\": \"Guest appearance on RTÉ One.\"\n    },\n    {\n      \"show\": \"The Tommy Tiernan Show\",\n      \"context\": \"Guest appearance on RTÉ One.\"\n    },\n    {\n      \"show\": \"The Commute\",\n      \"context\": \"Appeared on the RTÉ series.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Bold, candid, exuberant, bawdy, and highly relatable.\",\n    \"structure\": \"Personal-story stand-up with conversational riffing and fast comic timing.\",\n    \"recurring_themes\": [\n      \"Single life and dating\",\n      \"Female friendship\",\n      \"Drinking and nightlife\",\n      \"Mental health and eating-disorder recovery\",\n      \"Irish identity and class\"\n    ],\n    \"comparable_to\": \"Her official site quotes a Daily Star description comparing her mix to “Jason Byrne’s madness and Amy Schumer’s balls.”\"\n  },\n  \"live_reputation\": \"Known for sell-out tours and large live audiences. Her official 2026 listings include Pinotphile dates in North America, Dublin's 3Arena, and London's Eventim Apollo; several listed Dublin and London dates were marked sold out.\",\n  \"recent_activity_2025_2026\": \"McNally has continued touring Pinotphile. Her official schedule lists North American dates in October and November 2026, four Dublin 3Arena dates in December 2026, and London Eventim Apollo dates in December 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"In March 2026, RTÉ reported that McNally added a second solo Pinotphile date at Dublin's 3Arena after the first date sold out.\",\n    \"quote\": \"I promise chaos, confessions and absolutely no personal growth.\",\n    \"source_publication\": \"RTÉ\",\n    \"source_url\": \"https://www.rte.ie/entertainment/2026/0309/1562378-mcnally-makes-history-again-with-second-3arena-show/\",\n    \"date\": \"2026-03-09\"\n  },\n  \"instagram_handle\": \"@joannemcnally\",\n  \"notable_bits_or_quotes\": [\n    \"“I’ll stop you there – you know you’re bald? This conversation sounds like you think you’ve got a full head of hair.”\",\n    \"“I do say I’m from a posh part of Dublin and then I slag them.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"Do not claim that McNally has released a filmed Netflix stand-up special; no such special was verified.\",\n    \"Do not present her touring shows Wine Tamer, The Prosecco Express, Bite Me, or Pinotphile as filmed comedy specials without a verified release page.\",\n    \"Do not claim an appearance on The Celebrity Traitors without a primary broadcaster announcement or other independently verified source.\",\n    \"Avoid using fan-database episode listings as the sole evidence for television credits.\"\n  ],\n  \"background_story\": \"McNally was born in County Roscommon and raised in Killiney, County Dublin. Before comedy, she worked in public relations and later for a mental-health charity. Following treatment for bulimia and anorexia, she appeared in Una McKevitt's 2014 stage show Singlehood, where a comedian encouraged her to pursue stand-up. Her 2016 one-woman show Bite Me drew on her experience of eating disorders.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Joanne_McNally\"\n    },\n    {\n      \"label\": \"IMDb\",\n      \"url\": \"https://www.imdb.com/name/nm6048796/\"\n    },\n    {\n      \"label\": \"Joanne McNally official biography\",\n      \"url\": \"https://joannemcnally.com/bio/\"\n    },\n    {\n      \"label\": \"Joanne McNally official live dates\",\n      \"url\": \"https://joannemcnally.com/live-shows/\"\n    },\n    {\n      \"label\": \"RTÉ: McNally adds second 3Arena show\",\n      \"url\": \"https://www.rte.ie/entertainment/2026/0309/1562378-mcnally-makes-history-again-with-second-3arena-show/\"\n    },\n    {\n      \"label\": \"The Guardian interview\",\n      \"url\": \"https://www.theguardian.com/stage/2022/apr/14/standup-joanne-mcnally\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Joanne_McNally",
+        "https://www.imdb.com/name/nm6048796/",
+        "https://www.instagram.com/joannemcnally/"
+      ],
+      "instagramHandle": "@joannemcnally",
+      "imageUrl": "https://s1.ticketm.net/dam/a/544/c15cfebb-79c2-4245-959b-64746735e544_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "wpPageId": 2234,
+      "wpLink": "https://comedyhouston.com/comedians/joanne-mcnally/",
+      "wpImageMediaId": 2233,
+      "legacy_slugs": [
+        "joanne-mcnally-punch-line-houston-2026-10-21"
+      ],
+      "shows": [
+        {
+          "date": "2026-10-21",
+          "venue": "Punch Line Houston",
+          "time": "7:30 PM",
+          "name": "Joanne McNally: Pinotphile",
+          "ticket_url": "https://www.ticketmaster.com/joanne-mcnally-pinotphile-houston-texas-10-21-2026/event/3A006468109E4D92",
+          "event_id": "8470f64ec39d1104",
+          "image_url": "https://s1.ticketm.net/dam/a/544/c15cfebb-79c2-4245-959b-64746735e544_TABLET_LANDSCAPE_LARGE_16_9.jpg"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/joanne-mcnally-houston.jpg"
+    },
+    {
+      "slug": "josh-gondelman",
+      "name": "Josh Gondelman",
+      "match": [
+        "josh gondelman"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T21:09:47.733Z",
+      "profile_written_at": "2026-10-15T21:10:58.536Z",
+      "profile_html": "<p>In September 2026, <a href=\"https://www.bostonglobe.com/2026/09/11/arts/josh-gondelman-standup-boston/\">the Boston Globe</a> found Josh Gondelman working on a weekly interview podcast, larger projects with Alison Leiby, and an hour he hoped to record in spring 2027. “I didn’t start doing stand-up to become vertically integrated,” he said. Gondelman began at Boston open mics in 2004; his comedy still has the regional compression he once called “Catholicism with bagels.”</p>\n\n<p>His delivery is warm and non-aggressive, or, in Gondelman’s phrase, “wide-eyed friendliness.” He likes the mechanics, the “joke math.” A Massachusetts-themed shirt becomes a ranking system: “Level three is a button-down shirt with a camo pattern made of shamrocks, and it’s called ‘shamouflage.’” Then comes the rule: “You’re really only supposed to wear it when a Dropkick Murphy is born or dies.”</p>\n\n<p>Gondelman moved to New York in 2011. His official biography credits him as a former web producer and staff writer for <em>Last Week Tonight with John Oliver</em>, head writer and executive producer for <em>Desus &amp; Mero</em>, and a contributor to the final season of <em>The Marvelous Mrs. Maisel</em>. It also lists appearances on <em>Conan</em>, <em>Late Night with Seth Meyers</em>, and <em>The Late Late Show with James Corden</em>.</p>\n\n<p>His 2022 special, <a href=\"https://www.joshgondelman.com/comedy-special/\"><em>People Pleaser</em></a>, was billed as “not-quite-clean but very friendly.” The 2025 YouTube special <a href=\"https://joshgondelman.bandcamp.com/album/positive-reinforcement\"><em>Positive Reinforcement</em></a> followed. He also appeared on <em>Hey Riddle Riddle</em> in 2026.</p>",
+      "research_json": "{\n  \"full_name\": \"Joshua Lyons Gondelman\",\n  \"hometown\": \"Stoneham, Massachusetts\",\n  \"career_start_year\": 2004,\n  \"specials\": [\n    {\n      \"title\": \"People Pleaser\",\n      \"platform\": \"Comedy Dynamics / VOD\",\n      \"year\": 2022\n    },\n    {\n      \"title\": \"Positive Reinforcement\",\n      \"platform\": \"YouTube (Blonde Medicine)\",\n      \"year\": 2025\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"My New Thing with Dan and Zach\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"Draw Me Anything with Jason Chatfield\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Music is Therapy with DJ Hesta Prynn\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Hey Riddle Riddle\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Conan\",\n      \"context\": \"Listed on his official biography as an appearance.\"\n    },\n    {\n      \"show\": \"Late Night with Seth Meyers\",\n      \"context\": \"Listed on his official biography as an appearance.\"\n    },\n    {\n      \"show\": \"The Late Late Show with James Corden\",\n      \"context\": \"Listed on his official biography as an appearance.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Warm, friendly, and non-aggressive; Gondelman has described his comic voice as presenting things with “wide-eyed friendliness.”\",\n    \"structure\": \"Joke-dense observational stand-up; he has described enjoying the mechanics, “joke math,” and problem-solving of comedy. His developing material combines personal storytelling with social commentary.\",\n    \"recurring_themes\": [\n      \"Boston and Massachusetts identity\",\n      \"Jewish upbringing\",\n      \"Family and friends\",\n      \"Everyday adult life\",\n      \"Social and cultural observations\"\n    ],\n    \"comparable_to\": null\n  },\n  \"live_reputation\": \"His official site describes People Pleaser as “not-quite-clean but very friendly” stand-up. Profiles have also characterized his stage presence as gentle and non-aggressive rather than confrontational.\",\n  \"recent_activity_2025_2026\": \"Gondelman released the stand-up special Positive Reinforcement on YouTube on June 27, 2025; its accompanying album was released July 11, 2025. In 2026, he appeared on several podcasts, performed Boston dates in September, and his official schedule lists October through December 2026 headline dates in Irving, Houston, San Diego, Chandler, Brooklyn, Pittsburgh, Cleveland, and Raleigh.\",\n  \"recent_hook\": {\n    \"summary\": \"In a September 11, 2026 Boston Globe interview, Gondelman said he is developing a weekly podcast centered on interviews with writers, collaborating on larger projects with comedian Alison Leiby, and honing a new hour that he hopes to record in spring 2027.\",\n    \"quote\": \"I didn’t start doing stand-up to become vertically integrated.\",\n    \"source_publication\": \"The Boston Globe\",\n    \"source_url\": \"https://www.bostonglobe.com/2026/09/11/arts/josh-gondelman-standup-boston/\",\n    \"date\": \"2026-09-11\"\n  },\n  \"instagram_handle\": \"@joshgondelman\",\n  \"notable_bits_or_quotes\": [\n    \"“Level three is a button-down shirt with a camo pattern made of shamrocks, and it’s called ‘shamouflage.’”\",\n    \"“You’re really only supposed to wear it when a Dropkick Murphy is born or dies.”\",\n    \"He has described a regional New England stoicism as “Catholicism with bagels.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That he hosted a Taskmaster event in Manhattan; this was encountered only in a Reddit discussion.\",\n    \"That he released the text of a September 2026 concert speech about “Jewish hell”; this was encountered only in Reddit posts.\",\n    \"Claims in stale third-party profile text that he currently writes for Desus & Mero; the Showtime series ended in 2022, and this wording appears outdated.\",\n    \"Unspecified claims that he opened for particular comedians, when supported only by audience comments or forum posts.\"\n  ],\n  \"background_story\": \"Gondelman grew up in Stoneham, Massachusetts and began doing open mics in Boston in 2004. He moved to New York City in 2011. Beyond stand-up, his official biography credits him as a former web producer and staff writer for Last Week Tonight with John Oliver, head writer and executive producer for Desus & Mero, and a contributor to the final season of The Marvelous Mrs. Maisel.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Josh_Gondelman\"\n    },\n    {\n      \"label\": \"Official biography\",\n      \"url\": \"https://www.joshgondelman.com/bio/\"\n    },\n    {\n      \"label\": \"Official comedy-special page\",\n      \"url\": \"https://www.joshgondelman.com/comedy-special/\"\n    },\n    {\n      \"label\": \"Positive Reinforcement album page\",\n      \"url\": \"https://joshgondelman.bandcamp.com/album/positive-reinforcement\"\n    },\n    {\n      \"label\": \"Recent Boston Globe interview\",\n      \"url\": \"https://www.bostonglobe.com/2026/09/11/arts/josh-gondelman-standup-boston/\"\n    },\n    {\n      \"label\": \"Hey Riddle Riddle episode\",\n      \"url\": \"https://www.iheart.com/podcast/281-hey-riddle-riddle-29901353/episode/418-catcel-culture-w-josh-gondelman-339375206/\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Josh_Gondelman",
+        "https://www.instagram.com/joshgondelman/"
+      ],
+      "instagramHandle": "@joshgondelman",
+      "imageUrl": "https://s1.ticketm.net/dam/a/244/69c29d13-5381-449d-95ae-2fe5e0d6d244_SOURCE",
+      "wpPageId": 2237,
+      "wpLink": "https://comedyhouston.com/comedians/josh-gondelman/",
+      "wpImageMediaId": 2236,
+      "legacy_slugs": [
+        "josh-gondelman-punch-line-houston-2026-10-22"
+      ],
+      "shows": [
+        {
+          "date": "2026-10-22",
+          "venue": "Punch Line Houston",
+          "time": "7:30 PM",
+          "name": "Josh Gondelman",
+          "ticket_url": "https://www.ticketmaster.com/josh-gondelman-houston-texas-10-22-2026/event/3A0064D4F984657B",
+          "event_id": "a49cb07773c9ebe0",
+          "image_url": "https://s1.ticketm.net/dam/a/244/69c29d13-5381-449d-95ae-2fe5e0d6d244_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/josh-gondelman-houston.jpg"
     },
     {
       "slug": "karen-morgan",
@@ -581,6 +694,96 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/nikki-glaser-houston.jpg"
+    },
+    {
+      "slug": "pauly-shore",
+      "name": "Pauly Shore",
+      "match": [
+        "pauly shore"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T21:11:18.857Z",
+      "profile_written_at": "2026-10-15T21:12:23.926Z",
+      "profile_html": "<p>Pauly Shore grew up around The Comedy Store, where his parents were comedian Sammy Shore and owner Mitzi Shore. He began performing stand-up at 17. In March 2026, on <a href=\"https://podcasts.apple.com/us/podcast/pauly-shore-ep-569/id853118658?i=1000757443906\">Felipe Esparza’s <em>What’s Up Fool? Podcast</em></a>, Shore discussed a Richard Simmons biopic, a memoir called <em>How’d You Expect Me to Turn Out</em>, and a 2026 stand-up tour.</p>\n\n<p>Shore became an MTV VJ in 1989 and hosted <em>Totally Pauly</em>. His California stoner-surfer character, “The Weasel,” moved into the 1992 HBO special <em>Pauly Does Dallas</em> and the Showtime specials <em>Pauly Shore’s Vegas Is My Oyster</em> and <em>Pauly Shore’s Pauly~tics</em>. The act draws on San Fernando Valley slang, sex, partying, and MTV nostalgia.</p>\n\n<p>On Fox’s <em>Pauly</em>, he played Pauly Sherman. <em>Minding the Store</em> followed his efforts to revive his acting career and run The Comedy Store. He appeared as himself on <em>Workaholics</em> and <em>Hell’s Kitchen</em>. In 2025, <em>The PMS Podcast Show</em> featured guests including David Lucas and Harland Williams. In 2026, Shore appeared on <a href=\"https://podcasts.apple.com/us/podcast/pauly-shore-opens-up-about-success-regret-and-reinvention/id1202590391?i=1000743889660\"><em>HATE TO BREAK IT TO YA with Jamie Kennedy</em></a>.</p>\n\n<p>Live, Shore leaves room for audience questions and crowd work. A January 2025 <a href=\"https://news.pollstar.com/2025/01/12/pauly-shore-to-be-56-fading-funny-live-review/\">Pollstar review</a> described a Boca Raton set built on recognition-driven laughs and a largely Gen X crowd.</p>",
+      "research_json": "{\n  \"full_name\": \"Paul Montgomery Shore\",\n  \"hometown\": \"Beverly Hills, California, United States\",\n  \"career_start_year\": 1985,\n  \"specials\": [\n    {\n      \"title\": \"Pauly Does Dallas\",\n      \"platform\": \"HBO\",\n      \"year\": 1992\n    },\n    {\n      \"title\": \"Pauly Shore's Vegas Is My Oyster\",\n      \"platform\": \"Showtime\",\n      \"year\": 2011\n    },\n    {\n      \"title\": \"Pauly Shore's Pauly~tics\",\n      \"platform\": \"Showtime\",\n      \"year\": 2012\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"What's Up Fool? Podcast\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"HATE TO BREAK IT TO YA with Jamie Kennedy\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Totally Pauly\",\n      \"context\": \"MTV series hosted by Shore.\"\n    },\n    {\n      \"show\": \"Pauly\",\n      \"context\": \"Fox sitcom in which Shore played Pauly Sherman.\"\n    },\n    {\n      \"show\": \"Minding the Store\",\n      \"context\": \"Reality series centered on Shore's efforts to revitalize his acting career and run The Comedy Store.\"\n    },\n    {\n      \"show\": \"Workaholics\",\n      \"context\": \"Appeared as himself in the episode \\\"Wolves of Rancho.\\\"\"\n    },\n    {\n      \"show\": \"Hell's Kitchen\",\n      \"context\": \"Appeared as himself in the episode \\\"Playing Your Cards Right.\\\"\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"A deliberately exaggerated California stoner/surfer persona associated with \\\"the Weasel,\\\" mixing off-color jokes with nostalgic, adolescent energy.\",\n    \"structure\": \"Persona-driven stand-up that incorporates riffing, audience questions, and crowd work.\",\n    \"recurring_themes\": [\n      \"Southern California and San Fernando Valley slang\",\n      \"Sex and partying\",\n      \"Nostalgia for his MTV-era persona\",\n      \"Comedy Store and show-business upbringing\"\n    ],\n    \"comparable_to\": \"A January 2025 Pollstar live review compared elements of the Weasel persona to Bill & Ted, Cheech and Chong, and Jeff Spicoli from Fast Times at Ridgemont High.\"\n  },\n  \"live_reputation\": \"A January 2025 Pollstar review reported that Shore sold out a Boca Raton club date announced four days earlier and characterized his set as crowd-responsive, with audience questions, qualified crowd work, and recognition-driven laughs from a largely Gen X audience.\",\n  \"recent_activity_2025_2026\": \"In 2025, Shore hosted new episodes of The PMS Podcast Show with guests including David Lucas, Ian Fidance, Josh Wolf, Harland Williams, Sara Weinshenk, Sam Tripoli, Dr. Drew, and Matt Pinfield. In March 2026, he appeared on Felipe Esparza's What's Up Fool? Podcast; the episode description said he was working on a Richard Simmons biopic, a memoir titled How'd You Expect Me to Turn Out, and a 2026 stand-up tour.\",\n  \"recent_hook\": {\n    \"summary\": \"On March 26, 2026, Shore appeared on What's Up Fool? Podcast. The episode description identified current projects as a Richard Simmons biopic, his memoir How'd You Expect Me to Turn Out, and a 2026 national stand-up tour.\",\n    \"quote\": \"“Today, he sits down with the crew to talk about his legendary run, his new book, and his life in comedy!”\",\n    \"source_publication\": \"What's Up Fool? Podcast / Apple Podcasts\",\n    \"source_url\": \"https://podcasts.apple.com/us/podcast/pauly-shore-ep-569/id853118658?i=1000757443906\",\n    \"date\": \"2026-03-26\"\n  },\n  \"instagram_handle\": \"@paulyshore\",\n  \"notable_bits_or_quotes\": [\n    \"The Weasel\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That Totally Pauly ran for exactly six years; sources reviewed conflict on its duration, with Shore's official bio saying six years and IMDb describing four years.\",\n    \"That the Richard Simmons biopic is completed, financed, or has a release date; the sources reviewed describe it as in development or a biopic-in-the-making.\",\n    \"That Shore's memoir How'd You Expect Me to Turn Out has been published; sources reviewed describe it as forthcoming or being finalized.\",\n    \"Claims assigning a definitive release year or streaming platform to every Pauly Shore stand-up recording without a primary distributor or network source.\"\n  ],\n  \"background_story\": \"Shore was born in the Los Angeles area to comedian Sammy Shore and Comedy Store owner Mitzi Shore. He grew up around The Comedy Store and began performing stand-up at age 17, then became an MTV VJ in 1989. His MTV exposure led to Totally Pauly, an HBO special, comedy albums, and starring roles in 1990s films including Encino Man, Son in Law, In the Army Now, Jury Duty, and Bio-Dome.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Pauly_Shore\"\n    },\n    {\n      \"label\": \"IMDb biography\",\n      \"url\": \"https://www.imdb.com/name/nm0001736/bio/?mode=desktop\"\n    },\n    {\n      \"label\": \"Pauly Shore official biography\",\n      \"url\": \"https://www.paulyshore.com/bio-1\"\n    },\n    {\n      \"label\": \"What's Up Fool? Podcast episode\",\n      \"url\": \"https://podcasts.apple.com/us/podcast/pauly-shore-ep-569/id853118658?i=1000757443906\"\n    },\n    {\n      \"label\": \"HATE TO BREAK IT TO YA with Jamie Kennedy episode\",\n      \"url\": \"https://podcasts.apple.com/us/podcast/pauly-shore-opens-up-about-success-regret-and-reinvention/id1202590391?i=1000743889660\"\n    },\n    {\n      \"label\": \"Pollstar live review\",\n      \"url\": \"https://news.pollstar.com/2025/01/12/pauly-shore-to-be-56-fading-funny-live-review/\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Pauly_Shore",
+        "https://www.imdb.com/name/nm0001736/bio/?mode=desktop",
+        "https://www.instagram.com/paulyshore/"
+      ],
+      "instagramHandle": "@paulyshore",
+      "imageUrl": "https://s1.ticketm.net/dam/a/457/694b5962-fb12-449a-96ba-e0e6162e0457_SOURCE",
+      "wpPageId": 2240,
+      "wpLink": "https://comedyhouston.com/comedians/pauly-shore/",
+      "wpImageMediaId": 2239,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-10-23",
+          "venue": "Punch Line Houston",
+          "time": "7:00 PM",
+          "name": "Pauly Shore",
+          "ticket_url": "https://www.ticketmaster.com/pauly-shore-houston-texas-10-23-2026/event/3A0064D43A10F097",
+          "event_id": "898ad1d97bd8067d",
+          "image_url": "https://s1.ticketm.net/dam/a/457/694b5962-fb12-449a-96ba-e0e6162e0457_SOURCE"
+        },
+        {
+          "date": "2026-10-24",
+          "venue": "Punch Line Houston",
+          "time": "7:00 PM",
+          "name": "Pauly Shore",
+          "ticket_url": "https://www.ticketmaster.com/pauly-shore-houston-texas-10-24-2026/event/3A0064D43A21F0D7",
+          "event_id": "df93ece1832caf3b",
+          "image_url": "https://s1.ticketm.net/dam/a/457/694b5962-fb12-449a-96ba-e0e6162e0457_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/pauly-shore-houston.jpg"
+    },
+    {
+      "slug": "sarper-guven",
+      "name": "Sarper Güven",
+      "match": [
+        "sarper guven"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T21:05:53.068Z",
+      "profile_written_at": "2026-10-15T21:07:03.726Z",
+      "profile_html": "<p>In September 2026, after the <i>90 Day: The Last Resort</i> Season 3 tell-all, Sarper Güven confirmed that he and Shekinah had separated. A <a href=\"https://www.cinemablend.com/television/90-day-the-last-resort-sarper-details-split-with-shekinah-following-tell-all\">CinemaBlend report</a> linked the split to their public dispute over his stand-up material. “To make it clear, we have been separated for at least eight months since the beginning of 2026,” he said. “In my heart and in my mind, I am SINGLE now.”</p>\n\n<p>Turkish-born and from Istanbul, Güven joined <a href=\"https://www.tlc.com/shows/90-day-fiance-the-other-way/photo-galleries/new-couples-90-day-fiance-the-other-way-season-5\"><i>90 Day Fiancé: The Other Way</i></a> with Shekinah in Season 5, introduced by TLC as a model and personal trainer. He returned for Season 6, then moved from Turkey to Los Angeles for <i>90 Day Fiancé</i> Season 11. In 2025, he began pursuing stand-up in the United States, drawing material from marriage, immigrant life, and the cultural gap between Turkey and America.</p>\n\n<p>Güven combines Turkish-style connected storytelling with shorter American jokes. He cites Sebastian Maniscalco’s physical performance as an influence but says he does not want to resemble anybody else. The act stays positive, high-energy, and more family-friendly than dark comedy. In a <a href=\"https://newnoisemagazine.com/interviews/comedy-spotlight-sarper-guven/\">New Noise Magazine interview</a>, he put the method plainly: “Every show I try three or four new jokes, that’s my style.” He tests material through audience interaction while working through hour-plus sets. On the September 8, 2026 episode of <a href=\"https://podcastaddict.com/unauthorized-opinions/episode/233160072\"><i>UnAuthorized Opinions</i></a>, he discussed his comedy tour, television fame, marriage, and Turkish-versus-American cultural differences.</p>",
+      "research_json": "{\n  \"full_name\": \"Sarper Güven\",\n  \"hometown\": \"Istanbul, Turkey\",\n  \"career_start_year\": 2025,\n  \"specials\": [],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"UnAuthorized Opinions\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"90 Day Fiancé: The Other Way\",\n      \"context\": \"Appeared with Shekinah as a Season 5 cast member and returned for Season 6.\"\n    },\n    {\n      \"show\": \"90 Day Fiancé\",\n      \"context\": \"Appeared with Shekinah as a returning couple in Season 11.\"\n    },\n    {\n      \"show\": \"90 Day: The Last Resort\",\n      \"context\": \"Appeared with Shekinah in Season 3; TLC described him as pursuing stand-up comedy while settling into life in America.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Positive, high-energy, physical, and intended by Güven to be more family-friendly than dark comedy.\",\n    \"structure\": \"He says he balances Turkish-style connected storytelling with shorter American-style jokes, incorporates audience interaction, and tests new material during sets.\",\n    \"recurring_themes\": [\n      \"Marriage and relationships\",\n      \"Turkish and American cultural differences\",\n      \"Immigrant experience\",\n      \"Gender differences\",\n      \"Reality-TV fame\"\n    ],\n    \"comparable_to\": \"Sebastian Maniscalco is a stated influence, particularly for physical performance; Güven said he does not want to look like anyone else.\"\n  },\n  \"live_reputation\": \"No independent critical consensus was located. In interviews, Güven has described touring with hour-plus sets and continually revising material; venue and tour listings confirm recurring U.S. stand-up dates.\",\n  \"recent_activity_2025_2026\": \"Güven began performing stand-up in 2025. His official Linktree listed a U.S. run of dates from October through December 2026, with an additional Lowell, Arkansas date listed for January 27, 2027. He also appeared on the September 8, 2026 episode of UnAuthorized Opinions, discussing his comedy tour, 90 Day Fiancé fame, marriage, and Turkish-versus-American cultural differences.\",\n  \"recent_hook\": {\n    \"summary\": \"In a September 22, 2026 report following the 90 Day: The Last Resort Season 3 tell-all, Güven publicly confirmed that he and Shekinah had separated. The report connected the split to public disagreement over material in his stand-up routine.\",\n    \"quote\": \"To make it clear, we have been separated for at least eight months since the beginning of 2026, and neither of us sees ourselves as married anymore. In my heart and in my mind, I am SINGLE now.\",\n    \"source_publication\": \"CinemaBlend\",\n    \"source_url\": \"https://www.cinemablend.com/television/90-day-the-last-resort-sarper-details-split-with-shekinah-following-tell-all\",\n    \"date\": \"2026-09-22\"\n  },\n  \"instagram_handle\": \"@sarper90day\",\n  \"notable_bits_or_quotes\": [\n    \"“I do have talent, and I discovered it!”\",\n    \"“Every show I try three or four new jokes, that’s my style.”\",\n    \"“When I’m on stage I forget everything. It’s like boosting dopamine.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That he has released a Netflix, YouTube, audio, or other stand-up special; no verified special was located.\",\n    \"That he performed with Bobby Lee, Whitney Cummings, and Pauly Shore as a documented billed collaborator; Güven stated this in interviews, but independent booking or lineup documentation was not located.\",\n    \"That he independently booked an exact 40-date national tour without a manager or agent; this was reported in one profile but was not independently confirmed.\",\n    \"That he was a stripper before reality television; this appeared in a local profile, but reliable independent corroboration was not located.\",\n    \"That he has a specific comedy-album release or a formally named solo tour; no reliably documented release or tour title was located.\"\n  ],\n  \"background_story\": \"Güven is Turkish-born and was introduced by TLC as a model and personal trainer in Turkey when he joined 90 Day Fiancé: The Other Way with Shekinah. TLC later documented his move from Turkey to Los Angeles for 90 Day Fiancé Season 11. In 2025, he began pursuing stand-up comedy in the United States.\",\n  \"source_urls\": [\n    {\n      \"label\": \"TLC: Meet the New Couples of 90 Day Fiancé: The Other Way Season 5\",\n      \"url\": \"https://www.tlc.com/shows/90-day-fiance-the-other-way/photo-galleries/new-couples-90-day-fiance-the-other-way-season-5\"\n    },\n    {\n      \"label\": \"TLC: Meet the 90 Day Fiancé Season 11 Couples\",\n      \"url\": \"https://www.tlc.com/shows/90-day-fiance/photo-galleries/meet-the-90-day-fiance-season-11-couples\"\n    },\n    {\n      \"label\": \"New Noise Magazine: Comedy Spotlight: Sarper Guven\",\n      \"url\": \"https://newnoisemagazine.com/interviews/comedy-spotlight-sarper-guven/\"\n    },\n    {\n      \"label\": \"Metro Silicon Valley: Sarper Güven Comes to Sunnyvale\",\n      \"url\": \"https://www.metrosiliconvalley.com/sarper-guven-stand-up-sunnyvale-rooster-t-feathers/\"\n    },\n    {\n      \"label\": \"Podcast Addict: Bread In, Bread Out | UnAuthorized Opinions 223 w/ Sarper Güven\",\n      \"url\": \"https://podcastaddict.com/unauthorized-opinions/episode/233160072\"\n    },\n    {\n      \"label\": \"CinemaBlend: 90 Day: The Last Resort's Sarper Details Split With Shekinah Following Tell-All Reveal\",\n      \"url\": \"https://www.cinemablend.com/television/90-day-the-last-resort-sarper-details-split-with-shekinah-following-tell-all\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.instagram.com/sarper90day/"
+      ],
+      "instagramHandle": "@sarper90day",
+      "imageUrl": "https://s1.ticketm.net/dam/a/ed9/fb31b4e7-480d-445a-989f-ea2980289ed9_SOURCE",
+      "wpPageId": 2228,
+      "wpLink": "https://comedyhouston.com/comedians/sarper-guven/",
+      "wpImageMediaId": 2227,
+      "legacy_slugs": [
+        "sarper-gven-punch-line-houston-2026-10-19"
+      ],
+      "shows": [
+        {
+          "date": "2026-10-19",
+          "venue": "Punch Line Houston",
+          "time": "7:30 PM",
+          "name": "Sarper Güven",
+          "ticket_url": "https://www.ticketmaster.com/sarper-guven-houston-texas-10-19-2026/event/3A006531CFF93698",
+          "event_id": "0f98bd1b033df9e1",
+          "image_url": "https://s1.ticketm.net/dam/a/ed9/fb31b4e7-480d-445a-989f-ea2980289ed9_SOURCE"
+        },
+        {
+          "date": "2026-10-20",
+          "venue": "Punch Line Houston",
+          "time": "7:30 PM",
+          "name": "Sarper Güven",
+          "ticket_url": "https://www.ticketmaster.com/sarper-guven-houston-texas-10-20-2026/event/3A00650ABBFF9B14",
+          "event_id": "93fcd9ded0eb2c58",
+          "image_url": "https://s1.ticketm.net/dam/a/ed9/fb31b4e7-480d-445a-989f-ea2980289ed9_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/sarper-guven-houston.jpg"
     },
     {
       "slug": "tony-hinchcliffe",
