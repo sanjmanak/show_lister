@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T22:39:46.224Z",
+  "generated_at": "2026-10-15T20:35:59.595Z",
   "source_manifests": [
     "manifest-2026-10-12.json",
     "manifest-2026-10-19.json",
@@ -116,36 +116,36 @@
       "date": "2026-11-05",
       "comedianName": "Alonzo Bodden",
       "slug": "alonzo-bodden-punch-line-houston-2026-11-05",
-      "wpLink": "https://comedyhouston.com/alonzo-bodden-punch-line-houston-2026-11-05/",
+      "wpLink": "https://comedyhouston.com/comedians/alonzo-bodden/",
       "venue": "Punch Line Houston"
     },
     {
       "date": "2026-11-06",
       "comedianName": "Desi Banks",
       "slug": "desi-banks-houston-improv-2026-11-06",
-      "wpLink": "https://comedyhouston.com/desi-banks-houston-improv-2026-11-06/",
+      "wpLink": "https://comedyhouston.com/comedians/desi-banks/",
       "venue": "Houston Improv"
     },
     {
       "date": "2026-11-06",
       "comedianName": "Karen Morgan",
       "slug": "karen-morgan-the-riot-comedy-club-conroe-2026-11-06",
-      "wpLink": "https://comedyhouston.com/karen-morgan-the-riot-comedy-club-conroe-2026-11-06/",
+      "wpLink": "https://comedyhouston.com/comedians/karen-morgan/",
       "venue": "The Riot Comedy Club — Conroe"
+    },
+    {
+      "date": "2026-11-06",
+      "comedianName": "Keegan Tindall",
+      "slug": "keegan-tindall-the-riot-comedy-club-2026-11-06",
+      "wpLink": "https://comedyhouston.com/comedians/keegan-tindall/",
+      "venue": "The Riot Comedy Club"
     },
     {
       "date": "2026-11-06",
       "comedianName": "Nikki Glaser",
       "slug": "nikki-glaser-smart-financial-centre-at-sugar-land-2026-11-06",
-      "wpLink": "https://comedyhouston.com/nikki-glaser-smart-financial-centre-at-sugar-land-2026-11-06/",
+      "wpLink": "https://comedyhouston.com/comedians/nikki-glaser/",
       "venue": "Smart Financial Centre at Sugar Land"
-    },
-    {
-      "date": "2026-11-06",
-      "comedianName": "Ramiro Gonzalez",
-      "slug": "ramiro-gonzalez-punch-line-houston-2026-11-06",
-      "wpLink": "https://comedyhouston.com/ramiro-gonzalez-punch-line-houston-2026-11-06/",
-      "venue": "Punch Line Houston"
     }
   ]
 }

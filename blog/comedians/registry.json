@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "updated_at": "2026-10-15T20:35:59.593Z",
+  "comedians": [
+    {
+      "slug": "alonzo-bodden",
+      "name": "Alonzo Bodden",
+      "match": [
+        "alonzo bodden"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T20:29:07.420Z",
+      "profile_written_at": "2026-10-15T20:30:06.077Z",
+      "profile_html": "<p>In October 2026, a <a href=\"https://www.alonzobodden.com/zofunny-monthly/oct26\">Zofunny Monthly</a> post found Alonzo Bodden writing about friends’ illnesses and deaths, postponed knee surgery, and the decision to stop deferring pleasure. “I am continually, sadly reminded that life is promised to no one,” he wrote. His stand-up draws on current events, race, media, and everyday observation.</p>\n\n<p>Bodden grew up in St. Albans, Queens, then spent about a decade as an airplane mechanic before training mechanics at McDonnell Douglas. Teaching made him comfortable before a room; a comedy-writing course graduation show gave him his first time onstage. He began doing stand-up in Los Angeles in 1993, at 30, and later broke through at Montreal’s Just for Laughs. “I never looked back,” he said. “I knew that this was what I was going to do.”</p>\n\n<p>His delivery is conversational. The Showtime specials <em>Who’s Paying Attention?</em> (2011), <em>Historically Incorrect</em> (2016), and <em>Heavy Lightweight</em> (2019) were followed in 2026 by <a href=\"https://www.angel.com/watch/shared/b07413b5-3e16-4b15-9164-df1507b2de76?utm_campaign=sharealonzob&amp;utm_source=dry-bar&amp;utm_medium=dry-bar&amp;utm_content=sharealonzob\"><em>How Do You Spell Moth?</em></a>, released through Dry Bar Comedy and Angel. On television, he won NBC’s third season of <em>Last Comic Standing</em> after finishing runner-up in season two, and played Alonzo in five 2014 episodes of <em>Californication</em>.</p>",
+      "research_json": "{\n  \"full_name\": \"Alonzo Bodden\",\n  \"hometown\": \"St. Albans, Queens, New York\",\n  \"career_start_year\": 1993,\n  \"specials\": [\n    {\n      \"title\": \"Tall, Dark, and Funny\",\n      \"platform\": \"DVD\",\n      \"year\": 2005\n    },\n    {\n      \"title\": \"Who's Paying Attention?\",\n      \"platform\": \"Showtime\",\n      \"year\": 2011\n    },\n    {\n      \"title\": \"Historically Incorrect\",\n      \"platform\": \"Showtime\",\n      \"year\": 2016\n    },\n    {\n      \"title\": \"Heavy Lightweight\",\n      \"platform\": \"Amazon Prime Video\",\n      \"year\": 2019\n    },\n    {\n      \"title\": \"Stupid Don't Get Tired\",\n      \"platform\": \"YouTube / Helium Comedy Studios\",\n      \"year\": 2022\n    },\n    {\n      \"title\": \"How Do You Spell Moth?\",\n      \"platform\": \"Dry Bar Comedy / Angel\",\n      \"year\": 2026\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Fascination Street\",\n      \"year_approx\": 2019\n    },\n    {\n      \"show\": \"OMG Hi! with George Lopez\",\n      \"year_approx\": null\n    },\n    {\n      \"show\": \"Alonzo Bodden: Where Comedy and Motorcycles Collide\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Last Comic Standing\",\n      \"context\": \"Winner of NBC's third season after previously being the runner-up in season two.\"\n    },\n    {\n      \"show\": \"Comedy Central Presents\",\n      \"context\": \"Performed a half-hour stand-up special episode in 2005.\"\n    },\n    {\n      \"show\": \"Californication\",\n      \"context\": \"Played Alonzo in five episodes in 2014.\"\n    },\n    {\n      \"show\": \"Dr. Ken\",\n      \"context\": \"Played a bouncer in one 2015 episode.\"\n    },\n    {\n      \"show\": \"Fresh Off the Boat\",\n      \"context\": \"Played Mr. Carlson in one 2018 episode.\"\n    },\n    {\n      \"show\": \"Ghosts\",\n      \"context\": \"Played Alonzo in one 2022 episode.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Conversational, observational, and politically sharp.\",\n    \"structure\": \"Stand-up built from commentary on current events, race, media, politics, and everyday incongruities.\",\n    \"recurring_themes\": [\n      \"Current events and politics\",\n      \"Race and stereotypes\",\n      \"Media\",\n      \"Everyday observations\",\n      \"Travel\",\n      \"Cars and motorcycles\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"Time Out described him as a longtime road comic with a real ease onstage; his official biography describes a commanding stage presence.\",\n  \"recent_activity_2025_2026\": \"In 2026, Dry Bar Comedy/Angel released his special \\\"How Do You Spell Moth?\\\" He also continued touring, with his official site listing November 2026 dates at Punch Line Houston, Comedy Mothership in Austin, and Atlanta Punchline.\",\n  \"recent_hook\": {\n    \"summary\": \"On October 7, 2026, Bodden's official Zofunny Monthly published a personal post, \\\"Live for Today,\\\" in which he wrote about friends' illnesses and deaths, his postponed knee surgery, and choosing experiences over postponing joy.\",\n    \"quote\": \"I am continually, sadly reminded that life is promised to no one.\",\n    \"source_publication\": \"Zofunny Monthly / Alonzo Bodden official site\",\n    \"source_url\": \"https://www.alonzobodden.com/zofunny-monthly/oct26\",\n    \"date\": \"2026-10-07\"\n  },\n  \"instagram_handle\": \"@zofunny\",\n  \"notable_bits_or_quotes\": [\n    \"“Irony and unintended stupidity is very funny. And then also sometimes slapstick.”\",\n    \"“I never looked back. I never looked back from that five minutes. I knew that this was what I was going to do.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"Claims from influencer-profile sites that place Bodden in Philadelphia or provide social-media analytics; these were not independently verified.\",\n    \"The official-site promotional comparison of his comedy to Marcus Miller, Robert Glasper, and Dee Dee Bridgewater; this is subjective promotional language, not a verifiable critical consensus.\",\n    \"Specific motorcycle ownership claims from hobbyist-profile sources were not independently verified.\"\n  ],\n  \"background_story\": \"Bodden grew up in St. Albans, Queens. Before comedy, he worked for about a decade as an airplane mechanic and later trained mechanics at McDonnell Douglas. He has said that teaching made him comfortable speaking before a room; after being laid off, he took a comedy-writing course whose graduation show was his first stand-up performance. He began doing stand-up in Los Angeles at age 30 and later broke through after appearing at Montreal's Just for Laughs.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Alonzo_Bodden\"\n    },\n    {\n      \"label\": \"IMDb — Alonzo Bodden\",\n      \"url\": \"https://www.imdb.com/name/nm0090785/\"\n    },\n    {\n      \"label\": \"Angel — How Do You Spell Moth?\",\n      \"url\": \"https://www.angel.com/watch/shared/b07413b5-3e16-4b15-9164-df1507b2de76?utm_campaign=sharealonzob&utm_source=dry-bar&utm_medium=dry-bar&utm_content=sharealonzob\"\n    },\n    {\n      \"label\": \"Alonzo Bodden official site\",\n      \"url\": \"https://www.alonzobodden.com/\"\n    },\n    {\n      \"label\": \"Zofunny Monthly — Live for Today\",\n      \"url\": \"https://www.alonzobodden.com/zofunny-monthly/oct26\"\n    },\n    {\n      \"label\": \"Fascination Street podcast episode\",\n      \"url\": \"https://www.podscan.fm/podcasts/fascination-street/episodes/throwback-alonzo-bodden-comedian-npr-personality\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Alonzo_Bodden",
+        "https://www.imdb.com/name/nm0090785/",
+        "https://www.instagram.com/zofunny/"
+      ],
+      "instagramHandle": "@zofunny",
+      "imageUrl": "https://s1.ticketm.net/dam/a/ad7/5d9195ef-4e6d-4757-bb42-48500f56dad7_SOURCE",
+      "wpPageId": 2173,
+      "wpLink": "https://comedyhouston.com/comedians/alonzo-bodden/",
+      "wpImageMediaId": 2172,
+      "legacy_slugs": [
+        "alonzo-bodden-punch-line-houston-2026-11-05"
+      ],
+      "shows": [
+        {
+          "date": "2026-11-05",
+          "venue": "Punch Line Houston",
+          "time": "7:30 PM",
+          "name": "Alonzo Bodden",
+          "ticket_url": "https://www.ticketmaster.com/alonzo-bodden-houston-texas-11-05-2026/event/3A0064EDA2476A9E",
+          "event_id": "d8b7572b871230be",
+          "image_url": "https://s1.ticketm.net/dam/a/ad7/5d9195ef-4e6d-4757-bb42-48500f56dad7_SOURCE"
+        },
+        {
+          "date": "2026-11-06",
+          "venue": "Punch Line Houston",
+          "time": "7:00 PM",
+          "name": "Alonzo Bodden",
+          "ticket_url": "https://www.ticketmaster.com/alonzo-bodden-houston-texas-11-06-2026/event/3A0064EDA24E6AA9",
+          "event_id": "094a3c3ba80bdc4d",
+          "image_url": "https://s1.ticketm.net/dam/a/ad7/5d9195ef-4e6d-4757-bb42-48500f56dad7_SOURCE"
+        },
+        {
+          "date": "2026-11-07",
+          "venue": "Punch Line Houston",
+          "time": "7:00 PM",
+          "name": "Alonzo Bodden",
+          "ticket_url": "https://www.ticketmaster.com/alonzo-bodden-houston-texas-11-07-2026/event/3A0064EDA2566AB1",
+          "event_id": "1b79296b5a8f8cd2",
+          "image_url": "https://s1.ticketm.net/dam/a/ad7/5d9195ef-4e6d-4757-bb42-48500f56dad7_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/alonzo-bodden-houston.jpg"
+    },
+    {
+      "slug": "desi-banks",
+      "name": "Desi Banks",
+      "match": [
+        "desi banks"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T20:31:27.632Z",
+      "profile_written_at": "2026-10-15T20:32:37.440Z",
+      "profile_html": "<p>In April 2026, <a href=\"https://www.forbes.com/sites/desjahaltvater/2026/04/28/how-desi-banks-became-your-favorite-cousin-and-took-the-joke-global/\">Forbes</a> caught up with Desi Banks as he leaned into his “Your Favorite Cousin” identity and prepared for the forthcoming film <em>Boyz Trip</em>. “I look at myself as a comedian, not just a social media comedian,” he said.</p>\n\n<p>Raised on Atlanta’s east side, Banks began posting sketches on Vine in 2012 and started doing stand-up in 2017. His <a href=\"https://en.wikipedia.org/wiki/Desi_Banks\">background</a> includes Cedar Grove High School, college football at Morehead State and Georgia State, and a sociology degree earned in December 2015.</p>\n\n<p>Banks played Fonk the Freak in a 2022 episode of <a href=\"https://www.imdb.com/name/nm7960472/\"><em>Sherman’s Showcase</em></a>, appeared on Season 6 of <em>The Shop: Uninterrupted</em> in 2023, and joined Ms. Pat on a 2025 episode of <a href=\"https://tubitv.com/tv-shows/200160388/s01-e08-ms-pat-desi-banks\"><em>We Got Time Today</em></a>.</p>\n\n<p>He has described the stage as a proving ground. Once the audience is with him, he can be freer with the material.</p>",
+      "research_json": "{\n  \"full_name\": \"Desi Terrell Banks Jr.\",\n  \"hometown\": \"Eastside of Atlanta, Georgia, United States\",\n  \"career_start_year\": 2012,\n  \"specials\": [],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"The Breakfast Club\",\n      \"year_approx\": 2023\n    },\n    {\n      \"show\": \"The Big Podcast with Shaq\",\n      \"year_approx\": 2024\n    },\n    {\n      \"show\": \"The 85 South Show\",\n      \"year_approx\": null\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Sherman's Showcase\",\n      \"context\": \"Played Fonk the Freak in one episode in 2022.\"\n    },\n    {\n      \"show\": \"The Shop: Uninterrupted\",\n      \"context\": \"Guest on Season 6, Episode 1 in 2023.\"\n    },\n    {\n      \"show\": \"We Got Time Today\",\n      \"context\": \"Guest with Ms. Pat on Season 1, Episode 8 in 2025.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Relatable, character-driven and rooted in Southern Black cultural observation.\",\n    \"structure\": \"Short-form character sketches online; autobiographical storytelling and audience-responsive material in live performance.\",\n    \"recurring_themes\": [\n      \"Family members and family dynamics\",\n      \"Southern Black experience\",\n      \"Atlanta life\",\n      \"Relationships\",\n      \"Everyday social situations\"\n    ],\n    \"comparable_to\": \"Eddie Murphy and Martin Lawrence are Banks's stated comedic influences.\"\n  },\n  \"live_reputation\": \"Banks transitioned from viral sketches into stand-up, beginning stand-up in 2017. In an April 2026 Forbes interview, he described live performance as the proving ground and said that once he has the audience on his side, he can be free with the material.\",\n  \"recent_activity_2025_2026\": \"In April 2026, Forbes profiled Banks around his \\\"Your Favorite Cousin\\\" live-comedy identity and his expansion into film through the forthcoming movie \\\"Boyz Trip.\\\" A Miami Improv listing scheduled dates for his \\\"Your Favorite Cousin Tour\\\" on October 16-18, 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"Forbes published a new interview with Banks on April 28, 2026, focused on the autobiographical \\\"Your Favorite Cousin\\\" identity, the importance of live performance, and his move into the forthcoming film \\\"Boyz Trip.\\\"\",\n    \"quote\": \"“I look at myself as a comedian, not just a social media comedian.”\",\n    \"source_publication\": \"Forbes\",\n    \"source_url\": \"https://www.forbes.com/sites/desjahaltvater/2026/04/28/how-desi-banks-became-your-favorite-cousin-and-took-the-joke-global/\",\n    \"date\": \"2026-04-28\"\n  },\n  \"instagram_handle\": \"@iamdesibanks\",\n  \"notable_bits_or_quotes\": [\n    \"\\\"Tweeka Tweeka\\\"\",\n    \"\\\"I just tell the truth, man.\\\"\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That Banks has released a named full-length stand-up special on Netflix, a major streamer, or YouTube; no such special was independently verified.\",\n    \"That he sold exactly 52,000 tickets on a 50-city 2024 tour; this appeared in venue promotional copy but was not independently verified.\",\n    \"That he has produced more than 3,500 original videos; this appeared in venue promotional copy but was not independently verified.\",\n    \"That Kevin Hart publicly called Banks the \\\"next great\\\" talent; this appeared in venue promotional copy but was not independently verified from Hart or a primary source.\",\n    \"Specific details of an alleged BET Studios sitcom project; venue copy and an IMDb pre-production listing indicate a project, but no primary studio announcement was verified.\"\n  ],\n  \"background_story\": \"Banks was born and raised on Atlanta's east side. He attended Cedar Grove High School, played college football at Morehead State and later transferred to Georgia State, where he earned a sociology degree in December 2015. He began posting comedy sketches on Vine in 2012 and began doing stand-up in 2017.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Desi_Banks\"\n    },\n    {\n      \"label\": \"Official Desi Banks biography\",\n      \"url\": \"https://www.desi-banks.com/about\"\n    },\n    {\n      \"label\": \"Forbes interview\",\n      \"url\": \"https://www.forbes.com/sites/desjahaltvater/2026/04/28/how-desi-banks-became-your-favorite-cousin-and-took-the-joke-global/\"\n    },\n    {\n      \"label\": \"IMDb\",\n      \"url\": \"https://www.imdb.com/name/nm7960472/\"\n    },\n    {\n      \"label\": \"The Big Podcast with Shaq episode\",\n      \"url\": \"https://podcasts.apple.com/us/podcast/shaq-roasts-desi-banks-reveals-how-he-made-kevin-hart/id1722576184?i=1000668033820\"\n    },\n    {\n      \"label\": \"We Got Time Today episode\",\n      \"url\": \"https://tubitv.com/tv-shows/200160388/s01-e08-ms-pat-desi-banks\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Desi_Banks",
+        "https://www.imdb.com/name/nm7960472/",
+        "https://www.instagram.com/iamdesibanks/"
+      ],
+      "instagramHandle": "@iamdesibanks",
+      "imageUrl": "https://s1.ticketm.net/dam/a/dd0/6249797d-9753-46d0-9f7a-97a273a5bdd0_SOURCE",
+      "wpPageId": 2179,
+      "wpLink": "https://comedyhouston.com/comedians/desi-banks/",
+      "wpImageMediaId": 2178,
+      "legacy_slugs": [
+        "desi-banks-houston-improv-2026-11-06"
+      ],
+      "shows": [
+        {
+          "date": "2026-11-06",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "Desi Banks",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7O8F3",
+          "event_id": "f8e830359aa1fed7",
+          "image_url": "https://s1.ticketm.net/dam/a/dd0/6249797d-9753-46d0-9f7a-97a273a5bdd0_SOURCE"
+        },
+        {
+          "date": "2026-11-07",
+          "venue": "Houston Improv",
+          "time": "7:00 PM",
+          "name": "Desi Banks",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7O8F-",
+          "event_id": "e0277b03a49633ce",
+          "image_url": "https://s1.ticketm.net/dam/a/dd0/6249797d-9753-46d0-9f7a-97a273a5bdd0_SOURCE"
+        },
+        {
+          "date": "2026-11-08",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "Desi Banks",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7O8FF",
+          "event_id": "a0883a039eeedbf5",
+          "image_url": "https://s1.ticketm.net/dam/a/dd0/6249797d-9753-46d0-9f7a-97a273a5bdd0_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/desi-banks-houston.png"
+    },
+    {
+      "slug": "karen-morgan",
+      "name": "Karen Morgan",
+      "match": [
+        "karen morgan"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T20:34:30.277Z",
+      "profile_written_at": "2026-10-15T20:35:51.729Z",
+      "profile_html": "<p>In 2026, Angel began streaming <a href=\"https://www.angel.com/watch/karen-morgan-put-some-butter-on-it\">Put Some Butter On It</a>, Karen Morgan’s third Dry Bar Comedy special. Angel describes it this way: “Karen Morgan believes brides who give dress codes for guests should have their weddings ruined.” Her material covers parenting, marriage, aging and generational differences.</p>\n\n<p>Karen Morgan began her professional comedy career in 2005, after taking a local comedy workshop while raising three children. A tape sent to Nickelodeon’s <em>Search for the Funniest Mom in America</em> made her one of seven finalists from more than 1,000 applicants. She earned a BFA from the University of Georgia in 1986 and practiced as a trial attorney, a background documented in her <a href=\"https://news.uga.edu/karen-morgan-hometown-show/\">University of Georgia profile</a>.</p>\n\n<p>Her 2023 YouTube special <em>Glamour Shots In The Dark</em> includes chapters called “Cassette Tape,” “Perilous Playground,” and “Mean Candy.” Earlier Dry Bar specials include <em>Go Dawgs!</em> from 2020 and <em>Rub Some Dirt On It</em> from 2023. In May 2024, she performed on <a href=\"https://www.tvmaze.com/episodes/2872109/the-talk-2024-05-24-jennifer-love-hewitt-karen-morgan\">The Talk</a>’s “Stand Up at THE TALK” segment.</p>",
+      "research_json": "{\n  \"full_name\": \"Karen Morgan\",\n  \"hometown\": \"Athens, Georgia\",\n  \"career_start_year\": 2005,\n  \"specials\": [\n    {\n      \"title\": \"Go Dawgs!\",\n      \"platform\": \"Dry Bar Comedy\",\n      \"year\": 2020\n    },\n    {\n      \"title\": \"Rub Some Dirt On It\",\n      \"platform\": \"Dry Bar Comedy\",\n      \"year\": 2023\n    },\n    {\n      \"title\": \"Glamour Shots In The Dark\",\n      \"platform\": \"YouTube\",\n      \"year\": 2023\n    },\n    {\n      \"title\": \"Put Some Butter On It\",\n      \"platform\": \"Dry Bar Comedy / Angel\",\n      \"year\": 2026\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Heavy Hitter Sports\",\n      \"year_approx\": 2023\n    },\n    {\n      \"show\": \"Midlife Talkshop\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"The Talk\",\n      \"context\": \"Performed in the \\\"Stand Up at THE TALK\\\" segment on the May 24, 2024 episode.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Clean, relatable, observational, and nostalgic.\",\n    \"structure\": \"Story-oriented stand-up drawn from everyday shared experiences.\",\n    \"recurring_themes\": [\n      \"Parenting\",\n      \"Marriage and family life\",\n      \"Midlife and aging\",\n      \"Generation X nostalgia\",\n      \"Growing up in the 1970s and 1980s\",\n      \"Southern identity and life in Maine\",\n      \"Generational differences\"\n    ],\n    \"comparable_to\": \"Brian Regan and Jim Gaffigan are cited as Morgan's comedic influences.\"\n  },\n  \"live_reputation\": \"Venue presenters have described her as a clean, relatable comic whose performances generate sustained audience laughter; her official site also advertises sold-out theater engagements.\",\n  \"recent_activity_2025_2026\": \"Morgan toured with her Unsupervised & Dehydrated show in 2025 and released her third Dry Bar Comedy special, Put Some Butter On It, in 2026. Her official tour page listed November 2026 dates in Austin, Conroe, Dallas, and Portland, Maine.\",\n  \"recent_hook\": {\n    \"summary\": \"Morgan's third Dry Bar Comedy special, Put Some Butter On It, is available on Angel in 2026.\",\n    \"quote\": \"Karen Morgan believes brides who give dress codes for guests should have their weddings ruined.\",\n    \"source_publication\": \"Angel\",\n    \"source_url\": \"https://www.angel.com/watch/karen-morgan-put-some-butter-on-it\",\n    \"date\": null\n  },\n  \"instagram_handle\": \"@karenmorgancomedy\",\n  \"notable_bits_or_quotes\": [\n    \"\\\"My favorite part of the process is finding a shared experience with human beings and then showing them that it can be funny, and it’s OK to laugh at it.\\\"\",\n    \"Her 2023 YouTube special includes material identified by chapters as \\\"Glamour Shots,\\\" \\\"Cassette Tape,\\\" \\\"Generations,\\\" \\\"Gen X,\\\" \\\"Perilous Playground,\\\" and \\\"Mean Candy.\\\"\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That Karen Morgan appeared in television advertisements for Walmart and Zyrtec; this claim appeared in a local event listing but was not independently corroborated in this research.\",\n    \"That she has appeared on AXS TV, HuffPost, The Washington Post, Insider, or Nick at Nite in the specific capacities implied by promotional graphics; these claims were not independently verified here.\",\n    \"Any claim assigning a precise release year to Rub Some Dirt On It on Angel: Morgan's official biography identifies it as a 2023 Dry Bar special, while Angel's current listing displays 2024.\"\n  ],\n  \"background_story\": \"Morgan was born and raised in Athens, Georgia, earned a BFA from the University of Georgia in 1986, and practiced as a trial attorney before starting stand-up. While raising three children, she took a local comedy workshop; her tape was submitted to Nickelodeon's Search for the Funniest Mom in America, where she became one of seven finalists from more than 1,000 applicants. Sources describe that experience as launching her professional comedy career in 2005. She later made Maine her home and has remained licensed to practice law in Maine and Georgia.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Karen Morgan official biography\",\n      \"url\": \"https://www.karenmorgan.com/about\"\n    },\n    {\n      \"label\": \"Karen Morgan official tour page\",\n      \"url\": \"https://www.karenmorgan.com/tour\"\n    },\n    {\n      \"label\": \"Angel special page: Put Some Butter On It\",\n      \"url\": \"https://www.angel.com/watch/karen-morgan-put-some-butter-on-it\"\n    },\n    {\n      \"label\": \"University of Georgia profile\",\n      \"url\": \"https://news.uga.edu/karen-morgan-hometown-show/\"\n    },\n    {\n      \"label\": \"The Talk episode listing\",\n      \"url\": \"https://www.tvmaze.com/episodes/2872109/the-talk-2024-05-24-jennifer-love-hewitt-karen-morgan\"\n    },\n    {\n      \"label\": \"Heavy Hitter Sports podcast episode\",\n      \"url\": \"https://podcasts.apple.com/us/podcast/karen-morgan-the-funny-side-of-sports/id1559258856?i=1000620912262\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.instagram.com/karenmorgancomedy/"
+      ],
+      "instagramHandle": "@karenmorgancomedy",
+      "imageUrl": "https://www.riotconroe.com/img/events/Karen-Morgan6-c1670a67-large-thumb.png",
+      "wpPageId": 2185,
+      "wpLink": "https://comedyhouston.com/comedians/karen-morgan/",
+      "wpImageMediaId": 2184,
+      "legacy_slugs": [
+        "karen-morgan-the-riot-comedy-club-conroe-2026-11-06"
+      ],
+      "shows": [
+        {
+          "date": "2026-11-06",
+          "venue": "The Riot Comedy Club — Conroe",
+          "time": "7:30 PM",
+          "name": "Comedian Karen Morgan (Dry Bar Comedy) Live in Conroe",
+          "ticket_url": "https://www.riotconroe.com/events/comedian-karen-morgan-dry-bar-comedy-live-in-conroe",
+          "event_id": "eb2438f0a7169949",
+          "image_url": "https://www.riotconroe.com/img/events/Karen-Morgan6-c1670a67-large-thumb.png"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/karen-morgan-houston.png"
+    },
+    {
+      "slug": "keegan-tindall",
+      "name": "Keegan Tindall",
+      "match": [
+        "keegan tindall"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T20:30:17.829Z",
+      "profile_written_at": "2026-10-15T20:31:19.263Z",
+      "profile_html": "<p>In September 2026, CBS aired Keegan Tindall on <a href=\"https://www.paramountpressexpress.com/cbs-entertainment/shows/comics-unleashed-with-byron-allen/releases/?view=113307-upcoming-episodes-of-comics-unleashed-with-byron-allen-928-102\">“Comics Unleashed with Byron Allen”</a>, alongside Luenell, CJ Marrinan, and Michael Turner. His work includes stand-up and original online sketches with a playful, absurd streak.</p>\n\n<p>Tindall is from South Jersey and based in New York. On Robert Kelly’s September 2024 <a href=\"https://podbay.fm/p/robert-kellys-you-know-what-dude/e/1725835147\">“You Know What Dude?”</a> appearance, “Eating Dog Food,” he discussed being burned after a drunk driver hit him, his family, and his father’s habit of eating dog food. A 2023 appearance on <a href=\"https://www.youtube.com/watch?v=jWAxTqh9CTk\">“Mindful Metal Jacket”</a> carried the subtitle “Burn Victim Guy.”</p>\n\n<p>The New York Comedy Festival named him a Comic to Watch in 2024. Moontower Comedy notes that he was passed at the Comedy Cellar. In November 2025, he wrote and voiced the comedy animation “Gnome Bacon.”</p>",
+      "research_json": "{\n  \"full_name\": \"Keegan Tindall\",\n  \"hometown\": \"South Jersey, New Jersey\",\n  \"career_start_year\": null,\n  \"specials\": [],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Mindful Metal Jacket #78: Burn Victim Guy\",\n      \"year_approx\": 2023\n    },\n    {\n      \"show\": \"You Know What Dude? #551: Eating Dog Food\",\n      \"year_approx\": 2024\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Comics Unleashed with Byron Allen\",\n      \"context\": \"Appeared on the CBS Television Network episode originally aired September 28, 2026, alongside Luenell, CJ Marrinan, and Michael Turner.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Playful and absurd.\",\n    \"structure\": \"Stand-up comedy and original online sketches.\",\n    \"recurring_themes\": [],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"The New York Comedy Festival and Moontower Comedy describe Tindall as a New York-based comedian who was named a Comic to Watch at the 2024 New York Comedy Festival and was passed at the Comedy Cellar.\",\n  \"recent_activity_2025_2026\": \"In November 2025, Tindall wrote and voiced the comedy animation \\\"Gnome Bacon.\\\" In 2026, he appeared on CBS's \\\"Comics Unleashed with Byron Allen\\\" (original air date September 28, 2026). He is also listed to co-headline a New York Comedy Festival show with Colin Armstrong on November 15, 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"Tindall made a recent network-TV appearance on \\\"Comics Unleashed with Byron Allen.\\\" CBS listed the episode as new for September 28, 2026; it was subsequently listed again in an October 14 CBS schedule release with that original-air-date notation.\",\n    \"quote\": \"Luenell, CJ Marrinan, Michael Turner and Keegan Tindall *NEW*\",\n    \"source_publication\": \"Paramount Press Express / CBS Entertainment\",\n    \"source_url\": \"https://www.paramountpressexpress.com/cbs-entertainment/shows/comics-unleashed-with-byron-allen/releases/?view=113307-upcoming-episodes-of-comics-unleashed-with-byron-allen-928-102\",\n    \"date\": \"2026-09-24\"\n  },\n  \"instagram_handle\": \"keegantindall\",\n  \"notable_bits_or_quotes\": [\n    \"“Eating Dog Food” — title of his September 2024 You Know What Dude? episode.\",\n    \"“Burn Victim Guy” — title of his August 2023 Mindful Metal Jacket episode.\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That he has released a standalone comedy special; no reliable source reviewed verified one.\",\n    \"Third-party social-profile claims about his exact follower totals, views, earnings, or engagement rates.\",\n    \"Claims that he has appeared on specific New York Comedy Club bills or shared bills with named comedians when supported only by profile aggregators.\",\n    \"That he acted in the 2019 film \\\"Arthur Futuro\\\"; the IMDb page reviewed identifies a production-assistant credit, not an acting credit.\"\n  ],\n  \"background_story\": \"In the description for his September 2024 You Know What Dude? appearance, the show states that he discussed being burned after being hit by a drunk driver, his family, and his father's habit of eating dog food. In that interview, he identified himself as being from South Jersey.\",\n  \"source_urls\": [\n    {\n      \"label\": \"CBS Entertainment / Paramount Press Express: Comics Unleashed schedule release\",\n      \"url\": \"https://www.paramountpressexpress.com/cbs-entertainment/shows/comics-unleashed-with-byron-allen/releases/?view=113307-upcoming-episodes-of-comics-unleashed-with-byron-allen-928-102\"\n    },\n    {\n      \"label\": \"New York Comedy Festival: Keegan Tindall & Colin Armstrong Co-Headline\",\n      \"url\": \"https://nycomedyfestival.com/lineup/keegan-tindall-colin-armstrong-co-headline/\"\n    },\n    {\n      \"label\": \"Moontower Comedy / Paramount Theatre performer page\",\n      \"url\": \"https://www.austintheatre.org/moontower-comedy/performers/keegan-tindall/\"\n    },\n    {\n      \"label\": \"YouTube: Mindful Metal Jacket #78\",\n      \"url\": \"https://www.youtube.com/watch?v=jWAxTqh9CTk\"\n    },\n    {\n      \"label\": \"You Know What Dude? #551\",\n      \"url\": \"https://podbay.fm/p/robert-kellys-you-know-what-dude/e/1725835147\"\n    },\n    {\n      \"label\": \"Veeps: Newcomers — An Evening of Bell House Debuts\",\n      \"url\": \"https://veeps.com/newcomers/723a7724-f79d-4e88-b4cd-981b334da5ae\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.youtube.com/watch?v=jWAxTqh9CTk",
+        "https://www.instagram.com/keegantindall/"
+      ],
+      "instagramHandle": "@keegantindall",
+      "imageUrl": "https://www.theriothtx.com/img/shows/IMG-0448-7e8d079c-large-thumb.png",
+      "wpPageId": 2176,
+      "wpLink": "https://comedyhouston.com/comedians/keegan-tindall/",
+      "wpImageMediaId": 2175,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-11-06",
+          "venue": "The Riot Comedy Club",
+          "time": "7:00 PM",
+          "name": "Keegan Tindall Headlines The Riot Comedy Club",
+          "ticket_url": "https://www.theriothtx.com/events/keegan-tindall-headlines-the-riot-comedy-club",
+          "event_id": "e37266535b168599",
+          "image_url": "https://www.theriothtx.com/img/shows/IMG-0448-7e8d079c-large-thumb.png"
+        },
+        {
+          "date": "2026-11-07",
+          "venue": "The Riot Comedy Club",
+          "time": "7:00 PM",
+          "name": "Keegan Tindall Headlines The Riot Comedy Club",
+          "ticket_url": "https://www.theriothtx.com/events/keegan-tindall-headlines-the-riot-comedy-club-the-riot-houston",
+          "event_id": "caec11b13ca15bf1",
+          "image_url": "https://www.theriothtx.com/img/shows/IMG-0448-7e8d079c-large-thumb.png"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/keegan-tindall-houston.png"
+    },
+    {
+      "slug": "nikki-glaser",
+      "name": "Nikki Glaser",
+      "match": [
+        "nikki glaser"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T20:32:54.627Z",
+      "profile_written_at": "2026-10-15T20:34:19.771Z",
+      "profile_html": "<p>In September 2026, after transgender influencer Briel Adams-Wheatley publicly objected to an onstage joke, Nikki Glaser apologized privately and said she would remove it immediately. “I HATE anti trans jokes of all kinds, and to think I may have added to that rhetoric is disgusting to me,” she said.</p>\n\n<p>Glaser began doing stand-up in college in 2002 after growing up in the St. Louis area. Her specials, from 2016’s <a href=\"https://www.netflix.com/tudum/articles/nikki-glaser-watch-list\"><em>Nikki Glaser: Perfect</em></a> to the 2024 HBO/Max hour <em>Nikki Glaser: Someday You’ll Die</em>, cover sex, dating, sobriety, beauty, aging and death. In a 2023 <a href=\"https://www.netflix.com/tudum/articles/nikki-glaser-watch-list\">Salon interview</a>, she said, “I’m always trying to keep it very real.”</p>\n\n<p>Glaser created, hosted and executive produced Comedy Central’s <em>Not Safe with Nikki Glaser</em>, then hosted and executive produced Max’s dating series <em>FBoy Island</em>. She hosted <em>Saturday Night Live</em> in November 2025 and the Golden Globe Awards in 2025 and 2026. Her Hulu special <a href=\"https://press.hulu.com/shows/nikki-glaser-good-girl/\"><em>Nikki Glaser: Good Girl</em></a> premiered in April 2026. The Stunning Tour launched that year.</p>",
+      "research_json": "{\n  \"full_name\": \"Nicole Rene Glaser\",\n  \"hometown\": \"St. Louis, Missouri\",\n  \"career_start_year\": 2002,\n  \"specials\": [\n    {\n      \"title\": \"Nikki Glaser: Perfect\",\n      \"platform\": \"Comedy Central\",\n      \"year\": 2016\n    },\n    {\n      \"title\": \"Nikki Glaser: Bangin'\",\n      \"platform\": \"Netflix\",\n      \"year\": 2019\n    },\n    {\n      \"title\": \"Nikki Glaser: Good Clean Filth\",\n      \"platform\": \"HBO / HBO Max\",\n      \"year\": 2022\n    },\n    {\n      \"title\": \"Nikki Glaser: Someday You'll Die\",\n      \"platform\": \"HBO / Max\",\n      \"year\": 2024\n    },\n    {\n      \"title\": \"Nikki Glaser: Good Girl\",\n      \"platform\": \"Hulu\",\n      \"year\": 2026\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Armchair Expert\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Not Safe with Nikki Glaser\",\n      \"context\": \"Creator, host and executive producer of the Comedy Central talk series.\"\n    },\n    {\n      \"show\": \"FBoy Island\",\n      \"context\": \"Host and executive producer of the Max reality dating series.\"\n    },\n    {\n      \"show\": \"Saturday Night Live\",\n      \"context\": \"Hosted the NBC sketch-comedy series in 2025.\"\n    },\n    {\n      \"show\": \"The Golden Globe Awards\",\n      \"context\": \"Hosted the 2025 and 2026 ceremonies; Ticketmaster's current artist page also lists her as scheduled to host the 2027 ceremony.\"\n    },\n    {\n      \"show\": \"Last Comic Standing\",\n      \"context\": \"Appeared on two seasons of the reality competition series.\"\n    },\n    {\n      \"show\": \"The Tonight Show with Jay Leno\",\n      \"context\": \"Performed stand-up.\"\n    },\n    {\n      \"show\": \"Conan\",\n      \"context\": \"Performed stand-up.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Brutally honest, no-holds-barred, raunchy and self-deprecating.\",\n    \"structure\": \"Conversational personal storytelling and observational stand-up, with deliberate oversharing and taboo-premise jokes.\",\n    \"recurring_themes\": [\n      \"Sex and dating\",\n      \"Sobriety\",\n      \"Personal insecurities\",\n      \"Aging and beauty\",\n      \"Fame and desirability\",\n      \"Not wanting children\",\n      \"Death\"\n    ],\n    \"comparable_to\": null\n  },\n  \"live_reputation\": \"Ticketmaster displayed a 4.0/5 audience rating from 763 reviews when checked. Recent attendee reviews repeatedly described her as candid, irreverent, perceptive and funny, while these are subjective audience assessments rather than critical consensus.\",\n  \"recent_activity_2025_2026\": \"Glaser hosted Saturday Night Live in November 2025 and returned to host the Golden Globes in January 2026. Her Hulu stand-up special Nikki Glaser: Good Girl premiered April 24, 2026. She also launched The Stunning Tour in 2026, with dates across Europe and North America.\",\n  \"recent_hook\": {\n    \"summary\": \"In September 2026, Glaser privately apologized to transgender influencer Briel Adams-Wheatley after Adams-Wheatley publicly objected to a joke about her that Glaser had performed onstage. Glaser said she would remove the joke immediately.\",\n    \"quote\": \"I HATE anti trans jokes of all kinds, and to think I may have added to that rhetoric is disgusting to me.\",\n    \"source_publication\": \"Us Weekly\",\n    \"source_url\": \"https://www.usmagazine.com/celebrity-news/news/nikki-glaser-apologizes-for-joke-about-trans-influencer/\",\n    \"date\": \"2026-09-25\"\n  },\n  \"instagram_handle\": \"@nikkiglaser\",\n  \"notable_bits_or_quotes\": [\n    \"In a 2023 Salon interview, Glaser said of her comedy: \\\"I’m always trying to keep it very real.\\\"\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"An alleged August 2026 firing of Glaser's agents connected to Kim Kardashian; this appeared in Reddit discussion, but no reliable independently verified report was located.\",\n    \"A claimed 2026 guest-judge appearance on America's Got Talent; social-media and Reddit posts appeared in search results, but no official NBC or America's Got Talent confirmation was located.\"\n  ],\n  \"background_story\": \"Glaser was born in Cincinnati and grew up in the St. Louis area, graduating from Kirkwood High School in 2002. She began doing stand-up while attending the University of Kansas, where she graduated in 2006 with a degree in English literature. Netflix's Tudum describes her early comedy career as beginning in college.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Nikki_Glaser\"\n    },\n    {\n      \"label\": \"Hulu Press — Nikki Glaser: Good Girl\",\n      \"url\": \"https://press.hulu.com/shows/nikki-glaser-good-girl/\"\n    },\n    {\n      \"label\": \"Netflix Tudum — Nikki Glaser watch list\",\n      \"url\": \"https://www.netflix.com/tudum/articles/nikki-glaser-watch-list\"\n    },\n    {\n      \"label\": \"Armchair Expert — Nikki Glaser Returns\",\n      \"url\": \"https://armchairexpertpod.com/pods/nikki-glaser-returns\"\n    },\n    {\n      \"label\": \"Us Weekly — September 2026 apology report\",\n      \"url\": \"https://www.usmagazine.com/celebrity-news/news/nikki-glaser-apologizes-for-joke-about-trans-influencer/\"\n    },\n    {\n      \"label\": \"Ticketmaster — Nikki Glaser events and artist biography\",\n      \"url\": \"https://www.ticketmaster.com/nikki-glaser-tickets/artist/1536543\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Nikki_Glaser",
+        "https://www.netflix.com/tudum/articles/nikki-glaser-watch-list",
+        "https://www.instagram.com/nikkiglaser/"
+      ],
+      "instagramHandle": "@nikkiglaser",
+      "imageUrl": "https://s1.ticketm.net/dam/a/aa7/8d4eeca4-892c-4aa1-a2d1-f7e9032f6aa7_SOURCE",
+      "wpPageId": 2182,
+      "wpLink": "https://comedyhouston.com/comedians/nikki-glaser/",
+      "wpImageMediaId": 2181,
+      "legacy_slugs": [
+        "nikki-glaser-smart-financial-centre-at-sugar-land-2026-11-06"
+      ],
+      "shows": [
+        {
+          "date": "2026-11-06",
+          "venue": "Smart Financial Centre at Sugar Land",
+          "time": "7:30 PM",
+          "name": "Nikki Glaser",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7OpvE",
+          "event_id": "d7cb270983b1f214",
+          "image_url": "https://s1.ticketm.net/dam/a/aa7/8d4eeca4-892c-4aa1-a2d1-f7e9032f6aa7_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/nikki-glaser-houston.jpg"
+    }
+  ]
+}

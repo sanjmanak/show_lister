@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-10-15T20:35:59.597Z",
+  "comedians": [
+    {
+      "slug": "alonzo-bodden",
+      "name": "Alonzo Bodden",
+      "match": [
+        "alonzo bodden"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/alonzo-bodden/",
+      "legacy_slugs": [
+        "alonzo-bodden-punch-line-houston-2026-11-05"
+      ],
+      "next_show": "2026-11-05"
+    },
+    {
+      "slug": "desi-banks",
+      "name": "Desi Banks",
+      "match": [
+        "desi banks"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/desi-banks/",
+      "legacy_slugs": [
+        "desi-banks-houston-improv-2026-11-06"
+      ],
+      "next_show": "2026-11-06"
+    },
+    {
+      "slug": "karen-morgan",
+      "name": "Karen Morgan",
+      "match": [
+        "karen morgan"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/karen-morgan/",
+      "legacy_slugs": [
+        "karen-morgan-the-riot-comedy-club-conroe-2026-11-06"
+      ],
+      "next_show": "2026-11-06"
+    },
+    {
+      "slug": "keegan-tindall",
+      "name": "Keegan Tindall",
+      "match": [
+        "keegan tindall"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/keegan-tindall/",
+      "legacy_slugs": [],
+      "next_show": "2026-11-06"
+    },
+    {
+      "slug": "nikki-glaser",
+      "name": "Nikki Glaser",
+      "match": [
+        "nikki glaser"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/nikki-glaser/",
+      "legacy_slugs": [
+        "nikki-glaser-smart-financial-centre-at-sugar-land-2026-11-06"
+      ],
+      "next_show": "2026-11-06"
+    }
+  ],
+  "archived_legacy_slugs": []
+}
