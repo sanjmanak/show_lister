@@ -2,7 +2,7 @@
  * Comedy Houston — shared WordPress REST client (zero dependencies).
  *
  * Replaces the five hand-rolled `wpRequest` copies that used to live in
- * generate-blog-post.js, generate-comedian-post.js, backfill-show-details.js,
+ * generate-blog-post.js, generate-comedian-post.js, sync-month-pages.js,
  * delete-comedian-blog-posts.js and manage-wp-pages.js (2026-09-30).
  *
  *   const { createWpClient, withRetry, isRetryableWpError } = require("./lib/wp");

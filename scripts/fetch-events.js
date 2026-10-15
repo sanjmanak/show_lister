@@ -60,6 +60,7 @@ const EB_ORGANIZERS = [
 const OUTPUT_DIR = path.resolve(__dirname, "..");
 const { fixMojibake } = require("./lib/fix-mojibake");
 const { classifyShowTags, cacheKey: showTagCacheKey } = require("./lib/classify-show-tags");
+const announceRules = require("./lib/announce-rules");
 
 const EVENTS_JSON_PATH = path.join(OUTPUT_DIR, "events.json");
 const FILTERS_JSON_PATH = path.join(OUTPUT_DIR, "config", "filters.json");
@@ -2504,6 +2505,26 @@ async function main() {
     ev.tags = tagsForEvent(ev, showTagsConfig, modelTags);
   }
   console.log(`Show tags: ${deduped.filter((e) => e.tags.length).length} events tagged`);
+
+  // Headliner stamp — the same venue-tier / junk-title / recurring-series
+  // verdict the "just announced" feed uses (config/announce-venues.json via
+  // lib/announce-rules.js), minus its lead-time floor. The WP plugin reads
+  // `headliner` + `venue_tier` to build the "Headliners this month" block on
+  // the month pages and the unlinked tail of the /comedians/ hub, so the
+  // notability rules live in exactly one place.
+  try {
+    const announceCtx = announceRules.buildContext(deduped, { ignoreLead: true });
+    let stamped = 0;
+    for (const ev of deduped) {
+      const verdict = announceRules.classify(ev, announceCtx);
+      ev.headliner = !!verdict.notable;
+      ev.venue_tier = announceRules.venueTier(ev.venue, announceCtx.config) || null;
+      if (ev.headliner) stamped++;
+    }
+    console.log(`Headliner stamp: ${stamped} events flagged`);
+  } catch (e) {
+    console.warn(`Headliner stamp skipped: ${e.message}`);
+  }
 
   // Sort by date, then time. Times are 12-hour strings ("8:00 PM"), so a
   // string compare puts "10:00 PM" before "8:00 PM" — compare minutes instead.

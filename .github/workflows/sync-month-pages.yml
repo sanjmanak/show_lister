@@ -1,0 +1,71 @@
+name: Sync Month Pages
+
+# Keeps the rolling dated month pages live (/comedy-shows-houston-november-
+# 2026/ and the one after it), trashes the page for a month once that month
+# is current (the plugin 301s the URL to the evergreen current-month post),
+# and keeps the month navigation + live title on the evergreen post. Pure
+# WordPress REST bookkeeping, no OpenAI: a handful of calls a day.
+# See scripts/sync-month-pages.js.
+
+on:
+  schedule:
+    - cron: '7 14 * * *'   # ~9:07am CDT daily (off :00; after the 8:17 data import)
+
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Log what would change without writing to WordPress'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sync-month-pages
+  cancel-in-progress: false
+
+env:
+  TZ: America/Chicago
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Sync month pages
+        env:
+          WP_SITE_URL: ${{ secrets.WP_SITE_URL }}
+          WP_APP_USER: ${{ secrets.WP_APP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          DRY_RUN: ${{ inputs.dry_run == true && '1' || '' }}
+        run: node scripts/sync-month-pages.js
+
+      - name: Notify on failure
+        if: failure() && env.HAS_SMTP == 'true'
+        env:
+          HAS_SMTP: ${{ secrets.SMTP_SERVER != '' }}
+        uses: dawidd6/action-send-mail@4226df7daafa6fc901a43789c49bf7ab309066e7 # v3 (SHA-pinned: action receives SMTP secrets)
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "[Comedy Houston] sync-month-pages FAILED"
+          to: ${{ secrets.NOTIFY_EMAIL }}
+          from: ${{ secrets.SMTP_FROM }}
+          body: |
+            The month-page sync failed. The dated month pages may be missing
+            or a finished month may still be live (its URL still 301s in the
+            plugin, so nothing is broken for visitors).
+
+            Run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}

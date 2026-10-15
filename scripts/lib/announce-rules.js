@@ -114,6 +114,7 @@ function buildContext(events, opts = {}) {
     config,
     series: buildSeriesIndex(list),
     today: opts.today || new Date().toISOString().slice(0, 10),
+    ignoreLead: !!opts.ignoreLead,
   };
 }
 
@@ -137,7 +138,11 @@ function classify(ev, ctx) {
   if (!ev || !ev.date) return no("no date");
   const lead = daysOut(ev.date, ctx.today);
   if (lead === null) return no("bad date");
-  if (lead < config.minDaysOut) return no(`only ${lead}d out (min ${config.minDaysOut})`);
+  // The lead-time floor is an ANNOUNCEMENT rule ("just announced" means a
+  // show a few weeks out). Callers that only want the venue/series/price
+  // verdict (the headliner stamp in fetch-events.js, which the month pages
+  // and the comedians hub read) pass ignoreLead: true.
+  if (!ctx.ignoreLead && lead < config.minDaysOut) return no(`only ${lead}d out (min ${config.minDaysOut})`);
 
   const tier = venueTier(ev.venue, config);
   if (tier === "excluded") return no("venue excluded");

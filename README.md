@@ -120,6 +120,14 @@ degrade gracefully rather than reverting to TBA). The
 reminder (via the same SMTP secrets as the failure alerts) only when a local
 run is actually due.
 
+## Comedian pages & month pages
+
+Since October 2026 the Monday comedian run publishes one evergreen page per
+comedian (`/comedians/{slug}/`, upcoming shows rendered live) instead of a
+dated post per show, and `sync-month-pages.yml` keeps dated month pages
+(`/comedy-shows-houston-november-2026/`) live for the next two months. The
+full design, lifecycle and cleanup rules are in ARCHITECTURE.md §3c.
+
 ## WordPress Page Caching (important)
 
 The `[comedy_houston]` listings are **date-dependent** — `/tonight/` and
