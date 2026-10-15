@@ -650,6 +650,9 @@ class Comedy_Houston_Plugin {
         if ($n === '') return '';
         $person = $this->extract_performer_name($n);
         $label = $person !== '' ? $person : $n;
+        // extract_performer_name() cuts at subtitle separators and can
+        // leave an opening quote behind ('Franco Escamilla "El Juicio').
+        if (substr_count($label, '"') % 2 === 1) $label = str_replace('"', '', $label);
         if ($venue !== '' && $this->normalize_match_text($label) === $this->normalize_match_text($venue)) return '';
         return mb_strlen($label) > 70 ? mb_substr($label, 0, 67) . '…' : $label;
     }
