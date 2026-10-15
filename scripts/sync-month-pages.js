@@ -179,6 +179,21 @@ function buildMonthPage(rec) {
 const wp = createWpClient({ siteUrl: WP_SITE_URL, userAgent: "ComedyHouston-MonthPages/1.0", timeoutMs: 30_000 });
 const wpRequest = (method, p, body) => wp.request(method, p, body);
 
+/** Published month pages, found by slug pattern over every page (not a hardcoded list). */
+async function listMonthPages() {
+  const out = [];
+  for (let page = 1; page <= 10; page++) {
+    const found = await wpRequest(
+      "GET",
+      `/wp-json/wp/v2/pages?per_page=100&page=${page}&status=publish,draft,future,private&_fields=id,slug,link,status`
+    );
+    if (!Array.isArray(found) || found.length === 0) break;
+    for (const p of found) if (monthFromSlug(p.slug)) out.push(p);
+    if (found.length < 100) break;
+  }
+  return out;
+}
+
 async function findPageBySlugRaw(slug) {
   const found = await wpRequest(
     "GET",
