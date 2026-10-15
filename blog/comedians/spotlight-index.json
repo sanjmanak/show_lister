@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T20:35:59.595Z",
+  "generated_at": "2026-10-15T20:45:20.265Z",
   "source_manifests": [
     "manifest-2026-10-12.json",
     "manifest-2026-10-19.json",
@@ -11,36 +11,36 @@
       "date": "2026-10-15",
       "comedianName": "Anjelah Johnson-Reyes",
       "slug": "anjelah-johnson-reyes-punch-line-houston-2026-10-15",
-      "wpLink": "https://comedyhouston.com/anjelah-johnson-reyes-punch-line-houston-2026-10-15/",
+      "wpLink": "https://comedyhouston.com/comedians/anjelah-johnson-reyes/",
       "venue": "Punch Line Houston"
     },
     {
       "date": "2026-10-15",
       "comedianName": "Iván Fematt La Mole",
       "slug": "ivn-fematt-la-mole-houston-improv-2026-10-15",
-      "wpLink": "https://comedyhouston.com/ivn-fematt-la-mole-houston-improv-2026-10-15/",
+      "wpLink": "https://comedyhouston.com/comedians/ivan-fematt-la-mole/",
       "venue": "Houston Improv"
     },
     {
       "date": "2026-10-16",
-      "comedianName": "Chaunte Wayans",
-      "slug": "chaunte-wayans-punch-line-houston-2026-10-16",
-      "wpLink": "https://comedyhouston.com/chaunte-wayans-punch-line-houston-2026-10-16/",
-      "venue": "Punch Line Houston"
-    },
-    {
-      "date": "2026-10-16",
-      "comedianName": "Kerryn Feehan",
-      "slug": "kerryn-feehan-the-riot-comedy-club-2026-10-16",
-      "wpLink": "https://comedyhouston.com/kerryn-feehan-the-riot-comedy-club-2026-10-16/",
-      "venue": "The Riot Comedy Club"
+      "comedianName": "Marlon Wayans",
+      "slug": "marlon-wayans-houston-improv-2026-10-16",
+      "wpLink": "https://comedyhouston.com/comedians/marlon-wayans/",
+      "venue": "Houston Improv"
     },
     {
       "date": "2026-10-16",
       "comedianName": "Mo Amer",
       "slug": "mo-amer-cullen-performance-hall-2026-10-16",
-      "wpLink": "https://comedyhouston.com/mo-amer-cullen-performance-hall-2026-10-16/",
+      "wpLink": "https://comedyhouston.com/comedians/mo-amer/",
       "venue": "Cullen Performance Hall"
+    },
+    {
+      "date": "2026-10-17",
+      "comedianName": "Tony Hinchcliffe",
+      "slug": "tony-hinchcliffe-smart-financial-centre-at-sugar-land-2026-10-17",
+      "wpLink": "https://comedyhouston.com/comedians/tony-hinchcliffe/",
+      "venue": "Smart Financial Centre at Sugar Land"
     },
     {
       "date": "2026-10-19",

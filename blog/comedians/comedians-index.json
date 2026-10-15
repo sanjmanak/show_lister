@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T20:35:59.597Z",
+  "generated_at": "2026-10-15T20:45:20.267Z",
   "comedians": [
     {
       "slug": "alonzo-bodden",
@@ -14,6 +14,18 @@
       "next_show": "2026-11-05"
     },
     {
+      "slug": "anjelah-johnson-reyes",
+      "name": "Anjelah Johnson-Reyes",
+      "match": [
+        "anjelah johnson reyes"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/anjelah-johnson-reyes/",
+      "legacy_slugs": [
+        "anjelah-johnson-reyes-punch-line-houston-2026-10-15"
+      ],
+      "next_show": "2026-10-15"
+    },
+    {
       "slug": "desi-banks",
       "name": "Desi Banks",
       "match": [
@@ -24,6 +36,18 @@
         "desi-banks-houston-improv-2026-11-06"
       ],
       "next_show": "2026-11-06"
+    },
+    {
+      "slug": "ivan-fematt-la-mole",
+      "name": "Iván Fematt La Mole",
+      "match": [
+        "ivan fematt la mole"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/ivan-fematt-la-mole/",
+      "legacy_slugs": [
+        "ivn-fematt-la-mole-houston-improv-2026-10-15"
+      ],
+      "next_show": "2026-10-15"
     },
     {
       "slug": "karen-morgan",
@@ -48,6 +72,28 @@
       "next_show": "2026-11-06"
     },
     {
+      "slug": "marlon-wayans",
+      "name": "Marlon Wayans",
+      "match": [
+        "marlon wayans"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/marlon-wayans/",
+      "legacy_slugs": [],
+      "next_show": "2026-10-16"
+    },
+    {
+      "slug": "mo-amer",
+      "name": "Mo Amer",
+      "match": [
+        "mo amer"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/mo-amer/",
+      "legacy_slugs": [
+        "mo-amer-cullen-performance-hall-2026-10-16"
+      ],
+      "next_show": "2026-10-16"
+    },
+    {
       "slug": "nikki-glaser",
       "name": "Nikki Glaser",
       "match": [
@@ -58,6 +104,17 @@
         "nikki-glaser-smart-financial-centre-at-sugar-land-2026-11-06"
       ],
       "next_show": "2026-11-06"
+    },
+    {
+      "slug": "tony-hinchcliffe",
+      "name": "Tony Hinchcliffe",
+      "match": [
+        "tony hinchcliffe",
+        "kill tony"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/tony-hinchcliffe/",
+      "legacy_slugs": [],
+      "next_show": "2026-10-17"
     }
   ],
   "archived_legacy_slugs": []

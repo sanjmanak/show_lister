@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-10-15T20:35:59.593Z",
+  "updated_at": "2026-10-15T20:45:20.261Z",
   "comedians": [
     {
       "slug": "alonzo-bodden",
@@ -59,6 +59,45 @@
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/alonzo-bodden-houston.jpg"
     },
     {
+      "slug": "anjelah-johnson-reyes",
+      "name": "Anjelah Johnson-Reyes",
+      "match": [
+        "anjelah johnson reyes"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T20:44:05.941Z",
+      "profile_written_at": "2026-10-15T20:45:09.384Z",
+      "profile_html": "<p>In May 2026, <a href=\"https://www.youtube.com/watch?v=3bvkoxZ6xcw\">“Ugly Baby”</a> arrived on YouTube, Anjelah Johnson-Reyes’s seventh hour-long special and her directorial debut. Filmed over two sold-out shows at Los Angeles’s El Rey Theatre, it covers motherhood in her 40s, fertility, pregnancy, postpartum life, relationships, and family generations. The material moves through personal stories, impressions, and characters.</p>\n\n<p>Raised in <a href=\"https://en.wikipedia.org/wiki/Anjelah_Johnson\">San Jose, California</a>, Johnson-Reyes was an Oakland Raiderette before moving to Los Angeles in 2005. A free church joke-writing class got her into comedy; “Nail Salon” was among her first jokes. She joined <em>MADtv</em> in 2007, playing Mỹ Linh, Tammy, and fast-food employee Bon Qui Qui, whose “I’M A CUT YOU” became the line. Her comedy returns to extended family, marriage, motherhood, aging, and daily irritations. Netflix tagged her 2015 special <a href=\"https://www.netflix.com/title/80046779\">“Not Fancy”</a> as Witty and Clean-Cut.</p>\n\n<p>The Family Reunion tour sold more than 200,000 tickets across more than 100 U.S. theater shows in 2025 and 2026.</p>\n\n<p>Her screen work includes <em>Curb Your Enthusiasm</em>, <em>Ugly Betty</em>, <em>Superstore</em>, and Hulu’s <em>Life &amp; Beth</em>. In May 2024, she hosted Tubi’s eight-episode <em>My Crazy Quince</em>.</p>",
+      "research_json": "{\n  \"full_name\": \"Anjelah Johnson-Reyes\",\n  \"hometown\": \"San Jose, California, United States\",\n  \"career_start_year\": 2006,\n  \"specials\": [\n    {\n      \"title\": \"Anjelah Johnson: That's How We Do It\",\n      \"platform\": \"Comedy Central\",\n      \"year\": 2009\n    },\n    {\n      \"title\": \"Anjelah Johnson: The Homecoming Show\",\n      \"platform\": \"Comedy Dynamics\",\n      \"year\": 2014\n    },\n    {\n      \"title\": \"Anjelah Johnson: Not Fancy\",\n      \"platform\": \"Netflix\",\n      \"year\": 2015\n    },\n    {\n      \"title\": \"Anjelah Johnson: Mahalo & Goodnight\",\n      \"platform\": \"\",\n      \"year\": 2017\n    },\n    {\n      \"title\": \"Anjelah Johnson-Reyes: Say I Won't\",\n      \"platform\": \"YouTube\",\n      \"year\": 2023\n    },\n    {\n      \"title\": \"Anjelah Johnson-Reyes: Technically Not Stalking\",\n      \"platform\": \"YouTube\",\n      \"year\": 2024\n    },\n    {\n      \"title\": \"Anjelah Johnson-Reyes: Ugly Baby\",\n      \"platform\": \"YouTube\",\n      \"year\": 2026\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Latina to Latina\",\n      \"year_approx\": 2022\n    },\n    {\n      \"show\": \"The Touchup\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"Rex in the Morning on C101\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Mature Allure\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"MADtv\",\n      \"context\": \"Featured performer during season 13; played characters including nail-salon worker Mỹ Linh/Tammy and fast-food employee Bon Qui Qui.\"\n    },\n    {\n      \"show\": \"Curb Your Enthusiasm\",\n      \"context\": \"Played Mimi in season 8, episode 4, \\\"The Smiley Face.\\\"\"\n    },\n    {\n      \"show\": \"Ugly Betty\",\n      \"context\": \"Played Wendy.\"\n    },\n    {\n      \"show\": \"Superstore\",\n      \"context\": \"Played Robin Green in one episode.\"\n    },\n    {\n      \"show\": \"Life & Beth\",\n      \"context\": \"Returned for the Hulu series' second season in February 2024.\"\n    },\n    {\n      \"show\": \"My Crazy Quince\",\n      \"context\": \"Hosted the eight-episode Tubi original series, which premiered in May 2024.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Observational, witty, and character-driven; Netflix classifies \\\"Not Fancy\\\" as \\\"Witty\\\" and \\\"Clean-Cut.\\\"\",\n    \"structure\": \"Personal-story stand-up that uses impressions and shifts into characters; she has described turning into a character while telling stories from her life.\",\n    \"recurring_themes\": [\n      \"Family and extended-family dynamics\",\n      \"Mexican and Latina identity\",\n      \"Marriage\",\n      \"Motherhood\",\n      \"Everyday life\",\n      \"Getting older\",\n      \"Cheerleading and sports\"\n    ],\n    \"comparable_to\": \"Her stated comedy heroes are Brian Regan, Ellen DeGeneres, and George Lopez.\"\n  },\n  \"live_reputation\": \"Her official site states that The Family Reunion tour sold more than 200,000 tickets across more than 100 theater shows in the United States during 2025-2026.\",\n  \"recent_activity_2025_2026\": \"She completed The Family Reunion tour in 2025-2026 and released her seventh hour-long special, \\\"Ugly Baby,\\\" globally on YouTube on May 10, 2026. She also appeared on podcasts and radio interviews in 2026 discussing the special, motherhood, and directing the project.\",\n  \"recent_hook\": {\n    \"summary\": \"Johnson-Reyes released and directed her seventh hour-long comedy special, \\\"Ugly Baby,\\\" on YouTube. The special draws on motherhood in her 40s, family dynamics, fertility, pregnancy, postpartum life, relationships, and generational differences.\",\n    \"quote\": \"Making her directorial debut, Anjelah filmed the self-financed and self-produced special across two sold-out shows at the historic El Rey Theatre in Los Angeles, CA on Saturday, February 28, 2026.\",\n    \"source_publication\": \"Anjelah Johnson-Reyes official YouTube channel\",\n    \"source_url\": \"https://www.youtube.com/watch?v=3bvkoxZ6xcw\",\n    \"date\": \"2026-05-10\"\n  },\n  \"instagram_handle\": \"@anjelahjohnson\",\n  \"notable_bits_or_quotes\": [\n    \"\\\"Nail Salon\\\"\",\n    \"Bon Qui Qui\",\n    \"\\\"I'M A CUT YOU\\\"\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That she was a \\\"recurring extra\\\" on Friends; this appears in a podcast episode description, but I did not independently verify the credit.\",\n    \"That she began her entertainment career as a 13-year-old child actress; this conflicts with other biographical material stating that she began acting as a high-school senior.\",\n    \"Any precise claim about the total views of individual viral clips unless it is checked directly against the current video page.\"\n  ],\n  \"background_story\": \"Johnson-Reyes was born and raised in San Jose, California. She was an Oakland Raiderette before moving to Los Angeles in 2005 to pursue entertainment. She began doing comedy after taking a free joke-writing stand-up class at church; one of her first jokes was the \\\"Nail Salon\\\" bit that later became a viral YouTube video. She joined MADtv in 2007, where Bon Qui Qui became one of her best-known characters.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Official website\",\n      \"url\": \"https://anjelah.com/home/\"\n    },\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Anjelah_Johnson\"\n    },\n    {\n      \"label\": \"Netflix special page: Anjelah Johnson: Not Fancy\",\n      \"url\": \"https://www.netflix.com/title/80046779\"\n    },\n    {\n      \"label\": \"Official YouTube special: Ugly Baby\",\n      \"url\": \"https://www.youtube.com/watch?v=3bvkoxZ6xcw\"\n    },\n    {\n      \"label\": \"LA Weekly interview\",\n      \"url\": \"https://www.laweekly.com/wp-content/uploads/2025/12/15-LAW-021326.pdf\"\n    },\n    {\n      \"label\": \"Rex in the Morning on C101 interview\",\n      \"url\": \"https://www.iheart.com/podcast/1248-rex-in-the-morning-on-c10-58135528/episode/anjelah-johnson-reyes-interview-335755934/\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.youtube.com/watch?v=3bvkoxZ6xcw",
+        "https://en.wikipedia.org/wiki/Anjelah_Johnson",
+        "https://www.netflix.com/title/80046779",
+        "https://www.instagram.com/anjelahjohnson/"
+      ],
+      "instagramHandle": "@anjelahjohnson",
+      "imageUrl": "https://s1.ticketm.net/dam/a/754/9026b1db-62a7-45e4-8fbc-b4d7b85ee754_SOURCE",
+      "wpPageId": 2200,
+      "wpLink": "https://comedyhouston.com/comedians/anjelah-johnson-reyes/",
+      "wpImageMediaId": 2199,
+      "legacy_slugs": [
+        "anjelah-johnson-reyes-punch-line-houston-2026-10-15"
+      ],
+      "shows": [
+        {
+          "date": "2026-10-15",
+          "venue": "Punch Line Houston",
+          "time": "7:00 PM",
+          "name": "Funjelah Live Podcast Taping w/ Anjelah Johnson-Reyes & Special Guest",
+          "ticket_url": "https://www.ticketmaster.com/funjelah-live-podcast-taping-w-anjelah-houston-texas-10-15-2026/event/3A0064EABBAFB15B",
+          "event_id": "d257018e0a83872b",
+          "image_url": "https://s1.ticketm.net/dam/a/754/9026b1db-62a7-45e4-8fbc-b4d7b85ee754_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/anjelah-johnson-reyes-houston.jpg"
+    },
+    {
       "slug": "desi-banks",
       "name": "Desi Banks",
       "match": [
@@ -113,6 +152,42 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/desi-banks-houston.png"
+    },
+    {
+      "slug": "ivan-fematt-la-mole",
+      "name": "Iván Fematt La Mole",
+      "match": [
+        "ivan fematt la mole"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T20:42:36.652Z",
+      "profile_written_at": "2026-10-15T20:43:55.329Z",
+      "profile_html": "<p>“Qué necesidad de ir a un reality show a que te humillen, te critiquen y te insulten”. In an October 7, 2026, post reported the next day by <a href=\"https://postamx.azurewebsites.net/share/que-necesidad-la-mole-critica-la-granja-vip-y-redes-le-recuerdan-su-pasado-en-acabatelo/vl2264182\">POSTA México</a>, Iván Fematt La Mole criticized the premise of entering a reality show to be humiliated, criticized or insulted. He named no program or contestant.</p>\n\n<p>Iván Fematt La Mole emerged from Monterrey television and radio. On <a href=\"https://www.multimediostv.com/programas/acabatelo/personajes/lamole.html\">Acábatelo</a>, he played Markitos, Empanadín, Maricela, Oso Dammy and El Guardia. He competed on Prime Video’s <a href=\"https://www.primevideo.com/-/es/detail/0FBECELKI3KI77ZJARAUZUOJ1F\">2019 second season of <i>LOL: Last One Laughing</i></a> and hosts the Multimedios late-night program <i>Buenas noches Don Fematt</i>.</p>\n\n<p>His stand-up pulls from television, newspapers, weddings and daily experience. “Voy sacando del día a día, leyendo el periódico, viendo la tele, voy a una boda y de cada vivencia saco una experiencia o un dato que voy incorporando,” he has said. The material is improvised, audience-near and rooted in Monterrey and northern Mexico. “No soy mucho de meterme con la gente,” he has also said.</p>\n\n<p>At a November 2024 performance in Tijuana, <a href=\"https://zetatijuana.com/2024/11/quiero-hacer-cine-la-mole/\">Semanario ZETA</a> reported that Iván Fematt La Mole worked with an audience of more than 1,000 people, using stories contextualized to the border audience.</p>",
+      "research_json": "{\n  \"full_name\": \"Iván Erick Fematt Rodriguez\",\n  \"hometown\": \"Monterrey, Nuevo León, Mexico\",\n  \"career_start_year\": null,\n  \"specials\": [],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Creativo\",\n      \"year_approx\": 2022\n    },\n    {\n      \"show\": \"Creativo\",\n      \"year_approx\": 2024\n    },\n    {\n      \"show\": \"¿Qué es la música?\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Acábatelo\",\n      \"context\": \"Cast member; Multimedios listed characters including Markitos, Empanadín, Maricela, Oso Dammy and El Guardia.\"\n    },\n    {\n      \"show\": \"LOL: Last One Laughing\",\n      \"context\": \"Contestant in Prime Video's second season, released in 2019.\"\n    },\n    {\n      \"show\": \"Buenas noches Don Fematt\",\n      \"context\": \"Host of the Multimedios late-night talk program.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Irreverent, audience-near humor with a distinctly Monterrey/northern Mexican tone.\",\n    \"structure\": \"He has described his stage material as improvised and built from daily observations, news, television, weddings and other lived experiences.\",\n    \"recurring_themes\": [\n      \"Everyday life\",\n      \"Personal anecdotes\",\n      \"Popular culture\",\n      \"Current events\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"At a November 2024 Tijuana performance, Semanario ZETA reported that he interacted with an audience of more than 1,000 people and used stories contextualized to the border audience.\",\n  \"recent_activity_2025_2026\": \"He continued co-hosting the weekly comedy podcast Hermanos de Leche with Adrián Marcelo in 2026. In May 2026, he said he was preparing a World Cup-related project and a United States tour. He also continued hosting Buenas noches Don Fematt in 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"In an October 7, 2026 social-media post reported by POSTA México on October 8, Fematt criticized the premise of entering a reality show to be criticized or humiliated. The post was widely linked by commenters to the contemporaneous La Granja VIP controversy, although he did not name the program or its contestants.\",\n    \"quote\": \"“Qué necesidad de ir a un reality show a que te humillen, te critiquen y te insulten”.\",\n    \"source_publication\": \"POSTA México\",\n    \"source_url\": \"https://postamx.azurewebsites.net/share/que-necesidad-la-mole-critica-la-granja-vip-y-redes-le-recuerdan-su-pasado-en-acabatelo/vl2264182\",\n    \"date\": \"2026-10-08\"\n  },\n  \"instagram_handle\": \"@mole82\",\n  \"notable_bits_or_quotes\": [\n    \"“Voy sacando del día a día, leyendo el periódico, viendo la tele, voy a una boda y de cada vivencia saco una experiencia o un dato que voy incorporando.”\",\n    \"“No soy mucho de meterme con la gente.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That he has released a filmed or streaming stand-up special titled “Antes de que estuviera casado.” It is verified as the title of a live show/routine, but no verified special release was found.\",\n    \"That he was a contestant on La Casa de los Famosos twice. One 2026 article contains ambiguous wording, but no independent confirmation of contestant participation was found.\",\n    \"That he was a former porn performer. This appears in a joke-style comedy-directory bio and should not be treated as biographical fact.\",\n    \"That he competed in the 2024 seventh season of LOL: Last One Laughing. A news item reported an announced return, but this research independently verified only his casting in Prime Video's 2019 second season.\",\n    \"Any precise elimination placement for his 2019 LOL appearance; non-primary sources gave inconsistent placement descriptions.\"\n  ],\n  \"background_story\": \"Multimedios identifies Fematt as a Monterrey-born communicator, comedian and presenter. Its biography says he entered cable channel D99 in 2004, began radio work with Los Manríquez in 2005, appeared in GenTV productions including Méteme Gol and Las Noches del Futbol, and launched the Pura Gente Bien project in 2011 as the character Mago Miau. He later joined Acábatelo, worked with Franco Escamilla on La Mesa Reñoña, and became a co-host of Hermanos de Leche with Adrián Marcelo.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Multimedios biography\",\n      \"url\": \"https://www.multimediostv.com/programas/acabatelo/personajes/lamole.html\"\n    },\n    {\n      \"label\": \"Prime Video: LOL: Last One Laughing, Season 2\",\n      \"url\": \"https://www.primevideo.com/-/es/detail/0FBECELKI3KI77ZJARAUZUOJ1F\"\n    },\n    {\n      \"label\": \"Semanario ZETA interview\",\n      \"url\": \"https://zetatijuana.com/2024/11/quiero-hacer-cine-la-mole/\"\n    },\n    {\n      \"label\": \"Quadratín Puebla interview\",\n      \"url\": \"https://puebla.quadratin.com.mx/principal/se-presento-el-comediante-la-mole-en-la-feria-de-puebla/\"\n    },\n    {\n      \"label\": \"Creativo episode 500 on Amazon Music\",\n      \"url\": \"https://music.amazon.com.mx/podcasts/25e2e231-0a52-416c-a0a3-82ba98d28631/episodes/96803f34-2515-42ab-8e9f-e7a76216693e/creativo-500-hermanos-de-leche-cancelaciones-censura-reality-shows-humor-negro-robots-fama\"\n    },\n    {\n      \"label\": \"POSTA México recent report\",\n      \"url\": \"https://postamx.azurewebsites.net/share/que-necesidad-la-mole-critica-la-granja-vip-y-redes-le-recuerdan-su-pasado-en-acabatelo/vl2264182\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.instagram.com/mole82/"
+      ],
+      "instagramHandle": "@mole82",
+      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "wpPageId": 2197,
+      "wpLink": "https://comedyhouston.com/comedians/ivan-fematt-la-mole/",
+      "wpImageMediaId": 2196,
+      "legacy_slugs": [
+        "ivn-fematt-la-mole-houston-improv-2026-10-15"
+      ],
+      "shows": [
+        {
+          "date": "2026-10-15",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "Iván Fematt La Mole (En Español)",
+          "ticket_url": "https://www.ticketweb.com/event/ivn-fematt-la-mole-en-houston-improv-tickets/14891023?REFERRAL_ID=tmfeed",
+          "event_id": "16813c804528bc42",
+          "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/ivan-fematt-la-mole-houston.jpg"
     },
     {
       "slug": "karen-morgan",
@@ -195,6 +270,98 @@
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/keegan-tindall-houston.png"
     },
     {
+      "slug": "marlon-wayans",
+      "name": "Marlon Wayans",
+      "match": [
+        "marlon wayans"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T20:39:27.963Z",
+      "profile_written_at": "2026-10-15T20:40:43.100Z",
+      "profile_html": "<p>In August 2026, <a href=\"https://www.iheart.com/podcast/61-real-laughs-28156042/episode/marlon-wayans-341845046/\">Real Laughs</a> heard Marlon Wayans describe a new hour taking shape in clubs, with another special expected within months. “I stay on stage and I keep grinding and it just makes me better,” he said. His stand-up runs on physical humor, impressions, and personal stories.</p>\n\n<p>Wayans has worked since his 1988 film debut in <em>I’m Gonna Git You Sucka</em>. He became widely known through <em>The Wayans Bros.</em> and the <em>Scary Movie</em> films. His 2018 Netflix special <a href=\"https://www.netflix.com/na/title/80134779\"><em>Marlon Wayans: Woke-ish</em></a> and HBO Max’s <a href=\"https://press.wbd.com/ca/media-release/hbo-max/marlon-wayans-presents-god-loves-me/max-original-comedy-special-marlon-wayans-god-loves-me-debuts-march-2\"><em>Marlon Wayans: God Loves Me</em></a> make room for family, race, relationships, fear, and his own mistakes.</p>\n\n<p>That turn lands hardest in 2024’s <em>Good Grief</em>: “I’ve been dodging depression for the last three years. I lost my momma three years ago. And let me tell you y’all something, ain’t no pain, ain’t no nothing like losing your momma.” In a <a href=\"https://www.cbsnews.com/news/marlon-wayans-on-him-and-on-veering-from-comedy-to-horror/\">CBS News</a> interview about grief, stand-up, and acting, he put his career drive plainly: “I don’t know if I’m chasing, or if I’m running from something!”</p>",
+      "research_json": "{\n  \"full_name\": \"Marlon Lamont Wayans\",\n  \"hometown\": \"New York City, New York, United States\",\n  \"career_start_year\": 1988,\n  \"specials\": [\n    {\n      \"title\": \"Marlon Wayans: Woke-ish\",\n      \"platform\": \"Netflix\",\n      \"year\": 2018\n    },\n    {\n      \"title\": \"Marlon Wayans: You Know What It Is\",\n      \"platform\": \"HBO Max\",\n      \"year\": 2021\n    },\n    {\n      \"title\": \"Marlon Wayans: God Loves Me\",\n      \"platform\": \"HBO Max\",\n      \"year\": 2023\n    },\n    {\n      \"title\": \"Marlon Wayans: Good Grief\",\n      \"platform\": \"Amazon Prime Video\",\n      \"year\": 2024\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"The Cruz Show Podcast\",\n      \"year_approx\": 2024\n    },\n    {\n      \"show\": \"The School of Greatness\",\n      \"year_approx\": 2024\n    },\n    {\n      \"show\": \"The Breakfast Club\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"Real Laughs\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Poppa's House\",\n      \"context\": \"Guest-starred as Melvin, Poppa's smooth-talking brother, in the March 24, 2025 episode titled \\\"Melvin.\\\"\"\n    },\n    {\n      \"show\": \"CBS News Sunday Morning\",\n      \"context\": \"Interviewed by Tracy Smith in a segment and web-exclusive interview about the film \\\"Him,\\\" stand-up, grief, and acting.\"\n    },\n    {\n      \"show\": \"Jimmy Kimmel Live!\",\n      \"context\": \"Appeared in a July 2026 interview with guest host Colman Domingo to discuss the return of \\\"Scary Movie,\\\" impressions, family, and supporting his transgender child.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"High-energy, blunt, raunchy, irreverent, and personal.\",\n    \"structure\": \"Uses physical humor, character work and impressions alongside pop-culture commentary and autobiographical storytelling.\",\n    \"recurring_themes\": [\n      \"Family and parenting\",\n      \"Grief and loss\",\n      \"Fear and anxiety\",\n      \"Race and racism\",\n      \"Pop culture\",\n      \"Gay rights and LGBTQ+ issues\",\n      \"Relationships and personal mistakes\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"Wayans actively tours stand-up, including the Wild Child Tour. Official descriptions of his work emphasize physical humor, outrageous stories, personal honesty, impressions, and emotionally candid material.\",\n  \"recent_activity_2025_2026\": \"Wayans continued the Wild Child Tour in 2025 and 2026. In an August 2026 appearance on the Real Laughs podcast, he said he had a new hour of material, was working clubs, and expected to film another special within a few months. He also returned as Shorty for the 2026 \\\"Scary Movie\\\" film.\",\n  \"recent_hook\": {\n    \"summary\": \"On the August 20, 2026 episode of Real Laughs, Wayans said he had developed a brand-new hour while continuing club dates and was preparing to film a stand-up special in the coming months.\",\n    \"quote\": \"I stay on stage and I keep grinding and it just makes me better.\",\n    \"source_publication\": \"Real Laughs / iHeart\",\n    \"source_url\": \"https://www.iheart.com/podcast/61-real-laughs-28156042/episode/marlon-wayans-341845046/\",\n    \"date\": \"2026-08-20\"\n  },\n  \"instagram_handle\": \"@marlonwayans\",\n  \"notable_bits_or_quotes\": [\n    {\n      \"quote\": \"I've been dodging depression for the last three years. I lost my momma three years ago. And let me tell you y'all something, ain't no pain, ain't no nothing like losing your momma.\",\n      \"context\": \"Quoted from his 2024 special \\\"Marlon Wayans: Good Grief\\\" in a CBS News profile.\"\n    },\n    {\n      \"quote\": \"I don't know if I'm chasing, or if I'm running from something!\",\n      \"context\": \"Wayans discussing his workload and career drive with CBS News in 2025.\"\n    }\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"Do not state that \\\"Good Grief\\\" debuted at No. 1 on Prime Video; that claim appeared in promotional material but was not independently verified here.\",\n    \"Do not call the separate ensemble program \\\"Marlon Wayans Presents: The Headliners\\\" a solo Marlon Wayans stand-up special.\",\n    \"Do not describe the unaffiliated marlonwayans.org tour-biography page as Wayans' official biography; the verified official website used here is marlonwayans.com.\"\n  ],\n  \"background_story\": \"Wayans was born in New York City and attended Fiorello H. LaGuardia High School of Music & Art and Performing Arts. He made his film debut in 1988 in \\\"I'm Gonna Git You Sucka.\\\" He is the youngest of 10 siblings in the Wayans family and became widely known through comedy work with family members, including \\\"The Wayans Bros.\\\" and the \\\"Scary Movie\\\" films. His more recent stand-up has incorporated grief following the deaths of his parents and other people close to him.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Netflix special page: Marlon Wayans: Woke-ish\",\n      \"url\": \"https://www.netflix.com/na/title/80134779\"\n    },\n    {\n      \"label\": \"Warner Bros. Discovery press release: Marlon Wayans: You Know What It Is\",\n      \"url\": \"https://press.wbd.com/us/media-release/hbo-max/marlon-wayans-you-know-what-it/marlon-wayans-you-know-what-it-debuts-august-19-hbo-max\"\n    },\n    {\n      \"label\": \"Warner Bros. Discovery press release: Marlon Wayans: God Loves Me\",\n      \"url\": \"https://press.wbd.com/ca/media-release/hbo-max/marlon-wayans-presents-god-loves-me/max-original-comedy-special-marlon-wayans-god-loves-me-debuts-march-2\"\n    },\n    {\n      \"label\": \"Apple TV: Marlon Wayans: Good Grief\",\n      \"url\": \"https://tv.apple.com/us/show/marlon-wayans-good-grief/umc.cmc.2xpqwqr2v91thqdin31gpgoso\"\n    },\n    {\n      \"label\": \"CBS News interview and profile\",\n      \"url\": \"https://www.cbsnews.com/news/marlon-wayans-on-him-and-on-veering-from-comedy-to-horror/\"\n    },\n    {\n      \"label\": \"Real Laughs podcast episode\",\n      \"url\": \"https://www.iheart.com/podcast/61-real-laughs-28156042/episode/marlon-wayans-341845046/\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.netflix.com/na/title/80134779",
+        "https://www.instagram.com/marlonwayans/"
+      ],
+      "instagramHandle": "@marlonwayans",
+      "imageUrl": "https://s1.ticketm.net/dam/a/649/fc0c18a2-de9c-4378-9212-c7fa46e7e649_SOURCE",
+      "wpPageId": 2191,
+      "wpLink": "https://comedyhouston.com/comedians/marlon-wayans/",
+      "wpImageMediaId": 2190,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-10-16",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "Marlon Wayans",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A70Uay",
+          "event_id": "3175c088c292ff0f",
+          "image_url": "https://s1.ticketm.net/dam/a/649/fc0c18a2-de9c-4378-9212-c7fa46e7e649_SOURCE"
+        },
+        {
+          "date": "2026-10-17",
+          "venue": "Houston Improv",
+          "time": "7:00 PM",
+          "name": "Marlon Wayans",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A70UaS",
+          "event_id": "1b061843a0a4b645",
+          "image_url": "https://s1.ticketm.net/dam/a/649/fc0c18a2-de9c-4378-9212-c7fa46e7e649_SOURCE"
+        },
+        {
+          "date": "2026-10-18",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "Marlon Wayans",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A70UaV",
+          "event_id": "2d4221fa621baf28",
+          "image_url": "https://s1.ticketm.net/dam/a/649/fc0c18a2-de9c-4378-9212-c7fa46e7e649_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/marlon-wayans-houston.jpg"
+    },
+    {
+      "slug": "mo-amer",
+      "name": "Mo Amer",
+      "match": [
+        "mo amer"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T20:40:51.588Z",
+      "profile_written_at": "2026-10-15T20:42:25.381Z",
+      "profile_html": "<p>In October 2026, Mo Amer sold out Radio City Music Hall. Dave Chappelle introduced him as a surprise guest; Jon Stewart, Ramy Youssef and Shane Gillis also appeared. The <em>Houston Chronicle</em> reported that Amer was the first Arab stand-up comedian to headline the roughly 6,000-seat room. “To switch gears and do my own show there and then have Dave go on there as a surprise guest, introduce me, it was so special man,” he later said.</p>\n\n<p>Born in Kuwait to Palestinian parents, Amer arrived in Houston after his family fled the Gulf War and grew up in Alief. He started doing stand-up as a teenager in 1999. His <a href=\"https://en.wikipedia.org/wiki/Mo_Amer\">Houston background</a> runs through stories of family, citizenship, refugee experience and Texas.</p>\n\n<p>His Netflix specials include <a href=\"https://www.netflix.com/title/80239503\"><em>Mo Amer: The Vagabond</em></a>, 2021’s <em>Mo Amer: Mohammed in Texas</em>, and 2025’s <em>Mo Amer: Wild World</em>. He works in English, Arabic and Spanish, with Muslim and Arab American life at the center. “My mother is a gansta,” he says.</p>\n\n<p>That material fed <em>Mo</em>, the Netflix comedy-drama he co-created, executive produced and stars in. Its second season arrived in January 2025. Amer also appeared on Hulu’s <em>Ramy</em> and joined <a href=\"https://www.wtfpod.com/podcast/episode-1619-mo-amer\"><em>WTF with Marc Maron</em>, Episode 1619</a> in 2025.</p>",
+      "research_json": "{\n  \"full_name\": \"Mohammed Mustafa Amer\",\n  \"hometown\": \"Houston, Texas\",\n  \"career_start_year\": 1999,\n  \"specials\": [\n    {\n      \"title\": \"Mo Amer: The Vagabond\",\n      \"platform\": \"Netflix\",\n      \"year\": 2018\n    },\n    {\n      \"title\": \"Mo Amer: Mohammed in Texas\",\n      \"platform\": \"Netflix\",\n      \"year\": 2021\n    },\n    {\n      \"title\": \"Mo Amer: Wild World\",\n      \"platform\": \"Netflix\",\n      \"year\": 2025\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"WTF with Marc Maron, Episode 1619\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"Armchair Expert with Dax Shepard\",\n      \"year_approx\": 2025\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Mo\",\n      \"context\": \"Netflix comedy-drama series that he co-created, executive produced and stars in; its second season released January 30, 2025.\"\n    },\n    {\n      \"show\": \"Ramy\",\n      \"context\": \"Hulu comedy series; listed by Hulu as starring Mohammed Amer.\"\n    },\n    {\n      \"show\": \"Jimmy Kimmel Live!\",\n      \"context\": \"Guest interview broadcast September 24, 2026, discussing a USO tour and headlining Radio City Music Hall.\"\n    },\n    {\n      \"show\": \"The Daily Show\",\n      \"context\": \"Appeared in an April 30, 2026 segment about anti-Muslim misconceptions.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Personal, irreverent and socially observant.\",\n    \"structure\": \"Long-form autobiographical storytelling and anecdotal stand-up; he incorporates English, Arabic and Spanish in his work.\",\n    \"recurring_themes\": [\n      \"Palestinian identity\",\n      \"Refugee and immigration experience\",\n      \"Family\",\n      \"Houston and Texas\",\n      \"Muslim and Arab American life\",\n      \"Citizenship and belonging\"\n    ],\n    \"comparable_to\": null\n  },\n  \"live_reputation\": \"On October 2, 2026, Amer sold out Radio City Music Hall, a roughly 6,000-seat venue. The Houston Chronicle reported that he was the first Arab stand-up comedian to headline the room.\",\n  \"recent_activity_2025_2026\": \"Amer released his third Netflix stand-up special, \\\"Mo Amer: Wild World,\\\" in October 2025. In 2026, he hosted the 86th Peabody Awards, appeared on Jimmy Kimmel Live!, and sold out Radio City Music Hall on October 2.\",\n  \"recent_hook\": {\n    \"summary\": \"Amer sold out Radio City Music Hall on October 2, 2026. The Houston Chronicle reported that he became the first Arab stand-up comedian to headline the venue; Jon Stewart, Ramy Youssef, Shane Gillis and Dave Chappelle made surprise appearances.\",\n    \"quote\": \"To switch gears and do my own show there and then have Dave go on there as a surprise guest, introduce me, it was so special man.\",\n    \"source_publication\": \"Houston Chronicle\",\n    \"source_url\": \"https://www.houstonchronicle.com/news/houston-texas/trending/article/mo-amer-radio-city-music-hall-show-22477095.php\",\n    \"date\": \"2026-10-14\"\n  },\n  \"instagram_handle\": \"@moamer\",\n  \"notable_bits_or_quotes\": [\n    \"\\\"My mother is a gansta.\\\"\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"Claims from the unaffiliated moamer.org tour site, including its biographical descriptions and tour assertions.\",\n    \"The claim that Amer has performed in more than 40 countries; it appeared in ticket-promotional material but was not independently verified in this research.\",\n    \"The claim that he was the first Arab American to star in a nationally televised one-hour stand-up special; it appears on his official site as an attributed promotional quote, but the underlying claim was not independently verified here.\",\n    \"Unattributed fan or ticket-site claims about specific new material, tour names, or future specials.\"\n  ],\n  \"background_story\": \"Amer was born in Kuwait to Palestinian parents. His family fled during the Gulf War and settled in Houston when he was nine. He grew up in the Alief area of Houston, began performing stand-up there as a teenager, and has drawn extensively on his family history, refugee experience and Houston upbringing in his comedy and in the semi-autobiographical Netflix series \\\"Mo.\\\"\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Mo_Amer\"\n    },\n    {\n      \"label\": \"Netflix — Mo Amer: Mohammed in Texas\",\n      \"url\": \"https://www.netflix.com/title/81435608?fromWatch=true\"\n    },\n    {\n      \"label\": \"Netflix — Mo Amer: The Vagabond\",\n      \"url\": \"https://www.netflix.com/title/80239503\"\n    },\n    {\n      \"label\": \"The New Yorker interview\",\n      \"url\": \"https://www.newyorker.com/culture/the-new-yorker-interview/mo-amer-has-survived-by-being-funny\"\n    },\n    {\n      \"label\": \"WTF with Marc Maron — Episode 1619\",\n      \"url\": \"https://www.wtfpod.com/podcast/episode-1619-mo-amer\"\n    },\n    {\n      \"label\": \"Armchair Expert — Mo Amer\",\n      \"url\": \"https://armchairexpertpod.com/pods/mo-amer\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Mo_Amer",
+        "https://www.netflix.com/title/81435608?fromWatch=true",
+        "https://www.netflix.com/title/80239503",
+        "https://www.instagram.com/moamer/"
+      ],
+      "instagramHandle": "@moamer",
+      "imageUrl": "https://s1.ticketm.net/dam/a/407/e2afafee-20b2-4067-b289-cb171ea40407_SOURCE",
+      "wpPageId": 2194,
+      "wpLink": "https://comedyhouston.com/comedians/mo-amer/",
+      "wpImageMediaId": 2193,
+      "legacy_slugs": [
+        "mo-amer-cullen-performance-hall-2026-10-16"
+      ],
+      "shows": [
+        {
+          "date": "2026-10-16",
+          "venue": "Cullen Performance Hall",
+          "time": "7:30 PM",
+          "name": "ZETEO AND RISALA PRESENT MEHDI & MO AMER IN HOUSTON",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7PJQ6",
+          "event_id": "72dcf8a91edce439",
+          "image_url": "https://s1.ticketm.net/dam/a/407/e2afafee-20b2-4067-b289-cb171ea40407_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/mo-amer-houston.jpg"
+    },
+    {
       "slug": "nikki-glaser",
       "name": "Nikki Glaser",
       "match": [
@@ -231,6 +398,45 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/nikki-glaser-houston.jpg"
+    },
+    {
+      "slug": "tony-hinchcliffe",
+      "name": "Tony Hinchcliffe",
+      "match": [
+        "tony hinchcliffe",
+        "kill tony"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T20:38:15.214Z",
+      "profile_written_at": "2026-10-15T20:39:20.819Z",
+      "profile_html": "<p>On <a href=\"https://www.youtube.com/watch?v=inrnVpGsKN4\">The Joe Rogan Experience #2522</a> in July 2026, Tony Hinchcliffe discussed the backlash to his George Floyd joke from <em>The Roast of Kevin Hart</em>. “I’m going to go for it,” he said.</p>\n\n<p>Hinchcliffe grew up in Youngstown, Ohio, and graduated from Ursuline High School in 2003. A <a href=\"https://vindyarchives.com/news/2007/dec/13/rising-comic-from-valley-returns-for-show/\">December 2007 <em>Vindicator</em> profile</a> found him in Los Angeles, working restaurant jobs and getting onstage at open mics. He later worked at The Comedy Store and wrote for Comedy Central’s <em>The Burn with Jeff Ross</em> and roast episodes involving James Franco, Justin Bieber, and Rob Lowe.</p>\n\n<p>His solo specials include Netflix’s 2016 release <em>One Shot</em> and 2021’s <em>Making Friends</em>, uploaded to YouTube. Netflix released <a href=\"https://about.netflix.com/en/news/kill-tony-comedy-specials-coming-to-netflix\"><em>Kill Tony: Kill or Be Killed</em></a> in April 2025, followed by the solo special <a href=\"https://www.imdb.com/title/tt43339083/\"><em>Man of the People</em></a> in June 2026.</p>\n\n<p>He is closely associated with <em>Kill Tony</em>, the touring podcast where aspiring comics perform one-minute sets before improvised interviews and critiques from Hinchcliffe and a guest panel. He has called it “the most spontaneous and improvised show that is out there.”</p>",
+      "research_json": "{\n  \"full_name\": \"Tony Hinchcliffe\",\n  \"hometown\": \"Youngstown, Ohio, United States\",\n  \"career_start_year\": 2007,\n  \"specials\": [\n    {\n      \"title\": \"Tony Hinchcliffe: One Shot\",\n      \"platform\": \"Netflix\",\n      \"year\": 2016\n    },\n    {\n      \"title\": \"Tony Hinchcliffe: Making Friends\",\n      \"platform\": \"YouTube\",\n      \"year\": 2021\n    },\n    {\n      \"title\": \"Kill Tony: Kill or Be Killed\",\n      \"platform\": \"Netflix\",\n      \"year\": 2025\n    },\n    {\n      \"title\": \"Tony Hinchcliffe: Man of the People\",\n      \"platform\": \"Netflix\",\n      \"year\": 2026\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Kill Tony\",\n      \"year_approx\": 2013\n    },\n    {\n      \"show\": \"The Joe Rogan Experience #1400\",\n      \"year_approx\": 2019\n    },\n    {\n      \"show\": \"The Joe Rogan Experience #2522\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Jim Norton Can't Save You\",\n      \"year_approx\": 2025\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"The Roast of Tom Brady\",\n      \"context\": \"Appeared as a roaster on the Netflix live roast in 2024.\"\n    },\n    {\n      \"show\": \"The Roast of Kevin Hart\",\n      \"context\": \"Appeared on the Netflix roast special in 2026.\"\n    },\n    {\n      \"show\": \"The Burn with Jeff Ross\",\n      \"context\": \"Writer on the Comedy Central series during its 2012–2013 run.\"\n    },\n    {\n      \"show\": \"Comedy Central Roasts\",\n      \"context\": \"Writer on roast episodes including the James Franco, Justin Bieber, and Rob Lowe roasts.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Roast and insult comedy with dark, confrontational humor.\",\n    \"structure\": \"Known for rapid-fire roast writing, crowd-facing insults, and the Kill Tony format of one-minute sets followed by improvised interviews and critiques.\",\n    \"recurring_themes\": [\n      \"Roasting and insult comedy\",\n      \"Crowd work\",\n      \"Taboo and provocative subjects\",\n      \"Comedy-industry and live-performance material\"\n    ],\n    \"comparable_to\": \"Jeff Ross\"\n  },\n  \"live_reputation\": \"He is closely associated with live roast comedy and with Kill Tony, a touring live podcast in which aspiring comedians perform one-minute sets and receive improvised feedback from Hinchcliffe and a guest panel. His official site says the Austin-based flagship show sells out in minutes.\",\n  \"recent_activity_2025_2026\": \"Netflix released Kill Tony: Kill or Be Killed on April 7, 2025. Hinchcliffe's solo Netflix special Tony Hinchcliffe: Man of the People premiered June 9, 2026. He appeared on The Joe Rogan Experience #2522 on July 2, 2026. Kill Tony also announced a two-night run at Dolby Live at Park MGM in Las Vegas for November 13–14, 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"On July 2, 2026, Hinchcliffe appeared on The Joe Rogan Experience #2522 and discussed the backlash to his George Floyd joke from Netflix's The Roast of Kevin Hart.\",\n    \"quote\": \"I'm going to go for it.\",\n    \"source_publication\": \"The Daily Beast\",\n    \"source_url\": \"https://www.thedailybeast.com/obsessed/maga-comedian-tony-hinchcliffe-defends-vile-joke-that-got-him-ripped-by-fellow-comics/\",\n    \"date\": \"2026-07-02\"\n  },\n  \"instagram_handle\": \"@tonyhinchcliffe\",\n  \"notable_bits_or_quotes\": [\n    \"“It’s the most spontaneous and improvised show that is out there.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That an unreleased Tony Hinchcliffe stand-up special was filmed in Atlanta in August 2023.\",\n    \"That he routinely reuses material from prior specials in his current live act.\",\n    \"That his solo special Making Friends was released in 2020; available reporting indicates it was filmed in 2020 and uploaded to YouTube in 2021.\"\n  ],\n  \"background_story\": \"Hinchcliffe is a Youngstown native and a 2003 graduate of Ursuline High School. A December 2007 Youngstown newspaper profile reported that he had moved to Los Angeles, worked restaurant jobs, and began stand-up about six months earlier by signing up for an open mic. He subsequently worked at The Comedy Store and became associated with roast comedy and the Comedy Central Roast writing staff.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Tony_Hinchcliffe\"\n    },\n    {\n      \"label\": \"Netflix announcement: Kill Tony comedy specials\",\n      \"url\": \"https://about.netflix.com/en/news/kill-tony-comedy-specials-coming-to-netflix\"\n    },\n    {\n      \"label\": \"IMDb: Tony Hinchcliffe: Man of the People\",\n      \"url\": \"https://www.imdb.com/title/tt43339083/\"\n    },\n    {\n      \"label\": \"The Joe Rogan Experience #2522\",\n      \"url\": \"https://www.youtube.com/watch?v=inrnVpGsKN4\"\n    },\n    {\n      \"label\": \"The Vindicator profile\",\n      \"url\": \"https://vindyarchives.com/news/2007/dec/13/rising-comic-from-valley-returns-for-show/\"\n    },\n    {\n      \"label\": \"Tony Hinchcliffe official tour page\",\n      \"url\": \"https://tonyhinchcliffe.com/pages/tour\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Tony_Hinchcliffe",
+        "https://about.netflix.com/en/news/kill-tony-comedy-specials-coming-to-netflix",
+        "https://www.imdb.com/title/tt43339083/",
+        "https://www.youtube.com/watch?v=inrnVpGsKN4",
+        "https://www.instagram.com/tonyhinchcliffe/"
+      ],
+      "instagramHandle": "@tonyhinchcliffe",
+      "imageUrl": "https://s1.ticketm.net/dam/a/bb5/c7d68f46-2707-4c16-8b12-b561ea43ebb5_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "wpPageId": 2188,
+      "wpLink": "https://comedyhouston.com/comedians/tony-hinchcliffe/",
+      "wpImageMediaId": 2187,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-10-17",
+          "venue": "Smart Financial Centre at Sugar Land",
+          "time": "7:00 PM",
+          "name": "Kill Tony",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A70ePA",
+          "event_id": "2c4ead85218f95b0",
+          "image_url": "https://s1.ticketm.net/dam/a/bb5/c7d68f46-2707-4c16-8b12-b561ea43ebb5_TABLET_LANDSCAPE_LARGE_16_9.jpg"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/tony-hinchcliffe-houston.jpg"
     }
   ]
 }

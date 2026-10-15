@@ -1,36 +1,78 @@
 {
-  "generated_at": "2026-09-21T20:12:03.562Z",
-  "manifest_version": 1790021523562,
+  "generated_at": "2026-10-15T20:45:20.262Z",
+  "manifest_version": 1792097120262,
   "week_range": "October 12 – October 18, 2026",
   "posts": [
     {
-      "comedianName": "Anjelah Johnson-Reyes",
-      "venue": "Punch Line Houston",
-      "date": "2026-10-15",
-      "imageUrl": "https://s1.ticketm.net/dam/a/754/9026b1db-62a7-45e4-8fbc-b4d7b85ee754_SOURCE",
-      "graphicImageUrl": "https://s1.ticketm.net/dam/a/754/9026b1db-62a7-45e4-8fbc-b4d7b85ee754_SOURCE",
-      "ticketUrl": "https://www.ticketmaster.com/funjelah-live-podcast-taping-w-anjelah-houston-texas-10-15-2026/event/3A0064EABBAFB15B",
-      "slug": "anjelah-johnson-reyes-punch-line-houston-2026-10-15",
-      "wpLink": "https://comedyhouston.com/anjelah-johnson-reyes-punch-line-houston-2026-10-15/",
-      "caption": "Houston, if *Ugly Baby* found its way into your YouTube queue, Anjelah Johnson-Reyes is bringing that voice to the room.  \n\nHer newest hour touches family and motherhood, but live, she builds stories with characters and impressions. You may know her from MADtv’s Bon Qui Qui, but the draw is how personal the stories feel. I’d go for the kind of set that gives you something to talk about on the ride home.  \n\nPunch Line Houston · Thursday, October 15, 2026  \n\nLink in bio for tickets. Tag someone you’d bring.  \n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #AnjelahJohnsonReyes  \n@anjelahjohnson",
-      "instagramHandle": "@anjelahjohnson",
+      "comedianName": "Tony Hinchcliffe",
+      "comedianSlug": "tony-hinchcliffe",
+      "venue": "Smart Financial Centre at Sugar Land",
+      "date": "2026-10-17",
+      "imageUrl": "https://s1.ticketm.net/dam/a/bb5/c7d68f46-2707-4c16-8b12-b561ea43ebb5_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "graphicImageUrl": "https://s1.ticketm.net/dam/a/bb5/c7d68f46-2707-4c16-8b12-b561ea43ebb5_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A70ePA",
+      "slug": "tony-hinchcliffe-smart-financial-centre-at-sugar-land-2026-10-17",
+      "wpLink": "https://comedyhouston.com/comedians/tony-hinchcliffe/",
+      "wpType": "page",
+      "caption": "Houston, if you watched Tony Hinchcliffe on The Roast of Tom Brady, you know he doesn’t ease into a joke.\n\nHis new Netflix special, *Man of the People*, premiered this year. Live, he brings fast roast writing, crowd work, and the sharp edge that made *Kill Tony* a staple for comedy fans. If you like comedy that takes chances, this is one to see in the room.\n\nSmart Financial Centre at Sugar Land · Saturday, October 17, 2026\n\nLink in bio for tickets. Tag someone you’d bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #TonyHinchcliffe\n\n@tonyhinchcliffe",
+      "instagramHandle": "@tonyhinchcliffe",
       "graphicFiles": [
-        "anjelah-johnson-reyes-punch-line-houston-2026-10-15-square.png",
-        "anjelah-johnson-reyes-punch-line-houston-2026-10-15-portrait.png",
-        "anjelah-johnson-reyes-punch-line-houston-2026-10-15-story.png"
+        "tony-hinchcliffe-smart-financial-centre-at-sugar-land-2026-10-17-square.png",
+        "tony-hinchcliffe-smart-financial-centre-at-sugar-land-2026-10-17-portrait.png",
+        "tony-hinchcliffe-smart-financial-centre-at-sugar-land-2026-10-17-story.png"
+      ]
+    },
+    {
+      "comedianName": "Marlon Wayans",
+      "comedianSlug": "marlon-wayans",
+      "venue": "Houston Improv",
+      "date": "2026-10-16",
+      "imageUrl": "https://s1.ticketm.net/dam/a/649/fc0c18a2-de9c-4378-9212-c7fa46e7e649_SOURCE",
+      "graphicImageUrl": "https://s1.ticketm.net/dam/a/649/fc0c18a2-de9c-4378-9212-c7fa46e7e649_SOURCE",
+      "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A70Uay",
+      "slug": "marlon-wayans-houston-improv-2026-10-16",
+      "wpLink": "https://comedyhouston.com/comedians/marlon-wayans/",
+      "wpType": "page",
+      "caption": "Houston, if you caught Marlon Wayans’ *Good Grief*, you know he brings the real stuff to the joke.\n\nHe’s been building a new hour in clubs while getting ready to film his next special. Expect physical bits, impressions, blunt stories, and the kind of personal material that lands because he means it. I’d see this one live—Marlon is at his best with a room in front of him.\n\nHouston Improv · Friday, October 16, 2026\n\nLink in bio for tickets. Tag someone you’d bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #MarlonWayans  \n@marlonwayans",
+      "instagramHandle": "@marlonwayans",
+      "graphicFiles": [
+        "marlon-wayans-houston-improv-2026-10-16-square.png",
+        "marlon-wayans-houston-improv-2026-10-16-portrait.png",
+        "marlon-wayans-houston-improv-2026-10-16-story.png"
+      ]
+    },
+    {
+      "comedianName": "Mo Amer",
+      "comedianSlug": "mo-amer",
+      "venue": "Cullen Performance Hall",
+      "date": "2026-10-16",
+      "imageUrl": "https://s1.ticketm.net/dam/a/407/e2afafee-20b2-4067-b289-cb171ea40407_SOURCE",
+      "graphicImageUrl": "https://s1.ticketm.net/dam/a/407/e2afafee-20b2-4067-b289-cb171ea40407_SOURCE",
+      "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7PJQ6",
+      "slug": "mo-amer-cullen-performance-hall-2026-10-16",
+      "wpLink": "https://comedyhouston.com/comedians/mo-amer/",
+      "wpType": "page",
+      "caption": "Houston, if you watched *Mo Amer: Wild World*, see @moamer where his stories began.\n\nHe grew up in Alief and started doing stand-up here as a teenager. His comedy is personal, sharp, and built from stories about family, Houston, and belonging. He just sold out Radio City Music Hall. There’s something good about hearing those Houston stories in Houston.\n\nCullen Performance Hall · Friday, October 16, 2026\n\nLink in bio for tickets. Tag someone you’d bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #MoAmer  \n@moamer",
+      "instagramHandle": "@moamer",
+      "graphicFiles": [
+        "mo-amer-cullen-performance-hall-2026-10-16-square.png",
+        "mo-amer-cullen-performance-hall-2026-10-16-portrait.png",
+        "mo-amer-cullen-performance-hall-2026-10-16-story.png"
       ]
     },
     {
       "comedianName": "Iván Fematt La Mole",
+      "comedianSlug": "ivan-fematt-la-mole",
       "venue": "Houston Improv",
       "date": "2026-10-15",
       "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "graphicImageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "graphicImageUrl": "",
       "ticketUrl": "https://www.ticketweb.com/event/ivn-fematt-la-mole-en-houston-improv-tickets/14891023?REFERRAL_ID=tmfeed",
       "slug": "ivn-fematt-la-mole-houston-improv-2026-10-15",
-      "wpLink": "https://comedyhouston.com/ivn-fematt-la-mole-houston-improv-2026-10-15/",
-      "caption": "Houston, if you know La Mole from *Experiencia Regia con La Mole*, you know he keeps the conversation moving.\n\nIván Fematt La Mole brings that story-first energy to the stage. He’s from Monterrey, and his comedy pulls from marriage, “Antes de que estuviera casado,” and northern Mexican life. I’d go for the stories and stay ready for the crowd interaction.\n\nHouston Improv · Thursday, October 15, 2026\n\nTickets are in the link in bio. Tag the person you’d bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #IvnFemattLaMole\n\n@lamolechida",
-      "instagramHandle": "@lamolechida",
+      "wpLink": "https://comedyhouston.com/comedians/ivan-fematt-la-mole/",
+      "wpType": "page",
+      "caption": "Houston, Hermanos de Leche co-host Iván Fematt La Mole is bringing his live set to town.\n\nHe pulls material from daily life: the news, TV, weddings, and the small stuff people actually talk about. His comedy has that Monterrey edge, but he keeps it close to the room. If you like a comic who can make a lived moment funny, this is a good Thursday plan.\n\nHouston Improv · Thursday, October 15, 2026\n\nLink in bio for tickets. Tag someone you’d bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #IvnFemattLaMole\n\n@mole82",
+      "instagramHandle": "@mole82",
       "graphicFiles": [
         "ivn-fematt-la-mole-houston-improv-2026-10-15-square.png",
         "ivn-fematt-la-mole-houston-improv-2026-10-15-portrait.png",
@@ -38,54 +80,22 @@
       ]
     },
     {
-      "comedianName": "Chaunte Wayans",
+      "comedianName": "Anjelah Johnson-Reyes",
+      "comedianSlug": "anjelah-johnson-reyes",
       "venue": "Punch Line Houston",
-      "date": "2026-10-16",
-      "imageUrl": "https://s1.ticketm.net/dam/a/811/01c641b8-c700-40e6-8b6f-a994aa7a2811_SOURCE",
-      "graphicImageUrl": "https://s1.ticketm.net/dam/a/811/01c641b8-c700-40e6-8b6f-a994aa7a2811_SOURCE",
-      "ticketUrl": "https://www.ticketmaster.com/chaunte-wayans-houston-texas-10-16-2026/event/3A00651FCBA6283C",
-      "slug": "chaunte-wayans-punch-line-houston-2026-10-16",
-      "wpLink": "https://comedyhouston.com/chaunte-wayans-punch-line-houston-2026-10-16/",
-      "caption": "Houston, if you watched Chaunté Wayans in Hulu’s *LOL Live with Chaunté Wayans*, make plans to see her live.\n\nHer comedy is candid and personal, built from marriage, dating, sobriety, family, and LGBTQ+ identity. You may know her from Netflix’s *Tiffany Haddish Presents: They Ready* or as a featured cast member on *Wild ’N Out*. I’d go for stand-up that feels honest and close to home.\n\nPunch Line Houston · Friday, October 16, 2026\n\nLink in bio for tickets. Tag someone you’d bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #ChaunteWayans  \n@cwayans",
-      "instagramHandle": "@cwayans",
+      "date": "2026-10-15",
+      "imageUrl": "https://s1.ticketm.net/dam/a/754/9026b1db-62a7-45e4-8fbc-b4d7b85ee754_SOURCE",
+      "graphicImageUrl": "https://s1.ticketm.net/dam/a/754/9026b1db-62a7-45e4-8fbc-b4d7b85ee754_SOURCE",
+      "ticketUrl": "https://www.ticketmaster.com/funjelah-live-podcast-taping-w-anjelah-houston-texas-10-15-2026/event/3A0064EABBAFB15B",
+      "slug": "anjelah-johnson-reyes-punch-line-houston-2026-10-15",
+      "wpLink": "https://comedyhouston.com/comedians/anjelah-johnson-reyes/",
+      "wpType": "page",
+      "caption": "Houston, Anjelah Johnson-Reyes just released and directed her seventh hour-long special, “Ugly Baby.”\n\nHer comedy pulls from family, marriage, motherhood, and getting older, then shifts into the characters and impressions she’s known for. You may know her from MADtv and Bon Qui Qui. Onstage, those personal stories have room to grow. I’d bring a friend who loves comedy about real life.\n\nPunch Line Houston · Thursday, October 15, 2026\n\nLink in bio for tickets. Tag someone you’d bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #AnjelahJohnsonReyes  \n@anjelahjohnson",
+      "instagramHandle": "@anjelahjohnson",
       "graphicFiles": [
-        "chaunte-wayans-punch-line-houston-2026-10-16-square.png",
-        "chaunte-wayans-punch-line-houston-2026-10-16-portrait.png",
-        "chaunte-wayans-punch-line-houston-2026-10-16-story.png"
-      ]
-    },
-    {
-      "comedianName": "Kerryn Feehan",
-      "venue": "The Riot Comedy Club",
-      "date": "2026-10-16",
-      "imageUrl": "https://www.theriothtx.com/img/comedians/feehan-79ee0819-large-thumb.jpg",
-      "graphicImageUrl": "https://www.theriothtx.com/img/comedians/feehan-79ee0819-large-thumb.jpg",
-      "ticketUrl": "https://www.theriothtx.com/events/kerryn-feehan-netflix-comedy-central-headlines-the-riot-comedy-club",
-      "slug": "kerryn-feehan-the-riot-comedy-club-2026-10-16",
-      "wpLink": "https://comedyhouston.com/kerryn-feehan-the-riot-comedy-club-2026-10-16/",
-      "caption": "Houston, if you caught Kerryn Feehan as Reagan on *Tires*, see her in a live room.\n\nHer 2025 special, *Kerryn Feehan: Don’t Serve Me*, is on OFTV. She’s unfiltered and explicit, with stories about dating, relationships, sexuality, and internet backlash. I’d see her live because that kind of honesty hits different in the room.\n\nThe Riot Comedy Club · Friday, October 16, 2026\n\nLink in bio for tickets. Tag someone you’d bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #KerrynFeehan\n\n@kerrynfeehan",
-      "instagramHandle": "@kerrynfeehan",
-      "graphicFiles": [
-        "kerryn-feehan-the-riot-comedy-club-2026-10-16-square.png",
-        "kerryn-feehan-the-riot-comedy-club-2026-10-16-portrait.png",
-        "kerryn-feehan-the-riot-comedy-club-2026-10-16-story.png"
-      ]
-    },
-    {
-      "comedianName": "Mo Amer",
-      "venue": "Cullen Performance Hall",
-      "date": "2026-10-16",
-      "imageUrl": "https://s1.ticketm.net/dam/a/407/e2afafee-20b2-4067-b289-cb171ea40407_SOURCE",
-      "graphicImageUrl": "https://s1.ticketm.net/dam/a/407/e2afafee-20b2-4067-b289-cb171ea40407_SOURCE",
-      "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7PJQ6",
-      "slug": "mo-amer-cullen-performance-hall-2026-10-16",
-      "wpLink": "https://comedyhouston.com/mo-amer-cullen-performance-hall-2026-10-16/",
-      "caption": "Houston, you know @realmoamer from Netflix’s *Mo Amer: Wild World*.\n\nI’d see him live for the personal, witty way he talks about family, belonging, and cultural differences. He grew up in Houston after his family fled Kuwait, and his stories carry that history without losing the laugh. On October 16, he joins Mehdi Hasan for a live edition of *We’re Not Kidding*, with politics, Palestine, comedy, and audience questions planned.\n\nCullen Performance Hall · Friday, October 16, 2026\n\nLink in bio for tickets. Tag someone you’d bring.\n\n#HoustonComedy #StandUp #LiveComedy #DateNightHouston #ThingsToDoInHouston #MoAmer\n\n@realmoamer",
-      "instagramHandle": "@realmoamer",
-      "graphicFiles": [
-        "mo-amer-cullen-performance-hall-2026-10-16-square.png",
-        "mo-amer-cullen-performance-hall-2026-10-16-portrait.png",
-        "mo-amer-cullen-performance-hall-2026-10-16-story.png"
+        "anjelah-johnson-reyes-punch-line-houston-2026-10-15-square.png",
+        "anjelah-johnson-reyes-punch-line-houston-2026-10-15-portrait.png",
+        "anjelah-johnson-reyes-punch-line-houston-2026-10-15-story.png"
       ]
     }
   ]
