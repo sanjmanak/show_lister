@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-10-11T18:07:30.127Z",
+  "last_updated": "2026-10-15T17:49:41.804Z",
   "entries": {
     "16813c804528bc42": {
       "price_min": 62.3,
@@ -57,14 +57,6 @@
       "source": "page",
       "url": "https://www.ticketweb.com/event/ellen-skrmetti-houston-improv-tickets/15024353?REFERRAL_ID=tmfeed",
       "fetched_at": "2026-09-01T18:00:54.755Z"
-    },
-    "70a1eb2a6825e2c4": {
-      "price_min": 20.36,
-      "price_max": 20.36,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999296122522",
-      "fetched_at": "2026-09-09T01:37:41.697Z"
     },
     "cdb8239bb77b819b": {
       "price_min": 20.36,
