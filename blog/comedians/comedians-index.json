@@ -1,6 +1,18 @@
 {
-  "generated_at": "2026-10-15T20:45:20.267Z",
+  "generated_at": "2026-10-15T21:03:21.073Z",
   "comedians": [
+    {
+      "slug": "abby-govindan",
+      "name": "Abby Govindan",
+      "match": [
+        "abby govindan"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/abby-govindan/",
+      "legacy_slugs": [
+        "abby-govindan-the-secret-group-2026-10-26"
+      ],
+      "next_show": "2026-10-26"
+    },
     {
       "slug": "alonzo-bodden",
       "name": "Alonzo Bodden",
@@ -26,6 +38,30 @@
       "next_show": "2026-10-15"
     },
     {
+      "slug": "daniel-sloss",
+      "name": "Daniel Sloss",
+      "match": [
+        "daniel sloss"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/daniel-sloss/",
+      "legacy_slugs": [
+        "daniel-sloss-bayou-music-center-2026-10-27"
+      ],
+      "next_show": "2026-10-27"
+    },
+    {
+      "slug": "dave-chappelle",
+      "name": "Dave Chappelle",
+      "match": [
+        "dave chappelle"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/dave-chappelle/",
+      "legacy_slugs": [
+        "dave-chappelle-toyota-center-tx-2026-10-28"
+      ],
+      "next_show": "2026-10-28"
+    },
+    {
       "slug": "desi-banks",
       "name": "Desi Banks",
       "match": [
@@ -36,6 +72,16 @@
         "desi-banks-houston-improv-2026-11-06"
       ],
       "next_show": "2026-11-06"
+    },
+    {
+      "slug": "dovi-neuburger",
+      "name": "Dovi Neuburger",
+      "match": [
+        "dovi neuburger"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/dovi-neuburger/",
+      "legacy_slugs": [],
+      "next_show": "2026-10-27"
     },
     {
       "slug": "ivan-fematt-la-mole",
@@ -70,6 +116,18 @@
       "wpLink": "https://comedyhouston.com/comedians/keegan-tindall/",
       "legacy_slugs": [],
       "next_show": "2026-11-06"
+    },
+    {
+      "slug": "marito-lopez",
+      "name": "Marito Lopez",
+      "match": [
+        "marito lopez"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/marito-lopez/",
+      "legacy_slugs": [
+        "marito-lopez-punch-line-houston-2026-10-28"
+      ],
+      "next_show": "2026-10-28"
     },
     {
       "slug": "marlon-wayans",

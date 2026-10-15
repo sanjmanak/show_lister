@@ -1,7 +1,43 @@
 {
   "version": 1,
-  "updated_at": "2026-10-15T20:45:20.261Z",
+  "updated_at": "2026-10-15T21:03:21.070Z",
   "comedians": [
+    {
+      "slug": "abby-govindan",
+      "name": "Abby Govindan",
+      "match": [
+        "abby govindan"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T20:56:59.024Z",
+      "profile_written_at": "2026-10-15T20:57:49.506Z",
+      "profile_html": "<p>In August 2026, during an Edinburgh Fringe run, <a href=\"https://www.theguardian.com/stage/2026/aug/16/abby-govindan-pushing-30-review-pleasance-courtyard-edinburgh\">The Guardian reviewed <em>Pushing 30</em></a>, Abby Govindan’s hour about love, big tech, marriage pressure, misinformation, and patriarchal expectations. “Patriarchy is not just a south Asian problem,” she says. The review called her delivery easygoing, conversational, and heartfelt.</p>\n\n<p>Govindan grew up in Houston and made her comedy debut at Caroline’s on Broadway in December 2017, at 20. Her <a href=\"https://abbygovindan.com/about/\">official biography</a> puts Indian American family life, internet virality, and the pursuit of stand-up at the center of her early work.</p>\n\n<p>She has folded screenshots, pranks, and PowerPoint-style visuals into story-driven stand-up. She once convinced social-media users and media outlets that she created <em>Emily in Paris</em>; her <a href=\"https://abbygovindan.com/\">official site</a> notes that she did not.</p>\n\n<p>In 2025, Govindan appeared on <em>Scam Goddess</em> and <em>Last Things First</em>, and brought the solo Off-Broadway show <em>How to Embarrass Your Immigrant Parents</em> to SoHo Playhouse. In 2026, she appeared on <a href=\"https://www.sbs.com.au/audio/podcast-episode/love-in-the-age-of-the-manosphere-with-abby-govindan/jlc9n7wij\"><em>SBS Spice</em></a>.</p>",
+      "research_json": "{\n  \"full_name\": \"Abby Govindan\",\n  \"hometown\": \"Houston, Texas\",\n  \"career_start_year\": 2017,\n  \"specials\": [],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Scam Goddess\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"SBS Spice\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Last Things First\",\n      \"year_approx\": 2025\n    }\n  ],\n  \"tv_appearances\": [],\n  \"comedy_style\": {\n    \"tone\": \"Conversational, personal, and satirical.\",\n    \"structure\": \"Story-driven stand-up that has incorporated screenshots, pranks, and PowerPoint-style visual material.\",\n    \"recurring_themes\": [\n      \"South Asian and Indian American identity\",\n      \"Family and immigrant-parent expectations\",\n      \"Dating, marriage pressure, and aging\",\n      \"Internet virality, misinformation, and big tech\",\n      \"Gendered expectations and patriarchy\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"A Guardian review of her 2026 Edinburgh Fringe debut described her delivery as \\\"easygoing and conversational storytelling\\\" and characterized the show as having heart.\",\n  \"recent_activity_2025_2026\": \"In 2025, Govindan brought her solo Off-Broadway show \\\"How to Embarrass Your Immigrant Parents\\\" to SoHo Playhouse. In 2026, she debuted and toured a new hour, \\\"Pushing 30,\\\" including an Edinburgh Fringe run in August and U.S. dates listed on her official site for October 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"Govindan’s new hour, \\\"Pushing 30,\\\" received a review during its Edinburgh Fringe run. The show addresses marriage pressure, dating, internet misinformation, big tech, and patriarchal expectations.\",\n    \"quote\": \"patriarchy is not just a south Asian problem\",\n    \"source_publication\": \"The Guardian\",\n    \"source_url\": \"https://www.theguardian.com/stage/2026/aug/16/abby-govindan-pushing-30-review-pleasance-courtyard-edinburgh\",\n    \"date\": \"2026-08-16\"\n  },\n  \"instagram_handle\": \"@abbygovindan\",\n  \"notable_bits_or_quotes\": [\n    \"She publicly pranked social-media users and media outlets into believing she was the creator of \\\"Emily in Paris\\\"; her official site explicitly states that she is not the show's creator.\",\n    \"\\\"Pushing 30\\\" is billed on her official site as a comedy hour about finding love in the age of big tech.\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That Abby Govindan was a television-show policy adviser; this appeared in an unverified Reddit post and was not independently confirmed.\",\n    \"That she hosted or currently hosts a feminist podcast; this appeared in an unverified Reddit discussion and was not independently confirmed.\",\n    \"Descriptions of her as a \\\"dancer\\\" in a third-party event listing; this appears to be a categorization error and should not be used as a biographical credit.\"\n  ],\n  \"background_story\": \"Govindan grew up in Houston and is based in New York City. Her official biography says she made her comedy debut at Caroline's on Broadway in New York in December 2017, at age 20. Her work has drawn on her Indian American family background, online virality, and her experience pursuing stand-up.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Abby Govindan official site\",\n      \"url\": \"https://abbygovindan.com/\"\n    },\n    {\n      \"label\": \"Abby Govindan official biography\",\n      \"url\": \"https://abbygovindan.com/about/\"\n    },\n    {\n      \"label\": \"The Guardian review of Pushing 30\",\n      \"url\": \"https://www.theguardian.com/stage/2026/aug/16/abby-govindan-pushing-30-review-pleasance-courtyard-edinburgh\"\n    },\n    {\n      \"label\": \"SBS Spice podcast episode\",\n      \"url\": \"https://www.sbs.com.au/audio/podcast-episode/love-in-the-age-of-the-manosphere-with-abby-govindan/jlc9n7wij\"\n    },\n    {\n      \"label\": \"Earwolf guest-appearance page\",\n      \"url\": \"https://www.earwolf.com/person/abby-govindan/\"\n    },\n    {\n      \"label\": \"Houston Chronicle profile\",\n      \"url\": \"https://www.houstonchronicle.com/projects/best-day-ever/abby-govindan/\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.instagram.com/abbygovindan/"
+      ],
+      "instagramHandle": "@abbygovindan",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1088890053%2F3558237521%2F1%2Foriginal.20250805-184307?auto=format%2Ccompress&q=75&sharp=10&s=09c5c2adfa2e9dfe3cdb6f8db73f2b63",
+      "wpPageId": 2203,
+      "wpLink": "https://comedyhouston.com/comedians/abby-govindan/",
+      "wpImageMediaId": 2217,
+      "legacy_slugs": [
+        "abby-govindan-the-secret-group-2026-10-26"
+      ],
+      "shows": [
+        {
+          "date": "2026-10-26",
+          "venue": "The Secret Group",
+          "time": "8:00 PM",
+          "name": "Abby Govindan",
+          "ticket_url": "https://www.eventbrite.com/e/abby-govindan-tickets-1996727920962",
+          "event_id": "e8e592d606211b74",
+          "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1088890053%2F3558237521%2F1%2Foriginal.20250805-184307?auto=format%2Ccompress&q=75&sharp=10&s=09c5c2adfa2e9dfe3cdb6f8db73f2b63"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/abby-govindan-houston-1.jpg"
+    },
     {
       "slug": "alonzo-bodden",
       "name": "Alonzo Bodden",
@@ -98,6 +134,81 @@
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/anjelah-johnson-reyes-houston.jpg"
     },
     {
+      "slug": "daniel-sloss",
+      "name": "Daniel Sloss",
+      "match": [
+        "daniel sloss"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T20:57:57.668Z",
+      "profile_written_at": "2026-10-15T20:59:04.142Z",
+      "profile_html": "<p>In July 2026, <a href=\"https://list.co.uk/news/daniel-sloss-on-the-riyadh-comedy-festival-what-price-is-your-soul-48586\">The List</a> found Daniel Sloss discussing two sitcoms in development after time away from touring following the birth of his daughter in 2024. “One is about an angry Scottish comedian. The other is about being an angry Scottish person in America.”</p>\n\n<p>Sloss began writing and performing in 2007 after his mother met Frankie Boyle at a conference. Boyle gave him early access to the comedy circuit. He made his Edinburgh Fringe stand-up debut in 2008, aged 17. His shows have since traveled through 55 countries and nine New York off-Broadway seasons.</p>\n\n<p>The 2018 Netflix specials <a href=\"https://media.netflix.com/en/only-on-netflix/80223685\">DARK and Jigsaw</a> cover the death of his sister, Josie, and relationships. In 2019’s <em>Daniel Sloss: X</em>, he addresses gender expectations, toxic masculinity, and the sexual assault of a close friend. The structure often starts provocative or slapstick, then turns toward personal reflection.</p>\n\n<p>Later releases include <em>SOCIO</em> in 2022, <em>HUBRiS</em> in 2024, and <em>CAN’T</em>, released on DanielSloss.com in December 2025. He has also appeared ten times on <em>Conan</em>, according to his official biography.</p>",
+      "research_json": "{\n  \"full_name\": \"Daniel Sloss\",\n  \"hometown\": \"Fife, Scotland\",\n  \"career_start_year\": 2007,\n  \"specials\": [\n    {\n      \"title\": \"DARK\",\n      \"platform\": \"Netflix\",\n      \"year\": 2018\n    },\n    {\n      \"title\": \"Jigsaw\",\n      \"platform\": \"Netflix\",\n      \"year\": 2018\n    },\n    {\n      \"title\": \"Daniel Sloss: X\",\n      \"platform\": \"HBO\",\n      \"year\": 2019\n    },\n    {\n      \"title\": \"SOCIO\",\n      \"platform\": \"DanielSloss.com\",\n      \"year\": 2022\n    },\n    {\n      \"title\": \"HUBRiS\",\n      \"platform\": \"DanielSloss.com\",\n      \"year\": 2024\n    },\n    {\n      \"title\": \"CAN'T\",\n      \"platform\": \"DanielSloss.com\",\n      \"year\": 2025\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Get A Real Job\",\n      \"year_approx\": 2023\n    },\n    {\n      \"show\": \"Here We Go Again With Kal Penn\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Whiskey Ginger with Andrew Santino\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Conan\",\n      \"context\": \"His official biography states that he appeared on the U.S. program ten times.\"\n    },\n    {\n      \"show\": \"The Project\",\n      \"context\": \"Interview appearances are featured on his official watch page, including clips dated 2019 and 2021.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Provocative, dark, profane, and intentionally discomforting, with vulnerable and serious turns.\",\n    \"structure\": \"His long-form shows can begin with provocative or slapstick material before pivoting into extended personal reflection; this structure was documented in coverage of X.\",\n    \"recurring_themes\": [\n      \"relationships\",\n      \"grief and family\",\n      \"gender expectations and toxic masculinity\",\n      \"sexual assault and accountability\",\n      \"comedy as a response to trauma\"\n    ],\n    \"comparable_to\": null\n  },\n  \"live_reputation\": \"A globally touring stand-up whose official biography says his tours have reached 55 countries; it also states that he has performed nine New York off-Broadway seasons.\",\n  \"recent_activity_2025_2026\": \"Sloss released his sixth global comedy special, CAN'T, on DanielSloss.com on December 6, 2025. In 2026 he has been touring a new show, BITTER, with U.S., Canadian, U.K., European, and 2027 Scandinavian dates listed on his official tour page.\",\n  \"recent_hook\": {\n    \"summary\": \"In a July 2026 interview, Sloss said he had recently shot QI and was developing two sitcoms after time away from touring following the birth of his daughter in 2024.\",\n    \"quote\": \"One is about an angry Scottish comedian. The other is about being an angry Scottish person in America.\",\n    \"source_publication\": \"The List\",\n    \"source_url\": \"https://list.co.uk/news/daniel-sloss-on-the-riyadh-comedy-festival-what-price-is-your-soul-48586\",\n    \"date\": \"2026-07-17\"\n  },\n  \"instagram_handle\": \"@danielsloss\",\n  \"notable_bits_or_quotes\": [\n    \"Jigsaw includes material about relationships.\",\n    \"DARK includes material about the death of his sister, Josie.\",\n    \"X addresses gender expectations, toxic masculinity, and the sexual assault of a close friend.\",\n    \"“Making jokes about a serious subject does not mean that you do not take it seriously.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"Any precise claim that Jigsaw caused a specific number of breakups, divorces, or cancelled engagements; these counts are promotional or self-reported and were not independently auditable.\",\n    \"The claim that Sloss was the world's biggest ticket-selling comedian for most of 2021; his official biography attributes this to Pollstar, but the underlying Pollstar documentation was not independently verified in this research.\",\n    \"The claim that he appeared on Robot Wars in 2002, which appeared in Wikipedia-derived television-credit lists but was not independently verified.\"\n  ],\n  \"background_story\": \"Sloss was born in London and raised in Fife, Scotland. His mother met comedian Frankie Boyle at a 2007 conference, after which Boyle gave Sloss early access to the comedy circuit; Sloss began writing and performing stand-up in 2007. He made his Edinburgh Fringe stand-up debut in 2008 at age 17.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Daniel_Sloss\"\n    },\n    {\n      \"label\": \"Official biography and special releases\",\n      \"url\": \"https://danielsloss.com/about/\"\n    },\n    {\n      \"label\": \"Netflix Media Center — Daniel Sloss: Live Shows\",\n      \"url\": \"https://media.netflix.com/en/only-on-netflix/80223685\"\n    },\n    {\n      \"label\": \"Notable 2026 interview — The List\",\n      \"url\": \"https://list.co.uk/news/daniel-sloss-on-the-riyadh-comedy-festival-what-price-is-your-soul-48586\"\n    },\n    {\n      \"label\": \"Whiskey Ginger podcast episode\",\n      \"url\": \"https://podcasts.apple.com/us/podcast/daniel-sloss-nothing-is-off-limits-whiskeyginger/id1440300401?i=1000779262165\"\n    },\n    {\n      \"label\": \"The New Yorker — Daniel Sloss's X\",\n      \"url\": \"https://www.newyorker.com/culture/cultural-comment/daniel-slosss-x-a-laddish-comics-reckoning-with-metoo\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Daniel_Sloss",
+        "https://media.netflix.com/en/only-on-netflix/80223685",
+        "https://www.instagram.com/danielsloss/"
+      ],
+      "instagramHandle": "@danielsloss",
+      "imageUrl": "https://s1.ticketm.net/dam/a/cfa/e476394e-b2ce-4a11-8230-879e15686cfa_SOURCE",
+      "wpPageId": 2206,
+      "wpLink": "https://comedyhouston.com/comedians/daniel-sloss/",
+      "wpImageMediaId": 2219,
+      "legacy_slugs": [
+        "daniel-sloss-bayou-music-center-2026-10-27"
+      ],
+      "shows": [
+        {
+          "date": "2026-10-27",
+          "venue": "Bayou Music Center",
+          "time": "7:00 PM",
+          "name": "Daniel Sloss: BITTER  (Brand New Tour!)",
+          "ticket_url": "https://www.ticketmaster.com/daniel-sloss-bitter-brand-new-tour-houston-texas-10-27-2026/event/3A00644497F17AB4",
+          "event_id": "e56c6c1fa87f9ff8",
+          "image_url": "https://s1.ticketm.net/dam/a/cfa/e476394e-b2ce-4a11-8230-879e15686cfa_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/daniel-sloss-houston-1.jpg"
+    },
+    {
+      "slug": "dave-chappelle",
+      "name": "Dave Chappelle",
+      "match": [
+        "dave chappelle"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T21:00:38.409Z",
+      "profile_written_at": "2026-10-15T21:01:58.365Z",
+      "profile_html": "<p>In August 2026, the <a href=\"https://apnews.com/article/lauryn-hill-interview-diaspora-calling-fugees-dangelo-33b8d5056d3bad4519eef23efdafb713\">Associated Press reported</a> that Dave Chappelle was scheduled to host Lauryn Hill’s Diaspora Calling! festival.</p>\n\n<p>Born in Washington, D.C., Dave Chappelle split time between the Washington area and Yellow Springs, Ohio, after his parents separated. He attended Duke Ellington School of the Arts and moved to New York in 1991 for the stand-up club circuit, as outlined in his <a href=\"https://en.wikipedia.org/wiki/Dave_Chappelle\">career background</a>. He starred in the 1996 sitcom <em>Buddies</em>, then co-created and starred in Comedy Central’s <em>Chappelle’s Show</em>, which premiered in 2003.</p>\n\n<p>Dave Chappelle builds long anecdotes from personal experience and cultural observation, covering race and racism in the United States, American politics, fatherhood and celebrity culture. Netflix released <a href=\"https://www.netflix.com/sh/title/81665820\"><em>The Dreamer</em></a> in 2023. His other specials include 2017’s <em>The Age of Spin</em> and <em>Equanimity</em>, 2019’s <em>Sticks &amp; Stones</em>, and 2021’s <em>The Closer</em>.</p>",
+      "research_json": "{\n  \"full_name\": \"David Khari Webber Chappelle\",\n  \"hometown\": \"Washington, D.C. (birthplace); he has long lived in Yellow Springs, Ohio.\",\n  \"career_start_year\": 1991,\n  \"specials\": [\n    {\n      \"title\": \"Dave Chappelle: Killin' Them Softly\",\n      \"platform\": \"HBO\",\n      \"year\": 2000\n    },\n    {\n      \"title\": \"Dave Chappelle: For What It's Worth\",\n      \"platform\": \"Showtime\",\n      \"year\": 2004\n    },\n    {\n      \"title\": \"The Age of Spin\",\n      \"platform\": \"Netflix\",\n      \"year\": 2017\n    },\n    {\n      \"title\": \"Deep in the Heart of Texas\",\n      \"platform\": \"Netflix\",\n      \"year\": 2017\n    },\n    {\n      \"title\": \"Equanimity\",\n      \"platform\": \"Netflix\",\n      \"year\": 2017\n    },\n    {\n      \"title\": \"The Bird Revelation\",\n      \"platform\": \"Netflix\",\n      \"year\": 2017\n    },\n    {\n      \"title\": \"Sticks & Stones\",\n      \"platform\": \"Netflix\",\n      \"year\": 2019\n    },\n    {\n      \"title\": \"The Closer\",\n      \"platform\": \"Netflix\",\n      \"year\": 2021\n    },\n    {\n      \"title\": \"What's in a Name?\",\n      \"platform\": \"Netflix\",\n      \"year\": 2022\n    },\n    {\n      \"title\": \"The Dreamer\",\n      \"platform\": \"Netflix\",\n      \"year\": 2023\n    }\n  ],\n  \"podcast_appearances\": [],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Chappelle's Show\",\n      \"context\": \"Co-created and starred in the Comedy Central sketch-comedy series, which premiered in 2003.\"\n    },\n    {\n      \"show\": \"Saturday Night Live\",\n      \"context\": \"Hosted the January 18, 2025 episode during the program's 50th season.\"\n    },\n    {\n      \"show\": \"Buddies\",\n      \"context\": \"Starred in the 1996 sitcom.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Irreverent, provocative social commentary.\",\n    \"structure\": \"Stand-up built around personal storytelling, cultural observation and extended anecdotes; he also became widely known for sketch comedy.\",\n    \"recurring_themes\": [\n      \"Race and racism in the United States\",\n      \"American politics and current events\",\n      \"Celebrity culture\",\n      \"Fatherhood and personal experience\",\n      \"Social controversy\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"Chappelle continues to perform large live dates; Live Nation announced a five-city U.S. arena run for June 2026.\",\n  \"recent_activity_2025_2026\": \"He hosted Saturday Night Live on January 18, 2025. In April 2026, he participated in the restoration and opening of Yellow Springs' Union Schoolhouse as the new home of WYSO Public Radio. Live Nation announced arena shows in Baltimore, Detroit, Cleveland, Chicago and San Diego for June 2026. In August 2026, the Associated Press reported that he was scheduled to host Lauryn Hill's Diaspora Calling! festival in Milton Keynes, England.\",\n  \"recent_hook\": {\n    \"summary\": \"The freshest verified item located is an August 5, 2026 Associated Press report stating that Dave Chappelle would host Lauryn Hill's Diaspora Calling! festival at The National Bowl in Milton Keynes, England.\",\n    \"quote\": \"“'tis the season to bring people together in the name of growth, healing and pushing forward.”\",\n    \"source_publication\": \"Associated Press\",\n    \"source_url\": \"https://apnews.com/article/lauryn-hill-interview-diaspora-calling-fugees-dangelo-33b8d5056d3bad4519eef23efdafb713\",\n    \"date\": \"2026-08-05\"\n  },\n  \"instagram_handle\": \"\",\n  \"notable_bits_or_quotes\": [],\n  \"unverifiable_claims_to_avoid\": [\n    \"Claims that a Dave Chappelle special titled \\\"The Unstoppable Reaction\\\" was released in 2025; this appeared in Reddit posts but was not independently verified through an official Netflix, distributor or trade-publication source.\",\n    \"Claims that Chappelle filmed an untitled Netflix special in 2026; this appeared in a Reddit audience post but was not independently verified through Netflix or another authoritative source.\",\n    \"Claims of specific October 2026 tour dates based only on ticket-resale or Reddit posts; no authoritative tour announcement was verified for those dates.\",\n    \"Any assertion that a particular Instagram account is Chappelle's official account; no official account was independently verified.\"\n  ],\n  \"background_story\": \"Chappelle was born in Washington, D.C. His parents were professors, and after their separation he spent time between the Washington area and Yellow Springs, Ohio, where his father worked at Antioch College. He attended Duke Ellington School of the Arts in Washington and moved to New York in 1991, working the stand-up club circuit. He later broke through on television and film before co-creating Chappelle's Show.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Dave_Chappelle\"\n    },\n    {\n      \"label\": \"Netflix — Dave Chappelle: The Dreamer\",\n      \"url\": \"https://www.netflix.com/sh/title/81665820\"\n    },\n    {\n      \"label\": \"Associated Press — 2026 Chappelle interview\",\n      \"url\": \"https://apnews.com/article/dave-chappelle-interview-6dbc70eae5d5b55124fcc988b1b925cf\"\n    },\n    {\n      \"label\": \"Associated Press — Diaspora Calling! festival report\",\n      \"url\": \"https://apnews.com/article/lauryn-hill-interview-diaspora-calling-fugees-dangelo-33b8d5056d3bad4519eef23efdafb713\"\n    },\n    {\n      \"label\": \"Live Nation — June 2026 arena-date announcement\",\n      \"url\": \"https://news.livenationentertainment.com/news/comedy-icon-dave-chappelle-announces-june-2026-arena-dates-in-baltimore-detroit-cleveland-chicago-san-diego\"\n    },\n    {\n      \"label\": \"NBC — Saturday Night Live Season 50 listings\",\n      \"url\": \"https://www.nbc.com/saturday-night-live\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Dave_Chappelle",
+        "https://www.netflix.com/sh/title/81665820"
+      ],
+      "instagramHandle": "",
+      "imageUrl": "https://s1.ticketm.net/dam/a/e69/931eff58-62a7-4240-adb3-cf67a084ee69_SOURCE",
+      "wpPageId": 2212,
+      "wpLink": "https://comedyhouston.com/comedians/dave-chappelle/",
+      "wpImageMediaId": 2223,
+      "legacy_slugs": [
+        "dave-chappelle-toyota-center-tx-2026-10-28"
+      ],
+      "shows": [
+        {
+          "date": "2026-10-28",
+          "venue": "Toyota Center - TX",
+          "time": "7:30 PM",
+          "name": "Dave Chappelle",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1AAvtAz",
+          "event_id": "b4fa0cfb6f9370cc",
+          "image_url": "https://s1.ticketm.net/dam/a/e69/931eff58-62a7-4240-adb3-cf67a084ee69_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/dave-chappelle-houston-1.jpg"
+    },
+    {
       "slug": "desi-banks",
       "name": "Desi Banks",
       "match": [
@@ -152,6 +263,40 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/desi-banks-houston.png"
+    },
+    {
+      "slug": "dovi-neuburger",
+      "name": "Dovi Neuburger",
+      "match": [
+        "dovi neuburger"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T20:59:15.225Z",
+      "profile_written_at": "2026-10-15T21:00:24.445Z",
+      "profile_html": "<p>Dovi Neuburger draws on yeshiva culture, family expectations, faith, and dating, adjusting the context for audiences less familiar with Jewish practice. A September 2026 <a href=\"https://unpacked.media/dovi-neuburger-is-bringing-orthodox-jewish-comedy-to-new-audiences/\">Unpacked profile</a> noted his effort to bring Orthodox Jewish comedy beyond its usual audience. One early joke he counted as a major success used “Love on the Spectrum” as a misdirection after a premise about Jewish dating.</p>\n\n<p>Neuburger left NYU Law after one semester and first tried stand-up at a Hanukkah show at Young Israel of the Upper West Side. He nearly quit after bombing. Then came a successful Purim set at Stand Up NY in March 2023, followed by a Gotham Comedy Club class, open mics, and more shows. His material includes his father’s criticism of a mezuzah’s placement in his apartment and the difficulty of getting a blanket into a duvet cover.</p>\n\n<p>His official site says he regularly opens Elon Gold’s theater dates and founded and produces the StandUp for Israel Comedy Tour. On <a href=\"https://www.buzzsprout.com/1872993/episodes/16346032-how-i-dropped-out-of-law-school-and-my-parents-are-still-proud-of-me-with-dovi-neuburger\">BrainStorm with Sony Perlman</a> in 2024, Neuburger discussed leaving law school. In 2026, he appeared on <a href=\"https://andheresmodi.buzzsprout.com/1826078/episodes/19327422-dovi-neuburger-returns?t=0\">AND HERE’S MODI</a> to discuss a seven-show Israel run, the matchmaker process, a Birthright trip, and being a rabbi’s son.</p>\n\n<p>For live rooms, Neuburger adjusts the cultural explanation without sanding down the specifics. Ami Kozak told Unpacked that he brings “proper standup insight to the Jewish world” and makes specificity feel universal.</p>",
+      "research_json": "{\n  \"full_name\": \"Dovi Neuburger\",\n  \"hometown\": null,\n  \"career_start_year\": null,\n  \"specials\": [],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"BrainStorm with Sony Perlman\",\n      \"year_approx\": 2024\n    },\n    {\n      \"show\": \"AND HERE'S MODI\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"Meaningful People\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"AND HERE'S MODI\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [],\n  \"comedy_style\": {\n    \"tone\": \"Observational, personal, and explicitly rooted in Orthodox Jewish life.\",\n    \"structure\": \"Stand-up built from sharp observations and personal storytelling; he adapts cultural context for audiences less familiar with Jewish practice.\",\n    \"recurring_themes\": [\n      \"Orthodox dating\",\n      \"yeshiva culture\",\n      \"Jewish communal life\",\n      \"family expectations\",\n      \"faith\",\n      \"anxiety\",\n      \"tradition and modern life\"\n    ],\n    \"comparable_to\": null\n  },\n  \"live_reputation\": \"He is a New York-based stand-up comic whose material is designed for live audiences; his official biography says he regularly opens Elon Gold's theater dates. In a September 2026 profile, comic Ami Kozak said Neuburger brings \\\"proper standup insight to the Jewish world\\\" and makes specificity feel universal.\",\n  \"recent_activity_2025_2026\": \"In 2026, Neuburger discussed a seven-show Israel run on AND HERE'S MODI and said he was developing material around dating, the matchmaker process, a Birthright trip, and being a rabbi's son. A September 25, 2026 Unpacked profile reported upcoming dates with Ami Kozak and Eli Lebowicz in Suffern, New York, plus Florida and Georgia stops, and a December 13, 2026 City Winery Manhattan headlining date. He is also listed for a December 5, 2026 Hanukkah comedy show with Ami Kozak at Aventura Arts & Cultural Center in Florida.\",\n  \"recent_hook\": {\n    \"summary\": \"A September 25, 2026 Unpacked profile reported that Neuburger was expanding his Orthodox-Jewish-life material to broader audiences and had a run of shows ahead, including a December 13, 2026 headlining date at City Winery in Manhattan.\",\n    \"quote\": \"I didn’t know what I was doing. I didn’t appreciate the process you need to go through. It was so embarrassing, I was going to quit.\",\n    \"source_publication\": \"Unpacked\",\n    \"source_url\": \"https://unpacked.media/dovi-neuburger-is-bringing-orthodox-jewish-comedy-to-new-audiences/\",\n    \"date\": \"2026-09-25\"\n  },\n  \"instagram_handle\": \"@dovineuburger\",\n  \"notable_bits_or_quotes\": [\n    \"His first joke he considered a major success used the misdirection \\\"Love on the Spectrum\\\" after setting up a premise about Jewish dating.\",\n    \"He has material about a rabbi father criticizing the placement of a mezuzah in his apartment.\",\n    \"A venue description for his May 2026 Tel Aviv show said: \\\"He still hasn’t figured out how to get a blanket in a duvet cover.\\\"\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That he owns or founded a comedy club; a 2025 podcast description says he discussed a \\\"new comedy club,\\\" but it does not establish ownership or founding.\",\n    \"That he regularly opens for Modi; this appeared in promotional copy but was not independently verified through a primary performance source.\",\n    \"Any television, Netflix, or streaming-special credits; no verified credits of that kind were found.\",\n    \"A specific hometown; available reliable sources verify that he is New York-based, but not a hometown.\"\n  ],\n  \"background_story\": \"Neuburger is the son of Rabbi Yaakov Neuburger, who leads Congregation Beth Abraham in Bergenfield, New Jersey, and is a rosh yeshiva at Yeshiva University. He left NYU Law after one semester. He first tried stand-up at a Hanukkah show at Young Israel of the Upper West Side in Manhattan, nearly quit after bombing, then performed a successful Purim set at Stand Up NY in March 2023. He has said a Gotham Comedy Club class, open mics, and repeated shows helped him develop. He founded and produces the StandUp for Israel Comedy Tour.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Unpacked profile\",\n      \"url\": \"https://unpacked.media/dovi-neuburger-is-bringing-orthodox-jewish-comedy-to-new-audiences/\"\n    },\n    {\n      \"label\": \"Official Dovi Neuburger website\",\n      \"url\": \"https://dovilive.com/\"\n    },\n    {\n      \"label\": \"AND HERE'S MODI — Dovi Neuburger Returns\",\n      \"url\": \"https://andheresmodi.buzzsprout.com/1826078/episodes/19327422-dovi-neuburger-returns?t=0\"\n    },\n    {\n      \"label\": \"BrainStorm with Sony Perlman — Dovi Neuburger episode\",\n      \"url\": \"https://www.buzzsprout.com/1872993/episodes/16346032-how-i-dropped-out-of-law-school-and-my-parents-are-still-proud-of-me-with-dovi-neuburger\"\n    },\n    {\n      \"label\": \"Broward Center — Dovi Neuburger & Ami Kozak Hanukkah Comedy Show\",\n      \"url\": \"https://www.browardcenter.org/events/detail/dovi-neuburger-ami-kozak-2026\"\n    },\n    {\n      \"label\": \"City Winery — Dovi Neuburger\",\n      \"url\": \"https://tickets.citywinery.com/event/dovi-neuburger-x2w47h\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.instagram.com/dovineuburger/"
+      ],
+      "instagramHandle": "@dovineuburger",
+      "imageUrl": "https://s1.ticketm.net/dam/a/d22/47417614-2ccb-471a-ad17-02a270a79d22_SOURCE",
+      "wpPageId": 2209,
+      "wpLink": "https://comedyhouston.com/comedians/dovi-neuburger/",
+      "wpImageMediaId": 2221,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-10-27",
+          "venue": "Punch Line Houston",
+          "time": "7:30 PM",
+          "name": "Dovi Neuburger",
+          "ticket_url": "https://www.ticketmaster.com/dovi-neuburger-houston-texas-10-27-2026/event/3A0064ED9F81667F",
+          "event_id": "8045bafb090b6993",
+          "image_url": "https://s1.ticketm.net/dam/a/d22/47417614-2ccb-471a-ad17-02a270a79d22_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/dovi-neuburger-houston-1.jpg"
     },
     {
       "slug": "ivan-fematt-la-mole",
@@ -268,6 +413,44 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/keegan-tindall-houston.png"
+    },
+    {
+      "slug": "marito-lopez",
+      "name": "Marito Lopez",
+      "match": [
+        "marito lopez"
+      ],
+      "status": "live",
+      "created_at": "2026-10-15T21:02:07.702Z",
+      "profile_written_at": "2026-10-15T21:03:13.551Z",
+      "profile_html": "<p>In September 2026, <a href=\"https://www.buzzsprout.com/2470463/episodes/19830593-latino-convert-finding-islam-getting-sober-having-a-lot-of-sex-marito-lopez?t=0\">The Secret Sex Lives of Muslim Women</a> introduced Marito Lopez as “the first straight cis man to ever enter The Secret Sex Lives of Muslim Women.” He discussed sobriety, his conversion to Islam, faith, sex, and dating.</p>\n\n<p>Lopez began performing comedy in 2009. Born in El Salvador, he immigrated to Canada with his family as a child and grew up in Calgary, Alberta. After working there, he relocated to Toronto and performed in New York City. A talent-management profile lists The Stand and New York Comedy Club among the rooms where he is a regular.</p>\n\n<p>Lopez voiced Marito in 17 episodes of <em>Gary and His Demons</em> from 2018 to 2023, played Carlito in four 2024 episodes of <em>One More Time</em>, and competed on <em>Roast Battle Canada</em> against Jarrett Campbell and Sophie Buddle. He was featured in the March 2022 <em>The New Wave of Standup</em> episode devoted to him. His 2026 <a href=\"https://tv.apple.com/us/movie/marito-antonio-lopez-latinxxx/umc.cmc.7afdntsntfk9ceua1xjjwjvnj?l=es\">Apple TV special</a> followed the February 2025 release of his comedy album <em>LatinXXX</em>.</p>",
+      "research_json": "{\n  \"full_name\": \"Marito Antonio Lopez\",\n  \"hometown\": \"Calgary, Alberta, Canada\",\n  \"career_start_year\": 2009,\n  \"specials\": [\n    {\n      \"title\": \"Marito Antonio Lopez: LatinXXX\",\n      \"platform\": \"Apple TV\",\n      \"year\": 2026\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Stop Podcasting Yourself\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"The Secret Sex Lives of Muslim Women\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"God Yay or Nay?\",\n      \"year_approx\": 2022\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"One More Time\",\n      \"context\": \"Played Carlito in four episodes in 2024.\"\n    },\n    {\n      \"show\": \"Roast Battle Canada\",\n      \"context\": \"Competed in season 4 against Jarrett Campbell and Sophie Buddle in 2024.\"\n    },\n    {\n      \"show\": \"The New Wave of Standup\",\n      \"context\": \"Featured in the Marito Lopez episode, released March 29, 2022.\"\n    },\n    {\n      \"show\": \"Comedy Night with Rick Mercer\",\n      \"context\": \"Performed stand-up in season 1, episode 3, alongside Ivan Decker, Dino Archie, and Julia Hladkowicz.\"\n    },\n    {\n      \"show\": \"Gary and His Demons\",\n      \"context\": \"Voice of the character Marito; credited for 17 episodes from 2018 to 2023.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"High-energy and charismatic.\",\n    \"structure\": null,\n    \"recurring_themes\": [\n      \"Immigrant parents\",\n      \"Latin identity\"\n    ],\n    \"comparable_to\": null\n  },\n  \"live_reputation\": \"His talent-management profile describes his stage presence as having \\\"electric energy\\\" and says he is a regular at New York comedy venues including The Stand and New York Comedy Club.\",\n  \"recent_activity_2025_2026\": \"Released the comedy album LatinXXX on February 11, 2025, and appeared as a guest on The Secret Sex Lives of Muslim Women on September 21, 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"Lopez was the guest on a September 2026 episode of The Secret Sex Lives of Muslim Women, discussing sobriety, his conversion to Islam, faith, sex, and dating.\",\n    \"quote\": \"the first straight cis man to ever enter The Secret Sex Lives of Muslim Women.\",\n    \"source_publication\": \"The Secret Sex Lives of Muslim Women\",\n    \"source_url\": \"https://www.buzzsprout.com/2470463/episodes/19830593-latino-convert-finding-islam-getting-sober-having-a-lot-of-sex-marito-lopez?t=0\",\n    \"date\": \"2026-09-21\"\n  },\n  \"instagram_handle\": \"@maritolopezthagod\",\n  \"notable_bits_or_quotes\": [],\n  \"unverifiable_claims_to_avoid\": [\n    \"That his 2015 parody rap album Wit' My Woes reached No. 1 on iTunes.\",\n    \"That he has appeared on Kevin Hart's LOL Network.\",\n    \"That he has appeared on MTV Canada.\",\n    \"That he has appeared in multiple Netflix films and television shows.\",\n    \"That he is a regular performer at the Just For Laughs Festival.\"\n  ],\n  \"background_story\": \"Lopez was born in El Salvador, immigrated to Canada with his family as a child, and grew up in Calgary. He later worked as a comedian in Calgary before relocating to Toronto and subsequently performing in New York City.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Marito_Lopez\"\n    },\n    {\n      \"label\": \"Apple TV – Marito Antonio Lopez: LatinXXX\",\n      \"url\": \"https://tv.apple.com/us/movie/marito-antonio-lopez-latinxxx/umc.cmc.7afdntsntfk9ceua1xjjwjvnj?l=es\"\n    },\n    {\n      \"label\": \"IMDb – Marito Lopez\",\n      \"url\": \"https://www.imdb.com/name/nm9841073/\"\n    },\n    {\n      \"label\": \"Stop Podcasting Yourself episode 909\",\n      \"url\": \"https://maximumfun.org/episodes/stop-podcasting-yourself/stop-podcasting-yourself-909-marito-lopez/\"\n    },\n    {\n      \"label\": \"The Secret Sex Lives of Muslim Women episode\",\n      \"url\": \"https://www.buzzsprout.com/2470463/episodes/19830593-latino-convert-finding-islam-getting-sober-having-a-lot-of-sex-marito-lopez?t=0\"\n    },\n    {\n      \"label\": \"Comedy Night with Rick Mercer – Apple TV\",\n      \"url\": \"https://tv.apple.com/ca/episode/featuring-marito-lopez/umc.cmc.gqj5kw12jmfx6vvqzak5u21b?showId=umc.cmc.4pdn5e08mv46vrlcxbz1r1d9p\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Marito_Lopez",
+        "https://www.imdb.com/name/nm9841073/",
+        "https://www.instagram.com/maritolopezthagod/"
+      ],
+      "instagramHandle": "@maritolopezthagod",
+      "imageUrl": "https://s1.ticketm.net/dam/a/fef/845bcb26-dc72-46ef-952e-98acdb418fef_SOURCE",
+      "wpPageId": 2215,
+      "wpLink": "https://comedyhouston.com/comedians/marito-lopez/",
+      "wpImageMediaId": 2225,
+      "legacy_slugs": [
+        "marito-lopez-punch-line-houston-2026-10-28"
+      ],
+      "shows": [
+        {
+          "date": "2026-10-28",
+          "venue": "Punch Line Houston",
+          "time": "7:30 PM",
+          "name": "Marito Lopez",
+          "ticket_url": "https://www.ticketmaster.com/marito-lopez-houston-texas-10-28-2026/event/3A0064E6ADBF7463",
+          "event_id": "346cb22fc835e96e",
+          "image_url": "https://s1.ticketm.net/dam/a/fef/845bcb26-dc72-46ef-952e-98acdb418fef_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/marito-lopez-houston-1.jpg"
     },
     {
       "slug": "marlon-wayans",
