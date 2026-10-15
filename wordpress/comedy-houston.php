@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.18.0
+ * Version: 2.18.1
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.18.0';
+    const VERSION      = '2.18.1';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -109,6 +109,11 @@ class Comedy_Houston_Plugin {
         // ones' signals onto the page that stays. Runs before send_cache_headers
         // so the redirect wins even while the old posts still exist in WP.
         add_action('template_redirect', [$this, 'redirect_dated_weekly_posts'], 4);
+        // Retired spotlight slugs → comedian page. On `wp` (priority 1), not
+        // template_redirect: Rank Math's "redirect 404s to the homepage"
+        // answers on `wp`, which fires first, and LiteSpeed then cached its
+        // 301 to / for every old spotlight URL (2026-10-15).
+        add_action('wp', [$this, 'redirect_legacy_spotlight'], 1);
 
         // Cache invalidation. Cache-Control alone can't fix a full-page cache
         // (LiteSpeed) that serves HTML without ever running PHP — the twice-
@@ -580,6 +585,20 @@ class Comedy_Houston_Plugin {
         ];
         set_transient($cache_key, $out, HOUR_IN_SECONDS);
         return $out;
+    }
+
+    /** Drop any cached response for every retired spotlight URL in the index. */
+    private function purge_legacy_spotlight_urls() {
+        $idx = $this->fetch_comedians_index();
+        $slugs = $idx['archived_legacy_slugs'];
+        foreach ($idx['comedians'] as $c) {
+            $slugs = array_merge($slugs, (array) ($c['legacy_slugs'] ?? []));
+        }
+        foreach (array_unique($slugs) as $slug) {
+            if (!is_string($slug) || $slug === '') continue;
+            do_action('litespeed_purge_url', home_url('/' . $slug . '/'));
+        }
+        return count($slugs);
     }
 
     /** 301 target for a retired spotlight slug, or '' when unknown. */
@@ -1081,16 +1100,10 @@ class Comedy_Houston_Plugin {
             }
         }
 
-        // Retired per-show spotlight posts (/{name}-{venue}-YYYY-MM-DD/) →
-        // the comedian's evergreen page. Only consulted on a 404 with a dated
-        // slug, so the index is never fetched for an ordinary page view.
-        if (is_404() && preg_match('#^/([a-z0-9-]+-\d{4}-\d{2}-\d{2})/?$#', $path, $m)) {
-            $target = $this->legacy_spotlight_target($m[1]);
-            if ($target) {
-                wp_safe_redirect($target, 301);
-                exit;
-            }
-        }
+        // Legacy spotlight slugs are handled earlier, on `wp` — see
+        // redirect_legacy_spotlight(). Called again here as a backstop for
+        // a host that short-circuits the `wp` action.
+        $this->redirect_legacy_spotlight();
 
         // Legacy open-mic URLs → the canonical /open-mic-comedy-houston/
         // page. Three open-mic URLs were briefly live simultaneously (the
@@ -1113,6 +1126,26 @@ class Comedy_Houston_Plugin {
         $trimmed = rtrim($path, '/');
         if (isset($legacy[$trimmed])) {
             wp_safe_redirect(home_url($legacy[$trimmed]), 301);
+            exit;
+        }
+    }
+
+    /**
+     * Retired per-show spotlight posts (/{name}-{venue}-YYYY-MM-DD/) → the
+     * comedian's evergreen page. Only consulted on a 404 with a dated slug,
+     * so the comedians index is never fetched for an ordinary page view.
+     */
+    public function redirect_legacy_spotlight() {
+        if (is_admin() || !is_404() || empty($_SERVER['REQUEST_URI'])) {
+            return;
+        }
+        $path = wp_parse_url(wp_unslash($_SERVER['REQUEST_URI']), PHP_URL_PATH);
+        if (!$path || !preg_match('#^/([a-z0-9-]+-\d{4}-\d{2}-\d{2})/?$#', $path, $m)) {
+            return;
+        }
+        $target = $this->legacy_spotlight_target($m[1]);
+        if ($target) {
+            wp_safe_redirect($target, 301);
             exit;
         }
     }
@@ -2104,6 +2137,10 @@ src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>
         if ($changed || $force) {
             $purged = $this->purge_listing_cache();
         }
+        // Retired spotlight URLs, every refresh: LiteSpeed cached Rank Math's
+        // 404→home 301 (and before that the old posts' 200s) for these, and
+        // nothing else ever purges a URL that no longer has a post behind it.
+        $this->purge_legacy_spotlight_urls();
         // lastmod only moves on a REAL data change, never on $force alone:
         // a manual webhook re-fire or a cache-clear is not new content, and
         // telling Google a page changed when it didn't is the fastest way
