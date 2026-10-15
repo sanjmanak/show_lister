@@ -38,8 +38,13 @@ const REGISTRY_VERSION = 1;
  * normalize_match_text(): both sides must agree or "Iván Fematt" never
  * matches "Iván Fematt La Mole (En Español)".
  */
+// Letters with no NFD decomposition, mapped the way WordPress's
+// remove_accents() maps them, so "Bjørn" normalizes to "bjorn" on both sides.
+const TRANSLIT = { "ø": "o", "Ø": "O", "ł": "l", "Ł": "L", "đ": "d", "Đ": "D", "þ": "th", "Þ": "Th", "ß": "ss", "æ": "ae", "Æ": "AE", "œ": "oe", "Œ": "OE", "ı": "i", "ð": "d", "Ð": "D" };
+
 function normalizeName(str) {
   return String(str || "")
+    .replace(/[øØłŁđĐþÞßæÆœŒıðÐ]/g, (ch) => TRANSLIT[ch] || ch)
     .normalize("NFD")
     .replace(/[̀-ͯ]/g, "")
     .toLowerCase()
@@ -77,6 +82,11 @@ function saveRegistry(dir, reg) {
   reg.comedians.sort((a, b) => a.slug.localeCompare(b.slug));
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(registryPath(dir), JSON.stringify(reg, null, 2) + "\n");
+}
+
+/** Whole-word containment: "mo amer" is in "mehdi & mo amer in houston", not in "promo america". */
+function containsTerm(haystackNorm, termNorm) {
+  return (" " + haystackNorm + " ").includes(" " + termNorm + " ");
 }
 
 /** Find by slug, exact normalized name, or any match term. */
@@ -125,7 +135,7 @@ function createComedian(reg, name) {
 function ensureMatchForEvent(entry, eventName) {
   const norm = normalizeName(eventName);
   if (!norm) return false;
-  if ((entry.match || []).some((t) => norm.includes(t))) return false;
+  if ((entry.match || []).some((t) => containsTerm(norm, t))) return false;
   entry.match = [...(entry.match || []), norm];
   return true;
 }
@@ -201,6 +211,7 @@ module.exports = {
   REGISTRY_NAME,
   INDEX_NAME,
   normalizeName,
+  containsTerm,
   slugForName,
   todayChicago,
   loadRegistry,

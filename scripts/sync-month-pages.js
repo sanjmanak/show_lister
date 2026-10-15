@@ -179,29 +179,36 @@ function buildMonthPage(rec) {
 const wp = createWpClient({ siteUrl: WP_SITE_URL, userAgent: "ComedyHouston-MonthPages/1.0", timeoutMs: 30_000 });
 const wpRequest = (method, p, body) => wp.request(method, p, body);
 
-async function findPageBySlug(slug) {
-  const found = await wpRequest("GET", `/wp-json/wp/v2/pages?slug=${encodeURIComponent(slug)}&status=publish,draft,future,private`);
+async function findPageBySlugRaw(slug) {
+  const found = await wpRequest(
+    "GET",
+    `/wp-json/wp/v2/pages?slug=${encodeURIComponent(slug)}&status=publish,draft,future,private&context=edit&_fields=id,link,status,content,title,ch_meta_title,ch_meta_description,ch_h1,ch_schema_graph`
+  );
   return Array.isArray(found) && found.length > 0 ? found[0] : null;
 }
 
-/** Published month pages, found by slug pattern over every page (not a hardcoded list). */
-async function listMonthPages() {
-  const out = [];
-  for (let page = 1; page <= 10; page++) {
-    const found = await wpRequest(
-      "GET",
-      `/wp-json/wp/v2/pages?per_page=100&page=${page}&status=publish,draft,future,private&_fields=id,slug,link,status`
-    );
-    if (!Array.isArray(found) || found.length === 0) break;
-    for (const p of found) if (monthFromSlug(p.slug)) out.push(p);
-    if (found.length < 100) break;
-  }
-  return out;
+/** True when the live page already carries exactly this content and meta. */
+function monthPageUnchanged(existing, data) {
+  if (!existing || existing.status !== "publish") return false;
+  const raw = existing.content && typeof existing.content.raw === "string" ? existing.content.raw : null;
+  const title = existing.title && typeof existing.title.raw === "string" ? existing.title.raw : null;
+  return raw === data.content && title === data.title &&
+    existing.ch_meta_title === data.ch_meta_title &&
+    existing.ch_meta_description === data.ch_meta_description &&
+    existing.ch_h1 === data.ch_h1 &&
+    existing.ch_schema_graph === data.ch_schema_graph;
 }
 
 async function syncMonthPage(rec) {
   const data = { ...buildMonthPage(rec), slug: rec.slug, status: "publish", comment_status: "closed", ch_noindex: false };
-  const existing = await findPageBySlug(rec.slug);
+  const existing = await findPageBySlugRaw(rec.slug);
+  // An unchanged page is not re-saved: a POST moves post_modified, and the
+  // sitemap's lastmod must only move when something changed (the plugin
+  // bumps it on real data changes already).
+  if (monthPageUnchanged(existing, data)) {
+    console.log(`  Unchanged /${rec.slug}/ (ID ${existing.id})`);
+    return { action: "unchanged", page: existing };
+  }
   if (DRY_RUN) {
     console.log(`  DRY RUN: would ${existing ? `update /${rec.slug}/ (ID ${existing.id})` : `create /${rec.slug}/`}`);
     return { action: existing ? "updated" : "created", dry: true };
@@ -240,8 +247,11 @@ async function syncEvergreenPost() {
   const wantDesc =
     "Every comedy show in Houston this month ({month_year}): headliners, showcases, theater dates and free open mics at every venue, " +
     "with showtimes, prices and ticket links. Updated twice daily.";
-  if (post.ch_meta_title !== wantTitle) data.ch_meta_title = wantTitle;
-  if (post.ch_meta_description !== wantDesc) data.ch_meta_description = wantDesc;
+  // Seeded ONCE, only when nothing is set: after that the WordPress editor
+  // owns them (clear the hidden _ch_meta_title in WP to hand the title back
+  // to Rank Math). Same rule as the venue pages.
+  if (!post.ch_meta_title) data.ch_meta_title = wantTitle;
+  if (!post.ch_meta_description) data.ch_meta_description = wantDesc;
   if (Object.keys(data).length === 0) {
     console.log(`  /${EVERGREEN_SLUG}/ already current.`);
     return;

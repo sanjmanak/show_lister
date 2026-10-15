@@ -161,4 +161,4 @@ function classify(ev, ctx) {
   return no("small room");
 }
 
-module.exports = { loadConfig, isJunkTitle, seriesTitle, isoWeek, buildSeriesIndex, buildContext, classify, venueTier };
+module.exports = { loadConfig, isJunkTitle, seriesTitle, seriesKey, isoWeek, buildSeriesIndex, buildContext, classify, venueTier };

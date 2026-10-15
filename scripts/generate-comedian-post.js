@@ -59,6 +59,7 @@ const { writeSpotlightIndex } = require("./lib/spotlight-index");
 const registry = require("./lib/comedian-registry");
 const comedianPage = require("./lib/comedian-page");
 const profileWriter = require("./lib/comedian-profile-writer");
+const announceRules = require("./lib/announce-rules");
 
 // ---------------------------------------------------------------------------
 // Config
@@ -635,6 +636,7 @@ function loadWeekManifests() {
  */
 function adoptLegacySpotlights(entry, weekManifests, pageLink) {
   let adopted = 0;
+  entry.legacy_slugs = Array.isArray(entry.legacy_slugs) ? entry.legacy_slugs : [];
   const terms = entry.match || [];
   for (const { file, manifest } of weekManifests) {
     let dirty = false;
@@ -866,6 +868,14 @@ async function main() {
   // Registry: one record per comedian, the source of truth for the pages.
   const reg = registry.loadRegistry(COMEDIANS_DIR);
   const weekManifests = loadWeekManifests();
+  // Series index over the WHOLE feed (not just this week), for the match-term
+  // guard below: a recurring showcase title must never become a comedian's
+  // permanent match term, or every future instance renders as their show.
+  let seriesCtx = null;
+  try {
+    const all = JSON.parse(fs.readFileSync(EVENTS_JSON_PATH, "utf8")).events || [];
+    seriesCtx = announceRules.buildContext(all, { ignoreLead: true });
+  } catch (_) { /* no guard; ensureMatchForEvent still refuses nothing extra */ }
 
   // Poster upload for the comedian page: download the event image, push it
   // to the WP media library, hand back the media id + URL.
@@ -923,8 +933,19 @@ async function main() {
       if (eventDedupeKey(ev) === runKey && registry.recordShow(entry, ev)) added++;
     }
     if (added) console.log(`  Recorded ${added} Houston date(s).`);
-    if (registry.ensureMatchForEvent(entry, matchedEvent.name)) {
-      console.log(`  Added match term for the show title ("${matchedEvent.name}") so the page lists it.`);
+    {
+      // Title-as-match-term only for a one-off title ("Kill Tony" at an
+      // arena), never for a recurring series or a junk/showcase pattern.
+      let recurring = false;
+      if (seriesCtx) {
+        const weeks = seriesCtx.series.get(announceRules.seriesKey(matchedEvent));
+        recurring = !!(weeks && weeks.size >= seriesCtx.config.seriesWeeks) || announceRules.isJunkTitle(matchedEvent.name);
+      }
+      if (recurring) {
+        console.log(`  Show title ("${matchedEvent.name}") looks like a recurring series — not added as a match term.`);
+      } else if (registry.ensureMatchForEvent(entry, matchedEvent.name)) {
+        console.log(`  Added match term for the show title ("${matchedEvent.name}") so the page lists it.`);
+      }
     }
 
     // ── Profile (only when missing or stale) ──────────────────────────────
@@ -932,28 +953,39 @@ async function main() {
       !entry.profile_html || REWRITE_AFTER_DAYS === 0 || registry.profileAgeDays(entry) > REWRITE_AFTER_DAYS;
     let research = entry.research_json || "";
     let instagramHandle = entry.instagramHandle || "";
+    // The page is published only with a usable profile. A new comedian whose
+    // research or writing fails this week still gets graphics, caption and
+    // a manifest row (the IG post must ship); the page waits for next week.
+    let publishPage = !!entry.profile_html;
 
     if (needsProfile) {
-      // Step 1: Deep research
+      // Step 1: Deep research. A failure here means NO profile write: an
+      // evergreen page built on "research unavailable" would stay up for
+      // REWRITE_AFTER_DAYS. The old per-show post could afford that; a
+      // permanent URL cannot.
       console.log("  Step 1: Researching via web search...");
+      let researchOk = false;
       try {
         research = await researchComedian(headliner.name);
+        researchOk = research.length > 50;
         console.log("  Research complete.");
       } catch (err) {
-        console.warn(`  Research failed: ${err.message}. Writing with limited data.`);
-        research = JSON.stringify({ full_name: headliner.name, note: "Research unavailable" });
+        console.warn(`  Research failed: ${err.message}. Profile not written this run${entry.profile_html ? " (existing profile kept)" : " (page waits for next run)"}.`);
+        research = entry.research_json || "";
       }
 
       // Step 2: Write the evergreen profile
-      console.log("  Step 2: Writing profile...");
       let draft = "";
-      try {
-        draft = openai.stripFences(
-          await profileWriter.writeProfile(headliner.name, research, { pastShows: registry.pastShows(entry) })
-        );
-        console.log("  Draft complete.");
-      } catch (err) {
-        console.error(`  Profile writing failed: ${err.message}.`);
+      if (researchOk) {
+        console.log("  Step 2: Writing profile...");
+        try {
+          draft = openai.stripFences(
+            await profileWriter.writeProfile(headliner.name, research, { pastShows: registry.pastShows(entry) })
+          );
+          console.log("  Draft complete.");
+        } catch (err) {
+          console.error(`  Profile writing failed: ${err.message}.`);
+        }
       }
 
       let finalContent = draft;
@@ -1000,18 +1032,18 @@ async function main() {
         }
       }
 
-      if (finalContent && finalContent.length >= 300) {
+      if (researchOk && finalContent && finalContent.length >= 300) {
         entry.profile_html = finalContent;
         entry.profile_written_at = new Date().toISOString();
         entry.research_json = research;
         entry.sameAs = extractPerformerSameAs(research);
+        publishPage = true;
       } else if (entry.profile_html) {
-        console.warn(`  New profile too short (${(finalContent || "").length} chars) — keeping the existing one.`);
+        console.warn(`  No usable new profile (${(finalContent || "").length} chars) — keeping the existing one.`);
         research = entry.research_json || research;
       } else {
-        console.warn(`  Profile too short for ${headliner.name} (${(finalContent || "").length} chars) — skipping; no page without a profile.`);
-        console.log("");
-        continue;
+        console.warn(`  No usable profile for ${headliner.name} (${(finalContent || "").length} chars) — page not published this run; IG assets still ship.`);
+        publishPage = false;
       }
 
       // Instagram handle from the research (normalized to "@name").
@@ -1058,7 +1090,9 @@ async function main() {
 
     // ── Page ──────────────────────────────────────────────────────────────
     let wpLink = entry.wpLink || "";
-    if (wpReady) {
+    if (wpReady && !publishPage) {
+      console.log("  Step 7: Page publish skipped (no profile yet).");
+    } else if (wpReady) {
       console.log("  Step 7: Publishing comedian page...");
       try {
         const res = await comedianPage.publishComedianPage(entry, { wpRequest, heroImageUrl: eventImageUrl, uploadHero });
@@ -1089,6 +1123,10 @@ async function main() {
       graphicFiles: graphicFiles.map((gf) => gf.pngFile),
     });
   }
+
+  // Persist registry state once more: a comedian created in the last
+  // iteration, or one whose page publish was skipped, has not been saved yet.
+  registry.saveRegistry(COMEDIANS_DIR, reg);
 
   if (generatedPosts.length > 0) {
     // Write manifest JSON (consumed by post-to-instagram.js, the reaper,

@@ -480,6 +480,12 @@ class Comedy_Houston_Plugin {
             $first_ts = strtotime($first->format('Y-m-d') . ' 12:00:00');
             $days = (int) round(($first_ts - $today_ts) / 86400);
             if ($days > self::MONTH_NAV_LEAD_DAYS) break;
+            // Only link a page the daily sync has actually created (cheap:
+            // get_page_by_path() is object-cached). A month that entered
+            // the window today, or a failed sync, must not produce a 404.
+            $slug = 'comedy-shows-houston-' . strtolower($first->format('F')) . '-' . $first->format('Y');
+            $page = get_page_by_path($slug, OBJECT, 'page');
+            if (!$page || $page->post_status !== 'publish') continue;
             $ym = $first->format('Y-m');
             $out[] = [
                 'ym'    => $ym,
@@ -490,36 +496,48 @@ class Comedy_Houston_Plugin {
         return $out;
     }
 
+    /** Per-request cache of upcoming_events() (hub + nav + strip share it). */
+    private $upcoming_cache = null;
+
     /** Upcoming, not cancelled, sorted — the base set for all three shortcodes. */
     private function upcoming_events() {
+        if ($this->upcoming_cache !== null) return $this->upcoming_cache;
         $data = $this->fetch_events_data();
-        if (!$data || empty($data['events'])) return [];
+        if (!$data || empty($data['events'])) return $this->upcoming_cache = [];
         $today = $this->houston_date('Y-m-d');
         $out = [];
         foreach ($data['events'] as $ev) {
             $date = $ev['date'] ?? '';
             if ($date === '' || $date < $today) continue;
             if (($ev['status'] ?? '') === 'cancelled') continue;
+            // Normalized title once per request, not once per comedian per
+            // event (the hub matches every index comedian against every
+            // upcoming event).
+            $ev['_norm'] = ' ' . $this->normalize_match_text($ev['name'] ?? '') . ' ';
             $out[] = $ev;
         }
         usort($out, function ($a, $b) {
             $dc = strcmp($a['date'] ?? '', $b['date'] ?? '');
             return $dc !== 0 ? $dc : strcmp($a['time'] ?? '', $b['time'] ?? '');
         });
-        return $out;
+        return $this->upcoming_cache = $out;
     }
 
-    /** Events whose normalized title contains any of the (normalized) terms. */
+    /**
+     * Events whose normalized title contains any of the (normalized) terms
+     * as whole words: "mo amer" is in "mehdi & mo amer in houston", not in
+     * "promo america". Mirrors containsTerm() in lib/comedian-registry.js.
+     */
     private function events_matching_terms($events, $terms) {
         $norm_terms = [];
         foreach ((array) $terms as $t) {
             $n = $this->normalize_match_text($t);
-            if ($n !== '' && strlen($n) >= 4) $norm_terms[] = $n;
+            if ($n !== '' && strlen($n) >= 3) $norm_terms[] = ' ' . $n . ' ';
         }
         if (empty($norm_terms)) return [];
         $out = [];
         foreach ($events as $ev) {
-            $name = $this->normalize_match_text($ev['name'] ?? '');
+            $name = $ev['_norm'] ?? (' ' . $this->normalize_match_text($ev['name'] ?? '') . ' ');
             foreach ($norm_terms as $t) {
                 if (strpos($name, $t) !== false) { $out[] = $ev; break; }
             }
@@ -569,7 +587,10 @@ class Comedy_Houston_Plugin {
         $idx = $this->fetch_comedians_index();
         foreach ($idx['comedians'] as $c) {
             if (in_array($slug, (array) ($c['legacy_slugs'] ?? []), true)) {
-                return esc_url_raw($c['wpLink']);
+                // Built here rather than trusting the stored wpLink, so a
+                // www/non-www change can never make wp_safe_redirect()
+                // bounce the visitor to wp-admin.
+                return home_url('/' . self::COMEDIANS_HUB_SLUG . '/' . sanitize_title($c['slug']) . '/');
             }
         }
         if (in_array($slug, $idx['archived_legacy_slugs'], true)) {
@@ -644,6 +665,7 @@ class Comedy_Houston_Plugin {
         if (preg_match('/\bpresents\b\s*:?\s*(.+)$/iu', $n, $m)) {
             $n = trim($m[1]);
         }
+        // Twice on purpose: "presents Headliner Comedian X" stacks two.
         $n = preg_replace('/^(?:comedian|headliner|comic)\s+/iu', '', $n);
         $n = preg_replace('/^(?:comedian|headliner|comic)\s+/iu', '', $n);
         $n = trim($n, " \t\"'“”");
@@ -726,6 +748,9 @@ class Comedy_Houston_Plugin {
     /** The queried page's performer meta (set by the generator), or null. */
     private function current_performer() {
         if ($this->performer_cache !== null) return $this->performer_cache ?: null;
+        // Before the main query is set up (a theme calling a title filter
+        // early) nothing is known yet; don't cache that as "no performer".
+        if (!did_action('wp')) return null;
         $this->performer_cache = false;
         if (!is_singular(['page', 'post'])) return null;
         $post = get_queried_object();
