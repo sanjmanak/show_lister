@@ -223,6 +223,15 @@ The blog body is the longest single generation (60–70 events in, a full HTML p
 
 ### 3b. Per-Comedian SEO Blog Post Generator (`scripts/generate-comedian-post.js`)
 
+> **October 2026:** the per-show spotlight POST this section describes is
+> retired. The same Monday run, headliner selection, research and editing
+> passes now feed one evergreen PAGE per comedian at `/comedians/{slug}/`
+> (see [§3c](#3c-comedian-pages--month-pages-october-2026)); the Instagram
+> graphics, captions and week-keyed manifests are unchanged. The prompt
+> details below that mention a title, a ticket link in the prose or show
+> facts no longer apply; the research call and the fact-check/polish roles
+> do.
+
 **~2,050 lines of Node.js. Zero npm dependencies.** Runs once a week (Monday mornings, shortly after the weekly blog post), generating for the week **three weeks out** (`LEAD_WEEKS`, default 3). Shares the OpenAI and image helpers with `generate-blog-post.js` (see §3 above); the Instagram graphic templates live in `scripts/lib/comedian-graphics.js` so `ensure-comedian-graphics.js` can rebuild a missing PNG identically.
 
 #### What it does, step by step:
@@ -289,13 +298,17 @@ The blog body is the longest single generation (60–70 events in, a full HTML p
 #### Cost per run:
 ~$0.15–0.35 per comedian (research with web search, write, fact-check, polish, caption). Typical weekly run with 3–5 comedians: **$0.60–1.75**.
 
-#### Show-details guarantee (`scripts/lib/show-details.js`)
+#### Show-details guarantee (retired October 2026)
 
-The writer is told to weave the date, venue and a `Get Tickets` link into the narrative; the fact-check pass then removed any sentence not backed by the comedian research (the show logistics never are) and the polish pass cut the weakest paragraph to fit 400 words. On 2026-09-22 only 4 of the 20 live spotlights named the show date **and** linked tickets in the body. Two layers fix it: the fact-check and polish prompts now receive a `SHOW FACTS` block (comedian, venue, date, time, price, ticket URL) marked as verified-by-us with an explicit keep rule, and `ensureShowDetails()` runs after sanitizing as a deterministic backstop, inserting `<p class="show-details"><strong>Name</strong> plays Venue on Date. Get Tickets.</p>` before the post footer whenever the body still lacks the date or a ticket link. `scripts/backfill-show-details.js` (workflow `backfill-show-details.yml`, dry-run by default) applies the same check to posts already live, touching only future-dated ones.
+`scripts/lib/show-details.js` and `backfill-show-details.js` inserted "Name
+plays Venue on Date. Get Tickets." into spotlight posts whose prose lacked
+the show logistics. The evergreen comedian pages carry no logistics in the
+prose at all: dates, venues and ticket links are rendered live by the
+plugin's performer shortcode. Both files were deleted; git history has them.
 
 #### Source-link verification (`scripts/lib/link-check.js`)
 
-The writer cites URLs from the research but invents one now and then (`youtube.com/watch?v=xyz123` shipped in the Martin Amini spotlight, 2026-09-01), and the fact-checker "preserves all hyperlinks to real source URLs" with no way to know which are real. After sanitizing, `verifyOutboundLinks()` fetches every external link in the body: YouTube URLs go through the oEmbed endpoint (a bad video id still renders a 200 page, oEmbed answers 400/404), everything else is a short GET following redirects. Dead links (404/410, or oEmbed rejecting the id) are **unwrapped**, keeping the sentence text and dropping the citation. 403/429/5xx/timeouts are inconclusive and left alone, as are internal comedyhouston.com links and ticket links. `backfill-show-details.js` runs the same pass on live posts (`VERIFY_LINKS=0` to skip).
+The writer cites URLs from the research but invents one now and then (`youtube.com/watch?v=xyz123` shipped in the Martin Amini spotlight, 2026-09-01), and the fact-checker "preserves all hyperlinks to real source URLs" with no way to know which are real. After sanitizing, `verifyOutboundLinks()` fetches every external link in the body: YouTube URLs go through the oEmbed endpoint (a bad video id still renders a 200 page, oEmbed answers 400/404), everything else is a short GET following redirects. Dead links (404/410, or oEmbed rejecting the id) are **unwrapped**, keeping the sentence text and dropping the citation. 403/429/5xx/timeouts are inconclusive and left alone, as are internal comedyhouston.com links and ticket links. (The retired `backfill-show-details.js` used to run the same pass on live posts.)
 
 #### WordPress publishing — preflight & error logging
 
@@ -304,6 +317,128 @@ Before any OpenAI call, `wpPreflight()` calls `GET /wp-json/wp/v2/users/me?conte
 `wpRequest()` errors now include the HTTP method, path, a relevant subset of response headers (`content-type`, `www-authenticate`, `x-litespeed-cache`, `cf-ray`, `server`), and the first 1500 chars of the response body — enough to distinguish credential failures (`rest_not_logged_in` JSON) from host firewall blocks (HTML body, no JSON code) from payload validation errors (`rest_invalid_param`) from rate-limiting (429).
 
 ---
+
+### 3c. Comedian pages & month pages (October 2026)
+
+Two page types built from data the site already had, aimed at the queries
+the venue sites cannot own: "comedians coming to houston", "[comedian]
+houston", and "comedy shows in houston [month] [year]".
+
+#### Comedian pages — `/comedians/{slug}/`
+
+**Before.** Every Monday the generator wrote up to five per-show spotlight
+POSTS for the week three weeks out (`/dave-chappelle-toyota-center-tx-2026-
+10-28/`), each a 400-word article about one date, deleted the week after the
+show by the reaper. The pages that earned the most clicks on the site were
+thrown away as soon as they had any history, the slugs leaked legal names
+and Ticketmaster venue strings into titles, and a returning comedian got a
+brand-new URL and a brand-new OpenAI bill.
+
+**Now.** One evergreen WordPress PAGE per comedian, child of the
+`/comedians/` hub, titled "{Name} in Houston". Parts, top to bottom:
+
+| Part | Source | Updates |
+|---|---|---|
+| Poster | the event image, uploaded to the media library once per distinct URL | on publish |
+| Upcoming shows | `[comedy_houston_performer name=".." match="a|b" slug=".."]` — the plugin filters events.json by match terms at request time and renders cards + Event JSON-LD, an empty state when nothing is on sale, and an "Also coming to Houston" strip of other comedians with dates | live, every request |
+| Profile | 250–400 words from `lib/comedian-profile-writer.js`: research → write → fact-check → polish. Stage name only (never the research's legal name), no show logistics, every news item dated | written once, rewritten after `REWRITE_AFTER_DAYS` (180) |
+| Past Houston shows | registry history | on publish |
+| Title / H1 / description | `{performer_next_short}` / `{performer_next_h1}` / `{performer_next_sentence}` tokens → "Oct 28 at Toyota Center" while a date is on sale, "Shows, Tickets and Dates" after | live, every request |
+
+The source of truth is `blog/comedians/registry.json` (`lib/comedian-
+registry.js`): one record per comedian with slug, name, match terms,
+profile HTML, the research JSON it came from, `sameAs` links, Instagram
+handle, WordPress page id/URL, every Houston date seen, the retired
+spotlight slugs (`legacy_slugs`), and a `live`/`archived` status. The
+plugin reads a compact projection, `blog/comedians/comedians-index.json`
+(name, match terms, page URL, legacy slugs), with a one-hour transient.
+
+**Match terms.** The performer filter is a normalized-substring test on the
+event title (accents stripped, punctuation dropped — `normalizeName()` in
+the registry and `normalize_match_text()` in the plugin must agree). When a
+headliner's show title does not contain their name ("Kill Tony" for Tony
+Hinchcliffe) the generator adds the whole title as a term, so the page lists
+it without matching anything broader.
+
+**Monday run, per headliner** (`generate-comedian-post.js`):
+
+1. find or create the registry record; record every night of the run;
+2. if the profile is missing or older than `REWRITE_AFTER_DAYS`: research,
+   write, fact-check, polish, sanitize, verify links. Otherwise reuse it —
+   a returning comedian costs no OpenAI spend beyond the caption;
+3. publish/update the page (`lib/comedian-page.js`): looked up by stored id,
+   then by slug under the hub, so re-runs update in place; schema =
+   ProfilePage → Person (+ sameAs) + BreadcrumbList; `ch_performer` meta
+   carries the name/match/slug the tokens and the shortcode read;
+4. write the per-show Instagram graphics + caption and the week manifest
+   exactly as before (`slug`, `date`, `venue`, `caption`, `graphicFiles`;
+   `wpLink` now points at the page, `wpType: "page"`, `comedianSlug`);
+5. adopt any legacy spotlight post for the same comedian: its slug goes
+   into `legacy_slugs`, its manifest entry is repointed at the page;
+6. rewrite `spotlight-index.json` (event-card "More info" links, unchanged
+   contract) and `comedians-index.json`.
+
+**Redirects.** A 404 for a dated slug (`/{anything}-YYYY-MM-DD/`) is looked
+up in the comedians index: a `legacy_slugs` hit 301s to the comedian page,
+an archived comedian's slug 301s to the hub. Old Instagram links never dead-
+end.
+
+**Cleanup** (`delete-comedian-blog-posts.js`, daily): legacy spotlight posts
+whose comedian page is live are deleted immediately (the 301 takes over);
+finished-week manifests are archived and their local graphics removed, as
+before; a comedian with no upcoming date and no date in `COMEDIAN_STALE_DAYS`
+(365) has their page moved to the WordPress trash and their registry record
+archived — profile and history kept, so a comeback republishes at the same
+URL for free. Nothing stale stays indexable; nothing is lost.
+
+**Hub.** `/comedians/` (in `config/landing-pages.json`, also created on
+demand by the generator) renders `[comedy_houston_comedians]`: every
+comedian with a page and a date on sale, soonest first, then the other
+headliner-flagged shows (unlinked), then the month navigation.
+
+#### Month pages — `/comedy-shows-houston-{month}-{year}/`
+
+`scripts/sync-month-pages.js` (daily, `sync-month-pages.yml`) keeps one
+page per FUTURE month whose first day is within 60 days — events.json holds
+90 days, so a month is published only once it is fully inside the data
+window. Body: a short intro, `[comedy_houston_months]` (navigation with
+live counts), `[comedy_houston month="2026-11" show_summary="true" ...]`
+(the plugin renders "226 shows at 20 venues … Headliners in November …"
+then every card, server-side, no listings JS), planning copy and a three-
+question FAQ (FAQPage schema).
+
+When the month becomes current the sync trashes the page and the plugin
+301s the URL to the evergreen `/houston-comedy-shows-this-month/` post, so
+"november 2026" has one URL in October and hands its signals to the
+current-month page on November 1st; nothing dated accumulates. The
+evergreen post gets the month navigation prepended once and a
+`{month_year}` title/description, additively.
+
+#### Headliner stamp
+
+`fetch-events.js` stamps every event with `headliner` (bool) and
+`venue_tier` using the "just announced" rules in `lib/announce-rules.js`
+(venue tiers, junk-title and recurring-series filters) with the lead-time
+floor switched off (`ignoreLead`). The month summary and the hub's unlinked
+list read it, so notability lives in one config file.
+
+#### Server-rendered pages and the listings JS
+
+`comedy-houston.js` re-renders `#chMain` from events.json with its own
+filter set and knows nothing about a month or a performer, so month pages
+and comedian pages never enqueue it (`ch-static`). They keep the stylesheet,
+cards and JSON-LD; the "Interested in performing?" button (a JS modal) is
+suppressed; ticket clicks are reported to GA4/Meta by an inline footer
+tracker with the same parameters as the JS. New markup styles ride inline
+for the same reason the tracker does: Hostinger's FTP rejects the CSS file.
+
+#### Cache & sitemap
+
+All four shortcodes get the midnight-Central `Cache-Control` and are purged
+on every data change. Month pages and the hub are in the `lastmod` bump
+(their content really changes with the data); comedian pages are not — a
+sitemap claiming two hundred pages changed twice a day is one Google stops
+believing. A comedian page's `lastmod` moves when the generator re-saves it.
 
 ### 4. WordPress Plugin (`wordpress/`)
 
@@ -1067,12 +1202,13 @@ show_lister/
 │   └── workflows/
 │       ├── update-events.yml            # Cron: fetch events 2x daily
 │       ├── generate-blog-post.yml       # Cron: weekly blog + email
-│       ├── generate-comedian-posts.yml  # Cron: weekly per-comedian SEO posts
+│       ├── generate-comedian-posts.yml  # Cron: weekly comedian pages + IG spotlight assets
+│       ├── sync-month-pages.yml         # Cron: daily rolling month pages (/comedy-shows-houston-{month}-{year}/)
 │       ├── post-to-instagram.yml       # Cron: staggered IG posting (every 6h)
 │       ├── post-tonight.yml            # Cron: daily "Tonight in Houston" post (3 PM CT)
 │       ├── post-announcements.yml      # Cron: daily LLM-gated "Just announced" post (10:37 AM CT)
 │       ├── delete-old-tonight-posts.yml # Cron: delete Tonight posts older than 1 day
-│       ├── delete-old-comedian-posts.yml # Cron: delete comedian spotlights + finished-week blog posts
+│       ├── delete-old-comedian-posts.yml # Cron: IG spotlight cleanup + content reaper (legacy posts, finished weeks, stale comedian pages)
 │       ├── price-reminder.yml           # Cron: Monday email when a local price refresh is due
 │       └── manage-pages.yml             # Manual: seed/overwrite evergreen WP pages from config
 │
@@ -1080,6 +1216,9 @@ show_lister/
 │   ├── lib/
 │   │   ├── openai.js                    # Shared OpenAI plumbing + model policy
 │   │   ├── comedian-graphics.js         # Spotlight square/portrait/story HTML templates
+│   │   ├── comedian-registry.js         # registry.json: one record per comedian (profile, dates, page, legacy slugs)
+│   │   ├── comedian-page.js             # Builds + publishes /comedians/{slug}/ pages
+│   │   ├── comedian-profile-writer.js   # Evergreen profile: write / fact-check / polish prompts
 │   │   ├── announce-card.js             # Just-announced card template (portrait + story)
 │   │   ├── image-utils.js               # URL-shape check + initials placeholder
 │   │   ├── meta-api.js                  # Shared Meta Graph API plumbing (both posters)
@@ -1088,7 +1227,8 @@ show_lister/
 │   │   └── tonight-state.js             # Shared tonight-post-state.json load/save/migrate
 │   ├── fetch-events.js                  # Core fetcher (~550 lines, venue normalization + genre)
 │   ├── generate-blog-post.js            # AI blog generator (~2,300 lines, 6-tile hero w/ event backfill)
-│   ├── generate-comedian-post.js        # Per-comedian SEO post generator
+│   ├── generate-comedian-post.js        # Comedian pages + weekly IG spotlight assets
+│   ├── sync-month-pages.js              # Rolling dated month pages + evergreen this-month post
 │   ├── delete-tonight-posts.js          # Deletes Tonight posts past retention (1 day)
 │   ├── delete-comedian-posts.js         # Deletes comedian spotlights past retention (5 days)
 │   ├── generate-tonight-post.js         # Daily lineup graphic + caption (no AI, ~$0)

@@ -117,6 +117,16 @@
     ]
    },
    "shortcode": "[comedy_houston tag=\"clean-comedy\" show_hero=\"false\" show_controls=\"false\" initial_days=\"120\"]"
+  },
+  {
+   "slug": "comedians",
+   "title": "Comedians Coming to Houston",
+   "meta_title": "Comedians Coming to Houston: {year} Tour Dates and Tickets",
+   "h1": "Comedians Coming to Houston in {year}",
+   "meta_description": "Every comedian coming to Houston: touring headliners at the Improv, Punch Line, the Riot, the theaters and the arenas, sorted by date, with each comedian's Houston page and tickets. Updated twice daily.",
+   "intro_html": "<p>Every touring comedian with a Houston date on sale, sorted by when they arrive. Each name links to that comedian's Houston page: who they are, what to expect live, every date we have for them and direct ticket links. Below the names, the rest of the month's headliners, and the full month-by-month calendar. Listings come straight from the box offices and update twice a day.</p>",
+   "shortcode": "[comedy_houston_comedians]",
+   "outro_html": "<h2>How to use this page</h2><p>Big names sell out the Improv and Punch Line weekends and the theater dates fast, so if someone you like is listed, buy early. The clubs also run showcases and open mics most nights for under $20 or free; see <a href=\"/tonight/\">comedy shows in Houston tonight</a>, <a href=\"/this-weekend/\">this weekend</a>, and the <a href=\"/houston-comedy-shows-this-month/\">full calendar for this month</a>.</p><p><em>Are you a comedian with a Houston date we are missing? <a href=\"/promote-my-show/\">Tell us about your show</a>.</em></p>"
   }
  ]
 }

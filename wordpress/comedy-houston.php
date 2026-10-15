@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.17.0
+ * Version: 2.18.0
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,11 +19,29 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.17.0';
+    const VERSION      = '2.18.0';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
     const CLICKS_TABLE = 'ch_clicks';
+
+    // The evergreen current-month post. Dated month pages 301 here once
+    // their month is current or past (see redirect_dated_weekly_posts()).
+    const EVERGREEN_MONTH_SLUG = 'houston-comedy-shows-this-month';
+    const COMEDIANS_HUB_SLUG   = 'comedians';
+    // Month pages are created this many days before the month starts
+    // (scripts/sync-month-pages.js uses 60; the nav uses one day less so it
+    // never links a page the daily sync has not created yet).
+    const MONTH_NAV_LEAD_DAYS  = 59;
+
+    /** True while a server-only listing is being rendered (no listings JS). */
+    private $static_render = false;
+    /** Set when any static listing rendered: footer emits the click tracker. */
+    private $needs_static_tracker = false;
+    /** Per-request cache of the queried page's performer meta. */
+    private $performer_cache = null;
+    /** Per-request cache of the performer's upcoming events. */
+    private $performer_events_cache = null;
 
     // Meta Pixel — deliberately the SAME pixel as sanjaycomedy.com and the
     // Eventbrite listings so purchase/visit signal pools into one audience
@@ -55,6 +73,18 @@ class Comedy_Houston_Plugin {
         // Front-end
         add_shortcode(self::SHORTCODE, [$this, 'render_shortcode']);
         add_action('wp_enqueue_scripts', [$this, 'register_assets']);
+
+        // 2.18.0: evergreen comedian pages + month pages (see MONTH PAGES &
+        // COMEDIAN PAGES below). All three are server-rendered only: the
+        // listings JS re-renders #chMain from events.json with its own
+        // filter set and knows nothing about a month or a performer, so
+        // these pages never enqueue it. Ticket clicks are still reported to
+        // GA4/Meta by emit_static_click_tracker().
+        add_shortcode('comedy_houston_performer', [$this, 'render_performer_shortcode']);
+        add_shortcode('comedy_houston_months', [$this, 'render_months_shortcode']);
+        add_shortcode('comedy_houston_comedians', [$this, 'render_comedians_shortcode']);
+        add_action('rest_api_init', [$this, 'register_performer_field']);
+        add_action('wp_footer', [$this, 'emit_static_click_tracker'], 30);
 
         // Admin settings page
         add_action('admin_menu', [$this, 'add_settings_page']);
@@ -236,12 +266,27 @@ class Comedy_Houston_Plugin {
             // The full list (hundreds of events through +90 days) is only
             // rendered after the visitor clicks "Show all". 0 disables.
             'initial_days'      => '14',
+            // Dated month page: month="2026-11" lists that calendar month
+            // only (future dates), server-rendered, no listings JS. With
+            // show_summary="true" a count + "Headliners this month" block
+            // is prepended. See scripts/sync-month-pages.js.
+            'month'             => '',
+            'show_summary'      => 'false',
         ], $atts, self::SHORTCODE);
+
+        $month_filter = preg_match('/^\d{4}-\d{2}$/', (string) $atts['month']) ? $atts['month'] : '';
+        $atts['month'] = $month_filter;
+        $static_render = $month_filter !== '';
 
         $scheme = !empty($atts['theme']) ? $atts['theme'] : $opts['color_scheme'];
 
         wp_enqueue_style('comedy-houston-style');
-        wp_enqueue_script('comedy-houston-app');
+        if (!$static_render) {
+            wp_enqueue_script('comedy-houston-app');
+        } else {
+            $this->static_render = true;
+            $this->needs_static_tracker = true;
+        }
 
         // Build redirect base URL for affiliate click tracking
         $redirect_base = home_url('/') . '?' . self::REDIRECT_VAR . '=';
@@ -318,7 +363,7 @@ class Comedy_Houston_Plugin {
             // covers the full filtered list so schema is not affected.
             $initial_days = max(0, intval($atts['initial_days']));
             $ssr_events = $filtered;
-            if ($initial_days > 0 && $atts['filter'] === 'all') {
+            if ($initial_days > 0 && $atts['filter'] === 'all' && !$static_render) {
                 $cutoff = $this->houston_date('Y-m-d', '+' . $initial_days . ' days');
                 $windowed = array_values(array_filter($filtered, function ($ev) use ($cutoff) {
                     return ($ev['date'] ?? '') <= $cutoff;
@@ -333,6 +378,9 @@ class Comedy_Houston_Plugin {
             if (count($ssr_events) < $ch_ssr_count) {
                 $ch_ssr_html .= '<div class="ch-show-all-wrap"><button type="button" class="ch-show-all-btn">'
                     . 'Show all ' . (int) $ch_ssr_count . ' upcoming shows</button></div>';
+            }
+            if ($static_render && strtolower($atts['show_summary']) === 'true') {
+                $ch_ssr_html = $this->render_month_summary($filtered, $month_filter) . $ch_ssr_html;
             }
             $ch_ssr_jsonld = $this->render_jsonld($filtered);
             if (!empty($events_data['last_updated'])) {
@@ -351,12 +399,606 @@ class Comedy_Houston_Plugin {
         $ch_show_sort         = strtolower($atts['show_sort']) !== 'false';
         $ch_hero_title        = sanitize_text_field($atts['title']);
 
+        if ($static_render && $ch_ssr_html === '') {
+            // No listings JS to fill the box, so say so instead of a spinner.
+            $ch_ssr_html = '<div class="empty-state"><h2>No shows listed yet for ' . esc_html($this->month_label($month_filter)) . '</h2>'
+                . '<p>Venues announce most dates two to six weeks out. Check <a href="' . esc_url(home_url('/this-weekend/')) . '">this weekend</a> '
+                . 'or <a href="' . esc_url(home_url('/comedians/')) . '">every comedian coming to Houston</a>.</p></div>';
+        }
+
         ob_start();
         // Output the theme class on the wrapper so CSS can switch palettes
-        echo '<div id="ch-app" class="ch-theme-' . esc_attr($scheme) . '">';
+        echo '<div id="ch-app" class="ch-theme-' . esc_attr($scheme) . ($static_render ? ' ch-static' : '') . '">';
         include plugin_dir_path(__FILE__) . 'comedy-houston-template.php';
         echo '</div>';
+        $this->static_render = false;
         return ob_get_clean();
+    }
+
+
+    // =========================================================================
+    // MONTH PAGES & COMEDIAN PAGES (2.18.0)
+    // =========================================================================
+    //
+    // Three server-rendered shortcodes plus the live title tokens that make
+    // an evergreen comedian page always say the right thing:
+    //
+    //   [comedy_houston_performer name=".." match="a|b" slug=".."]
+    //       this comedian's UPCOMING Houston shows (cards + Event JSON-LD),
+    //       an empty state when none, and an "Also coming to Houston" strip.
+    //   [comedy_houston_months]
+    //       navigation: the evergreen current-month post + each dated month
+    //       page inside the lead window, with live show counts.
+    //   [comedy_houston_comedians]
+    //       the /comedians/ hub: every comedian with a page and a date on
+    //       sale, sorted by date, then the month's other headliners.
+    //
+    // Comedians come from blog/comedians/comedians-index.json (written by
+    // the generator and the reaper, fetched with a one-hour transient like
+    // the spotlight index). Matching is a normalized-substring test on the
+    // event title — the same normalization as scripts/lib/comedian-registry
+    // .js normalizeName(), which both sides must keep in sync.
+
+    /** Lowercase, accents stripped, punctuation → space, collapsed. */
+    private function normalize_match_text($str) {
+        $s = remove_accents((string) $str);
+        $s = strtolower($s);
+        $s = preg_replace('/[^a-z0-9]+/', ' ', $s);
+        return trim(preg_replace('/\s+/', ' ', $s));
+    }
+
+    /** Ticketmaster venue strings end in " - TX"; readers don't need it. */
+    private function pretty_venue($venue) {
+        return trim(preg_replace('/\s+[-–—]\s+TX$/u', '', (string) $venue));
+    }
+
+    private function month_number($name) {
+        $months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+        $i = array_search($name, $months, true);
+        return $i === false ? 0 : $i + 1;
+    }
+
+    /** "2026-11" → "November 2026". */
+    private function month_label($ym) {
+        $ts = strtotime($ym . '-01 12:00:00');
+        return $ts ? date('F Y', $ts) : $ym;
+    }
+
+    /**
+     * Dated month pages inside the lead window, newest last:
+     * [ ['ym' => '2026-11', 'label' => 'November 2026', 'url' => ...], ... ]
+     * Same rule as scripts/sync-month-pages.js targetMonths(), one day
+     * stricter (MONTH_NAV_LEAD_DAYS) so the nav trails the sync.
+     */
+    private function month_nav_records() {
+        $today = $this->houston_date('Y-m-d');
+        $today_ts = strtotime($today . ' 12:00:00');
+        $out = [];
+        for ($k = 1; $k <= 4; $k++) {
+            $first = new DateTime($today, new DateTimeZone('America/Chicago'));
+            $first->modify('first day of +' . $k . ' month');
+            $first_ts = strtotime($first->format('Y-m-d') . ' 12:00:00');
+            $days = (int) round(($first_ts - $today_ts) / 86400);
+            if ($days > self::MONTH_NAV_LEAD_DAYS) break;
+            // Only link a page the daily sync has actually created (cheap:
+            // get_page_by_path() is object-cached). A month that entered
+            // the window today, or a failed sync, must not produce a 404.
+            $slug = 'comedy-shows-houston-' . strtolower($first->format('F')) . '-' . $first->format('Y');
+            $page = get_page_by_path($slug, OBJECT, 'page');
+            if (!$page || $page->post_status !== 'publish') continue;
+            $ym = $first->format('Y-m');
+            $out[] = [
+                'ym'    => $ym,
+                'label' => $first->format('F Y'),
+                'url'   => home_url('/comedy-shows-houston-' . strtolower($first->format('F')) . '-' . $first->format('Y') . '/'),
+            ];
+        }
+        return $out;
+    }
+
+    /** Per-request cache of upcoming_events() (hub + nav + strip share it). */
+    private $upcoming_cache = null;
+
+    /** Upcoming, not cancelled, sorted — the base set for all three shortcodes. */
+    private function upcoming_events() {
+        if ($this->upcoming_cache !== null) return $this->upcoming_cache;
+        $data = $this->fetch_events_data();
+        if (!$data || empty($data['events'])) return $this->upcoming_cache = [];
+        $today = $this->houston_date('Y-m-d');
+        $out = [];
+        foreach ($data['events'] as $ev) {
+            $date = $ev['date'] ?? '';
+            if ($date === '' || $date < $today) continue;
+            if (($ev['status'] ?? '') === 'cancelled') continue;
+            // Normalized title once per request, not once per comedian per
+            // event (the hub matches every index comedian against every
+            // upcoming event).
+            $ev['_norm'] = ' ' . $this->normalize_match_text($ev['name'] ?? '') . ' ';
+            $out[] = $ev;
+        }
+        usort($out, function ($a, $b) {
+            $dc = strcmp($a['date'] ?? '', $b['date'] ?? '');
+            return $dc !== 0 ? $dc : strcmp($a['time'] ?? '', $b['time'] ?? '');
+        });
+        return $this->upcoming_cache = $out;
+    }
+
+    /**
+     * Events whose normalized title contains any of the (normalized) terms
+     * as whole words: "mo amer" is in "mehdi & mo amer in houston", not in
+     * "promo america". Mirrors containsTerm() in lib/comedian-registry.js.
+     */
+    private function events_matching_terms($events, $terms) {
+        $norm_terms = [];
+        foreach ((array) $terms as $t) {
+            $n = $this->normalize_match_text($t);
+            if ($n !== '' && strlen($n) >= 3) $norm_terms[] = ' ' . $n . ' ';
+        }
+        if (empty($norm_terms)) return [];
+        $out = [];
+        foreach ($events as $ev) {
+            $name = $ev['_norm'] ?? (' ' . $this->normalize_match_text($ev['name'] ?? '') . ' ');
+            foreach ($norm_terms as $t) {
+                if (strpos($name, $t) !== false) { $out[] = $ev; break; }
+            }
+        }
+        return $out;
+    }
+
+    /**
+     * blog/comedians/comedians-index.json from GitHub, one-hour transient.
+     * Returns ['comedians' => [...], 'archived_legacy_slugs' => [...]].
+     */
+    public function fetch_comedians_index() {
+        $opts = $this->get_options();
+        $cache_key = 'ch_comidx_' . md5($opts['github_user'] . '_' . $opts['repo']);
+        $cached = get_transient($cache_key);
+        if ($cached !== false) return $cached;
+
+        $url = sprintf(
+            'https://raw.githubusercontent.com/%s/%s/main/blog/comedians/comedians-index.json',
+            sanitize_text_field($opts['github_user']),
+            sanitize_text_field($opts['repo'])
+        );
+        $empty = ['comedians' => [], 'archived_legacy_slugs' => []];
+        $response = wp_remote_get($url, ['timeout' => 10]);
+        if (is_wp_error($response) || wp_remote_retrieve_response_code($response) !== 200) {
+            set_transient($cache_key, $empty, 5 * MINUTE_IN_SECONDS);
+            return $empty;
+        }
+        $data = json_decode(wp_remote_retrieve_body($response), true);
+        if (!is_array($data) || !isset($data['comedians']) || !is_array($data['comedians'])) {
+            set_transient($cache_key, $empty, 5 * MINUTE_IN_SECONDS);
+            return $empty;
+        }
+        $out = [
+            'comedians'            => array_values(array_filter($data['comedians'], function ($c) {
+                return is_array($c) && !empty($c['name']) && !empty($c['wpLink']) && !empty($c['slug']);
+            })),
+            'archived_legacy_slugs' => isset($data['archived_legacy_slugs']) && is_array($data['archived_legacy_slugs'])
+                ? $data['archived_legacy_slugs'] : [],
+        ];
+        set_transient($cache_key, $out, HOUR_IN_SECONDS);
+        return $out;
+    }
+
+    /** 301 target for a retired spotlight slug, or '' when unknown. */
+    private function legacy_spotlight_target($slug) {
+        $idx = $this->fetch_comedians_index();
+        foreach ($idx['comedians'] as $c) {
+            if (in_array($slug, (array) ($c['legacy_slugs'] ?? []), true)) {
+                // Built here rather than trusting the stored wpLink, so a
+                // www/non-www change can never make wp_safe_redirect()
+                // bounce the visitor to wp-admin.
+                return home_url('/' . self::COMEDIANS_HUB_SLUG . '/' . sanitize_title($c['slug']) . '/');
+            }
+        }
+        if (in_array($slug, $idx['archived_legacy_slugs'], true)) {
+            return home_url('/' . self::COMEDIANS_HUB_SLUG . '/');
+        }
+        return '';
+    }
+
+    /**
+     * Group upcoming events by who is performing. A comedian from the index
+     * owns every event their match terms hit (linked to their page); other
+     * events flagged `headliner` at ingest (config/announce-venues.json via
+     * scripts/fetch-events.js) are grouped by extracted performer name +
+     * venue (unlinked). Returns groups sorted by first date:
+     *   ['label', 'url', 'slug', 'venue', 'dates' => [...], 'matched' => bool]
+     */
+    private function headliner_groups($events, $index_comedians, $only_matched = false) {
+        $groups = [];
+        $claimed = [];
+        foreach ($index_comedians as $c) {
+            $hits = $this->events_matching_terms($events, $c['match'] ?? [$c['name']]);
+            if (empty($hits)) continue;
+            $g = ['label' => $c['name'], 'url' => $c['wpLink'], 'slug' => $c['slug'], 'venue' => '', 'dates' => [], 'venues' => [], 'matched' => true];
+            foreach ($hits as $ev) {
+                $claimed[$ev['id'] ?? ($ev['name'] . $ev['date'])] = true;
+                $g['dates'][] = $ev['date'];
+                $g['venues'][$this->pretty_venue($ev['venue'] ?? '')] = true;
+            }
+            $g['dates'] = array_values(array_unique($g['dates']));
+            sort($g['dates']);
+            $g['venue'] = implode(', ', array_slice(array_keys($g['venues']), 0, 2));
+            $groups['c:' . $c['slug']] = $g;
+        }
+        if (!$only_matched) {
+            foreach ($events as $ev) {
+                $key_id = $ev['id'] ?? ($ev['name'] . $ev['date']);
+                if (isset($claimed[$key_id]) || empty($ev['headliner'])) continue;
+                $venue = $this->pretty_venue($ev['venue'] ?? '');
+                $label = $this->headliner_label($ev['name'] ?? '', $venue);
+                if ($label === '') continue;
+                $key = 'e:' . $this->normalize_match_text($label) . '@' . $this->normalize_match_text($venue);
+                if (!isset($groups[$key])) {
+                    $groups[$key] = ['label' => $label, 'url' => '', 'slug' => '', 'venue' => $venue, 'dates' => [], 'venues' => [$venue => true], 'matched' => false];
+                }
+                $groups[$key]['dates'][] = $ev['date'];
+            }
+        }
+        foreach ($groups as &$g) {
+            $g['dates'] = array_values(array_unique($g['dates']));
+            sort($g['dates']);
+        }
+        unset($g);
+        $list = array_values($groups);
+        usort($list, function ($a, $b) {
+            $dc = strcmp($a['dates'][0] ?? '', $b['dates'][0] ?? '');
+            return $dc !== 0 ? $dc : strcmp($a['label'], $b['label']);
+        });
+        return $list;
+    }
+
+    /**
+     * Display label for an unlinked headliner event. The venue's own
+     * framing is stripped first ("The Riot Comedy Club presents Headliner
+     * Will Abeles" → "Will Abeles", "Comedian Shane Torres" → "Shane
+     * Torres"), then extract_performer_name() trims tour subtitles; when
+     * that rejects the name (a show title like "Group Therapy") the cleaned
+     * title itself is used. '' when nothing usable is left.
+     */
+    private function headliner_label($event_name, $venue = '') {
+        $n = trim((string) $event_name);
+        if ($n === '') return '';
+        if (preg_match('/\bpresents\b\s*:?\s*(.+)$/iu', $n, $m)) {
+            $n = trim($m[1]);
+        }
+        // Twice on purpose: "presents Headliner Comedian X" stacks two.
+        $n = preg_replace('/^(?:comedian|headliner|comic)\s+/iu', '', $n);
+        $n = preg_replace('/^(?:comedian|headliner|comic)\s+/iu', '', $n);
+        $n = trim($n, " \t\"'“”");
+        if ($n === '') return '';
+        $person = $this->extract_performer_name($n);
+        $label = $person !== '' ? $person : $n;
+        // extract_performer_name() cuts at subtitle separators and can
+        // leave an opening quote behind ('Franco Escamilla "El Juicio').
+        if (substr_count($label, '"') % 2 === 1) $label = str_replace('"', '', $label);
+        if ($venue !== '' && $this->normalize_match_text($label) === $this->normalize_match_text($venue)) return '';
+        return mb_strlen($label) > 70 ? mb_substr($label, 0, 67) . '…' : $label;
+    }
+
+    /** "Sat, Nov 7" or "Nov 7–9" style date summary for a group. */
+    private function group_dates_label($dates) {
+        $n = count($dates);
+        if ($n === 0) return '';
+        $first = strtotime($dates[0] . ' 12:00:00');
+        if ($n === 1) return date('D, M j', $first);
+        $last = strtotime($dates[$n - 1] . ' 12:00:00');
+        if (date('M', $first) === date('M', $last)) {
+            return date('M j', $first) . '–' . date('j', $last) . ' (' . $n . ' shows)';
+        }
+        return date('M j', $first) . '–' . date('M j', $last) . ' (' . $n . ' shows)';
+    }
+
+    private function render_group_item($g) {
+        $name = $g['url']
+            ? '<a href="' . esc_url($g['url']) . '"><strong>' . esc_html($g['label']) . '</strong></a>'
+            : '<strong>' . esc_html($g['label']) . '</strong>';
+        $venue_html = '';
+        if ($g['venue'] !== '') {
+            $venue_page = $this->venue_page_url($g['venue']);
+            $venue_html = $venue_page
+                ? '<a href="' . esc_url($venue_page) . '">' . esc_html($g['venue']) . '</a>'
+                : esc_html($g['venue']);
+        }
+        return '<li>' . $name . ($venue_html ? ' at ' . $venue_html : '') . ' <span class="ch-dates">' . esc_html($this->group_dates_label($g['dates'])) . '</span></li>';
+    }
+
+    /**
+     * Count line + "Headliners in {Month}" for a month page, prepended to
+     * the server-rendered cards.
+     */
+    private function render_month_summary($events, $ym) {
+        if (empty($events)) return '';
+        $venues = [];
+        $free = 0;
+        $mics = 0;
+        $min_price = null;
+        foreach ($events as $ev) {
+            $venues[$this->pretty_venue($ev['venue'] ?? '')] = true;
+            $pm = $ev['price_min'] ?? null;
+            if ($pm !== null && floatval($pm) == 0) $free++;
+            if (!empty($ev['is_open_mic'])) $mics++;
+            if ($pm !== null && floatval($pm) > 0 && ($min_price === null || floatval($pm) < $min_price)) $min_price = floatval($pm);
+        }
+        $n = count($events);
+        $label = $this->month_label($ym);
+        $html = '<div class="ch-month-summary">';
+        $html .= '<p class="ch-month-count"><strong>' . $n . ' show' . ($n !== 1 ? 's' : '') . '</strong> at <strong>' . count($venues) . ' venue' . (count($venues) !== 1 ? 's' : '') . '</strong> in ' . esc_html($label);
+        if ($min_price !== null) $html .= ', from $' . number_format($min_price, 0);
+        if ($free > 0) $html .= ' &middot; ' . $free . ' free';
+        if ($mics > 0) $html .= ' &middot; ' . $mics . ' open mic' . ($mics !== 1 ? 's' : '');
+        $html .= '. Updated twice daily.</p>';
+
+        $idx = $this->fetch_comedians_index();
+        $groups = array_slice($this->headliner_groups($events, $idx['comedians']), 0, 25);
+        if (!empty($groups)) {
+            $html .= '<h2 class="ch-month-headliners-title">Headliners in ' . esc_html(date('F', strtotime($ym . '-01 12:00:00'))) . '</h2><ul class="ch-headliners">';
+            foreach ($groups as $g) $html .= $this->render_group_item($g);
+            $html .= '</ul>';
+        }
+        $html .= '</div>';
+        return $html;
+    }
+
+    // --- [comedy_houston_performer] -----------------------------------------
+
+    /** The queried page's performer meta (set by the generator), or null. */
+    private function current_performer() {
+        if ($this->performer_cache !== null) return $this->performer_cache ?: null;
+        // Before the main query is set up (a theme calling a title filter
+        // early) nothing is known yet; don't cache that as "no performer".
+        if (!did_action('wp')) return null;
+        $this->performer_cache = false;
+        if (!is_singular(['page', 'post'])) return null;
+        $post = get_queried_object();
+        if (!$post || empty($post->ID)) return null;
+        $raw = get_post_meta($post->ID, '_ch_performer', true);
+        if (!is_string($raw) || $raw === '') return null;
+        $decoded = json_decode($raw, true);
+        if (!is_array($decoded) || empty($decoded['name'])) return null;
+        $this->performer_cache = [
+            'name'  => (string) $decoded['name'],
+            'match' => !empty($decoded['match']) && is_array($decoded['match']) ? $decoded['match'] : [$decoded['name']],
+            'slug'  => (string) ($decoded['slug'] ?? ''),
+        ];
+        return $this->performer_cache;
+    }
+
+    private function current_performer_events() {
+        if ($this->performer_events_cache !== null) return $this->performer_events_cache;
+        $perf = $this->current_performer();
+        $this->performer_events_cache = $perf ? $this->events_matching_terms($this->upcoming_events(), $perf['match']) : [];
+        return $this->performer_events_cache;
+    }
+
+    /**
+     * Live tokens for comedian pages (see scripts/lib/comedian-page.js):
+     *   {performer_next_short}    "Oct 28 at Toyota Center"   | "Shows, Tickets and Dates"
+     *   {performer_next_h1}       "Wednesday, October 28 at Toyota Center" | same fallback
+     *   {performer_next_sentence} "Dave Chappelle plays Toyota Center in Houston on Wednesday, October 28, 2026."
+     *                             | "No Houston dates on sale right now for Dave Chappelle."
+     * Always defined so a stray token never renders literally.
+     */
+    private function performer_tokens() {
+        $fallback = 'Shows, Tickets and Dates';
+        $perf = $this->current_performer();
+        if (!$perf) {
+            return [
+                '{performer_next_sentence}' => '',
+                '{performer_next_short}'    => $fallback,
+                '{performer_next_h1}'       => $fallback,
+            ];
+        }
+        $events = $this->current_performer_events();
+        if (empty($events)) {
+            return [
+                '{performer_next_sentence}' => 'No Houston dates on sale right now for ' . $perf['name'] . '.',
+                '{performer_next_short}'    => $fallback,
+                '{performer_next_h1}'       => $fallback,
+            ];
+        }
+        $first = $events[0];
+        $ts = strtotime($first['date'] . ' 12:00:00');
+        $venue = $this->pretty_venue($first['venue'] ?? 'Houston');
+        $n = count($events);
+        return [
+            '{performer_next_sentence}' => $perf['name'] . ' plays ' . $venue . ' in Houston on ' . date('l, F j, Y', $ts)
+                . ($n > 1 ? ' (' . $n . ' shows)' : '') . '.',
+            '{performer_next_short}'    => date('M j', $ts) . ' at ' . $venue,
+            '{performer_next_h1}'       => date('l, F j', $ts) . ' at ' . $venue,
+        ];
+    }
+
+    public function render_performer_shortcode($atts) {
+        $atts = shortcode_atts(['name' => '', 'match' => '', 'slug' => ''], $atts, 'comedy_houston_performer');
+        $name = sanitize_text_field($atts['name']);
+        if ($name === '') return '';
+        $terms = array_filter(array_map('trim', explode('|', (string) $atts['match'])));
+        if (empty($terms)) $terms = [$name];
+        $opts = $this->get_options();
+        $scheme = $opts['color_scheme'];
+
+        wp_enqueue_style('comedy-houston-style');
+        $this->static_render = true;
+        $this->needs_static_tracker = true;
+
+        $redirect_base = home_url('/') . '?' . self::REDIRECT_VAR . '=';
+        $events = $this->events_matching_terms($this->upcoming_events(), $terms);
+
+        $html = '<div id="ch-app" class="ch-theme-' . esc_attr($scheme) . ' ch-static ch-performer">';
+        $html .= '<main class="ch-main">';
+        if (!empty($events)) {
+            $html .= $this->render_ssr_html($events, $opts, $redirect_base, []);
+            $html .= $this->render_jsonld($events);
+        } else {
+            $html .= '<div class="empty-state"><h2>No upcoming Houston dates</h2>'
+                . '<p>No ' . esc_html($name) . ' shows are on sale in Houston right now. This page updates the day a date is announced. '
+                . 'Meanwhile: <a href="' . esc_url(home_url('/this-weekend/')) . '">this weekend\'s shows</a> or '
+                . '<a href="' . esc_url(home_url('/' . self::COMEDIANS_HUB_SLUG . '/')) . '">every comedian coming to Houston</a>.</p></div>';
+        }
+        $html .= '</main>';
+        $html .= $this->render_also_coming(sanitize_text_field($atts['slug']));
+        $html .= '</div>';
+        $this->static_render = false;
+        return $html;
+    }
+
+    /** Up to six other comedians with a date on sale, soonest first. */
+    private function render_also_coming($exclude_slug) {
+        $idx = $this->fetch_comedians_index();
+        if (empty($idx['comedians'])) return '';
+        $groups = $this->headliner_groups($this->upcoming_events(), $idx['comedians'], true);
+        $items = [];
+        foreach ($groups as $g) {
+            if ($g['slug'] === $exclude_slug) continue;
+            $items[] = '<a href="' . esc_url($g['url']) . '">' . esc_html($g['label']) . '</a> <span class="ch-dates">(' . esc_html($this->group_dates_label($g['dates'])) . ')</span>';
+            if (count($items) >= 6) break;
+        }
+        if (empty($items)) return '';
+        return '<p class="ch-also-coming"><strong>Also coming to Houston:</strong> ' . implode(' &middot; ', $items)
+            . ' &middot; <a href="' . esc_url(home_url('/' . self::COMEDIANS_HUB_SLUG . '/')) . '">all comedians</a></p>';
+    }
+
+    // --- [comedy_houston_months] --------------------------------------------
+
+    public function render_months_shortcode() {
+        $events = $this->upcoming_events();
+        $this_ym = $this->houston_date('Y-m');
+        $counts = [];
+        foreach ($events as $ev) {
+            $ym = substr($ev['date'] ?? '', 0, 7);
+            $counts[$ym] = ($counts[$ym] ?? 0) + 1;
+        }
+        $items = [];
+        $current = get_queried_object();
+        $current_slug = ($current && !empty($current->post_name)) ? $current->post_name : '';
+        $this_label = 'This month (' . date('F', strtotime($this_ym . '-01 12:00:00')) . ')';
+        $this_count = $counts[$this_ym] ?? 0;
+        $items[] = $current_slug === self::EVERGREEN_MONTH_SLUG
+            ? '<li class="current">' . esc_html($this_label) . ($this_count ? ' <span class="ch-dates">' . $this_count . ' shows</span>' : '') . '</li>'
+            : '<li><a href="' . esc_url(home_url('/' . self::EVERGREEN_MONTH_SLUG . '/')) . '">' . esc_html($this_label) . '</a>'
+                . ($this_count ? ' <span class="ch-dates">' . $this_count . ' shows</span>' : '') . '</li>';
+        foreach ($this->month_nav_records() as $rec) {
+            $count = $counts[$rec['ym']] ?? 0;
+            $is_current = $current_slug !== '' && strpos($rec['url'], '/' . $current_slug . '/') !== false;
+            $items[] = $is_current
+                ? '<li class="current">' . esc_html($rec['label']) . ($count ? ' <span class="ch-dates">' . $count . ' shows</span>' : '') . '</li>'
+                : '<li><a href="' . esc_url($rec['url']) . '">' . esc_html($rec['label']) . '</a>' . ($count ? ' <span class="ch-dates">' . $count . ' shows</span>' : '') . '</li>';
+        }
+        return '<nav class="ch-months" aria-label="Comedy shows by month"><strong>By month:</strong><ul>' . implode('', $items) . '</ul></nav>';
+    }
+
+    // --- [comedy_houston_comedians] -----------------------------------------
+
+    public function render_comedians_shortcode() {
+        $events = $this->upcoming_events();
+        $idx = $this->fetch_comedians_index();
+        $groups = $this->headliner_groups($events, $idx['comedians']);
+        $matched = array_values(array_filter($groups, function ($g) { return $g['matched']; }));
+        $others  = array_values(array_filter($groups, function ($g) { return !$g['matched']; }));
+
+        $html = '<div class="ch-comedians-hub">';
+        if (!empty($matched)) {
+            $html .= '<h2>On sale now, soonest first</h2><ul class="ch-headliners ch-headliners-linked">';
+            foreach ($matched as $g) $html .= $this->render_group_item($g);
+            $html .= '</ul>';
+        }
+        if (!empty($others)) {
+            $html .= '<h2>More headliners and shows on sale</h2><ul class="ch-headliners">';
+            foreach (array_slice($others, 0, 60) as $g) $html .= $this->render_group_item($g);
+            $html .= '</ul>';
+        }
+        if (empty($matched) && empty($others)) {
+            $html .= '<p>No headliner dates are on sale right now. See <a href="' . esc_url(home_url('/this-weekend/')) . '">this weekend\'s shows</a>.</p>';
+        }
+        $html .= $this->render_months_shortcode();
+        $html .= '</div>';
+        return $html;
+    }
+
+    // --- REST field: _ch_performer -------------------------------------------
+
+    /**
+     * `ch_performer` on pages and posts: a JSON string {name, match[], slug}
+     * written by scripts/lib/comedian-page.js. It is what makes a page a
+     * comedian page: the {performer_next_*} title tokens and the performer
+     * shortcode's "also coming" strip read it.
+     */
+    public function register_performer_field() {
+        register_rest_field(['page', 'post'], 'ch_performer', [
+            'schema' => [
+                'description' => 'Comedian page descriptor (JSON: name, match terms, slug).',
+                'type'        => 'string',
+                'context'     => ['view', 'edit'],
+            ],
+            'get_callback' => function ($post_arr) {
+                $val = get_post_meta($post_arr['id'], '_ch_performer', true);
+                return is_string($val) ? $val : '';
+            },
+            'update_callback' => function ($value, $post) {
+                if (!is_string($value)) {
+                    return new WP_Error('ch_performer_invalid_type', 'ch_performer must be a JSON-encoded string.', ['status' => 400]);
+                }
+                if ($value === '') {
+                    delete_post_meta($post->ID, '_ch_performer');
+                    return true;
+                }
+                $decoded = json_decode($value, true);
+                if (!is_array($decoded) || empty($decoded['name']) || !is_string($decoded['name'])) {
+                    return new WP_Error('ch_performer_invalid', 'ch_performer must be JSON with a "name".', ['status' => 400]);
+                }
+                $clean = [
+                    'name'  => sanitize_text_field($decoded['name']),
+                    'match' => array_values(array_filter(array_map('sanitize_text_field', (array) ($decoded['match'] ?? [])))),
+                    'slug'  => sanitize_title((string) ($decoded['slug'] ?? '')),
+                ];
+                update_post_meta($post->ID, '_ch_performer', wp_json_encode($clean, JSON_UNESCAPED_UNICODE));
+                return true;
+            },
+        ]);
+    }
+
+    // --- Click tracking without the listings JS -------------------------------
+
+    /**
+     * Server-rendered listings (month pages, comedian pages) do not load
+     * comedy-houston.js, which is where ticket_click / TicketClick fire.
+     * This footer snippet reports the same events with the same parameters
+     * (keep in sync with trackTicketClick() in comedy-houston.js) so the
+     * GA4 reports don't go blind on the new page types.
+     */
+    public function emit_static_click_tracker() {
+        if (!$this->needs_static_tracker || is_admin()) return;
+        // Styles for the 2.18.0 markup ride along inline: comedy-houston.css
+        // cannot be deployed over Hostinger's FTP (450 on text files above
+        // ~12 KB) and must not be a prerequisite for these pages to look
+        // right. Small enough to live here.
+        ?>
+<style>
+.ch-months{margin:0 0 1.5rem}.ch-months ul{list-style:none;padding:0;margin:.35em 0 0;display:flex;flex-wrap:wrap;gap:.4em 1.4em}.ch-months li.current{font-weight:700}
+.ch-dates{opacity:.72;font-size:.9em;white-space:nowrap}
+.ch-headliners{margin:0 0 1.25rem 1.25rem;padding:0;line-height:1.75}
+#ch-app .ch-month-summary{padding:.25rem 0 1.5rem}#ch-app .ch-month-summary p{margin:0 0 .5rem}#ch-app .ch-month-summary h2{font-size:1.2rem;margin:1rem 0 .4rem}
+#ch-app .ch-also-coming{padding:1.25rem 0 .25rem;font-size:.95rem;line-height:1.7}#ch-app .ch-also-coming a{text-decoration:underline}
+#ch-app.ch-performer .ch-main{padding-top:0}
+</style>
+<script>
+(function(){
+  function dest(h){try{var u=new URL(h,location.href);var p=u.searchParams.get('<?php echo esc_js(self::REDIRECT_VAR); ?>');if(!p)return h;p=p.replace(/-/g,'+').replace(/_/g,'/');while(p.length%4)p+='=';return atob(p);}catch(e){return h;}}
+  document.addEventListener('click',function(e){
+    var a=e.target&&e.target.closest?e.target.closest('#ch-app.ch-static a.card-cta[href]'):null;if(!a)return;
+    var card=a.closest('.event-card');function t(s){var el=card?card.querySelector(s):null;return el?el.textContent.trim():'';}
+    var name=t('.card-name'),venue=t('.card-venue'),price=t('.card-price'),d=dest(a.href),vd='';
+    try{vd=new URL(d).hostname.replace(/^www\./,'');}catch(_){}
+    if(typeof gtag==='function')gtag('event','ticket_click',{event_category:'engagement',event_label:name,comedian_name:name,venue_name:venue,price_info:price,outbound_url:d,vendor_domain:vd});
+    if(typeof fbq==='function')fbq('trackCustom','TicketClick',{content_name:name,venue_name:venue,price_info:price});
+  },true);
+})();
+</script>
+        <?php
     }
 
     // =========================================================================
@@ -379,7 +1021,7 @@ class Comedy_Houston_Plugin {
             return;
         }
         $post = get_queried_object();
-        if (!$post || empty($post->post_content) || !has_shortcode($post->post_content, self::SHORTCODE)) {
+        if (!$post || empty($post->post_content) || !$this->has_listing_shortcode($post->post_content)) {
             return;
         }
         try {
@@ -420,6 +1062,34 @@ class Comedy_Houston_Plugin {
         if (preg_match('#^/houston-comedy-shows-this-week-\d{4}-\d{2}-\d{2}/?$#', $path)) {
             wp_safe_redirect(home_url('/this-week/'), 301);
             exit;
+        }
+
+        // Dated month pages (/comedy-shows-houston-november-2026/) exist
+        // only while the month is in the future. Once it is the current
+        // month, or past, the URL hands its signals to the evergreen
+        // current-month post. The rule fires even if the sync has not
+        // trashed the page yet, so there is never a window with two live
+        // URLs for one month. See scripts/sync-month-pages.js.
+        if (preg_match('#^/comedy-shows-houston-([a-z]+)-(\d{4})/?$#i', $path, $m)) {
+            $month_num = $this->month_number(strtolower($m[1]));
+            if ($month_num > 0) {
+                $ym = $m[2] . '-' . str_pad((string) $month_num, 2, '0', STR_PAD_LEFT);
+                if ($ym <= $this->houston_date('Y-m')) {
+                    wp_safe_redirect(home_url('/' . self::EVERGREEN_MONTH_SLUG . '/'), 301);
+                    exit;
+                }
+            }
+        }
+
+        // Retired per-show spotlight posts (/{name}-{venue}-YYYY-MM-DD/) →
+        // the comedian's evergreen page. Only consulted on a 404 with a dated
+        // slug, so the index is never fetched for an ordinary page view.
+        if (is_404() && preg_match('#^/([a-z0-9-]+-\d{4}-\d{2}-\d{2})/?$#', $path, $m)) {
+            $target = $this->legacy_spotlight_target($m[1]);
+            if ($target) {
+                wp_safe_redirect($target, 301);
+                exit;
+            }
         }
 
         // Legacy open-mic URLs → the canonical /open-mic-comedy-houston/
@@ -979,7 +1649,7 @@ class Comedy_Houston_Plugin {
             '{today}'               => date('l, F j', $today_ts),
             '{month_year}'          => date('F Y', $today_ts),
             '{year}'                => date('Y', $today_ts),
-        ];
+        ] + $this->performer_tokens();
     }
 
     /**
@@ -1465,14 +2135,51 @@ src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>
         // although its content never changes.
         $bare = '%' . $wpdb->esc_like('[' . self::SHORTCODE . ']') . '%';
         $attr = '%' . $wpdb->esc_like('[' . self::SHORTCODE . ' ') . '%';
+        // The month navigation and the comedians hub also render counts
+        // and names from events.json, so their lastmod moves with the data
+        // too. The performer pages deliberately do NOT: see
+        // performer_page_ids().
+        $months = '%' . $wpdb->esc_like('[comedy_houston_months') . '%';
+        $hub    = '%' . $wpdb->esc_like('[comedy_houston_comedians') . '%';
         return $wpdb->get_col($wpdb->prepare(
             "SELECT ID FROM {$wpdb->posts}
              WHERE post_status = 'publish'
                AND post_type IN ('page', 'post')
-               AND (post_content LIKE %s OR post_content LIKE %s)",
+               AND (post_content LIKE %s OR post_content LIKE %s OR post_content LIKE %s OR post_content LIKE %s)",
             $bare,
-            $attr
+            $attr,
+            $months,
+            $hub
         ));
+    }
+
+    /**
+     * Published comedian pages ([comedy_houston_performer ...]). Purged with
+     * the listing pages on every data change (their show cards and live
+     * titles come from events.json) but NOT included in the lastmod bump:
+     * for most of them nothing changed in a given import, and a sitemap
+     * that claims two hundred pages changed twice a day is a sitemap Google
+     * stops believing. A comedian page's lastmod moves when the generator
+     * re-saves it with a new date or profile, which is when it really did.
+     */
+    private function performer_page_ids() {
+        global $wpdb;
+        $like = '%' . $wpdb->esc_like('[comedy_houston_performer ') . '%';
+        return $wpdb->get_col($wpdb->prepare(
+            "SELECT ID FROM {$wpdb->posts}
+             WHERE post_status = 'publish'
+               AND post_type IN ('page', 'post')
+               AND post_content LIKE %s",
+            $like
+        ));
+    }
+
+    /** Any of the shortcodes whose output depends on events.json / the date. */
+    private function has_listing_shortcode($content) {
+        foreach ([self::SHORTCODE, 'comedy_houston_performer', 'comedy_houston_months', 'comedy_houston_comedians'] as $tag) {
+            if (has_shortcode($content, $tag)) return true;
+        }
+        return false;
     }
 
     /**
@@ -1541,7 +2248,10 @@ src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>
      * this is safe on any host.
      */
     private function purge_listing_cache() {
-        $ids = $this->listing_page_ids();
+        $ids = array_values(array_unique(array_merge(
+            array_map('intval', (array) $this->listing_page_ids()),
+            array_map('intval', (array) $this->performer_page_ids())
+        )));
 
         $urls = [home_url('/')];
         foreach ($ids as $id) {
@@ -1971,7 +2681,7 @@ src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>
 
     public function register_noindex_fields() {
         foreach (['ch_noindex' => '_ch_noindex', 'ch_allow_index' => '_ch_allow_index'] as $field => $meta_key) {
-            register_rest_field('post', $field, [
+            register_rest_field(['post', 'page'], $field, [
                 'schema' => [
                     'description' => $field === 'ch_noindex'
                         ? 'Emit a robots noindex meta tag on this post.'
@@ -2258,6 +2968,7 @@ src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>
         $show_open_mic = strtolower($atts['show_open_mic']) !== 'false';
         $type_filter = $atts['type'];
         $tag_filter = $atts['tag'] ?? '';
+        $month_filter = (isset($atts['month']) && preg_match('/^\d{4}-\d{2}$/', (string) $atts['month'])) ? $atts['month'] : '';
         $max_date = $this->houston_date('Y-m-d', '+90 days');
 
         // Weekend: Fri-Sat-Sun (mirrors JS logic). Shared with the
@@ -2287,6 +2998,7 @@ src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>
             if ($filter === 'tomorrow' && $date !== $tomorrow) continue;
             if ($filter === 'week' && $date > $end_of_week) continue;
             if ($filter === 'month' && $date > $end_of_month) continue;
+            if ($month_filter !== '' && substr($date, 0, 7) !== $month_filter) continue;
 
             // Curated tag filter — events carry tags[] from ingest
             // (config/show-tags.json). Events without the field simply
@@ -2463,7 +3175,7 @@ src="https://www.facebook.com/tr?id=<?php echo esc_attr(self::META_PIXEL_ID); ?>
         // "Get Tickets". Kept in sync with renderCard() in comedy-houston.js;
         // the click handler + modal live there (delegated, so SSR markup
         // works too).
-        if (!empty($ev['performer_requests'])) {
+        if (!empty($ev['performer_requests']) && !$this->static_render) {
             $card .= '<div class="card-perform-row"><button type="button" class="card-perform-link"'
                 . ' data-event-id="' . esc_attr($ev['id'] ?? '') . '"'
                 . ' data-event-name="' . esc_attr($ev['name'] ?? '') . '"'

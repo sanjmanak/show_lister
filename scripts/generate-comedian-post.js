@@ -1,22 +1,33 @@
 #!/usr/bin/env node
 
 /**
- * Comedy Houston — Per-Comedian SEO Blog Post Generator (MVP)
+ * Comedy Houston — comedian pages + weekly spotlight assets.
  *
- * Reads events.json, identifies headliners, and generates individual
- * 400-word blog posts for each notable comedian, publishes them to WordPress,
- * and writes the Instagram graphics + manifest to blog/comedians/.
+ * Reads events.json for the week LEAD_WEEKS ahead, identifies headliners,
+ * and for each one:
  *
- * Four-call pipeline per comedian (see scripts/lib/openai.js for the model
- * policy):
- *   1. Deep research via OpenAI Responses API (web search)
- *   2. Write the blog post via OpenAI Chat
- *   3. Fact-check pass via OpenAI Chat (editor role)
- *   4. Polish pass (voice, rhythm, length)
+ *   1. finds or creates the comedian in blog/comedians/registry.json
+ *      (lib/comedian-registry.js) and records the Houston date;
+ *   2. writes the evergreen profile ONLY if the registry has none, or it is
+ *      older than REWRITE_AFTER_DAYS: research (web search) → write →
+ *      fact-check → polish (lib/comedian-profile-writer.js). A returning
+ *      comedian costs no OpenAI spend beyond the Instagram caption;
+ *   3. publishes or updates the evergreen PAGE /comedians/{slug}/
+ *      (lib/comedian-page.js) — upcoming shows render live from events.json
+ *      through the plugin's performer shortcode, so the page stays current
+ *      between runs and after the show without being republished;
+ *   4. writes the per-show Instagram graphics + caption to blog/comedians/
+ *      and the week-keyed manifest the IG poster, the graphics self-heal and
+ *      the reaper consume (unchanged contract: slug/date/venue/caption/
+ *      graphicFiles; wpLink now points at the comedian page).
  *
- * Images: the event's own ticket image (Ticketmaster / Eventbrite /
- * StandupTix) is used everywhere — WordPress featured image, the static
- * page, and the Instagram graphics. No headshot scraping.
+ * The old per-show spotlight POSTS (name-venue-date slugs, deleted the week
+ * after the show) are retired. Their slugs are recorded as legacy_slugs on
+ * the comedian so the plugin 301s them to the page; the reaper deletes the
+ * posts themselves (scripts/delete-comedian-blog-posts.js).
+ *
+ * Images: the event's own ticket image is the page's featured image and the
+ * photo on the Instagram graphics. No headshot scraping.
  *
  * Zero npm dependencies — uses only built-in Node modules.
  */
@@ -41,12 +52,14 @@ const { writeComedianGraphics } = require("./lib/comedian-graphics");
 // Regex-based scrub for LLM-produced HTML. Runs after the fact-check and
 // polish passes, right before we wrap the body in the final template.
 // See scripts/lib/sanitize-html.js.
-const { sanitizeAiHtml, addSponsoredRelToTicketLinks } = require("./lib/sanitize-html");
-const { ensureShowDetails } = require("./lib/show-details");
+const { sanitizeAiHtml } = require("./lib/sanitize-html");
 const { verifyOutboundLinks } = require("./lib/link-check");
-const { addBlogPostingToGraph, wpGmtToIso } = require("./lib/schema-utils");
 const { createWpClient } = require("./lib/wp");
 const { writeSpotlightIndex } = require("./lib/spotlight-index");
+const registry = require("./lib/comedian-registry");
+const comedianPage = require("./lib/comedian-page");
+const profileWriter = require("./lib/comedian-profile-writer");
+const announceRules = require("./lib/announce-rules");
 
 // ---------------------------------------------------------------------------
 // Config
@@ -76,6 +89,11 @@ const COMEDIANS_DIR = path.join(OUTPUT_DIR, "blog", "comedians");
 // workflow_dispatch lead_weeks input (0 = the old same-week behavior,
 // used for transition backfills).
 const LEAD_WEEKS = Math.max(0, parseInt(process.env.LEAD_WEEKS || "3", 10) || 0);
+
+// A comedian's profile is reused on every return visit. Older than this and
+// the Monday run researches and rewrites it (a 2025 "recent hook" should not
+// headline a 2027 page). 0 = always rewrite.
+const REWRITE_AFTER_DAYS = Math.max(0, parseInt(process.env.REWRITE_AFTER_DAYS || "180", 10) || 0);
 
 function getCurrentWeekRange() {
   const now = new Date();
@@ -326,200 +344,6 @@ Return ONLY the JSON object, no other text.`;
   return callOpenAIResponses(input, instructions);
 }
 
-// ---------------------------------------------------------------------------
-// Step 2: Write the blog post
-// ---------------------------------------------------------------------------
-
-function writeBlogPost(comedianName, venue, city, date, time, price, ticketUrl, imageUrl, research) {
-  const priceStr = price || "See venue for pricing";
-  const timeStr = time || "See venue for time";
-
-  const systemPrompt = `You are a working comedy writer whose byline appears in Vulture, The New Yorker's Talk of the Town, and the LA Times Calendar section. You write about comedians the way a fellow obsessive does — with specific references, dry confidence, and zero hype. You trust the reader. You never explain that something is funny; you describe what the comic actually does and let it land.
-
-VOICE ANCHOR — match this register:
-"Russell Brand is one of those comedians who, despite selling out theaters all over the world and starring in several films throughout the past decade, I have simply not paid much attention to. Brand often seemed to me too smug, self-referential, and, quite frankly, stupid to ever give him the benefit of the doubt. However, in the last few months, I've slowly come around to him. In April, Brand appeared on Norm MacDonald's video podcast Norm Macdonald Live, and I found that his lascivious, free-love persona contrasted well against MacDonald's particular brand of sexual repression. Like a kind of glammed up Trojan horse, he sneaks past our defenses and enlightens and entertains while pontificating on the news of the day."
-
-Notice what that paragraph does: a real opinion, a specific recent appearance with a real co-host, an unexpected adjective ("lascivious"), one good metaphor (not three), and zero throat-clearing. That is the bar.`;
-
-  const prompt = `Write a 400-word blog post about a comedian's upcoming live show. 400 words is a HARD CEILING. Tighter is fine. Padding is not.
-
-INPUT DATA:
-Comedian: ${comedianName}
-Venue: ${venue}
-City: ${city}
-Date: ${formatDateForDisplay(date)}
-Time: ${timeStr}
-Price: ${priceStr}
-Ticket URL: ${ticketUrl}
-${imageUrl ? `Image URL: ${imageUrl}` : ""}
-
-VERIFIED RESEARCH (THIS IS YOUR ONLY SOURCE OF FACTS — anything not here is forbidden):
-${research}
-
-ABSOLUTE FACT RULES:
-- You may ONLY state facts that appear explicitly in the research above. Not "reasonable inferences." Not "well-known background." Only what is in the JSON.
-- If the research has a "recent_hook" with content, the post MUST be built around it. Lead with the hook. It is the reason this specific show in ${formatDateForDisplay(date)} matters.
-- If a credit, special, TV show, or quote is not in the research, it does not exist. Do not mention it.
-- Anything in "unverifiable_claims_to_avoid" is poison. Never reference it.
-- NEVER output the literal token "[VERIFY]" or any bracketed editor's note. The published post must read as final. If you are not sure about something, just leave it out. Silence is better than a flag.
-- NEVER paraphrase or reconstruct quotes. A quote may only appear if it is verbatim from "notable_bits_or_quotes" or "recent_hook.quote".
-
-TITLE (critical — this drives both clicks AND search rankings):
-Write an <h1> tag with a headline that a Variety or Vulture editor would approve.
-SEO REQUIREMENTS — the title MUST contain ALL THREE of these:
-  1. The comedian's full name (exactly as provided)
-  2. The venue name
-  3. The word "Houston"
-These are non-negotiable for long-tail search. Someone will Google "${comedianName} Houston" or "${comedianName} ${venue}" and this title must match.
-
-CREATIVE REQUIREMENTS — the title must also:
-- Be specific to THIS comedian — it should not work for any other performer
-- Reference something concrete: a special title, a signature bit, a career moment, a cultural reference
-- NEVER use the pattern "[Name] Brings [X] to [City/Venue]" — this is the #1 banned title format
-- NEVER use "Brings," "Takes the Stage," "Comes to," "Heads to," "Hits," or "Lands at"
-- Instead, try structures like:
-  • "The Quiet Precision of Sam Tallent, Live at Punch Line Houston"
-  • "After 'Running the Light,' Sam Tallent Returns to Punch Line Houston"
-  • "Why Matthew Broussard's Math-Comedy Works — See for Yourself at The Gordy in Houston"
-  • "Isabel Hagen's Viola and Punchlines: A Night at The Riot Houston"
-  • "Shawn Gardini: Philadelphia's Best-Kept Comedy Secret at The Gordy Houston"
-
-OPENING (first paragraph):
-Do NOT start with the comedian's name. Start with a scene, a detail, a quote from their material, a cultural observation, or a specific moment from their career. Pull the reader into the world of this comedian before naming them. Think of how a New Yorker profile opens — obliquely, with texture, then sharpens into focus.
-
-BODY:
-- Weave credentials (specials, TV, podcasts) into narrative, not a resume list
-- Describe their comedy style using specific, sensory language. Not "sharp wit" but how the wit actually manifests — the timing, the structure, the targets, the surprises
-- If the research mentions specific bits, quotes, or material — use them. A real detail from a set is worth ten adjectives.
-- Include what the live show offers that a special doesn't — intimacy, improvisation, the unpredictable moments
-- Weave in date, venue, time, price naturally — embedded in the narrative, not a separate info block
-
-CTA: One short closing sentence. No hype. Point to tickets.
-
-SIGN-OFF — End the post with this exact HTML (do not modify):
-<div class="post-footer">
-  <p>For more Houston comedy shows, visit <a href="https://comedyhouston.com">ComedyHouston.com</a> — updated twice daily with every show in the city.</p>
-  <p>Have a question or want to list your show? <a href="https://comedyhouston.com/contact/">Contact us</a>.</p>
-</div>
-
-SOURCE LINKS:
-The research includes "source_urls" with verified URLs. Weave 3-4 as natural hyperlinks — link special titles to IMDB/Netflix, background to Wikipedia, interviews to their source. Natural anchor text, never "click here." Do NOT invent URLs.
-
-BANNED PHRASES:
-"Don't miss" / "Must-see" / "Get ready" / "Side-splitting" / "Rib-tickling" / "Comedic genius" / "Laugh-out-loud" / "Hilarity ensues" / "A night of laughs" / "Known for his/her unique style" / "Comedy fans will love" / "Brings his/her [X] to [Y]" / "Takes the stage" / "Sharp wit" / "Razor-sharp" / "Boundary-pushing" / "Unapologetic" / "Unfiltered" / "Raw and honest" / "In a world where..." / Any sentence that could apply to any comedian without changes
-
-BANNED STRUCTURES (these are LLM tells — instant rejection):
-- "X isn't just Y, it's Z" (and any "not just/but also" variant)
-- Opening with weather, atmosphere, "the air crackles," "in the dim glow," "under the lights," or any scene-setting that doesn't reference THIS comedian
-- Closing with "boundaries blur," "shared experience," "the magic of live comedy," or any abstract reassurance
-- Rhetorical questions ("How does he do it?")
-- Metaphor stacking — pick ONE metaphor for the whole post or none. No "scalpel + canvas + mirror."
-- Tricolons (three-item lists like "sharp, smart, and surprising")
-- The word "scalpel." Ever. It is the LLM's favorite comedy implement and a giveaway.
-- Any sentence whose structure is "abstract claim, abstract elaboration, abstract reassurance"
-- A standalone CTA paragraph at the end ("Don't miss your chance...")
-
-STYLE:
-- No exclamation points, no emojis
-- Vary sentence length dramatically — a three-word sentence after a long one creates rhythm. Read it back in your head.
-- Maximum 2 uses of the comedian's full name; use last name or pronouns after
-- At least 3 concrete, verifiable details from the research, ideally one per paragraph
-- Every paragraph must contain at least one specific noun (a real credit, a venue detail, a year, a publication name, a tour name) — no all-abstract paragraphs
-- Confident omission: if you don't have enough material for 400 words, write 320. Do not stretch.
-- The reader should feel the writer has an actual opinion, not a press release
-
-OUTPUT: Return ONLY the HTML blog post content. Use semantic HTML: <h1> for the SEO title, <p> for paragraphs. No <html>/<head>/<body> wrapper. Include a single <a class="ticket-link" href="${ticketUrl}">Get Tickets</a> link in the CTA paragraph.`;
-
-  return callOpenAI(prompt, systemPrompt, 0.6);
-}
-
-// ---------------------------------------------------------------------------
-// Step 3: Fact-check / editorial pass
-// ---------------------------------------------------------------------------
-
-function factCheckPost(research, draft, showFacts) {
-  const systemPrompt = `You are a senior editorial fact-checker at a major publication. Your job is to compare a draft article against verified source research and silently remove anything that is not supported. You are ruthless about accuracy. The output you produce is FINAL and will be published as-is to WordPress with no human review. You never add content, only subtract or lightly rephrase for flow.`;
-
-  const prompt = `RESEARCH DATA:
-${research}
-
-SHOW FACTS (verified from the Comedy Houston listings, NOT part of the research data above, and they MUST be kept):
-${showFacts}
-
-DRAFT ARTICLE:
-${draft}
-
-Review this article against the research data. For each claim:
-1. If it appears in the research data → keep it
-2. If it states a SHOW FACT (the venue, the date, the time, the price, the ticket link) → keep it; those are verified by us
-3. If it is NOT in the research and cannot be verified → REMOVE the entire sentence and lightly stitch the surrounding sentences for flow
-
-Also remove:
-- Any generic sentence that could describe any comedian (e.g., "audiences are in for a treat")
-- Any adjective not backed by a specific reference
-- Any fabricated quotes or bit descriptions not in the research
-- Any of these banned phrases: "don't miss," "must-see," "side-splitting," "comedic genius," "hilarity ensues," "get ready," "a night of laughs"
-- Any rhetorical question, any "isn't just X, it's Y" construction, any hype-only closing paragraph that carries no show fact and no ticket link
-- Do NOT remove the sentence that names the show date and venue, and do NOT remove the <a class="ticket-link"> Get Tickets link. One plain sentence pointing to tickets is required, not a CTA to cut.
-
-CRITICAL — THIS IS THE FINAL VERSION:
-- The output goes straight to WordPress. There is NO human review.
-- NEVER emit "[VERIFY]", "[CHECK]", "[CITATION NEEDED]", "[TODO]", or any bracketed editor's note. If something is shaky, just delete it. Silence > flag.
-- Do not leave editor's comments, parenthetical asides to the writer, or self-references.
-- The post should read as a finished, confident piece by a working journalist.
-
-IMPORTANT:
-- Do not add new content. Only subtract or lightly rephrase for flow after removing sentences.
-- Keep the HTML structure intact. Return the cleaned HTML.
-- PRESERVE all hyperlinks (<a href="...">) that link to real source URLs.
-- PRESERVE the <div class="post-footer"> section at the end exactly as-is.`;
-
-  return callOpenAI(prompt, systemPrompt, 0.2);
-}
-
-// ---------------------------------------------------------------------------
-// Step 4: Polish pass — voice & rhythm critique, no new facts
-// ---------------------------------------------------------------------------
-
-function polishPost(draft, showFacts) {
-  const systemPrompt = `You are a copy chief at a respected magazine. You take a fact-checked draft and tighten it for voice, rhythm, and specificity. You never add facts. You aggressively cut LLM-tells. The version you return is the version that publishes — no flags, no notes.`;
-
-  const prompt = `Here is a fact-checked draft. Score it silently against this rubric, then return ONLY the rewritten HTML:
-
-RUBRIC (do not output, just apply):
-- Specificity: every paragraph has at least one concrete noun
-- Rhythm: short sentences mixed with long
-- Voice: confident, dry, opinionated, not press-release
-- No LLM tells: no "isn't just X it's Y," no rhetorical questions, no metaphor stacking, no scalpel/canvas/mirror, no "in a world where," no closing reassurance
-- Length: 400 words MAX in the body. Cut the weakest paragraph entirely if over.
-
-REWRITE RULES:
-- Do NOT add any new facts, names, credits, quotes, or claims. You can only cut and rearrange existing content.
-- Keep the <h1> title.
-- Keep the sentence that names the show date and venue, and keep the <a class="ticket-link"> Get Tickets link. If you cut a paragraph, it must not be that one. The 400-word ceiling excludes that sentence and the post-footer.
-- Keep all <a href="..."> hyperlinks pointing to real sources.
-- Keep the <div class="post-footer"> at the end exactly as-is.
-- NEVER emit "[VERIFY]" or any bracketed editor's note. This is the final version.
-- Return ONLY the HTML. No preamble, no explanation, no scoring.
-
-SHOW FACTS (verified by us, keep them):
-${showFacts}
-DRAFT:
-${draft}`;
-
-  return callOpenAI(prompt, systemPrompt, 0.5);
-}
-
-// Final safety net: strip any [VERIFY]-style editor markers that slipped through
-function stripEditorMarkers(html) {
-  if (!html) return html;
-  // Remove tokens like [VERIFY], [VERIFY date], [CHECK], [CITATION NEEDED], [TODO ...]
-  let cleaned = html.replace(/\s*\[(?:VERIFY|CHECK|CITATION NEEDED|TODO|CONFIRM|FACT[- ]?CHECK)[^\]]*\]/gi, "");
-  // Collapse any double spaces created by the removal
-  cleaned = cleaned.replace(/[ \t]{2,}/g, " ");
-  return cleaned;
-}
-
 // Instagram graphic templates live in scripts/lib/comedian-graphics.js
 // (shared with ensure-comedian-graphics.js so a rebuilt PNG matches).
 
@@ -567,166 +391,6 @@ RULES:
     prompt,
     "You are writing an Instagram caption for a local comedy publication. Your influences are Seth Godin (minimal, say less, mean more) and Roy H. Williams aka the Wizard of Ads (speak to one person, be honest, earn trust). Clean, modern copy that converts because it's genuine — not because it's loud. No AI voice. No marketing fluff."
   );
-}
-
-// ---------------------------------------------------------------------------
-// HTML template
-// ---------------------------------------------------------------------------
-
-function escapeHTML(str) {
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
-
-/**
- * Build the "Also performing in Houston this week" internal-linking section.
- * Pure templating off the manifest — no LLM call. Run as a second pass after
- * all comedian posts are generated so each post can link to the others.
- *
- * SEO purpose: every per-comedian page becomes part of a topical cluster
- * instead of an island. Google uses internal links as the #1 signal for
- * crawl priority and topical authority on a young site.
- */
-function buildAlsoThisWeekSection(currentSlug, allPosts) {
-  const others = allPosts.filter((p) => p.slug !== currentSlug);
-  if (others.length === 0) return "";
-
-  const items = others
-    .map((p) => {
-      const url = p.wpLink || `https://comedyhouston.com/${p.slug}/`;
-      const dateLabel = formatDateForDisplay(p.date);
-      return `    <li><a href="${escapeHTML(url)}"><strong>${escapeHTML(p.comedianName)}</strong></a> — ${escapeHTML(p.venue)}, ${escapeHTML(dateLabel)}</li>`;
-    })
-    .join("\n");
-
-  return `
-<hr />
-<h3>Also performing in Houston this week</h3>
-<p>If you're already booking your weekend, here's the rest of this week's headliners:</p>
-<ul>
-${items}
-</ul>
-<p><a href="https://comedyhouston.com/this-week/"><strong>See the full weekly roundup →</strong></a></p>
-`;
-}
-
-// ---------------------------------------------------------------------------
-// Schema.org helpers for the WordPress post's ch_schema_graph field.
-// ---------------------------------------------------------------------------
-
-/**
- * Venue → PostalAddress lookup. Kept in sync with wordpress/comedy-houston.php
- * venue_address(). Add new venues in BOTH places.
- *
- * ⚠️ Addresses hand-verified against Google Maps. Unknown venues fall back to
- * Houston/TX only so the schema is still valid.
- */
-function venueAddress(venueName) {
-  const key = (venueName || "")
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9\s]/g, "")
-    .replace(/\s+/g, " ");
-
-  const map = {
-    "punch line houston": { street: "2930 Sage Rd", locality: "Houston", region: "TX", postal: "77056" },
-    "houston improv":     { street: "7620 Katy Fwy #431", locality: "Houston", region: "TX", postal: "77024" },
-    "the secret group":   { street: "2101 Polk St", locality: "Houston", region: "TX", postal: "77003" },
-    "rudyards":           { street: "2010 Waugh Dr", locality: "Houston", region: "TX", postal: "77006" },
-    "the riot comedy club upstairs at rudyards": { street: "2010 Waugh Dr", locality: "Houston", region: "TX", postal: "77006" },
-    "the riot comedy club":                       { street: "2010 Waugh Dr", locality: "Houston", region: "TX", postal: "77006" },
-    // TODO: The Gordy and any new venue added to events.json.
-  };
-
-  const out = {
-    "@type": "PostalAddress",
-    addressLocality: "Houston",
-    addressRegion: "TX",
-    addressCountry: "US",
-  };
-  if (map[key]) {
-    const m = map[key];
-    out.streetAddress = m.street;
-    out.addressLocality = m.locality;
-    out.addressRegion = m.region;
-    if (m.postal) out.postalCode = m.postal;
-  }
-  return out;
-}
-
-/**
- * US DST rules: 2nd Sunday of March through 1st Sunday of November.
- * Used to pick the correct America/Chicago UTC offset (-05:00 CDT vs -06:00 CST)
- * without pulling in a tz library.
- */
-function isChicagoDst(year, month, day) {
-  if (month < 3 || month > 11) return false;
-  if (month > 3 && month < 11) return true;
-  if (month === 3) {
-    // DST starts on the 2nd Sunday of March.
-    let sundays = 0;
-    for (let i = 1; i <= 31; i++) {
-      const d = new Date(year, 2, i);
-      if (d.getDay() === 0) {
-        sundays++;
-        if (sundays === 2) return day >= i;
-      }
-    }
-    return false;
-  }
-  // November: DST ends on the 1st Sunday.
-  for (let i = 1; i <= 7; i++) {
-    const d = new Date(year, 10, i);
-    if (d.getDay() === 0) return day < i;
-  }
-  return false;
-}
-
-/**
- * Build an ISO-8601 datetime string in America/Chicago with proper offset.
- *   buildChicagoIso("2026-04-10", "7:30 PM")          → "2026-04-10T19:30:00-05:00"
- *   buildChicagoIso("2026-04-10", "7:30 PM", 120)     → "2026-04-10T21:30:00-05:00"  (endDate = +2h)
- *   buildChicagoIso("2026-04-10", null)               → "2026-04-10T19:00:00-05:00"  (default 7 PM)
- */
-function buildChicagoIso(dateStr, timeStr, addMinutes = 0) {
-  if (!dateStr) return "";
-  const dateMatch = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-  if (!dateMatch) return "";
-  let year = parseInt(dateMatch[1], 10);
-  let month = parseInt(dateMatch[2], 10);
-  let day = parseInt(dateMatch[3], 10);
-
-  let hour = 19;
-  let minute = 0;
-  if (timeStr) {
-    const m = String(timeStr).match(/(\d{1,2}):?(\d{0,2})\s*(AM|PM)?/i);
-    if (m) {
-      hour = parseInt(m[1], 10);
-      minute = m[2] ? parseInt(m[2], 10) : 0;
-      const ampm = (m[3] || "").toUpperCase();
-      if (ampm === "PM" && hour < 12) hour += 12;
-      if (ampm === "AM" && hour === 12) hour = 0;
-    }
-  }
-
-  if (addMinutes) {
-    // Walk the clock forward by addMinutes. Use Date arithmetic so midnight
-    // wraparound is correct; then read the components back out.
-    const asUtc = new Date(Date.UTC(year, month - 1, day, hour, minute));
-    asUtc.setUTCMinutes(asUtc.getUTCMinutes() + addMinutes);
-    year = asUtc.getUTCFullYear();
-    month = asUtc.getUTCMonth() + 1;
-    day = asUtc.getUTCDate();
-    hour = asUtc.getUTCHours();
-    minute = asUtc.getUTCMinutes();
-  }
-
-  const offset = isChicagoDst(year, month, day) ? "-05:00" : "-06:00";
-  const pad = (n) => String(n).padStart(2, "0");
-  return `${year}-${pad(month)}-${pad(day)}T${pad(hour)}:${pad(minute)}:00${offset}`;
 }
 
 /**
@@ -783,107 +447,6 @@ function extractPerformerSameAs(research) {
 
   return Array.from(urls).slice(0, 8);
 }
-
-/**
- * Build the full schema.org @graph for a comedian post. Returns a JS object
- * ready to pass to JSON.stringify and send as the WordPress post's
- * ch_schema_graph field.
- */
-function buildComedianSchemaGraph({
-  comedianName,
-  venue,
-  date,
-  time,
-  imageUrl,
-  ticketUrl,
-  priceMin,
-  priceMax,
-  currency,
-  description,
-  research,
-  lastUpdated,
-}) {
-  const sameAs = extractPerformerSameAs(research);
-  const performer = {
-    "@type": "Person",
-    name: comedianName,
-    jobTitle: "Comedian",
-    ...(imageUrl ? { image: imageUrl } : {}),
-    ...(sameAs.length > 0 ? { sameAs } : {}),
-  };
-
-  const startDate = buildChicagoIso(date, time, 0);
-  const endDate = buildChicagoIso(date, time, 120);
-
-  const event = {
-    "@type": "ComedyEvent",
-    name: `${comedianName} Live at ${venue}`,
-    description:
-      description ||
-      `${comedianName} performs live at ${venue} in Houston, TX on ${formatDateForDisplay(date)}.`,
-    ...(startDate ? { startDate } : {}),
-    ...(endDate ? { endDate } : {}),
-    eventStatus: "https://schema.org/EventScheduled",
-    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    location: {
-      "@type": "Place",
-      name: venue,
-      address: venueAddress(venue),
-    },
-    organizer: {
-      "@type": "Organization",
-      name: venue,
-    },
-    performer: {
-      "@type": "Person",
-      name: comedianName,
-      ...(sameAs.length > 0 ? { sameAs } : {}),
-    },
-    ...(imageUrl ? { image: imageUrl } : {}),
-  };
-
-  // Offers. Google's Event Rich Results requires `offers.price` or
-  // `offers.priceSpecification` when offers is present — an Offer without
-  // a price is an ERROR (not a warning) and drops the event from carousel
-  // eligibility. So we emit offers ONLY when we know the price (priceMin
-  // is set, including 0 for free events). If we have a ticket URL but no
-  // price data, we omit offers entirely rather than shipping a partial
-  // Offer that would break schema validation for the whole Event.
-  if (ticketUrl && priceMin !== null && priceMin !== undefined) {
-    const offer = {
-      "@type": "Offer",
-      url: ticketUrl,
-      priceCurrency: currency || "USD",
-      availability: "https://schema.org/InStock",
-      validFrom: lastUpdated || new Date().toISOString(),
-      price: priceMin,
-      lowPrice: priceMin,
-    };
-    if (priceMax !== null && priceMax !== undefined) {
-      offer.highPrice = priceMax;
-    }
-    event.offers = offer;
-  }
-
-  return {
-    "@context": "https://schema.org",
-    "@graph": [performer, event],
-  };
-}
-
-/**
- * Serialize a schema graph as a `<script type="application/ld+json">` block
- * ready to prepend to post body HTML.
- */
-function renderSchemaScriptTag(graph) {
-  // JSON.stringify does not escape "<", so an event name containing
-  // "</script>" (third-party Ticketmaster/Eventbrite data) would break out
-  // of the JSON-LD block. < is valid JSON and parses identically.
-  const json = JSON.stringify(graph).replace(/</g, "\\u003c");
-  return `<script type="application/ld+json">${json}</script>`;
-}
-
-// ---------------------------------------------------------------------------
 
 /** WordPress REST call (shared client, 30s timeout, detailed errors, no retry). */
 const wpClient = createWpClient({ userAgent: "ComedyHouston-BlogBot/1.0" });
@@ -1041,166 +604,59 @@ function wpUploadImage(imageBuffer, contentType, filename) {
   });
 }
 
-/**
- * Publish a blog post to WordPress.
- * Returns the post URL on success.
- */
-/** Look up a WordPress category ID by slug. Returns the ID or 0. */
-async function wpGetCategoryBySlug(slug) {
-  try {
-    const categories = await wpRequest("GET", `/wp-json/wp/v2/categories?slug=${encodeURIComponent(slug)}`, null);
-    if (Array.isArray(categories) && categories.length > 0) {
-      return categories[0].id;
-    }
-  } catch (err) {
-    console.warn(`    Could not look up category "${slug}": ${err.message}`);
-  }
-  return 0;
+// ---------------------------------------------------------------------------
+// Legacy spotlight migration
+// ---------------------------------------------------------------------------
+
+/** Every week-keyed manifest on disk, with its path, for in-place edits. */
+function loadWeekManifests() {
+  if (!fs.existsSync(COMEDIANS_DIR)) return [];
+  return fs
+    .readdirSync(COMEDIANS_DIR)
+    .filter((f) => /^manifest-\d{4}-\d{2}-\d{2}\.json$/.test(f))
+    .map((f) => {
+      const file = path.join(COMEDIANS_DIR, f);
+      try {
+        return { file, manifest: JSON.parse(fs.readFileSync(file, "utf8")) };
+      } catch {
+        return null;
+      }
+    })
+    .filter(Boolean);
 }
 
-async function publishToWordPress(comedianName, venue, date, slug, htmlContent, imageUrl, schemaGraph) {
-  console.log("  Step 4: Publishing to WordPress...");
-
-  // Extract just the article body (strip the <h1> — WordPress uses the title field)
-  let wpContent = htmlContent;
-  let wpTitle = `${comedianName} at ${venue} — ${formatDateForDisplay(date)}`;
-
-  // Try to extract <h1> from content to use as WP title
-  const h1Match = wpContent.match(/<h1[^>]*>(.*?)<\/h1>/i);
-  if (h1Match) {
-    wpTitle = h1Match[1].replace(/<[^>]+>/g, ""); // strip any inner HTML tags
-    wpContent = wpContent.replace(/<h1[^>]*>.*?<\/h1>/i, "").trim();
-  }
-
-  // Upload featured image if available
-  let featuredMediaId = 0;
-  let wpImageUrl = "";
-  if (imageUrl) {
-    try {
-      console.log("    Downloading featured image...");
-      const { buffer, contentType } = await downloadImage(imageUrl);
-      const ext = contentType.includes("png") ? "png" : "jpg";
-      const imgFilename = `${slug}.${ext}`;
-      console.log("    Uploading to WordPress media library...");
-      featuredMediaId = await wpUploadImage(buffer, contentType, imgFilename);
-      console.log(`    Featured image uploaded (media ID: ${featuredMediaId})`);
-
-      // Get the uploaded image URL from WP for embedding in content
-      try {
-        const media = await wpRequest("GET", `/wp-json/wp/v2/media/${featuredMediaId}`, null);
-        wpImageUrl = media.source_url || "";
-      } catch (_) {
-        wpImageUrl = imageUrl; // fallback to original URL
+/**
+ * Point every manifest entry for this comedian at the new page and record
+ * the old per-show POST slugs as legacy_slugs so (a) the event cards'
+ * "More info" link goes to the page as soon as the spotlight index is
+ * rebuilt, (b) the plugin 301s the old URLs, and (c) the reaper deletes the
+ * old posts. Returns the number of legacy posts adopted. manifest_version
+ * is deliberately left alone: the IG poster treats a changed version as a
+ * mid-week regeneration.
+ */
+function adoptLegacySpotlights(entry, weekManifests, pageLink) {
+  let adopted = 0;
+  entry.legacy_slugs = Array.isArray(entry.legacy_slugs) ? entry.legacy_slugs : [];
+  const terms = entry.match || [];
+  for (const { file, manifest } of weekManifests) {
+    let dirty = false;
+    for (const post of manifest.posts || []) {
+      const norm = registry.normalizeName(post.comedianName);
+      if (!norm || !(norm === registry.normalizeName(entry.name) || terms.includes(norm))) continue;
+      if (post.wpLink && post.wpLink !== pageLink && !/\/comedians\//.test(post.wpLink)) {
+        if (!entry.legacy_slugs.includes(post.slug)) entry.legacy_slugs.push(post.slug);
+        adopted++;
       }
-    } catch (err) {
-      console.warn(`    Featured image upload failed: ${err.message}. Publishing without image.`);
+      if (post.wpLink !== pageLink || post.wpType !== "page" || post.comedianSlug !== entry.slug) {
+        post.wpLink = pageLink;
+        post.wpType = "page";
+        post.comedianSlug = entry.slug;
+        dirty = true;
+      }
     }
+    if (dirty) fs.writeFileSync(file, JSON.stringify(manifest, null, 2));
   }
-
-  // Inject the image at the top of the post content
-  if (wpImageUrl) {
-    // aligncenter + width:fit-content make the figure hug the image, so the
-    // theme's figure box-shadow wraps the photo instead of a full-width
-    // white box with the image stuck to its left edge (square Eventbrite
-    // posters and portrait headshots both hit this).
-    const imgTag = `<figure class="wp-block-image size-large aligncenter ch-post-hero" style="width:fit-content;max-width:100%;margin-left:auto;margin-right:auto"><img src="${wpImageUrl}" alt="${comedianName.replace(/"/g, '&quot;')}" class="wp-image-${featuredMediaId}" style="display:block;max-width:100%;height:auto"/></figure>\n\n`;
-    wpContent = imgTag + wpContent;
-  }
-
-  // Look up the "Shows" category (slug: comedy-shows)
-  const categoryId = await wpGetCategoryBySlug("comedy-shows");
-
-  // Create the post
-  const postData = {
-    title: wpTitle,
-    content: wpContent,
-    status: "publish",
-    slug: slug,
-    comment_status: "closed",
-    // Spotlights are INDEXABLE as of the 3-week-lead pipeline (2026-09-01):
-    // each post publishes ~3 weeks before its show to rank for
-    // "[comedian] [venue] houston" searches, and is deleted the week after
-    // the show by delete-comedian-blog-posts.js. Only ~18 are live at any
-    // time and none go stale, which is what fixed the earlier quality-drag
-    // concern that motivated ch_noindex: 1 (see git history).
-    ch_noindex: 0,
-  };
-
-  if (featuredMediaId) {
-    postData.featured_media = featuredMediaId;
-  }
-
-  if (categoryId) {
-    postData.categories = [categoryId];
-    console.log(`    Category: Shows (ID: ${categoryId})`);
-  } else {
-    console.warn("    Warning: 'comedy-shows' category not found — posting as Uncategorized.");
-  }
-
-  // Schema graph goes on a custom REST field registered by the Comedy Houston
-  // plugin (v2.4.2+). The plugin stores it in post_meta and emits
-  // <script type="application/ld+json"> from wp_head on the front-end. This
-  // keeps the script tag out of post_content entirely, so wp_kses_post can't
-  // strip it on publish (no unfiltered_html capability required) and later
-  // Gutenberg edits can't corrupt the JSON. If the plugin isn't deployed yet,
-  // WordPress silently ignores unknown REST fields — the in-body prepend
-  // still carries the schema as a fallback until the plugin is live.
-  if (schemaGraph) {
-    postData.ch_schema_graph = JSON.stringify(schemaGraph);
-  }
-
-  // If a per-comedian post with this slug already exists (e.g. the workflow
-  // is being re-run on the same Monday), update it in place instead of
-  // creating a duplicate. WordPress's REST API does NOT dedupe by slug — it
-  // would auto-suffix the new slug to "...-2" and leave the old post live,
-  // breaking SEO and any social links that already point at the original.
-  // (Mirrors the fix applied to the weekly roundup in f6dabb1.)
-  let existingPost = null;
-  try {
-    const found = await wpRequest(
-      "GET",
-      `/wp-json/wp/v2/posts?slug=${encodeURIComponent(slug)}&status=publish,draft,future,private`,
-      null
-    );
-    if (Array.isArray(found) && found.length > 0) {
-      existingPost = found[0];
-    }
-  } catch (err) {
-    console.warn(`    Slug lookup failed (will create new post): ${err.message}`);
-  }
-
-  let post;
-  if (existingPost) {
-    console.log(`    Existing post found (ID ${existingPost.id}) — updating in place.`);
-    post = await wpRequest("POST", `/wp-json/wp/v2/posts/${existingPost.id}`, postData);
-    console.log(`    Updated: ${post.link}`);
-  } else {
-    post = await wpRequest("POST", "/wp-json/wp/v2/posts", postData);
-    console.log(`    Published: ${post.link}`);
-  }
-
-  // Now that the canonical post URL is known, extend the schema graph with a
-  // BlogPosting node (mainEntityOfPage needs the real permalink, which only
-  // exists after the create call). Best-effort: a failure here leaves the
-  // ComedyEvent/Person graph intact.
-  if (schemaGraph && post && post.link && post.id) {
-    try {
-      const fullGraph = addBlogPostingToGraph(schemaGraph, {
-        title: wpTitle,
-        url: post.link,
-        imageUrl: wpImageUrl || imageUrl || null,
-        datePublished: wpGmtToIso(post.date_gmt),
-        dateModified: wpGmtToIso(post.modified_gmt),
-      });
-      await wpRequest("POST", `/wp-json/wp/v2/posts/${post.id}`, {
-        ch_schema_graph: JSON.stringify(fullGraph),
-      });
-      console.log("    BlogPosting schema attached.");
-    } catch (err) {
-      console.warn(`    BlogPosting schema update failed (non-fatal): ${err.message}`);
-    }
-  }
-  return post.link;
+  return adopted;
 }
 
 // ---------------------------------------------------------------------------
@@ -1409,7 +865,32 @@ async function main() {
     process.exit(0);
   }
 
-  // Process each headliner
+  // Registry: one record per comedian, the source of truth for the pages.
+  const reg = registry.loadRegistry(COMEDIANS_DIR);
+  const weekManifests = loadWeekManifests();
+  // Series index over the WHOLE feed (not just this week), for the match-term
+  // guard below: a recurring showcase title must never become a comedian's
+  // permanent match term, or every future instance renders as their show.
+  let seriesCtx = null;
+  try {
+    const all = JSON.parse(fs.readFileSync(EVENTS_JSON_PATH, "utf8")).events || [];
+    seriesCtx = announceRules.buildContext(all, { ignoreLead: true });
+  } catch (_) { /* no guard; ensureMatchForEvent still refuses nothing extra */ }
+
+  // Poster upload for the comedian page: download the event image, push it
+  // to the WP media library, hand back the media id + URL.
+  const uploadHero = async ({ url, filename }) => {
+    const { buffer, contentType } = await downloadImage(url);
+    const ext = contentType.includes("png") ? "png" : "jpg";
+    const mediaId = await wpUploadImage(buffer, contentType, `${filename}.${ext}`);
+    let mediaUrl = "";
+    try {
+      const media = await wpRequest("GET", `/wp-json/wp/v2/media/${mediaId}`, null);
+      mediaUrl = media.source_url || "";
+    } catch (_) { /* page falls back to the vendor URL */ }
+    return { mediaId, mediaUrl };
+  };
+
   const generatedPosts = [];
 
   for (const headliner of headliners) {
@@ -1428,238 +909,207 @@ async function main() {
 
     const venue = matchedEvent.venue || "Houston Venue";
     const date = matchedEvent.date;
-    const time = matchedEvent.time;
     const ticketUrl = matchedEvent.ticket_url || "";
     const eventImageUrl = matchedEvent.image_url || "";
-    const priceMin = matchedEvent.price_min;
-    const priceMax = matchedEvent.price_max;
-    let price = "";
-    if (priceMin !== null && priceMax !== null && priceMin !== priceMax) {
-      price = `$${priceMin} – $${priceMax}`;
-    } else if (priceMin !== null) {
-      price = `$${priceMin}`;
-    } else if (priceMax !== null) {
-      price = `Up to $${priceMax}`;
+
+    // ── Registry ──────────────────────────────────────────────────────────
+    let entry = registry.findComedian(reg, headliner.name);
+    if (!entry) {
+      entry = registry.createComedian(reg, headliner.name);
+      console.log(`  New comedian → /comedians/${entry.slug}/`);
+    } else {
+      const age = entry.profile_written_at ? `${Math.round(registry.profileAgeDays(entry))}d old` : "missing";
+      console.log(`  Known comedian (/comedians/${entry.slug}/, ${entry.shows.length} Houston date(s) on record, profile ${age})`);
     }
-
-    // Step 1: Deep research
-    console.log("  Step 1: Researching via web search...");
-    let research = "";
-    try {
-      research = await researchComedian(headliner.name);
-      console.log("  Research complete.");
-    } catch (err) {
-      console.warn(`  Research failed: ${err.message}. Writing with limited data.`);
-      research = JSON.stringify({ full_name: headliner.name, note: "Research unavailable" });
+    if (entry.status !== "live") {
+      console.log("  Reactivating archived comedian — the page comes back at its old URL.");
+      entry.status = "live";
+      entry.archived_at = null;
     }
-
-    // Image: the event's own ticket image, everywhere. It is what the venue
-    // and the comedian already use to promote this show. If the URL shape
-    // is a known social-CDN glyph the graphic renders without a photo
-    // (name/date/venue on the dark card) rather than with junk.
-    const graphicImageUrl = isUsableImageUrl(eventImageUrl) ? eventImageUrl : "";
-    if (!graphicImageUrl) {
-      console.log("  No usable event image — graphics will render text-only.");
+    // Every night of this run (same title + venue), not just the first.
+    const runKey = eventDedupeKey(matchedEvent);
+    let added = 0;
+    for (const ev of events) {
+      if (eventDedupeKey(ev) === runKey && registry.recordShow(entry, ev)) added++;
     }
-
-    // Step 2: Write the blog post
-    console.log("  Step 2: Writing blog post...");
-    let draft = "";
-    try {
-      draft = await writeBlogPost(
-        headliner.name, venue, "Houston, TX", date, time, price, ticketUrl, eventImageUrl, research
-      );
-      draft = draft.replace(/^```html\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
-      console.log("  Draft complete.");
-    } catch (err) {
-      console.error(`  Blog writing failed: ${err.message}. Skipping ${headliner.name}.`);
-      console.log("");
-      continue;
-    }
-
-    // The editors get the show logistics as a separate verified block. They
-    // are not in the research JSON, and "remove anything not in the research"
-    // used to strip the date sentence and the ticket link (11/20 posts named
-    // the date, 5/20 linked tickets, as of 2026-09-22).
-    const showFacts = [
-      `Comedian: ${headliner.name}`,
-      `Venue: ${venue}, Houston, TX`,
-      `Date: ${formatDateForDisplay(date)}`,
-      `Time: ${time || "See venue for time"}`,
-      `Price: ${price || "See venue for pricing"}`,
-      `Ticket URL: ${ticketUrl}`,
-    ].join("\n");
-
-    // Step 3: Fact-check pass
-    console.log("  Step 3: Fact-checking...");
-    let finalContent = draft;
-    try {
-      finalContent = await factCheckPost(research, draft, showFacts);
-      finalContent = finalContent.replace(/^```html\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
-      console.log("  Fact-check complete.");
-    } catch (err) {
-      console.warn(`  Fact-check failed: ${err.message}. Using unedited draft.`);
-    }
-
-    // Step 4: Polish pass — voice, rhythm, length (no new facts)
-    console.log("  Step 4: Polish pass...");
-    try {
-      const polished = await polishPost(finalContent, showFacts);
-      const cleanedPolish = polished.replace(/^```html\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
-      if (cleanedPolish && cleanedPolish.length > 200) {
-        finalContent = cleanedPolish;
-        console.log("  Polish complete.");
-      } else {
-        console.warn("  Polish output too short — keeping fact-checked draft.");
-      }
-    } catch (err) {
-      console.warn(`  Polish failed: ${err.message}. Using fact-checked draft.`);
-    }
-
-    // Final safety net: strip any [VERIFY]/editor markers that slipped through.
-    // The published post must have NO bracketed editor flags.
-    finalContent = stripEditorMarkers(finalContent);
-
-    // Refusal / empty-output check. If three LLM passes produced fewer than
-    // 300 chars, something is wrong (safety refusal, truncation, API error).
-    // Skip this comedian rather than publishing a broken stub.
-    if (!finalContent || finalContent.length < 300) {
-      console.warn(
-        `  Final content too short for ${headliner.name} (${finalContent.length} chars) — skipping.`
-      );
-      continue;
-    }
-
-    // Sanitize the AI output. Strip <script>/<iframe>/on*=/javascript: URLs
-    // that the LLM might have produced (via prompt injection from a hostile
-    // event description, or via the model just… doing the wrong thing).
-    const sanitized = sanitizeAiHtml(finalContent);
-    if (sanitized.removed.length > 0) {
-      console.warn(
-        `  sanitizeAiHtml removed for ${headliner.name}: ${sanitized.removed.join(", ")}`
-      );
-    }
-    finalContent = addSponsoredRelToTicketLinks(sanitized.html);
-
-    // Ask the web whether every cited source URL exists. The writer invents
-    // links now and then (youtube.com/watch?v=xyz123 shipped on 2026-09-01)
-    // and the fact-checker has no way to tell a real URL from a plausible
-    // one. Dead links (404/410, or a YouTube id oEmbed rejects) are unwrapped
-    // so the sentence keeps its text; anything ambiguous (403/timeout) stays.
-    try {
-      const links = await verifyOutboundLinks(finalContent);
-      if (links.removed.length > 0) {
-        console.log(`  Dead source links unwrapped: ${links.removed.join(", ")}`);
-      }
-      const unknown = links.checked.filter((c) => c.verdict === "unknown");
-      if (unknown.length > 0) {
-        console.log(`  Links left as-is (inconclusive): ${unknown.map((c) => `${c.href} [${c.status}]`).join(", ")}`);
-      }
-      finalContent = links.html;
-    } catch (err) {
-      console.warn(`  Link verification failed (non-fatal, links kept): ${err.message}`);
-    }
-
-    // Deterministic backstop: whatever the three passes did, the body names
-    // the show date and links to tickets before it leaves this function.
+    if (added) console.log(`  Recorded ${added} Houston date(s).`);
     {
-      const guard = ensureShowDetails(finalContent, {
-        comedianName: headliner.name, venue, date, time, ticketUrl,
-      });
-      finalContent = guard.html;
-      if (guard.inserted) {
-        console.log(
-          `  Show details sentence inserted (date missing: ${guard.dateMissing}, ticket link missing: ${guard.ticketMissing}).`
-        );
+      // Title-as-match-term only for a one-off title ("Kill Tony" at an
+      // arena), never for a recurring series or a junk/showcase pattern.
+      let recurring = false;
+      if (seriesCtx) {
+        const weeks = seriesCtx.series.get(announceRules.seriesKey(matchedEvent));
+        recurring = !!(weeks && weeks.size >= seriesCtx.config.seriesWeeks) || announceRules.isJunkTitle(matchedEvent.name);
+      }
+      if (recurring) {
+        console.log(`  Show title ("${matchedEvent.name}") looks like a recurring series — not added as a match term.`);
+      } else if (registry.ensureMatchForEvent(entry, matchedEvent.name)) {
+        console.log(`  Added match term for the show title ("${matchedEvent.name}") so the page lists it.`);
       }
     }
 
-    // Build the schema.org @graph ONCE. It goes to WordPress via the
-    // `ch_schema_graph` REST field in publishToWordPress — the Comedy
-    // Houston plugin (v2.4.2+) stores it in post meta and emits it from
-    // wp_head on singular views.
-    // The schema is NOT prepended to finalContent. An earlier version did
-    // that as a belt-and-suspenders during the plugin refactor transition;
-    // it has been removed now that the plugin path is verified live. Keeping
-    // the <script> tag in post_content caused Rank Math to serialize the
-    // JSON as the post's auto-generated meta description (and og/twitter
-    // descriptions, and BlogPosting.description), poisoning social previews
-    // and SERP snippets across every comedian post.
-    const schemaGraph = buildComedianSchemaGraph({
-      comedianName: headliner.name,
-      venue: venue,
-      date: date,
-      time: time,
-      imageUrl: eventImageUrl,
-      ticketUrl: ticketUrl,
-      priceMin: priceMin,
-      priceMax: priceMax,
-      currency: matchedEvent.currency || "USD",
-      description: matchedEvent.description || "",
-      research: research,
-      lastUpdated: matchedEvent.last_updated || null,
-    });
+    // ── Profile (only when missing or stale) ──────────────────────────────
+    const needsProfile =
+      !entry.profile_html || REWRITE_AFTER_DAYS === 0 || registry.profileAgeDays(entry) > REWRITE_AFTER_DAYS;
+    let research = entry.research_json || "";
+    let instagramHandle = entry.instagramHandle || "";
+    // The page is published only with a usable profile. A new comedian whose
+    // research or writing fails this week still gets graphics, caption and
+    // a manifest row (the IG post must ship); the page waits for next week.
+    let publishPage = !!entry.profile_html;
 
-    // Slug: name + venue + show date. Also the WordPress post slug.
+    if (needsProfile) {
+      // Step 1: Deep research. A failure here means NO profile write: an
+      // evergreen page built on "research unavailable" would stay up for
+      // REWRITE_AFTER_DAYS. The old per-show post could afford that; a
+      // permanent URL cannot.
+      console.log("  Step 1: Researching via web search...");
+      let researchOk = false;
+      try {
+        research = await researchComedian(headliner.name);
+        researchOk = research.length > 50;
+        console.log("  Research complete.");
+      } catch (err) {
+        console.warn(`  Research failed: ${err.message}. Profile not written this run${entry.profile_html ? " (existing profile kept)" : " (page waits for next run)"}.`);
+        research = entry.research_json || "";
+      }
+
+      // Step 2: Write the evergreen profile
+      let draft = "";
+      if (researchOk) {
+        console.log("  Step 2: Writing profile...");
+        try {
+          draft = openai.stripFences(
+            await profileWriter.writeProfile(headliner.name, research, { pastShows: registry.pastShows(entry) })
+          );
+          console.log("  Draft complete.");
+        } catch (err) {
+          console.error(`  Profile writing failed: ${err.message}.`);
+        }
+      }
+
+      let finalContent = draft;
+      if (draft) {
+        // Step 3: Fact-check pass
+        console.log("  Step 3: Fact-checking...");
+        try {
+          finalContent = openai.stripFences(await profileWriter.factCheckProfile(research, draft, headliner.name));
+          console.log("  Fact-check complete.");
+        } catch (err) {
+          console.warn(`  Fact-check failed: ${err.message}. Using unedited draft.`);
+        }
+
+        // Step 4: Polish pass — voice, rhythm, length (no new facts)
+        console.log("  Step 4: Polish pass...");
+        try {
+          const polished = openai.stripFences(await profileWriter.polishProfile(finalContent, headliner.name));
+          if (polished && polished.length > 200) {
+            finalContent = polished;
+            console.log("  Polish complete.");
+          } else {
+            console.warn("  Polish output too short — keeping fact-checked draft.");
+          }
+        } catch (err) {
+          console.warn(`  Polish failed: ${err.message}. Using fact-checked draft.`);
+        }
+
+        finalContent = profileWriter.stripH1(profileWriter.stripEmDashes(profileWriter.stripEditorMarkers(finalContent)));
+
+        // Sanitize the AI output (scripts, iframes, javascript: URLs).
+        const sanitized = sanitizeAiHtml(finalContent);
+        if (sanitized.removed.length > 0) {
+          console.warn(`  sanitizeAiHtml removed for ${headliner.name}: ${sanitized.removed.join(", ")}`);
+        }
+        finalContent = sanitized.html;
+
+        // Dead cited links are unwrapped, inconclusive ones left alone.
+        try {
+          const links = await verifyOutboundLinks(finalContent);
+          if (links.removed.length > 0) console.log(`  Dead source links unwrapped: ${links.removed.join(", ")}`);
+          finalContent = links.html;
+        } catch (err) {
+          console.warn(`  Link verification failed (non-fatal, links kept): ${err.message}`);
+        }
+      }
+
+      if (researchOk && finalContent && finalContent.length >= 300) {
+        entry.profile_html = finalContent;
+        entry.profile_written_at = new Date().toISOString();
+        entry.research_json = research;
+        entry.sameAs = extractPerformerSameAs(research);
+        publishPage = true;
+      } else if (entry.profile_html) {
+        console.warn(`  No usable new profile (${(finalContent || "").length} chars) — keeping the existing one.`);
+        research = entry.research_json || research;
+      } else {
+        console.warn(`  No usable profile for ${headliner.name} (${(finalContent || "").length} chars) — page not published this run; IG assets still ship.`);
+        publishPage = false;
+      }
+
+      // Instagram handle from the research (normalized to "@name").
+      try {
+        const researchObj = JSON.parse(openai.stripFences(research));
+        instagramHandle = researchObj.instagram_handle || "";
+      } catch (_) { /* research wasn't JSON — that's fine */ }
+      if (instagramHandle) {
+        instagramHandle = "@" + instagramHandle.replace(/^@+/, "").trim();
+        if (instagramHandle === "@") instagramHandle = "";
+      }
+      entry.instagramHandle = instagramHandle;
+    } else {
+      console.log("  Profile is current — reused (research reused for the caption, no OpenAI spend).");
+    }
+    registry.saveRegistry(COMEDIANS_DIR, reg);
+
+    // ── Instagram assets (per show, unchanged contract) ───────────────────
+    const graphicImageUrl = isUsableImageUrl(eventImageUrl) ? eventImageUrl : "";
+    if (!graphicImageUrl) console.log("  No usable event image — graphics will render text-only.");
+
+    // Slug: name + venue + show date. Names the graphics and the caption
+    // file; the IG poster and the graphics self-heal key on it.
     const postSlug = `${slugify(headliner.name)}-${slugify(venue)}-${date}`;
 
-    // Step 4: Generate Instagram graphics (3 sizes)
-    console.log("  Step 4: Generating Instagram graphic templates...");
+    console.log("  Step 5: Generating Instagram graphic templates...");
     let graphicFiles = [];
     try {
       graphicFiles = writeComedianGraphics(headliner.name, venue, date, graphicImageUrl, postSlug);
-      for (const gf of graphicFiles) {
-        console.log(`    Wrote: blog/comedians/images/${path.basename(gf.htmlPath)}`);
-      }
+      for (const gf of graphicFiles) console.log(`    Wrote: blog/comedians/images/${path.basename(gf.htmlPath)}`);
     } catch (err) {
       console.warn(`  Instagram graphics failed: ${err.message}`);
     }
 
-    // Step 5: Generate Instagram caption
-    console.log("  Step 5: Generating Instagram caption...");
+    console.log("  Step 6: Generating Instagram caption...");
     let caption = "";
-    let instagramHandle = "";
-    // Try to extract Instagram handle from research
-    try {
-      const cleanRes = research.replace(/^```json\s*\n?/i, "").replace(/\n?```\s*$/g, "").trim();
-      const researchObj = JSON.parse(cleanRes);
-      instagramHandle = researchObj.instagram_handle || "";
-    } catch (_) {
-      // Research wasn't valid JSON or didn't have handle — that's fine
-    }
-    // Normalize handle to always be "@name" so the LLM can't emit it bare
-    // (bare handles break the poster's user_tags extraction, so the
-    // comedian never gets tagged in the IG photo).
-    if (instagramHandle) {
-      instagramHandle = "@" + instagramHandle.replace(/^@+/, "").trim();
-      if (instagramHandle === "@") instagramHandle = "";
-    }
     try {
       caption = await generateComedianCaption(headliner.name, venue, date, instagramHandle, research);
-      const captionPath = path.join(COMEDIANS_DIR, `${postSlug}-caption.txt`);
-      fs.writeFileSync(captionPath, caption);
+      fs.writeFileSync(path.join(COMEDIANS_DIR, `${postSlug}-caption.txt`), caption);
       console.log(`  Wrote: blog/comedians/${postSlug}-caption.txt`);
     } catch (err) {
       console.warn(`  Caption generation failed: ${err.message}`);
     }
 
-    let wpLink = "";
-
-    // Publish to WordPress if configured AND preflight passed
-    if (wpReady) {
+    // ── Page ──────────────────────────────────────────────────────────────
+    let wpLink = entry.wpLink || "";
+    if (wpReady && !publishPage) {
+      console.log("  Step 7: Page publish skipped (no profile yet).");
+    } else if (wpReady) {
+      console.log("  Step 7: Publishing comedian page...");
       try {
-        wpLink = await publishToWordPress(
-          headliner.name, venue, date, postSlug, finalContent, eventImageUrl, schemaGraph
-        );
+        const res = await comedianPage.publishComedianPage(entry, { wpRequest, heroImageUrl: eventImageUrl, uploadHero });
+        wpLink = res.link;
+        const migrated = adoptLegacySpotlights(entry, weekManifests, wpLink);
+        if (migrated) console.log(`  ${migrated} legacy spotlight post(s) now redirect to the page (reaper deletes them).`);
       } catch (err) {
-        console.error(`  WordPress publish failed: ${err.message}`);
-        console.log("  Graphics and caption still ship; the post itself is not live.");
+        console.error(`  Page publish failed: ${err.message}`);
+        console.log("  Graphics and caption still ship; the page is retried next run.");
       }
+      registry.saveRegistry(COMEDIANS_DIR, reg);
     }
     console.log("");
 
     generatedPosts.push({
       comedianName: headliner.name,
+      comedianSlug: entry.slug,
       venue: venue,
       date: date,
       imageUrl: eventImageUrl,
@@ -1667,54 +1117,16 @@ async function main() {
       ticketUrl: ticketUrl,
       slug: postSlug,
       wpLink: wpLink,
+      wpType: "page",
       caption: caption,
       instagramHandle: instagramHandle, // "@name" or "" — poster uses this to tag the comedian in the IG photo
       graphicFiles: graphicFiles.map((gf) => gf.pngFile),
-      // Stash the post body and the pre-built schema graph so the second
-      // pass below can append the internal-linking section and re-publish
-      // without re-running the OpenAI pipeline. The schema graph is reused
-      // verbatim — same structured data in round 1 and round 2.
-      _finalContent: finalContent,
-      _schemaGraph: schemaGraph,
     });
   }
 
-  // ─────────────────────────────────────────────────────────────────────────
-  // Second pass: internal linking ("Also performing this week" footer block)
-  // ─────────────────────────────────────────────────────────────────────────
-  // Now that every comedian post has been published, we know all the slugs
-  // and WP URLs. Walk the manifest a second time and append a cross-link
-  // section to each post pointing at the OTHER comedians this week, then
-  // re-publish to WordPress (slug-dedupe handles the in-place update).
-  if (generatedPosts.length > 1) {
-    console.log("");
-    console.log("━━━ Second pass: adding internal links between comedian posts ━━━");
-    for (const post of generatedPosts) {
-      try {
-        const linkSection = buildAlsoThisWeekSection(post.slug, generatedPosts);
-        const linkedContent = post._finalContent + linkSection;
-
-        // Re-publish to WordPress (slug-dedupe will UPDATE the existing post
-        // in place — no -2 suffixed duplicate). Skip if WP isn't ready or
-        // the first publish never created a post.
-        if (wpReady && post.wpLink) {
-          await publishToWordPress(
-            post.comedianName, post.venue, post.date, post.slug, linkedContent, post.imageUrl, post._schemaGraph
-          );
-        }
-        console.log(`  Linked: ${post.comedianName}`);
-      } catch (err) {
-        console.warn(`  Internal link pass failed for ${post.comedianName}: ${err.message}`);
-      }
-    }
-    console.log("");
-  }
-
-  // Strip the internal-only fields before they hit manifest.json
-  for (const post of generatedPosts) {
-    delete post._finalContent;
-    delete post._schemaGraph;
-  }
+  // Persist registry state once more: a comedian created in the last
+  // iteration, or one whose page publish was skipped, has not been saved yet.
+  registry.saveRegistry(COMEDIANS_DIR, reg);
 
   if (generatedPosts.length > 0) {
     // Write manifest JSON (consumed by post-to-instagram.js, the reaper,
@@ -1748,9 +1160,9 @@ async function main() {
       emailBody += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
       emailBody += `${post.comedianName} — ${post.venue}, ${formatDateForDisplay(post.date)}\n`;
       if (post.wpLink) {
-        emailBody += `Blog post: ${post.wpLink}\n`;
+        emailBody += `Comedian page: ${post.wpLink}\n`;
       } else {
-        emailBody += `Blog post: NOT PUBLISHED (WordPress publish failed — see the run log)\n`;
+        emailBody += `Comedian page: NOT PUBLISHED (WordPress publish failed — see the run log)\n`;
       }
       emailBody += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
       if (post.caption) {
@@ -1776,14 +1188,21 @@ async function main() {
     console.log(`Wrote: blog/comedians/email-attachments.txt`);
   }
 
-  // Rebuild the plugin's spotlight index from every week-keyed manifest on
-  // disk (see lib/spotlight-index.js). Always, even when nothing was
-  // generated, so a manual re-run repairs the file.
+  // Rebuild the plugin's indexes from disk. Always, even when nothing was
+  // generated, so a manual re-run repairs the files:
+  //   spotlight-index.json  — per-show "More info" links on the event cards
+  //   comedians-index.json  — performer match terms, page URLs, legacy 301s
   try {
     const n = writeSpotlightIndex(COMEDIANS_DIR);
     console.log(`Wrote: blog/comedians/spotlight-index.json (${n} posts)`);
   } catch (err) {
     console.warn(`Spotlight index write failed: ${err.message}`);
+  }
+  try {
+    const n = registry.writeComediansIndex(COMEDIANS_DIR, reg);
+    console.log(`Wrote: blog/comedians/comedians-index.json (${n} comedians)`);
+  } catch (err) {
+    console.warn(`Comedians index write failed: ${err.message}`);
   }
 
   console.log("");

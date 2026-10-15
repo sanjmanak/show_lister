@@ -57,11 +57,12 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run == true && '1' || '' }}
         run: node scripts/delete-comedian-posts.js
 
-      # Blog-post reaper: once a spotlight week's last show date has passed
-      # (plus a 1-day grace), delete the WordPress posts themselves and
-      # archive that week's manifest. Indexable spotlights must not pile up
-      # as stale thin content — see scripts/delete-comedian-blog-posts.js.
-      - name: Delete finished-week spotlight blog posts
+      # Content reaper (scripts/delete-comedian-blog-posts.js): deletes the
+      # retired per-show spotlight POSTS once their comedian page is live
+      # (the plugin 301s them), archives finished-week manifests + local
+      # graphics, and trashes comedian PAGES with no Houston date in a year
+      # (registry record kept, so a comeback republishes at the same URL).
+      - name: Reap spotlight posts, finished weeks and stale comedian pages
         timeout-minutes: 10
         env:
           WP_SITE_URL: ${{ secrets.WP_SITE_URL }}
@@ -130,9 +131,10 @@ jobs:
             echo "Subject: [Comedy Houston] Comedian-spotlight CLEANUP failed"
             echo "Content-Type: text/plain; charset=UTF-8"
             echo
-            echo "The comedian spotlight cleanup workflow failed — aged posts"
-            echo "may still be live on Instagram/Facebook. Failed IDs stay in"
-            echo "the state file and tomorrow's run retries automatically."
+            echo "The comedian spotlight cleanup workflow failed — aged social"
+            echo "posts may still be live on Instagram/Facebook, or a stale"
+            echo "comedian page / legacy spotlight post is still up. State is"
+            echo "kept and tomorrow's run retries automatically."
             echo "Check the logs:"
             echo
             echo "Run: ${RUN_URL}"
