@@ -21,7 +21,9 @@ permissions:
 
 # Prevent manual reruns from racing the Mon cron — both publish to WordPress
 # and both commit to blog/comedians/. Slug-dedup keeps WP safe; this keeps git
-# clean.
+# clean. NOTE: GitHub keeps only ONE pending run per group and has let a
+# third dispatch start before the first finished pushing (2026-10-15), so
+# dispatch backfills one at a time, after the previous run is green.
 concurrency:
   group: generate-comedian-posts
   cancel-in-progress: false

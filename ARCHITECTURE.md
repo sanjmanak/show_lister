@@ -378,6 +378,15 @@ it without matching anything broader.
 6. rewrite `spotlight-index.json` (event-card "More info" links, unchanged
    contract) and `comedians-index.json`.
 
+**Backfills run one at a time.** `registry.json`, `comedians-index.json` and
+`spotlight-index.json` are single files rewritten by every run, and the
+workflow's rebase-then-push cannot merge two runs' edits (2026-10-15: three
+`lead_weeks` dispatches queued at once; GitHub's concurrency queue dropped
+the middle one and let the third start before the first had pushed, and its
+push died on a registry conflict). Dispatch the next run only after the
+previous one shows green. A run whose push failed has still published its
+pages; re-running it adopts them by slug and only re-spends the research.
+
 **Redirects.** A 404 for a dated slug (`/{anything}-YYYY-MM-DD/`) is looked
 up in the comedians index: a `legacy_slugs` hit 301s to the comedian page,
 an archived comedian's slug 301s to the hub. Old Instagram links never dead-
