@@ -1,19 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-10-16T01:42:02.110Z",
-  "total_excluded": 24,
+  "last_updated": "2026-10-16T17:24:39.130Z",
+  "total_excluded": 23,
   "events": [
-    {
-      "name": "Karaoke every THURSDAY!",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-10-15",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/karaoke-every-thursday-tickets-2002395971253",
-      "reason": "title keyword blocklisted: \"karaoke\""
-    },
     {
       "name": "NOTHING MATTERS Emo | Indie | Punk Dance Party",
       "venue": "The Secret Group",

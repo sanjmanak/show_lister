@@ -2493,6 +2493,12 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-10-15"
+    },
+    "riot comedy class: graduation showcase": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-16"
     }
   }
 }
