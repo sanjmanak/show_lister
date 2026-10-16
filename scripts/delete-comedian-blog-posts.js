@@ -76,11 +76,43 @@ async function deletePostBySlug(slug) {
   }
   if (DRY_RUN) {
     console.log(`    DRY RUN: would delete WP post ${found[0].id} (${slug})`);
+    await deleteLegacyMedia(slug, found[0].id);
     return false;
   }
+  await deleteLegacyMedia(slug, found[0].id);
   await wpRequest("DELETE", `/wp-json/wp/v2/posts/${found[0].id}?force=true`);
   console.log(`    deleted WP post ${found[0].id} (${slug})`);
   return true;
+}
+
+/**
+ * Delete the media left behind by a legacy spotlight post: its hero image
+ * was uploaded under the post's slug, and once the post is force-deleted
+ * WordPress serves that orphaned attachment page at the old URL (so it is
+ * no longer a 404 and Rank Math 301s it to the homepage). Matches the exact
+ * slug or WP's -N duplicate suffix, only unattached media or media attached
+ * to `parentId`. Comedian page heroes use "{slug}-houston", never matched.
+ */
+async function deleteLegacyMedia(slug, parentId) {
+  const pattern = new RegExp(`^${slug.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(-\\d+)?$`);
+  const found = await wpRequest(
+    "GET",
+    `/wp-json/wp/v2/media?search=${encodeURIComponent(slug)}&per_page=20&_fields=id,slug,post`
+  );
+  if (!Array.isArray(found)) return 0;
+  let deleted = 0;
+  for (const m of found) {
+    if (!pattern.test(m.slug || "")) continue;
+    if (m.post && parentId && m.post !== parentId) continue;
+    if (DRY_RUN) {
+      console.log(`    DRY RUN: would delete media ${m.id} (${m.slug})`);
+      continue;
+    }
+    await wpRequest("DELETE", `/wp-json/wp/v2/media/${m.id}?force=true`);
+    console.log(`    deleted media ${m.id} (${m.slug})`);
+    deleted++;
+  }
+  return deleted;
 }
 
 function localDateStr(d) {
@@ -114,17 +146,19 @@ function removeLocalFiles(slug) {
   // ── 1. Legacy spotlight posts already replaced by a page ──────────────
   console.log("Legacy spotlight posts replaced by comedian pages:");
   let legacyDeleted = 0;
+  let legacyMediaDeleted = 0;
   for (const c of reg.comedians) {
     if (c.status !== "live" || !c.wpLink) continue;
     for (const slug of c.legacy_slugs || []) {
       try {
         if (await deletePostBySlug(slug)) legacyDeleted++;
+        else legacyMediaDeleted += await deleteLegacyMedia(slug, 0); // post already gone: orphans only
       } catch (err) {
         console.log(`    FAILED ${slug}: ${err.message} — retried tomorrow`);
       }
     }
   }
-  console.log(`  ${legacyDeleted} deleted${DRY_RUN ? " (dry run)" : ""}.`);
+  console.log(`  ${legacyDeleted} deleted, ${legacyMediaDeleted} orphaned media removed${DRY_RUN ? " (dry run)" : ""}.`);
 
   // ── 2. Finished weeks ─────────────────────────────────────────────────
   const manifests = fs

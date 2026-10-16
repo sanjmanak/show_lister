@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comedy Houston Shows
  * Description: Displays Houston comedy event listings with configurable theme and affiliate click tracking.
- * Version: 2.18.1
+ * Version: 2.18.2
  * Author: Comedy Houston
  *
  * INSTALLATION:
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 
 class Comedy_Houston_Plugin {
 
-    const VERSION      = '2.18.1';
+    const VERSION      = '2.18.2';
     const SHORTCODE    = 'comedy_houston';
     const OPTION_KEY   = 'comedy_houston_settings';
     const REDIRECT_VAR = 'ch_go';
@@ -1132,11 +1132,17 @@ class Comedy_Houston_Plugin {
 
     /**
      * Retired per-show spotlight posts (/{name}-{venue}-YYYY-MM-DD/) → the
-     * comedian's evergreen page. Only consulted on a 404 with a dated slug,
-     * so the comedians index is never fetched for an ordinary page view.
+     * comedian's evergreen page. Only consulted on a 404 (or an orphaned
+     * attachment page) with a dated slug, so the comedians index is never
+     * fetched for an ordinary page view.
      */
     public function redirect_legacy_spotlight() {
-        if (is_admin() || !is_404() || empty($_SERVER['REQUEST_URI'])) {
+        // is_attachment() too: the hero image uploaded for the old spotlight
+        // post shares its slug, and once the post is force-deleted WP serves
+        // that orphaned attachment page at the old URL instead of a 404 (Rank
+        // Math then 301s it to the homepage, on `wp` priority 10). The reaper
+        // deletes those attachments, but the redirect must not depend on it.
+        if (is_admin() || !(is_404() || is_attachment()) || empty($_SERVER['REQUEST_URI'])) {
             return;
         }
         $path = wp_parse_url(wp_unslash($_SERVER['REQUEST_URI']), PHP_URL_PATH);
