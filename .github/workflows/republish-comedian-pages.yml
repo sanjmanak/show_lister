@@ -15,6 +15,9 @@ on:
         required: false
         default: ''
 
+permissions:
+  contents: write
+
 concurrency:
   group: generate-comedian-posts   # shares the registry with the generator
   cancel-in-progress: false
