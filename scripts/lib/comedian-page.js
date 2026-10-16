@@ -64,20 +64,14 @@ function performerShortcode(entry) {
 }
 
 /**
- * Page body. `heroImageUrl` is the WordPress media URL (after upload) or the
- * event poster URL as a fallback; `heroMediaId` adds the wp-image class so
- * the theme treats it like any other inserted image.
+ * Page body. The poster is NOT repeated here: it is the page's featured
+ * image (the theme renders that once above the H1) and the live show card
+ * carries its own thumbnail, so an inline figure showed the same photo three
+ * times (owner, 2026-10-16). `heroImageUrl` stays in the signature for the
+ * schema builder and older callers.
  */
-function buildPageContent(entry, { heroImageUrl = "", heroMediaId = 0 } = {}) {
+function buildPageContent(entry, { heroImageUrl = "", heroMediaId = 0 } = {}) { // eslint-disable-line no-unused-vars
   const parts = [];
-  if (heroImageUrl) {
-    parts.push(
-      `<figure class="wp-block-image size-large aligncenter ch-post-hero" style="width:fit-content;max-width:100%;margin-left:auto;margin-right:auto">` +
-        `<img src="${escapeHTML(heroImageUrl)}" alt="${escapeHTML(entry.name)}"` +
-        (heroMediaId ? ` class="wp-image-${heroMediaId}"` : "") +
-        ` style="display:block;max-width:100%;height:auto"/></figure>`
-    );
-  }
   parts.push(performerShortcode(entry));
   if (entry.profile_html) {
     parts.push(`<div class="ch-comedian-profile">\n${entry.profile_html.trim()}\n</div>`);

@@ -1,0 +1,49 @@
+name: Republish Comedian Pages
+
+# Manual only. Re-saves every live /comedians/{slug}/ page from the registry
+# after a template change in scripts/lib/comedian-page.js. No OpenAI calls,
+# no poster uploads: profile text and featured image are left as they are.
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Log what would be republished without saving'
+        type: boolean
+        default: false
+      only:
+        description: 'Comma-separated comedian slugs (empty = all live pages)'
+        required: false
+        default: ''
+
+concurrency:
+  group: generate-comedian-posts   # shares the registry with the generator
+  cancel-in-progress: false
+
+env:
+  TZ: America/Chicago
+
+jobs:
+  republish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: Republish comedian pages
+        env:
+          WP_SITE_URL: ${{ secrets.WP_SITE_URL }}
+          WP_APP_USER: ${{ secrets.WP_APP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          DRY_RUN: ${{ inputs.dry_run == true && '1' || '' }}
+          ONLY: ${{ inputs.only }}
+        run: node scripts/republish-comedian-pages.js
+      - name: Commit registry if it changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add blog/comedians/registry.json
+          git diff --cached --quiet && echo "No changes to commit." && exit 0
+          git commit -m "Republish comedian pages — $(date +'%B %d, %Y %I:%M %p CT')"
+          git pull --rebase origin main && git push
