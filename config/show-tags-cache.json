@@ -2499,6 +2499,14 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-10-16"
+    },
+    "tony roberts": {
+      "tags": [
+        "black-comedy"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-17"
     }
   }
 }
