@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-10-16T17:26:49.965Z",
+  "last_updated": "2026-10-17T16:27:42.805Z",
   "entries": {
     "060972590fd8edcb": {
       "price_min": 49.94,
@@ -57,14 +57,6 @@
       "source": "page",
       "url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-1999296198750",
       "fetched_at": "2026-09-09T01:37:42.593Z"
-    },
-    "95cc9761e6ffc8e9": {
-      "price_min": 25.09,
-      "price_max": 25.09,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/saul-trujillo-live-in-houston-tickets-1987000184039",
-      "fetched_at": "2026-09-09T01:38:07.424Z"
     },
     "735cd3851322fc99": {
       "price_min": 30.87,
