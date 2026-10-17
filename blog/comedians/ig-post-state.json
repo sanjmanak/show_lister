@@ -50,15 +50,6 @@
   "manifest_version": 1792097120262,
   "cleanup_queue": [
     {
-      "slug": "anjelah-johnson-reyes-punch-line-houston-2026-10-15",
-      "comedianName": "Anjelah Johnson-Reyes",
-      "igFeedMediaId": "18564199942076140",
-      "igStoryMediaId": "18359439502221487",
-      "fbFeedPostId": "1428183622739712",
-      "fbStoryPostId": "2871748569860881",
-      "postedAt": "2026-10-12T12:18:10.547Z"
-    },
-    {
       "slug": "ivn-fematt-la-mole-houston-improv-2026-10-15",
       "comedianName": "Iván Fematt La Mole",
       "igFeedMediaId": "17999963751040903",
