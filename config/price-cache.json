@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-10-17T16:27:42.805Z",
+  "last_updated": "2026-10-18T16:35:15.476Z",
   "entries": {
     "060972590fd8edcb": {
       "price_min": 49.94,
@@ -65,14 +65,6 @@
       "source": "page",
       "url": "https://www.eventbrite.com/e/yaqiao-yang-live-in-houston-tickets-1997877925657",
       "fetched_at": "2026-09-09T01:38:13.804Z"
-    },
-    "542ab5927e701262": {
-      "price_min": 19.32,
-      "price_max": 25.09,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/roast-battle-houston-tickets-1998832052476",
-      "fetched_at": "2026-09-09T01:38:14.692Z"
     },
     "117e2e6a6fcc648e": {
       "price_min": 25.09,
