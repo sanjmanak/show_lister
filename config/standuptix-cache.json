@@ -1,60 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/kerryn-feehan-netflix-comedy-central-headlines-the-riot-comedy-club-the-riot-houston": {
-      "lastmod": "2026-10-16T10:46:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Kerryn Feehan (Netflix, Comedy Central) Headlines The Riot Comedy Club",
-        "startDate": "2026-10-17T19:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/kerryn-feehan-netflix-comedy-central-headlines-the-riot-comedy-club-the-riot-houston",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "InStock",
-          "validFrom": "2026-07-28T14:15:22-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/kerryn-feehan-netflix-comedy-central-headlines-the-riot-comedy-club-the-riot-houston",
-        "image": "/img/comedians/feehan-79ee0819-large-thumb.jpg",
-        "description": "Known for her role as Reagan, the &ldquo;bold, no-nonsense badass, with a straight talking demeanor&rdquo; featured in Seasons 1 &amp; 2 of the hit Netflix show, Tires, Kerryn Feehan is a New York based comic. She&rsquo;s been featured on Comedy Central, TruTv, TLC, Sirius Xm and Barstool Sports. Her podcast, &ldquo;Only Feehans&rdquo; has been a longstanding favorite among comedy fans, bringing in over 40.5 million views, and counting. Kerryn performs nightly in NYC when not touring the country AND don&rsquo;t forget to check out her recently released special, &ldquo;Don&rsquo;t Serve Me&rdquo; on OFTV.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Your browser does not support HTML5 video.Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Kerryn Feehan"
-          },
-          {
-            "@type": "Person",
-            "name": "Brian Gendron"
-          },
-          {
-            "@type": "Person",
-            "name": "Dylan Kendrick"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-20": {
-      "lastmod": "2026-10-14T07:13:00-05:00",
+      "lastmod": "2026-10-17T07:21:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -119,7 +66,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-24": {
-      "lastmod": "2026-10-14T07:13:00-05:00",
+      "lastmod": "2026-10-17T07:21:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -338,12 +285,12 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-10-20-26-07-00-pm": {
-      "lastmod": "2026-09-22T11:41:00-05:00",
+      "lastmod": "2026-10-17T05:19:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents Tuesday Night Standup Comedy Showcase!",
-        "startDate": "2026-10-20T19:00:00-05:00",
+        "startDate": "2026-10-20T19:30:00-05:00",
         "location": {
           "@type": "Place",
           "name": "The Riot Houston",
@@ -951,12 +898,12 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-10-27-26-07-00-pm": {
-      "lastmod": "2026-09-22T11:41:00-05:00",
+      "lastmod": "2026-10-17T05:20:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents Tuesday Night Standup Comedy Showcase!",
-        "startDate": "2026-10-27T19:00:00-05:00",
+        "startDate": "2026-10-27T19:30:00-05:00",
         "location": {
           "@type": "Place",
           "name": "The Riot Houston",
@@ -1536,12 +1483,12 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-11-03-26-07-00-pm": {
-      "lastmod": "2026-09-22T11:41:00-05:00",
+      "lastmod": "2026-10-17T05:21:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents Tuesday Night Standup Comedy Showcase!",
-        "startDate": "2026-11-03T19:00:00-06:00",
+        "startDate": "2026-11-03T19:30:00-06:00",
         "location": {
           "@type": "Place",
           "name": "The Riot Houston",
@@ -7657,59 +7604,6 @@
           {
             "@type": "Person",
             "name": "Ian Fidance"
-          }
-        ]
-      }
-    },
-    "https://www.riotconroe.com/events/comedian-michael-palascak-tonight-show-comedy-central-live-in-conroe-1": {
-      "lastmod": "2026-10-16T11:47:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Comedian Michael Palascak (Tonight Show, Comedy Central) Live in Conroe",
-        "startDate": "2026-10-17T19:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Conroe",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "219 Simonton Street",
-            "addressLocality": "Conroe",
-            "postalCode": "77301",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.riotconroe.com/events/comedian-michael-palascak-tonight-show-comedy-central-live-in-conroe-1",
-          "priceCurrency": "USD",
-          "price": "25.00",
-          "availability": "InStock",
-          "validFrom": "2026-04-24T13:09:48-05:00"
-        },
-        "url": "https://www.riotconroe.com/events/comedian-michael-palascak-tonight-show-comedy-central-live-in-conroe-1",
-        "image": "/img/events/Michael-Palascak16-17-25530ca6-large-thumb.png",
-        "description": "",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Conroe",
-          "url": "https://www.riotconroe.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Grady Pruitt"
-          },
-          {
-            "@type": "Person",
-            "name": "Michael Palascak"
-          },
-          {
-            "@type": "Person",
-            "name": "Ebad Jann"
           }
         ]
       }

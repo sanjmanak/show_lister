@@ -1,6 +1,6 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-10-17T16:25:22.457Z",
+  "last_updated": "2026-10-18T01:34:33.505Z",
   "total_excluded": 22,
   "events": [
     {
@@ -19,7 +19,7 @@
       "venue": "The Secret Group",
       "venue_city": "Houston",
       "date": "2026-10-18",
-      "time": "9:00 PM",
+      "time": "10:00 PM",
       "source": "eventbrite",
       "genre": null,
       "ticket_url": "https://www.eventbrite.com/e/our-mic-is-your-mic-emo-karaoke-tickets-2002396095625",
@@ -74,7 +74,7 @@
       "venue": "The Secret Group",
       "venue_city": "Houston",
       "date": "2026-10-25",
-      "time": "9:00 PM",
+      "time": "10:00 PM",
       "source": "eventbrite",
       "genre": null,
       "ticket_url": "https://www.eventbrite.com/e/our-mic-is-your-mic-emo-karaoke-tickets-2002396255102",
@@ -140,7 +140,7 @@
       "venue": "The Secret Group",
       "venue_city": "Houston",
       "date": "2026-11-01",
-      "time": "9:00 PM",
+      "time": "10:00 PM",
       "source": "eventbrite",
       "genre": null,
       "ticket_url": "https://www.eventbrite.com/e/our-mic-is-your-mic-emo-karaoke-tickets-2002396655299",
@@ -195,7 +195,7 @@
       "venue": "The Secret Group",
       "venue_city": "Houston",
       "date": "2026-11-08",
-      "time": "9:00 PM",
+      "time": "10:00 PM",
       "source": "eventbrite",
       "genre": null,
       "ticket_url": "https://www.eventbrite.com/e/our-mic-is-your-mic-emo-karaoke-tickets-2002925241314",
