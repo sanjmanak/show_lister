@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-10-19T19:25:36.138Z",
+  "updated_at": "2026-10-19T20:43:32.151Z",
   "comedians": [
     {
       "slug": "abby-govindan",
@@ -132,6 +132,75 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/anjelah-johnson-reyes-houston.jpg"
+    },
+    {
+      "slug": "chrissy-chlapecka",
+      "name": "Chrissy Chlapecka",
+      "match": [
+        "chrissy chlapecka"
+      ],
+      "status": "live",
+      "created_at": "2026-10-19T20:42:27.582Z",
+      "profile_written_at": "2026-10-19T20:43:21.297Z",
+      "profile_html": "<p>In June 2026, <a href=\"https://music.apple.com/us/album/christine-high-voltage/6774552155\">“Christine: High Voltage”</a> arrived as the 16-track second act to Chrissy Chlapecka’s 2025 project <i>Christine</i>. In a June 2026 <a href=\"https://www.hollywoodrebound.com/chrissy-chlapecka-christine-high-voltage-ep/\">Hollywood Rebound interview</a>, she framed the releases in theater-kid terms: “Act One” and “Act Two.”</p>\n\n<p>Chicago-born Chlapecka built a TikTok following with a hyper-feminine <a href=\"https://www.interviewmagazine.com/culture/search-history-chrissy-chlapecka-is-tiktok-biggest-bimbo\">bimbo persona</a> and commentary on queer identity, misogyny, and self-confidence. “I don’t do this for the misogynistic male gaze... I do it for my gaze, and damn! My tits look good!” she has said. Her short-form work favors characters and sociopolitical commentary over conventional stand-up premises.</p>\n\n<p>Music and musical theater were central to her upbringing before TikTok became pivotal to her career. Her 2024 debut EP, <i>Girlie Pop</i>, took its name from her own definition: “For me, Girlie Pop is a subgenre of music that I have created based on my own experiences and love for girly, fun, campy, cheeky self-love music that makes you wanna dance.” She also appeared on <i>Craig &amp; Friends</i> in 2021.</p>\n\n<p>Live, Chlapecka turns the material into a colorful, theatrical, vocal-forward pop show for a predominantly queer audience.</p>",
+      "research_json": "{\n  \"full_name\": \"Christine Chlapecka\",\n  \"hometown\": \"Chicago, Illinois\",\n  \"career_start_year\": null,\n  \"specials\": [],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Craig & Friends\",\n      \"year_approx\": 2021\n    }\n  ],\n  \"tv_appearances\": [],\n  \"comedy_style\": {\n    \"tone\": \"High-camp, hyper-feminine, playful, and politically pointed.\",\n    \"structure\": \"Short-form character-driven social-media comedy and pop performance rather than verified stand-up comedy.\",\n    \"recurring_themes\": [\n      \"Bimbo feminism\",\n      \"Hyper-femininity\",\n      \"Queer identity and queer community\",\n      \"Self-confidence and self-love\",\n      \"Gender politics and misogyny\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"Music coverage describes her live performances as colorful, theatrical, vocal-forward pop shows with a predominantly queer audience.\",\n  \"recent_activity_2025_2026\": \"She released the 16-track pop album \\\"Christine: High Voltage\\\" on June 5, 2026, following the 2025 project \\\"Christine.\\\" She has also toured under the name \\\"Girl On The Moon Tour,\\\" with Live Nation listing European dates and additional U.S. dates for November and December 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"On June 5, 2026, Chlapecka released \\\"Christine: High Voltage,\\\" a 16-track follow-up framed in a June 11 interview as the second act of her \\\"Christine\\\" project.\",\n    \"quote\": \"As a former theater kid, Chlapecka views the releases as “Act One” and “Act Two.”\",\n    \"source_publication\": \"Hollywood Rebound\",\n    \"source_url\": \"https://www.hollywoodrebound.com/chrissy-chlapecka-christine-high-voltage-ep/\",\n    \"date\": \"2026-06-11\"\n  },\n  \"instagram_handle\": \"@chrissychlapecka\",\n  \"notable_bits_or_quotes\": [\n    \"“I don’t do this for the misogynistic male gaze... I do it for my gaze, and damn! My tits look good!”\",\n    \"“For me, Girlie Pop is a subgenre of music that I have created based on my own experiences and love for girly, fun, campy, cheeky self-love music that makes you wanna dance.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That Chrissy Chlapecka is primarily a stand-up comedian.\",\n    \"That she has released a stand-up or comedy special.\",\n    \"That she has verified television acting or television-comedy credits.\",\n    \"That her hometown is St. Charles, Illinois; low-quality event-aggregation pages make this claim, while interviews identify her as being from Chicago.\",\n    \"Claims assigning her a full legal middle name; this was not independently verified from a reliable primary or editorial source.\"\n  ],\n  \"background_story\": \"Chlapecka is a Chicago-born pop artist and internet personality who became known on TikTok through a hyper-feminine \\\"bimbo\\\" persona, humor, and sociopolitical commentary. She has said that music and musical theater were central to her upbringing, and that TikTok became a pivotal part of her career before she began releasing music. Her 2024 debut EP was \\\"Girlie Pop.\\\"\",\n  \"source_urls\": [\n    {\n      \"label\": \"Interview Magazine profile\",\n      \"url\": \"https://www.interviewmagazine.com/culture/search-history-chrissy-chlapecka-is-tiktok-biggest-bimbo\"\n    },\n    {\n      \"label\": \"PAPER Magazine interview\",\n      \"url\": \"https://www.papermag.com/chrissy-chlapecka-girlie-pop-tiktok\"\n    },\n    {\n      \"label\": \"Apple Music: Christine: High Voltage\",\n      \"url\": \"https://music.apple.com/us/album/christine-high-voltage/6774552155\"\n    },\n    {\n      \"label\": \"Hollywood Rebound interview\",\n      \"url\": \"https://www.hollywoodrebound.com/chrissy-chlapecka-christine-high-voltage-ep/\"\n    },\n    {\n      \"label\": \"Craig & Friends episode\",\n      \"url\": \"https://podcasts.apple.com/us/podcast/129-chrissy-chlapecka/id1361582513?i=1000507505269\"\n    },\n    {\n      \"label\": \"Live Nation tour page\",\n      \"url\": \"https://www.livenation.com/artist/K8vZ917hQT7/chrissy-chlapecka-events\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.instagram.com/chrissychlapecka/"
+      ],
+      "instagramHandle": "@chrissychlapecka",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192238708%2F3558237521%2F1%2Foriginal.20260830-213118?auto=format%2Ccompress&q=75&sharp=10&s=ccbac3fc9b16b9293b6269d13e650bf8",
+      "wpPageId": 2276,
+      "wpLink": "https://comedyhouston.com/comedians/chrissy-chlapecka/",
+      "wpImageMediaId": 2275,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-11-12",
+          "venue": "The Secret Group",
+          "time": "8:00 PM",
+          "name": "Chrissy Chlapecka",
+          "ticket_url": "https://www.eventbrite.com/e/chrissy-chlapecka-tickets-1999224556466",
+          "event_id": "fbde67c3e67f3f9b",
+          "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192238708%2F3558237521%2F1%2Foriginal.20260830-213118?auto=format%2Ccompress&q=75&sharp=10&s=ccbac3fc9b16b9293b6269d13e650bf8"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/chrissy-chlapecka-houston.jpg"
+    },
+    {
+      "slug": "clint-coley",
+      "name": "Clint Coley",
+      "match": [
+        "clint coley"
+      ],
+      "status": "live",
+      "created_at": "2026-10-19T20:38:53.131Z",
+      "profile_written_at": "2026-10-19T20:39:45.634Z",
+      "profile_html": "<p>In September 2026, on <a href=\"https://music.amazon.com/podcasts/38f6cb88-f17f-455a-9044-b223d805a201/episodes/155beac0-f282-4145-a1dc-04afd062c153/1-on-1's-w-deuces-clint-coley-talks-his-new-tour-savage-x-fenty-world-series-of-spades-more-s9-e7-1-on-1's-w-deuces\">1-on-1’s w/Deuces</a>, Clint Coley discussed a comedy tour, Savage X Fenty, and the World Series of Spades. His stand-up draws on Philadelphia, dating, sex, and gender dynamics. It is candid, blunt, and high-energy.</p>\n\n<p>In an <a href=\"https://www.okayplayer.com/comedian-clint-coley-on-his-bipolar-diagnosis-and-why-hes-not-quiet-about-it/636410\">Okayplayer interview</a>, Coley described the routine of managing his bipolar diagnosis: “It takes a while to wrap your head around the fact that you gotta take meds every single day. You have to do it. Like, ain't no you skipped your meds like four or five days.”</p>\n\n<p>Coley appeared on the inaugural 2022 episode of <em>D.L. Hughley’s Speakeasy: Comedy Overload</em> and on podcasts including <a href=\"https://podcasts.apple.com/us/podcast/rents-due/id1796608543\">Rent’s Due</a>, which follows the development of his next special. He created and produced the World Series of Spades, and wrote and starred in the 2016 short film <a href=\"https://www.imdb.com/title/tt5931592/\">The First Date</a>.</p>",
+      "research_json": "{\n  \"full_name\": \"Clint Coley\",\n  \"hometown\": \"Philadelphia, Pennsylvania\",\n  \"career_start_year\": null,\n  \"specials\": [\n    {\n      \"title\": \"My Edible Kicked In\",\n      \"platform\": \"YouTube\",\n      \"year\": null\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"1-on-1's w/Deuces\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Say What You Mean with Aida Rodriguez\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Tripp After Dark\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Thoughts Of An Average Joe\",\n      \"year_approx\": 2025\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"D.L. Hughley's Speakeasy: Comedy Overload\",\n      \"context\": \"Appeared as himself in the inaugural episode, released August 29, 2022.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Candid, blunt, high-energy, and conversational.\",\n    \"structure\": \"\",\n    \"recurring_themes\": [\n      \"Relationships and dating\",\n      \"Sex and gender dynamics\",\n      \"Mental health and bipolar disorder\",\n      \"Black male friendship and vulnerability\",\n      \"Philadelphia upbringing and culture\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"Venue copy has described Coley's stand-up as blunt, high-energy storytelling; he has performed headlining and co-headlining club dates and has been booked for larger music-tour hosting engagements.\",\n  \"recent_activity_2025_2026\": \"In September 2026, Coley appeared on 1-on-1's w/Deuces to discuss a new comedy tour, the material informing his upcoming set, Savage X Fenty, and the World Series of Spades. He also launched the Rent's Due podcast, framed as a behind-the-scenes account of developing his next comedy special, and was announced as host of the 2026 Say Yes Tour featuring Floetry, Raheem DeVaughn, and Teedra Moses.\",\n  \"recent_hook\": {\n    \"summary\": \"Coley's freshest verified media appearance is a September 19, 2026 episode of 1-on-1's w/Deuces, where he discussed his new comedy tour, the focus of his upcoming stand-up set, his Savage X Fenty collaboration, and the World Series of Spades.\",\n    \"quote\": \"\",\n    \"source_publication\": \"1-on-1's w/Deuces on Amazon Music\",\n    \"source_url\": \"https://music.amazon.com/podcasts/38f6cb88-f17f-455a-9044-b223d805a201/episodes/155beac0-f282-4145-a1dc-04afd062c153/1-on-1's-w-deuces-clint-coley-talks-his-new-tour-savage-x-fenty-world-series-of-spades-more-s9-e7-1-on-1's-w-deuces\",\n    \"date\": \"2026-09-19\"\n  },\n  \"instagram_handle\": \"@clintcoley\",\n  \"notable_bits_or_quotes\": [\n    \"“It takes a while to wrap your head around the fact that you gotta take meds every single day. You have to do it. Like, ain't no you skipped your meds like four or five days.”\",\n    \"“You gotta assemble the fucking Avengers. That's the only way to deal with it. It is me, my therapist, my friends who consistently make space for me, family, again, medicine — like all those things.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"An exact year when Coley began performing stand-up.\",\n    \"Claims that he has a formally released stand-up special titled My Edible Kicked In with a verified release year or distributor; the title is corroborated, but a definitive official release page and date were not located.\",\n    \"Claims that he has opened for D.L. Hughley continuously since 2012.\",\n    \"Claims that D.L. Hughley formally bestowed the nickname “The Prince” on him.\",\n    \"Claims that he opened for Kevin Hart.\",\n    \"Specific ticket-sales claims for the 2014 I'm an Adult tour.\",\n    \"Specific Billboard and iTunes chart positions for Sturgis or Sensitive unless independently sourced from Billboard or the distributor.\",\n    \"Claims that he hosted a weekly live podcast with Sherry Cola.\"\n  ],\n  \"background_story\": \"Coley is Philadelphia-raised. Beyond stand-up, he wrote and starred in the 2016 short film The First Date. He has also created and hosted podcasts, including Advice From A F*ckboy and Rent's Due, and is credited by Comedy Works as the creator and producer of The World Series of Spades.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Amazon Music — 1-on-1's w/Deuces episode\",\n      \"url\": \"https://music.amazon.com/podcasts/38f6cb88-f17f-455a-9044-b223d805a201/episodes/155beac0-f282-4145-a1dc-04afd062c153/1-on-1's-w-deuces-clint-coley-talks-his-new-tour-savage-x-fenty-world-series-of-spades-more-s9-e7-1-on-1's-w-deuces\"\n    },\n    {\n      \"label\": \"Okayplayer interview\",\n      \"url\": \"https://www.okayplayer.com/comedian-clint-coley-on-his-bipolar-diagnosis-and-why-hes-not-quiet-about-it/636410\"\n    },\n    {\n      \"label\": \"Comedy Works artist page\",\n      \"url\": \"https://comedyworks.com/comedians/clint-coley\"\n    },\n    {\n      \"label\": \"Apple Podcasts — Rent's Due\",\n      \"url\": \"https://podcasts.apple.com/us/podcast/rents-due/id1796608543\"\n    },\n    {\n      \"label\": \"iHeart — Say What You Mean with Aida Rodriguez episode\",\n      \"url\": \"https://www.iheart.com/podcast/269-say-what-you-mean-with-aid-222131865/episode/episode-54-clint-coley-is-a-329342990/\"\n    },\n    {\n      \"label\": \"IMDb — The First Date\",\n      \"url\": \"https://www.imdb.com/title/tt5931592/\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.imdb.com/title/tt5931592/",
+        "https://www.instagram.com/clintcoley/"
+      ],
+      "instagramHandle": "@clintcoley",
+      "imageUrl": "https://s1.ticketm.net/dam/a/84d/6f42b922-5aa3-4667-bee0-ae827060884d_SOURCE",
+      "wpPageId": 2267,
+      "wpLink": "https://comedyhouston.com/comedians/clint-coley/",
+      "wpImageMediaId": 2266,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-11-12",
+          "venue": "Punch Line Houston",
+          "time": "7:30 PM",
+          "name": "Clint Coley",
+          "ticket_url": "https://www.ticketmaster.com/clint-coley-houston-texas-11-12-2026/event/3A0064F335EF12DC",
+          "event_id": "a00462ff2839a101",
+          "image_url": "https://s1.ticketm.net/dam/a/84d/6f42b922-5aa3-4667-bee0-ae827060884d_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/clint-coley-houston.jpg"
     },
     {
       "slug": "daniel-sloss",
@@ -297,6 +366,40 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/dovi-neuburger-houston-1.jpg"
+    },
+    {
+      "slug": "ellen-skrmetti",
+      "name": "Ellen Skrmetti",
+      "match": [
+        "ellen skrmetti"
+      ],
+      "status": "live",
+      "created_at": "2026-10-19T20:39:53.439Z",
+      "profile_written_at": "2026-10-19T20:41:03.088Z",
+      "profile_html": "<p><a href=\"https://www.hachettebookgroup.com/titles/ellen-skrmetti/cattywampus/9781546011248/\">Cattywampus: A Southern Woman’s Guide to Laughing When Life Goes Sideways</a> is Ellen Skrmetti’s second essay collection from Apiary, following 2024’s <em>Hey, Jesus, It’s Me: I Have Questions, Comments, and Concerns</em>.</p>\n\n<p>Skrmetti started performing stand-up in 2020 after taking comedy-writing classes at 41. When live comedy paused during the pandemic, she took online classes with Second City and made character sketches, including “If the Queen Died in the South,” before building out “Hey Jesus, It’s Me.”</p>\n\n<p>Her clean, faith-inflected Southern comedy covers marriage, motherhood, menopause, college football, and Southern culture. “I can do all things through Christ who strengthens me. What if I don’t want to?” Her work pairs personal-storytelling stand-up with short, character-driven social-media sketches.</p>\n\n<p>She appeared on <a href=\"https://www.anniefdowns.com/podcast/hey-jesus-its-me-with-comedian-ellen-skrmetti-episode-936/\">That Sounds Fun with Annie F. Downs</a> in 2024 and <a href=\"https://music.amazon.com/podcasts/b44eb772-4a91-4a31-b64b-39f017acb549/episodes/55f19a1f-6acc-4ec7-8647-592db4c1b610/in-good-faith-ep-310-comedy-and-faith-ellen-skrmetti\">In Good Faith</a> in September 2025. WSFA 12 News interviewed her in October 2024 about <em>Hey Jesus, It’s Me</em>.</p>",
+      "research_json": "{\n  \"full_name\": \"Ellen Skrmetti\",\n  \"hometown\": \"Ripley, Mississippi\",\n  \"career_start_year\": 2020,\n  \"specials\": [],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"The Punch Bowl Diaries\",\n      \"year_approx\": 2024\n    },\n    {\n      \"show\": \"That Sounds Fun with Annie F. Downs\",\n      \"year_approx\": 2024\n    },\n    {\n      \"show\": \"In Good Faith\",\n      \"year_approx\": 2025\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"WSFA 12 News\",\n      \"context\": \"Interviewed about her book, Hey Jesus, It's Me, in an October 2024 segment.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Clean, Southern, faith-inflected observational humor.\",\n    \"structure\": \"Short character-driven social-media sketches, notably the \\\"Hey Jesus, It's Me\\\" series, alongside personal-storytelling stand-up.\",\n    \"recurring_themes\": [\n      \"Faith\",\n      \"Family\",\n      \"Marriage\",\n      \"Motherhood\",\n      \"Menopause and midlife\",\n      \"Southern life and culture\",\n      \"College football\"\n    ],\n    \"comparable_to\": null\n  },\n  \"live_reputation\": \"Venue and publisher bios describe her live work as clean, relatable Southern comedy built around everyday stories; Hachette states that she has sold out venues across the country.\",\n  \"recent_activity_2025_2026\": \"Skrmetti appeared on In Good Faith in September 2025 and continued touring in 2026. Her second essay collection, Cattywampus: A Southern Woman's Guide to Laughing When Life Goes Sideways, is scheduled for publication on November 3, 2026, with related November appearances listed by her publisher.\",\n  \"recent_hook\": {\n    \"summary\": \"Skrmetti's forthcoming second book, Cattywampus: A Southern Woman's Guide to Laughing When Life Goes Sideways, is scheduled for release by Apiary on November 3, 2026.\",\n    \"quote\": \"Ellen Skrmetti, comedian and bestselling author, returns with a collection of hilarious essays about what happens when life goes sideways.\",\n    \"source_publication\": \"Hachette Book Group\",\n    \"source_url\": \"https://www.hachettebookgroup.com/titles/ellen-skrmetti/cattywampus/9781546011248/\",\n    \"date\": \"2026-11-03\"\n  },\n  \"instagram_handle\": \"@justskrmetti\",\n  \"notable_bits_or_quotes\": [\n    \"\\\"If the Queen Died in the South\\\"\",\n    \"\\\"Hey Jesus, It's Me\\\"\",\n    \"\\\"I can do all things through Christ who strengthens me. What if I don't want to?\\\"\",\n    \"\\\"Dreams don't have deadlines.\\\"\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That she has appeared in scripted television series or comedy specials.\",\n    \"That she has released a stand-up special, album, or Netflix special.\",\n    \"Exact social-media follower totals or total video-view figures unless checked directly on the relevant platform at publication time.\",\n    \"That Hey Jesus, It's Me was a bestseller on a specific national bestseller list; promotional and venue bios use \\\"bestselling,\\\" but no specific list placement was independently verified.\",\n    \"That she served on the faculty of a Birmingham comedy club; this appeared in a profile but was not independently corroborated.\",\n    \"That she is related to Tennessee Attorney General Jonathan Skrmetti; this was not independently verified for this profile.\"\n  ],\n  \"background_story\": \"Skrmetti was born and raised in Ripley, Mississippi, and later moved to Birmingham, Alabama. After working in sales and marketing, she began taking stand-up comedy writing classes at age 41 and first performed in 2020. When live comedy shut down during the COVID-19 pandemic, she took online classes with Second City and began posting sketches. Her \\\"If the Queen Died in the South\\\" sketch went viral, followed by her \\\"Hey Jesus, It's Me\\\" series. Her first book, Hey, Jesus, It's Me: I Have Questions, Comments, and Concerns, was published in 2024.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Official website\",\n      \"url\": \"https://ellenskrmetti.com/\"\n    },\n    {\n      \"label\": \"Hachette Book Group author page\",\n      \"url\": \"https://www.hachettebookgroup.com/contributor/ellen-skrmetti/\"\n    },\n    {\n      \"label\": \"Hachette Book Group: Cattywampus\",\n      \"url\": \"https://www.hachettebookgroup.com/titles/ellen-skrmetti/cattywampus/9781546011248/\"\n    },\n    {\n      \"label\": \"Publishers Weekly review of Cattywampus\",\n      \"url\": \"https://www2.publishersweekly.com/978-1-5460-1124-8\"\n    },\n    {\n      \"label\": \"That Sounds Fun with Annie F. Downs, Episode 936\",\n      \"url\": \"https://www.anniefdowns.com/podcast/hey-jesus-its-me-with-comedian-ellen-skrmetti-episode-936/\"\n    },\n    {\n      \"label\": \"In Good Faith, Episode 310\",\n      \"url\": \"https://music.amazon.com/podcasts/b44eb772-4a91-4a31-b64b-39f017acb549/episodes/55f19a1f-6acc-4ec7-8647-592db4c1b610/in-good-faith-ep-310-comedy-and-faith-ellen-skrmetti\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.instagram.com/justskrmetti/"
+      ],
+      "instagramHandle": "@justskrmetti",
+      "imageUrl": "https://s1.ticketm.net/dam/a/59a/054c5f8c-fe42-4283-865f-f63a2333559a_EVENT_DETAIL_PAGE_16_9.jpg",
+      "wpPageId": 2270,
+      "wpLink": "https://comedyhouston.com/comedians/ellen-skrmetti/",
+      "wpImageMediaId": 2269,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-11-12",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "Ellen Skrmetti",
+          "ticket_url": "https://www.ticketweb.com/event/ellen-skrmetti-houston-improv-tickets/15024353?REFERRAL_ID=tmfeed",
+          "event_id": "6b85772a84b825cf",
+          "image_url": "https://s1.ticketm.net/dam/a/59a/054c5f8c-fe42-4283-865f-f63a2333559a_EVENT_DETAIL_PAGE_16_9.jpg"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/ellen-skrmetti-houston.jpg"
     },
     {
       "slug": "foos-gone-wild",
@@ -528,6 +631,42 @@
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/keegan-tindall-houston.png"
     },
     {
+      "slug": "kev-adams",
+      "name": "Kev Adams",
+      "match": [
+        "kev adams"
+      ],
+      "status": "live",
+      "created_at": "2026-10-19T20:37:36.411Z",
+      "profile_written_at": "2026-10-19T20:38:43.348Z",
+      "profile_html": "<p>In September 2026, discussing <i>La Maison de nos rêves</i> with France Inter, Kev Adams said: “Je crois que l'on écrit ce que l'on est.” The film, directed by Claude Zidi Jr. and released in French cinemas in October 2026, was co-written by Adams, who also stars in it. He linked its portrayal of loneliness among older people to personal experience.</p>\n\n<p>Adams gained wider exposure in 2009 through opening appearances connected with Anne Roumanoff and Gad Elmaleh. His first solo show was billed as <i>The Young Man Show</i>. The material draws on love, success and social commentary. His <a href=\"https://www.kevadams.fr/fr/spectacles\">official show history</a> includes the Olympia, Zénith venues and Accor Arena.</p>\n\n<p>On screen, Adams starred in and co-created <i>Soda</i>, the French short-format comedy series. He was a panelist on TF1’s <i>Mask Singer</i> from 2019 through 2026. His 2022 Netflix special, <a href=\"https://www.netflix.com/title/81467328\"><i>Kev Adams: The Real Me</i></a>, is a standalone set. In 2026, he performed a stand-up audition in English on <i>America’s Got Talent</i>.</p>",
+      "research_json": "{\n  \"full_name\": \"Kevin Smadja\",\n  \"hometown\": \"Paris, France\",\n  \"career_start_year\": 2009,\n  \"specials\": [\n    {\n      \"title\": \"Kev Adams: The Real Me\",\n      \"platform\": \"Netflix\",\n      \"year\": 2022\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"OnTime\",\n      \"year_approx\": 2024\n    },\n    {\n      \"show\": \"LEGEND\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Le sept neuf France Inter\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Soda\",\n      \"context\": \"Star and co-creator of the French short-format comedy series.\"\n    },\n    {\n      \"show\": \"Mask Singer\",\n      \"context\": \"Panelist/judge on TF1 from 2019 through 2026.\"\n    },\n    {\n      \"show\": \"America's Got Talent\",\n      \"context\": \"Performed a stand-up audition in English in 2026.\"\n    },\n    {\n      \"show\": \"L'Humour à la plage\",\n      \"context\": \"Presenter of the TF1-broadcast comedy gala/festival he created.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Personal, intimate and observational.\",\n    \"structure\": \"Stand-up/one-man-show format.\",\n    \"recurring_themes\": [\n      \"Life after his early career breakthrough\",\n      \"Love\",\n      \"Success\",\n      \"Social commentary\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"His official show history documents performances and tours at the Olympia, Zénith venues and Accor Arena.\",\n  \"recent_activity_2025_2026\": \"In 2026, Adams co-wrote and starred in Claude Zidi Jr.'s comedy La Maison de nos rêves, released in French cinemas on October 7, 2026. He also promoted the film in a September 28, 2026 France Inter interview and appeared on America's Got Talent in 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"Kev Adams co-wrote and stars in La Maison de nos rêves, a comedy directed by Claude Zidi Jr. that opened in French cinemas on October 7, 2026. In a recent France Inter interview, he connected the film's writing to his personal experience and its themes of loneliness among older people.\",\n    \"quote\": \"Je crois que l'on écrit ce que l'on est.\",\n    \"source_publication\": \"France Inter\",\n    \"source_url\": \"https://fr.linkedin.com/posts/france-inter_je-crois-que-lon-%C3%A9crit-ce-que-lon-est-activity-7510292940028559360-Q_n6\",\n    \"date\": \"2026-09-28\"\n  },\n  \"instagram_handle\": \"@kevadams\",\n  \"notable_bits_or_quotes\": [],\n  \"unverifiable_claims_to_avoid\": [\n    \"Claims that Kev Adams has exactly 27 film credits and exactly 30 million cinema admissions; these figures appeared on his personal website but were not independently verified.\",\n    \"Claims that he has created exactly four Fridge comedy clubs; this was presented on his personal website but was not independently verified.\",\n    \"An old school-publication claim that he was the youngest French personality with the largest social-media following.\"\n  ],\n  \"background_story\": \"Born Kevin Smadja in Paris on July 1, 1991, he began gaining wider public exposure in 2009, including opening appearances connected with Anne Roumanoff and Gad Elmaleh. His early solo stage work was billed as The Young Man Show.\",\n  \"source_urls\": [\n    {\n      \"label\": \"IMDb biography\",\n      \"url\": \"https://www.imdb.com/name/nm1133795/bio/\"\n    },\n    {\n      \"label\": \"Netflix special page\",\n      \"url\": \"https://www.netflix.com/title/81467328\"\n    },\n    {\n      \"label\": \"Kev Adams official show history\",\n      \"url\": \"https://www.kevadams.fr/fr/spectacles\"\n    },\n    {\n      \"label\": \"TF1+ Kev Adams biography and television credits\",\n      \"url\": \"https://www.tf1.fr/dossier/kev-adams-39041420\"\n    },\n    {\n      \"label\": \"LEGEND podcast episode\",\n      \"url\": \"https://podcasts.apple.com/fr/podcast/rediff-kev-adams-revient-sur-les-hauts-et-les-bas-de/id1691740320?i=1000751029386\"\n    },\n    {\n      \"label\": \"France Inter recent interview post\",\n      \"url\": \"https://fr.linkedin.com/posts/france-inter_je-crois-que-lon-%C3%A9crit-ce-que-lon-est-activity-7510292940028559360-Q_n6\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.imdb.com/name/nm1133795/bio/",
+        "https://www.netflix.com/title/81467328",
+        "https://www.instagram.com/kevadams/"
+      ],
+      "instagramHandle": "@kevadams",
+      "imageUrl": "https://s1.ticketm.net/dam/a/892/5c0db8b1-ce91-4685-af42-af3dc4610892_1306001_EVENT_DETAIL_PAGE_16_9.jpg",
+      "wpPageId": 2264,
+      "wpLink": "https://comedyhouston.com/comedians/kev-adams/",
+      "wpImageMediaId": 2263,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-11-11",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "Kev Adams",
+          "ticket_url": "https://www.ticketweb.com/event/kev-adams-houston-improv-tickets/14277964?REFERRAL_ID=tmfeed",
+          "event_id": "f3f2fc613ede0656",
+          "image_url": "https://s1.ticketm.net/dam/a/892/5c0db8b1-ce91-4685-af42-af3dc4610892_1306001_EVENT_DETAIL_PAGE_16_9.jpg"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/kev-adams-houston.jpg"
+    },
+    {
       "slug": "marito-lopez",
       "name": "Marito Lopez",
       "match": [
@@ -739,6 +878,41 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/pauly-shore-houston.jpg"
+    },
+    {
+      "slug": "reem-edan",
+      "name": "Reem Edan",
+      "match": [
+        "reem edan"
+      ],
+      "status": "live",
+      "created_at": "2026-10-19T20:41:15.313Z",
+      "profile_written_at": "2026-10-19T20:42:18.401Z",
+      "profile_html": "<p>In July 2026, on <a href=\"https://www.iheart.com/podcast/269-arab-is-me-336191753/episode/reem-edan-too-arab-for-337939639/\">Arab Is Me</a>, Reem Edan summed up her résumé: “all these credits and still no husband.” The episode covered Iraqi-American identity, dating, parents, social-media work, Arab and Muslim women’s expectations, and her Dry Bar Comedy special <a href=\"https://www.imdb.com/name/nm6003879/\">Ethnic, Ambiguous &amp; Single</a>.</p>\n\n<p>Edan grew up in Fort Collins, Colorado, then lived in Bahrain after moving there shortly before September 11, 2001. Before comedy, she worked in film marketing and publicity connected with Paramount and Disney. In a <a href=\"https://www.newarab.com/features/20-feet-stardom-conversation-comedian-reem-edan\">New Arab interview</a>, she said open mics and the question of what made her happy led her out of that work.</p>\n\n<p>Her material takes on Iraqi-American and first-generation identity, Muslim upbringing, religion, family, immigrant parents, dating, cross-cultural expectations, and social media. Bits include “I’m Muslim Unless Trump Gets Elected,” “How To Talk Back To Aunties,” and “Chad GPT.”</p>\n\n<p>Edan also does character-driven sketches. Her official biography credits a performance in Arabic on Shahid VIP’s <a href=\"https://www.reemedan.com/about\">The Stand Up Sketch Show</a>. IMDb lists her as Reem and credits sketch characters in the 2025 series <em>Great Job News!</em>.</p>",
+      "research_json": "{\n  \"full_name\": \"Reem Edan\",\n  \"hometown\": \"Fort Collins, Colorado\",\n  \"career_start_year\": null,\n  \"specials\": [\n    {\n      \"title\": \"Ethnic, Ambiguous & Single\",\n      \"platform\": \"Dry Bar Comedy\",\n      \"year\": null\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"The Comedy Cast\",\n      \"year_approx\": 2017\n    },\n    {\n      \"show\": \"The Dino Podcast\",\n      \"year_approx\": 2024\n    },\n    {\n      \"show\": \"Arab Is Me\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Disney Television Discovers: Talent Showcase\",\n      \"context\": \"Writer; IMDb lists two episodes in 2022.\"\n    },\n    {\n      \"show\": \"The Stand Up Sketch Show\",\n      \"context\": \"Her official biography says she performed in Arabic on Shahid VIP's program.\"\n    },\n    {\n      \"show\": \"Great Job News!\",\n      \"context\": \"IMDb lists her as Reem and sketch characters in the 2025 TV series.\"\n    },\n    {\n      \"show\": \"Desus & Mero\",\n      \"context\": \"Listed as an appearance in her Kirkland Productions booking biography.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Sharp and unfiltered.\",\n    \"structure\": \"Stand-up combined with character-driven sketches.\",\n    \"recurring_themes\": [\n      \"Iraqi-American and first-generation identity\",\n      \"Muslim upbringing and religion\",\n      \"Family and immigrant parents\",\n      \"Dating\",\n      \"Cross-cultural expectations\",\n      \"Social media\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"Her booking representative's page includes a testimonial from producer Uzma Jafri stating that Edan “connected with every person in the room.”\",\n  \"recent_activity_2025_2026\": \"IMDb lists Edan in the 2025 TV series Great Job News! as Reem and sketch characters. In 2026, she performed her Superficial Intelligence tour at the Rainbow Theater in Amman on October 10 and has a Dallas Comedy Club date scheduled for November 11, 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"On July 1, 2026, Edan appeared on the Arab Is Me podcast to discuss Iraqi-American identity, comedy, social-media work, Arab and Muslim women's expectations, dating, parents, and her Dry Bar Comedy special Ethnic, Ambiguous & Single.\",\n    \"quote\": \"all these credits and still no husband.\",\n    \"source_publication\": \"Arab Is Me / iHeart\",\n    \"source_url\": \"https://www.iheart.com/podcast/269-arab-is-me-336191753/episode/reem-edan-too-arab-for-337939639/\",\n    \"date\": \"2026-07-01\"\n  },\n  \"instagram_handle\": \"@reemedan\",\n  \"notable_bits_or_quotes\": [\n    \"I'm Muslim Unless Trump Gets Elected\",\n    \"How To Talk Back To Aunties\",\n    \"Chad GPT\",\n    \"“I'm 20 feet from stardom. What am I doing?”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That she began stand-up in 2020. This appears on Famous Birthdays, but it conflicts with a 2017 Comedy Cast episode description stating she had been in comedy for less than two years.\",\n    \"Any precise year for the release of Ethnic, Ambiguous & Single; reliable pages verified that it is available on Dry Bar Comedy, but did not provide a release year.\",\n    \"That she opened for specific comedians including Iliza Schlesinger, Arsenio Hall, or Hannah Berner; these claims appear in venue or booking biographies but were not independently verified during this research.\",\n    \"That she has performed in exactly nine countries across four continents; this was found on a celebrity-profile site and was not independently verified.\",\n    \"That she wrote for Netflix; this appears in a booking catalog but was not independently verified with a Netflix credit or official project listing.\"\n  ],\n  \"background_story\": \"Edan is an Iraqi-American comedian, actress, writer, and content creator. She grew up in Fort Collins, Colorado, and later lived in Bahrain after moving there shortly before September 11, 2001. Before focusing on comedy, she worked in film marketing and publicity, including work connected with Paramount and Disney. In a 2024 interview, she said that doing open mics and reflecting on what made her happy led her to leave that career. Her work frequently addresses navigating Iraqi, American, Arab, Muslim, and family expectations.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Official website\",\n      \"url\": \"https://www.reemedan.com/\"\n    },\n    {\n      \"label\": \"Official biography\",\n      \"url\": \"https://www.reemedan.com/about\"\n    },\n    {\n      \"label\": \"The New Arab interview\",\n      \"url\": \"https://www.newarab.com/features/20-feet-stardom-conversation-comedian-reem-edan\"\n    },\n    {\n      \"label\": \"Arab Is Me podcast episode\",\n      \"url\": \"https://www.iheart.com/podcast/269-arab-is-me-336191753/episode/reem-edan-too-arab-for-337939639/\"\n    },\n    {\n      \"label\": \"IMDb\",\n      \"url\": \"https://www.imdb.com/name/nm6003879/\"\n    },\n    {\n      \"label\": \"Dallas Comedy Club event listing\",\n      \"url\": \"https://www.prekindle.com/event/53493-reem-edan-superficial-intelligence-dallas\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.imdb.com/name/nm6003879/",
+        "https://www.instagram.com/reemedan/"
+      ],
+      "instagramHandle": "@reemedan",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194219395%2F2991795842957%2F1%2Foriginal.20260923-184205?auto=format%2Ccompress&q=75&sharp=10&s=a5f36902b8d6a8c94611d6489fdcd5bf",
+      "wpPageId": 2273,
+      "wpLink": "https://comedyhouston.com/comedians/reem-edan/",
+      "wpImageMediaId": 2272,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-11-12",
+          "venue": "The Den Comedy Club",
+          "time": "7:30 PM",
+          "name": "Stand-Up Comedy - Reem Edan live at the Den Comedy Club",
+          "ticket_url": "https://www.eventbrite.com/e/stand-up-comedy-reem-edan-live-at-the-den-comedy-club-tickets-2002163279265",
+          "event_id": "a6a5e39da7d85ded",
+          "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194219395%2F2991795842957%2F1%2Foriginal.20260923-184205?auto=format%2Ccompress&q=75&sharp=10&s=a5f36902b8d6a8c94611d6489fdcd5bf"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/reem-edan-houston.jpg"
     },
     {
       "slug": "sarper-guven",
