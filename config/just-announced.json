@@ -1,358 +1,6 @@
 {
- "updated": "2026-10-18T16:35:18.383Z",
+ "updated": "2026-10-19T01:49:02.516Z",
  "announcements": [
-  {
-   "id": "ec806922d03f7e4d",
-   "name": "FOR THE CULTURE: A Tuesday Comedy Show for The Culture",
-   "venue": "The Secret Group",
-   "date": "2026-10-27",
-   "time": "8:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1171686511%2F3558237521%2F1%2Foriginal.20251124-232548?auto=format%2Ccompress&q=75&sharp=10&s=f229ff3250f6ec814bce4550095dd7d0",
-   "ticket_url": "https://www.eventbrite.com/e/for-the-culture-a-tuesday-comedy-show-for-the-culture-tickets-2002396390507",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 9d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "49e2146e62a6f519",
-   "name": "C U Next Tuesday: Weekly Comedy hosted by Corlis DeLauren and Tess Vergult",
-   "venue": "The Secret Group",
-   "date": "2026-10-27",
-   "time": "10:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194475271%2F68532713233%2F1%2Foriginal.20240802-211725?auto=format%2Ccompress&q=75&sharp=10&s=48e272138a0f8f938b7cbe6de3e9be48",
-   "ticket_url": "https://www.eventbrite.com/e/c-u-next-tuesday-weekly-comedy-hosted-by-corlis-delauren-and-tess-vergult-tickets-2002396447678",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 9d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "b6baf31fc6167c2c",
-   "name": "PASS THE MIC: Tuesday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-10-27",
-   "time": "11:30 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194475386%2F68532713233%2F1%2Foriginal.20240806-170802?auto=format%2Ccompress&q=75&sharp=10&s=3df2402bca20388ec46fca1393b7fd97",
-   "ticket_url": "https://www.eventbrite.com/e/pass-the-mic-tuesday-open-mic-comedy-tickets-2002396502843",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 9d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "7f459e60aaf26f74",
-   "name": "$2 BILL Two Dollar Comedy Show every Wednesday!",
-   "venue": "The Secret Group",
-   "date": "2026-10-28",
-   "time": "8:00 PM",
-   "price_min": 5.36,
-   "price_max": 5.36,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192637134%2F3558237521%2F1%2Foriginal.20260903-234123?auto=format%2Ccompress&q=75&sharp=10&s=93f8262e1563e28c879354e3f44335de",
-   "ticket_url": "https://www.eventbrite.com/e/2-bill-two-dollar-comedy-show-every-wednesday-tickets-2002396510867",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 10d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "5d34511dcdc739f2",
-   "name": "Master Debaters",
-   "venue": "The Secret Group",
-   "date": "2026-10-28",
-   "time": "10:00 PM",
-   "price_min": 8.82,
-   "price_max": 8.82,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186105427%2F3558237521%2F1%2Foriginal.20260603-215732?auto=format%2Ccompress&q=75&sharp=10&s=d6cb2dc6efbb6740f97bbfc6a7ded544",
-   "ticket_url": "https://www.eventbrite.com/e/master-debaters-tickets-2002396451690",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 10d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "be183d88ea5dbf8b",
-   "name": "WITCHY WEDNESDAYS: Wednesday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-10-28",
-   "time": "11:59 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1116853183%2F3558237521%2F1%2Foriginal.20250907-205756?auto=format%2Ccompress&q=75&sharp=10&s=4afa07037c4ed3981e9c168d7d882705",
-   "ticket_url": "https://www.eventbrite.com/e/witchy-wednesdays-wednesday-open-mic-comedy-tickets-2002396515882",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 10d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "dc19529b70c306bc",
-   "name": "BACK OF THE BUS: Thursday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-10-29",
-   "time": "9:30 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194475604%2F65406453537%2F1%2Foriginal.20210519-142609?auto=format%2Ccompress&q=75&sharp=10&s=8caf13fcc03c056e17801025396edaa6",
-   "ticket_url": "https://www.eventbrite.com/e/back-of-the-bus-thursday-open-mic-comedy-tickets-2002396636242",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 11d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "27655bdf0bc0b2e4",
-   "name": "The Best of the Secret Group Comedy Showcase 8pm",
-   "venue": "The Secret Group",
-   "date": "2026-10-30",
-   "time": "8:00 PM",
-   "price_min": 18.06,
-   "price_max": 21.51,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194475607%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=09585b01e7ccb4393d4446c28c6d2c26",
-   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-8pm-tickets-2002396637245",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 12d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "dec383b87a5fd9fa",
-   "name": "The Best of the Secret Group Comedy Showcase 10pm",
-   "venue": "The Secret Group",
-   "date": "2026-10-30",
-   "time": "10:00 PM",
-   "price_min": 18.06,
-   "price_max": 21.51,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194475314%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=2f14c3fb8f31bbbc54a5990b2c181888",
-   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-10pm-tickets-2002396476765",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 12d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "f8963a8abda833ce",
-   "name": "The Late Night Dirty Show: X Rated Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-10-30",
-   "time": "11:59 PM",
-   "price_min": 8.82,
-   "price_max": 8.82,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F923781843%2F2186820483043%2F1%2Foriginal.20241227-161803?auto=format%2Ccompress&q=75&sharp=10&s=680f9342c7cee46a79ee13f5f9896ffe",
-   "ticket_url": "https://www.eventbrite.com/e/the-late-night-dirty-show-x-rated-comedy-tickets-2002396523906",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 12d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "1606e5a5bd53f5ce",
-   "name": "The Best of the Secret Group Comedy Showcase 7pm",
-   "venue": "The Secret Group",
-   "date": "2026-10-31",
-   "time": "7:00 PM",
-   "price_min": 18.06,
-   "price_max": 21.51,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194475329%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=6621c2664bb4213e8d3330a6ced3fa1f",
-   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-7pm-tickets-2002396480777",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 13d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "158cf4cfda1a2ebc",
-   "name": "The Best of the Secret Group Comedy Showcase 9pm",
-   "venue": "The Secret Group",
-   "date": "2026-10-31",
-   "time": "9:00 PM",
-   "price_min": 18.06,
-   "price_max": 21.51,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194475430%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=180af710e292db67931ee983ae0b2a8f",
-   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-9pm-tickets-2002396527918",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 13d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "125fe2b4e7fbed44",
-   "name": "The Best of the Secret Group RATED R Comedy Showcase 11pm",
-   "venue": "The Secret Group",
-   "date": "2026-10-31",
-   "time": "11:00 PM",
-   "price_min": 11.13,
-   "price_max": 14.59,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194475351%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=9c5de4c7b510ac1be88cd4520dc77ce9",
-   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-rated-r-comedy-showcase-11pm-tickets-2002396489804",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 13d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "70c65c58f7e1b380",
-   "name": "SPEEDBALL: Saturday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-10-31",
-   "time": "11:59 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1065628803%2F3558237521%2F1%2Foriginal.20250703-001512?auto=format%2Ccompress&q=75&sharp=10&s=61b8871824c7fc4b25eb3b46b0c8c63e",
-   "ticket_url": "https://www.eventbrite.com/e/speedball-saturday-open-mic-comedy-tickets-2002396419594",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 13d out (min 14)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "7edc120824affbb4",
-   "name": "The Last Laugh with James Vogt & Trip Truman",
-   "venue": "The Secret Group",
-   "date": "2026-11-01",
-   "time": "7:00 PM",
-   "price_min": 8.82,
-   "price_max": 8.82,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1191459227%2F3558237521%2F1%2Foriginal.20260819-201134?auto=format%2Ccompress&q=75&sharp=10&s=cea7a34ee27a983a6dc54f88c3210522",
-   "ticket_url": "https://www.eventbrite.com/e/the-last-laugh-with-james-vogt-trip-truman-tickets-2002396572050",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "recurring series (4 weeks)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "cf2a8e13ca5029b5",
-   "name": "The (secret) Secret Show",
-   "venue": "The Secret Group",
-   "date": "2026-11-01",
-   "time": "9:00 PM",
-   "price_min": 14.59,
-   "price_max": 14.59,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1182517711%2F3558237521%2F1%2Foriginal.20260419-192309?auto=format%2Ccompress&q=75&sharp=10&s=9360a990100667a0306d4f4d57bb4300",
-   "ticket_url": "https://www.eventbrite.com/e/the-secret-secret-show-tickets-2002396574056",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "title pattern",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "d8f90d54900dbe13",
-   "name": "COMEDY DOJO: Sunday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-11-01",
-   "time": "11:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1115718973%2F3558237521%2F1%2Foriginal.20250905-193245?auto=format%2Ccompress&q=75&sharp=10&s=0f3508786faa5dc4d3f3540085034564",
-   "ticket_url": "https://www.eventbrite.com/e/comedy-dojo-sunday-open-mic-comedy-tickets-2002396617185",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "title pattern",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "31be32b5277287a7",
-   "name": "MONDAY NIGHT COMEDY!",
-   "venue": "The Secret Group",
-   "date": "2026-11-02",
-   "time": "8:00 PM",
-   "price_min": 8.82,
-   "price_max": 8.82,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1084977123%2F3558237521%2F1%2Foriginal.20250730-234417?auto=format%2Ccompress&q=75&sharp=10&s=27248b634d602f36b66580f6e67573f3",
-   "ticket_url": "https://www.eventbrite.com/e/monday-night-comedy-tickets-2002396540957",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "recurring series (4 weeks)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "9b9d23a340ddee32",
-   "name": "The Passing Lane with Andrew Youngblood, Will Loden & Blake Jones",
-   "venue": "The Secret Group",
-   "date": "2026-11-02",
-   "time": "10:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1175278655%2F3558237521%2F1%2Foriginal.20260119-212007?auto=format%2Ccompress&q=75&sharp=10&s=5a09ff467498732e5fdea29b56ad6e85",
-   "ticket_url": "https://www.eventbrite.com/e/the-passing-lane-with-andrew-youngblood-will-loden-blake-jones-tickets-2002396545972",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "recurring series (4 weeks)",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "b6500a66fb5b8206",
-   "name": "NIGHT COURT: Monday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-11-02",
-   "time": "11:30 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176335183%2F3558237521%2F1%2Foriginal.20260131-175517?auto=format%2Ccompress&q=75&sharp=10&s=aadd8de34a66a713db9766a3e110f224",
-   "ticket_url": "https://www.eventbrite.com/e/night-court-monday-open-mic-comedy-tickets-2002396628218",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "title pattern",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "b2469c266d44fcfa",
-   "name": "FOR THE CULTURE: A Tuesday Comedy Show for The Culture",
-   "venue": "The Secret Group",
-   "date": "2026-11-03",
-   "time": "8:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1171686511%2F3558237521%2F1%2Foriginal.20251124-232548?auto=format%2Ccompress&q=75&sharp=10&s=f229ff3250f6ec814bce4550095dd7d0",
-   "ticket_url": "https://www.eventbrite.com/e/for-the-culture-a-tuesday-comedy-show-for-the-culture-tickets-2002396630224",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "title pattern",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
-  {
-   "id": "5a7bf1c0c874eff0",
-   "name": "C U Next Tuesday: Weekly Comedy hosted by Corlis DeLauren and Tess Vergult",
-   "venue": "The Secret Group",
-   "date": "2026-11-03",
-   "time": "10:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1194476986%2F68532713233%2F1%2Foriginal.20240802-211725?auto=format%2Ccompress&q=75&sharp=10&s=7d4b65a001ba558db777bcb0da17dd8d",
-   "ticket_url": "https://www.eventbrite.com/e/c-u-next-tuesday-weekly-comedy-hosted-by-corlis-delauren-and-tess-vergult-tickets-2002397106649",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "title pattern",
-   "first_seen": "2026-09-28T02:03:25.842Z"
-  },
   {
    "id": "16b74a97f84b6209",
    "name": "PASS THE MIC: Tuesday Open Mic Comedy",
@@ -398,7 +46,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (4 weeks)",
+   "notable_reason": "recurring series (5 weeks)",
    "first_seen": "2026-09-28T02:03:25.842Z"
   },
   {
@@ -558,7 +206,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -16d out (min 14)",
+   "notable_reason": "only -17d out (min 14)",
    "first_seen": "2026-09-28T20:10:41.923Z"
   },
   {
@@ -574,7 +222,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -15d out (min 14)",
+   "notable_reason": "only -16d out (min 14)",
    "first_seen": "2026-09-28T20:10:41.923Z"
   },
   {
@@ -622,7 +270,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -16d out (min 14)",
+   "notable_reason": "only -17d out (min 14)",
    "first_seen": "2026-09-29T02:48:36.348Z"
   },
   {
@@ -686,7 +334,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -14d out (min 14)",
+   "notable_reason": "only -15d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -702,7 +350,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -9d out (min 14)",
+   "notable_reason": "only -10d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -718,7 +366,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -7d out (min 14)",
+   "notable_reason": "only -8d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -734,7 +382,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -4d out (min 14)",
+   "notable_reason": "only -5d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -750,7 +398,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -1d out (min 14)",
+   "notable_reason": "only -2d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -766,7 +414,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 0d out (min 14)",
+   "notable_reason": "only -1d out (min 14)",
    "first_seen": "2026-09-30T02:28:59.699Z"
   },
   {
@@ -798,7 +446,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -8d out (min 14)",
+   "notable_reason": "only -9d out (min 14)",
    "first_seen": "2026-09-30T18:30:09.420Z"
   },
   {
@@ -894,7 +542,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -9d out (min 14)",
+   "notable_reason": "only -10d out (min 14)",
    "first_seen": "2026-10-01T18:56:47.376Z"
   },
   {
@@ -910,7 +558,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -9d out (min 14)",
+   "notable_reason": "only -10d out (min 14)",
    "first_seen": "2026-10-01T18:56:47.376Z"
   },
   {
@@ -926,7 +574,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-01T18:56:47.376Z"
   },
   {
@@ -942,7 +590,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-10-01T18:56:47.376Z"
   },
   {
@@ -958,7 +606,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-10-01T18:56:47.376Z"
   },
   {
@@ -1006,7 +654,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -4d out (min 14)",
+   "notable_reason": "only -5d out (min 14)",
    "first_seen": "2026-10-02T02:39:02.152Z"
   },
   {
@@ -1022,7 +670,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -3d out (min 14)",
+   "notable_reason": "only -4d out (min 14)",
    "first_seen": "2026-10-02T02:39:02.152Z"
   },
   {
@@ -1038,7 +686,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-10-02T02:39:02.152Z"
   },
   {
@@ -1054,7 +702,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-10-02T02:39:02.152Z"
   },
   {
@@ -1070,7 +718,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-02T02:39:02.152Z"
   },
   {
@@ -1486,7 +1134,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -10d out (min 14)",
+   "notable_reason": "only -11d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -1502,7 +1150,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -3d out (min 14)",
+   "notable_reason": "only -4d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -1518,7 +1166,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -1534,7 +1182,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -1582,7 +1230,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (4 weeks)",
+   "notable_reason": "recurring series (5 weeks)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -1630,7 +1278,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (4 weeks)",
+   "notable_reason": "recurring series (5 weeks)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -1646,7 +1294,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (4 weeks)",
+   "notable_reason": "recurring series (5 weeks)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -1742,7 +1390,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (4 weeks)",
+   "notable_reason": "recurring series (5 weeks)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -2046,7 +1694,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -8d out (min 14)",
+   "notable_reason": "only -9d out (min 14)",
    "first_seen": "2026-10-07T02:46:00.656Z"
   },
   {
@@ -2062,7 +1710,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-10-07T19:23:52.142Z"
   },
   {
@@ -2110,7 +1758,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -1d out (min 14)",
+   "notable_reason": "only -2d out (min 14)",
    "first_seen": "2026-10-08T03:01:58.794Z"
   },
   {
@@ -2126,7 +1774,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-10-08T19:19:58.340Z"
   },
   {
@@ -2174,7 +1822,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -2d out (min 14)",
+   "notable_reason": "only -3d out (min 14)",
    "first_seen": "2026-10-09T18:52:00.005Z"
   },
   {
@@ -2222,7 +1870,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -8d out (min 14)",
+   "notable_reason": "only -9d out (min 14)",
    "first_seen": "2026-10-10T02:50:31.432Z"
   },
   {
@@ -2302,7 +1950,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -8d out (min 14)",
+   "notable_reason": "only -9d out (min 14)",
    "first_seen": "2026-10-11T02:16:06.531Z"
   },
   {
@@ -2318,7 +1966,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (3 weeks)",
+   "notable_reason": "small room",
    "first_seen": "2026-10-11T18:07:32.734Z"
   },
   {
@@ -2414,7 +2062,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-10-12T02:44:31.090Z"
   },
   {
@@ -2430,7 +2078,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-10-12T02:44:31.090Z"
   },
   {
@@ -2446,7 +2094,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-10-12T02:44:31.090Z"
   },
   {
@@ -2462,7 +2110,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-10-12T02:44:31.090Z"
   },
   {
@@ -2894,7 +2542,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-10-15T17:49:43.895Z"
   },
   {
@@ -2942,7 +2590,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -1d out (min 14)",
+   "notable_reason": "only -2d out (min 14)",
    "first_seen": "2026-10-16T17:26:52.728Z"
   },
   {
@@ -2958,7 +2606,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-10-16T17:26:52.728Z"
   },
   {
@@ -3200,6 +2848,358 @@
    "tier": null,
    "notable_reason": "venue excluded",
    "first_seen": "2026-10-18T16:35:18.383Z"
+  },
+  {
+   "id": "3ccdb8f4d575eeec",
+   "name": "The Last Laugh with James Vogt & Trip Truman",
+   "venue": "The Secret Group",
+   "date": "2026-11-15",
+   "time": "7:00 PM",
+   "price_min": 8.82,
+   "price_max": 8.82,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1191459227%2F3558237521%2F1%2Foriginal.20260819-201134?auto=format%2Ccompress&q=75&sharp=10&s=cea7a34ee27a983a6dc54f88c3210522",
+   "ticket_url": "https://www.eventbrite.com/e/the-last-laugh-with-james-vogt-trip-truman-tickets-2003571984741",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "recurring series (5 weeks)",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "3e08b43e9a0d7d02",
+   "name": "The (secret) Secret Show",
+   "venue": "The Secret Group",
+   "date": "2026-11-15",
+   "time": "9:00 PM",
+   "price_min": 14.59,
+   "price_max": 14.59,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1182517711%2F3558237521%2F1%2Foriginal.20260419-192309?auto=format%2Ccompress&q=75&sharp=10&s=9360a990100667a0306d4f4d57bb4300",
+   "ticket_url": "https://www.eventbrite.com/e/the-secret-secret-show-tickets-2003572042915",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "d067d3a12d48f28c",
+   "name": "COMEDY DOJO: Sunday Open Mic Comedy",
+   "venue": "The Secret Group",
+   "date": "2026-11-15",
+   "time": "11:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1115718973%2F3558237521%2F1%2Foriginal.20250905-193245?auto=format%2Ccompress&q=75&sharp=10&s=0f3508786faa5dc4d3f3540085034564",
+   "ticket_url": "https://www.eventbrite.com/e/comedy-dojo-sunday-open-mic-comedy-tickets-2003572128170",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "55baae96d2971118",
+   "name": "MONDAY NIGHT COMEDY!",
+   "venue": "The Secret Group",
+   "date": "2026-11-16",
+   "time": "8:00 PM",
+   "price_min": 8.82,
+   "price_max": 8.82,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1084977123%2F3558237521%2F1%2Foriginal.20250730-234417?auto=format%2Ccompress&q=75&sharp=10&s=27248b634d602f36b66580f6e67573f3",
+   "ticket_url": "https://www.eventbrite.com/e/monday-night-comedy-tickets-2003572155251",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "recurring series (5 weeks)",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "213885cf3e6ab3d0",
+   "name": "The Passing Lane with Andrew Youngblood, Will Loden & Blake Jones",
+   "venue": "The Secret Group",
+   "date": "2026-11-16",
+   "time": "10:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1175278655%2F3558237521%2F1%2Foriginal.20260119-212007?auto=format%2Ccompress&q=75&sharp=10&s=5a09ff467498732e5fdea29b56ad6e85",
+   "ticket_url": "https://www.eventbrite.com/e/the-passing-lane-with-andrew-youngblood-will-loden-blake-jones-tickets-2003572183335",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "recurring series (5 weeks)",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "33b78c767497c01c",
+   "name": "NIGHT COURT: Monday Open Mic Comedy",
+   "venue": "The Secret Group",
+   "date": "2026-11-16",
+   "time": "11:30 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176335183%2F3558237521%2F1%2Foriginal.20260131-175517?auto=format%2Ccompress&q=75&sharp=10&s=aadd8de34a66a713db9766a3e110f224",
+   "ticket_url": "https://www.eventbrite.com/e/night-court-monday-open-mic-comedy-tickets-2003572265581",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "587c678cbbd67687",
+   "name": "FOR THE CULTURE: A Tuesday Comedy Show for The Culture",
+   "venue": "The Secret Group",
+   "date": "2026-11-17",
+   "time": "8:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1171686511%2F3558237521%2F1%2Foriginal.20251124-232548?auto=format%2Ccompress&q=75&sharp=10&s=f229ff3250f6ec814bce4550095dd7d0",
+   "ticket_url": "https://www.eventbrite.com/e/for-the-culture-a-tuesday-comedy-show-for-the-culture-tickets-2003572296674",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "e9bbebcc86d35fb3",
+   "name": "C U Next Tuesday: Weekly Comedy hosted by Corlis DeLauren and Tess Vergult",
+   "venue": "The Secret Group",
+   "date": "2026-11-17",
+   "time": "10:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1196049380%2F68532713233%2F1%2Foriginal.20240802-211725?auto=format%2Ccompress&q=75&sharp=10&s=a9625d28ef02a2f6a93036bb7958cd2b",
+   "ticket_url": "https://www.eventbrite.com/e/c-u-next-tuesday-weekly-comedy-hosted-by-corlis-delauren-and-tess-vergult-tickets-2003573046918",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "b6f2ffce4c74a973",
+   "name": "PASS THE MIC: Tuesday Open Mic Comedy",
+   "venue": "The Secret Group",
+   "date": "2026-11-17",
+   "time": "11:30 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1196049512%2F68532713233%2F1%2Foriginal.20240806-170802?auto=format%2Ccompress&q=75&sharp=10&s=1f63ea0b82c56dedf83e3e2dfccf9bda",
+   "ticket_url": "https://www.eventbrite.com/e/pass-the-mic-tuesday-open-mic-comedy-tickets-2003573072996",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "4e73cf9cfa094e71",
+   "name": "$2 BILL Two Dollar Comedy Show every Wednesday!",
+   "venue": "The Secret Group",
+   "date": "2026-11-18",
+   "time": "8:00 PM",
+   "price_min": 5.36,
+   "price_max": 5.36,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192637134%2F3558237521%2F1%2Foriginal.20260903-234123?auto=format%2Ccompress&q=75&sharp=10&s=93f8262e1563e28c879354e3f44335de",
+   "ticket_url": "https://www.eventbrite.com/e/2-bill-two-dollar-comedy-show-every-wednesday-tickets-2003573094059",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "c8c19587efa893af",
+   "name": "Master Debaters",
+   "venue": "The Secret Group",
+   "date": "2026-11-18",
+   "time": "10:00 PM",
+   "price_min": 8.82,
+   "price_max": 8.82,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186105427%2F3558237521%2F1%2Foriginal.20260603-215732?auto=format%2Ccompress&q=75&sharp=10&s=d6cb2dc6efbb6740f97bbfc6a7ded544",
+   "ticket_url": "https://www.eventbrite.com/e/master-debaters-tickets-2003573249524",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "recurring series (5 weeks)",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "a6e9df11cd9a6cc6",
+   "name": "WITCHY WEDNESDAYS: Wednesday Open Mic Comedy",
+   "venue": "The Secret Group",
+   "date": "2026-11-18",
+   "time": "11:59 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1116853183%2F3558237521%2F1%2Foriginal.20250907-205756?auto=format%2Ccompress&q=75&sharp=10&s=4afa07037c4ed3981e9c168d7d882705",
+   "ticket_url": "https://www.eventbrite.com/e/witchy-wednesdays-wednesday-open-mic-comedy-tickets-2003573260557",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "c923bd23fc1aab16",
+   "name": "BACK OF THE BUS: Thursday Open Mic Comedy",
+   "venue": "The Secret Group",
+   "date": "2026-11-19",
+   "time": "9:30 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1196049904%2F65406453537%2F1%2Foriginal.20210519-142609?auto=format%2Ccompress&q=75&sharp=10&s=89c0c752338851b8398ade1804ff2380",
+   "ticket_url": "https://www.eventbrite.com/e/back-of-the-bus-thursday-open-mic-comedy-tickets-2003573317728",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "34862fc9218cfbd6",
+   "name": "The Best of the Secret Group Comedy Showcase 8pm",
+   "venue": "The Secret Group",
+   "date": "2026-11-20",
+   "time": "8:00 PM",
+   "price_min": 18.06,
+   "price_max": 21.51,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1196049977%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=6bf8699a3912f8d83bfbd4fe6c438495",
+   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-8pm-tickets-2003573330767",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "ac7d5fc36ad42346",
+   "name": "The Best of the Secret Group Comedy Showcase 10pm",
+   "venue": "The Secret Group",
+   "date": "2026-11-20",
+   "time": "10:00 PM",
+   "price_min": 18.06,
+   "price_max": 21.51,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1196050108%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=62bf345c024a4a7581bf99b460f24fb5",
+   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-10pm-tickets-2003573394959",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "e917973e0b1eb108",
+   "name": "The Late Night Dirty Show: X Rated Comedy",
+   "venue": "The Secret Group",
+   "date": "2026-11-20",
+   "time": "11:59 PM",
+   "price_min": 8.82,
+   "price_max": 8.82,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F923781843%2F2186820483043%2F1%2Foriginal.20241227-161803?auto=format%2Ccompress&q=75&sharp=10&s=680f9342c7cee46a79ee13f5f9896ffe",
+   "ticket_url": "https://www.eventbrite.com/e/the-late-night-dirty-show-x-rated-comedy-tickets-2003573444106",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "2951ccfe5a45191e",
+   "name": "The Best of the Secret Group Comedy Showcase 7pm",
+   "venue": "The Secret Group",
+   "date": "2026-11-21",
+   "time": "7:00 PM",
+   "price_min": 18.06,
+   "price_max": 21.51,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1196050273%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=b760bcd2e28f45bcc2475b43d4917eee",
+   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-7pm-tickets-2003574230458",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "d5c40548b183a237",
+   "name": "The Best of the Secret Group Comedy Showcase 9pm",
+   "venue": "The Secret Group",
+   "date": "2026-11-21",
+   "time": "9:00 PM",
+   "price_min": 18.06,
+   "price_max": 21.51,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1196050401%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=4009f7eb15bc6dbe2df4f05ca939c802",
+   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-comedy-showcase-9pm-tickets-2003574472181",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "89411c619163fa71",
+   "name": "The Best of the Secret Group RATED R Comedy Showcase 11pm",
+   "venue": "The Secret Group",
+   "date": "2026-11-21",
+   "time": "11:00 PM",
+   "price_min": 11.13,
+   "price_max": 14.59,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1196050484%2F284483032458%2F1%2Foriginal.20230724-165709?auto=format%2Ccompress&q=75&sharp=10&s=1fa95c115252efe672cd7870c1cff4a2",
+   "ticket_url": "https://www.eventbrite.com/e/the-best-of-the-secret-group-rated-r-comedy-showcase-11pm-tickets-2003574504277",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "8fdf122685925e7b",
+   "name": "SPEEDBALL: Saturday Open Mic Comedy",
+   "venue": "The Secret Group",
+   "date": "2026-11-21",
+   "time": "11:59 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1065628803%2F3558237521%2F1%2Foriginal.20250703-001512?auto=format%2Ccompress&q=75&sharp=10&s=61b8871824c7fc4b25eb3b46b0c8c63e",
+   "ticket_url": "https://www.eventbrite.com/e/speedball-saturday-open-mic-comedy-tickets-2003571286653",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "eaf93bbe2b4e4f9f",
+   "name": "Don't Tell Comedy: Sugar Land (8:00 PM Show)",
+   "venue": "Don't Tell Comedy (Secret Location)",
+   "date": "2026-12-04",
+   "time": "8:00 PM",
+   "price_min": 27,
+   "price_max": 27,
+   "image_url": "https://dont-tell-comedy.mo.cloudinary.net/private/20-_DSC4292_yyMy6bK.webp",
+   "ticket_url": "https://www.donttellcomedy.com/shows/houston-21883/",
+   "source": "donttellcomedy",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "small room",
+   "first_seen": "2026-10-19T01:49:02.516Z"
+  },
+  {
+   "id": "7c1a442c66d6ad34",
+   "name": "Don McMillan 2.0: Now Powered By Ai",
+   "venue": "Houston Improv",
+   "date": "2027-01-12",
+   "time": "7:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+   "ticket_url": "https://www.ticketweb.com/event/don-mcmillan-20-now-powered-houston-improv-tickets/14846803?REFERRAL_ID=tmfeed",
+   "source": "ticketmaster",
+   "notable": true,
+   "tier": "headliner_room",
+   "notable_reason": "headliner room",
+   "first_seen": "2026-10-19T01:49:02.516Z"
   }
  ]
 }
