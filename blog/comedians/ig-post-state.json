@@ -1,53 +1,17 @@
 {
   "posted": [
     {
-      "slug": "anjelah-johnson-reyes-punch-line-houston-2026-10-15",
-      "comedianName": "Anjelah Johnson-Reyes",
-      "igFeedMediaId": "18564199942076140",
-      "igStoryMediaId": "18359439502221487",
-      "fbFeedPostId": "1428183622739712",
-      "fbStoryPostId": "2871748569860881",
-      "postedAt": "2026-10-12T12:18:10.547Z"
-    },
-    {
-      "slug": "ivn-fematt-la-mole-houston-improv-2026-10-15",
-      "comedianName": "Iván Fematt La Mole",
-      "igFeedMediaId": "17999963751040903",
-      "igStoryMediaId": "18099106175533927",
-      "fbFeedPostId": "1428650716026336",
-      "fbStoryPostId": "4406193156296719",
-      "postedAt": "2026-10-12T23:06:42.082Z"
-    },
-    {
-      "slug": "mo-amer-cullen-performance-hall-2026-10-16",
-      "comedianName": "Mo Amer",
-      "igFeedMediaId": "18377828002243493",
-      "igStoryMediaId": "18437026843179247",
-      "fbFeedPostId": "1429692069255534",
-      "fbStoryPostId": "4426980094191179",
-      "postedAt": "2026-10-14T01:18:37.847Z"
-    },
-    {
-      "slug": "tony-hinchcliffe-smart-financial-centre-at-sugar-land-2026-10-17",
-      "comedianName": "Tony Hinchcliffe",
-      "igFeedMediaId": "18057963797570099",
-      "igStoryMediaId": "18117129343811480",
-      "fbFeedPostId": "1431545089070232",
-      "fbStoryPostId": "2311576072717095",
-      "postedAt": "2026-10-16T00:33:27.300Z"
-    },
-    {
-      "slug": "marlon-wayans-houston-improv-2026-10-16",
-      "comedianName": "Marlon Wayans",
-      "igFeedMediaId": "18449818768192596",
-      "igStoryMediaId": "18094438220445641",
-      "fbFeedPostId": "1431854952372579",
-      "fbStoryPostId": "1446588277425505",
-      "postedAt": "2026-10-16T09:09:45.382Z"
+      "slug": "sarper-gven-punch-line-houston-2026-10-19",
+      "comedianName": "Sarper Güven",
+      "igFeedMediaId": "18130204213695828",
+      "igStoryMediaId": "18485797168113303",
+      "fbFeedPostId": "1434647222093352",
+      "fbStoryPostId": "1675536220864801",
+      "postedAt": "2026-10-19T10:08:24.092Z"
     }
   ],
-  "week_range": "October 12 – October 18, 2026",
-  "manifest_version": 1792097120262,
+  "week_range": "October 19 – October 25, 2026",
+  "manifest_version": 1792098756541,
   "cleanup_queue": [
     {
       "slug": "kerryn-feehan-the-riot-comedy-club-2026-10-16",
@@ -84,6 +48,15 @@
       "fbFeedPostId": "1431854952372579",
       "fbStoryPostId": "1446588277425505",
       "postedAt": "2026-10-16T09:09:45.382Z"
+    },
+    {
+      "slug": "sarper-gven-punch-line-houston-2026-10-19",
+      "comedianName": "Sarper Güven",
+      "igFeedMediaId": "18130204213695828",
+      "igStoryMediaId": "18485797168113303",
+      "fbFeedPostId": "1434647222093352",
+      "fbStoryPostId": "1675536220864801",
+      "postedAt": "2026-10-19T10:08:24.092Z"
     }
   ]
 }
