@@ -1,117 +1,117 @@
 {
-  "generated_at": "2026-10-12T22:29:32.916Z",
-  "week_range": "October 12 – October 18, 2026",
+  "generated_at": "2026-10-19T20:34:15.913Z",
+  "week_range": "October 19 – October 25, 2026",
   "comedians": [
     {
-      "name": "Tony Hinchcliffe",
-      "displayName": "Tony Hinchcliffe",
+      "name": "Seth Meyers",
+      "displayName": "Seth Meyers",
       "names": [
-        "Tony Hinchcliffe"
+        "Seth Meyers"
       ],
-      "show": "Kill Tony",
-      "venue": "Smart Financial Centre at Sugar Land",
-      "date": "2026-10-17",
-      "eventKey": "killtony@smartfinancialcentreatsugarland",
-      "imageUrl": "https://s1.ticketm.net/dam/a/bb5/c7d68f46-2707-4c16-8b12-b561ea43ebb5_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "displayImage": "https://s1.ticketm.net/dam/a/bb5/c7d68f46-2707-4c16-8b12-b561ea43ebb5_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "show": "Seth Meyers: Live",
+      "venue": "Bayou Music Center",
+      "date": "2026-10-24",
+      "eventKey": "sethmeyerslive@bayoumusiccenter",
+      "imageUrl": "https://s1.ticketm.net/dam/a/639/c860f8e9-1fb4-48a9-981f-607b28429639_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/639/c860f8e9-1fb4-48a9-981f-607b28429639_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Marlon Wayans",
-      "displayName": "Marlon Wayans",
+      "name": "Charlie Berens",
+      "displayName": "Charlie Berens",
       "names": [
-        "Marlon Wayans"
+        "Charlie Berens"
       ],
-      "show": "Marlon Wayans",
-      "venue": "Houston Improv",
-      "date": "2026-10-16",
-      "eventKey": "marlonwayans@houstonimprov",
-      "imageUrl": "https://s1.ticketm.net/dam/a/649/fc0c18a2-de9c-4378-9212-c7fa46e7e649_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/649/fc0c18a2-de9c-4378-9212-c7fa46e7e649_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Mo Amer",
-      "displayName": "Mo Amer",
-      "names": [
-        "Mo Amer"
-      ],
-      "show": "ZETEO AND RISALA PRESENT MEHDI & MO AMER IN HOUSTON",
+      "show": "CHARLIE BERENS THE LOST AND FOUND TOUR",
       "venue": "Cullen Performance Hall",
-      "date": "2026-10-16",
-      "eventKey": "zeteoandrisalapresentmehdimoamerinhouston@cullenperformancehall",
-      "imageUrl": "https://s1.ticketm.net/dam/a/407/e2afafee-20b2-4067-b289-cb171ea40407_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/407/e2afafee-20b2-4067-b289-cb171ea40407_SOURCE",
+      "date": "2026-10-24",
+      "eventKey": "charlieberensthelostandfoundtour@cullenperformancehall",
+      "imageUrl": "https://s1.ticketm.net/dam/a/d67/9fc9eace-5c22-47c5-b651-b4602d481d67_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "displayImage": "https://s1.ticketm.net/dam/a/d67/9fc9eace-5c22-47c5-b651-b4602d481d67_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "imageSource": "event"
     },
     {
-      "name": "Iván Fematt La Mole",
-      "displayName": "Iván Fematt La Mole",
+      "name": "Pauly Shore",
+      "displayName": "Pauly Shore",
       "names": [
-        "Iván Fematt La Mole"
+        "Pauly Shore"
       ],
-      "show": "Iván Fematt La Mole (En Español)",
+      "show": "Pauly Shore",
+      "venue": "Punch Line Houston",
+      "date": "2026-10-23",
+      "eventKey": "paulyshore@punchlinehouston",
+      "imageUrl": "https://s1.ticketm.net/dam/a/457/694b5962-fb12-449a-96ba-e0e6162e0457_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/457/694b5962-fb12-449a-96ba-e0e6162e0457_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "FOOS GONE WILD",
+      "displayName": "FOOS GONE WILD",
+      "names": [
+        "FOOS GONE WILD"
+      ],
+      "show": "FOOS GONE WILD: The FOOS GONE WILD Tour 2026",
+      "venue": "House of Blues Houston",
+      "date": "2026-10-20",
+      "eventKey": "foosgonewildthefoosgonewildtour2026@houseofblueshouston",
+      "imageUrl": "https://s1.ticketm.net/dam/a/5e3/fd510e97-d4b0-4d3a-89be-b442fef295e3_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "displayImage": "https://s1.ticketm.net/dam/a/5e3/fd510e97-d4b0-4d3a-89be-b442fef295e3_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "imageSource": "event"
+    },
+    {
+      "name": "Standoperos",
+      "displayName": "Standoperos",
+      "names": [
+        "Standoperos"
+      ],
+      "show": "Standoperos: La Tómbola",
       "venue": "Houston Improv",
-      "date": "2026-10-15",
-      "eventKey": "ivnfemattlamoleenespaol@houstonimprov",
+      "date": "2026-10-21",
+      "eventKey": "standoperoslatmbola@houstonimprov",
       "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "displayImage": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237c5cff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ff4d6a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2254%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22Inter%2CArial%2Csans-serif%22%20font-size%3D%2280%22%20font-weight%3D%22800%22%20fill%3D%22%23ffffff%22%3EIF%3C%2Ftext%3E%3C%2Fsvg%3E",
+      "displayImage": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237c5cff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ff4d6a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2254%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22Inter%2CArial%2Csans-serif%22%20font-size%3D%2280%22%20font-weight%3D%22800%22%20fill%3D%22%23ffffff%22%3ES%3C%2Ftext%3E%3C%2Fsvg%3E",
       "imageSource": "initials"
     },
     {
-      "name": "Anjelah Johnson-Reyes",
-      "displayName": "Anjelah Johnson-Reyes",
+      "name": "Yohay Sponder",
+      "displayName": "Yohay Sponder",
       "names": [
-        "Anjelah Johnson-Reyes"
+        "Yohay Sponder"
       ],
-      "show": "Funjelah Live Podcast Taping w/ Anjelah Johnson-Reyes & Special Guest",
-      "venue": "Punch Line Houston",
-      "date": "2026-10-15",
-      "eventKey": "funjelahlivepodcasttapingwanjelahjohnsonreyesspecialguest@punchlinehouston",
-      "imageUrl": "https://s1.ticketm.net/dam/a/754/9026b1db-62a7-45e4-8fbc-b4d7b85ee754_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/754/9026b1db-62a7-45e4-8fbc-b4d7b85ee754_SOURCE",
+      "show": "Yohay Sponder: Genesis",
+      "venue": "House of Blues Houston",
+      "date": "2026-10-25",
+      "eventKey": "yohayspondergenesis@houseofblueshouston",
+      "imageUrl": "https://s1.ticketm.net/dam/a/b31/444203c6-5565-4d2f-887e-b3a13edbdb31_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/b31/444203c6-5565-4d2f-887e-b3a13edbdb31_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "TK Kirkland",
-      "displayName": "TK Kirkland",
+      "name": "Joanne McNally",
+      "displayName": "Joanne McNally",
       "names": [
-        "TK Kirkland"
+        "Joanne McNally"
       ],
-      "show": "TK Kirkland",
+      "show": "Joanne McNally: Pinotphile",
       "venue": "Punch Line Houston",
-      "date": "2026-10-16",
-      "eventKey": "tkkirkland@punchlinehouston",
-      "imageUrl": "https://s1.ticketm.net/dam/a/c65/7e689083-7081-41c0-9606-f8b57a0dbc65_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/c65/7e689083-7081-41c0-9606-f8b57a0dbc65_SOURCE",
+      "date": "2026-10-21",
+      "eventKey": "joannemcnallypinotphile@punchlinehouston",
+      "imageUrl": "https://s1.ticketm.net/dam/a/544/c15cfebb-79c2-4245-959b-64746735e544_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "displayImage": "https://s1.ticketm.net/dam/a/544/c15cfebb-79c2-4245-959b-64746735e544_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "imageSource": "event"
     },
     {
-      "name": "Chaunte Wayans",
-      "displayName": "Chaunte Wayans",
+      "name": "Cortisa Star",
+      "displayName": "Cortisa Star",
       "names": [
-        "Chaunte Wayans"
+        "Cortisa Star"
       ],
-      "show": "Chaunte Wayans",
-      "venue": "Punch Line Houston",
-      "date": "2026-10-16",
-      "eventKey": "chauntewayans@punchlinehouston",
-      "imageUrl": "https://s1.ticketm.net/dam/a/811/01c641b8-c700-40e6-8b6f-a994aa7a2811_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/811/01c641b8-c700-40e6-8b6f-a994aa7a2811_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Saul Trujillo",
-      "displayName": "Saul Trujillo",
-      "names": [
-        "Saul Trujillo"
-      ],
-      "show": "Saul Trujillo Live in Houston",
-      "venue": "The Pink Flamingo Comedy Club",
-      "date": "2026-10-16",
-      "eventKey": "saultrujilloliveinhouston@thepinkflamingocomedyclub",
-      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1181708836%2F2996872667695%2F1%2Foriginal.20260408-170702?auto=format%2Ccompress&q=75&sharp=10&s=7d6e846bfc86b5056c825227e8525c73",
-      "displayImage": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1181708836%2F2996872667695%2F1%2Foriginal.20260408-170702?auto=format%2Ccompress&q=75&sharp=10&s=7d6e846bfc86b5056c825227e8525c73",
+      "show": "Cortisa Star - For All The Dolls Tour",
+      "venue": "The Secret Group",
+      "date": "2026-10-23",
+      "eventKey": "cortisastarforallthedollstour@thesecretgroup",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192236176%2F3558237521%2F1%2Foriginal.20260830-203506?auto=format%2Ccompress&q=75&sharp=10&s=8560140a880f7020db5a0963c5338fe6",
+      "displayImage": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192236176%2F3558237521%2F1%2Foriginal.20260830-203506?auto=format%2Ccompress&q=75&sharp=10&s=8560140a880f7020db5a0963c5338fe6",
       "imageSource": "event"
     }
   ]
