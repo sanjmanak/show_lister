@@ -1,47 +1,11 @@
 {
-  "generated_at": "2026-10-15T21:12:36.543Z",
+  "generated_at": "2026-10-19T19:25:36.145Z",
   "source_manifests": [
-    "manifest-2026-10-12.json",
     "manifest-2026-10-19.json",
     "manifest-2026-10-26.json",
     "manifest-2026-11-02.json"
   ],
   "posts": [
-    {
-      "date": "2026-10-15",
-      "comedianName": "Anjelah Johnson-Reyes",
-      "slug": "anjelah-johnson-reyes-punch-line-houston-2026-10-15",
-      "wpLink": "https://comedyhouston.com/comedians/anjelah-johnson-reyes/",
-      "venue": "Punch Line Houston"
-    },
-    {
-      "date": "2026-10-15",
-      "comedianName": "Iván Fematt La Mole",
-      "slug": "ivn-fematt-la-mole-houston-improv-2026-10-15",
-      "wpLink": "https://comedyhouston.com/comedians/ivan-fematt-la-mole/",
-      "venue": "Houston Improv"
-    },
-    {
-      "date": "2026-10-16",
-      "comedianName": "Marlon Wayans",
-      "slug": "marlon-wayans-houston-improv-2026-10-16",
-      "wpLink": "https://comedyhouston.com/comedians/marlon-wayans/",
-      "venue": "Houston Improv"
-    },
-    {
-      "date": "2026-10-16",
-      "comedianName": "Mo Amer",
-      "slug": "mo-amer-cullen-performance-hall-2026-10-16",
-      "wpLink": "https://comedyhouston.com/comedians/mo-amer/",
-      "venue": "Cullen Performance Hall"
-    },
-    {
-      "date": "2026-10-17",
-      "comedianName": "Tony Hinchcliffe",
-      "slug": "tony-hinchcliffe-smart-financial-centre-at-sugar-land-2026-10-17",
-      "wpLink": "https://comedyhouston.com/comedians/tony-hinchcliffe/",
-      "venue": "Smart Financial Centre at Sugar Land"
-    },
     {
       "date": "2026-10-19",
       "comedianName": "Sarper Güven",

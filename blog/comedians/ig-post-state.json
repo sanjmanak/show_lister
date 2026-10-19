@@ -23,24 +23,6 @@
   "manifest_version": 1792098756541,
   "cleanup_queue": [
     {
-      "slug": "kerryn-feehan-the-riot-comedy-club-2026-10-16",
-      "comedianName": "Kerryn Feehan",
-      "igFeedMediaId": "18170292142466725",
-      "igStoryMediaId": "18143302939608034",
-      "fbFeedPostId": "1429573989267342",
-      "fbStoryPostId": "2198623188202578",
-      "postedAt": "2026-10-13T21:23:52.914Z"
-    },
-    {
-      "slug": "mo-amer-cullen-performance-hall-2026-10-16",
-      "comedianName": "Mo Amer",
-      "igFeedMediaId": "18377828002243493",
-      "igStoryMediaId": "18437026843179247",
-      "fbFeedPostId": "1429692069255534",
-      "fbStoryPostId": "4426980094191179",
-      "postedAt": "2026-10-14T01:18:37.847Z"
-    },
-    {
       "slug": "tony-hinchcliffe-smart-financial-centre-at-sugar-land-2026-10-17",
       "comedianName": "Tony Hinchcliffe",
       "igFeedMediaId": "18057963797570099",

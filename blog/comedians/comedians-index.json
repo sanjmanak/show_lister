@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T21:12:36.545Z",
+  "generated_at": "2026-10-19T19:25:36.147Z",
   "comedians": [
     {
       "slug": "abby-govindan",
@@ -35,7 +35,7 @@
       "legacy_slugs": [
         "anjelah-johnson-reyes-punch-line-houston-2026-10-15"
       ],
-      "next_show": "2026-10-15"
+      "next_show": null
     },
     {
       "slug": "daniel-sloss",
@@ -105,7 +105,7 @@
       "legacy_slugs": [
         "ivn-fematt-la-mole-houston-improv-2026-10-15"
       ],
-      "next_show": "2026-10-15"
+      "next_show": null
     },
     {
       "slug": "joanne-mcnally",
@@ -173,7 +173,7 @@
       ],
       "wpLink": "https://comedyhouston.com/comedians/marlon-wayans/",
       "legacy_slugs": [],
-      "next_show": "2026-10-16"
+      "next_show": null
     },
     {
       "slug": "mo-amer",
@@ -185,7 +185,7 @@
       "legacy_slugs": [
         "mo-amer-cullen-performance-hall-2026-10-16"
       ],
-      "next_show": "2026-10-16"
+      "next_show": null
     },
     {
       "slug": "nikki-glaser",
@@ -230,7 +230,7 @@
       ],
       "wpLink": "https://comedyhouston.com/comedians/tony-hinchcliffe/",
       "legacy_slugs": [],
-      "next_show": "2026-10-17"
+      "next_show": null
     }
   ],
   "archived_legacy_slugs": []
