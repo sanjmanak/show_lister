@@ -1,21 +1,3 @@
 {
-  "generated_at": "2026-10-19T20:42:48.934Z",
-  "dry_run": false,
-  "items": [
-    {
-      "id": "23e18c1392c110b0",
-      "name": "Chris D'Elia",
-      "performer_name": "Chris D'Elia",
-      "venue": "Houston Improv",
-      "date": "2027-01-08",
-      "ticket_url": "https://www.ticketweb.com/event/chris-delia-houston-improv-tickets/14221104?REFERRAL_ID=tmfeed",
-      "files": {
-        "portrait": "2027-01-08-chris-d-elia-portrait.png",
-        "story": "2027-01-08-chris-d-elia-story.png",
-        "reel": "2027-01-08-chris-d-elia.mp4"
-      },
-      "caption": "The Congratulations podcast host and Netflix special veteran is back on the road.\nChris D'Elia performs at Houston Improv on January 8, 2027. He has released multiple Netflix stand-up specials. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
-      "confidence": 0.99
-    }
-  ]
+  "items": []
 }
