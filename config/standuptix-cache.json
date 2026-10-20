@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-10-20-26-07-00-pm": {
-      "lastmod": "2026-10-19T01:17:00-05:00",
+      "lastmod": "2026-10-20T10:47:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -40,10 +40,6 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Matt B.C."
-          },
-          {
-            "@type": "Person",
             "name": "Mason James"
           },
           {
@@ -61,6 +57,10 @@
           {
             "@type": "Person",
             "name": "Jeff Joe"
+          },
+          {
+            "@type": "Person",
+            "name": "Onkar Singh"
           }
         ]
       }
@@ -535,7 +535,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-42": {
-      "lastmod": "2026-10-19T07:28:00-05:00",
+      "lastmod": "2026-10-20T10:46:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -580,7 +580,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-25": {
-      "lastmod": "2026-10-19T07:28:00-05:00",
+      "lastmod": "2026-10-20T10:46:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -11080,7 +11080,7 @@
       }
     },
     "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-24130000": {
-      "lastmod": "2026-10-19T07:54:00-05:00",
+      "lastmod": "2026-10-20T10:54:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -11127,25 +11127,25 @@
           },
           {
             "@type": "Person",
-            "name": "Matt B.C."
-          },
-          {
-            "@type": "Person",
-            "name": "Corlis DeLauren"
-          },
-          {
-            "@type": "Person",
-            "name": "Tess Vergult"
-          },
-          {
-            "@type": "Person",
             "name": "Ocean Glapion"
+          },
+          {
+            "@type": "Person",
+            "name": "Onkar Singh"
+          },
+          {
+            "@type": "Person",
+            "name": "Bob Biggerstaff"
+          },
+          {
+            "@type": "Person",
+            "name": "Danny Guerrero"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-10-25130000": {
-      "lastmod": "2026-10-19T07:33:00-05:00",
+      "lastmod": "2026-10-20T10:55:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -11184,10 +11184,6 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Dylan Kendrick"
-          },
-          {
-            "@type": "Person",
             "name": "Luis Dejesus"
           },
           {
@@ -11201,6 +11197,10 @@
           {
             "@type": "Person",
             "name": "Danny Guerrero"
+          },
+          {
+            "@type": "Person",
+            "name": "Matt B.C."
           }
         ]
       }
