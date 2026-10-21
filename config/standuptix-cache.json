@@ -111,7 +111,7 @@
       }
     },
     "https://www.theriothtx.com/events/liz-miele-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-10-19T01:23:00-05:00",
+      "lastmod": "2026-10-21T10:20:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -155,12 +155,16 @@
           {
             "@type": "Person",
             "name": "Christian Alexander"
+          },
+          {
+            "@type": "Person",
+            "name": "Brian Gendron"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-25": {
-      "lastmod": "2026-10-19T01:23:00-05:00",
+      "lastmod": "2026-10-21T10:15:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -220,6 +224,10 @@
           {
             "@type": "Person",
             "name": "JCann"
+          },
+          {
+            "@type": "Person",
+            "name": "Liz Miele"
           }
         ]
       }
@@ -286,7 +294,7 @@
       }
     },
     "https://www.theriothtx.com/events/liz-miele-comedy-central-headlines-the-riot-comedy-club-the-riot-houston": {
-      "lastmod": "2026-10-19T07:17:00-05:00",
+      "lastmod": "2026-10-21T10:20:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -326,12 +334,20 @@
           {
             "@type": "Person",
             "name": "Liz Miele"
+          },
+          {
+            "@type": "Person",
+            "name": "Luis Dejesus"
+          },
+          {
+            "@type": "Person",
+            "name": "Tess Vergult"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-21": {
-      "lastmod": "2026-10-19T07:17:00-05:00",
+      "lastmod": "2026-10-21T10:24:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -375,12 +391,28 @@
           {
             "@type": "Person",
             "name": "Ocean Glapion"
+          },
+          {
+            "@type": "Person",
+            "name": "Liz Miele"
+          },
+          {
+            "@type": "Person",
+            "name": "Brian Gendron"
+          },
+          {
+            "@type": "Person",
+            "name": "Brandon Green"
+          },
+          {
+            "@type": "Person",
+            "name": "Jeff Joe"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-25": {
-      "lastmod": "2026-10-19T07:17:00-05:00",
+      "lastmod": "2026-10-21T10:26:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -420,12 +452,36 @@
           {
             "@type": "Person",
             "name": "Zac Silverman"
+          },
+          {
+            "@type": "Person",
+            "name": "Christian Alexander"
+          },
+          {
+            "@type": "Person",
+            "name": "Kris Atkins"
+          },
+          {
+            "@type": "Person",
+            "name": "Mackenzie jewell"
+          },
+          {
+            "@type": "Person",
+            "name": "Ruben Medina"
+          },
+          {
+            "@type": "Person",
+            "name": "Timely Rain Watson"
+          },
+          {
+            "@type": "Person",
+            "name": "Darius Gullett"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-42": {
-      "lastmod": "2026-10-20T10:46:00-05:00",
+      "lastmod": "2026-10-21T10:28:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -465,12 +521,32 @@
           {
             "@type": "Person",
             "name": "Ocean Glapion"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Loden"
+          },
+          {
+            "@type": "Person",
+            "name": "Christian Alexander"
+          },
+          {
+            "@type": "Person",
+            "name": "Blake Jones"
+          },
+          {
+            "@type": "Person",
+            "name": "James Vogt"
+          },
+          {
+            "@type": "Person",
+            "name": "Dulce Mac"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-25": {
-      "lastmod": "2026-10-20T10:46:00-05:00",
+      "lastmod": "2026-10-21T10:30:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -509,7 +585,27 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Dulce Mac"
+            "name": "Mason James"
+          },
+          {
+            "@type": "Person",
+            "name": "Danny Guerrero"
+          },
+          {
+            "@type": "Person",
+            "name": "Ebad Jann"
+          },
+          {
+            "@type": "Person",
+            "name": "Dylan Kendrick"
+          },
+          {
+            "@type": "Person",
+            "name": "Tess Vergult"
+          },
+          {
+            "@type": "Person",
+            "name": "Daniel Contreras"
           }
         ]
       }
@@ -10970,7 +11066,7 @@
       }
     },
     "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-24130000": {
-      "lastmod": "2026-10-20T10:54:00-05:00",
+      "lastmod": "2026-10-21T10:18:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -11030,12 +11126,16 @@
           {
             "@type": "Person",
             "name": "Danny Guerrero"
+          },
+          {
+            "@type": "Person",
+            "name": "Liz Miele"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-10-25130000": {
-      "lastmod": "2026-10-20T10:55:00-05:00",
+      "lastmod": "2026-10-21T10:26:00-05:00",
       "node": {
         "@context": "http://schema.org",
         "@type": "ComedyEvent",
@@ -11091,6 +11191,10 @@
           {
             "@type": "Person",
             "name": "Matt B.C."
+          },
+          {
+            "@type": "Person",
+            "name": "Cody Greenlee"
           }
         ]
       }
