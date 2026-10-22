@@ -1,74 +1,9 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-25": {
-      "lastmod": "2026-10-19T07:13:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Wednesday Night Standup Comedy Showcase \"Hump Day\"",
-        "startDate": "2026-10-21T19:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-25",
-          "priceCurrency": "USD",
-          "price": "8.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-08T12:07:00-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-25",
-        "image": "/img/shows/Showcase-Templates-6-239d0d36-large-thumb.png",
-        "description": "Join us for a hilarious night of laughter at The Riot&#39;s Wednesday Night Standup Comedy Showcase, lovingly dubbed &quot;Hump Day.&quot; Get ready to unwind and have a great time as our talented lineup of comedians takes the stage to tickle your funny bone.Featuring Mason James, the winner of 2022 &amp; 2023 The Riot Funniest Person In Houston Contest. https://www.instagram.com/mason_james_silly/Don&#39;t miss out on this unforgettable night of comedy. Mark your calendars, gather your crew, and make your way to The Riot for a guaranteed fun-filled Wednesday night. See you there!All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet ParkingLooking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Christian Alexander"
-          },
-          {
-            "@type": "Person",
-            "name": "Andy Huggins"
-          },
-          {
-            "@type": "Person",
-            "name": "Ocean Glapion"
-          },
-          {
-            "@type": "Person",
-            "name": "Luis Dejesus"
-          },
-          {
-            "@type": "Person",
-            "name": "Tre Tutson"
-          },
-          {
-            "@type": "Person",
-            "name": "Natia Simon"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-23": {
-      "lastmod": "2026-10-18T07:31:00-05:00",
+      "lastmod": "2026-10-21T03:03:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents  The One Minute Comedy Showdown with Jeff Joe",
         "startDate": "2026-10-21T21:00:00-05:00",
@@ -91,7 +26,7 @@
           "url": "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-23",
           "priceCurrency": "USD",
           "price": "10.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-09T10:34:16-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-23",
@@ -113,7 +48,7 @@
     "https://www.theriothtx.com/events/liz-miele-headlines-the-riot-comedy-club": {
       "lastmod": "2026-10-21T10:20:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Liz Miele (Comedy Central) Headlines The Riot Comedy Club",
         "startDate": "2026-10-23T19:00:00-05:00",
@@ -136,7 +71,7 @@
           "url": "https://www.theriothtx.com/events/liz-miele-headlines-the-riot-comedy-club",
           "priceCurrency": "USD",
           "price": "0.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-06-08T19:49:41-05:00"
         },
         "url": "https://www.theriothtx.com/events/liz-miele-headlines-the-riot-comedy-club",
@@ -166,7 +101,7 @@
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-25": {
       "lastmod": "2026-10-21T10:15:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents Friday Night Standup Comedy Showcase",
         "startDate": "2026-10-23T21:00:00-05:00",
@@ -189,7 +124,7 @@
           "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-25",
           "priceCurrency": "USD",
           "price": "19.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-08T12:27:01-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-25",
@@ -235,7 +170,7 @@
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-22": {
       "lastmod": "2026-10-19T01:23:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Comedy Club Presents Friday Night Standup Comedy Late Showcase!",
         "startDate": "2026-10-23T23:00:00-05:00",
@@ -258,7 +193,7 @@
           "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-22",
           "priceCurrency": "USD",
           "price": "15.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-08T12:34:11-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-22",
@@ -296,7 +231,7 @@
     "https://www.theriothtx.com/events/liz-miele-comedy-central-headlines-the-riot-comedy-club-the-riot-houston": {
       "lastmod": "2026-10-21T10:20:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Liz Miele (Comedy Central) Headlines The Riot Comedy Club",
         "startDate": "2026-10-24T19:00:00-05:00",
@@ -319,7 +254,7 @@
           "url": "https://www.theriothtx.com/events/liz-miele-comedy-central-headlines-the-riot-comedy-club-the-riot-houston",
           "priceCurrency": "USD",
           "price": "0.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-06-08T19:58:10-05:00"
         },
         "url": "https://www.theriothtx.com/events/liz-miele-comedy-central-headlines-the-riot-comedy-club-the-riot-houston",
@@ -349,7 +284,7 @@
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-21": {
       "lastmod": "2026-10-21T10:24:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents Saturday Night Standup Comedy Showcase",
         "startDate": "2026-10-24T21:00:00-05:00",
@@ -372,7 +307,7 @@
           "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-21",
           "priceCurrency": "USD",
           "price": "20.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-10T14:50:04-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-21",
@@ -414,7 +349,7 @@
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-25": {
       "lastmod": "2026-10-21T10:26:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Comedy Club Presents Saturday Night Standup Comedy Late Show!",
         "startDate": "2026-10-24T23:00:00-05:00",
@@ -437,7 +372,7 @@
           "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-25",
           "priceCurrency": "USD",
           "price": "15.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-08T12:40:49-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-25",
@@ -483,7 +418,7 @@
     "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-42": {
       "lastmod": "2026-10-21T10:28:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents \"Houston's Funniest\" Sunday Comedy Showcase",
         "startDate": "2026-10-25T18:00:00-05:00",
@@ -506,7 +441,7 @@
           "url": "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-42",
           "priceCurrency": "USD",
           "price": "10.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-08T12:45:41-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-42",
@@ -548,7 +483,7 @@
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-25": {
       "lastmod": "2026-10-21T10:30:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Comedy Club Presents Sunday Night Standup Comedy Showcase",
         "startDate": "2026-10-25T20:00:00-05:00",
@@ -571,7 +506,7 @@
           "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-25",
           "priceCurrency": "USD",
           "price": "10.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-08T12:48:28-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-25",
@@ -613,7 +548,7 @@
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-10": {
       "lastmod": "2026-08-09T09:59:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents Monday Night Standup Comedy Showcase!",
         "startDate": "2026-10-26T19:00:00-05:00",
@@ -636,7 +571,7 @@
           "url": "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-10",
           "priceCurrency": "USD",
           "price": "8.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-09T09:59:58-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-10",
@@ -653,7 +588,7 @@
     "https://www.theriothtx.com/events/riot-comedy-club-presents-monday-night-standup-comedy-open-mic-2026-10-26210000": {
       "lastmod": "2026-09-24T08:28:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Riot Comedy Club presents Monday Night Standup Comedy Open Mic",
         "startDate": "2026-10-26T21:00:00-05:00",
@@ -676,7 +611,7 @@
           "url": "https://www.theriothtx.com/events/riot-comedy-club-presents-monday-night-standup-comedy-open-mic-2026-10-26210000",
           "priceCurrency": "USD",
           "price": "0.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-12T11:08:31-05:00"
         },
         "url": "https://www.theriothtx.com/events/riot-comedy-club-presents-monday-night-standup-comedy-open-mic-2026-10-26210000",
@@ -698,7 +633,7 @@
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-10-27-26-07-00-pm": {
       "lastmod": "2026-10-17T05:20:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents Tuesday Night Standup Comedy Showcase!",
         "startDate": "2026-10-27T19:30:00-05:00",
@@ -721,7 +656,7 @@
           "url": "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-10-27-26-07-00-pm",
           "priceCurrency": "USD",
           "price": "8.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-09T10:26:08-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-10-27-26-07-00-pm",
@@ -738,7 +673,7 @@
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-10-27210000": {
       "lastmod": "2026-09-24T08:29:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Riot Comedy Club presents Tuesday Night Standup Comedy Open Mic",
         "startDate": "2026-10-27T21:00:00-05:00",
@@ -761,7 +696,7 @@
           "url": "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-10-27210000",
           "priceCurrency": "USD",
           "price": "0.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-12T11:27:04-05:00"
         },
         "url": "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-10-27210000",
@@ -783,7 +718,7 @@
     "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-26": {
       "lastmod": "2026-09-22T11:42:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents Wednesday Night Standup Comedy Showcase \"Hump Day\"",
         "startDate": "2026-10-28T19:00:00-05:00",
@@ -806,7 +741,7 @@
           "url": "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-26",
           "priceCurrency": "USD",
           "price": "8.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-08T12:07:00-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-26",
@@ -7407,9 +7342,9 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-chinedu-ogu-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-08-17T09:15:00-05:00",
+      "lastmod": "2026-10-21T07:11:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Chinedu Ogu Headlines The Riot Comedy Club",
         "startDate": "2026-10-23T19:30:00-05:00",
@@ -7432,7 +7367,7 @@
           "url": "https://www.riotconroe.com/events/comedian-chinedu-ogu-headlines-the-riot-comedy-club",
           "priceCurrency": "USD",
           "price": "20.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-17T09:11:54-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-chinedu-ogu-headlines-the-riot-comedy-club",
@@ -7447,14 +7382,18 @@
           {
             "@type": "Person",
             "name": "Chinedu Ogu"
+          },
+          {
+            "@type": "Person",
+            "name": "TBD"
           }
         ]
       }
     },
     "https://www.riotconroe.com/events/comedian-chinedu-ogu-headlines-the-riot-comedy-club-2026-10-24190000": {
-      "lastmod": "2026-08-17T09:16:00-05:00",
+      "lastmod": "2026-10-21T07:12:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Chinedu Ogu Headlines The Riot Comedy Club",
         "startDate": "2026-10-24T19:00:00-05:00",
@@ -7477,7 +7416,7 @@
           "url": "https://www.riotconroe.com/events/comedian-chinedu-ogu-headlines-the-riot-comedy-club-2026-10-24190000",
           "priceCurrency": "USD",
           "price": "20.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-17T09:13:27-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-chinedu-ogu-headlines-the-riot-comedy-club-2026-10-24190000",
@@ -7492,14 +7431,18 @@
           {
             "@type": "Person",
             "name": "Chinedu Ogu"
+          },
+          {
+            "@type": "Person",
+            "name": "TBD"
           }
         ]
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-24": {
-      "lastmod": "2026-09-01T07:30:00-05:00",
+      "lastmod": "2026-10-21T02:02:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
         "startDate": "2026-10-24T21:00:00-05:00",
@@ -7522,7 +7465,7 @@
           "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-24",
           "priceCurrency": "USD",
           "price": "15.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-01T14:28:21-05:00"
         },
         "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-24",
@@ -7533,7 +7476,28 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "A.D. Hodge"
+          },
+          {
+            "@type": "Person",
+            "name": "Blake Jones"
+          },
+          {
+            "@type": "Person",
+            "name": "Daniel Contreras"
+          },
+          {
+            "@type": "Person",
+            "name": "Kristin Lindner"
+          },
+          {
+            "@type": "Person",
+            "name": "Keelain Smith"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-the-riot-conroe-6": {
@@ -9444,7 +9408,7 @@
     "https://www.theriothtx.com/events/the-riot-presents-2026-funniest-person-in-houston-fpih-comedy-competition-2026-10-22190000": {
       "lastmod": "2026-09-17T03:50:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot presents 2026 Funniest Person in Houston (FPiH) Comedy Competition",
         "startDate": "2026-10-22T19:00:00-05:00",
@@ -9467,7 +9431,7 @@
           "url": "https://www.theriothtx.com/events/the-riot-presents-2026-funniest-person-in-houston-fpih-comedy-competition-2026-10-22190000",
           "priceCurrency": "USD",
           "price": "0.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-09-17T15:50:10-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-2026-funniest-person-in-houston-fpih-comedy-competition-2026-10-22190000",
@@ -9484,7 +9448,7 @@
     "https://www.theriothtx.com/events/the-riot-presents-2026-funniest-person-in-houston-fpih-comedy-competition-2026-10-22210000": {
       "lastmod": "2026-09-17T03:50:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot presents 2026 Funniest Person in Houston (FPiH) Comedy Competition",
         "startDate": "2026-10-22T21:00:00-05:00",
@@ -9507,7 +9471,7 @@
           "url": "https://www.theriothtx.com/events/the-riot-presents-2026-funniest-person-in-houston-fpih-comedy-competition-2026-10-22210000",
           "priceCurrency": "USD",
           "price": "0.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-09-17T15:50:10-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-2026-funniest-person-in-houston-fpih-comedy-competition-2026-10-22210000",
@@ -9682,9 +9646,9 @@
       }
     },
     "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-10-22200000": {
-      "lastmod": "2026-09-21T02:47:00-05:00",
+      "lastmod": "2026-10-21T01:57:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
         "startDate": "2026-10-22T20:00:00-05:00",
@@ -9707,7 +9671,7 @@
           "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-10-22200000",
           "priceCurrency": "USD",
           "price": "9.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-09-21T14:47:28-05:00"
         },
         "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-10-22200000",
@@ -9718,7 +9682,28 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "James Holder"
+          },
+          {
+            "@type": "Person",
+            "name": "Jacinto Maturino"
+          },
+          {
+            "@type": "Person",
+            "name": "Bob Biggerstaff"
+          },
+          {
+            "@type": "Person",
+            "name": "Ebad Jann"
+          },
+          {
+            "@type": "Person",
+            "name": "Sandra Dee"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-10-29200000": {
@@ -11068,7 +11053,7 @@
     "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-24130000": {
       "lastmod": "2026-10-21T10:18:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Yolks & Jokes - Saturday Brunch Comedy Show! ",
         "startDate": "2026-10-24T13:00:00-05:00",
@@ -11091,7 +11076,7 @@
           "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-24130000",
           "priceCurrency": "USD",
           "price": "0.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-10-11T13:53:43-05:00"
         },
         "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-24130000",
@@ -11137,7 +11122,7 @@
     "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-10-25130000": {
       "lastmod": "2026-10-21T10:26:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show! ",
         "startDate": "2026-10-25T13:00:00-05:00",
@@ -11160,7 +11145,7 @@
           "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-10-25130000",
           "priceCurrency": "USD",
           "price": "0.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-10-11T14:07:07-05:00"
         },
         "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-10-25130000",
