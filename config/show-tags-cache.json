@@ -794,8 +794,9 @@
     },
     "comedy & drinks in a speakeasy: friday 7pm": {
       "tags": [],
-      "model": "gpt-4o-mini",
-      "classified_at": "2026-08-16"
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-22"
     },
     "comedy & drinks in a speakeasy: saturday": {
       "tags": [],
@@ -2585,6 +2586,20 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-10-21"
+    },
+    "ali siddiq": {
+      "tags": [
+        "black-comedy"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-22"
+    },
+    "halloween comedy & costume contest in a speakeasy: friday 9pm": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-22"
     }
   }
 }
