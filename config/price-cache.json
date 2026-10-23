@@ -1,15 +1,7 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-10-22T18:01:49.628Z",
+  "last_updated": "2026-10-23T17:55:59.557Z",
   "entries": {
-    "1d0db91269b6ef97": {
-      "price_min": 25.22,
-      "price_max": 25.22,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/eva-evans-houston-improv-tickets/14243884?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-08-17T14:45:06.675Z"
-    },
     "fb79d8c874a3588f": {
       "price_min": 43.76,
       "price_max": 43.76,
