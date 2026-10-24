@@ -50,15 +50,6 @@
   "manifest_version": 1792098756541,
   "cleanup_queue": [
     {
-      "slug": "sarper-gven-punch-line-houston-2026-10-19",
-      "comedianName": "Sarper Güven",
-      "igFeedMediaId": "18130204213695828",
-      "igStoryMediaId": "18485797168113303",
-      "fbFeedPostId": "1434647222093352",
-      "fbStoryPostId": "1675536220864801",
-      "postedAt": "2026-10-19T10:08:24.092Z"
-    },
-    {
       "slug": "foos-gone-wild-house-of-blues-houston-2026-10-20",
       "comedianName": "FOOS GONE WILD",
       "igFeedMediaId": "18129363472875845",
