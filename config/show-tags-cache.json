@@ -2606,6 +2606,12 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-10-23"
+    },
+    "don't tell comedy: river oaks (8:00 pm show)": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-24"
     }
   }
 }
