@@ -1,60 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/liz-miele-comedy-central-headlines-the-riot-comedy-club-the-riot-houston": {
-      "lastmod": "2026-10-23T06:19:00-05:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Liz Miele (Comedy Central) Headlines The Riot Comedy Club",
-        "startDate": "2026-10-24T19:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/liz-miele-comedy-central-headlines-the-riot-comedy-club-the-riot-houston",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-06-08T19:58:10-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/liz-miele-comedy-central-headlines-the-riot-comedy-club-the-riot-houston",
-        "image": "/img/shows/IMG-0443-7df5077c-large-thumb.jpg",
-        "description": "Liz Miele&nbsp;is a NYC comedian that has appeared on Comedy Central, FOX, AXS TV, Hulu and NPR&rsquo;s Wait Wait Don&rsquo;t Tell Me. She&#39;s been featured in The New Yorker, NY Times, Runner&#39;s World, Psychology Today and The Guardian. She has several viral videos on YouTube, Instagram and TikTok including jokes &ldquo;Feminist Sex Positions,&rdquo; &quot;Dating Is Harder for Comedians,&quot; and &quot;F*ck Finland&quot;.She regularly tours internationally and has four albums out including her first, &ldquo;Emotionally Exhausting&rdquo; which has over 3 million views, and Self Help Me, which has almost 2 million views.Her most recent special &ldquo;Ghost of Academic Future&rdquo; has over 1 million views and was listed on the New York Times, Paste Magazine and Interrobang &ldquo;Best Comedy Specials of 2022&rdquo; list. Her next special &ldquo;Murder Sheets&rdquo; is due to come out April 2nd on youtube. Her book &quot;Why Cats Are A**holes&quot; was published March 2021. She has a weekly podcast with comedian Maria Shehata called 2 Non-Doctors. For more info visit her website:&nbsp;www.lizmiele.comAll shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Liz Miele"
-          },
-          {
-            "@type": "Person",
-            "name": "Luis Dejesus"
-          },
-          {
-            "@type": "Person",
-            "name": "Tess Vergult"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-21": {
-      "lastmod": "2026-10-23T06:19:00-05:00",
+      "lastmod": "2026-10-24T07:59:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -119,7 +66,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-25": {
-      "lastmod": "2026-10-23T06:19:00-05:00",
+      "lastmod": "2026-10-24T07:59:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -170,10 +117,6 @@
           },
           {
             "@type": "Person",
-            "name": "Mackenzie jewell"
-          },
-          {
-            "@type": "Person",
             "name": "Ruben Medina"
           },
           {
@@ -183,6 +126,10 @@
           {
             "@type": "Person",
             "name": "Darius Gullett"
+          },
+          {
+            "@type": "Person",
+            "name": "Luis Dejesus"
           }
         ]
       }
@@ -700,7 +647,7 @@
     "https://www.theriothtx.com/events/comedian-shane-torres-headlines-the-riot-houston-the-riot-houston": {
       "lastmod": "2026-10-05T05:11:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Shane Torres (The Late Show, Comedy Central) Headlines The Riot Houston",
         "startDate": "2026-10-31T19:00:00-05:00",
@@ -723,7 +670,7 @@
           "url": "https://www.theriothtx.com/events/comedian-shane-torres-headlines-the-riot-houston-the-riot-houston",
           "priceCurrency": "USD",
           "price": "0.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-06-07T18:47:04-05:00"
         },
         "url": "https://www.theriothtx.com/events/comedian-shane-torres-headlines-the-riot-houston-the-riot-houston",
@@ -7113,55 +7060,6 @@
         ]
       }
     },
-    "https://www.riotconroe.com/events/comedian-chinedu-ogu-headlines-the-riot-comedy-club-2026-10-24190000": {
-      "lastmod": "2026-10-21T07:12:00-05:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Comedian Chinedu Ogu Headlines The Riot Comedy Club",
-        "startDate": "2026-10-24T19:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Conroe",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "219 Simonton Street",
-            "addressLocality": "Conroe",
-            "postalCode": "77301",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.riotconroe.com/events/comedian-chinedu-ogu-headlines-the-riot-comedy-club-2026-10-24190000",
-          "priceCurrency": "USD",
-          "price": "20.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-08-17T09:13:27-05:00"
-        },
-        "url": "https://www.riotconroe.com/events/comedian-chinedu-ogu-headlines-the-riot-comedy-club-2026-10-24190000",
-        "image": "/img/events/Guadalaharrys-63-1-03180bf5-large-thumb.png",
-        "description": "CHINEDU is a stand up comedian, content creator, and host from Houston, TX. He is best known for his hilarious viral videos about Houston and Texas culture, along with his work in sports and stand up comedy. He has hosted several events across the country including rodeos, galas, and award shows. His comedic style is family friendly that is suitable for all ages and walks of life. Along with his stand up comedy tours, he also produces content for companies such as Pepsi, Whataburger, Blue Bell Ice Cream, MLS, NBA, NFL, and CBS Sports. CHINEDU is currently on his 7th comedy tour while preparing to produce and film his upcoming 5th stand up special.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.---",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Conroe",
-          "url": "https://www.riotconroe.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Chinedu Ogu"
-          },
-          {
-            "@type": "Person",
-            "name": "TBD"
-          }
-        ]
-      }
-    },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-24": {
       "lastmod": "2026-10-21T02:02:00-05:00",
       "node": {
@@ -7226,7 +7124,7 @@
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-the-riot-conroe-6": {
       "lastmod": "2026-08-10T04:21:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Riot Comedy Club presents Saturday Night Early Standup Comedy in Conroe!",
         "startDate": "2026-10-31T19:00:00-05:00",
@@ -7249,7 +7147,7 @@
           "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-the-riot-conroe-6",
           "priceCurrency": "USD",
           "price": "36.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-01T14:27:41-05:00"
         },
         "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-the-riot-conroe-6",
@@ -10700,7 +10598,7 @@
     "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-31130000": {
       "lastmod": "2026-10-19T07:54:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Yolks & Jokes - Saturday Brunch Comedy Show! ",
         "startDate": "2026-10-31T13:00:00-05:00",
@@ -10723,7 +10621,7 @@
           "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-31130000",
           "priceCurrency": "USD",
           "price": "0.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-10-11T13:53:43-05:00"
         },
         "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-31130000",
