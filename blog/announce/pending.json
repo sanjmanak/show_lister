@@ -1,3 +1,21 @@
 {
-  "items": []
+  "generated_at": "2026-10-25T18:33:11.639Z",
+  "dry_run": false,
+  "items": [
+    {
+      "id": "8b6bf36985a6429b",
+      "name": "Aaron Chen - Technology",
+      "performer_name": "Aaron Chen",
+      "venue": "House of Blues Houston",
+      "date": "2027-01-16",
+      "ticket_url": "https://www.ticketmaster.com/aaron-chen-technology-houston-texas-01-16-2027/event/3A00652DC483CC88",
+      "files": {
+        "portrait": "2027-01-16-aaron-chen-portrait.png",
+        "story": "2027-01-16-aaron-chen-story.png",
+        "reel": "2027-01-16-aaron-chen.mp4"
+      },
+      "caption": "The mind behind If Weren't Filmed, Nobody Would Believe is touring Technology.\nAaron Chen performs at House of Blues Houston on January 16, 2027, with his Technology tour. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
+      "confidence": 0.93
+    }
+  ]
 }
