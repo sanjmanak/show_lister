@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-10": {
-      "lastmod": "2026-08-09T09:59:00-05:00",
+      "lastmod": "2026-10-26T01:03:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -37,7 +37,32 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Marz Pimentel"
+          },
+          {
+            "@type": "Person",
+            "name": "Bob Morrissey"
+          },
+          {
+            "@type": "Person",
+            "name": "Mason James"
+          },
+          {
+            "@type": "Person",
+            "name": "Adam Bob"
+          },
+          {
+            "@type": "Person",
+            "name": "Natia Simon"
+          },
+          {
+            "@type": "Person",
+            "name": "Luis Dejesus"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-monday-night-standup-comedy-open-mic-2026-10-26210000": {
@@ -86,7 +111,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-10-27-26-07-00-pm": {
-      "lastmod": "2026-10-17T05:20:00-05:00",
+      "lastmod": "2026-10-26T03:47:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -122,11 +147,36 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "James Vogt"
+          },
+          {
+            "@type": "Person",
+            "name": "Ebad Jann"
+          },
+          {
+            "@type": "Person",
+            "name": "Neal Rosen"
+          },
+          {
+            "@type": "Person",
+            "name": "Sandra Dee"
+          },
+          {
+            "@type": "Person",
+            "name": "Mason James"
+          },
+          {
+            "@type": "Person",
+            "name": "JCann"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-10-27210000": {
-      "lastmod": "2026-09-24T08:29:00-05:00",
+      "lastmod": "2026-10-26T03:48:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -165,13 +215,13 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Marz Pimentel"
+            "name": "Darius Gullett"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-26": {
-      "lastmod": "2026-09-22T11:42:00-05:00",
+      "lastmod": "2026-10-26T11:24:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -207,7 +257,32 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Bob Biggerstaff"
+          },
+          {
+            "@type": "Person",
+            "name": "Mason James"
+          },
+          {
+            "@type": "Person",
+            "name": "Matt B.C."
+          },
+          {
+            "@type": "Person",
+            "name": "JCann"
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
+          },
+          {
+            "@type": "Person",
+            "name": "Andy Huggins"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-24": {
@@ -8702,7 +8777,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-2026-funniest-person-in-houston-fpih-comedy-competition-2026-10-29190000": {
-      "lastmod": "2026-09-17T03:53:00-05:00",
+      "lastmod": "2026-10-26T03:52:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -9947,7 +10022,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-swipe-right-comedy-dating-game-for-singles-couples-2026-10-29210000": {
-      "lastmod": "2026-09-30T09:59:00-05:00",
+      "lastmod": "2026-10-26T03:52:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",

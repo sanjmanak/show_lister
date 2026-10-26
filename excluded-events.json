@@ -1,30 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-10-26T01:47:12.632Z",
-  "total_excluded": 21,
+  "last_updated": "2026-10-26T19:19:22.913Z",
+  "total_excluded": 23,
   "events": [
-    {
-      "name": "Classic Movie Night At The Jefferson The Addams Family",
-      "venue": "Jefferson Theatre",
-      "venue_city": "Beaumont",
-      "date": "2026-10-25",
-      "time": "7:00 PM",
-      "source": "ticketmaster",
-      "genre": "Comedy",
-      "ticket_url": "https://www.ticketmaster.com/classic-movie-night-at-the-jefferson-beaumont-texas-10-25-2026/event/3A006519EC2420F1",
-      "reason": "venue blocklisted: Jefferson Theatre"
-    },
-    {
-      "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-10-25",
-      "time": "10:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/our-mic-is-your-mic-emo-karaoke-tickets-2002396255102",
-      "reason": "title keyword blocklisted: \"karaoke\""
-    },
     {
       "name": "Classic Movie Night At The Jefferson Little Shop Of Horrors",
       "venue": "Jefferson Theatre",
@@ -221,6 +199,50 @@
       "source": "eventbrite",
       "genre": null,
       "ticket_url": "https://www.eventbrite.com/e/dial-up-90s-y2k-dance-party-tickets-2003574359845",
+      "reason": "title keyword blocklisted: \"dance party\""
+    },
+    {
+      "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-11-22",
+      "time": "10:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/our-mic-is-your-mic-emo-karaoke-tickets-2003921897339",
+      "reason": "title keyword blocklisted: \"karaoke\""
+    },
+    {
+      "name": "Karaoke every THURSDAY!",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-11-26",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/karaoke-every-thursday-tickets-2003923630523",
+      "reason": "title keyword blocklisted: \"karaoke\""
+    },
+    {
+      "name": "NOTHING MATTERS Emo | Indie | Punk Dance Party",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-11-27",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/nothing-matters-emo-indie-punk-dance-party-tickets-2003923862216",
+      "reason": "title keyword blocklisted: \"dance party\""
+    },
+    {
+      "name": "DIAL UP: 90s & Y2K Dance Party!",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-11-28",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/dial-up-90s-y2k-dance-party-tickets-2003924348671",
       "reason": "title keyword blocklisted: \"dance party\""
     },
     {
