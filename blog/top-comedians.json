@@ -1,117 +1,117 @@
 {
-  "generated_at": "2026-10-19T20:34:15.913Z",
-  "week_range": "October 19 – October 25, 2026",
+  "generated_at": "2026-10-26T20:27:41.274Z",
+  "week_range": "October 26 – November 1, 2026",
   "comedians": [
     {
-      "name": "Seth Meyers",
-      "displayName": "Seth Meyers",
+      "name": "Dave Chappelle",
+      "displayName": "Dave Chappelle",
       "names": [
-        "Seth Meyers"
+        "Dave Chappelle"
       ],
-      "show": "Seth Meyers: Live",
+      "show": "Dave Chappelle",
+      "venue": "Toyota Center - TX",
+      "date": "2026-10-28",
+      "eventKey": "davechappelle@toyotacentertx",
+      "imageUrl": "https://s1.ticketm.net/dam/a/e69/931eff58-62a7-4240-adb3-cf67a084ee69_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/e69/931eff58-62a7-4240-adb3-cf67a084ee69_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "Pandji",
+      "displayName": "Pandji",
+      "names": [
+        "Pandji"
+      ],
+      "show": "Pandji",
+      "venue": "Punch Line Houston",
+      "date": "2026-11-01",
+      "eventKey": "pandji@punchlinehouston",
+      "imageUrl": "https://s1.ticketm.net/dam/e/376/848a6ae9-7b69-42f5-a209-010d4c6a0376_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/e/376/848a6ae9-7b69-42f5-a209-010d4c6a0376_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "Daniel Sloss",
+      "displayName": "Daniel Sloss",
+      "names": [
+        "Daniel Sloss"
+      ],
+      "show": "Daniel Sloss: BITTER  (Brand New Tour!)",
       "venue": "Bayou Music Center",
-      "date": "2026-10-24",
-      "eventKey": "sethmeyerslive@bayoumusiccenter",
-      "imageUrl": "https://s1.ticketm.net/dam/a/639/c860f8e9-1fb4-48a9-981f-607b28429639_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/639/c860f8e9-1fb4-48a9-981f-607b28429639_SOURCE",
+      "date": "2026-10-27",
+      "eventKey": "danielslossbitterbrandnewtour@bayoumusiccenter",
+      "imageUrl": "https://s1.ticketm.net/dam/a/cfa/e476394e-b2ce-4a11-8230-879e15686cfa_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/cfa/e476394e-b2ce-4a11-8230-879e15686cfa_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Charlie Berens",
-      "displayName": "Charlie Berens",
+      "name": "Jerry Wayne Longmire",
+      "displayName": "Jerry Wayne Longmire",
       "names": [
-        "Charlie Berens"
+        "Jerry Wayne Longmire"
       ],
-      "show": "CHARLIE BERENS THE LOST AND FOUND TOUR",
-      "venue": "Cullen Performance Hall",
-      "date": "2026-10-24",
-      "eventKey": "charlieberensthelostandfoundtour@cullenperformancehall",
-      "imageUrl": "https://s1.ticketm.net/dam/a/d67/9fc9eace-5c22-47c5-b651-b4602d481d67_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "displayImage": "https://s1.ticketm.net/dam/a/d67/9fc9eace-5c22-47c5-b651-b4602d481d67_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "show": "Comedian Jerry Wayne Longmire Live in Conroe",
+      "venue": "The Riot Comedy Club — Conroe",
+      "date": "2026-10-30",
+      "eventKey": "comedianjerrywaynelongmireliveinconroe@theriotcomedyclubconroe",
+      "imageUrl": "https://www.riotconroe.com/img/shows/IMG-0499-6e83071f-large-thumb.jpg",
+      "displayImage": "https://www.riotconroe.com/img/shows/IMG-0499-6e83071f-large-thumb.jpg",
       "imageSource": "event"
     },
     {
-      "name": "Pauly Shore",
-      "displayName": "Pauly Shore",
+      "name": "D'Lai",
+      "displayName": "D'Lai",
       "names": [
-        "Pauly Shore"
+        "D'Lai"
       ],
-      "show": "Pauly Shore",
+      "show": "D'Lai",
       "venue": "Punch Line Houston",
-      "date": "2026-10-23",
-      "eventKey": "paulyshore@punchlinehouston",
-      "imageUrl": "https://s1.ticketm.net/dam/a/457/694b5962-fb12-449a-96ba-e0e6162e0457_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/457/694b5962-fb12-449a-96ba-e0e6162e0457_SOURCE",
+      "date": "2026-10-29",
+      "eventKey": "dlai@punchlinehouston",
+      "imageUrl": "https://s1.ticketm.net/dam/a/592/75683124-585d-42f6-bd4b-01a389372592_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/592/75683124-585d-42f6-bd4b-01a389372592_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "FOOS GONE WILD",
-      "displayName": "FOOS GONE WILD",
+      "name": "Marito Lopez",
+      "displayName": "Marito Lopez",
       "names": [
-        "FOOS GONE WILD"
+        "Marito Lopez"
       ],
-      "show": "FOOS GONE WILD: The FOOS GONE WILD Tour 2026",
-      "venue": "House of Blues Houston",
-      "date": "2026-10-20",
-      "eventKey": "foosgonewildthefoosgonewildtour2026@houseofblueshouston",
-      "imageUrl": "https://s1.ticketm.net/dam/a/5e3/fd510e97-d4b0-4d3a-89be-b442fef295e3_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "displayImage": "https://s1.ticketm.net/dam/a/5e3/fd510e97-d4b0-4d3a-89be-b442fef295e3_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "show": "Marito Lopez",
+      "venue": "Punch Line Houston",
+      "date": "2026-10-28",
+      "eventKey": "maritolopez@punchlinehouston",
+      "imageUrl": "https://s1.ticketm.net/dam/a/fef/845bcb26-dc72-46ef-952e-98acdb418fef_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/fef/845bcb26-dc72-46ef-952e-98acdb418fef_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Standoperos",
-      "displayName": "Standoperos",
+      "name": "Steve Byrne",
+      "displayName": "Steve Byrne",
       "names": [
-        "Standoperos"
+        "Steve Byrne"
       ],
-      "show": "Standoperos: La Tómbola",
+      "show": "Steve Byrne",
       "venue": "Houston Improv",
-      "date": "2026-10-21",
-      "eventKey": "standoperoslatmbola@houstonimprov",
-      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "displayImage": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237c5cff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23ff4d6a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2254%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20font-family%3D%22Inter%2CArial%2Csans-serif%22%20font-size%3D%2280%22%20font-weight%3D%22800%22%20fill%3D%22%23ffffff%22%3ES%3C%2Ftext%3E%3C%2Fsvg%3E",
-      "imageSource": "initials"
-    },
-    {
-      "name": "Yohay Sponder",
-      "displayName": "Yohay Sponder",
-      "names": [
-        "Yohay Sponder"
-      ],
-      "show": "Yohay Sponder: Genesis",
-      "venue": "House of Blues Houston",
-      "date": "2026-10-25",
-      "eventKey": "yohayspondergenesis@houseofblueshouston",
-      "imageUrl": "https://s1.ticketm.net/dam/a/b31/444203c6-5565-4d2f-887e-b3a13edbdb31_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/b31/444203c6-5565-4d2f-887e-b3a13edbdb31_SOURCE",
+      "date": "2026-10-30",
+      "eventKey": "stevebyrne@houstonimprov",
+      "imageUrl": "https://s1.ticketm.net/dam/a/f57/77d81e36-5e13-4e2a-925f-1a0a86088f57_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/f57/77d81e36-5e13-4e2a-925f-1a0a86088f57_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Joanne McNally",
-      "displayName": "Joanne McNally",
+      "name": "Abby Govindan",
+      "displayName": "Abby Govindan",
       "names": [
-        "Joanne McNally"
+        "Abby Govindan"
       ],
-      "show": "Joanne McNally: Pinotphile",
-      "venue": "Punch Line Houston",
-      "date": "2026-10-21",
-      "eventKey": "joannemcnallypinotphile@punchlinehouston",
-      "imageUrl": "https://s1.ticketm.net/dam/a/544/c15cfebb-79c2-4245-959b-64746735e544_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "displayImage": "https://s1.ticketm.net/dam/a/544/c15cfebb-79c2-4245-959b-64746735e544_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "imageSource": "event"
-    },
-    {
-      "name": "Cortisa Star",
-      "displayName": "Cortisa Star",
-      "names": [
-        "Cortisa Star"
-      ],
-      "show": "Cortisa Star - For All The Dolls Tour",
+      "show": "Abby Govindan",
       "venue": "The Secret Group",
-      "date": "2026-10-23",
-      "eventKey": "cortisastarforallthedollstour@thesecretgroup",
-      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192236176%2F3558237521%2F1%2Foriginal.20260830-203506?auto=format%2Ccompress&q=75&sharp=10&s=8560140a880f7020db5a0963c5338fe6",
-      "displayImage": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192236176%2F3558237521%2F1%2Foriginal.20260830-203506?auto=format%2Ccompress&q=75&sharp=10&s=8560140a880f7020db5a0963c5338fe6",
+      "date": "2026-10-26",
+      "eventKey": "abbygovindan@thesecretgroup",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1088890053%2F3558237521%2F1%2Foriginal.20250805-184307?auto=format%2Ccompress&q=75&sharp=10&s=09c5c2adfa2e9dfe3cdb6f8db73f2b63",
+      "displayImage": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1088890053%2F3558237521%2F1%2Foriginal.20250805-184307?auto=format%2Ccompress&q=75&sharp=10&s=09c5c2adfa2e9dfe3cdb6f8db73f2b63",
       "imageSource": "event"
     }
   ]
