@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T17:10:44.753Z",
+  "generated_at": "2026-10-26T20:40:49.345Z",
   "comedians": [
     {
       "slug": "abby-govindan",
@@ -36,6 +36,16 @@
         "anjelah-johnson-reyes-punch-line-houston-2026-10-15"
       ],
       "next_show": null
+    },
+    {
+      "slug": "chris-fleming",
+      "name": "Chris Fleming",
+      "match": [
+        "chris fleming"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/chris-fleming/",
+      "legacy_slugs": [],
+      "next_show": "2026-11-20"
     },
     {
       "slug": "chrissy-chlapecka",
@@ -150,6 +160,16 @@
       "next_show": null
     },
     {
+      "slug": "josh-blue",
+      "name": "Josh Blue",
+      "match": [
+        "josh blue"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/josh-blue/",
+      "legacy_slugs": [],
+      "next_show": "2026-11-19"
+    },
+    {
       "slug": "josh-gondelman",
       "name": "Josh Gondelman",
       "match": [
@@ -194,6 +214,16 @@
       "next_show": "2026-11-11"
     },
     {
+      "slug": "luke-kidgell",
+      "name": "Luke Kidgell",
+      "match": [
+        "luke kidgell"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/luke-kidgell/",
+      "legacy_slugs": [],
+      "next_show": "2026-11-18"
+    },
+    {
       "slug": "marito-lopez",
       "name": "Marito Lopez",
       "match": [
@@ -214,6 +244,16 @@
       "wpLink": "https://comedyhouston.com/comedians/marlon-wayans/",
       "legacy_slugs": [],
       "next_show": null
+    },
+    {
+      "slug": "michael-rowland",
+      "name": "Michael Rowland",
+      "match": [
+        "michael rowland"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/michael-rowland/",
+      "legacy_slugs": [],
+      "next_show": "2026-11-20"
     },
     {
       "slug": "mo-amer",
@@ -248,6 +288,16 @@
       "wpLink": "https://comedyhouston.com/comedians/pauly-shore/",
       "legacy_slugs": [],
       "next_show": null
+    },
+    {
+      "slug": "phil-hanley",
+      "name": "Phil Hanley",
+      "match": [
+        "phil hanley"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/phil-hanley/",
+      "legacy_slugs": [],
+      "next_show": "2026-11-19"
     },
     {
       "slug": "reem-edan",

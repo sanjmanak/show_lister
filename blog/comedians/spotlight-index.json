@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-10-25T17:10:44.751Z",
+  "generated_at": "2026-10-26T20:40:49.341Z",
   "source_manifests": [
     "manifest-2026-10-26.json",
     "manifest-2026-11-02.json",
-    "manifest-2026-11-09.json"
+    "manifest-2026-11-09.json",
+    "manifest-2026-11-16.json"
   ],
   "posts": [
     {
@@ -110,6 +111,41 @@
       "slug": "reem-edan-the-den-comedy-club-2026-11-12",
       "wpLink": "https://comedyhouston.com/comedians/reem-edan/",
       "venue": "The Den Comedy Club"
+    },
+    {
+      "date": "2026-11-18",
+      "comedianName": "Luke Kidgell",
+      "slug": "luke-kidgell-punch-line-houston-2026-11-18",
+      "wpLink": "https://comedyhouston.com/comedians/luke-kidgell/",
+      "venue": "Punch Line Houston"
+    },
+    {
+      "date": "2026-11-19",
+      "comedianName": "Josh Blue",
+      "slug": "josh-blue-punch-line-houston-2026-11-19",
+      "wpLink": "https://comedyhouston.com/comedians/josh-blue/",
+      "venue": "Punch Line Houston"
+    },
+    {
+      "date": "2026-11-19",
+      "comedianName": "Phil Hanley",
+      "slug": "phil-hanley-houston-improv-2026-11-19",
+      "wpLink": "https://comedyhouston.com/comedians/phil-hanley/",
+      "venue": "Houston Improv"
+    },
+    {
+      "date": "2026-11-20",
+      "comedianName": "Chris Fleming",
+      "slug": "chris-fleming-cullen-performance-hall-2026-11-20",
+      "wpLink": "https://comedyhouston.com/comedians/chris-fleming/",
+      "venue": "Cullen Performance Hall"
+    },
+    {
+      "date": "2026-11-20",
+      "comedianName": "Michael Rowland",
+      "slug": "michael-rowland-the-riot-comedy-club-2026-11-20",
+      "wpLink": "https://comedyhouston.com/comedians/michael-rowland/",
+      "venue": "The Riot Comedy Club"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-10-25T17:10:44.743Z",
+  "updated_at": "2026-10-26T20:40:49.338Z",
   "comedians": [
     {
       "slug": "abby-govindan",
@@ -132,6 +132,41 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/anjelah-johnson-reyes-houston.jpg"
+    },
+    {
+      "slug": "chris-fleming",
+      "name": "Chris Fleming",
+      "match": [
+        "chris fleming"
+      ],
+      "status": "live",
+      "created_at": "2026-10-26T20:39:18.883Z",
+      "profile_written_at": "2026-10-26T20:40:39.744Z",
+      "profile_html": "<p>In August 2026, <a href=\"https://www.harpersbazaar.com/culture/film-tv/a73367663/chris-fleming-hbo-special-2026/\">Harper’s Bazaar</a> caught Chris Fleming after the premiere of <a href=\"https://press.wbd.com/us/property/chris-fleming-live-palace/media-releases\">Chris Fleming: Live at the Palace</a>, his HBO and HBO Max special, and his first Emmy nomination for Outstanding Writing for a Variety Special. “That special was me firing at the height of my powers,” he said.</p>\n\n<p>Fleming grew up in Stow, Massachusetts, in an Irish Catholic family. New England, suburban social types, therapy, consumer culture, and performance anxiety recur in his work. His early online breakthrough was <a href=\"https://en.wikipedia.org/wiki/Chris_Fleming_(comedian)\">Gayle</a>, the web series about Gayle Waters-Waters, a hyper-competitive suburban mother.</p>\n\n<p>His stand-up mixes stories, dancing, songs, and sketch-like framing with strenuous physical performance. Harper’s Bazaar described him as constantly in motion onstage; Marc Maron called the act unusually free and improvisationally flexible. The 2018 YouTube special <em>Showpig</em> came before the 2023 Peacock special <a href=\"https://www.peacocktv.com/blog/chris-fleming-hell-how-to-watch-new-special\"><em>Chris Fleming: Hell</em></a>.</p>\n\n<p>Fleming played Leonard in the 2025 <em>Abbott Elementary</em> episode “Karaoke.” In March 2026, he appeared on <em>Late Night with Seth Meyers</em> to promote <em>Live at the Palace</em>.</p>",
+      "research_json": "{\n  \"full_name\": \"Chris Fleming\",\n  \"hometown\": \"Stow, Massachusetts\",\n  \"career_start_year\": null,\n  \"specials\": [\n    {\n      \"title\": \"Showpig\",\n      \"platform\": \"YouTube\",\n      \"year\": 2018\n    },\n    {\n      \"title\": \"Chris Fleming: Hell\",\n      \"platform\": \"Peacock\",\n      \"year\": 2023\n    },\n    {\n      \"title\": \"Chris Fleming: Live at the Palace\",\n      \"platform\": \"HBO and HBO Max\",\n      \"year\": 2026\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Wild Card with Rachel Martin\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"American Masters: Creative Spark\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Mike Birbiglia's Working It Out\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Conan O'Brien Needs a Friend\",\n      \"year_approx\": 2025\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Abbott Elementary\",\n      \"context\": \"Played Leonard in the 2025 episode \\\"Karaoke.\\\"\"\n    },\n    {\n      \"show\": \"Late Night with Seth Meyers\",\n      \"context\": \"Appeared as a guest in March 2026 while promoting \\\"Chris Fleming: Live at the Palace.\\\"\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Absurdist, observational, high-energy, and self-deprecating.\",\n    \"structure\": \"Stand-up that combines storytelling with extensive physical performance, dancing, songs, and occasional sketch-like framing.\",\n    \"recurring_themes\": [\n      \"New England and suburban social types\",\n      \"Masculinity and gender expression\",\n      \"Consumer culture and everyday institutions\",\n      \"Irish Catholic culture\",\n      \"Therapy\",\n      \"Performance anxiety\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"Fleming is known for a highly physical, theatrical live act. Harper's Bazaar described his body as constantly in motion during performance; Marc Maron characterized his onstage work as unusually free and improvisationally flexible.\",\n  \"recent_activity_2025_2026\": \"In 2026, \\\"Chris Fleming: Live at the Palace\\\" premiered on HBO and HBO Max and received an Emmy nomination for Outstanding Writing for a Variety Special. Fleming also hosted the recurring Los Angeles variety show Chris Fleming and Friends at Largo at the Coronet. His official site listed live dates from November 2026 through April 2027 in the United States and Canada.\",\n  \"recent_hook\": {\n    \"summary\": \"An August 18, 2026 Harper's Bazaar profile documented Fleming's expanded profile after \\\"Chris Fleming: Live at the Palace,\\\" including his recurring Chris Fleming and Friends variety show at Largo at the Coronet and his first Emmy nomination for writing the HBO special.\",\n    \"quote\": \"That special was me firing at the height of my powers.\",\n    \"source_publication\": \"Harper's Bazaar\",\n    \"source_url\": \"https://www.harpersbazaar.com/culture/film-tv/a73367663/chris-fleming-hbo-special-2026/\",\n    \"date\": \"2026-08-18\"\n  },\n  \"instagram_handle\": \"\",\n  \"notable_bits_or_quotes\": [\n    \"Gayle, his web series centered on fictional suburban mother Gayle Waters-Waters\",\n    \"Company Is Coming\",\n    \"Sick Jan\",\n    \"I'm Afraid to Talk to Men\",\n    \"In \\\"Live at the Palace,\\\" material includes Trader Joe's, Oreos, NPR, dog breeds, masculinity, and conga lines.\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"Claims connecting this comedian to paranormal television series including \\\"Dead Famous,\\\" \\\"Psychic Kids,\\\" \\\"Ghost Adventures,\\\" or \\\"Spooked Scotland\\\"; those credits concern a different person named Chris Fleming.\",\n    \"Claims that Fleming has a comedy special called \\\"Bosh\\\"; no reliable source located during this research verified such a special.\",\n    \"Claims that he appeared on \\\"The Doctors\\\" or \\\"Tosh.0\\\" based solely on a 2017 publicity release; these were not independently verified.\"\n  ],\n  \"background_story\": \"Fleming grew up in Stow, Massachusetts, in an Irish Catholic family. He performed in school productions and began attending local open-mic nights at age 16 after his mother encouraged him to write his own material. His early online breakthrough came through the YouTube character Gayle Waters-Waters, a hyper-competitive suburban mother partly informed by people he encountered in Stow.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Chris_Fleming_(comedian)\"\n    },\n    {\n      \"label\": \"IMDb\",\n      \"url\": \"https://www.imdb.com/name/nm4955186/?showAllCredits=true\"\n    },\n    {\n      \"label\": \"HBO press page for Chris Fleming: Live at the Palace\",\n      \"url\": \"https://press.wbd.com/us/property/chris-fleming-live-palace/media-releases\"\n    },\n    {\n      \"label\": \"Peacock page for Chris Fleming: Hell\",\n      \"url\": \"https://www.peacocktv.com/blog/chris-fleming-hell-how-to-watch-new-special\"\n    },\n    {\n      \"label\": \"Harper's Bazaar interview\",\n      \"url\": \"https://www.harpersbazaar.com/culture/film-tv/a73367663/chris-fleming-hbo-special-2026/\"\n    },\n    {\n      \"label\": \"Wild Card with Rachel Martin episode\",\n      \"url\": \"https://pod.wave.co/podcast/wild-card-with-rachel-martin/chris-fleming\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Chris_Fleming_(comedian)",
+        "https://www.imdb.com/name/nm4955186/?showAllCredits=true"
+      ],
+      "instagramHandle": "",
+      "imageUrl": "https://s1.ticketm.net/dam/a/7da/06accf4e-b857-45e8-ae24-e57e6c84d7da_SOURCE",
+      "wpPageId": 2296,
+      "wpLink": "https://comedyhouston.com/comedians/chris-fleming/",
+      "wpImageMediaId": 2295,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-11-20",
+          "venue": "Cullen Performance Hall",
+          "time": "7:30 PM",
+          "name": "CHRIS FLEMING LIVE",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1AAvI-V",
+          "event_id": "1422d54256e6400a",
+          "image_url": "https://s1.ticketm.net/dam/a/7da/06accf4e-b857-45e8-ae24-e57e6c84d7da_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/chris-fleming-houston.jpg"
     },
     {
       "slug": "chrissy-chlapecka",
@@ -514,6 +549,61 @@
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/joanne-mcnally-houston.jpg"
     },
     {
+      "slug": "josh-blue",
+      "name": "Josh Blue",
+      "match": [
+        "josh blue"
+      ],
+      "status": "live",
+      "created_at": "2026-10-26T20:35:23.563Z",
+      "profile_written_at": "2026-10-26T20:36:56.625Z",
+      "profile_html": "<p>In February 2026, <a href=\"https://www.cpr.org/show-episode/feb-18-2026-comedian-josh-blue-gives-us-something-to-stare-at/\">Colorado Public Radio</a> spoke with Josh Blue at Boulder’s Dairy Arts Center about his first memoir, <em>Something To Stare At</em>. The 2025 book covers childhood in West Africa, cerebral palsy, Paralympic soccer and comedy. Blue called the project “putting the cerebral in cerebral palsy.”</p>\n\n<p>Blue was born in Cameroon, raised in St. Paul, Minnesota, and started doing open mics at Evergreen State College in Olympia, Washington. He represented the United States in cerebral-palsy football at the 2004 Paralympic Games in Athens, then built a comedy career in Denver. In 2006, he won the fourth season of NBC’s <em>Last Comic Standing</em>. He later appeared on <em>The Ellen DeGeneres Show</em> and <em>The Tonight Show Starring Jimmy Fallon</em>, and finished third on <em>America’s Got Talent</em> in 2021.</p>\n\n<p>His material draws on single parenting, divorce, family life and strangers’ assumptions about cerebral palsy. “There’s no map on that. I’ve never written anything down physically. It’s just all kind of off the top of my head.” <a href=\"https://www.youtube.com/watch?v=hyOawy9gYbA\"><em>Freak Accident</em></a>, his 2024 special, was released through YouTube and 800 Pound Gorilla Media. Earlier releases include 2012’s <em>Josh Blue: Sticky Change</em> on Showtime.</p>\n\n<p>Blue changes the order, timing and topics as the room demands. Crowd interaction can become part of the set.</p>",
+      "research_json": "{\n  \"full_name\": \"Josh Blue\",\n  \"hometown\": \"St. Paul, Minnesota\",\n  \"career_start_year\": null,\n  \"specials\": [\n    {\n      \"title\": \"7 More Days in the Tank\",\n      \"platform\": \"Theatrical release\",\n      \"year\": 2006\n    },\n    {\n      \"title\": \"Comedy Central Presents: Josh Blue\",\n      \"platform\": \"Comedy Central\",\n      \"year\": 2009\n    },\n    {\n      \"title\": \"Josh Blue: Sticky Change\",\n      \"platform\": \"Showtime\",\n      \"year\": 2012\n    },\n    {\n      \"title\": \"Broccoli\",\n      \"platform\": \"Streaming via Josh Blue's official store\",\n      \"year\": 2018\n    },\n    {\n      \"title\": \"Freak Accident\",\n      \"platform\": \"YouTube / 800 Pound Gorilla Media\",\n      \"year\": 2024\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"John and Heidi Show\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"Husky Boys Podcast\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"Colorado Matters\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"No Barriers Podcast\",\n      \"year_approx\": null\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Last Comic Standing\",\n      \"context\": \"Won NBC's fourth season in 2006.\"\n    },\n    {\n      \"show\": \"The Ellen DeGeneres Show\",\n      \"context\": \"Performed stand-up after winning Last Comic Standing.\"\n    },\n    {\n      \"show\": \"The Late Late Show with Craig Ferguson\",\n      \"context\": \"Guest appearance on December 2, 2013.\"\n    },\n    {\n      \"show\": \"The Tonight Show Starring Jimmy Fallon\",\n      \"context\": \"Performed stand-up on May 4, 2018.\"\n    },\n    {\n      \"show\": \"America's Got Talent\",\n      \"context\": \"Finished third in season 16 in 2021.\"\n    },\n    {\n      \"show\": \"America's Got Talent: All-Stars\",\n      \"context\": \"Returned as a contestant in 2023.\"\n    },\n    {\n      \"show\": \"Studio Twelve\",\n      \"context\": \"Interviewed in a PBS12 episode that aired April 7, 2026.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Self-deprecating, candid, irreverent, and conversational.\",\n    \"structure\": \"Story-driven stand-up with punch lines embedded in longer narratives; Blue has said he does not write material down verbatim and changes order, timing, and topics in response to the room.\",\n    \"recurring_themes\": [\n      \"Living with cerebral palsy and public assumptions about disability\",\n      \"Single parenting and family life\",\n      \"Divorce and relationships\",\n      \"Paralympic soccer\",\n      \"Everyday absurdity\",\n      \"Audience interaction and improvisation\"\n    ],\n    \"comparable_to\": null\n  },\n  \"live_reputation\": \"Blue is a long-running touring headliner whose official biography says he performs more than 200 shows annually and emphasizes that his off-the-cuff improvisation means no two shows are alike.\",\n  \"recent_activity_2025_2026\": \"Blue released his first memoir, Something To Stare At, in 2025; it covers his childhood, cerebral palsy, time in West Africa, Paralympic soccer, and comedy career. Colorado Public Radio featured him discussing the memoir and performing in Boulder in February 2026. His official website also listed 2026 stand-up dates and promoted an Instagram post saying he was filming another special.\",\n  \"recent_hook\": {\n    \"summary\": \"Colorado Public Radio featured Blue's memoir Something To Stare At in a February 2026 Colorado Matters episode recorded at Boulder’s Dairy Arts Center. The memoir is his first book and recounts his formative years in West Africa, Paralympic soccer career, and rise in stand-up.\",\n    \"quote\": \"putting the cerebral in cerebral palsy\",\n    \"source_publication\": \"Colorado Public Radio\",\n    \"source_url\": \"https://www.cpr.org/show-episode/feb-18-2026-comedian-josh-blue-gives-us-something-to-stare-at/\",\n    \"date\": \"2026-02-18\"\n  },\n  \"instagram_handle\": \"@joshbluecomedy\",\n  \"notable_bits_or_quotes\": [\n    \"“What’s beautiful about stand-up is I’ll never figure it out completely.”\",\n    \"“There’s no map on that. I’ve never written anything down physically. It’s just all kind of off the top of my head.”\",\n    \"“It’s been like having a raccoon attached to my body.”\",\n    \"“If you’re not squirming, you’re not learning.”\",\n    \"“I realize people are going to stare, so I want to give them something to stare at.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"An exact career-start year: reliable sources verify that he began doing open mics while attending Evergreen State College, but do not establish one definitive start year.\",\n    \"Claims that he has a Netflix special: his official website uses Netflix branding in a general promotional banner, but no specific Josh Blue Netflix special page was independently verified.\",\n    \"Claims that Delete is definitively a filmed stand-up special: lower-quality databases list it as a special or record, but a primary distribution page was not independently verified.\",\n    \"A definitive count or ordering of all his hour specials: sources conflict about which release was his fifth hour or fifth special.\",\n    \"Claims of a verified appearance on WTF with Marc Maron or Getting Doug with High without a directly verified episode page.\"\n  ],\n  \"background_story\": \"Blue was born in Cameroon in 1978 and was raised in St. Paul, Minnesota. He has cerebral palsy. He attended Evergreen State College in Olympia, Washington, where he began performing at open mics and built an early following through a weekly comedy show. He represented the United States in cerebral-palsy football, including at the 2004 Paralympic Games in Athens. He later established his comedy career in Denver, won Last Comic Standing in 2006, and has continued touring nationally.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Josh_Blue\"\n    },\n    {\n      \"label\": \"IMDb\",\n      \"url\": \"https://www.imdb.com/name/nm2333144/\"\n    },\n    {\n      \"label\": \"Official Josh Blue biography\",\n      \"url\": \"https://www.joshblue.com/about/\"\n    },\n    {\n      \"label\": \"Freak Accident on YouTube\",\n      \"url\": \"https://www.youtube.com/watch?v=hyOawy9gYbA\"\n    },\n    {\n      \"label\": \"Colorado Public Radio memoir feature\",\n      \"url\": \"https://www.cpr.org/show-episode/feb-18-2026-comedian-josh-blue-gives-us-something-to-stare-at/\"\n    },\n    {\n      \"label\": \"Denver Westword memoir interview\",\n      \"url\": \"https://www.westword.com/arts-culture/denver-comedian-josh-blue-releases-memoir-25215949/\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Josh_Blue",
+        "https://www.imdb.com/name/nm2333144/",
+        "https://www.youtube.com/watch?v=hyOawy9gYbA",
+        "https://www.instagram.com/joshbluecomedy/"
+      ],
+      "instagramHandle": "@joshbluecomedy",
+      "imageUrl": "https://s1.ticketm.net/dam/a/1a5/1bb49469-9a04-4981-ab58-98c759b8e1a5_SOURCE",
+      "wpPageId": 2287,
+      "wpLink": "https://comedyhouston.com/comedians/josh-blue/",
+      "wpImageMediaId": 2286,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-11-19",
+          "venue": "Punch Line Houston",
+          "time": "7:00 PM",
+          "name": "Josh Blue",
+          "ticket_url": "https://www.ticketmaster.com/josh-blue-houston-texas-11-19-2026/event/3A0064F908E72B37",
+          "event_id": "2056acc27f4fda34",
+          "image_url": "https://s1.ticketm.net/dam/a/1a5/1bb49469-9a04-4981-ab58-98c759b8e1a5_SOURCE"
+        },
+        {
+          "date": "2026-11-20",
+          "venue": "Punch Line Houston",
+          "time": "7:00 PM",
+          "name": "Josh Blue",
+          "ticket_url": "https://www.ticketmaster.com/josh-blue-houston-texas-11-20-2026/event/3A0064F908F02B63",
+          "event_id": "6edcd04abe36be30",
+          "image_url": "https://s1.ticketm.net/dam/a/1a5/1bb49469-9a04-4981-ab58-98c759b8e1a5_SOURCE"
+        },
+        {
+          "date": "2026-11-21",
+          "venue": "Punch Line Houston",
+          "time": "6:30 PM",
+          "name": "Josh Blue",
+          "ticket_url": "https://www.ticketmaster.com/josh-blue-houston-texas-11-21-2026/event/3A0064F908F82B81",
+          "event_id": "87e31c24df2c0a80",
+          "image_url": "https://s1.ticketm.net/dam/a/1a5/1bb49469-9a04-4981-ab58-98c759b8e1a5_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/josh-blue-houston.jpg"
+    },
+    {
       "slug": "josh-gondelman",
       "name": "Josh Gondelman",
       "match": [
@@ -667,6 +757,41 @@
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/kev-adams-houston.jpg"
     },
     {
+      "slug": "luke-kidgell",
+      "name": "Luke Kidgell",
+      "match": [
+        "luke kidgell"
+      ],
+      "status": "live",
+      "created_at": "2026-10-26T20:34:05.808Z",
+      "profile_written_at": "2026-10-26T20:35:08.952Z",
+      "profile_html": "<p>Luke Kidgell started performing stand-up in 2015 after seeing Nick Cody at that year’s Comedy Festival. Three months later, he tried it himself, he told <a href=\"https://www.westernweekender.com.au/2022/05/from-tiktok-to-the-joan-luke-kidgell-coming-to-penrith/\">The Western Weekender</a>. He had already been posting videos to Instagram and YouTube before clips from live sets widened his audience on TikTok. “Sometimes people just scream the word ‘TikTok’ at me,” he has said. “They’ll just yell the platform that they know me from.”</p>\n\n<p>Kidgell mixes prepared material with anecdotes and audience interaction. Travel, touring, awkward encounters and everyday observations are all in the rotation. He calls the approach “silly, interactive, and hopefully funny.” “I just like talking to people and seeing what happens on the night,” he has said.</p>\n\n<p>His YouTube specials include <a href=\"https://www.lukekidgell.com/comedy-specials\">Cheers To That</a> (2023) and <a href=\"https://www.youtube.com/watch?v=h2sbIMb-7TA\">Happy Hour</a> (2025), filmed on his 2024 UK tour and released March 12, 2025. His official biography says the <a href=\"https://www.lukekidgell.com/about\">Happy Hour tour</a> played to more than 150,000 people across 14 countries. He also co-hosts the B.L.T. comedy podcast with Blake Pavey and Tyler Cahill.</p>",
+      "research_json": "{\n  \"full_name\": \"Luke Kidgell\",\n  \"hometown\": \"\",\n  \"career_start_year\": 2015,\n  \"specials\": [\n    {\n      \"title\": \"Cheers To That\",\n      \"platform\": \"YouTube\",\n      \"year\": 2023\n    },\n    {\n      \"title\": \"Happy Hour\",\n      \"platform\": \"YouTube\",\n      \"year\": 2025\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"The Critical Banter Podcast\",\n      \"year_approx\": 2022\n    },\n    {\n      \"show\": \"Alpha Blokes Podcast\",\n      \"year_approx\": 2023\n    },\n    {\n      \"show\": \"The Debrief with Dave O'Neil\",\n      \"year_approx\": 2024\n    },\n    {\n      \"show\": \"Game of Life with Dan and Harman\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [],\n  \"comedy_style\": {\n    \"tone\": \"Kidgell has described his own style as \\\"silly, interactive, and hopefully funny.\\\"\",\n    \"structure\": \"Prepared stand-up material and anecdotes combined with audience interaction and crowd work.\",\n    \"recurring_themes\": [\n      \"Audience interactions\",\n      \"Travel and touring\",\n      \"Awkward encounters\",\n      \"Everyday observations\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"He is widely promoted and reported as a crowd-work-focused stand-up comedian whose audience interactions have gone viral online. His official biography says his Happy Hour tour played to more than 150,000 people across 14 countries.\",\n  \"recent_activity_2025_2026\": \"Kidgell released the YouTube special Happy Hour on March 12, 2025, filmed during his 2024 UK tour. In 2026 he toured Australia with the new show Good Intentions. His official North American schedule, accessed October 26, 2026, listed several U.S. dates from October 25 through November 20 as postponed, while listing added or sold-out Canadian dates in late November and December.\",\n  \"recent_hook\": {\n    \"summary\": \"Kidgell's official North American tour page currently lists a run of October-November 2026 U.S. dates as postponed, while several Canadian dates are listed as newly added or sold out. The official page was accessed on October 26, 2026; it does not state a reason for the postponements.\",\n    \"quote\": \"POSTPONED\",\n    \"source_publication\": \"Luke Kidgell official website\",\n    \"source_url\": \"https://www.lukekidgell.com/northamerica\",\n    \"date\": \"\"\n  },\n  \"instagram_handle\": \"@lukekidgell\",\n  \"notable_bits_or_quotes\": [\n    \"“Sometimes people just scream the word ‘TikTok’ at me, they’ll just yell the platform that they know me from.”\",\n    \"“I just like talking to people and seeing what happens on the night.”\",\n    \"“Most people know me from the internet. I try to make people laugh, that’s always the goal.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That Melbourne is Kidgell's hometown or birthplace. Reliable sources reviewed call him a Melbourne comedian, but did not independently establish his hometown or birthplace.\",\n    \"That he began posting on TikTok in 2019. This appears in low-quality biographical summaries but was not independently verified.\",\n    \"That he co-founded Keg Touring in 2024 with his brother Jack. A 2026 podcast description mentions Keg Touring and working with his brother, but the founding date and co-founder claim were not independently verified.\",\n    \"That he hosts a podcast called Memoirs of a White Guy. This claim appeared in a low-quality summary and was not independently verified.\",\n    \"That he previously co-hosted a podcast called Weekend Ready with Meg Archibald. This claim was not independently verified.\",\n    \"Any claimed television credits. The official biography says he previously had shows on Triple M and the Hit Network, which are radio networks, not verified television appearances.\"\n  ],\n  \"background_story\": \"Kidgell told The Western Weekender that he began comedy three months after seeing Nick Cody perform at the 2015 Comedy Festival. He was already posting videos on Instagram and YouTube before TikTok expanded his audience through clips from his live performances. His official biography says he has been performing stand-up since 2015 and is a co-host of the B.L.T. comedy podcast with Blake Pavey and Tyler Cahill.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Official biography\",\n      \"url\": \"https://www.lukekidgell.com/about\"\n    },\n    {\n      \"label\": \"Official comedy-specials page\",\n      \"url\": \"https://www.lukekidgell.com/comedy-specials\"\n    },\n    {\n      \"label\": \"Happy Hour YouTube special\",\n      \"url\": \"https://www.youtube.com/watch?v=h2sbIMb-7TA\"\n    },\n    {\n      \"label\": \"Notable interview: The Western Weekender\",\n      \"url\": \"https://www.westernweekender.com.au/2022/05/from-tiktok-to-the-joan-luke-kidgell-coming-to-penrith/\"\n    },\n    {\n      \"label\": \"Game of Life with Dan and Harman podcast episode\",\n      \"url\": \"https://shows.acast.com/game-of-life-with-dan-and-harman/episodes/69899f8bdb453dd2d51e3439\"\n    },\n    {\n      \"label\": \"Official North American tour page\",\n      \"url\": \"https://www.lukekidgell.com/northamerica\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.youtube.com/watch?v=h2sbIMb-7TA",
+        "https://www.instagram.com/lukekidgell/"
+      ],
+      "instagramHandle": "@lukekidgell",
+      "imageUrl": "https://s1.ticketm.net/dam/a/ef4/43eff045-db29-49d7-b366-91d33d4ebef4_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "wpPageId": 2284,
+      "wpLink": "https://comedyhouston.com/comedians/luke-kidgell/",
+      "wpImageMediaId": 2283,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-11-18",
+          "venue": "Punch Line Houston",
+          "time": "7:30 PM",
+          "name": "Luke Kidgell - Live In The USA",
+          "ticket_url": "https://www.ticketmaster.com/luke-kidgell-live-in-the-usa-houston-texas-11-18-2026/event/3A0064C3CC1BD7DC",
+          "event_id": "173fc23bec77ef46",
+          "image_url": "https://s1.ticketm.net/dam/a/ef4/43eff045-db29-49d7-b366-91d33d4ebef4_TABLET_LANDSCAPE_LARGE_16_9.jpg"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/luke-kidgell-houston.jpg"
+    },
+    {
       "slug": "marito-lopez",
       "name": "Marito Lopez",
       "match": [
@@ -756,6 +881,50 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/marlon-wayans-houston.jpg"
+    },
+    {
+      "slug": "michael-rowland",
+      "name": "Michael Rowland",
+      "match": [
+        "michael rowland"
+      ],
+      "status": "live",
+      "created_at": "2026-10-26T20:38:11.232Z",
+      "profile_written_at": "2026-10-26T20:39:10.700Z",
+      "profile_html": "<p>Michael Rowland began in stand-up. Born in Atlanta, he lives in New York City.</p>\n\n<p>His 2020 <a href=\"https://www.rottentomatoes.com/tv/comedy_central_stand_up_featuring/s05/e05\">Comedy Central Stand-Up Featuring</a> set was titled “Have You Ever Met an Old Person You Vibed With?” “People Watch, Southern Yoga and Nut Allergies” appears in descriptions of his work. The official line calls the comedy grounded and unpredictable.</p>\n\n<p>Rowland made his late-night debut on <a href=\"https://thetvdb.com/series/the-tonight-show-starring-jimmy-fallon/episodes/9351133\"><em>The Tonight Show Starring Jimmy Fallon</em></a> in September 2022 and has performed on <em>This Week at the Comedy Cellar</em>. He plays Fred “Shred” Taylor on <a href=\"https://www.foxflash.com/shows/animal-control/bio/michael-rowland\"><em>Animal Control</em></a>, including the October 2026 episode “Tortoises &amp; Turtlenecks.” His other appearances include <em>Pause with Sam Jay</em>, <em>In the Minivan</em>, and <em>Stupid Questions with Chris DiStefano</em>.</p>\n\n<p>Rowland performs regularly in New York City and headlines clubs around the country.</p>",
+      "research_json": "{\n  \"full_name\": \"Michael Rowland\",\n  \"hometown\": \"Atlanta, Georgia\",\n  \"career_start_year\": null,\n  \"specials\": [],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"In the Minivan\",\n      \"year_approx\": null\n    },\n    {\n      \"show\": \"Stupid Questions with Chris DiStefano\",\n      \"year_approx\": null\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Animal Control\",\n      \"context\": \"Plays Fred \\\"Shred\\\" Taylor.\"\n    },\n    {\n      \"show\": \"The Tonight Show Starring Jimmy Fallon\",\n      \"context\": \"Performed stand-up on September 21, 2022; this was his late-night television debut.\"\n    },\n    {\n      \"show\": \"This Week at the Comedy Cellar\",\n      \"context\": \"Appeared as a stand-up performer.\"\n    },\n    {\n      \"show\": \"Comedy Central Stand-Up Featuring\",\n      \"context\": \"Performed in the 2020 episode \\\"Have You Ever Met an Old Person You Vibed With?\\\"\"\n    },\n    {\n      \"show\": \"Pause with Sam Jay\",\n      \"context\": \"Appeared in one episode in 2022.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Laid-back; official promotional materials describe his comedy as grounded and unpredictable.\",\n    \"structure\": \"\",\n    \"recurring_themes\": [\n      \"People-watching\",\n      \"Southern yoga\",\n      \"Nut allergies\",\n      \"Older people and intergenerational friendship\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"He performs regularly in New York City and headlines comedy clubs around the United States.\",\n  \"recent_activity_2025_2026\": \"Rowland continued playing Fred \\\"Shred\\\" Taylor on FOX's Animal Control. FOX listed him in the Season Five cast, which premiered on September 27, 2026. He was also billed for a Comedy Store performance in Los Angeles on October 26, 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"Michael Rowland appeared in the Animal Control Season Five episode \\\"Tortoises & Turtlenecks,\\\" which aired on FOX on October 25, 2026.\",\n    \"quote\": \"ANIMAL CONTROL: Michael Rowland in the “TORTOISES & TURTLENECKS” episode of Animal Control airing Sunday, Oct. 25 (8:30-9:00 PM ET/PT) on FOX.\",\n    \"source_publication\": \"FOXFLASH\",\n    \"source_url\": \"https://www.foxflash.com/shows/animal-control/photos/?episode=504&season=s5&type=episodic\",\n    \"date\": \"2026-10-25\"\n  },\n  \"instagram_handle\": \"@michaelrowlando_o\",\n  \"notable_bits_or_quotes\": [\n    \"People Watch, Southern Yoga and Nut Allergies\",\n    \"Have You Ever Met an Old Person You Vibed With?\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That he began stand-up around 2010 at Atlanta's Punchline Comedy Club.\",\n    \"That he attended North Springs High School and earned a degree from California State University, Northridge.\",\n    \"That he is of Irish descent.\",\n    \"That he founded Bub's Driveway Productions in 2022.\",\n    \"That he is currently based in Los Angeles.\"\n  ],\n  \"background_story\": \"Rowland is an Atlanta-born stand-up comedian and actor who lives in New York City. He says stand-up was his starting point, and he later joined the cast of FOX's Animal Control as Fred \\\"Shred\\\" Taylor.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Official Michael Rowland biography\",\n      \"url\": \"https://www.michaelrowlandcomedy.com/about\"\n    },\n    {\n      \"label\": \"FOXFLASH Animal Control cast biography\",\n      \"url\": \"https://www.foxflash.com/shows/animal-control/bio/michael-rowland\"\n    },\n    {\n      \"label\": \"FOXFLASH Animal Control Season Five information\",\n      \"url\": \"https://www.foxflash.com/shows/animal-control/info/\"\n    },\n    {\n      \"label\": \"The Tonight Show episode listing\",\n      \"url\": \"https://thetvdb.com/series/the-tonight-show-starring-jimmy-fallon/episodes/9351133\"\n    },\n    {\n      \"label\": \"Comedy Central Stand-Up Featuring episode listing\",\n      \"url\": \"https://www.rottentomatoes.com/tv/comedy_central_stand_up_featuring/s05/e05\"\n    },\n    {\n      \"label\": \"The Comedy Store event listing\",\n      \"url\": \"https://thecomedystore.com/calendar/show/4524/2026-10-26t200000-0700-michael-rowland\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.rottentomatoes.com/tv/comedy_central_stand_up_featuring/s05/e05",
+        "https://www.instagram.com/michaelrowlando_o/"
+      ],
+      "instagramHandle": "@michaelrowlando_o",
+      "imageUrl": "https://www.theriothtx.com/img/events/Michael-Rowland-Headshot-1-7b980f1b-large-thumb.png",
+      "wpPageId": 2293,
+      "wpLink": "https://comedyhouston.com/comedians/michael-rowland/",
+      "wpImageMediaId": 2292,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-11-20",
+          "venue": "The Riot Comedy Club",
+          "time": "7:00 PM",
+          "name": "Michael Rowland (HBOmax, Late Night with Jimmy Fallon, Comedy Central) Headlines The Riot Comedy Club",
+          "ticket_url": "https://www.theriothtx.com/events/michael-rowland-hbomax-late-night-with-jimmy-fallon-comedy-central-headlines-the-riot-comedy-club",
+          "event_id": "c8664eb47f3f3aa4",
+          "image_url": "https://www.theriothtx.com/img/events/Michael-Rowland-Headshot-1-7b980f1b-large-thumb.png"
+        },
+        {
+          "date": "2026-11-21",
+          "venue": "The Riot Comedy Club",
+          "time": "7:00 PM",
+          "name": "Michael Rowland (HBOmax, Late Night with Jimmy Fallon, Comedy Central) Headlines The Riot Comedy Club",
+          "ticket_url": "https://www.theriothtx.com/events/michael-rowland-hbomax-late-night-with-jimmy-fallon-comedy-central-headlines-the-riot-comedy-club-the-riot-houston",
+          "event_id": "b9708f9454bd5565",
+          "image_url": "https://www.theriothtx.com/img/events/Michael-Rowland-Headshot-1-7b980f1b-large-thumb.png"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/michael-rowland-houston.png"
     },
     {
       "slug": "mo-amer",
@@ -878,6 +1047,60 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/pauly-shore-houston.jpg"
+    },
+    {
+      "slug": "phil-hanley",
+      "name": "Phil Hanley",
+      "match": [
+        "phil hanley"
+      ],
+      "status": "live",
+      "created_at": "2026-10-26T20:37:03.572Z",
+      "profile_written_at": "2026-10-26T20:38:05.388Z",
+      "profile_html": "<p>Phil Hanley grew up in Oshawa, Ontario, struggled with reading from first grade, and was eventually diagnosed with dyslexia. Before stand-up, he worked as a runway model in Europe, then started doing open mics in Vancouver music venues. His 2025 memoir, <a href=\"https://read.macmillan.com/holt/spellbound_landingpage/\">Spellbound: My Life as a Dyslexic Wordsmith</a>, includes the line, “I always prayed I’d wake up smart.”</p>\n\n<p>His 2022 YouTube special, <a href=\"https://www.youtube.com/watch?v=FzJ245Q4mGk\">Ooh La La</a>, calls him “a acid eating, dyslexic, former model who falls in love too easily.” He also has a 2015 Comedy Central special, <i>The Half Hour: Phil Hanley</i>, and credits including <i>The Tonight Show Starring Jimmy Fallon</i>, <i>Late Night with Seth Meyers</i>, and two episodes of <i>Inside Amy Schumer</i>.</p>\n\n<p>A Comedy Cellar regular in New York, Hanley works in traditional jokes, audience interaction, and improvisation. The material is reflective, sharply observed, and rarely interested in making the point gently.</p>",
+      "research_json": "{\n  \"full_name\": \"Phil Hanley\",\n  \"hometown\": \"Oshawa, Ontario, Canada\",\n  \"career_start_year\": null,\n  \"specials\": [\n    {\n      \"title\": \"The Half Hour: Phil Hanley\",\n      \"platform\": \"Comedy Central\",\n      \"year\": 2015\n    },\n    {\n      \"title\": \"Ooh La La\",\n      \"platform\": \"YouTube\",\n      \"year\": 2022\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"The HoneyDew with Ryan Sickler\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"Blocks with Neal Brennan\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Q with Tom Power\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"We Might Be Drunk\",\n      \"year_approx\": 2022\n    },\n    {\n      \"show\": \"No Simple Road\",\n      \"year_approx\": 2022\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"The Tonight Show Starring Jimmy Fallon\",\n      \"context\": \"Listed as a prior appearance in the description of Hanley's official YouTube special.\"\n    },\n    {\n      \"show\": \"Late Night with Seth Meyers\",\n      \"context\": \"Listed as a prior appearance in the description of Hanley's official YouTube special.\"\n    },\n    {\n      \"show\": \"The Late Late Show with Craig Ferguson\",\n      \"context\": \"Listed as a prior appearance in the description of Hanley's official YouTube special.\"\n    },\n    {\n      \"show\": \"John Oliver's New York Stand-Up Show\",\n      \"context\": \"Listed as a prior appearance in the description of Hanley's official YouTube special.\"\n    },\n    {\n      \"show\": \"The Pete Holmes Show\",\n      \"context\": \"Listed as a prior appearance in the description of Hanley's official YouTube special.\"\n    },\n    {\n      \"show\": \"@midnight\",\n      \"context\": \"Listed as a prior appearance in the description of Hanley's official YouTube special.\"\n    },\n    {\n      \"show\": \"Inside Amy Schumer\",\n      \"context\": \"IMDb credits Hanley in two episodes, as Karl and Father.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Reflective and sharply observed.\",\n    \"structure\": \"Traditional joke-telling combined with audience interaction and improvisation.\",\n    \"recurring_themes\": [\n      \"Dyslexia\",\n      \"Former modeling career\",\n      \"Romantic relationships\",\n      \"Crowd work\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"Hanley is a regular at New York City's Comedy Cellar. His official special description says he developed a blend of prepared material and crowd interaction at Vancouver open mics, making performances vary from show to show.\",\n  \"recent_activity_2025_2026\": \"Hanley's memoir, \\\"Spellbound: My Life as a Dyslexic Wordsmith,\\\" was published by Henry Holt on March 18, 2025. He discussed the book and dyslexia on WNYC's \\\"All Of It\\\" in September 2025, appeared on Neal Brennan's \\\"Blocks\\\" on February 5, 2026, and played a four-night engagement at Chicago's Den Theatre from October 8 through October 11, 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"Hanley's October 8-11, 2026 run at Chicago's Den Theatre included filmed Friday and Saturday performances, making the engagement a concrete recent production-related development.\",\n    \"quote\": \"The shows on Friday and Saturday will be filmed.\",\n    \"source_publication\": \"The Den Theatre\",\n    \"source_url\": \"https://thedentheatre.com/performances/2026/10/8/phil-hanley-the-den-theatre-comedy-club-chicago\",\n    \"date\": \"2026-10-08\"\n  },\n  \"instagram_handle\": \"@philmhanley\",\n  \"notable_bits_or_quotes\": [\n    \"“I always prayed I’d wake up smart.”\",\n    \"The official description for \\\"Ooh La La\\\" says the special explores Hanley's life as “a acid eating, dyslexic, former model who falls in love too easily.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"A specific year for when Hanley began performing stand-up; reliable sources confirm he began at Vancouver open mics but do not establish a definitive start year.\",\n    \"That the Chicago performances filmed in October 2026 were definitely for a new stand-up special; the venue confirms filming but does not identify the project as a special.\",\n    \"That Hanley is currently on a tour formally titled \\\"Gravity Tour\\\"; a search result from philhanley.com displayed unrelated July Talk listings and is not reliable evidence of a Hanley tour title.\",\n    \"Claims that Hanley has five YouTube specials.\",\n    \"Claims that \\\"Spellbound\\\" was published in 2024; the publisher lists the original on-sale date as March 18, 2025.\"\n  ],\n  \"background_story\": \"Hanley grew up in Oshawa, Ontario. According to his publisher, he struggled to read from first grade, was eventually diagnosed with dyslexia, worked as a runway model in Europe, and later found a career in stand-up. He began performing at open mics in Vancouver, including music-venue open mics.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Phil_Hanley\"\n    },\n    {\n      \"label\": \"YouTube special page\",\n      \"url\": \"https://www.youtube.com/watch?v=FzJ245Q4mGk\"\n    },\n    {\n      \"label\": \"Macmillan / Henry Holt book page\",\n      \"url\": \"https://read.macmillan.com/holt/spellbound_landingpage/\"\n    },\n    {\n      \"label\": \"Notable interview\",\n      \"url\": \"https://hightimes.com/culture/phil-hanley-is-taking-it-easy/\"\n    },\n    {\n      \"label\": \"Podcast episode\",\n      \"url\": \"https://thehoneydewpodcast.com/hd363/\"\n    },\n    {\n      \"label\": \"Recent filmed engagement\",\n      \"url\": \"https://thedentheatre.com/performances/2026/10/8/phil-hanley-the-den-theatre-comedy-club-chicago\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Phil_Hanley",
+        "https://www.youtube.com/watch?v=FzJ245Q4mGk",
+        "https://www.instagram.com/philmhanley/"
+      ],
+      "instagramHandle": "@philmhanley",
+      "imageUrl": "https://s1.ticketm.net/dam/a/b43/ad704c18-c772-413d-9dd3-abb98683db43_EVENT_DETAIL_PAGE_16_9.jpg",
+      "wpPageId": 2290,
+      "wpLink": "https://comedyhouston.com/comedians/phil-hanley/",
+      "wpImageMediaId": 2289,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-11-19",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "Phil Hanley",
+          "ticket_url": "https://www.ticketweb.com/event/phil-hanley-houston-improv-tickets/14124864?REFERRAL_ID=tmfeed",
+          "event_id": "079296984d08bbbc",
+          "image_url": "https://s1.ticketm.net/dam/a/b43/ad704c18-c772-413d-9dd3-abb98683db43_EVENT_DETAIL_PAGE_16_9.jpg"
+        },
+        {
+          "date": "2026-11-20",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "Phil Hanley",
+          "ticket_url": "https://www.ticketweb.com/event/phil-hanley-houston-improv-tickets/14124874?REFERRAL_ID=tmfeed",
+          "event_id": "03a5263feb275d68",
+          "image_url": "https://s1.ticketm.net/dam/a/b43/ad704c18-c772-413d-9dd3-abb98683db43_EVENT_DETAIL_PAGE_16_9.jpg"
+        },
+        {
+          "date": "2026-11-21",
+          "venue": "Houston Improv",
+          "time": "7:00 PM",
+          "name": "Phil Hanley",
+          "ticket_url": "https://www.ticketweb.com/event/phil-hanley-houston-improv-tickets/14124904?REFERRAL_ID=tmfeed",
+          "event_id": "b85f5eacda3eef47",
+          "image_url": "https://s1.ticketm.net/dam/a/b43/ad704c18-c772-413d-9dd3-abb98683db43_EVENT_DETAIL_PAGE_16_9.jpg"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/phil-hanley-houston.jpg"
     },
     {
       "slug": "reem-edan",
