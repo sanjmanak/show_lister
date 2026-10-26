@@ -1,52 +1,26 @@
 {
   "posted": [
     {
-      "slug": "sarper-gven-punch-line-houston-2026-10-19",
-      "comedianName": "Sarper Güven",
-      "igFeedMediaId": "18130204213695828",
-      "igStoryMediaId": "18485797168113303",
-      "fbFeedPostId": "1434647222093352",
-      "fbStoryPostId": "1675536220864801",
-      "postedAt": "2026-10-19T10:08:24.092Z"
-    },
-    {
-      "slug": "foos-gone-wild-house-of-blues-houston-2026-10-20",
-      "comedianName": "FOOS GONE WILD",
-      "igFeedMediaId": "18129363472875845",
-      "igStoryMediaId": "18128218171895963",
-      "fbFeedPostId": "1434966635394744",
-      "fbStoryPostId": "5606594682899228",
-      "postedAt": "2026-10-19T17:03:56.544Z"
-    },
-    {
-      "slug": "joanne-mcnally-punch-line-houston-2026-10-21",
-      "comedianName": "Joanne McNally",
-      "igFeedMediaId": "18347923420251553",
-      "igStoryMediaId": "18073092197766849",
-      "fbFeedPostId": "1435251232032951",
-      "fbStoryPostId": "4629192683986213",
-      "postedAt": "2026-10-20T01:08:13.800Z"
-    },
-    {
-      "slug": "josh-gondelman-punch-line-houston-2026-10-22",
-      "comedianName": "Josh Gondelman",
-      "igFeedMediaId": "18058278581562582",
-      "igStoryMediaId": "17924886027429724",
-      "fbFeedPostId": "1435566978668043",
-      "fbStoryPostId": "1436183254533800",
-      "postedAt": "2026-10-20T09:32:58.103Z"
-    },
-    {
-      "slug": "pauly-shore-punch-line-houston-2026-10-23",
-      "comedianName": "Pauly Shore",
-      "igFeedMediaId": "18116693885071473",
-      "igStoryMediaId": "18096043460448037",
-      "fbFeedPostId": "1435821608642580",
-      "fbStoryPostId": "1790916375484522",
-      "postedAt": "2026-10-20T15:15:38.202Z"
+      "slug": "abby-govindan-the-secret-group-2026-10-26",
+      "comedianName": "Abby Govindan",
+      "igFeedMediaId": "18031642868892860",
+      "igStoryMediaId": "18115949195015113",
+      "fbFeedPostId": "1441205324770875",
+      "fbStoryPostId": "2001458107198082",
+      "postedAt": "2026-10-26T10:23:07.644Z"
     }
   ],
-  "week_range": "October 19 – October 25, 2026",
-  "manifest_version": 1792098756541,
-  "cleanup_queue": []
+  "week_range": "October 26 – November 1, 2026",
+  "manifest_version": 1792098201070,
+  "cleanup_queue": [
+    {
+      "slug": "abby-govindan-the-secret-group-2026-10-26",
+      "comedianName": "Abby Govindan",
+      "igFeedMediaId": "18031642868892860",
+      "igStoryMediaId": "18115949195015113",
+      "fbFeedPostId": "1441205324770875",
+      "fbStoryPostId": "2001458107198082",
+      "postedAt": "2026-10-26T10:23:07.644Z"
+    }
+  ]
 }
