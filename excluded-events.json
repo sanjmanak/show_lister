@@ -1,19 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-10-28T02:37:09.036Z",
-  "total_excluded": 23,
+  "last_updated": "2026-10-28T18:52:42.837Z",
+  "total_excluded": 22,
   "events": [
-    {
-      "name": "Classic Movie Night At The Jefferson Little Shop Of Horrors",
-      "venue": "Jefferson Theatre",
-      "venue_city": "Beaumont",
-      "date": "2026-10-27",
-      "time": "7:00 PM",
-      "source": "ticketmaster",
-      "genre": "Comedy",
-      "ticket_url": "https://www.ticketmaster.com/classic-movie-night-at-the-jefferson-beaumont-texas-10-27-2026/event/3A006519EEE32568",
-      "reason": "venue blocklisted: Jefferson Theatre"
-    },
     {
       "name": "Classic Movie Night At The Jefferson Hocus Pocus",
       "venue": "Jefferson Theatre",

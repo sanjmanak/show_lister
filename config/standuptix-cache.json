@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-26": {
-      "lastmod": "2026-10-26T11:24:00-05:00",
+      "lastmod": "2026-10-28T01:03:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -111,7 +111,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-shane-torres-headlines-the-riot-houston": {
-      "lastmod": "2026-10-27T03:18:00-05:00",
+      "lastmod": "2026-10-28T12:01:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -154,17 +154,13 @@
           },
           {
             "@type": "Person",
-            "name": "Dylan Kendrick"
-          },
-          {
-            "@type": "Person",
-            "name": "Tre Tutson"
+            "name": ""
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-26": {
-      "lastmod": "2026-10-27T03:18:00-05:00",
+      "lastmod": "2026-10-28T12:01:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -229,7 +225,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-23": {
-      "lastmod": "2026-10-27T03:22:00-05:00",
+      "lastmod": "2026-10-28T12:01:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -298,7 +294,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-shane-torres-headlines-the-riot-houston-the-riot-houston": {
-      "lastmod": "2026-10-27T05:27:00-05:00",
+      "lastmod": "2026-10-28T11:04:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -351,7 +347,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-22": {
-      "lastmod": "2026-10-27T05:27:00-05:00",
+      "lastmod": "2026-10-28T11:04:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -416,7 +412,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-26": {
-      "lastmod": "2026-10-27T05:27:00-05:00",
+      "lastmod": "2026-10-28T11:04:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -485,7 +481,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-43": {
-      "lastmod": "2026-09-24T08:25:00-05:00",
+      "lastmod": "2026-10-28T12:37:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -521,11 +517,36 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Ebad Jann"
+          },
+          {
+            "@type": "Person",
+            "name": "James Vogt"
+          },
+          {
+            "@type": "Person",
+            "name": "Ku Egenti"
+          },
+          {
+            "@type": "Person",
+            "name": "Mike Ryan"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Owens"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Loden"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-26": {
-      "lastmod": "2026-09-24T08:26:00-05:00",
+      "lastmod": "2026-10-28T12:37:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -561,7 +582,32 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "John Meyer"
+          },
+          {
+            "@type": "Person",
+            "name": "Chelby Morgan"
+          },
+          {
+            "@type": "Person",
+            "name": "Kris Atkins"
+          },
+          {
+            "@type": "Person",
+            "name": "Danny Guerrero"
+          },
+          {
+            "@type": "Person",
+            "name": "Tre Tutson"
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-11": {
@@ -6776,7 +6822,7 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-the-riot-conroe-6": {
-      "lastmod": "2026-08-10T04:21:00-05:00",
+      "lastmod": "2026-10-28T12:18:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -6812,11 +6858,32 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Nate Ortiz"
+          },
+          {
+            "@type": "Person",
+            "name": "Hannah Abney"
+          },
+          {
+            "@type": "Person",
+            "name": "Jamal Rahal"
+          },
+          {
+            "@type": "Person",
+            "name": "Brandon Green"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Loden"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-25": {
-      "lastmod": "2026-09-01T07:30:00-05:00",
+      "lastmod": "2026-10-28T12:18:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -6852,7 +6919,28 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "A.D. Hodge"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Loden"
+          },
+          {
+            "@type": "Person",
+            "name": "Jessica Misitano"
+          },
+          {
+            "@type": "Person",
+            "name": "Daniel Contreras"
+          },
+          {
+            "@type": "Person",
+            "name": "Brandon Green"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/comedian-karen-morgan-dry-bar-comedy-live-in-conroe": {
@@ -8841,7 +8929,7 @@
       }
     },
     "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-10-29200000": {
-      "lastmod": "2026-09-21T02:47:00-05:00",
+      "lastmod": "2026-10-28T11:54:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -8877,7 +8965,28 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Justin Smith htx"
+          },
+          {
+            "@type": "Person",
+            "name": "Kris Atkins"
+          },
+          {
+            "@type": "Person",
+            "name": "Hannah Abney"
+          },
+          {
+            "@type": "Person",
+            "name": "Jacinto Maturino"
+          },
+          {
+            "@type": "Person",
+            "name": "Grady Pruitt"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-11-05200000": {
@@ -9112,46 +9221,6 @@
         "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-21210000",
         "image": "/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
         "description": "Don’t miss your chance to catch the best live standup in Downtown Conroe at the city’s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Conroe",
-          "url": "https://www.riotconroe.com"
-        },
-        "performer": []
-      }
-    },
-    "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-11-26200000": {
-      "lastmod": "2026-09-21T02:47:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
-        "startDate": "2026-11-26T20:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Conroe",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "219 Simonton Street",
-            "addressLocality": "Conroe",
-            "postalCode": "77301",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-11-26200000",
-          "priceCurrency": "USD",
-          "price": "9.00",
-          "availability": "InStock",
-          "validFrom": "2026-09-21T14:47:29-05:00"
-        },
-        "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-11-26200000",
-        "image": "/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
-        "description": "Don’t miss your chance to catch the best live standup in Downtown Conroe at the city’s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night.✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -9400,126 +9469,6 @@
         "performer": []
       }
     },
-    "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-12-17200000": {
-      "lastmod": "2026-09-21T02:47:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
-        "startDate": "2026-12-17T20:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Conroe",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "219 Simonton Street",
-            "addressLocality": "Conroe",
-            "postalCode": "77301",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-12-17200000",
-          "priceCurrency": "USD",
-          "price": "9.00",
-          "availability": "InStock",
-          "validFrom": "2026-09-21T14:47:30-05:00"
-        },
-        "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-12-17200000",
-        "image": "/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
-        "description": "Don’t miss your chance to catch the best live standup in Downtown Conroe at the city’s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night.✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Conroe",
-          "url": "https://www.riotconroe.com"
-        },
-        "performer": []
-      }
-    },
-    "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-12-24200000": {
-      "lastmod": "2026-09-21T02:47:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
-        "startDate": "2026-12-24T20:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Conroe",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "219 Simonton Street",
-            "addressLocality": "Conroe",
-            "postalCode": "77301",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-12-24200000",
-          "priceCurrency": "USD",
-          "price": "9.00",
-          "availability": "InStock",
-          "validFrom": "2026-09-21T14:47:30-05:00"
-        },
-        "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-12-24200000",
-        "image": "/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
-        "description": "Don’t miss your chance to catch the best live standup in Downtown Conroe at the city’s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night.✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Conroe",
-          "url": "https://www.riotconroe.com"
-        },
-        "performer": []
-      }
-    },
-    "https://www.riotconroe.com/events/riot-comedy-club-presents-friday-night-standup-comedy-in-conroe-2026-12-25193000": {
-      "lastmod": "2026-09-21T02:58:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Riot Comedy Club presents Friday Night Standup Comedy in Conroe!",
-        "startDate": "2026-12-25T19:30:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Conroe",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "219 Simonton Street",
-            "addressLocality": "Conroe",
-            "postalCode": "77301",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-friday-night-standup-comedy-in-conroe-2026-12-25193000",
-          "priceCurrency": "USD",
-          "price": "12.00",
-          "availability": "InStock",
-          "validFrom": "2026-09-21T14:58:01-05:00"
-        },
-        "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-friday-night-standup-comedy-in-conroe-2026-12-25193000",
-        "image": "/img/shows/friday-conroe-bece0abe-large-thumb.jpg",
-        "description": "Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ????✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Conroe",
-          "url": "https://www.riotconroe.com"
-        },
-        "performer": []
-      }
-    },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-2026-12-26190000": {
       "lastmod": "2026-09-21T03:05:00-05:00",
       "node": {
@@ -9641,7 +9590,7 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-jerry-wayne-longmire-live-in-conroe-2026-10-30193000": {
-      "lastmod": "2026-09-22T12:18:00-05:00",
+      "lastmod": "2026-10-28T12:13:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -9677,7 +9626,12 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Bob Biggerstaff"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/comedian-cristina-mariani-kill-tony-comedy-mothership-headlines-the-riot-comedy-club": {
@@ -10185,7 +10139,7 @@
       }
     },
     "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-31130000": {
-      "lastmod": "2026-10-27T05:27:00-05:00",
+      "lastmod": "2026-10-28T11:04:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -10250,7 +10204,7 @@
       }
     },
     "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-01130000": {
-      "lastmod": "2026-10-11T03:30:00-05:00",
+      "lastmod": "2026-10-28T12:52:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -10286,7 +10240,32 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Dylan Kendrick"
+          },
+          {
+            "@type": "Person",
+            "name": "Matt B.C."
+          },
+          {
+            "@type": "Person",
+            "name": "Brian Gendron"
+          },
+          {
+            "@type": "Person",
+            "name": "Chelby Morgan"
+          },
+          {
+            "@type": "Person",
+            "name": "Grady Pruitt"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Loden"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-07130000": {

@@ -2686,6 +2686,34 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-10-28"
+    },
+    "don mcmillan: the venn master": {
+      "tags": [
+        "clean-comedy"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-28"
+    },
+    "will loden & friends": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-28"
+    },
+    "los tíos comedy tour headlined by flo hernandez": {
+      "tags": [
+        "en-espanol"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-28"
+    },
+    "harland williams": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-28"
     }
   }
 }

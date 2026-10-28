@@ -1,15 +1,7 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-10-28T02:39:26.603Z",
+  "last_updated": "2026-10-28T18:55:03.509Z",
   "entries": {
-    "fb79d8c874a3588f": {
-      "price_min": 43.76,
-      "price_max": 43.76,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/group-therapy-session-2-houston-improv-tickets/15032193?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-08-17T14:45:11.678Z"
-    },
     "618d33b89fa9b0d1": {
       "price_min": 25.22,
       "price_max": 25.22,
