@@ -2662,6 +2662,30 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-10-26"
+    },
+    "jamie wolf": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-28"
+    },
+    "the get up & hustle tour": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-28"
+    },
+    "don't tell comedy: humble (8:00 pm show)": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-28"
+    },
+    "don't tell comedy: east downtown (7:00 pm show)": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-10-28"
     }
   }
 }

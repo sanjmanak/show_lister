@@ -1,70 +1,6 @@
 {
- "updated": "2026-10-27T18:45:24.703Z",
+ "updated": "2026-10-28T02:39:28.854Z",
  "announcements": [
-  {
-   "id": "1af6619fdcc5fc57",
-   "name": "Keith Alberstadt",
-   "venue": "Punch Line Houston",
-   "date": "2026-12-10",
-   "time": "7:30 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/a/c8c/7cf61385-b197-4f93-b39c-f1acfacf5c8c_SOURCE",
-   "ticket_url": "https://www.ticketmaster.com/keith-alberstadt-houston-texas-12-10-2026/event/3A006511BCBC562D",
-   "source": "ticketmaster",
-   "notable": true,
-   "tier": "headliner_room",
-   "notable_reason": "headliner room",
-   "first_seen": "2026-10-04T17:37:32.875Z"
-  },
-  {
-   "id": "ad03ffae5c82bd8e",
-   "name": "Nasser Al-Rayess",
-   "venue": "Houston Improv",
-   "date": "2026-12-10",
-   "time": "7:30 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-   "ticket_url": "https://www.ticketweb.com/event/nasser-al-rayess-houston-improv-tickets/15003373?REFERRAL_ID=tmfeed",
-   "source": "ticketmaster",
-   "notable": true,
-   "tier": "headliner_room",
-   "notable_reason": "headliner room",
-   "first_seen": "2026-10-04T17:37:32.875Z"
-  },
-  {
-   "id": "c06a438ec7f74cdc",
-   "name": "Chris Redd",
-   "venue": "Punch Line Houston",
-   "date": "2026-12-11",
-   "time": "7:00 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/a/694/2b909bdc-f113-4ea4-b2c9-7ea10d4e1694_SOURCE",
-   "ticket_url": "https://www.ticketmaster.com/chris-redd-houston-texas-12-11-2026/event/3A006518B2ECA82F",
-   "source": "ticketmaster",
-   "notable": true,
-   "tier": "headliner_room",
-   "notable_reason": "headliner room",
-   "first_seen": "2026-10-04T17:37:32.875Z"
-  },
-  {
-   "id": "c3378048e7c540fa",
-   "name": "Filthy Pop-Up Show",
-   "venue": "Punch Line Houston",
-   "date": "2026-12-11",
-   "time": "9:30 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/e/d15/7c8876d0-1dd7-4134-adef-9570461ebd15_SOURCE",
-   "ticket_url": "https://www.ticketmaster.com/filthy-popup-show-houston-texas-12-11-2026/event/3A00651FC147F74A",
-   "source": "ticketmaster",
-   "notable": true,
-   "tier": "headliner_room",
-   "notable_reason": "headliner room",
-   "first_seen": "2026-10-04T17:37:32.875Z"
-  },
   {
    "id": "85d6934e9e083ba6",
    "name": "Chris Redd",
@@ -110,7 +46,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -19d out (min 14)",
+   "notable_reason": "only -20d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -126,7 +62,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -12d out (min 14)",
+   "notable_reason": "only -13d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -142,7 +78,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -5d out (min 14)",
+   "notable_reason": "only -6d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -158,7 +94,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 2d out (min 14)",
+   "notable_reason": "only 1d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -174,7 +110,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -190,7 +126,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -206,7 +142,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -222,7 +158,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -238,7 +174,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -254,7 +190,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -270,7 +206,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -286,7 +222,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -302,7 +238,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -318,7 +254,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -334,7 +270,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-10-05T21:15:31.923Z"
   },
   {
@@ -638,7 +574,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-10-06T03:25:04.365Z"
   },
   {
@@ -670,7 +606,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -17d out (min 14)",
+   "notable_reason": "only -18d out (min 14)",
    "first_seen": "2026-10-07T02:46:00.656Z"
   },
   {
@@ -686,7 +622,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-10-07T19:23:52.142Z"
   },
   {
@@ -702,7 +638,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-10-07T19:23:52.142Z"
   },
   {
@@ -734,7 +670,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -10d out (min 14)",
+   "notable_reason": "only -11d out (min 14)",
    "first_seen": "2026-10-08T03:01:58.794Z"
   },
   {
@@ -750,7 +686,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -4d out (min 14)",
+   "notable_reason": "only -5d out (min 14)",
    "first_seen": "2026-10-08T19:19:58.340Z"
   },
   {
@@ -798,7 +734,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -11d out (min 14)",
+   "notable_reason": "only -12d out (min 14)",
    "first_seen": "2026-10-09T18:52:00.005Z"
   },
   {
@@ -814,7 +750,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-09T18:52:00.005Z"
   },
   {
@@ -846,7 +782,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -17d out (min 14)",
+   "notable_reason": "only -18d out (min 14)",
    "first_seen": "2026-10-10T02:50:31.432Z"
   },
   {
@@ -926,7 +862,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -17d out (min 14)",
+   "notable_reason": "only -18d out (min 14)",
    "first_seen": "2026-10-11T02:16:06.531Z"
   },
   {
@@ -1038,7 +974,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -3d out (min 14)",
+   "notable_reason": "only -4d out (min 14)",
    "first_seen": "2026-10-12T02:44:31.090Z"
   },
   {
@@ -1054,7 +990,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -2d out (min 14)",
+   "notable_reason": "only -3d out (min 14)",
    "first_seen": "2026-10-12T02:44:31.090Z"
   },
   {
@@ -1070,7 +1006,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-10-12T02:44:31.090Z"
   },
   {
@@ -1086,7 +1022,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-10-12T02:44:31.090Z"
   },
   {
@@ -1102,7 +1038,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-12T02:44:31.090Z"
   },
   {
@@ -1118,7 +1054,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-10-12T02:44:31.090Z"
   },
   {
@@ -1518,7 +1454,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-10-15T17:49:43.895Z"
   },
   {
@@ -1566,7 +1502,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -10d out (min 14)",
+   "notable_reason": "only -11d out (min 14)",
    "first_seen": "2026-10-16T17:26:52.728Z"
   },
   {
@@ -1582,7 +1518,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -3d out (min 14)",
+   "notable_reason": "only -4d out (min 14)",
    "first_seen": "2026-10-16T17:26:52.728Z"
   },
   {
@@ -1598,7 +1534,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-10-16T17:26:52.728Z"
   },
   {
@@ -2254,7 +2190,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -3d out (min 14)",
+   "notable_reason": "only -4d out (min 14)",
    "first_seen": "2026-10-20T02:11:16.680Z"
   },
   {
@@ -2270,7 +2206,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-10-20T02:11:16.680Z"
   },
   {
@@ -2286,7 +2222,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-10-20T02:11:16.680Z"
   },
   {
@@ -2302,7 +2238,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-20T02:11:16.680Z"
   },
   {
@@ -2318,7 +2254,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-20T02:11:16.680Z"
   },
   {
@@ -2510,7 +2446,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-10-21T18:05:08.699Z"
   },
   {
@@ -2574,7 +2510,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-10-22T18:01:52.138Z"
   },
   {
@@ -2590,7 +2526,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-10-22T18:01:52.138Z"
   },
   {
@@ -2638,7 +2574,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-23T02:02:56.465Z"
   },
   {
@@ -2654,7 +2590,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-10-24T02:03:52.290Z"
   },
   {
@@ -3200,6 +3136,70 @@
    "tier": "headliner_room",
    "notable_reason": "headliner room",
    "first_seen": "2026-10-26T19:21:38.483Z"
+  },
+  {
+   "id": "f26f452629d1e149",
+   "name": "Don't Tell Comedy: Humble (8:00 PM Show)",
+   "venue": "Don't Tell Comedy (Secret Location)",
+   "date": "2026-11-07",
+   "time": "8:00 PM",
+   "price_min": 27,
+   "price_max": 27,
+   "image_url": "https://dont-tell-comedy.mo.cloudinary.net/private/backyard_outdoor6_ot5fQ2U.webp",
+   "ticket_url": "https://www.donttellcomedy.com/shows/houston-22218/",
+   "source": "donttellcomedy",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "only 10d out (min 14)",
+   "first_seen": "2026-10-28T02:39:28.854Z"
+  },
+  {
+   "id": "a2da2fdc63c29123",
+   "name": "Don't Tell Comedy: East Downtown (7:00 PM Show)",
+   "venue": "Don't Tell Comedy (Secret Location)",
+   "date": "2026-11-08",
+   "time": "7:00 PM",
+   "price_min": 27,
+   "price_max": 27,
+   "image_url": "https://dont-tell-comedy.mo.cloudinary.net/private/cafe-columbus-blackmalecomic_YLJGPsd.webp",
+   "ticket_url": "https://www.donttellcomedy.com/shows/houston-22219/",
+   "source": "donttellcomedy",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "only 11d out (min 14)",
+   "first_seen": "2026-10-28T02:39:28.854Z"
+  },
+  {
+   "id": "8198b7fb38ecbc30",
+   "name": "Jamie Wolf",
+   "venue": "Punch Line Houston",
+   "date": "2027-01-21",
+   "time": "7:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/b39/a2b8ad09-bfe9-4cde-b54c-2e33c2981b39_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/jamie-wolf-houston-texas-01-21-2027/event/3A00655203D5B517",
+   "source": "ticketmaster",
+   "notable": true,
+   "tier": "headliner_room",
+   "notable_reason": "headliner room",
+   "first_seen": "2026-10-28T02:39:28.854Z"
+  },
+  {
+   "id": "30962974e59640a1",
+   "name": "The Get Up & Hustle Tour",
+   "venue": "Houston Improv",
+   "date": "2027-01-21",
+   "time": "7:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+   "ticket_url": "https://www.ticketweb.com/event/the-get-up-hustle-houston-improv-tickets/14334414?REFERRAL_ID=tmfeed",
+   "source": "ticketmaster",
+   "notable": true,
+   "tier": "headliner_room",
+   "notable_reason": "headliner room",
+   "first_seen": "2026-10-28T02:39:28.854Z"
   }
  ]
 }
