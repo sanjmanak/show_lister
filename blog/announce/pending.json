@@ -1,21 +1,3 @@
 {
-  "generated_at": "2026-10-28T20:32:58.124Z",
-  "dry_run": false,
-  "items": [
-    {
-      "id": "6d0e530a3830e5e8",
-      "name": "Los Tíos Comedy Tour headlined by Flo Hernandez",
-      "performer_name": "Flo Hernandez",
-      "venue": "Punch Line Houston",
-      "date": "2027-01-20",
-      "ticket_url": "https://www.ticketmaster.com/los-tios-comedy-tour-headlined-by-houston-texas-01-20-2027/event/3A00655A9DE17777",
-      "files": {
-        "portrait": "2027-01-20-flo-hernandez-portrait.png",
-        "story": "2027-01-20-flo-hernandez-story.png",
-        "reel": "2027-01-20-flo-hernandez.mp4"
-      },
-      "caption": "Flo Hernandez is leading the Los Tíos Comedy Tour with new stand-up on the road.\nFlo Hernandez headlines the Los Tíos Comedy Tour at Punch Line Houston on January 20, 2027. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
-      "confidence": 0.78
-    }
-  ]
+  "items": []
 }
