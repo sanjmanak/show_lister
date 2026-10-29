@@ -1,117 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-26": {
-      "lastmod": "2026-10-28T01:03:00-05:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Wednesday Night Standup Comedy Showcase \"Hump Day\"",
-        "startDate": "2026-10-28T19:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-26",
-          "priceCurrency": "USD",
-          "price": "8.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-08-08T12:07:00-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-26",
-        "image": "/img/shows/Showcase-Templates-6-239d0d36-large-thumb.png",
-        "description": "Join us for a hilarious night of laughter at The Riot&#39;s Wednesday Night Standup Comedy Showcase, lovingly dubbed &quot;Hump Day.&quot; Get ready to unwind and have a great time as our talented lineup of comedians takes the stage to tickle your funny bone.Featuring Mason James, the winner of 2022 &amp; 2023 The Riot Funniest Person In Houston Contest. https://www.instagram.com/mason_james_silly/Don&#39;t miss out on this unforgettable night of comedy. Mark your calendars, gather your crew, and make your way to The Riot for a guaranteed fun-filled Wednesday night. See you there!All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet ParkingLooking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Bob Biggerstaff"
-          },
-          {
-            "@type": "Person",
-            "name": "Mason James"
-          },
-          {
-            "@type": "Person",
-            "name": "Matt B.C."
-          },
-          {
-            "@type": "Person",
-            "name": "JCann"
-          },
-          {
-            "@type": "Person",
-            "name": "Keisha Hunt"
-          },
-          {
-            "@type": "Person",
-            "name": "Andy Huggins"
-          }
-        ]
-      }
-    },
-    "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-24": {
-      "lastmod": "2026-09-22T11:43:00-05:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents  The One Minute Comedy Showdown with Jeff Joe",
-        "startDate": "2026-10-28T21:00:00-05:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-24",
-          "priceCurrency": "USD",
-          "price": "10.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-08-09T10:34:16-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-24",
-        "image": "/img/shows/https-cdn-evbuc-com-images-921782813-428099579998-1-original-282c1848-large-thumb.jpg",
-        "description": "Get ready for a night of fast-paced, side-splitting fun at the One Minute Comedy Showdown! Hosted by the hilarious Jeff Joe, this unique stand-up comedy competition puts the spotlight on 15 of Houston&rsquo;s funniest comedians (plus special surprise guests).Here&rsquo;s how it works:&bull; Each comedian performs a 1-minute set to win over the crowd.&bull; YOU get to decide who moves on to the next round.&bull; The competition heats up as comedians perform longer sets until only one is left standing as the One Minute Comedy Showdown Champion!It&rsquo;s unpredictable, high-energy, and packed with laughs from start to finish. Don&rsquo;t miss your chance to experience the most exciting comedy competition in Houston!Reserve your tickets now and be part of the action!All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet ParkingLooking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Jeff Joe"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/comedian-shane-torres-headlines-the-riot-houston": {
-      "lastmod": "2026-10-28T12:01:00-05:00",
+      "lastmod": "2026-10-28T05:34:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -154,13 +44,17 @@
           },
           {
             "@type": "Person",
-            "name": ""
+            "name": "Christian Alexander"
+          },
+          {
+            "@type": "Person",
+            "name": "Dylan Kendrick"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-26": {
-      "lastmod": "2026-10-28T12:01:00-05:00",
+      "lastmod": "2026-10-28T05:34:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -225,7 +119,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-23": {
-      "lastmod": "2026-10-28T12:01:00-05:00",
+      "lastmod": "2026-10-28T05:34:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -276,10 +170,6 @@
           },
           {
             "@type": "Person",
-            "name": "Emily Peacock"
-          },
-          {
-            "@type": "Person",
             "name": "Onkar Singh"
           },
           {
@@ -289,6 +179,10 @@
           {
             "@type": "Person",
             "name": "Jeff Joe"
+          },
+          {
+            "@type": "Person",
+            "name": "Mackenzie jewell"
           }
         ]
       }
@@ -412,7 +306,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-26": {
-      "lastmod": "2026-10-28T11:04:00-05:00",
+      "lastmod": "2026-10-28T07:42:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -455,14 +349,6 @@
           },
           {
             "@type": "Person",
-            "name": "Onkar Singh"
-          },
-          {
-            "@type": "Person",
-            "name": "Raimey Roberts"
-          },
-          {
-            "@type": "Person",
             "name": "Will Loden"
           },
           {
@@ -476,12 +362,20 @@
           {
             "@type": "Person",
             "name": "Keisha Hunt"
+          },
+          {
+            "@type": "Person",
+            "name": "Mackenzie jewell"
+          },
+          {
+            "@type": "Person",
+            "name": "Matt B.C."
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-43": {
-      "lastmod": "2026-10-28T12:37:00-05:00",
+      "lastmod": "2026-10-28T06:36:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -546,7 +440,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-26": {
-      "lastmod": "2026-10-28T12:37:00-05:00",
+      "lastmod": "2026-10-28T06:36:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -593,10 +487,6 @@
           },
           {
             "@type": "Person",
-            "name": "Kris Atkins"
-          },
-          {
-            "@type": "Person",
             "name": "Danny Guerrero"
           },
           {
@@ -606,6 +496,10 @@
           {
             "@type": "Person",
             "name": "Keisha Hunt"
+          },
+          {
+            "@type": "Person",
+            "name": "T. Sean Shannon"
           }
         ]
       }
@@ -783,7 +677,7 @@
     "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-27": {
       "lastmod": "2026-09-22T11:42:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents Wednesday Night Standup Comedy Showcase \"Hump Day\"",
         "startDate": "2026-11-04T19:00:00-06:00",
@@ -806,7 +700,7 @@
           "url": "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-27",
           "priceCurrency": "USD",
           "price": "8.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-08T12:07:01-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-27",
@@ -823,7 +717,7 @@
     "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-25": {
       "lastmod": "2026-09-22T11:43:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents  The One Minute Comedy Showdown with Jeff Joe",
         "startDate": "2026-11-04T21:00:00-06:00",
@@ -846,7 +740,7 @@
           "url": "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-25",
           "priceCurrency": "USD",
           "price": "10.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-09T10:34:17-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-25",
@@ -1278,46 +1172,6 @@
             "name": "Mackenzie jewell"
           }
         ]
-      }
-    },
-    "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-11-10-26-07-00-pm": {
-      "lastmod": "2026-09-22T11:41:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Tuesday Night Standup Comedy Showcase!",
-        "startDate": "2026-11-10T19:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-11-10-26-07-00-pm",
-          "priceCurrency": "USD",
-          "price": "8.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-09T10:26:08-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-11-10-26-07-00-pm",
-        "image": "/img/shows/HTX-Saturday-Night-Showcases-1-2-e1ae10f9-large-thumb.png",
-        "description": "Keep the week rolling with a night of live standup comedy at The New Riot on Washington!Join us Tuesday night for a killer lineup of comedians bringing their best to the stage. Whether you&rsquo;re looking to break up the workweek, grab drinks with friends, or just need a good laugh, Tuesday night at The Riot is the place to be.Tickets are limited, so grab yours in advance and make some midweek plans worth looking forward to. Great comedy, great drinks, and a room built for laughs &mdash; we&rsquo;ll see you Tuesday night at The New Riot on Washington.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet ParkingLooking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": []
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-11-10210000": {
@@ -6822,7 +6676,7 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-the-riot-conroe-6": {
-      "lastmod": "2026-10-28T12:18:00-05:00",
+      "lastmod": "2026-10-28T05:30:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -6883,7 +6737,7 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-25": {
-      "lastmod": "2026-10-28T12:18:00-05:00",
+      "lastmod": "2026-10-28T05:30:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -9590,7 +9444,7 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-jerry-wayne-longmire-live-in-conroe-2026-10-30193000": {
-      "lastmod": "2026-10-28T12:13:00-05:00",
+      "lastmod": "2026-10-28T05:31:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -9629,7 +9483,11 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Bob Biggerstaff"
+            "name": "Grady Pruitt"
+          },
+          {
+            "@type": "Person",
+            "name": "Barry Laminack"
           }
         ]
       }
@@ -10204,7 +10062,7 @@
       }
     },
     "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-01130000": {
-      "lastmod": "2026-10-28T12:52:00-05:00",
+      "lastmod": "2026-10-28T06:36:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
