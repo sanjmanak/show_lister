@@ -188,7 +188,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-shane-torres-headlines-the-riot-houston-the-riot-houston": {
-      "lastmod": "2026-10-28T11:04:00-05:00",
+      "lastmod": "2026-10-29T10:34:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -241,7 +241,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-22": {
-      "lastmod": "2026-10-28T11:04:00-05:00",
+      "lastmod": "2026-10-29T10:34:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -306,7 +306,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-26": {
-      "lastmod": "2026-10-28T07:42:00-05:00",
+      "lastmod": "2026-10-29T10:34:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -349,10 +349,6 @@
           },
           {
             "@type": "Person",
-            "name": "Will Loden"
-          },
-          {
-            "@type": "Person",
             "name": "Tess Vergult"
           },
           {
@@ -370,12 +366,16 @@
           {
             "@type": "Person",
             "name": "Matt B.C."
+          },
+          {
+            "@type": "Person",
+            "name": "Scott Fillmore"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-43": {
-      "lastmod": "2026-10-28T06:36:00-05:00",
+      "lastmod": "2026-10-29T11:07:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -440,7 +440,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-26": {
-      "lastmod": "2026-10-28T06:36:00-05:00",
+      "lastmod": "2026-10-29T11:07:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -487,10 +487,6 @@
           },
           {
             "@type": "Person",
-            "name": "Danny Guerrero"
-          },
-          {
-            "@type": "Person",
             "name": "Tre Tutson"
           },
           {
@@ -500,6 +496,10 @@
           {
             "@type": "Person",
             "name": "T. Sean Shannon"
+          },
+          {
+            "@type": "Person",
+            "name": "Scott Fillmore"
           }
         ]
       }
@@ -925,9 +925,9 @@
       }
     },
     "https://www.theriothtx.com/events/keegan-tindall-headlines-the-riot-comedy-club-the-riot-houston": {
-      "lastmod": "2026-10-02T12:09:00-05:00",
+      "lastmod": "2026-10-29T01:10:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Keegan Tindall Headlines The Riot Comedy Club",
         "startDate": "2026-11-07T19:00:00-06:00",
@@ -950,7 +950,7 @@
           "url": "https://www.theriothtx.com/events/keegan-tindall-headlines-the-riot-comedy-club-the-riot-houston",
           "priceCurrency": "USD",
           "price": "0.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-07-02T14:09:55-05:00"
         },
         "url": "https://www.theriothtx.com/events/keegan-tindall-headlines-the-riot-comedy-club-the-riot-houston",
@@ -970,9 +970,9 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-23": {
-      "lastmod": "2026-09-24T08:21:00-05:00",
+      "lastmod": "2026-10-29T01:10:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents Saturday Night Standup Comedy Showcase",
         "startDate": "2026-11-07T21:00:00-06:00",
@@ -995,7 +995,7 @@
           "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-23",
           "priceCurrency": "USD",
           "price": "20.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-10T14:50:05-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-23",
@@ -1006,13 +1006,18 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Tony Wellons"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-27": {
-      "lastmod": "2026-09-24T08:22:00-05:00",
+      "lastmod": "2026-10-29T01:10:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Comedy Club Presents Saturday Night Standup Comedy Late Show!",
         "startDate": "2026-11-07T23:00:00-06:00",
@@ -1035,7 +1040,7 @@
           "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-27",
           "priceCurrency": "USD",
           "price": "15.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-08T12:40:49-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-27",
@@ -1046,13 +1051,18 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Tony Wellons"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-44": {
-      "lastmod": "2026-09-24T08:25:00-05:00",
+      "lastmod": "2026-10-29T01:12:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents \"Houston's Funniest\" Sunday Comedy Showcase",
         "startDate": "2026-11-08T18:00:00-06:00",
@@ -1075,7 +1085,7 @@
           "url": "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-44",
           "priceCurrency": "USD",
           "price": "10.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-08T12:45:42-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-44",
@@ -1086,7 +1096,12 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Tony Wellons"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-12": {
@@ -6676,7 +6691,7 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-the-riot-conroe-6": {
-      "lastmod": "2026-10-28T05:30:00-05:00",
+      "lastmod": "2026-10-29T10:26:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -6715,29 +6730,29 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Nate Ortiz"
-          },
-          {
-            "@type": "Person",
-            "name": "Hannah Abney"
-          },
-          {
-            "@type": "Person",
-            "name": "Jamal Rahal"
-          },
-          {
-            "@type": "Person",
             "name": "Brandon Green"
           },
           {
             "@type": "Person",
             "name": "Will Loden"
+          },
+          {
+            "@type": "Person",
+            "name": "George Brito"
+          },
+          {
+            "@type": "Person",
+            "name": "Barry Laminack"
+          },
+          {
+            "@type": "Person",
+            "name": "A.D. Hodge"
           }
         ]
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-25": {
-      "lastmod": "2026-10-28T05:30:00-05:00",
+      "lastmod": "2026-10-29T10:27:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -6784,15 +6799,15 @@
           },
           {
             "@type": "Person",
-            "name": "Jessica Misitano"
-          },
-          {
-            "@type": "Person",
-            "name": "Daniel Contreras"
-          },
-          {
-            "@type": "Person",
             "name": "Brandon Green"
+          },
+          {
+            "@type": "Person",
+            "name": "Marlo Ray"
+          },
+          {
+            "@type": "Person",
+            "name": "Sandra Dee"
           }
         ]
       }
@@ -8623,7 +8638,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-2026-funniest-person-in-houston-fpih-comedy-competition-2026-10-29190000": {
-      "lastmod": "2026-10-26T03:52:00-05:00",
+      "lastmod": "2026-10-29T01:03:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -9787,9 +9802,9 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-tara-cannistraci-headlines-the-riot-houston": {
-      "lastmod": "2026-10-02T03:15:00-05:00",
+      "lastmod": "2026-10-29T01:12:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Tara Cannistraci Headlines The Riot Houston",
         "startDate": "2026-11-08T20:00:00-06:00",
@@ -9812,7 +9827,7 @@
           "url": "https://www.theriothtx.com/events/comedian-tara-cannistraci-headlines-the-riot-houston",
           "priceCurrency": "USD",
           "price": "0.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-10-02T15:08:51-05:00"
         },
         "url": "https://www.theriothtx.com/events/comedian-tara-cannistraci-headlines-the-riot-houston",
@@ -9823,7 +9838,12 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Tara Cannistraci"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/comedian-javi-bailon-headlines-the-riot-comedy-club": {
@@ -9997,7 +10017,7 @@
       }
     },
     "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-31130000": {
-      "lastmod": "2026-10-28T11:04:00-05:00",
+      "lastmod": "2026-10-29T10:34:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -10062,7 +10082,7 @@
       }
     },
     "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-01130000": {
-      "lastmod": "2026-10-28T06:36:00-05:00",
+      "lastmod": "2026-10-29T11:07:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -10127,9 +10147,9 @@
       }
     },
     "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-07130000": {
-      "lastmod": "2026-10-19T07:54:00-05:00",
+      "lastmod": "2026-10-29T01:13:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Yolks & Jokes - Saturday Brunch Comedy Show! ",
         "startDate": "2026-11-07T13:00:00-06:00",
@@ -10152,7 +10172,7 @@
           "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-07130000",
           "priceCurrency": "USD",
           "price": "0.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-10-11T13:53:44-05:00"
         },
         "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-07130000",
@@ -10163,13 +10183,18 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Tony Wellons"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-08130000": {
-      "lastmod": "2026-10-11T03:30:00-05:00",
+      "lastmod": "2026-10-29T01:14:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show! ",
         "startDate": "2026-11-08T13:00:00-06:00",
@@ -10192,7 +10217,7 @@
           "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-08130000",
           "priceCurrency": "USD",
           "price": "0.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-10-11T14:07:07-05:00"
         },
         "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-08130000",
@@ -10203,7 +10228,12 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Tony Wellons"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-14130000": {
@@ -11054,6 +11084,96 @@
           "url": "https://www.theriothtx.com"
         },
         "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-chris-cope-jimmy-kimmel-don-t-tell-comedy-conan-headlines-the-riot-houston": {
+      "lastmod": "2026-10-29T10:27:00-05:00",
+      "node": {
+        "@context": "https://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Chris Cope (Jimmy Kimmel, Don't Tell Comedy, Conan) Headlines The Riot Houston",
+        "startDate": "2027-01-24T20:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-chris-cope-jimmy-kimmel-don-t-tell-comedy-conan-headlines-the-riot-houston",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-10-29T10:18:54-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-chris-cope-jimmy-kimmel-don-t-tell-comedy-conan-headlines-the-riot-houston",
+        "image": "/img/events/Chris-Cope-Headshot-0f140cbd-large-thumb.jpg",
+        "description": "Comedian Chris Cope, a Florida transplant now living in Los Angeles. LA has been good to Chris, over the last decade, he&rsquo;s appeared on numerous tv shows(Jimmy Kimmel, Grey&rsquo;s Anatomy to name a few). His first comedy album can be heard on XM/SIRIUS radio. His credits include a stellar performance on TBS&rsquo;s CONAN, Funniest Judge on Netflix&rsquo;s Cooking ON High, Winner of Big Sky Comedy Festival, Amazon&rsquo;s Inside Joke With Asif Ali, and a Dry Bar Comedy Special (BABYFACE! Over 6M total views). Most recently, Chris&#39;s Don&#39;t Tell Comedy Set premiered and went viral, over 7M(And Growing) views over 3 platforms!! &nbsp;He also was on COMICS UNLEASHED on CBS in January!All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Chris Cope"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/comedian-charles-engle-don-t-tell-comedy-headlines-the-riot-comedy-club-in-houston": {
+      "lastmod": "2026-10-29T10:11:00-05:00",
+      "node": {
+        "@context": "https://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Charles Engle (Don't Tell Comedy) headlines The Riot Comedy Club in Houston",
+        "startDate": "2027-05-13T19:00:00-05:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/comedian-charles-engle-don-t-tell-comedy-headlines-the-riot-comedy-club-in-houston",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-10-29T10:09:39-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/comedian-charles-engle-don-t-tell-comedy-headlines-the-riot-comedy-club-in-houston",
+        "image": "/img/events/Charles-Engle-Headshot-3d800df1-large-thumb.jpg",
+        "description": "Originally from Arizona and now based in New York City, Charles Engle is a stand-upcomedian whose comedy mixes personal vulnerability with the absurdity of everyday life. Charles has appeared in a Don&rsquo;t Tell Comedy Special, Comics Unleashed,The New York Comedy Festival, Big Pine Comedy Festival, and Seattle International Comedy Festival, and has completed two Tours for the Troops, entertaining U.S.service members overseas. He regularly tours with comedians Preacher Lawson,Jessie Johnson, and Shapel Lacey.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Charles Engle"
+          }
+        ]
       }
     }
   }

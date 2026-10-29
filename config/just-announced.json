@@ -1,38 +1,6 @@
 {
- "updated": "2026-10-29T02:58:26.999Z",
+ "updated": "2026-10-29T19:01:33.494Z",
  "announcements": [
-  {
-   "id": "febfff0466fe3020",
-   "name": "Comedian Javi Bailon Headlines The Riot Comedy Club",
-   "venue": "The Riot Comedy Club — Conroe",
-   "date": "2026-11-07",
-   "time": "7:00 PM",
-   "price_min": 20,
-   "price_max": 20,
-   "image_url": "https://www.riotconroe.com/img/events/Screenshot-151-cbec0a76-large-thumb.png",
-   "ticket_url": "https://www.riotconroe.com/events/comedian-javi-bailon-headlines-the-riot-comedy-club",
-   "source": "standuptix",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 9d out (min 14)",
-   "first_seen": "2026-10-05T21:15:31.923Z"
-  },
-  {
-   "id": "e0c1a4bd881980ef",
-   "name": "The Last Laugh with James Vogt & Trip Truman",
-   "venue": "The Secret Group",
-   "date": "2026-11-08",
-   "time": "7:00 PM",
-   "price_min": 8.82,
-   "price_max": 8.82,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1191459227%2F3558237521%2F1%2Foriginal.20260819-201134?auto=format%2Ccompress&q=75&sharp=10&s=cea7a34ee27a983a6dc54f88c3210522",
-   "ticket_url": "https://www.eventbrite.com/e/the-last-laugh-with-james-vogt-trip-truman-tickets-2002925200191",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 10d out (min 14)",
-   "first_seen": "2026-10-05T21:15:31.923Z"
-  },
   {
    "id": "f2d6fa58ea0fab64",
    "name": "The (secret) Secret Show",
@@ -1822,7 +1790,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (5 weeks)",
+   "notable_reason": "recurring series (4 weeks)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -2846,7 +2814,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (5 weeks)",
+   "notable_reason": "recurring series (4 weeks)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -3200,6 +3168,38 @@
    "tier": "headliner_room",
    "notable_reason": "headliner room",
    "first_seen": "2026-10-29T02:58:26.999Z"
+  },
+  {
+   "id": "8e2e1fb4bff37fe7",
+   "name": "ZOLTAN KASZAS: ROAD WARRIOR TOUR",
+   "venue": "Houston Improv",
+   "date": "2027-01-23",
+   "time": "6:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+   "ticket_url": "https://www.ticketweb.com/event/zoltan-kaszas-road-warrior-tour-houston-improv-tickets/14308864?REFERRAL_ID=tmfeed",
+   "source": "ticketmaster",
+   "notable": true,
+   "tier": "headliner_room",
+   "notable_reason": "headliner room",
+   "first_seen": "2026-10-29T19:01:33.494Z"
+  },
+  {
+   "id": "fc6385793c32dca8",
+   "name": "Comedian Chris Cope (Jimmy Kimmel, Don't Tell Comedy, Conan) Headlines The Riot Houston",
+   "venue": "The Riot Comedy Club",
+   "date": "2027-01-24",
+   "time": "8:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://www.theriothtx.com/img/events/Chris-Cope-Headshot-0f140cbd-large-thumb.jpg",
+   "ticket_url": "https://www.theriothtx.com/events/comedian-chris-cope-jimmy-kimmel-don-t-tell-comedy-conan-headlines-the-riot-houston",
+   "source": "standuptix",
+   "notable": true,
+   "tier": "headliner_room",
+   "notable_reason": "headliner room",
+   "first_seen": "2026-10-29T19:01:33.494Z"
   }
  ]
 }
