@@ -1,30 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-10-30T03:00:33.970Z",
-  "total_excluded": 22,
+  "last_updated": "2026-10-30T18:38:16.193Z",
+  "total_excluded": 20,
   "events": [
-    {
-      "name": "Classic Movie Night At The Jefferson Hocus Pocus",
-      "venue": "Jefferson Theatre",
-      "venue_city": "Beaumont",
-      "date": "2026-10-29",
-      "time": "7:00 PM",
-      "source": "ticketmaster",
-      "genre": "Comedy",
-      "ticket_url": "https://www.ticketmaster.com/classic-movie-night-at-the-jefferson-beaumont-texas-10-29-2026/event/3A006519F1002A58",
-      "reason": "venue blocklisted: Jefferson Theatre"
-    },
-    {
-      "name": "Karaoke every THURSDAY!",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-10-29",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/karaoke-every-thursday-tickets-2002396455702",
-      "reason": "title keyword blocklisted: \"karaoke\""
-    },
     {
       "name": "NOTHING MATTERS Emo | Indie | Punk Dance Party",
       "venue": "The Secret Group",

@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/comedian-shane-torres-headlines-the-riot-houston": {
-      "lastmod": "2026-10-28T05:34:00-05:00",
+      "lastmod": "2026-10-30T01:03:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -54,7 +54,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-26": {
-      "lastmod": "2026-10-28T05:34:00-05:00",
+      "lastmod": "2026-10-30T09:42:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -119,7 +119,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-23": {
-      "lastmod": "2026-10-28T05:34:00-05:00",
+      "lastmod": "2026-10-30T09:42:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -188,7 +188,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-shane-torres-headlines-the-riot-houston-the-riot-houston": {
-      "lastmod": "2026-10-29T10:34:00-05:00",
+      "lastmod": "2026-10-30T10:33:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -241,7 +241,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-22": {
-      "lastmod": "2026-10-29T10:34:00-05:00",
+      "lastmod": "2026-10-30T10:33:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -306,7 +306,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-26": {
-      "lastmod": "2026-10-29T10:34:00-05:00",
+      "lastmod": "2026-10-30T10:33:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -505,7 +505,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-11": {
-      "lastmod": "2026-08-09T09:59:00-05:00",
+      "lastmod": "2026-10-30T10:36:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -541,7 +541,32 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Daniel Contreras"
+          },
+          {
+            "@type": "Person",
+            "name": "Frank Overlton"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Owens"
+          },
+          {
+            "@type": "Person",
+            "name": "Chelby Morgan"
+          },
+          {
+            "@type": "Person",
+            "name": "Malay Vyas"
+          },
+          {
+            "@type": "Person",
+            "name": "JCann"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-monday-night-standup-comedy-open-mic-2026-11-02210000": {
@@ -6691,7 +6716,7 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-the-riot-conroe-6": {
-      "lastmod": "2026-10-29T10:26:00-05:00",
+      "lastmod": "2026-10-30T11:34:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -6738,15 +6763,15 @@
           },
           {
             "@type": "Person",
-            "name": "George Brito"
-          },
-          {
-            "@type": "Person",
             "name": "Barry Laminack"
           },
           {
             "@type": "Person",
             "name": "A.D. Hodge"
+          },
+          {
+            "@type": "Person",
+            "name": "Dan Hornstein"
           }
         ]
       }
@@ -9867,7 +9892,7 @@
       }
     },
     "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-10-31130000": {
-      "lastmod": "2026-10-29T10:34:00-05:00",
+      "lastmod": "2026-10-30T10:33:00-05:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",

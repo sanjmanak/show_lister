@@ -1,22 +1,6 @@
 {
- "updated": "2026-10-30T03:02:44.639Z",
+ "updated": "2026-10-30T18:40:37.797Z",
  "announcements": [
-  {
-   "id": "e6730af4674ad427",
-   "name": "COMEDY DOJO: Sunday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-11-08",
-   "time": "11:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1115718973%2F3558237521%2F1%2Foriginal.20250905-193245?auto=format%2Ccompress&q=75&sharp=10&s=0f3508786faa5dc4d3f3540085034564",
-   "ticket_url": "https://www.eventbrite.com/e/comedy-dojo-sunday-open-mic-comedy-tickets-2002925245326",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 9d out (min 14)",
-   "first_seen": "2026-10-05T21:15:31.923Z"
-  },
   {
    "id": "6ce7f0a89796f171",
    "name": "MONDAY NIGHT COMEDY!",
@@ -3200,6 +3184,22 @@
    "tier": null,
    "notable_reason": "title pattern",
    "first_seen": "2026-10-30T03:02:44.639Z"
+  },
+  {
+   "id": "27314ba5ba239da1",
+   "name": "Harland Williams",
+   "venue": "Punch Line Houston",
+   "date": "2027-01-23",
+   "time": "7:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/520/b928a572-dbf2-43f3-b1a0-b73330456520_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/harland-williams-houston-texas-01-23-2027/event/3A00653CB171B7EC",
+   "source": "ticketmaster",
+   "notable": true,
+   "tier": "headliner_room",
+   "notable_reason": "headliner room",
+   "first_seen": "2026-10-30T18:40:37.797Z"
   }
  ]
 }
