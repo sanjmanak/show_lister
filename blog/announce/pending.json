@@ -1,3 +1,21 @@
 {
-  "items": []
+  "generated_at": "2026-10-30T20:05:55.143Z",
+  "dry_run": false,
+  "items": [
+    {
+      "id": "fc6385793c32dca8",
+      "name": "Comedian Chris Cope (Jimmy Kimmel, Don't Tell Comedy, Conan) Headlines The Riot Houston",
+      "performer_name": "Chris Cope",
+      "venue": "The Riot Comedy Club",
+      "date": "2027-01-24",
+      "ticket_url": "https://www.theriothtx.com/events/comedian-chris-cope-jimmy-kimmel-don-t-tell-comedy-conan-headlines-the-riot-houston",
+      "files": {
+        "portrait": "2027-01-24-chris-cope-portrait.png",
+        "story": "2027-01-24-chris-cope-story.png",
+        "reel": "2027-01-24-chris-cope.mp4"
+      },
+      "caption": "The Conan and Jimmy Kimmel Live comic returns with material built for late-night crowds.\nChris Cope performs at The Riot Comedy Club on January 24, 2027. His credits also include Don't Tell Comedy. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
+      "confidence": 0.94
+    }
+  ]
 }
