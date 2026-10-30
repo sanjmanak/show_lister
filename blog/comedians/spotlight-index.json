@@ -1,47 +1,11 @@
 {
-  "generated_at": "2026-10-26T20:40:49.341Z",
+  "generated_at": "2026-10-30T18:44:16.720Z",
   "source_manifests": [
-    "manifest-2026-10-26.json",
     "manifest-2026-11-02.json",
     "manifest-2026-11-09.json",
     "manifest-2026-11-16.json"
   ],
   "posts": [
-    {
-      "date": "2026-10-26",
-      "comedianName": "Abby Govindan",
-      "slug": "abby-govindan-the-secret-group-2026-10-26",
-      "wpLink": "https://comedyhouston.com/comedians/abby-govindan/",
-      "venue": "The Secret Group"
-    },
-    {
-      "date": "2026-10-27",
-      "comedianName": "Daniel Sloss",
-      "slug": "daniel-sloss-bayou-music-center-2026-10-27",
-      "wpLink": "https://comedyhouston.com/comedians/daniel-sloss/",
-      "venue": "Bayou Music Center"
-    },
-    {
-      "date": "2026-10-27",
-      "comedianName": "Dovi Neuburger",
-      "slug": "dovi-neuburger-punch-line-houston-2026-10-27",
-      "wpLink": "https://comedyhouston.com/comedians/dovi-neuburger/",
-      "venue": "Punch Line Houston"
-    },
-    {
-      "date": "2026-10-28",
-      "comedianName": "Dave Chappelle",
-      "slug": "dave-chappelle-toyota-center-tx-2026-10-28",
-      "wpLink": "https://comedyhouston.com/comedians/dave-chappelle/",
-      "venue": "Toyota Center - TX"
-    },
-    {
-      "date": "2026-10-28",
-      "comedianName": "Marito Lopez",
-      "slug": "marito-lopez-punch-line-houston-2026-10-28",
-      "wpLink": "https://comedyhouston.com/comedians/marito-lopez/",
-      "venue": "Punch Line Houston"
-    },
     {
       "date": "2026-11-05",
       "comedianName": "Alonzo Bodden",
