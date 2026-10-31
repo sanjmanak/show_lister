@@ -1,3 +1,21 @@
 {
-  "items": []
+  "generated_at": "2026-10-31T19:31:11.725Z",
+  "dry_run": false,
+  "items": [
+    {
+      "id": "9347a87a9ba02b87",
+      "name": "Gaby Mendoza & Jose Luis Zagar ",
+      "performer_name": "Gaby Mendoza & José Luis Zagar",
+      "venue": "Arena Theatre",
+      "date": "2027-01-23",
+      "ticket_url": "https://www.ticketmaster.com/gaby-mendoza-jose-luis-zagar-houston-texas-01-23-2027/event/3A0064C99EEEA712",
+      "files": {
+        "portrait": "2027-01-23-gaby-mendoza-jos-luis-zagar-portrait.png",
+        "story": "2027-01-23-gaby-mendoza-jos-luis-zagar-story.png",
+        "reel": "2027-01-23-gaby-mendoza-jos-luis-zagar.mp4"
+      },
+      "caption": "Mexican stand-up regular José Luis Zagar shares the bill with Gaby Mendoza.\nGaby Mendoza and José Luis Zagar perform at Arena Theatre on January 23, 2027. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
+      "confidence": 0.84
+    }
+  ]
 }
