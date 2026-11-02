@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-11": {
-      "lastmod": "2026-10-30T10:36:00-05:00",
+      "lastmod": "2026-11-02T01:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -66,7 +66,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-monday-night-standup-comedy-open-mic-2026-11-02210000": {
-      "lastmod": "2026-09-24T08:28:00-05:00",
+      "lastmod": "2026-11-02T03:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -111,7 +111,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-11-03-26-07-00-pm": {
-      "lastmod": "2026-10-17T05:21:00-05:00",
+      "lastmod": "2026-11-02T11:53:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -147,11 +147,36 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "James Vogt"
+          },
+          {
+            "@type": "Person",
+            "name": "Malay Vyas"
+          },
+          {
+            "@type": "Person",
+            "name": "Brian Gendron"
+          },
+          {
+            "@type": "Person",
+            "name": "Chelby Morgan"
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
+          },
+          {
+            "@type": "Person",
+            "name": "Mason James"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-11-03210000": {
-      "lastmod": "2026-09-24T08:29:00-05:00",
+      "lastmod": "2026-11-02T11:53:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -190,13 +215,13 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Marz Pimentel"
+            "name": "David Vas"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-27": {
-      "lastmod": "2026-10-30T11:14:00-05:00",
+      "lastmod": "2026-11-02T09:42:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -236,12 +261,32 @@
           {
             "@type": "Person",
             "name": "Andy Huggins"
+          },
+          {
+            "@type": "Person",
+            "name": "Mason James"
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
+          },
+          {
+            "@type": "Person",
+            "name": "Cody Walker"
+          },
+          {
+            "@type": "Person",
+            "name": "Matthew Zane"
+          },
+          {
+            "@type": "Person",
+            "name": "Netra Netra Netra"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-25": {
-      "lastmod": "2026-10-30T11:14:00-05:00",
+      "lastmod": "2026-11-02T09:42:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -286,7 +331,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-36": {
-      "lastmod": "2026-10-30T11:24:00-05:00",
+      "lastmod": "2026-11-02T12:09:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -326,6 +371,26 @@
           {
             "@type": "Person",
             "name": "Andy Huggins"
+          },
+          {
+            "@type": "Person",
+            "name": "Mackenzie jewell"
+          },
+          {
+            "@type": "Person",
+            "name": "Adam Bob"
+          },
+          {
+            "@type": "Person",
+            "name": "Brian Gendron"
+          },
+          {
+            "@type": "Person",
+            "name": "Kris Atkins"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Owens"
           }
         ]
       }
@@ -9102,7 +9167,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-you-look-like-roast-contest-2026-11-05210000": {
-      "lastmod": "2026-10-30T11:24:00-05:00",
+      "lastmod": "2026-11-02T09:57:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -10252,6 +10317,231 @@
           {
             "@type": "Person",
             "name": "Charles Engle"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe": {
+      "lastmod": "2026-11-02T02:35:00-06:00",
+      "node": {
+        "@context": "https://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Jason Salmon (HBO, Comedy Central , HULU) Live at The Riot in Conroe",
+        "startDate": "2027-02-25T20:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe",
+          "priceCurrency": "USD",
+          "price": "30.00",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-11-02T14:31:18-06:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe",
+        "image": "/img/events/JSalmon-828b0875-large-thumb.jpg",
+        "description": "Jason is a Texas born, NYC based standup whose comedy has been described as&ldquo;&hellip;like getting the best advice you&rsquo;ve ever gotten&hellip;from the dumbest guy you know.&rdquo;Jason&rsquo;s performed all over the world including for the troops in Europe, South America,&amp;amp; Afghanistan. His standup special: BISCUITS and GRAVITY can be watched right nowon YouTube.He&rsquo;s been featured in Red Dead Redemption 2, Orange is the New Black, HBO,Comedy Central, At Home with Amy Sedaris, Hulu&rsquo;s Wu Tang Clan Series, and 30Rock.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.--",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Jason Salmon"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-26180000": {
+      "lastmod": "2026-11-02T02:36:00-06:00",
+      "node": {
+        "@context": "https://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Jason Salmon (HBO, Comedy Central , HULU) Live at The Riot in Conroe",
+        "startDate": "2027-02-26T18:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-26180000",
+          "priceCurrency": "USD",
+          "price": "30.00",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-11-02T14:36:27-06:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-26180000",
+        "image": "/img/events/JSalmon-828b0875-large-thumb.jpg",
+        "description": "Jason is a Texas born, NYC based standup whose comedy has been described as“…like getting the best advice you’ve ever gotten…from the dumbest guy you know.”Jason’s performed all over the world including for the troops in Europe, South America,&amp;amp; Afghanistan. His standup special: BISCUITS and GRAVITY can be watched right nowon YouTube.He’s been featured in Red Dead Redemption 2, Orange is the New Black, HBO,Comedy Central, At Home with Amy Sedaris, Hulu’s Wu Tang Clan Series, and 30Rock.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.--",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Jason Salmon"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-26203000": {
+      "lastmod": "2026-11-02T02:36:00-06:00",
+      "node": {
+        "@context": "https://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Jason Salmon (HBO, Comedy Central , HULU) Live at The Riot in Conroe",
+        "startDate": "2027-02-26T20:30:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-26203000",
+          "priceCurrency": "USD",
+          "price": "30.00",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-11-02T14:36:27-06:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-26203000",
+        "image": "/img/events/JSalmon-828b0875-large-thumb.jpg",
+        "description": "Jason is a Texas born, NYC based standup whose comedy has been described as“…like getting the best advice you’ve ever gotten…from the dumbest guy you know.”Jason’s performed all over the world including for the troops in Europe, South America,&amp;amp; Afghanistan. His standup special: BISCUITS and GRAVITY can be watched right nowon YouTube.He’s been featured in Red Dead Redemption 2, Orange is the New Black, HBO,Comedy Central, At Home with Amy Sedaris, Hulu’s Wu Tang Clan Series, and 30Rock.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.--",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Jason Salmon"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-27170000": {
+      "lastmod": "2026-11-02T02:36:00-06:00",
+      "node": {
+        "@context": "https://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Jason Salmon (HBO, Comedy Central , HULU) Live at The Riot in Conroe",
+        "startDate": "2027-02-27T17:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-27170000",
+          "priceCurrency": "USD",
+          "price": "30.00",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-11-02T14:36:27-06:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-27170000",
+        "image": "/img/events/JSalmon-828b0875-large-thumb.jpg",
+        "description": "Jason is a Texas born, NYC based standup whose comedy has been described as“…like getting the best advice you’ve ever gotten…from the dumbest guy you know.”Jason’s performed all over the world including for the troops in Europe, South America,&amp;amp; Afghanistan. His standup special: BISCUITS and GRAVITY can be watched right nowon YouTube.He’s been featured in Red Dead Redemption 2, Orange is the New Black, HBO,Comedy Central, At Home with Amy Sedaris, Hulu’s Wu Tang Clan Series, and 30Rock.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.--",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Jason Salmon"
+          }
+        ]
+      }
+    },
+    "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-27193000": {
+      "lastmod": "2026-11-02T02:36:00-06:00",
+      "node": {
+        "@context": "https://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Comedian Jason Salmon (HBO, Comedy Central , HULU) Live at The Riot in Conroe",
+        "startDate": "2027-02-27T19:30:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-27193000",
+          "priceCurrency": "USD",
+          "price": "30.00",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-11-02T14:36:28-06:00"
+        },
+        "url": "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-27193000",
+        "image": "/img/events/JSalmon-828b0875-large-thumb.jpg",
+        "description": "Jason is a Texas born, NYC based standup whose comedy has been described as“…like getting the best advice you’ve ever gotten…from the dumbest guy you know.”Jason’s performed all over the world including for the troops in Europe, South America,&amp;amp; Afghanistan. His standup special: BISCUITS and GRAVITY can be watched right nowon YouTube.He’s been featured in Red Dead Redemption 2, Orange is the New Black, HBO,Comedy Central, At Home with Amy Sedaris, Hulu’s Wu Tang Clan Series, and 30Rock.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.--",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Jason Salmon"
           }
         ]
       }
