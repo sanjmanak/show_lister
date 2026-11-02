@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-10-30T18:44:16.710Z",
+  "updated_at": "2026-11-02T23:12:23.858Z",
   "comedians": [
     {
       "slug": "abby-govindan",
@@ -37,6 +37,42 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/abby-govindan-houston-1.jpg"
+    },
+    {
+      "slug": "ali-siddiq",
+      "name": "Ali Siddiq",
+      "match": [
+        "ali siddiq"
+      ],
+      "status": "live",
+      "created_at": "2026-11-02T23:08:19.691Z",
+      "profile_written_at": "2026-11-02T23:09:32.147Z",
+      "profile_html": "<p>Ali Siddiq began doing stand-up in Houston in 1997. His background includes time in incarceration, which he has publicly discussed; his 2018 Comedy Central special <em>Ali Siddiq: It’s Bigger Than These Bars</em> was filmed in a Texas jail. He appeared in two episodes of <em>This Is Not Happening</em> in 2015 and 2016, including “Mexicans Got on Boots,” a prison-riot story.</p>\n\n<p>Siddiq’s self-released YouTube work includes <em>The Domino Effect</em> (2022), <em>The Domino Effect Part 2: Loss</em> (2023), and two further installments in 2024. In 2025, he released <a href=\"https://www.imdb.com/name/nm3143517/\"><em>My Two Sons</em>, <em>Rugged</em>, and <em>Mondays</em></a>. <em>My Two Sons</em> won the 2026 NAACP Image Award for Outstanding Variety Special. His 2026 special <em>My Father</em> was released that year.</p>\n\n<p>Onstage, Siddiq favors long-form narratives drawn from personal experience over a conveyor belt of short punchlines. “We learn most things through stories,” he has said. Friendship, family, fatherhood, incarceration, and accountability supply the material.</p>\n\n<p>In an August 2026 <a href=\"https://news.wfsu.org/wfsu-local-news/2026-08-28/comedian-ali-siddiq-talks-fatherhood-prison-work-and-storytelling-ahead-of-tallahassee-show\">WFSU News interview</a> about The Custom Fit Tour, Siddiq said the title concerned the people around a person: “In order to succeed in life, you have to have a great team, and you have to cultivate that team.” He has also appeared on <a href=\"https://www.wtfpod.com/podcast/episode-1547-ali-siddiq\">WTF with Marc Maron</a>, <em>Club Shay Shay</em>, and <em>Pause with Sam Jay</em>.</p>",
+      "research_json": "{\n  \"full_name\": \"Ali Siddiq\",\n  \"hometown\": \"Houston, Texas\",\n  \"career_start_year\": 1997,\n  \"specials\": [\n    {\n      \"title\": \"Ali Siddiq: It's Bigger Than These Bars\",\n      \"platform\": \"Comedy Central\",\n      \"year\": 2018\n    },\n    {\n      \"title\": \"The Domino Effect\",\n      \"platform\": \"YouTube\",\n      \"year\": 2022\n    },\n    {\n      \"title\": \"The Domino Effect Part 2: Loss\",\n      \"platform\": \"YouTube\",\n      \"year\": 2023\n    },\n    {\n      \"title\": \"Ali Siddiq: Don't Judge a Book by Its Cover\",\n      \"platform\": \"YouTube\",\n      \"year\": 2023\n    },\n    {\n      \"title\": \"The Domino Effect Part 3: First Day of School\",\n      \"platform\": \"YouTube\",\n      \"year\": 2024\n    },\n    {\n      \"title\": \"The Domino Effect Part 4: Pins & Needles\",\n      \"platform\": \"YouTube\",\n      \"year\": 2024\n    },\n    {\n      \"title\": \"Ali Siddiq: My Two Sons\",\n      \"platform\": \"YouTube\",\n      \"year\": 2025\n    },\n    {\n      \"title\": \"Ali Siddiq: Rugged\",\n      \"platform\": \"YouTube\",\n      \"year\": 2025\n    },\n    {\n      \"title\": \"Ali Siddiq: Mondays\",\n      \"platform\": \"YouTube\",\n      \"year\": 2025\n    },\n    {\n      \"title\": \"Ali Siddiq: My Father\",\n      \"platform\": \"AliSiddiq.com / YouTube\",\n      \"year\": 2026\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"WTF with Marc Maron, Episode 1547\",\n      \"year_approx\": 2024\n    },\n    {\n      \"show\": \"Club Shay Shay, Episode 167\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"What's News With You, Episode 64\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"The Warehouse\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"This Is Not Happening\",\n      \"context\": \"Appeared in two episodes during 2015–2016; his prison-riot story \\\"Mexicans Got on Boots\\\" became a widely viewed segment.\"\n    },\n    {\n      \"show\": \"Bring the Funny\",\n      \"context\": \"Stand-up competitor on NBC's 2019 comedy competition series.\"\n    },\n    {\n      \"show\": \"Flatbush Misdemeanors\",\n      \"context\": \"Played Bishop in one 2022 episode.\"\n    },\n    {\n      \"show\": \"Pause with Sam Jay\",\n      \"context\": \"Appeared as himself in one 2022 episode.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Conversational, reflective, and grounded in personal experience.\",\n    \"structure\": \"Long-form narrative storytelling rather than a sequence of short standalone punchline-driven bits.\",\n    \"recurring_themes\": [\n      \"Family\",\n      \"Fatherhood\",\n      \"Friendship\",\n      \"Race and culture\",\n      \"Everyday life\",\n      \"Incarceration and accountability\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"Siddiq is known as a storytelling-focused stand-up performer. In 2026, he took his Custom Fit Tour to arenas for the first time, after building a large audience through independently released YouTube specials.\",\n  \"recent_activity_2025_2026\": \"In 2025, Siddiq released the specials My Two Sons, Rugged, and Mondays. My Two Sons won the 2026 NAACP Image Award for Outstanding Variety Special. He toured with The Custom Fit Tour in 2026 and released My Father in 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"Ali Siddiq continued The Custom Fit Tour in 2026 and discussed its central idea in an August 2026 interview: the title refers to deliberately building a supportive team around oneself, rather than simply to tailored clothing.\",\n    \"quote\": \"It's really about the people in your life. In order to succeed in life, you have to have a great team, and you have to cultivate that team.\",\n    \"source_publication\": \"WFSU News\",\n    \"source_url\": \"https://news.wfsu.org/wfsu-local-news/2026-08-28/comedian-ali-siddiq-talks-fatherhood-prison-work-and-storytelling-ahead-of-tallahassee-show\",\n    \"date\": \"2026-08-28\"\n  },\n  \"instagram_handle\": \"@alisiddiq\",\n  \"notable_bits_or_quotes\": [\n    \"\\\"Mexicans Got on Boots\\\"\",\n    \"\\\"We learn most things through stories.\\\"\",\n    \"\\\"I didn't know it would make an impact. I was just telling my story.\\\"\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"Claims that Siddiq appeared on The Tonight Show Starring Jimmy Fallon.\",\n    \"Claims that Siddiq appeared in Netflix's They Ready.\",\n    \"Claims that Siddiq appeared on Shaquille O'Neal Presents: All Star Comedy Jam.\",\n    \"Claims that he was the first comedian in history to release a four-part stand-up series.\",\n    \"Claims assigning an exact total number of specials or total career views without a date-specific primary source.\"\n  ],\n  \"background_story\": \"Siddiq is a Houston comedian who began doing stand-up in 1997. His work draws on his life experiences, including his family, his upbringing, and time he has publicly discussed serving in incarceration. He developed a substantial independent audience by self-releasing long-form storytelling specials online; his earlier Comedy Central special It's Bigger Than These Bars was filmed in a Texas jail.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Ali_Siddiq\"\n    },\n    {\n      \"label\": \"IMDb\",\n      \"url\": \"https://www.imdb.com/name/nm3143517/\"\n    },\n    {\n      \"label\": \"Ali Siddiq official website\",\n      \"url\": \"https://alisiddiq.com/\"\n    },\n    {\n      \"label\": \"Houston Chronicle interview\",\n      \"url\": \"https://www.houstonchronicle.com/news/houston-texas/trending/article/ali-siddid-arena-tour-22257216.php\"\n    },\n    {\n      \"label\": \"WLRN interview\",\n      \"url\": \"https://www.wlrn.org/arts-culture/2026-05-14/ali-siddiq-miami-youtube-comedy\"\n    },\n    {\n      \"label\": \"WTF with Marc Maron, Episode 1547\",\n      \"url\": \"https://www.wtfpod.com/podcast/episode-1547-ali-siddiq\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Ali_Siddiq",
+        "https://www.imdb.com/name/nm3143517/",
+        "https://www.instagram.com/alisiddiq/"
+      ],
+      "instagramHandle": "@alisiddiq",
+      "imageUrl": "https://s1.ticketm.net/dam/a/8b9/0a83a81b-0da6-4434-9b7d-4e59027c58b9_SOURCE",
+      "wpPageId": 2304,
+      "wpLink": "https://comedyhouston.com/comedians/ali-siddiq/",
+      "wpImageMediaId": 2303,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-11-25",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "Ali Siddiq",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1AA7FvI",
+          "event_id": "69b9df2f89b6af0e",
+          "image_url": "https://s1.ticketm.net/dam/a/8b9/0a83a81b-0da6-4434-9b7d-4e59027c58b9_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/ali-siddiq-houston.jpg"
     },
     {
       "slug": "alonzo-bodden",
@@ -883,6 +919,59 @@
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/marlon-wayans-houston.jpg"
     },
     {
+      "slug": "michael-blackson",
+      "name": "Michael Blackson",
+      "match": [
+        "michael blackson"
+      ],
+      "status": "live",
+      "created_at": "2026-11-02T23:10:54.065Z",
+      "profile_written_at": "2026-11-02T23:12:08.006Z",
+      "profile_html": "<p>Michael Blackson taped <a href=\"https://egotickets.com/events/michael-blackson-standup-special-i-deported-myself\">I Deported Myself</a> at Accra International Conference Centre in Ghana in January 2026. Born in Ghana and raised in the United States, he began performing in Philadelphia clubs in 1992. His act draws on immigrant experience, social observation, crowd riffs, and one-liners, delivered with brash, unfiltered energy.</p>\n\n<p>His national film breakthrough came as the Angry African Man customer in <em>Next Friday</em>. He later appeared as African Man on <em>30 Rock</em>, made recurring cast and self appearances on <em>Nick Cannon Presents: Wild 'N Out</em>, and starred as Mr. Michael Blackson in the BET+ sitcom <em>The Michael Blackson Show</em>, which premiered in July 2023. Eddie Murphy was an early comedic inspiration.</p>\n\n<p>On a 2024 appearance on <a href=\"https://podscripts.co/podcasts/digital-social-hour/from-36-outfit-to-empire-an-immigrants-success-blueprint-michael-blackson-dsh-1000\">Digital Social Hour</a>, Blackson said he spent his first three years in the United States in Newark before moving to Philadelphia, where he was raised.</p>",
+      "research_json": "{\n  \"full_name\": \"Michael Kojo Blackson (born Jafari Ferguson)\",\n  \"hometown\": \"Philadelphia, Pennsylvania, United States\",\n  \"career_start_year\": 1992,\n  \"specials\": [\n    {\n      \"title\": \"I Deported Myself\",\n      \"platform\": \"Live special taping at Accra International Conference Centre; no release platform verified\",\n      \"year\": 2026\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Drink Champs\",\n      \"year_approx\": 2023\n    },\n    {\n      \"show\": \"Digital Social Hour\",\n      \"year_approx\": 2024\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"30 Rock\",\n      \"context\": \"Guest appearance as African Man in the episode \\\"Jack Meets Dennis.\\\"\"\n    },\n    {\n      \"show\": \"Nick Cannon Presents: Wild 'N Out\",\n      \"context\": \"Recurring cast/self appearances.\"\n    },\n    {\n      \"show\": \"The Michael Blackson Show\",\n      \"context\": \"Starred as Mr. Michael Blackson in the BET+ sitcom that premiered in July 2023.\"\n    },\n    {\n      \"show\": \"Love & Hip Hop: Miami\",\n      \"context\": \"Appeared as himself in Season 7.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Brash, unfiltered, and high-energy.\",\n    \"structure\": \"Immigrant-experience storytelling, crowd-work/improvisational riffs, and one-liners.\",\n    \"recurring_themes\": [\n      \"West African and American cultural contrast\",\n      \"Immigrant experience\",\n      \"Identity\",\n      \"Social observation\"\n    ],\n    \"comparable_to\": \"Eddie Murphy is a verified early comedic inspiration.\"\n  },\n  \"live_reputation\": \"His official biography describes him as a club-and-theater headliner who has toured the United States, United Kingdom, and Africa; his official 2026 schedule lists dozens of U.S. dates.\",\n  \"recent_activity_2025_2026\": \"Blackson taped the stand-up special \\\"I Deported Myself\\\" in Accra on January 3, 2026. His official site also listed an extensive 2026 U.S. tour schedule, including November and December dates in Louisville, Arlington, Houston, Tacoma, and San Antonio.\",\n  \"recent_hook\": {\n    \"summary\": \"Michael Blackson taped a new stand-up special, \\\"I Deported Myself,\\\" at Accra International Conference Centre in Ghana on January 3, 2026.\",\n    \"quote\": \"Get your tickets for the Taping of Michael Blackson's stand-up comedy special, \\\"I Deported Myself,\\\" at the International Conference Center.\",\n    \"source_publication\": \"eGotickets\",\n    \"source_url\": \"https://egotickets.com/events/michael-blackson-standup-special-i-deported-myself\",\n    \"date\": \"2026-01-03\"\n  },\n  \"instagram_handle\": \"@michaelblackson\",\n  \"notable_bits_or_quotes\": [\n    \"\\\"The African King of Comedy\\\"\",\n    \"\\\"I'm not just a comedian. I'm a movement.\\\"\",\n    \"His signature breakout film role was the \\\"Angry African Man\\\" customer in Next Friday.\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"Do not state that \\\"I Deported Myself\\\" has been released on Netflix, YouTube, or any other streaming platform; only its January 2026 live taping in Accra was verified.\",\n    \"Do not call Modasucka: Welcome to America a filmed stand-up special; reliable sources identify it as a 2005 comedy sketch CD.\",\n    \"Do not claim that he has a Netflix stand-up special; no verified Netflix special page was found.\",\n    \"Avoid unverified relationship, pregnancy, and family-storyline details repeated by low-quality entertainment sites and unsourced portions of biographical databases.\"\n  ],\n  \"background_story\": \"Blackson was born in Ghana and raised in the United States. In a 2024 Digital Social Hour appearance, he said he spent his first three years in the U.S. in Newark, New Jersey, then moved to Philadelphia, where he said he was raised. He began performing comedy in Philadelphia clubs in 1992. His national film breakthrough came through Next Friday.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Michael_Blackson\"\n    },\n    {\n      \"label\": \"Official Michael Blackson biography\",\n      \"url\": \"https://www.michaelblacksonofficial.com/about\"\n    },\n    {\n      \"label\": \"Official Michael Blackson 2026 tour schedule\",\n      \"url\": \"https://www.michaelblacksonofficial.com/\"\n    },\n    {\n      \"label\": \"TV Guide credits\",\n      \"url\": \"https://www.tvguide.com/celebrities/michael-blackson/credits/3000309762/\"\n    },\n    {\n      \"label\": \"I Deported Myself special-taping event page\",\n      \"url\": \"https://egotickets.com/events/michael-blackson-standup-special-i-deported-myself\"\n    },\n    {\n      \"label\": \"Digital Social Hour episode transcript\",\n      \"url\": \"https://podscripts.co/podcasts/digital-social-hour/from-36-outfit-to-empire-an-immigrants-success-blueprint-michael-blackson-dsh-1000\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Michael_Blackson",
+        "https://www.instagram.com/michaelblackson/"
+      ],
+      "instagramHandle": "@michaelblackson",
+      "imageUrl": "https://s1.ticketm.net/dam/a/2d8/9d31340e-beb9-4944-b62f-707ff186d2d8_SOURCE",
+      "wpPageId": 2310,
+      "wpLink": "https://comedyhouston.com/comedians/michael-blackson/",
+      "wpImageMediaId": 2309,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-11-27",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "Michael Blackson",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A70U1k",
+          "event_id": "7529e0514b5eccfc",
+          "image_url": "https://s1.ticketm.net/dam/a/2d8/9d31340e-beb9-4944-b62f-707ff186d2d8_SOURCE"
+        },
+        {
+          "date": "2026-11-28",
+          "venue": "Houston Improv",
+          "time": "7:00 PM",
+          "name": "Michael Blackson",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A70U16",
+          "event_id": "b30ed0b9b51c0d5f",
+          "image_url": "https://s1.ticketm.net/dam/a/2d8/9d31340e-beb9-4944-b62f-707ff186d2d8_SOURCE"
+        },
+        {
+          "date": "2026-11-29",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "Michael Blackson",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A70U1A",
+          "event_id": "8a471f965aa9dee0",
+          "image_url": "https://s1.ticketm.net/dam/a/2d8/9d31340e-beb9-4944-b62f-707ff186d2d8_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/michael-blackson-houston.jpg"
+    },
+    {
       "slug": "michael-rowland",
       "name": "Michael Rowland",
       "match": [
@@ -1136,6 +1225,60 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/reem-edan-houston.jpg"
+    },
+    {
+      "slug": "ron-taylor",
+      "name": "Ron Taylor",
+      "match": [
+        "ron taylor"
+      ],
+      "status": "live",
+      "created_at": "2026-11-02T23:09:41.382Z",
+      "profile_written_at": "2026-11-02T23:10:44.201Z",
+      "profile_html": "<p>Ron Taylor, born in Detroit, began pursuing stand-up in 2010. He bought a van with prize money from college and <em>Apollo Live</em> performances, drove it to Los Angeles, and lived in it while establishing himself. He said he stayed in the van until about 2023.</p>\n\n<p>His credits include BET’s <em>Apollo Live</em>, Fox’s <em>Laughs</em>, Bill Burr’s Comedy Central showcase <em>Bill Burr Presents: The Ringers</em>, and a Delivery Guy role on FX’s <em>Oh Jerome, No</em>.</p>\n\n<p>Taylor’s 2025 special, <a href=\"https://tubitv.com/movies/100050107/ron-taylor-avalanche\"><em>Avalanche</em></a>, is on Tubi. In May 2026, he won the first season of Netflix’s <a href=\"https://www.netflix.com/tudum/articles/funny-af-season-1-cast-instagrams-finalists\"><em>Funny AF with Kevin Hart</em></a>, earning a future Netflix special. He has also appeared on <em>The Underground Comedy Podcast</em>, <em>New Rory &amp; MAL</em>, and Craig Conant’s show.</p>\n\n<p>Taylor describes his approach as putting a “silly flair on serious things.” He has said, “I learned how to pace myself and squeeze all I can out of each topic.”</p>\n\n<p>Ron Taylor is a paid regular at the Comedy Store in Hollywood and a regular at Austin’s Comedy Mothership.</p>",
+      "research_json": "{\n  \"full_name\": \"Ron Taylor\",\n  \"hometown\": \"Detroit, Michigan\",\n  \"career_start_year\": 2010,\n  \"specials\": [\n    {\n      \"title\": \"Avalanche\",\n      \"platform\": \"Tubi\",\n      \"year\": 2025\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"The Underground Comedy Podcast\",\n      \"year_approx\": 2019\n    },\n    {\n      \"show\": \"New Rory & MAL\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Community Service with Craig Conant\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Funny AF with Kevin Hart\",\n      \"context\": \"Contestant and inaugural winner of Netflix's comedy competition series.\"\n    },\n    {\n      \"show\": \"Bill Burr Presents: The Ringers\",\n      \"context\": \"Stand-up performer selected by Bill Burr for the Comedy Central showcase.\"\n    },\n    {\n      \"show\": \"Apollo Live\",\n      \"context\": \"Stand-up appearance on BET.\"\n    },\n    {\n      \"show\": \"Laughs\",\n      \"context\": \"Stand-up appearance on Fox.\"\n    },\n    {\n      \"show\": \"Oh Jerome, No\",\n      \"context\": \"Appeared in the FX comedy series as Delivery Guy.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Taylor describes his approach as putting a \\\"silly flair on serious things.\\\"\",\n    \"structure\": \"He has said he learned to pace himself and get as much as possible from each topic.\",\n    \"recurring_themes\": [\n      \"Serious subjects approached with a silly angle\",\n      \"Partying\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"Taylor is a paid regular at The Comedy Store in Hollywood; his official biography also identifies him as a regular at the Comedy Mothership in Austin.\",\n  \"recent_activity_2025_2026\": \"In 2025, Avalanche was released as a stand-up special. In May 2026, Taylor won the first season of Netflix's Funny AF with Kevin Hart, which earned him a Netflix special. He continued podcast appearances in 2026, including Community Service with Craig Conant on October 27, 2026, and has listed U.S. dates through late 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"Taylor appeared on Community Service with Craig Conant in an episode released October 27, 2026.\",\n    \"quote\": \"Craig and Ron talk about blacking out, breaking something important, and letting it all work out.\",\n    \"source_publication\": \"Community Service with Craig Conant / Apple Podcasts\",\n    \"source_url\": \"https://podcasts.apple.com/au/podcast/ron-taylor/id1441475405?i=1000798274121\",\n    \"date\": \"2026-10-27\"\n  },\n  \"instagram_handle\": \"comedianront\",\n  \"notable_bits_or_quotes\": [\n    \"“I like to think that I put a silly flair on serious things.”\",\n    \"“I learned how to pace myself and squeeze all I can out of each topic.”\",\n    \"“Because I’d be finally going up!”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That Avalanche was released in April 2024. Reliable listings conflict on its release year; Tubi and Apple Music list it as a 2025 release.\",\n    \"That Taylor's Netflix special is already released or has a confirmed title. His Funny AF prize was a future Netflix special, but no released title was independently verified.\",\n    \"That Taylor wrote for Inventing Anna, Survival of the Thickest, or And Just Like That. A Netflix page's surrounding text associates those writing credits with another comedian, not clearly with Taylor.\",\n    \"That he was a series regular on Freeform's None of the Above. An agency bio makes that claim, but IMDb lists one episode, so the series-regular designation was not independently verified.\",\n    \"That he appeared on The Tonight Show Starring Jimmy Fallon on June 2, 2026. This appeared in a Wikipedia episode list but was not independently verified from NBC or another primary source.\",\n    \"That he has performed comedy for exactly 15 years. This appeared in user-generated discussion rather than a reliable biographical source.\"\n  ],\n  \"background_story\": \"Taylor is Detroit-born and began pursuing stand-up in 2010. He has said that Dave Chappelle inspired him to enter comedy. In interviews, Taylor described buying a van with prize money earned from college and Apollo Live performances, driving it to Los Angeles, and living in it while establishing himself in comedy; he said he lived in the van until about 2023.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Netflix Tudum profile and Funny AF winner announcement\",\n      \"url\": \"https://www.netflix.com/tudum/articles/funny-af-season-1-cast-instagrams-finalists\"\n    },\n    {\n      \"label\": \"Ron Taylor official website\",\n      \"url\": \"https://comedianrontaylor.com/\"\n    },\n    {\n      \"label\": \"Ron Taylor: Avalanche on Tubi\",\n      \"url\": \"https://tubitv.com/movies/100050107/ron-taylor-avalanche\"\n    },\n    {\n      \"label\": \"The Rich Eisen Show interview\",\n      \"url\": \"https://richeisenshow.com/read/comedian-ron-taylor-talks-neflixs-funny-af-kevin-harts-roast-more-wrich-eisen-full-interview\"\n    },\n    {\n      \"label\": \"Community Service with Craig Conant episode\",\n      \"url\": \"https://podcasts.apple.com/au/podcast/ron-taylor/id1441475405?i=1000798274121\"\n    },\n    {\n      \"label\": \"IMDb\",\n      \"url\": \"https://www.imdb.com/name/nm6883290/\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.netflix.com/tudum/articles/funny-af-season-1-cast-instagrams-finalists",
+        "https://www.imdb.com/name/nm6883290/",
+        "https://www.instagram.com/comedianront/"
+      ],
+      "instagramHandle": "@comedianront",
+      "imageUrl": "https://s1.ticketm.net/dam/a/2a8/a0820ae5-7051-4f46-99d4-8cdc1a85e2a8_SOURCE",
+      "wpPageId": 2307,
+      "wpLink": "https://comedyhouston.com/comedians/ron-taylor/",
+      "wpImageMediaId": 2306,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-11-27",
+          "venue": "Punch Line Houston",
+          "time": "7:00 PM",
+          "name": "Ron Taylor",
+          "ticket_url": "https://www.ticketmaster.com/ron-taylor-houston-texas-11-27-2026/event/3A0064BD88DD638D",
+          "event_id": "1043b6557dc0fe56",
+          "image_url": "https://s1.ticketm.net/dam/a/2a8/a0820ae5-7051-4f46-99d4-8cdc1a85e2a8_SOURCE"
+        },
+        {
+          "date": "2026-11-28",
+          "venue": "Punch Line Houston",
+          "time": "7:00 PM",
+          "name": "Ron Taylor",
+          "ticket_url": "https://www.ticketmaster.com/ron-taylor-houston-texas-11-28-2026/event/3A0064BD88EC63A9",
+          "event_id": "64f1771c80387172",
+          "image_url": "https://s1.ticketm.net/dam/a/2a8/a0820ae5-7051-4f46-99d4-8cdc1a85e2a8_SOURCE"
+        },
+        {
+          "date": "2026-11-29",
+          "venue": "Punch Line Houston",
+          "time": "7:00 PM",
+          "name": "Ron Taylor",
+          "ticket_url": "https://www.ticketmaster.com/ron-taylor-houston-texas-11-29-2026/event/3A0064BD88FA63D8",
+          "event_id": "1f8cf77a33a1a423",
+          "image_url": "https://s1.ticketm.net/dam/a/2a8/a0820ae5-7051-4f46-99d4-8cdc1a85e2a8_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/ron-taylor-houston.jpg"
     },
     {
       "slug": "sarper-guven",

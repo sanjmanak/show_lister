@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-10-30T18:44:16.720Z",
+  "generated_at": "2026-11-02T23:12:23.861Z",
   "source_manifests": [
     "manifest-2026-11-02.json",
     "manifest-2026-11-09.json",
-    "manifest-2026-11-16.json"
+    "manifest-2026-11-16.json",
+    "manifest-2026-11-23.json"
   ],
   "posts": [
     {
@@ -110,6 +111,27 @@
       "slug": "michael-rowland-the-riot-comedy-club-2026-11-20",
       "wpLink": "https://comedyhouston.com/comedians/michael-rowland/",
       "venue": "The Riot Comedy Club"
+    },
+    {
+      "date": "2026-11-25",
+      "comedianName": "Ali Siddiq",
+      "slug": "ali-siddiq-houston-improv-2026-11-25",
+      "wpLink": "https://comedyhouston.com/comedians/ali-siddiq/",
+      "venue": "Houston Improv"
+    },
+    {
+      "date": "2026-11-27",
+      "comedianName": "Michael Blackson",
+      "slug": "michael-blackson-houston-improv-2026-11-27",
+      "wpLink": "https://comedyhouston.com/comedians/michael-blackson/",
+      "venue": "Houston Improv"
+    },
+    {
+      "date": "2026-11-27",
+      "comedianName": "Ron Taylor",
+      "slug": "ron-taylor-punch-line-houston-2026-11-27",
+      "wpLink": "https://comedyhouston.com/comedians/ron-taylor/",
+      "venue": "Punch Line Houston"
     }
   ]
 }

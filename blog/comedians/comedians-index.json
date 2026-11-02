@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T18:44:16.724Z",
+  "generated_at": "2026-11-02T23:12:23.863Z",
   "comedians": [
     {
       "slug": "abby-govindan",
@@ -12,6 +12,16 @@
         "abby-govindan-the-secret-group-2026-10-26"
       ],
       "next_show": null
+    },
+    {
+      "slug": "ali-siddiq",
+      "name": "Ali Siddiq",
+      "match": [
+        "ali siddiq"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/ali-siddiq/",
+      "legacy_slugs": [],
+      "next_show": "2026-11-25"
     },
     {
       "slug": "alonzo-bodden",
@@ -246,6 +256,16 @@
       "next_show": null
     },
     {
+      "slug": "michael-blackson",
+      "name": "Michael Blackson",
+      "match": [
+        "michael blackson"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/michael-blackson/",
+      "legacy_slugs": [],
+      "next_show": "2026-11-27"
+    },
+    {
       "slug": "michael-rowland",
       "name": "Michael Rowland",
       "match": [
@@ -308,6 +328,16 @@
       "wpLink": "https://comedyhouston.com/comedians/reem-edan/",
       "legacy_slugs": [],
       "next_show": "2026-11-12"
+    },
+    {
+      "slug": "ron-taylor",
+      "name": "Ron Taylor",
+      "match": [
+        "ron taylor"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/ron-taylor/",
+      "legacy_slugs": [],
+      "next_show": "2026-11-27"
     },
     {
       "slug": "sarper-guven",
