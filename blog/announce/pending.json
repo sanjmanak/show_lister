@@ -1,3 +1,21 @@
 {
-  "items": []
+  "generated_at": "2026-11-02T23:12:44.619Z",
+  "dry_run": false,
+  "items": [
+    {
+      "id": "51a4d1597d58f1f0",
+      "name": "Anthony Jeselnik: Wrath of Man",
+      "performer_name": "Anthony Jeselnik",
+      "venue": "Bayou Music Center",
+      "date": "2027-01-30",
+      "ticket_url": "https://www.ticketmaster.com/anthony-jeselnik-wrath-of-man-houston-texas-01-30-2027/event/3A00654D02911ED0",
+      "files": {
+        "portrait": "2027-01-30-anthony-jeselnik-portrait.png",
+        "story": "2027-01-30-anthony-jeselnik-story.png",
+        "reel": "2027-01-30-anthony-jeselnik.mp4"
+      },
+      "caption": "The Good Talk host returns with Wrath of Man, his latest tour of precision cruelty.\nAnthony Jeselnik performs at Bayou Music Center on January 30, 2027. He hosts the podcast Good Talk with Anthony Jeselnik. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
+      "confidence": 0.99
+    }
+  ]
 }
