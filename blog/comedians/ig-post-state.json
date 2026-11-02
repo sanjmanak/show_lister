@@ -1,52 +1,26 @@
 {
   "posted": [
     {
-      "slug": "abby-govindan-the-secret-group-2026-10-26",
-      "comedianName": "Abby Govindan",
-      "igFeedMediaId": "18031642868892860",
-      "igStoryMediaId": "18115949195015113",
-      "fbFeedPostId": "1441205324770875",
-      "fbStoryPostId": "2001458107198082",
-      "postedAt": "2026-10-26T10:23:07.644Z"
-    },
-    {
-      "slug": "daniel-sloss-bayou-music-center-2026-10-27",
-      "comedianName": "Daniel Sloss",
-      "igFeedMediaId": "18104384414013170",
-      "igStoryMediaId": "18033019319911317",
-      "fbFeedPostId": "1441505368074204",
-      "fbStoryPostId": "1092978356903955",
-      "postedAt": "2026-10-26T16:52:11.151Z"
-    },
-    {
-      "slug": "dovi-neuburger-punch-line-houston-2026-10-27",
-      "comedianName": "Dovi Neuburger",
-      "igFeedMediaId": "17896069731427107",
-      "igStoryMediaId": "17902498704671256",
-      "fbFeedPostId": "1441816004709807",
-      "fbStoryPostId": "1952484202392809",
-      "postedAt": "2026-10-27T01:33:46.881Z"
-    },
-    {
-      "slug": "dave-chappelle-toyota-center-tx-2026-10-28",
-      "comedianName": "Dave Chappelle",
-      "igFeedMediaId": "18134404480673417",
-      "igStoryMediaId": "18008267013006298",
-      "fbFeedPostId": "1442113021346772",
-      "fbStoryPostId": "1654868163056423",
-      "postedAt": "2026-10-27T09:56:42.071Z"
-    },
-    {
-      "slug": "marito-lopez-punch-line-houston-2026-10-28",
-      "comedianName": "Marito Lopez",
-      "igFeedMediaId": "17867018103677902",
-      "igStoryMediaId": "18116756282118728",
-      "fbFeedPostId": "1442388317985909",
-      "fbStoryPostId": "1094893060091306",
-      "postedAt": "2026-10-27T15:56:38.676Z"
+      "slug": "alonzo-bodden-punch-line-houston-2026-11-05",
+      "comedianName": "Alonzo Bodden",
+      "igFeedMediaId": "17939741541123295",
+      "igStoryMediaId": "18106922510292261",
+      "fbFeedPostId": "1448070164084391",
+      "fbStoryPostId": "1792482168677807",
+      "postedAt": "2026-11-02T12:44:34.492Z"
     }
   ],
-  "week_range": "October 26 – November 1, 2026",
-  "manifest_version": 1792098201070,
-  "cleanup_queue": []
+  "week_range": "November 2 – November 8, 2026",
+  "manifest_version": 1792096559593,
+  "cleanup_queue": [
+    {
+      "slug": "alonzo-bodden-punch-line-houston-2026-11-05",
+      "comedianName": "Alonzo Bodden",
+      "igFeedMediaId": "17939741541123295",
+      "igStoryMediaId": "18106922510292261",
+      "fbFeedPostId": "1448070164084391",
+      "fbStoryPostId": "1792482168677807",
+      "postedAt": "2026-11-02T12:44:34.492Z"
+    }
+  ]
 }
