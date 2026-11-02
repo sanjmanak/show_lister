@@ -1,117 +1,117 @@
 {
-  "generated_at": "2026-10-26T20:27:41.274Z",
-  "week_range": "October 26 – November 1, 2026",
+  "generated_at": "2026-11-02T23:06:21.439Z",
+  "week_range": "November 2 – November 8, 2026",
   "comedians": [
     {
-      "name": "Dave Chappelle",
-      "displayName": "Dave Chappelle",
+      "name": "Franco Escamilla",
+      "displayName": "Franco Escamilla",
       "names": [
-        "Dave Chappelle"
+        "Franco Escamilla"
       ],
-      "show": "Dave Chappelle",
-      "venue": "Toyota Center - TX",
-      "date": "2026-10-28",
-      "eventKey": "davechappelle@toyotacentertx",
-      "imageUrl": "https://s1.ticketm.net/dam/a/e69/931eff58-62a7-4240-adb3-cf67a084ee69_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/e69/931eff58-62a7-4240-adb3-cf67a084ee69_SOURCE",
+      "show": "Franco Escamilla \"El Juicio\"",
+      "venue": "Arena Theatre",
+      "date": "2026-11-07",
+      "eventKey": "francoescamillaeljuicio@arenatheatre",
+      "imageUrl": "https://s1.ticketm.net/dam/e/c65/ca6782b0-72cf-4047-b009-8bc3cd56ec65_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/e/c65/ca6782b0-72cf-4047-b009-8bc3cd56ec65_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Pandji",
-      "displayName": "Pandji",
+      "name": "Desi Banks",
+      "displayName": "Desi Banks",
       "names": [
-        "Pandji"
+        "Desi Banks"
       ],
-      "show": "Pandji",
-      "venue": "Punch Line Houston",
-      "date": "2026-11-01",
-      "eventKey": "pandji@punchlinehouston",
-      "imageUrl": "https://s1.ticketm.net/dam/e/376/848a6ae9-7b69-42f5-a209-010d4c6a0376_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/e/376/848a6ae9-7b69-42f5-a209-010d4c6a0376_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Daniel Sloss",
-      "displayName": "Daniel Sloss",
-      "names": [
-        "Daniel Sloss"
-      ],
-      "show": "Daniel Sloss: BITTER  (Brand New Tour!)",
-      "venue": "Bayou Music Center",
-      "date": "2026-10-27",
-      "eventKey": "danielslossbitterbrandnewtour@bayoumusiccenter",
-      "imageUrl": "https://s1.ticketm.net/dam/a/cfa/e476394e-b2ce-4a11-8230-879e15686cfa_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/cfa/e476394e-b2ce-4a11-8230-879e15686cfa_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Jerry Wayne Longmire",
-      "displayName": "Jerry Wayne Longmire",
-      "names": [
-        "Jerry Wayne Longmire"
-      ],
-      "show": "Comedian Jerry Wayne Longmire Live in Conroe",
-      "venue": "The Riot Comedy Club — Conroe",
-      "date": "2026-10-30",
-      "eventKey": "comedianjerrywaynelongmireliveinconroe@theriotcomedyclubconroe",
-      "imageUrl": "https://www.riotconroe.com/img/shows/IMG-0499-6e83071f-large-thumb.jpg",
-      "displayImage": "https://www.riotconroe.com/img/shows/IMG-0499-6e83071f-large-thumb.jpg",
-      "imageSource": "event"
-    },
-    {
-      "name": "D'Lai",
-      "displayName": "D'Lai",
-      "names": [
-        "D'Lai"
-      ],
-      "show": "D'Lai",
-      "venue": "Punch Line Houston",
-      "date": "2026-10-29",
-      "eventKey": "dlai@punchlinehouston",
-      "imageUrl": "https://s1.ticketm.net/dam/a/592/75683124-585d-42f6-bd4b-01a389372592_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/592/75683124-585d-42f6-bd4b-01a389372592_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Marito Lopez",
-      "displayName": "Marito Lopez",
-      "names": [
-        "Marito Lopez"
-      ],
-      "show": "Marito Lopez",
-      "venue": "Punch Line Houston",
-      "date": "2026-10-28",
-      "eventKey": "maritolopez@punchlinehouston",
-      "imageUrl": "https://s1.ticketm.net/dam/a/fef/845bcb26-dc72-46ef-952e-98acdb418fef_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/fef/845bcb26-dc72-46ef-952e-98acdb418fef_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Steve Byrne",
-      "displayName": "Steve Byrne",
-      "names": [
-        "Steve Byrne"
-      ],
-      "show": "Steve Byrne",
+      "show": "Desi Banks",
       "venue": "Houston Improv",
-      "date": "2026-10-30",
-      "eventKey": "stevebyrne@houstonimprov",
-      "imageUrl": "https://s1.ticketm.net/dam/a/f57/77d81e36-5e13-4e2a-925f-1a0a86088f57_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/f57/77d81e36-5e13-4e2a-925f-1a0a86088f57_SOURCE",
+      "date": "2026-11-06",
+      "eventKey": "desibanks@houstonimprov",
+      "imageUrl": "https://s1.ticketm.net/dam/a/dd0/6249797d-9753-46d0-9f7a-97a273a5bdd0_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/dd0/6249797d-9753-46d0-9f7a-97a273a5bdd0_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Abby Govindan",
-      "displayName": "Abby Govindan",
+      "name": "Adrian Uribe",
+      "displayName": "Adrian Uribe",
       "names": [
-        "Abby Govindan"
+        "Adrian Uribe"
       ],
-      "show": "Abby Govindan",
-      "venue": "The Secret Group",
-      "date": "2026-10-26",
-      "eventKey": "abbygovindan@thesecretgroup",
-      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1088890053%2F3558237521%2F1%2Foriginal.20250805-184307?auto=format%2Ccompress&q=75&sharp=10&s=09c5c2adfa2e9dfe3cdb6f8db73f2b63",
-      "displayImage": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1088890053%2F3558237521%2F1%2Foriginal.20250805-184307?auto=format%2Ccompress&q=75&sharp=10&s=09c5c2adfa2e9dfe3cdb6f8db73f2b63",
+      "show": "Adrian Uribe: 50 y Pico Tour",
+      "venue": "713 Music Hall",
+      "date": "2026-11-08",
+      "eventKey": "adrianuribe50ypicotour@713musichall",
+      "imageUrl": "https://s1.ticketm.net/dam/a/f60/761f97bd-3c39-4555-923a-64c39cde4f60_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "displayImage": "https://s1.ticketm.net/dam/a/f60/761f97bd-3c39-4555-923a-64c39cde4f60_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "imageSource": "event"
+    },
+    {
+      "name": "Nikki Glaser",
+      "displayName": "Nikki Glaser",
+      "names": [
+        "Nikki Glaser"
+      ],
+      "show": "Nikki Glaser",
+      "venue": "Smart Financial Centre at Sugar Land",
+      "date": "2026-11-06",
+      "eventKey": "nikkiglaser@smartfinancialcentreatsugarland",
+      "imageUrl": "https://s1.ticketm.net/dam/a/aa7/8d4eeca4-892c-4aa1-a2d1-f7e9032f6aa7_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/aa7/8d4eeca4-892c-4aa1-a2d1-f7e9032f6aa7_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "David Koechner",
+      "displayName": "David Koechner",
+      "names": [
+        "David Koechner"
+      ],
+      "show": "David Koechner",
+      "venue": "Punch Line Houston",
+      "date": "2026-11-08",
+      "eventKey": "davidkoechner@punchlinehouston",
+      "imageUrl": "https://s1.ticketm.net/dam/a/8df/9d160212-5230-4272-9339-151d817658df_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/8df/9d160212-5230-4272-9339-151d817658df_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "Alonzo Bodden",
+      "displayName": "Alonzo Bodden",
+      "names": [
+        "Alonzo Bodden"
+      ],
+      "show": "Alonzo Bodden",
+      "venue": "Punch Line Houston",
+      "date": "2026-11-05",
+      "eventKey": "alonzobodden@punchlinehouston",
+      "imageUrl": "https://s1.ticketm.net/dam/a/ad7/5d9195ef-4e6d-4757-bb42-48500f56dad7_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/ad7/5d9195ef-4e6d-4757-bb42-48500f56dad7_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "Javi Bailon",
+      "displayName": "Javi Bailon",
+      "names": [
+        "Javi Bailon"
+      ],
+      "show": "Comedian Javi Bailon Headlines The Riot Comedy Club",
+      "venue": "The Riot Comedy Club — Conroe",
+      "date": "2026-11-07",
+      "eventKey": "comedianjavibailonheadlinestheriotcomedyclub@theriotcomedyclubconroe",
+      "imageUrl": "https://www.riotconroe.com/img/events/Screenshot-151-cbec0a76-large-thumb.png",
+      "displayImage": "https://www.riotconroe.com/img/events/Screenshot-151-cbec0a76-large-thumb.png",
+      "imageSource": "event"
+    },
+    {
+      "name": "Tara Cannistraci",
+      "displayName": "Tara Cannistraci",
+      "names": [
+        "Tara Cannistraci"
+      ],
+      "show": "Comedian Tara Cannistraci Headlines The Riot Houston",
+      "venue": "The Riot Comedy Club",
+      "date": "2026-11-08",
+      "eventKey": "comediantaracannistraciheadlinestheriothouston@theriotcomedyclub",
+      "imageUrl": "https://www.theriothtx.com/img/events/IMG-0502-7eb50787-large-thumb.png",
+      "displayImage": "https://www.theriothtx.com/img/events/IMG-0502-7eb50787-large-thumb.png",
       "imageSource": "event"
     }
   ]
