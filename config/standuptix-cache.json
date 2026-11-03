@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-11-03-26-07-00-pm": {
-      "lastmod": "2026-11-02T11:53:00-06:00",
+      "lastmod": "2026-11-03T01:33:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -221,7 +221,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-36": {
-      "lastmod": "2026-11-02T06:15:00-06:00",
+      "lastmod": "2026-11-03T01:24:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -280,13 +280,13 @@
           },
           {
             "@type": "Person",
-            "name": "Will Owens"
+            "name": "Danny Guerrero"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/keegan-tindall-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-11-02T05:20:00-06:00",
+      "lastmod": "2026-11-03T01:25:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -326,12 +326,20 @@
           {
             "@type": "Person",
             "name": "Keegan Tindall"
+          },
+          {
+            "@type": "Person",
+            "name": "Mason James"
+          },
+          {
+            "@type": "Person",
+            "name": "Matt B.C."
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-27": {
-      "lastmod": "2026-09-24T08:17:00-05:00",
+      "lastmod": "2026-11-03T01:25:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -367,11 +375,40 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Onkar Singh"
+          },
+          {
+            "@type": "Person",
+            "name": "Quinn Collins"
+          },
+          {
+            "@type": "Person",
+            "name": "Brian Gendron"
+          },
+          {
+            "@type": "Person",
+            "name": "Keegan Tindall"
+          },
+          {
+            "@type": "Person",
+            "name": "Jeff Joe"
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
+          },
+          {
+            "@type": "Person",
+            "name": "Andy Huggins"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-24": {
-      "lastmod": "2026-09-24T08:23:00-05:00",
+      "lastmod": "2026-11-03T01:25:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -407,11 +444,40 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Keelain Smith"
+          },
+          {
+            "@type": "Person",
+            "name": "Matthew Zane"
+          },
+          {
+            "@type": "Person",
+            "name": "Ricky Murphy"
+          },
+          {
+            "@type": "Person",
+            "name": "George Brito"
+          },
+          {
+            "@type": "Person",
+            "name": "Mackenzie jewell"
+          },
+          {
+            "@type": "Person",
+            "name": "Chelby Morgan"
+          },
+          {
+            "@type": "Person",
+            "name": "JCann"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/keegan-tindall-headlines-the-riot-comedy-club-the-riot-houston": {
-      "lastmod": "2026-10-29T01:10:00-05:00",
+      "lastmod": "2026-11-03T01:27:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -451,12 +517,20 @@
           {
             "@type": "Person",
             "name": "Keegan Tindall"
+          },
+          {
+            "@type": "Person",
+            "name": "Mason James"
+          },
+          {
+            "@type": "Person",
+            "name": "Christian Alexander"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-23": {
-      "lastmod": "2026-10-29T01:10:00-05:00",
+      "lastmod": "2026-11-03T01:27:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -496,12 +570,32 @@
           {
             "@type": "Person",
             "name": "Tony Wellons"
+          },
+          {
+            "@type": "Person",
+            "name": "Andy Huggins"
+          },
+          {
+            "@type": "Person",
+            "name": "Keegan Tindall"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Loden"
+          },
+          {
+            "@type": "Person",
+            "name": "Brian Gendron"
+          },
+          {
+            "@type": "Person",
+            "name": "JCann"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-27": {
-      "lastmod": "2026-10-29T01:10:00-05:00",
+      "lastmod": "2026-11-03T01:27:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -541,12 +635,36 @@
           {
             "@type": "Person",
             "name": "Tony Wellons"
+          },
+          {
+            "@type": "Person",
+            "name": "Mason James"
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
+          },
+          {
+            "@type": "Person",
+            "name": "Ricky Murphy"
+          },
+          {
+            "@type": "Person",
+            "name": "Jordan Cavarrubio"
+          },
+          {
+            "@type": "Person",
+            "name": "Trip Truman"
+          },
+          {
+            "@type": "Person",
+            "name": "Jeff Joe"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-44": {
-      "lastmod": "2026-10-29T01:12:00-05:00",
+      "lastmod": "2026-11-03T10:49:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -586,6 +704,26 @@
           {
             "@type": "Person",
             "name": "Tony Wellons"
+          },
+          {
+            "@type": "Person",
+            "name": "Ku Egenti"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Loden"
+          },
+          {
+            "@type": "Person",
+            "name": "Brian Gendron"
+          },
+          {
+            "@type": "Person",
+            "name": "Malay Vyas"
+          },
+          {
+            "@type": "Person",
+            "name": "Connor Nutt"
           }
         ]
       }
@@ -6177,7 +6315,7 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-karen-morgan-dry-bar-comedy-live-in-conroe": {
-      "lastmod": "2026-07-02T12:49:00-05:00",
+      "lastmod": "2026-11-03T10:54:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -6213,7 +6351,16 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Grady Pruitt"
+          },
+          {
+            "@type": "Person",
+            "name": "Karen Morgan"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/jon-polar-bear-gonzale-live-in-conroe": {
@@ -8122,7 +8269,7 @@
       }
     },
     "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-11-05200000": {
-      "lastmod": "2026-09-21T02:47:00-05:00",
+      "lastmod": "2026-11-03T10:50:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -8158,11 +8305,32 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Javier Negrete"
+          },
+          {
+            "@type": "Person",
+            "name": "Grady Pruitt"
+          },
+          {
+            "@type": "Person",
+            "name": "Ebad Jann"
+          },
+          {
+            "@type": "Person",
+            "name": "Jordan Brady"
+          },
+          {
+            "@type": "Person",
+            "name": "James Holder"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-07210000": {
-      "lastmod": "2026-09-21T02:53:00-05:00",
+      "lastmod": "2026-11-03T01:21:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -8967,7 +9135,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-tara-cannistraci-headlines-the-riot-houston": {
-      "lastmod": "2026-10-29T01:12:00-05:00",
+      "lastmod": "2026-11-03T10:49:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -9007,12 +9175,20 @@
           {
             "@type": "Person",
             "name": "Tara Cannistraci"
+          },
+          {
+            "@type": "Person",
+            "name": "Mason James"
+          },
+          {
+            "@type": "Person",
+            "name": "Luis Dejesus"
           }
         ]
       }
     },
     "https://www.riotconroe.com/events/comedian-javi-bailon-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-10-05T03:47:00-05:00",
+      "lastmod": "2026-11-03T01:21:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -9052,6 +9228,10 @@
           {
             "@type": "Person",
             "name": "Javi Bailon"
+          },
+          {
+            "@type": "Person",
+            "name": "Waldo Rodas"
           }
         ]
       }
@@ -9182,12 +9362,12 @@
       }
     },
     "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-07130000": {
-      "lastmod": "2026-10-29T01:13:00-05:00",
+      "lastmod": "2026-11-03T01:27:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Yolks & Jokes - Saturday Brunch Comedy Show! ",
-        "startDate": "2026-11-07T13:00:00-06:00",
+        "startDate": "2026-11-07T14:00:00-06:00",
         "location": {
           "@type": "Place",
           "name": "The Riot Houston",
@@ -9212,7 +9392,7 @@
         },
         "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-07130000",
         "image": "/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
-        "description": "Hot Breakfast. Cold Drinks. Big Laughs.Start your Saturday sunny side up with Yolks &amp; Jokes, The Riot's weekly comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Friday night or kicking off your Saturday in style, we've got everything you need for the perfect weekend brunch!???? Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!???? Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.???? Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!☕ Fresh Coffee – For those who need a little caffeine with their comedy.???? Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.???? LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.???? The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "description": "Hot Breakfast. Cold Drinks. Big Laughs.Start your Saturday sunny side up with Yolks &amp; Jokes, The Riot&#39;s weekly comedy brunch! We&#39;re serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you&#39;re recovering from Friday night or kicking off your Saturday in style, we&#39;ve got everything you need for the perfect weekend brunch!???? Hot Breakfast Menu &ndash; Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!???? Bloody Mary Menu &ndash; Spice up your morning with our lineup of Bloody Marys.???? Frozen Bellinis &amp; Mimosas &ndash; Because brunch deserves bubbles!☕ Fresh Coffee &ndash; For those who need a little caffeine with their comedy.???? Cocktails &amp; Draft Beer &ndash; Full bar available for whatever your Saturday calls for.???? LIVE STAND-UP COMEDY &ndash; A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that&#39;s anything but ordinary.???? The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Houston",
@@ -9222,17 +9402,37 @@
           {
             "@type": "Person",
             "name": "Tony Wellons"
+          },
+          {
+            "@type": "Person",
+            "name": "Keegan Tindall"
+          },
+          {
+            "@type": "Person",
+            "name": "Mason James"
+          },
+          {
+            "@type": "Person",
+            "name": "Brandon Green"
+          },
+          {
+            "@type": "Person",
+            "name": "Ebad Jann"
+          },
+          {
+            "@type": "Person",
+            "name": "Barry Laminack"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-08130000": {
-      "lastmod": "2026-10-29T01:14:00-05:00",
+      "lastmod": "2026-11-03T01:23:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Yolks & Jokes - Sunday Funday Brunch Comedy Show! ",
-        "startDate": "2026-11-08T13:00:00-06:00",
+        "startDate": "2026-11-08T14:00:00-06:00",
         "location": {
           "@type": "Place",
           "name": "The Riot Houston",
@@ -9257,7 +9457,7 @@
         },
         "url": "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-08130000",
         "image": "/img/shows/Yolks-Jokes-Sunday-Brunch-6ff50f17-large-thumb.png",
-        "description": "Start your Sunday sunny side up with Yolks &amp; Jokes, The Riot's weekly Sunday comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Saturday night or wrapping up your weekend in style, we've got everything you need for the perfect Sunday Funday!Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!Fresh Coffee – For those who need a little caffeine with their comedy.Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "description": "Start your Sunday sunny side up with Yolks &amp; Jokes, The Riot&#39;s weekly Sunday comedy brunch! We&#39;re serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you&#39;re recovering from Saturday night or wrapping up your weekend in style, we&#39;ve got everything you need for the perfect Sunday Funday!Hot Breakfast Menu &ndash; Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!Bloody Mary Menu &ndash; Spice up your morning with our lineup of Bloody Marys.Frozen Bellinis &amp; Mimosas &ndash; Because brunch deserves bubbles!Fresh Coffee &ndash; For those who need a little caffeine with their comedy.Cocktails &amp; Draft Beer &ndash; Full bar available for whatever your Saturday calls for.LIVE STAND-UP COMEDY &ndash; A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that&#39;s anything but ordinary.The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Houston",
@@ -9267,6 +9467,26 @@
           {
             "@type": "Person",
             "name": "Tony Wellons"
+          },
+          {
+            "@type": "Person",
+            "name": "Mason James"
+          },
+          {
+            "@type": "Person",
+            "name": "Christian Alexander"
+          },
+          {
+            "@type": "Person",
+            "name": "Chelby Morgan"
+          },
+          {
+            "@type": "Person",
+            "name": "Rachel McMillen"
+          },
+          {
+            "@type": "Person",
+            "name": "Trip Truman"
           }
         ]
       }
