@@ -2798,6 +2798,18 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-11-04"
+    },
+    "cliff cash - fri. 8pm show": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-05"
+    },
+    "cliff cash - sat. 7pm show": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-05"
     }
   }
 }

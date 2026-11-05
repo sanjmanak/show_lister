@@ -1,7 +1,7 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-11-05T03:46:11.806Z",
-  "total_excluded": 21,
+  "last_updated": "2026-11-05T20:40:39.799Z",
+  "total_excluded": 22,
   "events": [
     {
       "name": "Karaoke every THURSDAY!",
@@ -233,6 +233,17 @@
       "genre": null,
       "ticket_url": "https://www.eventbrite.com/e/dial-up-90s-y2k-dance-party-tickets-2004209537679",
       "reason": "title keyword blocklisted: \"dance party\""
+    },
+    {
+      "name": "Red Dirt Comedy Presents:William Lee Martin \"Seemed Smart At The Time\"",
+      "venue": "Jefferson Theatre",
+      "venue_city": "Beaumont",
+      "date": "2027-01-23",
+      "time": "7:00 PM",
+      "source": "ticketmaster",
+      "genre": "Comedy",
+      "ticket_url": "https://www.ticketmaster.com/red-dirt-comedy-presentswilliam-lee-martin-beaumont-texas-01-23-2027/event/3A006563A80E6A76",
+      "reason": "venue blocklisted: Jefferson Theatre"
     }
   ]
 }

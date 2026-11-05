@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-36": {
-      "lastmod": "2026-11-03T01:24:00-06:00",
+      "lastmod": "2026-11-05T01:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -764,9 +764,9 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-swipe-right-comedy-dating-game-for-singles-couples-12": {
-      "lastmod": "2026-09-24T08:32:00-05:00",
+      "lastmod": "2026-11-05T06:44:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents \"Swipe Right\" Comedy Dating Game for Singles & Couples",
         "startDate": "2026-11-12T21:00:00-06:00",
@@ -788,8 +788,8 @@
           "@type": "Offer",
           "url": "https://www.theriothtx.com/events/the-riot-presents-swipe-right-comedy-dating-game-for-singles-couples-12",
           "priceCurrency": "USD",
-          "price": "10.00",
-          "availability": "InStock",
+          "price": "12.00",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-09T09:26:14-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-swipe-right-comedy-dating-game-for-singles-couples-12",
@@ -813,9 +813,9 @@
       }
     },
     "https://www.theriothtx.com/events/jay-badlani-don-t-tell-comedy-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-10-05T05:12:00-05:00",
+      "lastmod": "2026-11-05T07:00:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Jay Badlani (Don't Tell Comedy) Headlines The Riot Comedy Club",
         "startDate": "2026-11-13T19:00:00-06:00",
@@ -837,8 +837,8 @@
           "@type": "Offer",
           "url": "https://www.theriothtx.com/events/jay-badlani-don-t-tell-comedy-headlines-the-riot-comedy-club",
           "priceCurrency": "USD",
-          "price": "20.00",
-          "availability": "InStock",
+          "price": "25.00",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-13T14:42:04-05:00"
         },
         "url": "https://www.theriothtx.com/events/jay-badlani-don-t-tell-comedy-headlines-the-riot-comedy-club",

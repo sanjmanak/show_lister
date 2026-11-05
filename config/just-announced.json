@@ -1,54 +1,6 @@
 {
- "updated": "2026-11-05T03:48:12.497Z",
+ "updated": "2026-11-05T20:42:53.367Z",
  "announcements": [
-  {
-   "id": "f274c94a73d101a4",
-   "name": "Gabby Bryan",
-   "venue": "Punch Line Houston",
-   "date": "2026-12-19",
-   "time": "7:00 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/a/291/73be4736-73ad-4dd9-ab3f-c9f2c803e291_SOURCE",
-   "ticket_url": "https://www.ticketmaster.com/gabby-bryan-houston-texas-12-19-2026/event/3A006494CCA1F18D",
-   "source": "ticketmaster",
-   "notable": true,
-   "tier": "headliner_room",
-   "notable_reason": "headliner room",
-   "first_seen": "2026-10-10T17:54:36.998Z"
-  },
-  {
-   "id": "3073c646bcb51543",
-   "name": "DeRay Davis",
-   "venue": "Houston Improv",
-   "date": "2026-12-19",
-   "time": "7:00 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/a/332/b7e2b245-267c-402a-a78f-c50f46a63332_SOURCE",
-   "ticket_url": "https://www.ticketweb.com/event/deray-davis-houston-improv-tickets/14950173?REFERRAL_ID=tmfeed",
-   "source": "ticketmaster",
-   "notable": true,
-   "tier": "headliner_room",
-   "notable_reason": "headliner room",
-   "first_seen": "2026-10-10T17:54:36.998Z"
-  },
-  {
-   "id": "fd4a4ca8db56bb66",
-   "name": "Comedian Janet McNamara Headlines The Riot Comedy Club",
-   "venue": "The Riot Comedy Club — Conroe",
-   "date": "2027-01-08",
-   "time": "7:30 PM",
-   "price_min": 20,
-   "price_max": 20,
-   "image_url": "https://www.riotconroe.com/img/events/image-6fcd07a5-large-thumb.jpg",
-   "ticket_url": "https://www.riotconroe.com/events/comedian-janet-mcnamara-headlines-the-riot-comedy-club",
-   "source": "standuptix",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "venue excluded",
-   "first_seen": "2026-10-10T17:54:36.998Z"
-  },
   {
    "id": "69d5e7d3543b6731",
    "name": "MATT PUZHITSKY- DON'T BE DEBIL!",
@@ -2174,7 +2126,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (5 weeks)",
+   "notable_reason": "recurring series (4 weeks)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -2942,7 +2894,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (5 weeks)",
+   "notable_reason": "recurring series (4 weeks)",
    "first_seen": "2026-11-02T22:23:04.050Z"
   },
   {
@@ -3200,6 +3152,54 @@
    "tier": null,
    "notable_reason": "title pattern",
    "first_seen": "2026-11-04T20:29:33.453Z"
+  },
+  {
+   "id": "f325467380c84972",
+   "name": "Don't Tell Comedy: Mont Belvieu (7:00 PM Show)",
+   "venue": "Don't Tell Comedy (Secret Location)",
+   "date": "2026-12-20",
+   "time": "7:00 PM",
+   "price_min": 27,
+   "price_max": 27,
+   "image_url": "https://dont-tell-comedy.mo.cloudinary.net/private/20-_DSC4292_9NZqhqN.webp",
+   "ticket_url": "https://www.donttellcomedy.com/shows/houston-22372/",
+   "source": "donttellcomedy",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "small room",
+   "first_seen": "2026-11-05T20:42:53.367Z"
+  },
+  {
+   "id": "a6342a4ac0fb7633",
+   "name": "Cliff Cash - FRI. 8PM SHOW",
+   "venue": "The Secret Group",
+   "date": "2027-01-22",
+   "time": "8:00 PM",
+   "price_min": 37.67,
+   "price_max": 49.21,
+   "image_url": "",
+   "ticket_url": "https://www.eventbrite.com/e/cliff-cash-fri-8pm-show-tickets-2004449676942",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "small room",
+   "first_seen": "2026-11-05T20:42:53.367Z"
+  },
+  {
+   "id": "37016adbc730185d",
+   "name": "Cliff Cash - SAT. 7PM SHOW",
+   "venue": "The Secret Group",
+   "date": "2027-01-23",
+   "time": "7:00 PM",
+   "price_min": 37.67,
+   "price_max": 49.21,
+   "image_url": "",
+   "ticket_url": "https://www.eventbrite.com/e/cliff-cash-sat-7pm-show-tickets-2004449680954",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "small room",
+   "first_seen": "2026-11-05T20:42:53.367Z"
   }
  ]
 }
