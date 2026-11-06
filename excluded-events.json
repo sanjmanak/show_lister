@@ -1,19 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-11-06T03:42:08.768Z",
+  "last_updated": "2026-11-06T19:58:33.970Z",
   "total_excluded": 22,
   "events": [
-    {
-      "name": "Karaoke every THURSDAY!",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-11-05",
-      "time": "9:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/karaoke-every-thursday-tickets-2002396700434",
-      "reason": "title keyword blocklisted: \"karaoke\""
-    },
     {
       "name": "NOTHING MATTERS Emo | Indie | Punk Dance Party",
       "venue": "The Secret Group",
@@ -233,6 +222,17 @@
       "genre": null,
       "ticket_url": "https://www.eventbrite.com/e/dial-up-90s-y2k-dance-party-tickets-2004209537679",
       "reason": "title keyword blocklisted: \"dance party\""
+    },
+    {
+      "name": "Classic Movie Night At The Jefferson Home Alone 2: Lost In New York",
+      "venue": "Jefferson Theatre",
+      "venue_city": "Beaumont",
+      "date": "2026-12-11",
+      "time": "7:00 PM",
+      "source": "ticketmaster",
+      "genre": "Comedy",
+      "ticket_url": "https://www.ticketmaster.com/classic-movie-night-at-the-jefferson-beaumont-texas-12-11-2026/event/3A006562D49EB1E2",
+      "reason": "venue blocklisted: Jefferson Theatre"
     },
     {
       "name": "Red Dirt Comedy Presents:William Lee Martin \"Seemed Smart At The Time\"",

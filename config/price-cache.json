@@ -1,6 +1,6 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-10-30T18:40:37.723Z",
+  "last_updated": "2026-11-06T20:00:50.446Z",
   "entries": {
     "f3f2fc613ede0656": {
       "price_min": 31.4,
@@ -33,6 +33,14 @@
       "source": "page",
       "url": "https://www.eventbrite.com/e/deric-poston-live-in-houston-tickets-1999114030881",
       "fetched_at": "2026-09-09T01:38:15.994Z"
+    },
+    "eaf93bbe2b4e4f9f": {
+      "price_min": 27,
+      "price_max": 27,
+      "currency": "USD",
+      "source": "page",
+      "url": "https://www.donttellcomedy.com/shows/houston-21883/",
+      "fetched_at": "2026-11-06T20:00:50.446Z"
     }
   }
 }

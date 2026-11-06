@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/keegan-tindall-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-11-03T01:25:00-06:00",
+      "lastmod": "2026-11-06T01:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -54,7 +54,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-27": {
-      "lastmod": "2026-11-04T07:21:00-06:00",
+      "lastmod": "2026-11-06T01:36:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -78,7 +78,7 @@
           "@type": "Offer",
           "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-27",
           "priceCurrency": "USD",
-          "price": "25.00",
+          "price": "0.00",
           "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-08T12:27:04-05:00"
         },
@@ -192,7 +192,7 @@
       }
     },
     "https://www.theriothtx.com/events/keegan-tindall-headlines-the-riot-comedy-club-the-riot-houston": {
-      "lastmod": "2026-11-04T03:09:00-06:00",
+      "lastmod": "2026-11-06T12:14:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -245,7 +245,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-23": {
-      "lastmod": "2026-11-04T03:09:00-06:00",
+      "lastmod": "2026-11-06T01:37:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -269,7 +269,7 @@
           "@type": "Offer",
           "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-23",
           "priceCurrency": "USD",
-          "price": "25.00",
+          "price": "0.00",
           "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-10T14:50:05-05:00"
         },
@@ -574,7 +574,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-28": {
-      "lastmod": "2026-09-22T11:42:00-05:00",
+      "lastmod": "2026-11-06T10:10:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -610,7 +610,32 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Luis Dejesus"
+          },
+          {
+            "@type": "Person",
+            "name": "Emily Peacock"
+          },
+          {
+            "@type": "Person",
+            "name": "Mason James"
+          },
+          {
+            "@type": "Person",
+            "name": "Larry Goodwell"
+          },
+          {
+            "@type": "Person",
+            "name": "Andy Huggins"
+          },
+          {
+            "@type": "Person",
+            "name": "JCann"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-26": {
@@ -659,7 +684,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-37": {
-      "lastmod": "2026-09-24T08:18:00-05:00",
+      "lastmod": "2026-11-06T01:04:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -695,11 +720,24 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Adam Fynke"
+          },
+          {
+            "@type": "Person",
+            "name": "Andy Huggins"
+          },
+          {
+            "@type": "Person",
+            "name": "Chelby Morgan"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-swipe-right-comedy-dating-game-for-singles-couples-12": {
-      "lastmod": "2026-11-05T06:44:00-06:00",
+      "lastmod": "2026-11-06T01:04:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -868,9 +906,9 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-24": {
-      "lastmod": "2026-09-24T08:21:00-05:00",
+      "lastmod": "2026-11-06T10:20:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents Saturday Night Standup Comedy Showcase",
         "startDate": "2026-11-14T21:00:00-06:00",
@@ -892,8 +930,8 @@
           "@type": "Offer",
           "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-24",
           "priceCurrency": "USD",
-          "price": "20.00",
-          "availability": "InStock",
+          "price": "25.00",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-10T14:50:05-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-24",
@@ -904,13 +942,18 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Andy Huggins"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-28": {
-      "lastmod": "2026-09-24T08:22:00-05:00",
+      "lastmod": "2026-11-06T10:20:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Comedy Club Presents Saturday Night Standup Comedy Late Show!",
         "startDate": "2026-11-14T23:00:00-06:00",
@@ -932,8 +975,8 @@
           "@type": "Offer",
           "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-28",
           "priceCurrency": "USD",
-          "price": "15.00",
-          "availability": "InStock",
+          "price": "20.00",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-08T12:40:49-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-28",
@@ -6613,7 +6656,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-jesse-peyton-fox-iheartradio-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-11-04T07:55:00-06:00",
+      "lastmod": "2026-11-06T10:20:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -9182,9 +9225,9 @@
       }
     },
     "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-14130000": {
-      "lastmod": "2026-10-19T07:54:00-05:00",
+      "lastmod": "2026-11-06T10:20:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Yolks & Jokes - Saturday Brunch Comedy Show! ",
         "startDate": "2026-11-14T13:00:00-06:00",
@@ -9207,7 +9250,7 @@
           "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-14130000",
           "priceCurrency": "USD",
           "price": "0.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-10-11T13:53:44-05:00"
         },
         "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-14130000",
@@ -9218,7 +9261,16 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Andy Huggins"
+          },
+          {
+            "@type": "Person",
+            "name": "Adam Fynke"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-15130000": {
