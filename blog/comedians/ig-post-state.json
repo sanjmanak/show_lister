@@ -50,15 +50,6 @@
   "manifest_version": 1792096559593,
   "cleanup_queue": [
     {
-      "slug": "alonzo-bodden-punch-line-houston-2026-11-05",
-      "comedianName": "Alonzo Bodden",
-      "igFeedMediaId": "17939741541123295",
-      "igStoryMediaId": "18106922510292261",
-      "fbFeedPostId": "1448070164084391",
-      "fbStoryPostId": "1792482168677807",
-      "postedAt": "2026-11-02T12:44:34.492Z"
-    },
-    {
       "slug": "keegan-tindall-the-riot-comedy-club-2026-11-06",
       "comedianName": "Keegan Tindall",
       "igFeedMediaId": "18129788137826444",
