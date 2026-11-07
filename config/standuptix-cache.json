@@ -1,129 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/keegan-tindall-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-11-06T01:03:00-06:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Keegan Tindall Headlines The Riot Comedy Club",
-        "startDate": "2026-11-06T19:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/keegan-tindall-headlines-the-riot-comedy-club",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-07-02T14:07:48-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/keegan-tindall-headlines-the-riot-comedy-club",
-        "image": "/img/shows/IMG-0448-7e8d079c-large-thumb.png",
-        "description": "A NY-based comedian, creator, and filmmaker who was recently passed at the world-famous Comedy Cellar and New York Comedy Club and was named a Comic To Watch at 2024s New York Comedy Festival. His playful and hilarious sketches have made him a rising star on social media. He has opened for Eddie Pepitone, Chris Gethard, Matt Braunger, Jorden Jenson, Kal Penn, and Kumail Nanjiani and heard on the podcast Mindful Metal Jacket w/ Joe List, and You Know What Dude w/ Robert KellyAll shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Keegan Tindall"
-          },
-          {
-            "@type": "Person",
-            "name": "Mason James"
-          },
-          {
-            "@type": "Person",
-            "name": "Matt B.C."
-          }
-        ]
-      }
-    },
-    "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-27": {
-      "lastmod": "2026-11-06T01:36:00-06:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Friday Night Standup Comedy Showcase",
-        "startDate": "2026-11-06T21:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-27",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-08-08T12:27:04-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-27",
-        "image": "/img/shows/Showcase-Templates-20-friday-night-9pm-602b1388-large-thumb.png",
-        "description": "Come join us for a hilarious evening of laughter at The Riot presents Friday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you&#39;re a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone. You can expect a diverse lineup with 5-7 comedians from Houston and around the country.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Compliemtary Valet--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google thousands of reviews!Delicious Food &amp; DrinksEnjoy tasty food, draft beer, wine, coffee, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Onkar Singh"
-          },
-          {
-            "@type": "Person",
-            "name": "Quinn Collins"
-          },
-          {
-            "@type": "Person",
-            "name": "Brian Gendron"
-          },
-          {
-            "@type": "Person",
-            "name": "Keegan Tindall"
-          },
-          {
-            "@type": "Person",
-            "name": "Jeff Joe"
-          },
-          {
-            "@type": "Person",
-            "name": "Keisha Hunt"
-          },
-          {
-            "@type": "Person",
-            "name": "Andy Huggins"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-24": {
-      "lastmod": "2026-11-03T01:25:00-06:00",
+      "lastmod": "2026-11-06T05:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -828,7 +706,7 @@
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-28": {
       "lastmod": "2026-09-24T08:17:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents Friday Night Standup Comedy Showcase",
         "startDate": "2026-11-13T21:00:00-06:00",
@@ -850,8 +728,8 @@
           "@type": "Offer",
           "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-28",
           "priceCurrency": "USD",
-          "price": "19.00",
-          "availability": "InStock",
+          "price": "25.00",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-08T12:27:04-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-28",
@@ -6106,59 +5984,10 @@
         ]
       }
     },
-    "https://www.riotconroe.com/events/comedian-karen-morgan-dry-bar-comedy-live-in-conroe": {
-      "lastmod": "2026-11-03T10:54:00-06:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Comedian Karen Morgan (Dry Bar Comedy) Live in Conroe",
-        "startDate": "2026-11-06T19:30:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Conroe",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "219 Simonton Street",
-            "addressLocality": "Conroe",
-            "postalCode": "77301",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.riotconroe.com/events/comedian-karen-morgan-dry-bar-comedy-live-in-conroe",
-          "priceCurrency": "USD",
-          "price": "25.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-04-24T13:11:49-05:00"
-        },
-        "url": "https://www.riotconroe.com/events/comedian-karen-morgan-dry-bar-comedy-live-in-conroe",
-        "image": "/img/events/Karen-Morgan6-c1670a67-large-thumb.png",
-        "description": "",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Conroe",
-          "url": "https://www.riotconroe.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Grady Pruitt"
-          },
-          {
-            "@type": "Person",
-            "name": "Karen Morgan"
-          }
-        ]
-      }
-    },
     "https://www.riotconroe.com/events/jon-polar-bear-gonzale-live-in-conroe": {
       "lastmod": "2026-08-13T02:53:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Jon \"Polar Bear\" Gonzalez Live in Conroe",
         "startDate": "2026-11-13T19:30:00-06:00",
@@ -6181,7 +6010,7 @@
           "url": "https://www.riotconroe.com/events/jon-polar-bear-gonzale-live-in-conroe",
           "priceCurrency": "USD",
           "price": "20.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-13T14:25:55-05:00"
         },
         "url": "https://www.riotconroe.com/events/jon-polar-bear-gonzale-live-in-conroe",
