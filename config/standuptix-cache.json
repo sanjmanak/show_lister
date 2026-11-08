@@ -1,141 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-23": {
-      "lastmod": "2026-11-07T03:03:00-06:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Saturday Night Standup Comedy Showcase",
-        "startDate": "2026-11-07T21:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-23",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-08-10T14:50:05-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-23",
-        "image": "/img/shows/Showcase-Templates-22-31130d5b-large-thumb.png",
-        "description": "Come join us for a hilarious evening of laughter at The Riot presents Saturday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you&#39;re a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google thousands of reviews!Delicious Food &amp; DrinksEnjoy tasty food, draft beer, wine, coffee, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Tony Wellons"
-          },
-          {
-            "@type": "Person",
-            "name": "Andy Huggins"
-          },
-          {
-            "@type": "Person",
-            "name": "Keegan Tindall"
-          },
-          {
-            "@type": "Person",
-            "name": "Will Loden"
-          },
-          {
-            "@type": "Person",
-            "name": "Brian Gendron"
-          },
-          {
-            "@type": "Person",
-            "name": "JCann"
-          }
-        ]
-      }
-    },
-    "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-27": {
-      "lastmod": "2026-11-07T05:03:00-06:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Comedy Club Presents Saturday Night Standup Comedy Late Show!",
-        "startDate": "2026-11-07T23:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-27",
-          "priceCurrency": "USD",
-          "price": "20.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-08-08T12:40:49-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-27",
-        "image": "/img/shows/Showcase-Templates-13-Saturday-11pm-20db1248-large-thumb.png",
-        "description": "Get ready for the most unpredictable and chaotic showtime in the comedy scene! The Late Show offers an intimate late-night experience where the crowd is loose, the vibes are electric, and the laughs are nonstop.This showcase features a mix of headline comedians who sell out venues and local talent who know how to steal the show, making every performance an unforgettable experience.Whether you&rsquo;re looking for a fun night out or just love the thrill of late-night comedy, this show will have you laughing until it&nbsp;&nbsp;Reserve your tickets now and join us for a late-night comedy event like no other!All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Tony Wellons"
-          },
-          {
-            "@type": "Person",
-            "name": "Mason James"
-          },
-          {
-            "@type": "Person",
-            "name": "Keisha Hunt"
-          },
-          {
-            "@type": "Person",
-            "name": "Ricky Murphy"
-          },
-          {
-            "@type": "Person",
-            "name": "Jordan Cavarrubio"
-          },
-          {
-            "@type": "Person",
-            "name": "Trip Truman"
-          },
-          {
-            "@type": "Person",
-            "name": "Jeff Joe"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-44": {
-      "lastmod": "2026-11-03T06:32:00-06:00",
+      "lastmod": "2026-11-08T12:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -7767,67 +7633,6 @@
         "performer": []
       }
     },
-    "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-07210000": {
-      "lastmod": "2026-11-04T05:32:00-06:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
-        "startDate": "2026-11-07T21:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Conroe",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "219 Simonton Street",
-            "addressLocality": "Conroe",
-            "postalCode": "77301",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-07210000",
-          "priceCurrency": "USD",
-          "price": "15.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-09-21T14:53:25-05:00"
-        },
-        "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-07210000",
-        "image": "/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
-        "description": "Don’t miss your chance to catch the best live standup in Downtown Conroe at the city’s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Conroe",
-          "url": "https://www.riotconroe.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Hannah Abney"
-          },
-          {
-            "@type": "Person",
-            "name": "Marlo Ray"
-          },
-          {
-            "@type": "Person",
-            "name": "Natia Simon"
-          },
-          {
-            "@type": "Person",
-            "name": "Will Mosley"
-          },
-          {
-            "@type": "Person",
-            "name": "Nathaniel Amador"
-          }
-        ]
-      }
-    },
     "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-11-12200000": {
       "lastmod": "2026-11-04T05:34:00-06:00",
       "node": {
@@ -7892,7 +7697,7 @@
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-14210000": {
       "lastmod": "2026-09-21T02:53:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
         "startDate": "2026-11-14T21:00:00-06:00",
@@ -7915,7 +7720,7 @@
           "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-14210000",
           "priceCurrency": "USD",
           "price": "15.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-09-21T14:53:25-05:00"
         },
         "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-14210000",
@@ -8615,7 +8420,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-tara-cannistraci-headlines-the-riot-houston": {
-      "lastmod": "2026-11-03T10:49:00-06:00",
+      "lastmod": "2026-11-07T10:31:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -8659,10 +8464,6 @@
           {
             "@type": "Person",
             "name": "Mason James"
-          },
-          {
-            "@type": "Person",
-            "name": "Luis Dejesus"
           }
         ]
       }
