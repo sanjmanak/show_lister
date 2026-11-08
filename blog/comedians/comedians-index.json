@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T23:12:23.863Z",
+  "generated_at": "2026-11-08T18:26:37.684Z",
   "comedians": [
     {
       "slug": "abby-govindan",
@@ -33,7 +33,7 @@
       "legacy_slugs": [
         "alonzo-bodden-punch-line-houston-2026-11-05"
       ],
-      "next_show": "2026-11-05"
+      "next_show": null
     },
     {
       "slug": "anjelah-johnson-reyes",
@@ -111,7 +111,7 @@
       "legacy_slugs": [
         "desi-banks-houston-improv-2026-11-06"
       ],
-      "next_show": "2026-11-06"
+      "next_show": "2026-11-08"
     },
     {
       "slug": "dovi-neuburger",
@@ -201,7 +201,7 @@
       "legacy_slugs": [
         "karen-morgan-the-riot-comedy-club-conroe-2026-11-06"
       ],
-      "next_show": "2026-11-06"
+      "next_show": null
     },
     {
       "slug": "keegan-tindall",
@@ -211,7 +211,7 @@
       ],
       "wpLink": "https://comedyhouston.com/comedians/keegan-tindall/",
       "legacy_slugs": [],
-      "next_show": "2026-11-06"
+      "next_show": null
     },
     {
       "slug": "kev-adams",
@@ -297,7 +297,7 @@
       "legacy_slugs": [
         "nikki-glaser-smart-financial-centre-at-sugar-land-2026-11-06"
       ],
-      "next_show": "2026-11-06"
+      "next_show": null
     },
     {
       "slug": "pauly-shore",
