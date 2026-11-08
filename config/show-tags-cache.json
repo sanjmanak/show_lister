@@ -2854,6 +2854,18 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-11-07"
+    },
+    "jimmy o. yang has no friends tour": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-08"
+    },
+    "nurse georgie carroll": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-08"
     }
   }
 }

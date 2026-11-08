@@ -1,60 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/keegan-tindall-headlines-the-riot-comedy-club-the-riot-houston": {
-      "lastmod": "2026-11-06T12:14:00-06:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Keegan Tindall Headlines The Riot Comedy Club",
-        "startDate": "2026-11-07T19:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/keegan-tindall-headlines-the-riot-comedy-club-the-riot-houston",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-07-02T14:09:55-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/keegan-tindall-headlines-the-riot-comedy-club-the-riot-houston",
-        "image": "/img/shows/IMG-0448-7e8d079c-large-thumb.png",
-        "description": "A NY-based comedian, creator, and filmmaker who was recently passed at the world-famous Comedy Cellar and New York Comedy Club and was named a Comic To Watch at 2024s New York Comedy Festival. His playful and hilarious sketches have made him a rising star on social media. He has opened for Eddie Pepitone, Chris Gethard, Matt Braunger, Jorden Jenson, Kal Penn, and Kumail Nanjiani and heard on the podcast Mindful Metal Jacket w/ Joe List, and You Know What Dude w/ Robert KellyAll shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Keegan Tindall"
-          },
-          {
-            "@type": "Person",
-            "name": "Mason James"
-          },
-          {
-            "@type": "Person",
-            "name": "Christian Alexander"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-23": {
-      "lastmod": "2026-11-06T01:37:00-06:00",
+      "lastmod": "2026-11-07T03:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -119,7 +66,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-27": {
-      "lastmod": "2026-11-04T03:09:00-06:00",
+      "lastmod": "2026-11-07T05:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -5963,7 +5910,7 @@
     "https://www.riotconroe.com/events/comedian-jon-polar-bear-gonzale-live-in-conroe-2026-11-14190000": {
       "lastmod": "2026-08-13T02:53:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Jon \"Polar Bear\" Gonzalez Live in Conroe",
         "startDate": "2026-11-14T19:00:00-06:00",
@@ -5986,7 +5933,7 @@
           "url": "https://www.riotconroe.com/events/comedian-jon-polar-bear-gonzale-live-in-conroe-2026-11-14190000",
           "priceCurrency": "USD",
           "price": "20.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-13T14:35:37-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-jon-polar-bear-gonzale-live-in-conroe-2026-11-14190000",
@@ -8720,55 +8667,6 @@
         ]
       }
     },
-    "https://www.riotconroe.com/events/comedian-javi-bailon-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-11-03T01:21:00-06:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Comedian Javi Bailon Headlines The Riot Comedy Club",
-        "startDate": "2026-11-07T19:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Conroe",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "219 Simonton Street",
-            "addressLocality": "Conroe",
-            "postalCode": "77301",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.riotconroe.com/events/comedian-javi-bailon-headlines-the-riot-comedy-club",
-          "priceCurrency": "USD",
-          "price": "20.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-10-05T15:42:50-05:00"
-        },
-        "url": "https://www.riotconroe.com/events/comedian-javi-bailon-headlines-the-riot-comedy-club",
-        "image": "/img/events/Screenshot-151-cbec0a76-large-thumb.png",
-        "description": "Javi Bailon is a Texas-based stand-up comedian and headliner known for his high-energy performances, fearless crowd work, and brutally honest storytelling. Born in El Paso and raised in Austin, Javi has built a rapidly growing audience, selling out shows across Texas and in cities including Los Angeles, Chicago, Phoenix, Albuquerque, and more.Javi has performed at some of the country&rsquo;s most recognized comedy venues, including The Comedy Store, Laugh Factory, Improv, Zanies, The Riot Comedy Club, and Hyena&rsquo;s Comedy Nightclub.With millions of views across social media and hundreds of thousands of followers, Javi brings his online audience to life on stage with comedy about relationships, family, culture, and everyday chaos&mdash;mixed with unpredictable crowd work that makes every show different.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.---",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Conroe",
-          "url": "https://www.riotconroe.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Javi Bailon"
-          },
-          {
-            "@type": "Person",
-            "name": "Waldo Rodas"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-you-look-like-roast-contest-2026-12-03210000": {
       "lastmod": "2026-10-05T06:00:00-05:00",
       "node": {
@@ -8850,71 +8748,6 @@
           {
             "@type": "Person",
             "name": "Vincent Bryant"
-          }
-        ]
-      }
-    },
-    "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-07130000": {
-      "lastmod": "2026-11-07T08:03:00-06:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Yolks & Jokes - Saturday Brunch Comedy Show! ",
-        "startDate": "2026-11-07T14:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-07130000",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-10-11T13:53:44-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-07130000",
-        "image": "/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
-        "description": "Hot Breakfast. Cold Drinks. Big Laughs.Start your Saturday sunny side up with Yolks &amp; Jokes, The Riot&#39;s weekly comedy brunch! We&#39;re serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you&#39;re recovering from Friday night or kicking off your Saturday in style, we&#39;ve got everything you need for the perfect weekend brunch!???? Hot Breakfast Menu &ndash; Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!???? Bloody Mary Menu &ndash; Spice up your morning with our lineup of Bloody Marys.???? Frozen Bellinis &amp; Mimosas &ndash; Because brunch deserves bubbles!☕ Fresh Coffee &ndash; For those who need a little caffeine with their comedy.???? Cocktails &amp; Draft Beer &ndash; Full bar available for whatever your Saturday calls for.???? LIVE STAND-UP COMEDY &ndash; A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that&#39;s anything but ordinary.???? The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Tony Wellons"
-          },
-          {
-            "@type": "Person",
-            "name": "Keegan Tindall"
-          },
-          {
-            "@type": "Person",
-            "name": "Mason James"
-          },
-          {
-            "@type": "Person",
-            "name": "Brandon Green"
-          },
-          {
-            "@type": "Person",
-            "name": "Ebad Jann"
-          },
-          {
-            "@type": "Person",
-            "name": "Barry Laminack"
           }
         ]
       }
