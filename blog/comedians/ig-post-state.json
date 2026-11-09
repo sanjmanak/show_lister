@@ -14,24 +14,6 @@
   "manifest_version": 1792442612153,
   "cleanup_queue": [
     {
-      "slug": "nikki-glaser-smart-financial-centre-at-sugar-land-2026-11-06",
-      "comedianName": "Nikki Glaser",
-      "igFeedMediaId": "17882099280548310",
-      "igStoryMediaId": "18024659732712868",
-      "fbFeedPostId": "1449463513945056",
-      "fbStoryPostId": "4259202384214040",
-      "postedAt": "2026-11-03T21:56:11.102Z"
-    },
-    {
-      "slug": "karen-morgan-the-riot-comedy-club-conroe-2026-11-06",
-      "comedianName": "Karen Morgan",
-      "igFeedMediaId": "17885812794526343",
-      "igStoryMediaId": "18137107189748102",
-      "fbFeedPostId": "1449626547262086",
-      "fbStoryPostId": "1422152873321681",
-      "postedAt": "2026-11-04T02:30:19.379Z"
-    },
-    {
       "slug": "kev-adams-houston-improv-2026-11-11",
       "comedianName": "Kev Adams",
       "igFeedMediaId": "18184244365428564",
