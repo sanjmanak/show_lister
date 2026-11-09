@@ -1,3 +1,21 @@
 {
-  "items": []
+  "generated_at": "2026-11-09T23:51:46.275Z",
+  "dry_run": false,
+  "items": [
+    {
+      "id": "d4990332d0eb25fa",
+      "name": "Brincos Dieras",
+      "performer_name": "Brincos Dieras",
+      "venue": "Arena Theatre",
+      "date": "2027-02-06",
+      "ticket_url": "https://www.ticketmaster.com/brincos-dieras-houston-texas-02-06-2027/event/3A006557E108776E",
+      "files": {
+        "portrait": "2027-02-06-brincos-dieras-portrait.png",
+        "story": "2027-02-06-brincos-dieras-story.png",
+        "reel": "2027-02-06-brincos-dieras.mp4"
+      },
+      "caption": "Mexico’s “El Payaso Más Irreverente” is back on his U.S. comedy run.\nBrincos Dieras performs at Arena Theatre on February 6, 2027. His adult-oriented clown comedy is known for crowd work and Spanish-language punchlines. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
+      "confidence": 0.94
+    }
+  ]
 }
