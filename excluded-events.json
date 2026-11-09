@@ -1,19 +1,8 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-11-09T03:01:02.543Z",
-  "total_excluded": 19,
+  "last_updated": "2026-11-09T23:00:14.170Z",
+  "total_excluded": 22,
   "events": [
-    {
-      "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
-      "venue": "The Secret Group",
-      "venue_city": "Houston",
-      "date": "2026-11-08",
-      "time": "10:00 PM",
-      "source": "eventbrite",
-      "genre": null,
-      "ticket_url": "https://www.eventbrite.com/e/our-mic-is-your-mic-emo-karaoke-tickets-2002925241314",
-      "reason": "title keyword blocklisted: \"karaoke\""
-    },
     {
       "name": "Karaoke every THURSDAY!",
       "venue": "The Secret Group",
@@ -191,6 +180,28 @@
       "reason": "title keyword blocklisted: \"dance party\""
     },
     {
+      "name": "OUR MIC IS YOUR MIC: EMO KARAOKE",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-12-06",
+      "time": "10:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/our-mic-is-your-mic-emo-karaoke-tickets-2004569495322",
+      "reason": "title keyword blocklisted: \"karaoke\""
+    },
+    {
+      "name": "Karaoke every THURSDAY!",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-12-10",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/karaoke-every-thursday-tickets-2004569669844",
+      "reason": "title keyword blocklisted: \"karaoke\""
+    },
+    {
       "name": "Classic Movie Night At The Jefferson Home Alone 2: Lost In New York",
       "venue": "Jefferson Theatre",
       "venue_city": "Beaumont",
@@ -200,6 +211,28 @@
       "genre": "Comedy",
       "ticket_url": "https://www.ticketmaster.com/classic-movie-night-at-the-jefferson-beaumont-texas-12-11-2026/event/3A006562D49EB1E2",
       "reason": "venue blocklisted: Jefferson Theatre"
+    },
+    {
+      "name": "NOTHING MATTERS Emo | Indie | Punk Dance Party",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-12-11",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/nothing-matters-emo-indie-punk-dance-party-tickets-2004569714979",
+      "reason": "title keyword blocklisted: \"dance party\""
+    },
+    {
+      "name": "DIAL UP: 90s & Y2K Dance Party!",
+      "venue": "The Secret Group",
+      "venue_city": "Houston",
+      "date": "2026-12-12",
+      "time": "9:00 PM",
+      "source": "eventbrite",
+      "genre": null,
+      "ticket_url": "https://www.eventbrite.com/e/dial-up-90s-y2k-dance-party-tickets-2004569780174",
+      "reason": "title keyword blocklisted: \"dance party\""
     },
     {
       "name": "Red Dirt Comedy Presents:William Lee Martin \"Seemed Smart At The Time\"",

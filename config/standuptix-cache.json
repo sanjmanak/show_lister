@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-12": {
-      "lastmod": "2026-08-09T09:59:00-05:00",
+      "lastmod": "2026-11-09T01:55:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -37,11 +37,36 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Luis Dejesus"
+          },
+          {
+            "@type": "Person",
+            "name": "Son Tran"
+          },
+          {
+            "@type": "Person",
+            "name": "Chelby Morgan"
+          },
+          {
+            "@type": "Person",
+            "name": "Matt B.C."
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
+          },
+          {
+            "@type": "Person",
+            "name": "John Meyer"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-monday-night-standup-comedy-open-mic-2026-11-09210000": {
-      "lastmod": "2026-09-24T08:28:00-05:00",
+      "lastmod": "2026-11-09T03:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -86,7 +111,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-11-10210000": {
-      "lastmod": "2026-09-24T08:29:00-05:00",
+      "lastmod": "2026-11-09T11:17:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -125,13 +150,13 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Marz Pimentel"
+            "name": "Ricky Murphy"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-28": {
-      "lastmod": "2026-11-06T10:10:00-06:00",
+      "lastmod": "2026-11-09T01:32:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -241,7 +266,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-37": {
-      "lastmod": "2026-11-06T01:04:00-06:00",
+      "lastmod": "2026-11-09T01:14:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -289,6 +314,18 @@
           {
             "@type": "Person",
             "name": "Chelby Morgan"
+          },
+          {
+            "@type": "Person",
+            "name": "Matt B.C."
+          },
+          {
+            "@type": "Person",
+            "name": "Ocean Glapion"
+          },
+          {
+            "@type": "Person",
+            "name": "Son Tran"
           }
         ]
       }
@@ -342,48 +379,8 @@
         ]
       }
     },
-    "https://www.theriothtx.com/events/jay-badlani-don-t-tell-comedy-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-11-05T07:00:00-06:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Jay Badlani (Don't Tell Comedy) Headlines The Riot Comedy Club",
-        "startDate": "2026-11-13T19:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/jay-badlani-don-t-tell-comedy-headlines-the-riot-comedy-club",
-          "priceCurrency": "USD",
-          "price": "25.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-08-13T14:42:04-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/jay-badlani-don-t-tell-comedy-headlines-the-riot-comedy-club",
-        "image": "/img/events/Jay-Badlani-Headshot-1-1-2-6cce0e2a-large-thumb.jpg",
-        "description": "Jay Badlani is a stand-up comedian, writer, and actor based in Atlanta, GA. Known for his unflinching attitude and sharp, charismatic voice, Jay has built one of the more impressive digital followings in the independent comedy space, with over 200 million views and 200,000+ followers across his platforms through a steady output of live stand-up and online content.A regular at the Laughing Skull Lounge, Jay is a fixture of the Atlanta comedy scene while simultaneously headlining rooms across the country. Recent and ongoing performances have taken him to Mic Drop Comedy in Arizona, The Lincoln Lodge in Chicago, and various Don&#39;t Tell Comedy showcases, alongside a recurring series of his own, Jay Badlani and Friends, which he produces and headlines in Atlanta.A respected festival presence, Jay is an alumnus of the Laughing Skull Comedy Festival, Red Clay Fest, Rogue Island Comedy Festival, and the North Carolina Comedy Festival. He has shared the stage with Jeff Garlin, Clayton English, and Dina Hashem.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": []
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-28": {
-      "lastmod": "2026-09-24T08:17:00-05:00",
+      "lastmod": "2026-11-09T02:09:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -419,11 +416,36 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Christian Alexander"
+          },
+          {
+            "@type": "Person",
+            "name": "Adam Fynke"
+          },
+          {
+            "@type": "Person",
+            "name": "Danny Guerrero"
+          },
+          {
+            "@type": "Person",
+            "name": "Ocean Glapion"
+          },
+          {
+            "@type": "Person",
+            "name": "JCann"
+          },
+          {
+            "@type": "Person",
+            "name": "Tess Vergult"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-32": {
-      "lastmod": "2026-09-24T08:23:00-05:00",
+      "lastmod": "2026-11-09T02:09:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -459,11 +481,40 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Onkar Singh"
+          },
+          {
+            "@type": "Person",
+            "name": "Dylan Kendrick"
+          },
+          {
+            "@type": "Person",
+            "name": "Ruben Medina"
+          },
+          {
+            "@type": "Person",
+            "name": "Jeff Joe"
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
+          },
+          {
+            "@type": "Person",
+            "name": "Jordan Cavarrubio"
+          },
+          {
+            "@type": "Person",
+            "name": "Ocean Glapion"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-24": {
-      "lastmod": "2026-11-06T10:20:00-06:00",
+      "lastmod": "2026-11-09T01:32:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -503,12 +554,32 @@
           {
             "@type": "Person",
             "name": "Andy Huggins"
+          },
+          {
+            "@type": "Person",
+            "name": "Matt B.C."
+          },
+          {
+            "@type": "Person",
+            "name": "Corlis DeLauren"
+          },
+          {
+            "@type": "Person",
+            "name": "Jeff Joe"
+          },
+          {
+            "@type": "Person",
+            "name": "Taija Leftwich"
+          },
+          {
+            "@type": "Person",
+            "name": "Adam Fynke"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-saturday-night-standup-comedy-late-show-28": {
-      "lastmod": "2026-11-06T10:20:00-06:00",
+      "lastmod": "2026-11-09T01:32:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -544,11 +615,40 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Onkar Singh"
+          },
+          {
+            "@type": "Person",
+            "name": "Kris Atkins"
+          },
+          {
+            "@type": "Person",
+            "name": "Dylan Kendrick"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Owens"
+          },
+          {
+            "@type": "Person",
+            "name": "Chelby Morgan"
+          },
+          {
+            "@type": "Person",
+            "name": "A.D. Hodge"
+          },
+          {
+            "@type": "Person",
+            "name": "Mackenzie jewell"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-houstons-funniest-sunday-comedy-showcase-62": {
-      "lastmod": "2026-09-24T08:25:00-05:00",
+      "lastmod": "2026-11-09T12:48:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -584,11 +684,36 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Onkar Singh"
+          },
+          {
+            "@type": "Person",
+            "name": "T. Sean Shannon"
+          },
+          {
+            "@type": "Person",
+            "name": "Marlo Ray"
+          },
+          {
+            "@type": "Person",
+            "name": "James Vogt"
+          },
+          {
+            "@type": "Person",
+            "name": "George Brito"
+          },
+          {
+            "@type": "Person",
+            "name": "Christian Alexander"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-sunday-night-standup-comedy-showcase-28": {
-      "lastmod": "2026-09-24T08:26:00-05:00",
+      "lastmod": "2026-11-09T12:48:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -624,7 +749,32 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Matt B.C."
+          },
+          {
+            "@type": "Person",
+            "name": "Daniel Contreras"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Owens"
+          },
+          {
+            "@type": "Person",
+            "name": "Tony Martinez"
+          },
+          {
+            "@type": "Person",
+            "name": "Brandon Green"
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-13": {
@@ -5664,7 +5814,7 @@
       }
     },
     "https://www.riotconroe.com/events/jon-polar-bear-gonzale-live-in-conroe": {
-      "lastmod": "2026-08-13T02:53:00-05:00",
+      "lastmod": "2026-11-09T01:19:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -5704,12 +5854,20 @@
           {
             "@type": "Person",
             "name": "Jon Gonzalez"
+          },
+          {
+            "@type": "Person",
+            "name": "Javier Negrete"
+          },
+          {
+            "@type": "Person",
+            "name": "Jacinto Maturino"
           }
         ]
       }
     },
     "https://www.riotconroe.com/events/comedian-jon-polar-bear-gonzale-live-in-conroe-2026-11-14190000": {
-      "lastmod": "2026-08-13T02:53:00-05:00",
+      "lastmod": "2026-11-09T01:31:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -5749,6 +5907,14 @@
           {
             "@type": "Person",
             "name": "Jon Gonzalez"
+          },
+          {
+            "@type": "Person",
+            "name": "Daniel Contreras"
+          },
+          {
+            "@type": "Person",
+            "name": "Grady Pruitt"
           }
         ]
       }
@@ -6164,7 +6330,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-jesse-peyton-fox-iheartradio-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-11-06T10:20:00-06:00",
+      "lastmod": "2026-11-09T01:32:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -7630,7 +7796,7 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-14210000": {
-      "lastmod": "2026-09-21T02:53:00-05:00",
+      "lastmod": "2026-11-09T01:31:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -7666,7 +7832,28 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Phillip Garcia"
+          },
+          {
+            "@type": "Person",
+            "name": "Jon Gonzalez"
+          },
+          {
+            "@type": "Person",
+            "name": "Hannah Abney"
+          },
+          {
+            "@type": "Person",
+            "name": "Natia Simon"
+          },
+          {
+            "@type": "Person",
+            "name": "Grady Pruitt"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-11-19200000": {
@@ -8440,7 +8627,7 @@
       }
     },
     "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-14130000": {
-      "lastmod": "2026-11-06T10:20:00-06:00",
+      "lastmod": "2026-11-09T01:32:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -8484,12 +8671,28 @@
           {
             "@type": "Person",
             "name": "Adam Fynke"
+          },
+          {
+            "@type": "Person",
+            "name": "George Brito"
+          },
+          {
+            "@type": "Person",
+            "name": "Victor Ramos"
+          },
+          {
+            "@type": "Person",
+            "name": "Bob Biggerstaff"
+          },
+          {
+            "@type": "Person",
+            "name": "Ocean Glapion"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/yolks-jokes-sunday-funday-brunch-comedy-show-2026-11-15130000": {
-      "lastmod": "2026-10-11T03:30:00-05:00",
+      "lastmod": "2026-11-09T12:48:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -8525,7 +8728,32 @@
           "name": "The Riot Houston",
           "url": "https://www.theriothtx.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Dylan Kendrick"
+          },
+          {
+            "@type": "Person",
+            "name": "Rachel McMillen"
+          },
+          {
+            "@type": "Person",
+            "name": "Cody Greenlee"
+          },
+          {
+            "@type": "Person",
+            "name": "Son Tran"
+          },
+          {
+            "@type": "Person",
+            "name": "Keisha Hunt"
+          },
+          {
+            "@type": "Person",
+            "name": "Brandon Green"
+          }
+        ]
       }
     },
     "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-21130000": {
@@ -9259,7 +9487,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-class-graduation-showcase": {
-      "lastmod": "2026-10-15T10:05:00-05:00",
+      "lastmod": "2026-11-09T11:17:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -9654,6 +9882,156 @@
           {
             "@type": "Person",
             "name": "Chinedu Ogu"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/the-riot-presents-friday-night-early-standup-comedy-showcase-2026-11-13190000": {
+      "lastmod": "2026-11-09T02:09:00-06:00",
+      "node": {
+        "@context": "https://schema.org",
+        "@type": "ComedyEvent",
+        "name": "The Riot Presents Friday Night Early Standup Comedy Showcase ",
+        "startDate": "2026-11-13T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-early-standup-comedy-showcase-2026-11-13190000",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-11-09T13:16:57-06:00"
+        },
+        "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-early-standup-comedy-showcase-2026-11-13190000",
+        "image": "/img/shows/friday-7-8bbb088f-large-thumb.jpg",
+        "description": "Come join us for a hilarious evening of laughter at The Riot presents Friday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you're a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone. You can expect a diverse lineup with 5-7 comedians from Houston and around the country.Find information about the lineup on our instagram page: https://instagram.com/theriothtxAll shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Complimentary Valet--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Luis Dejesus"
+          },
+          {
+            "@type": "Person",
+            "name": "Brandon Green"
+          },
+          {
+            "@type": "Person",
+            "name": "Matt B.C."
+          },
+          {
+            "@type": "Person",
+            "name": "Kris Atkins"
+          },
+          {
+            "@type": "Person",
+            "name": "Jeff Joe"
+          },
+          {
+            "@type": "Person",
+            "name": "Son Tran"
+          }
+        ]
+      }
+    },
+    "https://www.theriothtx.com/events/evan-lopez-comedy-mothership-headlines-the-riot-houston": {
+      "lastmod": "2026-11-09T03:47:00-06:00",
+      "node": {
+        "@context": "https://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Evan Lopez (Comedy Mothership) Headlines The Riot Houston",
+        "startDate": "2027-01-21T21:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/evan-lopez-comedy-mothership-headlines-the-riot-houston",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-11-09T15:44:13-06:00"
+        },
+        "url": "https://www.theriothtx.com/events/evan-lopez-comedy-mothership-headlines-the-riot-houston",
+        "image": "/img/events/Evan-Lopez-a0390971-large-thumb.jpg",
+        "description": "Austin-based comedian Evan Lopez is the guy behind the viral bird-watching videos that have racked up millions of views online. Raised and homeschooled in a small desert town, Evan brings his unusual upbringing, everyday observations, and lighthearted sense of humor to the stage through playful, personal storytelling.Now headlining shows across Texas, Evan regularly performs at Austin comedy clubs including Comedy Mothership, Cap City Comedy Club, and The Creek and the Cave. He was featured on OFTV&#39;s most-watched episode of LMAOF and hosts the podcast SEVEN MINUTES IN EVAN, with a combined audience of nearly 70,000 followers and listeners across platforms.All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.riotconroe.com/events/steven-rogers-don-t-tell-comedy-dry-bar-sirius-xm-headlines-the-riot-comedy-club": {
+      "lastmod": "2026-11-09T01:58:00-06:00",
+      "node": {
+        "@context": "https://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Steven Rogers (Don't Tell Comedy, Dry Bar, Sirius XM) Headlines The Riot Comedy Club",
+        "startDate": "2027-02-20T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Conroe",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "219 Simonton Street",
+            "addressLocality": "Conroe",
+            "postalCode": "77301",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.riotconroe.com/events/steven-rogers-don-t-tell-comedy-dry-bar-sirius-xm-headlines-the-riot-comedy-club",
+          "priceCurrency": "USD",
+          "price": "20.00",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-11-09T13:54:32-06:00"
+        },
+        "url": "https://www.riotconroe.com/events/steven-rogers-don-t-tell-comedy-dry-bar-sirius-xm-headlines-the-riot-comedy-club",
+        "image": "/img/events/img-be3ba299-4b3e-4cca-a08c-91f3eafcaec2-3f1d11cc-large-thumb.png",
+        "description": "Steven Rogers is a stand-up comedian known for his unique blend of wit, vulnerability, and sharp observational humor. His comedic style combines relatable mishaps, personal struggles, and endearing storytelling, often drawing from his own life experiences. Steven&#39;s fresh take on everyday challenges has earned him a devoted following and widespread recognition in the comedy world.In his second stand-up special, Half of We, produced by comedy icons Nate Bargatze and Brian Regan, Steven takes his audience on an unforgettable journey through his personal life. From hilarious mishaps and his struggles with adulthood to stories about his engagement, Steven&rsquo;s storytelling is both humorous and heartwarming, culminating in a shocking twist that will leave audiences laughing and reflecting long after the special ends. Steven has opened for some of the biggest names in comedy, including Brian Regan, Joe List, Tom Papa, Nate Bargatze, and Taylor Tomlinson. His clever, rapid-fire material has earned him appearances on major TV shows such as The Late Show with Stephen Colbert, The Late Late Show with James Corden, Dry Bar Comedy, and Don&rsquo;t Tell Comedy. His debut album/special, Before He Was Super, quickly hit #1 on iTunes and was named one of Paste&rsquo;s Top 12 Best Comedy Albums of 2022 and one of Vanyaland&rsquo;s Favorite Comedy Releases of 2022. Steven can regularly be heard on SiriusXM.---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Conroe",
+          "url": "https://www.riotconroe.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Steven Rogers"
           }
         ]
       }
