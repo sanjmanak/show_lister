@@ -1,117 +1,117 @@
 {
-  "generated_at": "2026-11-02T23:06:21.439Z",
-  "week_range": "November 2 – November 8, 2026",
+  "generated_at": "2026-11-09T23:46:31.414Z",
+  "week_range": "November 9 – November 15, 2026",
   "comedians": [
     {
-      "name": "Franco Escamilla",
-      "displayName": "Franco Escamilla",
+      "name": "Leanne Morgan",
+      "displayName": "Leanne Morgan",
       "names": [
-        "Franco Escamilla"
+        "Leanne Morgan"
       ],
-      "show": "Franco Escamilla \"El Juicio\"",
-      "venue": "Arena Theatre",
-      "date": "2026-11-07",
-      "eventKey": "francoescamillaeljuicio@arenatheatre",
-      "imageUrl": "https://s1.ticketm.net/dam/e/c65/ca6782b0-72cf-4047-b009-8bc3cd56ec65_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/e/c65/ca6782b0-72cf-4047-b009-8bc3cd56ec65_SOURCE",
+      "show": "Leanne Morgan",
+      "venue": "Toyota Center - TX",
+      "date": "2026-11-14",
+      "eventKey": "leannemorgan@toyotacentertx",
+      "imageUrl": "https://s1.ticketm.net/dam/a/da9/e244b269-a579-4c18-9104-2f8f21c13da9_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "displayImage": "https://s1.ticketm.net/dam/a/da9/e244b269-a579-4c18-9104-2f8f21c13da9_TABLET_LANDSCAPE_LARGE_16_9.jpg",
       "imageSource": "event"
     },
     {
-      "name": "Desi Banks",
-      "displayName": "Desi Banks",
+      "name": "Nurse John",
+      "displayName": "Nurse John",
       "names": [
-        "Desi Banks"
+        "Nurse John"
       ],
-      "show": "Desi Banks",
-      "venue": "Houston Improv",
-      "date": "2026-11-06",
-      "eventKey": "desibanks@houstonimprov",
-      "imageUrl": "https://s1.ticketm.net/dam/a/dd0/6249797d-9753-46d0-9f7a-97a273a5bdd0_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/dd0/6249797d-9753-46d0-9f7a-97a273a5bdd0_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Adrian Uribe",
-      "displayName": "Adrian Uribe",
-      "names": [
-        "Adrian Uribe"
-      ],
-      "show": "Adrian Uribe: 50 y Pico Tour",
-      "venue": "713 Music Hall",
-      "date": "2026-11-08",
-      "eventKey": "adrianuribe50ypicotour@713musichall",
-      "imageUrl": "https://s1.ticketm.net/dam/a/f60/761f97bd-3c39-4555-923a-64c39cde4f60_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "displayImage": "https://s1.ticketm.net/dam/a/f60/761f97bd-3c39-4555-923a-64c39cde4f60_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "imageSource": "event"
-    },
-    {
-      "name": "Nikki Glaser",
-      "displayName": "Nikki Glaser",
-      "names": [
-        "Nikki Glaser"
-      ],
-      "show": "Nikki Glaser",
+      "show": "Nurse John",
       "venue": "Smart Financial Centre at Sugar Land",
-      "date": "2026-11-06",
-      "eventKey": "nikkiglaser@smartfinancialcentreatsugarland",
-      "imageUrl": "https://s1.ticketm.net/dam/a/aa7/8d4eeca4-892c-4aa1-a2d1-f7e9032f6aa7_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/aa7/8d4eeca4-892c-4aa1-a2d1-f7e9032f6aa7_SOURCE",
+      "date": "2026-11-13",
+      "eventKey": "nursejohn@smartfinancialcentreatsugarland",
+      "imageUrl": "https://s1.ticketm.net/dam/a/c5b/7ab28ae8-0253-4f76-ac58-eb4fbab24c5b_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/c5b/7ab28ae8-0253-4f76-ac58-eb4fbab24c5b_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "David Koechner",
-      "displayName": "David Koechner",
+      "name": "Kev Adams",
+      "displayName": "Kev Adams",
       "names": [
-        "David Koechner"
+        "Kev Adams"
       ],
-      "show": "David Koechner",
+      "show": "Kev Adams",
+      "venue": "Houston Improv",
+      "date": "2026-11-11",
+      "eventKey": "kevadams@houstonimprov",
+      "imageUrl": "https://s1.ticketm.net/dam/a/892/5c0db8b1-ce91-4685-af42-af3dc4610892_1306001_EVENT_DETAIL_PAGE_16_9.jpg",
+      "displayImage": "https://s1.ticketm.net/dam/a/892/5c0db8b1-ce91-4685-af42-af3dc4610892_1306001_EVENT_DETAIL_PAGE_16_9.jpg",
+      "imageSource": "event"
+    },
+    {
+      "name": "Ellen Skrmetti",
+      "displayName": "Ellen Skrmetti",
+      "names": [
+        "Ellen Skrmetti"
+      ],
+      "show": "Ellen Skrmetti",
+      "venue": "Houston Improv",
+      "date": "2026-11-12",
+      "eventKey": "ellenskrmetti@houstonimprov",
+      "imageUrl": "https://s1.ticketm.net/dam/a/59a/054c5f8c-fe42-4283-865f-f63a2333559a_EVENT_DETAIL_PAGE_16_9.jpg",
+      "displayImage": "https://s1.ticketm.net/dam/a/59a/054c5f8c-fe42-4283-865f-f63a2333559a_EVENT_DETAIL_PAGE_16_9.jpg",
+      "imageSource": "event"
+    },
+    {
+      "name": "Corey Holcomb",
+      "displayName": "Corey Holcomb",
+      "names": [
+        "Corey Holcomb"
+      ],
+      "show": "Corey Holcomb",
+      "venue": "Houston Improv",
+      "date": "2026-11-13",
+      "eventKey": "coreyholcomb@houstonimprov",
+      "imageUrl": "https://s1.ticketm.net/dam/a/168/ad8a409d-f583-4333-896e-c605ce02c168_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/168/ad8a409d-f583-4333-896e-c605ce02c168_SOURCE",
+      "imageSource": "event"
+    },
+    {
+      "name": "Clint Coley",
+      "displayName": "Clint Coley",
+      "names": [
+        "Clint Coley"
+      ],
+      "show": "Clint Coley",
       "venue": "Punch Line Houston",
-      "date": "2026-11-08",
-      "eventKey": "davidkoechner@punchlinehouston",
-      "imageUrl": "https://s1.ticketm.net/dam/a/8df/9d160212-5230-4272-9339-151d817658df_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/8df/9d160212-5230-4272-9339-151d817658df_SOURCE",
+      "date": "2026-11-12",
+      "eventKey": "clintcoley@punchlinehouston",
+      "imageUrl": "https://s1.ticketm.net/dam/a/84d/6f42b922-5aa3-4667-bee0-ae827060884d_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/84d/6f42b922-5aa3-4667-bee0-ae827060884d_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Alonzo Bodden",
-      "displayName": "Alonzo Bodden",
+      "name": "Christopher Titus",
+      "displayName": "Christopher Titus",
       "names": [
-        "Alonzo Bodden"
+        "Christopher Titus"
       ],
-      "show": "Alonzo Bodden",
+      "show": "Christopher Titus: Doomed To Repeat",
       "venue": "Punch Line Houston",
-      "date": "2026-11-05",
-      "eventKey": "alonzobodden@punchlinehouston",
-      "imageUrl": "https://s1.ticketm.net/dam/a/ad7/5d9195ef-4e6d-4757-bb42-48500f56dad7_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/ad7/5d9195ef-4e6d-4757-bb42-48500f56dad7_SOURCE",
+      "date": "2026-11-13",
+      "eventKey": "christophertitusdoomedtorepeat@punchlinehouston",
+      "imageUrl": "https://s1.ticketm.net/dam/a/c08/441cbaa3-6959-425b-ad68-f249f10d9c08_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/c08/441cbaa3-6959-425b-ad68-f249f10d9c08_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Javi Bailon",
-      "displayName": "Javi Bailon",
+      "name": "Chrissy Chlapecka",
+      "displayName": "Chrissy Chlapecka",
       "names": [
-        "Javi Bailon"
+        "Chrissy Chlapecka"
       ],
-      "show": "Comedian Javi Bailon Headlines The Riot Comedy Club",
-      "venue": "The Riot Comedy Club — Conroe",
-      "date": "2026-11-07",
-      "eventKey": "comedianjavibailonheadlinestheriotcomedyclub@theriotcomedyclubconroe",
-      "imageUrl": "https://www.riotconroe.com/img/events/Screenshot-151-cbec0a76-large-thumb.png",
-      "displayImage": "https://www.riotconroe.com/img/events/Screenshot-151-cbec0a76-large-thumb.png",
-      "imageSource": "event"
-    },
-    {
-      "name": "Tara Cannistraci",
-      "displayName": "Tara Cannistraci",
-      "names": [
-        "Tara Cannistraci"
-      ],
-      "show": "Comedian Tara Cannistraci Headlines The Riot Houston",
-      "venue": "The Riot Comedy Club",
-      "date": "2026-11-08",
-      "eventKey": "comediantaracannistraciheadlinestheriothouston@theriotcomedyclub",
-      "imageUrl": "https://www.theriothtx.com/img/events/IMG-0502-7eb50787-large-thumb.png",
-      "displayImage": "https://www.theriothtx.com/img/events/IMG-0502-7eb50787-large-thumb.png",
+      "show": "Chrissy Chlapecka",
+      "venue": "The Secret Group",
+      "date": "2026-11-12",
+      "eventKey": "chrissychlapecka@thesecretgroup",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192238708%2F3558237521%2F1%2Foriginal.20260830-213118?auto=format%2Ccompress&q=75&sharp=10&s=ccbac3fc9b16b9293b6269d13e650bf8",
+      "displayImage": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192238708%2F3558237521%2F1%2Foriginal.20260830-213118?auto=format%2Ccompress&q=75&sharp=10&s=ccbac3fc9b16b9293b6269d13e650bf8",
       "imageSource": "event"
     }
   ]
