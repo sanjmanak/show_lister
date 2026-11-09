@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-11-08T18:26:37.683Z",
+  "generated_at": "2026-11-09T23:54:28.869Z",
   "source_manifests": [
     "manifest-2026-11-09.json",
     "manifest-2026-11-16.json",
-    "manifest-2026-11-23.json"
+    "manifest-2026-11-23.json",
+    "manifest-2026-11-30.json"
   ],
   "posts": [
     {
@@ -95,6 +96,41 @@
       "comedianName": "Ron Taylor",
       "slug": "ron-taylor-punch-line-houston-2026-11-27",
       "wpLink": "https://comedyhouston.com/comedians/ron-taylor/",
+      "venue": "Punch Line Houston"
+    },
+    {
+      "date": "2026-12-02",
+      "comedianName": "Boyacoman",
+      "slug": "boyacoman-houston-improv-2026-12-02",
+      "wpLink": "https://comedyhouston.com/comedians/boyacoman/",
+      "venue": "Houston Improv"
+    },
+    {
+      "date": "2026-12-02",
+      "comedianName": "Keropi Sánchez",
+      "slug": "keropi-snchez-punch-line-houston-2026-12-02",
+      "wpLink": "https://comedyhouston.com/comedians/keropi-sanchez/",
+      "venue": "Punch Line Houston"
+    },
+    {
+      "date": "2026-12-03",
+      "comedianName": "Dale Elliott Jr.",
+      "slug": "dale-elliott-jr-houston-improv-2026-12-03",
+      "wpLink": "https://comedyhouston.com/comedians/dale-elliott-jr/",
+      "venue": "Houston Improv"
+    },
+    {
+      "date": "2026-12-03",
+      "comedianName": "Raambo2funny",
+      "slug": "raambo2funny-the-secret-group-2026-12-03",
+      "wpLink": "https://comedyhouston.com/comedians/raambo2funny/",
+      "venue": "The Secret Group"
+    },
+    {
+      "date": "2026-12-04",
+      "comedianName": "Michael Yo",
+      "slug": "michael-yo-punch-line-houston-2026-12-04",
+      "wpLink": "https://comedyhouston.com/comedians/michael-yo/",
       "venue": "Punch Line Houston"
     }
   ]

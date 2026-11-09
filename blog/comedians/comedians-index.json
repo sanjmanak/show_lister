@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T18:26:37.684Z",
+  "generated_at": "2026-11-09T23:54:28.871Z",
   "comedians": [
     {
       "slug": "abby-govindan",
@@ -48,6 +48,16 @@
       "next_show": null
     },
     {
+      "slug": "boyacoman",
+      "name": "Boyacoman",
+      "match": [
+        "boyacoman"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/boyacoman/",
+      "legacy_slugs": [],
+      "next_show": "2026-12-02"
+    },
+    {
       "slug": "chris-fleming",
       "name": "Chris Fleming",
       "match": [
@@ -76,6 +86,16 @@
       "wpLink": "https://comedyhouston.com/comedians/clint-coley/",
       "legacy_slugs": [],
       "next_show": "2026-11-12"
+    },
+    {
+      "slug": "dale-elliott-jr",
+      "name": "Dale Elliott Jr.",
+      "match": [
+        "dale elliott jr"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/dale-elliott-jr/",
+      "legacy_slugs": [],
+      "next_show": "2026-12-03"
     },
     {
       "slug": "daniel-sloss",
@@ -111,7 +131,7 @@
       "legacy_slugs": [
         "desi-banks-houston-improv-2026-11-06"
       ],
-      "next_show": "2026-11-08"
+      "next_show": null
     },
     {
       "slug": "dovi-neuburger",
@@ -214,6 +234,16 @@
       "next_show": null
     },
     {
+      "slug": "keropi-sanchez",
+      "name": "Keropi Sánchez",
+      "match": [
+        "keropi sanchez"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/keropi-sanchez/",
+      "legacy_slugs": [],
+      "next_show": "2026-12-02"
+    },
+    {
       "slug": "kev-adams",
       "name": "Kev Adams",
       "match": [
@@ -276,6 +306,16 @@
       "next_show": "2026-11-20"
     },
     {
+      "slug": "michael-yo",
+      "name": "Michael Yo",
+      "match": [
+        "michael yo"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/michael-yo/",
+      "legacy_slugs": [],
+      "next_show": "2026-12-04"
+    },
+    {
       "slug": "mo-amer",
       "name": "Mo Amer",
       "match": [
@@ -318,6 +358,16 @@
       "wpLink": "https://comedyhouston.com/comedians/phil-hanley/",
       "legacy_slugs": [],
       "next_show": "2026-11-19"
+    },
+    {
+      "slug": "raambo2funny",
+      "name": "Raambo2funny",
+      "match": [
+        "raambo2funny"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/raambo2funny/",
+      "legacy_slugs": [],
+      "next_show": "2026-12-03"
     },
     {
       "slug": "reem-edan",

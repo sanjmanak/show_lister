@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-08T18:26:37.603Z",
+  "updated_at": "2026-11-09T23:54:28.866Z",
   "comedians": [
     {
       "slug": "abby-govindan",
@@ -170,6 +170,40 @@
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/anjelah-johnson-reyes-houston.jpg"
     },
     {
+      "slug": "boyacoman",
+      "name": "Boyacoman",
+      "match": [
+        "boyacoman"
+      ],
+      "status": "live",
+      "created_at": "2026-11-09T23:49:36.813Z",
+      "profile_written_at": "2026-11-09T23:50:37.200Z",
+      "profile_html": "<p>In November 2026, Canal Trece reported that Bojacá, Cundinamarca, included Boyacoman in its anniversary programming, alongside music, culture and tradition.</p>\n\n<p>Boyacoman entered <a href=\"https://www.caracoltv.com/festival-internacional-del-humor/boyacoman-colombia\">Sábados Felices</a> through the Cuentachistes competition on December 8, 2001. He took first place and became associated with the program. By his account, the name came from an on-air copla: “que se le achique la nariz a Hernán (Orjuela), se despide el super Boyacomán”.</p>\n\n<p>His comedy runs on anecdotes and improvisation. The 2019 show <a href=\"https://www.caracoltv.com/actualidad/boyacoman-estrena-nuevo-espectaculo-de-comedia-sobre-su-infancia?_amp=true\">Los años maravillosos</a> drew on childhood memories; the official <a href=\"https://improv.com/comic/boyacoman/\">Improv listing</a> describes his live set as stand-up rooted in anecdotes and Colombian humor.</p>\n\n<p>Television has kept him busy. He participated in Caracol Televisión’s 2012 reality program <em>La Granja</em>. In 2026, Caracol identified him as part of the on-air team on <em>Día a Día</em>. That year, he appeared with Diana Álvarez on <a href=\"https://www.caracoltv.com/la-vuelta-al-mundial-en-80-risas/diana-alvarez-y-boyacoman-quedan-colgados-en-el-aire-mientras-intentan-ser-trapecistas-pr30?_amp=true\">La Vuelta al Mundial en 80 Risas</a>, including a New York trapeze-training segment. He also appeared on <em>Echemos Caja</em> around 2024.</p>",
+      "research_json": "{\n  \"full_name\": \"Frey Eduardo Quintero Suárez\",\n  \"hometown\": \"Jenesano, Boyacá, Colombia\",\n  \"career_start_year\": 2001,\n  \"specials\": [],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Echemos Caja\",\n      \"year_approx\": 2024\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Sábados Felices\",\n      \"context\": \"He first competed in the program's Cuentachistes segment on December 8, 2001, winning first place; he subsequently became associated with the program.\"\n    },\n    {\n      \"show\": \"La Granja\",\n      \"context\": \"Participant in Caracol Televisión's 2012 reality program.\"\n    },\n    {\n      \"show\": \"Día a Día\",\n      \"context\": \"Caracol Televisión identified him as part of the morning show's on-air team in 2026.\"\n    },\n    {\n      \"show\": \"La Vuelta al Mundial en 80 Risas\",\n      \"context\": \"Appeared with Diana Álvarez in the 2026 World Cup-themed edition, including a New York trapeze-training segment.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Authentic and irreverent.\",\n    \"structure\": \"Anecdotal storytelling and improvisation.\",\n    \"recurring_themes\": [\n      \"Everyday situations\",\n      \"Family life\",\n      \"Colombian and Latin culture\",\n      \"Childhood memories\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"The Improv's official event page describes him as one of Colombia's recognized and beloved comedians and promotes his live set as stand-up built around anecdotes and Colombian humor.\",\n  \"recent_activity_2025_2026\": \"In 2026, he appeared on Caracol Televisión's La Vuelta al Mundial en 80 Risas and remained part of Día a Día. As of November 2026, official venue listings advertised Boyacoman en Español dates at Chicago Improv (December 3), Denver Improv (December 4), San Jose Improv (December 6), and Ontario Improv (December 9).\",\n  \"recent_hook\": {\n    \"summary\": \"Canal Trece reported on November 7, 2026, that Boyacoman is scheduled to perform in Bojacá, Cundinamarca, on November 14 as part of the municipality's 489th-anniversary festivities.\",\n    \"quote\": \"\",\n    \"source_publication\": \"Canal Trece\",\n    \"source_url\": \"https://canaltrece.com.co/noticias/bojaca-celebra-489-anos-con-diez-dias-de-musica-cultura-y-tradicion/\",\n    \"date\": \"2026-11-07\"\n  },\n  \"instagram_handle\": \"@boyacoman\",\n  \"notable_bits_or_quotes\": [\n    \"“que se le achique la nariz a Hernán (Orjuela), se despide el super Boyacomán”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"Claims that Boyacoman has a feature-film credit; a 2021 profile mentioned that he had a film but did not provide a title, role, release information, or a primary source that could be independently verified.\",\n    \"Claims that he released a rock song with friends; a 2021 profile mentioned such a project without a title, release page, recording credit, or independently verifiable source.\",\n    \"Any claim that Los años maravillosos was a filmed or streaming comedy special. It was verified as a live theater show in 2019, but no official recording or platform release was located.\"\n  ],\n  \"background_story\": \"Quintero was born in Jenesano, Boyacá, on March 13, 1981. He studied advertising and marketing and also attempted nursing studies. He entered Sábados Felices through its Cuentachistes competition in 2001 and won first place. According to his account, he adopted the Boyacoman name after using “super Boyacomán” in an on-air copla. In 2019 he presented the live show Los años maravillosos at Teatro Vive Astor Plaza, drawing on memories of his childhood.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Caracol TV biography\",\n      \"url\": \"https://www.caracoltv.com/festival-internacional-del-humor/boyacoman-colombia\"\n    },\n    {\n      \"label\": \"Caracol TV: Los años maravillosos\",\n      \"url\": \"https://www.caracoltv.com/actualidad/boyacoman-estrena-nuevo-espectaculo-de-comedia-sobre-su-infancia?_amp=true\"\n    },\n    {\n      \"label\": \"Infobae profile\",\n      \"url\": \"https://www.infobae.com/america/colombia/2021/03/31/boyacoman-de-fanatico-televidente-a-estrella-de-sabados-felices/\"\n    },\n    {\n      \"label\": \"Caracol TV: La Vuelta al Mundial en 80 Risas\",\n      \"url\": \"https://www.caracoltv.com/la-vuelta-al-mundial-en-80-risas/diana-alvarez-y-boyacoman-quedan-colgados-en-el-aire-mientras-intentan-ser-trapecistas-pr30?_amp=true\"\n    },\n    {\n      \"label\": \"Improv event listing\",\n      \"url\": \"https://improv.com/comic/boyacoman/\"\n    },\n    {\n      \"label\": \"Canal Trece: Bojacá anniversary programming\",\n      \"url\": \"https://canaltrece.com.co/noticias/bojaca-celebra-489-anos-con-diez-dias-de-musica-cultura-y-tradicion/\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.instagram.com/boyacoman/"
+      ],
+      "instagramHandle": "@boyacoman",
+      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "wpPageId": 2317,
+      "wpLink": "https://comedyhouston.com/comedians/boyacoman/",
+      "wpImageMediaId": 2316,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-12-02",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "Boyacoman",
+          "ticket_url": "https://www.ticketweb.com/event/boyacoman-houston-improv-tickets/15044913?REFERRAL_ID=tmfeed",
+          "event_id": "1d1845722f6d3f4a",
+          "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/boyacoman-houston.jpg"
+    },
+    {
       "slug": "chris-fleming",
       "name": "Chris Fleming",
       "match": [
@@ -272,6 +306,43 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/clint-coley-houston.jpg"
+    },
+    {
+      "slug": "dale-elliott-jr",
+      "name": "Dale Elliott Jr.",
+      "match": [
+        "dale elliott jr"
+      ],
+      "status": "live",
+      "created_at": "2026-11-09T23:50:46.611Z",
+      "profile_written_at": "2026-11-09T23:51:40.917Z",
+      "profile_html": "<p>In October 2026, Dale Elliott Jr. received a Boston City Council resolution and a citation from the Massachusetts House of Representatives. He told the <a href=\"https://beta2.jamaica-gleaner.com/index.php/article/entertainment/20261031/dale-elliott-jr-grateful-us-honours\">Jamaica Gleaner</a> that his planned <em>Son of an Immigrant</em> special was “the one thing in my life that I’m most proud of.”</p>\n\n<p>Elliott earned a degree in international relations, with a minor in management studies, from the University of the West Indies, Mona, in 2019. He then moved to the United States to live with his father. During the COVID-19 pandemic, comedy became his main source of income.</p>\n\n<p>In 2025, he took <em>Son of an Immigrant</em> through Europe and the United Kingdom. In 2026, he performed at the Netflix Is a Joke Festival in Pasadena.</p>\n\n<p>His television appearances include <em>Sundial</em>, <em>Mo Gilligan: Beginning, Middle &amp; End</em>, and <em>The Comedy Couch with Yakov Smirnoff</em>.</p>",
+      "research_json": "{\n  \"full_name\": \"Dale Elliott Jr.\",\n  \"hometown\": \"Kingston, Jamaica\",\n  \"career_start_year\": null,\n  \"specials\": [\n    {\n      \"title\": \"Problem Child: Bad Pickney\",\n      \"platform\": \"YouTube (Dale Elliott TV)\",\n      \"year\": 2023\n    },\n    {\n      \"title\": \"Live From London\",\n      \"platform\": \"YouTube (Dale Elliott TV)\",\n      \"year\": 2024\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Sundial\",\n      \"year_approx\": 2023\n    },\n    {\n      \"show\": \"Mo Gilligan: Beginning, Middle & End\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"The Comedy Couch with Yakov Smirnoff\",\n      \"year_approx\": 2025\n    }\n  ],\n  \"tv_appearances\": [],\n  \"comedy_style\": {\n    \"tone\": \"Autobiographical and observational, drawing on Jamaican humor and immigrant life.\",\n    \"structure\": \"Story-based stand-up built from personal experiences, cultural contrasts, family stories, and detailed observations.\",\n    \"recurring_themes\": [\n      \"Jamaican upbringing\",\n      \"Immigrant experiences in the United States\",\n      \"Jamaican Patois and language\",\n      \"Family\",\n      \"Culture shock\",\n      \"Life in Jamaica versus the United States\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"His official website states that he has headlined sold-out tours in the United States, United Kingdom, and Canada.\",\n  \"recent_activity_2025_2026\": \"In 2025, he toured Son of an Immigrant in Europe and the United Kingdom. In 2026, he performed at the Netflix Is a Joke Festival in Pasadena, California, and reported plans to extend the Funny How Life Works tour into 2027. On October 25, 2026, he received a Boston City Council resolution and a citation from the Massachusetts House of Representatives while performing in Boston.\",\n  \"recent_hook\": {\n    \"summary\": \"In an October 31, 2026 Jamaica Gleaner interview about receiving Boston and Massachusetts honors, Elliott said his official comedy special, Son of an Immigrant, was planned for release during the 2026 Christmas season.\",\n    \"quote\": \"This comedy special is the one thing in my life that I’m most proud of, and I can’t wait for everyone to see it!\",\n    \"source_publication\": \"Jamaica Gleaner\",\n    \"source_url\": \"https://beta2.jamaica-gleaner.com/index.php/article/entertainment/20261031/dale-elliott-jr-grateful-us-honours\",\n    \"date\": \"2026-10-31\"\n  },\n  \"instagram_handle\": \"@daleelliottjr\",\n  \"notable_bits_or_quotes\": [],\n  \"unverifiable_claims_to_avoid\": [\n    \"That he has verified television acting credits beyond the feature film Sprinter; no specific television credit was independently verified.\",\n    \"That Sprinter was Dale Elliott Jr.'s acting debut; this appeared in promotional coverage but was not independently established from a complete filmography.\",\n    \"That he was a college track star; this appeared in a recent interview summary but was not independently verified.\",\n    \"Specific social-media reach claims such as 40 million monthly views; these are stated on his official site but were not independently audited.\",\n    \"That he has joined or signed with Live Nation; promotional coverage referenced Live Nation in connection with touring, but a direct deal announcement was not independently verified.\"\n  ],\n  \"background_story\": \"Elliott is Jamaican-born and from Kingston. In a 2026 Jamaica Gleaner interview, he said he completed a bachelor's degree in international relations with a minor in management studies at the University of the West Indies, Mona, in 2019, then moved to the United States to live with his father. He has said that comedy became his main source of income after arriving in the U.S. during the COVID-19 pandemic. He played Akeem Sharp in the feature film Sprinter.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Official website\",\n      \"url\": \"https://www.daleelliottjr.com/\"\n    },\n    {\n      \"label\": \"Problem Child: Bad Pickney — YouTube\",\n      \"url\": \"https://www.youtube.com/watch?v=N0DifqFM1eo\"\n    },\n    {\n      \"label\": \"Live From London — YouTube\",\n      \"url\": \"https://www.youtube.com/watch?v=1TV36F2sVn0\"\n    },\n    {\n      \"label\": \"Jamaica Gleaner — Netflix Is a Joke Festival interview\",\n      \"url\": \"https://web4.jamaica-gleaner.com/article/entertainment/20260322/dale-elliott-jr-takes-next-step-netflix-comedy-festival\"\n    },\n    {\n      \"label\": \"Jamaica Gleaner — October 2026 honors and Son of an Immigrant announcement\",\n      \"url\": \"https://beta2.jamaica-gleaner.com/index.php/article/entertainment/20261031/dale-elliott-jr-grateful-us-honours\"\n    },\n    {\n      \"label\": \"IMDb — Sprinter full cast and crew\",\n      \"url\": \"https://www.imdb.com/title/tt5903926/fullcredits/\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.youtube.com/watch?v=N0DifqFM1eo",
+        "https://www.youtube.com/watch?v=1TV36F2sVn0",
+        "https://www.imdb.com/title/tt5903926/fullcredits/",
+        "https://www.instagram.com/daleelliottjr/"
+      ],
+      "instagramHandle": "@daleelliottjr",
+      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "wpPageId": 2320,
+      "wpLink": "https://comedyhouston.com/comedians/dale-elliott-jr/",
+      "wpImageMediaId": 2319,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-12-03",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "Dale Elliott Jr.",
+          "ticket_url": "https://www.ticketweb.com/event/dale-elliott-jr-houston-improv-tickets/15042043?REFERRAL_ID=tmfeed",
+          "event_id": "761758197b855902",
+          "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/dale-elliott-jr-houston.jpg"
     },
     {
       "slug": "daniel-sloss",
@@ -757,6 +828,40 @@
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/keegan-tindall-houston.png"
     },
     {
+      "slug": "keropi-sanchez",
+      "name": "Keropi Sánchez",
+      "match": [
+        "keropi sanchez"
+      ],
+      "status": "live",
+      "created_at": "2026-11-09T23:48:16.392Z",
+      "profile_written_at": "2026-11-09T23:49:24.094Z",
+      "profile_html": "<p>On November 5, 2026, <a href=\"https://podcasts.apple.com/us/podcast/kplus/id1526237407\">KPLUS</a>, Keropi Sánchez’s comedy podcast, listed an episode titled “BORILICIOUS DISPONIBLE EN YOUTUBE.”</p>\n\n<p>Keropi Sánchez is a Bayamón-born Puerto Rican comedian and content creator. His stand-up is clean, personal, and reflective, without a church focus. In an <a href=\"https://www.elnuevodia.com/entretenimiento/farandula/notas/emmanuel-keropi-sanchez-el-comediante-que-decidio-ser-luz/\">El Nuevo Día profile</a>, Sánchez said he began to see comedy as a profession after converting to Christianity at 23. His material draws on family, relationships, childhood, school, work, and faith.</p>\n\n<p>In 2026, Sánchez launched <a href=\"https://www.keropisanchez.com/\">Keropi Sánchez Remastered Vol. 1</a>, a live stand-up project that revisits earlier material with added perspective and new jokes. El Nuevo Día reported that the first two Remastered shows, in Hartford and New York City in July 2026, sold out.</p>\n\n<p>Outside stand-up, Sánchez competed on the third edition of <i>Super Chef Celebrities</i> and was reported as its first runner-up. He served as a judge on TeleOnce’s <a href=\"https://teleonce.com/programas/en-familia/keropi-sanchez-apuesta-al-talento-local-como-jurado-de-boricuas-con-talento/\">Boricuas con Talento</a> in 2026 and appeared on <i>El Push Estelar</i> in 2025.</p>",
+      "research_json": "{\n  \"full_name\": \"Emmanuel “Keropi” Sánchez\",\n  \"hometown\": \"Bayamón, Puerto Rico\",\n  \"career_start_year\": null,\n  \"specials\": [\n    {\n      \"title\": \"Keropi Sánchez Remastered Vol. 1\",\n      \"platform\": \"Live stand-up\",\n      \"year\": 2026\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"El Push Estelar\",\n      \"year_approx\": 2025\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Super Chef Celebrities\",\n      \"context\": \"Competitor in the show's third edition; reported as first runner-up.\"\n    },\n    {\n      \"show\": \"Boricuas con Talento\",\n      \"context\": \"Judge on TeleOnce's talent-competition program.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Clean, personal, and reflective.\",\n    \"structure\": \"Stand-up storytelling drawn from personal anecdotes and everyday experiences.\",\n    \"recurring_themes\": [\n      \"Family\",\n      \"Relationships\",\n      \"Childhood and upbringing\",\n      \"School experiences\",\n      \"Work\",\n      \"Faith-related personal experiences\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"El Nuevo Día reported that the first two Keropi Sánchez Remastered tour performances, in Hartford and New York City in July 2026, were sold out; the publication described the audiences as enthusiastic and laughing throughout the shows.\",\n  \"recent_activity_2025_2026\": \"In 2026, Sánchez launched Keropi Sánchez Remastered Vol. 1, a live stand-up project that updates earlier material with new material and perspective. His official site listed additional U.S. dates in November and December 2026. He also served as a judge on TeleOnce's Boricuas con Talento.\",\n  \"recent_hook\": {\n    \"summary\": \"KPLUS, the comedy podcast credited to Keropi Sánchez, listed a new episode titled “BORILICIOUS DISPONIBLE EN YOUTUBE” as its latest episode four days before November 9, 2026.\",\n    \"quote\": \"\",\n    \"source_publication\": \"Apple Podcasts\",\n    \"source_url\": \"https://podcasts.apple.com/us/podcast/kplus/id1526237407\",\n    \"date\": \"2026-11-05\"\n  },\n  \"instagram_handle\": \"@keropisanchez\",\n  \"notable_bits_or_quotes\": [\n    \"“Esto es comedia como la de todo el mundo.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"The titles, release dates, and distribution platforms of two additional comedy specials: Sánchez's official site states that he has presented three specials, but the other two were not independently identified in reliable sources reviewed.\",\n    \"A December 7, 2026 appearance in Irving, Texas, listed by a third-party comedy-events aggregator but not listed on Sánchez's official tour page.\",\n    \"Any claim that Keropi Sánchez has released a Netflix special or has an IMDb-listed comedy special.\"\n  ],\n  \"background_story\": \"Sánchez is a Bayamón-born Puerto Rican comedian and content creator. He told El Nuevo Día that he recognized comedy as a possible profession after converting to Christianity at age 23. He has described his material as clean comedy rather than church-focused comedy. Apple Podcasts credits him as the creator of KPLUS, a comedy podcast.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Official Keropi Sánchez tour site\",\n      \"url\": \"https://www.keropisanchez.com/\"\n    },\n    {\n      \"label\": \"El Nuevo Día: Emmanuel “Keropi” Sánchez: el comediante que decidió ser luz\",\n      \"url\": \"https://www.elnuevodia.com/entretenimiento/farandula/notas/emmanuel-keropi-sanchez-el-comediante-que-decidio-ser-luz/\"\n    },\n    {\n      \"label\": \"Primera Hora: Keropi Sánchez: “Esto es comedia como la de todo el mundo”\",\n      \"url\": \"https://www.primerahora.com/entretenimiento/cultura-teatro/notas/keropi-sanchez-esto-es-comedia-como-la-de-todo-el-mundo/\"\n    },\n    {\n      \"label\": \"TeleOnce: Keropi Sánchez apuesta al talento local como jurado de “Boricuas con Talento”\",\n      \"url\": \"https://teleonce.com/programas/en-familia/keropi-sanchez-apuesta-al-talento-local-como-jurado-de-boricuas-con-talento/\"\n    },\n    {\n      \"label\": \"NotiCel: El Push Estelar: Entrevista a Keropi Sánchez\",\n      \"url\": \"https://noticel.com/videos-y-fotos/video/20250726/el-push-estelar-entrevista-a-keropi-sanchez/\"\n    },\n    {\n      \"label\": \"Apple Podcasts: KPLUS\",\n      \"url\": \"https://podcasts.apple.com/us/podcast/kplus/id1526237407\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.instagram.com/keropisanchez/"
+      ],
+      "instagramHandle": "@keropisanchez",
+      "imageUrl": "https://s1.ticketm.net/dam/a/01b/b75866c2-2fa2-4848-a408-5b75385ee01b_SOURCE",
+      "wpPageId": 2314,
+      "wpLink": "https://comedyhouston.com/comedians/keropi-sanchez/",
+      "wpImageMediaId": 2313,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-12-02",
+          "venue": "Punch Line Houston",
+          "time": "7:30 PM",
+          "name": "Keropi Sánchez: Remastered (En Español)",
+          "ticket_url": "https://www.ticketmaster.com/keropi-sanchez-remastered-en-espanol-houston-texas-12-02-2026/event/3A00653B2D923F32",
+          "event_id": "28fc2ebee309047d",
+          "image_url": "https://s1.ticketm.net/dam/a/01b/b75866c2-2fa2-4848-a408-5b75385ee01b_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/keropi-sanchez-houston.jpg"
+    },
+    {
       "slug": "kev-adams",
       "name": "Kev Adams",
       "match": [
@@ -1016,6 +1121,52 @@
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/michael-rowland-houston.png"
     },
     {
+      "slug": "michael-yo",
+      "name": "Michael Yo",
+      "match": [
+        "michael yo"
+      ],
+      "status": "live",
+      "created_at": "2026-11-09T23:53:02.974Z",
+      "profile_written_at": "2026-11-09T23:54:17.952Z",
+      "profile_html": "<p>In September 2026, Michael Yo told <a href=\"https://thathollywoodshow.com/tv-news/scrambled-up-season-2-samsung-streaming-game-show-interview-michael-yo/\">That Hollywood Show</a> that <em>Scrambled Up</em> had begun its second season after shooting 160 episodes. “We just started Season Two. We shot 160 episodes.” Yo has co-hosted <em>The Insider</em>, appeared regularly on <em>Chelsea Lately</em>, and hosted the nationally syndicated word-game show.</p>\n\n<p>Houston-raised Yo came to stand-up after jobs in radio and entertainment news, including E! News, Extra, and <em>The Insider</em>. After <em>Chelsea Lately</em>, he began performing in his late 30s. Jo Koy became a mentor and took him on the road. Yo favors personal stories and observations over one-liners. His specials include <a href=\"https://www.comedydynamics.com/catalog/michael-yo-blasian/\"><em>Michael Yo: Blasian</em></a> (2018), 2022’s <a href=\"https://www.imdb.com/title/tt18231980/\"><em>I Never Thought</em></a>, and the 2025 YouTube special <a href=\"https://www.youtube.com/watch?v=QBsG2ml4oMM\"><em>Snack Daddy</em></a>.</p>\n\n<p>Yo returns to his Black and Korean identity, marriage, parenting, parents, and aging. “Black don't crack, and Asian don't raisin!” His television work includes Philip on Apple TV+’s <em>Amber Brown</em> and a judging stint on Netflix’s <em>Is It Cake?</em> in 2022. He has also appeared on <em>The Joe Rogan Experience</em> and <em>The Adam Carolla Show</em>.</p>",
+      "research_json": "{\n  \"full_name\": \"Michael Yo Simmons\",\n  \"hometown\": \"Houston, Texas, United States\",\n  \"career_start_year\": null,\n  \"specials\": [\n    {\n      \"title\": \"Michael Yo: Blasian\",\n      \"platform\": \"Amazon\",\n      \"year\": 2018\n    },\n    {\n      \"title\": \"I Never Thought\",\n      \"platform\": \"YouTube\",\n      \"year\": 2022\n    },\n    {\n      \"title\": \"Snack Daddy\",\n      \"platform\": \"YouTube\",\n      \"year\": 2025\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"The Joe Rogan Experience\",\n      \"year_approx\": 2020\n    },\n    {\n      \"show\": \"Adam Carolla Show\",\n      \"year_approx\": 2023\n    },\n    {\n      \"show\": \"Funjelah with Anjelah Johnson-Reyes\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"The Insider\",\n      \"context\": \"Co-host on the CBS entertainment-news program.\"\n    },\n    {\n      \"show\": \"Chelsea Lately\",\n      \"context\": \"Regular comedy-panel participant.\"\n    },\n    {\n      \"show\": \"America's Got Talent\",\n      \"context\": \"Season 15 stand-up contestant; received four yes votes and reached the quarterfinals.\"\n    },\n    {\n      \"show\": \"Amber Brown\",\n      \"context\": \"Played Philip on the Apple TV+ series.\"\n    },\n    {\n      \"show\": \"Is It Cake?\",\n      \"context\": \"Appeared as a judge on the Netflix baking competition in 2022.\"\n    },\n    {\n      \"show\": \"Scrambled Up\",\n      \"context\": \"Host of the nationally syndicated word-game show.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Warm, high-energy, self-deprecating, and family-oriented.\",\n    \"structure\": \"Personal storytelling and observational stand-up rather than a one-liner-focused approach.\",\n    \"recurring_themes\": [\n      \"Multiracial Black and Korean identity\",\n      \"Family dynamics\",\n      \"Marriage\",\n      \"Parenting\",\n      \"His parents\",\n      \"Aging\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"A national headliner who performs clubs and theaters, with a weekly Las Vegas residency at Jimmy Kimmel's Comedy Club at the LINQ.\",\n  \"recent_activity_2025_2026\": \"Released the YouTube special Snack Daddy on January 28, 2025; hosted Scrambled Up as it was renewed for a second season in July 2026; and was touring with the I Love You Tour in October 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"Michael Yo discussed the newly launched second season of Scrambled Up, saying the production had completed 160 new episodes and reached 320 episodes across two years.\",\n    \"quote\": \"“We just started Season Two. We shot 160 episodes.”\",\n    \"source_publication\": \"That Hollywood Show\",\n    \"source_url\": \"https://thathollywoodshow.com/tv-news/scrambled-up-season-2-samsung-streaming-game-show-interview-michael-yo/\",\n    \"date\": \"2026-09-22\"\n  },\n  \"instagram_handle\": \"@MichaelYo\",\n  \"notable_bits_or_quotes\": [\n    \"\\\"Issa Truue!\\\"\",\n    \"\\\"Black don't crack, and Asian don't raisin!\\\"\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That Michael Yo's mother was Chinese; reliable sources identify her as Korean.\",\n    \"That Super Troopers is a verified Michael Yo stand-up special title; an isolated venue document makes this claim, but it conflicts with his official listing of three full specials and was not independently confirmed.\",\n    \"That he currently lives in Los Angeles; older biographical material says Los Angeles, while his current official site says Las Vegas.\"\n  ],\n  \"background_story\": \"Yo is Houston-raised and has a Black father and Korean mother. He began in radio and entertainment news, including work for E! News, Extra, and The Insider. He has said he began stand-up in his late 30s after appearing on Chelsea Lately; Jo Koy became a mentor and took him on the road.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Michael_Yo\"\n    },\n    {\n      \"label\": \"Comedy Dynamics – Michael Yo: Blasian\",\n      \"url\": \"https://www.comedydynamics.com/catalog/michael-yo-blasian/\"\n    },\n    {\n      \"label\": \"YouTube – Michael Yo: Snack Daddy\",\n      \"url\": \"https://www.youtube.com/watch?v=QBsG2ml4oMM\"\n    },\n    {\n      \"label\": \"IMDb – I Never Thought\",\n      \"url\": \"https://www.imdb.com/title/tt18231980/\"\n    },\n    {\n      \"label\": \"Apple Podcasts – Funjelah episode with Michael Yo\",\n      \"url\": \"https://podcasts.apple.com/ca/podcast/the-one-without-the-video-footage-with-michael-yo/id1750047932?i=1000793461829\"\n    },\n    {\n      \"label\": \"TVNewsCheck – Scrambled Up season-two renewal\",\n      \"url\": \"https://tvnewscheck.com/programming/article/syndicated-scrambled-up-renewed-for-second-season/\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Michael_Yo",
+        "https://www.youtube.com/watch?v=QBsG2ml4oMM",
+        "https://www.imdb.com/title/tt18231980/",
+        "https://www.instagram.com/MichaelYo/"
+      ],
+      "instagramHandle": "@MichaelYo",
+      "imageUrl": "https://s1.ticketm.net/dam/a/730/0089dec7-eae1-4324-81bf-9f50edde7730_SOURCE",
+      "wpPageId": 2326,
+      "wpLink": "https://comedyhouston.com/comedians/michael-yo/",
+      "wpImageMediaId": 2325,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-12-04",
+          "venue": "Punch Line Houston",
+          "time": "7:00 PM",
+          "name": "Michael Yo",
+          "ticket_url": "https://www.ticketmaster.com/michael-yo-houston-texas-12-04-2026/event/3A00650AB86894DD",
+          "event_id": "97c6e69ff23a61f2",
+          "image_url": "https://s1.ticketm.net/dam/a/730/0089dec7-eae1-4324-81bf-9f50edde7730_SOURCE"
+        },
+        {
+          "date": "2026-12-05",
+          "venue": "Punch Line Houston",
+          "time": "7:00 PM",
+          "name": "Michael Yo",
+          "ticket_url": "https://www.ticketmaster.com/michael-yo-houston-texas-12-05-2026/event/3A00650AB86494D8",
+          "event_id": "78de34351ea066eb",
+          "image_url": "https://s1.ticketm.net/dam/a/730/0089dec7-eae1-4324-81bf-9f50edde7730_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/michael-yo-houston.jpg"
+    },
+    {
       "slug": "mo-amer",
       "name": "Mo Amer",
       "match": [
@@ -1190,6 +1341,41 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/phil-hanley-houston.jpg"
+    },
+    {
+      "slug": "raambo2funny",
+      "name": "Raambo2funny",
+      "match": [
+        "raambo2funny"
+      ],
+      "status": "live",
+      "created_at": "2026-11-09T23:51:50.524Z",
+      "profile_written_at": "2026-11-09T23:52:49.361Z",
+      "profile_html": "<p>CultureMap Houston called Raambo2funny a “high energy and country comedian from the backwoods of Georgia.”</p>\n\n<p>His material draws on marriage, family life, and rural Georgia. A 2021 event description framed the arc as a move from “professional side dude” to married family man.</p>\n\n<p>In 2025, Raambo2funny appeared on <a href=\"https://poddtoppen.se/podcast/1327136943/the-pour-horsemen/ep369-trail-ride-chaos-1m-events-wild-horse-trailers-wraambo2funny\">The Pour Horsemen</a> for “Trail Ride Chaos: $1M Events &amp; Wild Horse Trailers w/Raambo2funny.” In the 2024 film <a href=\"https://www.imdb.com/title/tt31970209/fullcredits/\">I Got the Juice</a>, he is credited as Cash.</p>",
+      "research_json": "{\n  \"full_name\": \"Darius Wilkerson\",\n  \"hometown\": \"\",\n  \"career_start_year\": null,\n  \"specials\": [],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"The Pour Horsemen — \\\"EP:369 Trail Ride Chaos: $1M Events & Wild Horse Trailers w/Raambo2Funny\\\"\",\n      \"year_approx\": 2025\n    }\n  ],\n  \"tv_appearances\": [],\n  \"comedy_style\": {\n    \"tone\": \"High-energy, country comedy.\",\n    \"structure\": \"A 2021 event description framed his show as a personal journey from being a \\\"professional side dude\\\" to becoming a married family man.\",\n    \"recurring_themes\": [\n      \"Marriage\",\n      \"Family life\",\n      \"Rural Georgia identity\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"CultureMap Houston described Raambo2Funny as a \\\"high energy and country comedian from the backwoods of Georgia.\\\"\",\n  \"recent_activity_2025_2026\": \"He is scheduled to headline The Secret Group's Best of TSG Headliner Series in Houston on December 3, 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"Raambo2funny is listed as the headliner for The Secret Group's Best of TSG Headliner Series in Houston, scheduled for December 3, 2026.\",\n    \"quote\": \"The Best of TSG Headliner Series - Raambo2funny\",\n    \"source_publication\": \"Eventbrite / The Secret Group\",\n    \"source_url\": \"https://www.eventbrite.com/e/the-best-of-tsg-headliner-series-raambo2funny-tickets-2002926179119\",\n    \"date\": \"2026-12-03\"\n  },\n  \"instagram_handle\": \"@raambo2funny\",\n  \"notable_bits_or_quotes\": [],\n  \"unverifiable_claims_to_avoid\": [\n    \"That \\\"Laughin My Azz Off Vol. 1\\\" is a solo Raambo2funny stand-up special; available listings describe it as a feature-length comedy production with a lineup of multiple comics.\",\n    \"Any claim of a verified Netflix special.\",\n    \"Any claim of verified television appearances or a television-series credit.\"\n  ],\n  \"background_story\": \"He is credited as Darius \\\"Raambo2funny\\\" Wilkerson in the 2024 film \\\"I Got the Juice,\\\" playing the character Cash. A Houston event listing described him as being from the backwoods of Georgia.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Eventbrite — The Best of TSG Headliner Series - Raambo2funny\",\n      \"url\": \"https://www.eventbrite.com/e/the-best-of-tsg-headliner-series-raambo2funny-tickets-2002926179119\"\n    },\n    {\n      \"label\": \"CultureMap Houston — The Riot Comedy Show presents Raambo2Funny\",\n      \"url\": \"https://houston.culturemap.com/eventdetail/riot-comedy-show-presents-raambo2funny/\"\n    },\n    {\n      \"label\": \"IMDb — I Got the Juice (2024) full cast and crew\",\n      \"url\": \"https://www.imdb.com/title/tt31970209/fullcredits/\"\n    },\n    {\n      \"label\": \"Apple Podcasts — Free Lunch\",\n      \"url\": \"https://podcasts.apple.com/nl/podcast/free-lunch/id1716449755\"\n    },\n    {\n      \"label\": \"Poddtoppen — The Pour Horsemen, Episode 369\",\n      \"url\": \"https://poddtoppen.se/podcast/1327136943/the-pour-horsemen/ep369-trail-ride-chaos-1m-events-wild-horse-trailers-wraambo2funny\"\n    },\n    {\n      \"label\": \"Plex — Laughin My Azz Off Vol. 1\",\n      \"url\": \"https://watch.plex.tv/pl/movie/laughin-my-azz-off-vol-1?context.unit=HE\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.imdb.com/title/tt31970209/fullcredits/",
+        "https://www.instagram.com/raambo2funny/"
+      ],
+      "instagramHandle": "@raambo2funny",
+      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176743871%2F3558237521%2F1%2Foriginal.20260205-024409?auto=format%2Ccompress&q=75&sharp=10&s=70e5049026424875ceb7fb9cbafc7ae9",
+      "wpPageId": 2323,
+      "wpLink": "https://comedyhouston.com/comedians/raambo2funny/",
+      "wpImageMediaId": 2322,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-12-03",
+          "venue": "The Secret Group",
+          "time": "8:00 PM",
+          "name": "The Best of TSG Headliner Series - Raambo2funny",
+          "ticket_url": "https://www.eventbrite.com/e/the-best-of-tsg-headliner-series-raambo2funny-tickets-2002926179119",
+          "event_id": "863c35353916dbbb",
+          "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176743871%2F3558237521%2F1%2Foriginal.20260205-024409?auto=format%2Ccompress&q=75&sharp=10&s=70e5049026424875ceb7fb9cbafc7ae9"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/raambo2funny-houston-scaled.jpg"
     },
     {
       "slug": "reem-edan",
