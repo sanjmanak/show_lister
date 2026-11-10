@@ -2922,6 +2922,14 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-11-09"
+    },
+    "kristin key": {
+      "tags": [
+        "clean-comedy"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-10"
     }
   }
 }
