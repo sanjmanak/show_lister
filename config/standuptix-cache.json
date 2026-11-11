@@ -1,50 +1,5 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-11-10210000": {
-      "lastmod": "2026-11-09T11:17:00-06:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Riot Comedy Club presents Tuesday Night Standup Comedy Open Mic",
-        "startDate": "2026-11-10T21:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-11-10210000",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-08-12T11:27:05-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-11-10210000",
-        "image": "/img/shows/Open-Mic-July-19-2023-at-14-42-02-7-dac80f0c-large-thumb.png",
-        "description": "Looking for a night full of laughs &mdash; and totally FREE? Join us at TheRiot Comedy Club&nbsp; for our Open Mic Comedy Night, where you can catch a dozen comedians taking the stage! From fresh new comics finding their voice to seasoned pros testing out brand-new material, it&rsquo;s always a wild mix of creativity, courage, and comedy gold.Every show is different, every joke is fresh, and every seat comes with a front-row view of the next big thing in Texas comedy.So grab your crew, order a drink, and come laugh with us &mdash; no tickets, no pressure, just pure fun.ALL SHOWS ARE AGES 21 &amp; UP,&nbsp;Complimentary Valet--Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Ricky Murphy"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-37": {
       "lastmod": "2026-11-09T01:14:00-06:00",
       "node": {
@@ -9266,46 +9221,6 @@
         "performer": []
       }
     },
-    "https://www.theriothtx.com/events/riot-comedy-class-graduation-showcase": {
-      "lastmod": "2026-11-10T01:03:00-06:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Riot Comedy Class: Graduation Showcase",
-        "startDate": "2026-11-10T19:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/riot-comedy-class-graduation-showcase",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-10-15T22:03:05-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/riot-comedy-class-graduation-showcase",
-        "image": "/img/events/Riot-Graduation-Showcase-Square-de2b1190-large-thumb.jpg",
-        "description": "Eight weeks ago, they&rsquo;d never held a mic. Tonight, they&rsquo;re headliners (for five minutes each).Come see the graduating class of The Riot&rsquo;s stand-up comedy course perform the five-minute sets they&rsquo;ve been writing, rewriting and workshopping since September. You&rsquo;ll get trial lawyers, theater kids, new dads, Google employees and at least one guy who thinks he&rsquo;s the District Attorney of Candyland.Fresh voices, brand-new material, and a room full of people rooting for them. Bring friends, bring family, bring the coworker who said &ldquo;you should do stand-up.&rdquo;All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": []
-      }
-    },
     "https://www.theriothtx.com/events/comedian-chris-cope-jimmy-kimmel-don-t-tell-comedy-conan-headlines-the-riot-houston": {
       "lastmod": "2026-10-29T10:27:00-05:00",
       "node": {
@@ -9667,7 +9582,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-early-standup-comedy-showcase-2026-11-13190000": {
-      "lastmod": "2026-11-09T05:42:00-06:00",
+      "lastmod": "2026-11-10T08:21:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -9697,7 +9612,7 @@
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-early-standup-comedy-showcase-2026-11-13190000",
         "image": "/img/shows/friday-7-8bbb088f-large-thumb.jpg",
-        "description": "Come join us for a hilarious evening of laughter at The Riot presents Friday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you're a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone. You can expect a diverse lineup with 5-7 comedians from Houston and around the country.Find information about the lineup on our instagram page: https://instagram.com/theriothtxAll shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Complimentary Valet--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "description": "Come join us for a hilarious evening of laughter at The Riot presents Friday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you&#39;re a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone. You can expect a diverse lineup with 5-7 comedians from Houston and around the country.Find information about the lineup on our instagram page: https://instagram.com/theriothtxAll shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Complimentary Valet--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Houston",

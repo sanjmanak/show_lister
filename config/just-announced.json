@@ -1,70 +1,6 @@
 {
- "updated": "2026-11-10T20:31:09.533Z",
+ "updated": "2026-11-11T03:07:58.207Z",
  "announcements": [
-  {
-   "id": "7f9fa4ece8821d44",
-   "name": "Chris D'Elia",
-   "venue": "Houston Improv",
-   "date": "2027-01-10",
-   "time": "7:30 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/a/4ec/f4c30093-f419-47e7-8a43-74290435d4ec_SOURCE",
-   "ticket_url": "https://www.ticketweb.com/event/chris-delia-houston-improv-tickets/14221144?REFERRAL_ID=tmfeed",
-   "source": "ticketmaster",
-   "notable": true,
-   "tier": "headliner_room",
-   "notable_reason": "headliner room",
-   "first_seen": "2026-10-18T16:35:18.383Z"
-  },
-  {
-   "id": "d4ceb20c126b770a",
-   "name": "Andy Haynes (HBO, Late Night with Jimmy Fallon) Headlines The Riot Comedy Club",
-   "venue": "The Riot Comedy Club",
-   "date": "2027-01-16",
-   "time": "7:00 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://www.theriothtx.com/img/events/IMG-0453-7d19077f-large-thumb.jpg",
-   "ticket_url": "https://www.theriothtx.com/events/andy-haynes-hbo-late-night-with-jimmy-fallon-headlines-the-riot-comedy-club-the-riot-houston",
-   "source": "standuptix",
-   "notable": true,
-   "tier": "headliner_room",
-   "notable_reason": "headliner room",
-   "first_seen": "2026-10-18T16:35:18.383Z"
-  },
-  {
-   "id": "da5880e9d7144a29",
-   "name": "Comedian Steve Byrne (The Late Show & Jimmy Kimmel) Live in Conroe",
-   "venue": "The Riot Comedy Club — Conroe",
-   "date": "2027-01-16",
-   "time": "7:00 PM",
-   "price_min": 25,
-   "price_max": 25,
-   "image_url": "https://www.riotconroe.com/img/events/Guadalaharrys-54-de740b59-large-thumb.png",
-   "ticket_url": "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-2",
-   "source": "standuptix",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "venue excluded",
-   "first_seen": "2026-10-18T16:35:18.383Z"
-  },
-  {
-   "id": "3ccdb8f4d575eeec",
-   "name": "The Last Laugh with James Vogt & Trip Truman",
-   "venue": "The Secret Group",
-   "date": "2026-11-15",
-   "time": "7:00 PM",
-   "price_min": 8.82,
-   "price_max": 8.82,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1191459227%2F3558237521%2F1%2Foriginal.20260819-201134?auto=format%2Ccompress&q=75&sharp=10&s=cea7a34ee27a983a6dc54f88c3210522",
-   "ticket_url": "https://www.eventbrite.com/e/the-last-laugh-with-james-vogt-trip-truman-tickets-2003571984741",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 5d out (min 14)",
-   "first_seen": "2026-10-19T01:49:02.516Z"
-  },
   {
    "id": "3e08b43e9a0d7d02",
    "name": "The (secret) Secret Show",
@@ -78,7 +14,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -94,7 +30,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -110,7 +46,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -126,7 +62,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -142,7 +78,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -158,7 +94,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -174,7 +110,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -190,7 +126,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -206,7 +142,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -222,7 +158,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -238,7 +174,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -254,7 +190,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -270,7 +206,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -286,7 +222,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -302,7 +238,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -318,7 +254,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -334,7 +270,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -350,7 +286,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -366,7 +302,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-19T01:49:02.516Z"
   },
   {
@@ -414,7 +350,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-10-19T19:23:21.094Z"
   },
   {
@@ -478,7 +414,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -17d out (min 14)",
+   "notable_reason": "only -18d out (min 14)",
    "first_seen": "2026-10-20T02:11:16.680Z"
   },
   {
@@ -494,7 +430,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -10d out (min 14)",
+   "notable_reason": "only -11d out (min 14)",
    "first_seen": "2026-10-20T02:11:16.680Z"
   },
   {
@@ -510,7 +446,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -4d out (min 14)",
+   "notable_reason": "only -5d out (min 14)",
    "first_seen": "2026-10-20T02:11:16.680Z"
   },
   {
@@ -526,7 +462,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -3d out (min 14)",
+   "notable_reason": "only -4d out (min 14)",
    "first_seen": "2026-10-20T02:11:16.680Z"
   },
   {
@@ -542,7 +478,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -3d out (min 14)",
+   "notable_reason": "only -4d out (min 14)",
    "first_seen": "2026-10-20T02:11:16.680Z"
   },
   {
@@ -558,7 +494,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-10-20T02:11:16.680Z"
   },
   {
@@ -574,7 +510,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-10-20T02:11:16.680Z"
   },
   {
@@ -590,7 +526,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-20T02:11:16.680Z"
   },
   {
@@ -702,7 +638,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-10-20T18:01:50.862Z"
   },
   {
@@ -734,7 +670,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -10d out (min 14)",
+   "notable_reason": "only -11d out (min 14)",
    "first_seen": "2026-10-21T18:05:08.699Z"
   },
   {
@@ -798,7 +734,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -11d out (min 14)",
+   "notable_reason": "only -12d out (min 14)",
    "first_seen": "2026-10-22T18:01:52.138Z"
   },
   {
@@ -814,7 +750,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -11d out (min 14)",
+   "notable_reason": "only -12d out (min 14)",
    "first_seen": "2026-10-22T18:01:52.138Z"
   },
   {
@@ -862,7 +798,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -3d out (min 14)",
+   "notable_reason": "only -4d out (min 14)",
    "first_seen": "2026-10-23T02:02:56.465Z"
   },
   {
@@ -878,7 +814,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -10d out (min 14)",
+   "notable_reason": "only -11d out (min 14)",
    "first_seen": "2026-10-24T02:03:52.290Z"
   },
   {
@@ -1086,7 +1022,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -1102,7 +1038,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -1118,7 +1054,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -1134,7 +1070,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -1150,7 +1086,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -1166,7 +1102,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -1182,7 +1118,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -1198,7 +1134,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -1214,7 +1150,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -1438,7 +1374,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -3d out (min 14)",
+   "notable_reason": "only -4d out (min 14)",
    "first_seen": "2026-10-28T02:39:28.854Z"
   },
   {
@@ -1454,7 +1390,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -2d out (min 14)",
+   "notable_reason": "only -3d out (min 14)",
    "first_seen": "2026-10-28T02:39:28.854Z"
   },
   {
@@ -1502,7 +1438,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-10-28T18:55:05.975Z"
   },
   {
@@ -1646,7 +1582,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-10-30T03:02:44.639Z"
   },
   {
@@ -2222,7 +2158,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -2d out (min 14)",
+   "notable_reason": "only -3d out (min 14)",
    "first_seen": "2026-11-04T20:29:33.453Z"
   },
   {
@@ -2238,7 +2174,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-11-04T20:29:33.453Z"
   },
   {
@@ -2334,7 +2270,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-11-06T20:00:52.847Z"
   },
   {
@@ -2350,7 +2286,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-11-06T20:00:52.847Z"
   },
   {
@@ -2366,7 +2302,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-11-06T20:00:52.847Z"
   },
   {
@@ -2750,7 +2686,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-11-09T23:02:28.167Z"
   },
   {
@@ -2766,7 +2702,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-11-09T23:02:28.167Z"
   },
   {
@@ -2782,7 +2718,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-11-09T23:02:28.167Z"
   },
   {
@@ -3166,7 +3102,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 1d out (min 14)",
+   "notable_reason": "only 0d out (min 14)",
    "first_seen": "2026-11-10T20:31:09.533Z"
   },
   {
@@ -3182,7 +3118,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 1d out (min 14)",
+   "notable_reason": "only 0d out (min 14)",
    "first_seen": "2026-11-10T20:31:09.533Z"
   },
   {
@@ -3198,8 +3134,72 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-11-10T20:31:09.533Z"
+  },
+  {
+   "id": "b244011d53956264",
+   "name": "Kinky Wednesdays",
+   "venue": "The Secret Group",
+   "date": "2026-11-11",
+   "time": "8:00 PM",
+   "price_min": 20.36,
+   "price_max": 20.36,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1193704512%2F3558237521%2F1%2Foriginal.20260916-231130?auto=format%2Ccompress&q=75&sharp=10&s=18fec350970f50ee7212d498edfaad66",
+   "ticket_url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-2004689485215",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "only 0d out (min 14)",
+   "first_seen": "2026-11-11T03:07:58.207Z"
+  },
+  {
+   "id": "a37942a82785f420",
+   "name": "Kinky Wednesdays",
+   "venue": "The Secret Group",
+   "date": "2026-11-25",
+   "time": "8:00 PM",
+   "price_min": 20.36,
+   "price_max": 20.36,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1193704512%2F3558237521%2F1%2Foriginal.20260916-231130?auto=format%2Ccompress&q=75&sharp=10&s=18fec350970f50ee7212d498edfaad66",
+   "ticket_url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-2004689494242",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "recurring series (4 weeks)",
+   "first_seen": "2026-11-11T03:07:58.207Z"
+  },
+  {
+   "id": "8fec986de1b4d58f",
+   "name": "Kinky Wednesdays",
+   "venue": "The Secret Group",
+   "date": "2026-12-09",
+   "time": "8:00 PM",
+   "price_min": 20.36,
+   "price_max": 20.36,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1193704512%2F3558237521%2F1%2Foriginal.20260916-231130?auto=format%2Ccompress&q=75&sharp=10&s=18fec350970f50ee7212d498edfaad66",
+   "ticket_url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-2004689502266",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "recurring series (4 weeks)",
+   "first_seen": "2026-11-11T03:07:58.207Z"
+  },
+  {
+   "id": "3c32a9b85bf81558",
+   "name": "Kinky Wednesdays",
+   "venue": "The Secret Group",
+   "date": "2026-12-23",
+   "time": "8:00 PM",
+   "price_min": 20.36,
+   "price_max": 20.36,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1193704512%2F3558237521%2F1%2Foriginal.20260916-231130?auto=format%2Ccompress&q=75&sharp=10&s=18fec350970f50ee7212d498edfaad66",
+   "ticket_url": "https://www.eventbrite.com/e/kinky-wednesdays-tickets-2004689504272",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "recurring series (4 weeks)",
+   "first_seen": "2026-11-11T03:07:58.207Z"
   }
  ]
 }
