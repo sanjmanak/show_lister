@@ -115,7 +115,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-28": {
-      "lastmod": "2026-11-09T05:42:00-06:00",
+      "lastmod": "2026-11-11T11:56:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -180,7 +180,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-32": {
-      "lastmod": "2026-11-09T05:42:00-06:00",
+      "lastmod": "2026-11-11T11:56:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -598,7 +598,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-11-17-26-07-00-pm": {
-      "lastmod": "2026-11-09T06:05:00-06:00",
+      "lastmod": "2026-11-11T11:31:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -638,7 +638,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-11-17210000": {
-      "lastmod": "2026-11-09T06:05:00-06:00",
+      "lastmod": "2026-11-11T11:31:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -677,7 +677,7 @@
         "performer": [
           {
             "@type": "Person",
-            "name": "Sergio Medrano"
+            "name": "TBD"
           }
         ]
       }
@@ -6065,7 +6065,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-jesse-peyton-fox-iheartradio-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-11-09T07:37:00-06:00",
+      "lastmod": "2026-11-11T12:01:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -6105,6 +6105,10 @@
           {
             "@type": "Person",
             "name": "jesse peyton"
+          },
+          {
+            "@type": "Person",
+            "name": "Kenneth Webster"
           }
         ]
       }
@@ -9582,7 +9586,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-early-standup-comedy-showcase-2026-11-13190000": {
-      "lastmod": "2026-11-10T08:21:00-06:00",
+      "lastmod": "2026-11-11T11:56:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -9732,7 +9736,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-veterans-day-standup-comedy-showcase-hump-day": {
-      "lastmod": "2026-11-10T11:52:00-06:00",
+      "lastmod": "2026-11-11T01:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -9797,7 +9801,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-veterans-day-one-minute-comedy-showdown-with-jeff-joe": {
-      "lastmod": "2026-11-10T11:54:00-06:00",
+      "lastmod": "2026-11-11T11:51:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",

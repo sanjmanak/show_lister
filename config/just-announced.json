@@ -1,54 +1,6 @@
 {
- "updated": "2026-11-11T03:07:58.207Z",
+ "updated": "2026-11-11T20:15:18.959Z",
  "announcements": [
-  {
-   "id": "3e08b43e9a0d7d02",
-   "name": "The (secret) Secret Show",
-   "venue": "The Secret Group",
-   "date": "2026-11-15",
-   "time": "9:00 PM",
-   "price_min": 14.59,
-   "price_max": 14.59,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1182517711%2F3558237521%2F1%2Foriginal.20260419-192309?auto=format%2Ccompress&q=75&sharp=10&s=9360a990100667a0306d4f4d57bb4300",
-   "ticket_url": "https://www.eventbrite.com/e/the-secret-secret-show-tickets-2003572042915",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 4d out (min 14)",
-   "first_seen": "2026-10-19T01:49:02.516Z"
-  },
-  {
-   "id": "d067d3a12d48f28c",
-   "name": "COMEDY DOJO: Sunday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-11-15",
-   "time": "11:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1115718973%2F3558237521%2F1%2Foriginal.20250905-193245?auto=format%2Ccompress&q=75&sharp=10&s=0f3508786faa5dc4d3f3540085034564",
-   "ticket_url": "https://www.eventbrite.com/e/comedy-dojo-sunday-open-mic-comedy-tickets-2003572128170",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 4d out (min 14)",
-   "first_seen": "2026-10-19T01:49:02.516Z"
-  },
-  {
-   "id": "55baae96d2971118",
-   "name": "MONDAY NIGHT COMEDY!",
-   "venue": "The Secret Group",
-   "date": "2026-11-16",
-   "time": "8:00 PM",
-   "price_min": 8.82,
-   "price_max": 8.82,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1084977123%2F3558237521%2F1%2Foriginal.20250730-234417?auto=format%2Ccompress&q=75&sharp=10&s=27248b634d602f36b66580f6e67573f3",
-   "ticket_url": "https://www.eventbrite.com/e/monday-night-comedy-tickets-2003572155251",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 5d out (min 14)",
-   "first_seen": "2026-10-19T01:49:02.516Z"
-  },
   {
    "id": "213885cf3e6ab3d0",
    "name": "The Passing Lane with Andrew Youngblood, Will Loden & Blake Jones",
@@ -3166,7 +3118,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (4 weeks)",
+   "notable_reason": "recurring series (3 weeks)",
    "first_seen": "2026-11-11T03:07:58.207Z"
   },
   {
@@ -3182,7 +3134,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (4 weeks)",
+   "notable_reason": "recurring series (3 weeks)",
    "first_seen": "2026-11-11T03:07:58.207Z"
   },
   {
@@ -3198,8 +3150,56 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (4 weeks)",
+   "notable_reason": "recurring series (3 weeks)",
    "first_seen": "2026-11-11T03:07:58.207Z"
+  },
+  {
+   "id": "4cf7a5cd6b7b2d08",
+   "name": "B6",
+   "venue": "The Secret Group",
+   "date": "2026-11-14",
+   "time": "7:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197776267%2F3558237521%2F1%2Foriginal.20261111-161658?auto=format%2Ccompress&q=75&sharp=10&s=fd28af44486ae397e2fc6a54b0311997",
+   "ticket_url": "https://www.eventbrite.com/e/b6-tickets-2004718627380",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "only 3d out (min 14)",
+   "first_seen": "2026-11-11T20:15:18.959Z"
+  },
+  {
+   "id": "b6a695011f163cd8",
+   "name": "Joey Diaz",
+   "venue": "Smart Financial Centre at Sugar Land",
+   "date": "2026-12-12",
+   "time": "8:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/488/69d90d6c-2681-4629-a407-37948c1ef488_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1AAee-y",
+   "source": "ticketmaster",
+   "notable": true,
+   "tier": "big_room",
+   "notable_reason": "big room",
+   "first_seen": "2026-11-11T20:15:18.959Z"
+  },
+  {
+   "id": "94ed1bdd688cc556",
+   "name": "Dale Jones",
+   "venue": "Punch Line Houston",
+   "date": "2027-02-07",
+   "time": "7:00 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/86b/cd4bcf11-b18c-4b3d-8ed2-991a6d5fb86b_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/dale-jones-houston-texas-02-07-2027/event/3A006569BDFE9567",
+   "source": "ticketmaster",
+   "notable": true,
+   "tier": "headliner_room",
+   "notable_reason": "headliner room",
+   "first_seen": "2026-11-11T20:15:18.959Z"
   }
  ]
 }
