@@ -1,3 +1,21 @@
 {
-  "items": []
+  "generated_at": "2026-11-11T22:14:23.821Z",
+  "dry_run": false,
+  "items": [
+    {
+      "id": "b6a695011f163cd8",
+      "name": "Joey Diaz",
+      "performer_name": "Joey Diaz",
+      "venue": "Smart Financial Centre at Sugar Land",
+      "date": "2026-12-12",
+      "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1AAee-y",
+      "files": {
+        "portrait": "2026-12-12-joey-diaz-portrait.png",
+        "story": "2026-12-12-joey-diaz-story.png",
+        "reel": "2026-12-12-joey-diaz.mp4"
+      },
+      "caption": "The Sociably Unacceptable comic is back with his no-filter road set.\nJoey Diaz performs at Smart Financial Centre at Sugar Land on December 12, 2026. He is also known for The Church of What's Happening Now podcast. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
+      "confidence": 0.98
+    }
+  ]
 }
