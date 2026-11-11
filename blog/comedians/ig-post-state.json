@@ -10,15 +10,6 @@
       "postedAt": "2026-11-09T13:10:57.713Z"
     },
     {
-      "slug": "clint-coley-punch-line-houston-2026-11-12",
-      "comedianName": "Clint Coley",
-      "igFeedMediaId": "17988705075175184",
-      "igStoryMediaId": "17945420454359861",
-      "fbFeedPostId": "1455819419976132",
-      "fbStoryPostId": "1875098233927411",
-      "postedAt": "2026-11-10T00:21:11.058Z"
-    },
-    {
       "slug": "ellen-skrmetti-houston-improv-2026-11-12",
       "comedianName": "Ellen Skrmetti",
       "igFeedMediaId": "18399403057205414",
@@ -28,26 +19,17 @@
       "postedAt": "2026-11-10T12:50:37.669Z"
     },
     {
-      "slug": "reem-edan-the-den-comedy-club-2026-11-12",
-      "comedianName": "Reem Edan",
-      "igFeedMediaId": "18131649982698919",
-      "igStoryMediaId": "18119402096603167",
-      "fbFeedPostId": "1456883353203072",
-      "fbStoryPostId": "2301225880423644",
-      "postedAt": "2026-11-10T21:52:36.533Z"
-    },
-    {
-      "slug": "chrissy-chlapecka-the-secret-group-2026-11-12",
-      "comedianName": "Chrissy Chlapecka",
-      "igFeedMediaId": "18115959107620544",
-      "igStoryMediaId": "17924996793223125",
-      "fbFeedPostId": "1457039389854135",
-      "fbStoryPostId": "976169318906267",
-      "postedAt": "2026-11-11T02:01:41.417Z"
+      "slug": "leanne-morgan-toyota-center-tx-2026-11-14",
+      "comedianName": "Leanne Morgan",
+      "igFeedMediaId": "18016615538793956",
+      "igStoryMediaId": "18076694225762316",
+      "fbFeedPostId": "1457990036425737",
+      "fbStoryPostId": "2292872237948709",
+      "postedAt": "2026-11-11T22:54:49.255Z"
     }
   ],
   "week_range": "November 9 – November 15, 2026",
-  "manifest_version": 1792442612153,
+  "manifest_version": 1794410942740,
   "cleanup_queue": [
     {
       "slug": "kev-adams-houston-improv-2026-11-11",
@@ -93,6 +75,15 @@
       "fbFeedPostId": "1457039389854135",
       "fbStoryPostId": "976169318906267",
       "postedAt": "2026-11-11T02:01:41.417Z"
+    },
+    {
+      "slug": "leanne-morgan-toyota-center-tx-2026-11-14",
+      "comedianName": "Leanne Morgan",
+      "igFeedMediaId": "18016615538793956",
+      "igStoryMediaId": "18076694225762316",
+      "fbFeedPostId": "1457990036425737",
+      "fbStoryPostId": "2292872237948709",
+      "postedAt": "2026-11-11T22:54:49.255Z"
     }
   ]
 }
