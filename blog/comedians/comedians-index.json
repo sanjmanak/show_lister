@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T23:54:28.871Z",
+  "generated_at": "2026-11-11T15:29:02.747Z",
   "comedians": [
     {
       "slug": "abby-govindan",
@@ -86,6 +86,16 @@
       "wpLink": "https://comedyhouston.com/comedians/clint-coley/",
       "legacy_slugs": [],
       "next_show": "2026-11-12"
+    },
+    {
+      "slug": "corey-holcomb",
+      "name": "Corey Holcomb",
+      "match": [
+        "corey holcomb"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/corey-holcomb/",
+      "legacy_slugs": [],
+      "next_show": "2026-11-13"
     },
     {
       "slug": "dale-elliott-jr",
@@ -254,6 +264,16 @@
       "next_show": "2026-11-11"
     },
     {
+      "slug": "leanne-morgan",
+      "name": "Leanne Morgan",
+      "match": [
+        "leanne morgan"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/leanne-morgan/",
+      "legacy_slugs": [],
+      "next_show": "2026-11-14"
+    },
+    {
       "slug": "luke-kidgell",
       "name": "Luke Kidgell",
       "match": [
@@ -338,6 +358,16 @@
         "nikki-glaser-smart-financial-centre-at-sugar-land-2026-11-06"
       ],
       "next_show": null
+    },
+    {
+      "slug": "nurse-john",
+      "name": "Nurse John",
+      "match": [
+        "nurse john"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/nurse-john/",
+      "legacy_slugs": [],
+      "next_show": "2026-11-13"
     },
     {
       "slug": "pauly-shore",

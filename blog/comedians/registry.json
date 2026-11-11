@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-09T23:54:28.866Z",
+  "updated_at": "2026-11-11T15:29:02.738Z",
   "comedians": [
     {
       "slug": "abby-govindan",
@@ -306,6 +306,60 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/clint-coley-houston.jpg"
+    },
+    {
+      "slug": "corey-holcomb",
+      "name": "Corey Holcomb",
+      "match": [
+        "corey holcomb"
+      ],
+      "status": "live",
+      "created_at": "2026-11-11T15:27:50.141Z",
+      "profile_written_at": "2026-11-11T15:28:50.301Z",
+      "profile_html": "<p>Corey Holcomb’s material is explicit and blunt, built around dating, romantic conflict, and relationship advice.</p>\n\n<p>His specials include <a href=\"https://www.imdb.com/name/nm1189640/\"><em>Corey Holcomb: The Problem Is You</em></a> (2004), a <em>Comedy Central Presents</em> installment (2005), Showtime’s <em>Corey Holcomb: Your Way Ain’t Working</em> (2012), and <em>The Book of Coreythians</em> (2023).</p>\n\n<p>He appeared as himself on <em>The Tonight Show with Jay Leno</em> in 2001 and <em>MADtv</em> in 2002; played Chauncey on <em>Half &amp; Half</em>; voiced Robert Tubbs for 14 episodes of <em>The Cleveland Show</em>; and played Boonie across 31 episodes of <em>Black Jesus</em> from 2014 to 2019. He was also listed as himself and a cast member on <em>Wild ’n Out</em> from 2005 to 2017.</p>\n\n<p>Holcomb appeared on <a href=\"https://podcasts.apple.com/us/podcast/corey-holcomb-million-dollaz-worth-of-game-episode-323/id1460157002?i=1000705184029\"><em>Million Dollaz Worth of Game</em></a> in April 2025 and <a href=\"https://www.iheart.com/podcast/1119-the-truth-after-dark-266334728/episode/corey-holcomb-talks-dr-cheyenne-bryant-336216711/\"><em>The Truth After Dark</em></a> in June 2026, followed by VladTV in August 2026.</p>",
+      "research_json": "{\n  \"full_name\": \"Corey Lamont Holcomb\",\n  \"hometown\": \"Chicago, Illinois, U.S.\",\n  \"career_start_year\": 1992,\n  \"specials\": [\n    {\n      \"title\": \"Corey Holcomb: The Problem Is You\",\n      \"platform\": \"\",\n      \"year\": 2004\n    },\n    {\n      \"title\": \"Comedy Central Presents: Corey Holcomb\",\n      \"platform\": \"Comedy Central\",\n      \"year\": 2005\n    },\n    {\n      \"title\": \"Corey Holcomb: Your Way Ain't Working\",\n      \"platform\": \"Showtime\",\n      \"year\": 2012\n    },\n    {\n      \"title\": \"Corey Holcomb: The Book of Coreythians\",\n      \"platform\": \"\",\n      \"year\": 2023\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Million Dollaz Worth of Game — Episode 323\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"The Truth After Dark\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"VladTV\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"The Tonight Show with Jay Leno\",\n      \"context\": \"Appeared as himself in 2001.\"\n    },\n    {\n      \"show\": \"MADtv\",\n      \"context\": \"Appeared as himself in a 2002 episode.\"\n    },\n    {\n      \"show\": \"Half & Half\",\n      \"context\": \"Played Chauncey in five episodes from 2003 to 2004.\"\n    },\n    {\n      \"show\": \"Wild 'n Out\",\n      \"context\": \"Listed as himself/cast member from 2005 to 2017.\"\n    },\n    {\n      \"show\": \"The Cleveland Show\",\n      \"context\": \"Voiced Robert Tubbs in 14 episodes from 2009 to 2013.\"\n    },\n    {\n      \"show\": \"Black Jesus\",\n      \"context\": \"Played Boonie in 31 episodes from 2014 to 2019.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Explicit, blunt, and relationship-focused.\",\n    \"structure\": \"Stand-up built around pointed relationship observations and advice-oriented premises.\",\n    \"recurring_themes\": [\n      \"Dating\",\n      \"Romantic relationships\",\n      \"Conflict between men and women\",\n      \"Relationship advice\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"He continues to headline comedy-club dates nationally; his official site lists dates from November 2026 through June 2027.\",\n  \"recent_activity_2025_2026\": \"Holcomb appeared on Million Dollaz Worth of Game in April 2025, The Truth After Dark in June 2026, and VladTV in August 2026. His official site lists a November 13–15, 2026 run at Houston Improv, followed by dates in Orlando, Tampa, Jackson, Greensboro, and Charlotte.\",\n  \"recent_hook\": {\n    \"summary\": \"Holcomb's official 5150 Show site lists an upcoming three-night Houston Improv engagement, billed as \\\"Corey Holcomb Live,\\\" beginning November 13, 2026.\",\n    \"quote\": \"Corey Holcomb Live (November 13-15)\",\n    \"source_publication\": \"Corey Holcomb 5150 Show\",\n    \"source_url\": \"https://coreyholcomb5150show.com/\",\n    \"date\": \"2026-11-13\"\n  },\n  \"instagram_handle\": \"@TheCoreyHolcomb\",\n  \"notable_bits_or_quotes\": [\n    \"His stand-up is repeatedly described by ticketing and entertainment listings as centering on relationship problems and dating dynamics.\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That Holcomb was born in 1968; sources encountered conflict on his birth year, with Wikipedia listing June 23, 1969.\",\n    \"That The Corey Holcomb 5150 Show began on SiriusXM; a Ticketmaster bio makes this claim, but it was not independently corroborated in the sources reviewed.\",\n    \"That The Book of Coreythians was released in 2018; a low-quality tour aggregator gave that year, while other sources identify it as a 2023 title.\",\n    \"Claims from unofficial ticket or fan sites that his 2026 tour consists of a fully new hour, uncensored late shows, or live 5150-style sessions; these details were not verified on Holcomb's official site.\"\n  ],\n  \"background_story\": \"Holcomb was born and raised in Chicago and was raised in the Robert Taylor Homes. After a short college basketball career, he began performing stand-up in Chicago; sources identify fellow Chicago comedian Godfrey as helping him get started. He later worked in television, film, voice acting, and radio/internet broadcasting, and hosts The Corey Holcomb 5150 Show.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Corey_Holcomb\"\n    },\n    {\n      \"label\": \"IMDb\",\n      \"url\": \"https://www.imdb.com/name/nm1189640/\"\n    },\n    {\n      \"label\": \"Corey Holcomb 5150 Show — official site\",\n      \"url\": \"https://coreyholcomb5150show.com/\"\n    },\n    {\n      \"label\": \"The Truth After Dark podcast episode\",\n      \"url\": \"https://www.iheart.com/podcast/1119-the-truth-after-dark-266334728/episode/corey-holcomb-talks-dr-cheyenne-bryant-336216711/\"\n    },\n    {\n      \"label\": \"Million Dollaz Worth of Game — Episode 323\",\n      \"url\": \"https://podcasts.apple.com/us/podcast/corey-holcomb-million-dollaz-worth-of-game-episode-323/id1460157002?i=1000705184029\"\n    },\n    {\n      \"label\": \"Ticketmaster artist page\",\n      \"url\": \"https://www.ticketmaster.com/corey-holcomb-tickets/artist/959260\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Corey_Holcomb",
+        "https://www.imdb.com/name/nm1189640/",
+        "https://www.instagram.com/TheCoreyHolcomb/"
+      ],
+      "instagramHandle": "@TheCoreyHolcomb",
+      "imageUrl": "https://s1.ticketm.net/dam/a/168/ad8a409d-f583-4333-896e-c605ce02c168_SOURCE",
+      "wpPageId": 2335,
+      "wpLink": "https://comedyhouston.com/comedians/corey-holcomb/",
+      "wpImageMediaId": 2334,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-11-13",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "Corey Holcomb",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7xFb8",
+          "event_id": "4a63376c2a61b36e",
+          "image_url": "https://s1.ticketm.net/dam/a/168/ad8a409d-f583-4333-896e-c605ce02c168_SOURCE"
+        },
+        {
+          "date": "2026-11-14",
+          "venue": "Houston Improv",
+          "time": "7:00 PM",
+          "name": "Corey Holcomb",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7xFbA",
+          "event_id": "f1ec42800c774d41",
+          "image_url": "https://s1.ticketm.net/dam/a/168/ad8a409d-f583-4333-896e-c605ce02c168_SOURCE"
+        },
+        {
+          "date": "2026-11-15",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "Corey Holcomb",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7xFbk",
+          "event_id": "b8d5ab81ef5cad5e",
+          "image_url": "https://s1.ticketm.net/dam/a/168/ad8a409d-f583-4333-896e-c605ce02c168_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/corey-holcomb-houston.jpg"
     },
     {
       "slug": "dale-elliott-jr",
@@ -898,6 +952,44 @@
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/kev-adams-houston.jpg"
     },
     {
+      "slug": "leanne-morgan",
+      "name": "Leanne Morgan",
+      "match": [
+        "leanne morgan"
+      ],
+      "status": "live",
+      "created_at": "2026-11-11T15:24:52.720Z",
+      "profile_written_at": "2026-11-11T15:25:58.811Z",
+      "profile_html": "<p>In August 2026, Season 2 of Netflix’s <a href=\"https://www.netflix.com/tudum/articles/leanne-morgan-comedy-series-season-2\"><em>Leanne</em></a> returned with more emotional material. Leanne Morgan told <em>Country Living</em> the following day, “I love all of them. We all hug every day and tell each other we love each other.” Her stand-up draws on family life and domestic frustration, down to the details.</p>\n\n<p>Morgan grew up in rural Adams, Tennessee, graduated from the University of Tennessee, and began performing open mics and comedy-club sets after moving to San Antonio in 2001. She had sold jewelry through home parties, where stories about motherhood and home life already had an audience. On a 2025 episode of <a href=\"https://officeladies.com/episodes/2025/30/07/episode-256-an-interview-with-leanne-morgan\">Office Ladies</a>, she recalled her first paid booking: a Rotary Club luncheon in Morristown, Tennessee.</p>\n\n<p>The 2025 follow-up, <a href=\"https://www.netflix.com/title/81733615\"><em>Leanne Morgan: Unspeakable Things</em></a>, covers family life, marriage, newfound fame, CBD, menopause, grandmotherhood, Southern culture, and domestic aggravation. “I think if you've ever been in a family. If you had a mama, a grandmama, or whatever then you kind of relate to what I'm saying,” she has said.</p>",
+      "research_json": "{\n  \"full_name\": \"Leanne Morgan\",\n  \"hometown\": \"Adams, Tennessee\",\n  \"career_start_year\": 2001,\n  \"specials\": [\n    {\n      \"title\": \"Leanne Morgan: I'm Every Woman\",\n      \"platform\": \"Netflix\",\n      \"year\": 2023\n    },\n    {\n      \"title\": \"Leanne Morgan: Unspeakable Things\",\n      \"platform\": \"Netflix\",\n      \"year\": 2025\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"That Sounds Fun with Annie F. Downs\",\n      \"year_approx\": 2024\n    },\n    {\n      \"show\": \"WTF with Marc Maron\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"Office Ladies 6.0\",\n      \"year_approx\": 2025\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Leanne\",\n      \"context\": \"Netflix multi-camera sitcom in which Morgan stars; Netflix identifies her as a co-creator and executive producer.\"\n    },\n    {\n      \"show\": \"The Kelly Clarkson Show\",\n      \"context\": \"Listed as an appearance in Morgan's official biography.\"\n    },\n    {\n      \"show\": \"The View\",\n      \"context\": \"Listed as an appearance in Morgan's official biography.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Warm, candid, down-home, and relatable.\",\n    \"structure\": \"Observational storytelling built from detailed anecdotes about ordinary life.\",\n    \"recurring_themes\": [\n      \"Family life\",\n      \"Marriage\",\n      \"Motherhood and grandmotherhood\",\n      \"Menopause and aging\",\n      \"Everyday domestic frustrations\",\n      \"Southern culture\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"Morgan's official site states that her Just Getting Started tour sold more than 100,000 tickets in its first six months and that she became the first female comedian to perform two nights at Nashville's Bridgestone Arena.\",\n  \"recent_activity_2025_2026\": \"Morgan's second Netflix stand-up special, Leanne Morgan: Unspeakable Things, premiered on November 4, 2025. She returned for Season 2 of the Netflix sitcom Leanne on August 27, 2026, and her official site announced The Time of Our Lives tour, running in 32 U.S. markets from late June through December 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"Season 2 of Morgan's Netflix sitcom Leanne returned in August 2026. In an interview published the following day, Morgan discussed reuniting with the show's cast and the new season's more emotional material.\",\n    \"quote\": \"“I love all of them. We all hug every day and tell each other we love each other.”\",\n    \"source_publication\": \"Country Living\",\n    \"source_url\": \"https://www.countryliving.com/life/entertainment/a73556486/leanne-season-2-interview/\",\n    \"date\": \"2026-08-28\"\n  },\n  \"instagram_handle\": \"@leannemorgancomedy\",\n  \"notable_bits_or_quotes\": [\n    \"“I think if you've ever been in a family. If you had a mama, a grandmama, or whatever then you kind of relate to what I'm saying.”\",\n    \"Her Netflix special Leanne Morgan: Unspeakable Things includes material about family life, newfound fame, marriage, and trying CBD.\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That Leanne Morgan: Unspeakable Things debuted at No. 1 worldwide; this appears on Morgan's official site, but was not independently verified through Netflix reporting.\",\n    \"That Morgan has development deals with ABC, Warner Bros., TV Land, and Sony Television; this appears in biographical promotional copy but was not independently verified.\",\n    \"That she will appear in the forthcoming film The Comeback King, including the stated February 5, 2027 release date; this was listed on her official site but was not independently verified through a studio source.\",\n    \"Claims giving her birth year as 1964 or 1965; sources encountered were inconsistent, so no birth year should be used without stronger verification.\"\n  ],\n  \"background_story\": \"Morgan grew up in rural Tennessee and graduated from the University of Tennessee. After marrying her husband, Chuck, she lived in Bean Station, Tennessee, sold jewelry through home parties, and found that audiences responded to her stories about motherhood and domestic life. After her family moved to San Antonio in 2001, she began performing open mics and comedy-club sets. In a 2025 Office Ladies interview, she said she had been doing stand-up for 25 years and described receiving her first paid comedy booking at a Rotary Club luncheon in Morristown, Tennessee.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Netflix — Leanne Morgan: I'm Every Woman\",\n      \"url\": \"https://www.netflix.com/title/81636889\"\n    },\n    {\n      \"label\": \"Netflix — Leanne Morgan: Unspeakable Things\",\n      \"url\": \"https://www.netflix.com/title/81733615\"\n    },\n    {\n      \"label\": \"Netflix Tudum — Leanne series profile\",\n      \"url\": \"https://www.netflix.com/tudum/articles/leanne-morgan-series\"\n    },\n    {\n      \"label\": \"Netflix Tudum — Leanne Season 2 announcement\",\n      \"url\": \"https://www.netflix.com/tudum/articles/leanne-morgan-comedy-series-season-2\"\n    },\n    {\n      \"label\": \"Office Ladies — Episode 256 interview\",\n      \"url\": \"https://officeladies.com/episodes/2025/30/07/episode-256-an-interview-with-leanne-morgan\"\n    },\n    {\n      \"label\": \"WTF with Marc Maron — Episode 1660\",\n      \"url\": \"https://www.wtfpod.com/podcast/episode-1660-leanne-morgan\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.netflix.com/title/81636889",
+        "https://www.netflix.com/title/81733615",
+        "https://www.netflix.com/tudum/articles/leanne-morgan-series",
+        "https://www.netflix.com/tudum/articles/leanne-morgan-comedy-series-season-2",
+        "https://www.instagram.com/leannemorgancomedy/"
+      ],
+      "instagramHandle": "@leannemorgancomedy",
+      "imageUrl": "https://s1.ticketm.net/dam/a/da9/e244b269-a579-4c18-9104-2f8f21c13da9_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "wpPageId": 2329,
+      "wpLink": "https://comedyhouston.com/comedians/leanne-morgan/",
+      "wpImageMediaId": 2328,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-11-14",
+          "venue": "Toyota Center - TX",
+          "time": "7:00 PM",
+          "name": "Leanne Morgan",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A7xZ8y",
+          "event_id": "8b1d041b75608b1f",
+          "image_url": "https://s1.ticketm.net/dam/a/da9/e244b269-a579-4c18-9104-2f8f21c13da9_TABLET_LANDSCAPE_LARGE_16_9.jpg"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/leanne-morgan-houston.jpg"
+    },
+    {
       "slug": "luke-kidgell",
       "name": "Luke Kidgell",
       "match": [
@@ -1242,6 +1334,40 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/nikki-glaser-houston.jpg"
+    },
+    {
+      "slug": "nurse-john",
+      "name": "Nurse John",
+      "match": [
+        "nurse john"
+      ],
+      "status": "live",
+      "created_at": "2026-11-11T15:26:13.029Z",
+      "profile_written_at": "2026-11-11T15:27:16.217Z",
+      "profile_html": "<p>In November 2026, <a href=\"https://www.youtubetheater.com/news/detail/comedian-nurse-john-announces-2027-against-medical-advice-readmitted-tour-stopping-at-youtube-theater-on-april-30-2027\">Nurse John announced</a> <em>Against Medical Advice: Readmitted</em>, a second North American leg following <em>Against Medical Advice</em>. “I never imagined that a Filipino kid with big dreams would one day stand on the iconic stage of Radio City Music Hall,” he said.</p>\n\n<p>Born in the Philippines, Nurse John immigrated to Canada at 16 and worked as a hospital frontliner during the COVID-19 pandemic before moving into full-time comedy and content creation. He told <a href=\"https://rollingstonephilippines.com/culture/internet-culture/nurse-john-tiktok-standup-interview/\">Rolling Stone Philippines</a> that he wants healthcare workers to tell stories about “what goes on behind the curtain at a hospital.” His short-form sketches cover nursing, understaffing, burnout, low pay, Filipino family dynamics, and the immigrant experience.</p>\n\n<p>The Short-Staffed Tour sold more than 200,000 tickets across more than 200 shows, including sold-out international dates. In July 2026, he headlined Just For Laughs in Montreal, an occasion covered by <a href=\"https://montreal.citynews.ca/2026/07/23/montreal-nurse-tiktok-nurse-johnn-just-for-laughs-festival/\">CityNews Montreal</a>.</p>\n\n<p>Onstage, he works the crowd in scrubs. His rule is plain: “I don’t use it to degrade people or punch down on a sensitive situation, but I use it to shed a light on the situation and show people that you’re not the only one that’s going through it.”</p>",
+      "research_json": "{\n  \"full_name\": \"John Dela Cruz\",\n  \"hometown\": \"Montreal, Quebec, Canada; he was born in Bulacan, Philippines.\",\n  \"career_start_year\": null,\n  \"specials\": [\n    {\n      \"title\": \"Against Medical Advice\",\n      \"platform\": \"Live taping at the Alex Theatre in Glendale, California; no release platform verified\",\n      \"year\": 2026\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Entertain Me! with Heather Brooker\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Asia News Week (ABC News Australia)\",\n      \"context\": \"Interviewed behind the scenes during his Australian tour about Filipino nurses and his healthcare-comedy sketches.\"\n    },\n    {\n      \"show\": \"CBS LA\",\n      \"context\": \"Interviewed about his local shows and the taping of his comedy special.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Relatable, cathartic, and empathetic; he uses humor to make healthcare workers feel seen without punching down.\",\n    \"structure\": \"Short-form character and workplace sketches online; live performances include crowdwork while performing as his healthcare alter ego in scrubs.\",\n    \"recurring_themes\": [\n      \"Nursing and hospital work\",\n      \"Understaffing and burnout\",\n      \"Low pay and undervaluation of healthcare workers\",\n      \"Healthcare-worker trauma bonding\",\n      \"Filipino family dynamics\",\n      \"Immigrant experience\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"His debut live outing, The Short-Staffed Tour, was reported by venue and media sources as selling more than 200,000 tickets across more than 200 shows, including sold-out international dates.\",\n  \"recent_activity_2025_2026\": \"In 2026, he headlined Just For Laughs in Montreal, taped his first comedy special, Against Medical Advice, at the Alex Theatre in Glendale on August 16, and toured North America with Against Medical Advice. On November 10, 2026, YouTube Theater announced a second 2027 leg, Against Medical Advice: Readmitted, including an April 30, 2027 Inglewood date.\",\n  \"recent_hook\": {\n    \"summary\": \"Nurse John announced the 2027 Against Medical Advice: Readmitted tour, a second North American leg following the first run of his Against Medical Advice tour. The announcement includes an April 30, 2027 performance at YouTube Theater in Inglewood, California.\",\n    \"quote\": \"I never imagined that a Filipino kid with big dreams would one day stand on the iconic stage of Radio City Music Hall. I’m filled with so much gratitude for how far I’ve come and for everyone who believed in me.\",\n    \"source_publication\": \"YouTube Theater\",\n    \"source_url\": \"https://www.youtubetheater.com/news/detail/comedian-nurse-john-announces-2027-against-medical-advice-readmitted-tour-stopping-at-youtube-theater-on-april-30-2027\",\n    \"date\": \"2026-11-10\"\n  },\n  \"instagram_handle\": \"@nurse.johnn\",\n  \"notable_bits_or_quotes\": [\n    \"“I feel like more healthcare workers should be able to tell their stories about what goes on behind the curtain at a hospital.”\",\n    \"“I don’t use it to degrade people or punch down on a sensitive situation, but I use it to shed a light on the situation and show people that you’re not the only one that’s going through it.”\",\n    \"“I do believe that we have the talent, we have the capabilities, and follow what makes you happy.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That he is a nurse practitioner; reliable sources reviewed describe him as a registered or licensed nurse, but this specific credential was not independently verified.\",\n    \"That Against Medical Advice has been released on a streaming service or other distribution platform; its August 2026 live taping was verified, but no release platform was verified.\",\n    \"That he was included in Forbes' Top Creators of 2026; this appeared in a Wikipedia search result but was not independently verified from Forbes.\",\n    \"Specific social-media follower totals without a date; figures varied across otherwise credible sources.\"\n  ],\n  \"background_story\": \"Dela Cruz is a Filipino-born, Filipino-Canadian nurse and comedian who immigrated from the Philippines to Canada at age 16. He worked as a hospital frontliner in Montreal during the COVID-19 pandemic and began posting healthcare-related TikTok videos after a video responding to a prompt about underpaid work went viral. He later moved from nursing into full-time comedy and content creation.\",\n  \"source_urls\": [\n    {\n      \"label\": \"YouTube Theater — 2027 Against Medical Advice: Readmitted announcement\",\n      \"url\": \"https://www.youtubetheater.com/news/detail/comedian-nurse-john-announces-2027-against-medical-advice-readmitted-tour-stopping-at-youtube-theater-on-april-30-2027\"\n    },\n    {\n      \"label\": \"Rolling Stone Philippines interview\",\n      \"url\": \"https://rollingstonephilippines.com/culture/internet-culture/nurse-john-tiktok-standup-interview/\"\n    },\n    {\n      \"label\": \"iHeart — Entertain Me! with Heather Brooker episode\",\n      \"url\": \"https://www.iheart.com/podcast/53-entertain-me-with-heather-b-275178444/episode/nurse-john-on-going-viral-nurses-341070316/\"\n    },\n    {\n      \"label\": \"CityNews Montreal interview\",\n      \"url\": \"https://montreal.citynews.ca/2026/07/23/montreal-nurse-tiktok-nurse-johnn-just-for-laughs-festival/\"\n    },\n    {\n      \"label\": \"American Society of Registered Nurses interview\",\n      \"url\": \"https://www.asrn.org/journal-nursing/3270-how-nurse-john-went-from-being-a-full-time-nurse-to-a-successful-comedian.html\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.instagram.com/nurse.johnn/"
+      ],
+      "instagramHandle": "@nurse.johnn",
+      "imageUrl": "https://s1.ticketm.net/dam/a/c5b/7ab28ae8-0253-4f76-ac58-eb4fbab24c5b_SOURCE",
+      "wpPageId": 2332,
+      "wpLink": "https://comedyhouston.com/comedians/nurse-john/",
+      "wpImageMediaId": 2331,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-11-13",
+          "venue": "Smart Financial Centre at Sugar Land",
+          "time": "7:30 PM",
+          "name": "Nurse John",
+          "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1A70_kF",
+          "event_id": "989f8bf75eaff755",
+          "image_url": "https://s1.ticketm.net/dam/a/c5b/7ab28ae8-0253-4f76-ac58-eb4fbab24c5b_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/nurse-john-houston.png"
     },
     {
       "slug": "pauly-shore",

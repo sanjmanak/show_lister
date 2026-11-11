@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T23:54:28.869Z",
+  "generated_at": "2026-11-11T15:29:02.742Z",
   "source_manifests": [
     "manifest-2026-11-09.json",
     "manifest-2026-11-16.json",
@@ -16,31 +16,31 @@
     },
     {
       "date": "2026-11-12",
-      "comedianName": "Chrissy Chlapecka",
-      "slug": "chrissy-chlapecka-the-secret-group-2026-11-12",
-      "wpLink": "https://comedyhouston.com/comedians/chrissy-chlapecka/",
-      "venue": "The Secret Group"
-    },
-    {
-      "date": "2026-11-12",
-      "comedianName": "Clint Coley",
-      "slug": "clint-coley-punch-line-houston-2026-11-12",
-      "wpLink": "https://comedyhouston.com/comedians/clint-coley/",
-      "venue": "Punch Line Houston"
-    },
-    {
-      "date": "2026-11-12",
       "comedianName": "Ellen Skrmetti",
       "slug": "ellen-skrmetti-houston-improv-2026-11-12",
       "wpLink": "https://comedyhouston.com/comedians/ellen-skrmetti/",
       "venue": "Houston Improv"
     },
     {
-      "date": "2026-11-12",
-      "comedianName": "Reem Edan",
-      "slug": "reem-edan-the-den-comedy-club-2026-11-12",
-      "wpLink": "https://comedyhouston.com/comedians/reem-edan/",
-      "venue": "The Den Comedy Club"
+      "date": "2026-11-13",
+      "comedianName": "Corey Holcomb",
+      "slug": "corey-holcomb-houston-improv-2026-11-13",
+      "wpLink": "https://comedyhouston.com/comedians/corey-holcomb/",
+      "venue": "Houston Improv"
+    },
+    {
+      "date": "2026-11-13",
+      "comedianName": "Nurse John",
+      "slug": "nurse-john-smart-financial-centre-at-sugar-land-2026-11-13",
+      "wpLink": "https://comedyhouston.com/comedians/nurse-john/",
+      "venue": "Smart Financial Centre at Sugar Land"
+    },
+    {
+      "date": "2026-11-14",
+      "comedianName": "Leanne Morgan",
+      "slug": "leanne-morgan-toyota-center-tx-2026-11-14",
+      "wpLink": "https://comedyhouston.com/comedians/leanne-morgan/",
+      "venue": "Toyota Center - TX"
     },
     {
       "date": "2026-11-18",
