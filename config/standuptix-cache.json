@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-37": {
-      "lastmod": "2026-11-09T01:14:00-06:00",
+      "lastmod": "2026-11-12T01:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -57,10 +57,6 @@
           {
             "@type": "Person",
             "name": "Ocean Glapion"
-          },
-          {
-            "@type": "Person",
-            "name": "Son Tran"
           }
         ]
       }
@@ -249,7 +245,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-24": {
-      "lastmod": "2026-11-11T07:42:00-06:00",
+      "lastmod": "2026-11-12T11:46:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -6065,7 +6061,7 @@
       }
     },
     "https://www.theriothtx.com/events/comedian-jesse-peyton-fox-iheartradio-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-11-11T07:42:00-06:00",
+      "lastmod": "2026-11-12T11:45:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",

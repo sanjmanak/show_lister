@@ -1,15 +1,7 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-11-06T20:00:50.446Z",
+  "last_updated": "2026-11-12T20:52:51.189Z",
   "entries": {
-    "f3f2fc613ede0656": {
-      "price_min": 31.4,
-      "price_max": 31.4,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.ticketweb.com/event/kev-adams-houston-improv-tickets/14277964?REFERRAL_ID=tmfeed",
-      "fetched_at": "2026-09-01T18:00:29.002Z"
-    },
     "6b85772a84b825cf": {
       "price_min": 31.4,
       "price_max": 31.4,
