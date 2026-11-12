@@ -1,3 +1,21 @@
 {
-  "items": []
+  "generated_at": "2026-11-12T21:55:27.126Z",
+  "dry_run": false,
+  "items": [
+    {
+      "id": "94ed1bdd688cc556",
+      "name": "Dale Jones",
+      "performer_name": "Dale Jones",
+      "venue": "Punch Line Houston",
+      "date": "2027-02-07",
+      "ticket_url": "https://www.ticketmaster.com/dale-jones-houston-texas-02-07-2027/event/3A006569BDFE9567",
+      "files": {
+        "portrait": "2027-02-07-dale-jones-portrait.png",
+        "story": "2027-02-07-dale-jones-story.png",
+        "reel": "2027-02-07-dale-jones.mp4"
+      },
+      "caption": "Three-time Last Comic Standing finalist Dale Jones is back with his rapid-fire stand-up.\nSee Dale Jones at Punch Line Houston on February 7, 2027. He is also a frequent guest on The Bob & Tom Show. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
+      "confidence": 0.94
+    }
+  ]
 }
