@@ -1,6 +1,6 @@
 {
   "_readme": "Events removed by config/filters.json at the last fetch. Review for false positives; edit the config to adjust.",
-  "last_updated": "2026-11-12T20:50:43.555Z",
+  "last_updated": "2026-11-13T03:38:50.557Z",
   "total_excluded": 22,
   "events": [
     {
