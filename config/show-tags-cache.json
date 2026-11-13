@@ -2972,6 +2972,24 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-11-13"
+    },
+    "comedian sheba mason headlines the riot comedy club": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-13"
+    },
+    "tino cochino headlines the riot comedy club": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-13"
+    },
+    "comedian tino cochino live in conroe": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-13"
     }
   }
 }
