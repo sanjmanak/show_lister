@@ -2990,6 +2990,30 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-11-13"
+    },
+    "nurse john: against medical advice tour": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-14"
+    },
+    "chris porter": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-14"
+    },
+    "don't tell comedy: downtown (7:00 pm show)": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-14"
+    },
+    "don't tell comedy: downtown (9:00 pm show)": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-14"
     }
   }
 }

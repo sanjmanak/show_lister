@@ -1,72 +1,7 @@
 {
   "pages": {
-    "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-28": {
-      "lastmod": "2026-11-11T11:56:00-06:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Friday Night Standup Comedy Showcase",
-        "startDate": "2026-11-13T21:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-28",
-          "priceCurrency": "USD",
-          "price": "25.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-08-08T12:27:04-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-28",
-        "image": "/img/shows/Showcase-Templates-20-friday-night-9pm-602b1388-large-thumb.png",
-        "description": "Come join us for a hilarious evening of laughter at The Riot presents Friday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you&#39;re a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone. You can expect a diverse lineup with 5-7 comedians from Houston and around the country.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Compliemtary Valet--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google thousands of reviews!Delicious Food &amp; DrinksEnjoy tasty food, draft beer, wine, coffee, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Christian Alexander"
-          },
-          {
-            "@type": "Person",
-            "name": "Adam Fynke"
-          },
-          {
-            "@type": "Person",
-            "name": "Danny Guerrero"
-          },
-          {
-            "@type": "Person",
-            "name": "Ocean Glapion"
-          },
-          {
-            "@type": "Person",
-            "name": "JCann"
-          },
-          {
-            "@type": "Person",
-            "name": "Tess Vergult"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-32": {
-      "lastmod": "2026-11-11T11:56:00-06:00",
+      "lastmod": "2026-11-13T05:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -736,7 +671,7 @@
     "https://www.theriothtx.com/events/michael-rowland-hbomax-late-night-with-jimmy-fallon-comedy-central-headlines-the-riot-comedy-club": {
       "lastmod": "2026-10-13T06:22:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Michael Rowland (HBOmax, Late Night with Jimmy Fallon, Comedy Central) Headlines The Riot Comedy Club",
         "startDate": "2026-11-20T19:00:00-06:00",
@@ -759,7 +694,7 @@
           "url": "https://www.theriothtx.com/events/michael-rowland-hbomax-late-night-with-jimmy-fallon-comedy-central-headlines-the-riot-comedy-club",
           "priceCurrency": "USD",
           "price": "0.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-07-29T14:08:39-05:00"
         },
         "url": "https://www.theriothtx.com/events/michael-rowland-hbomax-late-night-with-jimmy-fallon-comedy-central-headlines-the-riot-comedy-club",
@@ -781,7 +716,7 @@
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-29": {
       "lastmod": "2026-09-24T08:17:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Presents Friday Night Standup Comedy Showcase",
         "startDate": "2026-11-20T21:00:00-06:00",
@@ -803,8 +738,8 @@
           "@type": "Offer",
           "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-29",
           "priceCurrency": "USD",
-          "price": "19.00",
-          "availability": "InStock",
+          "price": "25.00",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-08T12:27:04-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-29",
@@ -5434,59 +5369,6 @@
         ]
       }
     },
-    "https://www.riotconroe.com/events/jon-polar-bear-gonzale-live-in-conroe": {
-      "lastmod": "2026-11-09T01:19:00-06:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Comedian Jon \"Polar Bear\" Gonzalez Live in Conroe",
-        "startDate": "2026-11-13T19:30:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Conroe",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "219 Simonton Street",
-            "addressLocality": "Conroe",
-            "postalCode": "77301",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.riotconroe.com/events/jon-polar-bear-gonzale-live-in-conroe",
-          "priceCurrency": "USD",
-          "price": "20.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-08-13T14:25:55-05:00"
-        },
-        "url": "https://www.riotconroe.com/events/jon-polar-bear-gonzale-live-in-conroe",
-        "image": "/img/events/Guadalaharrys-67-eafa0b9a-large-thumb.png",
-        "description": "Welcome to Riot Comedy Conroe &ndash; Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, great food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.Come see Jon &ldquo;Polar Bear&rdquo; Gonzalez! Jon&rsquo;s best known for his White VS Hispanic skits, however Jon first started doing comedy in July of 2011. What started off as making his family laugh on road trips, soon led to him stumbling upon Chris Farley and stand up comedy, which eventually led to him pursuing a full time career in stand up. After getting involved in the local comedy scene in Austin, Jon quickly found success through the release of multiple comedy skits which went viral receiving millions of views on Facebook and shortly after, TikTok. Since then Jon has toured all over the country performing his live standup show while also growing his fan base through social media. He&rsquo;s currently working on his new hour and is getting it as close to perfection as possible for his new nationwide tour in 2027. Make sure to catch Polar Bear&rsquo;s live show when he comes through your city. You won&rsquo;t wanna miss it!ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.--",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Conroe",
-          "url": "https://www.riotconroe.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Jon Gonzalez"
-          },
-          {
-            "@type": "Person",
-            "name": "Javier Negrete"
-          },
-          {
-            "@type": "Person",
-            "name": "Jacinto Maturino"
-          }
-        ]
-      }
-    },
     "https://www.riotconroe.com/events/comedian-jon-polar-bear-gonzale-live-in-conroe-2026-11-14190000": {
       "lastmod": "2026-11-09T06:05:00-06:00",
       "node": {
@@ -6927,7 +6809,7 @@
     "https://www.riotconroe.com/events/comedian-lachlan-patterson-the-tonight-show-comedy-central-america-s-got-talent-live-in-conroe": {
       "lastmod": "2026-09-16T05:06:00-05:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Lachlan Patterson (The Tonight Show, Comedy Central, America's Got Talent) Live in Conroe",
         "startDate": "2026-11-20T19:30:00-06:00",
@@ -6950,7 +6832,7 @@
           "url": "https://www.riotconroe.com/events/comedian-lachlan-patterson-the-tonight-show-comedy-central-america-s-got-talent-live-in-conroe",
           "priceCurrency": "USD",
           "price": "20.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-09-10T15:01:20-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-lachlan-patterson-the-tonight-show-comedy-central-america-s-got-talent-live-in-conroe",
@@ -9406,71 +9288,6 @@
           {
             "@type": "Person",
             "name": "Chinedu Ogu"
-          }
-        ]
-      }
-    },
-    "https://www.theriothtx.com/events/the-riot-presents-friday-night-early-standup-comedy-showcase-2026-11-13190000": {
-      "lastmod": "2026-11-13T01:03:00-06:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Friday Night Early Standup Comedy Showcase ",
-        "startDate": "2026-11-13T19:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-early-standup-comedy-showcase-2026-11-13190000",
-          "priceCurrency": "USD",
-          "price": "25.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-11-09T13:16:57-06:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-early-standup-comedy-showcase-2026-11-13190000",
-        "image": "/img/shows/friday-7-8bbb088f-large-thumb.jpg",
-        "description": "Come join us for a hilarious evening of laughter at The Riot presents Friday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you&#39;re a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone. You can expect a diverse lineup with 5-7 comedians from Houston and around the country.Find information about the lineup on our instagram page: https://instagram.com/theriothtxAll shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Complimentary Valet--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Luis Dejesus"
-          },
-          {
-            "@type": "Person",
-            "name": "Brandon Green"
-          },
-          {
-            "@type": "Person",
-            "name": "Matt B.C."
-          },
-          {
-            "@type": "Person",
-            "name": "Kris Atkins"
-          },
-          {
-            "@type": "Person",
-            "name": "Jeff Joe"
-          },
-          {
-            "@type": "Person",
-            "name": "Ocean Glapion"
           }
         ]
       }
