@@ -50,15 +50,6 @@
   "manifest_version": 1794410942740,
   "cleanup_queue": [
     {
-      "slug": "kev-adams-houston-improv-2026-11-11",
-      "comedianName": "Kev Adams",
-      "igFeedMediaId": "18184244365428564",
-      "igStoryMediaId": "18114573266122823",
-      "fbFeedPostId": "1455318736692867",
-      "fbStoryPostId": "2530485920774715",
-      "postedAt": "2026-11-09T13:10:57.713Z"
-    },
-    {
       "slug": "clint-coley-punch-line-houston-2026-11-12",
       "comedianName": "Clint Coley",
       "igFeedMediaId": "17988705075175184",
