@@ -50,24 +50,6 @@
   "manifest_version": 1794410942740,
   "cleanup_queue": [
     {
-      "slug": "clint-coley-punch-line-houston-2026-11-12",
-      "comedianName": "Clint Coley",
-      "igFeedMediaId": "17988705075175184",
-      "igStoryMediaId": "17945420454359861",
-      "fbFeedPostId": "1455819419976132",
-      "fbStoryPostId": "1875098233927411",
-      "postedAt": "2026-11-10T00:21:11.058Z"
-    },
-    {
-      "slug": "ellen-skrmetti-houston-improv-2026-11-12",
-      "comedianName": "Ellen Skrmetti",
-      "igFeedMediaId": "18399403057205414",
-      "igStoryMediaId": "18002770551033683",
-      "fbFeedPostId": "1456442656580475",
-      "fbStoryPostId": "983552827635622",
-      "postedAt": "2026-11-10T12:50:37.669Z"
-    },
-    {
       "slug": "reem-edan-the-den-comedy-club-2026-11-12",
       "comedianName": "Reem Edan",
       "igFeedMediaId": "18131649982698919",
