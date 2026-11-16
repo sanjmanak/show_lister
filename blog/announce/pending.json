@@ -1,21 +1,3 @@
 {
-  "generated_at": "2026-11-16T23:50:25.157Z",
-  "dry_run": false,
-  "items": [
-    {
-      "id": "b891f1905d891313",
-      "name": "David Cross - Fake Joy",
-      "performer_name": "David Cross",
-      "venue": "White Oak Music Hall - Downstairs",
-      "date": "2027-02-12",
-      "ticket_url": "https://www.ticketmaster.com/david-cross-fake-joy-houston-texas-02-12-2027/event/3A00655ADE132526",
-      "files": {
-        "portrait": "2027-02-12-david-cross-portrait.png",
-        "story": "2027-02-12-david-cross-story.png",
-        "reel": "2027-02-12-david-cross.mp4"
-      },
-      "caption": "Mr. Show co-creator and Arrested Development's Tobias Fünke is touring Fake Joy.\nDavid Cross performs at White Oak Music Hall - Downstairs on February 12, 2027. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
-      "confidence": 0.99
-    }
-  ]
+  "items": []
 }
