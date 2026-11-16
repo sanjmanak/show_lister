@@ -1,117 +1,91 @@
 {
-  "generated_at": "2026-11-09T23:46:31.414Z",
-  "week_range": "November 9 – November 15, 2026",
+  "generated_at": "2026-11-16T23:44:32.507Z",
+  "week_range": "November 16 – November 22, 2026",
   "comedians": [
     {
-      "name": "Leanne Morgan",
-      "displayName": "Leanne Morgan",
+      "name": "Nick Cannon",
+      "displayName": "Nick Cannon",
       "names": [
-        "Leanne Morgan"
+        "Nick Cannon"
       ],
-      "show": "Leanne Morgan",
-      "venue": "Toyota Center - TX",
-      "date": "2026-11-14",
-      "eventKey": "leannemorgan@toyotacentertx",
-      "imageUrl": "https://s1.ticketm.net/dam/a/da9/e244b269-a579-4c18-9104-2f8f21c13da9_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-      "displayImage": "https://s1.ticketm.net/dam/a/da9/e244b269-a579-4c18-9104-2f8f21c13da9_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "show": "Nick Cannon Presents: Wild 'N Out Live - The Next Generation",
+      "venue": "Toyota Center",
+      "date": "2026-11-21",
+      "eventKey": "nickcannonpresentswildnoutlivethenextgeneration@toyotacenter",
+      "imageUrl": "https://s1.ticketm.net/dam/a/d03/0e910820-a598-4fdb-9f4d-ec70f74fdd03_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/d03/0e910820-a598-4fdb-9f4d-ec70f74fdd03_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Nurse John",
-      "displayName": "Nurse John",
+      "name": "Chelsea Handler",
+      "displayName": "Chelsea Handler",
       "names": [
-        "Nurse John"
+        "Chelsea Handler"
       ],
-      "show": "Nurse John",
-      "venue": "Smart Financial Centre at Sugar Land",
-      "date": "2026-11-13",
-      "eventKey": "nursejohn@smartfinancialcentreatsugarland",
-      "imageUrl": "https://s1.ticketm.net/dam/a/c5b/7ab28ae8-0253-4f76-ac58-eb4fbab24c5b_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/c5b/7ab28ae8-0253-4f76-ac58-eb4fbab24c5b_SOURCE",
+      "show": "CHELSEA HANDLER: THE HIGH AND MIGHTY TOUR",
+      "venue": "713 Music Hall",
+      "date": "2026-11-21",
+      "eventKey": "chelseahandlerthehighandmightytour@713musichall",
+      "imageUrl": "https://s1.ticketm.net/dam/a/e90/38e0c356-6bcb-4cd2-ab5d-97809a77ce90_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/e90/38e0c356-6bcb-4cd2-ab5d-97809a77ce90_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Kev Adams",
-      "displayName": "Kev Adams",
+      "name": "Brett Goldstein",
+      "displayName": "Brett Goldstein",
       "names": [
-        "Kev Adams"
+        "Brett Goldstein"
       ],
-      "show": "Kev Adams",
-      "venue": "Houston Improv",
-      "date": "2026-11-11",
-      "eventKey": "kevadams@houstonimprov",
-      "imageUrl": "https://s1.ticketm.net/dam/a/892/5c0db8b1-ce91-4685-af42-af3dc4610892_1306001_EVENT_DETAIL_PAGE_16_9.jpg",
-      "displayImage": "https://s1.ticketm.net/dam/a/892/5c0db8b1-ce91-4685-af42-af3dc4610892_1306001_EVENT_DETAIL_PAGE_16_9.jpg",
+      "show": "Brett Goldstein: Sex, Death & Small Talk",
+      "venue": "Bayou Music Center",
+      "date": "2026-11-22",
+      "eventKey": "brettgoldsteinsexdeathsmalltalk@bayoumusiccenter",
+      "imageUrl": "https://s1.ticketm.net/dam/a/fb8/f09abbd9-bcb8-4a09-83ab-c43806315fb8_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/fb8/f09abbd9-bcb8-4a09-83ab-c43806315fb8_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Ellen Skrmetti",
-      "displayName": "Ellen Skrmetti",
+      "name": "D.L. Hughley",
+      "displayName": "D.L. Hughley",
       "names": [
-        "Ellen Skrmetti"
+        "D.L. Hughley"
       ],
-      "show": "Ellen Skrmetti",
-      "venue": "Houston Improv",
-      "date": "2026-11-12",
-      "eventKey": "ellenskrmetti@houstonimprov",
-      "imageUrl": "https://s1.ticketm.net/dam/a/59a/054c5f8c-fe42-4283-865f-f63a2333559a_EVENT_DETAIL_PAGE_16_9.jpg",
-      "displayImage": "https://s1.ticketm.net/dam/a/59a/054c5f8c-fe42-4283-865f-f63a2333559a_EVENT_DETAIL_PAGE_16_9.jpg",
+      "show": "DON LEMON AND DL HUGHLEY: DL + DL 'ANYTHING GOES'",
+      "venue": "Cullen Performance Hall",
+      "date": "2026-11-21",
+      "eventKey": "donlemonanddlhughleydldlanythinggoes@cullenperformancehall",
+      "imageUrl": "https://s1.ticketm.net/dam/a/4af/a7091ede-2fb7-4276-a6fc-5d1f208d74af_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/4af/a7091ede-2fb7-4276-a6fc-5d1f208d74af_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Corey Holcomb",
-      "displayName": "Corey Holcomb",
+      "name": "Chris Fleming",
+      "displayName": "Chris Fleming",
       "names": [
-        "Corey Holcomb"
+        "Chris Fleming"
       ],
-      "show": "Corey Holcomb",
-      "venue": "Houston Improv",
-      "date": "2026-11-13",
-      "eventKey": "coreyholcomb@houstonimprov",
-      "imageUrl": "https://s1.ticketm.net/dam/a/168/ad8a409d-f583-4333-896e-c605ce02c168_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/168/ad8a409d-f583-4333-896e-c605ce02c168_SOURCE",
+      "show": "CHRIS FLEMING LIVE",
+      "venue": "Cullen Performance Hall",
+      "date": "2026-11-20",
+      "eventKey": "chrisfleminglive@cullenperformancehall",
+      "imageUrl": "https://s1.ticketm.net/dam/a/7da/06accf4e-b857-45e8-ae24-e57e6c84d7da_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/7da/06accf4e-b857-45e8-ae24-e57e6c84d7da_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Clint Coley",
-      "displayName": "Clint Coley",
+      "name": "Ryan Stiles",
+      "displayName": "Whose Live Anyway?",
       "names": [
-        "Clint Coley"
+        "Ryan Stiles",
+        "Greg Proops",
+        "Jeff B. Davis"
       ],
-      "show": "Clint Coley",
-      "venue": "Punch Line Houston",
-      "date": "2026-11-12",
-      "eventKey": "clintcoley@punchlinehouston",
-      "imageUrl": "https://s1.ticketm.net/dam/a/84d/6f42b922-5aa3-4667-bee0-ae827060884d_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/84d/6f42b922-5aa3-4667-bee0-ae827060884d_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Christopher Titus",
-      "displayName": "Christopher Titus",
-      "names": [
-        "Christopher Titus"
-      ],
-      "show": "Christopher Titus: Doomed To Repeat",
-      "venue": "Punch Line Houston",
-      "date": "2026-11-13",
-      "eventKey": "christophertitusdoomedtorepeat@punchlinehouston",
-      "imageUrl": "https://s1.ticketm.net/dam/a/c08/441cbaa3-6959-425b-ad68-f249f10d9c08_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/c08/441cbaa3-6959-425b-ad68-f249f10d9c08_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Chrissy Chlapecka",
-      "displayName": "Chrissy Chlapecka",
-      "names": [
-        "Chrissy Chlapecka"
-      ],
-      "show": "Chrissy Chlapecka",
-      "venue": "The Secret Group",
-      "date": "2026-11-12",
-      "eventKey": "chrissychlapecka@thesecretgroup",
-      "imageUrl": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192238708%2F3558237521%2F1%2Foriginal.20260830-213118?auto=format%2Ccompress&q=75&sharp=10&s=ccbac3fc9b16b9293b6269d13e650bf8",
-      "displayImage": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192238708%2F3558237521%2F1%2Foriginal.20260830-213118?auto=format%2Ccompress&q=75&sharp=10&s=ccbac3fc9b16b9293b6269d13e650bf8",
+      "show": "Whose Live Anyway?",
+      "venue": "Cullen Performance Hall",
+      "date": "2026-11-22",
+      "eventKey": "whoseliveanyway@cullenperformancehall",
+      "imageUrl": "https://s1.ticketm.net/dam/a/e19/4ff116ef-1748-417c-85ec-e9559ebc1e19_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/e19/4ff116ef-1748-417c-85ec-e9559ebc1e19_SOURCE",
       "imageSource": "event"
     }
   ]
