@@ -1,53 +1,17 @@
 {
   "posted": [
     {
-      "slug": "kev-adams-houston-improv-2026-11-11",
-      "comedianName": "Kev Adams",
-      "igFeedMediaId": "18184244365428564",
-      "igStoryMediaId": "18114573266122823",
-      "fbFeedPostId": "1455318736692867",
-      "fbStoryPostId": "2530485920774715",
-      "postedAt": "2026-11-09T13:10:57.713Z"
-    },
-    {
-      "slug": "ellen-skrmetti-houston-improv-2026-11-12",
-      "comedianName": "Ellen Skrmetti",
-      "igFeedMediaId": "18399403057205414",
-      "igStoryMediaId": "18002770551033683",
-      "fbFeedPostId": "1456442656580475",
-      "fbStoryPostId": "983552827635622",
-      "postedAt": "2026-11-10T12:50:37.669Z"
-    },
-    {
-      "slug": "leanne-morgan-toyota-center-tx-2026-11-14",
-      "comedianName": "Leanne Morgan",
-      "igFeedMediaId": "18016615538793956",
-      "igStoryMediaId": "18076694225762316",
-      "fbFeedPostId": "1457990036425737",
-      "fbStoryPostId": "2292872237948709",
-      "postedAt": "2026-11-11T22:54:49.255Z"
-    },
-    {
-      "slug": "nurse-john-smart-financial-centre-at-sugar-land-2026-11-13",
-      "comedianName": "Nurse John",
-      "igFeedMediaId": "18425293669152816",
-      "igStoryMediaId": "17915561370480485",
-      "fbFeedPostId": "1458614999696574",
-      "fbStoryPostId": "1103635782434295",
-      "postedAt": "2026-11-12T13:00:57.896Z"
-    },
-    {
-      "slug": "corey-holcomb-houston-improv-2026-11-13",
-      "comedianName": "Corey Holcomb",
-      "igFeedMediaId": "17957494254029709",
-      "igStoryMediaId": "17972156070194384",
-      "fbFeedPostId": "1459072099650864",
-      "fbStoryPostId": "1173143798716590",
-      "postedAt": "2026-11-12T22:21:44.163Z"
+      "slug": "luke-kidgell-punch-line-houston-2026-11-18",
+      "comedianName": "Luke Kidgell",
+      "igFeedMediaId": "18115393859594413",
+      "igStoryMediaId": "17886454863522739",
+      "fbFeedPostId": "1462683202623087",
+      "fbStoryPostId": "1790423739428929",
+      "postedAt": "2026-11-16T13:01:54.605Z"
     }
   ],
-  "week_range": "November 9 – November 15, 2026",
-  "manifest_version": 1794410942740,
+  "week_range": "November 16 – November 22, 2026",
+  "manifest_version": 1793047249340,
   "cleanup_queue": [
     {
       "slug": "reem-edan-the-den-comedy-club-2026-11-12",
@@ -93,6 +57,15 @@
       "fbFeedPostId": "1459072099650864",
       "fbStoryPostId": "1173143798716590",
       "postedAt": "2026-11-12T22:21:44.163Z"
+    },
+    {
+      "slug": "luke-kidgell-punch-line-houston-2026-11-18",
+      "comedianName": "Luke Kidgell",
+      "igFeedMediaId": "18115393859594413",
+      "igStoryMediaId": "17886454863522739",
+      "fbFeedPostId": "1462683202623087",
+      "fbStoryPostId": "1790423739428929",
+      "postedAt": "2026-11-16T13:01:54.605Z"
     }
   ]
 }
