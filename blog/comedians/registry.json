@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-16T22:59:28.729Z",
+  "updated_at": "2026-11-16T23:52:33.630Z",
   "comedians": [
     {
       "slug": "abby-govindan",
@@ -672,6 +672,41 @@
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/ivan-fematt-la-mole-houston.jpg"
     },
     {
+      "slug": "jeremy-alder",
+      "name": "Jeremy Alder",
+      "match": [
+        "jeremy alder"
+      ],
+      "status": "live",
+      "created_at": "2026-11-16T23:51:20.124Z",
+      "profile_written_at": "2026-11-16T23:52:27.247Z",
+      "profile_html": "<p>Jeremy Alder was homeschooled in Texas by fundamentalist missionary parents, then studied philosophy at the University of Texas at Austin and earned a master’s degree from Duke Divinity School. In September 2026, he and religion journalist Liz Charlotte Grant began <a href=\"https://www.thempathylist.com/p/the-empathy-list-177-the-empaths\">Empathy Revolt!</a>, a weekly politics-and-religion podcast. Its first full episode arrived September 30, 2026.</p>\n\n<p>His 2023 <a href=\"https://www.drybarcomedy.com/products/buy-rent-jeremy-alder-purity-pants\">Purity Pants</a> special, also on <a href=\"https://www.youtube.com/watch?v=i9OmDo5Weoc\">YouTube</a>, draws on homeschooling, marriage, parenting, aging, faith, and Christian rock. Alder’s delivery is dry, skeptical, and occasionally ridiculous. “I think there’s real power in laughing at the stuff that used to scare you,” he has said.</p>\n\n<p>Alder began performing after leaving ministry and attending an open mic in North Carolina. “I didn’t even know weekly comedy open mics were a thing,” he said. “I just wrote a few jokes, came back the next week and didn’t stop.” He has opened for Demetri Martin, Tom Papa, Aparna Nancherla, Nicole Byer, Russell Howard, and Chad Daniels, and headlines clubs and bars around the United States. His debut album, <a href=\"https://music.apple.com/us/album/almost-a-grown-man/1802816651\">Almost A Grown Man</a>, arrived through Blonde Medicine in April 2025.</p>",
+      "research_json": "{\n  \"full_name\": \"Jeremy Alder\",\n  \"hometown\": \"Hillsborough, North Carolina; he was raised in Texas.\",\n  \"career_start_year\": null,\n  \"specials\": [\n    {\n      \"title\": \"Purity Pants\",\n      \"platform\": \"Dry Bar Comedy; YouTube\",\n      \"year\": 2023\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Punching Up with Maya May\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"Rock That Doesn't Roll: The Story of Christian Music\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"The Jared Oliphint Show\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Alone At Lunch\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [],\n  \"comedy_style\": {\n    \"tone\": \"Dry, skeptical, silly, thoughtful, and irreverent without being cynical.\",\n    \"structure\": \"Personal stand-up rooted in autobiographical stories and observations.\",\n    \"recurring_themes\": [\n      \"homeschooling\",\n      \"evangelical and religious culture\",\n      \"faith and doubt\",\n      \"marriage\",\n      \"parenting\",\n      \"aging\",\n      \"Christian rock\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"He headlines comedy clubs and bars around the United States and has opened for Demetri Martin, Russell Howard, Tom Papa, Aparna Nancherla, Nicole Byer, and Chad Daniels.\",\n  \"recent_activity_2025_2026\": \"His debut comedy album, Almost A Grown Man, was released by Blonde Medicine on April 25, 2025. In 2026 he appeared on Rock That Doesn't Roll, The Jared Oliphint Show, and Alone At Lunch. In September 2026, he launched the weekly politics-and-religion podcast Empathy Revolt! with religion journalist Liz Charlotte Grant.\",\n  \"recent_hook\": {\n    \"summary\": \"Jeremy Alder became co-host of Empathy Revolt!, a weekly podcast for the Christian Left and its allies, with religion journalist Liz Charlotte Grant. The show's first full episode was published September 30, 2026.\",\n    \"quote\": \"My podcast co-host is Jeremy Alder, the comedian who does those “Christians Who Don’t Suck” videos on Instagram, and a social worker-in-training.\",\n    \"source_publication\": \"The Empathy List\",\n    \"source_url\": \"https://www.thempathylist.com/p/the-empathy-list-177-the-empaths\",\n    \"date\": \"2026-10-14\"\n  },\n  \"instagram_handle\": \"@jeremy.alder\",\n  \"notable_bits_or_quotes\": [\n    \"“I didn’t even know weekly comedy open mics were a thing. I just wrote a few jokes, came back the next week and didn’t stop.”\",\n    \"“I think there’s real power in laughing at the stuff that used to scare you.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That he has appeared on Don't Tell Comedy; this appeared in event-listing copy, but no primary appearance page was independently verified.\",\n    \"That he is in regular rotation on SiriusXM; this appeared in venue and event copy, but a SiriusXM primary source was not independently verified.\",\n    \"That he is a three-time North Carolina's Funniest finalist; this appeared in a comedy-club biography, but independent results documentation was not verified.\"\n  ],\n  \"background_story\": \"Alder was homeschooled in Texas by fundamentalist missionary parents. He later attended a public university, earned a philosophy degree from the University of Texas at Austin, and received a master's degree from Duke Divinity School. He was previously a preacher and began doing stand-up after leaving ministry and attending an open mic in North Carolina. He is married and has children.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Official biography\",\n      \"url\": \"https://www.jeremyalder.com/about\"\n    },\n    {\n      \"label\": \"Dry Bar Comedy special page\",\n      \"url\": \"https://www.drybarcomedy.com/products/buy-rent-jeremy-alder-purity-pants\"\n    },\n    {\n      \"label\": \"YouTube special\",\n      \"url\": \"https://www.youtube.com/watch?v=i9OmDo5Weoc\"\n    },\n    {\n      \"label\": \"Apple Music album page\",\n      \"url\": \"https://music.apple.com/us/album/almost-a-grown-man/1802816651\"\n    },\n    {\n      \"label\": \"Rock That Doesn't Roll podcast episode\",\n      \"url\": \"https://www.iheart.com/podcast/310-rock-that-doesnt-roll-the-122152185/episode/whats-funny-about-failing-at-christian-327282347/\"\n    },\n    {\n      \"label\": \"Empathy Revolt launch article\",\n      \"url\": \"https://www.thempathylist.com/p/the-empathy-list-177-the-empaths\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.youtube.com/watch?v=i9OmDo5Weoc",
+        "https://www.instagram.com/jeremy.alder/"
+      ],
+      "instagramHandle": "@jeremy.alder",
+      "imageUrl": "https://www.riotconroe.com/img/events/IMG-0488-700c072c-large-thumb.jpg",
+      "wpPageId": 2351,
+      "wpLink": "https://comedyhouston.com/comedians/jeremy-alder/",
+      "wpImageMediaId": 2350,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-12-10",
+          "venue": "The Riot Comedy Club — Conroe",
+          "time": "8:00 PM",
+          "name": "Jeremy Alder (Sirius XM) Headlines The Riot Comedy Club",
+          "ticket_url": "https://www.riotconroe.com/events/jeremy-alder-sirius-xm-headlines-the-riot-comedy-club",
+          "event_id": "4a956a0b83ce5d58",
+          "image_url": "https://www.riotconroe.com/img/events/IMG-0488-700c072c-large-thumb.jpg"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/jeremy-alder-houston.jpg"
+    },
+    {
       "slug": "joanne-mcnally",
       "name": "Joanne McNally",
       "match": [
@@ -882,6 +917,40 @@
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/keegan-tindall-houston.png"
     },
     {
+      "slug": "keith-alberstadt",
+      "name": "Keith Alberstadt",
+      "match": [
+        "keith alberstadt"
+      ],
+      "status": "live",
+      "created_at": "2026-11-16T23:48:42.513Z",
+      "profile_written_at": "2026-11-16T23:49:56.779Z",
+      "profile_html": "<p>Keith Alberstadt works in playful, sarcastic, generally PG-13 material about family, marriage, parenting, and everyday idiosyncrasies.</p>\n\n<p>“No, ma'am. I am a time traveler. I am only here to beg you, please don't break up with your boyfriend or I'll never be born.”</p>\n\n<p>Alberstadt began in Nashville, Tennessee, then moved to New York City. His <a href=\"https://keithcomedy.com/bio/\">official biography</a> names the Comedy Cellar as his home club. He has appeared as a stand-up guest on <em>The Late Show with David Letterman</em>, <em>Late Night with Seth Meyers</em> in 2015, and <a href=\"https://www.imdb.com/title/tt7000216/\">The Late Show with Stephen Colbert</a> in 2017. His biography also credits freelance joke-writing for <em>Saturday Night Live</em>’s Weekend Update and <em>Late Night with Jimmy Fallon</em>.</p>\n\n<p>A January 2025 <a href=\"https://netny.tv/episodes/currents/daughter-with-down-syndrome-brings-laughter-and-love-to-comedian-and-his-family/\">Currents News profile</a> reported that Alberstadt and his wife, Leslie, lived in Bloomfield, New Jersey, with their three children. The profile said he had begun discussing his daughter Eileen’s Down syndrome in his act and advocacy. He appeared on <em>School of Laughs</em> in 2015 and <em>The Comedy Castle Podcast</em> in 2024 and 2025.</p>",
+      "research_json": "{\n  \"full_name\": \"Keith Alberstadt\",\n  \"hometown\": \"Nashville, Tennessee\",\n  \"career_start_year\": null,\n  \"specials\": [],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"The Comedy Castle Podcast\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"The Comedy Castle Podcast\",\n      \"year_approx\": 2024\n    },\n    {\n      \"show\": \"School of Laughs\",\n      \"year_approx\": 2015\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"The Late Show with Stephen Colbert\",\n      \"context\": \"Stand-up comic guest on the June 15, 2017 episode.\"\n    },\n    {\n      \"show\": \"Late Night with Seth Meyers\",\n      \"context\": \"Stand-up appearance on the April 9, 2015 episode.\"\n    },\n    {\n      \"show\": \"The Late Show with David Letterman\",\n      \"context\": \"Stand-up appearance; his official biography lists the program among his credits.\"\n    },\n    {\n      \"show\": \"Last Comic Standing\",\n      \"context\": \"Television credit listed in his official biography.\"\n    },\n    {\n      \"show\": \"Comics Unleashed with Byron Allen\",\n      \"context\": \"Television credit listed in his official biography.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Playful, sarcastic, and generally PG-13.\",\n    \"structure\": \"Observational stand-up built around everyday situations and personal life.\",\n    \"recurring_themes\": [\n      \"Family\",\n      \"Marriage\",\n      \"Everyday idiosyncrasies\",\n      \"Parenting\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"His official biography identifies the Comedy Cellar in New York City as his home club and says he performs at comedy clubs and corporate events around the United States.\",\n  \"recent_activity_2025_2026\": \"In October 2026, Alberstadt performed October 23-24 at The Edje at Bally's Quad Cities in Rock Island, Illinois. His official tour calendar also listed him as opening for Leanne Morgan in Cedar Park, Texas, on November 12-13, 2026; Houston on November 14, 2026; and Oklahoma City on November 15, 2026. It lists solo club dates at Bricktown Comedy Club in Oklahoma City on December 9, 2026, and Punch Line Houston on December 10, 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"A dated October 23, 2026 local-events article promoted Alberstadt's October 23-24 stand-up dates at The Edje at Bally's Quad Cities in Rock Island, Illinois.\",\n    \"quote\": \"Get ready for a weekend of big laughs with acclaimed comedian Keith Alberstadt at The Edje!\",\n    \"source_publication\": \"QuadCities.com\",\n    \"source_url\": \"https://www.quadcities.com/arts-and-entertainment-news/comedian-keith-alberstadt-at-ballys-in-rock-island-this-weekend/\",\n    \"date\": \"2026-10-23\"\n  },\n  \"instagram_handle\": null,\n  \"notable_bits_or_quotes\": [\n    \"“No, ma'am. I am a time traveler. I am only here to beg you, please don't break up with your boyfriend or I'll never be born.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"A specific career-start year; available sources establish releases and performances but do not reliably document the year he began performing stand-up.\",\n    \"That he has released a Netflix special or a stand-up special; verified sources located albums and late-night performances, not a Netflix special.\",\n    \"That he was a Saturday Night Live staff writer from 2008 to 2015; his official biography verifies freelance writing for Weekend Update but not that exact date range or staff status.\",\n    \"That he has appeared on Comedy Central; some event listings mention Comedy Central, but no independently verified program or episode was located.\",\n    \"That he has exactly four identifiable comedy albums; his official biography says he has four albums, but only One Night Stand, It's Pronounced 'Jenkins', and Walk It Off were independently identified.\"\n  ],\n  \"background_story\": \"Alberstadt began in Nashville and later moved to New York City. His official biography lists freelance joke-writing for Saturday Night Live's Weekend Update and Late Night with Jimmy Fallon, as well as several tours performing for U.S. troops in the Middle East. A January 2025 Currents News profile reported that he and his wife Leslie lived in Bloomfield, New Jersey, with their three children and that he had begun discussing his daughter Eileen's Down syndrome in his act and advocacy.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Official biography\",\n      \"url\": \"https://keithcomedy.com/bio/\"\n    },\n    {\n      \"label\": \"Official one-page biography PDF\",\n      \"url\": \"https://keithcomedy.com/wp-content/uploads/2018/06/one-page-bio.pdf\"\n    },\n    {\n      \"label\": \"IMDb: The Late Show with Stephen Colbert episode\",\n      \"url\": \"https://www.imdb.com/title/tt7000216/\"\n    },\n    {\n      \"label\": \"Apple Music: It's Pronounced 'Jenkins'\",\n      \"url\": \"https://music.apple.com/us/album/its-pronounced-jenkins/1459935524\"\n    },\n    {\n      \"label\": \"The Comedy Castle Podcast episode\",\n      \"url\": \"https://comedycastlepodcast.com/2025/11/04/podcast-245-keith-alberstadts-family-business/\"\n    },\n    {\n      \"label\": \"Currents News profile\",\n      \"url\": \"https://netny.tv/episodes/currents/daughter-with-down-syndrome-brings-laughter-and-love-to-comedian-and-his-family/\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.imdb.com/title/tt7000216/"
+      ],
+      "instagramHandle": "",
+      "imageUrl": "https://s1.ticketm.net/dam/a/c8c/7cf61385-b197-4f93-b39c-f1acfacf5c8c_SOURCE",
+      "wpPageId": 2345,
+      "wpLink": "https://comedyhouston.com/comedians/keith-alberstadt/",
+      "wpImageMediaId": 2344,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-12-10",
+          "venue": "Punch Line Houston",
+          "time": "7:30 PM",
+          "name": "Keith Alberstadt",
+          "ticket_url": "https://www.ticketmaster.com/keith-alberstadt-houston-texas-12-10-2026/event/3A006511BCBC562D",
+          "event_id": "1af6619fdcc5fc57",
+          "image_url": "https://s1.ticketm.net/dam/a/c8c/7cf61385-b197-4f93-b39c-f1acfacf5c8c_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/keith-alberstadt-houston.jpg"
+    },
+    {
       "slug": "keropi-sanchez",
       "name": "Keropi Sánchez",
       "match": [
@@ -988,6 +1057,40 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/leanne-morgan-houston.jpg"
+    },
+    {
+      "slug": "liz-faublas-wallace",
+      "name": "Liz Faublas-Wallace",
+      "match": [
+        "liz faublas wallace"
+      ],
+      "status": "live",
+      "created_at": "2026-11-16T23:47:37.529Z",
+      "profile_written_at": "2026-11-16T23:48:32.705Z",
+      "profile_html": "<p>Liz Faublas-Wallace’s recurring territory includes family, marriage, culture, faith, relationships, and everyday life.</p>\n\n<p>A Brooklyn native and St. John’s University alumna, Faublas-Wallace built a media career at Time Warner, NY1, NBC’s <em>TODAY</em>, and Bloomberg Television, according to <a href=\"https://www.stjohns.edu/news-media/success-stories/st-johns-alumna-grateful-education-she-received\">St. John’s</a>. She also solo-anchored NET-TV’s half-hour Catholic news broadcast <em>Currents News</em>.</p>\n\n<p>Her documented stand-up work dates to September 2010, when she appeared on a New York comedy bill. Faublas-Wallace favors personal stories and observation. “Sometimes you just have to laugh,” she has said. Her <a href=\"https://www.lizfaublas.com/stand-up-comedian.html\">official comedy bio</a> calls the material honest, grown, and relatable; a Houston Improv listing cites sharp observations and quick wit.</p>",
+      "research_json": "{\n  \"full_name\": \"Liz Faublas-Wallace\",\n  \"hometown\": \"Brooklyn, New York, United States\",\n  \"career_start_year\": null,\n  \"specials\": [],\n  \"podcast_appearances\": [],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Currents News\",\n      \"context\": \"Solo anchor of NET-TV's half-hour Catholic news broadcast, according to St. John's University.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Relatable, candid, faith-informed, and reflective.\",\n    \"structure\": \"Personal storytelling and observations drawn from everyday life.\",\n    \"recurring_themes\": [\n      \"family\",\n      \"marriage\",\n      \"culture\",\n      \"faith\",\n      \"relationships\",\n      \"everyday life\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"Her current promotional material describes her stand-up as honest, grown, relatable storytelling built from everyday experiences; a Houston Improv event listing describes her as using sharp observations and quick wit.\",\n  \"recent_activity_2025_2026\": \"She is scheduled to headline a live comedy taping, billed as \\\"Laugh Therapy: Liz Faublas-Wallace,\\\" at Houston Improv in Houston, Texas, on December 9, 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"Liz Faublas-Wallace is scheduled to record a live comedy special at Houston Improv on December 9, 2026. The event is presented as her first live comedy-special taping.\",\n    \"quote\": \"Get ready for an unforgettable night of laughter as nationally recognized comedian Liz Faublas-Wallace records her first-ever LIVE comedy special at the legendary Houston Improv.\",\n    \"source_publication\": \"Eventbrite\",\n    \"source_url\": \"https://www.eventbrite.com/e/shed-g-hosts-liz-faublas-wallace-live-comedy-taping-tickets-1993369468741?aff=ebdssbdestsearch\",\n    \"date\": \"2026-12-09\"\n  },\n  \"instagram_handle\": \"@efaublas\",\n  \"notable_bits_or_quotes\": [\n    \"\\\"Sometimes you just have to laugh.\\\"\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That she has a released stand-up special; the available evidence verifies only a planned live taping on December 9, 2026.\",\n    \"That she was the first Haitian-American female anchor of a nightly Catholic news program; this appears in an IMDb trivia entry but was not independently verified.\",\n    \"Specific claims of appearances at the Arlington Improv, Stand Up New York, and Broadway Comedy Club; these are listed on her own site, but no independent archival venue listings were located.\",\n    \"Any specific Emmy nomination, category, or year; promotional materials call her Emmy-nominated, but a nomination record was not independently located.\"\n  ],\n  \"background_story\": \"Faublas-Wallace is a Brooklyn native and St. John's University alumna. St. John's University reports that she began her media career at Time Warner after graduating, later worked at NY1, was a segment producer for NBC's TODAY, and reported for Bloomberg Television. The university also identifies her as the daughter of Haitian immigrants. Her documented stand-up activity dates at least to September 2010, when she was listed on a New York comedy show bill.\",\n  \"source_urls\": [\n    {\n      \"label\": \"St. John's University profile\",\n      \"url\": \"https://www.stjohns.edu/news-media/success-stories/st-johns-alumna-grateful-education-she-received\"\n    },\n    {\n      \"label\": \"Houston Improv event page\",\n      \"url\": \"https://improvtx.com/houston/event/liz%2Bfaublas-wallace/14202124/\"\n    },\n    {\n      \"label\": \"Eventbrite live comedy taping listing\",\n      \"url\": \"https://www.eventbrite.com/e/shed-g-hosts-liz-faublas-wallace-live-comedy-taping-tickets-1993369468741?aff=ebdssbdestsearch\"\n    },\n    {\n      \"label\": \"Official comedy bio\",\n      \"url\": \"https://www.lizfaublas.com/stand-up-comedian.html\"\n    },\n    {\n      \"label\": \"CanvasRebel interview\",\n      \"url\": \"https://canvasrebel.com/meet-liz-faublas-wallace/\"\n    },\n    {\n      \"label\": \"Best New York Comedy show listing\",\n      \"url\": \"https://bestnewyorkcomedy.com/2010/09/20/nyc-top-comedy-choices-for-monday-92010/\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.instagram.com/efaublas/"
+      ],
+      "instagramHandle": "@efaublas",
+      "imageUrl": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+      "wpPageId": 2342,
+      "wpLink": "https://comedyhouston.com/comedians/liz-faublas-wallace/",
+      "wpImageMediaId": 2341,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-12-09",
+          "venue": "Houston Improv",
+          "time": "8:00 PM",
+          "name": "Liz Faublas-Wallace",
+          "ticket_url": "https://www.ticketweb.com/event/liz-faublas-wallace-houston-improv-tickets/14202124?REFERRAL_ID=tmfeed",
+          "event_id": "24de083745dc828b",
+          "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/liz-faublas-wallace-houston.jpg"
     },
     {
       "slug": "luke-kidgell",
@@ -1298,6 +1401,42 @@
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/mo-amer-houston.jpg"
     },
     {
+      "slug": "nasser-al-rayess",
+      "name": "Nasser Al-Rayess",
+      "match": [
+        "nasser al rayess"
+      ],
+      "status": "live",
+      "created_at": "2026-11-16T23:50:06.653Z",
+      "profile_written_at": "2026-11-16T23:51:11.605Z",
+      "profile_html": "<p>Nasser Al-Rayess works Arab family life, food culture, pop culture, and the social rules of Arab gatherings into stand-up. His stated mission is blunt: “I want to make Arab culture mainstream… we’ve already been pushed away too much, it's time to bring our culture to the forefront and say, you like it? Amazing. You don’t? Then move to the side.”</p>\n\n<p>Al-Rayess began making content in 2018 and started stand-up in 2023, according to a <a href=\"https://www.thebeiruter.com/article/nasser-al-rayess-the-shawarma-king-found-his-calling-in-comedy/1144\">2026 profile in The Beiruter</a>. Both parents are from Syria. He earned a political-science degree and an MBA from UC Berkeley, then worked in consulting before moving into content and stand-up full time.</p>\n\n<p>Arabic music runs through material about wedding dancing, shawarma, and Arab social habits. “My love for shawarma is real don’t get this twisted.” Dry Bar Comedy released <a href=\"https://www.youtube.com/watch?v=M0FEak6DMSQ\">“I Look Like An Arab Jonah Hill”</a> in January 2026, followed by “Teaching White People How to Dance at an Arab Wedding” in March 2026.</p>\n\n<p>He has appeared on <a href=\"https://www.youtube.com/watch?v=3ChHmPUlHqA\">Hikmat Wehbi Podcast #217</a> and Digital Social Hour with Sean Kelly. His official biography says he has played sold-out dates across the United States, Australia, Europe, and the Middle East.</p>",
+      "research_json": "{\n  \"full_name\": \"Nasser Al-Rayess\",\n  \"hometown\": \"San Francisco, California\",\n  \"career_start_year\": 2023,\n  \"specials\": [],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Hikmat Wehbi Podcast #217\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"Well Rooted\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"Digital Social Hour with Sean Kelly (DSH #1598)\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [],\n  \"comedy_style\": {\n    \"tone\": \"Observational, culturally specific, and conversational.\",\n    \"structure\": \"Stand-up that incorporates Arabic music and references to the atmosphere of traditional Arab gatherings.\",\n    \"recurring_themes\": [\n      \"Arab-American identity\",\n      \"Arab family and social dynamics\",\n      \"Arabic music\",\n      \"Shawarma and food culture\",\n      \"Pop culture\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"His official biography states that he has toured internationally and played sold-out shows in the United States, Australia, Europe, and the Middle East.\",\n  \"recent_activity_2025_2026\": \"In 2026, Dry Bar Comedy released the YouTube stand-up videos \\\"I Look Like An Arab Jonah Hill\\\" (January 7) and \\\"Teaching White People How to Dance at an Arab Wedding\\\" (March 10). He appeared on Digital Social Hour in June 2026. In November 2026, he began dates for his Bil Bilaad Middle East tour; a special taping is scheduled at San Jose Improv on December 13, 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"Al-Rayess is bringing Bil Bilaad to Dubai on November 22, 2026, as part of what event coverage describes as his first Middle East tour.\",\n    \"quote\": \"Syrian-American comedian Nasser Al-Rayess will perform Bil Bilaad at New Covent Garden Theatre in Dubai on Sunday, 22 November 2026, as part of his first Middle East tour.\",\n    \"source_publication\": \"FEW.ae\",\n    \"source_url\": \"https://www.few.ae/nasser-al-rayess-brings-bil-bilaad-to-dubai/\",\n    \"date\": \"2026-11-12\"\n  },\n  \"instagram_handle\": \"@naw_sir\",\n  \"notable_bits_or_quotes\": [\n    \"\\\"I want to make Arab culture mainstream… we’ve already been pushed away too much, it's time to bring our culture to the forefront and say, you like it? Amazing. You don’t? Then move to the side\\\"\",\n    \"\\\"My love for shawarma is real don’t get this twisted\\\"\",\n    \"Dry Bar Comedy video title: \\\"I Look Like An Arab Jonah Hill\\\"\",\n    \"Dry Bar Comedy video title: \\\"Teaching White People How to Dance at an Arab Wedding\\\"\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That he has verified television acting credits or specific TV-show appearances; no specific television program was independently verified.\",\n    \"That the two Dry Bar Comedy YouTube releases are full-length standalone specials; they were verified as Dry Bar Comedy YouTube stand-up videos, but not independently verified as full specials.\",\n    \"That he is professionally known as \\\"Nemo\\\"; this appeared in a Digital Social Hour write-up but was not independently corroborated.\",\n    \"Specific claims about total TikTok views or total follower counts from older profiles, unless independently checked at publication time.\"\n  ],\n  \"background_story\": \"Al-Rayess is a Syrian-American comedian born in San Francisco. A February 2026 profile reports that both of his parents are from Syria, that he earned a political-science bachelor's degree and an MBA from UC Berkeley, began making content in 2018, and started stand-up in 2023. He left a consulting job as he shifted into full-time content and stand-up.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Official biography\",\n      \"url\": \"https://www.nawsir.com/about\"\n    },\n    {\n      \"label\": \"The Beiruter interview\",\n      \"url\": \"https://www.thebeiruter.com/article/nasser-al-rayess-the-shawarma-king-found-his-calling-in-comedy/1144\"\n    },\n    {\n      \"label\": \"Dry Bar Comedy YouTube video\",\n      \"url\": \"https://www.youtube.com/watch?v=M0FEak6DMSQ\"\n    },\n    {\n      \"label\": \"Hikmat Wehbi Podcast #217\",\n      \"url\": \"https://www.youtube.com/watch?v=3ChHmPUlHqA\"\n    },\n    {\n      \"label\": \"San Jose Improv event calendar\",\n      \"url\": \"https://improv.com/sanjose/calendar/\"\n    },\n    {\n      \"label\": \"FEW.ae Bil Bilaad announcement\",\n      \"url\": \"https://www.few.ae/nasser-al-rayess-brings-bil-bilaad-to-dubai/\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.youtube.com/watch?v=M0FEak6DMSQ",
+        "https://www.youtube.com/watch?v=3ChHmPUlHqA",
+        "https://www.instagram.com/naw_sir/"
+      ],
+      "instagramHandle": "@naw_sir",
+      "imageUrl": "https://s1.ticketm.net/dam/a/c62/07c4d381-2d68-4131-a0e4-8ab076046c62_EVENT_DETAIL_PAGE_16_9.jpg",
+      "wpPageId": 2348,
+      "wpLink": "https://comedyhouston.com/comedians/nasser-al-rayess/",
+      "wpImageMediaId": 2347,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-12-10",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "Nasser Al-Rayess",
+          "ticket_url": "https://www.ticketweb.com/event/nasser-al-rayess-houston-improv-tickets/15003373?REFERRAL_ID=tmfeed",
+          "event_id": "ad03ffae5c82bd8e",
+          "image_url": "https://s1.ticketm.net/dam/a/c62/07c4d381-2d68-4131-a0e4-8ab076046c62_EVENT_DETAIL_PAGE_16_9.jpg"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/nasser-al-rayess-houston.jpg"
+    },
+    {
       "slug": "nikki-glaser",
       "name": "Nikki Glaser",
       "match": [
@@ -1368,6 +1507,40 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/nurse-john-houston.png"
+    },
+    {
+      "slug": "ola-dada",
+      "name": "Ola Dada",
+      "match": [
+        "ola dada"
+      ],
+      "status": "live",
+      "created_at": "2026-11-16T23:46:02.258Z",
+      "profile_written_at": "2026-11-16T23:47:22.668Z",
+      "profile_html": "<p>In October 2026, CBC Comedy’s <a href=\"https://podcasts.apple.com/ca/podcast/ola-dada-marito-lopez-never-forget-the-king-in-short-king/id331599764?i=1000798522742\">Laugh Out Loud</a> released Ola Dada’s stand-up about immigrating from Nigeria to Fort McMurray, Alberta.</p>\n\n<p>Dada was born in Nigeria, moved to Canada as a child, and spent his teen years in Fort McMurray before studying at the University of Calgary. In a <a href=\"https://www.vancouverfringe.com/qa-with-our-2023-key-image-feature-old-dada/\">Vancouver Fringe interview</a>, he said friends dared him to get onstage at a show beneath a pizza shop. He studied accounting, worked in banking, and did stand-up on the side before moving to Vancouver in 2015. His material covers family expectations, faith, Nigerian and Canadian cultural differences, marriage, and self-improvement.</p>\n\n<p>His 2025 Comedy Dynamics special, <a href=\"https://www.comedydynamics.com/catalog/ola-dada-unlimited-dada/\"><em>Unlimited Dada</em></a>, followed appearances on CBC Gem’s <em>The New Wave of Standup</em> and a 2022 semifinalist run on <em>Canada’s Got Talent</em>. In 2026, <a href=\"https://www.primevideo.com/detail/0TQVF5KNPFRX4JXRO8Z47T639G?tr=us\"><em>Husband on Probation</em></a> included material about meeting his wife on Instagram “in Jesus' name,” therapy, lactose intolerance, and cultural clashes. He has also appeared on <em>What’s So Funny?</em>, <em>Downtown Van</em>, and <em>Sky Talks</em>.</p>\n\n<p>Dada calls his method “storytelling with unexpected punch twists leaving you on your toes.” A 2019 JFL42 finals review noted his ease onstage and the fun he seemed to be having.</p>",
+      "research_json": "{\n  \"full_name\": \"Ola Dada\",\n  \"hometown\": \"Fort McMurray, Alberta, Canada (raised); Vancouver, British Columbia, Canada (based)\",\n  \"career_start_year\": null,\n  \"specials\": [\n    {\n      \"title\": \"Unlimited Dada\",\n      \"platform\": \"Comedy Dynamics\",\n      \"year\": 2025\n    },\n    {\n      \"title\": \"Husband on Probation\",\n      \"platform\": \"Prime Video / Wonder Project\",\n      \"year\": 2026\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"What's So Funny?\",\n      \"year_approx\": 2019\n    },\n    {\n      \"show\": \"Downtown Van\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"Sky Talks\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Laugh Out Loud\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"The New Wave of Standup\",\n      \"context\": \"Performed in the CBC Gem stand-up series' first season; his episode aired July 17, 2020.\"\n    },\n    {\n      \"show\": \"Canada's Got Talent\",\n      \"context\": \"Competitor and semifinalist in season two in 2022.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Fun, light-hearted, warm, and playful.\",\n    \"structure\": \"Storytelling built around unexpected punch twists.\",\n    \"recurring_themes\": [\n      \"Nigerian and Canadian cultural differences\",\n      \"family expectations\",\n      \"religion and faith\",\n      \"relationships and marriage\",\n      \"personal shortcomings and self-improvement\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"A 2019 JFL42 finals review described Dada as very comfortable onstage and said he appeared to be having as much fun as the audience.\",\n  \"recent_activity_2025_2026\": \"Comedy Dynamics lists Unlimited Dada as released November 4, 2025. In 2026, his Prime Video special Husband on Probation premiered July 8 as part of Wonder Presents: The Stand-Ups. He also appeared on CBC Comedy's Laugh Out Loud on October 28, 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"On October 28, 2026, CBC Comedy's Laugh Out Loud released an episode featuring Ola Dada's stand-up about immigrating from Nigeria to Fort McMurray, Alberta.\",\n    \"quote\": \"Well, “reminiscing” might not be the right word.\",\n    \"source_publication\": \"CBC Comedy / Laugh Out Loud via Apple Podcasts\",\n    \"source_url\": \"https://podcasts.apple.com/ca/podcast/ola-dada-marito-lopez-never-forget-the-king-in-short-king/id331599764?i=1000798522742\",\n    \"date\": \"2026-10-28\"\n  },\n  \"instagram_handle\": \"@showtime.dada\",\n  \"notable_bits_or_quotes\": [\n    \"“My style is storytelling with unexpected punch twists leaving you on your toes.”\",\n    \"Husband on Probation includes material about meeting his wife on Instagram “in Jesus' name,” cultural clashes, therapy, and lactose intolerance.\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That Ola Dada was the runner-up on Canada's Got Talent; reliable artist and festival biographies identify him as a semifinalist.\",\n    \"The misspelled or alternate special title “Husband of Probation”; Prime Video lists the title as Husband on Probation.\",\n    \"That Husband on Probation was only an upcoming October 2027 release; Prime Video lists it as released on July 8, 2026.\",\n    \"Claims that Dada Plan was released through 604 Records; this was reported by a local article but was not independently verified from a label or distributor page during this research.\",\n    \"Claims that he has performed with Andrew Santino, Rosebud Baker, Bryan Simpson, Donnell Rawlings, Okey Bakassi, Bovi, or Godfrey; these were found in a single local report and were not independently verified.\"\n  ],\n  \"background_story\": \"Dada was born in Nigeria and moved to Canada as a child, spending his teen years in Fort McMurray, Alberta. He attended the University of Calgary before moving to Vancouver in 2015. He studied accounting and worked in banking while doing stand-up on the side. He has said he began comedy accidentally after friends dared him to go onstage at a comedy show beneath a pizza shop.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Official biography\",\n      \"url\": \"https://www.oladada.com/about-me\"\n    },\n    {\n      \"label\": \"Comedy Dynamics — Unlimited Dada\",\n      \"url\": \"https://www.comedydynamics.com/catalog/ola-dada-unlimited-dada/\"\n    },\n    {\n      \"label\": \"Prime Video — Ola Dada: Husband on Probation\",\n      \"url\": \"https://www.primevideo.com/detail/0TQVF5KNPFRX4JXRO8Z47T639G?tr=us\"\n    },\n    {\n      \"label\": \"Vancouver Fringe interview\",\n      \"url\": \"https://www.vancouverfringe.com/qa-with-our-2023-key-image-feature-old-dada/\"\n    },\n    {\n      \"label\": \"Richmond Sentinel interview\",\n      \"url\": \"https://mail.richmondsentinel.ca/article-detail/61999/from-accounting-to-comedy-ola-dada-on-the-rise-in-canada\"\n    },\n    {\n      \"label\": \"Laugh Out Loud episode\",\n      \"url\": \"https://podcasts.apple.com/ca/podcast/ola-dada-marito-lopez-never-forget-the-king-in-short-king/id331599764?i=1000798522742\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.instagram.com/showtime.dada/"
+      ],
+      "instagramHandle": "@showtime.dada",
+      "imageUrl": "https://s1.ticketm.net/dam/a/fc6/2a89fdfa-506a-476c-9bdd-e52a679a3fc6_SOURCE",
+      "wpPageId": 2338,
+      "wpLink": "https://comedyhouston.com/comedians/ola-dada/",
+      "wpImageMediaId": 2337,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-12-09",
+          "venue": "Punch Line Houston",
+          "time": "7:30 PM",
+          "name": "Ola Dada",
+          "ticket_url": "https://www.ticketmaster.com/ola-dada-houston-texas-12-09-2026/event/3A006511BBFF551C",
+          "event_id": "039deba54fce287d",
+          "image_url": "https://s1.ticketm.net/dam/a/fc6/2a89fdfa-506a-476c-9bdd-e52a679a3fc6_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/ola-dada-houston.png"
     },
     {
       "slug": "pauly-shore",

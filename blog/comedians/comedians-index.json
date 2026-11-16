@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T22:59:28.744Z",
+  "generated_at": "2026-11-16T23:52:33.637Z",
   "comedians": [
     {
       "slug": "abby-govindan",
@@ -188,6 +188,16 @@
       "next_show": null
     },
     {
+      "slug": "jeremy-alder",
+      "name": "Jeremy Alder",
+      "match": [
+        "jeremy alder"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/jeremy-alder/",
+      "legacy_slugs": [],
+      "next_show": "2026-12-10"
+    },
+    {
       "slug": "joanne-mcnally",
       "name": "Joanne McNally",
       "match": [
@@ -244,6 +254,16 @@
       "next_show": null
     },
     {
+      "slug": "keith-alberstadt",
+      "name": "Keith Alberstadt",
+      "match": [
+        "keith alberstadt"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/keith-alberstadt/",
+      "legacy_slugs": [],
+      "next_show": "2026-12-10"
+    },
+    {
       "slug": "keropi-sanchez",
       "name": "Keropi Sánchez",
       "match": [
@@ -272,6 +292,16 @@
       "wpLink": "https://comedyhouston.com/comedians/leanne-morgan/",
       "legacy_slugs": [],
       "next_show": null
+    },
+    {
+      "slug": "liz-faublas-wallace",
+      "name": "Liz Faublas-Wallace",
+      "match": [
+        "liz faublas wallace"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/liz-faublas-wallace/",
+      "legacy_slugs": [],
+      "next_show": "2026-12-09"
     },
     {
       "slug": "luke-kidgell",
@@ -348,6 +378,16 @@
       "next_show": null
     },
     {
+      "slug": "nasser-al-rayess",
+      "name": "Nasser Al-Rayess",
+      "match": [
+        "nasser al rayess"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/nasser-al-rayess/",
+      "legacy_slugs": [],
+      "next_show": "2026-12-10"
+    },
+    {
       "slug": "nikki-glaser",
       "name": "Nikki Glaser",
       "match": [
@@ -368,6 +408,16 @@
       "wpLink": "https://comedyhouston.com/comedians/nurse-john/",
       "legacy_slugs": [],
       "next_show": null
+    },
+    {
+      "slug": "ola-dada",
+      "name": "Ola Dada",
+      "match": [
+        "ola dada"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/ola-dada/",
+      "legacy_slugs": [],
+      "next_show": "2026-12-09"
     },
     {
       "slug": "pauly-shore",
