@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T15:29:02.747Z",
+  "generated_at": "2026-11-16T22:59:28.744Z",
   "comedians": [
     {
       "slug": "abby-govindan",
@@ -75,7 +75,7 @@
       ],
       "wpLink": "https://comedyhouston.com/comedians/chrissy-chlapecka/",
       "legacy_slugs": [],
-      "next_show": "2026-11-12"
+      "next_show": null
     },
     {
       "slug": "clint-coley",
@@ -85,7 +85,7 @@
       ],
       "wpLink": "https://comedyhouston.com/comedians/clint-coley/",
       "legacy_slugs": [],
-      "next_show": "2026-11-12"
+      "next_show": null
     },
     {
       "slug": "corey-holcomb",
@@ -95,7 +95,7 @@
       ],
       "wpLink": "https://comedyhouston.com/comedians/corey-holcomb/",
       "legacy_slugs": [],
-      "next_show": "2026-11-13"
+      "next_show": null
     },
     {
       "slug": "dale-elliott-jr",
@@ -161,7 +161,7 @@
       ],
       "wpLink": "https://comedyhouston.com/comedians/ellen-skrmetti/",
       "legacy_slugs": [],
-      "next_show": "2026-11-12"
+      "next_show": null
     },
     {
       "slug": "foos-gone-wild",
@@ -261,7 +261,7 @@
       ],
       "wpLink": "https://comedyhouston.com/comedians/kev-adams/",
       "legacy_slugs": [],
-      "next_show": "2026-11-11"
+      "next_show": null
     },
     {
       "slug": "leanne-morgan",
@@ -271,7 +271,7 @@
       ],
       "wpLink": "https://comedyhouston.com/comedians/leanne-morgan/",
       "legacy_slugs": [],
-      "next_show": "2026-11-14"
+      "next_show": null
     },
     {
       "slug": "luke-kidgell",
@@ -367,7 +367,7 @@
       ],
       "wpLink": "https://comedyhouston.com/comedians/nurse-john/",
       "legacy_slugs": [],
-      "next_show": "2026-11-13"
+      "next_show": null
     },
     {
       "slug": "pauly-shore",
@@ -407,7 +407,7 @@
       ],
       "wpLink": "https://comedyhouston.com/comedians/reem-edan/",
       "legacy_slugs": [],
-      "next_show": "2026-11-12"
+      "next_show": null
     },
     {
       "slug": "ron-taylor",

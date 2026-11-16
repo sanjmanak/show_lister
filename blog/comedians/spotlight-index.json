@@ -1,47 +1,11 @@
 {
-  "generated_at": "2026-11-11T15:29:02.742Z",
+  "generated_at": "2026-11-16T22:59:28.740Z",
   "source_manifests": [
-    "manifest-2026-11-09.json",
     "manifest-2026-11-16.json",
     "manifest-2026-11-23.json",
     "manifest-2026-11-30.json"
   ],
   "posts": [
-    {
-      "date": "2026-11-11",
-      "comedianName": "Kev Adams",
-      "slug": "kev-adams-houston-improv-2026-11-11",
-      "wpLink": "https://comedyhouston.com/comedians/kev-adams/",
-      "venue": "Houston Improv"
-    },
-    {
-      "date": "2026-11-12",
-      "comedianName": "Ellen Skrmetti",
-      "slug": "ellen-skrmetti-houston-improv-2026-11-12",
-      "wpLink": "https://comedyhouston.com/comedians/ellen-skrmetti/",
-      "venue": "Houston Improv"
-    },
-    {
-      "date": "2026-11-13",
-      "comedianName": "Corey Holcomb",
-      "slug": "corey-holcomb-houston-improv-2026-11-13",
-      "wpLink": "https://comedyhouston.com/comedians/corey-holcomb/",
-      "venue": "Houston Improv"
-    },
-    {
-      "date": "2026-11-13",
-      "comedianName": "Nurse John",
-      "slug": "nurse-john-smart-financial-centre-at-sugar-land-2026-11-13",
-      "wpLink": "https://comedyhouston.com/comedians/nurse-john/",
-      "venue": "Smart Financial Centre at Sugar Land"
-    },
-    {
-      "date": "2026-11-14",
-      "comedianName": "Leanne Morgan",
-      "slug": "leanne-morgan-toyota-center-tx-2026-11-14",
-      "wpLink": "https://comedyhouston.com/comedians/leanne-morgan/",
-      "venue": "Toyota Center - TX"
-    },
     {
       "date": "2026-11-18",
       "comedianName": "Luke Kidgell",
