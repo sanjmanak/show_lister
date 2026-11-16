@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/the-riot-presents-monday-night-standup-comedy-showcase-13": {
-      "lastmod": "2026-11-15T01:41:00-06:00",
+      "lastmod": "2026-11-16T01:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -66,7 +66,7 @@
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-monday-night-standup-comedy-open-mic-2026-11-16210000": {
-      "lastmod": "2026-09-24T08:28:00-05:00",
+      "lastmod": "2026-11-16T03:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -2423,51 +2423,6 @@
         ]
       }
     },
-    "https://www.theriothtx.com/events/erica-rhodes-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-11-04T02:01:00-06:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Erica Rhodes (Americas Got Talent, Don’t Tell Comedy, Netflix is a Joke Fest) Headlines The Riot Comedy Club",
-        "startDate": "2026-12-11T19:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/erica-rhodes-headlines-the-riot-comedy-club",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-06-09T19:45:19-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/erica-rhodes-headlines-the-riot-comedy-club",
-        "image": "/img/shows/IMG-0450-7d1d0785-large-thumb.jpg",
-        "description": "Erica Rhodes is one of Deadline Hollywood&rsquo;s Comics to Watch for 2026 and a breakout favorite from America&rsquo;s Got Talent. She is currently on her CALL ME CRAZY tour, performing to packed rooms across the country.Erica&rsquo;s comedy has been featured on America&rsquo;s Got Talent, The Late Show with Stephen Colbert, Just For Laughs, Don&rsquo;t Tell Comedy, Comics Unleashed, @midnight, NBC&rsquo;s Bring the Funny, CW&rsquo;s Howie Mandel Comedy Extravaganza, and Fox&rsquo;s Punchline. She was a New Faceat the 2018 Just for Laughs Festival and has performed at JFL Bermuda and Vancouver, Netflix Is a Joke Fest, Moontower Comedy Festival, New York Comedy Festival, and San Francisco Sketchfest. Sofia Vergara called Erica &ldquo;the best comedy act she has ever seen on AGT&rdquo; andBring the Funny judge Jeff Foxworthy described her as &ldquo;the best-defined comic voice of the competition.&rdquo;Erica was a semi-regular performer and writer on NPR&rsquo;s A Prairie Home Companion. She can be seen in Modern Family, VEEP, New Girl, Audible&rsquo;s Dr. Katz: The Audiobook, ABC&rsquo;s The Off-Season, and voiced the scene-stealing character &ldquo;Dotty&rdquo; in Netflix&rsquo;s A Tale Dark and Grimm.Her comedy albums Sad Lemon and Ladybug both debuted at #1 on the iTunes Comedy charts. Her Dry Bar special Love You More has over 2 million views on YouTube, and her second special, La Vie en Rhodes, premiered as part of the Tribeca Drive-In Festival and streams onAmazon. Her two Don&rsquo;t Tell Comedy sets have amassed over 1 million views.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Erica Rhodes"
-          }
-        ]
-      }
-    },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-32": {
       "lastmod": "2026-11-04T02:01:00-06:00",
       "node": {
@@ -2558,96 +2513,6 @@
           {
             "@type": "Person",
             "name": "Tomek Kolecki"
-          }
-        ]
-      }
-    },
-    "https://www.theriothtx.com/events/erica-rhodes-americas-got-talent-don-t-tell-comedy-netflix-is-a-joke-fest-headlines-the-riot-comedy-club-the-riot-houston": {
-      "lastmod": "2026-10-05T05:22:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Erica Rhodes (Americas Got Talent, Don’t Tell Comedy, Netflix is a Joke Fest) Headlines The Riot Comedy Club",
-        "startDate": "2026-12-12T19:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/erica-rhodes-americas-got-talent-don-t-tell-comedy-netflix-is-a-joke-fest-headlines-the-riot-comedy-club-the-riot-houston",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "InStock",
-          "validFrom": "2026-06-09T19:51:33-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/erica-rhodes-americas-got-talent-don-t-tell-comedy-netflix-is-a-joke-fest-headlines-the-riot-comedy-club-the-riot-houston",
-        "image": "/img/shows/IMG-0450-7d1d0785-large-thumb.jpg",
-        "description": "Erica Rhodes is one of Deadline Hollywood&rsquo;s Comics to Watch for 2026 and a breakout favorite from America&rsquo;s Got Talent. She is currently on her CALL ME CRAZY tour, performing to packed rooms across the country.Erica&rsquo;s comedy has been featured on America&rsquo;s Got Talent, The Late Show with Stephen Colbert, Just For Laughs, Don&rsquo;t Tell Comedy, Comics Unleashed, @midnight, NBC&rsquo;s Bring the Funny, CW&rsquo;s Howie Mandel Comedy Extravaganza, and Fox&rsquo;s Punchline. She was a New Faceat the 2018 Just for Laughs Festival and has performed at JFL Bermuda and Vancouver, Netflix Is a Joke Fest, Moontower Comedy Festival, New York Comedy Festival, and San Francisco Sketchfest. Sofia Vergara called Erica &ldquo;the best comedy act she has ever seen on AGT&rdquo; andBring the Funny judge Jeff Foxworthy described her as &ldquo;the best-defined comic voice of the competition.&rdquo;Erica was a semi-regular performer and writer on NPR&rsquo;s A Prairie Home Companion. She can be seen in Modern Family, VEEP, New Girl, Audible&rsquo;s Dr. Katz: The Audiobook, ABC&rsquo;s The Off-Season, and voiced the scene-stealing character &ldquo;Dotty&rdquo; in Netflix&rsquo;s A Tale Dark and Grimm.Her comedy albums Sad Lemon and Ladybug both debuted at #1 on the iTunes Comedy charts. Her Dry Bar special Love You More has over 2 million views on YouTube, and her second special, La Vie en Rhodes, premiered as part of the Tribeca Drive-In Festival and streams onAmazon. Her two Don&rsquo;t Tell Comedy sets have amassed over 1 million views.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Erica Rhodes"
-          }
-        ]
-      }
-    },
-    "https://www.theriothtx.com/events/erica-rhodes-americas-got-talent-don-t-tell-comedy-netflix-is-a-joke-fest-headlines-the-riot-comedy-club-the-riot-houston-1": {
-      "lastmod": "2026-10-02T12:14:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "Erica Rhodes (Americas Got Talent, Don’t Tell Comedy, Netflix is a Joke Fest) Headlines The Riot Comedy Club",
-        "startDate": "2026-12-12T21:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/erica-rhodes-americas-got-talent-don-t-tell-comedy-netflix-is-a-joke-fest-headlines-the-riot-comedy-club-the-riot-houston-1",
-          "priceCurrency": "USD",
-          "price": "0.00",
-          "availability": "InStock",
-          "validFrom": "2026-06-09T19:52:17-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/erica-rhodes-americas-got-talent-don-t-tell-comedy-netflix-is-a-joke-fest-headlines-the-riot-comedy-club-the-riot-houston-1",
-        "image": "/img/shows/IMG-0450-7d1d0785-large-thumb.jpg",
-        "description": "Erica Rhodes is one of Deadline Hollywood&rsquo;s Comics to Watch for 2026 and a breakout favorite from America&rsquo;s Got Talent. She is currently on her CALL ME CRAZY tour, performing to packed rooms across the country.Erica&rsquo;s comedy has been featured on America&rsquo;s Got Talent, The Late Show with Stephen Colbert, Just For Laughs, Don&rsquo;t Tell Comedy, Comics Unleashed, @midnight, NBC&rsquo;s Bring the Funny, CW&rsquo;s Howie Mandel Comedy Extravaganza, and Fox&rsquo;s Punchline. She was a New Faceat the 2018 Just for Laughs Festival and has performed at JFL Bermuda and Vancouver, Netflix Is a Joke Fest, Moontower Comedy Festival, New York Comedy Festival, and San Francisco Sketchfest. Sofia Vergara called Erica &ldquo;the best comedy act she has ever seen on AGT&rdquo; andBring the Funny judge Jeff Foxworthy described her as &ldquo;the best-defined comic voice of the competition.&rdquo;Erica was a semi-regular performer and writer on NPR&rsquo;s A Prairie Home Companion. She can be seen in Modern Family, VEEP, New Girl, Audible&rsquo;s Dr. Katz: The Audiobook, ABC&rsquo;s The Off-Season, and voiced the scene-stealing character &ldquo;Dotty&rdquo; in Netflix&rsquo;s A Tale Dark and Grimm.Her comedy albums Sad Lemon and Ladybug both debuted at #1 on the iTunes Comedy charts. Her Dry Bar special Love You More has over 2 million views on YouTube, and her second special, La Vie en Rhodes, premiered as part of the Tribeca Drive-In Festival and streams onAmazon. Her two Don&rsquo;t Tell Comedy sets have amassed over 1 million views.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Erica Rhodes"
           }
         ]
       }
@@ -9100,6 +8965,171 @@
           "url": "https://www.riotconroe.com"
         },
         "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/the-riot-presents-friday-night-early-standup-comedy-showcase-2026-12-11190000": {
+      "lastmod": "2026-11-16T09:17:00-06:00",
+      "node": {
+        "@context": "https://schema.org",
+        "@type": "ComedyEvent",
+        "name": "The Riot Presents Friday Night Early Standup Comedy Showcase ",
+        "startDate": "2026-12-11T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-early-standup-comedy-showcase-2026-12-11190000",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-11-16T09:17:01-06:00"
+        },
+        "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-early-standup-comedy-showcase-2026-12-11190000",
+        "image": "/img/shows/friday-7-8bbb088f-large-thumb.jpg",
+        "description": "Come join us for a hilarious evening of laughter at The Riot presents Friday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you're a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone. You can expect a diverse lineup with 5-7 comedians from Houston and around the country.Find information about the lineup on our instagram page: https://instagram.com/theriothtxAll shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Complimentary Valet--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/the-riot-presents-saturday-night-early-standup-comedy-showcase-2026-12-12190000": {
+      "lastmod": "2026-11-16T09:17:00-06:00",
+      "node": {
+        "@context": "https://schema.org",
+        "@type": "ComedyEvent",
+        "name": "The Riot Presents Saturday Night Early Standup Comedy Showcase",
+        "startDate": "2026-12-12T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-early-standup-comedy-showcase-2026-12-12190000",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-11-16T09:17:42-06:00"
+        },
+        "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-early-standup-comedy-showcase-2026-12-12190000",
+        "image": "/img/events/saturday-7-9bfc0960-large-thumb.jpg",
+        "description": "Come join us for a hilarious evening of laughter at The Riot presents Saturday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you're a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone.All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Complimentary Valet--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-2026-12-12210000": {
+      "lastmod": "2026-11-16T09:18:00-06:00",
+      "node": {
+        "@context": "https://schema.org",
+        "@type": "ComedyEvent",
+        "name": "The Riot Presents Saturday Night Standup Comedy Showcase",
+        "startDate": "2026-12-12T21:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-2026-12-12210000",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-11-16T09:18:00-06:00"
+        },
+        "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-standup-comedy-showcase-2026-12-12210000",
+        "image": "/img/shows/Showcase-Templates-22-31130d5b-large-thumb.png",
+        "description": "Come join us for a hilarious evening of laughter at The Riot presents Saturday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you're a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google thousands of reviews!Delicious Food &amp; DrinksEnjoy tasty food, draft beer, wine, coffee, and handcrafted cocktails—all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston’s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/armando-anto-hulu-amazon-dry-bar-cbs-headlines-the-riot-comedy-club": {
+      "lastmod": "2026-11-16T10:15:00-06:00",
+      "node": {
+        "@context": "https://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Armando Anto (HULU, Amazon, Dry Bar, CBS) Headlines The Riot Comedy Club",
+        "startDate": "2027-02-27T17:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/armando-anto-hulu-amazon-dry-bar-cbs-headlines-the-riot-comedy-club",
+          "priceCurrency": "USD",
+          "price": "0.00",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-11-16T09:59:34-06:00"
+        },
+        "url": "https://www.theriothtx.com/events/armando-anto-hulu-amazon-dry-bar-cbs-headlines-the-riot-comedy-club",
+        "image": "/img/events/MV5BYTkxNGE2MGItNjFhNy00OWNiLTlhNWMtZTU2MTVkYTdiYTFhXkEyXkFqcGc-V1-d82a1bad-large-thumb.jpg",
+        "description": "Armando Anto is an internationally touring comedian and classically trained violinist who has turned the violin into one of stand-up comedy&rsquo;s most unexpected weapons. Featured on NBC, CBS, Cirque du Soleil, Dry Bar Comedy, Amazon, and Hulu, Armando&rsquo;s comedy has earned millions of views onlineand taken him to stages across the world. With razor-sharp comedy, music, and a French-Iranian-American perspective, Armando doesn&rsquo;t just perform stand-up&mdash;he puts on a show.Prepare for a night where elegance meets chaos&hellip; and no topic is off-limits.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Two(2) Drink Minimum Per Person. Complimentary Valet--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Armando Anto"
+          }
+        ]
       }
     }
   }
