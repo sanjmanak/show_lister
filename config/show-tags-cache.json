@@ -3058,6 +3058,46 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-11-16"
+    },
+    "boyacoman (en español)": {
+      "tags": [
+        "en-espanol"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-17"
+    },
+    "jerry seinfeld": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-17"
+    },
+    "the riot presents thanksgiving night standup comedy showcase!": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-17"
+    },
+    "the riot presents thanksgiving night late standup comedy showcase!": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-17"
+    },
+    "secret headliner (netflix, don't tell comedy) headlines a clean show  at the riot comedy club": {
+      "tags": [
+        "clean-comedy"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-17"
+    },
+    "don't tell comedy: heights (8:00 pm show)": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-17"
     }
   }
 }

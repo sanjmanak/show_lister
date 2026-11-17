@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/the-riot-presents-tuesday-night-standup-comedy-showcase-11-17-26-07-00-pm": {
-      "lastmod": "2026-11-15T01:57:00-06:00",
+      "lastmod": "2026-11-17T02:47:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -61,12 +61,16 @@
           {
             "@type": "Person",
             "name": "A.D. Hodge"
+          },
+          {
+            "@type": "Person",
+            "name": "Francisco Rincon"
           }
         ]
       }
     },
     "https://www.theriothtx.com/events/riot-comedy-club-presents-tuesday-night-standup-comedy-open-mic-2026-11-17210000": {
-      "lastmod": "2026-11-15T01:57:00-06:00",
+      "lastmod": "2026-11-17T03:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -111,7 +115,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-wednesday-night-standup-comedy-showcase-hump-day-29": {
-      "lastmod": "2026-11-15T03:21:00-06:00",
+      "lastmod": "2026-11-17T02:48:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -172,7 +176,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-the-one-minute-comedy-showdown-with-jeff-joe-27": {
-      "lastmod": "2026-09-22T11:43:00-05:00",
+      "lastmod": "2026-11-17T02:50:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -217,7 +221,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-38": {
-      "lastmod": "2026-11-15T03:24:00-06:00",
+      "lastmod": "2026-11-17T02:51:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -282,7 +286,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-thursday-night-late-standup-comedy-showcase-the-riot-houston-13": {
-      "lastmod": "2026-09-24T08:30:00-05:00",
+      "lastmod": "2026-11-17T02:52:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -322,7 +326,7 @@
       }
     },
     "https://www.theriothtx.com/events/michael-rowland-hbomax-late-night-with-jimmy-fallon-comedy-central-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-10-13T06:22:00-05:00",
+      "lastmod": "2026-11-17T02:53:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -367,7 +371,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-29": {
-      "lastmod": "2026-09-24T08:17:00-05:00",
+      "lastmod": "2026-11-17T03:21:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -407,7 +411,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-25": {
-      "lastmod": "2026-09-24T08:23:00-05:00",
+      "lastmod": "2026-11-17T03:22:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -925,11 +929,11 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-39": {
-      "lastmod": "2026-09-24T08:18:00-05:00",
+      "lastmod": "2026-11-17T02:34:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
-        "name": "The Riot Presents Thursday Night Standup Comedy Showcase!",
+        "name": "The Riot Presents Thanksgiving Night Standup Comedy Showcase!",
         "startDate": "2026-11-26T19:00:00-06:00",
         "location": {
           "@type": "Place",
@@ -949,12 +953,12 @@
           "@type": "Offer",
           "url": "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-39",
           "priceCurrency": "USD",
-          "price": "10.00",
-          "availability": "InStock",
+          "price": "15.00",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-08T12:10:52-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-39",
-        "image": "/img/shows/CTX-Thursday-Showcase-2-48800df6-large-thumb.png",
+        "image": "/img/events/HTX-Thursday-Night-Showcases-3-c00910a7-large-thumb.png",
         "description": "Join us for a hilarious night of standup comedy - Get ready for a night of non-stop laughter!Located at the Riot on Washington Ave this event promises a cozy and intimate atmosphere that&#39;ll make you feel right at home. With its friendly staff and great drinks, The Riot is the perfect venue to enjoy a night of comedy. So come on down and be part of the fun!Tickets are limited, so make sure to secure yours in advance. Don&#39;t miss out on this incredible opportunity to see some of the best talent in the city live on stage. Get ready for a night filled with laughter, good vibes, and unforgettable memories. We can&#39;t wait to see you there!All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary ValetLooking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
         "organizer": {
           "@type": "Organization",
@@ -965,11 +969,11 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-thursday-night-late-standup-comedy-showcase-the-riot-houston-14": {
-      "lastmod": "2026-09-24T08:30:00-05:00",
+      "lastmod": "2026-11-17T02:37:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
-        "name": "The Riot Presents Thursday Night Late Standup Comedy Showcase!",
+        "name": "The Riot Presents Thanksgiving Night Late Standup Comedy Showcase!",
         "startDate": "2026-11-26T21:00:00-06:00",
         "location": {
           "@type": "Place",
@@ -989,12 +993,12 @@
           "@type": "Offer",
           "url": "https://www.theriothtx.com/events/the-riot-presents-thursday-night-late-standup-comedy-showcase-the-riot-houston-14",
           "priceCurrency": "USD",
-          "price": "10.00",
-          "availability": "InStock",
+          "price": "15.00",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-09T09:36:45-05:00"
         },
         "url": "https://www.theriothtx.com/events/the-riot-presents-thursday-night-late-standup-comedy-showcase-the-riot-houston-14",
-        "image": "/img/shows/Showcase-Templates-24-1-49f70dad-large-thumb.png",
+        "image": "/img/events/Showcase-Templates-25-33080d71-large-thumb.png",
         "description": "Join us for a hilarious night of standup comedy - Get ready for a night of non-stop laughter!Located at Rudyard&#39;s, this event promises a cozy and intimate atmosphere that&#39;ll make you feel right at home. With its friendly staff and great drinks, Rudyard&#39;s is the perfect venue to enjoy a night of comedy. So come on down and be part of the fun!Tickets are limited, so make sure to secure yours in advance. Don&#39;t miss out on this incredible opportunity to see some of the best talent in the city live on stage. Get ready for a night filled with laughter, good vibes, and unforgettable memories. We can&#39;t wait to see you there!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Complimentary Valet--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
         "organizer": {
           "@type": "Organization",
@@ -1002,51 +1006,6 @@
           "url": "https://www.theriothtx.com"
         },
         "performer": []
-      }
-    },
-    "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-1-13": {
-      "lastmod": "2026-11-05T07:19:00-06:00",
-      "node": {
-        "@context": "https://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Friday Night Early Standup Comedy Showcase ",
-        "startDate": "2026-11-27T19:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-1-13",
-          "priceCurrency": "USD",
-          "price": "25.00",
-          "availability": "https://schema.org/InStock",
-          "validFrom": "2026-08-10T14:55:06-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-1-13",
-        "image": "/img/shows/friday-7-8bbb088f-large-thumb.jpg",
-        "description": "Come join us for a hilarious evening of laughter at The Riot presents Friday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you&#39;re a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone. You can expect a diverse lineup with 5-7 comedians from Houston and around the country.Find information about the lineup on our instagram page: https://instagram.com/theriothtxAll shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Complimentary Valet--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": [
-          {
-            "@type": "Person",
-            "name": "Chinedu Ogu"
-          }
-        ]
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-30": {
@@ -1126,46 +1085,6 @@
         "url": "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-26",
         "image": "/img/shows/Showcase-Templates-18-2f410d5b-large-thumb.png",
         "description": "Get ready for the most unpredictable and chaotic showtime in the comedy scene! The Late Show offers an intimate late-night experience where the crowd is loose, the vibes are electric, and the laughs are nonstop.This showcase features a mix of headline comedians who sell out venues and local talent who know how to steal the show, making every performance an unforgettable experience.Whether you&rsquo;re looking for a fun night out or just love the thrill of late-night comedy, this show will have you laughing until it hurts.Reserve your tickets now and join us for a late-night comedy event like no other!All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Complimentary Valet--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Houston",
-          "url": "https://www.theriothtx.com"
-        },
-        "performer": []
-      }
-    },
-    "https://www.theriothtx.com/events/the-riot-presents-saturday-night-early-standup-comedy-showcase-the-riot-houston-13": {
-      "lastmod": "2026-09-24T08:23:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Presents Saturday Night Early Standup Comedy Showcase",
-        "startDate": "2026-11-28T19:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Houston",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1925 Washington Ave",
-            "addressLocality": "Houston",
-            "postalCode": "77007",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-early-standup-comedy-showcase-the-riot-houston-13",
-          "priceCurrency": "USD",
-          "price": "20.00",
-          "availability": "InStock",
-          "validFrom": "2026-08-10T14:51:36-05:00"
-        },
-        "url": "https://www.theriothtx.com/events/the-riot-presents-saturday-night-early-standup-comedy-showcase-the-riot-houston-13",
-        "image": "/img/events/saturday-7-9bfc0960-large-thumb.jpg",
-        "description": "Come join us for a hilarious evening of laughter at The Riot presents Saturday Night Comedy Showcase! Get ready to have your funny bone tickled and your spirits lifted as talented comedians take the stage to entertain you.This event promises to be a riotous night filled with side-splitting jokes and unforgettable moments. Whether you&#39;re a comedy aficionado or just looking for a fun night out, this showcase is perfect for everyone.All shows Ages 21 &amp; Up. Photo ID Required for Entry.&nbsp;Complimentary Valet--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Houston",
@@ -4888,9 +4807,9 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe-1": {
-      "lastmod": "2026-08-24T03:47:00-05:00",
+      "lastmod": "2026-11-17T02:17:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Gabriel Rutledge (Amazon Prime Video, Comedy Central) Live at the Riot in Conroe",
         "startDate": "2026-12-18T21:00:00-06:00",
@@ -4913,7 +4832,7 @@
           "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe-1",
           "priceCurrency": "USD",
           "price": "25.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-06-18T17:43:58-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe-1",
@@ -4928,9 +4847,9 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe": {
-      "lastmod": "2026-08-24T03:47:00-05:00",
+      "lastmod": "2026-11-17T02:17:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Gabriel Rutledge (Amazon Prime Video, Comedy Central) Live at the Riot in Conroe",
         "startDate": "2026-12-19T19:00:00-06:00",
@@ -4953,7 +4872,7 @@
           "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe",
           "priceCurrency": "USD",
           "price": "25.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-06-18T17:43:01-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe",
@@ -4968,9 +4887,9 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe-2": {
-      "lastmod": "2026-08-24T03:48:00-05:00",
+      "lastmod": "2026-11-17T02:18:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Gabriel Rutledge (Amazon Prime Video, Comedy Central) Live at the Riot in Conroe",
         "startDate": "2026-12-19T21:00:00-06:00",
@@ -4993,7 +4912,7 @@
           "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe-2",
           "priceCurrency": "USD",
           "price": "25.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-06-18T17:44:08-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-the-riot-conroe-2",
@@ -5008,9 +4927,9 @@
       }
     },
     "https://www.riotconroe.com/events/lace-larrabee-america-s-got-talent-sirius-xm-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-07-02T04:10:00-05:00",
+      "lastmod": "2026-11-17T02:20:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Lace Larrabee (America's Got Talent, Sirius XM) Headlines The Riot Comedy Club",
         "startDate": "2027-01-09T19:30:00-06:00",
@@ -5033,7 +4952,7 @@
           "url": "https://www.riotconroe.com/events/lace-larrabee-america-s-got-talent-sirius-xm-headlines-the-riot-comedy-club",
           "priceCurrency": "USD",
           "price": "20.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-07-02T16:07:48-05:00"
         },
         "url": "https://www.riotconroe.com/events/lace-larrabee-america-s-got-talent-sirius-xm-headlines-the-riot-comedy-club",
@@ -5048,9 +4967,9 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe": {
-      "lastmod": "2026-08-13T10:39:00-05:00",
+      "lastmod": "2026-11-17T02:21:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Steve Byrne (The Late Show & Jimmy Kimmel) Live in Conroe",
         "startDate": "2027-01-15T19:30:00-06:00",
@@ -5073,12 +4992,12 @@
           "url": "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe",
           "priceCurrency": "USD",
           "price": "25.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-04-24T12:30:58-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe",
         "image": "/img/events/Guadalaharrys-54-eaa10b91-large-thumb.png",
-        "description": "Riot Comedy Conroe Presents Comedian Steve Byrne Live in ConroeDon’t miss your chance to catch the best live standup in Downtown Conroe at the city’s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.Over the last few years, comedian Steve Byrne has solidified his status as one of the most innovative, versatile and established entertainers working in his field. From starting his career at established clubs in NYC likeThe Comedy Cellar and Gotham to cementing his work ethic in LA atThe Comedy Store and The Improv, his career has ascended to a national touring act backed by an impressive resume.Apart from being a late night talk show regular: “Conan”, “Jimmy Kimmel” “The LateLate Show”, even appearing on “The Tonight Show” 10 times, Steve starred, produced and wrote on his own sitcom that ran for 3 seasons on TBS, “Sullivan &amp; Son” producedby Vince Vaughn and Peter Billingsley. Rebounding from tv, Steve directed the documentary “Always Amazing” about comic-magician The Amazing Johnathan” that was given a home with Bill Burr’s All Things Comedy. He then wrote and directed his first feature film “The Opening Act”, about a comedian’s first time on the road with Jimmy O Yang, Cedric the Entertainer, Bill Burr, Whitney Cummings, Ken Jeong, Iliza Schlesinger, Tom Segura and many more. The film premiered to rave reviews and sits at 84% Fresh on Rotten Tomatoes.Steve has been touring non stop as a regular at all the top clubs in the nation, usually insupport of his 5 hour specials, his first two “Happy Hour” and “Byrne Identity” released on Comedy Central. “Champion” released on Netflix, “Tell the Damn Joke” on Showtime and most recently, released in Dec 2022, “The Last Late Night” on AmazonPrime, a late night talk show disguised as an hour special, that’s rated 4.8 stars.With the release of his last hour, Steve is currently working on his next 2 feature film projects, touring material for the next special and his two podcasts: “Two Cool Moms” with Joe Gatto and “Comedy Piñata”.---You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "description": "Riot Comedy Conroe Presents Comedian Steve Byrne Live in ConroeDon&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.Over the last few years, comedian Steve Byrne has solidified his status as one of the most innovative, versatile and established entertainers working in his field. From starting his career at established clubs in NYC likeThe Comedy Cellar and Gotham to cementing his work ethic in LA atThe Comedy Store and The Improv, his career has ascended to a national touring act backed by an impressive resume.Apart from being a late night talk show regular: &ldquo;Conan&rdquo;, &ldquo;Jimmy Kimmel&rdquo; &ldquo;The LateLate Show&rdquo;, even appearing on &ldquo;The Tonight Show&rdquo; 10 times, Steve starred, produced and wrote on his own sitcom that ran for 3 seasons on TBS, &ldquo;Sullivan &amp; Son&rdquo; producedby Vince Vaughn and Peter Billingsley. Rebounding from tv, Steve directed the documentary &ldquo;Always Amazing&rdquo; about comic-magician The Amazing Johnathan&rdquo; that was given a home with Bill Burr&rsquo;s All Things Comedy. He then wrote and directed his first feature film &ldquo;The Opening Act&rdquo;, about a comedian&rsquo;s first time on the road with Jimmy O Yang, Cedric the Entertainer, Bill Burr, Whitney Cummings, Ken Jeong, Iliza Schlesinger, Tom Segura and many more. The film premiered to rave reviews and sits at 84% Fresh on Rotten Tomatoes.Steve has been touring non stop as a regular at all the top clubs in the nation, usually insupport of his 5 hour specials, his first two &ldquo;Happy Hour&rdquo; and &ldquo;Byrne Identity&rdquo; released on Comedy Central. &ldquo;Champion&rdquo; released on Netflix, &ldquo;Tell the Damn Joke&rdquo; on Showtime and most recently, released in Dec 2022, &ldquo;The Last Late Night&rdquo; on AmazonPrime, a late night talk show disguised as an hour special, that&rsquo;s rated 4.8 stars.With the release of his last hour, Steve is currently working on his next 2 feature film projects, touring material for the next special and his two podcasts: &ldquo;Two Cool Moms&rdquo; with Joe Gatto and &ldquo;Comedy Pi&ntilde;ata&rdquo;.---You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -5088,9 +5007,9 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-1": {
-      "lastmod": "2026-07-02T12:52:00-05:00",
+      "lastmod": "2026-11-17T02:21:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Steve Byrne (The Late Show & Jimmy Kimmel) Live in Conroe",
         "startDate": "2027-01-15T21:30:00-06:00",
@@ -5113,7 +5032,7 @@
           "url": "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-1",
           "priceCurrency": "USD",
           "price": "25.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-04-24T12:34:18-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-1",
@@ -5128,9 +5047,9 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-2": {
-      "lastmod": "2026-07-02T12:53:00-05:00",
+      "lastmod": "2026-11-17T02:22:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Steve Byrne (The Late Show & Jimmy Kimmel) Live in Conroe",
         "startDate": "2027-01-16T19:00:00-06:00",
@@ -5153,7 +5072,7 @@
           "url": "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-2",
           "priceCurrency": "USD",
           "price": "25.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-04-24T12:35:48-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-2",
@@ -5168,9 +5087,9 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-3": {
-      "lastmod": "2026-07-02T12:53:00-05:00",
+      "lastmod": "2026-11-17T02:22:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Steve Byrne (The Late Show & Jimmy Kimmel) Live in Conroe",
         "startDate": "2027-01-16T21:00:00-06:00",
@@ -5193,7 +5112,7 @@
           "url": "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-3",
           "priceCurrency": "USD",
           "price": "25.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-04-24T12:38:33-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-steve-byrne-the-late-show-jimmy-kimmel-live-in-conroe-3",
@@ -5208,9 +5127,9 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-dave-landau-comedy-central-the-joe-rogan-exp-live-in-conroe-1": {
-      "lastmod": "2026-07-08T04:56:00-05:00",
+      "lastmod": "2026-11-17T02:23:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Dave Landau (Comedy Central, The Joe Rogan Exp)Live in Conroe",
         "startDate": "2027-01-22T19:30:00-06:00",
@@ -5233,7 +5152,7 @@
           "url": "https://www.riotconroe.com/events/comedian-dave-landau-comedy-central-the-joe-rogan-exp-live-in-conroe-1",
           "priceCurrency": "USD",
           "price": "20.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-04-24T13:15:32-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-dave-landau-comedy-central-the-joe-rogan-exp-live-in-conroe-1",
@@ -5253,9 +5172,9 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-dave-landau-comedy-central-the-joe-rogan-exp-live-in-conroe": {
-      "lastmod": "2026-07-08T04:57:00-05:00",
+      "lastmod": "2026-11-17T02:23:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Dave Landau (Comedy Central, The Joe Rogan Exp)Live in Conroe",
         "startDate": "2027-01-23T19:00:00-06:00",
@@ -5278,7 +5197,7 @@
           "url": "https://www.riotconroe.com/events/comedian-dave-landau-comedy-central-the-joe-rogan-exp-live-in-conroe",
           "priceCurrency": "USD",
           "price": "20.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-04-24T06:38:00-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-dave-landau-comedy-central-the-joe-rogan-exp-live-in-conroe",
@@ -5298,9 +5217,9 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-maggie-hughes-live-in-conroe": {
-      "lastmod": "2026-09-09T03:46:00-05:00",
+      "lastmod": "2026-11-17T02:15:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Maggie Hughes DePalo Live in Conroe",
         "startDate": "2026-12-11T19:30:00-06:00",
@@ -5323,7 +5242,7 @@
           "url": "https://www.riotconroe.com/events/comedian-maggie-hughes-live-in-conroe",
           "priceCurrency": "USD",
           "price": "20.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-24T14:39:51-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-maggie-hughes-live-in-conroe",
@@ -5338,9 +5257,9 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-maggie-hughes-live-in-conroe-2026-12-12190000": {
-      "lastmod": "2026-09-09T03:46:00-05:00",
+      "lastmod": "2026-11-17T02:15:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Maggie Hughes DePalo Live in Conroe",
         "startDate": "2026-12-12T19:00:00-06:00",
@@ -5363,7 +5282,7 @@
           "url": "https://www.riotconroe.com/events/comedian-maggie-hughes-live-in-conroe-2026-12-12190000",
           "priceCurrency": "USD",
           "price": "20.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-08-24T14:42:42-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-maggie-hughes-live-in-conroe-2026-12-12190000",
@@ -5693,9 +5612,9 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-2026-12-18190000": {
-      "lastmod": "2026-09-02T01:50:00-05:00",
+      "lastmod": "2026-11-17T02:16:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Gabriel Rutledge (Amazon Prime Video, Comedy Central) Live at the Riot in Conroe",
         "startDate": "2026-12-18T19:00:00-06:00",
@@ -5718,12 +5637,12 @@
           "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-2026-12-18190000",
           "priceCurrency": "USD",
           "price": "25.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-09-02T13:50:21-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-gabriel-rutledge-amazon-prime-video-comedy-central-live-at-the-riot-in-conroe-2026-12-18190000",
         "image": "/img/events/Guadalaharrys-56-e92a0b7f-large-thumb.png",
-        "description": "\"Gabriel Rutledge is a quick thinking, fast talking, hard working badass.\" - Louisville WeeklyA past winner of both the Seattle International Comedy Competition and The Laughing Skull Comedy Festival in Atlanta, Gabriel has made numerous television appearances including Comedy Central's Live at Gotham, Nickelodeon's Nickmom Night Out, Laughs on FOX, and Inside Joke streaming on Amazon Prime Video. His Dry Bar Comedy special “A Third of the Room,” as well as his YouTube special “Nectarine” have garnered millions of views online. He is also the author of the book \"Happiness Isn't Funny: True Stories of a Road Comic.”---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "description": "&quot;Gabriel Rutledge is a quick thinking, fast talking, hard working badass.&quot; - Louisville WeeklyA past winner of both the Seattle International Comedy Competition and The Laughing Skull Comedy Festival in Atlanta, Gabriel has made numerous television appearances including Comedy Central&#39;s Live at Gotham, Nickelodeon&#39;s Nickmom Night Out, Laughs on FOX, and Inside Joke streaming on Amazon Prime Video. His Dry Bar Comedy special &ldquo;A Third of the Room,&rdquo; as well as his YouTube special &ldquo;Nectarine&rdquo; have garnered millions of views online. He is also the author of the book &quot;Happiness Isn&#39;t Funny: True Stories of a Road Comic.&rdquo;---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -5778,9 +5697,9 @@
       }
     },
     "https://www.riotconroe.com/events/jeremy-alder-sirius-xm-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-09-04T02:08:00-05:00",
+      "lastmod": "2026-11-17T02:14:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Jeremy Alder (Sirius XM) Headlines The Riot Comedy Club",
         "startDate": "2026-12-10T20:00:00-06:00",
@@ -5803,7 +5722,7 @@
           "url": "https://www.riotconroe.com/events/jeremy-alder-sirius-xm-headlines-the-riot-comedy-club",
           "priceCurrency": "USD",
           "price": "20.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-09-04T14:05:09-05:00"
         },
         "url": "https://www.riotconroe.com/events/jeremy-alder-sirius-xm-headlines-the-riot-comedy-club",
@@ -5818,9 +5737,9 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-ivan-decker-netflix-conan-live-in-conroe": {
-      "lastmod": "2026-09-04T02:18:00-05:00",
+      "lastmod": "2026-11-17T02:23:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Ivan Decker (Netflix, Conan) Live in Conroe",
         "startDate": "2027-01-29T19:30:00-06:00",
@@ -5843,7 +5762,7 @@
           "url": "https://www.riotconroe.com/events/comedian-ivan-decker-netflix-conan-live-in-conroe",
           "priceCurrency": "USD",
           "price": "20.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-09-04T14:13:58-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-ivan-decker-netflix-conan-live-in-conroe",
@@ -5863,9 +5782,9 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-ivan-decker-netflix-conan-live-in-conroe-2027-01-30190000": {
-      "lastmod": "2026-09-04T02:18:00-05:00",
+      "lastmod": "2026-11-17T02:24:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Ivan Decker (Netflix, Conan) Live in Conroe",
         "startDate": "2027-01-30T19:00:00-06:00",
@@ -5888,12 +5807,12 @@
           "url": "https://www.riotconroe.com/events/comedian-ivan-decker-netflix-conan-live-in-conroe-2027-01-30190000",
           "priceCurrency": "USD",
           "price": "20.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-09-04T14:18:39-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-ivan-decker-netflix-conan-live-in-conroe-2027-01-30190000",
         "image": "/img/events/IMG-0489-76f40752-large-thumb.jpg",
-        "description": "Known for his sharp, polished, and multi-layered observational comedy, Ivan Decker continues to achieve success as a writer, stand-up, and actor. After being named “A Comic to Watch” at the New York Comedy Festival, Netflix then released his Comedy Special, “Underwater Scissors” to rave reviews. Ivan made his American television debut on “Conan” and his comedy album “I Wanted to be a Dinosaur” was the recipient of the JUNO award for “Comedy Album of the Year.” He can be seen and heard on the popular CBC radio program “The Debaters” and his newest special, “Popcorn,” was released by 800 Pound Gorilla Media and was nominated for a 2025 JUNO Award for \"Comedy Album of the Year.\"ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS--",
+        "description": "Known for his sharp, polished, and multi-layered observational comedy, Ivan Decker continues to achieve success as a writer, stand-up, and actor. After being named &ldquo;A Comic to Watch&rdquo; at the New York Comedy Festival, Netflix then released his Comedy Special, &ldquo;Underwater Scissors&rdquo; to rave reviews. Ivan made his American television debut on &ldquo;Conan&rdquo; and his comedy album &ldquo;I Wanted to be a Dinosaur&rdquo; was the recipient of the JUNO award for &ldquo;Comedy Album of the Year.&rdquo; He can be seen and heard on the popular CBC radio program &ldquo;The Debaters&rdquo; and his newest special, &ldquo;Popcorn,&rdquo; was released by 800 Pound Gorilla Media and was nominated for a 2025 JUNO Award for &quot;Comedy Album of the Year.&quot;ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS--",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -6223,7 +6142,7 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-lachlan-patterson-the-tonight-show-comedy-central-america-s-got-talent-live-in-conroe": {
-      "lastmod": "2026-09-16T05:06:00-05:00",
+      "lastmod": "2026-11-17T02:09:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -6268,7 +6187,7 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-lachlan-patterson-the-tonight-show-comedy-central-america-s-got-talent-live-in-conroe-2026-11-21190000": {
-      "lastmod": "2026-09-16T05:06:00-05:00",
+      "lastmod": "2026-11-17T02:11:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -6658,7 +6577,7 @@
       }
     },
     "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-11-19200000": {
-      "lastmod": "2026-09-21T02:47:00-05:00",
+      "lastmod": "2026-11-17T02:07:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -6688,7 +6607,7 @@
         },
         "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-11-19200000",
         "image": "/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
-        "description": "Don’t miss your chance to catch the best live standup in Downtown Conroe at the city’s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night.✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night.✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -6698,7 +6617,7 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-21210000": {
-      "lastmod": "2026-09-21T02:53:00-05:00",
+      "lastmod": "2026-11-17T02:11:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -6728,7 +6647,7 @@
         },
         "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-21210000",
         "image": "/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
-        "description": "Don’t miss your chance to catch the best live standup in Downtown Conroe at the city’s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -6738,9 +6657,9 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-friday-night-standup-comedy-in-conroe-2026-11-27193000": {
-      "lastmod": "2026-09-21T02:58:00-05:00",
+      "lastmod": "2026-11-17T02:12:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Riot Comedy Club presents Friday Night Standup Comedy in Conroe!",
         "startDate": "2026-11-27T19:30:00-06:00",
@@ -6763,12 +6682,12 @@
           "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-friday-night-standup-comedy-in-conroe-2026-11-27193000",
           "priceCurrency": "USD",
           "price": "12.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-09-21T14:58:01-05:00"
         },
         "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-friday-night-standup-comedy-in-conroe-2026-11-27193000",
         "image": "/img/shows/friday-conroe-bece0abe-large-thumb.jpg",
-        "description": "Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ????✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "description": "Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ????✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -6778,9 +6697,9 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-2026-11-28190000": {
-      "lastmod": "2026-09-21T03:05:00-05:00",
+      "lastmod": "2026-11-17T02:12:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Riot Comedy Club presents Saturday Night Early Standup Comedy in Conroe!",
         "startDate": "2026-11-28T19:00:00-06:00",
@@ -6803,12 +6722,12 @@
           "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-2026-11-28190000",
           "priceCurrency": "USD",
           "price": "36.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-09-21T15:05:51-05:00"
         },
         "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-2026-11-28190000",
         "image": "/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
-        "description": "Don’t miss your chance to catch the best live standup in Downtown Conroe at the city’s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature&nbsp;4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature&nbsp;4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -6818,9 +6737,9 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-28210000": {
-      "lastmod": "2026-09-21T03:08:00-05:00",
+      "lastmod": "2026-11-17T02:12:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
         "startDate": "2026-11-28T21:00:00-06:00",
@@ -6843,52 +6762,12 @@
           "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-28210000",
           "priceCurrency": "USD",
           "price": "15.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-09-21T15:08:51-05:00"
         },
         "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-28210000",
         "image": "/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
-        "description": "Don’t miss your chance to catch the best live standup in Downtown Conroe at the city’s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
-        "organizer": {
-          "@type": "Organization",
-          "name": "The Riot Conroe",
-          "url": "https://www.riotconroe.com"
-        },
-        "performer": []
-      }
-    },
-    "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-12-03200000": {
-      "lastmod": "2026-09-21T02:47:00-05:00",
-      "node": {
-        "@context": "http://schema.org",
-        "@type": "ComedyEvent",
-        "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
-        "startDate": "2026-12-03T20:00:00-06:00",
-        "location": {
-          "@type": "Place",
-          "name": "The Riot Conroe",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "219 Simonton Street",
-            "addressLocality": "Conroe",
-            "postalCode": "77301",
-            "addressRegion": "TX",
-            "addressCountry": "US"
-          }
-        },
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-12-03200000",
-          "priceCurrency": "USD",
-          "price": "9.00",
-          "availability": "InStock",
-          "validFrom": "2026-09-21T14:47:30-05:00"
-        },
-        "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-12-03200000",
-        "image": "/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
-        "description": "Don’t miss your chance to catch the best live standup in Downtown Conroe at the city’s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night.✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -6898,9 +6777,9 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-12-05210000": {
-      "lastmod": "2026-09-21T03:08:00-05:00",
+      "lastmod": "2026-11-17T02:13:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
         "startDate": "2026-12-05T21:00:00-06:00",
@@ -6923,12 +6802,12 @@
           "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-12-05210000",
           "priceCurrency": "USD",
           "price": "15.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-09-21T15:08:51-05:00"
         },
         "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-12-05210000",
         "image": "/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
-        "description": "Don’t miss your chance to catch the best live standup in Downtown Conroe at the city’s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -6938,9 +6817,9 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-12-12210000": {
-      "lastmod": "2026-09-21T03:08:00-05:00",
+      "lastmod": "2026-11-17T02:15:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
         "startDate": "2026-12-12T21:00:00-06:00",
@@ -6963,12 +6842,12 @@
           "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-12-12210000",
           "priceCurrency": "USD",
           "price": "15.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-09-21T15:08:51-05:00"
         },
         "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-12-12210000",
         "image": "/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
-        "description": "Don’t miss your chance to catch the best live standup in Downtown Conroe at the city’s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -6978,9 +6857,9 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-2026-12-26190000": {
-      "lastmod": "2026-09-21T03:05:00-05:00",
+      "lastmod": "2026-11-17T02:19:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Riot Comedy Club presents Saturday Night Early Standup Comedy in Conroe!",
         "startDate": "2026-12-26T19:00:00-06:00",
@@ -7003,12 +6882,12 @@
           "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-2026-12-26190000",
           "priceCurrency": "USD",
           "price": "36.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-09-21T15:05:51-05:00"
         },
         "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-2026-12-26190000",
         "image": "/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
-        "description": "Don’t miss your chance to catch the best live standup in Downtown Conroe at the city’s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature&nbsp;4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature&nbsp;4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -7018,9 +6897,9 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-12-26210000": {
-      "lastmod": "2026-09-21T03:08:00-05:00",
+      "lastmod": "2026-11-17T02:19:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Riot Comedy Club presents Saturday Night Standup Comedy in Conroe!",
         "startDate": "2026-12-26T21:00:00-06:00",
@@ -7043,12 +6922,12 @@
           "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-12-26210000",
           "priceCurrency": "USD",
           "price": "15.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-09-21T15:08:52-05:00"
         },
         "url": "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-12-26210000",
         "image": "/img/shows/conroe-saturay-d8160b82-large-thumb.jpg",
-        "description": "Don’t miss your chance to catch the best live standup in Downtown Conroe at the city’s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.&nbsp;Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night. ✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -7058,9 +6937,9 @@
       }
     },
     "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-12-31200000": {
-      "lastmod": "2026-09-21T02:47:00-05:00",
+      "lastmod": "2026-11-17T02:19:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "The Riot Comedy Club presents Thursday Night Standup Comedy Show LIVE IN CONROE!",
         "startDate": "2026-12-31T20:00:00-06:00",
@@ -7083,12 +6962,12 @@
           "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-12-31200000",
           "priceCurrency": "USD",
           "price": "9.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-09-21T14:47:31-05:00"
         },
         "url": "https://www.riotconroe.com/events/the-riot-comedy-club-presents-thursday-night-standup-comedy-show-live-in-conroe-2026-12-31200000",
         "image": "/img/shows/Showcase-Templates-24-31200d5d-large-thumb.png",
-        "description": "Don’t miss your chance to catch the best live standup in Downtown Conroe at the city’s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY’s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you're planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY’s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night.✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
+        "description": "Don&rsquo;t miss your chance to catch the best live standup in Downtown Conroe at the city&rsquo;s newest comedy hotspot! Featuring some of the funniest comedians from across Texas and the country.Welcome to Riot Comedy Conroe - Your New Weekend Destination for Laughter!Get ready for an unforgettable night of standup at GuadalaHARRY&rsquo;s Bar &amp; Grill, where Riot Comedy brings top-tier comedians, delicious food, cold drinks, and a vibrant atmosphere to the heart of Downtown Conroe. Enjoy a relaxed, energetic setting perfect for comedy fans, couples, groups, and anyone looking for a great night out.---Our Comedy Showcases feature 4-5 of the funniest comedians from Houston, Conroe, and across Texas, plus surprise drop-ins from national touring acts. You never know who might jump on stage, but you can count on big laughs all night long.Whether you&#39;re planning a date night, meeting up with friends, or discovering a new spot in Downtown Conroe, this is the place to be. Come early for food and drinks at GuadalaHARRY&rsquo;s and stay late for the full Riot Comedy experience.Come for the comedy, stay for the night.✨---ALL SHOWS ARE AGES 21 &amp; UP. TWO(2) DRINK MINIMUM INCLUSIVE OF NON-ALCOHOLIC DRINKS",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -7298,9 +7177,9 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-janet-mcnamara-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-09-24T11:18:00-05:00",
+      "lastmod": "2026-11-17T02:20:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Janet McNamara Headlines The Riot Comedy Club",
         "startDate": "2027-01-08T19:30:00-06:00",
@@ -7323,7 +7202,7 @@
           "url": "https://www.riotconroe.com/events/comedian-janet-mcnamara-headlines-the-riot-comedy-club",
           "priceCurrency": "USD",
           "price": "20.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-09-24T11:13:50-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-janet-mcnamara-headlines-the-riot-comedy-club",
@@ -7428,7 +7307,7 @@
       }
     },
     "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-21130000": {
-      "lastmod": "2026-10-19T07:54:00-05:00",
+      "lastmod": "2026-11-17T03:23:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -7458,7 +7337,7 @@
         },
         "url": "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-21130000",
         "image": "/img/shows/Yolks-Jokes-Comedy-Brunch-6eba0f05-large-thumb.png",
-        "description": "Hot Breakfast. Cold Drinks. Big Laughs.Start your Saturday sunny side up with Yolks &amp; Jokes, The Riot's weekly comedy brunch! We're serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you're recovering from Friday night or kicking off your Saturday in style, we've got everything you need for the perfect weekend brunch!???? Hot Breakfast Menu – Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!???? Bloody Mary Menu – Spice up your morning with our lineup of Bloody Marys.???? Frozen Bellinis &amp; Mimosas – Because brunch deserves bubbles!☕ Fresh Coffee – For those who need a little caffeine with their comedy.???? Cocktails &amp; Draft Beer – Full bar available for whatever your Saturday calls for.???? LIVE STAND-UP COMEDY – A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that's anything but ordinary.???? The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you’re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you’ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails—all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "description": "Hot Breakfast. Cold Drinks. Big Laughs.Start your Saturday sunny side up with Yolks &amp; Jokes, The Riot&#39;s weekly comedy brunch! We&#39;re serving up a hilarious lineup of stand-up comedians alongside delicious hot breakfast, boozy brunch favorites, and plenty of laughs.Whether you&#39;re recovering from Friday night or kicking off your Saturday in style, we&#39;ve got everything you need for the perfect weekend brunch!???? Hot Breakfast Menu &ndash; Freshly prepared egg dishes, delicious paninis, hot pizzas, and more!???? Bloody Mary Menu &ndash; Spice up your morning with our lineup of Bloody Marys.???? Frozen Bellinis &amp; Mimosas &ndash; Because brunch deserves bubbles!☕ Fresh Coffee &ndash; For those who need a little caffeine with their comedy.???? Cocktails &amp; Draft Beer &ndash; Full bar available for whatever your Saturday calls for.???? LIVE STAND-UP COMEDY &ndash; A rotating lineup of hilarious comedians bringing the laughs while you brunch!Bring your friends, grab a drink, order some breakfast, and enjoy a Saturday that&#39;s anything but ordinary.???? The Riot Comedy Club | 1925 Washington Ave, Houston, TXCome hungry. Leave laughing.All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet Parking--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 6000 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Houston",
@@ -8118,9 +7997,9 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-donna-lee-kill-tony-the-cw-live-in-conroe": {
-      "lastmod": "2026-10-15T10:17:00-05:00",
+      "lastmod": "2026-11-17T02:13:00-06:00",
       "node": {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "ComedyEvent",
         "name": "Comedian Donna Lee (Kill Tony, The CW) Live in Conroe",
         "startDate": "2026-12-05T19:00:00-06:00",
@@ -8143,7 +8022,7 @@
           "url": "https://www.riotconroe.com/events/comedian-donna-lee-kill-tony-the-cw-live-in-conroe",
           "priceCurrency": "USD",
           "price": "20.00",
-          "availability": "InStock",
+          "availability": "https://schema.org/InStock",
           "validFrom": "2026-10-15T10:16:12-05:00"
         },
         "url": "https://www.riotconroe.com/events/comedian-donna-lee-kill-tony-the-cw-live-in-conroe",
@@ -8248,7 +8127,7 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe": {
-      "lastmod": "2026-11-02T02:35:00-06:00",
+      "lastmod": "2026-11-17T02:25:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -8293,7 +8172,7 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-26180000": {
-      "lastmod": "2026-11-02T02:36:00-06:00",
+      "lastmod": "2026-11-17T02:26:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -8323,7 +8202,7 @@
         },
         "url": "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-26180000",
         "image": "/img/events/JSalmon-828b0875-large-thumb.jpg",
-        "description": "Jason is a Texas born, NYC based standup whose comedy has been described as“…like getting the best advice you’ve ever gotten…from the dumbest guy you know.”Jason’s performed all over the world including for the troops in Europe, South America,&amp;amp; Afghanistan. His standup special: BISCUITS and GRAVITY can be watched right nowon YouTube.He’s been featured in Red Dead Redemption 2, Orange is the New Black, HBO,Comedy Central, At Home with Amy Sedaris, Hulu’s Wu Tang Clan Series, and 30Rock.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.--",
+        "description": "Jason is a Texas born, NYC based standup whose comedy has been described as&ldquo;&hellip;like getting the best advice you&rsquo;ve ever gotten&hellip;from the dumbest guy you know.&rdquo;Jason&rsquo;s performed all over the world including for the troops in Europe, South America,&amp;amp; Afghanistan. His standup special: BISCUITS and GRAVITY can be watched right nowon YouTube.He&rsquo;s been featured in Red Dead Redemption 2, Orange is the New Black, HBO,Comedy Central, At Home with Amy Sedaris, Hulu&rsquo;s Wu Tang Clan Series, and 30Rock.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.--",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -8338,7 +8217,7 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-26203000": {
-      "lastmod": "2026-11-02T02:36:00-06:00",
+      "lastmod": "2026-11-17T02:26:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -8368,7 +8247,7 @@
         },
         "url": "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-26203000",
         "image": "/img/events/JSalmon-828b0875-large-thumb.jpg",
-        "description": "Jason is a Texas born, NYC based standup whose comedy has been described as“…like getting the best advice you’ve ever gotten…from the dumbest guy you know.”Jason’s performed all over the world including for the troops in Europe, South America,&amp;amp; Afghanistan. His standup special: BISCUITS and GRAVITY can be watched right nowon YouTube.He’s been featured in Red Dead Redemption 2, Orange is the New Black, HBO,Comedy Central, At Home with Amy Sedaris, Hulu’s Wu Tang Clan Series, and 30Rock.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.--",
+        "description": "Jason is a Texas born, NYC based standup whose comedy has been described as&ldquo;&hellip;like getting the best advice you&rsquo;ve ever gotten&hellip;from the dumbest guy you know.&rdquo;Jason&rsquo;s performed all over the world including for the troops in Europe, South America,&amp;amp; Afghanistan. His standup special: BISCUITS and GRAVITY can be watched right nowon YouTube.He&rsquo;s been featured in Red Dead Redemption 2, Orange is the New Black, HBO,Comedy Central, At Home with Amy Sedaris, Hulu&rsquo;s Wu Tang Clan Series, and 30Rock.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.--",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -8383,7 +8262,7 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-27170000": {
-      "lastmod": "2026-11-02T02:36:00-06:00",
+      "lastmod": "2026-11-17T02:27:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -8413,7 +8292,7 @@
         },
         "url": "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-27170000",
         "image": "/img/events/JSalmon-828b0875-large-thumb.jpg",
-        "description": "Jason is a Texas born, NYC based standup whose comedy has been described as“…like getting the best advice you’ve ever gotten…from the dumbest guy you know.”Jason’s performed all over the world including for the troops in Europe, South America,&amp;amp; Afghanistan. His standup special: BISCUITS and GRAVITY can be watched right nowon YouTube.He’s been featured in Red Dead Redemption 2, Orange is the New Black, HBO,Comedy Central, At Home with Amy Sedaris, Hulu’s Wu Tang Clan Series, and 30Rock.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.--",
+        "description": "Jason is a Texas born, NYC based standup whose comedy has been described as&ldquo;&hellip;like getting the best advice you&rsquo;ve ever gotten&hellip;from the dumbest guy you know.&rdquo;Jason&rsquo;s performed all over the world including for the troops in Europe, South America,&amp;amp; Afghanistan. His standup special: BISCUITS and GRAVITY can be watched right nowon YouTube.He&rsquo;s been featured in Red Dead Redemption 2, Orange is the New Black, HBO,Comedy Central, At Home with Amy Sedaris, Hulu&rsquo;s Wu Tang Clan Series, and 30Rock.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.--",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -8428,7 +8307,7 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-27193000": {
-      "lastmod": "2026-11-02T02:36:00-06:00",
+      "lastmod": "2026-11-17T02:27:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -8458,7 +8337,7 @@
         },
         "url": "https://www.riotconroe.com/events/comedian-jason-salmon-hbo-comedy-central-hulu-live-at-the-riot-in-conroe-2027-02-27193000",
         "image": "/img/events/JSalmon-828b0875-large-thumb.jpg",
-        "description": "Jason is a Texas born, NYC based standup whose comedy has been described as“…like getting the best advice you’ve ever gotten…from the dumbest guy you know.”Jason’s performed all over the world including for the troops in Europe, South America,&amp;amp; Afghanistan. His standup special: BISCUITS and GRAVITY can be watched right nowon YouTube.He’s been featured in Red Dead Redemption 2, Orange is the New Black, HBO,Comedy Central, At Home with Amy Sedaris, Hulu’s Wu Tang Clan Series, and 30Rock.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.--",
+        "description": "Jason is a Texas born, NYC based standup whose comedy has been described as&ldquo;&hellip;like getting the best advice you&rsquo;ve ever gotten&hellip;from the dumbest guy you know.&rdquo;Jason&rsquo;s performed all over the world including for the troops in Europe, South America,&amp;amp; Afghanistan. His standup special: BISCUITS and GRAVITY can be watched right nowon YouTube.He&rsquo;s been featured in Red Dead Redemption 2, Orange is the New Black, HBO,Comedy Central, At Home with Amy Sedaris, Hulu&rsquo;s Wu Tang Clan Series, and 30Rock.ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.--",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -8558,7 +8437,7 @@
       }
     },
     "https://www.riotconroe.com/events/steven-rogers-don-t-tell-comedy-dry-bar-sirius-xm-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-11-09T01:58:00-06:00",
+      "lastmod": "2026-11-17T02:25:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -8588,7 +8467,7 @@
         },
         "url": "https://www.riotconroe.com/events/steven-rogers-don-t-tell-comedy-dry-bar-sirius-xm-headlines-the-riot-comedy-club",
         "image": "/img/events/img-be3ba299-4b3e-4cca-a08c-91f3eafcaec2-3f1d11cc-large-thumb.png",
-        "description": "Steven Rogers is a stand-up comedian known for his unique blend of wit, vulnerability, and sharp observational humor. His comedic style combines relatable mishaps, personal struggles, and endearing storytelling, often drawing from his own life experiences. Steven&#39;s fresh take on everyday challenges has earned him a devoted following and widespread recognition in the comedy world.In his second stand-up special, Half of We, produced by comedy icons Nate Bargatze and Brian Regan, Steven takes his audience on an unforgettable journey through his personal life. From hilarious mishaps and his struggles with adulthood to stories about his engagement, Steven&rsquo;s storytelling is both humorous and heartwarming, culminating in a shocking twist that will leave audiences laughing and reflecting long after the special ends. Steven has opened for some of the biggest names in comedy, including Brian Regan, Joe List, Tom Papa, Nate Bargatze, and Taylor Tomlinson. His clever, rapid-fire material has earned him appearances on major TV shows such as The Late Show with Stephen Colbert, The Late Late Show with James Corden, Dry Bar Comedy, and Don&rsquo;t Tell Comedy. His debut album/special, Before He Was Super, quickly hit #1 on iTunes and was named one of Paste&rsquo;s Top 12 Best Comedy Albums of 2022 and one of Vanyaland&rsquo;s Favorite Comedy Releases of 2022. Steven can regularly be heard on SiriusXM.---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
+        "description": "Steven Rogers is a stand-up comedian known for his unique blend of wit, vulnerability, and sharp observational humor. His comedic style combines relatable mishaps, personal struggles, and endearing storytelling, often drawing from his own life experiences. Steven&#39;s fresh take on everyday challenges has earned him a devoted following and widespread recognition in the comedy world.In his second stand-up special, Half of We, produced by comedy icons Nate Bargatze and Brian Regan, Steven takes his audience on an unforgettable journey through his personal life. From hilarious mishaps and his struggles with adulthood to stories about his engagement, Steven&rsquo;s storytelling is both humorous and heartwarming, culminating in a shocking twist that will leave audiences laughing and reflecting long after the special ends. Steven has opened for some of the biggest names in comedy, including Brian Regan, Joe List, Tom Papa, Nate Bargatze, and Taylor Tomlinson.His clever, rapid-fire material has earned him appearances on major TV shows such as The Late Show with Stephen Colbert, The Late Late Show with James Corden, Dry Bar Comedy, and Don&rsquo;t Tell Comedy. His debut album/special, Before He Was Super, quickly hit #1 on iTunes and was named one of Paste&rsquo;s Top 12 Best Comedy Albums of 2022 and one of Vanyaland&rsquo;s Favorite Comedy Releases of 2022. Steven can regularly be heard on SiriusXM.---ALL SHOWS ARE AGES 21 &amp; UP. NO DRINK MINIMUMS.",
         "organizer": {
           "@type": "Organization",
           "name": "The Riot Conroe",
@@ -8818,7 +8697,7 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-tino-cochino-live-in-conroe": {
-      "lastmod": "2026-11-13T12:28:00-06:00",
+      "lastmod": "2026-11-17T02:24:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -9020,6 +8899,86 @@
             "name": "Armando Anto"
           }
         ]
+      }
+    },
+    "https://www.theriothtx.com/events/secret-headliner-netflix-don-t-tell-comedy-headlines-the-riot-comedy-club": {
+      "lastmod": "2026-11-17T02:08:00-06:00",
+      "node": {
+        "@context": "https://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Secret Headliner (Netflix, Don't Tell Comedy) Headlines a CLEAN SHOW  at The Riot Comedy Club",
+        "startDate": "2026-11-27T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/secret-headliner-netflix-don-t-tell-comedy-headlines-the-riot-comedy-club",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-08-10T14:55:06-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/secret-headliner-netflix-don-t-tell-comedy-headlines-the-riot-comedy-club",
+        "image": "/img/shows/Headliners-74-c2160a51-large-thumb.png",
+        "description": "Get ready for a night of big laughs without the dirty jokes! The Riot is bringing you a Secret Headliner seen on Netflix and Don&#39;t Tell Comedy. You won&#39;t know who&#39;s taking the stage until showtime, but one thing&#39;s guaranteed: this clean comedy show is bringing the laughs. Grab your tickets and bring the whole crew!All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
+      }
+    },
+    "https://www.theriothtx.com/events/secret-headliner-netflix-don-t-tell-comedy-headlines-the-riot-comedy-club-1": {
+      "lastmod": "2026-11-17T02:08:00-06:00",
+      "node": {
+        "@context": "https://schema.org",
+        "@type": "ComedyEvent",
+        "name": "Secret Headliner (Netflix, Don't Tell Comedy) Headlines a CLEAN SHOW  at The Riot Comedy Club",
+        "startDate": "2026-11-28T19:00:00-06:00",
+        "location": {
+          "@type": "Place",
+          "name": "The Riot Houston",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1925 Washington Ave",
+            "addressLocality": "Houston",
+            "postalCode": "77007",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          }
+        },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.theriothtx.com/events/secret-headliner-netflix-don-t-tell-comedy-headlines-the-riot-comedy-club-1",
+          "priceCurrency": "USD",
+          "price": "25.00",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-08-10T14:51:36-05:00"
+        },
+        "url": "https://www.theriothtx.com/events/secret-headliner-netflix-don-t-tell-comedy-headlines-the-riot-comedy-club-1",
+        "image": "/img/shows/Headliners-74-c2160a51-large-thumb.png",
+        "description": "Get ready for a night of big laughs without the dirty jokes! The Riot is bringing you a Secret Headliner seen on&nbsp;Netflix and&nbsp;Don&#39;t Tell Comedy. You won&#39;t know who&#39;s taking the stage until showtime, but one thing&#39;s guaranteed: this clean comedy show is bringing the laughs. Grab your tickets and bring the whole crew!All shows Ages 21 &amp; Up. Photo ID Required for Entry. Complimentary Valet--Looking for the fun thing to do in Houston? Whether you&rsquo;re planning a fun date night, a night out with friends, or just want to meet new people, Riot Comedy Club is the perfect destination!Top-Tier Comedy ShowsExperience hilarious stand-up performances featuring the funniest comedians you&rsquo;ve seen on Netflix, HBO, Comedy Central, and at iconic venues like the Comedy Store and Comedy Cellar. with 4.9 Star rating on Google with over 5500 Google reivews!Delicious Food &amp; DrinksEnjoy tasty food, draught beer, wine, and handcrafted cocktails&mdash;all served in our intimate and casual setting.A Unique Night OutSkip the usual bars and movies! Laugh, connect, and make memories at Houston&rsquo;s best comedy club.Join us for an unforgettable evening filled with laughter, great vibes, and the best live comedy Houston has to offer.Book your tickets now!#FunThingToDoInHouston #HoustonComedyClub #DateNightHouston #HoustonNightlife #StandupComedyHouston",
+        "organizer": {
+          "@type": "Organization",
+          "name": "The Riot Houston",
+          "url": "https://www.theriothtx.com"
+        },
+        "performer": []
       }
     }
   }
