@@ -1,134 +1,6 @@
 {
- "updated": "2026-11-16T22:56:45.909Z",
+ "updated": "2026-11-17T05:18:41.898Z",
  "announcements": [
-  {
-   "id": "32e6de2572dd88f1",
-   "name": "Ali Siddiq",
-   "venue": "Smart Financial Centre at Sugar Land",
-   "date": "2026-12-31",
-   "time": "7:30 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/a/8b9/0a83a81b-0da6-4434-9b7d-4e59027c58b9_SOURCE",
-   "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1AAvx-P",
-   "source": "ticketmaster",
-   "notable": true,
-   "tier": "big_room",
-   "notable_reason": "big room",
-   "first_seen": "2026-10-22T18:01:52.138Z"
-  },
-  {
-   "id": "4604e7b7ffe3e51a",
-   "name": "Saturday Night Comedy 11/07",
-   "venue": "The Pink Flamingo Comedy Club",
-   "date": "2026-11-07",
-   "time": "8:00 PM",
-   "price_min": 13.54,
-   "price_max": 59.75,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1196395247%2F2996872667695%2F1%2Foriginal.20261022-200628?auto=format%2Ccompress&q=75&sharp=10&s=f03e78e5f415b1662e50d6260d590cd9",
-   "ticket_url": "https://www.eventbrite.com/e/saturday-night-comedy-1107-tickets-2003790798218",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only -9d out (min 14)",
-   "first_seen": "2026-10-23T02:02:56.465Z"
-  },
-  {
-   "id": "243956de7f0b72d2",
-   "name": "Don't Tell Comedy: Katy (8:00 PM Show)",
-   "venue": "Don't Tell Comedy (Secret Location)",
-   "date": "2026-10-31",
-   "time": "8:00 PM",
-   "price_min": 27,
-   "price_max": 27,
-   "image_url": "https://dont-tell-comedy.mo.cloudinary.net/private/halloween6_cl24B7a_i4hoa0k.webp",
-   "ticket_url": "https://www.donttellcomedy.com/shows/houston-21813/",
-   "source": "donttellcomedy",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only -16d out (min 14)",
-   "first_seen": "2026-10-24T02:03:52.290Z"
-  },
-  {
-   "id": "ba96d21ac417d622",
-   "name": "Don't Tell Comedy: River Oaks (8:00 PM Show)",
-   "venue": "Don't Tell Comedy (Secret Location)",
-   "date": "2027-01-08",
-   "time": "8:00 PM",
-   "price_min": 27,
-   "price_max": 27,
-   "image_url": "https://dont-tell-comedy.mo.cloudinary.net/private/bizres-detroit-johannacenter_vyw0ONL.webp",
-   "ticket_url": "https://www.donttellcomedy.com/shows/houston-21618/",
-   "source": "donttellcomedy",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "small room",
-   "first_seen": "2026-10-24T02:03:52.290Z"
-  },
-  {
-   "id": "8844081e4e1ad3fd",
-   "name": "Insight with Chris Van Vliet in Houston",
-   "venue": "The Pink Flamingo Comedy Club",
-   "date": "2026-11-27",
-   "time": "8:00 PM",
-   "price_min": 42.42,
-   "price_max": 88.64,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1196502953%2F2996872667695%2F1%2Foriginal.20261024-151714?auto=format%2Ccompress&q=75&sharp=10&s=5c4853f0bf0d33aa207fd398d2ec7337",
-   "ticket_url": "https://www.eventbrite.com/e/insight-with-chris-van-vliet-in-houston-tickets-2003855705357",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 11d out (min 14)",
-   "first_seen": "2026-10-24T16:38:33.068Z"
-  },
-  {
-   "id": "1ea32fba1d045525",
-   "name": "Erin Cholakian",
-   "venue": "Punch Line Houston",
-   "date": "2027-01-14",
-   "time": "7:30 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/a/627/3f4a57cc-f637-4e83-af46-cb64ba333627_SOURCE",
-   "ticket_url": "https://www.ticketmaster.com/erin-cholakian-houston-texas-01-14-2027/event/3A006528B62B9E75",
-   "source": "ticketmaster",
-   "notable": true,
-   "tier": "headliner_room",
-   "notable_reason": "headliner room",
-   "first_seen": "2026-10-24T16:38:33.068Z"
-  },
-  {
-   "id": "57c52cd818bd177f",
-   "name": "Brian Bates",
-   "venue": "Houston Improv",
-   "date": "2027-01-14",
-   "time": "7:30 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-   "ticket_url": "https://www.ticketweb.com/event/brian-bates-houston-improv-tickets/15032433?REFERRAL_ID=tmfeed",
-   "source": "ticketmaster",
-   "notable": true,
-   "tier": "headliner_room",
-   "notable_reason": "headliner room",
-   "first_seen": "2026-10-24T16:38:33.068Z"
-  },
-  {
-   "id": "c745d8079b09593f",
-   "name": "Comedian Charles Haycock Headlines The Riot Comedy Club",
-   "venue": "The Riot Comedy Club",
-   "date": "2027-01-22",
-   "time": "7:00 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://www.theriothtx.com/img/shows/IMG-0507-7d170778-large-thumb.jpg",
-   "ticket_url": "https://www.theriothtx.com/events/comedian-charles-haycock-headlines-the-riot-comedy-club",
-   "source": "standuptix",
-   "notable": true,
-   "tier": "headliner_room",
-   "notable_reason": "headliner room",
-   "first_seen": "2026-10-24T16:38:33.068Z"
-  },
   {
    "id": "ede3d236bfbdd26a",
    "name": "Comedian Dave Landau (Comedy Central, The Joe Rogan Exp)Live in Conroe",
@@ -254,7 +126,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -270,7 +142,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -286,7 +158,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -302,7 +174,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -318,7 +190,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -334,7 +206,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -350,7 +222,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -366,7 +238,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -382,7 +254,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -398,7 +270,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -414,7 +286,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -430,7 +302,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -446,7 +318,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -462,7 +334,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -478,7 +350,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -494,7 +366,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -510,7 +382,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -526,7 +398,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -542,7 +414,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -558,7 +430,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-10-26T19:21:38.483Z"
   },
   {
@@ -606,7 +478,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -9d out (min 14)",
+   "notable_reason": "only -10d out (min 14)",
    "first_seen": "2026-10-28T02:39:28.854Z"
   },
   {
@@ -622,7 +494,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -8d out (min 14)",
+   "notable_reason": "only -9d out (min 14)",
    "first_seen": "2026-10-28T02:39:28.854Z"
   },
   {
@@ -670,7 +542,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 2d out (min 14)",
+   "notable_reason": "only 1d out (min 14)",
    "first_seen": "2026-10-28T18:55:05.975Z"
   },
   {
@@ -814,7 +686,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 1d out (min 14)",
+   "notable_reason": "only 0d out (min 14)",
    "first_seen": "2026-10-30T03:02:44.639Z"
   },
   {
@@ -1022,7 +894,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-11-02T22:23:04.050Z"
   },
   {
@@ -1038,7 +910,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-11-02T22:23:04.050Z"
   },
   {
@@ -1054,7 +926,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-11-02T22:23:04.050Z"
   },
   {
@@ -1070,7 +942,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (5 weeks)",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-11-02T22:23:04.050Z"
   },
   {
@@ -1086,7 +958,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (5 weeks)",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-11-02T22:23:04.050Z"
   },
   {
@@ -1102,7 +974,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-11-02T22:23:04.050Z"
   },
   {
@@ -1390,7 +1262,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -8d out (min 14)",
+   "notable_reason": "only -9d out (min 14)",
    "first_seen": "2026-11-04T20:29:33.453Z"
   },
   {
@@ -1406,7 +1278,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 2d out (min 14)",
+   "notable_reason": "only 1d out (min 14)",
    "first_seen": "2026-11-04T20:29:33.453Z"
   },
   {
@@ -1502,7 +1374,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-11-06T20:00:52.847Z"
   },
   {
@@ -1518,7 +1390,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-11-06T20:00:52.847Z"
   },
   {
@@ -1534,7 +1406,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-11-06T20:00:52.847Z"
   },
   {
@@ -1550,7 +1422,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 11d out (min 14)",
+   "notable_reason": "only 10d out (min 14)",
    "first_seen": "2026-11-06T20:00:52.847Z"
   },
   {
@@ -1566,7 +1438,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-11-06T20:00:52.847Z"
   },
   {
@@ -1854,7 +1726,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-11-09T03:03:15.292Z"
   },
   {
@@ -1918,7 +1790,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -3d out (min 14)",
+   "notable_reason": "only -4d out (min 14)",
    "first_seen": "2026-11-09T23:02:28.167Z"
   },
   {
@@ -1934,7 +1806,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -3d out (min 14)",
+   "notable_reason": "only -4d out (min 14)",
    "first_seen": "2026-11-09T23:02:28.167Z"
   },
   {
@@ -1950,7 +1822,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -2d out (min 14)",
+   "notable_reason": "only -3d out (min 14)",
    "first_seen": "2026-11-09T23:02:28.167Z"
   },
   {
@@ -2030,7 +1902,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (5 weeks)",
+   "notable_reason": "recurring series (4 weeks)",
    "first_seen": "2026-11-09T23:02:28.167Z"
   },
   {
@@ -2334,7 +2206,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -5d out (min 14)",
+   "notable_reason": "only -6d out (min 14)",
    "first_seen": "2026-11-10T20:31:09.533Z"
   },
   {
@@ -2350,7 +2222,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -5d out (min 14)",
+   "notable_reason": "only -6d out (min 14)",
    "first_seen": "2026-11-10T20:31:09.533Z"
   },
   {
@@ -2366,7 +2238,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-11-10T20:31:09.533Z"
   },
   {
@@ -2382,7 +2254,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -5d out (min 14)",
+   "notable_reason": "only -6d out (min 14)",
    "first_seen": "2026-11-11T03:07:58.207Z"
   },
   {
@@ -2398,7 +2270,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 9d out (min 14)",
+   "notable_reason": "only 8d out (min 14)",
    "first_seen": "2026-11-11T03:07:58.207Z"
   },
   {
@@ -2446,7 +2318,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -2d out (min 14)",
+   "notable_reason": "only -3d out (min 14)",
    "first_seen": "2026-11-11T20:15:18.959Z"
   },
   {
@@ -2574,7 +2446,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only -3d out (min 14)",
+   "notable_reason": "only -4d out (min 14)",
    "first_seen": "2026-11-14T03:40:15.595Z"
   },
   {
@@ -2862,7 +2734,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (5 weeks)",
+   "notable_reason": "recurring series (4 weeks)",
    "first_seen": "2026-11-16T22:56:45.909Z"
   },
   {
@@ -3200,6 +3072,134 @@
    "tier": "headliner_room",
    "notable_reason": "headliner room",
    "first_seen": "2026-11-16T22:56:45.909Z"
+  },
+  {
+   "id": "ba1ce065db2a3c6b",
+   "name": "Live at the Barbershop Houston: Stand Up Comedy · BYOB",
+   "venue": "Cutthroat Barbers - Houston Barbershop in The Heights - Men's Barbershop",
+   "date": "2026-11-21",
+   "time": "8:30 PM",
+   "price_min": 17.85,
+   "price_max": 17.85,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186073370%2F17937490607%2F1%2Foriginal.20260603-161601?auto=format%2Ccompress&q=75&sharp=10&s=20c19f0df3041e183dd945f749ef8cb9",
+   "ticket_url": "https://www.eventbrite.com/e/live-at-the-barbershop-houston-stand-up-comedy-byob-tickets-2004936651496",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "only 4d out (min 14)",
+   "first_seen": "2026-11-17T05:18:41.898Z"
+  },
+  {
+   "id": "8e67bfa7bc6c6738",
+   "name": "Live at the Barbershop Houston: Stand Up Comedy · BYOB",
+   "venue": "Cutthroat Barbers - Houston Barbershop in The Heights - Men's Barbershop",
+   "date": "2026-11-28",
+   "time": "8:30 PM",
+   "price_min": 17.85,
+   "price_max": 17.85,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186073370%2F17937490607%2F1%2Foriginal.20260603-161601?auto=format%2Ccompress&q=75&sharp=10&s=20c19f0df3041e183dd945f749ef8cb9",
+   "ticket_url": "https://www.eventbrite.com/e/live-at-the-barbershop-houston-stand-up-comedy-byob-tickets-2004936727724",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "only 11d out (min 14)",
+   "first_seen": "2026-11-17T05:18:41.898Z"
+  },
+  {
+   "id": "2b6a40c3a94e33ed",
+   "name": "Live at the Barbershop Houston: Stand Up Comedy · BYOB",
+   "venue": "Cutthroat Barbers - Houston Barbershop in The Heights - Men's Barbershop",
+   "date": "2026-12-05",
+   "time": "8:30 PM",
+   "price_min": 17.85,
+   "price_max": 17.85,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186073370%2F17937490607%2F1%2Foriginal.20260603-161601?auto=format%2Ccompress&q=75&sharp=10&s=20c19f0df3041e183dd945f749ef8cb9",
+   "ticket_url": "https://www.eventbrite.com/e/live-at-the-barbershop-houston-stand-up-comedy-byob-tickets-2004936769850",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-11-17T05:18:41.898Z"
+  },
+  {
+   "id": "27a0dfa8cb2d6476",
+   "name": "comedy show in a speakeasy: thursday 8pm",
+   "venue": "The Den Comedy Club",
+   "date": "2026-12-10",
+   "time": "8:00 PM",
+   "price_min": 19,
+   "price_max": 154.46,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186716898%2F2991795842957%2F1%2Foriginal.20260611-214230?auto=format%2Ccompress&q=75&sharp=10&s=8c88be66110c684cd1911f877e541c2d",
+   "ticket_url": "https://www.eventbrite.com/e/comedy-show-in-a-speakeasy-thursday-8pm-tickets-2004931320551",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-11-17T05:18:41.898Z"
+  },
+  {
+   "id": "d7f743080dc1b329",
+   "name": "comedy show in a speakeasy: friday 9pm",
+   "venue": "The Den Comedy Club",
+   "date": "2026-12-11",
+   "time": "9:00 PM",
+   "price_min": 27.06,
+   "price_max": 227.33,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1179479239%2F2991795842957%2F1%2Foriginal.20260310-132745?auto=format%2Ccompress&q=75&sharp=10&s=83d22d5a4ddd3e9086b6761c1fbb3708",
+   "ticket_url": "https://www.eventbrite.com/e/comedy-show-in-a-speakeasy-friday-9pm-tickets-2004932404794",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-11-17T05:18:41.898Z"
+  },
+  {
+   "id": "a410aabdb2fb022f",
+   "name": "Live at the Barbershop Houston: Stand Up Comedy · BYOB",
+   "venue": "Cutthroat Barbers - Houston Barbershop in The Heights - Men's Barbershop",
+   "date": "2026-12-12",
+   "time": "8:30 PM",
+   "price_min": 17.85,
+   "price_max": 17.85,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186073370%2F17937490607%2F1%2Foriginal.20260603-161601?auto=format%2Ccompress&q=75&sharp=10&s=20c19f0df3041e183dd945f749ef8cb9",
+   "ticket_url": "https://www.eventbrite.com/e/live-at-the-barbershop-houston-stand-up-comedy-byob-tickets-2004936789910",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-11-17T05:18:41.898Z"
+  },
+  {
+   "id": "d14b236ece575930",
+   "name": "Live at the Barbershop Houston: Stand Up Comedy · BYOB",
+   "venue": "Cutthroat Barbers - Houston Barbershop in The Heights - Men's Barbershop",
+   "date": "2026-12-19",
+   "time": "8:30 PM",
+   "price_min": 17.85,
+   "price_max": 17.85,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186073370%2F17937490607%2F1%2Foriginal.20260603-161601?auto=format%2Ccompress&q=75&sharp=10&s=20c19f0df3041e183dd945f749ef8cb9",
+   "ticket_url": "https://www.eventbrite.com/e/live-at-the-barbershop-houston-stand-up-comedy-byob-tickets-2004936840060",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-11-17T05:18:41.898Z"
+  },
+  {
+   "id": "aa58a091d91fc21c",
+   "name": "Live at the Barbershop Houston: Stand Up Comedy · BYOB",
+   "venue": "Cutthroat Barbers - Houston Barbershop in The Heights - Men's Barbershop",
+   "date": "2026-12-26",
+   "time": "8:30 PM",
+   "price_min": 17.85,
+   "price_max": 17.85,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1186073370%2F17937490607%2F1%2Foriginal.20260603-161601?auto=format%2Ccompress&q=75&sharp=10&s=20c19f0df3041e183dd945f749ef8cb9",
+   "ticket_url": "https://www.eventbrite.com/e/live-at-the-barbershop-houston-stand-up-comedy-byob-tickets-2004936915285",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "title pattern",
+   "first_seen": "2026-11-17T05:18:41.898Z"
   }
  ]
 }
