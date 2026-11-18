@@ -50,15 +50,6 @@
   "manifest_version": 1793047249340,
   "cleanup_queue": [
     {
-      "slug": "corey-holcomb-houston-improv-2026-11-13",
-      "comedianName": "Corey Holcomb",
-      "igFeedMediaId": "17957494254029709",
-      "igStoryMediaId": "17972156070194384",
-      "fbFeedPostId": "1459072099650864",
-      "fbStoryPostId": "1173143798716590",
-      "postedAt": "2026-11-12T22:21:44.163Z"
-    },
-    {
       "slug": "luke-kidgell-punch-line-houston-2026-11-18",
       "comedianName": "Luke Kidgell",
       "igFeedMediaId": "18115393859594413",
