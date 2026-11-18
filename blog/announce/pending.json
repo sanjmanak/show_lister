@@ -1,3 +1,21 @@
 {
-  "items": []
+  "generated_at": "2026-11-18T22:42:02.645Z",
+  "dry_run": false,
+  "items": [
+    {
+      "id": "a56295d658341bc5",
+      "name": "Jerry Seinfeld",
+      "performer_name": "Jerry Seinfeld",
+      "venue": "Smart Financial Centre at Sugar Land",
+      "date": "2027-01-16",
+      "ticket_url": "https://www.ticketmaster.com/event/Z7r9jZ1AAA41b",
+      "files": {
+        "portrait": "2027-01-16-jerry-seinfeld-portrait.png",
+        "story": "2027-01-16-jerry-seinfeld-story.png",
+        "reel": "2027-01-16-jerry-seinfeld.mp4"
+      },
+      "caption": "The Seinfeld co-creator and Comedians in Cars Getting Coffee host returns to stand-up.\nJerry Seinfeld performs at Smart Financial Centre at Sugar Land on January 16, 2027. His latest film, Unfrosted, arrived on Netflix in 2024. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
+      "confidence": 0.99
+    }
+  ]
 }
