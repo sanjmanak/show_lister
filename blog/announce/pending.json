@@ -1,3 +1,21 @@
 {
-  "items": []
+  "generated_at": "2026-11-19T22:50:37.557Z",
+  "dry_run": false,
+  "items": [
+    {
+      "id": "016387f414e9fa28",
+      "name": "Bruce Bruce *New Material*",
+      "performer_name": "Bruce Bruce",
+      "venue": "Houston Improv",
+      "date": "2026-12-04",
+      "ticket_url": "https://www.ticketweb.com/event/bruce-bruce-new-material-houston-improv-tickets/14179574?REFERRAL_ID=tmfeed",
+      "files": {
+        "portrait": "2026-12-04-bruce-bruce-portrait.png",
+        "story": "2026-12-04-bruce-bruce-story.png",
+        "reel": "2026-12-04-bruce-bruce.mp4"
+      },
+      "caption": "The former BET ComicView host is working out new material.\nBruce Bruce performs at Houston Improv on December 4, 2026, with a New Material set. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
+      "confidence": 0.99
+    }
+  ]
 }
