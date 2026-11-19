@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T04:35:46.837Z",
+ "updated": "2026-11-19T21:34:50.011Z",
  "announcements": [
   {
    "id": "36901dcfaf16fa0e",
@@ -1822,7 +1822,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (5 weeks)",
+   "notable_reason": "recurring series (4 weeks)",
    "first_seen": "2026-11-09T23:02:28.167Z"
   },
   {
@@ -2654,7 +2654,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (5 weeks)",
+   "notable_reason": "recurring series (4 weeks)",
    "first_seen": "2026-11-16T22:56:45.909Z"
   },
   {
