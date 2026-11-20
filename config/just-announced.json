@@ -1,38 +1,6 @@
 {
- "updated": "2026-11-20T04:24:14.175Z",
+ "updated": "2026-11-20T21:07:27.537Z",
  "announcements": [
-  {
-   "id": "36901dcfaf16fa0e",
-   "name": "NIGHT COURT: Monday Open Mic Comedy",
-   "venue": "The Secret Group",
-   "date": "2026-11-23",
-   "time": "11:30 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176335183%2F3558237521%2F1%2Foriginal.20260131-175517?auto=format%2Ccompress&q=75&sharp=10&s=aadd8de34a66a713db9766a3e110f224",
-   "ticket_url": "https://www.eventbrite.com/e/night-court-monday-open-mic-comedy-tickets-2003922913378",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 3d out (min 14)",
-   "first_seen": "2026-10-26T19:21:38.483Z"
-  },
-  {
-   "id": "c108836304f42832",
-   "name": "FOR THE CULTURE: A Tuesday Comedy Show for The Culture",
-   "venue": "The Secret Group",
-   "date": "2026-11-24",
-   "time": "8:00 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1171686511%2F3558237521%2F1%2Foriginal.20251124-232548?auto=format%2Ccompress&q=75&sharp=10&s=f229ff3250f6ec814bce4550095dd7d0",
-   "ticket_url": "https://www.eventbrite.com/e/for-the-culture-a-tuesday-comedy-show-for-the-culture-tickets-2003922967540",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 4d out (min 14)",
-   "first_seen": "2026-10-26T19:21:38.483Z"
-  },
   {
    "id": "28920f6cbbb1ab8b",
    "name": "C U Next Tuesday: Weekly Comedy hosted by Corlis DeLauren and Tess Vergult",
@@ -3200,6 +3168,38 @@
    "tier": "headliner_room",
    "notable_reason": "headliner room",
    "first_seen": "2026-11-18T21:29:59.655Z"
+  },
+  {
+   "id": "cc581228dd8fbed0",
+   "name": "a \"thank u\" comedy show: wednesday 8pm",
+   "venue": "The Den Comedy Club",
+   "date": "2026-11-25",
+   "time": "8:00 PM",
+   "price_min": 16.24,
+   "price_max": 110.42,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198405039%2F2991795842957%2F1%2Foriginal.20261120-173421?auto=format%2Ccompress&q=75&sharp=10&s=9ff183d59de2259a3cf4cd7023783265",
+   "ticket_url": "https://www.eventbrite.com/e/a-thank-u-comedy-show-wednesday-8pm-tickets-2005151515159",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "only 5d out (min 14)",
+   "first_seen": "2026-11-20T21:07:27.537Z"
+  },
+  {
+   "id": "7edfd17c91f6a606",
+   "name": "Joe List (Comedy Central, Last Comic Standing, Netflix) - THU. 8PM SHOW",
+   "venue": "The Secret Group",
+   "date": "2027-02-18",
+   "time": "8:00 PM",
+   "price_min": 37.67,
+   "price_max": 49.21,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F842908899%2F68532713233%2F1%2Foriginal.20240905-194312?auto=format%2Ccompress&q=75&sharp=10&s=0d912fbb4e4b973ef57642aa5caf4f69",
+   "ticket_url": "https://www.eventbrite.com/e/joe-list-comedy-central-last-comic-standing-netflix-thu-8pm-show-tickets-1989614863616",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "small room",
+   "first_seen": "2026-11-20T21:07:27.537Z"
   }
  ]
 }

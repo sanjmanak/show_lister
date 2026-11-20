@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/michael-rowland-hbomax-late-night-with-jimmy-fallon-comedy-central-headlines-the-riot-comedy-club": {
-      "lastmod": "2026-11-18T06:49:00-06:00",
+      "lastmod": "2026-11-20T01:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -54,7 +54,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-29": {
-      "lastmod": "2026-11-18T07:43:00-06:00",
+      "lastmod": "2026-11-20T03:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -119,7 +119,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-25": {
-      "lastmod": "2026-11-18T07:43:00-06:00",
+      "lastmod": "2026-11-20T02:37:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -188,7 +188,7 @@
       }
     },
     "https://www.theriothtx.com/events/michael-rowland-hbomax-late-night-with-jimmy-fallon-comedy-central-headlines-the-riot-comedy-club-the-riot-houston": {
-      "lastmod": "2026-11-19T05:10:00-06:00",
+      "lastmod": "2026-11-20T09:36:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -6014,7 +6014,7 @@
       }
     },
     "https://www.riotconroe.com/events/comedian-lachlan-patterson-the-tonight-show-comedy-central-america-s-got-talent-live-in-conroe": {
-      "lastmod": "2026-11-19T02:17:00-06:00",
+      "lastmod": "2026-11-20T09:57:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
