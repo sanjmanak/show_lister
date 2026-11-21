@@ -50,15 +50,6 @@
   "manifest_version": 1793047249340,
   "cleanup_queue": [
     {
-      "slug": "luke-kidgell-punch-line-houston-2026-11-18",
-      "comedianName": "Luke Kidgell",
-      "igFeedMediaId": "18115393859594413",
-      "igStoryMediaId": "17886454863522739",
-      "fbFeedPostId": "1462683202623087",
-      "fbStoryPostId": "1790423739428929",
-      "postedAt": "2026-11-16T13:01:54.605Z"
-    },
-    {
       "slug": "josh-blue-punch-line-houston-2026-11-19",
       "comedianName": "Josh Blue",
       "igFeedMediaId": "18652905361051229",
