@@ -1,15 +1,7 @@
 {
   "_readme": "Prices recovered by scripts/fetch-events.js price enrichment (API detail endpoint or ticket-page JSON-LD), keyed by event id. source:'page' prices include fees. Safe to delete — it will be rebuilt over the next runs.",
-  "last_updated": "2026-11-15T03:11:00.016Z",
+  "last_updated": "2026-11-21T20:08:54.345Z",
   "entries": {
-    "735cd3851322fc99": {
-      "price_min": 30.87,
-      "price_max": 53.98,
-      "currency": "USD",
-      "source": "page",
-      "url": "https://www.eventbrite.com/e/yaqiao-yang-live-in-houston-tickets-1997877925657",
-      "fetched_at": "2026-09-09T01:38:13.804Z"
-    },
     "117e2e6a6fcc648e": {
       "price_min": 25.09,
       "price_max": 25.09,
