@@ -1,21 +1,3 @@
 {
-  "generated_at": "2026-11-22T01:22:07.443Z",
-  "dry_run": false,
-  "items": [
-    {
-      "id": "3d2642a4e157c57a",
-      "name": "Comedian Alingon Mitra (Conan, Comedy Central) Headlines The Riot Comedy Club",
-      "performer_name": "Alingon Mitra",
-      "venue": "The Riot Comedy Club",
-      "date": "2027-02-19",
-      "ticket_url": "https://www.theriothtx.com/events/comedian-alingon-mitra-conan-comedy-central-headlines-the-riot-comedy-club",
-      "files": {
-        "portrait": "2027-02-19-alingon-mitra-portrait.png",
-        "story": "2027-02-19-alingon-mitra-story.png",
-        "reel": "2027-02-19-alingon-mitra.mp4"
-      },
-      "caption": "The Conan and Comedy Central veteran brings a tightly wound point of view.\nAlingon Mitra headlines The Riot Comedy Club on February 19, 2027. His credits include Conan and Comedy Central. Tickets on sale now. Link in bio.\n\n#houstoncomedy #comedyhouston #standupcomedy #houston",
-      "confidence": 0.93
-    }
-  ]
+  "items": []
 }
