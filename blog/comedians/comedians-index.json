@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T23:52:33.637Z",
+  "generated_at": "2026-11-22T20:26:36.764Z",
   "comedians": [
     {
       "slug": "abby-govindan",
@@ -65,7 +65,7 @@
       ],
       "wpLink": "https://comedyhouston.com/comedians/chris-fleming/",
       "legacy_slugs": [],
-      "next_show": "2026-11-20"
+      "next_show": null
     },
     {
       "slug": "chrissy-chlapecka",
@@ -217,7 +217,7 @@
       ],
       "wpLink": "https://comedyhouston.com/comedians/josh-blue/",
       "legacy_slugs": [],
-      "next_show": "2026-11-19"
+      "next_show": null
     },
     {
       "slug": "josh-gondelman",
@@ -311,7 +311,7 @@
       ],
       "wpLink": "https://comedyhouston.com/comedians/luke-kidgell/",
       "legacy_slugs": [],
-      "next_show": "2026-11-18"
+      "next_show": null
     },
     {
       "slug": "marito-lopez",
@@ -353,7 +353,7 @@
       ],
       "wpLink": "https://comedyhouston.com/comedians/michael-rowland/",
       "legacy_slugs": [],
-      "next_show": "2026-11-20"
+      "next_show": null
     },
     {
       "slug": "michael-yo",
@@ -437,7 +437,7 @@
       ],
       "wpLink": "https://comedyhouston.com/comedians/phil-hanley/",
       "legacy_slugs": [],
-      "next_show": "2026-11-19"
+      "next_show": null
     },
     {
       "slug": "raambo2funny",

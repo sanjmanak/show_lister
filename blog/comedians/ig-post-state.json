@@ -50,24 +50,6 @@
   "manifest_version": 1793047249340,
   "cleanup_queue": [
     {
-      "slug": "josh-blue-punch-line-houston-2026-11-19",
-      "comedianName": "Josh Blue",
-      "igFeedMediaId": "18652905361051229",
-      "igStoryMediaId": "18127419803296296",
-      "fbFeedPostId": "1463152142576193",
-      "fbStoryPostId": "1519989703309878",
-      "postedAt": "2026-11-17T00:21:39.430Z"
-    },
-    {
-      "slug": "phil-hanley-houston-improv-2026-11-19",
-      "comedianName": "Phil Hanley",
-      "igFeedMediaId": "18038025773905944",
-      "igStoryMediaId": "17921215911528407",
-      "fbFeedPostId": "1463662619191812",
-      "fbStoryPostId": "1732355518260998",
-      "postedAt": "2026-11-17T13:41:54.751Z"
-    },
-    {
       "slug": "michael-rowland-the-riot-comedy-club-2026-11-20",
       "comedianName": "Michael Rowland",
       "igFeedMediaId": "17937375237144361",
