@@ -3172,6 +3172,24 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-11-22"
+    },
+    "joe list (comedy central, last comic standing, netflix) - sat. 7pm show": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-22"
+    },
+    "joe list (comedy central, last comic standing, netflix) - sat. 9pm show": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-22"
+    },
+    "steven rogers (don't tell comedy, dry bar, sirius xm) headlines the riot comedy club": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-22"
     }
   }
 }
