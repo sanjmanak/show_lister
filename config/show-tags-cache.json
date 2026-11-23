@@ -3190,6 +3190,22 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-11-22"
+    },
+    "secret headliner (netflix, don't tell comedy) headlines at the riot comedy club": {
+      "tags": [
+        "clean-comedy"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-23"
+    },
+    "secret headliner (netflix, don't tell comedy) headlines the riot comedy club": {
+      "tags": [
+        "clean-comedy"
+      ],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-23"
     }
   }
 }
