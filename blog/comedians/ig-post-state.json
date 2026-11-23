@@ -1,53 +1,17 @@
 {
   "posted": [
     {
-      "slug": "luke-kidgell-punch-line-houston-2026-11-18",
-      "comedianName": "Luke Kidgell",
-      "igFeedMediaId": "18115393859594413",
-      "igStoryMediaId": "17886454863522739",
-      "fbFeedPostId": "1462683202623087",
-      "fbStoryPostId": "1790423739428929",
-      "postedAt": "2026-11-16T13:01:54.605Z"
-    },
-    {
-      "slug": "josh-blue-punch-line-houston-2026-11-19",
-      "comedianName": "Josh Blue",
-      "igFeedMediaId": "18652905361051229",
-      "igStoryMediaId": "18127419803296296",
-      "fbFeedPostId": "1463152142576193",
-      "fbStoryPostId": "1519989703309878",
-      "postedAt": "2026-11-17T00:21:39.430Z"
-    },
-    {
-      "slug": "phil-hanley-houston-improv-2026-11-19",
-      "comedianName": "Phil Hanley",
-      "igFeedMediaId": "18038025773905944",
-      "igStoryMediaId": "17921215911528407",
-      "fbFeedPostId": "1463662619191812",
-      "fbStoryPostId": "1732355518260998",
-      "postedAt": "2026-11-17T13:41:54.751Z"
-    },
-    {
-      "slug": "michael-rowland-the-riot-comedy-club-2026-11-20",
-      "comedianName": "Michael Rowland",
-      "igFeedMediaId": "17937375237144361",
-      "igStoryMediaId": "17920107387522204",
-      "fbFeedPostId": "1464056715819069",
-      "fbStoryPostId": "2198810047693247",
-      "postedAt": "2026-11-17T23:36:26.772Z"
-    },
-    {
-      "slug": "chris-fleming-cullen-performance-hall-2026-11-20",
-      "comedianName": "Chris Fleming",
-      "igFeedMediaId": "18107712161642931",
-      "igStoryMediaId": "17945704887376779",
-      "fbFeedPostId": "1464574055767335",
-      "fbStoryPostId": "1793453841937911",
-      "postedAt": "2026-11-18T13:16:38.426Z"
+      "slug": "ali-siddiq-houston-improv-2026-11-25",
+      "comedianName": "Ali Siddiq",
+      "igFeedMediaId": "18648260743043174",
+      "igStoryMediaId": "18136927735749334",
+      "fbFeedPostId": "1469835971907810",
+      "fbStoryPostId": "1114785348034896",
+      "postedAt": "2026-11-23T15:06:17.290Z"
     }
   ],
-  "week_range": "November 16 – November 22, 2026",
-  "manifest_version": 1793047249340,
+  "week_range": "November 23 – November 29, 2026",
+  "manifest_version": 1793661143860,
   "cleanup_queue": [
     {
       "slug": "michael-rowland-the-riot-comedy-club-2026-11-20",
@@ -66,6 +30,15 @@
       "fbFeedPostId": "1464574055767335",
       "fbStoryPostId": "1793453841937911",
       "postedAt": "2026-11-18T13:16:38.426Z"
+    },
+    {
+      "slug": "ali-siddiq-houston-improv-2026-11-25",
+      "comedianName": "Ali Siddiq",
+      "igFeedMediaId": "18648260743043174",
+      "igStoryMediaId": "18136927735749334",
+      "fbFeedPostId": "1469835971907810",
+      "fbStoryPostId": "1114785348034896",
+      "postedAt": "2026-11-23T15:06:17.290Z"
     }
   ]
 }
