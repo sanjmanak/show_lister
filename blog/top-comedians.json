@@ -1,91 +1,75 @@
 {
-  "generated_at": "2026-11-16T23:44:32.507Z",
-  "week_range": "November 16 – November 22, 2026",
+  "generated_at": "2026-11-24T02:09:25.931Z",
+  "week_range": "November 23 – November 29, 2026",
   "comedians": [
     {
-      "name": "Nick Cannon",
-      "displayName": "Nick Cannon",
+      "name": "Michael Blackson",
+      "displayName": "Michael Blackson",
       "names": [
-        "Nick Cannon"
+        "Michael Blackson"
       ],
-      "show": "Nick Cannon Presents: Wild 'N Out Live - The Next Generation",
-      "venue": "Toyota Center",
-      "date": "2026-11-21",
-      "eventKey": "nickcannonpresentswildnoutlivethenextgeneration@toyotacenter",
-      "imageUrl": "https://s1.ticketm.net/dam/a/d03/0e910820-a598-4fdb-9f4d-ec70f74fdd03_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/d03/0e910820-a598-4fdb-9f4d-ec70f74fdd03_SOURCE",
+      "show": "Michael Blackson",
+      "venue": "Houston Improv",
+      "date": "2026-11-27",
+      "eventKey": "michaelblackson@houstonimprov",
+      "imageUrl": "https://s1.ticketm.net/dam/a/2d8/9d31340e-beb9-4944-b62f-707ff186d2d8_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/2d8/9d31340e-beb9-4944-b62f-707ff186d2d8_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Chelsea Handler",
-      "displayName": "Chelsea Handler",
+      "name": "Ali Siddiq",
+      "displayName": "Ali Siddiq",
       "names": [
-        "Chelsea Handler"
+        "Ali Siddiq"
       ],
-      "show": "CHELSEA HANDLER: THE HIGH AND MIGHTY TOUR",
-      "venue": "713 Music Hall",
-      "date": "2026-11-21",
-      "eventKey": "chelseahandlerthehighandmightytour@713musichall",
-      "imageUrl": "https://s1.ticketm.net/dam/a/e90/38e0c356-6bcb-4cd2-ab5d-97809a77ce90_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/e90/38e0c356-6bcb-4cd2-ab5d-97809a77ce90_SOURCE",
+      "show": "Ali Siddiq",
+      "venue": "Houston Improv",
+      "date": "2026-11-25",
+      "eventKey": "alisiddiqpresentsthejiveturkeys@houstonimprov",
+      "imageUrl": "https://s1.ticketm.net/dam/a/8b9/0a83a81b-0da6-4434-9b7d-4e59027c58b9_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/8b9/0a83a81b-0da6-4434-9b7d-4e59027c58b9_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Brett Goldstein",
-      "displayName": "Brett Goldstein",
+      "name": "Ron Taylor",
+      "displayName": "Ron Taylor",
       "names": [
-        "Brett Goldstein"
+        "Ron Taylor"
       ],
-      "show": "Brett Goldstein: Sex, Death & Small Talk",
-      "venue": "Bayou Music Center",
-      "date": "2026-11-22",
-      "eventKey": "brettgoldsteinsexdeathsmalltalk@bayoumusiccenter",
-      "imageUrl": "https://s1.ticketm.net/dam/a/fb8/f09abbd9-bcb8-4a09-83ab-c43806315fb8_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/fb8/f09abbd9-bcb8-4a09-83ab-c43806315fb8_SOURCE",
+      "show": "Ron Taylor",
+      "venue": "Punch Line Houston",
+      "date": "2026-11-27",
+      "eventKey": "rontaylor@punchlinehouston",
+      "imageUrl": "https://s1.ticketm.net/dam/a/2a8/a0820ae5-7051-4f46-99d4-8cdc1a85e2a8_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/2a8/a0820ae5-7051-4f46-99d4-8cdc1a85e2a8_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "D.L. Hughley",
-      "displayName": "D.L. Hughley",
+      "name": "Lotto Marie",
+      "displayName": "Lotto Marie",
       "names": [
-        "D.L. Hughley"
+        "Lotto Marie"
       ],
-      "show": "DON LEMON AND DL HUGHLEY: DL + DL 'ANYTHING GOES'",
-      "venue": "Cullen Performance Hall",
-      "date": "2026-11-21",
-      "eventKey": "donlemonanddlhughleydldlanythinggoes@cullenperformancehall",
-      "imageUrl": "https://s1.ticketm.net/dam/a/4af/a7091ede-2fb7-4276-a6fc-5d1f208d74af_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/4af/a7091ede-2fb7-4276-a6fc-5d1f208d74af_SOURCE",
+      "show": "Lotto Marie & Friends",
+      "venue": "Punch Line Houston",
+      "date": "2026-11-25",
+      "eventKey": "lottomariefriends@punchlinehouston",
+      "imageUrl": "https://s1.ticketm.net/dam/a/17e/96f709dc-16d2-4942-b1fa-bf263613317e_SOURCE",
+      "displayImage": "https://s1.ticketm.net/dam/a/17e/96f709dc-16d2-4942-b1fa-bf263613317e_SOURCE",
       "imageSource": "event"
     },
     {
-      "name": "Chris Fleming",
-      "displayName": "Chris Fleming",
+      "name": "Chinedu Unaka",
+      "displayName": "Chinedu Unaka",
       "names": [
-        "Chris Fleming"
+        "Chinedu Unaka"
       ],
-      "show": "CHRIS FLEMING LIVE",
-      "venue": "Cullen Performance Hall",
-      "date": "2026-11-20",
-      "eventKey": "chrisfleminglive@cullenperformancehall",
-      "imageUrl": "https://s1.ticketm.net/dam/a/7da/06accf4e-b857-45e8-ae24-e57e6c84d7da_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/7da/06accf4e-b857-45e8-ae24-e57e6c84d7da_SOURCE",
-      "imageSource": "event"
-    },
-    {
-      "name": "Ryan Stiles",
-      "displayName": "Whose Live Anyway?",
-      "names": [
-        "Ryan Stiles",
-        "Greg Proops",
-        "Jeff B. Davis"
-      ],
-      "show": "Whose Live Anyway?",
-      "venue": "Cullen Performance Hall",
-      "date": "2026-11-22",
-      "eventKey": "whoseliveanyway@cullenperformancehall",
-      "imageUrl": "https://s1.ticketm.net/dam/a/e19/4ff116ef-1748-417c-85ec-e9559ebc1e19_SOURCE",
-      "displayImage": "https://s1.ticketm.net/dam/a/e19/4ff116ef-1748-417c-85ec-e9559ebc1e19_SOURCE",
+      "show": "Comedian Chinedu (Hulu, FOX) Headlines The Riot Comedy Club",
+      "venue": "The Riot Comedy Club",
+      "date": "2026-11-28",
+      "eventKey": "comedianchineduhulufoxheadlinestheriotcomedyclub@theriotcomedyclub",
+      "imageUrl": "https://www.theriothtx.com/img/events/IMG-0500-7d7a0775-large-thumb.png",
+      "displayImage": "https://www.theriothtx.com/img/events/IMG-0500-7d7a0775-large-thumb.png",
       "imageSource": "event"
     }
   ]
