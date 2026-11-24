@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T20:26:36.764Z",
+  "generated_at": "2026-11-24T02:22:51.208Z",
   "comedians": [
     {
       "slug": "abby-govindan",
@@ -56,6 +56,16 @@
       "wpLink": "https://comedyhouston.com/comedians/boyacoman/",
       "legacy_slugs": [],
       "next_show": "2026-12-02"
+    },
+    {
+      "slug": "chloe-radcliffe",
+      "name": "Chloe Radcliffe",
+      "match": [
+        "chloe radcliffe"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/chloe-radcliffe/",
+      "legacy_slugs": [],
+      "next_show": "2026-12-16"
     },
     {
       "slug": "chris-fleming",
@@ -132,6 +142,16 @@
       "next_show": null
     },
     {
+      "slug": "deray-davis",
+      "name": "DeRay Davis",
+      "match": [
+        "deray davis"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/deray-davis/",
+      "legacy_slugs": [],
+      "next_show": "2026-12-17"
+    },
+    {
       "slug": "desi-banks",
       "name": "Desi Banks",
       "match": [
@@ -174,6 +194,16 @@
         "foos-gone-wild-house-of-blues-houston-2026-10-20"
       ],
       "next_show": null
+    },
+    {
+      "slug": "gabby-bryan",
+      "name": "Gabby Bryan",
+      "match": [
+        "gabby bryan"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/gabby-bryan/",
+      "legacy_slugs": [],
+      "next_show": "2026-12-17"
     },
     {
       "slug": "ivan-fematt-la-mole",
@@ -282,6 +312,16 @@
       "wpLink": "https://comedyhouston.com/comedians/kev-adams/",
       "legacy_slugs": [],
       "next_show": null
+    },
+    {
+      "slug": "kevonstage",
+      "name": "KevOnStage",
+      "match": [
+        "kevonstage"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/kevonstage/",
+      "legacy_slugs": [],
+      "next_show": "2026-12-17"
     },
     {
       "slug": "leanne-morgan",
@@ -480,6 +520,16 @@
         "sarper-gven-punch-line-houston-2026-10-19"
       ],
       "next_show": null
+    },
+    {
+      "slug": "sophie-buddle",
+      "name": "Sophie Buddle",
+      "match": [
+        "sophie buddle"
+      ],
+      "wpLink": "https://comedyhouston.com/comedians/sophie-buddle/",
+      "legacy_slugs": [],
+      "next_show": "2026-12-18"
     },
     {
       "slug": "tony-hinchcliffe",

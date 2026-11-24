@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-11-22T20:26:36.759Z",
+  "generated_at": "2026-11-24T02:22:51.206Z",
   "source_manifests": [
     "manifest-2026-11-23.json",
     "manifest-2026-11-30.json",
-    "manifest-2026-12-07.json"
+    "manifest-2026-12-07.json",
+    "manifest-2026-12-14.json"
   ],
   "posts": [
     {
@@ -96,6 +97,41 @@
       "slug": "nasser-al-rayess-houston-improv-2026-12-10",
       "wpLink": "https://comedyhouston.com/comedians/nasser-al-rayess/",
       "venue": "Houston Improv"
+    },
+    {
+      "date": "2026-12-16",
+      "comedianName": "Chloe Radcliffe",
+      "slug": "chloe-radcliffe-punch-line-houston-2026-12-16",
+      "wpLink": "https://comedyhouston.com/comedians/chloe-radcliffe/",
+      "venue": "Punch Line Houston"
+    },
+    {
+      "date": "2026-12-17",
+      "comedianName": "DeRay Davis",
+      "slug": "deray-davis-houston-improv-2026-12-17",
+      "wpLink": "https://comedyhouston.com/comedians/deray-davis/",
+      "venue": "Houston Improv"
+    },
+    {
+      "date": "2026-12-17",
+      "comedianName": "Gabby Bryan",
+      "slug": "gabby-bryan-punch-line-houston-2026-12-17",
+      "wpLink": "https://comedyhouston.com/comedians/gabby-bryan/",
+      "venue": "Punch Line Houston"
+    },
+    {
+      "date": "2026-12-17",
+      "comedianName": "KevOnStage",
+      "slug": "kevonstage-house-of-blues-houston-2026-12-17",
+      "wpLink": "https://comedyhouston.com/comedians/kevonstage/",
+      "venue": "House of Blues Houston"
+    },
+    {
+      "date": "2026-12-18",
+      "comedianName": "Sophie Buddle",
+      "slug": "sophie-buddle-the-riot-comedy-club-2026-12-18",
+      "wpLink": "https://comedyhouston.com/comedians/sophie-buddle/",
+      "venue": "The Riot Comedy Club"
     }
   ]
 }

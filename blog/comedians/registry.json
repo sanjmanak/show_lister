@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-22T20:26:36.747Z",
+  "updated_at": "2026-11-24T02:22:51.203Z",
   "comedians": [
     {
       "slug": "abby-govindan",
@@ -202,6 +202,41 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/boyacoman-houston.jpg"
+    },
+    {
+      "slug": "chloe-radcliffe",
+      "name": "Chloe Radcliffe",
+      "match": [
+        "chloe radcliffe"
+      ],
+      "status": "live",
+      "created_at": "2026-11-24T02:16:23.933Z",
+      "profile_written_at": "2026-11-24T02:17:36.743Z",
+      "profile_html": "<p>In October 2026, three Twin Cities billboards addressed to former crushes from high school, college, and a Target job promoted Chloe Radcliffe’s Comedy Central special. “I'm really desperate that my old crushes finally notice me,” Radcliffe said.</p>\n\n<p>Radcliffe grew up in <a href=\"https://en.wikipedia.org/wiki/Chloe_Radcliffe\">Prior Lake, Minnesota</a>, started stand-up in Minneapolis after a layoff from Target headquarters, and did her first open mic at Acme Comedy Club. She moved to New York in 2018. Her solo show <a href=\"https://www.vulture.com/article/chloe-radcliffe-comedians-you-should-know-2024.html\">CHEAT</a>, drawn from her history of infidelity, sold out a month at the 2023 Edinburgh Fringe Festival and became a New York Times pick at the 2024 New York Comedy Festival.</p>\n\n<p>Her 2026 debut special, <a href=\"https://www.paramountpressexpress.com/comedy-central/shows/chloe-radcliffe-eyes-down-here/releases/?view=113475-comedy-central-announces-chloe-radcliffe-eyes-down-here\">Chloe Radcliffe: Eyes Down Here</a>, is on Comedy Central’s Stand-Up YouTube channel. It covers flirting, self-image, her facial birthmark, and feeling overlooked. “Some people say Chloe is just a pretty face,” she says. “Then she turns her head.”</p>\n\n<p>Outside stand-up, Radcliffe starred in Steven Soderbergh’s web series <em>Command Z</em> and received a 2024 WGA Award nomination for writing on it. She has also appeared on <em>After Midnight with Taylor Tomlinson</em>, <em>Whiskey Ginger with Andrew Santino</em>, and <em>Comedy Bang Bang: The Podcast</em>.</p>",
+      "research_json": "{\n  \"full_name\": \"Chloe Radcliffe\",\n  \"hometown\": \"Prior Lake, Minnesota\",\n  \"career_start_year\": null,\n  \"specials\": [\n    {\n      \"title\": \"Chloe Radcliffe: Eyes Down Here\",\n      \"platform\": \"Comedy Central Stand-Up YouTube Channel\",\n      \"year\": 2026\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Whiskey Ginger with Andrew Santino\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Comedy Bang Bang: The Podcast\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Story & Craft with Marc Preston\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Command Z\",\n      \"context\": \"Starred in Steven Soderbergh's web series and was nominated for a 2024 WGA Award for writing on the series.\"\n    },\n    {\n      \"show\": \"After Midnight with Taylor Tomlinson\",\n      \"context\": \"Listed in her official biography as an appearance.\"\n    },\n    {\n      \"show\": \"The Tonight Show Starring Jimmy Fallon\",\n      \"context\": \"Worked as a staff writer; this is a writing credit, not verified here as an on-camera appearance.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Candid, self-deprecating, and observational.\",\n    \"structure\": \"Precision-built stand-up that pairs recognizable personal truths with unexpected punchlines.\",\n    \"recurring_themes\": [\n      \"Dating and flirting\",\n      \"Infidelity and relationship boundaries\",\n      \"Self-image and her facial birthmark\",\n      \"Social insecurity\",\n      \"Midwestern upbringing\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"Her one-woman show CHEAT sold out a full-month run at the 2023 Edinburgh Fringe Festival, was a New York Times pick for the 2024 New York Comedy Festival, and is being developed for television.\",\n  \"recent_activity_2025_2026\": \"In 2025, Radcliffe launched the tandem-bicycle comedian-interview series In Tandem with Chloe Radcliffe and appeared in Bradley Cooper's Is This Thing On? In October 2026, Comedy Central released her debut full-length special, Chloe Radcliffe: Eyes Down Here, on its Stand-Up YouTube channel. She also performed a Los Angeles run of CHEAT in November 2026.\",\n  \"recent_hook\": {\n    \"summary\": \"To promote her October 27, 2026 Comedy Central special Eyes Down Here, Radcliffe put up three Twin Cities billboards addressed to former crushes from high school, college, and her Target job.\",\n    \"quote\": \"“I'm really desperate that my old crushes finally notice me.”\",\n    \"source_publication\": \"MPR News\",\n    \"source_url\": \"https://www.mprnews.org/story/2026/10/27/chloe-radcliffe-promotes-comedy-central-special-eyes-down-here-with-twin-cities-billboards\",\n    \"date\": \"2026-10-27\"\n  },\n  \"instagram_handle\": \"@chloebadcliffe\",\n  \"notable_bits_or_quotes\": [\n    \"“Some people say Chloe is just a pretty face. Then she turns her head.”\",\n    \"“The lesson is: Ask for what you want, and you might not actually get exactly that thing, but you might get something close.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"Do not call Eyes Down Here a Netflix special; verified sources identify it as a Comedy Central release on the Comedy Central Stand-Up YouTube channel.\",\n    \"Do not state a precise comedy-career start year without stronger primary documentation; sources reviewed verify that she began stand-up in Minneapolis after being laid off from a corporate job.\",\n    \"Claims that she opened for Dave Attell and Bargatze appeared in a syndicated entertainment profile but were not independently corroborated in the sources reviewed.\",\n    \"Claims that she produces the Minneapolis 10,000 Laughs Comedy Festival were not independently corroborated in the sources reviewed.\",\n    \"Do not assign a title, release date, or production status to her reported Sony comedy-feature project; her official site says only that a comedy feature is in development with Sony.\"\n  ],\n  \"background_story\": \"Radcliffe grew up in Minnesota and is originally from Prior Lake. After being laid off from a corporate job at Target headquarters, she began performing stand-up in Minneapolis; her first open mic was at Acme Comedy Club. She moved to New York in 2018. Her solo show CHEAT draws on her own history of infidelity, while Eyes Down Here includes material about flirting, self-image, her facial birthmark, and feeling overlooked.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Chloe_Radcliffe\"\n    },\n    {\n      \"label\": \"Comedy Central press release\",\n      \"url\": \"https://www.paramountpressexpress.com/comedy-central/shows/chloe-radcliffe-eyes-down-here/releases/?view=113475-comedy-central-announces-chloe-radcliffe-eyes-down-here\"\n    },\n    {\n      \"label\": \"MPR News profile on Eyes Down Here billboards\",\n      \"url\": \"https://www.mprnews.org/story/2026/10/27/chloe-radcliffe-promotes-comedy-central-special-eyes-down-here-with-twin-cities-billboards\"\n    },\n    {\n      \"label\": \"Vulture interview\",\n      \"url\": \"https://www.vulture.com/article/chloe-radcliffe-comedians-you-should-know-2024.html\"\n    },\n    {\n      \"label\": \"Official website\",\n      \"url\": \"https://www.chloeradcliffe.com/\"\n    },\n    {\n      \"label\": \"Whiskey Ginger episode\",\n      \"url\": \"https://podcasts.apple.com/au/podcast/chloe-radcliffe-joins-the-show-whiskey-ginger/id1440300401?i=1000751908164\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Chloe_Radcliffe",
+        "https://www.instagram.com/chloebadcliffe/"
+      ],
+      "instagramHandle": "@chloebadcliffe",
+      "imageUrl": "https://s1.ticketm.net/dam/a/bd6/7b2d83dc-9e22-4262-b8f7-a27eec2fbbd6_SOURCE",
+      "wpPageId": 2355,
+      "wpLink": "https://comedyhouston.com/comedians/chloe-radcliffe/",
+      "wpImageMediaId": 2354,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-12-16",
+          "venue": "Punch Line Houston",
+          "time": "7:30 PM",
+          "name": "Chloe Radcliffe",
+          "ticket_url": "https://www.ticketmaster.com/chloe-radcliffe-houston-texas-12-16-2026/event/3A0065369C3DD8EB",
+          "event_id": "6cb1691d1db3e595",
+          "image_url": "https://s1.ticketm.net/dam/a/bd6/7b2d83dc-9e22-4262-b8f7-a27eec2fbbd6_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/chloe-radcliffe-houston.png"
     },
     {
       "slug": "chris-fleming",
@@ -474,6 +509,70 @@
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/dave-chappelle-houston-1.jpg"
     },
     {
+      "slug": "deray-davis",
+      "name": "DeRay Davis",
+      "match": [
+        "deray davis"
+      ],
+      "status": "live",
+      "created_at": "2026-11-24T02:20:19.103Z",
+      "profile_written_at": "2026-11-24T02:21:23.397Z",
+      "profile_html": "<p>Raised on Chicago’s South Side, DeRay Davis started in comedy clubs, drew attention at Atlanta’s Laffapalooza Festival, and later moved to Los Angeles. In September 2026, he joined Cam Newton’s <a href=\"https://podscan.fm/player/funky-friday-with-cam-newton/the-comedy-game-changed-deray-davis-explains-why\">Funky Friday</a> to discuss the comedy business, career longevity, Katt Williams, Kevin Hart, Dave Chappelle, Kanye West, and cancel culture.</p>\n\n<p>Davis’s stand-up pulls from childhood, dating, troubled relationships, race, poverty, Hollywood, and rappers. His 2006 <a href=\"https://en.wikipedia.org/wiki/DeRay_Davis\">Comedy Central Presents</a> set covered childhood, dating expenses, and his preferred type of woman. On 2011’s <a href=\"https://tv.apple.com/us/movie/deray-davis---power-play/umc.cmc.6hijbp7fvo716ugpivx5b7ko3\">Power Play</a>, he worked the “Hood to Hollywood” angle, with relationships and rap culture in the mix. <a href=\"https://www.imdb.com/title/tt7288084/\">DeRay Davis: How to Act Black</a>, released in 2017, took on dating, show business, life, and Black identity with a high-energy, personal delivery.</p>\n\n<p>He has been a cast member on <i>Wild ’N Out</i>, hosted VH1’s revival of <i>Hip Hop Squares</i>, and hosted the Game Show Network series <i>Mind of a Man</i>. His acting credits include Peaches on <i>Snowfall</i> and Master Marshawn on <i>The Chi</i>. His comedy skits also appeared on Kanye West’s <i>The College Dropout</i> and <i>Late Registration</i>.</p>\n\n<p>Davis headlines club dates nationally and hosts MONDERAYS at the Hollywood Improv.</p>",
+      "research_json": "{\n  \"full_name\": \"Antoine DeRay Davis\",\n  \"hometown\": \"Chicago, Illinois\",\n  \"career_start_year\": null,\n  \"specials\": [\n    {\n      \"title\": \"Comedy Central Presents: DeRay Davis\",\n      \"platform\": \"Comedy Central\",\n      \"year\": 2006\n    },\n    {\n      \"title\": \"DeRay Davis - Power Play\",\n      \"platform\": \"Showtime\",\n      \"year\": 2011\n    },\n    {\n      \"title\": \"DeRay Davis: How to Act Black\",\n      \"platform\": \"Netflix\",\n      \"year\": 2017\n    },\n    {\n      \"title\": \"Snoop Dogg's F*cn Around Comedy Special\",\n      \"platform\": \"Netflix\",\n      \"year\": 2022\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"Not My Best Moment with KevOnStage\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Funky Friday with Cam Newton\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Willie D Live Conversations\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Wild 'N Out\",\n      \"context\": \"Series regular/cast member.\"\n    },\n    {\n      \"show\": \"Hip Hop Squares\",\n      \"context\": \"Host of the VH1 revival.\"\n    },\n    {\n      \"show\": \"Mind of a Man\",\n      \"context\": \"Host of the Game Show Network series.\"\n    },\n    {\n      \"show\": \"Snowfall\",\n      \"context\": \"Played Peaches in a recurring role.\"\n    },\n    {\n      \"show\": \"The Chi\",\n      \"context\": \"Played Master Marshawn.\"\n    },\n    {\n      \"show\": \"Comedy Central Presents\",\n      \"context\": \"Stand-up episode released February 23, 2006.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Streetwise, uncensored, personal, and high-energy.\",\n    \"structure\": \"Subject-driven stand-up built around personal observations and stories.\",\n    \"recurring_themes\": [\n      \"Chicago upbringing\",\n      \"race\",\n      \"poverty\",\n      \"relationships\",\n      \"Hollywood and the entertainment business\",\n      \"hip-hop culture\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"Davis continues to headline club dates nationally and hosts the recurring MONDERAYS comedy show at the Hollywood Improv.\",\n  \"recent_activity_2025_2026\": \"In 2026, Davis appeared on KevOnStage's Not My Best Moment and Cam Newton's Funky Friday. His official site listed live dates in Addison, Texas; Charlotte, North Carolina; Raleigh, North Carolina; and Houston, Texas for November and December 2026, alongside his recurring MONDERAYS and TUESDERAYS shows.\",\n  \"recent_hook\": {\n    \"summary\": \"Davis was the guest on the September 25, 2026 episode of Cam Newton's Funky Friday, titled \\\"The Comedy Game Changed. DeRay Davis Explains Why.\\\" The episode description says the conversation covers the evolution of comedy, cancel culture, comedy-industry rivalries, Katt Williams, Kevin Hart, Dave Chappelle, Kanye West, and career longevity.\",\n    \"quote\": \"Nothing is off-limits as Cam and DeRay break down the business of being funny, staying authentic, and keeping it funky!\",\n    \"source_publication\": \"Funky Friday with Cam Newton / Podscan\",\n    \"source_url\": \"https://podscan.fm/player/funky-friday-with-cam-newton/the-comedy-game-changed-deray-davis-explains-why\",\n    \"date\": \"2026-09-25\"\n  },\n  \"instagram_handle\": \"@deraydavis\",\n  \"notable_bits_or_quotes\": [\n    \"His 2006 Comedy Central Presents set includes material about his childhood, dating expenses, and his preferred type of woman.\",\n    \"Power Play covers subjects described as \\\"The Hood to Hollywood,\\\" troubled relationships, and rappers.\",\n    \"How to Act Black addresses dating, life, show business, and Black identity.\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That DeRay Davis's Netflix special How to Act Black \\\"shut down the Netflix server twice.\\\"\",\n    \"That he has a stand-up special titled I Got Six Senses; this appeared in an automatically generated podcast transcript but was not independently verified.\",\n    \"That he has exactly four solo stand-up specials dating from 2002 to 2022; low-quality comedy aggregators inconsistently classify showcase episodes and ensemble programs as specials.\",\n    \"That the Soopaboots self-titled EP was released in fall 2024; his official bio described it as forthcoming, but a completed release could not be independently verified.\",\n    \"An exact comedy-career start year of 1998; this appears on Wikipedia but was not independently corroborated by a primary or reliable biographical source.\"\n  ],\n  \"background_story\": \"Davis was born and raised in Chicago, Illinois, including on the city's South Side. He began performing in comedy clubs, drew industry attention at Atlanta's Laffapalooza Festival, and later moved to Los Angeles. His career expanded from stand-up into film, television, voice work, and comedy skits for Kanye West's albums The College Dropout and Late Registration.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/DeRay_Davis\"\n    },\n    {\n      \"label\": \"IMDb - DeRay Davis: How to Act Black\",\n      \"url\": \"https://www.imdb.com/title/tt7288084/\"\n    },\n    {\n      \"label\": \"Apple TV - DeRay Davis - Power Play\",\n      \"url\": \"https://tv.apple.com/us/movie/deray-davis---power-play/umc.cmc.6hijbp7fvo716ugpivx5b7ko3\"\n    },\n    {\n      \"label\": \"Netflix - Snoop Dogg's F*cn Around Comedy Special\",\n      \"url\": \"https://www.netflix.com/title/81218432\"\n    },\n    {\n      \"label\": \"Not My Best Moment with KevOnStage\",\n      \"url\": \"https://www.iheart.com/podcast/1119-not-my-best-moment-with-k-303943358/episode/deray-davis-on-breaking-into-comedy-331165437/\"\n    },\n    {\n      \"label\": \"Official DeRay Davis website\",\n      \"url\": \"https://deraydavis.com/\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/DeRay_Davis",
+        "https://www.imdb.com/title/tt7288084/",
+        "https://www.netflix.com/title/81218432",
+        "https://www.instagram.com/deraydavis/"
+      ],
+      "instagramHandle": "@deraydavis",
+      "imageUrl": "https://s1.ticketm.net/dam/a/332/b7e2b245-267c-402a-a78f-c50f46a63332_SOURCE",
+      "wpPageId": 2364,
+      "wpLink": "https://comedyhouston.com/comedians/deray-davis/",
+      "wpImageMediaId": 2363,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-12-17",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "DeRay Davis",
+          "ticket_url": "https://www.ticketweb.com/event/deray-davis-houston-improv-tickets/14950143?REFERRAL_ID=tmfeed",
+          "event_id": "a247c8fd2d6db7e5",
+          "image_url": "https://s1.ticketm.net/dam/a/332/b7e2b245-267c-402a-a78f-c50f46a63332_SOURCE"
+        },
+        {
+          "date": "2026-12-18",
+          "venue": "Houston Improv",
+          "time": "7:30 PM",
+          "name": "DeRay Davis",
+          "ticket_url": "https://www.ticketweb.com/event/deray-davis-houston-improv-tickets/14950163?REFERRAL_ID=tmfeed",
+          "event_id": "13e122b75acc00f3",
+          "image_url": "https://s1.ticketm.net/dam/a/332/b7e2b245-267c-402a-a78f-c50f46a63332_SOURCE"
+        },
+        {
+          "date": "2026-12-19",
+          "venue": "Houston Improv",
+          "time": "7:00 PM",
+          "name": "DeRay Davis",
+          "ticket_url": "https://www.ticketweb.com/event/deray-davis-houston-improv-tickets/14950173?REFERRAL_ID=tmfeed",
+          "event_id": "3073c646bcb51543",
+          "image_url": "https://s1.ticketm.net/dam/a/332/b7e2b245-267c-402a-a78f-c50f46a63332_SOURCE"
+        },
+        {
+          "date": "2026-12-20",
+          "venue": "Houston Improv",
+          "time": "6:00 PM",
+          "name": "DeRay Davis",
+          "ticket_url": "https://www.ticketweb.com/event/deray-davis-houston-improv-tickets/14950153?REFERRAL_ID=tmfeed",
+          "event_id": "c56cf0eef694558d",
+          "image_url": "https://s1.ticketm.net/dam/a/332/b7e2b245-267c-402a-a78f-c50f46a63332_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/deray-davis-houston.jpg"
+    },
+    {
       "slug": "desi-banks",
       "name": "Desi Banks",
       "match": [
@@ -634,6 +733,60 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/foos-gone-wild-houston.jpg"
+    },
+    {
+      "slug": "gabby-bryan",
+      "name": "Gabby Bryan",
+      "match": [
+        "gabby bryan"
+      ],
+      "status": "live",
+      "created_at": "2026-11-24T02:18:58.603Z",
+      "profile_written_at": "2026-11-24T02:19:59.978Z",
+      "profile_html": "<p>In November 2026, <a href=\"https://www.imdb.com/fr/news/ni66118868/\">Gabby Bryan Is My Therapist</a> arrived on YouTube, filmed at a sold-out Nashville Comedy Festival show at Zanies Comedy Club. Bryan turns dating problems, emotional baggage and adult dilemmas from the audience into an hour of unqualified therapy. “Gabby Bryan is your therapist for one night only. She does not take your insurance and there will be a copay.” Prime Video availability was announced for December 4, 2026.</p>\n\n<p>Her 2024 YouTube special <a href=\"https://www.youtube.com/watch?v=rdfXzVu6mIo\">Girl Town Hall: A Crowd Work Special</a> works through sororities, dating, body image, career ambitions and modern adulthood with audience members. In the Don’t Tell Comedy set <em>Listen to Mommy</em>, she covers turning 30, anti-aging plans and a hypothetical threesome.</p>\n\n<p>Bryan appeared in Ilana Glazer’s Comedy Central special <em>Comedy on Earth</em> and on <em>The Mike Calta Show</em>, <em>The Ok Sweetie Show</em>, <em>Disgraceful with Grace O’Malley</em> and <em>Stavvy’s World</em>. She co-hosts <a href=\"https://podcasts.apple.com/us/podcast/let-me-ask-my-dad/id1747199106\"><em>Let Me Ask My Dad</em></a>, a cross-generational self-help comedy podcast, with David Bryan, and <a href=\"https://podcasts.apple.com/us/podcast/ill-go-if-you-go/id6786852416\"><em>I’ll Go If You Go</em></a> with Stef Dag.</p>",
+      "research_json": "{\n  \"full_name\": \"Gabby Bryan\",\n  \"hometown\": \"Colts Neck, New Jersey\",\n  \"career_start_year\": null,\n  \"specials\": [\n    {\n      \"title\": \"Girl Town Hall: A Crowd Work Special\",\n      \"platform\": \"YouTube\",\n      \"year\": 2024\n    },\n    {\n      \"title\": \"Gabby Bryan Is My Therapist\",\n      \"platform\": \"YouTube\",\n      \"year\": 2026\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"The Mike Calta Show\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"The Ok Sweetie Show\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Disgraceful with Grace O'Malley\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Stavvy's World\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"Comedy on Earth\",\n      \"context\": \"Featured in Ilana Glazer's Comedy Central special.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Interactive and improvisational.\",\n    \"structure\": \"Crowd-work-driven sets built around direct conversations with audience members; \\\"Gabby Bryan Is My Therapist\\\" frames those interactions as mock therapy.\",\n    \"recurring_themes\": [\n      \"Dating and relationships\",\n      \"Personal problems and emotional baggage\",\n      \"Body image\",\n      \"Modern adulthood\"\n    ],\n    \"comparable_to\": null\n  },\n  \"live_reputation\": \"Bryan headlined a sold-out April 10, 2026 performance at Zanies Comedy Club in Nashville during the Nashville Comedy Festival, where she filmed \\\"Gabby Bryan Is My Therapist.\\\"\",\n  \"recent_activity_2025_2026\": \"Bryan released the crowd-work special \\\"Gabby Bryan Is My Therapist\\\" on YouTube on November 19, 2026. The special was announced to begin streaming on Prime Video on December 4, 2026. She also co-hosts the podcasts \\\"I'll Go If You Go\\\" with Stef Dag and \\\"Let Me Ask My Dad\\\" with David Bryan.\",\n  \"recent_hook\": {\n    \"summary\": \"On November 19, 2026, Bryan released her hour-long crowd-work special \\\"Gabby Bryan Is My Therapist\\\" on YouTube. Filmed at a sold-out Nashville Comedy Festival performance, it uses an unqualified-therapist premise for audience interaction; Prime Video availability was announced for December 4, 2026.\",\n    \"quote\": \"Gabby Bryan is your therapist for one night only. She does not take your insurance and there will be a copay.\",\n    \"source_publication\": \"Variety (republished by IMDb)\",\n    \"source_url\": \"https://www.imdb.com/fr/news/ni66118868/\",\n    \"date\": \"2026-11-19\"\n  },\n  \"instagram_handle\": \"@gabbyisbryan\",\n  \"notable_bits_or_quotes\": [\n    {\n      \"title\": \"Listen to Mommy\",\n      \"description\": \"A Don't Tell Comedy set in which Bryan jokes about turning 30, anti-aging plans and a hypothetical threesome.\"\n    },\n    {\n      \"title\": \"Girl Town Hall: A Crowd Work Special\",\n      \"description\": \"A crowd-work set featuring conversations with audience members about topics including sororities, dating, body image, career ambitions and modern adulthood.\"\n    }\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That Bryan is an Emmy Award-winning producer; this claim appears in promotional bios, but an underlying Emmy award record was not independently verified.\",\n    \"That she has sold out shows \\\"across the world\\\"; individual sold-out dates were verifiable, but the broader claim was not independently verified.\",\n    \"That she opened for Hannah Berner; this appeared in episode promotional copy but was not independently verified.\",\n    \"Any claim that \\\"Gabby Bryan Is My Therapist\\\" is a Netflix special; verified sources identify YouTube as its initial release platform and Prime Video as its announced streaming destination.\",\n    \"Claims that identify \\\"Comedy on Earth\\\" as an HBO production; verified promotional sources instead describe it as an Ilana Glazer Comedy Central special.\"\n  ],\n  \"background_story\": \"Bryan was born in New Jersey and moved to New York in 2012 to pursue acting, comedy and writing. She attended Pace University. She co-hosts \\\"Let Me Ask My Dad,\\\" a cross-generational self-help comedy podcast with her father, David Bryan, a founding member of Bon Jovi.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Gabby Bryan official Linktree\",\n      \"url\": \"https://linktr.ee/GABBYBRYAN\"\n    },\n    {\n      \"label\": \"YouTube: Girl Town Hall: Crowd Work Special\",\n      \"url\": \"https://www.youtube.com/watch?v=rdfXzVu6mIo\"\n    },\n    {\n      \"label\": \"IMDb: Variety report on Gabby Bryan Is My Therapist\",\n      \"url\": \"https://www.imdb.com/fr/news/ni66118868/\"\n    },\n    {\n      \"label\": \"Apple Podcasts: Let Me Ask My Dad\",\n      \"url\": \"https://podcasts.apple.com/us/podcast/let-me-ask-my-dad/id1747199106\"\n    },\n    {\n      \"label\": \"Apple Podcasts: I'll Go If You Go\",\n      \"url\": \"https://podcasts.apple.com/us/podcast/ill-go-if-you-go/id6786852416\"\n    },\n    {\n      \"label\": \"Amazon Music: The Ok Sweetie Show episode\",\n      \"url\": \"https://music.amazon.com/podcasts/8d6ba2c4-356b-4424-9668-c79c530567b4/episodes/44458cbc-94ab-4602-91aa-ebbc6c579f64/the-ok-sweetie-show-gabby-bryan-comedy-it-girl\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.imdb.com/fr/news/ni66118868/",
+        "https://www.youtube.com/watch?v=rdfXzVu6mIo",
+        "https://www.instagram.com/gabbyisbryan/"
+      ],
+      "instagramHandle": "@gabbyisbryan",
+      "imageUrl": "https://s1.ticketm.net/dam/a/291/73be4736-73ad-4dd9-ab3f-c9f2c803e291_SOURCE",
+      "wpPageId": 2361,
+      "wpLink": "https://comedyhouston.com/comedians/gabby-bryan/",
+      "wpImageMediaId": 2360,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-12-17",
+          "venue": "Punch Line Houston",
+          "time": "7:30 PM",
+          "name": "Gabby Bryan",
+          "ticket_url": "https://www.ticketmaster.com/gabby-bryan-houston-texas-12-17-2026/event/3A006494CC92F16D",
+          "event_id": "34d7069625700c62",
+          "image_url": "https://s1.ticketm.net/dam/a/291/73be4736-73ad-4dd9-ab3f-c9f2c803e291_SOURCE"
+        },
+        {
+          "date": "2026-12-18",
+          "venue": "Punch Line Houston",
+          "time": "7:00 PM",
+          "name": "Gabby Bryan",
+          "ticket_url": "https://www.ticketmaster.com/gabby-bryan-houston-texas-12-18-2026/event/3A006494CC99F17F",
+          "event_id": "4f288ad943088e75",
+          "image_url": "https://s1.ticketm.net/dam/a/291/73be4736-73ad-4dd9-ab3f-c9f2c803e291_SOURCE"
+        },
+        {
+          "date": "2026-12-19",
+          "venue": "Punch Line Houston",
+          "time": "7:00 PM",
+          "name": "Gabby Bryan",
+          "ticket_url": "https://www.ticketmaster.com/gabby-bryan-houston-texas-12-19-2026/event/3A006494CCA1F18D",
+          "event_id": "f274c94a73d101a4",
+          "image_url": "https://s1.ticketm.net/dam/a/291/73be4736-73ad-4dd9-ab3f-c9f2c803e291_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/gabby-bryan-houston.png"
     },
     {
       "slug": "ivan-fematt-la-mole",
@@ -1019,6 +1172,42 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/kev-adams-houston.jpg"
+    },
+    {
+      "slug": "kevonstage",
+      "name": "KevOnStage",
+      "match": [
+        "kevonstage"
+      ],
+      "status": "live",
+      "created_at": "2026-11-24T02:17:55.156Z",
+      "profile_written_at": "2026-11-24T02:18:49.762Z",
+      "profile_html": "<p>In November 2026, <a href=\"https://stories.forbestravelguide.com/comedian-kevonstage-takes-off-with-the-airport\">Forbes Travel Guide</a> spoke with KevOnStage about <em>The Airport</em>, his 10-episode Tubi improv-comedy series released November 19. He prefers short sketches that reach the punchline fast. “I just like to be as funny in as many different ways as possible,” he said.</p>\n\n<p>Marriage, parenting and church culture fill his material. “Feet meat is crazy” counts among the compact observations. Born in El Paso, Texas, KevOnStage grew up in a military family that moved between cities. His church upbringing remains in the act, which is marketed as clean.</p>\n\n<p>His 2018 special, <a href=\"https://www.imdb.com/title/tt9302226/\"><em>KevOnStage: Funny in Real Life</em></a>, preceded acting work on HBO Max’s <em>A Black Lady Sketch Show</em>, hosting duties on Facebook Watch’s <em>Dad’s Just Don’t Understand</em>, and his role as star, creator and executive producer of BET+’s <em>Churchy</em>. He has also appeared on Amazon Prime’s <em>Black Love</em> and the podcasts <em>BET Talks</em> and <em>Club Shay Shay</em>.</p>\n\n<p>His 2026 <em>Grief Sucks: A One Man Show By KevOnStage</em> tour addressed the death of his brother and manager, Jason Fredericks. “This isn’t grief in theory,” he said. “This is about a person that was very important to me.” The <em>Grief Sucks</em> special is slated for Tubi in February 2027.</p>",
+      "research_json": "{\n  \"full_name\": \"Kevin Fredericks\",\n  \"hometown\": \"El Paso, Texas\",\n  \"career_start_year\": null,\n  \"specials\": [\n    {\n      \"title\": \"KevOnStage: Funny in Real Life\",\n      \"platform\": \"KevOnStage Studios\",\n      \"year\": 2018\n    },\n    {\n      \"title\": \"Grief Sucks\",\n      \"platform\": \"Tubi\",\n      \"year\": 2027\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"BET Talks\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"Club Shay Shay\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"A Black Lady Sketch Show\",\n      \"context\": \"Appeared as an actor on the HBO Max series.\"\n    },\n    {\n      \"show\": \"Dad's Just Don't Understand\",\n      \"context\": \"Hosted the Facebook Watch series produced by Westbrook Media.\"\n    },\n    {\n      \"show\": \"Churchy\",\n      \"context\": \"Star, creator and executive producer of the BET+ series.\"\n    },\n    {\n      \"show\": \"Black Love\",\n      \"context\": \"Appeared on the Amazon Prime series.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Clean, sharp and relatable.\",\n    \"structure\": \"Observational stand-up and sketch/improv comedy; he has described aiming to reach the punchline quickly in short sketches.\",\n    \"recurring_themes\": [\n      \"Family life\",\n      \"Marriage\",\n      \"Parenting\",\n      \"Faith and church culture\",\n      \"Contemporary culture\",\n      \"Grief\"\n    ],\n    \"comparable_to\": \"He has cited Keenen Ivory Wayans, In Living Color, Life and Harlem Nights as creative influences.\"\n  },\n  \"live_reputation\": \"A nationally touring comedian described by event and venue bios as regularly selling out comedy clubs and theaters; his work is also marketed as clean comedy suitable for college and corporate audiences.\",\n  \"recent_activity_2025_2026\": \"In 2026, Fredericks launched the Tubi improv-comedy series The Airport, which released on November 19, 2026. He also toured Grief Sucks: A One Man Show By KevOnStage, material about the death of his brother and manager Jason Fredericks. In a November 2026 interview, he said the resulting Grief Sucks stand-up special would arrive on Tubi in February 2027.\",\n  \"recent_hook\": {\n    \"summary\": \"KevOnStage's 10-episode Tubi improv-comedy series The Airport released on November 19, 2026. In a November 20 interview, he said the show draws on his extensive travel as a touring comic and uses a rapid, punchline-forward sketch format.\",\n    \"quote\": \"I just like to be as funny in as many different ways as possible.\",\n    \"source_publication\": \"Forbes Travel Guide\",\n    \"source_url\": \"https://stories.forbestravelguide.com/comedian-kevonstage-takes-off-with-the-airport\",\n    \"date\": \"2026-11-20\"\n  },\n  \"instagram_handle\": \"@kevonstage\",\n  \"notable_bits_or_quotes\": [\n    \"“Feet meat is crazy.”\",\n    \"“I just like to be as funny in as many different ways as possible.”\",\n    \"“This isn’t grief in theory. This isn’t about a person in theory. This is about a person that was very important to me.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That his comedy career definitively began in 2012; this appears in a booking-agency timeline but was not independently corroborated.\",\n    \"That KevOnStage: Family Man was a released stand-up special in 2016; this title appeared in a low-quality biographical roundup but was not independently verified.\",\n    \"That Why Lie? was a released stand-up special in 2010; this title appeared in a low-quality biographical roundup but was not independently verified.\",\n    \"That he appeared as a special guest on ComicView: Rooftop Series; this was encountered through Wikipedia-derived material but was not independently verified.\"\n  ],\n  \"background_story\": \"Fredericks was born in El Paso, Texas and grew up in a military family that moved between cities. He has described a church upbringing, and his family, faith and parenting experiences became recurring material in his comedy. Before building his entertainment career, he worked conventional jobs while developing his online comedy audience.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Official KevOnStage website\",\n      \"url\": \"https://www.kevonstage.com/\"\n    },\n    {\n      \"label\": \"IMDb: KevOnStage: Funny in Real Life\",\n      \"url\": \"https://www.imdb.com/title/tt9302226/\"\n    },\n    {\n      \"label\": \"Forbes Travel Guide interview\",\n      \"url\": \"https://stories.forbestravelguide.com/comedian-kevonstage-takes-off-with-the-airport\"\n    },\n    {\n      \"label\": \"BET Talks podcast episode\",\n      \"url\": \"https://podcasts.apple.com/us/podcast/kevonstage-gets-real-on-marriage-dreams-going-viral/id1852091731?i=1000736173069\"\n    },\n    {\n      \"label\": \"Dream Con talent biography\",\n      \"url\": \"https://www.dreamconvention.com/talent/kevonstage\"\n    },\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Kevin_Fredericks\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://www.imdb.com/title/tt9302226/",
+        "https://en.wikipedia.org/wiki/Kevin_Fredericks",
+        "https://www.instagram.com/kevonstage/"
+      ],
+      "instagramHandle": "@kevonstage",
+      "imageUrl": "https://s1.ticketm.net/dam/a/c1c/40e5588d-d4a5-4637-a79e-941147744c1c_SOURCE",
+      "wpPageId": 2358,
+      "wpLink": "https://comedyhouston.com/comedians/kevonstage/",
+      "wpImageMediaId": 2357,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-12-17",
+          "venue": "House of Blues Houston",
+          "time": "6:30 PM",
+          "name": "Grief Sucks: A One Man Show By KevOnStage",
+          "ticket_url": "https://www.ticketmaster.com/grief-sucks-a-one-man-show-houston-texas-12-17-2026/event/3A0064E8C371C47E",
+          "event_id": "f51c3e3781cd6fa7",
+          "image_url": "https://s1.ticketm.net/dam/a/c1c/40e5588d-d4a5-4637-a79e-941147744c1c_SOURCE"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/kevonstage-houston.jpg"
     },
     {
       "slug": "leanne-morgan",
@@ -1809,6 +1998,50 @@
       ],
       "archived_at": null,
       "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/10/sarper-guven-houston.jpg"
+    },
+    {
+      "slug": "sophie-buddle",
+      "name": "Sophie Buddle",
+      "match": [
+        "sophie buddle"
+      ],
+      "status": "live",
+      "created_at": "2026-11-24T02:21:31.143Z",
+      "profile_written_at": "2026-11-24T02:22:41.142Z",
+      "profile_html": "<p>In October 2026, <a href=\"https://music.amazon.co.uk/podcasts/5ad4f0fa-a8b9-4152-9096-d984b69bb485/episodes/b14b4665-9242-440e-8c36-05b9dfbe476a/spaced-out-with-blair-socci-i-went-on-a-date-with-a-fan-with-sophie-buddle\">Spaced Out with Blair Socci</a> brought back Sophie Buddle as its first returning guest. The conversation included Buddle’s interest in putting “blocking curses” on people who annoy her.</p>\n\n<p>The Ottawa, Ontario, comedian describes herself as “kind of edgy; kind of political.” Her stand-up covers dating, technology, family, sexuality, social stereotypes, and global or American politics. “I’m kind of low key,” she has said. “I’m not running around the stage or anything. I think I’m very ideas-based.”</p>\n\n<p>Her 2019 album <em>A Lil Bit of Buddle</em> won the 2020 Juno Award for Comedy Album of the Year, making Sophie Buddle the first solo woman stand-up comic to win it. Her 2022 special, <a href=\"https://tubitv.com/movies/100063114/sophie-buddle-smile-baby\"><em>Sophie Buddle: Smile, Baby</em></a>, was released on Crave. She has performed on <em>The Late Late Show with James Corden</em> and <em>The Tonight Show Starring Jimmy Fallon</em>, and worked as head monologue writer on <em>After Midnight</em> and as a correspondent and writer for <em>This Hour Has 22 Minutes</em>.</p>\n\n<p>Buddle has worked out of Vancouver and performed U.S. club dates. Her 2025 appearance on <em>WTF with Marc Maron</em> was followed by 2026 appearances on <em>SHENK</em> and <em>The BOB &amp; TOM Show</em>. A <a href=\"https://en.wikipedia.org/wiki/Sophie_Buddle\">short biography of her work</a> notes that her interview podcast, <em>Obsessed with Sophie Buddle</em>, ran from 2019 to 2023.</p>",
+      "research_json": "{\n  \"full_name\": \"Sophie Buddle\",\n  \"hometown\": \"Ottawa, Ontario, Canada\",\n  \"career_start_year\": null,\n  \"specials\": [\n    {\n      \"title\": \"Sophie Buddle: Smile, Baby\",\n      \"platform\": \"Crave\",\n      \"year\": 2022\n    }\n  ],\n  \"podcast_appearances\": [\n    {\n      \"show\": \"WTF with Marc Maron, Episode 1611\",\n      \"year_approx\": 2025\n    },\n    {\n      \"show\": \"SHENK\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"Spaced Out with Blair Socci\",\n      \"year_approx\": 2026\n    },\n    {\n      \"show\": \"The BOB & TOM Show\",\n      \"year_approx\": 2026\n    }\n  ],\n  \"tv_appearances\": [\n    {\n      \"show\": \"The Tonight Show Starring Jimmy Fallon\",\n      \"context\": \"Performed stand-up on April 6, 2023.\"\n    },\n    {\n      \"show\": \"The Late Late Show with James Corden\",\n      \"context\": \"Performed a stand-up set in 2021.\"\n    },\n    {\n      \"show\": \"After Midnight\",\n      \"context\": \"Worked as head monologue writer and appeared as a panelist.\"\n    },\n    {\n      \"show\": \"This Hour Has 22 Minutes\",\n      \"context\": \"Worked as a correspondent and writer.\"\n    },\n    {\n      \"show\": \"Roast Battle Canada\",\n      \"context\": \"Appeared on the CTV comedy series.\"\n    }\n  ],\n  \"comedy_style\": {\n    \"tone\": \"Low-key, edgy, and political without being prescriptive.\",\n    \"structure\": \"Ideas-based stand-up built around premises, schemes, and proposed social solutions, alongside personal stories.\",\n    \"recurring_themes\": [\n      \"Dating\",\n      \"Technology\",\n      \"Family\",\n      \"Global and American politics\",\n      \"Sexuality\",\n      \"Social stereotypes\"\n    ],\n    \"comparable_to\": \"\"\n  },\n  \"live_reputation\": \"Buddle has described her own stage style as low-key and ideas-based rather than high-energy or physically animated.\",\n  \"recent_activity_2025_2026\": \"In 2025, Buddle was a guest on WTF with Marc Maron. In 2026, she appeared on SHENK, The BOB & TOM Show, and Spaced Out with Blair Socci, and continued performing U.S. club dates.\",\n  \"recent_hook\": {\n    \"summary\": \"Buddle returned as a guest on Blair Socci's Spaced Out podcast in an episode released October 28, 2026. The episode description identifies her as the show's first returning guest and says the conversation includes Buddle's interest in putting “blocking curses” on people who annoy her.\",\n    \"quote\": \"\",\n    \"source_publication\": \"Spaced Out with Blair Socci\",\n    \"source_url\": \"https://music.amazon.co.uk/podcasts/5ad4f0fa-a8b9-4152-9096-d984b69bb485/episodes/b14b4665-9242-440e-8c36-05b9dfbe476a/spaced-out-with-blair-socci-i-went-on-a-date-with-a-fan-with-sophie-buddle\",\n    \"date\": \"2026-10-28\"\n  },\n  \"instagram_handle\": \"@sophbuds\",\n  \"notable_bits_or_quotes\": [\n    \"“I’m kind of edgy; kind of political. I do some dating and tech stuff. I tell some stories about my family.”\",\n    \"“I’m kind of low key. I’m not running around the stage or anything. I think I’m very ideas-based.”\",\n    \"“Stand-up comedy as an art form is so pure because honesty always resonates the most with people.”\"\n  ],\n  \"unverifiable_claims_to_avoid\": [\n    \"That she began doing stand-up in a specific calendar year. Sources conflict or provide only her age at the time.\",\n    \"That she was a three-time runner-up in SiriusXM Canada's Top Comic competition. This was repeated in promotional bios, but was not independently verified in this research.\",\n    \"Specific alleged appearances on Kevin Hart's LOL Network and JFL All Access. These appeared in ticketing or promotional biographies but were not independently verified here.\",\n    \"That her 2022 special was her first-ever comedy special. It was described as a debut special in older promotional coverage, but this was not independently confirmed from a primary release record.\"\n  ],\n  \"background_story\": \"Buddle is a Canadian stand-up comedian from Ottawa who later worked out of Vancouver before moving to the United States. She released the independently issued comedy album A Lil Bit of Buddle in 2019; it won the 2020 Juno Award for Comedy Album of the Year, making her the first solo woman stand-up comedian to win that award. She also created the interview podcast Obsessed with Sophie Buddle, which ran from 2019 to 2023.\",\n  \"source_urls\": [\n    {\n      \"label\": \"Wikipedia\",\n      \"url\": \"https://en.wikipedia.org/wiki/Sophie_Buddle\"\n    },\n    {\n      \"label\": \"Crave special announcement\",\n      \"url\": \"https://www.bellmedia.ca/the-lede/press/crave-delivers-homegrown-canadian-comedy-with-seven-new-crave-original-stand-up-specials/\"\n    },\n    {\n      \"label\": \"Tubi special page\",\n      \"url\": \"https://tubitv.com/movies/100063114/sophie-buddle-smile-baby\"\n    },\n    {\n      \"label\": \"Notable interview or article\",\n      \"url\": \"https://cleverock.com/interview-sophie-buddle/\"\n    },\n    {\n      \"label\": \"Vulture profile\",\n      \"url\": \"https://www.vulture.com/article/sophie-buddle-comedians-you-should-know-2023.html\"\n    },\n    {\n      \"label\": \"Podcast episode or appearance\",\n      \"url\": \"https://www.wtfpod.com/podcast?offset=1742799900875\"\n    }\n  ]\n}",
+      "sameAs": [
+        "https://en.wikipedia.org/wiki/Sophie_Buddle",
+        "https://www.instagram.com/sophbuds/"
+      ],
+      "instagramHandle": "@sophbuds",
+      "imageUrl": "https://www.theriothtx.com/img/events/Guadalaharrys-70-eaf30b9a-large-thumb.png",
+      "wpPageId": 2367,
+      "wpLink": "https://comedyhouston.com/comedians/sophie-buddle/",
+      "wpImageMediaId": 2366,
+      "legacy_slugs": [],
+      "shows": [
+        {
+          "date": "2026-12-18",
+          "venue": "The Riot Comedy Club",
+          "time": "7:00 PM",
+          "name": "Comedian Sophie Buddle (The Tonight Show, Sirius XM, Kevin Hart's LOL) Headlines The Riot Comedy Club",
+          "ticket_url": "https://www.theriothtx.com/events/comedian-sophie-buddle-the-tonight-show-sirius-xm-kevin-hart-s-lol-headlines-the-riot-comedy-club",
+          "event_id": "7e2a936809d4c19f",
+          "image_url": "https://www.theriothtx.com/img/events/Guadalaharrys-70-eaf30b9a-large-thumb.png"
+        },
+        {
+          "date": "2026-12-19",
+          "venue": "The Riot Comedy Club",
+          "time": "7:00 PM",
+          "name": "Comedian Sophie Buddle (The Tonight Show, Sirius XM, Kevin Hart's LOL) Headlines The Riot Comedy Club",
+          "ticket_url": "https://www.theriothtx.com/events/comedian-sophie-buddle-the-tonight-show-sirius-xm-kevin-hart-s-lol-headlines-the-riot-comedy-club-2026-12-19190000",
+          "event_id": "4d153cf84a16d7b0",
+          "image_url": "https://www.theriothtx.com/img/events/Guadalaharrys-70-eaf30b9a-large-thumb.png"
+        }
+      ],
+      "archived_at": null,
+      "wpImageUrl": "https://comedyhouston.com/wp-content/uploads/2026/11/sophie-buddle-houston.png"
     },
     {
       "slug": "tony-hinchcliffe",
