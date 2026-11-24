@@ -1,22 +1,6 @@
 {
- "updated": "2026-11-24T00:52:57.073Z",
+ "updated": "2026-11-24T07:10:19.787Z",
  "announcements": [
-  {
-   "id": "2396673cee76ed4e",
-   "name": "$2 BILL Two Dollar Comedy Show every Wednesday!",
-   "venue": "The Secret Group",
-   "date": "2026-12-02",
-   "time": "8:00 PM",
-   "price_min": 5.36,
-   "price_max": 5.36,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1192637134%2F3558237521%2F1%2Foriginal.20260903-234123?auto=format%2Ccompress&q=75&sharp=10&s=93f8262e1563e28c879354e3f44335de",
-   "ticket_url": "https://www.eventbrite.com/e/2-bill-two-dollar-comedy-show-every-wednesday-tickets-2004209357139",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 8d out (min 14)",
-   "first_seen": "2026-11-02T22:23:04.050Z"
-  },
   {
    "id": "903d9930f5ab6d78",
    "name": "Master Debaters",
@@ -1710,7 +1694,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (5 weeks)",
+   "notable_reason": "recurring series (4 weeks)",
    "first_seen": "2026-11-16T22:56:45.909Z"
   },
   {
@@ -1726,7 +1710,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (5 weeks)",
+   "notable_reason": "recurring series (4 weeks)",
    "first_seen": "2026-11-16T22:56:45.909Z"
   },
   {
@@ -2910,7 +2894,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (5 weeks)",
+   "notable_reason": "recurring series (4 weeks)",
    "first_seen": "2026-11-24T00:52:57.073Z"
   },
   {
@@ -2926,7 +2910,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "recurring series (5 weeks)",
+   "notable_reason": "recurring series (4 weeks)",
    "first_seen": "2026-11-24T00:52:57.073Z"
   },
   {
@@ -3200,6 +3184,22 @@
    "tier": "headliner_room",
    "notable_reason": "headliner room",
    "first_seen": "2026-11-24T00:52:57.073Z"
+  },
+  {
+   "id": "f8e81eab5229ba7d",
+   "name": "John Achkar New Show: Feena Nehke? (In Arabic)",
+   "venue": "Houston Improv",
+   "date": "2027-02-21",
+   "time": "7:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+   "ticket_url": "https://www.ticketweb.com/event/john-achkar-new-show-feena-houston-improv-tickets/14302574?REFERRAL_ID=tmfeed",
+   "source": "ticketmaster",
+   "notable": true,
+   "tier": "headliner_room",
+   "notable_reason": "headliner room",
+   "first_seen": "2026-11-24T07:10:19.787Z"
   }
  ]
 }

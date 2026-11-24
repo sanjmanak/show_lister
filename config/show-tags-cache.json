@@ -3212,6 +3212,12 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-11-24"
+    },
+    "john achkar new show: feena nehke? (in arabic)": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-24"
     }
   }
 }
