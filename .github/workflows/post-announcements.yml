@@ -34,6 +34,9 @@ env:
   DRY_RUN: ${{ inputs.dry_run == true && '1' || '' }}
   ANNOUNCE_MAX: ${{ inputs.max || '1' }}
   ANNOUNCE_WINDOW_HOURS: ${{ inputs.window_hours || '48' }}
+  # Still cards only. Set to '1' to bring the 10s reels back (see the
+  # REELS_ENABLED note in scripts/post-announcements.js).
+  ANNOUNCE_REELS: ''
 
 jobs:
   announce:
@@ -48,9 +51,12 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Install Puppeteer + ffmpeg
+      - name: Install Puppeteer
+        run: npm install puppeteer --no-save
+
+      - name: Install ffmpeg (reel mode only)
+        if: env.ANNOUNCE_REELS == '1'
         run: |
-          npm install puppeteer --no-save
           # ffmpeg is not on the hosted image; needed only for reel mode.
           sudo apt-get update -qq >/dev/null && sudo apt-get install -y -qq ffmpeg >/dev/null
           ffmpeg -version | head -1

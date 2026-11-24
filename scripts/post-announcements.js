@@ -15,10 +15,11 @@
  * must be on `main` first (same pattern as post-tonight.js):
  *
  *   --render   pick candidates, run the LLM gate, render the card(s) and,
- *              when assets/music/ has a track and ffmpeg exists, a 10s reel.
+ *              only when ANNOUNCE_REELS=1 (off by default since 2026-11-24:
+ *              the still card out-reached the reels 10 to 50x), a 10s reel.
  *              Writes blog/announce/<slug>-{portrait,story}.png[, .mp4] and
  *              blog/announce/pending.json. The workflow commits + pushes.
- *   --post     reads pending.json, posts IG feed (reel or image) + IG story
+ *   --post     reads pending.json, posts IG feed (image, or reel) + IG story
  *              + FB feed, records config/announced-posted.json.
  *              Then takes down every just-announced post older than the
  *              newest ANNOUNCE_KEEP_LIVE (default 3) on IG and FB, so the
@@ -57,6 +58,11 @@ const rules = require("./lib/announce-rules");
 const MIN_DAYS_OUT = rules.loadConfig().minDaysOut; // config/announce-venues.json
 const REPOST_GAP_DAYS = 45;    // same performer not twice in this window
 const RETENTION_DAYS = 14;     // rendered assets pruned after this
+// Reels are opt-in. Announcement reels reached 20 to 130 people each with 0
+// or 1 likes across 49 posts (Sep to Nov 2026); the same card as a still image
+// reached 275 to 1,518. Set ANNOUNCE_REELS=1 to render and post reels again
+// (needs a track in assets/music and ffmpeg on the runner).
+const REELS_ENABLED = process.env.ANNOUNCE_REELS === "1";
 const REEL_SECONDS = 10;
 // Where in the track the reel's audio starts (seconds). Intros are usually
 // quiet; 20s in is normally the hook. Override with REEL_MUSIC_START.
@@ -219,9 +225,10 @@ async function renderPhase() {
   const { cardHTML, photoDataUri, slugify, SIZES, displayVenue } = require("./lib/announce-card");
   fs.mkdirSync(OUT_DIR, { recursive: true });
   pruneOld();
-  const music = pickMusic();
-  const reelsOn = !!music && haveFfmpeg();
-  console.log(`Reel mode: ${reelsOn ? "ON (" + path.basename(music) + ", from " + MUSIC_START + "s)" : "off (" + (music ? "no ffmpeg" : "no track in assets/music") + ")"}`);
+  const music = REELS_ENABLED ? pickMusic() : null;
+  const reelsOn = REELS_ENABLED && !!music && haveFfmpeg();
+  const why = !REELS_ENABLED ? "ANNOUNCE_REELS not set, posting the still card" : music ? "no ffmpeg" : "no track in assets/music";
+  console.log(`Reel mode: ${reelsOn ? "ON (" + path.basename(music) + ", from " + MUSIC_START + "s)" : "off (" + why + ")"}`);
 
   const browser = await puppeteer.launch({ headless: "new", args: ["--no-sandbox", "--disable-setuid-sandbox"] });
   const items = [];
