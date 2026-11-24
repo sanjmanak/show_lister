@@ -31,6 +31,7 @@ const {
   validateTokenAndGuards,
   postIgFeedImage,
   postFbFeedPhoto,
+  deleteGraphObject,
   shutdown,
 } = require("./lib/meta-api");
 
@@ -46,6 +47,13 @@ const EVENTS_PATH = path.join(ROOT, "events.json");
 // receiving end are the ones who decide which it looks like.
 const MAX_VENUE_TAGS = 6;
 const META_PATH = path.join(BLOG_DIR, "weekly-meta.json");
+// How many weekly roundup posts stay live on IG/FB. Owner decision 2026-11-24:
+// a roundup sells one week; once that week is over it is a stale listing on
+// the grid. Posting a new one takes down the oldest beyond this. Entries live
+// in state.cleanup_queue (same shape as the spotlight queue: igFeedMediaId,
+// fbFeedPostId, postedAt). Roundups posted before this shipped have no entry
+// and were taken down by hand on 2026-11-24.
+const KEEP_LIVE = Math.max(0, parseInt(process.env.WEEKLY_KEEP_LIVE || "2", 10) || 0);
 const STATE_PATH = path.join(BLOG_DIR, "weekly-post-state.json");
 
 const CHANNEL_TIMEOUT_MS = parseInt(process.env.IG_CHANNEL_TIMEOUT_MS || "180000", 10);
@@ -97,6 +105,45 @@ function weekVenueTags(weekMonday) {
     console.warn(`  ⚠ Could not derive venue tags: ${err.message}. Posting untagged.`);
     return [];
   }
+}
+
+/**
+ * Keep only the newest KEEP_LIVE weekly roundups live. IG feed media and the
+ * FB photo post are deleted; a rate limit ends the pass, any other failure
+ * keeps the ID for retry. Mutates `state`; the caller saves it.
+ */
+async function pruneLiveRoundups(state) {
+  const queue = Array.isArray(state.cleanup_queue) ? state.cleanup_queue : [];
+  const live = queue
+    .filter((e) => e.igFeedMediaId || e.fbFeedPostId)
+    .sort((a, b) => (Date.parse(b.postedAt) || 0) - (Date.parse(a.postedAt) || 0));
+  const stale = live.slice(KEEP_LIVE);
+  if (!stale.length) {
+    console.log(`\nPrune: ${live.length} roundup(s) live, none older than the newest ${KEEP_LIVE}.`);
+  } else {
+    console.log(`\nPrune: ${live.length} roundups live, keeping the newest ${KEEP_LIVE}, taking down ${stale.length}.`);
+  }
+  let rateLimited = false;
+  for (const e of stale) {
+    if (rateLimited) break;
+    for (const [field, label] of [["igFeedMediaId", "IG feed"], ["fbFeedPostId", "FB feed"]]) {
+      if (!e[field]) continue;
+      try {
+        await withTimeout(deleteGraphObject(e[field], `${label} roundup ${e.week || ""}`), label, 60000);
+        e[field] = null;
+      } catch (err) {
+        const msg = String(err && err.message || err).split("\n")[0];
+        if (msg.startsWith("RATE_LIMITED")) {
+          console.log("   rate limited; the rest waits for the next run.");
+          rateLimited = true;
+          break;
+        }
+        console.log(`   ${label} delete failed for week ${e.week} (kept for retry): ${msg}`);
+      }
+    }
+  }
+  // Drop fully cleared entries so the queue never grows without bound.
+  state.cleanup_queue = queue.filter((e) => e.igFeedMediaId || e.fbFeedPostId);
 }
 
 async function main() {
@@ -199,8 +246,19 @@ async function main() {
     fbFeedPostId: results.fbFeed,
     postedAt: new Date().toISOString(),
   };
+  if (!Array.isArray(state.cleanup_queue)) state.cleanup_queue = [];
+  state.cleanup_queue.push({ week: weekMonday, ...state.last_results });
   fs.writeFileSync(STATE_PATH, JSON.stringify(state, null, 2) + "\n");
   console.log(`\nState saved → ${STATE_PATH}`);
+
+  // Take down the roundups beyond the newest KEEP_LIVE. Nothing here can
+  // fail the run: a failed delete keeps its ID for the next Monday.
+  try {
+    await pruneLiveRoundups(state);
+    fs.writeFileSync(STATE_PATH, JSON.stringify(state, null, 2) + "\n");
+  } catch (err) {
+    console.log(`  prune skipped: ${String(err && err.message || err).split("\n")[0]}`);
+  }
 
   console.log(`\n${"=".repeat(60)}`);
   console.log(`RESULTS — Weekly Roundup (week of ${weekMonday})`);
