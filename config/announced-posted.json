@@ -20,9 +20,10 @@
       "date": "2026-11-15",
       "posted_at": "2026-09-09T18:50:28.023Z",
       "mode": "reel",
-      "ig_media_id": "18440113300121040",
-      "ig_story_id": "18383135206228294",
-      "fb_post_id": "1399288468962561"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "d75776b83310ea1c",
@@ -32,9 +33,10 @@
       "date": "2026-11-22",
       "posted_at": "2026-09-11T18:44:54.484Z",
       "mode": "reel",
-      "ig_media_id": "18462373585143782",
-      "ig_story_id": "17989293720047394",
-      "fb_post_id": "1400993672125374"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "1aacd734a8705060",
@@ -44,21 +46,23 @@
       "date": "2026-11-22",
       "posted_at": "2026-09-12T17:49:26.368Z",
       "mode": "reel",
-      "ig_media_id": "18340892020258227",
-      "ig_story_id": "17893179993413918",
-      "fb_post_id": "1401775528713855"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "6a4f2661b95c294e",
-      "name": "Erica Rhodes (Americas Got Talent, Don’t Tell Comedy, Netflix is a Joke Fest) Headlines The Riot Comedy Club",
+      "name": "Erica Rhodes (Americas Got Talent, Don\u2019t Tell Comedy, Netflix is a Joke Fest) Headlines The Riot Comedy Club",
       "performer_name": "Erica Rhodes",
       "venue": "The Riot Comedy Club",
       "date": "2026-12-11",
       "posted_at": "2026-09-13T18:20:14.120Z",
       "mode": "reel",
-      "ig_media_id": "18103154254980785",
-      "ig_story_id": "17908373652540431",
-      "fb_post_id": "1402609785297096"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "6e6a42cc9972ddf1",
@@ -68,9 +72,10 @@
       "date": "2026-10-28",
       "posted_at": "2026-09-14T19:57:40.405Z",
       "mode": "reel",
-      "ig_media_id": "18124791859875834",
-      "ig_story_id": "18149937082464175",
-      "fb_post_id": "1403518981872843"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "8a471f965aa9dee0",
@@ -80,9 +85,10 @@
       "date": "2026-11-29",
       "posted_at": "2026-09-19T18:12:36.560Z",
       "mode": "reel",
-      "ig_media_id": "18121662400933156",
-      "ig_story_id": "17966032530177994",
-      "fb_post_id": "1407634581461283"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "7e2a936809d4c19f",
@@ -92,9 +98,10 @@
       "date": "2026-12-18",
       "posted_at": "2026-09-20T18:17:55.770Z",
       "mode": "reel",
-      "ig_media_id": "17993561804838056",
-      "ig_story_id": "18428161324194176",
-      "fb_post_id": "1408467044711370"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "5c2e9adc897afe67",
@@ -104,9 +111,10 @@
       "date": "2026-10-24",
       "posted_at": "2026-09-21T20:07:33.931Z",
       "mode": "reel",
-      "ig_media_id": "18176439448431539",
-      "ig_story_id": "18336835384282935",
-      "fb_post_id": "1409347407956667"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "1422d54256e6400a",
@@ -116,9 +124,10 @@
       "date": "2026-11-20",
       "posted_at": "2026-09-22T19:06:03.959Z",
       "mode": "reel",
-      "ig_media_id": "18207968053366103",
-      "ig_story_id": "18105932162247705",
-      "fb_post_id": "1410140467877361"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "97c6e69ff23a61f2",
@@ -128,9 +137,10 @@
       "date": "2026-12-04",
       "posted_at": "2026-09-26T18:42:33.844Z",
       "mode": "reel",
-      "ig_media_id": "18109822799180587",
-      "ig_story_id": "17982009888065538",
-      "fb_post_id": "1413785967512811"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "08dfc658d220110a",
@@ -140,9 +150,10 @@
       "date": "2026-12-05",
       "posted_at": "2026-09-27T19:15:00.762Z",
       "mode": "reel",
-      "ig_media_id": "18125821462845672",
-      "ig_story_id": "17962744581194996",
-      "fb_post_id": "1414765904081484"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "aba715c3ff1ec302",
@@ -152,21 +163,23 @@
       "date": "2026-12-05",
       "posted_at": "2026-09-28T21:22:48.258Z",
       "mode": "reel",
-      "ig_media_id": "17994846234024391",
-      "ig_story_id": "18109598108136757",
-      "fb_post_id": "1415768187314589"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "28fc2ebee309047d",
-      "name": "Keropi Sánchez: Remastered (En Español)",
-      "performer_name": "Keropi Sánchez",
+      "name": "Keropi S\u00e1nchez: Remastered\u00a0(En Espa\u00f1ol)",
+      "performer_name": "Keropi S\u00e1nchez",
       "venue": "Punch Line Houston",
       "date": "2026-12-02",
       "posted_at": "2026-10-01T20:29:18.866Z",
       "mode": "reel",
-      "ig_media_id": "18115861037044409",
-      "ig_story_id": "18445900108121739",
-      "fb_post_id": "1418614113696663"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "eeae647870dc2d43",
@@ -176,9 +189,10 @@
       "date": "2026-11-08",
       "posted_at": "2026-10-03T18:49:22.946Z",
       "mode": "reel",
-      "ig_media_id": "17927421903182825",
-      "ig_story_id": "18103177631366716",
-      "fb_post_id": "1420457166845691"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "1aa7ae5251602484",
@@ -188,9 +202,10 @@
       "date": "2026-12-06",
       "posted_at": "2026-10-04T18:46:51.863Z",
       "mode": "reel",
-      "ig_media_id": "18115122643825618",
-      "ig_story_id": "18097418012207845",
-      "fb_post_id": "1421337783424296"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "f51c3e3781cd6fa7",
@@ -200,9 +215,10 @@
       "date": "2026-12-17",
       "posted_at": "2026-10-05T22:10:32.026Z",
       "mode": "reel",
-      "ig_media_id": "18115021796016182",
-      "ig_story_id": "18126788212871525",
-      "fb_post_id": "1422325559992185"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "6cb1691d1db3e595",
@@ -212,9 +228,10 @@
       "date": "2026-12-16",
       "posted_at": "2026-10-06T20:32:39.621Z",
       "mode": "reel",
-      "ig_media_id": "18351408622251124",
-      "ig_story_id": "18168830239461997",
-      "fb_post_id": "1423151483242926"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "a247c8fd2d6db7e5",
@@ -224,9 +241,10 @@
       "date": "2026-12-17",
       "posted_at": "2026-10-07T20:46:31.440Z",
       "mode": "reel",
-      "ig_media_id": "18130127699495735",
-      "ig_story_id": "18107820068208559",
-      "fb_post_id": "1424041713153903"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "4f288ad943088e75",
@@ -236,9 +254,10 @@
       "date": "2026-12-18",
       "posted_at": "2026-10-08T20:48:45.427Z",
       "mode": "reel",
-      "ig_media_id": "17927202552423975",
-      "ig_story_id": "18168374707478230",
-      "fb_post_id": "1424927999731941"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "b2012134ba35273c",
@@ -248,9 +267,10 @@
       "date": "2026-12-26",
       "posted_at": "2026-10-11T19:42:18.180Z",
       "mode": "reel",
-      "ig_media_id": "17982500595102249",
-      "ig_story_id": "18118464226989428",
-      "fb_post_id": "1427563839468357"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "c8f67fb80244a583",
@@ -260,9 +280,10 @@
       "date": "2026-12-23",
       "posted_at": "2026-10-12T22:35:33.589Z",
       "mode": "reel",
-      "ig_media_id": "17968391640189156",
-      "ig_story_id": "18025406657876379",
-      "fb_post_id": "1428634582694616"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "31a78c4edced5bdb",
@@ -272,9 +293,10 @@
       "date": "2026-12-29",
       "posted_at": "2026-10-13T20:49:32.459Z",
       "mode": "reel",
-      "ig_media_id": "17914741539470147",
-      "ig_story_id": "18119085514962879",
-      "fb_post_id": "1429553799269361"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "aa178567b293fed8",
@@ -284,9 +306,10 @@
       "date": "2026-12-31",
       "posted_at": "2026-10-14T19:40:06.289Z",
       "mode": "reel",
-      "ig_media_id": "18116387674822405",
-      "ig_story_id": "18126173554847797",
-      "fb_post_id": "1430461199178621"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "c972f77fa6996ccc",
@@ -296,9 +319,10 @@
       "date": "2027-01-01",
       "posted_at": "2026-10-17T17:56:10.282Z",
       "mode": "reel",
-      "ig_media_id": "18636623458035259",
-      "ig_story_id": "18116484317044029",
-      "fb_post_id": "1433153058909435"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "041bbc8d7e184a65",
@@ -308,9 +332,10 @@
       "date": "2027-01-02",
       "posted_at": "2026-10-18T18:16:34.356Z",
       "mode": "reel",
-      "ig_media_id": "17964131496236445",
-      "ig_story_id": "18165860608522231",
-      "fb_post_id": "1434093512148723"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "23e18c1392c110b0",
@@ -320,9 +345,10 @@
       "date": "2027-01-08",
       "posted_at": "2026-10-19T20:42:53.237Z",
       "mode": "reel",
-      "ig_media_id": "18470493592185952",
-      "ig_story_id": "18115384264834828",
-      "fb_post_id": "1435109575380450"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "32e6de2572dd88f1",
@@ -332,9 +358,10 @@
       "date": "2026-12-31",
       "posted_at": "2026-10-22T19:26:55.404Z",
       "mode": "reel",
-      "ig_media_id": "18076556969735823",
-      "ig_story_id": "18101452898432702",
-      "fb_post_id": "1437854335105974"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "8b6bf36985a6429b",
@@ -344,9 +371,10 @@
       "date": "2027-01-16",
       "posted_at": "2026-10-25T18:33:15.908Z",
       "mode": "reel",
-      "ig_media_id": "18030889988911937",
-      "ig_story_id": "18131971666864682",
-      "fb_post_id": "1440583618166379"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "17535560fff62c56",
@@ -356,21 +384,23 @@
       "date": "2027-01-15",
       "posted_at": "2026-10-26T20:44:02.006Z",
       "mode": "reel",
-      "ig_media_id": "18065729741521055",
-      "ig_story_id": "18097569680407992",
-      "fb_post_id": "1441652904726117"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "6d0e530a3830e5e8",
-      "name": "Los Tíos Comedy Tour headlined by Flo Hernandez",
+      "name": "Los T\u00edos Comedy Tour headlined by Flo Hernandez",
       "performer_name": "Flo Hernandez",
       "venue": "Punch Line Houston",
       "date": "2027-01-20",
       "posted_at": "2026-10-28T20:33:03.665Z",
       "mode": "reel",
-      "ig_media_id": "18468523672136221",
-      "ig_story_id": "18113904245177752",
-      "fb_post_id": "1443558274535580"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "46e98c1e925b2cbb",
@@ -380,9 +410,10 @@
       "date": "2027-01-22",
       "posted_at": "2026-10-29T20:31:42.149Z",
       "mode": "reel",
-      "ig_media_id": "18285628036293590",
-      "ig_story_id": "18121691933285381",
-      "fb_post_id": "1444542841103790"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "fc6385793c32dca8",
@@ -392,20 +423,21 @@
       "date": "2027-01-24",
       "posted_at": "2026-10-30T20:06:01.971Z",
       "mode": "reel",
-      "ig_media_id": "18101112506434728",
-      "ig_story_id": "18131821444836725",
-      "fb_post_id": "1445500237674717"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-24T19:21:07Z"
     },
     {
       "id": "9347a87a9ba02b87",
       "name": "Gaby Mendoza & Jose Luis Zagar ",
-      "performer_name": "Gaby Mendoza & José Luis Zagar",
+      "performer_name": "Gaby Mendoza & Jos\u00e9 Luis Zagar",
       "venue": "Arena Theatre",
       "date": "2027-01-23",
       "posted_at": "2026-10-31T19:31:16.141Z",
       "mode": "reel",
-      "ig_media_id": "18151965373547721",
-      "ig_story_id": "18103831634629672",
+      "ig_media_id": null,
+      "ig_story_id": null,
       "fb_post_id": "1446450044246403"
     },
     {
@@ -416,8 +448,8 @@
       "date": "2027-01-29",
       "posted_at": "2026-11-01T19:53:54.980Z",
       "mode": "reel",
-      "ig_media_id": "17886990210622927",
-      "ig_story_id": "18118521506050161",
+      "ig_media_id": null,
+      "ig_story_id": null,
       "fb_post_id": "1447433894148018"
     },
     {
@@ -428,8 +460,8 @@
       "date": "2027-01-30",
       "posted_at": "2026-11-02T23:12:49.398Z",
       "mode": "reel",
-      "ig_media_id": "18093640721646387",
-      "ig_story_id": "18161872681512635",
+      "ig_media_id": null,
+      "ig_story_id": null,
       "fb_post_id": "1448519944039413"
     },
     {
@@ -440,8 +472,8 @@
       "date": "2027-01-30",
       "posted_at": "2026-11-04T21:28:30.898Z",
       "mode": "reel",
-      "ig_media_id": "18074565782769208",
-      "ig_story_id": "18395490211164108",
+      "ig_media_id": null,
+      "ig_story_id": null,
       "fb_post_id": "1450434123847995"
     },
     {
@@ -452,8 +484,8 @@
       "date": "2027-02-05",
       "posted_at": "2026-11-07T19:36:08.411Z",
       "mode": "reel",
-      "ig_media_id": "18015286271760983",
-      "ig_story_id": "18400004470206427",
+      "ig_media_id": null,
+      "ig_story_id": null,
       "fb_post_id": "1453559023535505"
     },
     {
@@ -464,8 +496,8 @@
       "date": "2027-01-31",
       "posted_at": "2026-11-08T19:56:22.099Z",
       "mode": "reel",
-      "ig_media_id": "18401646499202043",
-      "ig_story_id": "18110779753944139",
+      "ig_media_id": null,
+      "ig_story_id": null,
       "fb_post_id": "1454644076760333"
     },
     {
@@ -476,8 +508,8 @@
       "date": "2027-02-06",
       "posted_at": "2026-11-09T23:51:51.003Z",
       "mode": "reel",
-      "ig_media_id": "18140528845629014",
-      "ig_story_id": "18209012023329060",
+      "ig_media_id": null,
+      "ig_story_id": null,
       "fb_post_id": "1455803156644425"
     },
     {
@@ -488,8 +520,8 @@
       "date": "2027-02-07",
       "posted_at": "2026-11-10T21:25:42.871Z",
       "mode": "reel",
-      "ig_media_id": "17956699242039244",
-      "ig_story_id": "18119004998468416",
+      "ig_media_id": null,
+      "ig_story_id": null,
       "fb_post_id": "1456866433204764"
     },
     {
@@ -500,8 +532,8 @@
       "date": "2026-12-12",
       "posted_at": "2026-11-11T22:14:29.140Z",
       "mode": "reel",
-      "ig_media_id": "17915315478559063",
-      "ig_story_id": "17951197509343196",
+      "ig_media_id": null,
+      "ig_story_id": null,
       "fb_post_id": "1457967106428030"
     },
     {
@@ -512,8 +544,8 @@
       "date": "2027-02-07",
       "posted_at": "2026-11-12T21:55:34.715Z",
       "mode": "reel",
-      "ig_media_id": "18111858098188257",
-      "ig_story_id": "17905109613372181",
+      "ig_media_id": null,
+      "ig_story_id": null,
       "fb_post_id": "1459057756318965"
     },
     {
@@ -524,8 +556,8 @@
       "date": "2027-02-10",
       "posted_at": "2026-11-13T21:35:07.345Z",
       "mode": "reel",
-      "ig_media_id": "18124059779069886",
-      "ig_story_id": "18211690516374079",
+      "ig_media_id": null,
+      "ig_story_id": null,
       "fb_post_id": "1460168662874541"
     },
     {
@@ -536,8 +568,8 @@
       "date": "2027-01-28",
       "posted_at": "2026-11-14T20:04:25.098Z",
       "mode": "reel",
-      "ig_media_id": "18101510408400180",
-      "ig_story_id": "18119079863027888",
+      "ig_media_id": null,
+      "ig_story_id": null,
       "fb_post_id": "1461103476114393"
     },
     {
@@ -548,8 +580,8 @@
       "date": "2027-02-12",
       "posted_at": "2026-11-15T20:32:52.277Z",
       "mode": "reel",
-      "ig_media_id": "17886996021626716",
-      "ig_story_id": "18138836968637199",
+      "ig_media_id": null,
+      "ig_story_id": null,
       "fb_post_id": "1462062886018452"
     },
     {
@@ -560,8 +592,8 @@
       "date": "2027-02-12",
       "posted_at": "2026-11-16T23:50:29.526Z",
       "mode": "reel",
-      "ig_media_id": "17898383595682579",
-      "ig_story_id": "18103561865375153",
+      "ig_media_id": null,
+      "ig_story_id": null,
       "fb_post_id": "1463136345911106"
     },
     {
@@ -572,8 +604,8 @@
       "date": "2027-02-13",
       "posted_at": "2026-11-17T23:07:34.742Z",
       "mode": "reel",
-      "ig_media_id": "18344601598260148",
-      "ig_story_id": "18043027169894959",
+      "ig_media_id": null,
+      "ig_story_id": null,
       "fb_post_id": "1464041695820571"
     },
     {
@@ -724,8 +756,8 @@
     },
     {
       "id": "0f98bd1b033df9e1",
-      "name": "Sarper Güven",
-      "reason": "Sarper Güven is known as a reality TV personality, not a recognizable stand-up comedian or comedy act.",
+      "name": "Sarper G\u00fcven",
+      "reason": "Sarper G\u00fcven is known as a reality TV personality, not a recognizable stand-up comedian or comedy act.",
       "at": "2026-09-18T18:38:36.489Z"
     },
     {
