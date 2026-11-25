@@ -3230,6 +3230,12 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-11-25"
+    },
+    "the riot presents wednesday night trivia": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-25"
     }
   }
 }
