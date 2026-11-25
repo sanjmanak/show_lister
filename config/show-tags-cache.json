@@ -3224,6 +3224,12 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-11-24"
+    },
+    "punchlines & pie: holiday edition": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-25"
     }
   }
 }

@@ -1,22 +1,6 @@
 {
- "updated": "2026-11-24T23:13:45.348Z",
+ "updated": "2026-11-25T05:45:27.077Z",
  "announcements": [
-  {
-   "id": "fa89119b0ebcb2e7",
-   "name": "Bruce Bruce *New Material*",
-   "venue": "Houston Improv",
-   "date": "2026-12-06",
-   "time": "7:30 PM",
-   "price_min": null,
-   "price_max": null,
-   "image_url": "https://s1.ticketm.net/dam/a/535/38a2e26c-ef49-4bf9-98cf-855fb164b535_SOURCE",
-   "ticket_url": "https://www.ticketweb.com/event/bruce-bruce-new-material-houston-improv-tickets/14179604?REFERRAL_ID=tmfeed",
-   "source": "ticketmaster",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "only 12d out (min 14)",
-   "first_seen": "2026-11-18T21:29:59.655Z"
-  },
   {
    "id": "75260b99a6969d2d",
    "name": "Malik Elassal",
@@ -46,7 +30,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 1d out (min 14)",
+   "notable_reason": "only 0d out (min 14)",
    "first_seen": "2026-11-20T21:07:27.537Z"
   },
   {
@@ -78,7 +62,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 10d out (min 14)",
+   "notable_reason": "only 9d out (min 14)",
    "first_seen": "2026-11-21T20:08:57.178Z"
   },
   {
@@ -126,7 +110,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 2d out (min 14)",
+   "notable_reason": "only 1d out (min 14)",
    "first_seen": "2026-11-22T03:33:45.658Z"
   },
   {
@@ -494,7 +478,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-11-23T04:04:47.557Z"
   },
   {
@@ -510,7 +494,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 4d out (min 14)",
+   "notable_reason": "only 3d out (min 14)",
    "first_seen": "2026-11-23T04:04:47.557Z"
   },
   {
@@ -894,7 +878,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 8d out (min 14)",
+   "notable_reason": "only 7d out (min 14)",
    "first_seen": "2026-11-24T23:13:45.348Z"
   },
   {
@@ -3200,6 +3184,22 @@
    "tier": null,
    "notable_reason": "title pattern",
    "first_seen": "2026-11-24T23:13:45.348Z"
+  },
+  {
+   "id": "8a75ef940fb23419",
+   "name": "Punchlines & Pie: Holiday Edition",
+   "venue": "D&T Drive Inn",
+   "date": "2026-12-19",
+   "time": "8:00 PM",
+   "price_min": 0,
+   "price_max": 0,
+   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1198660555%2F2976463182411%2F1%2Foriginal.20261125-043417?auto=format%2Ccompress&q=75&sharp=10&s=6a9bce08e57f3c556b886d0def346cef",
+   "ticket_url": "https://www.eventbrite.com/e/punchlines-pie-holiday-edition-tickets-2005436652011",
+   "source": "eventbrite",
+   "notable": false,
+   "tier": null,
+   "notable_reason": "small room",
+   "first_seen": "2026-11-25T05:45:27.077Z"
   }
  ]
 }
