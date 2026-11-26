@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T22:35:29.871Z",
+ "updated": "2026-11-26T05:32:44.553Z",
  "announcements": [
   {
    "id": "c844bc21728b00ec",
@@ -238,7 +238,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 2d out (min 14)",
+   "notable_reason": "only 1d out (min 14)",
    "first_seen": "2026-11-23T04:04:47.557Z"
   },
   {
@@ -254,7 +254,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 3d out (min 14)",
+   "notable_reason": "only 2d out (min 14)",
    "first_seen": "2026-11-23T04:04:47.557Z"
   },
   {
@@ -638,7 +638,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-11-24T23:13:45.348Z"
   },
   {
@@ -2974,7 +2974,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 7d out (min 14)",
+   "notable_reason": "only 6d out (min 14)",
    "first_seen": "2026-11-25T22:35:29.871Z"
   },
   {
@@ -2990,7 +2990,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "title pattern",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-11-25T22:35:29.871Z"
   },
   {
