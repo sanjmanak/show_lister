@@ -1,7 +1,7 @@
 {
   "pages": {
     "https://www.theriothtx.com/events/the-riot-presents-thursday-night-standup-comedy-showcase-39": {
-      "lastmod": "2026-11-25T01:46:00-06:00",
+      "lastmod": "2026-11-26T01:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -70,7 +70,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-thursday-night-late-standup-comedy-showcase-the-riot-houston-14": {
-      "lastmod": "2026-11-23T06:02:00-06:00",
+      "lastmod": "2026-11-26T03:03:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -135,7 +135,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-presents-friday-night-standup-comedy-showcase-30": {
-      "lastmod": "2026-11-25T01:49:00-06:00",
+      "lastmod": "2026-11-26T10:31:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -200,7 +200,7 @@
       }
     },
     "https://www.theriothtx.com/events/the-riot-comedy-club-presents-friday-night-standup-comedy-late-showcase-26": {
-      "lastmod": "2026-11-25T01:37:00-06:00",
+      "lastmod": "2026-11-26T10:31:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -5856,7 +5856,7 @@
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-early-standup-comedy-in-conroe-2026-11-28190000": {
-      "lastmod": "2026-11-17T02:12:00-06:00",
+      "lastmod": "2026-11-26T10:28:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -5892,11 +5892,32 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "Grady Pruitt"
+          },
+          {
+            "@type": "Person",
+            "name": "Hannah Abney"
+          },
+          {
+            "@type": "Person",
+            "name": "Waldo Rodas"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Loden"
+          },
+          {
+            "@type": "Person",
+            "name": "A.D. Hodge"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-11-28210000": {
-      "lastmod": "2026-11-17T02:12:00-06:00",
+      "lastmod": "2026-11-26T10:28:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -5932,7 +5953,28 @@
           "name": "The Riot Conroe",
           "url": "https://www.riotconroe.com"
         },
-        "performer": []
+        "performer": [
+          {
+            "@type": "Person",
+            "name": "A.D. Hodge"
+          },
+          {
+            "@type": "Person",
+            "name": "Grady Pruitt"
+          },
+          {
+            "@type": "Person",
+            "name": "Will Loden"
+          },
+          {
+            "@type": "Person",
+            "name": "Matthew Zane"
+          },
+          {
+            "@type": "Person",
+            "name": "Netra Netra Netra"
+          }
+        ]
       }
     },
     "https://www.riotconroe.com/events/riot-comedy-club-presents-saturday-night-standup-comedy-in-conroe-2026-12-05210000": {
@@ -6466,7 +6508,7 @@
       }
     },
     "https://www.theriothtx.com/events/yokes-jokes-saturday-brunch-comedy-show-2026-11-28130000": {
-      "lastmod": "2026-11-25T02:17:00-06:00",
+      "lastmod": "2026-11-26T10:30:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
@@ -6525,7 +6567,7 @@
           },
           {
             "@type": "Person",
-            "name": "Christian Alexander"
+            "name": "Natia Simon"
           }
         ]
       }
@@ -8087,7 +8129,7 @@
       }
     },
     "https://www.theriothtx.com/events/secret-headliner-netflix-don-t-tell-comedy-headlines-at-the-riot-comedy-club": {
-      "lastmod": "2026-11-25T01:37:00-06:00",
+      "lastmod": "2026-11-26T10:31:00-06:00",
       "node": {
         "@context": "https://schema.org",
         "@type": "ComedyEvent",
