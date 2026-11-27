@@ -8,9 +8,10 @@
       "date": "2026-11-21",
       "posted_at": "2026-09-08T16:04:44.084Z",
       "mode": "image",
-      "ig_media_id": "18094153010250415",
-      "ig_story_id": "18093182603542543",
-      "fb_post_id": null
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-27T23:42:31.500Z"
     },
     {
       "id": "cd29653447ef4ce7",
@@ -631,9 +632,10 @@
       "date": "2027-01-16",
       "posted_at": "2026-11-18T22:42:06.880Z",
       "mode": "reel",
-      "ig_media_id": "17957359731334909",
-      "ig_story_id": "18138818035640914",
-      "fb_post_id": "1464952369062837"
+      "ig_media_id": null,
+      "ig_story_id": null,
+      "fb_post_id": null,
+      "pruned_at": "2026-11-27T23:42:31.357Z"
     },
     {
       "id": "3d2642a4e157c57a",
@@ -658,6 +660,18 @@
       "ig_media_id": "18103573733678570",
       "ig_story_id": "18030001109860423",
       "fb_post_id": "1470322321859175"
+    },
+    {
+      "id": "6606061ae695239a",
+      "name": "Ray Lau (Kevin Hart's Funny AF)Headlines The Riot Comedy Club",
+      "performer_name": "Ray Lau",
+      "venue": "The Riot Comedy Club",
+      "date": "2027-02-25",
+      "posted_at": "2026-11-27T23:42:01.669Z",
+      "mode": "image",
+      "ig_media_id": "18116647430143537",
+      "ig_story_id": "18170823244471555",
+      "fb_post_id": "1474488681442539"
     }
   ],
   "skipped": [
