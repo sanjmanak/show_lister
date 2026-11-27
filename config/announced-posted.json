@@ -53,7 +53,7 @@
     },
     {
       "id": "6a4f2661b95c294e",
-      "name": "Erica Rhodes (Americas Got Talent, Don\u2019t Tell Comedy, Netflix is a Joke Fest) Headlines The Riot Comedy Club",
+      "name": "Erica Rhodes (Americas Got Talent, Don’t Tell Comedy, Netflix is a Joke Fest) Headlines The Riot Comedy Club",
       "performer_name": "Erica Rhodes",
       "venue": "The Riot Comedy Club",
       "date": "2026-12-11",
@@ -170,8 +170,8 @@
     },
     {
       "id": "28fc2ebee309047d",
-      "name": "Keropi S\u00e1nchez: Remastered\u00a0(En Espa\u00f1ol)",
-      "performer_name": "Keropi S\u00e1nchez",
+      "name": "Keropi Sánchez: Remastered (En Español)",
+      "performer_name": "Keropi Sánchez",
       "venue": "Punch Line Houston",
       "date": "2026-12-02",
       "posted_at": "2026-10-01T20:29:18.866Z",
@@ -391,7 +391,7 @@
     },
     {
       "id": "6d0e530a3830e5e8",
-      "name": "Los T\u00edos Comedy Tour headlined by Flo Hernandez",
+      "name": "Los Tíos Comedy Tour headlined by Flo Hernandez",
       "performer_name": "Flo Hernandez",
       "venue": "Punch Line Houston",
       "date": "2027-01-20",
@@ -431,7 +431,7 @@
     {
       "id": "9347a87a9ba02b87",
       "name": "Gaby Mendoza & Jose Luis Zagar ",
-      "performer_name": "Gaby Mendoza & Jos\u00e9 Luis Zagar",
+      "performer_name": "Gaby Mendoza & José Luis Zagar",
       "venue": "Arena Theatre",
       "date": "2027-01-23",
       "posted_at": "2026-10-31T19:31:16.141Z",
@@ -771,8 +771,8 @@
     },
     {
       "id": "0f98bd1b033df9e1",
-      "name": "Sarper G\u00fcven",
-      "reason": "Sarper G\u00fcven is known as a reality TV personality, not a recognizable stand-up comedian or comedy act.",
+      "name": "Sarper Güven",
+      "reason": "Sarper Güven is known as a reality TV personality, not a recognizable stand-up comedian or comedy act.",
       "at": "2026-09-18T18:38:36.489Z"
     },
     {
@@ -972,6 +972,12 @@
       "name": "Luke Severeid",
       "reason": "recent repost",
       "at": "2026-11-25T00:05:03.041Z"
+    },
+    {
+      "id": "1984f4ee4acfc1ae",
+      "name": "Andi Marie Tillman is Somethin' Else",
+      "reason": "Andi Marie Tillman is not identifiable with confidence as a nationally recognized stand-up headliner.",
+      "at": "2026-11-27T23:41:47.479Z"
     }
   ]
 }
