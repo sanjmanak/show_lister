@@ -15,11 +15,15 @@
  * must be on `main` first (same pattern as post-tonight.js):
  *
  *   --render   pick candidates, run the LLM gate, render the card(s) and,
- *              when assets/music/ has a track and ffmpeg exists, a 10s reel.
+ *              only when ANNOUNCE_REELS=1 (off by default since 2026-11-24:
+ *              the still card out-reached the reels 10 to 50x), a 10s reel.
  *              Writes blog/announce/<slug>-{portrait,story}.png[, .mp4] and
  *              blog/announce/pending.json. The workflow commits + pushes.
- *   --post     reads pending.json, posts IG feed (reel or image) + IG story
+ *   --post     reads pending.json, posts IG feed (image, or reel) + IG story
  *              + FB feed, records config/announced-posted.json.
+ *              Then takes down every just-announced post older than the
+ *              newest ANNOUNCE_KEEP_LIVE (default 3) on IG and FB, so the
+ *              grid never fills up with announcement cards.
  *
  * Env: OPENAI_API_KEY (render), INSTAGRAM_ACCESS_TOKEN / INSTAGRAM_USER_ID
  * (post), ANNOUNCE_MAX (default 1 per run), ANNOUNCE_WINDOW_HOURS (default
@@ -43,10 +47,22 @@ const RAW_BASE = "https://raw.githubusercontent.com/sanjmanak/show_lister/main/b
 const MAX = Math.max(1, parseInt(process.env.ANNOUNCE_MAX || "1", 10) || 1);
 const WINDOW_H = parseInt(process.env.ANNOUNCE_WINDOW_HOURS || "48", 10) || 48;
 const DRY_RUN = !!process.env.DRY_RUN && process.env.DRY_RUN !== "false";
+// How many just-announced posts stay live on IG/FB. Posting a new one takes
+// down the oldest beyond this. Owner decision 2026-11-24 (the grid read as
+// automated with 50 near-zero-reach announcement reels up at once).
+const KEEP_LIVE = Math.max(0, parseInt(process.env.ANNOUNCE_KEEP_LIVE || "3", 10) || 0);
+// Delete calls per run. A burst of ~80 deletes hit Meta's app-level (#4)
+// limit on 2026-11-24; anything left over simply goes on the next run.
+const PRUNE_MAX_CALLS = 10;
 const rules = require("./lib/announce-rules");
 const MIN_DAYS_OUT = rules.loadConfig().minDaysOut; // config/announce-venues.json
 const REPOST_GAP_DAYS = 45;    // same performer not twice in this window
 const RETENTION_DAYS = 14;     // rendered assets pruned after this
+// Reels are opt-in. Announcement reels reached 20 to 130 people each with 0
+// or 1 likes across 49 posts (Sep to Nov 2026); the same card as a still image
+// reached 275 to 1,518. Set ANNOUNCE_REELS=1 to render and post reels again
+// (needs a track in assets/music and ffmpeg on the runner).
+const REELS_ENABLED = process.env.ANNOUNCE_REELS === "1";
 const REEL_SECONDS = 10;
 // Where in the track the reel's audio starts (seconds). Intros are usually
 // quiet; 20s in is normally the hook. Override with REEL_MUSIC_START.
@@ -209,9 +225,10 @@ async function renderPhase() {
   const { cardHTML, photoDataUri, slugify, SIZES, displayVenue } = require("./lib/announce-card");
   fs.mkdirSync(OUT_DIR, { recursive: true });
   pruneOld();
-  const music = pickMusic();
-  const reelsOn = !!music && haveFfmpeg();
-  console.log(`Reel mode: ${reelsOn ? "ON (" + path.basename(music) + ", from " + MUSIC_START + "s)" : "off (" + (music ? "no ffmpeg" : "no track in assets/music") + ")"}`);
+  const music = REELS_ENABLED ? pickMusic() : null;
+  const reelsOn = REELS_ENABLED && !!music && haveFfmpeg();
+  const why = !REELS_ENABLED ? "ANNOUNCE_REELS not set, posting the still card" : music ? "no ffmpeg" : "no track in assets/music";
+  console.log(`Reel mode: ${reelsOn ? "ON (" + path.basename(music) + ", from " + MUSIC_START + "s)" : "off (" + why + ")"}`);
 
   const browser = await puppeteer.launch({ headless: "new", args: ["--no-sandbox", "--disable-setuid-sandbox"] });
   const items = [];
@@ -286,6 +303,49 @@ async function postReel(videoUrl, caption, meta) {
   return publishWithRetry(container.id, "Reel");
 }
 
+/**
+ * Keep only the newest KEEP_LIVE just-announced posts live. Called after a
+ * successful post, so publishing the Nth card takes down the (N - KEEP_LIVE)th.
+ * IG feed media and the FB photo post are deleted; stories expire on their own
+ * and are never touched. A rate limit ends the pass (the rest waits for the
+ * next run), any other failure keeps the ID in state for retry, and nothing
+ * here can fail the posting run. Mutates `state`; the caller saves it.
+ */
+async function pruneLivePosts(state, meta) {
+  const live = state.posted
+    .filter((p) => p.ig_media_id || p.fb_post_id)
+    .sort((a, b) => (Date.parse(b.posted_at) || 0) - (Date.parse(a.posted_at) || 0));
+  const stale = live.slice(KEEP_LIVE);
+  if (!stale.length) {
+    console.log(`\nPrune: ${live.length} live post(s), none older than the newest ${KEEP_LIVE}.`);
+    return;
+  }
+  console.log(`\nPrune: ${live.length} live, keeping the newest ${KEEP_LIVE}, taking down ${stale.length} (max ${PRUNE_MAX_CALLS} calls this run).`);
+  let calls = 0;
+  for (const p of stale) {
+    if (calls >= PRUNE_MAX_CALLS) break;
+    for (const [field, label] of [["ig_media_id", "IG feed"], ["fb_post_id", "FB feed"]]) {
+      if (!p[field] || calls >= PRUNE_MAX_CALLS) continue;
+      calls++;
+      try {
+        await meta.withTimeout(meta.deleteGraphObject(p[field], `${label} ${p.performer_name}`), label, 60000);
+        p[field] = null;
+      } catch (err) {
+        const msg = String(err && err.message || err).split("\n")[0];
+        if (msg.startsWith("RATE_LIMITED")) {
+          console.log(`   rate limited after ${calls} call(s); the rest waits for the next run.`);
+          return;
+        }
+        console.log(`   ${label} delete failed for ${p.performer_name} (kept for retry): ${msg}`);
+      }
+    }
+    if (!p.ig_media_id && !p.fb_post_id) {
+      p.ig_story_id = null;
+      p.pruned_at = new Date().toISOString();
+    }
+  }
+}
+
 async function postPhase() {
   const pending = loadJson(PENDING, { items: [] });
   if (!pending.items || !pending.items.length) { console.log("No pending announcements."); return; }
@@ -342,6 +402,11 @@ async function postPhase() {
       } catch (err) { console.log(`   FB feed failed (non-fatal): ${err.message}`); }
     }
     state.posted.push(record);
+    saveJson(STATE, state);
+  }
+  if (!DRY_RUN) {
+    try { await pruneLivePosts(state, meta); }
+    catch (err) { console.log(`   prune skipped: ${String(err && err.message || err).split("\n")[0]}`); }
     saveJson(STATE, state);
   }
   saveJson(PENDING, { items: [] });
