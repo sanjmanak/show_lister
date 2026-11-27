@@ -3236,6 +3236,12 @@
       "model": "gpt-5.6-luna",
       "taxonomy": 2,
       "classified_at": "2026-11-25"
+    },
+    "andi marie tillman is somethin' else": {
+      "tags": [],
+      "model": "gpt-5.6-luna",
+      "taxonomy": 2,
+      "classified_at": "2026-11-27"
     }
   }
 }

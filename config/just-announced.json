@@ -1,22 +1,6 @@
 {
- "updated": "2026-11-26T22:23:49.424Z",
+ "updated": "2026-11-27T05:27:00.651Z",
  "announcements": [
-  {
-   "id": "2052adfff587cd07",
-   "name": "Social Comedy Nite",
-   "venue": "Notsuoh",
-   "date": "2027-01-26",
-   "time": "10:30 PM",
-   "price_min": 0,
-   "price_max": 0,
-   "image_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1177329624%2F2986074715451%2F1%2Foriginal.20260211-230247?auto=format%2Ccompress&q=75&sharp=10&s=9520d1a7668651771ff71d5f1bcd6333",
-   "ticket_url": "https://www.eventbrite.com/e/social-comedy-nite-tickets-2005222698069",
-   "source": "eventbrite",
-   "notable": false,
-   "tier": null,
-   "notable_reason": "recurring series (13 weeks)",
-   "first_seen": "2026-11-22T20:24:04.128Z"
-  },
   {
    "id": "798bc15c62cf92d6",
    "name": "Social Comedy Nite",
@@ -206,7 +190,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 1d out (min 14)",
+   "notable_reason": "only 0d out (min 14)",
    "first_seen": "2026-11-23T04:04:47.557Z"
   },
   {
@@ -222,7 +206,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 2d out (min 14)",
+   "notable_reason": "only 1d out (min 14)",
    "first_seen": "2026-11-23T04:04:47.557Z"
   },
   {
@@ -606,7 +590,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-11-24T23:13:45.348Z"
   },
   {
@@ -2942,7 +2926,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 6d out (min 14)",
+   "notable_reason": "only 5d out (min 14)",
    "first_seen": "2026-11-25T22:35:29.871Z"
   },
   {
@@ -2958,7 +2942,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 13d out (min 14)",
+   "notable_reason": "only 12d out (min 14)",
    "first_seen": "2026-11-25T22:35:29.871Z"
   },
   {
@@ -3200,6 +3184,22 @@
    "tier": null,
    "notable_reason": "title pattern",
    "first_seen": "2026-11-26T22:23:49.424Z"
+  },
+  {
+   "id": "1984f4ee4acfc1ae",
+   "name": "Andi Marie Tillman is Somethin' Else",
+   "venue": "Punch Line Houston",
+   "date": "2027-02-24",
+   "time": "7:30 PM",
+   "price_min": null,
+   "price_max": null,
+   "image_url": "https://s1.ticketm.net/dam/a/b02/976d3378-2fa9-4173-9abf-68ac05f30b02_SOURCE",
+   "ticket_url": "https://www.ticketmaster.com/andi-marie-tillman-is-somethin-else-houston-texas-02-24-2027/event/3A00656E1042F8B6",
+   "source": "ticketmaster",
+   "notable": true,
+   "tier": "headliner_room",
+   "notable_reason": "headliner room",
+   "first_seen": "2026-11-27T05:27:00.651Z"
   }
  ]
 }
