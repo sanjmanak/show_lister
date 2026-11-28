@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T22:01:43.124Z",
+ "updated": "2026-11-28T05:02:33.391Z",
  "announcements": [
   {
    "id": "8f03fc2825967422",
@@ -350,7 +350,7 @@
    "source": "ticketmaster",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-11-24T23:13:45.348Z"
   },
   {
@@ -366,7 +366,7 @@
    "source": "donttellcomedy",
    "notable": false,
    "tier": null,
-   "notable_reason": "small room",
+   "notable_reason": "only 13d out (min 14)",
    "first_seen": "2026-11-24T23:13:45.348Z"
   },
   {
@@ -2686,7 +2686,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-11-25T22:35:29.871Z"
   },
   {
@@ -2702,7 +2702,7 @@
    "source": "standuptix",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-11-25T22:35:29.871Z"
   },
   {
@@ -2974,7 +2974,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 5d out (min 14)",
+   "notable_reason": "only 4d out (min 14)",
    "first_seen": "2026-11-27T22:01:43.124Z"
   },
   {
@@ -2990,7 +2990,7 @@
    "source": "eventbrite",
    "notable": false,
    "tier": null,
-   "notable_reason": "only 12d out (min 14)",
+   "notable_reason": "only 11d out (min 14)",
    "first_seen": "2026-11-27T22:01:43.124Z"
   },
   {
